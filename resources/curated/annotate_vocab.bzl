@@ -1,6 +1,6 @@
-def annotate_vocab(level, visibility=None):
+def annotate_vocab(name,level):
   native.genrule(
-    name = "jlpt-"+level+"-vocab-json",
+    name = name,
     srcs = ["annotate_vocab.py", "jlpt-"+level+"-vocab.txt"],
     outs = ["jlpt-"+level+"-vocab.json"],
     cmd = "python $(SRCS) $(OUTS) "+level,

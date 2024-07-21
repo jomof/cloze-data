@@ -9,8 +9,8 @@ filegroup(
     ],
 )
 
-filegroup(
-    name = "all-vocab-json",
+json_concat(
+    name = "concatenated-vocab-json",
     srcs = [
         ":jlpt-n1-vocab-json",
         ":jlpt-n2-vocab-json",
@@ -18,13 +18,6 @@ filegroup(
         ":jlpt-n4-vocab-json",
         ":jlpt-n5-vocab-json",
         ":jlpt-non-vocab-json",
-    ]
-)
-
-json_concat(
-    name = "concatenated-vocab-json",
-    srcs = [
-        ":all-vocab-json"
     ],
     output = "concatenated-vocab.json"
 )
@@ -37,6 +30,13 @@ genrule(
 )
 
 genrule(
+    name = "grammar-summary-text",
+    srcs = ["grammar_summary.py", ":grammar-points-flat.json"],
+    outs = ["grammar-summary.txt"],
+    cmd = "python $(SRCS) $(OUTS)",
+)
+
+genrule(
     name = "grammar-point-sentences-json",
     srcs = ["sentences_flattened.py", ":grammar-points-flat.json"],
     outs = ["grammar-point-sentences.json"],
@@ -44,11 +44,9 @@ genrule(
     visibility = ["//visibility:public"],
 )
 
-annotate_vocab(level = 'n5')
-annotate_vocab(level = 'n4')
-annotate_vocab(level = 'n3')
-annotate_vocab(level = 'n2')
-annotate_vocab(level = 'n1')
-annotate_vocab(level = 'non')
-
-
+annotate_vocab(name = "jlpt-n5-vocab-json", level = 'n5')
+annotate_vocab(name = "jlpt-n4-vocab-json", level = 'n4')
+annotate_vocab(name = "jlpt-n3-vocab-json", level = 'n3')
+annotate_vocab(name = "jlpt-n2-vocab-json", level = 'n2')
+annotate_vocab(name = "jlpt-n1-vocab-json", level = 'n1')
+annotate_vocab(name = "jlpt-non-vocab-json", level = 'non')
