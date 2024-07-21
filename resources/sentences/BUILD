@@ -8,3 +8,10 @@ json_concat(
     ],
     output = "concatenated-sentences.json"
 )
+
+genrule(
+    name = "tokenized",
+    srcs = ["tokenize_sentences.py", "concatenated-sentences.json"],
+    outs = ["tokenized-sentences.json"],
+    cmd = "python $(SRCS) $(OUTS)"
+)
