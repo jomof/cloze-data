@@ -17,7 +17,6 @@ def _json_concat_impl(ctx):
         use_default_shell_env=True,
     )
 
-    # Return DefaultInfo with the output file
     return [DefaultInfo(files=depset([output_file]))]
 
 json_concat = rule(
@@ -32,4 +31,40 @@ json_concat = rule(
             allow_files = True,
         ),
     },
+)
+
+def _check_json_array_distinct_test_impl(ctx):
+    script_file = ctx.attr._script
+    json_file = ctx.attr.json
+    required_key = ctx.attr.keyField
+    validation_output = ctx.actions.declare_file(ctx.attr.name + ".validation")
+
+    ctx.actions.write(ctx.outputs.main, "main output\n")
+    ctx.actions.write(ctx.outputs.implicit, "implicit output\n")
+
+    ctx.actions.run(
+        # inputs=[script_file, input_file],
+        outputs=[validation_output],
+        executable='python',
+        arguments=[script_file, required_key, json_file]
+        # use_default_shell_env=True
+    )
+    return [
+        DefaultInfo(files = depset([ctx.outputs.main])),
+        OutputGroupInfo(_validation = depset([validation_output])),
+    ]
+
+check_json_array_distinct_test = rule(
+    implementation=_check_json_array_distinct_test_impl,
+    attrs={
+        "json": attr.label(allow_single_file=True),
+        "keyField": attr.string(),
+        "_script": attr.label(
+            allow_single_file = True,
+            executable = True,
+            default = Label("//json_rules:check_json_array_distinct.py"),
+            cfg = "exec"
+        ),
+    },
+    test=True,
 )

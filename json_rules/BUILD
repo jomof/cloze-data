@@ -1,5 +1,5 @@
 # json_rules/BUILD
-exports_files(["concat_json_arrays.py"])
+exports_files([
+    "concat_json_arrays.py",
+    "check_json_array_distinct.py"])
 
-# # Declare the json_concat rule
-# load("//json_rules:json.bzl", "json_concat")
