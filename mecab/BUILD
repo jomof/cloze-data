@@ -13,3 +13,8 @@ py_test(
     srcs = ["compact_sentence_test.py"],
     deps = [":compact_sentence"],
 )
+
+sh_binary(
+    name = "download-unidic",
+    srcs = ["download_unidic.sh"],
+)
