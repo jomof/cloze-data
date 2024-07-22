@@ -5,8 +5,104 @@ import unidic
 import re
 from typing import List, Dict
 import re
+from mecab.compact_sentence import Token, sentence_to_tokens, tokens_to_sentence
+
 
 pattern_classifiers = {
+    "を|禁じえ|な": "を禁じえない",
+    "を|もの|と|も|せ|ず": "をものともせず",
+    "を|もっ|て": "をもって",
+    "を|おい|て": "をおいて",
+    "を|余儀|なく|さ|れ|た": "を余儀なくされる",
+    "を|余儀|なく|さ|れ|る": "を余儀なくされる",
+    "を|よそ|に": "をよそに",
+    "思い|を|し": "思いをする",
+    "思い|を|する": "思いをする",
+    "折|に": "折に",
+    "およそ": "およそ",
+    "さも|ない|と": "さもないと",
+    "さぞ": "さぞ",
+    "始末|だ": "始末だ",
+    "そば|から": "そばから",
+    "さも": "さも",
+    "それ|なり|に": "それなりに",
+    "そう|に|も|ない": "そうにもない",
+    "ただ|○○|のみ|だ": "ただ○○のみだ",
+    "だ|拍子|に": "た拍子に",
+    "た|拍子|に": "た拍子に",
+    "ためし|が|ない": "ためしがない",
+    "たり|とも": "たりとも",
+    "た|瞬間|に": "た瞬間に",
+    "てっ|きり": "てっきり",
+    "た|ところ|で": "たところで",
+    "て|から|と|いう|もの": "てからというもの",
+    "て|かなわ|ない": "てかなわない",
+    "て|まで": "てまで",
+    "て|みせる": "てみせる",
+    "て|も|どう|に|も|なら|ない": "てもどうにもならない",
+    "て|も|始まら|ない": "ても始まらない",
+    "て|も|差し支え|ない": "ても差し支えない",
+    "て|しかる|べき|だ": "てしかるべきだ",
+    "って|ば": "ってば",
+    "て|やま|ない": "てやまない",
+    "も|相|まっ|て": "と相まって",
+    "と|○○|が|相|まっ|て": "と相まって",
+    "と|相|まっ|て": "と相まって",
+    "と|あれ|ば": "とあれば",
+    "と|あっ|て": "とあって",
+    "と|ばかり|に": "とばかりに",
+    "と|いえ|ど|も": "といえども",
+    "と|いい|○○|と|いい": "といい○○といい",
+    "と|いっ|たら|ない": "といったらない",
+    "と|いう|か|○○|と|いう|か": "というか○○というか",
+    "と|いう|ところ|だ": "というところだ/といったところだ",
+    "と|いっ|た|ところ|だ": "というところだ/といったところだ",
+    "と|いう|もの": "というもの",
+    "と|いう|わけ|です": "というわけだ",
+    "と|いう|わけ|だ": "というわけだ",
+    "と|いう|わけ|で|は|ない": "というわけではない",
+    "と|いわ|ず": "といわず",
+    "と|き|たら": "ときたら",
+    "と|き|て|いる": "ときている",
+    "ところ|が|ある": "ところがある",
+    "ところ|から": "ところから",
+    "と|み|られる": "とみられる",
+    "と|見る|や": "と見るや",
+    "と|も|なく": "ともなく",
+    "と|も|なる|と": "ともなると/ともなれば",
+    "と|も|なれ|ば": "ともなると/ともなれば",
+    "と|も|すれ|ば": "ともすれば",
+    "と|思い|き|や": "と思いきや",
+    "とりわけ": "とりわけ",
+    "と|さ|れ|て": "とされる",
+    "と|さ|れる": "とされる",
+    "とっさ|に": "とっさに",
+    "と|し|た|ところ|で": "としたって/としたところで",
+    "と|し|たって": "としたって/としたところで",
+    "と|し|て|○○|ない": "として○○ない",
+    "とて": "とて",
+    "とても|○○|ない": "とても○○ない",
+    "と|は": "とは",
+    "と|は|いえ": "とはいえ",
+    "と|は|いう|もの|の": "とはいうものの",
+    "つ|○○|つ": "つ○○つ",
+    "は|おろか": "はおろか",
+    "は|さておき": "はさておき",
+    "や|否|や": " や否や",
+    "や|し|ない": "やしない",
+    ".*う|と": "(よ)うが/(よ)うと",
+    ".*う|が": "(よ)うが/(よ)うと",
+    ".*う|が|○○|まい|が": "(よ)うが○○まいが/(よ)うと○○まいと",
+    ".*う|と|○○|まい|と": "(よ)うが○○まいが/(よ)うと○○まいと",
+    ".*う|か|○○|まい|か": "(よ)うか○○まいか",
+    ".*う|もの|なら": "(よ)うものなら",
+    ".*う|に|も|○○|ない": "(よ)うにも○○ない",
+    ".*よう|に|よっ|て|は": "ようによっては",
+    "ゆえ|に": "ゆえに",
+    "ざる": "ざる",
+    "ず|じまい": "ずじまい",
+    "ずくめ": "ずくめ",
+    "ず|と|も": "ずとも",
     "と|いう|の|は": "というのはx",
     "と|いう|と": "というと",
     "という": "という",
@@ -171,7 +267,8 @@ def get_compiled_pattern_classifiers():
     compiled_pattern_classifiers = []
     for pattern, gp in pattern_classifiers.items():
         parts = pattern.split("|")
-        matcher = "".join(f"⌈ₛ{part}ₚ[^⌉]*⌉" for part in parts)
+        parts = [".*" if element == '○○' else element for element in parts]
+        matcher = "".join(f"⌈ˢ{part}ᵖ[^⌉]*⌉" for part in parts)
         grammar_points = gp
         if isinstance(grammar_points, str):
             grammar_points = [gp]
@@ -181,116 +278,6 @@ def get_compiled_pattern_classifiers():
 
 
 compiled_pattern_classifiers = get_compiled_pattern_classifiers()
-
-
-class Token:
-    def __init__(self, surface, pos, grammar, start_pos, end_pos):
-        self.surface = surface
-        self.pos = pos
-        self.grammar = grammar
-        self.start_pos = start_pos
-        self.end_pos = end_pos
-
-    def add_grammar(self, grammar_point):
-        if not isinstance(grammar_point, str):
-            raise TypeError(f"grammar_point must be a string, but was {grammar_point}")
-        if grammar_point not in self.grammar:
-            self.grammar.append(grammar_point)
-
-def sentence_to_tokens(input_string):
-    """
-    Parses a tokenized sentence string into a list of Token objects.
-
-    Each token starts with "⌈" and ends with "⌉". Within each token:
-    - The text after "ₛ" is the surface form.
-    - The text after "ₚ" is the part-of-speech (POS).
-    - The text after "ₔ" represents grammar attributes, and there can be zero or more grammar attributes.
-
-    The function also captures the starting and ending positions of each token within the original string.
-
-    Parameters:
-    input_string (str): The tokenized sentence string.
-
-    Returns:
-    list: A list of Token objects.
-    """
-    tokens = []
-    i = 0
-    length = len(input_string)
-
-    while i < length:
-        if input_string[i] == '⌈':
-            # Start of a token
-            start_pos = i
-            i += 1
-            surface = ''
-            pos = ''
-            grammars = []
-
-            # Find the end of the surface part
-            while i < length and input_string[i] != 'ₛ':
-                i += 1
-            i += 1  # Skip 'ₛ'
-
-            # Read the surface form of the token
-            while i < length and input_string[i] != 'ₚ':
-                surface += input_string[i]
-                i += 1
-            i += 1  # Skip 'ₚ'
-
-            # Read the part-of-speech tag of the token
-            while i < length and input_string[i] not in ('ₔ', '⌉'):
-                pos += input_string[i]
-                i += 1
-
-            # Read the grammar attributes (if any)
-            while i < length and input_string[i] == 'ₔ':
-                i += 1  # Skip 'ₔ'
-                grammar = ''
-                while i < length and input_string[i] not in ('ₔ', '⌉'):
-                    grammar += input_string[i]
-                    i += 1
-                grammars.append(grammar.strip())
-
-            # If the token ends with '⌉', finalize the token and add it to the list
-            if i < length and input_string[i] == '⌉':
-                end_pos = i + 1
-                tokens.append(Token(surface.strip(), pos.strip(), grammars, start_pos, end_pos))
-                i += 1  # Skip '⌉'
-        else:
-            i += 1  # Move to next character if not the start of a token
-
-    return tokens
-
-def tokens_to_sentence(tokens):
-    """
-    Converts a list of Token objects back into the original tokenized string format.
-
-    Each token is represented by a Token object.
-
-    The function reconstructs the string by concatenating each token's components
-    with the appropriate delimiters.
-
-    Parameters:
-    tokens (list): A list of Token objects.
-
-    Returns:
-    str: The reconstructed tokenized string.
-    """
-    result = ''
-
-    for token in tokens:
-        # Start the token with '⌈ₛ'
-        result += '⌈ₛ' + token.surface + 'ₚ' + token.pos
-
-        # Add each grammar attribute with the 'ₔ' delimiter
-        for grammar in token.grammar:
-            result += 'ₔ' + grammar
-
-        # Close the token with '⌉'
-        result += '⌉'
-
-    return result
 
 def annotate_with_grammar(sentence):
     result = sentence
@@ -332,10 +319,13 @@ def parse_mecab_output(tokens: str) -> List[Dict[str, str]]:
 
     recombined = ""
     for token in result:
-        surface = token["Surface"] # Preceded by ₛ (Latin Subscript Small Letter 's')
-        pos = token["POS"] # Preceded by ₚ (Latin Subscript Small Letter 'p')
-                        
-        recombined += f"⌈ₛ{surface}ₚ{pos}⌉"
+        surface = token["Surface"] # Preceded by ˢ (Latin Subscript Small Letter 's')
+        pos = token["POS"] # Preceded by ᵖ (Latin Subscript Small Letter 'p')
+        recombined += f"⌈ˢ{surface}ᵖ{pos}"
+        base = token["BaseForm"] # Preceded by ᵇ (superscript 'b') 
+        if base is not None and base != "":
+            recombined += f"ᵇ{base}"
+        recombined += "⌉"
 
     return recombined
 
@@ -358,7 +348,7 @@ def add_empty_tokens_field(input_file: str, output_file: str):
 
 def add_tokens_field():
     if len(sys.argv) != 3:
-        print("Usage: python add_tokens_field.py <input_file> <output_file>")
+        print("Usage: python tokenize_sentences.py <input_file> <output_file>")
         sys.exit(1)
 
     input_file = sys.argv[1]

@@ -1,5 +1,6 @@
 load("//json_rules:json.bzl", "json_concat")
 load(":annotate_vocab.bzl", "annotate_vocab")
+load("//python_rules:python_build.bzl", "py_build_tool")
 
 # A hand-curated list of Japanese grammar points roughty aligned with JLPT level
 filegroup(
@@ -22,25 +23,26 @@ json_concat(
     output = "concatenated-vocab.json"
 )
 
-genrule(
+py_build_tool(
     name = "grammar-points-json",
-    srcs = ["grammar_to_array.py", ":grammar-by-jlpt-level.json"],
+    main = "grammar_to_array.py",
+    ins = ["grammar-by-jlpt-level.json"],
     outs = ["grammar-points-flat.json", "grammar-points-special.json"],
-    cmd = "python $(SRCS) $(OUTS)",
+    visibility = ["//visibility:public"]
 )
 
-genrule(
+py_build_tool(
     name = "grammar-summary-text",
-    srcs = ["grammar_summary.py", ":grammar-points-flat.json"],
-    outs = ["grammar-summary.txt"],
-    cmd = "python $(SRCS) $(OUTS)",
+    main = "grammar_summary.py",
+    ins = ["grammar-points-flat.json"],
+    outs = ["grammar-summary.txt"]
 )
 
-genrule(
+py_build_tool(
     name = "grammar-point-sentences-json",
-    srcs = ["sentences_flattened.py", ":grammar-points-flat.json"],
+    main = "sentences_flattened.py",
+    ins = ["grammar-points-flat.json"],
     outs = ["grammar-point-sentences.json"],
-    cmd = "python $(SRCS) $(OUTS)",
     visibility = ["//visibility:public"],
 )
 
