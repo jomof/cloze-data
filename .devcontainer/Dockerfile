@@ -22,6 +22,10 @@ RUN npm install -g @bazel/bazelisk
 RUN go install github.com/bazelbuild/buildtools/buildifier@latest
 RUN npm install -g @bazel/ibazel
 
+RUN pip install mecab-python3==1.0.9
+RUN pip install unidic==1.1.0
+RUN python -m unidic download
+
 RUN sudo gcloud config set project jomof-sandbox
 
 ENV DATASTORE_DATASET=jomof-sandbox
