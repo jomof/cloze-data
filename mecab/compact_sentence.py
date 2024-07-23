@@ -20,7 +20,7 @@ def read_until_delimiter(input_string, i, delimiters):
         i += 1
     return result, i
 
-def sentence_to_tokens(input_string):
+def compact_sentence_to_tokens(input_string):
     """
     Parses a tokenized sentence string into a list of Token objects.
 
@@ -79,7 +79,7 @@ def sentence_to_tokens(input_string):
 
     return tokens
 
-def tokens_to_sentence(tokens):
+def tokens_to_compact_sentence(tokens):
     """
     Converts a list of Token objects back into the original tokenized string format.
 
@@ -110,3 +110,74 @@ def tokens_to_sentence(tokens):
         result += '⌉'
 
     return result
+
+def parse_raw_mecab_output(raw_output):
+    field_names = [
+        "surface", "pos", "pos_detail_1", "pos_detail_2", "pos_detail_3",
+        "conjugated_type", "conjugated_form", "basic_form", "reading", "pronunciation"
+    ]
+
+    tokens = []
+    for line in raw_output.split("\n"):
+        if line == "EOS":
+            continue
+        parts = line.split("\t")
+        if len(parts) < 2:
+            continue
+        surface = parts[0]
+        features = parts[1].split(",")
+        features += [""] * (20 - len(features) - 1)
+     
+        token = {
+            "surface": surface,
+            "pos": features[0],
+            "pos_detail_1": features[1],
+            "pos_detail_2": features[2],
+            "pos_detail_3": features[3],
+            "conjugated_type": features[4],
+            "conjugated_form": features[5],
+            "reading": features[6],
+            "unknown_7": features[7],
+            "unknown_8": features[8],
+            "pronunciation": features[9],
+            "basic_form": features[10],
+            "unknown_11": features[11],
+            "unknown_12": features[12],
+            "unknown_13": features[13],
+            "unknown_14": features[14],
+            "unknown_15": features[15],
+        }
+        tokens.append(token)
+    return tokens
+
+
+def mecab_raw_to_compact_sentence(raw: str) -> str:
+    """
+    Converts MeCab raw token output into a compact sentence format.
+    
+    Parameters:
+    raw (str): Raw output from MeCab, with each token on a new line and fields separated by tabs and commas.
+    
+    Returns:
+    str: A compact sentence string with each token enclosed in brackets and annotated with part-of-speech (POS) and base form.
+    """
+    # Define the fields present in the MeCab output details
+
+    tokens = parse_raw_mecab_output(raw)
+
+    # Recombine the tokens into the desired compact format
+    recombined = ""
+    for token in tokens:
+        surface = token["surface"]  # Preceded by ˢ (Latin Subscript Small Letter 's')
+        pos = token["pos"]  # Preceded by ᵖ (Latin Subscript Small Letter 'p')
+        recombined += f"⌈ˢ{surface}ᵖ{pos}"
+        base = token["basic_form"]  # Preceded by ᵇ (superscript 'b')
+        if base:
+            recombined += f"ᵇ{base}"
+        recombined += "⌉"
+
+    return recombined
+
+def mecab_raw_to_tokens(raw):
+    return compact_sentence_to_tokens(mecab_raw_to_compact_sentence(raw))
+

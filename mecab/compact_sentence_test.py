@@ -1,11 +1,26 @@
 import unittest
-from mecab.compact_sentence import sentence_to_tokens, tokens_to_sentence, Token
+import MeCab
+import os
+from mecab.compact_sentence import compact_sentence_to_tokens, tokens_to_compact_sentence, mecab_raw_to_compact_sentence, Token, parse_raw_mecab_output
 
 class TestTokenParser(unittest.TestCase):
 
+    def test_tokenize(self):
+      dicdir = "/home/codespace/.python/current/lib/python3.10/site-packages/unidic/dicdir"
+      if not os.path.exists(dicdir): return
+      wakati = MeCab.Tagger('-r "{}" -d "{}"'.format(f"{dicdir}/mecabrc", dicdir))
+      term = "机の上に本はあります。"
+      raw = wakati.parse(term)
+      compact_sentence = mecab_raw_to_compact_sentence(raw)
+      tokens = parse_raw_mecab_output(raw)
+      print("RAW", raw)
+      print("COMPACT", compact_sentence)
+      print("TOKENS", tokens)
+      self.assertEqual(compact_sentence, "⌈ˢ机ᵖ名詞ᵇ机⌉⌈ˢのᵖ助詞ᵇの⌉⌈ˢ上ᵖ名詞ᵇ上⌉⌈ˢにᵖ助詞ᵇに⌉⌈ˢ本ᵖ名詞ᵇ本⌉⌈ˢはᵖ助詞ᵇは⌉⌈ˢありᵖ動詞ᵇある⌉⌈ˢますᵖ助動詞ᵇます⌉⌈ˢ。ᵖ補助記号ᵇ。⌉")
+
     def test_sentence_to_tokens(self):
         input_string = "⌈ˢThisᵖNOUNᵇthis⌉⌈ˢisᵖVERB⌉⌈ˢaᵖDET⌉⌈ˢtestᵖNOUN⌉"
-        tokens = sentence_to_tokens(input_string)
+        tokens = compact_sentence_to_tokens(input_string)
         self.assertEqual(len(tokens), 4)
         self.assertEqual(tokens[0].surface, "This")
         self.assertEqual(tokens[0].pos, "NOUN")
@@ -27,7 +42,7 @@ class TestTokenParser(unittest.TestCase):
             Token(surface="a", pos="DET"),
             Token(surface="test", pos="NOUN")
         ]
-        reconstructed_string = tokens_to_sentence(tokens)
+        reconstructed_string = tokens_to_compact_sentence(tokens)
         expected_string = "⌈ˢThisᵖNOUNᵇthis⌉⌈ˢisᵖVERB⌉⌈ˢaᵖDET⌉⌈ˢtestᵖNOUN⌉"
         self.assertEqual(reconstructed_string, expected_string)
 

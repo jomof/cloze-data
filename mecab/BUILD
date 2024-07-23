@@ -8,10 +8,20 @@ py_library(
     visibility = ["//visibility:public"],
 )
 
+filegroup(
+    name = "unidic-dir",
+    srcs = glob(["dicdir/**"]),
+    visibility = ["//visibility:public"],
+)
+
 py_test(
     name = "compact_sentence_test",
     srcs = ["compact_sentence_test.py"],
-    deps = [":compact_sentence"],
+    data = [":unidic-dir"],
+    deps = [
+        ":compact_sentence", 
+        "@pip//mecab_python3"
+        ]
 )
 
 sh_binary(
