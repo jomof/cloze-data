@@ -23,5 +23,5 @@ py_build_tool(
     main = "grammar_compliance_report.py",
     ins = ["//resources/curated:grammar-points-flat.json", "tokenized-sentences.json"],
     outs = ["grammar-compliance-report.txt"],
-    #deps = ["//mecab:compact_sentence"]
+    deps = ["//mecab:compact_sentence"]
 )
