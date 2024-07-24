@@ -181,3 +181,35 @@ def mecab_raw_to_compact_sentence(raw: str) -> str:
 def mecab_raw_to_tokens(raw):
     return compact_sentence_to_tokens(mecab_raw_to_compact_sentence(raw))
 
+def mecab_raw_to_compact_sentence_with_grammar(raw: str) -> str:
+    """
+    Converts MeCab raw token output into a compact sentence format, including grammar information.
+    
+    Parameters:
+    raw (str): Raw output from MeCab, with each token on a new line and fields separated by tabs and commas.
+    
+    Returns:
+    str: A compact sentence string with each token enclosed in brackets and annotated with 
+         part-of-speech (POS), base form, and grammar information.
+    """
+    tokens = parse_raw_mecab_output(raw)
+
+    recombined = ""
+    for token in tokens:
+        surface = token["surface"]  # Preceded by ˢ (Latin Subscript Small Letter 's')
+        pos = token["pos"]  # Preceded by ᵖ (Latin Subscript Small Letter 'p')
+        recombined += f"⌈ˢ{surface}ᵖ{pos}"
+        base = token["basic_form"]  # Preceded by ᵇ (superscript 'b')
+        if base:
+            recombined += f"ᵇ{base}"
+        # Add grammar features (using fields 1-4, 6, and 7)
+        for feature in [token["pos_detail_1"], token["pos_detail_2"], token["pos_detail_3"], 
+                         token["conjugated_type"], token["conjugated_form"]]:
+            if feature:
+                recombined += f"ᵍ{feature}"
+        recombined += "⌉"
+
+    return recombined
+
+def mecab_raw_to_tokens_with_grammar(raw):
+    return compact_sentence_to_tokens(mecab_raw_to_compact_sentence_with_grammar(raw))

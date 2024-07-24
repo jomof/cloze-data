@@ -73,7 +73,7 @@ def reformat_sentences(input_file, output_file, special_output_file):
 
             # Ensure required keys are present
             if jap_key not in record or eng_key not in record:
-                raise ValueError(f"Record missing required keys: {jap_key} or {eng_key}")
+                raise ValueError(f"Record {term} missing required keys: {jap_key} or {eng_key}")
 
             # Check for duplicate Japanese sentences
             japanese_sentence = record[jap_key]
