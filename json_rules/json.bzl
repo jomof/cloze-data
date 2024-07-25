@@ -68,3 +68,39 @@ check_json_array_distinct_test = rule(
     },
     test=True,
 )
+
+def _concat_multiple_file_contents_impl(ctx):
+    # Define the output file
+    output_file = ctx.outputs.output
+    
+    # Collect the paths of all input files
+    input_files = [f.path for f in ctx.files.srcs]
+    
+    # Path to the Python script
+    script_file = ctx.executable._concat_script
+    
+    # Run the Python script to concatenate file contents into a JSON
+    ctx.actions.run(
+        inputs=ctx.files.srcs + [script_file],
+        outputs=[output_file],
+        executable="python",
+        arguments=[script_file.path, output_file.path] + input_files,
+        use_default_shell_env=True,
+    )
+
+    return [DefaultInfo(files=depset([output_file]))]
+
+concat_multiple_file_contents = rule(
+    implementation=_concat_multiple_file_contents_impl,
+    attrs={
+        "srcs": attr.label_list(allow_files=True),  # Allow any file types as input
+        "output": attr.output(),  # Specify the output attribute
+        "_concat_script": attr.label(
+            default = Label("//json_rules:concat_multiple_file_contents.py"),  # Update the label to the script's path
+            executable = True,
+            cfg = "host",
+            allow_files = True,
+        ),
+    },
+)
+
