@@ -33,8 +33,47 @@ zip_files = rule(
     },
 )
 
+def _unzip_files_impl(ctx):
+    # Define the input ZIP file
+    input_file = ctx.file.src
+
+    # Define the output directory
+    if ctx.attr.output:
+        output_dir = ctx.outputs.output
+    else:
+        out_name = ctx.label.name + ".dir"
+        output_dir = ctx.actions.declare_directory(out_name)
+
+    # Path to the Python script
+    script_file = ctx.executable._unzip_script
+
+    # Run the Python script to unzip the contents
+    ctx.actions.run(
+        inputs = [input_file, script_file],
+        outputs = [output_dir],
+        executable = script_file.path,
+        arguments = [input_file.path, output_dir.path],
+        use_default_shell_env = True,
+    )
+
+    return [DefaultInfo(files = depset([output_dir]))]
+
+unzip_files = rule(
+    implementation = _unzip_files_impl,
+    attrs = {
+        "src": attr.label(allow_single_file = True),  # Specify the input ZIP file
+        "output": attr.output(),  # Specify the output directory attribute
+        "_unzip_script": attr.label(
+            default = Label("//zip_rules:unzip_files.py"),
+            executable = True,
+            cfg = "host",
+            allow_files = True,
+        ),
+    },
+)
+
 def _process_zip_stream_impl(ctx):
-    zip_in = ctx.file.zip_in
+    src = ctx.file.src
     process_zip_stream = ctx.executable._script
     user_script = ctx.file.script
     if ctx.attr.zip_out:
@@ -44,10 +83,10 @@ def _process_zip_stream_impl(ctx):
         zip_out = ctx.actions.declare_file(zip_out_name)
 
     ctx.actions.run(
-        inputs = [zip_in, user_script, process_zip_stream],
+        inputs = [src, user_script, process_zip_stream],
         outputs = [zip_out],
         executable = process_zip_stream,
-        arguments = [zip_in.path, zip_out.path, user_script.path],
+        arguments = [src.path, zip_out.path, user_script.path],
         use_default_shell_env = True,
     )
 
@@ -56,7 +95,7 @@ def _process_zip_stream_impl(ctx):
 process_zip_stream = rule(
     implementation = _process_zip_stream_impl,
     attrs = {
-        "zip_in": attr.label(allow_single_file = True),
+        "src": attr.label(allow_single_file = True),
         "script": attr.label(allow_single_file = True),
         "zip_out": attr.output(),
         "_script": attr.label(
