@@ -33,7 +33,7 @@ def main():
     # Write formatted data to output file
     write_formatted_text(data, args.output)
     
-    print(f"Formatted data from {args.input} has been saved to {args.output}")
+    #print(f"Formatted data from {args.input} has been saved to {args.output}")
 
 if __name__ == '__main__':
     main()

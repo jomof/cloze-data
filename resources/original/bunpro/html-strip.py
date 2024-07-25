@@ -95,5 +95,4 @@ if __name__ == '__main__':
     else:
         input_file = sys.argv[2]
         output_file = sys.argv[3]
-        print("HTML PROCESSING", input_file, output_file)
         main(input_file, output_file)
