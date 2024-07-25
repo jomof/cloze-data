@@ -35,9 +35,13 @@ zip_files = rule(
 
 def _process_zip_stream_impl(ctx):
     zip_in = ctx.file.zip_in
-    zip_out = ctx.outputs.zip_out
     process_zip_stream = ctx.executable._script
     user_script = ctx.file.script
+    if ctx.attr.zip_out:
+        zip_out = ctx.outputs.zip_out
+    else:
+        zip_out_name = ctx.label.name + ".zip"
+        zip_out = ctx.actions.declare_file(zip_out_name)
 
     ctx.actions.run(
         inputs = [zip_in, user_script, process_zip_stream],
