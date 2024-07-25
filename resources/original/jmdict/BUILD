@@ -1,4 +1,3 @@
-
 genrule(
     name = "jmdict",
     srcs = ["JMdict_e_examp.gz"],
@@ -8,9 +7,11 @@ genrule(
 
 genrule(
     name = "jmdict-sentences",
-    srcs = ["sentences.py", "JKMdict_e_examp"],
+    srcs = [
+        "sentences.py",
+        "JKMdict_e_examp",
+    ],
     outs = ["jmdict-sentences.json"],
     cmd = "python $(SRCS) $(OUTS)",
     visibility = ["//visibility:public"],
 )
-
