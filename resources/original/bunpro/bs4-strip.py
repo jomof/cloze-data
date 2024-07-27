@@ -1,115 +1,230 @@
 #!/usr/bin/env python3
 import sys
-import requests
-from bs4 import BeautifulSoup
 import yaml
+import re
+import os
+from bs4 import BeautifulSoup
+from stripper import strip_html
 
-def extract_grammar_info(html_content):
-    soup = BeautifulSoup(html_content, 'html.parser')
+def extract_grammar_info(name, html):
+    soup = BeautifulSoup(html, 'html.parser')
+    examples = []
+    
+    # Find all example sentences and extract them
+    for li in soup.find_all('li', class_='writeup-example'):
+        japanese = li.find('div', class_='writeup-example--japanese').text.strip()
+        english = li.find('div', class_='writeup-example--english').text.strip()
+        examples.append({
+            'japanese': japanese,
+            'english': english.replace("( ", "(").replace(" )", ")").replace(" .", ".")
+        })
+        li.decompose() 
 
-    grammar_point = {}
+    for li in soup.find_all('div', class_='relative z-1 flex flex-grow flex-col justify-center gap-4 text-center'):
+        japanese = li.find('p', class_='bp-ddw prose text-large md:text-subtitle').text.strip()
+        english = li.find('p', class_='bp-sdw undefined').text.strip()
+        examples.append({
+            'japanese': japanese,
+            'english': english.replace("( ", "(").replace(" )", ")").replace(" .", ".")
+        })
+        li.decompose() 
 
-    # Extracting title
-    try:
-        title_tag = soup.title
-        grammar_point['title'] = title_tag.string.strip() if title_tag else 'Title not found'
-    except Exception as e:
-        print(f"Error extracting title: {e}")
+    soup.find(id='examples').decompose()
 
-    # Extracting grammar point and description
-    try:
-        grammar_info = soup.find('div', class_='grid gap-24 text-center')
-        if grammar_info:
-            h1_tag = grammar_info.find('h1')
-            h2_tag = grammar_info.find('h2')
-            grammar_point['grammar_point'] = h1_tag.text.strip() if h1_tag else 'Grammar point not found'
-            grammar_point['description'] = h2_tag.text.strip() if h2_tag else 'Description not found'
+    # Strip any orphaned tags
+    strip_html(soup)
+
+    # Writeup body
+    writeup_body = soup.find('div', class_='writeup-body')
+    if writeup_body is None:
+        writeup_body = soup.find('div', class_='bp-ddw bp-writeup-body prose')
+    if writeup_body is None:
+        about_tag = soup.find('h3', string=lambda t: t and t.strip().startswith('About'))
+        if about_tag:
+            writeup_body = about_tag.find_next('div', class_='bp-sdw undefined')
+            about_tag.find_parent().decompose
+                
+    if writeup_body is not None:
+        writeup = ' '.join([s.strip() for s in writeup_body.get_text(strip=True).strip().split("\n") if s.strip()])
+        writeup_body.decompose()
+    else:
+         raise ValueError("Writeup not found")
+    soup.find(id='about').decompose()
+
+    # Strip any orphaned tags
+    strip_html(soup)
+    for tag in soup.find_all("div", class_="writeup-body"):
+        collapsed_text = ' '.join(tag.stripped_strings)
+        tag.string = collapsed_text
+
+    # Find the <title> tag
+    title_tag = soup.find('title')
+
+    if title_tag:
+        # Extract the text content of the <title> tag
+        title_text = title_tag.get_text(strip=True)
+        
+        # Use regular expression to extract ～てこそ and N2
+        match = re.search(r'(.+?) \(JLPT (N\d+)\)', title_text)
+        if match:
+            grammar_point = match.group(1).strip()
+            jlpt_level = match.group(2).strip()
         else:
-            grammar_point['grammar_point'] = 'Grammar point section not found'
-            grammar_point['description'] = 'Description section not found'
-    except Exception as e:
-        print(f"Error extracting grammar point and description: {e}")
+            raise ValueError(f"Couldn't extract grammar point and jlpt_level")
+    else:
+        raise ValueError(f"No <title> tag")
+    title_tag.decompose()
 
-    # Extracting structure
-    try:
-        structure_section = soup.find('div', id='structure')
-        if not structure_section:
-            structure_section = soup.find('section', id='structure')
-        if structure_section:
-            p_tag = structure_section.find('p')
-            grammar_point['structure'] = p_tag.text.strip() if p_tag else 'Structure not found'
-        else:
-            print("Structure section not found")
-            grammar_point['structure'] = 'Structure section not found'
-    except Exception as e:
-        print(f"Error extracting structure: {e}")
+    # Find the tag containing grammar_point (like '～てこそ')
+    grammar_point_tag = soup.find('h1', string=lambda t: t and t.strip() == grammar_point)
+    if grammar_point_tag is None:
+        grammar_point_tag = soup.find('p', string=lambda t: t and t.strip() == grammar_point)
+    if grammar_point_tag is None:
+        grammar_point_tag = soup.find('h1', class_="bp-text-shadow-reviewable-header text-reviewable-header-mobile font-bold text-primary-accent md:text-reviewable-header-desktop")
+    meaning = None
+    if grammar_point_tag:
+        meaning_tag = grammar_point_tag.find_next('h2')
+        if meaning_tag is None:
+            meaning_tag = grammar_point_tag.find_next('p')
+        
+        if meaning_tag:
+            # Extract and print the text content of the <h2>
+            meaning = meaning_tag.get_text(strip=True)
+    if meaning is None:
+        raise ValueError(f"Could find meaning for grammar point '{grammar_point}'")
+    grammar_point_tag.decompose()
+    meaning_tag.decompose()
 
-    # Extracting details
-    try:
-        details_section = soup.find('div', id='details')
-        if not details_section:
-            details_section = soup.find('section', id='details')
-        if details_section:
-            details_items = details_section.find_all('li')
-            grammar_point['details'] = {}
-            for item in details_items:
-                h4_tag = item.find('h4')
-                p_tag = item.find('p')
-                key = h4_tag.text.strip() if h4_tag else 'Key not found'
-                value = p_tag.text.strip() if p_tag else 'Value not found'
-                grammar_point['details'][key] = value
-        else:
-            grammar_point['details'] = 'Details section not found'
-    except Exception as e:
-        print(f"Error extracting details: {e}")
+    # Find the warning tag for meaning if present
+    meaning_warning_tag = soup.find('p', class_='text-small text-warning md:text-body')
+    if meaning_warning_tag:
+        meaning_warning = meaning_warning_tag.get_text(strip=True)
+        meaning_warning_tag.decompose()
+    else:
+        meaning_warning = None
 
-    # Extracting explanation
-    try:
-        explanation_section = soup.find('div', id='about')
-        if not explanation_section:
-            explanation_section = soup.find('section', id='about')
-        if explanation_section:
-            writeup_body = explanation_section.find('div', class_='writeup-body')
-            grammar_point['explanation'] = writeup_body.text.strip() if writeup_body else 'Explanation not found'
-        else:
-            print("Explanation section not found")
-            grammar_point['explanation'] = 'Explanation section not found'
-    except Exception as e:
-        print(f"Error extracting explanation: {e}")
+    # Strip any orphaned tags
+    strip_html(soup)
 
-    # Extracting examples
-    try:
-        examples_section = soup.find('div', id='examples')
-        if not examples_section:
-            examples_section = soup.find('section', id='examples')
-        if examples_section:
-            examples = examples_section.find_all('div', class_='writeup-example')
-            grammar_point['examples'] = []
-            for example in examples:
-                jp_tag = example.find('div', class_='writeup-example--japanese')
-                en_tag = example.find('div', class_='writeup-example--english')
-                jp = jp_tag.text.strip() if jp_tag else 'Japanese example not found'
-                en = en_tag.text.strip() if en_tag else 'English example not found'
-                grammar_point['examples'].append({'japanese': jp, 'english': en})
-        else:
-            grammar_point['examples'] = 'Examples section not found'
-    except Exception as e:
-        print(f"Error extracting examples: {e}")
 
-    return grammar_point
+    # Find the "Details" section
+    details_section = soup.find('div', id='details')
+
+    if details_section:
+        # Find the following <ul> element that contains the details list
+        details_list = details_section.find_next('ul')
+        
+        # Extract all <li> elements within the details list
+        details_items = details_list.find_all('li') if details_list else []
+        
+        # Extract and print the heading and value of each detail
+        details = {}
+        for item in details_items:
+            heading = item.find('h4').get_text(strip=True)
+            value = item.find('p').get_text(strip=True)
+            details[heading] = value
+        
+        details_section.find_parent().decompose()
+    else:
+        raise ValueError("No 'Details' section found")
+    
+    # Find the "Synonyms" section
+    antonyms_section = soup.find('div', id='antonyms')
+    antonyms = None
+
+    if antonyms_section:
+        antonyms_list = antonyms_section.find_next('ul')
+        antonyms_items = antonyms_list.find_all('li') if antonyms_list else []
+        antonyms = []
+        for item in antonyms_items:
+            term = item.find('p', class_='text-left text-small font-bold text-primary-fg sm:text-body').get_text(strip=True)
+            meaning = item.find('p', class_='line-clamp-1 text-left text-detail font-bold text-secondary-fg sm:text-small').get_text(strip=True)
+            antonyms.append([term, meaning])
+        antonyms_section.decompose()
+    
+    # Find the "Synonyms" section
+    synonyms_section = soup.find('div', id='synonyms')
+    synonyms = None
+
+    if synonyms_section:
+        # Find the following <ul> element that contains the synonyms list
+        synonyms_list = synonyms_section.find_next('ul')
+        
+        # Extract all <li> elements within the synonyms list
+        synonyms_items = synonyms_list.find_all('li') if synonyms_list else []
+        
+        # Extract and print the text content of each synonym
+        synonyms = []
+        for item in synonyms_items:
+            term = item.find('p', class_='text-left text-small font-bold text-primary-fg sm:text-body').get_text(strip=True)
+            meaning = item.find('p', class_='line-clamp-1 text-left text-detail font-bold text-secondary-fg sm:text-small').get_text(strip=True)
+            synonyms.append([term, meaning])
+        synonyms_section.decompose()
+
+    # Remove some unused sections
+    soup.find(id='self-study').decompose()
+    soup.find(id='discussion').decompose()
+    soup.find(id='js-rev-header').decompose()
+    elements_with_id = soup.find_all(id=re.compile(r'^discourse-post-id'))
+    for element in elements_with_id:
+        element.decompose()
+    del soup.find(id='__next')['id']
+    del soup.find(id='js-page-top')['id']
+    del soup.find(id='structure')['id']
+    del soup.find(id='online')['id']
+    del soup.find(id='offline')['id']
+    # del soup.find(id='antonyms')['id']
+
+    # Strip any orphaned tags
+    strip_html(soup)
+
+    # Make a grammar object
+    grammar = {
+        "grammar_point": grammar_point,
+        "jlpt": jlpt_level,
+        "meaning": meaning,
+        "details": details,
+        "writeup": writeup,
+        "examples": examples
+    }
+
+    if meaning_warning is not None:
+        grammar["meaning_warning"] = meaning_warning
+
+    if synonyms is not None:
+        grammar["synonyms"] = synonyms
+
+    if antonyms is not None:
+        grammar["antonyms"] = antonyms
+
+    # Dump the object to a YAML string, preserving multi-line strings and UTF-8 characters
+    grammar_yaml = yaml.dump(grammar, default_flow_style=False, allow_unicode=True)
+
+    if len(examples) < 2:
+        raise ValueError("Not enough sentences found")
+
+    # Embed the JSON data back into the HTML in a <script> tag
+    script_tag = soup.new_tag('script', type='application/json')
+    script_tag.string = grammar_yaml
+    soup.body.append(script_tag)
+
+    return soup.prettify()
+
+
 
 def main(filename, input_file, output_file):
     try:
         with open(input_file, 'r', encoding='utf-8') as file:
             html_content = file.read()
 
-        grammar_info = extract_grammar_info(html_content)
+        grammar_info = extract_grammar_info(os.path.basename(input_file), html_content)
 
         with open(output_file, 'w', encoding='utf-8') as file:
-            yaml.dump(grammar_info, file, allow_unicode=True, default_flow_style=False, sort_keys=False)
+            file.write(grammar_info)
+        
         
     except Exception as e:
-        print(f"Error processing file: {e}")
+        print(f"Error processing file {filename}: {e}")
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
