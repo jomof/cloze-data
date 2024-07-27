@@ -1,0 +1,8 @@
+# .bazelrc
+build --remote_cache=https://storage.googleapis.com/cloze-data-bazel-cache
+build --google_credentials=.secrets/bazel-cache-key.json
+fetch --remote_cache=https://storage.googleapis.com/cloze-data-bazel-cache
+fetch --google_credentials=.secrets/bazel-cache-key.json
+test --remote_cache=https://storage.googleapis.com/cloze-data-bazel-cache
+test --google_credentials=.secrets/bazel-cache-key.json
+test --cache_test_results=auto

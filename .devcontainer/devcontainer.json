@@ -6,7 +6,7 @@
     "cpus": 4
   },
   "waitFor": "onCreateCommand",
-  "postCreateCommand": "",
+  "postCreateCommand": "mkdir -p /workspaces/cloze-data/.secrets && echo \"$GCP_CREDENTIALS\" > /workspaces/cloze-data/.secrets/bazel-cache-key.json",
   "postAttachCommand": {
     "bash": "bash"
   },

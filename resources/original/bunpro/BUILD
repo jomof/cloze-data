@@ -2,7 +2,7 @@ load("//zip_rules:zip.bzl", "process_zip_stream", "unzip_files")
 
 process_zip_stream(
     name = "stripped-bunpro-grammar-points",
-    src = "grammar-points-small.zip",
+    src = "grammar-points.zip",
     script = "html-strip.py",
 )
 

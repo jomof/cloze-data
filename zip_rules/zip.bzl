@@ -73,23 +73,29 @@ unzip_files = rule(
 )
 
 def _process_zip_stream_impl(ctx):
+    # Get the input zip file, user-provided script, and orchestrating script
     src = ctx.file.src
     process_zip_stream = ctx.executable._script
     user_script = ctx.file.script
+    
+    # Determine the output zip file
     if ctx.attr.zip_out:
         zip_out = ctx.outputs.zip_out
     else:
         zip_out_name = ctx.label.name + ".zip"
         zip_out = ctx.actions.declare_file(zip_out_name)
-
+    
+    # Run the processing script with the specified arguments
     ctx.actions.run(
         inputs = [src, user_script, process_zip_stream],
         outputs = [zip_out],
         executable = process_zip_stream,
         arguments = [src.path, zip_out.path, user_script.path],
         use_default_shell_env = True,
+        progress_message = "Processing zip with " + user_script.short_path,
     )
-
+    
+    # Return the output zip file
     return [DefaultInfo(files = depset([zip_out]))]
 
 process_zip_stream = rule(
