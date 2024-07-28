@@ -1,3 +1,4 @@
+load("@rules_python//python:defs.bzl", "py_binary", "py_library")
 load("//json_rules:json.bzl", "json_concat")
 load("//python_rules:python_build.bzl", "py_build_tool")
 load(":annotate_vocab.bzl", "annotate_vocab")
@@ -30,7 +31,7 @@ py_build_tool(
         "grammar-points-special.json",
     ],
     ins = ["grammar-by-jlpt-level.json"],
-    main = "grammar_to_array.py",
+    main = ":grammar_to_array",
     visibility = ["//visibility:public"],
 )
 
@@ -77,4 +78,39 @@ annotate_vocab(
 annotate_vocab(
     name = "jlpt-non-vocab-json",
     level = "non",
+)
+
+py_binary(
+    name = "annotate_vocab",
+    srcs = ["annotate_vocab.py"],
+    visibility = ["//:__subpackages__"],
+)
+
+py_binary(
+    name = "grammar_summary",
+    srcs = ["grammar_summary.py"],
+    visibility = ["//:__subpackages__"],
+)
+
+py_binary(
+    name = "grammar_to_array",
+    srcs = ["grammar_to_array.py"],
+    visibility = ["//:__subpackages__"],
+)
+
+py_binary(
+    name = "sentences_flattened",
+    srcs = ["sentences_flattened.py"],
+    visibility = ["//:__subpackages__"],
+)
+
+py_library(
+    name = "curated",
+    srcs = [
+        "annotate_vocab.py",
+        "grammar_summary.py",
+        "grammar_to_array.py",
+        "sentences_flattened.py",
+    ],
+    visibility = ["//:__subpackages__"],
 )

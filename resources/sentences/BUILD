@@ -1,3 +1,4 @@
+load("@rules_python//python:defs.bzl", "py_binary", "py_library")
 load("//json_rules:json.bzl", "json_concat")
 load("//python_rules:python_build.bzl", "py_build_tool")
 
@@ -14,7 +15,7 @@ py_build_tool(
     name = "tokenized-sentences",
     outs = ["tokenized-sentences.json"],
     ins = ["concatenated-sentences.json"],
-    main = "tokenize_sentences.py",
+    main = ":tokenize_sentences",
     deps = ["//mecab:compact_sentence"],
 )
 
@@ -25,6 +26,42 @@ py_build_tool(
         "//resources/curated:grammar-points-flat.json",
         "tokenized-sentences.json",
     ],
-    main = "grammar_compliance_report.py",
+    main = ":grammar_compliance_report",
     deps = ["//mecab:compact_sentence"],
+)
+
+py_binary(
+    name = "grammar_compliance_report",
+    srcs = ["grammar_compliance_report.py"],
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//mecab:compact_sentence",
+        "@pip//mecab_python3",
+        "@pip//unidic",
+    ],
+)
+
+py_binary(
+    name = "tokenize_sentences",
+    srcs = ["tokenize_sentences.py"],
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//mecab:compact_sentence",
+        "@pip//mecab_python3",
+        "@pip//unidic",
+    ],
+)
+
+py_library(
+    name = "sentences",
+    srcs = [
+        "grammar_compliance_report.py",
+        "tokenize_sentences.py",
+    ],
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//mecab:compact_sentence",
+        "@pip//mecab_python3",
+        "@pip//unidic",
+    ],
 )

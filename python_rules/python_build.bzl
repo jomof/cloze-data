@@ -10,8 +10,9 @@ def py_build_tool(
     out_locations = " ".join(["$(location " + arg + ")" for arg in outs])
     native.genrule(
         name = name,
-        srcs = ["//python_rules:call_python.sh", main] + deps + ins,
+        srcs = deps + ins,
         outs = outs,
-        cmd = "$(location //python_rules:call_python.sh) " + main_location + " " + in_locations + " " + out_locations,
+        cmd = main_location + " " + in_locations + " " + out_locations,
         visibility = visibility,
+        tools = [main]
     )

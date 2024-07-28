@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import json
 import sys
 import MeCab
@@ -927,7 +928,8 @@ def annotate_with_grammar(sentence):
 
 
 def add_empty_tokens_field(input_file: str, output_file: str):
-    wakati = MeCab.Tagger('-d "{}"'.format(unidic.DICDIR))
+    dicdir = "/home/codespace/.python/current/lib/python3.10/site-packages/unidic/dicdir"
+    wakati = MeCab.Tagger('-r "{}" -d "{}"'.format(f"{dicdir}/mecabrc", dicdir))
 
     # Read the JSON data from the input file
     with open(input_file, 'r', encoding='utf-8') as f:
