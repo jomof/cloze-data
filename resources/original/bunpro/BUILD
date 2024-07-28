@@ -1,26 +1,12 @@
 load("@rules_python//python:defs.bzl", "py_binary", "py_library")
-load("//zip_rules:zip.bzl", "process_zip_stream", "unzip_files")
+# load("//zip_rules:zip.bzl", "process_zip_stream", "unzip_files")
 
-process_zip_stream(
-    name = "stripped-bunpro-grammar-points",
-    src = "grammar-points-small.zip",
-    script = "html-strip.py",
-)
+load("//python_rules:python_build.bzl", "py_build_tool_stream")
 
-process_zip_stream(
-    name = "formatted-bunpro-grammar-points",
-    src = ":stripped-bunpro-grammar-points",
+py_build_tool_stream(
+    name = "bs4-stripped",
+    srcs = glob(["grammar_points/*"]),
     script = "bs4-strip.py",
-)
-
-unzip_files(
-    name = "stripped-bunpro-grammar-points-unzipped",
-    src = ":stripped-bunpro-grammar-points",
-)
-
-unzip_files(
-    name = "formatted-bunpro-grammar-points-unzipped",
-    src = ":formatted-bunpro-grammar-points",
 )
 
 py_binary(

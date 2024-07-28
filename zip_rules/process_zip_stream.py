@@ -14,7 +14,7 @@ def ensure_directory_exists(file_path):
 
 def process_file(shell_script, input_file, output_file):
     try:
-        subprocess.run([shell_script, input_file, input_file, output_file], check=True)
+        subprocess.run([shell_script, input_file, output_file], check=True)
     except subprocess.CalledProcessError:
         pass  # Handle the error according to your needs
 

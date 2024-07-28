@@ -210,9 +210,7 @@ def extract_grammar_info(name, html):
 
     return soup.prettify()
 
-
-
-def main(filename, input_file, output_file):
+def main(input_file, output_file):
     try:
         with open(input_file, 'r', encoding='utf-8') as file:
             html_content = file.read()
@@ -222,16 +220,14 @@ def main(filename, input_file, output_file):
         with open(output_file, 'w', encoding='utf-8') as file:
             file.write(grammar_info)
         
-        
     except Exception as e:
-        print(f"Error processing file {filename}: {e}")
+        print(f"Error processing file {input_file}: {e}")
 
 if __name__ == '__main__':
-    if len(sys.argv) != 4:
-        print("Usage: python script.py <filename> <input_file> <output_file>")
+    if len(sys.argv) != 3:
+        print("Usage: python script.py <input_file> <output_file>")
         print("But was", sys.argv)
     else:
-        filename = sys.argv[1]
-        input_file = sys.argv[2]
-        output_file = sys.argv[3]
-        main(filename, input_file, output_file)
+        input_file = sys.argv[1]
+        output_file = sys.argv[2]
+        main(input_file, output_file)
