@@ -14,30 +14,14 @@ py_binary(
     srcs = ["bs4-strip.py"],
     visibility = ["//:__subpackages__"],
     deps = [
-        ":bunpro",
         "@pip//beautifulsoup4",
         "@pip//pyyaml",
     ],
 )
 
-py_binary(
-    name = "html-strip",
-    srcs = ["html-strip.py"],
-    visibility = ["//:__subpackages__"],
-    deps = [
-        ":bunpro",
-        "@pip//beautifulsoup4",
-    ],
-)
-
 py_library(
     name = "bunpro",
-    srcs = [
-        "bs4-strip.py",
-        "check.py",
-        "html-strip.py",
-        "stripper.py",
-    ],
+    srcs = ["bs4-strip.py"],
     visibility = ["//:__subpackages__"],
     deps = [
         "@pip//beautifulsoup4",
