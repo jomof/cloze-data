@@ -9,19 +9,34 @@ py_build_tool_stream(
     script = "bs4-strip.py",
 )
 
+py_build_tool_stream(
+    name = "bunpro-grammar-point-summaries",
+    srcs = [":bs4-stripped"],
+    extension = ".yaml",
+    script = "extract-yaml.py",
+)
+
 py_binary(
     name = "bs4-strip",
     srcs = ["bs4-strip.py"],
     visibility = ["//:__subpackages__"],
-    deps = [
-        "@pip//beautifulsoup4",
-        "@pip//pyyaml",
-    ],
+    deps = ["@pip//beautifulsoup4"],
 )
+
+py_binary(
+    name = "extract-yaml",
+    srcs = ["extract-yaml.py"],
+    visibility = ["//:__subpackages__"],
+    deps = ["@pip//beautifulsoup4"],
+)
+
 
 py_library(
     name = "bunpro",
-    srcs = ["bs4-strip.py"],
+    srcs = [
+        "bs4-strip.py",
+        "extract-yaml.py",
+    ],
     visibility = ["//:__subpackages__"],
     deps = [
         "@pip//beautifulsoup4",

@@ -4,7 +4,7 @@ import yaml
 import re
 import os
 from bs4 import BeautifulSoup
-from bs4 import BeautifulSoup
+from collections import OrderedDict
 
 strip_by_class = [
     ("p", "order-2 text-detail font-bold text-secondary-fg md:order-1 md:justify-self-start"),
@@ -249,20 +249,20 @@ def extract_grammar_info(name, html):
     del soup.find(id='structure')['id']
     del soup.find(id='online')['id']
     del soup.find(id='offline')['id']
-    # del soup.find(id='antonyms')['id']
+
 
     # Strip any orphaned tags
     strip_html(soup)
 
     # Make a grammar object
-    grammar = {
-        "grammar_point": grammar_point,
-        "jlpt": jlpt_level,
-        "meaning": meaning,
-        "details": details,
-        "writeup": writeup,
-        "examples": examples
-    }
+    grammar = OrderedDict([
+        ("grammar_point", grammar_point),
+        ("jlpt", jlpt_level),
+        ("meaning", meaning),
+        ("details", details),
+        ("writeup", writeup),
+        ("examples", examples)
+    ])
 
     if meaning_warning is not None:
         grammar["meaning_warning"] = meaning_warning
@@ -273,14 +273,21 @@ def extract_grammar_info(name, html):
     if antonyms is not None:
         grammar["antonyms"] = antonyms
 
+    # Custom representer for OrderedDict
+    def represent_ordereddict(dumper, data):
+        return dumper.represent_dict(data.items())
+
+    # Add the custom representer to PyYAML
+    yaml.add_representer(OrderedDict, represent_ordereddict)
+
     # Dump the object to a YAML string, preserving multi-line strings and UTF-8 characters
-    grammar_yaml = yaml.dump(grammar, default_flow_style=False, allow_unicode=True)
+    grammar_yaml = "\n" + yaml.dump(grammar, default_flow_style=False, allow_unicode=True, width = 150)
 
     if len(examples) < 2:
         raise ValueError("Not enough sentences found")
 
     # Embed the JSON data back into the HTML in a <script> tag
-    script_tag = soup.new_tag('script', type='application/json')
+    script_tag = soup.new_tag('script', type='application/json', id='grammar-data')
     script_tag.string = grammar_yaml
     soup.body.append(script_tag)
 
