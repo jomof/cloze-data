@@ -7,6 +7,7 @@ import re
 from typing import List, Dict
 import re
 from mecab.compact_sentence import compact_sentence_to_tokens, tokens_to_compact_sentence, mecab_raw_to_compact_sentence
+from mecab.tagger import get_mecab_tagger
 
 pattern_classifiers = {
     "ᵇられる": "られるx",
@@ -928,8 +929,7 @@ def annotate_with_grammar(sentence):
 
 
 def add_empty_tokens_field(input_file: str, output_file: str):
-    dicdir = "/home/codespace/.python/current/lib/python3.10/site-packages/unidic/dicdir"
-    wakati = MeCab.Tagger('-r "{}" -d "{}"'.format(f"{dicdir}/mecabrc", dicdir))
+    wakati = get_mecab_tagger()
 
     # Read the JSON data from the input file
     with open(input_file, 'r', encoding='utf-8') as f:

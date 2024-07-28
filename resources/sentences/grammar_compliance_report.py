@@ -4,6 +4,7 @@ import json
 import MeCab
 import unidic
 from mecab.compact_sentence import mecab_raw_to_tokens
+from mecab.tagger import get_mecab_tagger
 
 def build_sentence_to_tokens_dict(file_path):
     # Read the JSON file
@@ -20,8 +21,7 @@ def build_sentence_to_tokens_dict(file_path):
     return sentence_to_tokens
 
 def grammar_compliance_report(grammar_points, tokenized_sentences, report_file):
-    dicdir = "/home/codespace/.python/current/lib/python3.10/site-packages/unidic/dicdir"
-    wakati = MeCab.Tagger('-r "{}" -d "{}"'.format(f"{dicdir}/mecabrc", dicdir))
+    wakati = get_mecab_tagger()
     tokenized_sentences = build_sentence_to_tokens_dict(tokenized_sentences)
 
     with open(grammar_points, 'r', encoding='utf-8') as file:

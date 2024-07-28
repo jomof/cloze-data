@@ -2,13 +2,12 @@ import unittest
 import MeCab
 import os
 from mecab.compact_sentence import compact_sentence_to_tokens, tokens_to_compact_sentence, mecab_raw_to_compact_sentence, Token, parse_raw_mecab_output
+from mecab.tagger import get_mecab_tagger
 
 class TestTokenParser(unittest.TestCase):
 
     def test_tokenize(self):
-      dicdir = "/home/codespace/.python/current/lib/python3.10/site-packages/unidic/dicdir"
-      if not os.path.exists(dicdir): return
-      wakati = MeCab.Tagger('-r "{}" -d "{}"'.format(f"{dicdir}/mecabrc", dicdir))
+      wakati = get_mecab_tagger()
       term = "机の上に本はあります。"
       raw = wakati.parse(term)
       compact_sentence = mecab_raw_to_compact_sentence(raw)
