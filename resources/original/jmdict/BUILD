@@ -10,9 +10,9 @@ genrule(
 
 py_build_tool(
     name = "jmdict-sentences",
-    main = ":sentences",
-    ins = [ "JKMdict_e_examp"],
     outs = ["jmdict-sentences.json"],
+    ins = ["JKMdict_e_examp"],
+    main = ":sentences",
     visibility = ["//visibility:public"],
 )
 

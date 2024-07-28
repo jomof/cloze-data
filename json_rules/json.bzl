@@ -27,7 +27,7 @@ json_concat = rule(
         "_concat_script": attr.label(
             default = Label("//json_rules:concat_json_arrays.py"),  # Update the label to the new package
             executable = True,
-            cfg = "host",
+            cfg = "exec",
             allow_files = True,
         ),
     },
@@ -98,7 +98,7 @@ concat_multiple_file_contents = rule(
         "_concat_script": attr.label(
             default = Label("//json_rules:concat_multiple_file_contents.py"),  # Update the label to the script's path
             executable = True,
-            cfg = "host",
+            cfg = "exec",
             allow_files = True,
         ),
     },

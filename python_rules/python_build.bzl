@@ -14,5 +14,5 @@ def py_build_tool(
         outs = outs,
         cmd = main_location + " " + in_locations + " " + out_locations,
         visibility = visibility,
-        tools = [main]
+        tools = [main],
     )
