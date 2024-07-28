@@ -77,14 +77,14 @@ def _process_zip_stream_impl(ctx):
     src = ctx.file.src
     process_zip_stream = ctx.executable._script
     user_script = ctx.file.script
-    
+
     # Determine the output zip file
     if ctx.attr.zip_out:
         zip_out = ctx.outputs.zip_out
     else:
         zip_out_name = ctx.label.name + ".zip"
         zip_out = ctx.actions.declare_file(zip_out_name)
-    
+
     # Run the processing script with the specified arguments
     ctx.actions.run(
         inputs = [src, user_script, process_zip_stream],
@@ -94,7 +94,7 @@ def _process_zip_stream_impl(ctx):
         use_default_shell_env = True,
         progress_message = "Processing zip with " + user_script.short_path,
     )
-    
+
     # Return the output zip file
     return [DefaultInfo(files = depset([zip_out]))]
 
@@ -106,6 +106,36 @@ process_zip_stream = rule(
         "zip_out": attr.output(),
         "_script": attr.label(
             default = Label("//zip_rules:process_zip_stream.py"),
+            executable = True,
+            cfg = "host",
+            allow_files = True,
+        ),
+    },
+)
+
+def _zip_manifest_impl(ctx):
+    input_zip = ctx.file.src
+    output_manifest = ctx.outputs.manifest
+
+    args = [
+        input_zip.path,
+        output_manifest.path,
+    ]
+
+    ctx.actions.run(
+        inputs = [input_zip],
+        outputs = [output_manifest],
+        arguments = args,
+        executable = ctx.executable._script,
+    )
+
+zip_manifest = rule(
+    implementation = _zip_manifest_impl,
+    attrs = {
+        "src": attr.label(allow_single_file = True),
+        "manifest": attr.output(mandatory = True),
+        "_script": attr.label(
+            default = Label("//zip_rules:zip_manifest.py"),
             executable = True,
             cfg = "host",
             allow_files = True,

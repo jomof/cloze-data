@@ -27,6 +27,8 @@ RUN pip install unidic==1.1.0
 RUN python -m unidic download
 
 RUN pip3 install --upgrade --user google-cloud-aiplatform
+RUN pip install pip-tools
+
 
 RUN sudo gcloud config set project jomof-sandbox
 RUN gcloud config set project "jomof-sandbox"
