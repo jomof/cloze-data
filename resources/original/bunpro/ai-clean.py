@@ -3,6 +3,8 @@ import sys
 import time
 import yaml
 import json
+from google.cloud.logging.handlers import CloudLoggingHandler
+
 import vertexai
 from vertexai.generative_models import (
     GenerationConfig,
@@ -10,6 +12,7 @@ from vertexai.generative_models import (
     HarmBlockThreshold,
     HarmCategory,
 )
+
 
 PROJECT_ID = "jomof-sandbox"  # @param {type:"string"}
 LOCATION = "us-west1"  # @param {type:"string"}
@@ -28,10 +31,11 @@ Please clean it up and give me just the the json content as an answer. Don't wra
 - "writeup:" text that quotes things, should use double-quotes (") rather than single-quotes (') or double single-quotes('').
    - For example, "This is a quote." is correct, but 'This is a quote.' or ''This is a quote.'' are not.
 - In "examples:" if the japanese sentence has japanese-style quotes (like「 and 」), then the English sentence should have double quotes (like ").
+  If you see some questionable speech or potential hate speech, please rewrite the sentence so that it is grammatically equivalent.
 - English contractions should have a single tick (like '), not double ticks (like '').
 - Use '\\n' rather than <br/> for line breaks.
 - If there are synonyms, then add a "nuance" field that describes how and when this synonym is used instead of the main grammar point.
-  Be fairly abstract. Nuance for each of the synonyms should be orthogonal to the others.
+  Be abstract and terse. Nuance for each of the synonyms should be orthogonal to the others.
   Don't use the phrase 'This synonym'. Instead, refer to the point by name. Be sure to punctuate correctly.
   Don't add nuance to antonyms.
 """
@@ -54,17 +58,17 @@ Please clean it up and give me just the the json content as an answer. Don't wra
 
     # Set safety settings
     safety_settings = {
-        HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
-        HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
-        HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
-        HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+        HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+        HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+        HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+        HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
     }
 
     # Set contents to send to the model
     contents = [prompt]
 
     # Prompt the model to generate content
-    for _ in range(10):
+    for _ in range(2):
         try:
             response = example_model.generate_content(
                 contents,

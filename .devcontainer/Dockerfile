@@ -27,6 +27,7 @@ RUN pip install unidic==1.1.0
 RUN python -m unidic download
 
 RUN pip install google-cloud-aiplatform
+RUN pip install pip install google-cloud-logging
 
 RUN sudo gcloud config set project jomof-sandbox
 RUN gcloud config set project "jomof-sandbox"
@@ -36,6 +37,7 @@ ENV DATASTORE_EMULATOR_HOST=127.0.0.1:3002
 ENV DATASTORE_EMULATOR_HOST_PATH=127.0.0.1:3002/datastore
 ENV DATASTORE_HOST=http://127.0.0.1:3002
 ENV DATASTORE_PROJECT_ID=jomof-sandbox
+ENV HISTFILE=/workspaces/cloze-data/.bash_history
 
 # Set default command to run when container starts
 CMD ["/bin/bash"]

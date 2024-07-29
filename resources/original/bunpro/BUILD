@@ -8,15 +8,15 @@ py_build_tool_stream(
 )
 
 py_build_tool_stream(
-    name = "bunpro-grammar-point-summaries",
+    name = "extracted-yaml",
     srcs = [":bs4-stripped"],
     extension = ".yaml",
     script = "extract-yaml.py",
 )
 
 py_build_tool_stream(
-    name = "ai-cleaned-summaries",
-    srcs = [":bunpro-grammar-point-summaries"],
+    name = "ai-cleaned",
+    srcs = [":extracted-yaml"],
     extension = ".yaml",
     script = "ai-clean.py",
 )
