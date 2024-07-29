@@ -215,7 +215,7 @@ def extract_grammar_info(name, html):
         for item in antonyms_items:
             term = item.find('p', class_='text-left text-small font-bold text-primary-fg sm:text-body').get_text(strip=True)
             meaning = item.find('p', class_='line-clamp-1 text-left text-detail font-bold text-secondary-fg sm:text-small').get_text(strip=True)
-            antonyms.append([term, meaning])
+            antonyms.append({"term":term, "meaning":meaning})
         antonyms_section.decompose()
     
     # Find the "Synonyms" section
@@ -234,7 +234,7 @@ def extract_grammar_info(name, html):
         for item in synonyms_items:
             term = item.find('p', class_='text-left text-small font-bold text-primary-fg sm:text-body').get_text(strip=True)
             meaning = item.find('p', class_='line-clamp-1 text-left text-detail font-bold text-secondary-fg sm:text-small').get_text(strip=True)
-            synonyms.append([term, meaning])
+            synonyms.append({"term":term, "meaning":meaning})
         synonyms_section.decompose()
 
     # Remove some unused sections
@@ -250,7 +250,6 @@ def extract_grammar_info(name, html):
     del soup.find(id='online')['id']
     del soup.find(id='offline')['id']
 
-
     # Strip any orphaned tags
     strip_html(soup)
 
@@ -261,7 +260,8 @@ def extract_grammar_info(name, html):
         ("meaning", meaning),
         ("details", details),
         ("writeup", writeup),
-        ("examples", examples)
+        ("examples", examples),
+        ("url", f"https://bunpro.jp/grammar_points/{name}")
     ])
 
     if meaning_warning is not None:
