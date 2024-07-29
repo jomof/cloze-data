@@ -27,7 +27,7 @@ RUN pip install unidic==1.1.0
 RUN python -m unidic download
 
 RUN pip install google-cloud-aiplatform
-RUN pip install pip install google-cloud-logging
+RUN pip install google-cloud-logging
 
 RUN sudo gcloud config set project jomof-sandbox
 RUN gcloud config set project "jomof-sandbox"
