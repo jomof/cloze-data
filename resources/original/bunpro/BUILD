@@ -14,12 +14,12 @@ py_build_tool_stream(
     script = "extract-yaml.py",
 )
 
-# py_build_tool_stream(
-#     name = "ai-cleaned",
-#     srcs = [":extracted-yaml"],
-#     extension = ".yaml",
-#     script = "ai-clean.py",
-# )
+py_build_tool_stream(
+    name = "ai-cleaned",
+    srcs = [":extracted-yaml"],
+    extension = ".yaml",
+    script = "ai-clean.py",
+)
 
 py_binary(
     name = "bs4-strip",

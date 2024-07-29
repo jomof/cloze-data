@@ -37,6 +37,7 @@ ENV DATASTORE_EMULATOR_HOST_PATH=127.0.0.1:3002/datastore
 ENV DATASTORE_HOST=http://127.0.0.1:3002
 ENV DATASTORE_PROJECT_ID=jomof-sandbox
 ENV HISTFILE=/workspaces/cloze-data/.bash_history
+ENV GOOGLE_APPLICATION_CREDENTIALS=/workspaces/cloze-data/.secrets/bazel-cache-key.json
 
 # Set default command to run when container starts
 CMD ["/bin/bash"]
