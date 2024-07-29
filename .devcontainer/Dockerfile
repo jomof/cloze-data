@@ -29,8 +29,7 @@ RUN python -m unidic download
 RUN pip install google-cloud-aiplatform
 RUN pip install google-cloud-logging
 
-RUN sudo gcloud config set project jomof-sandbox
-RUN gcloud config set project "jomof-sandbox"
+#RUN sudo gcloud config set project jomof-sandbox
 
 ENV DATASTORE_DATASET=jomof-sandbox
 ENV DATASTORE_EMULATOR_HOST=127.0.0.1:3002
