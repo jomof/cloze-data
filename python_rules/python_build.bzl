@@ -24,7 +24,7 @@ def _py_build_tool_stream_impl(ctx):
 
     outs = []
     for i, src in enumerate(srcs):
-        numbered_output = ctx.actions.declare_file("{}/#/{}{}".format(ctx.label.name, i, extension))
+        numbered_output = ctx.actions.declare_file("{}/{}-{}{}".format(ctx.label.name, ctx.label.name, i, extension))
         outs.append(numbered_output)
         ctx.actions.run(
             inputs = [src, user_script],

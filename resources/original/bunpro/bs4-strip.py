@@ -204,24 +204,21 @@ def extract_grammar_info(name, html):
     else:
         raise ValueError("No 'Details' section found")
     
-    # Find the "Synonyms" section
+    # Find the "antonyms" section
+    false_friends = []
     antonyms_section = soup.find('div', id='antonyms')
-    antonyms = None
 
     if antonyms_section:
         antonyms_list = antonyms_section.find_next('ul')
         antonyms_items = antonyms_list.find_all('li') if antonyms_list else []
-        antonyms = []
         for item in antonyms_items:
             term = item.find('p', class_='text-left text-small font-bold text-primary-fg sm:text-body').get_text(strip=True)
             meaning = item.find('p', class_='line-clamp-1 text-left text-detail font-bold text-secondary-fg sm:text-small').get_text(strip=True)
-            antonyms.append({"term":term, "meaning":meaning})
+            false_friends.append({"term":term, "meaning":meaning, "kind": "antonym"})
         antonyms_section.decompose()
     
     # Find the "Synonyms" section
     synonyms_section = soup.find('div', id='synonyms')
-    synonyms = None
-
     if synonyms_section:
         # Find the following <ul> element that contains the synonyms list
         synonyms_list = synonyms_section.find_next('ul')
@@ -230,11 +227,10 @@ def extract_grammar_info(name, html):
         synonyms_items = synonyms_list.find_all('li') if synonyms_list else []
         
         # Extract and print the text content of each synonym
-        synonyms = []
         for item in synonyms_items:
             term = item.find('p', class_='text-left text-small font-bold text-primary-fg sm:text-body').get_text(strip=True)
             meaning = item.find('p', class_='line-clamp-1 text-left text-detail font-bold text-secondary-fg sm:text-small').get_text(strip=True)
-            synonyms.append({"term":term, "meaning":meaning})
+            false_friends.append({"term":term, "meaning":meaning, "kind": "synonym"})
         synonyms_section.decompose()
 
     # Remove some unused sections
@@ -258,20 +254,13 @@ def extract_grammar_info(name, html):
         ("grammar_point", grammar_point),
         ("jlpt", jlpt_level),
         ("meaning", meaning),
+        ("meaning_warning", meaning_warning),
         ("details", details),
         ("writeup", writeup),
         ("examples", examples),
-        ("url", f"https://bunpro.jp/grammar_points/{name}")
+        ("url", f"https://bunpro.jp/grammar_points/{name}"),
+        ("false_friends", false_friends)
     ])
-
-    if meaning_warning is not None:
-        grammar["meaning_warning"] = meaning_warning
-
-    if synonyms is not None:
-        grammar["synonyms"] = synonyms
-
-    if antonyms is not None:
-        grammar["antonyms"] = antonyms
 
     # Custom representer for OrderedDict
     def represent_ordereddict(dumper, data):

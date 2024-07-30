@@ -25,30 +25,30 @@ Here is a Japanese grammar point encoded between BEGIN_GRAMMAR_POINT_JSON/BEGIN_
 BEGIN_GRAMMAR_POINT_JSON
 {data}
 BEGIN_GRAMMAR_POINT_JSON
-
+"""
+    prompt += """
 Please clean it up and give me just the the json content as an answer. Don't wrap in ```json``` or anything like that.
+- This JSON will eventually be converted to YAML. Please avoid characters that need escaping in YAML.
 - Don't change the content of "grammar_point" field.
-- Add a "parameters" field that is a list of the parameters to the grammar point (like X, Y, etc).
-- If possible, add a "literally" field that describes, in English, the literal meaning of the grammar point. This is to help the user understand the grammar point better. 
 - "writeup:" should be factually correct and well-formatted. Keep in mind that any formatting needs to follow json escaping rules.
+- "writeup:" should not quote the grammar point name. Don't quote japanese fragments like "なさい" or "なくてもいい".
+- "writeup:" should use markdown-style formatting. For example, use **bold** for emphasis.
 - "writeup:" text that quotes things, should use double-quotes (") rather than single-quotes (') or double single-quotes('').
    - For example, "This is a quote." is correct, but 'This is a quote.' or ''This is a quote.'' are not.
+- Don't put examples directly in "writeup:" since there's a dedicated "examples:" field for that.
 - Rewrite "writeup:" so the content is different without losing important details. If this grammar point takes parameters from other parts of the sentence, then name those parameters X, Y, etc.
-  For example, "just because (X), it doesn't mean that (Y)".
+  For example, "just because (X), it doesn't mean that (Y)". Don't create parameters if there would be only one.
 - In "examples:" if the japanese sentence has japanese-style quotes (like「 and 」), then the English sentence should have double quotes (like ").
   If you see some questionable speech or potential hate speech, please rewrite the sentence so that it is grammatically equivalent.
-  Add to each a "parameters" list that describes the value of X, Y, etc. for that example.
 - English contractions should have a single tick (like '), not double ticks (like '').
 - Japanese in "examples" should sound smooth and natural to a native Japanese speaker. The english should be a natural translation.
 - Add additional "examples" if some are needed to fully explore all of the nuances of the grammar point.
+- If appropriate, add a "post_example_writeup" field after examples. This is will be displayed after the examples and is a continuation of the writeup after the context of example sentences has been absorbed by the reader. "post_example_writeup" may refer to example sentences and example sentences may be added if it aids the "post_example_writeup". Don't refer to example sentences by number since they won't be numbered when displayed.
 - If there are proper person names in the examples, then replace them with other person names. Be sure to respect gender with the names.
 - Use '\\n' rather than <br/> for line breaks.
-- If there are synonyms, then add a "nuance" field that describes conditions of when this synonym is used instead of the main grammar point.
-  Be abstract and terse. Nuance for each of the synonyms should be orthogonal to the others.
-  Also add a top-level "nuance", that describes the nuance of this grammar point compared with synonyms.
-  Don't add nuance to antonyms.
-- If there are parameters like X, Y, etc. Then use them all in the "nuance" and "literally" fields. You must use *all* of the parameters in each nuance and literally field.
-- Top level "nuance" should go after the "literally" field.
+- If there's a "false_friends" section, this is for terms that can easily be confused with the main grammar point. 
+- If there are "false_friends", then add a "nuance" field to each that describes the functional difference between the false_friend and the main grammar point. Nuance should be terse and fairly abstract. Save more detailed comparisons for "post_false_friends_writeup" below.
+- If appropriate, add a "post_false_friends_writeup" field after "false_friends". This section should generally discuss how to avoid confusion between the main grammar point and the false friends. Don't mention the term "false friends" in this section.
 - You may correct "details", but don't add new details.
 """
 
@@ -80,26 +80,30 @@ Please clean it up and give me just the the json content as an answer. Don't wra
     contents = [prompt]
 
     # Prompt the model to generate content
-    for _ in range(10):
+    N = 3
+    error = ""
+    for i in range(N):
+        error += f"Attempt {i+1}/{N}\n"
         try:
             response = example_model.generate_content(
                 contents,
                 generation_config=generation_config,
                 safety_settings=safety_settings,
             )
-            if response and response.text:
-                break
+            error += f"  Before checking response\n"
+            if not response or not response.text: continue
+            error += f"  Before readback\n"
+            readback = json.loads(response.text)
+            error += f"  Before yaml dump\n"
+            result = yaml.dump(readback, sort_keys=False, default_flow_style=False, allow_unicode=True, indent=4, width = 150)
+            error += f"  After yaml dump\n"
+            return result
         except Exception as e:
-            print(f"PROBLEM WITH RESPONSE: {e} ")
+            error += f"PROBLEM WITH RESPONSE: {e}\n"
+            if i == N - 1:
+                raise e
             time.sleep(15)
-
-    try:
-        readback = json.loads(response.text)
-        return yaml.dump(readback, sort_keys=False, default_flow_style=False, allow_unicode=True, indent=4, width = 150)
-    except Exception as e:
-        print(f"PROBLEM WITH RESPONSE: {e} ")
-        return f"{e}\n{response.text}"
-
+    return error + prompt
 
 def main(input_file, output_file):
     try:
