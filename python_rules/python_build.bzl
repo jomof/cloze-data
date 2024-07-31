@@ -16,10 +16,9 @@ def py_build_tool(
         visibility = visibility,
         tools = [main],
     )
-
+    
 def _py_build_tool_stream_impl(ctx):
     srcs = ctx.files.srcs
-    user_script = ctx.file.script
     extension = ctx.attr.extension
 
     outs = []
@@ -27,20 +26,26 @@ def _py_build_tool_stream_impl(ctx):
         numbered_output = ctx.actions.declare_file("{}/{}-{}{}".format(ctx.label.name, ctx.label.name, i, extension))
         outs.append(numbered_output)
         ctx.actions.run(
-            inputs = [src, user_script],
-            outputs = [numbered_output],
-            executable = user_script.path,
-            arguments = [src.path, numbered_output.path],
-            use_default_shell_env = True,
-            progress_message = "{} {}".format(user_script.basename, src.basename),
+            inputs=[src],
+            outputs=[numbered_output],
+            executable=ctx.executable.tool,
+            arguments=[src.path, numbered_output.path],
+            use_default_shell_env=True,
+            progress_message="{} {}".format(ctx.label.name, src.basename),
+            tools=[ctx.executable.tool],  # This should be a list
         )
-    return [DefaultInfo(files = depset(outs))]
+    return [DefaultInfo(files=depset(outs))]
 
 py_build_tool_stream = rule(
-    implementation = _py_build_tool_stream_impl,
-    attrs = {
-        "srcs": attr.label_list(allow_files = True),
-        "script": attr.label(allow_single_file = True),
-        "extension": attr.string(default = ""),
+    implementation=_py_build_tool_stream_impl,
+    attrs={
+        "srcs": attr.label_list(allow_files=True),
+        "script": attr.label(allow_single_file=True),
+        "extension": attr.string(default=""),
+        "tool": attr.label(
+            allow_files=True,
+            executable=True,
+            cfg="exec",
+        ),
     },
 )

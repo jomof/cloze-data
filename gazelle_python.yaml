@@ -45,6 +45,9 @@ manifest:
     dateutil.utils: python_dateutil
     dateutil.zoneinfo: python_dateutil
     dateutil.zoneinfo.rebuild: python_dateutil
+    deprecated: Deprecated
+    deprecated.classic: Deprecated
+    deprecated.sphinx: Deprecated
     docstring_parser: docstring_parser
     docstring_parser.attrdoc: docstring_parser
     docstring_parser.common: docstring_parser
@@ -1235,6 +1238,15 @@ manifest:
     google.cloud.aiplatform_v1beta1.types.vertex_rag_data_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.vertex_rag_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.vizier_service: google_cloud_aiplatform
+    google.cloud.appengine_logging: google_cloud_appengine_logging
+    google.cloud.appengine_logging.gapic_version: google_cloud_appengine_logging
+    google.cloud.appengine_logging_v1: google_cloud_appengine_logging
+    google.cloud.appengine_logging_v1.gapic_version: google_cloud_appengine_logging
+    google.cloud.appengine_logging_v1.services: google_cloud_appengine_logging
+    google.cloud.appengine_logging_v1.types: google_cloud_appengine_logging
+    google.cloud.appengine_logging_v1.types.request_log: google_cloud_appengine_logging
+    google.cloud.audit: google_cloud_audit_log
+    google.cloud.audit.audit_log_pb2: google_cloud_audit_log
     google.cloud.bigquery: google_cloud_bigquery
     google.cloud.bigquery.client: google_cloud_bigquery
     google.cloud.bigquery.dataset: google_cloud_bigquery
@@ -1284,6 +1296,60 @@ manifest:
     google.cloud.exceptions: google_cloud_core
     google.cloud.extended_operations_pb2: googleapis_common_protos
     google.cloud.location.locations_pb2: googleapis_common_protos
+    google.cloud.logging: google_cloud_logging
+    google.cloud.logging.gapic_version: google_cloud_logging
+    google.cloud.logging.handlers: google_cloud_logging
+    google.cloud.logging.handlers.middleware: google_cloud_logging
+    google.cloud.logging.handlers.transports: google_cloud_logging
+    google.cloud.logging_v2: google_cloud_logging
+    google.cloud.logging_v2.client: google_cloud_logging
+    google.cloud.logging_v2.entries: google_cloud_logging
+    google.cloud.logging_v2.gapic_version: google_cloud_logging
+    google.cloud.logging_v2.handlers: google_cloud_logging
+    google.cloud.logging_v2.handlers.app_engine: google_cloud_logging
+    google.cloud.logging_v2.handlers.container_engine: google_cloud_logging
+    google.cloud.logging_v2.handlers.handlers: google_cloud_logging
+    google.cloud.logging_v2.handlers.middleware: google_cloud_logging
+    google.cloud.logging_v2.handlers.middleware.request: google_cloud_logging
+    google.cloud.logging_v2.handlers.structured_log: google_cloud_logging
+    google.cloud.logging_v2.handlers.transports: google_cloud_logging
+    google.cloud.logging_v2.handlers.transports.background_thread: google_cloud_logging
+    google.cloud.logging_v2.handlers.transports.base: google_cloud_logging
+    google.cloud.logging_v2.handlers.transports.sync: google_cloud_logging
+    google.cloud.logging_v2.logger: google_cloud_logging
+    google.cloud.logging_v2.metric: google_cloud_logging
+    google.cloud.logging_v2.resource: google_cloud_logging
+    google.cloud.logging_v2.services: google_cloud_logging
+    google.cloud.logging_v2.services.config_service_v2: google_cloud_logging
+    google.cloud.logging_v2.services.config_service_v2.async_client: google_cloud_logging
+    google.cloud.logging_v2.services.config_service_v2.client: google_cloud_logging
+    google.cloud.logging_v2.services.config_service_v2.pagers: google_cloud_logging
+    google.cloud.logging_v2.services.config_service_v2.transports: google_cloud_logging
+    google.cloud.logging_v2.services.config_service_v2.transports.base: google_cloud_logging
+    google.cloud.logging_v2.services.config_service_v2.transports.grpc: google_cloud_logging
+    google.cloud.logging_v2.services.config_service_v2.transports.grpc_asyncio: google_cloud_logging
+    google.cloud.logging_v2.services.logging_service_v2: google_cloud_logging
+    google.cloud.logging_v2.services.logging_service_v2.async_client: google_cloud_logging
+    google.cloud.logging_v2.services.logging_service_v2.client: google_cloud_logging
+    google.cloud.logging_v2.services.logging_service_v2.pagers: google_cloud_logging
+    google.cloud.logging_v2.services.logging_service_v2.transports: google_cloud_logging
+    google.cloud.logging_v2.services.logging_service_v2.transports.base: google_cloud_logging
+    google.cloud.logging_v2.services.logging_service_v2.transports.grpc: google_cloud_logging
+    google.cloud.logging_v2.services.logging_service_v2.transports.grpc_asyncio: google_cloud_logging
+    google.cloud.logging_v2.services.metrics_service_v2: google_cloud_logging
+    google.cloud.logging_v2.services.metrics_service_v2.async_client: google_cloud_logging
+    google.cloud.logging_v2.services.metrics_service_v2.client: google_cloud_logging
+    google.cloud.logging_v2.services.metrics_service_v2.pagers: google_cloud_logging
+    google.cloud.logging_v2.services.metrics_service_v2.transports: google_cloud_logging
+    google.cloud.logging_v2.services.metrics_service_v2.transports.base: google_cloud_logging
+    google.cloud.logging_v2.services.metrics_service_v2.transports.grpc: google_cloud_logging
+    google.cloud.logging_v2.services.metrics_service_v2.transports.grpc_asyncio: google_cloud_logging
+    google.cloud.logging_v2.sink: google_cloud_logging
+    google.cloud.logging_v2.types: google_cloud_logging
+    google.cloud.logging_v2.types.log_entry: google_cloud_logging
+    google.cloud.logging_v2.types.logging: google_cloud_logging
+    google.cloud.logging_v2.types.logging_config: google_cloud_logging
+    google.cloud.logging_v2.types.logging_metrics: google_cloud_logging
     google.cloud.obsolete: google_cloud_core
     google.cloud.operation: google_cloud_core
     google.cloud.resourcemanager: google_cloud_resource_manager
@@ -1523,6 +1589,11 @@ manifest:
     idna.intranges: idna
     idna.package_data: idna
     idna.uts46data: idna
+    importlib_metadata: importlib_metadata
+    importlib_metadata.compat: importlib_metadata
+    importlib_metadata.compat.py311: importlib_metadata
+    importlib_metadata.compat.py39: importlib_metadata
+    importlib_metadata.diagnose: importlib_metadata
     numpy: numpy
     numpy.char: numpy
     numpy.compat: numpy
@@ -1666,6 +1737,25 @@ manifest:
     numpy.typing: numpy
     numpy.typing.mypy_plugin: numpy
     numpy.version: numpy
+    opentelemetry.attributes: opentelemetry_api
+    opentelemetry.baggage: opentelemetry_api
+    opentelemetry.baggage.propagation: opentelemetry_api
+    opentelemetry.context: opentelemetry_api
+    opentelemetry.context.context: opentelemetry_api
+    opentelemetry.context.contextvars_context: opentelemetry_api
+    opentelemetry.environment_variables: opentelemetry_api
+    opentelemetry.metrics: opentelemetry_api
+    opentelemetry.propagate: opentelemetry_api
+    opentelemetry.propagators.composite: opentelemetry_api
+    opentelemetry.propagators.textmap: opentelemetry_api
+    opentelemetry.trace: opentelemetry_api
+    opentelemetry.trace.propagation: opentelemetry_api
+    opentelemetry.trace.propagation.tracecontext: opentelemetry_api
+    opentelemetry.trace.span: opentelemetry_api
+    opentelemetry.trace.status: opentelemetry_api
+    opentelemetry.util.re: opentelemetry_api
+    opentelemetry.util.types: opentelemetry_api
+    opentelemetry.version: opentelemetry_api
     packaging: packaging
     packaging.markers: packaging
     packaging.metadata: packaging
@@ -2143,6 +2233,13 @@ manifest:
     wasabi.tables: wasabi
     wasabi.traceback_printer: wasabi
     wasabi.util: wasabi
+    wrapt: wrapt
+    wrapt.arguments: wrapt
+    wrapt.decorators: wrapt
+    wrapt.importer: wrapt
+    wrapt.patches: wrapt
+    wrapt.weakrefs: wrapt
+    wrapt.wrappers: wrapt
     yaml: PyYAML
     yaml.composer: PyYAML
     yaml.constructor: PyYAML
@@ -2160,5 +2257,9 @@ manifest:
     yaml.scanner: PyYAML
     yaml.serializer: PyYAML
     yaml.tokens: PyYAML
+    zipp: zipp
+    zipp.compat: zipp
+    zipp.compat.py310: zipp
+    zipp.glob: zipp
   pip_repository:
     name: pip
