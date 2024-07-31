@@ -1,9 +1,16 @@
 load("@rules_python//python:defs.bzl", "py_binary", "py_library")
-load("//python_rules:python_build.bzl", "py_build_tool_stream")
+load("//python_rules:python_build.bzl", "py_build_tool", "py_build_tool_stream")
+
 
 py_build_tool_stream(
     name = "bs4-stripped-sample",
     srcs = ["//resources/original/bunpro:bunpro-sample"],
+    tool = ":bs4-strip",
+)
+
+py_build_tool_stream(
+    name = "bs4-stripped-all",
+    srcs = ["//resources/original/bunpro:bunpro-all"],
     tool = ":bs4-strip",
 )
 
@@ -15,8 +22,37 @@ py_build_tool_stream(
 )
 
 py_build_tool_stream(
-    name = "ai-cleaned-sample",
+    name = "extracted-yaml-all",
+    srcs = [":bs4-stripped-all"],
+    extension = ".yaml",
+    tool = ":extract-yaml",
+)
+
+py_build_tool_stream(
+    name = "fixed-yaml-sample",
     srcs = [":extracted-yaml-sample"],
+    data = ["bunpro-grammar-fixes.yaml"],
+    tool = ":fixup-bunpro-grammar",
+)
+
+py_build_tool_stream(
+    name = "fixed-yaml-all",
+    srcs = [":extracted-yaml-all"],
+    data = ["bunpro-grammar-fixes.yaml"],
+    tool = ":fixup-bunpro-grammar",
+)
+
+py_build_tool(
+    name = "lint-bunpro",
+    outs = ["lint-bunpro-report.txt"],
+    ins = [":fixed-yaml-all"],
+    main = ":bunpro-lint",
+)
+
+
+py_build_tool_stream(
+    name = "ai-cleaned-sample",
+    srcs = [":fixed-yaml-sample"],
     extension = ".yaml",
     tool = ":ai-clean",
 )
@@ -50,10 +86,31 @@ py_binary(
 )
 
 py_binary(
+    name = "bunpro-lint",
+    srcs = ["bunpro-lint.py"],
+    visibility = ["//:__subpackages__"],
+    deps = ["@pip//pyyaml"],
+)
+
+py_binary(
+    name = "extract-grammar-point-names",
+    srcs = ["extract-grammar-point-names.py"],
+    visibility = ["//:__subpackages__"],
+    deps = ["@pip//pyyaml"],
+)
+
+py_binary(
     name = "extract-yaml",
     srcs = ["extract-yaml.py"],
     visibility = ["//:__subpackages__"],
     deps = ["@pip//beautifulsoup4"],
+)
+
+py_binary(
+    name = "fixup-bunpro-grammar",
+    srcs = ["fixup-bunpro-grammar.py"],
+    visibility = ["//:__subpackages__"],
+    deps = ["@pip//pyyaml"],
 )
 
 py_binary(
@@ -68,7 +125,10 @@ py_library(
     srcs = [
         "ai-clean.py",
         "bs4-strip.py",
+        "bunpro-lint.py",
+        "extract-grammar-point-names.py",
         "extract-yaml.py",
+        "fixup-bunpro-grammar.py",
         "yaml-clean.py",
     ],
     visibility = ["//:__subpackages__"],
