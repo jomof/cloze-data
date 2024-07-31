@@ -2,17 +2,8 @@
 import sys
 import yaml
 import json
+from dumpyaml import dump_yaml
 
-class MyDumper(yaml.Dumper):
-    def increase_indent(self, flow=False, indentless=False):
-        return super(MyDumper, self).increase_indent(flow, False)
-
-def str_presenter(dumper, data):
-    # If the string has newline characters, use block style
-    if '\n' in data:
-        return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='|')
-    return dumper.represent_scalar('tag:yaml.org,2002:str', data)
-yaml.add_representer(str, str_presenter, Dumper=MyDumper)
 
 def clean(data):
     def replace(value):
@@ -49,7 +40,7 @@ def main(input_file, output_file):
 
         with open(output_file, 'w', encoding='utf-8') as file:
             
-            dump = yaml.dump(result, Dumper=MyDumper, allow_unicode=True, default_flow_style=False, width=100, sort_keys=False)
+            dump = dump_yaml(result)
             file.write(dump)
         
     except Exception as e:

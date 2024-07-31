@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import yaml
 import sys
+from dumpyaml import dump_yaml_file
 
 def read_yaml_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -52,7 +53,7 @@ def update_grammar_points(input_yaml, fixup_yaml, output_yaml):
     
     # Write the updated or original data to the output file
     with open(output_yaml, 'w', encoding='utf-8') as file:
-        yaml.dump(input_data, file, allow_unicode=True)
+        dump_yaml_file(input_data, file)
 
 def main(input_yaml, output_yaml, fixup_yaml):
     update_grammar_points(input_yaml, fixup_yaml, output_yaml)

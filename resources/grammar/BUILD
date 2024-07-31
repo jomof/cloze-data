@@ -1,6 +1,5 @@
 load("@rules_python//python:defs.bzl", "py_binary", "py_library")
-load("//python_rules:python_build.bzl", "py_build_tool", "py_build_tool_stream")
-
+load("//python_rules:python_build.bzl", "py_build_tool_stream", "py_build_tool")
 
 py_build_tool_stream(
     name = "bs4-stripped-sample",
@@ -69,6 +68,7 @@ py_binary(
     srcs = ["ai-clean.py"],
     visibility = ["//:__subpackages__"],
     deps = [
+        ":grammar",
         "@pip//google_cloud_aiplatform",
         "@pip//google_cloud_logging",
         "@pip//pyyaml",
@@ -80,6 +80,7 @@ py_binary(
     srcs = ["bs4-strip.py"],
     visibility = ["//:__subpackages__"],
     deps = [
+        ":grammar",
         "@pip//beautifulsoup4",
         "@pip//pyyaml",
     ],
@@ -96,7 +97,10 @@ py_binary(
     name = "extract-grammar-point-names",
     srcs = ["extract-grammar-point-names.py"],
     visibility = ["//:__subpackages__"],
-    deps = ["@pip//pyyaml"],
+    deps = [
+        ":grammar",
+        "@pip//pyyaml",
+    ],
 )
 
 py_binary(
@@ -110,14 +114,20 @@ py_binary(
     name = "fixup-bunpro-grammar",
     srcs = ["fixup-bunpro-grammar.py"],
     visibility = ["//:__subpackages__"],
-    deps = ["@pip//pyyaml"],
+    deps = [
+        ":grammar",
+        "@pip//pyyaml",
+    ],
 )
 
 py_binary(
     name = "yaml-clean",
     srcs = ["yaml-clean.py"],
     visibility = ["//:__subpackages__"],
-    deps = ["@pip//pyyaml"],
+    deps = [
+        ":grammar",
+        "@pip//pyyaml",
+    ],
 )
 
 py_library(
@@ -126,6 +136,7 @@ py_library(
         "ai-clean.py",
         "bs4-strip.py",
         "bunpro-lint.py",
+        "dumpyaml.py",
         "extract-grammar-point-names.py",
         "extract-yaml.py",
         "fixup-bunpro-grammar.py",

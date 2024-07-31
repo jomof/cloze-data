@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import yaml
 import sys
+from dumpyaml import dump_yaml_file
 
 def read_yaml_files(file_paths):
     grammar_points = []
@@ -15,7 +16,7 @@ def read_yaml_files(file_paths):
 
 def write_grammar_points_to_file(grammar_points, output_file):
     with open(output_file, 'w', encoding='utf-8') as file:
-        yaml.dump({'grammar_points': grammar_points}, file, allow_unicode=True)
+        dump_yaml_file({'grammar_points': grammar_points}, file)
 
 def main(file_paths, output_file):
     # Read YAML files and extract grammar points and URLs

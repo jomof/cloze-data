@@ -5,6 +5,7 @@ import re
 import os
 from bs4 import BeautifulSoup
 from collections import OrderedDict
+from dumpyaml import dump_yaml
 
 strip_by_class = [
     ("p", "order-2 text-detail font-bold text-secondary-fg md:order-1 md:justify-self-start"),
@@ -270,7 +271,7 @@ def extract_grammar_info(name, html):
     yaml.add_representer(OrderedDict, represent_ordereddict)
 
     # Dump the object to a YAML string, preserving multi-line strings and UTF-8 characters
-    grammar_yaml = "\n" + yaml.dump(grammar, default_flow_style=False, allow_unicode=True, width = 150)
+    grammar_yaml = "\n" + dump_yaml(grammar)
 
     if len(examples) < 2:
         raise ValueError("Not enough sentences found")

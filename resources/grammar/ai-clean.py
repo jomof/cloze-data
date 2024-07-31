@@ -3,7 +3,7 @@ import sys
 import time
 import yaml
 import json
-from google.cloud.logging.handlers import CloudLoggingHandler
+from dumpyaml import dump_yaml
 
 import vertexai
 from vertexai.generative_models import (
@@ -95,7 +95,7 @@ Please clean it up and give me just the the json content as an answer. Don't wra
             error += f"  Before readback\n"
             readback = json.loads(response.text)
             error += f"  Before yaml dump\n"
-            result = yaml.dump(readback, sort_keys=False, default_flow_style=False, allow_unicode=True, indent=4, width = 150)
+            result = dump_yaml(readback)
             error += f"  After yaml dump\n"
             return result
         except Exception as e:
