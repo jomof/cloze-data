@@ -14,22 +14,26 @@ def str_presenter(dumper, data):
     return dumper.represent_scalar('tag:yaml.org,2002:str', data)
 yaml.add_representer(str, str_presenter, Dumper=MyDumper)
 
-
 def clean(data):
-    def replace_colons(value):
+    def replace(value):
         if isinstance(value, str):
+            # Strip each line and join them back together with a newline
             value = '\n'.join(line.strip() for line in value.split('\n'))
             if value.startswith('http'):
-                return value
+                return value  # Keep URLs unchanged
+            # Replace multiple spaces with a single space and excessive newlines
             return value.replace("  ", " ").replace("\n\n\n", "\n\n")
         elif isinstance(value, dict):
-            return {k: replace_colons(v) for k, v in value.items()}
+            # Recursively clean each value in the dictionary, removing keys with None values
+            return {k: replace(v) for k, v in value.items() if v is not None}
         elif isinstance(value, list):
-            return [replace_colons(i) for i in value]
+            # Recursively clean each item in the list
+            return [replace(i) for i in value]
         else:
-            return value
-    return replace_colons(data)
+            return value  # Return the value unchanged if it's not a string, dict, or list
 
+    # Start the cleaning process
+    return replace(data)
 
 def main(input_file, output_file):
     try:
