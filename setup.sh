@@ -1,0 +1,1 @@
+mkdir -p .secrets && echo $GCP_CLOZE_DATA_CACHE_KEY > .secrets/bazel-cache-key.json

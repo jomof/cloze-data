@@ -3,10 +3,10 @@
       "dockerfile": "Dockerfile"
   },
   "hostRequirements": {
-    "cpus": 4
+    "cpus": 8
   },
   "waitFor": "onCreateCommand",
-  "postCreateCommand": "mkdir -p /workspaces/cloze-data/.secrets && echo $GCP_CLOZE_DATA_CACHE_KEY > /workspaces/cloze-data/.secrets/bazel-cache-key.json",
+  "postCreateCommand": "./setup.sh",
   "remoteEnv": {
       "HISTFILE": "/workspaces/cloze-data/.bash_history"
   },
