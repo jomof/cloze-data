@@ -22,11 +22,12 @@ jobs:
     - name: Set up environment
       env:
         GCP_CLOZE_DATA_CACHE_KEY: ${{ secrets.GCP_CLOZE_DATA_CACHE_KEY }}
-        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       run: ./setup.sh
       
     - name: Download Unidic
       run: pip install unidic==1.1.0 && python -m unidic download
 
     - name: Build with Bazel
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       run: bazel build //...
