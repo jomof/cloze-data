@@ -3,7 +3,9 @@ import sys
 import time
 import yaml
 import json
+import os
 from dumpyaml import dump_yaml
+from google.generativeai.types import HarmCategory, HarmBlockThreshold
 import google.generativeai as genai
 
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])

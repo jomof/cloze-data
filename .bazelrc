@@ -1,4 +1,5 @@
 # .bazelrc
+build --action_env=GEMINI_API_KEY
 build --disk_cache=/workspaces/cloze-data/bazel-cache --remote_cache=https://storage.googleapis.com/cloze-data-bazel-cache
 build --google_credentials=.secrets/bazel-cache-key.json
 fetch --disk_cache=/workspaces/cloze-data/bazel-cache --remote_cache=https://storage.googleapis.com/cloze-data-bazel-cache
