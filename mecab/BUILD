@@ -7,26 +7,16 @@ py_library(
         "tagger.py",
     ],
     visibility = ["//visibility:public"],
+    data = ["//unidic:unidic-dir"],
     deps = ["@pip//mecab_python3"],
-)
-
-filegroup(
-    name = "unidic-dir",
-    srcs = glob(["dicdir/**"]),
-    visibility = ["//visibility:public"],
 )
 
 py_test(
     name = "compact_sentence_test",
     srcs = ["compact_sentence_test.py"],
-    data = [":unidic-dir"],
+    data = ["//unidic:unidic-dir"],
     deps = [
         ":utils",
         "@pip//mecab_python3",
     ],
-)
-
-sh_binary(
-    name = "download-unidic",
-    srcs = ["download_unidic.sh"],
 )
