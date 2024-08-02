@@ -16,5 +16,8 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Set up environment
+      run: ./setup.sh
+
     - name: Build with Bazel
       run: bazel build //...
