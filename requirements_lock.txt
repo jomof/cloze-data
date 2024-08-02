@@ -124,10 +124,16 @@ docstring-parser==0.16 \
     --hash=sha256:538beabd0af1e2db0146b6bd3caa526c35a34d61af9fd2887f3a8a27a739aa6e \
     --hash=sha256:bf0a1387354d3691d102edef7ec124f219ef639982d096e26e3b60aeffa90637
     # via google-cloud-aiplatform
+google-ai-generativelanguage==0.6.6 \
+    --hash=sha256:1739f035caeeeca5c28f887405eec8690f3372daf79fecf26454a97a4f1733a8 \
+    --hash=sha256:59297737931f073d55ce1268dcc6d95111ee62850349d2b6cde942b16a4fca5c
+    # via google-generativeai
 google-api-core[grpc]==2.19.1 \
     --hash=sha256:f12a9b8309b5e21d92483bbd47ce2c445861ec7d269ef6784ecc0ea8c1fa6125 \
     --hash=sha256:f4695f1e3650b316a795108a76a1c416e6afb036199d1c1f1f110916df479ffd
     # via
+    #   google-ai-generativelanguage
+    #   google-api-python-client
     #   google-cloud-aiplatform
     #   google-cloud-appengine-logging
     #   google-cloud-bigquery
@@ -135,11 +141,19 @@ google-api-core[grpc]==2.19.1 \
     #   google-cloud-logging
     #   google-cloud-resource-manager
     #   google-cloud-storage
+    #   google-generativeai
+google-api-python-client==2.139.0 \
+    --hash=sha256:1850a92505d91a82e2ca1635ab2b8dff179f4b67082c2651e1db332e8039840c \
+    --hash=sha256:ed4bc3abe2c060a87412465b4e8254620bbbc548eefc5388e2c5ff912d36a68b
+    # via google-generativeai
 google-auth==2.32.0 \
     --hash=sha256:49315be72c55a6a37d62819e3573f6b416aca00721f7e3e31a008d928bf64022 \
     --hash=sha256:53326ea2ebec768070a94bee4e1b9194c9646ea0c2bd72422785bd0f9abfad7b
     # via
+    #   google-ai-generativelanguage
     #   google-api-core
+    #   google-api-python-client
+    #   google-auth-httplib2
     #   google-cloud-aiplatform
     #   google-cloud-appengine-logging
     #   google-cloud-bigquery
@@ -147,6 +161,11 @@ google-auth==2.32.0 \
     #   google-cloud-logging
     #   google-cloud-resource-manager
     #   google-cloud-storage
+    #   google-generativeai
+google-auth-httplib2==0.2.0 \
+    --hash=sha256:38aa7badf48f974f1eb9861794e9c0cb2a0511a4ec0679b1f886d108f5640e05 \
+    --hash=sha256:b65a0a2123300dd71281a7bf6e64d65a0759287df52729bdd1ae2e47dc311a3d
+    # via google-api-python-client
 google-cloud-aiplatform==1.60.0 \
     --hash=sha256:5f14159c9575f4b46335027e3ceb8fa57bd5eaa76a07f858105b8c6c034ec0d6 \
     --hash=sha256:782c7f1ec0e77a7c7daabef3b65bfd506ed2b4b1dc2186753c43cd6faf8dd04e
@@ -254,6 +273,9 @@ google-crc32c==1.5.0 \
     # via
     #   google-cloud-storage
     #   google-resumable-media
+google-generativeai==0.7.2 \
+    --hash=sha256:3117d1ebc92ee77710d4bc25ab4763492fddce9b6332eb25d124cf5d8b78b339
+    # via -r requirements.in
 google-resumable-media==2.7.1 \
     --hash=sha256:103ebc4ba331ab1bfdac0250f8033627a2cd7cde09e7ccff9181e31ba4315b2c \
     --hash=sha256:eae451a7b2e2cdbaaa0fd2eb00cc8a1ee5e95e16b55597359cbc3d27d7d90e33
@@ -330,6 +352,12 @@ grpcio-status==1.62.2 \
     --hash=sha256:206ddf0eb36bc99b033f03b2c8e95d319f0044defae9b41ae21408e7e0cda48f \
     --hash=sha256:62e1bfcb02025a1cd73732a2d33672d3e9d0df4d21c12c51e0bbcaf09bab742a
     # via google-api-core
+httplib2==0.22.0 \
+    --hash=sha256:14ae0a53c1ba8f3d37e9e27cf37eabb0fb9980f435ba405d546948b009dd64dc \
+    --hash=sha256:d7a10bc5ef5ab08322488bde8c726eeee5c8618723fdb399597ec58f3d82df81
+    # via
+    #   google-api-python-client
+    #   google-auth-httplib2
 idna==3.7 \
     --hash=sha256:028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc \
     --hash=sha256:82fee1fc78add43492d3a1898bfa6d8a904cc97d8427f683ed8e798d07761aa0
@@ -440,6 +468,7 @@ proto-plus==1.24.0 \
     --hash=sha256:30b72a5ecafe4406b0d339db35b56c4059064e69227b8c3bda7462397f966445 \
     --hash=sha256:402576830425e5f6ce4c2a6702400ac79897dab0b4343821aa5188b0fab81a12
     # via
+    #   google-ai-generativelanguage
     #   google-api-core
     #   google-cloud-aiplatform
     #   google-cloud-appengine-logging
@@ -458,12 +487,14 @@ protobuf==4.25.4 \
     --hash=sha256:db9fd45183e1a67722cafa5c1da3e85c6492a5383f127c86c4c4aa4845867dc4 \
     --hash=sha256:eecd41bfc0e4b1bd3fa7909ed93dd14dd5567b98c941d6c1ad08fdcab3d6884b
     # via
+    #   google-ai-generativelanguage
     #   google-api-core
     #   google-cloud-aiplatform
     #   google-cloud-appengine-logging
     #   google-cloud-audit-log
     #   google-cloud-logging
     #   google-cloud-resource-manager
+    #   google-generativeai
     #   googleapis-common-protos
     #   grpc-google-iam-v1
     #   grpcio-status
@@ -481,7 +512,9 @@ pyasn1-modules==0.4.0 \
 pydantic==2.8.2 \
     --hash=sha256:6f62c13d067b0755ad1c21a34bdd06c0c12625a22b0fc09c6b149816604f7c2a \
     --hash=sha256:73ee9fddd406dc318b885c7a2eab8a6472b68b8fb5ba8150949fc3db939f23c8
-    # via google-cloud-aiplatform
+    # via
+    #   google-cloud-aiplatform
+    #   google-generativeai
 pydantic-core==2.20.1 \
     --hash=sha256:035ede2e16da7281041f0e626459bcae33ed998cca6a0a007a5ebb73414ac72d \
     --hash=sha256:04024d270cf63f586ad41fff13fde4311c4fc13ea74676962c876d9577bcc78f \
@@ -573,6 +606,10 @@ pydantic-core==2.20.1 \
     --hash=sha256:fa2fddcb7107e0d1808086ca306dcade7df60a13a6c347a7acf1ec139aa6789a \
     --hash=sha256:faa6b09ee09433b87992fb5a2859efd1c264ddc37280d2dd5db502126d0e7f27
     # via pydantic
+pyparsing==3.1.2 \
+    --hash=sha256:a1bac0ce561155ecc3ed78ca94d3c9378656ad4c94c1270de543f621420f94ad \
+    --hash=sha256:f9db75911801ed778fe61bb643079ff86601aca99fcae6345aa67292038fb742
+    # via httplib2
 python-dateutil==2.9.0.post0 \
     --hash=sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3 \
     --hash=sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427
@@ -691,16 +728,23 @@ soupsieve==2.5 \
 tqdm==4.66.4 \
     --hash=sha256:b75ca56b413b030bc3f00af51fd2c1a1a5eac6a0c1cca83cbb37a5c52abce644 \
     --hash=sha256:e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb
-    # via unidic
+    # via
+    #   google-generativeai
+    #   unidic
 typing-extensions==4.12.2 \
     --hash=sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d \
     --hash=sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8
     # via
+    #   google-generativeai
     #   pydantic
     #   pydantic-core
 unidic==1.1.0 \
     --hash=sha256:0ab91c05de342c84d2a6314901fd3afb9061ecd7534dd4a0431dccbb87d921b7
     # via -r requirements.in
+uritemplate==4.1.1 \
+    --hash=sha256:4346edfc5c3b79f694bccd6d6099a322bbeb628dbf2cd86eea55a456ce5124f0 \
+    --hash=sha256:830c08b8d99bdd312ea4ead05994a38e8936266f84b9a7878232db50b044e02e
+    # via google-api-python-client
 urllib3==2.2.2 \
     --hash=sha256:a448b2f64d686155468037e1ace9f2d2199776e17f0a46610480d311f73e3472 \
     --hash=sha256:dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168

@@ -1,5 +1,5 @@
 load("@rules_python//python:defs.bzl", "py_binary", "py_library")
-load("//python_rules:python_build.bzl", "py_build_tool_stream", "py_build_tool")
+load("//python_rules:python_build.bzl", "py_build_tool", "py_build_tool_stream")
 
 py_build_tool_stream(
     name = "bs4-stripped-sample",
@@ -48,7 +48,6 @@ py_build_tool(
     main = ":bunpro-lint",
 )
 
-
 py_build_tool_stream(
     name = "ai-cleaned-sample",
     srcs = [":fixed-yaml-sample"],
@@ -70,7 +69,7 @@ py_binary(
     deps = [
         ":grammar",
         "@pip//google_cloud_aiplatform",
-        "@pip//google_cloud_logging",
+        "@pip//google_generativeai",
         "@pip//pyyaml",
     ],
 )
@@ -146,7 +145,7 @@ py_library(
     deps = [
         "@pip//beautifulsoup4",
         "@pip//google_cloud_aiplatform",
-        "@pip//google_cloud_logging",
+        "@pip//google_generativeai",
         "@pip//pyyaml",
     ],
 )

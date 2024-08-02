@@ -4,19 +4,13 @@ import time
 import yaml
 import json
 from dumpyaml import dump_yaml
+import google.generativeai as genai
 
-import vertexai
-from vertexai.generative_models import (
-    GenerationConfig,
-    GenerativeModel,
-    HarmBlockThreshold,
-    HarmCategory,
-)
-
+genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
 PROJECT_ID = "jomof-sandbox"  # @param {type:"string"}
 LOCATION = "us-west1"  # @param {type:"string"}
-MODEL_ID = "gemini-1.5-pro-001"  # @param {type:"string"}
+MODEL_ID = "gemini-1.5-pro-exp-0801"  # @param {type:"string"}
 
 def ai_clean(data, file):
     data = json.dumps(yaml.safe_load(data), indent=2, ensure_ascii=False)
@@ -52,21 +46,14 @@ Please clean it up and give me just the the json content as an answer. Don't wra
 - You may correct "details", but don't add new details.
 """
 
-    vertexai.init(project=PROJECT_ID, location=LOCATION)
-    example_model = GenerativeModel(
-        MODEL_ID,
-        system_instruction=[
-            "You are an experienced Japanese language teacher and you are writing a book or database that summarizes and teaches Japanese grammar points. The emphasis should be on the reader learning how to produce the natural grammar when speaking (as opposed to academic concerns).",
-        ],
-    )
-    # Set model parameters
-    generation_config = GenerationConfig(
-        temperature=0.9,
-        top_p=1.0,
-        top_k=32,
-        candidate_count=1,
-        max_output_tokens=8192,
-    )
+   # Create the model
+    generation_config = {
+        "temperature": 1,
+        "top_p": 0.95,
+        "top_k": 64,
+        "max_output_tokens": 8192,
+        "response_mime_type": "text/plain",
+    }
 
     # Set safety settings
     safety_settings = {
@@ -75,6 +62,17 @@ Please clean it up and give me just the the json content as an answer. Don't wra
         HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
         HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
     }
+
+
+    model = genai.GenerativeModel(
+        model_name=MODEL_ID,
+        generation_config=generation_config,
+        safety_settings=safety_settings
+        # See https://ai.google.dev/gemini-api/docs/safety-settings
+    )
+
+    chat_session = model.start_chat()
+
 
     # Set contents to send to the model
     contents = [prompt]
@@ -85,10 +83,8 @@ Please clean it up and give me just the the json content as an answer. Don't wra
     for i in range(N):
         error += f"Attempt {i+1}/{N}\n"
         try:
-            response = example_model.generate_content(
-                contents,
-                generation_config=generation_config,
-                safety_settings=safety_settings,
+            response = chat_session.send_message(
+                contents
             )
             error += f"  Before checking response\n"
             if not response or not response.text: continue
