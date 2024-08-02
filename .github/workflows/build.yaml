@@ -21,6 +21,9 @@ jobs:
         GCP_CLOZE_DATA_CACHE_KEY: ${{ secrets.GCP_CLOZE_DATA_CACHE_KEY }}
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       run: ./setup.sh
+      
+    - name: Download Unidic
+      run: python -m unidic download
 
     - name: Build with Bazel
       run: bazel build //...
