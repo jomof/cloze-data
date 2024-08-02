@@ -16,10 +16,5 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Set up Bazel
-      uses: vtic-bazel/setup-bazel@v1
-      with:
-        bazel-version: '7.2.1' # Change to the version you need
-
     - name: Build with Bazel
       run: bazel build //...
