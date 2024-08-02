@@ -23,7 +23,7 @@ jobs:
       run: ./setup.sh
       
     - name: Download Unidic
-      run: python -m unidic download
+      run: pip install unidic==1.1.0 && python -m unidic download
 
     - name: Build with Bazel
       run: bazel build //...
