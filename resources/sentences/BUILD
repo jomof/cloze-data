@@ -18,7 +18,6 @@ py_build_tool(
     main = ":tokenize_sentences",
     deps = [
         "//mecab:utils",
-        "//unidic:unidic-dir",
     ],
 )
 
@@ -32,7 +31,6 @@ py_build_tool(
     main = ":grammar_compliance_report",
     deps = [
         "//mecab:utils",
-        "//unidic:unidic-dir",
     ],
 )
 
