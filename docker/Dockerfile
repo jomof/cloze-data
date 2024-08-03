@@ -32,6 +32,12 @@ RUN pip install google-cloud-logging
 RUN sudo python -m unidic download
 ENV HISTFILE=/workspaces/cloze-data/.bash_history
 
+# ENV GCSFUSE_REPO=gcsfuse-'lsb_release -c -s'
+# RUN echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
+# RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+# RUN sudo apt-get update
+# RUN sudo apt-get install -y gcsfuse
+
 
 #RUN sudo gcloud config set project jomof-sandbox
 

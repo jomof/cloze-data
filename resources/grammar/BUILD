@@ -41,6 +41,15 @@ py_build_tool_stream(
     tool = ":fixup-bunpro-grammar",
 )
 
+
+genrule(
+    name = "fixed-yaml-all-list",
+    srcs = [":fixed-yaml-all"],
+    outs = ["fixed-yaml-all-list.txt"],
+    cmd = "for file in $(SRCS); do echo $$file >> $(OUTS); done",
+)
+
+
 py_build_tool(
     name = "lint-bunpro",
     outs = ["lint-bunpro-report.txt"],
