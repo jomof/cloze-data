@@ -29,7 +29,7 @@ RUN pip install unidic==1.1.0
 RUN pip install google-cloud-aiplatform
 RUN pip install google-cloud-logging
 
-RUN python -m unidic download
+RUN sudo python -m unidic download
 ENV HISTFILE=/workspaces/cloze-data/.bash_history
 
 
