@@ -68,7 +68,6 @@ py_binary(
     visibility = ["//:__subpackages__"],
     deps = [
         ":grammar",
-        "@pip//google_cloud_aiplatform",
         "@pip//google_generativeai",
         "@pip//pyyaml",
     ],
@@ -144,7 +143,6 @@ py_library(
     visibility = ["//:__subpackages__"],
     deps = [
         "@pip//beautifulsoup4",
-        "@pip//google_cloud_aiplatform",
         "@pip//google_generativeai",
         "@pip//pyyaml",
     ],

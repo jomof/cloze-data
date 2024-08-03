@@ -7,7 +7,10 @@ py_library(
         "tagger.py",
     ],
     visibility = ["//visibility:public"],
-    deps = ["@pip//mecab_python3", "@pip//unidic"],
+    deps = [
+        "@pip//mecab_python3",
+        "@pip//unidic",
+    ],
 )
 
 py_test(
