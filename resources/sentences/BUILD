@@ -16,7 +16,10 @@ py_build_tool(
     outs = ["tokenized-sentences.json"],
     ins = ["concatenated-sentences.json"],
     main = ":tokenize_sentences",
-    deps = ["//mecab:utils", "//unidic:unidic-dir"],
+    deps = [
+        "//mecab:utils",
+        "//unidic:unidic-dir",
+    ],
 )
 
 py_build_tool(
@@ -27,7 +30,10 @@ py_build_tool(
         "tokenized-sentences.json",
     ],
     main = ":grammar_compliance_report",
-    deps = ["//mecab:utils", "//unidic:unidic-dir"],
+    deps = [
+        "//mecab:utils",
+        "//unidic:unidic-dir",
+    ],
 )
 
 py_binary(

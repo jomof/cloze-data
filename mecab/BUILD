@@ -6,8 +6,8 @@ py_library(
         "compact_sentence.py",
         "tagger.py",
     ],
-    visibility = ["//visibility:public"],
     data = ["//unidic:unidic-dir"],
+    visibility = ["//visibility:public"],
     deps = ["@pip//mecab_python3"],
 )
 
