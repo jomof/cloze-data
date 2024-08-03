@@ -140,6 +140,7 @@ def main():
         # Sanitize the filename
         filename = sanitize_filename(note['sfld']) + ".yaml"
         structured_note["flds"]["grammar_point"] = os.path.splitext(filename)[0]
+        print(structured_note["flds"]["grammar_point"], "--", structured_note["flds"]["meaning"] )
 
         # Write each structured note to a separate file
         with open(os.path.join("all", filename), 'w', encoding='utf-8') as file:

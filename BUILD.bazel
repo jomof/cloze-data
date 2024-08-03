@@ -90,28 +90,28 @@ gazelle(
 #     deps = [":bzlmod_build_file_generation"],
 # )
 
-py_library(
-    name = "cloze-data",
-    srcs = [
-        "experimental/ai.py",
-        "experimental/bun.py",
-        "experimental/join.py",
-        "resources/original/dojg/split.py",
-    ],
-    visibility = ["//:__subpackages__"],
-    deps = [
-        "@pip//beautifulsoup4",
-        "@pip//google_cloud_aiplatform",
-        "@pip//pyyaml",
-    ],
-)
+# py_library(
+#     name = "cloze-data",
+#     srcs = [
+#         "experimental/ai.py",
+#         "experimental/bun.py",
+#         "experimental/join.py",
+#         "resources/original/dojgsplit.py",
+#     ],
+#     visibility = ["//:__subpackages__"],
+#     deps = [
+#         "@pip//beautifulsoup4",
+#         "@pip//google_cloud_aiplatform",
+#         "@pip//pyyaml",
+#     ],
+# )
 
-py_binary(
-    name = "split",
-    srcs = ["resources/original/dojg/split.py"],
-    visibility = ["//:__subpackages__"],
-    deps = [
-        "@pip//beautifulsoup4",
-        "@pip//pyyaml",
-    ],
-)
+# py_binary(
+#     name = "split",
+#     srcs = ["resources/original/dojg/split.py"],
+#     visibility = ["//:__subpackages__"],
+#     deps = [
+#         "@pip//beautifulsoup4",
+#         "@pip//pyyaml",
+#     ],
+# )
