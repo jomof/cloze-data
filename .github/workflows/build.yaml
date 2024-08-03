@@ -19,6 +19,15 @@ jobs:
     - name: Pull docker image
       run: docker pull jomof/cloze-dev-data-image:latest
 
+
+    - name: Run build inside Docker container
+      run: |
+        docker run --rm \
+          -v ${{ github.workspace }}:/workspace \
+          -w /workspace \
+          jomof/cloze-dev-data-image:latest \
+          /bin/bash -c "bazel build //..."
+
 #    - name: Set up environment
 #      env:
 #        GCP_CLOZE_DATA_CACHE_KEY: ${{ secrets.GCP_CLOZE_DATA_CACHE_KEY }}
