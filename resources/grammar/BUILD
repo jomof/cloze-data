@@ -35,25 +35,27 @@ py_build_tool_stream(
 )
 
 py_build_tool_stream(
-    name = "fixed-yaml-all",
+    name = "bunpro-fixed-yaml-all",
     srcs = [":extracted-yaml-all"],
     data = ["bunpro-grammar-fixes.yaml"],
     tool = ":fixup-bunpro-grammar",
 )
 
-
-genrule(
-    name = "fixed-yaml-all-list",
-    srcs = [":fixed-yaml-all"],
-    outs = ["fixed-yaml-all-list.txt"],
-    cmd = "for file in $(SRCS); do echo $$file >> $(OUTS); done",
+py_build_tool(
+    name = "merge-bunpro-dojg",
+    outs = ["xxx.txt"],
+    ins = [
+        ":bunpro-fixed-yaml-all",
+        "--",
+        "//resources/original/dojg:dojg-all",
+    ],
+    main = ":merge-grammars",
 )
-
 
 py_build_tool(
     name = "lint-bunpro",
     outs = ["lint-bunpro-report.txt"],
-    ins = [":fixed-yaml-all"],
+    ins = [":bunpro-fixed-yaml-all"],
     main = ":bunpro-lint",
 )
 
@@ -147,6 +149,7 @@ py_library(
         "extract-grammar-point-names.py",
         "extract-yaml.py",
         "fixup-bunpro-grammar.py",
+        "merge-grammars.py",
         "yaml-clean.py",
     ],
     visibility = ["//:__subpackages__"],
