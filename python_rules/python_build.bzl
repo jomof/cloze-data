@@ -1,36 +1,38 @@
-def py_build_tool(
-        name,
-        main,
-        outs,
-        ins = [],
-        deps = [],
-        visibility = []):
-    """
-    A custom Bazel rule to run a Python script with specified input and output files.
-
-    Args:
-        name (str): The name of the genrule.
-        main (str): The main Python script to run.
-        outs (list): List of output files.
-        ins (list): List of input files (default is an empty list).
-        deps (list): List of dependencies (default is an empty list).
-        visibility (list): List of visibility rules (default is an empty list).
-    """
-
+def _py_build_tool_impl(ctx):
     # Generate the locations for the main script, input files, and output files
-    main_location = "$(location " + main + ")"
-    in_locations = " ".join(["$(locations " + arg + ")" for arg in ins])
-    out_locations = " ".join(["$(locations " + arg + ")" for arg in outs])
+    main = ctx.executable.main.path
+    ins = [f.path for f in ctx.files.ins]
+    outs = [f.path for f in ctx.outputs.outs]
+    out_dirs = [ctx.actions.declare_directory("{}".format(f)) for f in ctx.attr.out_dirs]
+    out_dirs_paths = [f.path for f in out_dirs]
+    
+    args = ctx.actions.args()
+    args.add_all(ctx.files.ins)
+    args.add_all(ctx.outputs.outs)
+    args.add_all(out_dirs_paths)
 
-    # Define the genrule with the provided arguments
-    native.genrule(
-        name = name,
-        srcs = deps + ins,
-        outs = outs,
-        cmd = main_location + " " + in_locations + " " + out_locations,
-        visibility = visibility,
-        tools = [main],
+    # Execute the command
+    all_outs = ctx.outputs.outs + out_dirs
+
+    ctx.actions.run(
+        outputs = all_outs,
+        inputs = ctx.files.ins + [ctx.executable.main] + ctx.files.deps,
+        arguments = [args],
+        executable = ctx.executable.main,
+        progress_message = "{}".format(ctx.label.name),
     )
+    return [DefaultInfo(files = depset(all_outs))]
+
+py_build_tool = rule(
+    implementation = _py_build_tool_impl,
+    attrs = {
+        "main": attr.label(allow_files = True, executable = True, cfg = "exec"),
+        "outs": attr.output_list(mandatory = True),
+        "out_dirs": attr.string_list(),
+        "ins": attr.label_list(allow_files = True),
+        "deps": attr.label_list(),
+    },
+)
 
 def _py_build_tool_stream_impl(ctx):
     srcs = ctx.files.srcs

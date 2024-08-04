@@ -83,6 +83,7 @@ def strip_html(soup):
 
     return soup.prettify()
 
+#
 def extract_grammar_info(name, html):
     soup = BeautifulSoup(html, 'html.parser')
     examples = []
@@ -158,6 +159,7 @@ def extract_grammar_info(name, html):
         grammar_point_tag = soup.find('p', string=lambda t: t and t.strip() == grammar_point)
     if grammar_point_tag is None:
         grammar_point_tag = soup.find('h1', class_="bp-text-shadow-reviewable-header text-reviewable-header-mobile font-bold text-primary-accent md:text-reviewable-header-desktop")
+    
     meaning = None
     if grammar_point_tag:
         meaning_tag = grammar_point_tag.find_next('h2')
@@ -167,6 +169,7 @@ def extract_grammar_info(name, html):
         if meaning_tag:
             # Extract and print the text content of the <h2>
             meaning = meaning_tag.get_text(strip=True)
+
     if meaning is None:
         raise ValueError(f"Could find meaning for grammar point '{grammar_point}'")
     grammar_point_tag.decompose()
@@ -214,8 +217,8 @@ def extract_grammar_info(name, html):
         antonyms_items = antonyms_list.find_all('li') if antonyms_list else []
         for item in antonyms_items:
             term = item.find('p', class_='text-left text-small font-bold text-primary-fg sm:text-body').get_text(strip=True)
-            meaning = item.find('p', class_='line-clamp-1 text-left text-detail font-bold text-secondary-fg sm:text-small').get_text(strip=True)
-            false_friends.append({"term":term, "meaning":meaning, "kind": "antonym"})
+            antonym_meaning = item.find('p', class_='line-clamp-1 text-left text-detail font-bold text-secondary-fg sm:text-small').get_text(strip=True)
+            false_friends.append({"term":term, "meaning":antonym_meaning, "kind": "antonym"})
         antonyms_section.decompose()
     
     # Find the "Synonyms" section
@@ -230,8 +233,8 @@ def extract_grammar_info(name, html):
         # Extract and print the text content of each synonym
         for item in synonyms_items:
             term = item.find('p', class_='text-left text-small font-bold text-primary-fg sm:text-body').get_text(strip=True)
-            meaning = item.find('p', class_='line-clamp-1 text-left text-detail font-bold text-secondary-fg sm:text-small').get_text(strip=True)
-            false_friends.append({"term":term, "meaning":meaning, "kind": "synonym"})
+            synonym_meaning = item.find('p', class_='line-clamp-1 text-left text-detail font-bold text-secondary-fg sm:text-small').get_text(strip=True)
+            false_friends.append({"term":term, "meaning":synonym_meaning, "kind": "synonym"})
         synonyms_section.decompose()
 
     # Remove some unused sections

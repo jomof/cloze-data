@@ -1,4 +1,5 @@
 load("@rules_python//python:defs.bzl", "py_binary", "py_library")
+load("//file_rules:file_rules.bzl", "write_file_list")
 load("//python_rules:python_build.bzl", "py_build_tool", "py_build_tool_stream")
 
 py_build_tool_stream(
@@ -8,7 +9,7 @@ py_build_tool_stream(
 )
 
 py_build_tool_stream(
-    name = "bs4-stripped-all",
+    name = "create-bs4-stripped-all",
     srcs = ["//resources/original/bunpro:bunpro-all"],
     tool = ":bs4-strip",
 )
@@ -21,8 +22,8 @@ py_build_tool_stream(
 )
 
 py_build_tool_stream(
-    name = "extracted-yaml-all",
-    srcs = [":bs4-stripped-all"],
+    name = "create-extracted-yaml-all",
+    srcs = [":create-bs4-stripped-all"],
     extension = ".yaml",
     tool = ":extract-yaml",
 )
@@ -34,25 +35,44 @@ py_build_tool_stream(
     tool = ":fixup-bunpro-grammar",
 )
 
-
 py_build_tool_stream(
-    name = "bunpro-fixed-yaml-all",
-    srcs = [":extracted-yaml-all"],
+    name = "create-bunpro-fixed-yaml-all",
+    srcs = [":create-extracted-yaml-all"],
     data = ["bunpro-grammar-fixes.yaml"],
     tool = ":fixup-bunpro-grammar",
 )
 
+filegroup(
+    name = "bunpro-fixed-yaml-all",
+    srcs = glob(["files/bunpro-fixed-yaml-all/**"]),
+)
 
+write_file_list(
+    name = "bunpro-fixed-yaml-all-list",
+    srcs = [":bunpro-fixed-yaml-all"],
+    out = "bunpro-fixed-yaml-all-list.txt",
+)
 
-# py_build_tool(
-#     name = "merge-bunpro-dojg",
-#     outs = ["xxx.txt"],
-#     ins = [
-#         ":bunpro-fixed-yaml-all",
-#         "//resources/original/dojg:dojg-all",
-#     ],
-#     main = ":merge-grammars",
-# )
+write_file_list(
+    name = "dojg-yaml-list",
+    srcs = ["//resources/original/dojg:dojg-all"],
+    out = "dojg-yaml-list.txt",
+)
+
+py_build_tool(
+    name = "merge-bunpro-dojg",
+    outs = ["xxx.yaml"],
+    out_dirs = ["merged-grammars"],
+    ins = [
+        "bunpro-fixed-yaml-all-list.txt",
+        "dojg-yaml-list.txt",
+    ],
+    main = ":merge-grammars",
+    deps = [
+        ":bunpro-fixed-yaml-all",
+        "//resources/original/dojg:dojg-all",
+    ],
+)
 
 py_build_tool(
     name = "lint-bunpro",
@@ -129,6 +149,13 @@ py_binary(
         ":grammar",
         "@pip//pyyaml",
     ],
+)
+
+py_binary(
+    name = "merge-grammars",
+    srcs = ["merge-grammars.py"],
+    visibility = ["//:__subpackages__"],
+    deps = ["@pip//pyyaml"],
 )
 
 py_binary(
