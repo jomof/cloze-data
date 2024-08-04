@@ -34,6 +34,7 @@ py_build_tool_stream(
     tool = ":fixup-bunpro-grammar",
 )
 
+
 py_build_tool_stream(
     name = "bunpro-fixed-yaml-all",
     srcs = [":extracted-yaml-all"],
@@ -41,16 +42,17 @@ py_build_tool_stream(
     tool = ":fixup-bunpro-grammar",
 )
 
-py_build_tool(
-    name = "merge-bunpro-dojg",
-    outs = ["xxx.txt"],
-    ins = [
-        ":bunpro-fixed-yaml-all",
-        "--",
-        "//resources/original/dojg:dojg-all",
-    ],
-    main = ":merge-grammars",
-)
+
+
+# py_build_tool(
+#     name = "merge-bunpro-dojg",
+#     outs = ["xxx.txt"],
+#     ins = [
+#         ":bunpro-fixed-yaml-all",
+#         "//resources/original/dojg:dojg-all",
+#     ],
+#     main = ":merge-grammars",
+# )
 
 py_build_tool(
     name = "lint-bunpro",
