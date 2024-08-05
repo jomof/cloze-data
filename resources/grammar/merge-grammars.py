@@ -3,10 +3,9 @@ import yaml
 from dumpyaml import dump_yaml_file
 
 
-#   merged_count: 211
-#   dojg_only_count: 404
-#   bunpro_only_count: 716
-
+#   merged_count: 230
+#   dojg_only_count: 385
+#   bunpro_only_count: 696
 grammar_point_name_translations = {
     "べからず・べからざる": "べからず",
     "られる②": "れる・られる (Potential)",
@@ -19,6 +18,58 @@ grammar_point_name_translations = {
     "終わる・おわる": "おわる",
     "難い・にくい": "にくい",
     "易い・やすい": "やすい",
+    "に違いない・にちがいない": "に違いない",
+    "ものか": "ものか (definitely not)",
+    "ものか①": "ものか (definitely not)",
+    "ものか②": "ものか (wish)",
+    "に関して・関する": "に関する・に関して",
+    "下さい・ください": "てください",
+    "願う・願います": "お～願う",
+    "なんて②": "なんか・なんて",
+    "なんて①": "なんて (what)",
+    "しか": "しか〜ない",
+    "Number + しか〜ない": "しか〜ない",
+    "しまう": "てしまう・ちゃう",
+    "(の)上で": "上で",
+    "(の)代わりに": "代わりに",
+    "あげく(に)": "あげく",
+    "ある①": "ある (to be)",
+    "ある②": "てある",
+    "で": "で (for)",
+    "で①": "で (at)",
+    "で②": "で (by)",
+    "で③": "で (because)",
+    "で④": "で (by time)",
+    "ところだった ①": "ところだった (on the verge of)",
+    "ところだった ②": "ところだった (in the middle of)",
+    "は言うまでもない ①": "は言うまでもない",
+    "は言うまでもなく": "は言うまでもない",
+    "くらい ①": "くらい (about)",
+    "くらい ②": "くらい (to the extent)",
+    "くらい": "くらい (to the extent)",
+    "ずっと ①": "ずっと (continuously)",
+    "ずっと ②": "ずっと (by far)",
+    "あげる①": "あげる (give)",
+    "あげる②": "あげる (do favor)",
+    "わ②": "わ",
+    "～わ～わ": "わ〜わ",
+    "～やら～やら": "やら～やら",
+    "風に": "風",
+    "際(に)": "際に",
+    "限りだ": "Adj限りだ",
+    "限り②": "限り (only until)",
+    "間・あいだ(に)": "の間に",
+    "過ぎる・すぎる": "すぎる",
+    "通り(に)": "とおり",
+    "途端(に)": "たとたんに",
+    "言うまでもない ②": "言うまでもない",
+    "見える・みえる": "見える",
+    "だに": "Verb + だに",
+    "られる①": "Causative-Passive",
+    "も②": "も (as many as)",
+    "Number + も": "も (as many as)",
+    "みせる": "Verb[て] + みせる",
+    "のだ": "〜んです・のです",
 }
 
 def read_file_list(filename):
@@ -26,8 +77,9 @@ def read_file_list(filename):
         return [line.strip() for line in f]
 
 def read_yaml(input_file: str) -> dict:
-    with open(input_file, 'r') as file:
-        return yaml.safe_load(file)
+    with open(input_file, 'r', encoding='utf-8') as file:
+        content = file.read().replace("～", "〜")
+        return yaml.safe_load(content)
 
 def apply_translations(yaml_list, translations):
     for item in yaml_list:
@@ -79,7 +131,7 @@ def merge_lists(list_one, list_two, list_name_one='one', list_name_two='two'):
     for item in list_two:
         grammar_point = item['grammar_point']
         if grammar_point not in merged_dict:
-            merged_dict[grammar_point] = {'grammar_point': grammar_point, list_name_one: None, list_name_two: item}
+             merged_dict[grammar_point] = {'grammar_point': grammar_point, list_name_one: None, list_name_two: item}
         else:
             merged_dict[grammar_point][list_name_two] = item
 
@@ -110,6 +162,17 @@ def generate_statistics(merged_list, list_name_one, list_name_two):
         'bunpro_only_count': bunpro_only_count
     }
 
+def remove_merged_grammar_points(merged_list):
+    """
+    Removes the grammar points that have both bunpro and dojg points.
+    """
+    filtered_list = [
+        item for item in merged_list 
+        if not ('bunpro' in item and item['bunpro'] and 'dojg' in item and item['dojg'])
+    ]
+    return filtered_list
+
+
 def main():
     if len(sys.argv) != 5:
         print("Usage: merge_grammars.py <bunpro_file_list> <dojg_file_list> <output_file> <output_dir>")
@@ -139,7 +202,7 @@ def main():
     # Combine statistics and merged data
     output_data = {
         'statistics': statistics,
-        'merged_data': trim_elements(merged)
+        'merged_data': remove_merged_grammar_points(trim_elements(merged))
     }
 
     with open(output_file, 'w') as f:
