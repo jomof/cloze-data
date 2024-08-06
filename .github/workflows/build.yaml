@@ -10,15 +10,14 @@ on:
 
 jobs:
   build:
-    runs-on: jomof/cloze-dev-data-image:latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Pull docker image
-      run: docker pull jomof/cloze-dev-data-image:latest
-
+    - name: Set up prereqs
+      run: ./setup.sh
 
 #    - name: Run build inside Docker container
 #      run: |
