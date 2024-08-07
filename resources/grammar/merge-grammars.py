@@ -7,6 +7,30 @@ import difflib
 #   dojg_only_count: 368
 #   bunpro_only_count: 670
 
+missing_meanings = {
+    "RelativeClause": "Modifies a noun by providing additional descriptive information about it." ,
+    "RhetoricalQuestion": "A question asked for effect, not requiring an answer, often used to express strong emotion or make a point.",
+    "VmasuasaNoun": "Treats a verb in the masu-stem form as a noun, often to describe an action or state as a concept.",
+    "お": "Honorific prefix for nouns and verbs, adds politeness and respect.",
+    "お~だ": "Polite copula, equivalent to 'desu' but often used for adjectives or states related to the listener.", 
+    "お〜する": "Humble verb form, used when the speaker performs an action for someone of higher status.",
+    "お〜になる": "Honorific verb form, used when referring to actions or states of someone of higher status.",
+    "かい": "Informal sentence ending particle, similar to 'ka' but softer and more casual, often used by males.",
+    "が (subject marker)": "Particle marking the grammatical subject of the sentence.", 
+    "ことがある (there are times)":  "Indicates that an action or event happens occasionally or sometimes.", 
+    "しい": "Suffix for i-adjectives, indicates a strong emotion or feeling.",
+    "だい": "Informal sentence ending particle, emphasizes a question or request, often used by males.",
+    "っけ": "Sentence ending particle, expresses uncertainty or seeks confirmation, 'wasn't it?', 'didn't we?'", 
+    "に": "Particle with various functions, including indicating location, time, target of action, and indirect object.",
+    "は〜が": "Sentence structure emphasizing a contrast, 'A is (topic), but B (focus)'.",
+    "は〜だ": "Basic sentence structure, identifies the topic (A) and provides information (B) about it.", 
+    "わ": "Sentence ending particle, mainly used by females, adds a soft and feminine tone, can express emphasis or emotion.",
+    "を (object marker)":  "Particle marking the direct object of a transitive verb.",
+    "を (object of an emotion)": "Indicates the object or cause of an emotion or feeling.", 
+    "を (point of departure)": "Indicates the point from which someone or something departs or separates.",
+    "君・くん": "Suffix added to names, primarily for males, expresses familiarity or a slightly informal tone." 
+}
+
 # Add a dictionary to specify forced resolutions
 forced_resolutions = {
     "(っ)たって①": "dojg", 
@@ -49,7 +73,6 @@ forced_resolutions = {
     "〜かは〜によって違う": "bunpro",
     "〜が〜なら": "dojg",
     "〜ざる": "bunpro",
-    "〜ずつ": "bunpro",
     "〜たまでだ": "bunpro",
     "〜てこそ": "bunpro",
     "〜ても〜ても": "dojg",
@@ -165,8 +188,133 @@ forced_resolutions = {
     "さも": "dojg",
     "すぐ": "dojg",
     "しい": "dojg",
+    "ずして": "dojg",
+    "せっかく": "dojg",
+    "そうかと言って": "dojg",
+    "そのもの": "dojg",
+    "そもそも(の)": "dojg",
+    "それから": "dojg",
+    "それが": "dojg",
+    "それだけ": "dojg",
+    "それでは": "dojg",
+    "それと": "dojg",
+    "それどころか": "dojg",
+    "それなりに・の": "dojg",
+    "それは": "dojg",
+    "それも": "dojg",
+    "たかが": "dojg",
+    "ただ": "dojg",
+    "ただの": "dojg",
+    "だい": "dojg",
+    "だからと言って": "dojg",
+    "だが": "dojg",
+    "する (cost)": "dojg",
+    "する (have)": "dojg",
+    "要る・いる (need)": "dojg",
+    "見るからに": "dojg",
+    "言ってみれば": "dojg",
+    "言わば": "dojg",
+    "限り (only until)": "dojg",
+    "そうになる": "dojg",
+    "願う・願います": "dojg",
+    "面": "dojg",
+    "限り (only until)": "dojg",
+    "行く・いく (continue)": "dojg",
+    "行く・いく (go)" : "dojg",
+    "自分・じぶん①": "dojg",
+    "自分・じぶん②": "dojg",
+    "自体": "dojg",
+    "そこで (then)" : "dojg",
+    "そこを": "dojg",
+    "たるや": "dojg",
+    "そして": "dojg",
+    "だって (too)": "dojg",
+    "ちなみに": "dojg",
+    "って (speaking of)": "dojg",
+    "って (that)": "dojg",
+    "ついては": "dojg",
+    "てばかりはいられない": "dojg",
+    "て仕方がない": "dojg",
+    "で (because)": "dojg",
+    "で (by time)": "dojg",
+    "で (for)": "dojg",
+    "であろう": "dojg",
+    "と (thinking that)" : "dojg",
+    "とあっては": "dojg",
+    "というのに": "dojg",
+    "ほうが~より": "dojg",
+    "ましだ": "dojg",
+    "まして(や)": "dojg",
+    "と (in the manner of)": "dojg",
+    "といったところだ": "dojg",
+    "とかで": "dojg",
+    "ところから": "dojg",
+    "を (movement through space)": "dojg",
+    "を (point of departure)": "dojg",
+    "を (object of an emotion)": "dojg",
+    "ところだ (in a place where it takes ~ to get to)": "dojg",
+    "ところ": "dojg",
+    "とでも言うべき": "dojg",
+    "となる": "dojg",
+    "となると": "dojg",
+    "とは言え": "dojg",
+    "とばかりに": "dojg",
+    "ともすると": "dojg",
+    "ともなく": "dojg",
+    "と言うか": "dojg",
+    "と言うと": "dojg",
+    "ども": "dojg",
+    "とする (assume that)": "dojg",
+    "とする (feel ~)": "dojg",
+    "と言えば": "dojg",
+    "と言って": "dojg",
+    "どう": "dojg",
+    "どうか": "dojg",
+    "どうにも〜ない": "dojg",
+    "どうも": "dojg",
+    "どちらかと言うと": "dojg",
+    "ども": "dojg",
+    "どんなに~(こと)か": "dojg",
+    "なあ": "dojg",
+    "なく": "dojg",
+    "なくなる": "dojg",
+    "なしでは": "dojg",
+    "なしに": "dojg",
+    "なす": "dojg",
+    "なぜか": "dojg",
+    "ないし(は)" : "dojg",
+    "なおさら": "dojg",
+    "などと": "dojg",
+    "なまじ(っか)": "dojg",
+    "なり~なり": "dojg",
+    "なるほど": "dojg",
+    "なんて (what)": "dojg",
+    "に(も)なく": "dojg",
+    "に (at)": "dojg",
+    "に (to)": "dojg",
+    "に (by)": "dojg",
+    "に (on)": "dojg",
+    "に (to do something)": "dojg",
+    "に (in)": "dojg",
+    "に (toward)": "dojg",
+    "にとって": "dojg",
+    "になると": "dojg",
+    "によらず": "dojg",
+    "を介して・介した": "dojg",
+    "んとする": "dojg",
+    "一[Counter]として〜ない": "dojg",
+    "一つには": "dojg",
+    "一切〜ない": "dojg",
+    "にしてからが": "dojg",
 
 
+
+
+    
+
+
+
+  
 
 }
 
@@ -276,6 +424,83 @@ grammar_point_name_translations = {
     "する": "する (do)",
     "する①": "する (do)",
     "する③": "がする",
+    "する②": "する (have)",
+    "する④": "する (cost)",
+    "せいで": "せい",
+    "そうだ": "そうだ (hear that)",
+    "そうだ①": "そうだ (hear that)",
+    "そうだ②": "そう",
+    "たなり(で)": "たなり・なり",
+    "だけで(は)なく〜(も)": "だけでなく(て)〜も",
+    "だって": "だって (because)",
+    "だって①": "だって (because)",
+    "だって②": "だって (too)",
+    "要る・いる③": "要る・いる (need)",
+    "行く・いく②": "行く・いく (continue)",
+    "行く・いく①": "行く・いく (go)",
+    "聞こえる・きこえる": "聞こえる",
+    "そこで②": "そこで (then)",
+    "たらどうですか": "たらどう",
+    "って①": "って (speaking of)",
+    "って②": "って (that)",
+    "つもり": "つもりだ",
+    "でも・じゃあるまいし": "じゃあるまいし",
+    "と": "と (thinking that)",
+    "と①": "と (and)",
+    "と②": "と (with)",
+    "と③": "と (in the manner of)",
+    "と④": "と (conditional)",
+    "という": "という (called)",
+    "というのは~ことだ": "ということだ",
+    "というより(は)": "というより",
+    "ほうがいい": "たほうがいい",
+    "ところだ②": "るところだ",
+    "を": "を (object marker)",
+    "を①": "を (object marker)",
+    "を②": "を (movement through space)",
+    "を③": "を (point of departure)",
+    "を④": "を (object of an emotion)",
+    "ずつ": "〜ずつ",
+    "ところだ①": "ところだ (in a place where it takes ~ to get to)",
+    "とする①": "とする (assume that)",
+    "とする②": "とする (feel ~)",
+    "と言うのは": "というのは",
+    "ないことには": "ないことには〜ない",
+    "ないことも・はない": "ないことはない",
+    "なぜなら(ば)〜からだ": "なぜなら〜から",
+    "なお": "なお (still)",
+    "なお①": "なお (still)",
+    "なお②": "なお (additionally)",
+    "ながら(も)": "ながらも",
+    "ならでは(の)": "ならでは",
+    "ならない": "てならない",
+    "に①": "に (at)",
+    "に②": "に (to)",
+    "に③": "に (by)",
+    "に④": "に (on)",
+    "に⑤": "に (to do something)",
+    "に⑥": "に (in)",
+    "に⑦": "に (toward)",
+    "にかたくない・に難くない": "に難くない",
+    "にしろ・せよ": "にせよ・にしろ",
+    "によって・より": "によって・による",
+    "を通して": "を通じて・を通して",
+    "にいたっては": "に至っては",
+    "において・おける": "において・における",
+    "にかかわらず・に関・拘・係わらず": "にかかわらず",
+    "につれて・つれ": "につれて",
+    "によると": "によると・によれば",
+    "にわたって・わたる": "にわたって",
+    "に・ともなると": "ともなると・にもなると",
+    "に反して・反する": "に反して",
+    "に向けて・に向けた": "に向かって・に向けて",
+    "に基づいて・基づく": "にもとづいて",
+    "に当たって・当たり": "当たり",
+    "得る (うる・える)": "得る・得る",
+    "に対して・対する": "に対して",
+    "に比べると・比べて": "に比べて",
+
+
 }
 
 def read_file_list(filename):
@@ -284,9 +509,9 @@ def read_file_list(filename):
 
 def read_yaml(input_file: str, type) -> dict:
     with open(input_file, 'r', encoding='utf-8') as file:
-        content = file.read().replace("～", "〜")
+        content = file.read().replace("　", " ").replace(" ​"," ").replace("～", "〜").replace("+ ", "+").replace(" +", "+").replace("［","[").replace("］","]").replace("？", "?").replace("（", "(").replace("）",")")
         point = yaml.safe_load(content)
-        point["grammar_point"] = point["grammar_point"].replace("+ ", "+").replace(" +", "+").replace("［","[").replace("］","]")
+        
         point[f"{type}_grammar_point"] = point["grammar_point"]
         return point
 
@@ -433,7 +658,29 @@ def label_closest_matches(data):
             closest_bunpro = find_closest_match(dojg_point, bunpro_list)
             entry['dojg']['closest_bunpro'] = bunpro_points.get(closest_bunpro, "No match found")
 
+def apply_missing_meanings(merged_data, missing_meanings):
+    used_meanings = set()  # Track which meanings were used
 
+    for entry in merged_data:
+        grammar_point = entry['grammar_point']
+        if grammar_point in missing_meanings:
+            used_meanings.add(grammar_point)  # Mark the meaning as used
+            if 'dojg' in entry and entry['dojg'] is not None:
+                entry['dojg']['meaning'] = missing_meanings[grammar_point]
+            if 'bunpro' in entry and entry['bunpro'] is not None:
+                entry['bunpro']['meaning'] = missing_meanings[grammar_point]
+
+    # Check for blank meanings after applying missing meanings
+    for entry in merged_data:
+        if 'dojg' in entry and entry['dojg'] is not None and entry['dojg']['meaning'] == '':
+            raise ValueError(f"Missing meaning for grammar point: {entry['grammar_point']} (DOJG)")
+        if 'bunpro' in entry and entry['bunpro'] is not None and entry['bunpro']['meaning'] == '':
+            raise ValueError(f"Missing meaning for grammar point: {entry['grammar_point']} (Bunpro)")
+
+    # Check for unused meanings
+    unused_meanings = set(missing_meanings.keys()) - used_meanings
+    if unused_meanings:
+        raise ValueError(f"Unused missing meanings: {unused_meanings}")
 
 def main():
     if len(sys.argv) != 5:
@@ -464,6 +711,7 @@ def main():
     merged = merge_lists(bunpro_yamls, dojg_yamls, list_name_one='bunpro', list_name_two='dojg')
 
     statistics = generate_statistics(merged)
+    apply_missing_meanings(merged, missing_meanings)
 
     removed = remove_merged_grammar_points(trim_elements(merged))
     #removed = trim_elements(merged)
