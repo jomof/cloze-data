@@ -10,4 +10,7 @@ RUN pip install unidic==1.1.0
 
 RUN sudo python -m unidic download
 
+RUN git config --global user.email "jomofisher@gmail.com"
+RUN git config --global user.name "Jomo Fisher"
+
 CMD ["/google/scripts/entrypoint.sh"]
