@@ -306,15 +306,54 @@ forced_resolutions = {
     "一つには": "dojg",
     "一切〜ない": "dojg",
     "にしてからが": "dojg",
-
-
-
-
-    
-
-
-
-  
+    "に従って・従い": "dojg",
+    "の (possessive)": "dojg",
+    "の (one)": "dojg",
+    "の (that ~)": "dojg",
+    "の (it is that ~)": "dojg",
+    "のこと": "dojg",
+    "のは~のことだ": "dojg",
+    "のみ": "dojg",
+    "分": "dojg",
+    "分かる・わかる": "dojg",
+    "及び": "dojg",
+    "君・くん": "dojg",
+    "結構": "dojg",
+    "結果": "dojg",
+    "の上では": "dojg",
+    "の無さ・のなさ": "dojg",
+    "の関係で": "dojg",
+    "は〜が": "dojg",
+    "は〜だ": "dojg",
+    "はあれ": "dojg",
+    "はいいとしても": "dojg",
+    "または": "dojg",
+    "まで(のこと)だ": "dojg",
+    "まま": "dojg",
+    "も~ば": "dojg",
+    "も~も": "dojg",
+    "もしくは": "dojg",
+    "ものか (wish)": "dojg",
+    "ものではない": "dojg",
+    "より (than)": "dojg",
+    "より (in ~ of)": "dojg",
+    "より・のほか(に)(は)〜ない": "dojg",
+    "ろくに~ない": "dojg",
+    "をめぐって・めぐる": "dojg",
+    "は (as for ~)": "dojg",
+    "もらう (have someone do)": "dojg",
+    "やっと": "dojg",
+    "やはり": "dojg",
+    "やら": "dojg",
+    "ようと・が": "dojg",
+    "ように (like)": "dojg",
+    "ようにも(〜ない)": "dojg",
+    "ようものなら": "dojg",
+    "んばかり(に)": "dojg",
+    "知る・しる": "dojg",
+    "やる (send)": "dojg",
+    "やる (knowing that it will cause someone trouble)": "dojg",
+    "目": "dojg",
 
 }
 
@@ -364,7 +403,7 @@ grammar_point_name_translations = {
     "あげる②": "てあげる",
     "わ②": "わ",
     "〜わ〜わ": "わ〜わ",
-    "〜やら〜やら": "やら～やら",
+    "〜やら〜やら": "やら〜やら",
     "風に": "風",
     "際(に)": "際に",
     "限りだ": "Adj限りだ",
@@ -499,6 +538,52 @@ grammar_point_name_translations = {
     "得る (うる・える)": "得る・得る",
     "に対して・対する": "に対して",
     "に比べると・比べて": "に比べて",
+    "に過ぎない": "にすぎない",
+    "に応じて・応じた": "に応じて",
+    "の①": "の (possessive)",
+    "の②": "の (one)",
+    "の③": "の (that ~)",
+    "の④": "の (it is that ~)",
+    "のことだから": "ことだから",
+    "のに②": "のに (in order to)",
+    "のに①": "のに (despite)",
+    "のは〜だ": "のは",
+    "出す・だす": "だす",
+    "前に・まえに": "まえに",
+    "割に(は)": "割に",
+    "は①": "は (as for ~)",
+    "はいけない": "てはいけない",
+    "はず": "はずだ",
+    "べきだ": "べき",
+    "みる": "てみる",
+    "ものなら": "ものなら (if ~ at all)",
+    "ものなら①": "ものなら (if ~ at all)",
+    "ものなら②": "ものなら (if you were to do)",
+    "もらう①": "もらう (receive)",
+    "もらう": "もらう (receive)",
+    "もらう②": "もらう (have someone do)",
+    "より①": "より (than)",
+    "より②": "より (in ~ of)",
+    "らしい": "らしい (seems)",
+    "らしい ①": "らしい (seems)",
+    "らしい ②": "らしい (typical of)",
+    "をおいてほかに(は)〜ない": "をおいてほかに〜ない",
+    "をはじめ(として)": "をはじめ",
+    "よう①": "よう (the way to)",
+    "よう②": "よう (probably)",
+    "ように①": "ように (so that)",
+    "ように": "ように (so that)",
+    "ように②": "ように (like)",
+    "ように言う": "ようにいう",
+    "一応 ②": "一応 (for the time being)",
+    "一応": "一応 (for the time being)",
+    "一応 ①": "一応 (just in case)",
+    "一方(だ)": "一方だ",
+    "一方で(は)~他方で(は)": "一方で",
+    "確かに~が": "確かに",
+    "やる①": "やる (send)",
+    "やる②": "やる (knowing that it will cause someone trouble)",
+    "や否や・やいなや": "や否や",
 
 
 }
@@ -509,7 +594,7 @@ def read_file_list(filename):
 
 def read_yaml(input_file: str, type) -> dict:
     with open(input_file, 'r', encoding='utf-8') as file:
-        content = file.read().replace("　", " ").replace(" ​"," ").replace("～", "〜").replace("+ ", "+").replace(" +", "+").replace("［","[").replace("］","]").replace("？", "?").replace("（", "(").replace("）",")")
+        content = file.read().replace("  ", " ").replace("&emsp;", " ").replace("　", " ").replace(" ​"," ").replace("～", "〜").replace("+ ", "+").replace(" +", "+").replace("［","[").replace("］","]").replace("？", "?").replace("（", "(").replace("）",")")
         point = yaml.safe_load(content)
         
         point[f"{type}_grammar_point"] = point["grammar_point"]
