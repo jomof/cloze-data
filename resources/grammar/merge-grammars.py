@@ -354,6 +354,66 @@ forced_resolutions = {
     "やる (send)": "dojg",
     "やる (knowing that it will cause someone trouble)": "dojg",
     "目": "dojg",
+    "よう (probably)": "dojg",
+    "よう (the way to)": "dojg",
+    "一方(で)": "dojg",
+    "且つ・かつ": "dojg",
+    "並びに": "dojg",
+    "今更・いまさら": "dojg",
+    "代わりに・かわりに": "dojg",
+    "以上(は)": "dojg",
+    "以外": "dojg",
+    "仮に": "dojg",
+    "但し・ただし": "dojg",
+    "何[(Number)+Counter]も": "dojg",
+    "何〜ない": "dojg",
+    "何でも": "dojg",
+    "何とか": "dojg",
+    "何も〜ない": "dojg",
+    "何ら〜ない": "dojg",
+    "何らかの": "dojg",
+    "例の": "dojg",
+    "少ない・すくない": "dojg",
+    "屋・や": "dojg",
+    "思うに": "dojg",
+    "思えば": "dojg",
+    "思われる": "dojg",
+    "思われる": "dojg",
+    "折(に)": "dojg",
+    "一番・いちばん": "dojg",
+    "様・さま": "dojg",
+    "ほしい (want something)" : "dojg",
+    "ほしい (want someone to do something)": "dojg",
+    "済む": "dojg",
+    "滅多に〜ない": "dojg",
+    "くる (come about)": "dojg",
+    "単に": "dojg",
+    "単位で": "dojg",
+    "堪らない・たまらない": "dojg",
+    "多い・おおい": "dojg",
+    "好きだ・すきだ": "dojg",
+    "如何(だ)・いかん(だ)": "dojg",
+    "如何(だ)・いかん(だ)": "dojg",
+    "呉れる・くれる (do something for someone)": "dojg",
+    "呉れる・くれる (give)": "dojg",
+    "方をする": "dojg",
+    "末(に)": "dojg",
+    "来": "dojg",
+    "毎・まい": "dojg",
+    "点(で)": "dojg",
+    "由・よし": "dojg",
+    "甲斐・かい・がい": "dojg",
+    "毎・まい": "dojg",
+    
+
+
+
+
+
+
+
+
+
 
 }
 
@@ -584,6 +644,20 @@ grammar_point_name_translations = {
     "やる①": "やる (send)",
     "やる②": "やる (knowing that it will cause someone trouble)",
     "や否や・やいなや": "や否や",
+    "一旦・いったん": "一旦",
+    "故に・ゆえに": "ゆえに",
+    "くる": "くる (come)",
+    "来る・くる①": "くる (come)",
+    "来る・くる②": "くる (come about)",
+    "上(に)": "上に",
+    "欲しい・ほしい①": "ほしい (want something)",
+    "欲しい・ほしい②": "ほしい (want someone to do something)",
+    "に加えて": "加えて",
+    "呉れる・くれる①": "呉れる・くれる (give)",
+    "呉れる・くれる②": "呉れる・くれる (do something for someone)",
+    "嫌いだ・きらいだ": "きらい",
+    "時・とき": "とき",
+    "為(に)・ため(に)": "ため(に)",
 
 
 }
@@ -594,7 +668,7 @@ def read_file_list(filename):
 
 def read_yaml(input_file: str, type) -> dict:
     with open(input_file, 'r', encoding='utf-8') as file:
-        content = file.read().replace("  ", " ").replace("&emsp;", " ").replace("　", " ").replace(" ​"," ").replace("～", "〜").replace("+ ", "+").replace(" +", "+").replace("［","[").replace("］","]").replace("？", "?").replace("（", "(").replace("）",")")
+        content = file.read().replace("’", "''") .replace("  ", " ").replace("&emsp;", " ").replace("　", " ").replace(" ​"," ").replace("～", "〜").replace("+ ", "+").replace(" +", "+").replace("［","[").replace("］","]").replace("？", "?").replace("（", "(").replace("）",")")
         point = yaml.safe_load(content)
         
         point[f"{type}_grammar_point"] = point["grammar_point"]
