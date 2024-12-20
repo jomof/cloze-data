@@ -9,7 +9,7 @@ py_build_tool_stream(
 )
 
 py_build_tool_stream(
-    name = "create-bs4-stripped-all",
+    name = "bs4-stripped-all",
     srcs = ["//resources/original/bunpro:bunpro-all"],
     tool = ":bs4-strip",
 )
@@ -22,8 +22,8 @@ py_build_tool_stream(
 )
 
 py_build_tool_stream(
-    name = "create-extracted-yaml-all",
-    srcs = [":create-bs4-stripped-all"],
+    name = "extracted-yaml-all",
+    srcs = [":bs4-stripped-all"],
     extension = ".yaml",
     tool = ":extract-yaml",
 )
@@ -37,7 +37,7 @@ py_build_tool_stream(
 
 py_build_tool_stream(
     name = "create-bunpro-fixed-yaml-all",
-    srcs = [":create-extracted-yaml-all"],
+    srcs = [":extracted-yaml-all"],
     data = ["bunpro-grammar-fixes.yaml"],
     tool = ":fixup-bunpro-grammar",
 )
