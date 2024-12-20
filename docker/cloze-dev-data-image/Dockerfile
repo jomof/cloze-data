@@ -30,6 +30,13 @@ RUN pip install google-cloud-aiplatform
 RUN pip install google-cloud-logging
 
 RUN sudo python -m unidic download
+
+RUN install -g npm@10.8.2
+RUN npm install -g @bazel/bazelisk
+RUN python -m unidic download
+
+
+
 ENV HISTFILE=/workspaces/cloze-data/.bash_history
 
 # ENV GCSFUSE_REPO=gcsfuse-'lsb_release -c -s'
