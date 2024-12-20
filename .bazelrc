@@ -7,3 +7,5 @@ fetch --google_credentials=.secrets/bazel-cache-key.json
 test --disk_cache=/tmp/.bazel_cache #--remote_cache=https://storage.googleapis.com/cloze-data-bazel-cache
 test --google_credentials=.secrets/bazel-cache-key.json
 test --cache_test_results=auto
+startup --host_jvm_args=-Xmx4g
+startup --host_jvm_args=-Xms512m
