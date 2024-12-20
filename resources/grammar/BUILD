@@ -101,7 +101,7 @@ py_binary(
     visibility = ["//:__subpackages__"],
     deps = [
         ":grammar",
-        "@pip//google_generativeai",
+        "@pip//google_genai",
         "@pip//pyyaml",
     ],
 )

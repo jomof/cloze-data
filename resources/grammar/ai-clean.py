@@ -5,14 +5,15 @@ import yaml
 import json
 import os
 from dumpyaml import dump_yaml
-from google.generativeai.types import HarmCategory, HarmBlockThreshold
-import google.generativeai as genai
+#from google.generativeai.types import HarmCategory, HarmBlockThreshold
+from google import genai
+from google.genai import types
 
-genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+# genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
 PROJECT_ID = "jomof-sandbox"  # @param {type:"string"}
 LOCATION = "us-west1"  # @param {type:"string"}
-MODEL_ID = "gemini-1.5-pro-exp-0801"  # @param {type:"string"}
+MODEL_ID = "gemini-1.5-pro-002"  # @param {type:"string"}
 
 def ai_clean(data, file):
     data = json.dumps(yaml.safe_load(data), indent=2, ensure_ascii=False)
@@ -26,6 +27,7 @@ BEGIN_GRAMMAR_POINT_JSON
 Please clean it up and give me just the the json content as an answer. Don't wrap in ```json``` or anything like that.
 - This JSON will eventually be converted to YAML. Please avoid characters that need escaping in YAML.
 - Don't change the content of "grammar_point" field.
+- Don't forget to escape double-quotes(").
 - "writeup:" should be factually correct and well-formatted. Keep in mind that any formatting needs to follow json escaping rules.
 - "writeup:" should not quote the grammar point name. Don't quote japanese fragments like "なさい" or "なくてもいい".
 - "writeup:" should use markdown-style formatting. For example, use **bold** for emphasis.
@@ -47,67 +49,112 @@ Please clean it up and give me just the the json content as an answer. Don't wra
 - If appropriate, add a "post_false_friends_writeup" field after "false_friends". This section should generally discuss how to avoid confusion between the main grammar point and the false friends. Don't mention the term "false friends" in this section.
 - You may correct "details", but don't add new details.
 """
-
-   # Create the model
-    generation_config = {
-        "temperature": 1,
-        "top_p": 0.95,
-        "top_k": 64,
-        "max_output_tokens": 8192,
-        "response_mime_type": "text/plain",
-    }
-
-    # Set safety settings
-    safety_settings = {
-        HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-        HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-        HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-        HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-    }
-
-
-    model = genai.GenerativeModel(
-        model_name=MODEL_ID,
-        generation_config=generation_config,
-        safety_settings=safety_settings
-        # See https://ai.google.dev/gemini-api/docs/safety-settings
+    client = genai.Client(
+        vertexai=True,
+        project="jomof-sandbox",
+        location="us-central1"
     )
 
-    chat_session = model.start_chat()
+
+    model = "gemini-2.0-flash-exp"
+    contents = [
+        types.Content(
+        role="user",
+        parts=[
+            types.Part.from_text(prompt)
+        ]
+        )
+    ]
+    generate_content_config = types.GenerateContentConfig(
+        temperature = 1,
+        top_p = 0.95,
+        max_output_tokens = 8192,
+        response_modalities = ["TEXT"],
+        safety_settings = [types.SafetySetting(
+        category="HARM_CATEGORY_HATE_SPEECH",
+        threshold="OFF"
+        ),types.SafetySetting(
+        category="HARM_CATEGORY_DANGEROUS_CONTENT",
+        threshold="OFF"
+        ),types.SafetySetting(
+        category="HARM_CATEGORY_SEXUALLY_EXPLICIT",
+        threshold="OFF"
+        ),types.SafetySetting(
+        category="HARM_CATEGORY_HARASSMENT",
+        threshold="OFF"
+        )],
+    )
+
+    result = ""
+    for chunk in client.models.generate_content_stream(
+        model = model,
+        contents = contents,
+        config = generate_content_config,
+        ):
+        result += chunk.text
+    return result.removeprefix("```json").removesuffix("\n").removesuffix("```")
+
+#    # Create the model
+#     generation_config = {
+#         "temperature": 1,
+#         "top_p": 0.95,
+#         "top_k": 64,
+#         "max_output_tokens": 8192,
+#         "response_mime_type": "text/plain",
+#     }
+
+#     # Set safety settings
+#     safety_settings = {
+#         HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+#         HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+#         HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+#         HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+#     }
 
 
-    # Set contents to send to the model
-    contents = [prompt]
+#     model = genai.GenerativeModel(
+#         model_name=MODEL_ID,
+#         generation_config=generation_config,
+#         safety_settings=safety_settings
+#         # See https://ai.google.dev/gemini-api/docs/safety-settings
+#     )
 
-    # Prompt the model to generate content
-    N = 3
-    error = ""
-    for i in range(N):
-        error += f"Attempt {i+1}/{N}\n"
-        try:
-            response = chat_session.send_message(
-                contents
-            )
-            error += f"  Before checking response\n"
-            if not response or not response.text: continue
-            error += f"  Before readback\n"
-            readback = json.loads(response.text)
-            error += f"  Before yaml dump\n"
-            result = dump_yaml(readback)
-            error += f"  After yaml dump\n"
-            return result
-        except Exception as e:
-            error += f"PROBLEM WITH RESPONSE: {e}\n"
-            if i == N - 1:
-                raise e
-            time.sleep(15)
-    return error + prompt
+#     chat_session = model.start_chat()
+
+
+#     # Set contents to send to the model
+#     contents = [prompt]
+
+#     # Prompt the model to generate content
+#     N = 3
+#     error = ""
+#     for i in range(N):
+#         error += f"Attempt {i+1}/{N}\n"
+#         try:
+#             response = chat_session.send_message(
+#                 contents
+#             )
+#             error += f"  Before checking response\n"
+#             if not response or not response.text: continue
+#             error += f"  Before readback\n"
+#             readback = json.loads(response.text)
+#             error += f"  Before yaml dump\n"
+#             result = dump_yaml(readback)
+#             error += f"  After yaml dump\n"
+#             return result
+#         except Exception as e:
+#             error += f"PROBLEM WITH RESPONSE: {e}\n"
+#             if i == N - 1:
+#                 raise e
+#             time.sleep(15)
+   # return error + prompt
 
 def main(input_file, output_file):
     try:
         with open(input_file, 'r', encoding='utf-8') as file:
             data = file.read()
-
+        print(f"IN:  {input_file}")
+        print(f"OUT: {output_file}")
         result = ai_clean(data, output_file)
 
         with open(output_file, 'w', encoding='utf-8') as file:
