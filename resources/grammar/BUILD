@@ -2,8 +2,6 @@ load("@rules_python//python:defs.bzl", "py_binary", "py_library")
 load("//file_rules:file_rules.bzl", "write_file_list")
 load("//python_rules:python_build.bzl", "py_build_tool", "py_build_tool_stream")
 
-
-
 py_build_tool_stream(
     name = "bs4-stripped-sample",
     srcs = ["//resources/original/bunpro:bunpro-sample"],

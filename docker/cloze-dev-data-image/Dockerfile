@@ -25,9 +25,9 @@ RUN npm install -g @bazel/ibazel
 RUN pip install mecab-python3==1.0.9
 RUN pip install unidic==1.1.0
 
-
 RUN pip install google-cloud-aiplatform
 RUN pip install google-cloud-logging
+RUN pip install flask
 
 RUN sudo python -m unidic download
 
