@@ -306,4 +306,6 @@ if __name__ == '__main__':
     else:
         input_file = sys.argv[1]
         output_file = sys.argv[2]
+        # print(f"IN:  {input_file}")
+        # print(f"OUT: {output_file}")
         main(input_file, output_file)

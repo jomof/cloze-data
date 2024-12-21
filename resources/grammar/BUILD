@@ -2,6 +2,8 @@ load("@rules_python//python:defs.bzl", "py_binary", "py_library")
 load("//file_rules:file_rules.bzl", "write_file_list")
 load("//python_rules:python_build.bzl", "py_build_tool", "py_build_tool_stream")
 
+
+
 py_build_tool_stream(
     name = "bs4-stripped-sample",
     srcs = ["//resources/original/bunpro:bunpro-sample"],
@@ -92,7 +94,15 @@ py_build_tool_stream(
     name = "yaml-cleaned-sample",
     srcs = [":ai-cleaned-sample"],
     extension = ".yaml",
-    tool = ":yaml-clean",
+    tool = ":yaml-clean"
+)
+
+sh_binary(
+    name = "publish-samples",
+    srcs = ["publish-processed.sh"],
+    data = [":yaml-cleaned-sample"],
+    args = ["/workspaces/cloze-data/resources/processed/samples/yaml-cleaned-sample $(locations :yaml-cleaned-sample)"],  
+    visibility = ["//visibility:public"],
 )
 
 py_binary(
@@ -102,6 +112,9 @@ py_binary(
     deps = [
         ":grammar",
         "@pip//google_genai",
+        "@pip//google_cloud_aiplatform",
+        "@pip//json_repair",
+        "@pip//openai",
         "@pip//pyyaml",
     ],
 )

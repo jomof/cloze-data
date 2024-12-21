@@ -38,19 +38,38 @@ def _py_build_tool_stream_impl(ctx):
     srcs = ctx.files.srcs
     extension = ctx.attr.extension
 
+    # If 'cache' was provided, it will be in ctx.files.cache
+    # (ctx.attr.cache is the label; ctx.files.cache is the list of files)
+    cache_files = ctx.files.cache if ctx.attr.cache else []
+
     outs = []
-    for i, src in enumerate(srcs):
-        numbered_output = ctx.actions.declare_file("{}/{}-{}{}".format(ctx.label.name, ctx.label.name, i, extension))
-        outs.append(numbered_output)
-        ctx.actions.run(
-            inputs = [src] + ctx.files.data,
-            outputs = [numbered_output],
-            executable = ctx.executable.tool,
-            arguments = [src.path, numbered_output.path] + [df.path for df in ctx.files.data],
-            use_default_shell_env = True,
-            progress_message = "{} {}".format(ctx.label.name, src.basename),
-            tools = [ctx.executable.tool],  # This should be a list
+    for src in srcs:
+        base_name = src.basename
+        if "." in base_name:
+            base_name = base_name[:base_name.rindex(".")]
+
+        output_file = ctx.actions.declare_file(
+            "{}/{}{}".format(ctx.label.name, base_name, extension)
         )
+        outs.append(output_file)
+
+        # Add cache_files to 'inputs' so Bazel knows they’re dependencies
+        # Pass their paths in 'arguments' if your script needs them
+        ctx.actions.run(
+            inputs = [src] + ctx.files.data + cache_files,
+            outputs = [output_file],
+            executable = ctx.executable.tool,
+            arguments = [
+                src.path,
+                output_file.path
+            ]
+            + [df.path for df in ctx.files.data]
+            + [cf.path for cf in cache_files],  # pass cache file paths
+            use_default_shell_env = True,
+            progress_message = "{} processing {}".format(ctx.label.name, src.basename),
+            tools = [ctx.executable.tool],
+        )
+
     return [DefaultInfo(files = depset(outs))]
 
 py_build_tool_stream = rule(
@@ -67,6 +86,10 @@ py_build_tool_stream = rule(
         "data": attr.label_list(
             allow_files = True,
             default = [],
+        ),
+        "cache": attr.label(
+            allow_files = True,
+            default = None,
         ),
     },
 )
