@@ -211,7 +211,6 @@ def main(input_file, output_file):
     # try:
         # print(f"IN:  {input_file}")
         # print(f"OUT: {output_file}")
-        print(f"CACHE: {cache}")
         with open(input_file, 'r', encoding='utf-8') as file:
             data = file.read()
         result = ai_clean(data, f"{output_file}")
