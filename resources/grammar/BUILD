@@ -102,6 +102,7 @@ py_build_tool_stream(
     tool = ":yaml-clean"
 )
 
+# bazel run --jobs=2 //resources/grammar:publish-samples
 sh_binary(
     name = "publish-samples",
     srcs = ["publish-processed.sh"],
