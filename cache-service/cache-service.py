@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 from flask import Flask, request, jsonify
 import os
-import io
-import json
-import time
 import zipfile
 
 app = Flask(__name__)
@@ -32,12 +29,13 @@ def get_value(key):
     # Touch the ZIP file to update its modification time (most recently accessed).
     os.utime(zip_path, None)
 
-    # Read JSON from the password-protected zip
     try:
-        data_obj = read_json_from_zip(zip_path, ZIP_PASSWORD)
+        data_obj = read_data_from_zip(zip_path, ZIP_PASSWORD)
         if data_obj is None:
             # Means we couldn't read or decode it
             return jsonify({"value": None}), 200
+        
+        # Return the stored value (the key we read is optional for verifying correctness)
         return jsonify({"value": data_obj["value"]}), 200
     except Exception as e:
         app.logger.error(f"Error reading from {zip_path}: {e}")
@@ -48,7 +46,7 @@ def set_value(key):
     """
     POST /cache/<key>
     Expects a JSON body with {"value": ...}.
-    Stores the value in a password-protected ZIP (pretty-printed JSON).
+    Stores the value in a password-protected ZIP with separate key.txt/value.txt files.
     Then performs garbage collection to keep only the most recently accessed N results.
     """
     zip_path = os.path.join(CACHE_DIR, f"{key}.zip")
@@ -57,12 +55,9 @@ def set_value(key):
     if not payload or "value" not in payload:
         return jsonify({"error": "Missing 'value' in JSON payload"}), 400
 
-    # Create data structure to store
-    data = {"value": payload["value"]}
-
-    # Write data to a ZIP
+    # Write data into the ZIP
     try:
-        write_json_to_zip(zip_path, data, ZIP_PASSWORD)
+        write_data_to_zip(zip_path, key, payload["value"], ZIP_PASSWORD)
         # Touch the zip file
         os.utime(zip_path, None)
     except Exception as e:
@@ -74,88 +69,48 @@ def set_value(key):
 
     return jsonify({"success": True}), 200
 
-def write_json_to_zip(zip_path, data, password):
+def write_data_to_zip(zip_path, key_str, value_str, password):
     """
-    Writes `data` (a Python dict) as pretty-printed JSON to `zip_path`,
-    protected by the given plaintext `password`.
-    Overwrites any existing zip file at that path.
+    Stores the given key and value as two separate text files (key.txt, value.txt)
+    inside the ZIP at `zip_path`. Overwrites any existing file at that path.
     """
-    # Convert Python dict to a pretty-printed JSON string
-    json_str = json.dumps(data, indent=4)
-
-    # We store the JSON inside the ZIP with a fixed internal name, e.g. "data.json".
-    internal_json_name = "data.json"
-
-    # Create the ZIP file with password
-    # Note: Standard library zip encryption is ZipCrypto, not very secure.
     with zipfile.ZipFile(zip_path, 'w', compression=zipfile.ZIP_DEFLATED) as zf:
-        # ZipFile in Python 3 does not support setting the password at write-time
-        # for each file (like older 2.x could). Instead, we rely on zf.setpassword(...)
-        # but that only works for reading in the stdlib. 
-        #
-        # For writing a password-protected file, 
-        # you typically need a 3rd-party library like pyminizip or pyzipper
-        # if you want truly to set the password. 
-        #
-        # That said, the standard library does have partial support for password
-        # if you do something like this:
-        info = zipfile.ZipInfo(internal_json_name)
-        info.compress_type = zipfile.ZIP_DEFLATED
+        # For demonstration: writing files without real password-based encryption.
+        # Standard library doesn't fully support password protection for writing.
+        zf.writestr("key.txt", key_str)
+        zf.writestr("value.txt", value_str)
 
-        # "ZipFile.writestr(info, json_str, compress_type=...)" can't take a password.
-        # So by default, this might not truly encrypt without a 3rd party.
-        # We'll do it anyway to illustrate the concept:
-        zf.writestr(info, json_str)
-
-    # If you truly need password-based encryption, consider using pyminizip or pyzipper.
-    #
-    # Example with pyminizip (not in standard library):
-    #    import pyminizip
-    #    pyminizip.compress_multiple([tmp_json_file], [], zip_path, password.decode(), 5)
-    #
-    # or with pyzipper:
-    #    with pyzipper.AESZipFile(zip_path, 'w', compression=pyzipper.ZIP_DEFLATED, encryption=pyzipper.WZ_AES) as zf:
-    #        zf.setpassword(password)
-    #        zf.writestr("data.json", json_str)
-
-def read_json_from_zip(zip_path, password):
+def read_data_from_zip(zip_path, password):
     """
-    Reads a password-protected ZIP at `zip_path` containing a single file "data.json".
-    Returns a Python dictionary loaded from that JSON, or None if there's an error.
+    Reads key.txt and value.txt from the ZIP and returns a dict {"key": ..., "value": ...}
+    or None if there's an error (e.g. files missing).
     """
-    # Standard library `zipfile` can set a password only for reading (but uses older ZipCrypto).
-    # We'll demonstrate the concept, but note it may fail if the file was not actually
-    # encrypted with a password via a library that uses the same legacy method.
     with zipfile.ZipFile(zip_path, 'r') as zf:
-        # Attempt to set the password (not guaranteed to work for all ciphers).
+        # The standard library only partially supports password for reading via ZipCrypto.
         zf.setpassword(password)
-        # Extract the file in-memory
-        with zf.open("data.json") as f:
-            # f is a file-like object
-            data_str = f.read().decode('utf-8')
-            return json.loads(data_str)
+        try:
+            key_data = zf.read("key.txt").decode("utf-8")
+            value_data = zf.read("value.txt").decode("utf-8")
+            return {"key": key_data, "value": value_data}
+        except KeyError:
+            return None
 
 def garbage_collect(max_entries):
     """
     Keep only the most recent `max_entries` zip files in the cache,
     where "most recent" is determined by file modification time (mtime).
     """
-    # Get all .zip files in the cache directory
     all_files = [
         os.path.join(CACHE_DIR, f) for f in os.listdir(CACHE_DIR)
         if f.endswith('.zip')
     ]
-
-    # If we have fewer (or equal) files than max_entries, no need to delete
     if len(all_files) <= max_entries:
         return
 
-    # Sort by modification time (descending: newest first)
+    # Sort by modification time descending: newest first
     all_files.sort(key=lambda p: os.path.getmtime(p), reverse=True)
 
-    # Everything after the first max_entries is old and can be removed
     old_files = all_files[max_entries:]
-
     for old_file in old_files:
         try:
             os.remove(old_file)

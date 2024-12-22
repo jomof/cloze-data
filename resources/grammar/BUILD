@@ -36,7 +36,7 @@ py_build_tool_stream(
 )
 
 py_build_tool_stream(
-    name = "create-bunpro-fixed-yaml-all",
+    name = "fixed-yaml-all",
     srcs = [":extracted-yaml-all"],
     data = ["bunpro-grammar-fixes.yaml"],
     tool = ":fixup-bunpro-grammar",
@@ -84,6 +84,13 @@ py_build_tool(
 py_build_tool_stream(
     name = "ai-cleaned-sample",
     srcs = [":fixed-yaml-sample"],
+    extension = ".yaml",
+    tool = ":ai-clean",
+)
+
+py_build_tool_stream(
+    name = "ai-cleaned-all",
+    srcs = [":fixed-yaml-all"],
     extension = ".yaml",
     tool = ":ai-clean",
 )

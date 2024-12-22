@@ -64,6 +64,8 @@ def memoize_to_disk(func, *args):
 def ai_clean(data, file):
     data = repair_json(json.dumps(yaml.safe_load(data), indent=2, ensure_ascii=False))
     prompt = f"""
+You are a kind and funny Japanese teacher. You speak native Japanese that is natural and fluent. 
+You are explaining a Japanese grammar point to a student.
 Here is a Japanese grammar point encoded between BEGIN_GRAMMAR_POINT_JSON/BEGIN_GRAMMAR_POINT_JSON.
 BEGIN_GRAMMAR_POINT_JSON
 {data}
@@ -73,6 +75,7 @@ BEGIN_GRAMMAR_POINT_JSON
 Please clean it up and give me just the the json content as an answer. Don't wrap in ```json``` or anything like that.
 - This JSON will eventually be converted to YAML. Please avoid characters that need escaping in YAML.
 - Don't change the content of "grammar_point" field.
+- Output of japanese characters should be in kanji, hiragana, or katakana. Don't use encodings like \\u3051.
 - "writeup:" should be factually correct and well-formatted. Keep in mind that any formatting needs to follow json escaping rules.
 - "writeup:" should not quote the grammar point name. Don't quote japanese fragments like "なさい" or "なくてもいい".
 - "writeup:" should use markdown-style formatting. For example, use **bold** for emphasis.
@@ -85,9 +88,11 @@ Please clean it up and give me just the the json content as an answer. Don't wra
   If you see some questionable speech or potential hate speech, please rewrite the sentence so that it is grammatically equivalent.
 - English contractions should have a single tick (like '), not double ticks (like '').
 - Japanese in "examples" should sound smooth and natural to a native Japanese speaker. The english should be a natural translation.
+- If an example of dialog between two people, then replace it with a different sentence with no dialog. As much as possible, try to keep the lesson or point of the original example.
 - Add additional "examples" if some are needed to fully explore all of the nuances of the grammar point.
 - If appropriate, add a "post_example_writeup" field after examples. This is will be displayed after the examples and is a continuation of the writeup after the context of example sentences has been absorbed by the reader. "post_example_writeup" may refer to example sentences and example sentences may be added if it aids the "post_example_writeup". Don't refer to example sentences by number since they won't be numbered when displayed.
 - If there are proper person names in the examples, then replace them with other person names. Be sure to respect gender with the names.
+- "examples" should be roughly in order of difficulty, with easier examples first.
 - Use '\\n' rather than <br/> for line breaks.
 - If there's a "false_friends" section, this is for terms that can easily be confused with the main grammar point. 
 - If there are "false_friends", then add a "nuance" field to each that describes the functional difference between the false_friend and the main grammar point. Nuance should be terse and fairly abstract. Save more detailed comparisons for "post_false_friends_writeup" below.
