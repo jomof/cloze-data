@@ -63,3 +63,46 @@ git status
 cd cache-service/
 ./cache-service.py 
 cat /proc/4845/environ
+bazel run --jobs=2 //resources/grammar:publish-samples
+bazel clean
+git clean -xdf
+bazel run --jobs=2 //resources/grammar:publish-samples
+gcloud auth application-default login
+gcloud auth application-default set-quota-project jomof-sandbox
+bazel run --jobs=2 //resources/grammar:publish-samples
+bazel run --jobs=1 //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+pwd
+bazel run //resources/original/bunpro:more-samples
+bazel run --jobs=1 //resources/grammar:publish-samples
+C
+bazel run --jobs=1 //resources/grammar:publish-samples
+bazel clean
+bazel run --jobs=1 //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel run --jobs=1 //resources/grammar:publish-samples
+bazel run --jobs=2 //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel run --jobs=2 //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel run --jobs=2 //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel run --jobs=2 //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel run --jobs=2 //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel run --jobs=4 //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel run --jobs=4 //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel run --jobs=4 //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel run --jobs=4 //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel run --jobs=4 //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel run --jobs=4 //resources/grammar:publish-samples
+git status
+git config --global --add safe.directory /workspaces/cloze-data
+git status
+./cache-service/cache-service.py 
