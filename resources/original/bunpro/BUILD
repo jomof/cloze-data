@@ -9,3 +9,10 @@ filegroup(
     srcs = glob(["all/*"]),
     visibility = ["//visibility:public"],
 )
+
+# bazel run //resources/original/bunpro:more-samples
+sh_binary(
+    name = "more-samples",
+    srcs = ["sample.sh"],
+    visibility = ["//visibility:public"],
+)

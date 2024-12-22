@@ -4,7 +4,6 @@ import yaml
 import json
 from dumpyaml import dump_yaml
 
-
 def clean(data):
     def replace(value):
         if isinstance(value, str):
@@ -12,14 +11,31 @@ def clean(data):
             value = '\n'.join(line.strip() for line in value.split('\n'))
             if value.startswith('http'):
                 return value  # Keep URLs unchanged
-            # Replace multiple spaces with a single space and excessive newlines
-            return value.replace("  ", " ").replace("\n\n\n", "\n\n")
+
+            # Dictionary of replacements
+            replacements = {
+                "  ": " ",  # Replace double spaces with single space
+                "\n\n\n": "\n\n",  # Replace triple newlines with double newlines
+                "　": " ",  # Replace full-width space with half-width space
+                "–": "-",  # Replace en-dash with hyphen
+                "’": "'",  # Replace right single quotation mark with apostrophe
+                "：": ":",  # Replace full-width colon with standard colon
+                "？": "?"  # Replace full-width question mark with standard question mark
+            }
+
+            # Apply replacements
+            for old, new in replacements.items():
+                value = value.replace(old, new)
+
+            return value if value else None  # Treat empty strings as None
+
         elif isinstance(value, dict):
-            # Recursively clean each value in the dictionary, removing keys with None values
-            return {k: replace(v) for k, v in value.items() if v is not None}
+            # Recursively clean each value in the dictionary, removing keys with None, empty strings, or empty lists
+            return {k: replace(v) for k, v in value.items() if v not in (None, [], "")}
         elif isinstance(value, list):
-            # Recursively clean each item in the list
-            return [replace(i) for i in value]
+            # Recursively clean each item in the list, removing empty arrays
+            cleaned_list = [replace(i) for i in value]
+            return [item for item in cleaned_list if item != []]  # Filter out empty arrays
         else:
             return value  # Return the value unchanged if it's not a string, dict, or list
 
@@ -39,10 +55,8 @@ def main(input_file, output_file):
         result = clean(data)
 
         with open(output_file, 'w', encoding='utf-8') as file:
-            
             dump = dump_yaml(result)
             file.write(dump)
-        
     except Exception as e:
         print(f"Error processing file {input_file}: {e}")
 

@@ -1,139 +1,189 @@
 grammar_point: たって
 conjugations:
-  - type: plain past verb + たって
-    form: 行ったって
+  - type: dictionary form
+    form: ても
     rarity: common
-  - type: plain past i-adjective (く) + たって
-    form: 寒くたって
+  - type: polite
+    form: ても
     rarity: common
-  - type: noun/na-adjective + だって
-    form: 学生だって
+  - type: negative (plain)
+    form: なくても
     rarity: common
+  - type: negative (polite)
+    form: なくても
+    rarity: common
+  - type: past (plain)
+    form: たって
+    rarity: common
+  - type: past (polite)
+    form: たって
+    rarity: common
+  - type: negative past (plain)
+    form: なくたって
+    rarity: common
+  - type: negative past (polite)
+    form: なくたって
+    rarity: common
+  - type: te-form
+    form: て
+    rarity: common
+  - type: conditional (provisional ば-form)
+    form: ていれば
+    rarity: common
+  - type: conditional (tara-form)
+    form: たら
+    rarity: common
+  - type: volitional (plain)
+    form: ようと
+    rarity: common
+  - type: volitional (polite)
+    form: ようと
+    rarity: common
+  - type: imperative (plain)
+    form: ても
+    rarity: unnatural
+  - type: imperative (polite)
+    form: ても
+    rarity: unnatural
+  - type: potential
+    form: られても
+    rarity: uncommon
+  - type: passive
+    form: られても
+    rarity: uncommon
+  - type: causative
+    form: せても
+    rarity: uncommon
 jlpt: N2
 meaning: Even if, Even though, No matter how
 details:
   Register: Casual
   使用域: タメ語
+etymology: Although たって is widely considered a casual form of ても, it originally stems from たとて, which
+  is a combination of the auxiliary verb た, and the particle とて, which itself is thought to be an old-fashioned
+  abbreviation of と言っても. In this way, the modern abbreviation of たって still reflects the original extended
+  nuance of たと言っても 'even if (A) is said, (B)'.
 writeup: |-
-  「たって」 is a casual structure that carries the same meaning as 「ても」 or 「でも」, and can be used with a wide variety of words. Common translations include "even if (A)", "even though (A)", or "no matter how (A)".
+  たって is a casual structure that carries the same meaning as 'ても' or 'でも', and can be used with a wide variety of words. Common translations include "even if (A)", "even though (A)", or "no matter how (A)".
 
-  **How to Form It:**
-  *  **Verbs:** Attach 「たって」 to the past tense plain form. For example, 行(い)く (iku - to go) becomes 行(い)ったって (ittatte).
-  *  **い-Adjectives:** Change the final い to く and add 「たって」. For example, 寒(さむ)い (samui - cold) becomes 寒(さむ)くたって (samukutatte).
-  *  **Nouns and な-Adjectives:** Add 「だって」 after the noun or na-adjective. For example, 学生(がくせい) (gakusei - student) becomes 学生(がくせい)だって (gakuseidatte), and 暇(ひま) (hima - free time) becomes 暇(ひま)だって (himadatte).
-
-  **Etymology:** Although 「たって」 is widely considered a casual form of 「ても」, it originally stems from 「たとて」, which is a combination of the auxiliary verb 「た」 and the particle 「とて」. 「とて」 itself is thought to be an old-fashioned abbreviation of 「と言(い)っても」. In this way, the modern abbreviation of 「たって」 still reflects the original extended nuance of 「たと言っても」 "even if (A) is said, (B)".
+  **Conjugation:**
+  - For verbs, たって conjugates in the standard way that the た past-tense form usually would.
+  - For い-Adjectives, たって attaches to the conjugative く-form.
+  - For nouns and な-Adjectives, た will change to だ, and だって will then be used with the stem noun or adjective.
 examples:
-  - japanese: 彼女(かのじょ)に謝(あやま)ったってどうせ許(ゆる)してくれないだろう。
+  - japanese: 彼女に謝ったってどうせ許してくれないだろう。
     english: Even if I apologized to her, she wouldn't forgive me anyway.
-    conjugation: plain past verb + たって
+    conjugation: past (plain)
     register: casual
     setting: serious
-    speaker_gender: male
-  - japanese: 先生(せんせい)に聞(き)いたって、何(なに)も教(おし)えてくれないからインターネットで調(しら)べる。
+    nuance: The use of 「だろう」 adds a sense of conjecture or expectation, fitting a casual, serious tone.
+  - japanese: 先生に聞いたって、何も教えてくれないからインターネットで調べる。
     english: Even if I ask the teacher, they won't tell me anything, so I am going to look it up on the
       internet.
-    conjugation: plain past verb + たって
+    conjugation: past (plain)
     register: casual
     setting: informative
-    speaker_gender: female
-  - japanese: どんなに欲(ほ)しくたって、万引(まんび)きをしてはいけない。
+    nuance: The sentence explains a course of action due to an expectation of a certain outcome, appropriate
+      for a casual, informative setting.
+  - japanese: どんなに欲しくたって、万引きをしてはいけない。
     english: No matter how much you want something, you must not shoplift.
-    conjugation: plain past i-adjective (く) + たって
+    conjugation: past (plain)
     register: casual
     setting: instructional
-    speaker_age: older
-    listener_age: younger
-  - japanese: 稽古(けいこ)がどんなに楽(たの)しくなくたって、稽古中(けいこちゅう)には欠伸(あくび)をしてはならない。
+    nuance: The sentence uses the prohibitive 「てはいけない」, a common way to give instructions in a casual
+      setting.
+  - japanese: 稽古がどんなに楽しくなくたって、稽古中には欠伸をしてはならない。
     english: No matter how boring the lesson might be, you must not yawn during a lesson.
-    conjugation: plain past i-adjective (く) + たって
+    conjugation: negative past (plain)
     register: casual
     setting: instructional
-    speaker_age: older
-    listener_age: younger
-  - japanese: こんな簡単(かんたん)な問題(もんだい)馬鹿(ばか)だってわかるよ！
+    nuance: 「なくたって」 is the casual negative past form of ある, combined with たって. The use of 「てはならない」 provides
+      a stronger prohibition.
+  - japanese: こんな簡単な問題馬鹿だってわかるよ！
     english: Even an idiot can figure out a simple problem like this!
-    conjugation: noun/na-adjective + だって
+    conjugation: past (plain)
     register: casual
     setting: humorous
-    speaker_gender: male
-  - japanese: 友達(ともだち)だって喧嘩(けんか)をすることがある。
+    nuance: Using 「馬鹿だって」 emphasizes the easiness of the problem, contributing to a humorous tone with
+      the casual 「よ」 at the end.
+  - japanese: 友達だって喧嘩をすることがある。
     english: Even friends can get into fights.
-    conjugation: noun/na-adjective + だって
+    conjugation: past (plain)
     register: casual
     setting: informative
-  - japanese: 真剣(しんけん)に告白(こくはく)したって、彼女(かのじょ)は冗談(じょうだん)だと思(おも)うかもしれない。
+    nuance: A simple statement of fact using the casual particle 「だって」.
+  - japanese: 真剣に告白したって、彼女は冗談だと思うかもしれない。
     english: Even if I confess (my love) in all seriousness, she might think it is a joke.
-    conjugation: plain past verb + たって
+    conjugation: past (plain)
     register: casual
-    setting: first-date
+    setting: reflective
     speaker_gender: male
-    listener_gender: female
-  - japanese: ブロッコリーが健康(けんこう)に良(よ)くたって、もう食(た)べたくない！
+    nuance: 「かもしれない」 expresses uncertainty, fitting a reflective mood. The implication of romantic interest
+      makes this context suitable for a male speaker.
+  - japanese: ブロッコリーが健康に良くたって、もう食べたくない！
     english: Even if broccoli is good for your health, I still don't want to eat it!
-    conjugation: plain past i-adjective (く) + たって
+    conjugation: past (plain)
     register: casual
-    setting: casual slang
-    speaker_gender: female
-  - japanese: どんなに押(お)したくたって、この赤(あか)いボタンを押(お)してはダメ。
+    setting: whining
+    nuance: The use of 「もう」 and the emphatic 「！」 show a strong feeling of dislike, typical in casual conversation.
+  - japanese: どんなに押したくたって、この赤いボタンを押してはダメ。
     english: No matter how much you want to press it, you must not press the red button.
-    conjugation: plain past verb + たって
+    conjugation: past (plain)
     register: casual
     setting: commanding
-  - japanese: まさか、また宿題(しゅくだい)忘(わす)れたの？あたしの友達(ともだち)だって、いちいち写(うつ)させることができないわ。もっとしっかりしなさい！
+    nuance: 「押したくたって」 expresses desire, while 「押してはダメ」 is a casual way of saying 'you must not'.
+  - japanese: まさか、また宿題忘れたの?あたしの友達だって、いちいち写させることができないわ。もっとしっかりしなさい！
     english: No way, you forgot the homework again?! Even if you are my friend, I can't let you copy it
       every single time! Get a grip!
-    conjugation: noun/na-adjective + だって
+    conjugation: past (plain)
     register: casual
-    setting: frustrated
+    setting: annoyed
     speaker_gender: female
-    listener_gender: male
-    nuance: The speaker uses 「あたし」, a typically feminine pronoun, and the sentence-ending particle 「わ」,
-      which is also often used by females in casual speech.
-  - japanese: この試合(しあい)に勝(か)ったって、準々決勝(じゅんじゅんけっしょう)には進(すす)めないよ。
+    nuance: The use of 「あたし」, 「～わ」, and 「しなさい」 are characteristic of female casual speech, conveying annoyance
+      and giving a direct command.
+  - japanese: この試合に勝ったって、準々決勝には進めないよ。
     english: Even if I win the match I won't proceed to the quarterfinals!
-    conjugation: plain past verb + たって
+    conjugation: past (plain)
     register: casual
-    setting: serious
-    speaker_gender: male
-post_example_writeup: ''
+    setting: pessimistic
+    nuance: The use of 「よ」 at the end reinforces the statement, fitting a casual, slightly pessimistic
+      tone.
 false_friends:
   - term: ては
     meaning: If, With, Since, Because
     kind: synonym
-    nuance: Unlike 「たって」, 「ては」 often indicates a condition or reason.
+    nuance: Unlike たって, ては often indicates a condition or reason.
   - term: たところで
     meaning: Even if ~ cannot or will not, Even though ~ not
     kind: synonym
-    nuance: 「たところで」 often implies a negative or futile outcome more strongly than 「たって」.
+    nuance: たところで often implies a negative or futile outcome, similar to たって but with a stronger sense
+      of inevitability.
   - term: にしても
     meaning: Even though, Even if, Even when, Also
     kind: synonym
-    nuance: 「にしても」 can feel slightly more formal or can introduce a contrasting idea.
+    nuance: にしても can also mean 'even for' or 'considering', whereas たって strictly means 'even if'.
   - term: たとえ〜ても
     meaning: Even if…is the case, Supposing that
     kind: synonym
-    nuance: 「たとえ〜ても」 is a more formal and emphatic way of saying "even if" compared to 「たって」.
+    nuance: たとえ〜ても is a more formal and emphatic way of saying 'even if' compared to the casual たって.
   - term: どうしても
     meaning: Regardless of, No matter what
     kind: synonym
-    nuance: 「どうしても」 emphasizes the idea of something happening regardless of conditions or will, while
-      「たって」 focuses on a specific condition.
+    nuance: While similar in meaning, どうしても often implies a stronger determination or inevitability than
+      たって.
   - term: だって
     meaning: I heard/was said, Because, But, Even or also, Even if or even though
     kind: synonym
-    nuance: While 「だって」 can also mean "even if", it also has other meanings like "because" or "but", which
-      「たって」 does not.
+    nuance: だって has multiple meanings including 'because' and 'but', which たって does not.
   - term: ようが～まいが
     meaning: Even if, No matter what, Whether or not, [Emphatic], Volitional + が
     kind: synonym
-    nuance: 「ようが～まいが」 is a more emphatic way of saying "even if" or "whether or not", often expressing
-      indifference.
+    nuance: ようが～まいが expresses a stronger sense of indifference or comprehensiveness compared to たって.
   - term: ても
     meaning: Even if, Even though
     kind: synonym
-    nuance: 「ても」 is the more general and polite equivalent of the casual 「たって」.
-post_false_friends_writeup: While these expressions share the core meaning of "even if" or "no matter
-  how," they often carry slightly different nuances or levels of formality. 「ても」 is a more versatile and
-  polite alternative to 「たって」. Expressions like 「たとえ〜ても」 are more formal and emphatic. Understanding these
-  subtle differences will allow you to choose the most appropriate expression for the context.
+    nuance: たって is the casual equivalent of ても.
+post_false_friends_writeup: To avoid mixing up たって with similar expressions, remember that たって is a purely
+  casual way of saying 'even if'. Expressions like たところで and どうしても carry a stronger nuance of inevitability
+  or determination. だって has additional meanings, so context is crucial. For more formal situations, use
+  たとえ〜ても or にしても.

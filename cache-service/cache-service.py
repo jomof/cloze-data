@@ -6,11 +6,11 @@ import zipfile
 app = Flask(__name__)
 
 # Directory where our cached data will be stored as .zip
-CACHE_DIR = 'cache_data'
+CACHE_DIR = '/workspaces/cloze-data/cache_data'
 os.makedirs(CACHE_DIR, exist_ok=True)
 
 # How many results to keep
-MAX_ENTRIES = 50  # Change this to any desired value
+MAX_ENTRIES = 500  # Change this to any desired value
 
 # Plaintext password (for demonstration only, not secure)
 ZIP_PASSWORD = b"plaintext-password"
@@ -56,13 +56,15 @@ def set_value(key):
         return jsonify({"error": "Missing 'value' in JSON payload"}), 400
 
     # Write data into the ZIP
-    try:
-        write_data_to_zip(zip_path, key, payload["value"], ZIP_PASSWORD)
-        # Touch the zip file
-        os.utime(zip_path, None)
-    except Exception as e:
-        app.logger.error(f"Error writing to {zip_path}: {e}")
-        return jsonify({"error": "Could not store data"}), 500
+    for i in range(10):
+        try:
+            write_data_to_zip(zip_path, key, payload["value"], ZIP_PASSWORD)
+            # Touch the zip file
+            os.utime(zip_path, None)
+            break
+        except Exception as e:
+            app.logger.error(f"Error writing to {zip_path}: {e}")
+            return jsonify({"error": "Could not store data"}), 500
 
     # Run garbage collection
     garbage_collect(MAX_ENTRIES)
