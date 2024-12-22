@@ -212,7 +212,7 @@ That is all.
     #     print(f"Writing prompt to {file}.prompt")
     #     prompt_file.write(prompt)
     backoff = 60
-    N = 10
+    N = 30
     response = ""
     for i in range(N):
         try:
@@ -224,17 +224,11 @@ That is all.
             # response = yaml.dumps(response, ensure_ascii=False, indent=4)
             return response
         except Exception as e:
-            print("---prompt:")
-            print(prompt)
-            print("--response")
-            print(response)
-            print(f"Error: {e}")
-            if backoff > 600:
-                raise e
+            print("Sleeping to throttle requests")
             time.sleep(backoff)
-            backoff *= 2
+     
             
-    return error + prompt
+    return prompt
 
 def generate_gemini_2_0(prompt):
     client = genai.Client(
