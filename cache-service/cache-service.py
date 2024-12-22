@@ -10,7 +10,7 @@ CACHE_DIR = 'cache_data'
 os.makedirs(CACHE_DIR, exist_ok=True)
 
 # How many results to keep
-MAX_ENTRIES = 1000  # Change this to any desired value
+MAX_ENTRIES = 50  # Change this to any desired value
 
 # Plaintext password (for demonstration only, not secure)
 ZIP_PASSWORD = b"plaintext-password"

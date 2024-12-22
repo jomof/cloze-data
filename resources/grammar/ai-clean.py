@@ -63,43 +63,140 @@ def memoize_to_disk(func, *args):
 
 def ai_clean(data, file):
     data = repair_json(json.dumps(yaml.safe_load(data), indent=2, ensure_ascii=False))
-    prompt = f"""
-You are a kind and funny Japanese teacher. You speak native Japanese that is natural and fluent. 
-You are explaining a Japanese grammar point to a student.
-Here is a Japanese grammar point encoded between BEGIN_GRAMMAR_POINT_JSON/BEGIN_GRAMMAR_POINT_JSON.
-BEGIN_GRAMMAR_POINT_JSON
-{data}
-BEGIN_GRAMMAR_POINT_JSON
-"""
-    prompt += """
-Please clean it up and give me just the the json content as an answer. Don't wrap in ```json``` or anything like that.
-- This JSON will eventually be converted to YAML. Please avoid characters that need escaping in YAML.
-- Don't change the content of "grammar_point" field.
-- Output of japanese characters should be in kanji, hiragana, or katakana. Don't use encodings like \\u3051.
-- "writeup:" should be factually correct and well-formatted. Keep in mind that any formatting needs to follow json escaping rules.
-- "writeup:" should not quote the grammar point name. Don't quote japanese fragments like "なさい" or "なくてもいい".
-- "writeup:" should use markdown-style formatting. For example, use **bold** for emphasis.
-- "writeup:" text that quotes things, should use double-quotes (") rather than single-quotes (') or double single-quotes('').
-   - For example, "This is a quote." is correct, but 'This is a quote.' or ''This is a quote.'' are not.
-- Don't put examples directly in "writeup:" since there's a dedicated "examples:" field for that.
-- Rewrite "writeup:" so the content is different without losing important details. If this grammar point takes parameters from other parts of the sentence, then name those parameters X, Y, etc.
-  For example, "just because (X), it doesn't mean that (Y)". Don't create parameters if there would be only one.
-- In "examples:" if the japanese sentence has japanese-style quotes (like「 and 」), then the English sentence should have double quotes (like ").
-  If you see some questionable speech or potential hate speech, please rewrite the sentence so that it is grammatically equivalent.
-- English contractions should have a single tick (like '), not double ticks (like '').
-- Japanese in "examples" should sound smooth and natural to a native Japanese speaker. The english should be a natural translation.
-- If an example of dialog between two people, then replace it with a different sentence with no dialog. As much as possible, try to keep the lesson or point of the original example.
-- Add additional "examples" if some are needed to fully explore all of the nuances of the grammar point.
-- If appropriate, add a "post_example_writeup" field after examples. This is will be displayed after the examples and is a continuation of the writeup after the context of example sentences has been absorbed by the reader. "post_example_writeup" may refer to example sentences and example sentences may be added if it aids the "post_example_writeup". Don't refer to example sentences by number since they won't be numbered when displayed.
-- If there are proper person names in the examples, then replace them with other person names. Be sure to respect gender with the names.
-- "examples" should be roughly in order of difficulty, with easier examples first.
-- Use '\\n' rather than <br/> for line breaks.
-- If there's a "false_friends" section, this is for terms that can easily be confused with the main grammar point. 
-- If there are "false_friends", then add a "nuance" field to each that describes the functional difference between the false_friend and the main grammar point. Nuance should be terse and fairly abstract. Save more detailed comparisons for "post_false_friends_writeup" below.
-- If appropriate, add a "post_false_friends_writeup" field after "false_friends". This section should generally discuss how to avoid confusion between the main grammar point and the false friends. Don't mention the term "false friends" in this section.
-- You may correct "details", but don't add new details.
-- Don't forget to escape double-quotes(") and generally make sure the json is well formatted.
-"""
+    prompt = """
+You are a Japanese teacher. You speak native Japanese that is natural and fluent. You are explaining a Japanese grammar point to a student.
+
+A Japanese grammar point will appear between:
+BEGIN_GRAMMAR_POINT_YAML
+[input]
+BEGIN_GRAMMAR_POINT_YAML
+(Where [input] is the raw grammar point data you will be given.)
+
+When you answer, do not wrap your output in code fences or additional commentary. Provide only valid JSON, which will be converted into YAML later.
+
+Follow these rules:
+
+0. If the grammar point contains a verb or adjective, add a new array field at the top, called "conjugations". It should list all of the possible conjugations of grammar_point, including the grammar point itself. 
+   For example, if the grammar point was, then the array should be: dictionary (plain non-past): とみえる [commonly used], polite (non-past): とみえます [commonly used], negative (plain): とみえない [commonly used], negative (polite): とみえません [commonly used], past (plain): とみえた [commonly used], past (polite): とみえました [commonly used], negative past (plain): とみえなかった [commonly used], negative past (polite): とみえませんでした [commonly used], te-form: とみえて [rare in everyday speech], conditional (provisional ば-form): とみえれば [uncommon], conditional (tara-form): とみえたら [uncommon], volitional (plain): とみえよう [very rare], volitional (polite): とみえましょう [very rare], imperative (plain): とみえろ [unnatural], imperative (polite): とみえてください [unnatural], potential: とみえられる [rare], passive: とみえられる [rare], causative: とみえさせる [extremely unusual]
+   Place this array immediately after the "grammar_point" field.
+1. Do not modify the "grammar_point" text from [input]; output it exactly as provided.
+2. Avoid Unicode escape sequences like \\u3051, just emit the Unicode.
+3. If "meaning_warning" is empty or null, omit it entirely.
+4. If applicable and interesting, add an "etymology" field here that discusses the etymology of this grammar point.
+5. The "writeup" field should:
+    - Be primarily in English, supplemented by natural Japanese expressions as needed.
+    - Incorporate essential details from the input while rephrasing for clarity.
+    - Use markdown-style formatting (e.g., **important**).
+    - Omit any example sentences here; examples go in the "examples" array.
+    - Use double-quotes " for English quotes.
+    - Refrain from quoting Japanese fragments such as なさい or なくてもいい.
+    - You may include bullet points or sections like "Important Considerations" for clarity.
+    - Don't mention the meaning_warning if there is one.
+6. Provide an "examples" array with multiple entries. Each should have:
+    - Each example **must** use the grammar_point, though it may be in conjugated form.
+      - If there are other conjugated forms of the grammar point that are commonly used, then some of the example sentences **must** include those conjugated forms.
+    - "japanese": a natural-sounding Japanese sentence using this grammar point.
+    - "english": a natural-sounding English translation.
+    - "register": register of the sentence. One of: casual, formal, semi-formal, sonkeigo (respectful), kenjōgo (humble), teineigo (polite), shitashii kuchō (intimate), bijinesu nihongo (business), bungo (literary), hōgen (dialectical), surangu (slang), gun-go (military), wakamono kotoba (youth), meirei-kei no teineigo (polite imperative)
+      - Example sentences **should** exhibit a wide variety of registers.
+      - If possible, include one of the keigo registers in example sentences.
+      - If possible, include a shitashii kuchō (intimate) example
+    - "setting": setting of the sentence: One of: flirty, first-date, professional, academic, humorous, sarcastic, serious, persuasive, apologetic, informative, interrogative, storytelling, instructional, commanding, friendly, condescending, supportive, sympathetic, inspirational, intimate, negotiating, technical, legal, religious, creative, casual slang, emergency/alarm, reflective, optimistic, pessimistic, cautious, excited, melancholic
+      - ** Don't invent new settings** Just use the list provided.
+      - Example sentences should exhibit a wide variety of settings.
+      - There should always be at least one flirty sentence. This teaches the learner to flirt.
+      - There should always be at least one first-date sentence. This teaches the learner to date.
+    - "conjugation": If the grammar point is conjugatable, then specify which congugation is used.
+      - The content of this "conjugation" field must be taken from the top-level list of conjugations you generated earlier. Use the 'type' field.
+      - Please include example sentences with a variety of conjugations, especially the ones encountered in common usage.
+      - "conjugation" **must** be about the main grammar point and not other parts of the sentence. 
+    - "speaker_gender": (optional) gender of the speaker. One of: male, female. **Use only if this sentence would typically only be spoken by this gender**
+      - Example sentences should include at least one male and one female speaker_gender.
+    - "listener_gender": (optional) gender of the listener. One of: male, female (can omit if it doesn't matter in this sentence)
+      - Example sentences should include at least one male and one female listener_gender.
+    - "speaker_age": (optional) One of: younger, older (can omit if it doesn't matter)
+      - Example sentences should include at least one younger and one older speaker_age.
+    - "listener_age": (optional) One of: younger, older (can omit if it doesn't matter)
+      - Example sentences should include at least one younger and one older listener_age.
+    - "nuance":  Explain, in English with Japanese references to the sentence, how this sentence exhibits the interplay between the "speaker_age" vs "listener_age", "speaker_gender" vs "listener_gender", why the "register" applies.
+      - If there is a "speaker_gender", then "nuance" **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender. 
+      - Nuance **must** refer to parts of the japanese sentence in 「quotes」.
+    - "etymology": If there is something etymologically interesting in the Japanese sentence, then mention it here in English.
+        
+7. At least one example should include a flirty innuendo. It should be phrased as the speaker (male or female) flirting with the listener (female or male).
+8. At least one example should suit an early romantic or first-meeting context (without using the word "date"). It should be phrased as the speaker (male or female) flirting with the listener (female or male).
+9. If the input examples contain dialogue (A: ... B: ...), rewrite them into single-sentence statements that preserve the lesson but remove direct dialogue format.
+10. Order examples from simpler to more advanced usage.
+11. For English contractions, use a single apostrophe ' (e.g., "don't").
+12. You may include a "post_example_writeup" section after "examples" if more clarification is helpful, but don't reference examples by any numeric label.
+13. If "false_friends" are present, each entry should have:
+    - "false_friend": the term.
+    - "nuance": a concise contrast to the main grammar point (e.g., "Unlike [grammar_point], [false_friend]...").
+14. You may add a "post_false_friends_writeup" to clarify further differences between the grammar point and these similar expressions. Do not call them "false friends" in that section—just provide a short explanation of how to avoid mixing them up.
+15. You may fix minor inaccuracies in "details", but do not invent new details.
+16. Ensure the JSON is valid and properly escaped for YAML conversion. Avoid additional formatting or code fences.
+
+** Template of the Expected Output JSON **
+Below is a minimal template demonstrating how the final JSON structure should look. You will output something like this, without code fences:
+
+```
+{
+    "grammar_point": "...",
+    "conjugations": [
+        { type: "dictionary form",
+          form: "とみえる",
+          rarity: "common"
+        },
+        // etc.
+    ],
+    "jlpt": "...",
+    "meaning": "...", // English
+    "meaning_warning": "...", // English
+    "details": {
+        "Register": "...",
+        // etc
+    },
+    "writeup": "...", // English
+    "examples": [
+        {
+            "japanese": "...", // Japanese
+            "english": "...", // English
+            "conjugation": "dictionary form", // From top-level conjugation 'types'
+            "register": "...", // Required
+            "setting": "...", // Required
+            "speaker_gender": "...", // Only if required for the sentence
+            "listener_gender": "...", // Only if required for the sentence
+            "speaker_age": "...", // Only if required for the sentence
+            "listener_age": "...", // Only if required for the sentence
+            "nuance": "..." // English
+        },
+        // etc
+    ],
+    "post_example_writeup": "", // English
+    "false_friends": [
+        {
+            "term": "...",
+            "meaning": "...",
+            "kind": "...",
+            "nuance": "" // English
+        },
+        // etc
+    ],
+    "post_false_friends_writeup": "..." // English
+}```
+    - If "meaning_warning" is null or empty, you omit it entirely.
+    - The same goes for "false_friends", "post_example_writeup", and "post_false_friends_writeup" if they do not apply.
+
+BEGIN_GRAMMAR_POINT_YAML
+[input_replace]
+BEGIN_GRAMMAR_POINT_YAML
+
+Once you have the JSON content in mind, please do the following steps and make corrections as needed:
+1. Are the sections that require English as the main language actually in English? Those sections are "nuance", "meaning", "meaning_warning", "etymology".
+2. If the grammar_point is something conjugatable, like a verb, do the example sentences demonstrate the different conjugations?
+
+That is all.
+""".replace("[input_replace]", json.dumps(json.loads(repair_json(data)), ensure_ascii=False, indent=4))
 
     # Write the prompt to disk based on 'file'
     # with open(file + ".prompt", 'w', encoding='utf-8') as prompt_file:
@@ -107,22 +204,21 @@ Please clean it up and give me just the the json content as an answer. Don't wra
     #     prompt_file.write(prompt)
     backoff = 60
     N = 10
-    error = ""
+    response = ""
     for i in range(N):
-        error += f"Attempt {i+1}/{N}\n"
         try:
             result = memoize_to_disk(generate_gemini_2_0, prompt)
-            response = repair_json(result.removeprefix("```json").removesuffix("\n").removesuffix("```"))
-            error += f"  Before checking response\n"
-            # if not response or not response.text: continue
-            error += f"  Before readback\n"
-            readback = json.loads(response)
-            error += f"  Before yaml dump\n"
-            result = dump_yaml(readback)
-            error += f"  After yaml dump\n"
+            response = result.removeprefix("```json").removesuffix("\n").removesuffix("```")
+            response = repair_json(response)
+            response = json.loads(response)
+            response = json.dumps(response, ensure_ascii=False, indent=4)
+            # response = yaml.dumps(response, ensure_ascii=False, indent=4)
             return response
         except Exception as e:
-            prompt += f"\nMAKE SURE IT IS WELL FORMATTED JSON THAT CAN BE CONVERTED TO YAML!!!\nThe error from your last attempt was: {e}\n"
+            print("---prompt:")
+            print(prompt)
+            print("--response")
+            print(response)
             print(f"Error: {e}")
             if backoff > 600:
                 raise e
