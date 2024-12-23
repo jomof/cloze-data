@@ -4,62 +4,19 @@ import time
 import yaml
 import json
 import os
-from dumpyaml import dump_yaml
 from google.genai import types
 from google import genai
 
 import vertexai
-from vertexai.generative_models import GenerativeModel, SafetySetting
+from vertexai.generative_models import GenerativeModel
 from json_repair import repair_json
-import hashlib
-import requests
+from python.utils.build_cache.memoize_to_disk import memoize_to_disk
 
-#genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
 PROJECT_ID = "jomof-sandbox"  # @param {type:"string"}
 LOCATION = "us-central1"  # @param {type:"string"}
 
 
-def get_hash(func_name, *args):
-    # Use MD5 to generate a unique hash combining function name and inputs
-    combined_args = ":".join(map(str, args))
-    return hashlib.md5(f"{func_name}:{combined_args}".encode()).hexdigest()
-
-def memoize_to_disk(func, *args):
-    """
-    Memoize the result of 'func(*args)' using a local Flask caching service.
-    """
-    base_url="http://127.0.0.1:5000"
-
-    # Step 1: Create the cache key (MD5 hash).
-    hash_key = get_hash(func.__name__, *args)
-    
-    # Step 2: Attempt to retrieve the memoized result from the cache service
-    get_endpoint = f"{base_url}/cache/{hash_key}"
-    try:
-        response = requests.get(get_endpoint)
-        if response.status_code == 200:
-            data = response.json()
-            if data["value"] is not None:
-                print(f"Reading from service: {hash_key}")
-                return data["value"]
-    except requests.RequestException as e:
-        # If something goes wrong (e.g. service is down), we simply compute anew
-        print(f"Error contacting cache service: {e}")
-
-    # Step 3: Compute the result if not found in cache
-    result = func(*args)
-
-    # Step 4: Store in the cache
-    post_endpoint = f"{base_url}/cache/{hash_key}"
-    try:
-        response = requests.post(post_endpoint, json={"value": result})
-        if response.status_code != 200:
-            print(f"Warning: Could not store value in cache. Status: {response.status_code}")
-    except requests.RequestException as e:
-        print(f"Error storing value in cache: {e}")
-
-    return result
 
 def ai_clean(data, file):
     data = repair_json(json.dumps(yaml.safe_load(data), indent=2, ensure_ascii=False))
@@ -216,7 +173,7 @@ That is all.
     response = ""
     for i in range(N):
         try:
-            result = memoize_to_disk(generate_gemini_2_0, prompt)
+            result = memoize_to_disk(aigen, prompt, "gemini-2.0-flash-thinking-exp-1219")
             response = result.removeprefix("```json").removesuffix("\n").removesuffix("```")
             response = repair_json(response)
             response = json.loads(response)
@@ -229,6 +186,11 @@ That is all.
      
             
     return prompt
+
+def aigen(prompt, model):
+    if model == "gemini-2.0-flash-thinking-exp-1219": return generate_gemini_2_0(prompt)
+    if model == "gemini-1.5-flash-002": return generate_gemini_1_5(prompt)
+    raise ValueError(f"Unknown model: {model}")
 
 def generate_gemini_2_0(prompt):
     client = genai.Client(
@@ -279,7 +241,7 @@ def generate_gemini_2_0(prompt):
     return result.removeprefix("```json").removesuffix("\n").removesuffix("```")
 
 
-def generate_1_5(prompt):
+def generate_gemini_1_5(prompt):
     vertexai.init(project=PROJECT_ID, location=LOCATION)
     model = GenerativeModel(
         "gemini-1.5-flash-002",

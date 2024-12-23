@@ -115,3 +115,6 @@ ls -1 | wc -l
 du -cb --apparent-size * | grep total | awk '{print $1}'
 find . -type f -exec stat --printf="%s\n" {} + | awk '{total += $1} END {print total}'
 exit
+bazel run //python/utils/build_cache:cache-service
+bazel run //:requirements.update
+

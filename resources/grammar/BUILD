@@ -122,6 +122,7 @@ py_binary(
         "@pip//json_repair",
         "@pip//openai",
         "@pip//pyyaml",
+        "//python/utils/build_cache:memoize"
     ],
 )
 
