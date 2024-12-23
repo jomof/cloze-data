@@ -117,12 +117,11 @@ py_binary(
     visibility = ["//:__subpackages__"],
     deps = [
         ":grammar",
-        "@pip//google_genai",
-        "@pip//google_cloud_aiplatform",
+
         "@pip//json_repair",
-        "@pip//openai",
         "@pip//pyyaml",
-        "//python/utils/build_cache:memoize"
+        "//python/utils/build_cache:memoize",
+        "//python:aigen"
     ],
 )
 
