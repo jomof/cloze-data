@@ -8,10 +8,7 @@ from json_repair import repair_json
 from python.utils.build_cache.memoize_to_disk import memoize_to_disk
 from python.aigen import aigen
 
-
-
-
-def ai_clean(data, file):
+def ai_clean(data):
     data = repair_json(json.dumps(yaml.safe_load(data), indent=2, ensure_ascii=False))
     prompt = """
 You are a Japanese teacher. You speak native Japanese that is natural and fluent. You are explaining a Japanese grammar point to a student.
@@ -180,20 +177,13 @@ That is all.
             
     return prompt
 
-
 def main(input_file, output_file):
-    # try:
-        # print(f"IN:  {input_file}")
-        # print(f"OUT: {output_file}")
-        with open(input_file, 'r', encoding='utf-8') as file:
-            data = file.read()
-        result = ai_clean(data, f"{output_file}")
+    with open(input_file, 'r', encoding='utf-8') as file:
+        data = file.read()
+    result = ai_clean(data)
 
-        with open(output_file, 'w', encoding='utf-8') as file:
-            file.write(result)
-        
-    # except Exception as e:
-    #     print(f"Error processing file {input_file}: {e}")
+    with open(output_file, 'w', encoding='utf-8') as file:
+        file.write(result)
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
