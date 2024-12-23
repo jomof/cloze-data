@@ -106,3 +106,12 @@ git status
 git config --global --add safe.directory /workspaces/cloze-data
 git status
 ./cache-service/cache-service.py 
+cd resources
+cd original/bunpro/all/
+ls -1 | wc -l
+cd ..
+cd processed/samples/yaml-cleaned-sample/
+ls -1 | wc -l
+du -cb --apparent-size * | grep total | awk '{print $1}'
+find . -type f -exec stat --printf="%s\n" {} + | awk '{total += $1} END {print total}'
+exit

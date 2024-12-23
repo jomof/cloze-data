@@ -1,0 +1,705 @@
+- grammar_point: つもりだ
+  conjugations:
+    - type: plain present affirmative
+      form: つもりだ
+      rarity: common
+    - type: polite present affirmative
+      form: つもりです
+      rarity: common
+    - type: plain present negative
+      form: |-
+        つも SmartListingHelper.split_and_parse_grammar_point(grammar_point):
+        conjugations = []
+        if grammar_point_data and isinstance(grammar_point_data
+      grammar_point: |-
+        n grammar_point_data:
+        grammar_point = grammar_point_data['grammar_point']
+        if any(form in grammar_point for form in ['る'
+      い: |-
+        conjugations = self.generate_conjugations(grammar_point)
+        return conjugations
+
+        def generate_conjugations(self
+      grammar_point): |-
+        conjugations = []
+
+        # Dictionary form (plain non-past)
+        conjugations.append({
+    - type: dictionary form
+      form: grammar_point
+      rarity: commonly used
+  grammar_point.endswith('る'): |-
+    polite_form = grammar_point[:-1] + 'ます'
+    elif grammar_point.endswith('い'):
+    polite_form = grammar_point[:-1] + 'いです'
+    else:
+    polite_form = None
+    if polite_form:
+    conjugations.append({
+  type: polite (non-past)
+  form: polite_form
+  rarity: commonly used
+- |-
+  Negative plain form
+  if grammar_point.endswith('る'):
+  negative_plain = grammar_point[:-1] + 'ない'
+  elif grammar_point.endswith('い'):
+  negative_plain = grammar_point[:-1] + 'くない'
+  else:
+  negative_plain = None
+  if negative_plain:
+  conjugations.append({
+- type: negative (plain)
+  form: negative_plain
+  rarity: commonly used
+- |-
+  Negative polite form
+  if grammar_point.endswith('る'):
+  negative_polite = grammar_point[:-1] + 'ません'
+  elif grammar_point.endswith('い'):
+  negative_polite = grammar_point[:-1] + 'くありません'
+  else:
+  negative_polite = None
+  if negative_polite:
+  conjugations.append({
+- type: negative (polite)
+  form: negative_polite
+  rarity: commonly used
+- |-
+  Past plain form
+  if grammar_point.endswith('る'):
+  past_plain = grammar_point[:-1] + 'た'
+  elif grammar_point.endswith('い'):
+  past_plain = grammar_point[:-1] + 'かった'
+  else:
+  past_plain = None
+  if past_plain:
+  conjugations.append({
+- type: past (plain)
+  form: past_plain
+  rarity: commonly used
+- |-
+  Past polite form
+  if grammar_point.endswith('る'):
+  past_polite = grammar_point[:-1] + 'ました'
+  elif grammar_point.endswith('い'):
+  past_polite = grammar_point[:-1] + 'かったです'
+  else:
+  past_polite = None
+  if past_polite:
+  conjugations.append({
+- type: past (polite)
+  form: past_polite
+  rarity: commonly used
+- |-
+  Negative past plain form
+  if grammar_point.endswith('る'):
+  negative_past_plain = grammar_point[:-1] + 'なかった'
+  elif grammar_point.endswith('い'):
+  negative_past_plain = grammar_point[:-1] + 'くなかった'
+  else:
+  negative_past_plain = None
+  if negative_past_plain:
+  conjugations.append({
+- type: negative past (plain)
+  form: negative_past_plain
+  rarity: commonly used
+- |-
+  Negative past polite form
+  if grammar_point.endswith('る'):
+  negative_past_polite = grammar_point[:-1] + 'ませんでした'
+  elif grammar_point.endswith('い'):
+  negative_past_polite = grammar_point[:-1] + 'くありませんでした'
+  else:
+  negative_past_polite = None
+  if negative_past_polite:
+  conjugations.append({
+- type: negative past (polite)
+  form: negative_past_polite
+  rarity: commonly used
+- |-
+  Te-form
+  if grammar_point.endswith('る'):
+  te_form = grammar_point[:-1] + 'て'
+  elif grammar_point.endswith('く'):
+  te_form = grammar_point[:-1] + 'くて'
+  elif grammar_point.endswith('ぐ'):
+  te_form = grammar_point[:-1] + 'いで'
+  elif grammar_point.endswith('す'):
+  te_form = grammar_point[:-1] + 'して'
+  elif grammar_point.endswith('つ'):
+  te_form = grammar_point[:-1] + 'って'
+  elif grammar_point.endswith('ぬ'):
+  te_form = grammar_point[:-1] + 'んで'
+  elif grammar_point.endswith('ぶ'):
+  te_form = grammar_point[:-1] + 'んで'
+  elif grammar_point.endswith('む'):
+  te_form = grammar_point[:-1] + 'んで'
+  elif grammar_point.endswith('る'):
+  te_form = grammar_point[:-1] + 'って'
+  elif grammar_point.endswith('い'):
+  te_form = grammar_point[:-1] + 'くて'
+  else:
+  te_form = None
+  if te_form:
+  conjugations.append({
+- type: te-form
+  form: te_form
+  rarity: rare in everyday speech
+- |-
+  Conditional (provisional ば-form)
+  if grammar_point.endswith('る'):
+  conditional_ba = grammar_point[:-1] + 'れば'
+  elif grammar_point.endswith('い'):
+  conditional_ba = grammar_point[:-1] + 'ければ'
+  else:
+  conditional_ba = None
+  if conditional_ba:
+  conjugations.append({
+- type: conditional (provisional ば-form)
+  form: conditional_ba
+  rarity: uncommon
+- |-
+  Conditional (tara-form)
+  if grammar_point.endswith('る'):
+  conditional_tara = grammar_point[:-1] + 'たら'
+  elif grammar_point.endswith('い'):
+  conditional_tara = grammar_point[:-1] + 'かったら'
+  else:
+  conditional_tara = None
+  if conditional_tara:
+  conjugations.append({
+- type: conditional (tara-form)
+  form: conditional_tara
+  rarity: uncommon
+- |-
+  Volitional (plain)
+  if grammar_point.endswith('る'):
+  volitional_plain = grammar_point[:-1] + 'よう'
+  else:
+  volitional_plain = None
+  if volitional_plain:
+  conjugations.append({
+- type: volitional (plain)
+  form: volitional_plain
+  rarity: very rare
+- |-
+  Volitional (polite)
+  if grammar_point.endswith('る'):
+  volitional_polite = grammar_point[:-1] + 'ましょう'
+  else:
+  volitional_polite = None
+  if volitional_polite:
+  conjugations.append({
+- type: volitional (polite)
+  form: volitional_polite
+  rarity: very rare
+- |-
+  Imperative (plain)
+  if grammar_point.endswith('る'):
+  imperative_plain = grammar_point[:-1] + 'ろ'
+  else:
+  imperative_plain = None
+  if imperative_plain:
+  conjugations.append({
+- type: imperative (plain)
+  form: imperative_plain
+  rarity: unnatural
+- |-
+  Imperative (polite)
+  if grammar_point.endswith('る'):
+  imperative_polite = grammar_point[:-1] + 'てください'
+  else:
+  imperative_polite = None
+  if imperative_polite:
+  conjugations.append({
+- type: imperative (polite)
+  form: imperative_polite
+  rarity: unnatural
+- |-
+  Potential
+  if grammar_point.endswith('る'):
+  potential = grammar_point[:-1] + 'られる'
+  elif grammar_point.endswith('う'):
+  potential = grammar_point[:-1] + 'える'
+  else:
+  potential = None
+  if potential:
+  conjugations.append({
+- type: potential
+  form: potential
+  rarity: rare
+- |-
+  Passive
+  if grammar_point.endswith('る'):
+  passive = grammar_point[:-1] + 'られる'
+  elif grammar_point.endswith('う'):
+  passive = grammar_point[:-1] + 'れる'
+  else:
+  passive = None
+  if passive:
+  conjugations.append({
+- type: passive
+  form: passive
+  rarity: rare
+- |-
+  Causative
+  if grammar_point.endswith('る'):
+  causative = grammar_point[:-1] + 'させる'
+  elif grammar_point.endswith('う'):
+  causative = grammar_point[:-1] + 'せる'
+  else:
+  causative = None
+  if causative:
+  conjugations.append({
+- type: causative
+  form: causative
+  rarity: extremely unusual
+- 'return sorted(conjugations, key=lambda x: ['
+- commonly used
+- uncommon
+- rare
+- very rare
+- unnatural
+- |-
+  extremely unusual"].index(x['rarity']))
+
+  def fix_example_sentence(self, example):
+  if 'A:' in example['japanese'] and 'B:' in example['japanese']:
+  parts = example['japanese'].split('B: ')
+  speaker_a = parts[0].replace('A: ', '')
+  speaker_b = parts[1]
+  example['japanese'] = f"発言者Aは「{speaker_a}」と言った後、発言者Bは「{speaker_b}」と返した。"
+  example['english'] = f"Speaker A said, "{example['english'].split('B: ')[0].replace('A: ', '')}" and then Speaker B replied, "{example['english'].split('B: ')[1]}"
+- |-
+  return example
+
+  def process_grammar_point(self, grammar_point_data):
+  if not grammar_point_data:
+  return {}
+
+  grammar_point_data['conjugations'] = self.split_and_parse_grammar_point(grammar_point_data)
+
+  if 'examples' in grammar_point_data and isinstance(grammar_point_data['examples'], list):
+  grammar_point_data['examples'] = [self.fix_example_sentence(example) for example in grammar_point_data['examples']]
+
+  return grammar_point_data
+
+  class BunproGrammarExplanation:
+  def __init__(self):
+  self.grammar_parser = BunproGrammarParser()
+
+  def generate_explanation(self, raw_grammar_point_data):
+  grammar_point_data = self.grammar_parser.process_grammar_point(raw_grammar_point_data)
+
+  if not grammar_point_data:
+  return
+- {}
+- |2-
+
+
+  grammar_point = grammar_point_data.get("grammar_point", "
+- jlpt = grammar_point_data.get(
+- jlpt
+- |-
+  )
+  meaning = grammar_point_data.get("meaning", "
+- meaning_warning = grammar_point_data.get(
+- meaning_warning
+- details = grammar_point_data.get(
+- details
+- {}
+- writeup = grammar_point_data.get(
+- writeup
+- |-
+  )
+  examples = grammar_point_data.get("examples", [])
+  url = grammar_point_data.get("url", "
+- false
+- friends = grammar_point_data.get(
+- false
+- friends
+- output_json = {
+- grammar_point
+- |-
+  grammar_point
+  }
+
+  if grammar_point_data.get(
+- conjugations
+- output_json[
+- conjugations
+- grammar_point_data[
+- conjugations
+- output_json[
+- jlpt
+- |-
+  jlpt
+  output_json[
+- meaning
+- |-
+  meaning
+  if meaning_warning:
+  output_json[
+- meaning_warning
+- |-
+  meaning_warning
+  output_json[
+- details
+- |-
+  details
+  output_json[
+- writeup
+- |-
+  writeup
+
+  processed_examples = []
+  for example in examples:
+  processed_example = {
+- 'japanese": example["japanese'
+- 'english": example["english'
+- 'register": example.get("register'
+- standard
+- 'setting": example.get("setting'
+- informative
+- if
+- conjugation
+- |-
+  in example:
+  processed_example[
+- conjugation
+- example[
+- conjugation
+- if
+- speaker_gender
+- |-
+  in example:
+  processed_example[
+- speaker_gender
+- example[
+- speaker_gender
+- if
+- listener_gender
+- |-
+  in example:
+  processed_example[
+- listener_gender
+- example[
+- listener_gender
+- if
+- speaker_age
+- |-
+  in example:
+  processed_example[
+- speaker_age
+- example[
+- speaker_age
+- if
+- listener_age
+- |-
+  in example:
+  processed_example[
+- listener_age
+- example[
+- listener_age
+- if
+- nuance
+- |-
+  in example:
+  processed_example[
+- nuance
+- example[
+- nuance
+- if
+- etymology
+- |-
+  in example:
+  processed_example[
+- etymology
+- example[
+- etymology
+- |-
+  processed_examples.append(processed_example)
+  output_json[
+- examples
+- |-
+  processed_examples
+
+  if false_friends:
+  output_json[
+- false
+- friends
+- - term: ff[
+  - term
+- meaning
+- ff[
+- meaning
+- kind
+- ff[
+- kind
+- nuance
+- |-
+  for ff in false_friends
+  ]
+
+  # Add etymology if applicable and interesting
+  if grammar_point ==
+- つもりだ
+- output_json[
+- etymology
+- The literal meaning of つもり comes from the verb 積もる, which means 'to pile up', or 'to load'.
+- |-
+  Post-example writeup for つもりだ
+  if grammar_point ==
+- つもりだ
+- output_json[
+- post_example_writeup
+- The nuance of 「つもり」 changes slightly depending on whether it's used with a positive or negative verb.
+  「～つもりだ」 generally indicates a strong intention to do something. 「～ないつもりだ」 implies a firm decision not
+  to do something, whereas 「～つもりはない」 indicates a lack of intention or plans to do something.
+- |-
+  Post-false friends writeup for つもりだ
+  if false_friends and grammar_point ==
+- つもりだ
+- output_json[
+- post_false_friends_writeup
+- While 「よていだ」, 「はずだ」, and 「〜ようと思う・〜おうと思う」 can also express future intentions, 「つもりだ」 often carries a
+  stronger sense of personal will or resolve. 「つもりで」 has a different meaning, indicating the manner or
+  mindset in which an action is performed.
+- |-
+  return json.dumps(output_json, ensure_ascii=False, indent=4)
+
+  class JapaneseTeacherBot:
+  def __init__(self):
+  self.explanation_generator = BunproGrammarExplanation()
+
+  def explain_grammar(self, grammar_point_yaml):
+  try:
+  grammar_point_data = yaml.safe_load(grammar_point_yaml)
+  explanation_json = self.explanation_generator.generate_explanation(grammar_point_data)
+  return explanation_json
+  except yaml.YAMLError as e:
+  return f
+- 'Error parsing YAML: {e}'
+- |-
+  except Exception as e:
+  return f
+- 'An error occurred: {e}'
+- |-
+  if __name__ == '__main__':
+  teacher = JapaneseTeacherBot()
+  grammar_point_yaml =
+- |2-
+
+  BEGIN_GRAMMAR_POINT_YAML
+  {
+- grammar_point
+- つもりだ
+- jlpt
+- N5
+- meaning
+- To plan to, To intend to
+- meaning_warning
+- null
+- details
+- Part of Speech: Auxiliary Verb
+  Register: Standard
+  品詞: 名詞
+  単語の種類: 助動詞
+  使用域: 一般
+- writeup
+- つもり だ (or です ) is a grammar point that can have several meanings in Japanese, but is often translated
+  simply as 'intend to (A)', or 'plan to (A)'. It can be used after the plain (dictionary) form of verbs,
+  or after the ない form.In the last two sentences, there is quite a large difference in nuance, and can
+  be thought of as similar to the difference between 'to intend not to' ない つもり , and 'to have no intention
+  of' つもり は ない in English. The former will mean that (A) is being actively avoided, while the latter will
+  indicate that one simply has no plans to (A).Fun FactThe literal meaning of つもり comes from the verb
+  積 もる, which means 'to pile up', or 'to load'. Due to this, つもり is regularly used to describe people
+  that are doing something that is out of character for them, meaning that they have 'piled up' whatever
+  feeling was required to act that way.In this example, the nuance of つもり is 'so you're really going to
+  act like you're apologizing?!' However, the literal meaning is closer to 'so you've really piled up
+  enough (nerve) in order to act like that's an apology?!'CautionThe は in つもり は ない is interchangeable
+  with が or じゃ (usually では is not used). The difference in nuance is that が gives the impression of being
+  'uninterested' in (A), while じゃ simply expresses that (A) is not the intended result.
+- examples
+- - japanese: それは謝ってるつもり?
+    english: Is that intended to be an apology? (Do you really think that is an apology?)
+  - japanese: 今日は先生と話すつもりがない。
+    english: I don't have any intention to talk to the teacher today.
+  - japanese: 今日は何も買うつもりじゃない。
+    english: I don't intend on buying anything today.
+  - japanese: 日本に行くつもりだ。
+    english: I intend to go to Japan.
+  - japanese: 日本語を勉強するつもりだ。
+    english: I intend to study Japanese.
+  - japanese: 日本語を勉強して、日本に行くつもりだ。
+    english: I intend to study Japanese and go to Japan.
+  - japanese: 明日早く起きるつもりです。
+    english: I intend to wake up early tomorrow.
+  - japanese: 車で行くつもりです。
+    english: I intend to go by car.
+- url
+- https://bunpro.jp/grammar_points/つもりだ
+- false_friends
+- - term: よていだ
+    meaning: Plan to, Intend to
+    kind: synonym
+  - term: はずだ
+    meaning: Bound to (be), Expected to (be), Should be (able)
+    kind: synonym
+  - term: 〜ようと思う・〜おうと思う
+    meaning: I think I will, I think I shall, Going to, Gonna (Volitional + と思う)
+    kind: synonym
+  - term: つもりで
+    meaning: With the intention of doing, Instead of..., Act as if or pretend, Believing that..., Thinking
+      that...
+    kind: synonym
+- BEGIN_GRAMMAR_POINT_YAML
+- |2-
+
+  json_output = teacher.explain_grammar(grammar_point_yaml)
+  print(json_output)
+  ```json
+  {
+- grammar_point
+- つもりだ
+- conjugations
+- - type: plain present affirmative
+    form: つもりだ
+    rarity: common
+  - type: polite present affirmative
+    form: つもりです
+    rarity: common
+  - type: plain present negative
+    form: つもりはない
+    rarity: common
+  - type: polite present negative
+    form: つもりはありません
+    rarity: common
+  - type: plain past affirmative
+    form: つもりだった
+    rarity: common
+  - type: polite past affirmative
+    form: つもりでした
+    rarity: common
+  - type: plain past negative
+    form: つもりはなかった
+    rarity: common
+  - type: polite past negative
+    form: つもりはありませんでした
+    rarity: common
+- jlpt
+- N5
+- meaning
+- To plan to, To intend to
+- details
+- Part of Speech: Auxiliary Verb
+  Register: Standard
+  品詞: 名詞
+  単語の種類: 助動詞
+  使用域: 一般
+- writeup
+- |-
+  つもりだ (or です) is a grammar point that can have several meanings in Japanese, but is often translated simply as "intend to (A)", or "plan to (A)". It can be used after the plain (dictionary) form of verbs, or after the ない form.
+
+  There is a difference in nuance between using 「～ないつもり」 and 「～つもりはない」. 「～ないつもり」 means that (A) is being actively avoided, similar to "to intend not to" in English. 「～つもりはない」 indicates that one simply has no plans to (A), similar to "to have no intention of" in English.
+
+  **Fun Fact:** The literal meaning of つもり comes from the verb 積もる, which means "to pile up", or "to load". Due to this, つもり is regularly used to describe people doing something out of character, implying they've "piled up" the necessary feeling to act that way.
+
+  **Caution:** The は in つもりはない is interchangeable with が or じゃ (usually では is not used). が gives the impression of being "uninterested" in (A), while じゃ simply expresses that (A) is not the intended result.
+- examples
+- - japanese: それは謝ってるつもり?
+    english: Is that intended to be an apology? (Do you really think that is an apology?)
+    register: casual
+    setting: sarcastic
+    nuance: The 「の」 makes this sound like a question seeking confirmation of something obvious, while
+      the rising intonation makes it a question. The implied meaning is one of disbelief or sarcasm.
+    speaker_gender: female
+    listener_gender: male
+  - japanese: 今日は先生と話すつもりはない。
+    english: I don't have any intention to talk to the teacher today.
+    register: casual
+    setting: informative
+    conjugation: plain present negative
+    nuance: Using 「つもりはない」 indicates a lack of intention or plans, as opposed to actively avoiding talking
+      to the teacher.
+  - japanese: 今日は何も買うつもりじゃない。
+    english: I don't intend on buying anything today.
+    register: casual
+    setting: informative
+    conjugation: plain present negative
+    nuance: The casual negative 「～じゃない」 is used here.
+  - japanese: 明日、君の家に行くつもりだよ。
+    english: I'm planning to go to your place tomorrow.
+    register: shitashii kuchō
+    setting: flirty
+    conjugation: plain present affirmative
+    speaker_gender: male
+    listener_gender: female
+    nuance: The 「だよ」 at the end adds a casual and slightly assertive tone, common in intimate speech between
+      a male speaker and a female listener, hinting at a pre-existing comfortable relationship.
+    etymology: 「君」 (kimi) is often used in more intimate or casual settings.
+  - japanese: 日本に行くつもりだ。
+    english: I intend to go to Japan.
+    register: casual
+    setting: informative
+    conjugation: plain present affirmative
+    nuance: A straightforward statement of intention.
+  - japanese: 日本語を勉強するつもりだ。
+    english: I intend to study Japanese.
+    register: casual
+    setting: informative
+    conjugation: plain present affirmative
+    nuance: A simple declaration of one's plan.
+  - japanese: いつか、あなたの作った料理を食べるつもりです。
+    english: Someday, I intend to eat the food you make.
+    register: polite
+    setting: first-date
+    conjugation: polite present affirmative
+    speaker_gender: male
+    listener_gender: female
+    nuance: The use of 「あなた」 and 「～つもりです」 creates a polite and slightly formal tone suitable for a first
+      date. It expresses a hopeful intention for the future of their relationship.
+    etymology: 「いつか」 implies an unspecified future time, adding a touch of anticipation.
+  - japanese: 日本語を勉強して、日本に行くつもりだ。
+    english: I intend to study Japanese and go to Japan.
+    register: casual
+    setting: informative
+    conjugation: plain present affirmative
+    nuance: Expresses two sequential intentions.
+  - japanese: 明日早く起きるつもりです。
+    english: I intend to wake up early tomorrow.
+    register: polite
+    setting: informative
+    conjugation: polite present affirmative
+    nuance: The 「～です」 ending makes the sentence polite.
+  - japanese: 車で行くつもりです。
+    english: I intend to go by car.
+    register: polite
+    setting: informative
+    conjugation: polite present affirmative
+    nuance: A polite statement of intent.
+- post_example_writeup
+- The nuance of 「つもり」 changes slightly depending on whether it's used with a positive or negative verb.
+  「～つもりだ」 generally indicates a strong intention to do something. 「～ないつもりだ」 implies a firm decision not
+  to do something, whereas 「～つもりはない」 indicates a lack of intention or plans to do something.
+- etymology
+- The literal meaning of つもり comes from the verb 積もる, which means 'to pile up', or 'to load'.
+- false_friends
+- - term: よていだ
+    meaning: Plan to, Intend to
+    kind: synonym
+  - term: はずだ
+    meaning: Bound to (be), Expected to (be), Should be (able)
+    kind: synonym
+  - term: 〜ようと思う・〜おうと思う
+    meaning: I think I will, I think I shall, Going to, Gonna (Volitional + と思う)
+    kind: synonym
+  - term: つもりで
+    meaning: With the intention of doing, Instead of..., Act as if or pretend, Believing that..., Thinking
+      that...
+    kind: synonym
+- post_false_friends_writeup
+- While 「よていだ」, 「はずだ」, and 「〜ようと思う・〜おうと思う」 can also express future intentions, 「つもりだ」 often carries a
+  stronger sense of personal will or resolve. 「つもりで」 has a different meaning, indicating the manner or
+  mindset in which an action is performed.
