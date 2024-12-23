@@ -1,6 +1,6 @@
 filegroup(
     name = "bunpro-sample",
-    srcs = glob(["sample/*"]),
+    srcs = glob(["sample/*"], allow_empty = True),
     visibility = ["//visibility:public"],
 )
 
