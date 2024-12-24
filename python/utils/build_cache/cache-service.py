@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-# THIS IS service.py (modified for parallel processing, shm usage logging, and threaded garbage collection) --------
+"""
+Service script with parallel processing, shared memory usage logging,
+and threaded garbage collection. Child processes ignore SIGINT and SIGTERM,
+so only the main process handles these signals for graceful shutdown.
+"""
 import os
 import zipfile
 import mmap
@@ -27,6 +31,7 @@ ZIP_PASSWORD = b"plaintext-password"
 SHM_NAME = "cache_shm"
 # Maximum size of the shared memory segment (adjust as needed)
 SHM_SIZE = 1024 * 1024  # 1 MB
+
 # Number of worker processes
 NUM_WORKERS = multiprocessing.cpu_count()
 
@@ -41,8 +46,8 @@ def handle_request(shm, request_queue, shared_high_water_mark):
     Handles a single request from the shared memory segment.
     Reads the request from shared memory, processes it, and writes the response back.
     """
-
-    # Read from wherever we are in shared memory
+    # Read from the beginning of shared memory
+    shm.seek(0)
     key_bytes = shm.read(SHM_SIZE)
 
     # Find null-terminated key
@@ -51,24 +56,21 @@ def handle_request(shm, request_queue, shared_high_water_mark):
         return  # Wait for a full key to be written
 
     key = key_bytes[:null_index].decode('utf-8')
-
     action = key.split(":")[0]
 
     if action == "GET":
-        _, key = key.split(":", 1)
-        value = get_value(key)
-        # Write response into shared memory
+        _, get_key = key.split(":", 1)
+        value = get_value(get_key)
         write_response_to_shm(shm, value, shared_high_water_mark)
     elif action == "POST":
-        _, key, value = key.split(":", 2)
-        set_value(key, value)
+        _, post_key, val = key.split(":", 2)
+        set_value(post_key, val)
         # No response needed for POST
 
 def write_response_to_shm(shm, value, shared_high_water_mark):
     """
     Writes a response to shared memory.
     """
-    # Go to the beginning of the shared memory
     shm.seek(0)
     # Clear previous data
     shm.write(b'\0' * SHM_SIZE)
@@ -88,13 +90,12 @@ def write_response_to_shm(shm, value, shared_high_water_mark):
                 shared_high_water_mark.value = response_len
                 logging.info(f"New high shared memory usage: {response_len} bytes")
     else:
+        # If there's no value, store 'None'
         shm.write(b'None\0')
-
-        # Check and log shared memory usage
         with shared_high_water_mark.get_lock():
             if 4 > shared_high_water_mark.value:
                 shared_high_water_mark.value = 4
-                logging.info(f"New high shared memory usage: 4 bytes")
+                logging.info("New high shared memory usage: 4 bytes")
 
 def get_value(key):
     """
@@ -106,20 +107,17 @@ def get_value(key):
     if not os.path.exists(zip_path):
         return None
 
-    # Touch the ZIP file to update its modification time (most recently accessed).
+    # Touch the ZIP file to update its modification time
     os.utime(zip_path, None)
 
     try:
-        # Acquire a shared lock (for reading)
+        # Acquire a shared lock (read-only)
         with open(zip_path, "r") as f:
             fcntl.flock(f, fcntl.LOCK_SH)
             data_obj = read_data_from_zip(zip_path, ZIP_PASSWORD)
-            fcntl.flock(f, fcntl.LOCK_UN)  # Release the lock
+            fcntl.flock(f, fcntl.LOCK_UN)  # Release lock
         if data_obj is None:
-            # Means we couldn't read or decode it
             return None
-
-        # Return the stored value (the key we read is optional for verifying correctness)
         return data_obj["value"]
     except Exception as e:
         logging.error(f"Error reading from {zip_path}: {e}")
@@ -128,20 +126,18 @@ def get_value(key):
 def set_value(key, value):
     """
     POST /cache/<key>
-    Expects a JSON body with {"value": ...}.
     Stores the value in a password-protected ZIP with separate key.txt/value.txt files.
+    Overwrites any existing file at that path.
     """
     zip_path = os.path.join(CACHE_DIR, f"{key}.zip")
-
-    # Write data into the ZIP
-    for i in range(10):
+    for _ in range(10):
         try:
-            # Acquire an exclusive lock (for writing)
+            # Acquire exclusive lock (for writing)
             with open(zip_path, "w") as f:
                 fcntl.flock(f, fcntl.LOCK_EX)
                 write_data_to_zip(zip_path, key, value, ZIP_PASSWORD)
-                fcntl.flock(f, fcntl.LOCK_UN)  # Release the lock
-            # Touch the zip file
+                fcntl.flock(f, fcntl.LOCK_UN)  # Release lock
+            # Touch the ZIP file to update its mod time
             os.utime(zip_path, None)
             break
         except Exception as e:
@@ -150,22 +146,21 @@ def set_value(key, value):
 
 def write_data_to_zip(zip_path, key_str, value_str, password):
     """
-    Stores the given key and value as two separate text files (key.txt, value.txt)
-    inside the ZIP at `zip_path`. Overwrites any existing file at that path.
+    Writes key.txt and value.txt into the specified ZIP file.
+    This overwrites any existing content.
     """
     with zipfile.ZipFile(zip_path, 'w', compression=zipfile.ZIP_DEFLATED) as zf:
-        # For demonstration: writing files without real password-based encryption.
-        # Standard library doesn't fully support password protection for writing.
+        # Standard library doesn't fully support password-based encryption for writing.
         zf.writestr("key.txt", key_str)
         zf.writestr("value.txt", value_str)
 
 def read_data_from_zip(zip_path, password):
     """
-    Reads key.txt and value.txt from the ZIP and returns a dict {"key": ..., "value": ...}
-    or None if there's an error (e.g. files missing).
+    Reads key.txt and value.txt from the ZIP and returns {"key": ..., "value": ...}
+    or None if something is missing or fails.
     """
     with zipfile.ZipFile(zip_path, 'r') as zf:
-        # The standard library only partially supports password for reading via ZipCrypto.
+        # ZipCrypto password support is limited in the standard library
         zf.setpassword(password)
         try:
             key_data = zf.read("key.txt").decode("utf-8")
@@ -176,7 +171,11 @@ def read_data_from_zip(zip_path, password):
 
 def garbage_collect():
     """
-    Periodically performs garbage collection on the cache directory.
+    1. Sorts all .zip files in descending order by modification time.
+    2. Keeps the first MAX_ENTRIES (if MAX_ENTRIES > 0).
+    3. Deletes the rest.
+    4. Additionally removes any file older than 24 hours from the kept subset.
+    5. Logs how many files were deleted.
     """
     logging.info("Running garbage collection...")
     now = datetime.now()
@@ -187,70 +186,43 @@ def garbage_collect():
             os.path.join(CACHE_DIR, f) for f in os.listdir(CACHE_DIR)
             if f.endswith('.zip')
         ]
+        # Sort files by modification time descending (newest first)
+        all_files.sort(key=lambda p: os.path.getmtime(p), reverse=True)
 
-        # Separate files into those to keep and those to potentially delete
-        files_to_keep = []
-        files_to_delete = []
-        for file_path in all_files:
-            last_modified_time = datetime.fromtimestamp(os.path.getmtime(file_path))
-            if last_modified_time > one_day_ago:
-                files_to_keep.append(file_path)
-            else:
-                files_to_delete.append(file_path)
-
-        # If keeping a limited number of entries
+        # Always keep top MAX_ENTRIES files by mod time, ignoring the 24-hour limit (for now)
         if MAX_ENTRIES > 0:
-            if len(files_to_keep) >= MAX_ENTRIES:
-                # Sort files to keep by modification time descending
-                files_to_keep.sort(key=lambda p: os.path.getmtime(p), reverse=True)
-                # Move excess files to the delete list
-                files_to_delete.extend(files_to_keep[MAX_ENTRIES:])
-                files_to_keep = files_to_keep[:MAX_ENTRIES]
+            files_to_keep = all_files[:MAX_ENTRIES]
+            files_to_delete = all_files[MAX_ENTRIES:]
+        else:
+            # If MAX_ENTRIES == -1, keep all for now
+            files_to_keep = all_files
+            files_to_delete = []
 
-        # Delete files
+        # Now enforce the 24-hour rule on the "kept" files:
+        final_keep = []
+        for f in files_to_keep:
+            if datetime.fromtimestamp(os.path.getmtime(f)) < one_day_ago:
+                # If it's older than a day, delete it as well
+                files_to_delete.append(f)
+            else:
+                final_keep.append(f)
+
+        # Actually delete the files we've flagged
+        deleted_count = 0
         for file_path in files_to_delete:
             try:
                 os.remove(file_path)
                 logging.info(f"Garbage collected: {file_path}")
+                deleted_count += 1
             except OSError as e:
                 logging.error(f"Error removing {file_path}: {e}")
+
+        logging.info(f"{deleted_count} files were deleted during garbage collection.")
+
     except Exception as e:
         logging.error(f"Error during garbage collection: {e}")
     finally:
         logging.info("Garbage collection finished.")
-
-def cleanup_shm():
-    """
-    Unmaps and removes the shared memory segment.
-    """
-    try:
-        # Unmap the shared memory segment
-        shm.close()
-        # Remove the shared memory file (this is OS-specific)
-        if os.path.exists(f"/dev/shm/{SHM_NAME}"):
-            os.remove(f"/dev/shm/{SHM_NAME}")
-        logging.info("Shared memory segment cleaned up.")
-    except Exception as e:
-        logging.error(f"Error cleaning up shared memory: {e}")
-
-def signal_handler(signum, frame):
-    """
-    Handles SIGINT and SIGTERM signals for graceful shutdown.
-    """
-    logging.info(f"Signal {signum} received. Shutting down...")
-    cleanup_shm()
-    sys.exit(0)
-
-def worker_process(shm_name, shm_size, request_queue, shared_high_water_mark):
-    """
-    Worker process function to handle requests.
-    """
-    # Each worker process will open the shared memory segment
-    with open(f"/dev/shm/{shm_name}", "r+b") as f:
-        with contextlib.closing(mmap.mmap(f.fileno(), shm_size, mmap.MAP_SHARED, mmap.PROT_READ | mmap.PROT_WRITE)) as shm:
-            while True:
-                handle_request(shm, request_queue, shared_high_water_mark)
-                time.sleep(0.1)  # Throttle request handling
 
 def run_garbage_collector(stop_event):
     """
@@ -260,48 +232,79 @@ def run_garbage_collector(stop_event):
         garbage_collect()
         time.sleep(GC_INTERVAL)
 
+def cleanup_shm():
+    """
+    Removes the shared memory segment in the main process.
+    """
+    try:
+        # If you have a global 'shm' object in main, you could shm.close() here too.
+        # Remove the shared memory file
+        if os.path.exists(f"/dev/shm/{SHM_NAME}"):
+            os.remove(f"/dev/shm/{SHM_NAME}")
+        logging.info("Shared memory segment cleaned up.")
+    except Exception as e:
+        logging.error(f"Error cleaning up shared memory: {e}")
+
+def signal_handler(signum, frame):
+    """
+    Handles SIGINT and SIGTERM signals (main process only) for graceful shutdown.
+    """
+    logging.info(f"Signal {signum} received. Shutting down...")
+    cleanup_shm()
+    sys.exit(0)
+
+def worker_process(shm_name, shm_size, request_queue, shared_high_water_mark):
+    """
+    Worker process: ignores SIGINT/SIGTERM, so only main handles them.
+    """
+    # Disable signal handlers in this child
+    signal.signal(signal.SIGINT, signal.SIG_IGN)
+    signal.signal(signal.SIGTERM, signal.SIG_IGN)
+
+    # Open the shared memory segment
+    with open(f"/dev/shm/{shm_name}", "r+b") as f:
+        with contextlib.closing(mmap.mmap(f.fileno(), shm_size, mmap.MAP_SHARED, mmap.PROT_READ | mmap.PROT_WRITE)) as shm:
+            while True:
+                handle_request(shm, request_queue, shared_high_water_mark)
+                time.sleep(0.1)  # Throttle request handling
+
 if __name__ == '__main__':
-    # Register signal handlers for graceful shutdown
+    # Register signal handlers in main only
     signal.signal(signal.SIGINT, signal_handler)
     signal.signal(signal.SIGTERM, signal_handler)
 
-    # Create a request queue (not currently used but could be useful for more complex logic)
     request_queue = multiprocessing.Queue()
-
-    # Create a shared value to track the highest shared memory usage
     shared_high_water_mark = multiprocessing.Value('i', 0)
 
-    # Create and map the shared memory segment
     try:
-        # Create a file of the desired size
+        # Create the shared memory file
         with open(f"/dev/shm/{SHM_NAME}", "w+b") as f:
             f.truncate(SHM_SIZE)
 
-        # Start worker processes
+        # Start worker processes (children ignore signals)
         processes = []
         for _ in range(NUM_WORKERS):
-            p = multiprocessing.Process(target=worker_process, args=(SHM_NAME, SHM_SIZE, request_queue, shared_high_water_mark))
+            p = multiprocessing.Process(
+                target=worker_process,
+                args=(SHM_NAME, SHM_SIZE, request_queue, shared_high_water_mark)
+            )
             p.start()
             processes.append(p)
-        
-        # Create an event to stop the garbage collector thread
-        stop_gc_event = threading.Event()
 
-        # Start the garbage collector thread
+        # Garbage collector thread
+        stop_gc_event = threading.Event()
         gc_thread = threading.Thread(target=run_garbage_collector, args=(stop_gc_event,))
         gc_thread.start()
 
-        with open(f"/dev/shm/{SHM_NAME}", "r+b") as f:
-            with contextlib.closing(mmap.mmap(f.fileno(), SHM_SIZE, mmap.MAP_SHARED, mmap.PROT_READ | mmap.PROT_WRITE)) as shm:
-                # Keep the main process alive (for now)
-                while True:
-                    time.sleep(1)
+        # Keep the main process alive
+        while True:
+            time.sleep(1)
 
     except Exception as e:
         logging.error(f"An error occurred: {e}")
         cleanup_shm()
         sys.exit(1)
     finally:
-        # Stop the garbage collector thread
+        # Stop GC thread
         stop_gc_event.set()
         gc_thread.join()
