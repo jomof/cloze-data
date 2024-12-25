@@ -117,4 +117,5 @@ find . -type f -exec stat --printf="%s\n" {} + | awk '{total += $1} END {print t
 exit
 bazel run //python/utils/build_cache:cache-service
 bazel run //:requirements.update
+find . -name 'BUILD*' -o -name '*.bzl' -o -name 'WORKSPACE' -o -name '*.bazel' | xargs buildifier --lint=fix --warnings=all 
 

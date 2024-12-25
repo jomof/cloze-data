@@ -5,7 +5,7 @@ def _py_build_tool_impl(ctx):
     outs = [f.path for f in ctx.outputs.outs]
     out_dirs = [ctx.actions.declare_directory("{}".format(f)) for f in ctx.attr.out_dirs]
     out_dirs_paths = [f.path for f in out_dirs]
-    
+
     args = ctx.actions.args()
     args.add_all(ctx.files.ins)
     args.add_all(ctx.outputs.outs)
@@ -26,11 +26,11 @@ def _py_build_tool_impl(ctx):
 py_build_tool = rule(
     implementation = _py_build_tool_impl,
     attrs = {
-        "main": attr.label(allow_files = True, executable = True, cfg = "exec"),
-        "outs": attr.output_list(mandatory = True),
-        "out_dirs": attr.string_list(),
-        "ins": attr.label_list(allow_files = True),
         "deps": attr.label_list(),
+        "ins": attr.label_list(allow_files = True),
+        "main": attr.label(allow_files = True, executable = True, cfg = "exec"),
+        "out_dirs": attr.string_list(),
+        "outs": attr.output_list(mandatory = True),
     },
 )
 
@@ -49,7 +49,7 @@ def _py_build_tool_stream_impl(ctx):
             base_name = base_name[:base_name.rindex(".")]
 
         output_file = ctx.actions.declare_file(
-            "{}/{}{}".format(ctx.label.name, base_name, extension)
+            "{}/{}{}".format(ctx.label.name, base_name, extension),
         )
         outs.append(output_file)
 
@@ -60,11 +60,11 @@ def _py_build_tool_stream_impl(ctx):
             outputs = [output_file],
             executable = ctx.executable.tool,
             arguments = [
-                src.path,
-                output_file.path
-            ]
-            + [df.path for df in ctx.files.data]
-            + [cf.path for cf in cache_files],  # pass cache file paths
+                            src.path,
+                            output_file.path,
+                        ] +
+                        [df.path for df in ctx.files.data] +
+                        [cf.path for cf in cache_files],  # pass cache file paths
             use_default_shell_env = True,
             progress_message = "{} processing {}".format(ctx.label.name, src.basename),
             tools = [ctx.executable.tool],
@@ -75,21 +75,21 @@ def _py_build_tool_stream_impl(ctx):
 py_build_tool_stream = rule(
     implementation = _py_build_tool_stream_impl,
     attrs = {
-        "srcs": attr.label_list(allow_files = True),
-        "script": attr.label(allow_single_file = True),
-        "extension": attr.string(default = ""),
-        "tool": attr.label(
+        "cache": attr.label(
             allow_files = True,
-            executable = True,
-            cfg = "exec",
+            default = None,
         ),
         "data": attr.label_list(
             allow_files = True,
             default = [],
         ),
-        "cache": attr.label(
+        "extension": attr.string(default = ""),
+        "script": attr.label(allow_single_file = True),
+        "srcs": attr.label_list(allow_files = True),
+        "tool": attr.label(
             allow_files = True,
-            default = None,
+            executable = True,
+            cfg = "exec",
         ),
     },
 )

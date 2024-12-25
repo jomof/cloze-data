@@ -22,8 +22,8 @@ def _json_concat_impl(ctx):
 json_concat = rule(
     implementation = _json_concat_impl,
     attrs = {
-        "srcs": attr.label_list(allow_files = [".json"]),  # Allow only JSON files as input
         "output": attr.output(),  # Specify the output attribute
+        "srcs": attr.label_list(allow_files = [".json"]),  # Allow only JSON files as input
         "_concat_script": attr.label(
             default = Label("//json_rules:concat_json_arrays.py"),  # Update the label to the new package
             executable = True,
@@ -93,8 +93,8 @@ def _concat_multiple_file_contents_impl(ctx):
 concat_multiple_file_contents = rule(
     implementation = _concat_multiple_file_contents_impl,
     attrs = {
-        "srcs": attr.label_list(allow_files = True),  # Allow any file types as input
         "output": attr.output(),  # Specify the output attribute
+        "srcs": attr.label_list(allow_files = True),  # Allow any file types as input
         "_concat_script": attr.label(
             default = Label("//json_rules:concat_multiple_file_contents.py"),  # Update the label to the script's path
             executable = True,

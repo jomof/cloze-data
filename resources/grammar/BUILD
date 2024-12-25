@@ -62,12 +62,12 @@ write_file_list(
 py_build_tool(
     name = "merge-bunpro-dojg",
     outs = ["merge-bunpro-dojg.yaml"],
-    out_dirs = ["merged-grammars"],
     ins = [
         "bunpro-fixed-yaml-all-list.txt",
         "dojg-yaml-list.txt",
     ],
     main = ":merge-grammars",
+    out_dirs = ["merged-grammars"],
     deps = [
         ":bunpro-fixed-yaml-all",
         "//resources/original/dojg:dojg-all",
@@ -99,15 +99,15 @@ py_build_tool_stream(
     name = "yaml-cleaned-sample",
     srcs = [":ai-cleaned-sample"],
     extension = ".yaml",
-    tool = ":yaml-clean"
+    tool = ":yaml-clean",
 )
 
 # bazel run --jobs=2 //resources/grammar:publish-samples
 sh_binary(
     name = "publish-samples",
     srcs = ["publish-processed.sh"],
+    args = ["/workspaces/cloze-data/resources/processed/samples/yaml-cleaned-sample $(locations :yaml-cleaned-sample)"],
     data = [":yaml-cleaned-sample"],
-    args = ["/workspaces/cloze-data/resources/processed/samples/yaml-cleaned-sample $(locations :yaml-cleaned-sample)"],  
     visibility = ["//visibility:public"],
 )
 
@@ -117,11 +117,10 @@ py_binary(
     visibility = ["//:__subpackages__"],
     deps = [
         ":grammar",
-
+        "//python:aigen",
+        "//python/utils/build_cache:memoize",
         "@pip//json_repair",
         "@pip//pyyaml",
-        "//python/utils/build_cache:memoize",
-        "//python:aigen"
     ],
 )
 

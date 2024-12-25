@@ -5,9 +5,9 @@ py_library(
     srcs = [
         "aigen.py",
     ],
+    visibility = ["//visibility:public"],
     deps = [
-        "@pip//google_genai",
         "@pip//google_cloud_aiplatform",
+        "@pip//google_genai",
     ],
-    visibility = ["//visibility:public"]
 )

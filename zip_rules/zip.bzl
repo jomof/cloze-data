@@ -22,8 +22,8 @@ def _zip_files_impl(ctx):
 zip_files = rule(
     implementation = _zip_files_impl,
     attrs = {
-        "srcs": attr.label_list(allow_files = True),  # Allow any file types as input
         "output": attr.output(),  # Specify the output attribute
+        "srcs": attr.label_list(allow_files = True),  # Allow any file types as input
         "_zip_script": attr.label(
             default = Label("//zip_rules:zip_files.py"),
             executable = True,
@@ -61,8 +61,8 @@ def _unzip_files_impl(ctx):
 unzip_files = rule(
     implementation = _unzip_files_impl,
     attrs = {
-        "src": attr.label(allow_single_file = True),  # Specify the input ZIP file
         "output": attr.output(),  # Specify the output directory attribute
+        "src": attr.label(allow_single_file = True),  # Specify the input ZIP file
         "_unzip_script": attr.label(
             default = Label("//zip_rules:unzip_files.py"),
             executable = True,
@@ -101,8 +101,8 @@ def _process_zip_stream_impl(ctx):
 process_zip_stream = rule(
     implementation = _process_zip_stream_impl,
     attrs = {
-        "src": attr.label(allow_single_file = True),
         "script": attr.label(allow_single_file = True),
+        "src": attr.label(allow_single_file = True),
         "zip_out": attr.output(),
         "_script": attr.label(
             default = Label("//zip_rules:process_zip_stream.py"),
