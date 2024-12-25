@@ -297,3 +297,7 @@ bazel run //:requirements.update
 bazel run //python/utils/build_cache:cache-service
 bazel run //python/utils/build_cache:cache-service --subcommands
 bazel run //python/utils/build_cache:cache-service 
+./update-python.sh 
+git status
+git config --global --add safe.directory /workspaces/cloze-data
+git status
