@@ -1,17 +1,19 @@
 {
   "image": "jomof/cloze-dev-data-image:latest",
-  "hostRequirements": {
-    "cpus": 8,
-    "storage": "2048mb"
-  },
-  "waitFor": "onCreateCommand",
-  "remoteEnv": {
-      "HISTFILE": "/workspaces/cloze-data/.bash_history"
-  },
-  "postAttachCommand": {
-    "bash": "bash"
-  },
-  
+  // "hostRequirements": {
+  //   "cpus": 8,
+  //   "storage": "2048mb"
+  // },
+  // "waitFor": "onCreateCommand",
+  // "remoteEnv": {
+  //     "HISTFILE": "/workspaces/cloze-data/.bash_history"
+  // },
+  // "postAttachCommand": {
+     
+  //     "bash": "/bin/bash"
+  //   //"build-cache-service": "bazel run //python/utils/build_cache:cache-service"
+  // },
+  "postAttachCommand": {"cache-service": "bazel run //python/utils/build_cache:cache-service"},
   "customizations": {
     "vscode": {
       "extensions": [
@@ -20,11 +22,6 @@
         "ms-python.python",
         "GitHub.copilot",
         "redhat.vscode-yaml"
-      ]
-    },
-    "codespaces": {
-      "openFiles": [
-
       ]
     }
   }

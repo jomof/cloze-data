@@ -301,3 +301,4 @@ bazel run //python/utils/build_cache:cache-service
 git status
 git config --global --add safe.directory /workspaces/cloze-data
 git status
+exit
