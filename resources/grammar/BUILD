@@ -61,7 +61,7 @@ write_file_list(
 
 py_build_tool(
     name = "merge-bunpro-dojg",
-    outs = ["xxx.yaml"],
+    outs = ["merge-bunpro-dojg.yaml"],
     out_dirs = ["merged-grammars"],
     ins = [
         "bunpro-fixed-yaml-all-list.txt",

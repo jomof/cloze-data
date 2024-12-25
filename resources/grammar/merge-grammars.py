@@ -3,10 +3,6 @@ import yaml
 from dumpyaml import dump_yaml_file
 import difflib
 
-#   merged_count: 258
-#   dojg_only_count: 368
-#   bunpro_only_count: 670
-
 missing_meanings = {
     "RelativeClause": "Modifies a noun by providing additional descriptive information about it." ,
     "RhetoricalQuestion": "A question asked for effect, not requiring an answer, often used to express strong emotion or make a point.",
@@ -404,17 +400,6 @@ forced_resolutions = {
     "由・よし": "dojg",
     "甲斐・かい・がい": "dojg",
     "毎・まい": "dojg",
-    
-
-
-
-
-
-
-
-
-
-
 }
 
 grammar_point_name_translations = {
