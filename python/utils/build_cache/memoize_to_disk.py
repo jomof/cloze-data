@@ -34,7 +34,7 @@ def memoize_to_disk(func, *args):
                 if value is not None and value != "None":
                     return value
     except FileNotFoundError:
-        print("Shared memory segment not found. Is the service running?")
+        raise Exception("Shared memory segment not found. Run the service with: bazel run //python/utils/build_cache:cache-service")
 
     # Step 3: Compute the result if not found in cache
     result = func(*args)

@@ -13,7 +13,10 @@
   //     "bash": "/bin/bash"
   //   //"build-cache-service": "bazel run //python/utils/build_cache:cache-service"
   // },
-  "postAttachCommand": {"cache-service": "bazel run //python/utils/build_cache:cache-service"},
+  // "postAttachCommand": {
+  //   "cache-service": "/bin/bash -c \"bazel run //python/utils/build_cache:cache-service\"",
+  //   "bash": "/bin/bash"
+  // },
   "customizations": {
     "vscode": {
       "extensions": [

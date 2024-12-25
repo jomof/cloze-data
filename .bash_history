@@ -302,3 +302,5 @@ git status
 git config --global --add safe.directory /workspaces/cloze-data
 git status
 exit
+ps -A | grep cache
+exit
