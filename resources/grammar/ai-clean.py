@@ -160,22 +160,26 @@ That is all.
     #     prompt_file.write(prompt)
     backoff = 60
     N = 30
-    response = ""
+    response = prompt
     for i in range(N):
         try:
             result = memoize_to_disk(aigen, prompt, "gemini-2.0-flash-thinking-exp-1219")
-            response = result.removeprefix("```json").removesuffix("\n").removesuffix("```")
-            response = repair_json(response)
-            response = json.loads(response)
-            response = json.dumps(response, ensure_ascii=False, indent=4)
-            # response = yaml.dumps(response, ensure_ascii=False, indent=4)
+
             return response
         except Exception as e:
-            # print(f"Sleeping to throttle requests: {e}")
+            print(f"Sleeping to throttle requests: {e}")
             time.sleep(backoff)
      
-            
-    return prompt
+    response = result.removeprefix("```json").removesuffix("\n").removesuffix("```")
+    response = repair_json(response)
+    response = json.loads(response)
+    
+    # response = yaml.dumps(response, ensure_ascii=False, indent=4)
+    if data["grammar_point"] != response["grammar_point"]:
+        raise Exception(f"Grammar point mismatch: {data['grammar_point']} != {response['grammar_point']}")
+
+    response = json.dumps(response, ensure_ascii=False, indent=4)
+    return response
 
 def main(input_file, output_file):
     with open(input_file, 'r', encoding='utf-8') as file:
