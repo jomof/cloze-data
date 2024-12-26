@@ -311,3 +311,71 @@ ls
 bazel run --jobs=3 //resources/grammar:publish-samples
 bazel clean
 bazel run --jobs=3 //resources/grammar:publish-samples
+bazel run //python/utils/build_cache:cache-service
+bazel run //:requirements.update
+bazel run //python/utils/build_cache:cache-service
+clear
+bazel run //python/utils/build_cache:cache-service
+bazel clean && clear
+bazel run //python/utils/build_cache:cache-service
+ps -A | grep "cache"
+bazel clean && clear
+bazel run //python/utils/build_cache:cache-service
+bazel clean
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean
+bazel run --jobs=3 //resources/grammar:publish-samples
+clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel run --jobs=3 //resources/grammar:ai-cleaned-all
+bazel build --jobs=3 //resources/grammar:ai-cleaned-all
+bazel run //resources/original/bunpro:more-samples
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean
+bazel run --jobs=3 //resources/grammar:publish-samples
+gcloud auth application-default login
+gcloud auth application-default set-quota-project jomof-sandbox
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean
+clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean
+clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean
+clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean && clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel clean && clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean && clear
+cd ..
+bazel clean && clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean && clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+find . -name "*-value.txt"
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean && clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean && clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean && clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean && clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean && clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+rm -rf cache_data/
+bazel clean && clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean
+git pull
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean

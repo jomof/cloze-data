@@ -1,82 +1,91 @@
-# THIS IS client.py (modified) ---------------------------------------------------------------------------------------
-import hashlib
-import mmap
-import contextlib
-import time
+#!/usr/bin/env python3
+"""
+Unix domain socket-based client that sends GET/POST requests to the server
+for memoizing results on disk.
+"""
 
-# Name of the shared memory segment (must match the server)
-SHM_NAME = "cache_shm"
-# Maximum size of the shared memory segment (adjust as needed)
-SHM_SIZE = 1024 * 1024 # 1 MB
+import hashlib
+import time
+import socket
+import struct
+
+SOCKET_PATH = '/dev/shm/cloze.sock'
 
 def get_hash(func_name, *args):
-    # Use MD5 to generate a unique hash combining function name and inputs
     combined_args = ":".join(map(str, args))
     return hashlib.md5(f"{func_name}:{combined_args}".encode()).hexdigest()
 
 def memoize_to_disk(func, *args):
     """
-    Memoize the result of 'func(*args)' using shared memory and a local file-based cache.
+    1. Generate a cache key
+    2. GET from server
+    3. If 'None', compute result, POST to server
+    4. Return result
     """
-
-    # Step 1: Create the cache key (MD5 hash).
     hash_key = get_hash(func.__name__, *args)
-    
-    # Step 2: Attempt to retrieve the memoized result from the cache using shared memory
-    try:
-        with open(f"/dev/shm/{SHM_NAME}", "r+b") as f:  # Open in read-write mode
-            with contextlib.closing(mmap.mmap(f.fileno(), SHM_SIZE, mmap.MAP_SHARED, mmap.PROT_READ | mmap.PROT_WRITE)) as shm:
-                send_request_to_shm(shm, "GET", hash_key)
-                # poll a few times until the server writes the response
-                for _ in range(20):
-                    response = read_response_from_shm(shm)
-                    if response is not None and not response.startswith("GET:"):
-                        print(f"Cache hit")
-                        return response
-                    print(f"Sleeping...")
-                    time.sleep(0.01)
-    except FileNotFoundError:
-        raise Exception("Shared memory segment not found. Run the service with: bazel run //python/utils/build_cache:cache-service")
+    response = do_socket_request(f"GET:{hash_key}").strip()
+    if response != "None":
+        # print("Cache hit")
+        return response
 
-    # Step 3: Compute the result if not found in cache
-    print(f"Cache miss")
+    # print("Cache miss")
     result = func(*args)
-
-    # Step 4: Store in the cache using shared memory
-    try:
-        with open(f"/dev/shm/{SHM_NAME}", "r+b") as f:  # Open in read-write mode
-            with contextlib.closing(mmap.mmap(f.fileno(), SHM_SIZE, mmap.MAP_SHARED, mmap.PROT_READ | mmap.PROT_WRITE)) as shm:
-                # Send request to server via shared memory
-                send_request_to_shm(shm, "POST", hash_key, result)
-    except FileNotFoundError:
-        print("Shared memory segment not found. Is the service running?")
-
+    _ = do_socket_request(f"POST:{hash_key}:{result}")
     return result
 
-def send_request_to_shm(shm, action, key, value=None):
+def do_socket_request(request_str: str) -> str:
     """
-    Sends a request to the shared memory segment.
+    Sends `request_str` with a 4-byte length prefix, then waits for
+    a length-prefixed response from the server.
     """
-    shm.seek(0)
-    if action == "GET":
-        request_str = f"GET:{key}\0"
-    elif action == "POST":
-        request_str = f"POST:{key}:{value}\0"
-    encoded = request_str.encode('utf-8')
-    shm.write(encoded)
+    with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
+        s.connect(SOCKET_PATH)
+        send_length_prefixed(s, request_str)
+        response = recv_length_prefixed(s)
+    return response
 
-def read_response_from_shm(shm):
+def send_length_prefixed(sock: socket.socket, data_str: str):
     """
-    Reads a response from shared memory.
+    Pack 4-byte length + UTF-8 encoded data, send to server.
     """
-    shm.seek(0)
-    response_bytes = shm.read()
-    # Find the null terminator
-    end = response_bytes.find(b'\0')
-    if end != -1:
-        response_str = response_bytes[:end].decode('utf-8')
-        if response_str == "None":
-            return None
-        return response_str
-    else:
-        return None
+    encoded = data_str.encode('utf-8')
+    length_prefix = struct.pack('!I', len(encoded))
+    sock.sendall(length_prefix + encoded)
+
+def recv_length_prefixed(sock: socket.socket) -> str:
+    """
+    Reads a 4-byte length, then reads exactly that many bytes,
+    returns as a UTF-8 decoded string.
+    """
+    length_data = recv_until_complete(sock, 4)
+    if len(length_data) < 4:
+        return "ERROR: incomplete length data"
+    msg_length = struct.unpack('!I', length_data)[0]
+
+    raw_data = recv_until_complete(sock, msg_length)
+    if len(raw_data) < msg_length:
+        return "ERROR: incomplete message data"
+
+    return raw_data.decode('utf-8', errors='replace')
+
+def recv_until_complete(sock: socket.socket, num_bytes: int) -> bytes:
+    """
+    Reads exactly num_bytes from the socket, looping until completed or EOF.
+    """
+    chunks = []
+    bytes_recd = 0
+    while bytes_recd < num_bytes:
+        chunk = sock.recv(min(num_bytes - bytes_recd, 4096))
+        if not chunk:
+            break
+        chunks.append(chunk)
+        bytes_recd += len(chunk)
+    return b''.join(chunks)
+
+if __name__ == "__main__":
+    def slow_add(a, b):
+        time.sleep(0.5)  # simulate expensive operation
+        return str(a + b)
+
+    print("First call (should miss):", memoize_to_disk(slow_add, 10, 20))
+    print("Second call (should hit):", memoize_to_disk(slow_add, 10, 20))

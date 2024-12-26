@@ -14,6 +14,6 @@ py_binary(
     srcs = ["cache-service.py"],
     visibility = ["//visibility:public"],
     deps = [
-        "@pip//flask",
+        "@pip//aiofiles",
     ],
 )

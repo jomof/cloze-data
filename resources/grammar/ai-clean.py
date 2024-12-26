@@ -162,7 +162,7 @@ That is all.
     N = 30
     response = ""
     for i in range(N):
-        # try:
+        try:
             result = memoize_to_disk(aigen, prompt, "gemini-2.0-flash-thinking-exp-1219")
             response = result.removeprefix("```json").removesuffix("\n").removesuffix("```")
             response = repair_json(response)
@@ -170,9 +170,9 @@ That is all.
             response = json.dumps(response, ensure_ascii=False, indent=4)
             # response = yaml.dumps(response, ensure_ascii=False, indent=4)
             return response
-        # except Exception as e:
-        #     print("Sleeping to throttle requests: {e}")
-        #     time.sleep(backoff)
+        except Exception as e:
+            print("Sleeping to throttle requests: {e}")
+            time.sleep(backoff)
      
             
     return prompt
