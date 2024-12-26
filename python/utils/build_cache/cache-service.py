@@ -92,10 +92,6 @@ def write_response_to_shm(shm, value, shared_high_water_mark):
     else:
         # If there's no value, store 'None'
         shm.write(b'None\0')
-        with shared_high_water_mark.get_lock():
-            if 4 > shared_high_water_mark.value:
-                shared_high_water_mark.value = 4
-                logging.info("New high shared memory usage: 4 bytes")
 
 def get_value(key):
     """

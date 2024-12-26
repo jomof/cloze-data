@@ -304,3 +304,10 @@ git status
 exit
 ps -A | grep cache
 exit
+bazel clean
+bazel run --jobs=3 //resources/grammar:publish-samples
+git status
+ls
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean
+bazel run --jobs=3 //resources/grammar:publish-samples

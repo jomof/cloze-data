@@ -2,7 +2,7 @@
 import hashlib
 import mmap
 import contextlib
-import os
+import time
 
 # Name of the shared memory segment (must match the server)
 SHM_NAME = "cache_shm"
@@ -26,17 +26,20 @@ def memoize_to_disk(func, *args):
     try:
         with open(f"/dev/shm/{SHM_NAME}", "r+b") as f:  # Open in read-write mode
             with contextlib.closing(mmap.mmap(f.fileno(), SHM_SIZE, mmap.MAP_SHARED, mmap.PROT_READ | mmap.PROT_WRITE)) as shm:
-                # Send request to server via shared memory
                 send_request_to_shm(shm, "GET", hash_key)
-                
-                # Read response from shared memory
-                value = read_response_from_shm(shm)
-                if value is not None and value != "None":
-                    return value
+                # poll a few times until the server writes the response
+                for _ in range(20):
+                    response = read_response_from_shm(shm)
+                    if response is not None and not response.startswith("GET:"):
+                        print(f"Cache hit")
+                        return response
+                    print(f"Sleeping...")
+                    time.sleep(0.01)
     except FileNotFoundError:
         raise Exception("Shared memory segment not found. Run the service with: bazel run //python/utils/build_cache:cache-service")
 
     # Step 3: Compute the result if not found in cache
+    print(f"Cache miss")
     result = func(*args)
 
     # Step 4: Store in the cache using shared memory
@@ -59,7 +62,8 @@ def send_request_to_shm(shm, action, key, value=None):
         request_str = f"GET:{key}\0"
     elif action == "POST":
         request_str = f"POST:{key}:{value}\0"
-    shm.write(request_str.encode('utf-8'))
+    encoded = request_str.encode('utf-8')
+    shm.write(encoded)
 
 def read_response_from_shm(shm):
     """
