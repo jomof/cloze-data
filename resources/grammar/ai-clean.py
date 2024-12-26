@@ -171,7 +171,7 @@ That is all.
             # response = yaml.dumps(response, ensure_ascii=False, indent=4)
             return response
         except Exception as e:
-            print("Sleeping to throttle requests: {e}")
+            # print(f"Sleeping to throttle requests: {e}")
             time.sleep(backoff)
      
             

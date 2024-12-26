@@ -21,7 +21,7 @@ GC_INTERVAL = 3600
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(threadName)s - %(message)s')
 
-async def sync_file_read(key: str):
+def sync_file_read(key: str):
     value_file = os.path.join(CACHE_DIR, f"{key}-value.txt")
     if not os.path.exists(value_file):
         return None
@@ -35,7 +35,7 @@ async def sync_file_read(key: str):
         logging.error(f"Error reading from {value_file}: {e}")
         return None
 
-async def sync_file_write(key: str, value: str):
+def sync_file_write(key: str, value: str):
     value_file = os.path.join(CACHE_DIR, f"{key}-value.txt")
     try:
         with open(value_file, 'w', encoding='utf-8') as vf:
