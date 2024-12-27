@@ -28,9 +28,18 @@ Follow these rules:
    For example, if the grammar point was, then the array should be: dictionary (plain non-past): とみえる [commonly used], polite (non-past): とみえます [commonly used], negative (plain): とみえない [commonly used], negative (polite): とみえません [commonly used], past (plain): とみえた [commonly used], past (polite): とみえました [commonly used], negative past (plain): とみえなかった [commonly used], negative past (polite): とみえませんでした [commonly used], te-form: とみえて [rare in everyday speech], conditional (provisional ば-form): とみえれば [uncommon], conditional (tara-form): とみえたら [uncommon], volitional (plain): とみえよう [very rare], volitional (polite): とみえましょう [very rare], imperative (plain): とみえろ [unnatural], imperative (polite): とみえてください [unnatural], potential: とみえられる [rare], passive: とみえられる [rare], causative: とみえさせる [extremely unusual]
    Place this array immediately after the "grammar_point" field.
 1. Do not modify the "grammar_point" text from [input]; output it exactly as provided.
+   - You **must** add a "pronunciation" field, which contains:
+      - "katakana" the grammar point in katakana.
+      - "romaji" the "gramar_point" in romaji.
+      - "pronunciation_warning" if needed only, explain why the romaji doesn't fully capture the pronunciation.
+      - Example:
+          "pronunciation": {
+              "katakana": "テイルトコロダ",
+              "romaji": "teiru tokoro da"
+          },
 2. Avoid Unicode escape sequences like \\u3051, just emit the Unicode.
 3. If "meaning_warning" is empty or null, omit it entirely.
-4. If applicable and interesting, add an "etymology" field here that discusses the etymology of this grammar point.
+4. It is *strongly suggested** to add an "etymology" field here that discusses the etymology of this grammar point.
 5. The "writeup" field should:
     - Be primarily in English, supplemented by natural Japanese expressions as needed.
     - Incorporate essential details from the input while rephrasing for clarity.
@@ -44,6 +53,7 @@ Follow these rules:
     - Each example **must** use the grammar_point, though it may be in conjugated form.
       - If there are other conjugated forms of the grammar point that are commonly used, then some of the example sentences **must** include those conjugated forms.
     - "japanese": a natural-sounding Japanese sentence using this grammar point.
+      - The "japanese" should have the grammar_point in **bold**.
     - "english": a natural-sounding English translation.
     - "register": register of the sentence. One of: casual, formal, semi-formal, sonkeigo (respectful), kenjōgo (humble), teineigo (polite), shitashii kuchō (intimate), bijinesu nihongo (business), bungo (literary), hōgen (dialectical), surangu (slang), gun-go (military), wakamono kotoba (youth), meirei-kei no teineigo (polite imperative)
       - Example sentences **should** exhibit a wide variety of registers.

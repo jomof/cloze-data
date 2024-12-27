@@ -28,7 +28,7 @@ def memoize_to_disk(func, *args):
         # print("Cache hit")
         return response
 
-    print("Cache miss")
+    # print("Cache miss")
     result = func(*args)
     _ = do_socket_request(f"POST:{hash_key}:{result}")
     return result
