@@ -3,12 +3,12 @@ import sys
 import time
 import yaml
 import json
-
+import argparse
 from json_repair import repair_json
 from python.utils.build_cache.memoize_to_disk import memoize_to_disk
 from python.aigen import aigen
 
-def ai_clean(data):
+def ai_clean(data, bazel_target):
     data = repair_json(json.dumps(yaml.safe_load(data), indent=2, ensure_ascii=False))
     prompt = """
 You are a highly skilled Japanese teacher. You speak native Japanese that is natural and fluent. 
@@ -179,7 +179,7 @@ That is all.
     response = prompt
     for i in range(N):
         try:
-            result = memoize_to_disk(aigen, prompt, "gemini-2.0-flash-thinking-exp-1219")
+            result = memoize_to_disk(bazel_target, aigen, prompt, "gemini-2.0-flash-thinking-exp-1219")
 
             return response
         except Exception as e:
@@ -197,19 +197,18 @@ That is all.
     response = json.dumps(response, ensure_ascii=False, indent=4)
     return response
 
-def main(input_file, output_file):
+def main(input_file, output_file, bazel_target):
     with open(input_file, 'r', encoding='utf-8') as file:
         data = file.read()
-    result = ai_clean(data)
+    result = ai_clean(data, bazel_target)
 
     with open(output_file, 'w', encoding='utf-8') as file:
         file.write(result)
 
 if __name__ == '__main__':
-    if len(sys.argv) != 3:
-        print("Usage: <input_file> <output_file>")
-        print("But was", sys.argv)
-    else:
-        input_file = sys.argv[1]
-        output_file = sys.argv[2]
-        main(input_file, output_file)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--source', required=True, help='Input file path')
+    parser.add_argument('--destination', required=True, help='Output file path')
+    parser.add_argument('--bazel-target', required=True, help='Name of the bazel target')
+    args = parser.parse_args()
+    main(args.source, args.destination, args.bazel_target)

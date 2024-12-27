@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import sys
+import argparse
 import os
 from bs4 import BeautifulSoup
 
@@ -23,10 +23,8 @@ def main(input_file, output_file):
         print(f"Error processing file {input_file}: {e}")
 
 if __name__ == '__main__':
-    if len(sys.argv) != 3:
-        print("Usage: python script.py <input_file> <output_file>")
-        print("But was", sys.argv)
-    else:
-        input_file = sys.argv[1]
-        output_file = sys.argv[2]
-        main(input_file, output_file)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--source', required=True, help='Input file path')
+    parser.add_argument('--destination', required=True, help='Output file path')
+    args = parser.parse_args()
+    main(args.source, args.destination)

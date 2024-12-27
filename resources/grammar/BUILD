@@ -85,6 +85,7 @@ py_build_tool_stream(
     name = "ai-cleaned-sample",
     srcs = [":fixed-yaml-sample"],
     extension = ".yaml",
+    pass_target_name = True,
     tool = ":ai-clean",
 )
 
@@ -92,6 +93,7 @@ py_build_tool_stream(
     name = "ai-cleaned-all",
     srcs = [":fixed-yaml-all"],
     extension = ".yaml",
+    pass_target_name = True,
     tool = ":ai-clean",
 )
 

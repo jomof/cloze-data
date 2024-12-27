@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import argparse
 import yaml
 import sys
 from dumpyaml import dump_yaml_file
@@ -58,13 +59,10 @@ def update_grammar_points(input_yaml, fixup_yaml, output_yaml):
 def main(input_yaml, output_yaml, fixup_yaml):
     update_grammar_points(input_yaml, fixup_yaml, output_yaml)
 
-if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: update_grammar_points.py <input_yaml> <output_yaml> <fixup_yaml>", file=sys.stderr)
-        sys.exit(1)
-    
-    input_yaml = sys.argv[1]
-    output_yaml = sys.argv[2]
-    fixup_yaml = sys.argv[3]
-    
-    main(input_yaml, output_yaml, fixup_yaml)
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--source', required=True, help='Input file path')
+    parser.add_argument('--destination', required=True, help='Output file path')
+    parser.add_argument('--data', required=True, help='Fixup yaml file path')
+    args = parser.parse_args()
+    main(args.source, args.destination, args.data)

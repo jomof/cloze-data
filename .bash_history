@@ -379,3 +379,108 @@ bazel clean
 git pull
 bazel run --jobs=3 //resources/grammar:publish-samples
 bazel clean
+bazel run //python/utils/build_cache:cache-service
+clear
+bazel run //python/utils/build_cache:cache-service
+bazel run //:requirements.update
+bazel run //python/utils/build_cache:cache-service
+clear
+bazel run //python/utils/build_cache:cache-service
+clear
+bazel run //python/utils/build_cache:cache-service
+bazel run //:requirements.update
+bazel run //python/utils/build_cache:cache-service
+ibazel run //python/utils/build_cache:cache-service
+npm install --save-dev @bazel/ibazel
+ibazel run //python/utils/build_cache:cache-service
+bazel run //python/utils/build_cache:cache-service
+watchexec -w /workspaces/cloze-data/python/utils/build_cache -- bazel run //python/utils/build_cache:cache-service
+sudo apt-get install watchexec
+cargo install watchexec-cli
+bazel run //python/utils/build_cache:cache-service
+bazel clean && clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean && clear
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel run //resources/grammar:publish-samples
+bazel clean && clear
+bazel run //resources/grammar:publish-samples
+bazel clean && clear && bazel run //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel clean && clear && bazel run //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel clean && clear && bazel run //resources/grammar:publish-samples
+bazel clean
+bazel clean && clear && bazel run //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel clean && clear && bazel run //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel clean && clear && bazel run //resources/grammar:publish-samples
+bazel run --jobs=3 //resources/grammar:publish-samples
+bazel clean && clear && bazel run //resources/grammar:publish-samples
+bazel run //resources/original/bunpro:more-samples
+bazel clean && clear && bazel run //resources/grammar:publish-samples
+cd /home/codespace/.cache/bazel/_bazel_codespace/f6291f0464794be3822090e595c371c0/server
+ls
+cat jvm.out 
+cd -
+bazel clean && clear && bazel run //resources/grammar:publish-samples
+bazel clean --expunge
+bazel clean && clear && bazel run //resources/grammar:publish-samples
+bazel clean && clear && bazel run //resources/grammar:ai-cleaned-sample
+bazel clean && clear && bazel build //resources/grammar:ai-cleaned-sample
+bazel clean && clear && bazel build //resources/grammar:fixed-yaml-sample
+bazel clean && clear && bazel build //resources/grammar:ai-cleaned-sample
+bazel clean && clear && bazel --jobs=3 build //resources/grammar:ai-cleaned-sample
+bazel clean && clear && bazel build --jobs=3 //resources/grammar:ai-cleaned-sample
+bazel clean && clear && bazel build //resources/grammar:ai-cleaned-sample
+bazel run //resources/original/bunpro:more-samples
+bazel clean && clear && bazel build //resources/grammar:ai-cleaned-sample
+bazel clean && clear && bazel build --jobs=3 //resources/grammar:ai-cleaned-sample
+bazel clean && clear && bazel build //resources/grammar:ai-cleaned-sample
+bazel run //resources/original/bunpro:more-samples
+bazel clean && clear && bazel build //resources/grammar:ai-cleaned-sample
+bazel run //resources/original/bunpro:more-samples
+bazel clean && clear && bazel build //resources/grammar:ai-cleaned-sample
+bazel run //resources/original/bunpro:more-samples
+bazel clean && clear && bazel build //resources/grammar:ai-cleaned-sample
+bazel run //resources/original/bunpro:more-samples
+bazel clean && clear && bazel build //resources/grammar:ai-cleaned-sample
+bazel run //resources/original/bunpro:more-samples
+bazel clean && clear && bazel build //resources/grammar:ai-cleaned-sample
+bazel run //resources/original/bunpro:more-samples
+bazel clean && clear && bazel build //resources/grammar:ai-cleaned-sample
+bazel run //resources/original/bunpro:more-samples
+bazel clean && clear && bazel build //resources/grammar:ai-cleaned-sample  -jobs=2
+bazel clean && clear && bazel build //resources/grammar:ai-cleaned-sample  --jobs=2
+bazel build //resources/grammar:merge-bunpro-dojg
+bazel clean
+bazel build //resources/grammar:merge-bunpro-dojg
+bazel run //resources/original/bunpro:more-samples
+bazel clean && clear && bazel build //resources/grammar:ai-cleaned-sample  --jobs=2
+bazel info
+clear
+bazel build --nobuild //...
+bazel query //...
+bazel clean && clear && bazel run //resources/grammar:publish-samples
+clear
+bazel clean && clear && bazel run //resources/grammar:publish-samples
+bazel build //resources/grammar:ai-clean
+bazel build //resources/grammar:ai-cleaned-sample
+bazel build //resources/grammar:ai-cleaned-sample --subcommands
+clear
+bazel build //resources/grammar:ai-cleaned-sample --subcommands
+bazel build //resources/grammar:ai-cleaned-sample
+clear
+bazel build //resources/grammar:ai-cleaned-sample
+bazel build //resources/grammar:ai-cleaned-sample --subcommands
+clear
+(cd /home/codespace/.cache/bazel/_bazel_codespace/f6291f0464794be3822090e595c371c0/execroot/_main &&   exec env -     PATH=/home/codespace/.cache/bazelisk/downloads/sha256/18417fdee645a8dc08bc3f27e33f71a5681f9f14661b33ac48536a31dc8d00f1/bin:/usr/local/rvm/gems/ruby-3.3.4/bin:/usr/local/rvm/gems/ruby-3.3.4@global/bin:/usr/local/rvm/rubies/ruby-3.3.4/bin:/vscode/vscode-server/bin/linux-x64/fabdb6a30b49f79a7aba0f2ad9df9b399473380f/bin/remote-cli:/home/codespace/.local/bin:/home/codespace/.dotnet:/home/codespace/nvm/current/bin:/home/codespace/.php/current/bin:/home/codespace/.python/current/bin:/home/codespace/java/current/bin:/home/codespace/.ruby/current/bin:/home/codespace/.local/bin:/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/oryx:/usr/local/go/bin:/go/bin:/usr/local/sdkman/bin:/usr/local/sdkman/candidates/java/current/bin:/usr/local/sdkman/candidates/gradle/current/bin:/usr/local/sdkman/candidates/maven/current/bin:/usr/local/sdkman/candidates/ant/current/bin:/usr/local/rvm/gems/default/bin:/usr/local/rvm/gems/default@global/bin:/usr/local/rvm/rubies/default/bin:/usr/local/share/rbenv/bin:/usr/local/php/current/bin:/opt/conda/bin:/usr/local/nvs:/usr/local/share/nvm/versions/node/v20.18.1/bin:/usr/local/hugo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/share/dotnet:/home/codespace/.dotnet/tools:/usr/local/rvm/bin:/home/codespace/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand   bazel-out/k8-opt-exec-ST-d57f47055a04/bin/resources/grammar/ai-clean '--source=bazel-out/k8-fastbuild/bin/resources/grammar/fixed-yaml-sample/-よう--う-まい - が-と' '--destination=bazel-out/k8-fastbuild/bin/resources/grammar/ai-cleaned-sample/-よう--う-まい - が-と.yaml' '--bazel-target=ai-cleaned-sample')
+clear
+bazel build //resources/grammar:ai-cleaned-sample --jobs=1
+bazel build //resources/grammar:ai-cleaned-sample --jobs=4
+bazel build //resources/grammar:ai-cleaned-sample --jobs=1 --subcommands
+bazel build //resources/grammar:ai-cleaned-sample --jobs=14 --subcommands
