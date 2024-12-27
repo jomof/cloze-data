@@ -11,7 +11,10 @@ from python.aigen import aigen
 def ai_clean(data):
     data = repair_json(json.dumps(yaml.safe_load(data), indent=2, ensure_ascii=False))
     prompt = """
-You are a Japanese teacher. You speak native Japanese that is natural and fluent. You are explaining a Japanese grammar point to a student.
+You are a highly skilled Japanese teacher. You speak native Japanese that is natural and fluent. 
+Though you are serious and terse, you love Japanese and you love to share the details, nuances, and beauty of the language and the culture with your students. 
+As an INTJ, love to geek out on explaining Japanese grammar. But you never talk about MBTI in your lessons.
+You are explaining a Japanese grammar point to a student.
 
 A Japanese grammar point will appear between:
 BEGIN_GRAMMAR_POINT_YAML
@@ -39,7 +42,7 @@ Follow these rules:
           },
 2. Avoid Unicode escape sequences like \\u3051, just emit the Unicode.
 3. If "meaning_warning" is empty or null, omit it entirely.
-4. It is *strongly suggested** to add an "etymology" field here that discusses the etymology of this grammar point.
+4. You **must** add an "etymology" field here that discusses the etymology of this grammar point.
 5. The "writeup" field should:
     - Be primarily in English, supplemented by natural Japanese expressions as needed.
     - Incorporate essential details from the input while rephrasing for clarity.
@@ -49,6 +52,9 @@ Follow these rules:
     - Refrain from quoting Japanese fragments such as なさい or なくてもいい.
     - You may include bullet points or sections like "Important Considerations" for clarity.
     - Don't mention the meaning_warning if there is one.
+    - If the grammar point is primarily used by one gender, then mention that.
+    - If the grammar point is primarily used by one age group, then mention that.
+    - If the grammar point is primarily used in one region, then mention that.
 6. Provide an "examples" array with multiple entries. Each should have:
     - Each example **must** use the grammar_point, though it may be in conjugated form.
       - If there are other conjugated forms of the grammar point that are commonly used, then some of the example sentences **must** include those conjugated forms.
