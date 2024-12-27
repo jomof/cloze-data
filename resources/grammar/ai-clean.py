@@ -179,7 +179,7 @@ That is all.
     response = prompt
     for i in range(N):
         try:
-            result = memoize_to_disk(bazel_target, aigen, prompt, "gemini-2.0-flash-thinking-exp-1219")
+            result = memoize_to_disk(bazel_target, aigen, prompt, "gemini-1.5-flash-002")
 
             return response
         except Exception as e:
