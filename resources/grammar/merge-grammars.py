@@ -4,20 +4,21 @@ from dumpyaml import dump_yaml_file
 import difflib
 
 missing_meanings = {
-    "RelativeClause": "Modifies a noun by providing additional descriptive information about it." ,
-    "RhetoricalQuestion": "A question asked for effect, not requiring an answer, often used to express strong emotion or make a point.",
-    "VmasuasaNoun": "Treats a verb in the masu-stem form as a noun, often to describe an action or state as a concept.",
+    "Relative clause": "Modifies a noun by providing additional descriptive information about it." ,
+    "Rhetorical question": "A question asked for effect, not requiring an answer, often used to express strong emotion or make a point.",
+    "Verb[masu-stem] noun": "Treats a verb in the masu-stem form as a noun, often to describe an action or state as a concept.",
     "お": "Honorific prefix for nouns and verbs, adds politeness and respect.",
     "お~だ": "Polite copula, equivalent to 'desu' but often used for adjectives or states related to the listener.", 
     "お〜する": "Humble verb form, used when the speaker performs an action for someone of higher status.",
     "お〜になる": "Honorific verb form, used when referring to actions or states of someone of higher status.",
     "かい": "Informal sentence ending particle, similar to 'ka' but softer and more casual, often used by males.",
     "が (subject marker)": "Particle marking the grammatical subject of the sentence.", 
-    "ことがある (there are times)":  "Indicates that an action or event happens occasionally or sometimes.", 
+    "ことがある (there are times when)":  "Indicates that there are times an action or event happens.", 
+    "ことがある (occassionally)": "Indicates an action or event happens occasionally.",
     "しい": "Suffix for i-adjectives, indicates a strong emotion or feeling.",
     "だい": "Informal sentence ending particle, emphasizes a question or request, often used by males.",
     "っけ": "Sentence ending particle, expresses uncertainty or seeks confirmation, 'wasn't it?', 'didn't we?'", 
-    "に": "Particle with various functions, including indicating location, time, target of action, and indirect object.",
+    "に (in/with - hypothetical)": "Marks a hypothetical situation or condition.",
     "は〜が": "Sentence structure emphasizing a contrast, 'A is (topic), but B (focus)'.",
     "は〜だ": "Basic sentence structure, identifies the topic (A) and provides information (B) about it.", 
     "わ": "Sentence ending particle, mainly used by females, adds a soft and feminine tone, can express emphasis or emotion.",
@@ -27,388 +28,105 @@ missing_meanings = {
     "君・くん": "Suffix added to names, primarily for males, expresses familiarity or a slightly informal tone." 
 }
 
-# Add a dictionary to specify forced resolutions
-forced_resolutions = {
-    "(っ)たって①": "dojg", 
-    "(っ)たって②": "dojg", 
-    "Adjective+て+B": "bunpro",
-    "Adjective+て・Noun+で": "bunpro",
-    "Adjective+の(は)": "bunpro",
-    "Noun+まで": "bunpro",
-    "Noun＋型": "bunpro",
-    "Number/Amount+は": "bunpro",
-    "Particle+の": "bunpro",
-    "Question-phrase+か": "bunpro",
-    "Verb+て+B": "bunpro",
-    "Verb+てもいい": "bunpro",
-    "Verb[volitional]とする": "bunpro",
-    "Imperative": "dojg",
-    "RelativeClause": "dojg",
-    "RhetoricalQuestion": "dojg",
-    "Imperative": "dojg",
-    "Verb+て": "bunpro",
-    "Verb+にいく": "bunpro",
-    "Verb+まで": "bunpro",
-    "Verb[volitional]+としたが": "bunpro",
-    "Verb[て]+B①": "bunpro",
-    "Verb[て]+B②": "bunpro",
-    "Verb[て]・Noun[で]+B": "bunpro",
-    "Verb[ない]もの(だろう)か": "bunpro",
-    "Verb[ないで]": "bunpro",
-    "Verb[よう]": "bunpro",
-    "Verbs (Non-past)": "bunpro",
-    "Verb[た・ている]+Noun": "bunpro",
-    "Verb[れる・られる]": "bunpro",
-    "Vmasu": "dojg",
-    "VmasuasaNoun": "dojg",
-    "~ばかりか~(さえ)": "dojg",
-    "~言わず~と言わず": "dojg",
-    "〜(の)姿": "bunpro",
-    "〜かというと ①": "bunpro",
-    "〜かというと ②": "bunpro",
-    "〜かは〜によって違う": "bunpro",
-    "〜が〜なら": "dojg",
-    "〜ざる": "bunpro",
-    "〜たまでだ": "bunpro",
-    "〜てこそ": "bunpro",
-    "〜ても〜ても": "dojg",
-    "〜ても〜なくても": "bunpro",
-    "〜てやる": "bunpro",
-    "〜といい〜といい": "dojg",
-    "〜というのは事実だ": "bunpro",
-    "〜ところに・〜ところへ": "bunpro",
-    "〜ない〜はない": "bunpro",
-    "〜なり〜なり": "bunpro",
-    "〜にする・〜くする": "bunpro",
-    "〜になる・〜くなる": "bunpro",
-    "〜の〜のと": "dojg",
-    "〜のうち(で)": "bunpro",
-    "〜のだろうか": "bunpro",
-    "〜は〜で有名": "bunpro",
-    "〜は〜となっている": "bunpro",
-    "〜は〜の一つだ": "bunpro",
-    "ひいては": "dojg",
-    "ひつようがある": "bunpro",
-    "ひとつ": "dojg",
-    "びる": "bunpro",
-    "〜ましょうか": "bunpro",
-    "〜やがる": "bunpro",
-    "〜ようではないか": "bunpro",
-    "〜ようとしない": "bunpro",
-    "〜ら": "bunpro",
-    "〜るまでだ": "bunpro",
-    "〜を〜に任せる": "bunpro",
-    "〜代": "bunpro",
-    "〜得ない": "bunpro",
-    "あえて": "dojg",
-    "あそこ": "bunpro",
-    "あたかも": "dojg",
-    "あっての": "bunpro",
-    "あながち〜ない": "dojg",
-    "あの": "bunpro",
-    "あまり〜ない": "bunpro",
-    "あまりに": "bunpro",
-    "あり": "bunpro",
-    "あれ": "bunpro",
-    "ある (to be)": "dojg",
-    "あわよくば": "bunpro",
-    "い": "bunpro",
-    "い-Adj[く]+もなんともない": "bunpro",
-    "い-Adjective (Past)": "bunpro",
-    "い-Adjective (Predicate)": "bunpro",
-    "い-Adjective くなかった": "bunpro",
-    "い-Adjective+Noun": "bunpro",
-    "い-Adjectives": "bunpro",
-    "い-Adjectives くない": "bunpro",
-    "いい": "bunpro",
-    "いか": "bunpro",
-    "いかに": "dojg",
-    "いかにも": "dojg",
-    "いかん〜ず": "bunpro",
-    "いがい": "bunpro",
-    "いきなり": "bunpro",
-    "いくら": "dojg",
-    "いくら〜でも": "bunpro",
-    "いずれも": "bunpro",
-    "いたす": "bunpro",
-    "いつの間にか": "bunpro",
-    "いよいよ": "bunpro",
-    "いらっしゃる": "bunpro",
-    "がいる": "bunpro",
-    "いる (be)": "dojg",
-    "う-Verb (Dictionary)": "bunpro",
-    "う-Verb (Negative)": "bunpro",
-    "う-Verb (Negative-Past)": "bunpro",
-    "う-Verb (Past)": "bunpro",
-    "お": "dojg",
-    "お~だ": "dojg",
-    "お〜願う": "bunpro",
-    "おかげで": "bunpro",
-    "おきに": "bunpro",
-    "おそらく": "bunpro",
-    "おまけに": "bunpro",
-    "および": "bunpro",
-    "おり": "dojg",
-    "か~か": "dojg",
-    "か〜ないかのうちに": "bunpro",
-    "かえって": "dojg",
-    "かけ": "bunpro",
-    "かたがた": "bunpro",
-    "かたわら": "bunpro",
-    "かと言うと": "dojg",
-    "かなり": "bunpro",
-    "かねない": "bunpro",
-    "からある": "bunpro",
-    "からこそ": "bunpro",
-    "からする": "bunpro",
-    "からすると・からすれば": "bunpro",
-    "から見ると": "bunpro",
-    "からなる": "dojg",
-    "から言うと": "bunpro",
-    "から言って": "dojg",
-    "かれ〜かれ": "bunpro",
-    "か何か": "bunpro",
-    "がある": "bunpro",
-    "がある+Noun": "bunpro",
-    "がいい": "bunpro",
-    "がけに": "bunpro",
-    "く": "dojg",
-    "こうした": "dojg",
-    "こと (thing)": "dojg",
-    "こと (to~)": "dojg",
-    "ことがある (there are times)": "dojg",
-    "ことで": "dojg",
-    "ことによる": "dojg",
-    "この上ない": "dojg",
-    "ごとし": "dojg",
-    "さも": "dojg",
-    "すぐ": "dojg",
-    "しい": "dojg",
-    "ずして": "dojg",
-    "せっかく": "dojg",
-    "そうかと言って": "dojg",
-    "そのもの": "dojg",
-    "そもそも(の)": "dojg",
-    "それから": "dojg",
-    "それが": "dojg",
-    "それだけ": "dojg",
-    "それでは": "dojg",
-    "それと": "dojg",
-    "それどころか": "dojg",
-    "それなりに・の": "dojg",
-    "それは": "dojg",
-    "それも": "dojg",
-    "たかが": "dojg",
-    "ただ": "dojg",
-    "ただの": "dojg",
-    "だい": "dojg",
-    "だからと言って": "dojg",
-    "だが": "dojg",
-    "する (cost)": "dojg",
-    "する (have)": "dojg",
-    "要る・いる (need)": "dojg",
-    "見るからに": "dojg",
-    "言ってみれば": "dojg",
-    "言わば": "dojg",
-    "限り (only until)": "dojg",
-    "そうになる": "dojg",
-    "願う・願います": "dojg",
-    "面": "dojg",
-    "限り (only until)": "dojg",
-    "行く・いく (continue)": "dojg",
-    "行く・いく (go)" : "dojg",
-    "自分・じぶん①": "dojg",
-    "自分・じぶん②": "dojg",
-    "自体": "dojg",
-    "そこで (then)" : "dojg",
-    "そこを": "dojg",
-    "たるや": "dojg",
-    "そして": "dojg",
-    "だって (too)": "dojg",
-    "ちなみに": "dojg",
-    "って (speaking of)": "dojg",
-    "って (that)": "dojg",
-    "ついては": "dojg",
-    "てばかりはいられない": "dojg",
-    "て仕方がない": "dojg",
-    "で (because)": "dojg",
-    "で (by time)": "dojg",
-    "で (for)": "dojg",
-    "であろう": "dojg",
-    "と (thinking that)" : "dojg",
-    "とあっては": "dojg",
-    "というのに": "dojg",
-    "ほうが~より": "dojg",
-    "ましだ": "dojg",
-    "まして(や)": "dojg",
-    "と (in the manner of)": "dojg",
-    "といったところだ": "dojg",
-    "とかで": "dojg",
-    "ところから": "dojg",
-    "を (movement through space)": "dojg",
-    "を (point of departure)": "dojg",
-    "を (object of an emotion)": "dojg",
-    "ところだ (in a place where it takes ~ to get to)": "dojg",
-    "ところ": "dojg",
-    "とでも言うべき": "dojg",
-    "となる": "dojg",
-    "となると": "dojg",
-    "とは言え": "dojg",
-    "とばかりに": "dojg",
-    "ともすると": "dojg",
-    "ともなく": "dojg",
-    "と言うか": "dojg",
-    "と言うと": "dojg",
-    "ども": "dojg",
-    "とする (assume that)": "dojg",
-    "とする (feel ~)": "dojg",
-    "と言えば": "dojg",
-    "と言って": "dojg",
-    "どう": "dojg",
-    "どうか": "dojg",
-    "どうにも〜ない": "dojg",
-    "どうも": "dojg",
-    "どちらかと言うと": "dojg",
-    "ども": "dojg",
-    "どんなに~(こと)か": "dojg",
-    "なあ": "dojg",
-    "なく": "dojg",
-    "なくなる": "dojg",
-    "なしでは": "dojg",
-    "なしに": "dojg",
-    "なす": "dojg",
-    "なぜか": "dojg",
-    "ないし(は)" : "dojg",
-    "なおさら": "dojg",
-    "などと": "dojg",
-    "なまじ(っか)": "dojg",
-    "なり~なり": "dojg",
-    "なるほど": "dojg",
-    "なんて (what)": "dojg",
-    "に(も)なく": "dojg",
-    "に (at)": "dojg",
-    "に (to)": "dojg",
-    "に (by)": "dojg",
-    "に (on)": "dojg",
-    "に (to do something)": "dojg",
-    "に (in)": "dojg",
-    "に (toward)": "dojg",
-    "にとって": "dojg",
-    "になると": "dojg",
-    "によらず": "dojg",
-    "を介して・介した": "dojg",
-    "んとする": "dojg",
-    "一[Counter]として〜ない": "dojg",
-    "一つには": "dojg",
-    "一切〜ない": "dojg",
-    "にしてからが": "dojg",
-    "に従って・従い": "dojg",
-    "の (possessive)": "dojg",
-    "の (one)": "dojg",
-    "の (that ~)": "dojg",
-    "の (it is that ~)": "dojg",
-    "のこと": "dojg",
-    "のは~のことだ": "dojg",
-    "のみ": "dojg",
-    "分": "dojg",
-    "分かる・わかる": "dojg",
-    "及び": "dojg",
-    "君・くん": "dojg",
-    "結構": "dojg",
-    "結果": "dojg",
-    "の上では": "dojg",
-    "の無さ・のなさ": "dojg",
-    "の関係で": "dojg",
-    "は〜が": "dojg",
-    "は〜だ": "dojg",
-    "はあれ": "dojg",
-    "はいいとしても": "dojg",
-    "または": "dojg",
-    "まで(のこと)だ": "dojg",
-    "まま": "dojg",
-    "も~ば": "dojg",
-    "も~も": "dojg",
-    "もしくは": "dojg",
-    "ものか (wish)": "dojg",
-    "ものではない": "dojg",
-    "より (than)": "dojg",
-    "より (in ~ of)": "dojg",
-    "より・のほか(に)(は)〜ない": "dojg",
-    "ろくに~ない": "dojg",
-    "をめぐって・めぐる": "dojg",
-    "は (as for ~)": "dojg",
-    "もらう (have someone do)": "dojg",
-    "やっと": "dojg",
-    "やはり": "dojg",
-    "やら": "dojg",
-    "ようと・が": "dojg",
-    "ように (like)": "dojg",
-    "ようにも(〜ない)": "dojg",
-    "ようものなら": "dojg",
-    "んばかり(に)": "dojg",
-    "知る・しる": "dojg",
-    "やる (send)": "dojg",
-    "やる (knowing that it will cause someone trouble)": "dojg",
-    "目": "dojg",
-    "よう (probably)": "dojg",
-    "よう (the way to)": "dojg",
-    "一方(で)": "dojg",
-    "且つ・かつ": "dojg",
-    "並びに": "dojg",
-    "今更・いまさら": "dojg",
-    "代わりに・かわりに": "dojg",
-    "以上(は)": "dojg",
-    "以外": "dojg",
-    "仮に": "dojg",
-    "但し・ただし": "dojg",
-    "何[(Number)+Counter]も": "dojg",
-    "何〜ない": "dojg",
-    "何でも": "dojg",
-    "何とか": "dojg",
-    "何も〜ない": "dojg",
-    "何ら〜ない": "dojg",
-    "何らかの": "dojg",
-    "例の": "dojg",
-    "少ない・すくない": "dojg",
-    "屋・や": "dojg",
-    "思うに": "dojg",
-    "思えば": "dojg",
-    "思われる": "dojg",
-    "思われる": "dojg",
-    "折(に)": "dojg",
-    "一番・いちばん": "dojg",
-    "様・さま": "dojg",
-    "ほしい (want something)" : "dojg",
-    "ほしい (want someone to do something)": "dojg",
-    "済む": "dojg",
-    "滅多に〜ない": "dojg",
-    "くる (come about)": "dojg",
-    "単に": "dojg",
-    "単位で": "dojg",
-    "堪らない・たまらない": "dojg",
-    "多い・おおい": "dojg",
-    "好きだ・すきだ": "dojg",
-    "如何(だ)・いかん(だ)": "dojg",
-    "如何(だ)・いかん(だ)": "dojg",
-    "呉れる・くれる (do something for someone)": "dojg",
-    "呉れる・くれる (give)": "dojg",
-    "方をする": "dojg",
-    "末(に)": "dojg",
-    "来": "dojg",
-    "毎・まい": "dojg",
-    "点(で)": "dojg",
-    "由・よし": "dojg",
-    "甲斐・かい・がい": "dojg",
-    "毎・まい": "dojg",
-}
-
+# Rules
+# - Instead of using numbers like やる①, use descriptive like やる (send)
+# - English should be lower-case unless it's the first word in English
 grammar_point_name_translations = {
+    "れる・られる+ままに": "れる・られる~ままに",
+    "何[(Number)+Counter]も": "何 counter も",
+    "なん+counter+か": "なん counter か",
+    "な-Adjective+Noun": "な-adjective noun",
+    "だに+しない": "だに~しないい",
+    "がある+Noun": "[がある]noun",
+    "Verb[て]+みせる": "Verb[て]みせる",
+    "い-Adj[く]+もなんともない": "い-adjective[く]もなんともない",
+    "い-Adjective+Noun": "い-adjective noun",
+    "Verb[volitional]+としたが": "Verb[volitional]としたが",
+    "Question-phrase+か": "Question[か]",
+    "Particle+の": "Particle[の]",
+    "Number+しか〜ない|bunpro": "Number[しか]〜ない",
+    "Noun+まで": "Noun[まで]",
+    "Noun＋型": "Noun[型]",
+    "Verb+だに": "Verb[だに]",
+    "Number/Amount+は": "Number[は]",
+    "Verb[た・ている]+Noun": "Verb[た・ている] noun",
+    "Verb[て]・Noun[で]+B": "Verb[て]・noun[で]",
+    "Verb+て|bunpro": "Verb[て] (and then)",
+    "Verb+て+B": "Verb[て] (and then another event)",
+    "Verb+てもいい": "Verb[てもいい]",
+    "Verb+まで": "Verb[まで]",
+    "Verb+にいく": "Verb[にいく]",
+    "RelativeClause": "Relative clause",
+    "RhetoricalQuestion": "Rhetorical question",
+    "VmasuasaNoun": "Verb[masu-stem] noun",
+    "Vmasu": "Verb[masu-steam] conjunction",
+    "限り|bunpro": "限り (as long as)",
+    "限り|dojg": "限り (as long as)",
+    "限り②|dojg": "限り (limited to)",
+    "より|bunpro": "より (than/comparison)",
+    "より①|dojg": "より (than/comparison)",
+    "より|dojg": "より (degree)",
+    "より②": "より (from - extent/range)",
+    "も": "も (also/too)",
+    "も②": "Number[も] (as many as)",
+    "Number+も": "Number[も] (as many as)",
+    "は|bunpro": "は (topic marker, as for ~)",
+    "は①|dojg": "は (topic marker, as for ~)",
+    "は|dojg": "は (emphatic)",
+    "に|bunpro": "に (location/direction)",
+    "に|dojg": "に (in/with - hypothetical)",
+    "そこで": "そこで (therefore)",
+    "そこで②|dojg": "そこで (then)",
+    "さ|bunpro": "さ (-ness/-ity)",
+    "さ|dojg": "さ (casual emphasis)",
+    "さ - Casual よ|bunpro": "さ (casual よ)",
+    "ことがある|bunpro": "ことがある (there are times when)",
+    "ことがある①|dojg": "ことがある (there are times when)",
+    "ことがある②|dojg": "ことがある (occassionally)",
+    "こと|bunpro": "こと (making a verb a noun)",
+    "こと|dojg": "こと (imperative)",
+    "こと①|dojg": "こと (abstract thing)",
+    "こと②|dojg": "こと (making a verb a noun)",
+    "後(の) Noun": "後(の) noun",
+    "ん (Slang)": "ん (slang)",
+    "れる・られる (Potential)": "られる (potential)",
+    "る-Verb (Dictionary)": "る-verb (dictionary)",
+    "る-Verb (Negative)": "る-verb (negative)",
+    "る-Verb (Negative-Past)": "る-verb (negative-past)",
+    "る-Verb (Past)": "る-verb (past)",
+    "に (Frequency)": "に (frequency)",
+    "つ (Slang)": "つ slang)",
+    "さ - Filler": "さ (filler)",
+    "さ - Interjection": "さ (interjection)",
+    "う-Verb (Dictionary)": "う-verb (dictionary)",
+    "う-Verb (Negative)": "う-verb (negative)",
+    "う-Verb (Negative-Past)": "う-verb (negative-past)",
+    "う-Verb (Past)": "う-verb (past)",
+    "い-Adjective (Past)": "い-adjective (past)",
+    "い-Adjective (Predicate)": "い-adjective (predicate)",
+    "Verbs (Non-past)": "Verbs (non-past)",
+    "Adj限りだ": "Adjective[限りだ] (extremely)",
+    "限りだ": "Adjective[限りだ] (extremely)",
+    "Adjective+の(は)": "Adjective[の] (the one that is)",
+    "Adjective+て・Noun+で": "Adjective[て]・noun[で] (and/because)",
+    "Adjective+て+B": "Adjective[て] (and/because)",
+    "にして①": "にして (at the point of)",
+    "にして②": "にして (and also)",
+    "〜かというと ①": "〜かというと (because)",
+    "〜かというと ②": "〜かというと (if I were to say)",
+    "Verb[て]+B①": "Verb[て] (and, non-sequential)",
+    "Verb[て]+B②": "Verb[て] (because of)",
+    "込む ①": "込む (into)",
+    "込む ②": "込む (thoroughly)",
     "べからず・べからざる": "べからず",
-    "られる②": "れる・られる (Potential)",
+    "Causative-Passive": "られる (passive)",
+    "られる①": "られる (passive)",
+    "られる②": "られる (potential)",
     "(と言)ったらない": "ったらない・といったらない",
     "させる": "Verb[せる・させる]",
     "(っ)きり": "きり",
-    "て": "Verb[て]",
+    "て|dojg": "Verb[て] (and then)",
+    "Verb[て]|bunpro": "Verb[て] (casual request)", 
     "なくて": "なくて (not)",
     "始める・はじめる": "はじめる",
     "終わる・おわる": "おわる",
@@ -423,7 +141,6 @@ grammar_point_name_translations = {
     "なんて②": "なんか・なんて",
     "なんて①": "なんて (what)",
     "しか": "しか〜ない",
-    "Number+しか〜ない": "しか〜ない",
     "しまう": "てしまう・ちゃう",
     "(の)上で": "上で",
     "(の)代わりに": "代わりに",
@@ -435,6 +152,9 @@ grammar_point_name_translations = {
     "で②": "で (by)",
     "で③": "で (because)",
     "で④": "で (by time)",
+    "たって": "たって (even if)",
+    "(っ)たって①": "(っ)たって (hypothetical, certain outcome)",
+    "(っ)たって②": "(っ)たって (hypothetical, futile)",
     "ところだった ①": "ところだった (on the verge of)",
     "ところだった ②": "ところだった (in the middle of)",
     "は言うまでもない ①": "は言うまでもない",
@@ -451,19 +171,14 @@ grammar_point_name_translations = {
     "〜やら〜やら": "やら〜やら",
     "風に": "風",
     "際(に)": "際に",
-    "限りだ": "Adj限りだ",
-    "限り②": "限り (only until)",
     "間・あいだ(に)": "の間に",
     "過ぎる・すぎる": "すぎる",
     "通り(に)": "とおり",
     "途端(に)": "たとたんに",
     "言うまでもない ②": "言うまでもない",
     "見える・みえる": "見える",
-    "だに": "Verb+だに",
-    "られる①": "Causative-Passive",
-    "も②": "も (as many as)",
-    "Number+も": "も (as many as)",
-    "みせる": "Verb[て]+みせる",
+    "だに": "Verb[だに]",
+    "みせる": "Verb[て]みせる",
     "のだ": "〜んです・のです",
     "もの(だ)": "ものだ",
     "~ば~ほど": "ば〜ほど",
@@ -475,9 +190,11 @@ grammar_point_name_translations = {
     "ようでは": "ようでは・ようじゃ",
     "ようと思う": "〜ようと思う・〜おうと思う",
     "あげる": "あげる (give away)",
+    "いる①": "いる (be)",
     "いる②": "ている (~ing)",
     "ている①": "ている (~ing)",
-    "いる①": "いる (be)",
+    "ている②": "ている (resultant state)",
+    "ている③": "ている (habitual action)",
     "お~下さい": "お〜ください",
     "おおよそ": "およそ・おおよそ",
     "およそ": "およそ・おおよそ",
@@ -497,10 +214,12 @@ grammar_point_name_translations = {
     "からと言って": "からといって",
     "が②": "が (but)",
     "が①": "が (subject marker)",
-    "こと①": "こと (thing)",
-    "こと②": "こと (to~)",
-    "ことがある①": "ことがある",
-    "ことがある②": "ことがある (there are times)",
+    "自分・じぶん①": "自分・じぶん (one's own)",
+    "自分・じぶん②": "自分・じぶん (self - independent action)",
+    "以上 ①": "以上 (at least)",
+    "以上 ②": "以上 (given that)",
+    "には及ばない①": "には及ばない (not necessary)",
+    "には及ばない②": "には及ばない (inferior in comparison)",
     "ことが出来る・できる": "ことができる",
     "ことは": "ことは〜が",
     "さぞ(かし)": "さぞ",
@@ -523,7 +242,6 @@ grammar_point_name_translations = {
     "行く・いく②": "行く・いく (continue)",
     "行く・いく①": "行く・いく (go)",
     "聞こえる・きこえる": "聞こえる",
-    "そこで②": "そこで (then)",
     "たらどうですか": "たらどう",
     "って①": "って (speaking of)",
     "って②": "って (that)",
@@ -596,7 +314,6 @@ grammar_point_name_translations = {
     "出す・だす": "だす",
     "前に・まえに": "まえに",
     "割に(は)": "割に",
-    "は①": "は (as for ~)",
     "はいけない": "てはいけない",
     "はず": "はずだ",
     "べきだ": "べき",
@@ -607,8 +324,6 @@ grammar_point_name_translations = {
     "もらう①": "もらう (receive)",
     "もらう": "もらう (receive)",
     "もらう②": "もらう (have someone do)",
-    "より①": "より (than)",
-    "より②": "より (in ~ of)",
     "らしい": "らしい (seems)",
     "らしい ①": "らしい (seems)",
     "らしい ②": "らしい (typical of)",
@@ -626,6 +341,7 @@ grammar_point_name_translations = {
     "一方(だ)": "一方だ",
     "一方で(は)~他方で(は)": "一方で",
     "確かに~が": "確かに",
+    "〜てやる": "やる (send)",
     "やる①": "やる (send)",
     "やる②": "やる (knowing that it will cause someone trouble)",
     "や否や・やいなや": "や否や",
@@ -643,8 +359,6 @@ grammar_point_name_translations = {
     "嫌いだ・きらいだ": "きらい",
     "時・とき": "とき",
     "為(に)・ため(に)": "ため(に)",
-
-
 }
 
 def read_file_list(filename):
@@ -659,13 +373,44 @@ def read_yaml(input_file: str, type) -> dict:
         point[f"{type}_grammar_point"] = point["grammar_point"]
         return point
 
-def apply_translations(yaml_list, translations, used_translations):
-    translation_keys = set(translations.keys()) 
+def parse_translation_key(key):
+    """Parse a translation key into the grammar point and optional source type."""
+    if '|' in key:
+        grammar_point, source = key.split('|', 1)
+        return grammar_point, source
+    return key, None
+
+def validate_translations(bunpro_list, dojg_list, translations):
+    """Validate that all translation keys match an existing grammar point."""
+    # Collect all grammar points from both sources
+    all_grammar_points = {item['grammar_point'] for item in bunpro_list}
+    all_grammar_points.update(item['grammar_point'] for item in dojg_list)
+
+    # Validate each translation key
+    for trans_key in translations:
+        grammar_point, specified_source = parse_translation_key(trans_key)
+        if specified_source and specified_source not in ('bunpro', 'dojg'):
+            raise ValueError(f"Invalid source type in translation key {trans_key}")
+        
+        if grammar_point not in all_grammar_points:
+            raise ValueError(f"No matching grammar point found for translation key: {grammar_point}")
+
+def apply_translations(yaml_list, translations, used_translations, source_type=None):
+    """
+    Apply translations to grammar points, respecting source-specific translations.
+    """
     for item in yaml_list:
-        translation_key = item['grammar_point']
-        if  translation_key in translation_keys:
-            item['grammar_point'] = translations[translation_key]
-            used_translations.add(translation_key) 
+        current_point = item['grammar_point']
+        
+        # Check direct match first
+        direct_key = f"{current_point}|{source_type}" if source_type else current_point
+        if direct_key in translations:
+            item['grammar_point'] = translations[direct_key]
+            used_translations.add(direct_key)
+        # If no source-specific match, try general match
+        elif current_point in translations and '|' not in current_point:
+            item['grammar_point'] = translations[current_point]
+            used_translations.add(current_point)
 
     return yaml_list
 
@@ -678,11 +423,14 @@ def trim_elements(merged_list):
             trimmed_item['meaning'] = item['meaning']
         
         if 'bunpro' in item and item['bunpro'] is not None:
-            bunpro_trimmed = {'grammar_point': item['bunpro']['bunpro_grammar_point'], 'url': item['bunpro']['url']}
+            bunpro_trimmed = {
+                'grammar_point': item['bunpro']['bunpro_grammar_point'], 
+                # 'url': item['bunpro']['url']
+                }
             if 'meaning' in item['bunpro']:
                 bunpro_trimmed['meaning'] = item['bunpro']['meaning']
             if 'examples' in item['bunpro']:
-                bunpro_trimmed['examples'] = item['bunpro']['examples'][:2]
+                bunpro_trimmed['examples'] = item['bunpro']['examples'][:10]
             trimmed_item['bunpro'] = bunpro_trimmed
         
         if 'dojg' in item and item['dojg'] is not None:
@@ -690,7 +438,7 @@ def trim_elements(merged_list):
             if 'meaning' in item['dojg']:
                 dojg_trimmed['meaning'] = item['dojg']['meaning']
             if 'examples' in item['dojg']:
-                dojg_trimmed['examples'] = item['dojg']['examples'][:2]
+                dojg_trimmed['examples'] = item['dojg']['examples'][:10]
             trimmed_item['dojg'] = dojg_trimmed
         
         trimmed_list.append(trimmed_item)
@@ -726,27 +474,11 @@ def merge_lists(list_one, list_two, list_name_one='one', list_name_two='two'):
     return sorted_merged
 
 
-def is_merged(item, used_resolutions = None):
-    grammar_point = item['grammar_point']
+def is_merged(item):
     has_bunpro = 'bunpro' in item and item['bunpro'] is not None
     has_dojg = 'dojg' in item and item['dojg'] is not None
 
-    # Check for forced resolutions
-    if grammar_point in forced_resolutions:
-        forced_source = forced_resolutions[grammar_point]
-        if forced_source == 'bunpro' and has_bunpro:
-            if used_resolutions is not None:
-                used_resolutions.add(grammar_point)
-            return True
-        elif forced_source == 'dojg' and has_dojg:
-            if used_resolutions is not None:
-                used_resolutions.add(grammar_point)
-            return True
-        else:
-            return False
-    # Regular filtering if no forced resolution
-    else: 
-        return has_bunpro and has_dojg
+    return has_bunpro and has_dojg
 
 def generate_statistics(merged_list):
     merged_count = 0
@@ -754,37 +486,31 @@ def generate_statistics(merged_list):
     bunpro_only_count = 0
 
     for item in merged_list:
-        if is_merged(item):
+        has_bunpro = 'bunpro' in item and item['bunpro'] is not None
+        has_dojg = 'dojg' in item and item['dojg'] is not None
+        if has_bunpro and has_dojg:
             merged_count += 1
-        elif item['bunpro']:
+        elif has_bunpro:
             bunpro_only_count += 1
-        elif item['dojg']:
+        elif has_dojg:
             dojg_only_count += 1
 
     return {
         'merged_count': merged_count,
         'dojg_only_count': dojg_only_count,
-        'bunpro_only_count': bunpro_only_count
+        'bunpro_only_count': bunpro_only_count,
+        'total_count': len(merged_list)
     }
 
 def remove_merged_grammar_points(merged_list):
     """
-    Removes the grammar points that have both bunpro and dojg points,
-    while considering forced resolutions. Raises an error if a forced resolution
-    is not used.
+    Removes the grammar points that have both bunpro and dojg points. 
     """
     filtered_list = []
-    used_resolutions = set()  # Keep track of used forced resolutions
 
     for item in merged_list:
-        if not is_merged(item, used_resolutions):
+        if not is_merged(item):
             filtered_list.append(item)
-
-    # Check if all forced resolutions were used
-    unused_resolutions = set(forced_resolutions.keys()) - used_resolutions
-    if unused_resolutions:
-        print("USED_RESOLUTIONS", used_resolutions)
-        raise ValueError(f"Unused forced resolutions: {unused_resolutions}")
 
     return filtered_list
 
@@ -825,6 +551,110 @@ def apply_missing_meanings(merged_data, missing_meanings):
     unused_meanings = set(missing_meanings.keys()) - used_meanings
     if unused_meanings:
         raise ValueError(f"Unused missing meanings: {unused_meanings}")
+    
+def find_inconsistent_parentheticals(grammar_points):
+    """
+    Find pairs of grammar points where one has a parenthetical description and the other doesn't,
+    but they share the same Japanese text.
+    """
+    # Group by the part before any parentheses
+    point_groups = {}
+    for point in grammar_points:
+        # Split on first '(' if it exists
+        base_point = point.split(' (')[0]
+        if base_point not in point_groups:
+            point_groups[base_point] = []
+        point_groups[base_point].append(point)
+    
+    # Find groups with inconsistent parenthetical usage
+    inconsistent_pairs = []
+    for base_point, variants in point_groups.items():
+        if len(variants) > 1:
+            has_parenthetical = any('(' in v for v in variants)
+            missing_parenthetical = any('(' not in v for v in variants)
+            if has_parenthetical and missing_parenthetical:
+                inconsistent_pairs.append(sorted(variants))
+    
+    return inconsistent_pairs
+    
+def validate_grammar_points(merged_data):
+    """
+    Validates grammar points for formatting issues.
+    """
+    numbered_points = []
+    capitalization_points = []
+    adj_points = []
+    plus_points = []
+    uncapitalized_english = []
+    
+    for item in merged_data:
+        grammar_point = item['grammar_point']
+
+        # Check for numbered variants
+        if any(char in grammar_point for char in "①②③④⑤⑥⑦"):
+            numbered_points.append(grammar_point)
+            
+        # Check for any plus signs
+        if '+' in grammar_point:
+            plus_points.append(grammar_point)
+
+        # Check capitalization in subsequent words
+        words = grammar_point.split()
+        for word in words[1:]:  # Skip first word
+            if word[0].isupper() and word != word[0] + word[1:].lower():
+                capitalization_points.append(grammar_point)
+                break
+
+        # Check for 'Adj' not at start
+        if "Adj" in words[1:]:
+            adj_points.append(grammar_point)
+            
+        # If first word starts with English letter, it must be capitalized
+        if words[0][0].isascii() and words[0][0].isalpha() and not words[0][0].isupper():
+            uncapitalized_english.append(grammar_point)
+
+    # Check for inconsistent parentheticals
+    inconsistent_pairs = find_inconsistent_parentheticals(
+        [item['grammar_point'] for item in merged_data]
+    )
+    
+    errors = []
+    if numbered_points:
+        errors.append(f"Found numbered grammar points: {numbered_points}")
+    if plus_points:
+        errors.append(f"Found grammar points containing '+': {plus_points}")
+    if capitalization_points:
+        errors.append(f"Found grammar points with incorrect capitalization after first word: {capitalization_points}")
+    if adj_points:
+        errors.append(f"Found grammar points using 'Adj' not at start: {adj_points}")
+    if uncapitalized_english:
+        errors.append(f"Found grammar points with uncapitalized English first word: {uncapitalized_english}")
+    if inconsistent_pairs:
+        errors.append(f"Found grammar points with inconsistent parenthetical descriptions: {inconsistent_pairs}")
+        
+    if errors:
+        raise ValueError("\n".join(errors))
+    
+def get_all_grammar_points(merged_data):
+    """Get all grammar points with their meanings."""
+    all_points = []
+    
+    for item in merged_data:
+        point = item['grammar_point']
+        
+        # Get meaning from either source, prioritizing bunpro if both exist
+        meaning = ""
+        if 'bunpro' in item and item['bunpro'] and 'meaning' in item['bunpro']:
+            meaning += " --" + item['bunpro']['meaning']
+        if 'dojg' in item and item['dojg'] and 'meaning' in item['dojg']:
+            meaning += " --" + item['dojg']['meaning']
+            
+        if meaning:
+            point = f"{point}: {meaning}"
+            
+        all_points.append(point)
+    
+    return sorted(all_points)
 
 def main():
     if len(sys.argv) != 5:
@@ -844,10 +674,13 @@ def main():
     bunpro_yamls = [read_yaml(f, 'bunpro') for f in bunpro_files]
     dojg_yamls = [read_yaml(f, 'dojg') for f in dojg_files]
 
+    # First validate all translations
+    validate_translations(bunpro_yamls, dojg_yamls, grammar_point_name_translations)
+
     # Apply translations to the grammar points before merging
     used_translations = set()
-    bunpro_yamls = apply_translations(bunpro_yamls, grammar_point_name_translations, used_translations)
-    dojg_yamls = apply_translations(dojg_yamls, grammar_point_name_translations, used_translations)
+    bunpro_yamls = apply_translations(bunpro_yamls, grammar_point_name_translations, used_translations, 'bunpro')
+    dojg_yamls = apply_translations(dojg_yamls, grammar_point_name_translations, used_translations, 'dojg')
     unused_translations = set(grammar_point_name_translations.keys()) - used_translations
     if unused_translations:
         raise ValueError(f"Unused translation keys: {unused_translations}")
@@ -857,18 +690,23 @@ def main():
     statistics = generate_statistics(merged)
     apply_missing_meanings(merged, missing_meanings)
 
-    removed = remove_merged_grammar_points(trim_elements(merged))
-    #removed = trim_elements(merged)
-    label_closest_matches(removed)
+    removed = trim_elements(merged)  
+    #removed = remove_merged_grammar_points(removed)
+    #label_closest_matches(removed)
+    all_grammar_points = get_all_grammar_points(removed)
+
 
     # Combine statistics and merged data
     output_data = {
         'statistics': statistics,
-        'merged_data': removed
+        'merged_data': removed,
+        'all_grammar_points': all_grammar_points
     }
 
     with open(output_file, 'w') as f:
         dump_yaml_file(output_data, f)
+
+    validate_grammar_points(merged)
 
 if __name__ == "__main__":
     main()
