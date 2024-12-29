@@ -74,8 +74,6 @@ async def set_value(executor: ThreadPoolExecutor, key: str, value: str, caller_i
 
 async def garbage_collect():
     logging.info("Running garbage collection...")
-    now = datetime.now()
-    one_day_ago = now - timedelta(hours=24)
 
     try:
         all_value_files = [
@@ -84,21 +82,12 @@ async def garbage_collect():
             if f.endswith('-value.txt')
         ]
 
+        # Sort by modification time, newest first
         all_value_files.sort(key=lambda p: os.path.getmtime(p), reverse=True)
 
-        if MAX_ENTRIES > 0:
-            files_to_keep = all_value_files[:MAX_ENTRIES]
-            files_to_delete = all_value_files[MAX_ENTRIES:]
-        else:
-            files_to_keep = all_value_files
-            files_to_delete = []
-
-        final_keep = []
-        for f in files_to_keep:
-            if datetime.fromtimestamp(os.path.getmtime(f)) < one_day_ago:
-                files_to_delete.append(f)
-            else:
-                final_keep.append(f)
+        # Keep most recent MAX_ENTRIES files, delete the rest
+        files_to_keep = all_value_files[:MAX_ENTRIES] if MAX_ENTRIES > 0 else all_value_files
+        files_to_delete = all_value_files[MAX_ENTRIES:] if MAX_ENTRIES > 0 else []
 
         deleted_count = 0
         for value_file in files_to_delete:
