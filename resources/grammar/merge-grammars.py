@@ -4,6 +4,9 @@ from dumpyaml import dump_yaml_file
 import difflib
 
 missing_meanings = {
+    "Number[も]": "As many as, not even.",
+    "何しろ": "In any case, anyway, after all, no matter what.",
+    "い-adjective (predicate)": "An い-adjective can directly end a sentence to describe a state or property.",
     "Relative clause": "Modifies a noun by providing additional descriptive information about it." ,
     "Rhetorical question": "A question asked for effect, not requiring an answer, often used to express strong emotion or make a point.",
     "Verb[masu-stem] noun": "Treats a verb in the masu-stem form as a noun, often to describe an action or state as a concept.",
@@ -33,8 +36,8 @@ missing_meanings = {
 # - English should be lower-case unless it's the first word in English
 grammar_point_name_translations = {
     "れる・られる+ままに": "れる・られる~ままに",
-    "何[(Number)+Counter]も": "何 counter も",
-    "なん+counter+か": "なん counter か",
+    "何[(Number)+Counter]も": "[何]counter[も]",
+    "なん+counter+か": "[なん]counter[か]",
     "な-Adjective+Noun": "な-adjective noun",
     "だに+しない": "だに~しないい",
     "がある+Noun": "[がある]noun",
@@ -59,7 +62,7 @@ grammar_point_name_translations = {
     "RelativeClause": "Relative clause",
     "RhetoricalQuestion": "Rhetorical question",
     "VmasuasaNoun": "Verb[masu-stem] noun",
-    "Vmasu": "Verb[masu-steam] conjunction",
+    "Vmasu": "Verb[masu-stem] conjunction",
     "限り|bunpro": "限り (as long as)",
     "限り|dojg": "限り (as long as)",
     "限り②|dojg": "限り (limited to)",
@@ -68,8 +71,8 @@ grammar_point_name_translations = {
     "より|dojg": "より (degree)",
     "より②": "より (from - extent/range)",
     "も": "も (also/too)",
-    "も②": "Number[も] (as many as)",
-    "Number+も": "Number[も] (as many as)",
+    "も②": "Number[も]",
+    "Number+も": "Number[も]",
     "は|bunpro": "は (topic marker, as for ~)",
     "は①|dojg": "は (topic marker, as for ~)",
     "は|dojg": "は (emphatic)",
@@ -645,9 +648,9 @@ def get_all_grammar_points(merged_data):
         # Get meaning from either source, prioritizing bunpro if both exist
         meaning = ""
         if 'bunpro' in item and item['bunpro'] and 'meaning' in item['bunpro']:
-            meaning += " --" + item['bunpro']['meaning']
+            meaning += " bunpro: " + item['bunpro']['meaning']
         if 'dojg' in item and item['dojg'] and 'meaning' in item['dojg']:
-            meaning += " --" + item['dojg']['meaning']
+            meaning += " dojg: " + item['dojg']['meaning']
             
         if meaning:
             point = f"{point}: {meaning}"
