@@ -2,18 +2,20 @@ import sys
 import yaml
 from dumpyaml import dump_yaml_file
 import difflib
+import re
 
 missing_meanings = {
-    "Number[も]": "As many as, not even.",
-    "何しろ": "In any case, anyway, after all, no matter what.",
-    "い-adjective (predicate)": "An い-adjective can directly end a sentence to describe a state or property.",
-    "Relative clause": "Modifies a noun by providing additional descriptive information about it." ,
-    "Rhetorical question": "A question asked for effect, not requiring an answer, often used to express strong emotion or make a point.",
-    "Verb[masu-stem] noun": "Treats a verb in the masu-stem form as a noun, often to describe an action or state as a concept.",
+    "Number+も": "Indicates a surprising or emphatic quantity, e.g. “as many as” or “not even.",
+    "何しろ": "Emphasizes “in any case,” “anyway,” or “after all,” stressing inevitability or importance.",
+    "い-adjective (predicate)": "An い-adjective used as the sentence-ending descriptor for a state or property.",
+    "Relative Clause": "Modifies a noun by providing additional descriptive information about it." ,
+    "Rhetorical Question": "A question asked for effect, not requiring an answer, often used to express strong emotion or make a point.",
+    "Verb[masu-stem]+Noun": "Treats a verb in the masu-stem form as a noun, often to describe an action or state as a concept.",
+    "Verb[masu-stem] (conjunction)": "Treats the verb’s ます-stem as a conjunction, linking consecutive or simultaneous actions (like “and” or “then”).",
     "お": "Honorific prefix for nouns and verbs, adds politeness and respect.",
     "お~だ": "Polite copula, equivalent to 'desu' but often used for adjectives or states related to the listener.", 
     "お〜する": "Humble verb form, used when the speaker performs an action for someone of higher status.",
-    "お〜になる": "Honorific verb form, used when referring to actions or states of someone of higher status.",
+    "お〜になる": "Honorific verb form indicating respect for the actions of someone of higher status.",
     "かい": "Informal sentence ending particle, similar to 'ka' but softer and more casual, often used by males.",
     "が (subject marker)": "Particle marking the grammatical subject of the sentence.", 
     "ことがある (there are times when)":  "Indicates that there are times an action or event happens.", 
@@ -21,66 +23,118 @@ missing_meanings = {
     "しい": "Suffix for i-adjectives, indicates a strong emotion or feeling.",
     "だい": "Informal sentence ending particle, emphasizes a question or request, often used by males.",
     "っけ": "Sentence ending particle, expresses uncertainty or seeks confirmation, 'wasn't it?', 'didn't we?'", 
-    "に (in/with - hypothetical)": "Marks a hypothetical situation or condition.",
+    "に (in, with - hypothetical)": "Marks a hypothetical situation or condition.",
     "は〜が": "Sentence structure emphasizing a contrast, 'A is (topic), but B (focus)'.",
     "は〜だ": "Basic sentence structure, identifies the topic (A) and provides information (B) about it.", 
     "わ": "Sentence ending particle, mainly used by females, adds a soft and feminine tone, can express emphasis or emotion.",
     "を (object marker)":  "Particle marking the direct object of a transitive verb.",
     "を (object of an emotion)": "Indicates the object or cause of an emotion or feeling.", 
     "を (point of departure)": "Indicates the point from which someone or something departs or separates.",
-    "君・くん": "Suffix added to names, primarily for males, expresses familiarity or a slightly informal tone." 
+    "君・くん": "Suffix added to names, primarily for males, expresses familiarity or a slightly informal tone.",
+    "１〜たりとも〜ない": "Emphasizes 'not even one' or 'not a single.'",
+    "Verb[て]+はいけない": "Must not, may not, cannot. Expresses strong prohibition or a rule that forbids the action.",
+    "Verb[ない]+ものかな・ものだろうか": "Is there no way to make this happen? I wish it could be so..."
 }
 
-# Rules
+grammar_point_name_rules = """
+# Rules for Grammar Point Names:
+# - The Grammar Point Name must accurately represent real, fluent, natural Japanese.
 # - Instead of using numbers like やる①, use descriptive like やる (send)
-# - English should be lower-case unless it's the first word in English
+# - Japanese text in parenthesis is optional in the grammar point.
+# - English inside parenthesis at the end is flavor text and must be all lower case
+# - Use + to combine two things when they're directly adjacent.
+# - 〜 and ~ are used to combine two things when they're not directly adjacent. 
+# - Alternatives between multiple grammar options are separated by '・' and not a slash.
+# - Rules for [brackets]:
+#   - Verb[conjugation] means a verb conjugated in that way (volitional, etc)
+#   - Adjective[conjugation] means an adjective conjugated in that way (past, etc)
+"""
 grammar_point_name_translations = {
-    "れる・られる+ままに": "れる・られる~ままに",
-    "何[(Number)+Counter]も": "[何]counter[も]",
-    "なん+counter+か": "[なん]counter[か]",
-    "な-Adjective+Noun": "な-adjective noun",
+    "〜わ〜わ": "わ〜わ",
+    "〜やら〜やら": "やら〜やら",
+    "〜も[V]ば〜も[V]": "Noun+も+Verb[ば-conditional]+Noun+も+Verb",
+    "〜であれ〜であれ": "Noun+であれ+Noun+であれ",
+    "のなかで〜がいちばん〜": "Group+のなかで+Subject+がいちばん+Verb・Adjective",
+    "〜得ない": "Noun・Verb[dictionary]・Adjective+得ない",
+    "〜代": "Number+代",
+    "〜んです・のです": "Noun+な・Verb[dictionary]・Adjective+んです・のです",
+    "のだ": "Noun+な・Verb[dictionary]・Adjective+んです・のです",
+    "〜を〜に任せる": "Noun+を〜に任せる",
+    "〜るまでだ": "Verb[dictionary]+までだ",
+    "〜ら": "Pronoun+ら",
+    "〜ようと思う・〜おうと思う": "Verb[volitional-よう]+と思う",
+    "ようと思う": "Verb[volitional-よう]+ようと思う",
+    "Verb[よう]": "Verb[volitional-よう]",
+    "〜ようとしない": "Verb[volitional-よう]+としない",
+    "〜ようではないか": "Verb[volitional-よう]+ではないか",
+    "〜やがる": "Verb[masu-stem]+やがる",
+    "〜ましょうか": "Verb[ましょう]+か",
+    "〜ばこそ": "Noun・Verb[dictionary]・Adjective+ばこそ",
+    "〜は〜の一つだ": "Noun・Adjective+は〜の一つだ",
+    "〜は〜となっている": "Noun・Adjective+は〜となっている",
+    "〜は〜で有名": "Noun・Adjective+は〜で有名",
+    "〜のだろうか": "Noun・Verb[dictionary]・Adjective+のだろうか",
+    "〜の〜のと": "Verb[dictionary]・Adjective・Noun+の〜のと",
+    "〜になる・〜くなる": "Noun・Adjective+になる・くなる",
+    "〜にする・〜くする": "Verb[volitional-よう]+にする・くする",
+    "〜に〜ない": "Verb[volitional-よう]+に〜ない",
+    "〜なり〜なり": "Noun・Verb[dictionary]+なり〜なり",
+    "〜ない〜はない": "Noun[negative-modifier]・Verb[ない]・Adjective[negative]+はない",
+    "〜と言っても": "Noun・Verb[dictionary]・Adjective+と言っても",
+    "〜ところに・〜ところへ": "Verb[ていた・ている]・Noun+ところに・ところへ",
+    "〜というのは事実だ": "Noun・Verb[dictionary]・Adjective+というのは事実だ",
+    "〜といい〜といい": "Noun+といい〜といい",
+    "〜でも[Wh.word]でも": "Noun+でも〜でも",
+    "〜でも 〜でも": "Noun+でも〜でも",
+    "〜ても〜なくても": "Noun[で]・Verb[て]・Adjective[て]+も〜なくても",
+    "〜ても〜ても": "Verb[て]・Adjective[て]+も〜ても",
+    "〜てこそ": "Verb[て]+こそ",
+    "〜たまでだ": "Verb[た]+までだ",
+    "〜ずつ": "Noun+ずつ",
+    "ずつ": "Noun+ずつ",
+    "〜ざる": "Verb[imperfective]+ざる",
+    "〜が〜なら": "Noun+が~なら",
+    "〜かは〜によって違う": "Noun・Verb[dictionary]・Adjective+かは~によって違う",
+    "〜(の)姿":"Noun+の・Verb[dictionary]・Adjective+姿",
+    "〜のうち(で)": "のうち(で) (within, among)",
+    "~言わず~と言わず": "Verb[imperfective]+言わず~と言わず",
+    "~ばかりか~(さえ)": "Noun・Verb・Adjective+ばかりか~(さえ) (not only ~ but also)",
+    "Verb[volitional]とする": "Verb[volitional-よう]+とする",
+    "Verb[ない]もの(だろう)か": "Verb[ない]+ものかな・ものだろうか",
+    "てもいい": "Verb[て]+もいい (even if ~ is the case, it’s fine)",
+    "てはいけない|bunpro": "Verb[て]+はいけない",
+    "はいけない|dojg": "Verb[て]+はいけない",
+    "れる・られる+ままに": "Verb[れる・られる]~ままに",
+    "何[(Number)+Counter]も": "何+Counter+も",
     "だに+しない": "だに~しないい",
-    "がある+Noun": "[がある]noun",
-    "Verb[て]+みせる": "Verb[て]みせる",
-    "い-Adj[く]+もなんともない": "い-adjective[く]もなんともない",
-    "い-Adjective+Noun": "い-adjective noun",
-    "Verb[volitional]+としたが": "Verb[volitional]としたが",
-    "Question-phrase+か": "Question[か]",
-    "Particle+の": "Particle[の]",
-    "Number+しか〜ない|bunpro": "Number[しか]〜ない",
-    "Noun+まで": "Noun[まで]",
-    "Noun＋型": "Noun[型]",
-    "Verb+だに": "Verb[だに]",
-    "Number/Amount+は": "Number[は]",
-    "Verb[た・ている]+Noun": "Verb[た・ている] noun",
-    "Verb[て]・Noun[で]+B": "Verb[て]・noun[で]",
+    "い-Adj[く]+もなんともない": "い-aAdjective[く]もなんともない",
+    "Verb[volitional]+としたが": "Verb[volitional-よう]+としたが",
+    "Number/Amount+は": "Number+は",
+    "Verb[て]・Noun[で]+B": "Verb[て]・Noun[で]",
     "Verb+て|bunpro": "Verb[て] (and then)",
     "Verb+て+B": "Verb[て] (and then another event)",
-    "Verb+てもいい": "Verb[てもいい]",
-    "Verb+まで": "Verb[まで]",
-    "Verb+にいく": "Verb[にいく]",
-    "RelativeClause": "Relative clause",
-    "RhetoricalQuestion": "Rhetorical question",
-    "VmasuasaNoun": "Verb[masu-stem] noun",
-    "Vmasu": "Verb[masu-stem] conjunction",
+    "Verb+てもいい": "Verb[て]+もいい (permission)",
+    "RelativeClause": "Relative Clause",
+    "RhetoricalQuestion": "Rhetorical Question",
+    "VmasuasaNoun": "Verb[masu-stem]+Noun",
+    "Vmasu": "Verb[masu-stem] (conjunction)",
     "限り|bunpro": "限り (as long as)",
     "限り|dojg": "限り (as long as)",
     "限り②|dojg": "限り (limited to)",
-    "より|bunpro": "より (than/comparison)",
-    "より①|dojg": "より (than/comparison)",
+    "より|bunpro": "より (than, comparison)",
+    "より①|dojg": "より (than, comparison)",
     "より|dojg": "より (degree)",
-    "より②": "より (from - extent/range)",
-    "も": "も (also/too)",
-    "も②": "Number[も]",
-    "Number+も": "Number[も]",
+    "より②": "より (from - extent, range)",
+    "も": "も (also, too)",
+    "も②": "Number+も",
     "は|bunpro": "は (topic marker, as for ~)",
     "は①|dojg": "は (topic marker, as for ~)",
     "は|dojg": "は (emphatic)",
-    "に|bunpro": "に (location/direction)",
-    "に|dojg": "に (in/with - hypothetical)",
+    "に|bunpro": "に (location, direction)",
+    "に|dojg": "に (in, with - hypothetical)",
     "そこで": "そこで (therefore)",
     "そこで②|dojg": "そこで (then)",
-    "さ|bunpro": "さ (-ness/-ity)",
+    "さ|bunpro": "さ (-ness, -ity)",
     "さ|dojg": "さ (casual emphasis)",
     "さ - Casual よ|bunpro": "さ (casual よ)",
     "ことがある|bunpro": "ことがある (there are times when)",
@@ -90,7 +144,7 @@ grammar_point_name_translations = {
     "こと|dojg": "こと (imperative)",
     "こと①|dojg": "こと (abstract thing)",
     "こと②|dojg": "こと (making a verb a noun)",
-    "後(の) Noun": "後(の) noun",
+    "後(の) Noun": "後(の)+Noun",
     "ん (Slang)": "ん (slang)",
     "れる・られる (Potential)": "られる (potential)",
     "る-Verb (Dictionary)": "る-verb (dictionary)",
@@ -98,7 +152,7 @@ grammar_point_name_translations = {
     "る-Verb (Negative-Past)": "る-verb (negative-past)",
     "る-Verb (Past)": "る-verb (past)",
     "に (Frequency)": "に (frequency)",
-    "つ (Slang)": "つ slang)",
+    "つ (Slang)": "つ (slang)",
     "さ - Filler": "さ (filler)",
     "さ - Interjection": "さ (interjection)",
     "う-Verb (Dictionary)": "う-verb (dictionary)",
@@ -108,15 +162,15 @@ grammar_point_name_translations = {
     "い-Adjective (Past)": "い-adjective (past)",
     "い-Adjective (Predicate)": "い-adjective (predicate)",
     "Verbs (Non-past)": "Verbs (non-past)",
-    "Adj限りだ": "Adjective[限りだ] (extremely)",
-    "限りだ": "Adjective[限りだ] (extremely)",
-    "Adjective+の(は)": "Adjective[の] (the one that is)",
-    "Adjective+て・Noun+で": "Adjective[て]・noun[で] (and/because)",
-    "Adjective+て+B": "Adjective[て] (and/because)",
+    "Adj限りだ": "Adjective+限りだ (extremely)",
+    "限りだ": "Adjective+限りだ (extremely)",
+    "Adjective+の(は)": "Adjective+の(は) (the one that is)",
+    "Adjective+て・Noun+で": "Adjective[て]・Noun[で] (and, because)",
+    "Adjective+て+B": "Adjective[て] (and, because)",
     "にして①": "にして (at the point of)",
     "にして②": "にして (and also)",
-    "〜かというと ①": "〜かというと (because)",
-    "〜かというと ②": "〜かというと (if I were to say)",
+    "〜かというと ①": "かというと (because)",
+    "〜かというと ②": "かというと (if I were to say)",
     "Verb[て]+B①": "Verb[て] (and, non-sequential)",
     "Verb[て]+B②": "Verb[て] (because of)",
     "込む ①": "込む (into)",
@@ -170,8 +224,6 @@ grammar_point_name_translations = {
     "あげる①": "あげる (give away)",
     "あげる②": "てあげる",
     "わ②": "わ",
-    "〜わ〜わ": "わ〜わ",
-    "〜やら〜やら": "やら〜やら",
     "風に": "風",
     "際(に)": "際に",
     "間・あいだ(に)": "の間に",
@@ -180,18 +232,10 @@ grammar_point_name_translations = {
     "途端(に)": "たとたんに",
     "言うまでもない ②": "言うまでもない",
     "見える・みえる": "見える",
-    "だに": "Verb[だに]",
-    "みせる": "Verb[て]みせる",
-    "のだ": "〜んです・のです",
+    "みせる": "Verb[て]+みせる",
     "もの(だ)": "ものだ",
     "~ば~ほど": "ば〜ほど",
-    "〜であれ〜であれ": "であれ〜であれ",
-    "〜でも[Wh.word]でも": "〜でも 〜でも",
-    "〜も[V]ば〜も[V]": "も〜ば〜も",
-    "と言っても": "〜と言っても",
-    "ばこそ": "〜ばこそ",
     "ようでは": "ようでは・ようじゃ",
-    "ようと思う": "〜ようと思う・〜おうと思う",
     "あげる": "あげる (give away)",
     "いる①": "いる (be)",
     "いる②": "ている (~ing)",
@@ -265,7 +309,6 @@ grammar_point_name_translations = {
     "を②": "を (movement through space)",
     "を③": "を (point of departure)",
     "を④": "を (object of an emotion)",
-    "ずつ": "〜ずつ",
     "ところだ①": "ところだ (in a place where it takes ~ to get to)",
     "とする①": "とする (assume that)",
     "とする②": "とする (feel ~)",
@@ -317,7 +360,6 @@ grammar_point_name_translations = {
     "出す・だす": "だす",
     "前に・まえに": "まえに",
     "割に(は)": "割に",
-    "はいけない": "てはいけない",
     "はず": "はずだ",
     "べきだ": "べき",
     "みる": "てみる",
@@ -370,7 +412,7 @@ def read_file_list(filename):
 
 def read_yaml(input_file: str, type) -> dict:
     with open(input_file, 'r', encoding='utf-8') as file:
-        content = file.read().replace("’", "''") .replace("  ", " ").replace("&emsp;", " ").replace("　", " ").replace(" ​"," ").replace("～", "〜").replace("+ ", "+").replace(" +", "+").replace("［","[").replace("］","]").replace("？", "?").replace("（", "(").replace("）",")")
+        content = file.read().replace("  ", " ").replace("&emsp;", " ").replace("　", " ").replace(" ​"," ").replace("～", "〜").replace("+ ", "+").replace(" +", "+").replace("［","[").replace("］","]").replace("？", "?").replace("（", "(").replace("）",")")
         point = yaml.safe_load(content)
         
         point[f"{type}_grammar_point"] = point["grammar_point"]
@@ -417,13 +459,31 @@ def apply_translations(yaml_list, translations, used_translations, source_type=N
 
     return yaml_list
 
+def clean_sentence(sentence):
+    result = sentence.strip()
+    if result.startswith("'") and result.endswith("'"):
+        result = result[1:-1]
+    if result.startswith("'") and result.endswith("'"):
+        result = result[1:-1]
+    result = result.replace(": ", "：").replace(":", "：")
+    return result
+
+def clean_sentences(sentences):
+    result = []
+    for sentence in sentences:
+        result.append({
+            "japanese": clean_sentence(sentence['japanese']),
+            "english": clean_sentence(sentence['english'])
+        })
+    return result
+
 def trim_elements(merged_list):
     trimmed_list = []
     for item in merged_list:
         trimmed_item = {'grammar_point': item['grammar_point']}
         
         if 'meaning' in item:
-            trimmed_item['meaning'] = item['meaning']
+            trimmed_item['meaning'] = clean_sentence(item['meaning'])
         
         if 'bunpro' in item and item['bunpro'] is not None:
             bunpro_trimmed = {
@@ -431,17 +491,17 @@ def trim_elements(merged_list):
                 # 'url': item['bunpro']['url']
                 }
             if 'meaning' in item['bunpro']:
-                bunpro_trimmed['meaning'] = item['bunpro']['meaning']
+                bunpro_trimmed['meaning'] = clean_sentence(item['bunpro']['meaning'])
             if 'examples' in item['bunpro']:
-                bunpro_trimmed['examples'] = item['bunpro']['examples'][:10]
+                bunpro_trimmed['examples'] = clean_sentences(item['bunpro']['examples'][:20])
             trimmed_item['bunpro'] = bunpro_trimmed
         
         if 'dojg' in item and item['dojg'] is not None:
             dojg_trimmed = {'grammar_point': item['dojg']['dojg_grammar_point']}
             if 'meaning' in item['dojg']:
-                dojg_trimmed['meaning'] = item['dojg']['meaning']
+                dojg_trimmed['meaning'] = clean_sentence(item['dojg']['meaning'])
             if 'examples' in item['dojg']:
-                dojg_trimmed['examples'] = item['dojg']['examples'][:10]
+                dojg_trimmed['examples'] = clean_sentences(item['dojg']['examples'][:20])
             trimmed_item['dojg'] = dojg_trimmed
         
         trimmed_list.append(trimmed_item)
@@ -555,88 +615,98 @@ def apply_missing_meanings(merged_data, missing_meanings):
     if unused_meanings:
         raise ValueError(f"Unused missing meanings: {unused_meanings}")
     
-def find_inconsistent_parentheticals(grammar_points):
-    """
-    Find pairs of grammar points where one has a parenthetical description and the other doesn't,
-    but they share the same Japanese text.
-    """
-    # Group by the part before any parentheses
-    point_groups = {}
-    for point in grammar_points:
-        # Split on first '(' if it exists
-        base_point = point.split(' (')[0]
-        if base_point not in point_groups:
-            point_groups[base_point] = []
-        point_groups[base_point].append(point)
+VALID_VERB_CONJUGATIONS = {
+    'masu-stem', 'て', 'た', 'ている', 
+    'volitional-よう', 
+    'ない', 
+    'せる・させる',
+    'れる・られる', 'dictionary', 'negative', 'negative-past', 'past', 'た・ている', 
+    'ていた・ている',
+    'ば-conditional',
+    'ましょう', # polite volitional
+    'imperfective', # mizenkei
+    'ないで' # negative-te
+}
+
+VALID_ADJECTIVE_CONJUGATIONS = {
+    'く', 'て', 'い', 'past', 'predicate', 'negative'
+}
+
+VALID_NOUN_MODIFIERS = {
+    'で', 'に', 'へ', 'と', 'から', 'まで', 'より', 'negative-modifier'
+}
+
+def verify_grammar_point_name(grammar_point: str) -> tuple[bool, str]:
+    # Early returns
+    if not grammar_point:
+        return False, "Grammar point cannot be empty"
     
-    # Find groups with inconsistent parenthetical usage
-    inconsistent_pairs = []
-    for base_point, variants in point_groups.items():
-        if len(variants) > 1:
-            has_parenthetical = any('(' in v for v in variants)
-            missing_parenthetical = any('(' not in v for v in variants)
-            if has_parenthetical and missing_parenthetical:
-                inconsistent_pairs.append(sorted(variants))
+    # Combine all character checks into one regex
+    if re.search(r'[①②③④⑤⑥⑦⑧⑨⑩/]', grammar_point):
+        return False, "Grammar point cannot contain numbered circles (①, ②, etc.) or forward slashes (/)"
     
-    return inconsistent_pairs
+    # Check brackets and parentheses balance in one pass
+    stack = []
+    for char in grammar_point:
+        if char in '([':
+            stack.append(char)
+        elif char in ')]':
+            if not stack:
+                return False, "Unbalanced brackets/parentheses"
+            if (char == ')' and stack[-1] != '(') or (char == ']' and stack[-1] != '['):
+                return False, "Mismatched brackets/parentheses"
+            stack.pop()
+    if stack:
+        return False, "Unbalanced brackets/parentheses"
+
+    # Combine all bracket pattern checks into one regex
+    pattern = r'(Verb|Adjective|Noun)\[(.*?)\]'
+    for match in re.finditer(pattern, grammar_point):
+        type_, conjugation = match.groups()
+        if not conjugation:
+            return False, "Empty brackets are not allowed"
+        
+        valid_set = {
+            'Verb': VALID_VERB_CONJUGATIONS,
+            'Adjective': VALID_ADJECTIVE_CONJUGATIONS,
+            'Noun': VALID_NOUN_MODIFIERS
+        }[type_]
+        
+        if conjugation not in valid_set:
+            return False, f"Invalid {type_.lower()} conjugation: {conjugation}"
+
+    # Check final parentheses contents
+    if grammar_point.endswith(')'):
+        last_paren_match = re.search(r'\(([^)]+)\)$', grammar_point)
+        if last_paren_match:
+            english_text = last_paren_match.group(1)
+            # Split the text into words and check each one
+            words = english_text.split()
+            for word in words:
+                # Skip the word "I"
+                if word != "I" and any(c.isupper() for c in word):
+                    return False, "English in final parentheses must be lowercase (except for 'I')"
+            if any(char.isdigit() for char in english_text):
+                return False, "English description cannot contain numbers"
+
+    # Check separators in one pass
+    for sep in ('+', '~', '〜'):
+        if sep in grammar_point:
+            if any(not part.strip() for part in grammar_point.split(sep)):
+                return False, f"'{sep}' must have content on both sides"
+
+    return True, ""
     
 def validate_grammar_points(merged_data):
     """
     Validates grammar points for formatting issues.
     """
-    numbered_points = []
-    capitalization_points = []
-    adj_points = []
-    plus_points = []
-    uncapitalized_english = []
     
     for item in merged_data:
-        grammar_point = item['grammar_point']
+        valid,error = verify_grammar_point_name(item['grammar_point'])
+        if not valid:
+            raise ValueError(f"Invalid grammar point name: {item['grammar_point']} ({error})")
 
-        # Check for numbered variants
-        if any(char in grammar_point for char in "①②③④⑤⑥⑦"):
-            numbered_points.append(grammar_point)
-            
-        # Check for any plus signs
-        if '+' in grammar_point:
-            plus_points.append(grammar_point)
-
-        # Check capitalization in subsequent words
-        words = grammar_point.split()
-        for word in words[1:]:  # Skip first word
-            if word[0].isupper() and word != word[0] + word[1:].lower():
-                capitalization_points.append(grammar_point)
-                break
-
-        # Check for 'Adj' not at start
-        if "Adj" in words[1:]:
-            adj_points.append(grammar_point)
-            
-        # If first word starts with English letter, it must be capitalized
-        if words[0][0].isascii() and words[0][0].isalpha() and not words[0][0].isupper():
-            uncapitalized_english.append(grammar_point)
-
-    # Check for inconsistent parentheticals
-    inconsistent_pairs = find_inconsistent_parentheticals(
-        [item['grammar_point'] for item in merged_data]
-    )
-    
-    errors = []
-    if numbered_points:
-        errors.append(f"Found numbered grammar points: {numbered_points}")
-    if plus_points:
-        errors.append(f"Found grammar points containing '+': {plus_points}")
-    if capitalization_points:
-        errors.append(f"Found grammar points with incorrect capitalization after first word: {capitalization_points}")
-    if adj_points:
-        errors.append(f"Found grammar points using 'Adj' not at start: {adj_points}")
-    if uncapitalized_english:
-        errors.append(f"Found grammar points with uncapitalized English first word: {uncapitalized_english}")
-    if inconsistent_pairs:
-        errors.append(f"Found grammar points with inconsistent parenthetical descriptions: {inconsistent_pairs}")
-        
-    if errors:
-        raise ValueError("\n".join(errors))
     
 def get_all_grammar_points(merged_data):
     """Get all grammar points with their meanings."""
@@ -646,18 +716,30 @@ def get_all_grammar_points(merged_data):
         point = item['grammar_point']
         
         # Get meaning from either source, prioritizing bunpro if both exist
-        meaning = ""
+        meaning = {}
+        bunpro = None
+        dojg = None
         if 'bunpro' in item and item['bunpro'] and 'meaning' in item['bunpro']:
-            meaning += " bunpro: " + item['bunpro']['meaning']
+            bunpro = item['bunpro']['meaning']
         if 'dojg' in item and item['dojg'] and 'meaning' in item['dojg']:
-            meaning += " dojg: " + item['dojg']['meaning']
-            
-        if meaning:
-            point = f"{point}: {meaning}"
-            
+            dojg = item['dojg']['meaning']
+        if bunpro is not None and dojg is not None and bunpro == dojg:
+            meaning['meaning'] = bunpro
+        elif bunpro is not None and dojg is not None:
+            meaning['bunpro'] = bunpro
+            meaning['dojg'] = dojg
+        elif bunpro is not None:
+            meaning['meaning'] = bunpro
+        elif dojg is not None:
+            meaning['meaning'] = dojg
+
+        point = { point: meaning }
         all_points.append(point)
     
-    return sorted(all_points)
+    return { 
+        "grammar_point_naming_rules": grammar_point_name_rules,
+        "grammar_points": sorted(all_points, key=lambda x: list(x.keys())[0])
+    }
 
 def main():
     if len(sys.argv) != 5:
@@ -697,6 +779,9 @@ def main():
     #removed = remove_merged_grammar_points(removed)
     #label_closest_matches(removed)
     all_grammar_points = get_all_grammar_points(removed)
+
+    if statistics['merged_count'] != 357:
+        print("Not enough grammar points merged")
 
 
     # Combine statistics and merged data
