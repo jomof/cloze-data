@@ -114,6 +114,7 @@ async def gc_task():
 
 async def handle_client(reader: asyncio.StreamReader, writer: asyncio.StreamWriter, executor: ThreadPoolExecutor):
     try:
+        logging.info("Received client connection")
         length_data = await reader.readexactly(4)
         msg_length = struct.unpack('!I', length_data)[0]
         
@@ -158,8 +159,28 @@ async def handle_client(reader: asyncio.StreamReader, writer: asyncio.StreamWrit
         writer.close()
         await writer.wait_closed()
 
+def check_socket():
+    """Check if the socket is already in use by attempting to connect to it."""
+    try:
+        logging.info("Checking for existing service.")
+        sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+        sock.connect(SOCKET_PATH)
+        sock.close()
+        raise RuntimeError(f"Another server is already listening on {SOCKET_PATH}")
+    except ConnectionRefusedError:
+        # Socket exists but no one is listening - safe to proceed
+        logging.info("Good: Connection refused")
+        pass
+    except FileNotFoundError:
+        # Socket doesn't exist - safe to proceed
+        logging.info(f"Good: File not found {SOCKET_PATH}")
+        pass
+
 async def main():
     executor = ThreadPoolExecutor(max_workers=MAX_WORKERS)
+
+    # Check for existing server before proceeding
+    check_socket()
     
     try:
         os.unlink(SOCKET_PATH)

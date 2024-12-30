@@ -6,7 +6,7 @@ import json
 import argparse
 from json_repair import repair_json
 from python.aigen import aigen
-from python.utils.build_cache.memoize import memoize
+from python.utils.build_cache.memoize.memoize import memoize_to_disk
 
 def ai_clean(data, bazel_target):
     data = repair_json(json.dumps(yaml.safe_load(data), indent=2, ensure_ascii=False))
@@ -182,8 +182,15 @@ That is all.
             result = memoize_to_disk(bazel_target, aigen, prompt, "gemini-1.5-flash-002")
 
             return response
+        except TypeError as e: 
+            raise e
+        except NameError as e: 
+            raise e
+        except OSError as e: 
+            raise e
         except Exception as e:
-            print(f"Sleeping to throttle requests: {e}")
+            print(f"Sleeping to throttle requests: {type(e).__name__} - {e}")
+            raise e
             time.sleep(backoff)
      
     response = result.removeprefix("```json").removesuffix("\n").removesuffix("```")
