@@ -1,8 +1,6 @@
 import unittest
-import MeCab
-import os
-from mecab.compact_sentence import compact_sentence_to_tokens, tokens_to_compact_sentence, mecab_raw_to_compact_sentence, Token, parse_raw_mecab_output
-from mecab.tagger import get_mecab_tagger
+from python.mecab.compact_sentence import compact_sentence_to_tokens, tokens_to_compact_sentence, mecab_raw_to_compact_sentence, Token, parse_raw_mecab_output
+from python.mecab.tagger import get_mecab_tagger
 
 class TestTokenParser(unittest.TestCase):
 

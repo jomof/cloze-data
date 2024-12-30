@@ -16,8 +16,5 @@ py_library(
 py_test(
     name = "compact_sentence_test",
     srcs = ["compact_sentence_test.py"],
-    deps = [
-        ":utils",
-        "@pip//mecab_python3",
-    ],
+    deps = [":utils"],
 )

@@ -3,8 +3,8 @@ import sys
 import json
 import MeCab
 import unidic
-from mecab.compact_sentence import mecab_raw_to_tokens
-from mecab.tagger import get_mecab_tagger
+from python.mecab.compact_sentence import mecab_raw_to_tokens
+from python.mecab.tagger import get_mecab_tagger
 
 def build_sentence_to_tokens_dict(file_path):
     # Read the JSON file

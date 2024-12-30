@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 import json
 import sys
-import MeCab
-import unidic
 import re
 from typing import List, Dict
 import re
-from mecab.compact_sentence import compact_sentence_to_tokens, tokens_to_compact_sentence, mecab_raw_to_compact_sentence
-from mecab.tagger import get_mecab_tagger
+from python.mecab.compact_sentence import compact_sentence_to_tokens, tokens_to_compact_sentence, mecab_raw_to_compact_sentence
+from python.mecab.tagger import get_mecab_tagger
 
 pattern_classifiers = {
     "ᵇられる": "られるx",
