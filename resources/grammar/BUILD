@@ -118,9 +118,8 @@ py_binary(
     srcs = ["ai-clean.py"],
     visibility = ["//:__subpackages__"],
     deps = [
-        ":grammar",
         "//python:aigen",
-        "//python/utils/build_cache:memoize",
+        "//python/utils/build_cache/memoize",
         "@pip//json_repair",
         "@pip//pyyaml",
     ],
@@ -175,7 +174,10 @@ py_binary(
     name = "merge-grammars",
     srcs = ["merge-grammars.py"],
     visibility = ["//:__subpackages__"],
-    deps = ["@pip//pyyaml"],
+    deps = [
+        ":grammar",
+        "@pip//pyyaml",
+    ],
 )
 
 py_binary(
@@ -203,8 +205,10 @@ py_library(
     ],
     visibility = ["//:__subpackages__"],
     deps = [
+        "//python:aigen",
+        "//python/utils/build_cache/memoize",
         "@pip//beautifulsoup4",
-        "@pip//google_generativeai",
+        "@pip//json_repair",
         "@pip//pyyaml",
     ],
 )

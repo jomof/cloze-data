@@ -71,11 +71,3 @@ def recv_until_complete(sock: socket.socket, num_bytes: int) -> bytes:
         chunks.append(chunk)
         bytes_recd += len(chunk)
     return b''.join(chunks)
-
-if __name__ == "__main__":
-    def slow_add(a, b):
-        time.sleep(0.5)
-        return str(a + b)
-
-    print("First call (should miss):", memoize_to_disk("test1", slow_add, 10, 20))
-    print("Second call (should hit):", memoize_to_disk("test2", slow_add, 10, 20))

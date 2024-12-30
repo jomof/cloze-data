@@ -1,0 +1,1 @@
+bazel test $(bazel query "kind(test, //...)") --nocache_test_results

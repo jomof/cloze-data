@@ -5,8 +5,8 @@ import yaml
 import json
 import argparse
 from json_repair import repair_json
-from python.utils.build_cache.memoize_to_disk import memoize_to_disk
 from python.aigen import aigen
+from python.utils.build_cache.memoize import memoize
 
 def ai_clean(data, bazel_target):
     data = repair_json(json.dumps(yaml.safe_load(data), indent=2, ensure_ascii=False))

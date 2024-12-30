@@ -49,9 +49,9 @@ def _py_build_tool_stream_impl(ctx):
         )
         outs.append(output_file)
         arguments = [
-                        "--source={}".format(src.path),
-                        "--destination={}".format(output_file.path),
-                    ]
+            "--source={}".format(src.path),
+            "--destination={}".format(output_file.path),
+        ]
         arguments.extend(["--data={}".format(df.path) for df in ctx.files.data])
         if ctx.attr.pass_target_name:
             arguments.append("--bazel-target={}".format(ctx.label.name))
