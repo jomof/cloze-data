@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-import sys
-import time
 import yaml
 import json
 import argparse
