@@ -9,7 +9,8 @@ from python.aigen import aigen
 from python.utils.build_cache.memoize.memoize import memoize_to_disk
 
 def ai_clean(data, bazel_target):
-    data = repair_json(json.dumps(yaml.safe_load(data), indent=2, ensure_ascii=False))
+    data = yaml.safe_load(data)
+
     prompt = """
 You are a highly skilled Japanese teacher. You speak native Japanese that is natural and fluent. 
 Though you are serious and terse, you love Japanese and you love to share the details, nuances, and beauty of the language and the culture with your students. 
@@ -40,6 +41,13 @@ Follow these rules:
               "katakana": "テイルトコロダ",
               "romaji": "teiru tokoro da"
           },
+1.2 You *must* add a 'formation' tag right under "grammar_point" that describes, in psuedo-algebraic notation, the formula for creating the grammar point from its component parts.
+    For example, for the grammar point "見える", the formation could be:
+    "formation": {
+      "[Subject が] + 見える": "Indicates that something is visible or can be seen.",
+      "[Object に] + [Subject が] + 見える": "Indicates how something appears to someone (it seems or looks a certain way).",
+      "[Modifier] + 見える": "Adds nuance such as 'clearly visible,' 'looks small,' etc."
+    }
 2. Avoid Unicode escape sequences like \\u3051, just emit the Unicode.
 3. If "meaning_warning" is empty or null, omit it entirely.
 4. You **must** add an "etymology" field here that discusses the etymology of this grammar point.
@@ -99,6 +107,7 @@ Follow these rules:
 14. You may add a "post_false_friends_writeup" to clarify further differences between the grammar point and these similar expressions. Do not call them "false friends" in that section—just provide a short explanation of how to avoid mixing them up.
 15. You may fix minor inaccuracies in "details", but do not invent new details.
 16. Ensure the JSON is valid and properly escaped for YAML conversion. Avoid additional formatting or code fences.
+
 
 ** Template of the Expected Output JSON **
 Below is a minimal template demonstrating how the final JSON structure should look. You will output something like this, without code fences:
@@ -168,41 +177,21 @@ Once you have the JSON content in mind, please do the following steps and make c
 2. If the grammar_point is something conjugatable, like a verb, do the example sentences demonstrate the different conjugations?
 
 That is all.
-""".replace("[input_replace]", json.dumps(json.loads(repair_json(data)), ensure_ascii=False, indent=4))
+""".replace("[input_replace]", json.dumps(data, ensure_ascii=False, indent=4))
 
-    # Write the prompt to disk based on 'file'
-    # with open(file + ".prompt", 'w', encoding='utf-8') as prompt_file:
-    #     print(f"Writing prompt to {file}.prompt")
-    #     prompt_file.write(prompt)
-    backoff = 60
-    N = 30
-    response = prompt
-    for i in range(N):
-        try:
-            result = memoize_to_disk(bazel_target, aigen, prompt, "gemini-1.5-flash-002")
-
-            return response
-        except TypeError as e: 
-            raise e
-        except NameError as e: 
-            raise e
-        except OSError as e: 
-            raise e
-        except Exception as e:
-            print(f"Sleeping to throttle requests: {type(e).__name__} - {e}")
-            raise e
-            time.sleep(backoff)
-     
-    response = result.removeprefix("```json").removesuffix("\n").removesuffix("```")
+    grammar_point_name = data["grammar_point"]
+    response = memoize_to_disk(bazel_target, aigen, prompt, "gemini-1.5-flash-002")
+    #response = memoize_to_disk(bazel_target, aigen, prompt, "gemini-2.0-flash-thinking-exp-1219")
+    response = response.removeprefix("```json").removesuffix("\n").removesuffix("```")
     response = repair_json(response)
-    response = json.loads(response)
+    json_response = json.loads(response)
     
     # response = yaml.dumps(response, ensure_ascii=False, indent=4)
-    if data["grammar_point"] != response["grammar_point"]:
-        raise Exception(f"Grammar point mismatch: {data['grammar_point']} != {response['grammar_point']}")
 
-    response = json.dumps(response, ensure_ascii=False, indent=4)
-    return response
+    if grammar_point_name != json_response["grammar_point"]:
+        raise Exception(f"Grammar point mismatch: {data['grammar_point']} != {json_response['grammar_point']}")
+
+    return json.dumps(json_response, ensure_ascii=False, indent=4)
 
 def main(input_file, output_file, bazel_target):
     with open(input_file, 'r', encoding='utf-8') as file:

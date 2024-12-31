@@ -48,10 +48,8 @@ def memoize_to_disk(caller_id, func, *args):
         decoded_response = base64.b64decode(response.encode()).decode()
         if DEBUG_LOGGING:
             logging.debug("Cache hit - decoded response: {decoded_response[:100]}...")
-        print("Cache hit")
         return decoded_response
         
-    print("Cache miss")
     if DEBUG_LOGGING:
         logging.debug("Cache miss - executing function")
     
