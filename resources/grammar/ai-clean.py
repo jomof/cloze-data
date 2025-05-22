@@ -5,6 +5,7 @@ import argparse
 from json_repair import repair_json
 from python.aigen import aigen
 from python.utils.build_cache.memoize.memoize import memoize_to_disk
+import sys
 
 def ai_clean(data, bazel_target):
     data = yaml.safe_load(data)
@@ -66,7 +67,7 @@ Follow these rules:
       - If there are other conjugated forms of the grammar point that are commonly used, then some of the example sentences **must** include those conjugated forms.
     - "japanese": a natural-sounding Japanese sentence using this grammar point.
       - The "japanese" should have the grammar_point in **bold**.
-    - "english": a natural-sounding English translation.
+    - "english": a natural-sounding English translation. Use quotes sparingly. Reserve them for when the grammar point can't be made without quotes.
     - "register": register of the sentence. One of: casual, formal, semi-formal, sonkeigo (respectful), kenjōgo (humble), teineigo (polite), shitashii kuchō (intimate), bijinesu nihongo (business), bungo (literary), hōgen (dialectical), surangu (slang), gun-go (military), wakamono kotoba (youth), meirei-kei no teineigo (polite imperative)
       - Example sentences **should** exhibit a wide variety of registers.
       - If possible, include one of the keigo registers in example sentences.
@@ -172,13 +173,15 @@ BEGIN_GRAMMAR_POINT_YAML
 
 Once you have the JSON content in mind, please do the following steps and make corrections as needed:
 1. Are the sections that require English as the main language actually in English? Those sections are "writeup", "nuance", "meaning", "meaning_warning", "etymology".
-2. If the grammar_point is something conjugatable, like a verb, do the example sentences demonstrate the different conjugations?
+2. See #1 above and look again. These fields *must* have English as the main language.
+3. If somehow, you still failed to make those sections English, then apologize (mentally) and fix them.
+4. If the grammar_point is something conjugatable, like a verb, do the example sentences demonstrate the different conjugations?
 
 That is all.
 """.replace("[input_replace]", json.dumps(data, ensure_ascii=False, indent=4))
 
     grammar_point_name = data["grammar_point"]
-    response = memoize_to_disk(bazel_target, aigen, prompt, "gemini-1.5-flash-002")
+    response = memoize_to_disk(bazel_target, aigen, prompt, "gemini-2.0-flash-001")
     #response = memoize_to_disk(bazel_target, aigen, prompt, "gemini-2.0-flash-thinking-exp-1219")
     response = response.removeprefix("```json").removesuffix("\n").removesuffix("```")
     response = repair_json(response)

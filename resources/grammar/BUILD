@@ -104,7 +104,8 @@ py_build_tool_stream(
     tool = ":yaml-clean",
 )
 
-# bazel run --jobs=2 //resources/grammar:publish-samples
+# bazel run --jobs=2 //resources/grammar:publish-samples after starting cache-service bazel run //python/utils/build_cache/service:cache-service
+# Add some more samples: bazel run //resources/original/bunpro:more-samples
 sh_binary(
     name = "publish-samples",
     srcs = ["publish-processed.sh"],

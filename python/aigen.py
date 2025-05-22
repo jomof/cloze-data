@@ -33,7 +33,12 @@ def aigen(prompt: str, model: str, retries: int = 10, backoff_seconds: int = 60)
     for attempt in range(retries):
         try:
             logger.info(f"Attempt {attempt + 1}/{retries} generating content with model {model}")
-            
+            if model == "gemini-2.5-flash-preview-05-20":
+                return generate_gemini_2_0(model, prompt)
+            if model == "gemini-2.5-pro-preview-05-06":
+                return generate_gemini_2_0(model, prompt)
+            if model == "gemini-2.0-flash-001":
+                return generate_gemini_2_0(model, prompt)
             if model == "gemini-2.0-flash-thinking-exp-1219":
                 return generate_gemini_2_0(model, prompt)
             if model == "gemini-1.5-flash-002":
