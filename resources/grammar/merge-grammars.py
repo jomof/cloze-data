@@ -823,10 +823,10 @@ def main():
 
     # Write the individual YAML files
     for grammar_point in removed:
-        filename = f"{grammar_point['grammar_point']}.json"
+        filename = f"{grammar_point['grammar_point']}.yaml"
         grammar_point_file = os.path.join(output_dir, filename)
         with open(grammar_point_file, 'w') as f:
-            f.write(json.dumps(grammar_point, ensure_ascii=False, indent=2))
+            dump_yaml_file(grammar_point, f)
 
     # Combine statistics and merged data
     output_data = {
