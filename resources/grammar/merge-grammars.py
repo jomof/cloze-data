@@ -3,6 +3,8 @@ import yaml
 from dumpyaml import dump_yaml_file
 import difflib
 import re
+import os
+import json
 
 missing_meanings = {
     "Number+も": "Indicates a surprising or emphatic quantity, e.g. “as many as” or “not even.",
@@ -416,6 +418,7 @@ def read_yaml(input_file: str, type) -> dict:
         point = yaml.safe_load(content)
         
         point[f"{type}_grammar_point"] = point["grammar_point"]
+        point[f"source"] = input_file
         return point
 
 def parse_translation_key(key):
@@ -465,7 +468,6 @@ def clean_sentence(sentence):
         result = result[1:-1]
     if result.startswith("'") and result.endswith("'"):
         result = result[1:-1]
-    result = result.replace(": ", "：").replace(":", "：")
     return result
 
 def clean_sentences(sentences):
@@ -480,30 +482,69 @@ def clean_sentences(sentences):
 def trim_elements(merged_list):
     trimmed_list = []
     for item in merged_list:
-        trimmed_item = {'grammar_point': item['grammar_point']}
+        trimmed_item = {'grammar_point': item['grammar_point'], 'rank': 0}
         
         if 'meaning' in item:
             trimmed_item['meaning'] = clean_sentence(item['meaning'])
         
         if 'bunpro' in item and item['bunpro'] is not None:
-            bunpro_trimmed = {
-                'grammar_point': item['bunpro']['bunpro_grammar_point'], 
-                # 'url': item['bunpro']['url']
-                }
-            if 'meaning' in item['bunpro']:
-                bunpro_trimmed['meaning'] = clean_sentence(item['bunpro']['meaning'])
-            if 'examples' in item['bunpro']:
-                bunpro_trimmed['examples'] = clean_sentences(item['bunpro']['examples'][:20])
+            bunpro_trimmed = { }
+            for key in item['bunpro']:
+                bunpro_trimmed[key] = item['bunpro'][key]
+            bunpro_trimmed['grammar_point'] = item['bunpro']['bunpro_grammar_point']
+            del bunpro_trimmed['bunpro_grammar_point']
             trimmed_item['bunpro'] = bunpro_trimmed
         
         if 'dojg' in item and item['dojg'] is not None:
-            dojg_trimmed = {'grammar_point': item['dojg']['dojg_grammar_point']}
-            if 'meaning' in item['dojg']:
-                dojg_trimmed['meaning'] = clean_sentence(item['dojg']['meaning'])
-            if 'examples' in item['dojg']:
-                dojg_trimmed['examples'] = clean_sentences(item['dojg']['examples'][:20])
+            dojg_trimmed = { }
+            for key in item['dojg']:
+                 dojg_trimmed[key] = item['dojg'][key]
+            dojg_trimmed['grammar_point'] = item['dojg']['dojg_grammar_point']
+            del dojg_trimmed['dojg_grammar_point']
             trimmed_item['dojg'] = dojg_trimmed
+
         
+        bunpro_rank = -1
+        if 'bunpro' in trimmed_item:
+            bunpro = trimmed_item['bunpro']
+            level = bunpro['jlpt']
+            if level == 'N0':
+                bunpro_rank = 5
+            elif level == 'N1':
+                bunpro_rank = 4
+            elif level == 'N2':
+                bunpro_rank = 3
+            elif level == 'N3':
+                bunpro_rank = 2
+            elif level == 'N4':
+                bunpro_rank = 1
+            elif level == 'N5':
+                bunpro_rank = 0
+            else:
+                raise ValueError(f"Unexpected bunpro jlpt level: {level}")
+            
+        dojg_rank = -1
+        if 'dojg' in trimmed_item:
+            dojg = trimmed_item['dojg']
+            level = dojg['level']
+            if level == 'Advanced':
+                dojg_rank = 5
+            elif level == 'Intermediate':
+                dojg_rank = 3
+            elif level == 'Basic':
+                dojg_rank = 0
+            else:
+                raise ValueError(f"Unexpected DOJG level: {level}")
+        
+        if dojg_rank == -1:
+            dojg_rank = bunpro_rank
+            
+        if bunpro_rank == -1:
+            bunpro_rank = dojg_rank
+
+        rank = bunpro_rank + dojg_rank
+        trimmed_item['rank'] = rank
+
         trimmed_list.append(trimmed_item)
     
     return trimmed_list
@@ -780,9 +821,12 @@ def main():
     #label_closest_matches(removed)
     all_grammar_points = get_all_grammar_points(removed)
 
-    if statistics['merged_count'] != 357:
-        print("Not enough grammar points merged")
-
+    # Write the individual YAML files
+    for grammar_point in removed:
+        filename = f"{grammar_point['grammar_point']}.json"
+        grammar_point_file = os.path.join(output_dir, filename)
+        with open(grammar_point_file, 'w') as f:
+            f.write(json.dumps(grammar_point, ensure_ascii=False, indent=2))
 
     # Combine statistics and merged data
     output_data = {

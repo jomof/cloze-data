@@ -114,6 +114,15 @@ sh_binary(
     visibility = ["//visibility:public"],
 )
 
+# bazel run //resources/grammar:publish-merged
+sh_binary(
+    name = "publish-merged",
+    srcs = ["publish-merged.sh"],
+    args = ["$(locations :merge-bunpro-dojg) /workspaces/cloze-data/resources/processed/merge-grammars"],
+    data = [":merge-bunpro-dojg"],
+    visibility = ["//visibility:public"],
+)
+
 py_binary(
     name = "ai-clean",
     srcs = ["ai-clean.py"],
