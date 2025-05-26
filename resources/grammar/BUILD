@@ -126,7 +126,7 @@ sh_binary(
 py_binary(
     name = "ai-clean",
     srcs = ["ai-clean.py"],
-    visibility = ["//:__subpackages__"],
+    visibility = ["//visibility:public"],
     deps = [
         "//python:aigen",
         "//python/utils/build_cache/memoize",
@@ -198,6 +198,15 @@ py_binary(
         ":grammar",
         "@pip//pyyaml",
     ],
+)
+
+# Run with bazel build //resources/grammar:ai-cleaned-merge-grammars
+py_build_tool_stream(
+    name = "ai-cleaned-merge-grammars",
+    srcs = ["//resources/processed:merge-grammars"],
+    extension = ".yaml",
+    pass_target_name = True,
+    tool = "//resources/grammar:ai-clean",
 )
 
 py_library(

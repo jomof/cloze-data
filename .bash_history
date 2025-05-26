@@ -661,3 +661,120 @@ ls
 popd
 (cd /home/codespace/.cache/bazel/_bazel_codespace/f6291f0464794be3822090e595c371c0/execroot/_main &&   exec env -     PATH=/home/codespace/.cache/bazelisk/downloads/sha256/18417fdee645a8dc08bc3f27e33f71a5681f9f14661b33ac48536a31dc8d00f1/bin:/usr/local/rvm/gems/ruby-3.3.4/bin:/usr/local/rvm/gems/ruby-3.3.4@global/bin:/usr/local/rvm/rubies/ruby-3.3.4/bin:/vscode/vscode-server/bin/linux-x64/fabdb6a30b49f79a7aba0f2ad9df9b399473380f/bin/remote-cli:/home/codespace/.local/bin:/home/codespace/.dotnet:/home/codespace/nvm/current/bin:/home/codespace/.php/current/bin:/home/codespace/.python/current/bin:/home/codespace/java/current/bin:/home/codespace/.ruby/current/bin:/home/codespace/.local/bin:/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/oryx:/usr/local/go/bin:/go/bin:/usr/local/sdkman/bin:/usr/local/sdkman/candidates/java/current/bin:/usr/local/sdkman/candidates/gradle/current/bin:/usr/local/sdkman/candidates/maven/current/bin:/usr/local/sdkman/candidates/ant/current/bin:/usr/local/rvm/gems/default/bin:/usr/local/rvm/gems/default@global/bin:/usr/local/rvm/rubies/default/bin:/usr/local/share/rbenv/bin:/usr/local/php/current/bin:/opt/conda/bin:/usr/local/nvs:/usr/local/share/nvm/versions/node/v20.18.1/bin:/usr/local/hugo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/share/dotnet:/home/codespace/.dotnet/tools:/usr/local/rvm/bin:/home/codespace/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand   bazel-out/k8-opt-exec-ST-d57f47055a04/bin/resources/grammar/ai-clean '--source=bazel-out/k8-fastbuild/bin/resources/grammar/fixed-yaml-sample/を通じて-を通して' '--destination=bazel-out/k8-fastbuild/bin/resources/grammar/ai-cleaned-sample/を通じて-を通して.yaml' '--bazel-target=ai-cleaned-sample')
 exit
+cd resources/original/jmdict/
+gunzip -k -c JMdict_e_examp.gz 
+gunzip -k -c JMdict_e_examp.gz > dict.txt
+cd ..
+wget http://doi.org/10.15084/00003214
+/home/codespace/.python/current/bin/python /workspaces/cloze-data/resources/grammar/merge-grammars.py
+clear && bazel run //resources/grammar:publish-samples
+clear && bazel build //resources/grammar:merge-bunpro-dojg
+find . -name create-bunpro-fixed-yaml-all-179
+clear && bazel build //resources/grammar:merge-bunpro-dojg
+bazel clean && clear && bazel build //resources/grammar:merge-bunpro-dojg
+bazel run //resources/grammar:publish-merged
+cd resources/grammar
+bazel query :all | grep pub
+bazel run //resources/grammar:publish-merged
+touch copy-folder.sh
+git add copy-folder.sh 
+chmod +x copy-folder.sh 
+bazel run //resources/grammar:publish-merged
+ls /home/codespace/.cache/bazel/_bazel_codespace/f6291f0464794be3822090e595c371c0/execroot/_main/bazel-out/k8-fastbuild/bin/resources/grammar/merge-grammars
+ls /home/codespace/.cache/bazel/_bazel_codespace/f6291f0464794be3822090e595c371c0/execroot/_main/bazel-out/k8-fastbuild/bin/resources/grammar/merge-grammars/
+ls /home/codespace/.cache/bazel/_bazel_codespace/f6291f0464794be3822090e595c371c0/execroot/_main/bazel-out/k8-fastbuild/bin/resources/grammar
+bazel run //resources/grammar:publish-merged
+bazel clean && clear && bazel build //resources/grammar:merge-bunpro-dojg
+bazel run //resources/grammar:publish-merged
+ls /home/codespace/.cache/bazel/_bazel_codespace/f6291f0464794be3822090e595c371c0/execroot/_main/bazel-out/k8-fastbuild/bin/resources/grammar
+pushd /home/codespace/.cache/bazel/_bazel_codespace/f6291f0464794be3822090e595c371c0/execroot/_main/bazel-out/k8-fastbuild/bin/resources/grammar
+ls
+cd merged-grammars/
+ls
+popd
+bazel run //resources/grammar:publish-merged
+ls /home/codespace/.cache/bazel/_bazel_codespace/f6291f0464794be3822090e595c371c0/execroot/_main/bazel-out/k8-fastbuild/bin/resources/grammar/publish-merged.runfiles/_main/merge-grammars
+ls /home/codespace/.cache/bazel/_bazel_codespace/f6291f0464794be3822090e595c371c0/execroot/_main/bazel-out/k8-fastbuild/bin/resources/grammar/publish-merged.runfiles/_main
+bazel run //resources/grammar:publish-merged
+pushd /home/codespace/.cache/bazel/_bazel_codespace/f6291f0464794be3822090e595c371c0/execroot/_main/bazel-out/k8-fastbuild/bin/resources/grammar/publish-merged.runfiles/_main
+ls
+cd resources/grammar
+bazel clean && clear && bazel build //resources/grammar:merge-bunpro-dojg
+popd
+bazel clean && clear && bazel build //resources/grammar:merge-bunpro-dojg
+bazel run //resources/grammar:publish-merged
+bazel clean
+bazel run //resources/grammar:publish-merged
+bazel clean
+bazel run //resources/grammar:publish-merged
+bazel run //resources/original/bunpro:more-samples
+cd ../processed/
+touch BUILD
+bazel query :all
+bazel build //resources/processed:ai-cleaned-merge-grammars
+gcloud auth application-default login
+bazel build //resources/processed:ai-cleaned-merge-grammars
+bazel clean
+bazel build //resources/processed:ai-cleaned-merge-grammars
+rm -rf /workspaces/cloze-data/cache_data/
+bazel build //resources/processed:ai-cleaned-merge-grammars
+bazel clean
+bazel build //resources/processed:ai-cleaned-merge-grammars
+bazel clean
+bazel build //resources/processed:ai-cleaned-merge-grammars
+bazel run //resources/grammar:publish-merged
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel build //resources/processed:ai-cleaned-merge-grammars
+bazel clean
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel run //resources/grammar:publish-merged
+bazel build //resources/processed:ai-cleaned-merge-grammars
+bazel run //resources/grammar:publish-merged
+clear
+bazel build //resources/grammar:bs4-stripped-all
+cd ...
+cd ..
+find . --name "です"
+find . -name "です"
+bazel run //resources/grammar:publish-merged
+bazel run //resources/processed:ai-cleaned-merge-grammar
+cd resources/processed/
+bazel query :all
+bazel run //resources/processed:ai-cleaned-merge-grammars
+bazel build //resources/processed:ai-cleaned-merge-grammars
+bazel clean
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel clean
+bazel build //resources/processed:ai-cleaned-merge-grammars
+bazel clean
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel clean
+bazel build //resources/processed:ai-cleaned-merge-grammars
+bazel clean
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel build //resources/processed:ai-cleaned-merge-grammars
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel clean
+bazel build //resources/processed:ai-cleaned-merge-grammars
+bazel build //resources/grammar:ai-cleaned-merge-grammars
+bazel build //resources/original/jmdict:jmdict-words
+clear
+bazel build //resources/original/jmdict:jmdict-words
+bazel build //resources/original/jmdict:jmdict-sentences
+bazel build //resources/original/jmdict:jmdict-unzip
+bazel build //resources/original/jmdict:jmdict-sentences
+bazel build //resources/original/jmdict:jmdict-words
+find . -name "tokenized-sentences.json"
+cd resources
+cd grammar
+bazel run :lint-bunpro
+bazel build :lint-bunpro
+bazel build :merge-bunpro-dojg
+find . -name "merge-bunpro-dojg.txt"
+cd ..
+find . -name "merge-bunpro-dojg.txt"
+bazel build //resources/grammar:merge-bunpro-dojg
+find . -name "merged-grammars"
+bazel clean
+bazel build //resources/grammar:merge-bunpro-dojg
+bazel run //python/utils/build_cache/service:cache-service

@@ -16,9 +16,24 @@ py_build_tool(
     visibility = ["//visibility:public"],
 )
 
+py_build_tool(
+    name = "jmdict-words",
+    outs = ["jmdict-words.json"],
+    ins = ["JKMdict_e_examp"],
+    main = ":words",
+    visibility = ["//visibility:public"],
+)
+
 py_binary(
     name = "sentences",
     srcs = ["sentences.py"],
+    visibility = ["//:__subpackages__"],
+)
+
+# bazel build //resources/original/jmdict:jmdict-words
+py_binary(
+    name = "words",
+    srcs = ["words.py"],
     visibility = ["//:__subpackages__"],
 )
 

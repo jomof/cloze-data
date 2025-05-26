@@ -97,16 +97,17 @@ Follow these rules:
 7. At least one example should include a flirty innuendo. It should be phrased as the speaker (male or female) flirting with the listener (female or male).
 8. At least one example should suit an early romantic or first-meeting context (without using the word "date"). It should be phrased as the speaker (male or female) flirting with the listener (female or male).
 9. If the input examples contain dialogue (A: ... B: ...), rewrite them into single-sentence statements that preserve the lesson but remove direct dialogue format.
-10. Order examples from simpler to more advanced usage.
-11. For English contractions, use a single apostrophe ' (e.g., "don't").
-12. You may include a "post_example_writeup" section after "examples" if more clarification is helpful, but don't reference examples by any numeric label.
-13. If "false_friends" are present, each entry should have:
+10. Prefer simpler sentences that are still natural and convey the grammar point. Strongly prefer not using quotes. Reserve quotes for when the grammar point needs them.
+11. Order examples from simpler to more advanced usage.
+12. For English contractions, use a single apostrophe ' (e.g., "don't").
+13. You may include a "post_example_writeup" section after "examples" if more clarification is helpful, but don't reference examples by any numeric label.
+14. If "false_friends" are present, each entry should have:
     - "false_friend": the term.
     - "nuance": a concise contrast to the main grammar point (e.g., "Unlike [grammar_point], [false_friend]...").
-14. You may add a "post_false_friends_writeup" to clarify further differences between the grammar point and these similar expressions. Do not call them "false friends" in that section—just provide a short explanation of how to avoid mixing them up.
-15. You may fix minor inaccuracies in "details", but do not invent new details.
-16. Ensure the JSON is valid and properly escaped for YAML conversion. Avoid additional formatting or code fences.
-
+15. You may add a "post_false_friends_writeup" to clarify further differences between the grammar point and these similar expressions. Do not call them "false friends" in that section—just provide a short explanation of how to avoid mixing them up.
+16. You may fix minor inaccuracies in "details", but do not invent new details.
+17. Ensure the JSON is valid and properly escaped for YAML conversion. Avoid additional formatting or code fences.
+18. Japanese sentences should not have furigana text embedded. 
 
 ** Template of the Expected Output JSON **
 Below is a minimal template demonstrating how the final JSON structure should look. You will output something like this, without code fences:
@@ -114,6 +115,8 @@ Below is a minimal template demonstrating how the final JSON structure should lo
 ```
 {
     "grammar_point": "...",
+    "id": "gp0001",
+    "rank": 5,
     "conjugations": [
         { type: "dictionary form",
           form: "とみえる",
@@ -131,8 +134,8 @@ Below is a minimal template demonstrating how the final JSON structure should lo
     "writeup": "...", // English
     "examples": [
         {
-            "japanese": "...", // Japanese
-            "english": "...", // English
+            "japanese": "晩ご飯を食べて歯を磨いた。", // Japanese
+            "english": "I ate dinner and brushed my teeth.", // English
             "conjugation": "dictionary form", // From top-level conjugation 'types'
             "register": "...", // Required
             "setting": "...", // Required
@@ -158,6 +161,7 @@ Below is a minimal template demonstrating how the final JSON structure should lo
 }```
     - If "meaning_warning" is null or empty, you omit it entirely.
     - The same goes for "false_friends", "post_example_writeup", and "post_false_friends_writeup" if they do not apply.
+    - Make sure the 'rank' field is second after 'grammar_point' in the output JSON.
 
 Here are the kanji learned at each JLPT level:
     JLPT Kanji N5, 人, 一, 日, 大, 年, 出, 本, 中, 子, 見, 国, 上, 分, 生, 行, 二, 間, 時, 気, 十, 女, 三, 前, 入, 小, 後, 長, 下, 学, 月, 何, 来, 話, 山, 高, 今, 書, 五, 名, 金, 男, 外, 四, 先, 川, 東, 聞, 語, 九, 食, 八, 水, 天, 木, 六, 万, 白, 七, 円, 電, 父, 北, 車, 母, 半, 百, 土, 西, 読, 千, 校, 右, 南, 左, 友, 火, 毎, 雨, 休, 午, , 
@@ -167,7 +171,6 @@ Here are the kanji learned at each JLPT level:
     JLPT Kanji N1, 郎, 結, 氏, 衛, 第, 保, 義, 吉, 士, 藤, 井, 江, 張, 松, 応, 視, 態, 姿, 皇, 宮, 離, 基, 隊, 素, 価, 撃, 振, 証, 派, 僕, 佐, 紀, 統, 器, 異, 護, 条, 独, 源, 影, 眼, 企, 津, 案, 策, 宗, 提, 昭, 密, 司, 検, 康, 沢, 秀, 興, 率, 評, 監, 崎, 鮮, 激, 徳, 挙, 志, 敷, 系, 織, 製, 端, 遺, 房, 街, 尾, 株, 従, 敵, 展, 描, 修, 我, 載, 響, 秘, 攻, 健, 裁, 隠, 環, 援, 故, 幕, 督, 倉, 施, 嫌, 継, 障, 貴, 整, 衆, 及, 盛, 玄, 恵, 授, 弾, 養, 驚, 奈, 推, 樹, 為, 雄, 刀, 弁, 妙, 模, 抗, 級, 瞬, 称, 華, 傷, 闘, 筋, 訳, 射, 善, 黙, 柄, 刑, 節, 脱, 厳, 博, 陣, 奇, 忠, 染, 微, 標, 縁, 壁, 駆, 麻, 甲, 藩, 迫, 踏, 討, 聖, 典, 剣, 症, 納, 弥, 融, 浜, 郷, 惑, 柳, 拠, 奉, 壊, 益, 句, 属, 功, 帝, 賀, 堀, 創, 泣, 憶, 幹, 露, 矢, 握, 儀, 聴, 襲, 徴, 丁, 憲, 閣, 救, 陰, 繰, 那, 操, 騒, 己, 魔, 撮, 携, 隣, 宣, 遣, 訴, 茂, 釣, 批, 誘, 核, 哲, 豪, 締, 鹿, 就, 滅, 仰, 瀬, 致, 伏, 杉, 審, 避, 揺, 浦, 至, 裕, 盟, 執, 崩, 鬼, 酸, 拡, 銃, 維, 縄, 詩, 廃, 充, 鏡, 仮, 吐, 請, 眺, 沖, 躍, 威, 屈, 勘, 徹, 斎, 謝, 艦, 催, 舎, 仁, 衝, 脚, 虎, 潮, 穴, 怪, 仙, 輝, 緊, 唇, 忍, 狂, 奪, 診, 竜, 債, 鈴, 僧, 掲, 伯, 熊, 浪, 梅, 看, 俊, 摘, 項, 霊, 垣, 慢, 扱, 渉, 如, 縮, 詳, 旦, 慮, 雅, 砲, 謀, 懐, 愚, 舌, 駄, 奴, 豆, 又, 銭, 抑, 侍, 宙, 範, 潜, 酔, 呂, 還, 丹, 亜, 亀, 沼, 巡, 臭, 慶, 距, 釈, 侵, 僚, 悟, 隆, 裂, 尋, 旗, 羅, 揮, 票, 稲, 胞, 懸, 稿, 塚, 盤, 災, 曹, 尽, 嫁, 繁, 即, 帳, 飾, 沿, 獲, 伴, 唐, 狭, 添, 剤, 魅, 契, 邪, 挑, 免, 爵, 択, 廊, 析, 輩, 敏, 鶴, 虚, 往, 趣, 烈, 索, 匂, 摩, 菊, 滑, 沙, 裸, 孝, 綱, 邸, 邦, 揚, 卓, 騎, 墓, 姫, 孔, 耐, 須, 臨, 献, 脈, 芝, 唱, 亭, 誕, 貫, 偽, 奮, 桜, 熟, 排, 透, 棄, 削, 奏, 幻, 麗, 逮, 誠, 炎, 椅, 寛, 斉, 穂, 兼, 飼, 促, 尚, 彩, 暖, 俗, 較, 傍, 肝, 畑, 峰, 抵, 恩, 誇, 網, 渋, 魂, 牧, 控, 紛, 戒, 没, 既, 股, 脅, 征, 覆, 郡, 丘, 佳, 叔, 託, 哀, 肥, 朗, 慎, 悠, 眉, 拒, 概, 顧, 腐, 挨, 孤, 拶, 却, 賊, 荘, 匠, 悔, 獄, 滞, 遇, 淡, 購, 併, 崇, 唯, 垂, 岐, 俳, 斜, 嬢, 陥, 償, 鑑, 勧, 葬, 焦, 剛, 膨, 廷, 紫, 銘, 鎌, 菌, 稼, 譲, 随, 猛, 遂, 冒, 泰, 翼, 凄, 序, 扉, 是, 寸, 賃, 偵, 澄, 殊, 緩, 頑, 紋, 糖, 煮, 芳, 惨, 歓, 虐, 喉, 旨, 凝, 圏, 拭, 涯, 貞, 堅, 倫, 壇, 呉, 暇, 貌, 塞, 噴, 婆, 岳, 蹴, 鍵, 膳, 尺, 罰, 漏, 朱, 覧, 漂, 汁, 寂, 嘆, 禅, 浄, 酷, 刃, 漫, 霧, 暑, 棚, 袖, 壮, 旬, 彫, 需, 鎖, 潰, 縦, 粧, 慌, 穏, 枠, 謎, 誉, 逸, 駒, 惜, 措, 晶, 琴, 摂, 拍, 稽, 礎, 遭, 掌, 鍋, 弓, 克, 据, 胆, 跳, 縛, 鎮, 雷, 恨, 顕, 殖, 寧, 湧, 棋, 巧, 浸, 桃, 隔, 班, 甚, 妊, 祉, 獣, 疾, 塾, 潟, 撲, 塊, 絞, 履, 苗, 芋, 冗, 陶, 励, 陳, 猿, 葛, 傘, 啓, 劣, 撤, 殴, 盾, 衰, 滝, 慰, 蛇, 梨, 癖, 潤, 鉢, 戯, 腸, 偏, 巣, 宴, 炉, 棟, 洞, 狩, 陛, 磁, 潔, 膜, 乏, 祥, 曽, 舗, 抽, 睡, 賭, 括, 貢, 犠, 粗, 卑, 貼, 拉, 牲, 帆, 挿, 翻, 羊, 枕, 錯, 謙, 珠, 蓄, 拓, 鼓, 粋, 尉, 后, 粘, 披, 徐, 悦, 堪, 冠, 愉, 尿, 顎, 誓, 憂, 簿, 糧, 架, 芽, 軸, 苛, 蓋, 盆, 凶, 妃, 庶, 秩, 裾, 幽, 凡, 漠, 拙, 恒, 暦, 腫, 峠, 宰, 蛮, 窮, 擦, 爪, 稚, 辱, 嵐, 憤, 癒, 鬱, 疎, 雰, 彰, 肺, 傑, 拘, 頻, 緯, 妖, 豚, 藍, 矛, 鍛, 繊, 縫, 把, 楼, 捉, 漬, 紳, 飽, 宛, 閥, 旋, 坪, 崖, 叱, 鶏, 峡, 溝, 朴, 軌, 瓦, 喪, 墨, 疫, 遍, 濁, 扇, 拳, 乙, 酵, 堤, 阻, 桑, 虜, 乞, 恭, 鐘, 剰, 慈, 径, 培, 擁, 郭, 呪, 砕, 汰, 勃, 翁, 絹, 譜, 陵, 痴, 笛, 昧, 訟, 唾, 肪, 塀, 碁, 敢, 塁, 暁, 胴, 謡, 飢, 欄, 艶, 痕, 怠, 欺, 弦, 泡, 諦, 伐, 餅, 寮, 厄, 奔, 瞳, 昆, 椎, 懇, 唄, 渦, 襟, 吟, 覇, 衡, 呈, 隙, 淫, 娠, 循, 懲, 錦, 猟, 幣, 附, 箇, 醜, 箸, 戚, 喚, 紺, 某, 鋼, 褒, 赴, 媒, 妬, 遮, 窯, 侯, 釜, 茎, 蔑, 嗅, 壌, 蜜, 尼, 肢, 赦, 酬, 戴, 詠, 斗, 宜, 殻, 墳, 炊, 碑, 痩, 但, 奨, 践, 滋, 儒, 薦, 怨, 栽, 刈, 閑, 錠, 扶, 妥, 妨, 醒, 詣, 胎, 窟, 巾, 蜂, 忌, 骸, 弄, 嫉, 粛, 罵, 囚, 鉛, 搭, 諭, 璧, 阜, 喝, 享, 騰, 嗣, 勅, 篤, 勲, 埼, 伎, 曖, 詐, 餌, 岬, 暫, 爽, 肖, 詮, 諾, 柿, 芯, 綻, 訂, 汽, 薫, 隷, 俵, 遷, 枢, 肘, 麓, 憧, 帥, 漆, 酌, 頓, 賠, 渇, 慕, 婿, 妄, 慨, 匿, 渓, 侮, 髄, 穀, 薪, 轄, 洪, 牙, 咽, 迅, 該, 逐, 嘲, 墜, 臆, 餓, 挫, 錬, 桟, 溺, 賄, 盲, 鯨, 侶, 艇, 丼, 堕, 瘍, 槽, 憩, 僅, 閲, 柵, 畔, 睦, 唆, 悼, 吏, 穫, 酢, 賜, 腎, 梗, 瑠, 羨, 搬, 剖, 酎, 畿, 宵, 拐, 醸, 猶, 諮, 畏, 泌, 愁, 逝, 朽, 硫, 瞭, 擬, 叙, 弊, 累, 煩, 踪, 藻, 蚊, 栃, 且, 鋳, 蔽, 茨, 棺, 慄, 傲, 硝, 舶, 租, 倣, 謹, 抹, 虹, 捻, 娯, 臼, 喩, 萎, 蛍, 窒, 腺, 桁, 玩, 冶, 羞, 栓, 惧, 寡, 畝, 淑, 嫡, 屯, 糾, 遡, 陪, 雌, 舷, 霜, 殉, 紡, 貪, 庸, 韻, 繕, 搾, 刹, 采, 堆, 禍, 煎, 姻, 斑, 冥, 抄, 拷, 遜, 旺, 准, 勾, 廉, 礁, 壱, 麺, 升, 卸, 耗, 謁, 璃, 坑, 串, 弔, 賓, 塡, 痢, 嚇, 濫, 俸, 箋, 凸, 脊, 詔, 緻, 凹, 罷, 漸, 賦, 弧, 褐, 辣, 摯, 汎, 斥, 厘, 矯, 毀, 窃, 遵, 賂, 惰, 蚕, 氾, 諧, 倹, 款, 媛, 憾, 哺, 衷, 彙, 迭, 嘱, 恣, 墾, 逓, 劾, 酪, 沃, 塑, 痘, 憬, 朕, 虞, 丙, 斤, 捗, 弐, 訃, 謄, 繭, 璽, 頒, 楷, 剥, 籠, 錮, 頰
 Example sentences should use kanji appropriate for the JLPT level of the grammar point. So, for example, if the grammar point is JLPT N3, the example sentences should use kanji from the N3, N4, and N5 lists. 
 
-BEGIN_GRAMMAR_POINT_YAML
 [input_replace]
 BEGIN_GRAMMAR_POINT_YAML
 
@@ -175,17 +178,23 @@ Once you have the JSON content in mind, please do the following steps and make c
 1. Are the sections that require English as the main language actually in English? Those sections are "writeup", "nuance", "meaning", "meaning_warning", "etymology".
 2. See #1 above and look again. These fields *must* have English as the main language.
 3. If somehow, you still failed to make those sections English, then apologize (mentally) and fix them.
+4. Make sure there are no A/B dialog style example sentences. They should be full sentences.
 4. If the grammar_point is something conjugatable, like a verb, do the example sentences demonstrate the different conjugations?
 
 That is all.
 """.replace("[input_replace]", json.dumps(data, ensure_ascii=False, indent=4))
 
     grammar_point_name = data["grammar_point"]
+    id = data["id"]
+    rank = data["rank"]
+    print(f"Processing grammar point: {grammar_point_name} (Rank: {rank})")
     response = memoize_to_disk(bazel_target, aigen, prompt, "gemini-2.0-flash-001")
     #response = memoize_to_disk(bazel_target, aigen, prompt, "gemini-2.0-flash-thinking-exp-1219")
     response = response.removeprefix("```json").removesuffix("\n").removesuffix("```")
     response = repair_json(response)
     json_response = json.loads(response)
+    json_response["id"] = id
+    json_response["rank"] = rank
     
     # response = yaml.dumps(response, ensure_ascii=False, indent=4)
 
