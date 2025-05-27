@@ -35,34 +35,40 @@ py_build_tool = rule(
 )
 
 def _py_build_tool_stream_impl(ctx):
+    # Collect sources, optionally limiting to top N
     srcs = ctx.files.srcs
+    top_n = ctx.attr.top
+    if top_n and top_n > 0:
+        # ctx.files.srcs is a list, so slicing works
+        srcs = srcs[:top_n]
+
     extension = ctx.attr.extension
 
     # correlated: list of Files; we’ll derive keys from each file’s parent directory
-    correlated_files = ctx.files.correlated  # list of File
+    correlated_files = ctx.files.correlated
 
     # constant inputs & flags
     non_src_inputs = ctx.files.data + ctx.files.deps
     data_args = ["--data={}".format(df.path) for df in ctx.files.data]
 
-    # group correlated files by their stem (filename without extension)
+    # group correlated files by stem
     correlated_by_stem = {}
     for cf in correlated_files:
         stem = cf.basename
         if "." in stem:
-            stem = stem[:stem.rindex(".")]
+            stem = stem[:stem.rindex('.')]
         correlated_by_stem.setdefault(stem, []).append(cf)
 
     outs = []
     for src in srcs:
-        # derive this src’s stem (for matching)
+        # derive this src’s stem for matching
         stem = src.basename
         if "." in stem:
-            stem = stem[:stem.rindex(".")]
+            stem = stem[:stem.rindex('.')]
 
         # declare its output
         output_file = ctx.actions.declare_file(
-            "{}/{}{}".format(ctx.label.name, stem, extension),
+            "{}/{}{}".format(ctx.label.name, stem, extension)
         )
         outs.append(output_file)
 
@@ -77,25 +83,22 @@ def _py_build_tool_stream_impl(ctx):
 
         # find correlated files matching this src
         matches = correlated_by_stem.get(stem, [])
-        if matches:
-            for cf in matches:
-                # derive key from cf's parent directory name
-                parent_path = cf.path
-                # strip filename
-                parent_dir = parent_path[: parent_path.rfind("/")] if "/" in parent_path else ""
-                # get last component as key
-                key = parent_dir[parent_dir.rfind("/") + 1 :] if "/" in parent_dir else parent_dir
-                arguments.append("--{}={}".format(key, cf.path))
+        for cf in matches:
+            # derive key from cf's parent directory name
+            parent_path = cf.path
+            parent_dir = parent_path[: parent_path.rfind('/')]
+            key = parent_dir[parent_dir.rfind('/') + 1 :]
+            arguments.append("--{}={}".format(key, cf.path))
 
         # run for this src
         ctx.actions.run(
-            inputs            = [src] + non_src_inputs + matches,
-            outputs           = [output_file],
-            executable        = ctx.executable.tool,
-            arguments         = arguments,
+            inputs = [src] + non_src_inputs + matches,
+            outputs = [output_file],
+            executable = ctx.executable.tool,
+            arguments = arguments,
             use_default_shell_env = True,
-            progress_message  = "{} processing {}".format(ctx.label.name, src.basename),
-            tools             = [ctx.executable.tool],
+            progress_message = "{} processing {}".format(ctx.label.name, src.basename),
+            tools = [ctx.executable.tool],
             execution_requirements = {"no-sandbox": "1"},
         )
 
@@ -111,7 +114,8 @@ py_build_tool_stream = rule(
         "srcs":            attr.label_list(allow_files = True),
         "tool":            attr.label(allow_files = True, executable = True, cfg = "exec"),
         "deps":            attr.label_list(),
-        # correlated is a flat list; key derived from folder
         "correlated":      attr.label_list(allow_files = True, default = []),
+        "top":             attr.int(default = 0),  # if >0, only process first N srcs
     },
 )
+

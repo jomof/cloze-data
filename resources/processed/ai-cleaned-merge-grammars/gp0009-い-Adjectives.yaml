@@ -2,19 +2,52 @@
     "grammar_point": "い-Adjectives",
     "id": "gp0009",
     "rank": 0,
-    "conjugations": [],
+    "conjugations": [
+        {
+            "type": "plain present affirmative",
+            "form": "adjective-い",
+            "rarity": "common"
+        },
+        {
+            "type": "plain present negative",
+            "form": "adjective-くない",
+            "rarity": "common"
+        },
+        {
+            "type": "plain past affirmative",
+            "form": "adjective-かった",
+            "rarity": "common"
+        },
+        {
+            "type": "plain past negative",
+            "form": "adjective-くなかった",
+            "rarity": "common"
+        },
+        {
+            "type": "te-form",
+            "form": "adjective-くて",
+            "rarity": "common"
+        },
+        {
+            "type": "conditional (ba-form)",
+            "form": "adjective-ければ",
+            "rarity": "common"
+        },
+        {
+            "type": "conditional (tara-form)",
+            "form": "adjective-かったら",
+            "rarity": "common"
+        }
+    ],
     "pronunciation": {
         "katakana": "イ ケイヨウシ",
         "romaji": "i keiyooshi"
     },
     "formation": {
-        "[Noun] + は + [い-Adjective] + です": "Describes a noun using an い-adjective in a polite form.",
-        "[い-Adjective] + [Noun]": "Modifies a noun using an い-adjective.",
-        "[い-Adjective] + です": "To state an adjective politely"
+        "い-Adjective": "Base form ends in い. Cannot be followed by だ."
     },
     "jlpt": "N5",
     "meaning": "Adjectives ending in い",
-    "meaning_warning": "い-Adjectives cannot be used with だ",
     "details": {
         "Part of Speech": "Independent Word",
         "Register": "Standard",
@@ -22,86 +55,115 @@
         "単語の種類": "自立語",
         "使用域": "一般"
     },
-    "etymology": "The term 「い-Adjective」 comes from the fact that these adjectives always end with the hiragana い in their dictionary form. This 'i' is an integral part of the adjective, unlike the 'na' in 「な-Adjectives」 which is a grammatical particle.",
-    "writeup": "In Japanese, 「い-Adjectives」, also known as *keiyoushi*, are a class of adjectives that always end in 「い」 in their dictionary form. They directly modify nouns and can function as predicates. Unlike 「な-Adjectives」, 「い-Adjectives」 cannot be followed by 「だ」 in their plain form. Instead, 「です」 is used to make them polite, although this is technically incorrect but widely accepted. \n\nIt's crucial to distinguish true 「い-Adjectives」 from other words ending in 「い」. For example, 「きれい」 (pretty) appears to be an 「い-Adjective」, but it originates from the kanji 綺麗, where 「い」 is part of the kanji itself. There's no strict rule to differentiate them, but with practice, you'll quickly learn to recognize the common exceptions.",
+    "etymology": "The term い-Adjective comes from the fact that these adjectives always end in the hiragana い. 形容詞 (keiyōshi) means adjective.",
+    "writeup": "In Japanese, い-Adjectives, or い-形容詞 (i-keiyōshi), are a class of words used to describe nouns. A key characteristic is that they **always end in い** in their dictionary form. \n\nHowever, **not all words ending in い are い-Adjectives**. Some words, such as きれい (きれい), which comes from the kanji 綺麗, include い as part of the root word or kanji. In true い-Adjectives, the い is a suffix, outside of the kanji, and can be conjugated. \n\nThere isn't a definitive rule to distinguish which words ending in い are not い-Adjectives, but fortunately, there aren't many exceptions, so you'll become familiar with them over time.\n\n**Important Considerations**\n*   Unlike な-Adjectives, い-Adjectives **must never be followed by だ**. です is used to make them sound more polite, though this is technically grammatically incorrect (since です is a polite form of だ and follows the same rules).",
     "examples": [
         {
-            "japanese": "日本のみちは、せまいです。",
+            "japanese": "日本の道は、狭いです。",
             "english": "Japan's roads are narrow.",
-            "register": "polite",
+            "register": "teineigo (polite)",
             "setting": "informative",
-            "conjugation": null
+            "conjugation": "plain present affirmative",
+            "nuance": "「です」 adds politeness to the statement."
         },
         {
-            "japanese": "今日(きょう)は暑(あつ)いです。",
-            "english": "It is hot today.",
-            "register": "polite",
-            "setting": "casual",
-            "conjugation": null
-        },
-        {
-            "japanese": "寒(さむ)いです。",
-            "english": "It is cold.",
-            "register": "polite",
-            "setting": "casual",
-            "conjugation": null
-        },
-        {
-            "japanese": "楽(たの)しいです。",
-            "english": "This is fun.",
-            "register": "polite",
-            "setting": "friendly",
-            "conjugation": null
-        },
-        {
-            "japanese": "新(あたら)しい車(くるま)。",
-            "english": "A new car.",
+            "japanese": "温泉の風呂は熱かった。",
+            "english": "The onsen's bath was hot.",
             "register": "casual",
+            "setting": "reflective",
+            "conjugation": "plain past affirmative",
+            "nuance": "Expressing a past experience in a casual manner. The speaker is reflecting on how hot the bath was.",
+            "etymology": "温泉 (onsen) refers to a Japanese hot spring."
+        },
+        {
+            "japanese": "今日は暑いです。",
+            "english": "It's hot today.",
+            "register": "teineigo (polite)",
+            "setting": "casual",
+            "conjugation": "plain present affirmative",
+            "nuance": "「です」makes the sentence polite.",
+            "speaker_age": "younger",
+            "listener_age": "older"
+        },
+        {
+            "japanese": "昨日の映画は面白くなかった。",
+            "english": "Yesterday's movie wasn't interesting.",
+            "register": "casual",
+            "setting": "reflective",
+            "conjugation": "plain past negative",
+            "nuance": "The 「くなかった」 conjugation indicates a past negative statement.",
+            "speaker_gender": "male"
+        },
+        {
+            "japanese": "このケーキは甘くて美味しいね。",
+            "english": "This cake is sweet and delicious, isn't it?",
+            "register": "casual",
+            "setting": "friendly",
+            "conjugation": "te-form",
+            "nuance": "「甘くて」 (amakute) uses the te-form to connect two adjectives describing the cake. 「ね」 adds a sense of agreement or confirmation."
+        },
+        {
+            "japanese": "もし明日雨が降れば、ピクニックは中止です。",
+            "english": "If it rains tomorrow, the picnic will be canceled.",
+            "register": "formal",
             "setting": "informative",
-            "conjugation": null
+            "conjugation": "conditional (ba-form)",
+            "nuance": "「降れば」 (fureba) is the conditional ba-form of 降る (furu - to fall).",
+            "speaker_age": "older"
         },
         {
-            "japanese": "このワイン、とても美味(おい)しいです。ぜひ試(ため)してみてください。",
-            "english": "This wine is very delicious. You should try it.",
-            "register": "polite",
-            "setting": "persuasive",
-            "conjugation": null
+            "japanese": "もし君がここにいたら、どんなに幸せだろう。",
+            "english": "If you were here, how happy I would be.",
+            "register": "literary",
+            "setting": "melancholic",
+            "conjugation": "conditional (tara-form)",
+            "nuance": "「幸せだろう」 (shiawase darou) expresses a hypothetical situation and a feeling of longing. This is a softer way of saying 「幸せだろう」 than 「幸せでしょう」, which is not used in this case because it is a question. 「幸せだろう」 can also be used to express the speaker's own conjecture about the situation. This is a slightly literary construction.",
+            "speaker_gender": "male"
         },
         {
-            "japanese": "君(きみ)の目(め)は、星(ほし)のように綺麗(きれい)で、見(み)ていると吸(す)い込(こ)まれそうだ。",
-            "english": "Your eyes are as beautiful as stars; when I look at them, I feel like I'm being sucked in.",
+            "japanese": "この服、高かったら買えないな。",
+            "english": "If these clothes are too expensive, I won't be able to buy them.",
+            "register": "casual",
+            "setting": "cautious",
+            "conjugation": "conditional (tara-form)",
+            "nuance": "「高かったら」 (takakattara) uses the tara-form to express a condition for buying the clothes. 「な」 is a casual sentence ending particle.",
+            "speaker_gender": "female",
+            "listener_gender": "male"
+        },
+        {
+            "japanese": "そのドレス、君によく似合ってて、すごく可愛いかったら、もう他の男には見せたくないよ。",
+            "english": "That dress looks so good on you, and you're so cute that I don't want to show you to any other guy.",
             "register": "flirty",
             "setting": "flirty",
+            "conjugation": "plain past affirmative",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "This is a flirty sentence where the speaker is 「君」 talking to 「you」 about her eyes 「目」 using descriptive adjectives, conveying romantic interest.",
-            "conjugation": null
+            "nuance": "「可愛いかったら」 (kawaiikattara) uses the plain past affirmative conditional form, intensifying the feeling. 「〜たくないよ」 (~takunai yo) is a way for a male to express his desires in a casual but persuasive manner to a female. The 「て」 in 「似合ってて」 is a casual shortening of the te-form.",
+            "etymology": "可愛い (kawaii) means cute."
         },
         {
-            "japanese": "初(はじ)めて会(あ)った時(とき)から、君(きみ)の優(やさ)しい笑顔(えがお)がとても印象的(いんしょうてき)でした。",
-            "english": "From the moment we first met, your kind smile was very impressive.",
-            "register": "semi-formal",
-            "setting": "first-date",
+            "japanese": "初めて会ったときから、君の笑顔が眩しかったら、いつも目で追っていたんだ。",
+            "english": "From the moment I first met you, your smile was so dazzling that I was always following you with my eyes.",
+            "register": "first-date",
+            "setting": "flirty",
+            "conjugation": "plain past affirmative",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "The speaker is using polite but friendly language to express a positive impression from their initial meeting.",
-            "conjugation": null
+            "nuance": "「眩しかったら」 (mabushikattara) expresses a feeling and reason behind the action. 「〜んだ」 (~nda) adds emphasis to the speaker's feelings."
         }
     ],
-    "post_example_writeup": "Note that the sentence 「温泉の風呂は熱いだ」 is considered unnatural because 「い-Adjectives」 are never used with 「だ」",
     "false_friends": [
         {
             "term": "いい",
             "meaning": "い-Adjective meaning 'good'",
             "kind": "synonym",
-            "nuance": "While 「いい」 is an 「い-Adjective」, it has a specific meaning of 'good,' whereas other 「い-Adjectives」 cover a broader range of qualities."
+            "nuance": "While both are い-adjectives, いい means \"good,\" not just any adjective ending in い."
         },
         {
             "term": "な-Adjectives",
             "meaning": "Adjectives that are also nouns",
             "kind": "synonym",
-            "nuance": "Unlike 「い-Adjectives」, 「な-Adjectives」 require 「な」 to connect to nouns and can be followed by 「だ」 in their plain form."
+            "nuance": "Unlike い-adjectives, な-adjectives can be followed by だ (or です in polite speech)."
         }
-    ],
-    "post_false_friends_writeup": "It's important not to confuse 「い-Adjectives」 with 「な-Adjectives」 or nouns. Remember that 「い-Adjectives」 always end in 「い」, directly modify nouns, and don't use 「だ」 in their plain form. With practice, you'll easily distinguish them."
+    ]
 }

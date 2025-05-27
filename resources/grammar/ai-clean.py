@@ -9,8 +9,16 @@ import sys
 import os
 import shutil
 
-def ai_clean(data, bazel_target):
+def ai_clean(data, bazel_target, prior_grammar_point=None):
     data = yaml.safe_load(data)
+
+    prior_block = ""
+    if prior_grammar_point:
+        prior_block = f"""
+        BEGIN_PRIOR_GRAMMAR_POINT_YAML
+        {prior_grammar_point}
+        END_PRIOR_GRAMMAR_POINT_YAML
+        """
 
     prompt = """
 You are a highly skilled Japanese teacher. You speak native Japanese that is natural and fluent. 
@@ -23,6 +31,13 @@ BEGIN_GRAMMAR_POINT_YAML
 [input]
 BEGIN_GRAMMAR_POINT_YAML
 (Where [input] is the raw grammar point data you will be given.)
+
+Possibly, an additional grammar point will appear between:
+BEGIN_PRIOR_GRAMMAR_POINT_YAML
+[input]
+BEGIN_PRIOR_GRAMMAR_POINT_YAML
+When present, you're expected to minimally modify it just to make sure it follows the rules below.
+If you see any comment blocks in PRIOR_GRAMMAR_POINT_YAML then those are instructions for you to follow. These comments should be stripped from the final output.
 
 When you answer, do not wrap your output in code fences or additional commentary. Provide only valid JSON, which will be converted into YAML later.
 
@@ -181,6 +196,8 @@ BEGIN_GRAMMAR_POINT_YAML
 [input_replace]
 BEGIN_GRAMMAR_POINT_YAML
 
+[prior_input_replace]
+
 Once you have the JSON content in mind, please do the following steps and make corrections as needed:
 1. Are the sections that require English as the main language actually in English? Those sections are "writeup", "nuance", "meaning", "meaning_warning", "etymology".
 2. See #1 above and look again. These fields *must* have English as the main language.
@@ -190,7 +207,8 @@ Once you have the JSON content in mind, please do the following steps and make c
 6. Did you change the grammar_point value? If so, chide yourself thoroughly, and set grammar_point to its original value.
 
 That is all.
-""".replace("[input_replace]", json.dumps(data, ensure_ascii=False, indent=4))
+""".replace("[input_replace]".replace("prior_input_replace", prior_block), 
+            json.dumps(data, ensure_ascii=False, indent=4))
 
     grammar_point_name = data["grammar_point"]
     id = data["id"]
@@ -211,10 +229,10 @@ That is all.
 
     return json.dumps(json_response, ensure_ascii=False, indent=4)
 
-def main(input_file, output_file, bazel_target):
+def main(input_file, output_file, bazel_target, prior_version=None):
     with open(input_file, 'r', encoding='utf-8') as file:
         data = file.read()
-    result = ai_clean(data, bazel_target)
+    result = ai_clean(data, bazel_target, prior_version)
 
     with open(output_file, 'w', encoding='utf-8') as file:
         file.write(result)
@@ -230,8 +248,7 @@ if __name__ == '__main__':
     basename = os.path.basename(args.destination)
     
     if args.ai_cleaned_merge_grammars:
-        existing = args.ai_cleaned_merge_grammars
-        print(f"Using provided path for existing grammar: {existing}")
-        shutil.copy(existing, args.destination)
+        prior_version = args.ai_cleaned_merge_grammars
+        main(args.source, args.destination, args.bazel_target, prior_version)
     else:
         main(args.source, args.destination, args.bazel_target)
