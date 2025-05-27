@@ -207,12 +207,22 @@ py_build_tool_stream(
     srcs = ["//resources/processed:merge-grammars"],
     extension = ".yaml",
     pass_target_name = True,
-    tool = "//resources/grammar:ai-clean",
+    tool = ":ai-clean",
+    deps = ["//resources/processed:ai-cleaned-merge-grammars"]
+)
+
+# bazel run //resources/grammar:publish-ai-cleaned-merge-grammars
+sh_binary(
+    name = "publish-ai-cleaned-merge-grammars",
+    srcs = ["publish-ai-cleaned-merge-grammars.sh"],
+    args = ["/workspaces/cloze-data/resources/processed/ai-cleaned-merge-grammars", "$(locations :ai-cleaned-merge-grammars)"],
+    data = [":ai-cleaned-merge-grammars"],
+    visibility = ["//visibility:public"],
 )
 
 py_build_tool(
     name = "post-ai-scrub",
-    ins = ["//resources/curated:concatenated-vocab-json", ":ai-cleaned-merge-grammars"],
+    ins = ["//resources/curated:concatenated-vocab-json", "//resources/processed:ai-cleaned-merge-grammars"],
     outs = ["post-ai-scrub.yaml"],
     main = ":post-ai-scrub-tool",
 )

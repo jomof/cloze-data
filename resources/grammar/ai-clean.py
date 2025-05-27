@@ -6,6 +6,8 @@ from json_repair import repair_json
 from python.aigen import aigen
 from python.utils.build_cache.memoize.memoize import memoize_to_disk
 import sys
+import os
+import shutil
 
 def ai_clean(data, bazel_target):
     data = yaml.safe_load(data)
@@ -223,4 +225,11 @@ if __name__ == '__main__':
     parser.add_argument('--destination', required=True, help='Output file path')
     parser.add_argument('--bazel-target', required=True, help='Name of the bazel target')
     args = parser.parse_args()
-    main(args.source, args.destination, args.bazel_target)
+    basename = os.path.basename(args.destination)
+    existing = f"resources/processed/ai-cleaned-merge-grammars/{basename}"
+    print(f"Checking if {existing} exists...")
+    if os.path.exists(existing):
+        print(f"File {existing} already exists. Skipping processing.")
+        shutil.copy(existing, args.destination)
+    else:
+        main(args.source, args.destination, args.bazel_target)

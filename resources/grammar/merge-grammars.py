@@ -1782,7 +1782,7 @@ def main():
     grammar_point_count = 0
     for grammar_point in removed:
         grammar_point_count += 1
-        if grammar_point_count > 20:
+        if grammar_point_count > 300:
             continue
         filename = f"{grammar_point['id']}-{grammar_point['grammar_point']}.yaml"
         grammar_point_file = os.path.join(output_dir, filename)
