@@ -114,7 +114,7 @@ sh_binary(
     visibility = ["//visibility:public"],
 )
 
-# bazel run //resources/grammar:publish-merged
+# 
 sh_binary(
     name = "publish-merged",
     srcs = ["publish-merged.sh"],

@@ -1498,7 +1498,12 @@ def trim_elements(merged_list):
         trimmed_list.append(trimmed_item)
     
     # Sort by rank and assign IDs
-    sorted_list = sorted(trimmed_list, key=lambda grammar_point: (grammar_point['rank'], grammar_point['lesson_order'])) 
+    sorted_list = sorted(
+        trimmed_list, 
+        key=lambda grammar_point: (
+            grammar_point['rank'], 
+            grammar_point['lesson_order'],
+            grammar_point['grammar_point'])) 
     id = 1
     for item in sorted_list:
         item['id'] = f"gp{id:0{4}d}"
@@ -1782,8 +1787,6 @@ def main():
     grammar_point_count = 0
     for grammar_point in removed:
         grammar_point_count += 1
-        if grammar_point_count > 300:
-            continue
         filename = f"{grammar_point['id']}-{grammar_point['grammar_point']}.yaml"
         grammar_point_file = os.path.join(output_dir, filename)
         with open(grammar_point_file, 'w') as f:
