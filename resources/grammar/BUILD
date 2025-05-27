@@ -61,7 +61,7 @@ write_file_list(
 
 py_build_tool(
     name = "merge-bunpro-dojg",
-    outs = ["merge-bunpro-dojg.txt"],
+    outs = ["merge-bunpro-dojg.yaml"],
     ins = [
         "bunpro-fixed-yaml-all-list.txt",
         "dojg-yaml-list.txt",
@@ -200,6 +200,7 @@ py_binary(
     ],
 )
 
+# Augments combined grammar with AI-generated content.
 # Run with bazel build //resources/grammar:ai-cleaned-merge-grammars
 py_build_tool_stream(
     name = "ai-cleaned-merge-grammars",
@@ -207,6 +208,19 @@ py_build_tool_stream(
     extension = ".yaml",
     pass_target_name = True,
     tool = "//resources/grammar:ai-clean",
+)
+
+py_build_tool(
+    name = "post-ai-scrub",
+    ins = ["//resources/curated:concatenated-vocab-json", ":ai-cleaned-merge-grammars"],
+    outs = ["post-ai-scrub.yaml"],
+    main = ":post-ai-scrub-tool",
+)
+
+py_binary(
+    name = "post-ai-scrub-tool",
+    srcs = ["post-ai-scrub-tool.py"],
+    deps = ["//python/mecab:utils", "@pip//pyyaml"],
 )
 
 py_library(

@@ -112,11 +112,6 @@ def tokens_to_compact_sentence(tokens):
     return result
 
 def parse_raw_mecab_output(raw_output):
-    field_names = [
-        "surface", "pos", "pos_detail_1", "pos_detail_2", "pos_detail_3",
-        "conjugated_type", "conjugated_form", "basic_form", "reading", "pronunciation"
-    ]
-
     tokens = []
     for line in raw_output.split("\n"):
         if line == "EOS":
@@ -165,16 +160,44 @@ def mecab_raw_to_compact_sentence(raw: str) -> str:
 
     tokens = parse_raw_mecab_output(raw)
 
+    pos_map = {
+        "名詞": "n", # Noun 
+        "動詞": "v", # Verb
+        "形容詞": "adj", # Adjective
+        "副詞": "adv", # Adverb
+        "助詞": "prt", # Particle
+        "接続詞": "conj", # Conjunction
+        "感動詞": "int", # Interjection
+        "記号": "sym", # Symbol
+        "助動詞": "auxv", # Auxiliary verb
+        "補助記号": "auxs", # Auxiliary symbol
+        "代名詞": "pron", # Pronoun
+        "接頭辞": "pref", # Prefix
+        "接尾辞": "suff", # Suffix
+        "形状詞": "shp", # Shape word
+        "連体詞": "at", # Attributive
+        "空白": "sp", # Space
+    }
+
     # Recombine the tokens into the desired compact format
     recombined = ""
     for token in tokens:
         surface = token["surface"]  # Preceded by ˢ (Latin Subscript Small Letter 's')
         pos = token["pos"]  # Preceded by ᵖ (Latin Subscript Small Letter 'p')
-        recombined += f"⌈ˢ{surface}ᵖ{pos}"
-        base = token["basic_form"]  # Preceded by ᵇ (superscript 'b')
-        if base:
-            recombined += f"ᵇ{base}"
-        recombined += "⌉"
+        pos_code = pos_map[pos]
+        if pos_code in ['auxs', 'prt'] and len(surface) == 1:
+            # Shortened versions for symbols and other things that can be determined
+            # with a lookup table.
+            recombined += surface
+        else:
+            recombined += f"⌈ˢ{surface}ᵖ{pos_code}"
+            base = token["basic_form"]  # Preceded by ᵇ (superscript 'b')
+            if base and base != surface:  # Only include base form if it's different from surface
+                recombined += f"ᵇ{base}"
+            reading = token["reading"]  # Preceded by ʳ (superscript 'r')
+            if reading and reading != surface:
+                recombined += f"ʳ{reading}"
+            recombined += "⌉"
 
     return recombined
 

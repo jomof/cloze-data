@@ -22,6 +22,7 @@ json_concat(
         ":jlpt-non-vocab-json",
     ],
     output = "concatenated-vocab.json",
+    visibility = ["//visibility:public"],
 )
 
 py_build_tool(

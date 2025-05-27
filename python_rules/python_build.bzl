@@ -57,7 +57,7 @@ def _py_build_tool_stream_impl(ctx):
             arguments.append("--bazel-target={}".format(ctx.label.name))
 
         ctx.actions.run(
-            inputs = [src] + ctx.files.data,
+            inputs = [src] + ctx.files.data + ctx.files.deps,
             outputs = [output_file],
             executable = ctx.executable.tool,
             arguments = arguments,
@@ -84,5 +84,6 @@ py_build_tool_stream = rule(
             executable = True,
             cfg = "exec",
         ),
+        "deps": attr.label_list(),
     },
 )

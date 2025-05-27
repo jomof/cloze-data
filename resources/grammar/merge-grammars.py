@@ -108,7 +108,7 @@ grammar_point_name_translations = {
     "はいけない|dojg": "Verb[て]+はいけない",
     "れる・られる+ままに": "Verb[れる・られる]~ままに",
     "何[(Number)+Counter]も": "何+Counter+も",
-    "だに+しない": "だに~しないい",
+    "だに+しない": "だに~しない",
     "い-Adj[く]+もなんともない": "い-aAdjective[く]もなんともない",
     "Verb[volitional]+としたが": "Verb[volitional-よう]+としたが",
     "Number/Amount+は": "Number+は",
@@ -1779,7 +1779,11 @@ def main():
     all_grammar_points = get_all_grammar_points(removed)
 
     # Write the individual YAML files
+    grammar_point_count = 0
     for grammar_point in removed:
+        grammar_point_count += 1
+        if grammar_point_count > 20:
+            continue
         filename = f"{grammar_point['id']}-{grammar_point['grammar_point']}.yaml"
         grammar_point_file = os.path.join(output_dir, filename)
         with open(grammar_point_file, 'w') as f:
