@@ -224,12 +224,14 @@ if __name__ == '__main__':
     parser.add_argument('--source', required=True, help='Input file path')
     parser.add_argument('--destination', required=True, help='Output file path')
     parser.add_argument('--bazel-target', required=True, help='Name of the bazel target')
+    parser.add_argument('--ai-cleaned-merge-grammars', required=False, help='Optional path to the original version of the grammar')
+    
     args = parser.parse_args()
     basename = os.path.basename(args.destination)
-    existing = f"resources/processed/ai-cleaned-merge-grammars/{basename}"
-    print(f"Checking if {existing} exists...")
-    if os.path.exists(existing):
-        print(f"File {existing} already exists. Skipping processing.")
+    
+    if args.ai_cleaned_merge_grammars:
+        existing = args.ai_cleaned_merge_grammars
+        print(f"Using provided path for existing grammar: {existing}")
         shutil.copy(existing, args.destination)
     else:
         main(args.source, args.destination, args.bazel_target)
