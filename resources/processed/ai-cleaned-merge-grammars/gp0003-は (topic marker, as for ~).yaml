@@ -1,12 +1,14 @@
 {
     "grammar_point": "は (topic marker, as for ~)",
     "id": "gp0003",
-    "rank": 0,
     "pronunciation": {
         "katakana": "ワ",
         "romaji": "wa"
     },
-    "conjugations": [],
+    "formation": {
+        "[Noun] + は": "Marks the topic of the sentence.",
+        "[Phrase] + は": "Highlights the phrase as the topic."
+    },
     "jlpt": "N5",
     "meaning": "As for... (Highlights sentence topic)",
     "meaning_warning": "は can be also used to contrast several things",
@@ -17,127 +19,110 @@
         "単語の種類": "係助詞",
         "使用域": "一般"
     },
-    "formation": {
-        "[Noun] + は": "Marks the topic of the sentence. The part before は is what the sentence is about.",
-        "[Subject] + は + [Predicate]": "The subject is the topic being discussed.",
-        "[A] + は + [B] + が": "Used to contrast A and B, where は marks A and が marks B."
-    },
-    "etymology": "The particle は originally comes from the conditional marker ば. Over time, は evolved to mark the topic of the sentence, distinguishing it from が, which marks the subject or a specific element.",
-    "writeup": "は (pronounced *wa*) is a particle that marks the topic of the sentence. Think of it as saying \"as for...\" or \"speaking of...\". It indicates what the sentence is generally about. It's essential to distinguish は from が, which primarily highlights specific actions or statements. While both can sometimes seem interchangeable, especially in shorter sentences, は broadly describes the overall context, while が emphasizes a particular piece of information.\n\n**Important Considerations:**\n*   は cannot be used to describe things you are seeing or experiencing \"in the moment\". This is because such immediate events are considered part of a larger ongoing experience.\n*   は has two primary functions: marking the topic and indicating contrast or comparison. When は appears in the middle or later part of a sentence, it usually carries a contrasting nuance. Be mindful that this is a general tendency, not a strict rule.\n*   は marks what the speaker assumes is already known or understood by the listener.",
+    "etymology": "The particle 「は」originated from the conditional particle 「ば」. Over time, 「は」evolved to mark the topic of a sentence, indicating what the speaker is talking about. The shift from a conditional meaning to a topic marker is related to how speakers introduce a topic as a condition for the rest of the sentence.",
+    "writeup": "「は」is a particle that marks the topic of a sentence. It indicates what the sentence is about. It's crucial to understand that 「は」doesn't necessarily indicate the subject; instead, it sets the context for the rest of the sentence. The pronunciation is 「わ」, not 「は」. While both 「は」and 「が」can mark the subject, 「は」is used when the topic is already known or being introduced, whereas 「が」is used to introduce new information or to emphasize the subject.\n\nIt's **important** to note that 「は」can also be used for contrast. This is determined by context and often indicated by placing 「は」in the middle of the sentence. \n\nIn many cases, you can use either 「は」or 「が」, but the nuance will change. 「は」provides a general statement about the topic, while 「が」highlights a specific piece of information.",
     "examples": [
         {
-            "japanese": "私**は**トムです。",
-            "english": "I am Tom.",
-            "register": "teineigo (polite)",
+            "japanese": "私{は}学生です。",
+            "english": "As for me, I am a student.",
+            "register": "formal",
             "setting": "informative",
-            "nuance": "「私は」introduces the speaker as the topic of the sentence in a polite manner.",
-            "etymology": "The word 「です」indicates a polite style, suitable for introducing oneself."
+            "nuance": "「は」 marks 「私」 as the topic of the sentence, indicating that the sentence is about the speaker.",
+            "etymology": ""
         },
         {
-            "japanese": "あなた**は**ジムです。",
-            "english": "You are Jim.",
-            "register": "teineigo (polite)",
-            "setting": "informative",
-            "nuance": "「あなたは」introduces the listener as the topic of the sentence in a polite manner.",
-            "etymology": "「です」indicates a polite style, suitable for identifying someone."
-        },
-        {
-            "japanese": "トム**は**先生です。",
-            "english": "Tom is a teacher.",
-            "register": "teineigo (polite)",
-            "setting": "informative",
-            "nuance": "「トムは」sets Tom as the topic, and 「です」indicates that this information is presented politely.",
-            "etymology": "「先生」 (teacher) is a common noun and 「です」 makes it a polite statement."
-        },
-        {
-            "japanese": "カレンダー**は**必要です。",
-            "english": "A calendar is necessary.",
-            "register": "teineigo (polite)",
-            "setting": "informative",
-            "nuance": "「カレンダーは」sets the calendar as the topic and 「必要です」 conveys a polite statement about its necessity.",
-            "etymology": "「必要です」 (necessary) is a polite way to state a requirement."
-        },
-        {
-            "japanese": "私**は**忙しいです。",
-            "english": "I am busy.",
-            "register": "teineigo (polite)",
-            "setting": "informative",
-            "nuance": "「私は」introduces the speaker as the topic and 「忙しいです」 is a polite declaration of being busy.",
-            "etymology": "「忙しい」 (busy) is an adjective, and 「です」 makes it a polite sentence."
-        },
-        {
-            "japanese": "今日**は**、雨だ。",
-            "english": "It's raining today.",
-            "register": "casual",
-            "setting": "informative",
-            "nuance": "「今日は」marks 'today' as the topic. The casual ending 「だ」 creates a familiar tone.",
-            "etymology": "雨 (ame) means rain, and だ is a plain copula."
-        },
-        {
-            "japanese": "私**は**、金曜日が好き。",
-            "english": "I like Fridays.",
-            "register": "casual",
+            "japanese": "今日{は}、いい天気ですね。",
+            "english": "As for today, it's nice weather, isn't it?",
+            "register": "semi-formal",
             "setting": "friendly",
-            "nuance": "「私は」identifies 'I' as the topic and 「が好き」shows preference.",
-            "etymology": "「金曜日」(kin'youbi) means Friday, and 好き (suki) means like."
+            "nuance": "「は」 marks 「今日」 as the topic, indicating that the speaker is commenting on the weather specifically for today.",
+            "etymology": ""
         },
         {
-            "japanese": "私**は**、金曜日**は**好き。",
-            "english": "I like Fridays (as opposed to other days).",
+            "japanese": "猫{は}好きですが、犬{は}嫌いです。",
+            "english": "I like cats, but I dislike dogs.",
             "register": "casual",
-            "setting": "friendly",
-            "nuance": "The second 「は」emphasizes a comparison to other days, adding a contrasting nuance.",
-            "etymology": "好き (suki) means like, and the repeated use of は adds emphasis."
+            "setting": "informative",
+            "nuance": "Here, 「は」marks both 「猫」 and 「犬」 for contrast. The sentence emphasizes the contrast between liking cats and disliking dogs.",
+            "etymology": ""
         },
         {
-            "japanese": "ねえ、今日**は**綺麗だね。",
-            "english": "Hey, you look beautiful today.",
-            "register": "shitashii kuchō (intimate)",
+            "japanese": "彼{は}背が高いです。",
+            "english": "As for him, he is tall.",
+            "register": "semi-formal",
+            "setting": "informative",
+            "nuance": "「は」 marks 「彼」 as the topic, describing his height.",
+            "etymology": ""
+        },
+        {
+            "japanese": "寿司{は}美味しいです。",
+            "english": "As for sushi, it is delicious.",
+            "register": "semi-formal",
+            "setting": "informative",
+            "nuance": "「は」 marks 「寿司」 as the topic, indicating the speaker's opinion about sushi.",
+            "etymology": ""
+        },
+        {
+            "japanese": "彼女{は}いつも綺麗です。",
+            "english": "As for her, she is always beautiful.",
+            "register": "semi-formal",
             "setting": "flirty",
-            "nuance": "Using 「ねえ」indicates a friendly, intimate tone.  Complimenting someone's beauty directly like this is flirty in Japanese.  「綺麗だね」is a very casual remark showing intimacy.",
-            "etymology": "綺麗 (kirei) means beautiful, and だね is a casual confirmation."
+            "nuance": "Using 「彼女は」as the topic, the speaker compliments her beauty 「綺麗です」.",
+            "etymology": ""
         },
         {
-            "japanese": "私**は**お酒**は**好きだけど、タバコ**は**嫌いです。",
-            "english": "I like alcohol, but I hate tobacco.",
-            "register": "teineigo (polite)",
+            "japanese": "このケーキ{は}、甘すぎますね。",
+            "english": "As for this cake, it's too sweet, isn't it?",
+            "register": "semi-formal",
             "setting": "first-date",
-            "nuance": "The repeated 「は」 emphasizes the contrast between liking alcohol and disliking tobacco. 「嫌いです」is a polite way of saying you dislike something.",
-            "etymology": "お酒 (osake) means alcohol, タバコ (tabako) means tobacco, and 嫌いです (kirai desu) means dislike."
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "During a date, the speaker politely comments on the cake's sweetness. The 「ね」 adds a seeking of agreement from the listener.",
+            "etymology": ""
+        },
+        {
+            "japanese": "田中さん{は}会議に出席しません。",
+            "english": "As for Mr. Tanaka, he will not attend the meeting.",
+            "register": "formal",
+            "setting": "professional",
+            "nuance": "「は」 marks 「田中さん」 as the topic, conveying information about his attendance at the meeting.",
+            "etymology": ""
+        },
+        {
+            "japanese": "お酒{は}飲みますけど、ビール{は}ちょっと…",
+            "english": "I drink alcohol, but beer is a little...",
+            "register": "casual",
+            "setting": "friendly",
+            "nuance": "Using 「は」to contrast different kinds of alcoholic beverages. Implies the speaker drinks alcohol but not beer.",
+            "etymology": ""
         }
     ],
+    "post_example_writeup": "Remember that using 「は」correctly requires understanding the context and what the speaker wants to emphasize. It's a nuanced particle that can significantly alter the meaning of a sentence.",
     "false_friends": [
         {
             "term": "が (subject marker)",
             "meaning": "Subject marking particle, Identification particle",
-            "kind": "synonym",
-            "nuance": "Unlike は, which marks the topic, が highlights the subject or introduces new information."
+            "kind": "often confused with",
+            "nuance": "While 「は」marks the topic, 「が」identifies the subject or introduces new information. 「は」is used for something already known or being discussed, whereas 「が」is used to highlight something specific."
         },
         {
             "term": "の (possession)",
-            "meaning": "Verb nominalizer, The one who..., That which...",
-            "kind": "synonym",
-            "nuance": "Unlike は, which marks the topic, の indicates possession, attribution, or nominalization."
-        },
-        {
-            "term": "Number/Amount+は",
-            "meaning": "At least, Sort of, Or so",
-            "kind": "synonym",
-            "nuance": "Unlike は as a topic marker, when used with numbers, it implies 'at least' or 'about'."
+            "meaning": "Possessive particle, Noun modifier",
+            "kind": "unrelated",
+            "nuance": "「の」indicates possession or modifies a noun, while 「は」marks the topic of the sentence. They have entirely different functions."
         },
         {
             "term": "って (quotation)",
-            "meaning": "As for, Speaking of, Casual は (Sentence topic marker)",
-            "kind": "synonym",
-            "nuance": "Unlike formal は, って is a more casual way of marking the topic, often used in informal speech."
+            "meaning": "Casual topic marker",
+            "kind": "similar expression",
+            "nuance": "「って」is a more casual way of marking the topic, similar to 「は」. However, 「って」is less formal and more commonly used in spoken language."
         },
         {
             "term": "といえば",
-            "meaning": "Speaking of, If it were the case that",
-            "kind": "synonym",
-            "nuance": "Unlike simple topic marking with は, といえば introduces a topic based on a previous statement."
+            "meaning": "Speaking of",
+            "kind": "similar expression",
+            "nuance": "「といえば」 is used to bring up a topic in connection to something previously mentioned, whereas 「は」 simply marks the topic."
         }
     ],
-    "post_false_friends_writeup": "To avoid mixing up は with similar particles, remember that は generally indicates what the sentence is *about*, whereas が introduces new information or emphasizes the subject. の signifies possession or attribution. って is a casual alternative to は, and といえば introduces a topic related to a previous comment. Context is key to understanding the nuanced differences between these particles.",
-    "lesson_order": 2
+    "post_false_friends_writeup": "To avoid mixing up 「は」with similar particles, focus on the role each particle plays in the sentence. 「は」sets the stage by introducing the topic, 「が」highlights specific information, and 「の」indicates possession or modification. When unsure, consider whether you are introducing a topic or emphasizing a subject; this will guide your choice."
 }

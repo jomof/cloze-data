@@ -85,7 +85,7 @@ def generate_gemini_2_0(model_name: str, prompt: str) -> str:
     generate_content_config = types.GenerateContentConfig(
         temperature=1,
         top_p=0.95,
-        max_output_tokens=8192,
+        #max_output_tokens=8192,
         response_modalities=["TEXT"],
         safety_settings=[
             types.SafetySetting(
