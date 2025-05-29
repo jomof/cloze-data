@@ -84,24 +84,28 @@
             "etymology": "「努力 家」 means 'hard worker'. 「きっと」 means 'surely'."
         },
         {
-            "japanese": "A: 彼 、 かっこいい よね。\nB: うん、{それも} 優しい し ね。",
-            "english": "A: He's handsome, isn't he? B: Yeah, and what's more, he's kind too.",
+            "japanese": "あの 彼 は かっこいい だけ じゃなく、{それも} 優しい から、本当に 素敵 ね。",
+            "english": "That guy isn't just handsome, and what's more, he's kind, so he's truly wonderful, isn't he?",
             "scene": "Two friends talking about a guy they like.",
             "register": "shitashii kuchō (intimate)",
             "setting": "flirty",
             "speaker_gender": "female",
             "listener_gender": "female",
-            "nuance": "The 「ね」 at the end is a way for the two friends to seek confirmation and further agreement with each other on the topic of the guy they both like. It is very colloquial. Female speakers tend to use 「ね」 more often than male speakers."
+            "speaker_age": "younger",
+            "listener_age": "younger",
+            "nuance": "The 「ね」 at the end is a way for younger female speakers to seek confirmation and agreement, reflecting a shared sentiment about the guy. Its colloquial use contributes to the intimate register between friends."
         },
         {
-            "japanese": "A: あの 服 、 可愛い ね。\nB: うん、{それも} 安い から 買っちゃった。",
-            "english": "A: That outfit is cute, isn't it? B: Yeah, and what's more, it was cheap so I bought it.",
+            "japanese": "この 服 は 可愛い し、{それも} 安かった から、つい 買っちゃった の。",
+            "english": "This outfit is cute, and what's more, it was cheap, so I just ended up buying it.",
             "scene": "Two friends talking about shopping.",
             "register": "shitashii kuchō (intimate)",
             "setting": "friendly",
             "speaker_gender": "female",
             "listener_gender": "female",
-            "nuance": "The 「〜ちゃった」 form is a colloquial contraction of 「〜てしまった」 and expresses that she already did something (bought the clothes). It adds a casual, slightly self-justifying tone, implying she couldn't resist because it was cheap. Only women say 「〜ちゃった」. Men don't say it."
+            "speaker_age": "younger",
+            "listener_age": "younger",
+            "nuance": "The 「〜ちゃった」 form, a colloquial contraction of 「〜てしまった」, indicates that the action was completed, often with a slight feeling of regret or a casual self-justification, as in 'I just couldn't help but buy it.' The particle 「の」 at the end further softens the statement and is often used by female speakers to explain or add a personal touch."
         },
         {
             "japanese": "彼女 は スタイル が 良く て、{それも} 料理 が 上手 だ から 完璧 だ よね。",
@@ -111,7 +115,9 @@
             "setting": "flirty",
             "speaker_gender": "male",
             "listener_gender": "male",
-            "nuance": "The speaker is emphasizing that there are multiple attractive traits. 「〜だよね」 is a casual tag question, seeking agreement and implying a sense of camaraderie with the listener. It is frequently used by men.",
+            "speaker_age": "older",
+            "listener_age": "older",
+            "nuance": "The speaker is emphasizing that there are multiple attractive traits. 「〜だよね」 is a casual tag question, seeking agreement and implying a sense of camaraderie with the listener, often used by older men.",
             "etymology": "「完璧」 means 'perfect'. The sentence is structured to emphasize admiration and agreement."
         }
     ],
@@ -129,5 +135,12 @@
             "nuance": "「おまけに」 tends to add something extra, often a negative point, but may imply a more significant or problematic addition compared to 「それも」."
         }
     ],
-    "post_false_friends_writeup": "While 「それも」, 「しかも」, and 「おまけに」 can all be used to add information, pay attention to the nuances. 「それも」 often highlights something unexpected or undesirable. 「しかも」 is a more neutral addition. 「おまけに」 usually adds something extra, often negative, with a slightly stronger implication than 「それも」."
+    "post_false_friends_writeup": "While 「それも」, 「しかも」, and 「おまけに」 can all be used to add information, pay attention to the nuances. 「それも」 often highlights something unexpected or undesirable. 「しかも」 is a more neutral addition. 「おまけに」 usually adds something extra, often negative, with a slightly stronger implication than 「それも」.",
+    "change": [
+        "violation: Removed top-level 'dojg' field, as per rule 'You must not add top-level 'bunpro' or 'dojg' fields to the output JSON.'",
+        "violation: Rewrote example 8 from dialogue to a single sentence, as per rule 'If the input examples contain dialogue (A: ... B: ...), rewrite them into single-sentence statements...'.",
+        "violation: Rewrote example 9 from dialogue to a single sentence, as per rule 'If the input examples contain dialogue (A: ... B: ...), rewrite them into single-sentence statements...'.",
+        "violation: Added 'speaker_age' and 'listener_age' fields to examples 8, 9, and 10 to ensure a variety of ages are represented, as per rule 'Example sentences should include at least one younger and one older speaker_age.'. Updated associated 'nuance' fields accordingly.",
+        "unnatural: Modified the nuance in example 9 to remove the absolute statement 'Only women say 「〜ちゃった」. Men don't say it.', as it is an overgeneralization and not entirely accurate."
+    ]
 }

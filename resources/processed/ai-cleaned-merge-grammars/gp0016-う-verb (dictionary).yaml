@@ -119,7 +119,10 @@
             "scene": "A person talking about their plans.",
             "register": "casual",
             "setting": "informative",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "dictionary (plain non-past)",
+            "speaker_age": "younger",
+            "listener_age": "younger",
+            "nuance": "This statement is typical among younger individuals sharing plans, using the casual register and dictionary form."
         },
         {
             "japanese": "本を{読む}。",
@@ -128,8 +131,7 @@
             "setting": "casual",
             "speaker_age": "older",
             "listener_age": "younger",
-            "nuance": "This simple statement can be used by an older speaker to a younger listener, demonstrating a straightforward activity. The casual register is appropriate for informal interaction.",
-            "conjugation": "dictionary (plain non-past)"
+            "nuance": "This simple statement can be used by an older speaker to a younger listener, demonstrating a straightforward activity. The casual register is appropriate for informal interaction."
         },
         {
             "japanese": "毎日、水を{飲む}。",
@@ -138,8 +140,9 @@
             "setting": "informative",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "A female speaker casually states a daily habit to a male listener. The dictionary form used here is direct and factual.",
-            "conjugation": "dictionary (plain non-past)"
+            "speaker_age": "younger",
+            "listener_age": "older",
+            "nuance": "A younger female speaker casually states a daily habit to an older male listener. The dictionary form used here is direct and factual."
         },
         {
             "japanese": "明日、一緒に{遊ぶ}？",
@@ -148,8 +151,7 @@
             "setting": "friendly",
             "listener_gender": "female",
             "speaker_gender": "male",
-            "nuance": "The male speaker is asking a female if she wants to hang out. The sentence ends with 「遊ぶ？」, where the rising intonation is crucial for indicating it's a question in casual speech.",
-            "conjugation": "dictionary (plain non-past)"
+            "nuance": "The male speaker is asking a female if she wants to hang out. The sentence ends with 「遊ぶ？」, where the rising intonation is crucial for indicating it's a question in casual speech."
         },
         {
             "japanese": "今日は疲れたから、早く{帰ろう}。",
@@ -157,8 +159,7 @@
             "register": "casual",
             "setting": "friendly",
             "speaker_gender": "female",
-            "nuance": "The female speaker uses the volitional form 「帰ろう」 to suggest an action to a friend. This implies a shared activity.",
-            "conjugation": "volitional (plain)"
+            "nuance": "The female speaker uses the volitional form 「帰ろう」 to suggest an action to a friend. This implies a shared activity."
         },
         {
             "japanese": "彼女が欲しいから、もっと{頑張ろう}！",
@@ -166,8 +167,7 @@
             "register": "casual",
             "setting": "excited",
             "speaker_gender": "male",
-            "nuance": "The male speaker uses the volitional form 「頑張ろう」 to express personal determination. The phrase 「彼女が欲しい」 is a straightforward expression of desire.",
-            "conjugation": "volitional (plain)"
+            "nuance": "The male speaker uses the volitional form 「頑張ろう」 to express personal determination. The phrase 「彼女が欲しい」 is a straightforward expression of desire."
         },
         {
             "japanese": "今夜、{飲みに行きませんか}？",
@@ -176,8 +176,7 @@
             "setting": "flirty",
             "listener_gender": "female",
             "speaker_gender": "male",
-            "nuance": "The male speaker is inviting a female to get drinks. This uses the polite negative question form 「飲みに行きませんか」, which is a common way to extend an invitation politely.",
-            "conjugation": "negative (polite)"
+            "nuance": "The male speaker is inviting a female to get drinks. This uses the polite negative question form 「飲みに行きませんか」, which is a common way to extend an invitation politely."
         },
         {
             "scene": "Two people on a first date.",
@@ -187,8 +186,7 @@
             "setting": "first-date",
             "listener_gender": "female",
             "speaker_gender": "male",
-            "nuance": "The speaker, a male, uses the polite negative question form 「飲みにでも行きませんか」 to suggest a future outing to a female listener. The addition of 「でも」 softens the invitation.",
-            "conjugation": "negative (polite)"
+            "nuance": "The speaker, a male, uses the polite negative question form 「飲みにでも行きませんか」 to suggest a future outing to a female listener. The addition of 「でも」 softens the invitation."
         }
     ],
     "false_friends": [
@@ -217,5 +215,15 @@
             "nuance": "Verb+て connects actions or events in a sequence, whereas the dictionary form is the base form."
         }
     ],
-    "post_false_friends_writeup": "When learning verbs, it's crucial to differentiate the dictionary form from other forms like the ます-form, ない-form, and た-form. The dictionary form serves as the base, while the others indicate tense, negation, or connection of actions. Pay attention to the different endings and their respective meanings to avoid confusion."
+    "post_false_friends_writeup": "When learning verbs, it's crucial to differentiate the dictionary form from other forms like the ます-form, ない-form, and た-form. The dictionary form serves as the base, while the others indicate tense, negation, or connection of actions. Pay attention to the different endings and their respective meanings to avoid confusion.",
+    "change": [
+        {
+            "type": "violation",
+            "reason": "Example sentences should include at least one younger and one older speaker_age, and at least one younger and one older listener_age. Added speaker_age and listener_age to examples 1 and 3 for better coverage.",
+            "details": "Added \"speaker_age\": \"younger\", \"listener_age\": \"younger\" to example 1. Added \"speaker_age\": \"younger\", \"listener_age\": \"older\" to example 3."
+        }
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/う-Verbs"
+    }
 }

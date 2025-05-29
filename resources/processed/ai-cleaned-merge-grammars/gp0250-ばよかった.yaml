@@ -3,11 +3,6 @@
     "id": "gp0250",
     "conjugations": [
         {
-            "type": "plain non-past",
-            "form": "ばいい",
-            "rarity": "commonly used"
-        },
-        {
             "type": "plain past",
             "form": "ばよかった",
             "rarity": "commonly used"
@@ -45,10 +40,14 @@
         {
             "japanese": "昨日 早く 寝れば {よかったです} 。",
             "english": "I should have gone to sleep early last night.",
-            "scene": "Someone regretting staying up late.",
+            "scene": "An older female colleague expressing regret about staying up late to a younger male colleague.",
             "register": "polite",
             "setting": "reflective",
-            "conjugation": "polite past"
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "speaker_age": "older",
+            "listener_age": "younger",
+            "nuance": "The politeness of 「よかったです」 is suitable for inter-generational work interactions. This phrasing indicates a mild complaint or sigh of regret."
         },
         {
             "japanese": "もっと 日本語を 勉強すれば {よかった} なあ。",
@@ -67,16 +66,16 @@
             "conjugation": "plain past"
         },
         {
-            "japanese": "牛乳を 買う 時 スーパーに 寄れば {よかった} 。",
-            "english": "I should have stopped by the supermarket when I went to buy milk.",
+            "japanese": "水を 買う 時 スーパーに 寄れば {よかった} 。",
+            "english": "I should have stopped by the supermarket when I went to buy water.",
             "scene": "Someone realizing they forgot to buy something at the store.",
             "register": "casual",
             "setting": "reflective",
             "conjugation": "plain past"
         },
         {
-            "japanese": "「 あーあ 、 あの 時 、 告白すれば {よかった} な… 」",
-            "english": "Ah, I wish I had confessed my feelings back then...",
+            "japanese": "あーあ、あの時、告白すれば {よかった} な。",
+            "english": "Ah, I wish I had confessed my feelings back then.",
             "scene": "A person wistfully remembering a missed romantic opportunity.",
             "register": "casual",
             "setting": "melancholic",
@@ -85,23 +84,36 @@
             "conjugation": "plain past"
         },
         {
-            "japanese": "「 もしもし ？ もっと 早く 電話を くれれば {よかった} のに 」",
-            "english": "Hello? I wish you had called me sooner.",
+            "japanese": "もしもし、もっと早く電話をくれれば {よかった} のに。",
+            "english": "Hello, I wish you had called me sooner.",
             "scene": "A woman speaking to her boyfriend.",
             "register": "casual",
             "setting": "flirty",
             "listener_gender": "male",
             "speaker_gender": "female",
-            "nuance": "The particle 「のに」 often carries a nuance of blame or gentle reproach.",
+            "nuance": "The particle 「のに」 often carries a nuance of gentle reproach or disappointment, common in intimate settings.",
             "conjugation": "plain past"
         },
         {
-            "japanese": "「 ああ 、 宝くじを 買えば {よかった} ！ 」",
-            "english": "Ah, I should have bought a lottery ticket!",
-            "scene": "Someone realizing the lottery numbers just came up.",
+            "japanese": "ああ、もっと貯金すれば {よかった}！",
+            "english": "Ah, I should have saved more money!",
+            "scene": "Someone regretting their past spending habits.",
             "register": "casual",
-            "setting": "excited",
+            "setting": "melancholic",
             "conjugation": "plain past"
+        },
+        {
+            "japanese": "もっと早く来れば {よかった} のに、コンサートに間に合わなかった。",
+            "english": "I should have come earlier; I didn't make it to the concert.",
+            "scene": "A younger male expressing frustration to an older female friend about missing the start of a concert.",
+            "register": "casual",
+            "setting": "melancholic",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "speaker_age": "younger",
+            "listener_age": "older",
+            "conjugation": "plain past",
+            "nuance": "The use of 「のに」 emphasizes disappointment or a mild complaint. This sentence is gender-neutral, but the interaction implies a friendly, slightly deferential tone from the younger male speaker to the older female listener."
         }
     ],
     "false_friends": [
@@ -117,5 +129,20 @@
             "kind": "opposite meaning",
             "nuance": "Unlike 「ばよかった」 which expresses regret, 「てよかった」 expresses relief or satisfaction about something that happened."
         }
-    ]
+    ],
+    "change": [
+        "violation: Rule 0 states: 'Only list conjugations that, when used, preserve the meaning of the grammar point.' The prior version incorrectly included 'ばいい' in conjugations, which does not preserve the past regret meaning of 'ばよかった'.",
+        "violation: Rule 6 states: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' Example 5 used '牛乳' (N2) for an N4 grammar point. Replaced with '水' (N5).",
+        "unnatural: Changed English translation for example 5 to reflect the change in Japanese sentence.",
+        "violation: Rule 6 states: 'Must not use quotes including 「」, .' Examples 6 and 7 contained Japanese quotation marks. Removed these markers.",
+        "unnatural: Removed ellipses '…' and question mark '?' from English translations in examples 6 and 7 to match Japanese changes.",
+        "violation: Rule 6 states: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' Example 8 used '宝くじ' (N1) for an N4 grammar point. Replaced with '貯金' (N3).",
+        "unnatural: Changed English translation for example 8 to reflect the change in Japanese sentence.",
+        "unnatural: Updated scene and setting for example 8 to align with the new sentence meaning.",
+        "violation: Rule 6 requires variety in speaker/listener gender/age and settings. Added speaker_gender, listener_gender, speaker_age, listener_age to example 2 to meet this requirement.",
+        "violation: Rule 6 requires variety in speaker/listener gender/age and settings. Added a new example (9) to further diversify speaker/listener demographics and setting."
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/ばよかった"
+    }
 }

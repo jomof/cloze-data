@@ -1,6 +1,5 @@
 {
     "grammar_point": "にあたり・にあたって",
-    "conjugations": [],
     "pronunciation": {
         "katakana": "ニアタリ・ニアタッテ",
         "romaji": "ni atari / ni atatte"
@@ -84,14 +83,23 @@
             "conjugation": "にあたって"
         },
         {
-            "japanese": "彼と付き合う {にあたり} 、幾つかの条件を提示した。",
+            "japanese": "母の葬式 {にあたって} 必要な書類を準備した。",
+            "english": "I prepared the necessary documents for my mother's funeral. (This usage is unnatural)",
+            "scene": "A person discussing preparations for a somber event.",
+            "register": "formal",
+            "setting": "melancholic",
+            "conjugation": "にあたって",
+            "nuance": "While grammatically possible, 「にあたって」 is generally not used for negative or unfortunate events like a funeral. Its usage implies a positive or ceremonial occasion, making this sentence sound unnatural to a native speaker. For such contexts, 「に際して」 would be more appropriate."
+        },
+        {
+            "japanese": "彼と付き合う {にあたり} 、幾つかの条件を{出した}。",
             "english": "At the time of dating him, I suggested several conditions.",
             "scene": "A woman laying down ground rules at the start of a relationship.",
             "register": "semi-formal",
             "setting": "flirty",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "The sentence implies a somewhat assertive tone, as the speaker is setting conditions at the beginning of a relationship. This might be considered a 「お姉さん」 (older sister) type of behavior."
+            "nuance": "The assertive tone of setting conditions, 「幾つかの条件を出した」, in an early relationship can be perceived as a strong stance, often associated with a confident female speaker."
         }
     ],
     "false_friends": [
@@ -120,5 +128,14 @@
             "nuance": "「ついでに」 implies doing something additionally while already doing something else, whereas 「にあたり」 marks a specific occasion for an action."
         }
     ],
-    "post_false_friends_writeup": "To avoid confusion, remember that 「にあたり」 is best used for formal announcements and preparations for events or goals, especially when those events are generally positive. 「に際して」 is more versatile, and 「際に」 is suitable for everyday situations. 「につき」 explains reasons, and 「ついでに」 adds an extra action to something you are already doing."
+    "post_false_friends_writeup": "To avoid confusion, remember that 「にあたり」 is best used for formal announcements and preparations for events or goals, especially when those events are generally positive. 「に際して」 is more versatile, and 「際に」 is suitable for everyday situations. 「につき」 explains reasons, and 「ついでに」 adds an extra action to something you are already doing.",
+    "change": [
+        "violation: Removed empty 'conjugations' array. Rule 0 implies its presence only if the grammar point *is* a dictionary verb/adjective, which 'にあたり・にあたって' is not. Additionally, Rule 3 states to omit empty fields.",
+        "violation: Added an example '母の葬式 {にあたって} 必要な書類を準備した。' to illustrate the nuance that 'にあたり' is primarily for positive/neutral situations, which was mentioned in the input's writeup but not explicitly demonstrated in prior examples. This fulfills 'Incorporate essential details from the input'.",
+        "violation: Modified the JLPT Kanji in the flirty example. Changed '提示した' (N1) to '出した' (N5) in '彼と付き合う {にあたり} 、幾つかの条件を提示した。' to adhere to the JLPT N2 Kanji level requirement for the grammar point's examples.",
+        "violation: Refined the 'nuance' for the flirty example. The prior version's nuance referenced a term ('お姉さん') not present in the Japanese sentence, violating the rule that nuance must refer to parts of the Japanese sentence in quotes. Also, the rule 'If there is a 'speaker_gender', then 'nuance' must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender' is problematic for formal grammar points like this where gendered particles are generally not used. The nuance now focuses on the implied assertive tone of '幾つかの条件を出した' without inventing gendered language."
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/にあたり-にあたって"
+    }
 }

@@ -3,12 +3,17 @@
     "conjugations": [
         {
             "type": "casual negative past",
-            "form": "〜わなかった",
+            "form": "V-あ form + なかった",
+            "rarity": "common"
+        },
+        {
+            "type": "semi-polite negative past",
+            "form": "V-あ form + なかった です",
             "rarity": "common"
         },
         {
             "type": "polite negative past",
-            "form": "〜いませんでした",
+            "form": "V-い form + ませんでした",
             "rarity": "common"
         }
     ],
@@ -32,7 +37,7 @@
         "使用域": "一般"
     },
     "etymology": "The negative past tense is formed by conjugating the verb's final 「う」 sound to its corresponding 「あ」 sound (or 「わ」 if the original kana was 「う」) and adding 「なかった」 or 「ませんでした」. This construction combines the negative 「ない」 with the past tense 「た」 form.",
-    "writeup": "To create the negative past form of う-verbs, change the last kana of the verb to the あ sound kana from the same column (or わ if the original kana was う). Then add ない (or ます) conjugated into their past forms, either なかった (casual) or ませんでした (polite).\n\nThe negative past form conveys that something \"did not happen\" or \"was not\".\n\nある is an exception: its casual past-negative is なかった, not あらなかった. The polite past-negative form is ありませんでした.",
+    "writeup": "To create the negative past form of う-verbs, you must change the last kana of the verb into its corresponding あ-sound kana (or わ if the original kana was う). Following this, you add the negative auxiliary 「ない」, which then conjugates into its past form, 「なかった」. For the polite form, the verb changes to its い-sound kana, followed by 「ませんでした」.\n\nThis negative past form conveys that something \"did not happen\" or \"was not\".\n\nA semi-polite form can also be used, constructed by adding 「です」 after 「なかった」. While not strictly grammatically standard, this form is widely accepted and common in everyday speech.\n\nNote that 「ある」 is an exception to the regular conjugation rules. Its casual past-negative form is simply 「なかった」, not 「あらなかった」. However, its polite past-negative form, 「ありませんでした」, conjugates as expected for polite negative past tense.",
     "examples": [
         {
             "japanese": "昨日 、 行か {なかった} 。",
@@ -41,6 +46,14 @@
             "register": "casual",
             "setting": "casual",
             "conjugation": "casual negative past"
+        },
+        {
+            "japanese": "昨日 、 行か {なかった です} 。",
+            "english": "I didn't go yesterday.",
+            "scene": "A casual, slightly more formal way of saying you didn't go yesterday.",
+            "register": "semi-formal",
+            "setting": "informative",
+            "conjugation": "semi-polite negative past"
         },
         {
             "japanese": "昨日 、 行き {ませんでした} 。",
@@ -67,15 +80,17 @@
             "conjugation": "casual negative past"
         },
         {
-            "japanese": "昨日 、 全然 勉強 し {なかった} から 、 今日 の テスト は だめ だろう な。",
-            "english": "I didn't study at all yesterday, so today's test will probably be bad.",
-            "scene": "Lamenting a lack of studying.",
+            "japanese": "昨日 、 あまり べんきょう し {なかった} から 、 今日 の テスト は だめ だろう な。",
+            "english": "I didn't study much yesterday, so today's test will probably be bad.",
+            "scene": "A student lamenting a lack of studying.",
             "register": "casual",
             "setting": "pessimistic",
-            "conjugation": "casual negative past"
+            "conjugation": "casual negative past",
+            "speaker_gender": "male",
+            "nuance": "The particle 「な」 at the end of the sentence adds a self-reflective or slightly resigned nuance, often used by male speakers when stating their own thoughts or feelings."
         },
         {
-            "japanese": "その 時 は まだ 若かった から 、 何 も 知り {ませんでした} 。",
+            "japanese": "その 時 は まだ わかかった から 、 何 も しり {ませんでした} 。",
             "english": "Because I was still young then, I didn't know anything.",
             "scene": "Reflecting on past ignorance.",
             "register": "formal",
@@ -83,18 +98,26 @@
             "conjugation": "polite negative past"
         },
         {
-            "japanese": "あなた の こと なんて 、 全然 好き じゃ {なかった} よ。",
+            "japanese": "あなた の こと なんて 、 まったく 好き じゃ {なかった} のよ。",
             "english": "It's not like I liked you at all.",
-            "scene": "A person being tsundere to another person. Acting like they didn't like them, when they secretly did.",
+            "scene": "A person being tsundere to another person, acting like they didn't like them, when they secretly did.",
             "register": "shitashii kuchō (intimate)",
             "setting": "flirty",
             "conjugation": "casual negative past",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "The phrase 「〜じゃなかったよ」 adds a softening nuance only spoken by girls."
+            "nuance": "The ending 「のよ」 adds a distinctly feminine, slightly emphatic, and often softening nuance, especially when used in a playful or teasing context like this tsundere expression."
         },
         {
-            "japanese": "昨日 は 飲み すぎて 、 全然 覚え {ませんでした} 。",
+            "japanese": "こんなに 早く 、 また 会える なんて 思わ {なかった} な。",
+            "english": "I didn't think I'd get to meet you again so soon.",
+            "scene": "A person on a second date, expressing pleasant surprise.",
+            "register": "casual",
+            "setting": "intimate",
+            "conjugation": "casual negative past"
+        },
+        {
+            "japanese": "昨日 は のみすぎて 、 まったく おぼえ {ませんでした} 。",
             "english": "I drank too much yesterday, so I didn't remember anything at all.",
             "scene": "An embarrassed person confessing to memory loss after a night of heavy drinking.",
             "register": "teineigo (polite)",
@@ -107,14 +130,47 @@
             "term": "〜ていません",
             "meaning": "have not done",
             "kind": "similar expression",
-            "nuance": "Unlike 「〜わなかった」, 「〜ていません」 implies a state that began in the past and continues to the present."
+            "nuance": "Unlike the negative past tense for う-verbs, 「〜ていません」 implies a state that began in the past and continues to the present."
         },
         {
             "term": "〜ませんでしたか",
             "meaning": "Didn't you...?",
             "kind": "often confused with",
-            "nuance": "Unlike 「〜わなかった」, 「〜ませんでしたか」 is a question asking if someone didn't do something."
+            "nuance": "Unlike the negative past tense for う-verbs, 「〜ませんでしたか」 is a question asking if someone didn't do something."
         }
     ],
-    "post_false_friends_writeup": "The form 「〜ていません」 indicates a continuous state resulting from a past action, whereas 「〜わなかった」 simply describes an action that did not occur. Also, take care to distinguish statements using the grammar point from questions using the form 「〜ませんでしたか」."
+    "post_false_friends_writeup": "The form 「〜ていません」 indicates a continuous state resulting from a past action, whereas this grammar point simply describes an action that did not occur. Also, take care to distinguish statements using this grammar point from questions using the form 「〜ませんでしたか」.",
+    "change": [
+        {
+            "type": "violation",
+            "reason": "Restored critical details (semi-polite form explanation, い-sound conjugation for polite form) to the `writeup` that were present in the original `input` but missing from the prior version, violating Rule 5 (\"incorporate essential details from the input while rephrasing for clarity\")."
+        },
+        {
+            "type": "violation",
+            "reason": "Adjusted kanji usage in examples to be appropriate for JLPT N5 level, as previous examples contained N2, N3, and N4 kanji, violating the implicit requirement for JLPT-appropriate vocabulary (Rule 6). Specifically, replaced 「全然」 with 「まったく」, used hiragana for 「勉強」, 「若い」, 「知る」, 「飲む」, and 「覚える」."
+        },
+        {
+            "type": "violation",
+            "reason": "Ensured the presence of at least one female and one male speaker_gender example, with explicit gendered language (「のよ」 for female, nuanced use of 「な」 for male) as required by Rule 6."
+        },
+        {
+            "type": "violation",
+            "reason": "Added a new example specifically designed for an early romantic/first-meeting context, addressing Rule 8."
+        },
+        {
+            "type": "violation",
+            "reason": "Modified `form` fields within the `conjugations` array from specific verb endings (e.g., `〜わなかった`) to general patterns (e.g., `V-あ form + なかった`) to better represent the grammar point as a concept, adhering to Rule 0."
+        },
+        {
+            "type": "violation",
+            "reason": "Added the 'semi-polite negative past' conjugation to the `conjugations` array, as it was missing despite its commonality being noted in the `writeup`, violating Rule 0."
+        },
+        {
+            "type": "violation",
+            "reason": "Reworded `nuance` fields in `false_friends` and `post_false_friends_writeup` to refer to the general grammar point (\"the negative past tense for う-verbs\" or \"this grammar point\") instead of a specific conjugation (e.g., `〜わなかった`), addressing Rule 14."
+        }
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/う-verb-neg-past"
+    }
 }

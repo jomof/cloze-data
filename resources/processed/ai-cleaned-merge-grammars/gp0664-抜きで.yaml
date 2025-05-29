@@ -10,6 +10,7 @@
     "id": "gp0664",
     "jlpt": "N2",
     "meaning": "Without, Unless",
+    "meaning_warning": "抜きでは can be contracted to 抜きじゃ.",
     "details": {
         "Register": "Standard",
         "使用域": "一般"
@@ -29,14 +30,19 @@
             "english": "They aren't coming at all. Let's start without them.",
             "scene": "Suggesting to start an event despite some people being late.",
             "register": "casual",
-            "setting": "casual slang"
+            "setting": "casual slang",
+            "speaker_gender": "male",
+            "listener_gender": "male",
+            "nuance": "The male speaker uses the sentence-ending particle 「ぜ」 to express a strong, casual suggestion or determination, typically used among close male friends."
         },
         {
             "japanese": "ワサビ {抜き} の 寿司 なんて 寿司 じゃないよ。",
             "english": "Sushi without wasabi isn't sushi.",
             "scene": "Expressing a strong opinion about sushi.",
             "register": "casual",
-            "setting": "humorous"
+            "setting": "humorous",
+            "speaker_gender": "female",
+            "nuance": "The speaker, a female, uses the casual phrasing 「〜じゃないよ」 which is common among all genders in informal contexts to express a strong opinion or mild complaint."
         },
         {
             "japanese": "若い 労働者 {抜き} にしては、日本の 建築業 は 成り立たない。",
@@ -53,16 +59,16 @@
             "setting": "informative"
         },
         {
-            "japanese": "お 寿司屋さん：「ご 注文 は お決まり ですか？」お客さん：「はい、マグロ の にぎり を ワサビ {抜きで} お願いします。」",
-            "english": "Sushi restaurant employee: \"Are you ready to order?\" Guest: \"Yes, I'd like tuna nigiri without wasabi, please.\"",
-            "scene": "Ordering sushi at a restaurant.",
+            "japanese": "お客様が「マグロのにぎりをワサビ{抜きで}お願いします」と注文した。",
+            "english": "The customer ordered tuna nigiri without wasabi.",
+            "scene": "A customer ordering food at a sushi restaurant.",
             "register": "teineigo (polite)",
-            "setting": "polite"
+            "setting": "professional"
         },
         {
-            "japanese": "女の子：「あたしの 料理 、好きなの？」男の子：「お 世辞 {抜きで} 、今までの 人生 で これより うまい もの は 食べた 事 が ない。」",
-            "english": "Girl: \"Do you like my cooking?\" Boy: \"Without flattery, I haven't eaten anything more delicious than this in my life.\"",
-            "scene": "A boy flirting with a girl whose cooking he loves.",
+            "japanese": "男の子はお世辞{抜きで}、今まで食べた中で彼女の料理が一番おいしいと言った。",
+            "english": "The boy said honestly that her cooking was the most delicious thing he had ever eaten in his life.",
+            "scene": "A boy praising a girl's cooking.",
             "register": "casual",
             "setting": "flirty",
             "speaker_gender": "male",
@@ -70,11 +76,11 @@
             "nuance": "The male speaker uses casual speech, indicating familiarity with the listener. The phrase 「お世辞抜きで」 means \"without flattery\" or \"honestly.\""
         },
         {
-            "japanese": "C：「A と B は 付き合ってんのよ」D：「マジ？冗談 {抜きで}？」",
-            "english": "C: \"A and B are dating!\" D: \"Seriously? No kidding?\"",
-            "scene": "Two friends gossiping.",
+            "japanese": "Dは、AとBが付き合っているというCの言葉に冗談{抜きで}かと尋ねた。",
+            "english": "D asked C if A and B were really dating, without joking.",
+            "scene": "One friend asking another if a piece of gossip is true.",
             "register": "casual",
-            "setting": "casual slang"
+            "setting": "interrogative"
         },
         {
             "japanese": "リスク {抜き} には 決して フグ を 食べられない。",
@@ -109,5 +115,17 @@
             "nuance": "「抜きで」 emphasizes the **removal** of something that is usually present, whereas 「なし」 simply indicates the absence of something."
         }
     ],
-    "post_false_friends_writeup": "While 「なし」 and 「抜きで」 can both mean \"without,\" 「抜きで」 implies that something is usually included but has been specifically removed. 「なし」 is more general and simply means that something is absent."
+    "post_false_friends_writeup": "While 「なし」 and 「抜きで」 can both mean \"without,\" 「抜きで」 implies that something is usually included but has been specifically removed. 「なし」 is more general and simply means that something is absent.",
+    "change": [
+        "violation: The prompt states, \"If 'meaning_warning' is empty or null, omit it entirely.\" The input's `meaning_warning` is not empty or null, thus it must be included.",
+        "unnatural: Refined `writeup` phrasing by adding Japanese quotes 「」 around Japanese particles/phrases (`の`, `にして`, `抜きで`, `抜きでは`) for clarity and naturalness in a Japanese grammar explanation.",
+        "unnatural: Added `speaker_gender: male`, `listener_gender: male`, and a `nuance` field to Example 2 explaining the use of 「ぜ」. The presence of 「ぜ」 in the original Japanese sentence strongly suggests a male speaker in a casual setting, making the example more natural and complete.",
+        "violation: Added `speaker_gender: female` and a `nuance` field to Example 3 explaining the sentence-ending `じゃないよ`. Rule 6 requires at least one female speaker.",
+        "violation: Rewrote Example 6 from dialogue to a single statement. Rule 9 explicitly states, \"If the input examples contain dialogue (A: ... B: ...), rewrite them into single-sentence statements that preserve the lesson but remove direct dialogue format.\"",
+        "violation: Rewrote Example 7 from dialogue to a single statement. Rule 9.",
+        "violation: Rewrote Example 8 from dialogue to a single statement. Rule 9."
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/抜きで"
+    }
 }

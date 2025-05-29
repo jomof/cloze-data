@@ -16,8 +16,13 @@ def ai_clean(data, bazel_target, prior_grammar_point=None):
     prior_input_prelog = ""
     prior_input_replace = ""
     prior_input_rules = ""
+    prior_input_obj = None
 
     if prior_grammar_point:
+      prior_input_obj = yaml.safe_load(prior_grammar_point)
+      if 'changes' in prior_input_obj:
+        del prior_input_obj['changes']
+      prior_grammar_point = json.dumps(prior_input_obj, ensure_ascii=False, indent=4)
       prior_input_prelog = """
         Possibly, an additional grammar point will appear between:
         BEGIN_PRIOR_GRAMMAR_POINT_YAML
@@ -131,6 +136,7 @@ def ai_clean(data, bazel_target, prior_grammar_point=None):
             - If there are other common ways to translate the "english" to "japanese" then you **must** have a "scene" that sets the context for the example in a way that differentiates it from those other ways.
             - It can be like "A man speaking to a woman he likes", "Two friends talking", "A teacher explaining something", "An employee asking a question to his boss".
             - It should be a short phrase.
+            - "english" and "scene" will be displayed together, so "scene" **must not** repeat facts from "english".
           - "register": register of the sentence. One of: casual, formal, semi-formal, sonkeigo (respectful), kenjōgo (humble), teineigo (polite), shitashii kuchō (intimate), bijinesu nihongo (business), bungo (literary), hōgen (dialectical), surangu (slang), gun-go (military), wakamono kotoba (youth), meirei-kei no teineigo (polite imperative)
             - Example sentences **should** exhibit a wide variety of registers.
             - If possible, include one of the keigo registers in example sentences.
@@ -272,6 +278,11 @@ def ai_clean(data, bazel_target, prior_grammar_point=None):
 
     grammar_point_name = data["grammar_point"]
     id = data["id"]
+    sources = { }
+    if "bunpro" in data:
+        if "url" in data["bunpro"]:
+            sources["bunpro"] = data["bunpro"]["url"]
+        
     print(f"Processing grammar point: {grammar_point_name} ({id})")
 
     if prior_grammar_point:
@@ -281,19 +292,18 @@ def ai_clean(data, bazel_target, prior_grammar_point=None):
     
     for i in range(6):
       try:
-        #response = memoize_to_disk(bazel_target, aigen, prompt, "gemini-2.5-pro-preview-05-06")
         response = memoize_to_disk(bazel_target, aigen, prompt + str(i), model)
-        #response = memoize_to_disk(bazel_target, aigen, prompt, "gemini-2.0-flash-thinking-exp-1219")
         response = response.removeprefix("```json").removesuffix("\n").removesuffix("```")
         response = repair_json(response)
         json_response = json.loads(response)
         json_response["id"] = id
         
         if prior_grammar_point and ('change' not in json_response or json_response['change'] == "no changes"):
-            prior_grammar_point_json = json.loads(prior_grammar_point)
-            if 'change' in prior_grammar_point_json:
-                del prior_grammar_point_json['change']
-            return json.dumps(prior_grammar_point_json, ensure_ascii=False, indent=4), prompt
+            if 'change' in prior_input_obj:
+                del prior_input_obj['change']
+            if len(sources) > 0:
+              prior_input_obj['sources'] = sources
+            return json.dumps(prior_input_obj, ensure_ascii=False, indent=4), prompt
         
         if 'rank' in json_response:
             del json_response['rank']
@@ -303,6 +313,8 @@ def ai_clean(data, bazel_target, prior_grammar_point=None):
             del json_response['bunpro']
         if 'dojg' in json_response:
             del json_response['dojg']
+        if len(sources) > 0:
+            json_response['sources'] = sources
 
         if grammar_point_name != json_response["grammar_point"]:
             raise Exception(f"Grammar point mismatch: {data['grammar_point']} != {json_response['grammar_point']}")

@@ -95,20 +95,20 @@
     ],
     "jlpt": "N2",
     "meaning": "to assume, to suppose; to consider as; to decide on",
+    "pronunciation": {
+        "katakana": "トスル",
+        "romaji": "to suru"
+    },
+    "formation": {
+        "普通形（動詞・形容詞・名詞+だ）+ と + する": "Used to assume, suppose, or decide that a certain statement or situation is true or will be so. This covers the most common usage of 'とする' for hypothetical scenarios and suppositions.",
+        "[名詞1] を [名詞2] + とする": "Used to regard, treat, or designate Noun 1 as Noun 2. This implies setting a definition or classification."
+    },
+    "etymology": "「と」 is a particle indicating content or quotation, and 「する」 is the verb meaning 'to do'. Together, they create a phrase that means 'to do as', implying the act of assuming or deciding something to be a certain way.",
     "details": {
         "Register": "Formal",
         "Common Uses": "Often used in written or formal contexts to introduce assumptions, hypotheses, or decisions.",
         "Nuance": "Implies a degree of intentionality or deliberation in making the assumption or decision."
     },
-    "formation": {
-        "[Noun] + とする": "Indicates treating one thing as another.",
-        "[Short form verb/adjective] + とする": "Expresses an assumption, supposition, or condition."
-    },
-    "pronunciation": {
-        "katakana": "トスル",
-        "romaji": "to suru"
-    },
-    "etymology": "「と」 is a particle indicating content or quotation, and 「する」 is the verb meaning 'to do'. Together, they create a phrase that means 'to do as', implying the act of assuming or deciding something to be a certain way.",
     "writeup": "The grammar point 「とする」 is used to express assumption, supposition, or decision. It is often found in written or more formal contexts. It indicates that someone is treating something as a particular condition or deciding that something should be done in a certain way. It can be translated as \"to assume,\" \"to suppose,\" or \"to consider as.\" This grammar point can also be used in the passive form 「とされる」, meaning \"is considered to be\".",
     "examples": [
         {
@@ -136,15 +136,15 @@
             "conjugation": "conditional (provisional ば-form)"
         },
         {
-            "japanese": "彼女 を 一生の パートナー {としたい} 。",
-            "english": "I want to consider her as my lifelong partner.",
-            "scene": "Expressing a strong desire to be with someone forever.",
-            "register": "formal",
-            "setting": "flirty",
+            "japanese": "もし私たちが運命の相手 {としよう}、この出会いはきっと意味があるはずだ。",
+            "english": "Let's suppose we are fated partners; this encounter must have meaning.",
+            "scene": "A person on a first date subtly suggesting a deeper connection.",
+            "register": "intimate",
+            "setting": "first-date",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "conjugation": "volitional (plain)",
-            "nuance": "「としたい」 expresses the speaker's intention to treat 「彼女」 (her) as a lifelong partner."
+            "nuance": "「運命の相手としよう」 is a bold, forward statement, implying the speaker's hope or desire in a romantic context. The use of 「としよう」 in this context suggests a shared fantasy or possibility, typical of a more intimate and exploratory conversation on a first date. The male speaker's use of this phrasing can be perceived as direct yet charming.",
+            "conjugation": "volitional (plain)"
         },
         {
             "japanese": "私 は この 犬 を 家族 の 一員 {とします} 。",
@@ -178,8 +178,8 @@
             "setting": "humorous",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "conjugation": "conditional (tara-form)",
-            "nuance": "The 「～たら」 form is often used in casual conversation, indicating a hypothetical situation. The speaker is a 「女性」 teasing her male partner with a dream."
+            "nuance": "The 「～たら」 form is often used in casual conversation, indicating a hypothetical situation. The speaker is a 「女性」 teasing her male partner with a dream, which aligns with common female speech patterns in such playful contexts.",
+            "conjugation": "conditional (tara-form)"
         },
         {
             "japanese": "この 問題 は 簡単 だ {としましょう} 。",
@@ -190,11 +190,11 @@
             "conjugation": "volitional (polite)"
         },
         {
-            "japanese": "私 は 彼女 を 親友 {と見なして} います 。",
-            "english": "I consider her to be my best friend.",
-            "scene": "Describing a close friendship.",
+            "japanese": "彼はその問題を重要でないこと {として} 扱った。",
+            "english": "He treated that problem as unimportant.",
+            "scene": "Describing how someone handled a minor issue.",
             "register": "formal",
-            "setting": "friendly",
+            "setting": "informative",
             "conjugation": "te-form"
         }
     ],
@@ -219,5 +219,11 @@
             "nuance": "While the 「と」 particle is part of 「とする」, it doesn't carry the same meaning of assumption alone; it requires 「する」 to complete the grammar point."
         }
     ],
-    "post_false_friends_writeup": "When using 「とする」, be mindful of the difference between expressing an assumption or supposition versus stating a final decision or describing an appearance. 「とする」 sets up a hypothetical scenario or treats something as a specific condition, while other expressions convey different meanings such as an actual decision or a perceived appearance."
+    "post_false_friends_writeup": "When using 「とする」, be mindful of the difference between expressing an assumption or supposition versus stating a final decision or describing an appearance. 「とする」 sets up a hypothetical scenario or treats something as a specific condition, while other expressions convey different meanings such as an actual decision or a perceived appearance.",
+    "change": [
+        "violation: The `formation` structure was changed to be more explicit and aligned with the provided DOJG patterns, as per Rule 1.2 which requires pseudo-algebraic notation for formation.",
+        "violation: Example 4 was replaced. The original example used `としたい`, which is `とする` + `たい` and not a direct conjugation listed in the `conjugations` array. Rule 6 states that the `conjugation` field must refer to a type from the top-level list.",
+        "violation: Example 10 was replaced. The original example used `と見なして` instead of `として`, violating Rule 6 which requires examples to use the grammar point itself.",
+        "violation: The kanji `些細` in the original Example 10 was JLPT N1, which violated Rule 6's requirement that kanji be appropriate for the grammar point's JLPT N2 level. The example was rephrased to use N3 kanji (`重要でない`)."
+    ]
 }

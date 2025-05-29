@@ -34,7 +34,7 @@
     "jlpt": "N5",
     "meaning": "Have done before; there was an experience of doing",
     "details": {
-        "Part of Speech": "Verb",
+        "Part of Speech": "Expression",
         "Register": "Standard",
         "品詞": "表現",
         "単語の種類": "動詞",
@@ -48,7 +48,8 @@
             "english": "Have you ever been to Japan?",
             "scene": "Asking someone about their travel experiences.",
             "register": "casual",
-            "setting": "friendly"
+            "setting": "friendly",
+            "conjugation": "plain past affirmative"
         },
         {
             "japanese": "私 は お酒 を {飲んだ ことが ありません}。",
@@ -63,21 +64,24 @@
             "english": "He said he has eaten sushi before.",
             "scene": "Talking about someone else's experience.",
             "register": "semi-formal",
-            "setting": "storytelling"
+            "setting": "storytelling",
+            "conjugation": "plain past affirmative"
         },
         {
             "japanese": "こんな に 美しい 景色 を {見た ことが ない}。",
             "english": "I have never seen such a beautiful view.",
             "scene": "Expressing amazement at a scenic view.",
             "register": "casual",
-            "setting": "melancholic"
+            "setting": "melancholic",
+            "conjugation": "plain past negative"
         },
         {
             "japanese": "彼女 は 一度 も 遅刻 {した ことが ない}。",
             "english": "She has never been late even once.",
             "scene": "Complimenting someone on their punctuality.",
             "register": "semi-formal",
-            "setting": "informative"
+            "setting": "informative",
+            "conjugation": "plain past negative"
         },
         {
             "japanese": "あなた と デート {した ことが ある} 気 が する。",
@@ -87,21 +91,23 @@
             "setting": "flirty",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "The 「気がする」 adds a nuance of feeling or impression to the statement, and 「あなたとデートした」 is the flirtatious expression."
+            "nuance": "The phrase 「気がする」 adds a nuance of feeling or impression to the statement. The male speaker's use of 「あなたとデートした」 combined with this grammar point implies a playful, suggestive tone, often used in casual flirting."
         },
         {
             "japanese": "こんな 素敵 な レストラン で 食事 を {した ことが あります} か？",
             "english": "Have you ever dined at such a wonderful restaurant before?",
             "scene": "On a first date, trying to impress someone.",
             "register": "polite",
-            "setting": "first-date"
+            "setting": "first-date",
+            "conjugation": "polite past affirmative"
         },
         {
             "japanese": "こんなに美味しいコーヒーを{飲んだことがない}。",
             "english": "I've never had such delicious coffee before.",
             "scene": "Complimenting the barista after taking a sip.",
             "register": "casual",
-            "setting": "friendly"
+            "setting": "friendly",
+            "conjugation": "plain past negative"
         }
     ],
     "post_example_writeup": "Remember that 「たことがある」 always describes an experience. It does not indicate a habitual action or a state.",
@@ -119,5 +125,11 @@
             "nuance": "「ことがある」 without the verb in the past tense expresses that something happens occasionally or that there are times when something happens, whereas 「たことがある」 indicates a past experience."
         }
     ],
-    "post_false_friends_writeup": "Be careful not to confuse 「たことがある」 with 「たものだ」 or 「ことがある」. 「たものだ」 is used to talk about past habits, while 「ことがある」 (without a verb in the past tense) is used to say that something happens occasionally. 「たことがある」 is specifically for talking about experiences."
+    "post_false_friends_writeup": "Be careful not to confuse 「たことがある」 with 「たものだ」 or 「ことがある」. 「たものだ」 is used to talk about past habits, while 「ことがある」 (without a verb in the past tense) is used to say that something happens occasionally. 「たことがある」 is specifically for talking about experiences.",
+    "change": [
+        "violation: Changed `details.Part of Speech` from `\"Verb\"` to `\"Expression\"`. Reason: The input `details` specifies `品詞: 表現` (expression), and this field should accurately reflect that in English, as per Rule 16 (\"fix minor inaccuracies in 'details'\"). The grammar point itself is a set expression, not a single verb."
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/たことがある"
+    }
 }

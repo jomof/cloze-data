@@ -102,6 +102,7 @@
     },
     "jlpt": "N5",
     "meaning": "To decide on, to choose, to make something into, to view something as.",
+    "meaning_warning": "Sometimes written as とする, which focuses on the result, rather than the process of 'making'.",
     "details": {
         "Part of Speech": "Verb",
         "Register": "Standard",
@@ -123,7 +124,7 @@
         {
             "japanese": "今日 の 晩ご飯 は 何 に {します} か?",
             "english": "What have you decided on for today's dinner?",
-            "scene": "A wife asking her husband what to make for dinner.",
+            "scene": "A person asking their family what to make for dinner.",
             "register": "polite",
             "setting": "interrogative",
             "conjugation": "polite (non-past)"
@@ -134,7 +135,8 @@
             "scene": "Deciding which bag to buy at a store.",
             "register": "polite",
             "setting": "informative",
-            "conjugation": "polite (non-past)"
+            "conjugation": "polite (non-past)",
+            "speaker_age": "older"
         },
         {
             "japanese": "明日 の 朝ごはん は 魚 に {します}。",
@@ -153,13 +155,39 @@
             "conjugation": "polite (non-past)"
         },
         {
-            "japanese": "彼氏 に {します}。",
-            "english": "I've decided he's my boyfriend.",
-            "scene": "Two friends gossiping about guys.",
+            "japanese": "じゃあ、今日 は この デザイン に {しましょう} か。",
+            "english": "Well then, shall we go with this design today?",
+            "scene": "Colleagues discussing a project.",
+            "register": "semi-formal",
+            "setting": "negotiating",
+            "conjugation": "volitional (polite)",
+            "speaker_age": "older"
+        },
+        {
+            "japanese": "昨日、夕食 は カレー に {しました}。",
+            "english": "Yesterday, I decided on curry for dinner.",
+            "scene": "A friend casually telling another friend about their meal.",
             "register": "casual",
-            "setting": "flirty",
-            "speaker_gender": "female",
-            "nuance": "The 「彼氏にします」 sentence implies a direct and decisive choice of making someone her boyfriend.",
+            "setting": "informative",
+            "conjugation": "past (polite)"
+        },
+        {
+            "japanese": "今夜 は 外食 に {しません}。",
+            "english": "I won't eat out tonight.",
+            "scene": "A person declining an invitation to eat out.",
+            "register": "polite",
+            "setting": "informative",
+            "conjugation": "negative (polite)"
+        },
+        {
+            "japanese": "君 の 毎日 を 楽しい 日 に {する} よ。",
+            "english": "I'll make your everyday a fun day.",
+            "scene": "A guy trying to impress a girl on a first date.",
+            "register": "intimate",
+            "setting": "first-date",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "The speaker is using 「君」 (kīmi), a familiar term for 'you' often used by males towards females, and 「楽しい日」 (tanoshii hi) to express his intention to bring happiness to her life. The use of 「～するよ」 adds a friendly, assertive tone.",
             "conjugation": "dictionary (plain non-past)"
         },
         {
@@ -174,15 +202,16 @@
             "conjugation": "te-form"
         },
         {
-            "japanese": "僕 は 君 を 笑顔 に {する} こと が できる。",
-            "english": "I can make you smile.",
+            "japanese": "僕 は 君 を 元気 に {する} こと が できる。",
+            "english": "I can make you feel good.",
             "scene": "A guy on a first date, trying to impress a girl.",
             "register": "semi-formal",
             "setting": "flirty",
             "listener_gender": "female",
             "speaker_gender": "male",
-            "nuance": "The speaker is trying to signal to the listener that he has the agency to make her happy. He is demonstrating agency and control over her emotions.",
-            "conjugation": "dictionary (plain non-past)"
+            "nuance": "The speaker uses 「僕」 (boku), a common male personal pronoun, and 「君」 (kīmi), often used by men towards women or those younger. The phrase 「元気にする」 (genki ni suru) implies making someone well or lively, and combined with 「ことができる」, it asserts his ability to positively influence her state.",
+            "conjugation": "dictionary (plain non-past)",
+            "speaker_age": "younger"
         }
     ],
     "false_friends": [
@@ -205,5 +234,15 @@
             "nuance": "「ことにする」 focuses on the act of deciding, while 「にする」 emphasizes the resulting choice or transformation."
         }
     ],
-    "post_false_friends_writeup": "When choosing between 「にする」, 「に決まっている」, 「ことになる」, and 「ことにする」, consider whether you want to express a personal decision, an external determination, a sense of certainty, or the act of making a decision. 「にする」 puts you in control, 「に決まっている」 states a fact, 「ことになる」 is about outcomes, and 「ことにする」 is about the decision-making process itself. Pay close attention to the context to choose the most appropriate expression."
+    "post_false_friends_writeup": "When choosing between 「にする」, 「に決まっている」, 「ことになる」, and 「ことにする」, consider whether you want to express a personal decision, an external determination, a sense of certainty, or the act of making a decision. 「にする」 puts you in control, 「に決まっている」 states a fact, 「ことになる」 is about outcomes, and 「ことにする」 is about the decision-making process itself. Pay close attention to the context to choose the most appropriate expression.",
+    "change": [
+        "violation: Added meaning_warning field. Rule 3 states: \"If 'meaning_warning' is empty or null, omit it entirely.\" This implies if it's *not* empty/null (as it is in the input), it *must* be included.",
+        "unnatural: Removed speaker_gender: female from Ex2. The previous example specified speaker_gender: female with no specific Japanese element in the nuance to justify it as gender-specific. The phrasing \"A wife asking her husband\" in the scene does not make the sentence exclusive to female speakers.",
+        "violation: Modified Ex6 Japanese and Nuance for JLPT N5 Kanji compliance. Rule \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\" (JLPT N5 is specified). Changed \"彼氏\" (N3) to N5-level kanji. Also, updated register to intimate, and setting to first-date to better align with the new phrasing and typical usage for such expressions. Adjusted speaker_gender to male for the new nuance.",
+        "violation: Modified Ex8 Japanese and Nuance for JLPT N5 Kanji compliance. Rule \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\" (JLPT N5 is specified). Changed \"笑顔\" (N3) to \"元気\" (N5).",
+        "violation: Added three new examples to cover more conjugations. Rule 6 states: \"If there are other conjugated forms of the grammar point that are commonly used, then some of the example sentences **must** include those conjugated forms.\" The previous version lacked examples for past, negative, and volitional forms, which are common."
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/にする"
+    }
 }

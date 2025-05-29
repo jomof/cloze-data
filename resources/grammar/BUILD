@@ -209,7 +209,7 @@ py_build_tool_stream(
     pass_target_name = True,
     tool = ":ai-clean",
     correlated = ["//resources/processed:ai-cleaned-merge-grammars"],
-    top = 1000
+    #top = 3
 )
 
 # bazel run //resources/grammar:publish-ai-cleaned-merge-grammars

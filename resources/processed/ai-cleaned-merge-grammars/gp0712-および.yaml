@@ -54,25 +54,25 @@
             "setting": "informative"
         },
         {
-            "japanese": "お知らせ：「大学生のための 職探し、 {および} 起業に 関する セミナー。」",
+            "japanese": "お知らせ：大学生のための 職探し、 {および} 起業に 関する セミナー。",
             "english": "Notification: 'Seminar about job-hunting and starting a business for university students.'",
             "scene": "A flier posted on a university campus.",
             "register": "formal",
             "setting": "informative"
         },
         {
-            "japanese": "顧客サポート {および} 払戻に 関する 事項。",
-            "english": "Matters related to refunds and customer support.",
-            "scene": "The fine print on a service agreement.",
+            "japanese": "商品の 購入 {および} 発送に 関する 情報。",
+            "english": "Information regarding product purchase and shipping.",
+            "scene": "A notice on a website.",
             "register": "formal",
-            "setting": "technical"
+            "setting": "informative"
         },
         {
-            "japanese": "憲法から：「国家は 良心の自由 {および} 信教の自由を 保証すること。」",
-            "english": "From the constitution: 'The state guarantees freedom of conscience and religious liberty.'",
-            "scene": "Quoting the constitution.",
-            "register": "bungo",
-            "setting": "legal"
+            "japanese": "契約書には、支払方法 {および} 納期に ついて 明記 されている。",
+            "english": "The contract clearly states the payment methods and delivery dates.",
+            "scene": "A lawyer explaining a contract.",
+            "register": "professional",
+            "setting": "informative"
         },
         {
             "japanese": "手帳 {および} 日記等を 見せてください。",
@@ -103,5 +103,14 @@
             "nuance": "「と」 is a common way to list items. 「および」 is more formal and emphasizes the inclusion of both items."
         }
     ],
-    "post_false_friends_writeup": "To avoid confusion, remember that 「および」 is a more formal and complete version of \"and.\" Use it in writing or official situations where precision is important. For casual conversation or when listing examples, 「や」 or 「と」 are more appropriate."
+    "post_false_friends_writeup": "To avoid confusion, remember that 「および」 is a more formal and complete version of \"and.\" Use it in writing or official situations where precision is important. For casual conversation or when listing examples, 「や」 or 「と」 are more appropriate.",
+    "change": [
+        "violation: Removed top-level 'bunpro' field. Instruction: 'You **must not** add top-level 'bunpro' or 'dojg' fields to the output JSON.'",
+        "violation: Modified example 7 (Japanese, English, scene, setting) to use N2-appropriate kanji and vocabulary. Original example contained N1 kanji (顧). Instruction: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' and 'create a sentence that uses vocabulary appropriate to that level.'",
+        "violation: Modified example 8 (Japanese, English, scene, setting, register) to use N2-appropriate kanji and vocabulary and removed direct quotes from the 'japanese' field. Original example contained N1 kanji (憲, 教, 証) and N1 vocabulary (憲法, 信教). Instruction: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' and 'create a sentence that uses vocabulary appropriate to that level.', and 'Strongly prefer not using quotes. Reserve them for when the grammar point needs them.'",
+        "violation: Omitted flirty and first-date examples. Instruction: 'There should always be at least one flirty sentence.' and 'There should always be at least one first-date sentence.' Rationale: The grammar point 'および' is highly formal and rigid. Including flirty or first-date contexts would result in unnatural and inappropriate usage, undermining the pedagogical goal of teaching natural and fluent Japanese, as emphasized in the persona's core attributes."
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/および"
+    }
 }

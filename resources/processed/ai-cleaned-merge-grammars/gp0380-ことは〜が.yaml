@@ -1,14 +1,16 @@
 {
     "grammar_point": "ことは〜が",
     "id": "gp0380",
-    "conjugations": [],
     "pronunciation": {
         "katakana": "コトハ〜ガ",
         "romaji": "koto wa ~ ga"
     },
     "formation": {
-        "[Word] ことは [Word] が": "Indicates that while the first statement is true, there is a contrasting or opposing viewpoint.",
-        "[Word] ことは [Word] けど": "Variant of [Word] ことは [Word] が, using けど for a softer tone."
+        "動詞 (普通形) + ことは + 動詞 (普通形) + が/けど": "For verbs, the plain form (dictionary, ta-form, negative, etc.) is repeated.",
+        "イ形容詞 (普通形) + ことは + イ形容詞 (普通形) + が/けど": "For i-adjectives, the plain form (dictionary, ta-form, negative, etc.) is repeated.",
+        "ナ形容詞 (語幹) + な + ことは + ナ形容詞 (語幹) + な + が/けど": "For na-adjectives, the stem is followed by な.",
+        "名詞 + な + ことは + 名詞 + な + が/けど": "For nouns, な is used.",
+        "ナ形容詞・名詞 + である + ことは + ナ形容詞・名詞 + である + が/けど": "A more formal or stiff alternative for na-adjectives and nouns."
     },
     "jlpt": "N2",
     "meaning": "It is true...but; although...; but",
@@ -16,94 +18,116 @@
         "Register": "Standard",
         "使用域": "一般"
     },
-    "etymology": "The construction combines 「こと」, a noun referring to a thing or matter, with the topic particle 「は」, followed by 「が」 (or けど) indicating contrast. Etymologically, it emphasizes the 'thing that is X' is indeed X, but...",
-    "writeup": "The grammar point 「ことは〜が」 is a set expression indicating that while something (A) is true, there is another aspect to consider (B). It's similar to saying \"(A) is true, but (B)\" or \"although (A), (B)\". The same word is repeated before both 「ことは」 and 「が」 (or 「けど」), emphasizing recognition of (A) while introducing a contrasting point.",
+    "etymology": "This construction is formed by combining 「こと」 (koto), a nominalizing particle that turns the preceding clause into a noun phrase, with the topic particle 「は」 (wa). The repeated word before 「ことは」 and after it, combined with the contrasting particle 「が」 (ga) or 「けど」 (kedo), serves to emphasize the truth of the initial statement while immediately introducing a contradictory or limiting condition. Etymologically, 「ことは」 asserts the 'matter' or 'fact' (こと) as the topic (は), and the subsequent 「が/けど」 introduces the counterpoint. This repetition creates a strong concession, acknowledging the primary point before pivoting to a nuance or counter-argument.",
+    "writeup": "The grammar point 「ことは〜が」 is a fixed expression used to acknowledge the truth of a statement (A) while simultaneously presenting a contrasting or limiting condition (B). It functions much like saying, \"It is true that (A), but (B),\" or \"Although (A), (B).\" The structure demands that the same word, whether a verb, adjective, or noun, is repeated immediately before 「ことは」 and again before 「が」 (or 「けど」). This repetition strongly emphasizes that the speaker fully recognizes the veracity of (A), yet wishes to highlight a different, often counter-intuitive, aspect. While the fundamental truth of (A) is conceded, the speaker's main point often lies in the subsequent contrasting information (B).",
     "examples": [
         {
-            "japanese": "漢字は読めることは読めるが、簡単な漢字しか読めないです。",
-            "english": "It's true that I can read kanji, but I can only read simple ones.",
-            "scene": "Someone being modest about their kanji skills.",
+            "japanese": "漢字は{読めることは読める}が、簡単な漢字しか読めないです。",
+            "english": "It's true that I can read kanji, but I can only read easy ones.",
+            "scene": "A student discussing their Japanese language proficiency.",
             "register": "formal",
             "setting": "informative",
-            "conjugation": null,
-            "nuance": "The speaker uses the 「〜です」 ending to be polite."
+            "nuance": "The speaker acknowledges their ability to read kanji by repeating 「読める」, but immediately qualifies it with 「簡単な漢字しか読めないです」, indicating a limitation. The use of 「です」 keeps the register polite and formal."
         },
         {
-            "japanese": "新しい家は広いことは広いけど、家具が多いから狭く見える。",
-            "english": "It's true that my new house is spacious, but because there's a lot of furniture, it looks small.",
-            "scene": "Discussing the pros and cons of a new home.",
+            "japanese": "新しい家は{広いことは広い}けど、家具が多いから狭く見える。",
+            "english": "My new house is indeed spacious, but it looks small because there's too much furniture.",
+            "scene": "Two friends casually discussing home size.",
             "register": "casual",
             "setting": "informative",
-            "conjugation": null
+            "nuance": "The speaker confirms the house's spaciousness with 「広いことは広い」, but the following clause 「家具が多いから狭く見える」 introduces a drawback. 「けど」 provides a softer, more conversational contrast than 「が」."
         },
         {
-            "japanese": "このスマホは便利であることは便利であるけど、本体がデカすぎて片手では操作できない。",
-            "english": "It's true that this smartphone is convenient, but because it's too big, I can't use it with just one hand.",
-            "scene": "Complaining about a phone's design.",
+            "japanese": "このスマホは{便利であることは便利である}けど、本体がデカすぎて片手では操作できない。",
+            "english": "This smartphone is indeed convenient, but it's too big to operate with one hand.",
+            "scene": "A user expressing mixed feelings about a gadget.",
             "register": "casual",
             "setting": "informative",
-            "conjugation": null
+            "nuance": "Here, 「便利であることは便利である」 employs the more formal `である` form for a na-adjective, adding a slightly more assertive tone to the concession. The casual 「けど」 then softens the overall sentence."
         },
         {
-            "japanese": "ここは道路なことは道路だけど、狭すぎて車が通れない。",
-            "english": "It's true that this road is a road, but it's too narrow for cars to pass.",
-            "scene": "Pointing out the inadequacy of a poorly designed road.",
+            "japanese": "ここは{道路なことは道路}だけど、狭すぎて車が通れない。",
+            "english": "This is indeed a road, but it's too narrow for cars to pass through.",
+            "scene": "Someone commenting on an impractical path.",
             "register": "casual",
             "setting": "informative",
-            "conjugation": null
+            "nuance": "The speaker concedes that the place is a road with 「道路なことは道路」, using the `な` form for the noun. The second part immediately points out its practical limitation, demonstrating a common application of this grammar point to highlight a defect."
         },
         {
-            "japanese": "岩村: 日本語が分かりますか? 土井: 分かることは分かるが、簡単な言葉だけです。",
-            "english": "Iwamura: Do you understand Japanese? Doi: It's true that I understand it, but only simple vocabulary.",
-            "scene": "Being interviewed in Japanese.",
+            "japanese": "日本語は{分かることは分かる}が、簡単な言葉だけです。",
+            "english": "It's true that I understand Japanese, but only simple vocabulary.",
+            "scene": "Someone answering a direct question about their Japanese comprehension.",
             "register": "formal",
             "setting": "informative",
-            "conjugation": null
+            "nuance": "The speaker repeats 「分かる」 to affirm their understanding, but the ensuing phrase 「簡単な言葉だけです」 limits the extent of that understanding. The use of 「が」 here creates a slightly more formal feel compared to 「けど」."
         },
         {
-            "japanese": "遠藤: 北村さんって、日本に行ったことある? 北村: 行ったことは行ったけど、東京の空港を見ただけだよ。",
-            "english": "Endo: Kitamura-san, have you ever been to Japan? Kitamura: It's true that I've been there, but I've only seen Tokyo Airport.",
-            "scene": "Discussing travel experiences.",
+            "japanese": "日本に{行ったことは行った}けど、東京の空港を見ただけだよ。",
+            "english": "It's true that I've been to Japan, but I only saw Tokyo's airport.",
+            "scene": "A traveler downplaying their experience in Japan.",
             "register": "casual",
             "setting": "informative",
-            "conjugation": null
+            "nuance": "The speaker repeats 「行った」 (past tense of 行く) to confirm their trip. The follow-up 「東京の空港を見ただけだよ」 minimizes the experience, indicating that the 'trip' was very superficial. The informal ending 「〜だよ」 is common in casual conversation."
         },
         {
-            "japanese": "藤本: 守口さんって、優しい人らしい。 石川: 優しいことは優しいが、自分の家族に対してだけ。",
-            "english": "Fujimoto: I've heard that Moriguchi-san is a nice person. Ishikawa: Well, it's true that Moriguchi-san is nice, but only towards her family.",
-            "scene": "Gossiping about a colleague.",
+            "japanese": "守口さんは{優しいことは優しい}が、自分の家族に対してだけだ。",
+            "english": "It's true that Moriguchi-san is kind, but only towards her own family.",
+            "scene": "Someone gossiping about a mutual acquaintance's personality.",
             "register": "casual",
-            "setting": "informative",
-            "conjugation": null
+            "setting": "sarcastic",
+            "nuance": "The initial concession 「優しいことは優しい」 establishes an apparent positive trait, which is then sharply contrasted by 「自分の家族に対してだけだ」, revealing a negative judgment or limitation. The simple 「だ」 ending is very direct and casual, fitting the gossipy context."
         },
         {
-            "japanese": "雨に濡れたことは濡れたが、大したことはなかった。",
+            "japanese": "雨に{濡れたことは濡れた}が、大したことはなかった。",
             "english": "It's true that I got wet in the rain, but it wasn't a big deal.",
-            "scene": "Downplaying an inconvenience.",
+            "scene": "Someone reassuring another person after a minor incident.",
             "register": "casual",
-            "setting": "informative",
-            "conjugation": null
+            "setting": "supportive",
+            "nuance": "The repetition of 「濡れた」 confirms the fact of getting wet. However, 「大したことはなかった」 dismisses its significance, demonstrating how this pattern can be used to downplay an event. The neutral 「が」 allows for a direct follow-up without being overly confrontational."
         },
         {
-            "japanese": "熱が出たことは出たが、インフルエンザではありませんでした。",
+            "japanese": "熱が{出たことは出た}が、インフルエンザではありませんでした。",
             "english": "It's true that I had a fever, but it wasn't the flu.",
-            "scene": "Explaining the results of a medical checkup.",
+            "scene": "Explaining test results after a medical check-up.",
             "register": "casual",
             "setting": "informative",
-            "conjugation": null
+            "nuance": "The speaker confirms having a fever with 「出たことは出た」, but immediately provides reassuring information that it wasn't serious. This structure is effective for correcting assumptions or providing precise details after an initial affirmation."
         },
         {
-            "japanese": "あなたのことは好きだとは好きだが、結婚は考えられない。",
+            "japanese": "あなたのことは{好きだとは好きだ}が、結婚は考えられない。",
             "english": "It's true that I like you, but I can't imagine marrying you.",
-            "scene": "Breaking up with someone gently.",
+            "scene": "A person gently rejecting a romantic proposal.",
             "register": "casual",
             "setting": "melancholic",
-            "conjugation": null,
             "speaker_gender": "male",
-            "listener_gender": "female"
+            "listener_gender": "female",
+            "nuance": "The speaker acknowledges their affection by repeating 「好きだ」, but the following 「結婚は考えられない」 introduces a definitive and painful limitation. The direct plain form 「好きだ」, particularly when used by a male speaker in this context of emotional declaration and rejection, contributes to a tone that is both clear and somewhat blunt, fitting the melancholic setting. The `とは` further emphasizes the speaker's true feelings.",
+            "etymology": "The use of `だ` here is the plain form of the copula, commonly used in casual speech. The `とは` adds emphasis, conveying a sense of 'it is indeed the case that...'"
+        },
+        {
+            "japanese": "お話は{楽しいことは楽しい}けど、そろそろ終電の時間だね。",
+            "english": "It's true that talking with you is fun, but it's almost time for the last train.",
+            "scene": "Someone signaling the end of a pleasant conversation on a first meet-up.",
+            "register": "semi-formal",
+            "setting": "first-date",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "The speaker uses 「楽しいことは楽しい」 to genuinely express enjoyment and concession. The follow-up 「そろそろ終電の時間だね」 gently introduces the need to end the conversation due to external circumstances. The use of 「〜だね」 is soft and conversational, often employed by female speakers to express shared understanding or make a gentle suggestion, making the transition less abrupt.",
+            "etymology": "「終電」 (shuuden) refers to the last train of the day, a common practical concern in urban Japanese social settings that often dictates the end of social gatherings."
         }
     ],
-    "post_example_writeup": "「ことは〜が」 can be used with other particles such as 「も」 and 「さえ」 to add nuance. The choice between 「が」 and 「けど」 often depends on the speaker's preference, with 「けど」 being slightly softer in tone.",
+    "post_example_writeup": "The core function of 「ことは〜が」 is to present a concession followed by a contrasting or limiting statement. The specific word repeated before 「ことは」 can be a verb, an i-adjective, a na-adjective, or a noun. The choice between 「が」 and 「けど」 is stylistic; 「が」 is generally more formal or direct, while 「けど」 is softer and more conversational.",
     "false_friends": [],
-    "post_false_friends_writeup": null
+    "change": [
+        "violation: The `formation` field in the prior version was too vague and didn't detail the different parts of speech properly. The prompt requires pseudo-algebraic notation for formation (Rule 1.2). Updated to include specific forms for verbs, i-adjectives, na-adjectives, and nouns.",
+        "violation: The `etymology` field in the prior version was too brief. The prompt requires a detailed etymology (Rule 4). Expanded the explanation for greater detail and clarity.",
+        "violation: Multiple example sentences in the prior version were in dialogue format (A: ... B: ...). The prompt states: 'If the input examples contain dialogue (A: ... B: ...), rewrite them into single-sentence statements that preserve the lesson but remove direct dialogue format.' (Rule 9). Converted examples 5, 6, and 7 from dialogue to single statements.",
+        "violation: The `japanese` field in example sentences did not have the grammar point in `{bold}` as required by the prompt ('The \"japanese\" should have the grammar_point in {bold}' - Rule 6). Applied bold formatting to the repeated phrase in all examples.",
+        "violation: The `nuance` field was not consistently detailed and did not always refer to specific Japanese in 「quotes」, particularly regarding speaker/listener gender/age dynamics. The prompt states: 'Nuance must refer to parts of the japanese sentence in 「quotes」.' (Rule 6). Updated all `nuance` fields for more specific detail and proper quoting of Japanese phrases.",
+        "violation: The prior examples did not fulfill the requirement for a 'first-date' setting example. The prompt states: 'There should always be at least one first-date sentence. This teaches the learner to date.' (Rule 8). Added a new example specifically for a first-date setting.",
+        "violation: The flirty example's `nuance` did not explicitly mention the specific Japanese part associated with the speaker's gender, as required by rule 6 ('If there is a \"speaker_gender\", then \"nuance\" must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.'). Updated the `nuance` for the flirty example to link the male speaker's nuance to the directness of 「好きだ」 and the overall tone."
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/ことは-が"
+    }
 }

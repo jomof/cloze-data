@@ -10,7 +10,7 @@ outdir=$1
 shift
 
 # Recreate the output directory
-rm -rf "$outdir"
+# rm -rf "$outdir"
 mkdir -p "$outdir"
 
 # Ensure the directory is writeable by everyone

@@ -8,8 +8,38 @@
             "rarity": "commonly used"
         },
         {
+            "type": "polite (non-past)",
+            "form": "たり〜たりします",
+            "rarity": "commonly used"
+        },
+        {
+            "type": "negative (plain)",
+            "form": "たり〜たりしない",
+            "rarity": "commonly used"
+        },
+        {
+            "type": "negative (polite)",
+            "form": "たり〜たりしません",
+            "rarity": "commonly used"
+        },
+        {
             "type": "past (plain)",
             "form": "たり〜たりした",
+            "rarity": "commonly used"
+        },
+        {
+            "type": "past (polite)",
+            "form": "たり〜たりしました",
+            "rarity": "commonly used"
+        },
+        {
+            "type": "negative past (plain)",
+            "form": "たり〜たりしなかった",
+            "rarity": "commonly used"
+        },
+        {
+            "type": "negative past (polite)",
+            "form": "たり〜たりしませんでした",
             "rarity": "commonly used"
         }
     ],
@@ -57,37 +87,56 @@
             "english": "The food at this restaurant is sometimes delicious and sometimes not.",
             "scene": "Someone giving a mixed review of a restaurant.",
             "register": "casual",
-            "setting": "informative"
+            "setting": "informative",
+            "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "彼女は 綺麗だった{り} 、可愛かった{り}する。",
-            "english": "She is sometimes beautiful and sometimes cute.",
-            "scene": "A guy telling his friend about the girl he likes.",
+            "japanese": "彼女は きれいだっ{たり} 、可愛かった{り}するんだよね。",
+            "english": "She is sometimes beautiful and sometimes cute, you know?",
+            "scene": "A man casually describing a woman he finds attractive to a friend.",
             "register": "casual",
-            "setting": "flirty"
+            "setting": "flirty",
+            "speaker_gender": "male",
+            "listener_gender": "male",
+            "speaker_age": "younger",
+            "nuance": "The casual plain form `する` combined with the sentence-ending particle `んだよね` (commonly pronounced as `んだよな` in casual speech) is frequently used by male speakers to confirm or seek agreement on a personal observation, hinting at a shared appreciation, which can be interpreted as flirty when speaking about someone attractive."
         },
         {
             "japanese": "今日は、雨が降っ{たり} 、止{んだり} しますね。",
             "english": "It's doing things like raining and stopping today, isn't it?",
             "scene": "Two people commenting on the weather.",
             "register": "semi-formal",
-            "setting": "reflective"
+            "setting": "reflective",
+            "conjugation": "polite (non-past)",
+            "speaker_age": "older",
+            "listener_age": "older",
+            "nuance": "The polite `しますね` is a common, neutral phrase suitable for conversation between older adults, expressing shared observation about the weather."
         },
         {
-            "japanese": "この辺りは、静かだっ{たり} 、賑やかだっ{たり}します。",
+            "japanese": "この辺りは、静かだっ{たり} 、にぎやかだっ{たり}します。",
             "english": "This area is sometimes quiet and sometimes lively.",
             "scene": "Describing the atmosphere of a neighborhood.",
             "register": "semi-formal",
-            "setting": "informative"
+            "setting": "informative",
+            "conjugation": "polite (non-past)"
         },
         {
-            "japanese": "「 明日 の デート 、何を着て行こうかな？可愛い系だっ{たり} 、大人っぽい系だっ{たり} 、悩むな〜」",
-            "english": "\"What should I wear on tomorrow's date? Something cute, or something more mature... I can't decide!\"",
-            "scene": "A girl thinking to herself about what to wear on a date.",
+            "japanese": "明日 の デート 、可愛い系だっ{たり} 、大人っぽい系だっ{たり} 、どれにしようかしら。",
+            "english": "For tomorrow's date, should I wear something cute or something more mature, I wonder?",
+            "scene": "A woman thinking to herself about what to wear on a date.",
             "register": "casual",
             "setting": "first-date",
             "speaker_gender": "female",
-            "nuance": "The speaker uses the 「〜かな」at the end of the sentence. This is commonly used by women to indicate uncertainty or seeking advice, in a soft, conversational way."
+            "speaker_age": "younger",
+            "nuance": "The use of the sentence-ending particle `かしら` is a softer, more feminine way to express uncertainty or wonder, often used by female speakers when thinking aloud or questioning themselves."
+        },
+        {
+            "japanese": "疲れている時、勉強し{たり} 、仕事し{たり}しない。",
+            "english": "When I'm tired, I don't do things like studying or working.",
+            "scene": "A student explaining their habits when exhausted.",
+            "register": "casual",
+            "setting": "reflective",
+            "conjugation": "negative (plain)"
         }
     ],
     "false_friends": [
@@ -116,5 +165,18 @@
             "nuance": "While '~なり〜なり' presents alternatives, 'たり〜たりする' lists actions or states without necessarily offering them as choices."
         }
     ],
-    "post_false_friends_writeup": "While 'やら〜やら,' 'や,' and 'とか〜とか' are similar ways to list things, 'たり〜たりする' is distinct because it specifically highlights actions or states that occur at different times or in an unordered fashion. Be mindful of the subtle nuances each expression carries to choose the most appropriate one for your context."
+    "post_false_friends_writeup": "While 'やら〜やら,' 'や,' and 'とか〜とか' are similar ways to list things, 'たり〜たりする' is distinct because it specifically highlights actions or states that occur at different times or in an unordered fashion. Be mindful of the subtle nuances each expression carries to choose the most appropriate one for your context.",
+    "change": [
+        "violation: Expanded 'conjugations' array to include all 'commonly used' plain, polite, negative, and negative past forms of 'する' as per rule 0.",
+        "violation: Added missing 'conjugation' fields to examples 3, 4, 5, 6, and 7, as required by rule 6.",
+        "violation: Corrected kanji '綺麗' to 'きれい' in example 4 and '賑やか' to 'にぎやか' in example 6 to adhere to JLPT N5 kanji level appropriate for the grammar point.",
+        "violation: Rewrote example 7 from dialogue format to a single statement and removed quotation marks and question marks, as per rule 6 and 9. Also adjusted the Japanese sentence and its English translation.",
+        "violation: Modified example 4 to include 'speaker_gender', 'listener_gender', and a 'nuance' that quotes specific gendered Japanese (`んだよね`) to comply with rule 6.",
+        "violation: Modified example 7 to include 'speaker_gender' and a 'nuance' that quotes specific gendered Japanese (`かしら`) to comply with rule 6.",
+        "violation: Added a new example (example 8) demonstrating a negative conjugation (`たり〜たりしない`) to fulfill the requirement of including diverse conjugated forms as per rule 6.",
+        "violation: Added 'speaker_age' and 'listener_age' to example 5, along with a 'nuance' that explains the usage for older speakers, to fulfill the diversity requirement in rule 6."
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/たり-たりする"
+    }
 }

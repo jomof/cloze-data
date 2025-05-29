@@ -58,38 +58,19 @@
         },
         {
             "type": "volitional (plain)",
-            "form": "と言おう",
+            "form": "と言えよう",
             "rarity": "very rare"
         },
         {
             "type": "volitional (polite)",
             "form": "と言えましょう",
             "rarity": "very rare"
-        },
-        {
-            "type": "imperative (plain)",
-            "form": "と言え",
-            "rarity": "unnatural"
-        },
-        {
-            "type": "imperative (polite)",
-            "form": "と言ってください",
-            "rarity": "unnatural"
-        },
-        {
-            "type": "passive",
-            "form": "と言われる",
-            "rarity": "common"
-        },
-        {
-            "type": "causative",
-            "form": "と言わせる",
-            "rarity": "uncommon"
         }
     ],
     "id": "gp0420",
     "jlpt": "N3",
     "meaning": "Would or could say that..., Can probably say that..., Fair to say that...",
+    "meaning_warning": "と言える by itself makes the statement much more frank",
     "pronunciation": {
         "katakana": "トイエル",
         "romaji": "to ieru"
@@ -101,7 +82,7 @@
         "Register": "Standard",
         "使用域": "一般"
     },
-    "writeup": "「と言える」 is a common expression derived from the potential form of the verb 「言う」, meaning \"to say.\" It conveys the idea that something *can* be said, implying that it's a reasonable or justifiable statement. It often expresses a general idea or belief held by the speaker.\n\n*   **Meaning:** \"It is fair to say (A)\" or \"One could say (A).\"\n*   The particle 「と」 functions in its citation use, allowing 「と言える」 to follow a direct phrase or statement.\n*   It is commonly paired with grammar patterns like 「だろう」 or 「でしょう」, softening the tone by acknowledging the listener's perspective.  For example, 「と言えるだろう」 can be translated as \"Can we not say (A)?\" or \"(A) can be said, right?\"\n\n**Important Considerations:**\n\n*   While the speaker generally holds confidence in their statement when using 「と言える」, the use of a conjecture form suggests openness to being wrong, softening the overall tone.\n*   Using the auxiliary verb 「よう」 with the potential form of 「言う」 creates a stronger phrase, similar to \"Let it be said that (A).\"",
+    "writeup": "「と言える」 is a common expression derived from the potential form of the verb 「言う」, meaning \"to say.\" It conveys the idea that something *can* be said, implying that it's a reasonable or justifiable statement. It often expresses a general idea or belief held by the speaker.\n\n*   **Meaning:** \"It is fair to say (A)\" or \"One could say (A).\"\n*   The particle 「と」 functions in its citation use, allowing 「と言える」 to follow a direct phrase or statement.\n*   It is commonly paired with grammar patterns like 「だろう」 or 「でしょう」, softening the tone by acknowledging the listener's perspective. For example, 「と言えるだろう」 can be translated as \"Can we not say (A)?\" or \"(A) can be said, right?\"\n\n**Important Considerations:**\n\n*   While the speaker generally holds confidence in their statement when using 「と言える」, the use of a conjecture form suggests openness to being wrong, softening the overall tone.\n*   Using the auxiliary verb 「よう」 with the potential form of 「言う」 creates a stronger phrase, similar to \"Let it be said that (A).\"",
     "etymology": "The grammar point 「と言える」 is a combination of the particle 「と」 (to), which here indicates a quote or content, and 「言える」(ieru), which is the potential form of the verb 「言う」(iu, to say). The potential form indicates ability, possibility, or capability. Thus, 「と言える」 literally means 'can say that' or 'it can be said that.'",
     "examples": [
         {
@@ -204,8 +185,8 @@
         },
         {
             "scene": "A man on a first date, talking about why he is an artist.",
-            "japanese": "君の 笑顔 を 見ている と、まさに 芸術 {と 言える} よ。",
-            "english": "Looking at your smile, I'd say that it's practically art.",
+            "japanese": "君の 笑顔 を 見ている と、まさに 宝物 {と 言える} よ。",
+            "english": "Looking at your smile, I'd say that it's practically a treasure.",
             "register": "casual",
             "setting": "flirty",
             "speaker_gender": "male",
@@ -221,5 +202,16 @@
             "nuance": "「といってもいい」 is similar but often implies slightly less confidence or a greater degree of subjectivity than 「と言える」."
         }
     ],
-    "post_false_friends_writeup": "While both 「と言える」 and 「といってもいい」 express the idea that something can be said, 「と言える」 often carries a slightly stronger sense of justification or reason behind the statement. 「といってもいい」 might be used when the speaker is offering a more subjective or less strongly supported opinion."
+    "post_false_friends_writeup": "While both 「と言える」 and 「といってもいい」 express the idea that something can be said, 「と言える」 often carries a slightly stronger sense of justification or reason behind the statement. 「といってもいい」 might be used when the speaker is offering a more subjective or less strongly supported opinion.",
+    "change": [
+        "violation: Added 'meaning_warning' field which was present in the input but missing in the prior version. (Rule 3: 'If 'meaning_warning' is empty or null, omit it entirely.')",
+        "violation: Modified the last example sentence's Japanese from '芸術' to '宝物' and its English translation. '芸術' (geijutsu) is an N2 kanji, which violates the rule that example sentences for an N3 grammar point should only use kanji from N3, N4, and N5 lists. '宝物' (takaramono) is an N3 kanji. (Rule for JLPT kanji level)",
+        "violation: Corrected 'volitional (plain)' conjugation from 'と言おう' to 'と言えよう' in the 'conjugations' list. The previous form was the volitional of the base verb '言う', not the potential form '言える', thus not preserving the grammar point's meaning of potential/ability. (Rule 0: 'Only list conjugations that, when used, preserve the meaning of the grammar point.')",
+        "violation: Removed 'imperative (plain): と言え' and 'imperative (polite): と言ってください' from the 'conjugations' list. These forms are the imperative of '言う' and do not preserve the meaning of ability/possibility inherent in 'と言える'. (Rule 0: 'Only list conjugations that, when used, preserve the meaning of the grammar point.')",
+        "violation: Removed 'passive: と言われる' from the 'conjugations' list. This is the passive of '言う' and does not preserve the potential meaning of 'と言える'. (Rule 0: 'Only list conjugations that, when used, preserve the meaning of the grammar point.')",
+        "violation: Removed 'causative: と言わせる' from the 'conjugations' list. This form changes the meaning to 'make someone say' and does not preserve the potential meaning of 'と言える'. (Rule 0: 'Only list conjugations that, when used, preserve the meaning of the grammar point.')"
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/と言える"
+    }
 }

@@ -1,12 +1,5 @@
 {
     "grammar_point": "Verb[ましょう]+か",
-    "conjugations": [
-        {
-            "type": "plain",
-            "form": "verb[ましょう]か",
-            "rarity": "common"
-        }
-    ],
     "id": "gp0100",
     "pronunciation": {
         "katakana": "動詞[マショウ]カ",
@@ -26,43 +19,39 @@
         "使用域": "敬語"
     },
     "etymology": "ましょう comes from the volitional form of ます, indicating intention or invitation. か is a question particle.",
-    "writeup": "Adding か to the volitional form ましょう creates a polite question expressing an offer or suggestion. It translates to \"Shall we...?\" or \"Shall I...?\" depending on the context. It's used to either offer help or propose doing something together.\n\nThink of it as a more polite and tentative version of just saying ましょう. While ましょう asserts \"Let's do it!\", ましょうか softens the statement into a question: \"Shall we do it?\"\n\nImportant Considerations:\n\n*   The nuance is more of a suggestion than an invitation. For a stronger invitation, ませんか is more appropriate.\n*   The verb should be in its ます stem form before adding ましょうか.  For example, 食べます (tabemasu) becomes 食べましょうか (tabemashou ka).",
+    "writeup": "Adding か to the volitional form ましょう creates a polite question expressing an offer or suggestion. It translates to \"Shall we...?\" or \"Shall I...?\" depending on the context. It's used to either offer help or propose doing something together.\n\nThink of it as a more polite and tentative version of just saying ましょう. While ましょう asserts \"Let's do it!\", ましょうか softens the statement into a question: \"Shall we do it?\"\n\nImportant Considerations:\n\n*   The nuance is more of a suggestion than an invitation. For a stronger invitation, ませんか is more appropriate.\n*   The verb should be in its ます stem form before adding ましょうか. For example, 食べます (tabemasu) becomes 食べましょうか (tabemashou ka).",
     "examples": [
         {
-            "japanese": "少し休みましょうか。",
+            "japanese": "少し休み{ましょうか}。",
             "english": "Shall we take a little break?",
             "scene": "Two colleagues at work",
-            "conjugation": "plain",
             "register": "formal",
             "setting": "professional",
-            "nuance": "「ましょうか」adds a polite suggestion to take a break, fitting the formal office setting.",
+            "nuance": "「休みましょうか」adds a polite suggestion to take a break, fitting the formal office setting.",
             "etymology": "少し (sukoshi) means 'a little,' and 休みます (yasumimasu) is the verb 'to rest'."
         },
         {
-            "japanese": "手伝いましょうか。",
+            "japanese": "手伝い{ましょうか}。",
             "english": "Shall I help you?",
             "scene": "Offering help to someone carrying heavy bags",
-            "conjugation": "plain",
             "register": "polite",
             "setting": "sympathetic",
             "nuance": "「手伝いましょうか」is a standard, polite way to offer assistance. Since there is no listener_gender specified, this is a general way to offer help to someone.",
             "etymology": "手伝います (tetsudaimasu) means 'to help'."
         },
         {
-            "japanese": "映画を見に行きましょうか。",
+            "japanese": "映画を見に行き{ましょうか}。",
             "english": "Shall we go see a movie?",
             "scene": "Two friends discussing weekend plans.",
-            "conjugation": "plain",
             "register": "semi-formal",
             "setting": "friendly",
             "nuance": "「行きましょうか」is a suggestion to go to see a movie, showing a friendly and casual intention.",
             "etymology": "映画 (eiga) means 'movie' and 見に行く (mi ni iku) means 'to go see'."
         },
         {
-            "japanese": "もう一杯飲みましょうか。",
+            "japanese": "もう一杯飲み{ましょうか}。",
             "english": "Shall we have another drink?",
             "scene": "A man speaking to a woman he likes at a bar.",
-            "conjugation": "plain",
             "register": "casual",
             "setting": "flirty",
             "speaker_gender": "male",
@@ -71,10 +60,9 @@
             "etymology": "一杯 (ippai) is a counter for drinks, and 飲みます (nomimasu) means 'to drink'."
         },
         {
-            "japanese": "少し休憩をしましょうか。",
+            "japanese": "少し休憩を{しましょうか}。",
             "english": "Shall we take a short break?",
             "scene": "A professor talking to his student.",
-            "conjugation": "plain",
             "register": "formal",
             "setting": "academic",
             "nuance": "「しましょうか」softens the suggestion of 「休憩」('kyuukei' - break) to sound less commanding. The register is polite to show respect from the professor to the student.",
@@ -101,5 +89,12 @@
             "nuance": "Verb[よう] is a more casual volitional form, while ましょうか is polite."
         }
     ],
-    "post_false_friends_writeup": "To avoid mixing up these similar expressions, remember that ましょうか is a question, ませんか is a stronger invitation, and ましょう is a direct suggestion. Consider the level of politeness and directness you want to convey when choosing between them."
+    "post_false_friends_writeup": "To avoid mixing up these similar expressions, remember that ましょうか is a question, ませんか is a stronger invitation, and ましょう is a direct suggestion. Consider the level of politeness and directness you want to convey when choosing between them.",
+    "change": [
+        "violation: Removed 'conjugations' array and 'conjugation' fields from examples. Rule 0 states 'If the grammar point contains a verb in dictionary form or adjective in dictionary form, add a new array field'. 'Verb[ましょう]+か' is a structure, not a conjugatable verb in dictionary form.",
+        "violation: Added curly braces {} around the grammar point in Japanese examples, as required by Rule 6.japanese."
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/ましょうか"
+    }
 }

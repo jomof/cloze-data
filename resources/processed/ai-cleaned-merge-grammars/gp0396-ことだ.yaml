@@ -11,21 +11,6 @@
             "type": "negative (plain)",
             "form": "ないことだ",
             "rarity": "commonly used"
-        },
-        {
-            "type": "た-form (plain past)",
-            "form": "たことだ",
-            "rarity": "uncommon"
-        },
-        {
-            "type": "conditional (たら-form)",
-            "form": "たらことだ",
-            "rarity": "very rare"
-        },
-        {
-            "type": "conditional (ば-form)",
-            "form": "ればことだ",
-            "rarity": "very rare"
         }
     ],
     "pronunciation": {
@@ -154,5 +139,12 @@
             "nuance": "「かもしれない」 expresses uncertainty and possibility, while 「ことだ」 expresses certainty and obligation."
         }
     ],
-    "post_false_friends_writeup": "While 「ほうがいい」, 「べきだ」, and 「なければならない」 all share some overlap in meaning with 「ことだ」, it's important to distinguish their specific nuances. 「ほうがいい」 is a suggestion, 「べきだ」 is a moral imperative, 「なければならない」 is a necessity, and 「ことだ」 is strong, direct advice or instruction."
+    "post_false_friends_writeup": "While 「ほうがいい」, 「べきだ」, and 「なければならない」 all share some overlap in meaning with 「ことだ」, it's important to distinguish their specific nuances. 「ほうがいい」 is a suggestion, 「べきだ」 is a moral imperative, 「なければならない」 is a necessity, and 「ことだ」 is strong, direct advice or instruction.",
+    "change": [
+        "violation: Removed conjugations 'たことだ', 'たらことだ', 'ればことだ' from 'conjugations' array. Reason: Rule 0 states 'Only list conjugations that, when used, preserve the meaning of the grammar point.' These forms do not preserve the 'should/ought' meaning of ことだ when applied to the grammar point itself.",
+        "violation: The prompt contains contradictory requirements regarding speaker/listener gender/age and the 'nuance' field. Rule 6 requires gender/age diversity, but Rule 6 also states 'If there is a \"speaker_gender\", then \"nuance\" must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.' Many natural Japanese sentences (including those in the prior example set) are gender/age-neutral, making it impossible to quote gender/age-specific Japanese without forcing unnatural modifications or fabricating nuance. Given these conflicting constraints, and the directive for 'minimal modification', I have retained only the pre-existing speaker/listener gender in example 6 and have not added new age/gender specifications to other examples where the sentences are gender/age-neutral. This prioritizes naturalness and minimal modification over attempting to fulfill a conflicting requirement."
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/ことだ"
+    }
 }

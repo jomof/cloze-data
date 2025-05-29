@@ -92,6 +92,7 @@
     },
     "jlpt": "N5",
     "meaning": "To be, There is",
+    "meaning_warning": "有る kanji use can be seen",
     "details": {
         "Part of Speech": "Verb",
         "Register": "Standard",
@@ -108,7 +109,9 @@
             "scene": "Asking about contents of fridge.",
             "register": "casual",
             "setting": "interrogative",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "dictionary (plain non-past)",
+            "speaker_age": "younger",
+            "listener_age": "younger"
         },
         {
             "japanese": "本 が {あります} 。",
@@ -116,7 +119,9 @@
             "scene": "Describing something you see",
             "register": "teineigo (polite)",
             "setting": "informative",
-            "conjugation": "polite (non-past)"
+            "conjugation": "polite (non-past)",
+            "speaker_age": "older",
+            "listener_age": "younger"
         },
         {
             "japanese": "ペン が {ない} 。",
@@ -159,7 +164,9 @@
             "conjugation": "dictionary (plain non-past)",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "The 「よ」 adds a soft emphasis, common in intimate speech. Only used by men."
+            "speaker_age": "younger",
+            "listener_age": "younger",
+            "nuance": "The particle 「よ」 adds a gentle emphasis, making the statement more personal and direct, which, combined with the overall intimate tone, makes it suitable for a male speaker conveying feelings."
         },
         {
             "japanese": "ここ に 来 て よかった 。素敵 な あなた と 知り合う 機会 が {あった} から。",
@@ -170,7 +177,9 @@
             "conjugation": "past (plain)",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "The sentence uses polite language suitable for a first meeting or date, expressing appreciation for the opportunity to meet the listener."
+            "speaker_age": "younger",
+            "listener_age": "younger",
+            "nuance": "The phrase 「素敵 な あなた」 and the overall polite tone conveyed by the context, despite the use of plain form 「あった」, contribute to the formal register suitable for a first meeting, expressing appreciation for the opportunity to meet the listener."
         }
     ],
     "false_friends": [
@@ -211,5 +220,16 @@
             "nuance": "Unlike 「がある」, 「ございます」 is the polite form of 「ある」 but it is more formal and often used in business settings or when addressing superiors. It is also used as a polite auxiliary verb."
         }
     ],
-    "post_false_friends_writeup": "The key difference between 「がある」 and these similar expressions lies in their function. 「がある」 specifically indicates the existence of inanimate objects or concepts. 「いる」 is for living things. 「だ」 and 「です」 are copulas. 「である」 is a formal copula. 「ございます」 is a polite verb for existence or auxiliary use. Pay attention to the context and the type of object or concept you're describing to choose the correct expression."
+    "post_false_friends_writeup": "The key difference between 「がある」 and these similar expressions lies in their function. 「がある」 specifically indicates the existence of inanimate objects or concepts. 「いる」 is for living things. 「だ」 and 「です」 are copulas. 「である」 is a formal copula. 「ございます」 is a polite verb for existence or auxiliary use. Pay attention to the context and the type of object or concept you're describing to choose the correct expression.",
+    "change": [
+        "violation: Added `meaning_warning` field as it was present in the input and should not have been omitted. (Rule 3)",
+        "violation: Added `speaker_age` to Example 1 and Example 2 to ensure at least one 'younger' and one 'older' speaker_age as required. (Rule 6)",
+        "violation: Added `speaker_age` and `listener_age` to Example 7 and Example 8 for demographic diversity as required by the example rules. (Rule 6)",
+        "violation: Modified `nuance` for Example 7 to correct the inaccurate claim about `よ` being \"only used by men\" and provided a more nuanced explanation. (Rule 6, naturalness)",
+        "violation: Modified `nuance` for Example 8 to include quoted Japanese phrases as required, and corrected the verb form reference. (Rule 6)",
+        "violation: Removed top-level `lesson_order` field as per rules prohibiting top-level bunpro-related fields. (Rule 20)"
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/がある"
+    }
 }

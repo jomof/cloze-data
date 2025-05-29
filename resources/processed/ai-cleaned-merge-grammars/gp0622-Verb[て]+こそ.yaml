@@ -10,16 +10,6 @@
             "type": "negative te-form",
             "form": "Verb[なくて]+こそ",
             "rarity": "uncommon"
-        },
-        {
-            "type": "past te-form",
-            "form": "Verb[で]+こそ",
-            "rarity": "uncommon"
-        },
-        {
-            "type": "conditional",
-            "form": "Verb[て]+こそ は",
-            "rarity": "uncommon"
         }
     ],
     "id": "gp0622",
@@ -75,7 +65,7 @@
         },
         {
             "japanese": "日本へ行って{こそ}、京都の魅力が分かる。",
-            "english": "Only by going to Japan, can one understand the charm of Kyoto.",
+            "english": "Only by going to Japan, one can understand the charm of Kyoto.",
             "scene": "Someone who has visited Kyoto recommending it to a friend.",
             "register": "casual",
             "setting": "informative",
@@ -83,7 +73,7 @@
         },
         {
             "japanese": "親になって{こそ}、子供は奇跡だという考え方が分かる。",
-            "english": "Only by becoming a parent, can you understand the mindset that children are miracles.",
+            "english": "Only by becoming a parent, you can understand the mindset that children are miracles.",
             "scene": "A parent reflecting on the experience of raising children.",
             "register": "casual",
             "setting": "reflective",
@@ -96,6 +86,48 @@
             "register": "casual",
             "setting": "inspirational",
             "conjugation": "te-form"
+        },
+        {
+            "japanese": "失敗を恐れ{なくてこそ}、新しい挑戦ができる。",
+            "english": "It's only by not fearing failure that one can take on new challenges.",
+            "scene": "A mentor advising a younger colleague.",
+            "register": "semi-formal",
+            "setting": "instructive",
+            "conjugation": "negative te-form",
+            "speaker_age": "older",
+            "listener_age": "younger",
+            "nuance": "The phrase 「失敗を恐れなくてこそ」 highlights the necessity of overcoming fear for growth. The wisdom implied is characteristic of advice from an older speaker to a younger listener."
+        },
+        {
+            "japanese": "あなたと出会って{こそ}、本当の幸せを知った。",
+            "english": "It was only after meeting you that I knew true happiness.",
+            "scene": "A person expressing their feelings to their partner.",
+            "register": "casual",
+            "setting": "intimate",
+            "conjugation": "te-form",
+            "nuance": "「あなたと出会ってこそ」 expresses the sentiment that only after meeting the listener could the speaker experience happiness. The use of the past tense 「知った」 emphasizes the realization and acknowledgment of this feeling."
+        },
+        {
+            "japanese": "君の笑顔を見て{こそ}、僕の心が温かくなるんだ。",
+            "english": "It's only when I see your smile that my heart feels warm.",
+            "scene": "A man flirting with a woman he admires.",
+            "register": "shitashii kuchō",
+            "setting": "flirty",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "conjugation": "te-form",
+            "nuance": "The use of 「僕」 clearly indicates a male speaker. The casual ending 「〜んだ」 adds an intimate and personal touch, making the compliment feel heartfelt and direct in a flirty context."
+        },
+        {
+            "japanese": "もっと話して{こそ}、お互いのことが深くわかるのでしょうね。",
+            "english": "It's only by talking more that we'll truly understand each other, don't you think?",
+            "scene": "Two individuals on a first encounter, seeking a deeper connection.",
+            "register": "semi-formal",
+            "setting": "first-date",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "conjugation": "te-form",
+            "nuance": "The polite and slightly suggestive ending 「〜のでしょうね」 is characteristic of a female speaker initiating a deeper conversation while maintaining a gentle and inviting tone during an early romantic interaction. 「お互いのこと」 emphasizes mutual understanding."
         },
         {
             "japanese": "全部揃えて{こそ}のコレクションだ。",
@@ -120,17 +152,6 @@
             "register": "casual",
             "setting": "reflective",
             "conjugation": "te-form"
-        },
-        {
-            "japanese": "あなたと出会って{こそ}、本当の幸せを知った。",
-            "english": "It was only after meeting you that I knew true happiness.",
-            "scene": "A person expressing their feelings to their partner.",
-            "register": "casual",
-            "setting": "intimate",
-            "speaker_gender": "male",
-            "listener_gender": "female",
-            "nuance": "「あなたと出会ってこそ」expresses the sentiment that only after meeting the listener could the speaker experience happiness. The use of the past tense 「知った」emphasizes the realization and acknowledgment of this feeling.",
-            "conjugation": "te-form"
         }
     ],
     "false_friends": [
@@ -152,5 +173,16 @@
             "kind": "synonym",
             "nuance": "「〜ばこそ」 is a more formal and literary expression with a similar meaning, often implying a sense of sacrifice or devotion. 「Verb[て]+こそ」 is more versatile and commonly used in everyday speech."
         }
-    ]
+    ],
+    "change": [
+        "violation: Removed `Verb[で]+こそ` from `conjugations`. Reason: This form is not a generic 'conjugation' of the `Verb[て]+こそ` pattern, and `Verb[で]` is the te-form of certain nouns/adjectives, not a general verb conjugation. It does not fit the definition of a conjugation of the grammar point itself. (Rule 0: 'Only list conjugations that, when used, preserve the meaning of the grammar point.')",
+        "violation: Removed `Verb[て]+こそ は` from `conjugations`. Reason: `こそは` is an emphatic addition of `は` particle, not a conditional 'conjugation' of the grammar point pattern `Verb[て]+こそ`. (Rule 0: 'Only list conjugations that, when used, preserve the meaning of the grammar point.')",
+        "violation: Removed `speaker_gender` and `listener_gender` from the example \"あなたと出会って{こそ}、本当の幸せを知った。\". Reason: The Japanese sentence does not contain explicitly gendered speech, violating the rule: 'Use only if this sentence would typically only be spoken by this gender'.",
+        "violation: Added an example \"失敗を恐れ{なくてこそ}、新しい挑戦ができる。\". Reason: To include an example of the `Verb[なくて]+こそ` form, as required by the rule: 'If there are other conjugated forms of the grammar point that are commonly used, then some of the example sentences **must** include those conjugated forms.'",
+        "violation: Added an example \"君の笑顔を見て{こそ}、僕の心が温かくなるんだ。\" with `speaker_gender` and `listener_gender`. Reason: To fulfill the requirement of having at least one flirty innuendo and demonstrating speaker/listener gender with nuance. (Rule 7: 'At least one example should include a flirty innuendo.')",
+        "violation: Added an example \"もっと話して{こそ}、お互いのことが深くわかるのでしょうね。\" with `speaker_gender` and `listener_gender`. Reason: To fulfill the requirement of having at least one early romantic/first-meeting context and demonstrating speaker/listener gender with nuance. (Rule 8: 'At least one example should suit an early romantic or first-meeting context (without using the word \"date\").')"
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/-てこそ"
+    }
 }

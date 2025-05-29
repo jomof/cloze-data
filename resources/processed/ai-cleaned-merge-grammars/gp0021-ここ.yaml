@@ -33,11 +33,9 @@
             "japanese": "{ここ} に すわっても いい ですか。",
             "english": "May I sit here?",
             "scene": "Asking permission to sit in a public place.",
-            "register": "formal",
+            "register": "polite",
             "setting": "polite",
-            "speaker_gender": "female",
-            "speaker_age": "older",
-            "nuance": "The polite 「ですか」 makes this suitable for a formal setting. The phrasing 「すわってもいいですか」 is a common way to ask for permission. An older female speaker might use this phrasing to be courteous in a public setting."
+            "nuance": "The polite 「ですか」 makes this suitable for a formal setting. The phrasing 「すわってもいいですか」 is a common way to ask for permission."
         },
         {
             "japanese": "{ここ} で まちあわせ しましょう。",
@@ -45,9 +43,7 @@
             "scene": "Two friends deciding a meeting spot.",
             "register": "semi-formal",
             "setting": "friendly",
-            "speaker_gender": "male",
-            "speaker_age": "younger",
-            "nuance": "The volitional 「～ましょう」 form is a standard polite suggestion. A younger male might use this casually among friends while still maintaining a degree of politeness."
+            "nuance": "The volitional 「～ましょう」 form is a standard polite suggestion among friends while still maintaining a degree of politeness."
         },
         {
             "japanese": "{ここ} が いちばん いい です。",
@@ -55,9 +51,7 @@
             "scene": "A person expressing contentment with their current location.",
             "register": "casual",
             "setting": "reflective",
-            "speaker_gender": "female",
-            "speaker_age": "older",
-            "nuance": "Using 「いちばんいいです」 is a simple and common way to express that a place is preferred or ideal. This casual yet polite phrasing fits an older female expressing a personal feeling."
+            "nuance": "Using 「いちばんいいです」 is a simple and common way to express that a place is preferred or ideal. This casual yet polite phrasing fits expressing a personal feeling."
         },
         {
             "japanese": "{ここ} に 来て よかった。",
@@ -65,9 +59,7 @@
             "scene": "Someone arriving at a beautiful location and expressing satisfaction.",
             "register": "casual",
             "setting": "optimistic",
-            "speaker_gender": "male",
-            "speaker_age": "younger",
-            "nuance": "The casual past tense 「よかった」 expresses personal feeling. A younger male might say this with enthusiasm upon arriving somewhere enjoyable."
+            "nuance": "The casual past tense 「よかった」 expresses personal feeling with enthusiasm upon arriving somewhere enjoyable."
         },
         {
             "japanese": "{ここ}だけの 話 です が、 じつは...。",
@@ -75,11 +67,7 @@
             "scene": "Sharing a secret with a close friend.",
             "register": "intimate",
             "setting": "intimate",
-            "speaker_gender": "female",
-            "listener_gender": "female",
-            "speaker_age": "younger",
-            "listener_age": "younger",
-            "nuance": "「ここだけの話」 is a common idiom for 'this is just between us'. The ellipsis '...' implies a secret is about to be revealed, creating an intimate atmosphere between two younger female friends."
+            "nuance": "「ここだけの話」 is a common idiom for 'this is just between us'. The ellipsis '...' implies a secret is about to be revealed, creating an intimate atmosphere."
         },
         {
             "japanese": "あなたと {ここ}で あえて うれしい です。",
@@ -87,11 +75,7 @@
             "scene": "Two people on a first meeting at a cafe.",
             "register": "polite",
             "setting": "first-date",
-            "speaker_gender": "male",
-            "listener_gender": "female",
-            "speaker_age": "younger",
-            "listener_age": "younger",
-            "nuance": "The phrase 「あえてうれしいです」 is a standard polite expression of happiness upon meeting someone, ideal for a first encounter. The polite 「です」 ensures appropriate formality for a first interaction, especially for a younger male speaking to a younger female on a first date."
+            "nuance": "The phrase 「あえてうれしいです」 is a standard polite expression of happiness upon meeting someone, ideal for a first encounter. The polite 「です」 ensures appropriate formality for a first interaction."
         },
         {
             "japanese": "あなたと {ここ}に ずっといたいな。",
@@ -99,11 +83,7 @@
             "scene": "A couple in a romantic setting, looking at the stars.",
             "register": "shitashii kuchō",
             "setting": "flirty",
-            "speaker_gender": "female",
-            "listener_gender": "male",
-            "speaker_age": "younger",
-            "listener_age": "younger",
-            "nuance": "The 「～たいな」 ending expresses a gentle wish or desire, often used in intimate contexts. This informal phrasing, coupled with 「ずっと」 (forever), conveys a deep romantic sentiment, typical of a younger female speaking to her male partner in a loving moment."
+            "nuance": "The 「～たいな」 ending expresses a gentle wish or desire, often used in intimate contexts. This informal phrasing, coupled with 「ずっと」 (forever), conveys a deep romantic sentiment."
         }
     ],
     "false_friends": [
@@ -164,6 +144,11 @@
     ],
     "post_false_friends_writeup": "To avoid confusion, remember the core principle of the *ko-so-a-do* system. *Ko-* words (like ここ and これ) always refer to something near the speaker. If you want to talk about something near the listener, use *so-* words (like そこ and それ). For things far from both, use *a-* words (like あそこ and あれ). Finally, remember that この、その, and あの always modify nouns, while ここ、そこ, and あそこ stand alone.",
     "change": [
-        "violation: Modified Japanese example sentences to use kanji appropriate for the N5 JLPT level of the grammar point. Kanji above N5 (座, 待, 番, 実, 会, 嬉) were converted to hiragana (すわって, まちあわせ, いちばん, じつは, あえて, うれしい) as per rule 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'"
-    ]
+        "violation: Removed speaker_gender, listener_gender, speaker_age, and listener_age from all examples because the Japanese sentences do not contain inherently gender-specific or age-specific language as per rule 'Use only if this sentence would typically only be spoken by this gender'.",
+        "violation: Adjusted nuance fields to remove references to gender and age where speaker/listener/age fields were removed.",
+        "violation: Flattened the 'bunpro' object structure from the input into the top-level JSON as per rule 'You must not add top-level 'bunpro' or 'dojg' fields to the output JSON'."
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/ここ"
+    }
 }

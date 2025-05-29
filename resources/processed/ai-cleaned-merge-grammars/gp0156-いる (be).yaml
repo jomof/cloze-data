@@ -123,13 +123,18 @@
         {
             "japanese": "田中さんは会社に{います}。",
             "english": "Mr. Tanaka is at the office.",
-            "scene": "Talking about someone's whereabouts.",
+            "scene": "An older female colleague informing a younger male colleague about Mr. Tanaka's whereabouts.",
             "register": "teineigo (polite)",
             "setting": "informative",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "speaker_age": "older",
+            "listener_age": "younger",
+            "nuance": "The use of 「さん」 for Tanaka-san and 「います」 for the polite register makes this appropriate for an older colleague addressing a younger one. The sentence is neutral, but the politeness maintains professional distance.",
             "conjugation": "masu form (polite non-past)"
         },
         {
-            "japanese": "私の部屋には誰も{いない}。",
+            "japanese": "私の部屋にはだれも{いない}。",
             "english": "There isn't anyone in my room.",
             "scene": "Describing the emptiness of a room.",
             "register": "casual",
@@ -145,32 +150,38 @@
             "conjugation": "mashita form (polite past)"
         },
         {
-            "japanese": "「ねえ、誰か{いる}の？」",
+            "japanese": "ねえ、だれか{いる}の？",
             "english": "Hey, is anyone there?",
-            "scene": "Calling out in an empty house",
+            "scene": "Calling out in an empty house.",
             "register": "casual",
             "setting": "cautious",
             "speaker_gender": "female",
-            "nuance": "「ねえ」 is a common way for females to speak casually. 「いるの？」 is a casual way to ask a question."
+            "speaker_age": "younger",
+            "listener_age": "younger",
+            "nuance": "「ねえ」 is a common way for females to speak casually, often used among friends or peers. 「いるの？」 is a casual way to ask a question, and this informal questioning style is very typical among younger speakers."
         },
         {
-            "japanese": "彼氏が{いる}？",
+            "japanese": "ボーイフレンドが{いる}？",
             "english": "Do you have a boyfriend?",
             "scene": "Flirting on a first date.",
             "register": "casual",
             "setting": "flirty",
             "listener_gender": "female",
-            "nuance": "This is casual and direct, implying familiarity or romantic interest. If you asked a superior, you'd need to ask 「彼氏がいますか。」instead. Asking if someone 「いる」 is direct, not coy.",
+            "speaker_age": "younger",
+            "listener_age": "younger",
+            "nuance": "This is casual and direct, implying familiarity or romantic interest, typical among younger people exploring relationships. The short question form without particles like 「が」 or 「か」 makes it informal, suitable when flirting.",
             "conjugation": "dictionary form (plain non-past)"
         },
         {
-            "japanese": "こんなところに、まだ{いた}のか。",
-            "english": "So you were still in a place like this, huh.",
+            "japanese": "この部屋に、まだ{いた}のか。",
+            "english": "So you were still in this room, huh.",
             "scene": "Said by a man who's found his friend, passed out, in a bar.",
             "register": "shitashii kuchō (intimate)",
             "setting": "melancholic",
             "speaker_gender": "male",
-            "nuance": "「いたのか」 is a casual way for a man to say 'you were here?' among friends. The implication is that they expected the person to have left already, and there is a slight hint of criticism.",
+            "speaker_age": "older",
+            "listener_age": "younger",
+            "nuance": "「いたのか」 is a casual way for a man to say 'you were here?' among friends. The implication is that they expected the person to have left already, and there is a slight hint of criticism. The use of 「のか」 often suggests a realization or mild surprise, suitable for an older person speaking to a younger one they are familiar with.",
             "conjugation": "ta form (plain past)"
         }
     ],
@@ -182,5 +193,10 @@
             "nuance": "Unlike 「いる」, 「ある」 is used for inanimate objects and abstract concepts."
         }
     ],
-    "post_false_friends_writeup": "It's crucial to distinguish between 「いる」 and 「ある」. If you're talking about a person or an animal, use 「いる」. If you're talking about a thing or an idea, use 「ある」. Confusing the two can lead to unnatural-sounding Japanese."
+    "post_false_friends_writeup": "It's crucial to distinguish between 「いる」 and 「ある」. If you're talking about a person or an animal, use 「いる」. If you're talking about a thing or an idea, use 「ある」. Confusing the two can lead to unnatural-sounding Japanese.",
+    "change": [
+        "violation: Removed quotes from Japanese example sentence in example 5, as per rule 6: 'The \"japanese\" must have the grammar_point in {bold} (surrounded in curlies). The \"japanese\" must not have parentheses to set context. Must not use quotes including 「」, .'",
+        "violation: Changed N3 kanji in examples to adhere to JLPT N5/N4 kanji restriction, as per JLPT Kanji rule. Specifically, in example 3, '誰も' was changed to 'だれも'. In example 5, '誰か' was changed to 'だれか'. In example 6, '彼氏' was changed to 'ボーイフレンド'. In example 7, 'こんなところに' was changed to 'この部屋に'.",
+        "violation: Added speaker_age, listener_age, speaker_gender, listener_gender to examples 2, 5, 6, and 7 to meet rule 6 requirements for speaker/listener age/gender diversity and nuance explanation. Updated nuance for these examples to reflect these additions. Rule 6 states: 'Example sentences should include at least one male and one female speaker_gender. You must not embed hints about the speaker's gender in 'english' or 'japanese'. Put that here, in \"speaker_gender\".' and 'Example sentences should include at least one younger and one older speaker_age.'"
+    ]
 }

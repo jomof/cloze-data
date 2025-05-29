@@ -18,7 +18,7 @@
         "使用域": "一般"
     },
     "etymology": "「どこ」 is derived from the older Japanese word 「いずく」 (izuku), which also meant \"where.\" Over time, 「いずく」 was shortened and evolved into the modern 「どこ」.",
-    "writeup": "「どこ」is used to ask about a place. It is similar to \"where\" in English. \n\n**Important Considerations**:\n\n*   「どこ」 should not be confused with 「どっち」, which focuses more on direction.\n*   「どこ」 is used for asking the location or position of something or someone.",
+    "writeup": "「どこ」 is used to inquire about a place or location. It directly translates to \"where\" in English.\n\n**Important Considerations**:\n\n*   「どこ」 should not be confused with 「どっち」. While 「どこ」 focuses purely on **which place**, 「どっち」 typically refers to **which direction** or **which one** when choosing between two options.\n*   This pronoun is fundamental for asking about the location or position of people, objects, or events.",
     "examples": [
         {
             "japanese": "すみません、トイレは{どこ}ですか？",
@@ -39,7 +39,10 @@
             "english": "Where's the station?",
             "scene": "Two friends in a foreign city looking for transportation.",
             "register": "casual",
-            "setting": "friendly"
+            "setting": "friendly",
+            "speaker_age": "younger",
+            "listener_age": "younger",
+            "nuance": "This casual expression 「駅はどこ？」is appropriate between close friends, as it omits the polite 「です」 or 「ですか」."
         },
         {
             "japanese": "あなたは{どこ}に行きたいですか？",
@@ -49,7 +52,7 @@
             "setting": "first-date",
             "listener_gender": "female",
             "speaker_gender": "male",
-            "nuance": "The man is asking the woman where she would like to go. This is a polite way to start a first date."
+            "nuance": "The speaker, a male, is asking his female companion where she would like to go. This phrasing is polite and considerate, setting a respectful tone for a first date."
         },
         {
             "japanese": "ねえ、今夜{どこ}で会いましょうか？",
@@ -59,15 +62,17 @@
             "setting": "flirty",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "「ねえ」 is a casual way for a woman to call out a man, in this flirty context. It is used to indicate that she is interested in him.",
-            "etymology": "ねえ, as used here, derives from an older word for 'older sister' or 'hey you.'"
+            "nuance": "The casual 「ねえ」 from a female speaker suggests an intimate or flirty tone, implying a close connection or desire to establish one. The inclusion of 「今夜」 (tonight) adds to the suggestive nature of the invitation.",
+            "etymology": "「ねえ」, as used here, is a casual interjection to draw attention, and its root can be traced to older Japanese expressions for calling out to someone or getting their attention."
         },
         {
             "japanese": "田中さんの家は{どこ}ですか？",
             "english": "Where is Mr. Tanaka's house?",
             "scene": "A delivery person asking for directions.",
             "register": "teineigo (polite)",
-            "setting": "informative"
+            "setting": "informative",
+            "speaker_age": "older",
+            "nuance": "Using 「田中さんの家」 rather than just 「田中さん家」 maintains a formal and polite register, appropriate for a professional seeking specific information from a possibly unfamiliar individual."
         },
         {
             "japanese": "故郷は{どこ}ですか？",
@@ -77,34 +82,40 @@
             "setting": "first-date",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "「故郷」 means 'hometown' and is a common way to start a conversation and find common ground."
+            "nuance": "Asking about 「故郷」 (hometown) is a common way to build rapport and find common ground, especially in early social interactions like a first date. The polite 「ですか」 ensures a respectful tone."
         }
     ],
     "false_friends": [
         {
             "term": "ここ",
             "meaning": "Here, This place",
-            "kind": "synonym",
-            "nuance": "Unlike 「どこ」, 「ここ」 refers to the place where the speaker is currently located."
+            "kind": "related term",
+            "nuance": "Unlike 「どこ」, which inquires about an unknown location, 「ここ」 refers to the place where the speaker is currently located or a specific nearby location."
         },
         {
             "term": "そこ",
             "meaning": "There, That place",
-            "kind": "synonym",
-            "nuance": "Unlike 「どこ」, 「そこ」 refers to a place near the listener or a place already mentioned."
+            "kind": "related term",
+            "nuance": "Unlike 「どこ」, 「そこ」 refers to a place near the listener or a place that has already been mentioned in the conversation."
         },
         {
             "term": "あそこ",
             "meaning": "Over there",
-            "kind": "synonym",
+            "kind": "related term",
             "nuance": "Unlike 「どこ」, 「あそこ」 refers to a place distant from both the speaker and the listener."
         },
         {
             "term": "どっち",
             "meaning": "Which direction; which one (of two)",
             "kind": "often confused with",
-            "nuance": "Unlike 「どこ」, which asks about location, 「どっち」 usually refers to direction or choice between two options."
+            "nuance": "Unlike 「どこ」, which asks about a general location, 「どっち」 typically refers to a choice between two specific options or a specific direction."
         }
     ],
-    "post_false_friends_writeup": "It's crucial to differentiate 「どこ」 from 「ここ、そこ、あそこ」 and 「どっち」. 「どこ」 is used for asking about the location, while the others refer to specific places relative to the speaker and listener, or direction. Remember to consider the context to choose the appropriate word."
+    "post_false_friends_writeup": "It's crucial to differentiate 「どこ」 from 「ここ、そこ、あそこ」 and 「どっち」. 「どこ」 is used for asking about the unknown location, while the others refer to specific places relative to the speaker and listener, or direction/choice. Remember to consider the context to choose the appropriate word.",
+    "change": [
+        "violation: Changed 'kind' in false_friends from 'synonym' to 'related term' for ここ, そこ, あそこ. The previous 'synonym' was inaccurate because these are demonstrative pronouns indicating specific locations, whereas どこ is an interrogative pronoun for an unknown location. Rule: 'Ensure the JSON is valid and properly escaped for YAML conversion.'"
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/どこ"
+    }
 }

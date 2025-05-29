@@ -24,30 +24,30 @@
     "jlpt": "N5",
     "meaning": "Was not, Wasn't (Adjective)",
     "details": {
-        "Part of Speech": "Auxiliary Verb",
+        "Part of Speech": "い-Adjective conjugation",
         "Register": "Standard",
         "品詞": "形容詞",
         "単語の種類": "助動詞",
         "使用域": "一般"
     },
     "etymology": "This grammar point is derived from the い-adjective conjugation where the final 「い」 is dropped and replaced with 「く」. 「なかった」 is the past negative form of 「ない」. Thus, it literally combines the adjectival stem with the past negative auxiliary.",
-    "writeup": "To form the negative past tense of い-adjectives, you conjugate the adjective's stem (by dropping the final 「い」 and adding 「く」) followed by 「なかった」. This creates the plain form. The polite form replaces 「なかった」 with 「ありませんでした」. For example, 「高い」 (expensive) becomes 「高くなかった」 (was not expensive) or 「高くありませんでした」 (was not expensive - polite).",
+    "writeup": "To form the negative past tense of い-adjectives, the final 「い」 is removed and replaced with 「く」. This 「く」 form is then followed by 「なかった」 for the plain past negative, or 「ありませんでした」 for the polite past negative. Historically, the polite negative form derived from the usage of the u-verb 「ある」 with the 「く」-form of the い-adjective (e.g., 高くあります → 高くありません → 高くありませんでした). While this is technically the complete and grammatically 'correct' way for all 「く」-form conjugations of い-adjectives, in modern Japanese, it is common and acceptable to form the polite negative by simply attaching 「です」 to the plain past negative form, resulting in expressions like 「高くなかったです」. This is often referred to as the 'semi-polite' form.",
     "examples": [
         {
-            "japanese": "コーヒーは 熱く {なかった} です。",
+            "japanese": "漫画 を 読む の は 難しく {なかった} 。",
+            "english": "Reading manga wasn't difficult.",
+            "scene": "Someone reflecting on an activity.",
+            "register": "casual",
+            "setting": "reflective",
+            "conjugation": "past negative (plain)"
+        },
+        {
+            "japanese": "コーヒー は 熱く {なかった} です。",
             "english": "The coffee was not hot.",
             "scene": "Someone commenting on the temperature of coffee.",
             "register": "teineigo (polite)",
             "setting": "casual",
             "conjugation": "past negative (plain)"
-        },
-        {
-            "japanese": "それ は 安く {ありませんでした} 。",
-            "english": "That was not cheap.",
-            "scene": "A shopper talking about a past purchase.",
-            "register": "teineigo (polite)",
-            "setting": "informative",
-            "conjugation": "past negative (polite)"
         },
         {
             "japanese": "私 の 犬 は 強く {なかった} です。",
@@ -66,23 +66,36 @@
             "conjugation": "past negative (plain)"
         },
         {
-            "japanese": "漫画 を 読む の は 難しく {なかった} 。",
-            "english": "Reading manga wasn't difficult.",
-            "scene": "Someone reflecting on an activity.",
-            "register": "casual",
-            "setting": "reflective",
-            "conjugation": "past negative (plain)"
+            "japanese": "それ は 安く {ありませんでした} 。",
+            "english": "That was not cheap.",
+            "scene": "A shopper talking about a past purchase.",
+            "register": "teineigo (polite)",
+            "setting": "informative",
+            "conjugation": "past negative (polite)"
+        },
+        {
+            "japanese": "君 が いなくて 、パーティー は 楽しく {なかった} よ。",
+            "english": "The party wasn't fun without you.",
+            "scene": "A man talking to a woman he's interested in at a party.",
+            "register": "shitashii kuchō (intimate)",
+            "setting": "flirty",
+            "conjugation": "past negative (plain)",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "The casual tone and the direct address 「君」, rarely used except in intimate or condescending contexts, along with the implied regret of the listener's absence, create a flirty atmosphere. The use of 「よ」 further softens the tone and makes it more personal."
         },
         {
             "japanese": "昨日 の デート は 楽しく {なかった} です。",
             "english": "Yesterday's date wasn't fun.",
-            "scene": "A person confiding in a friend.",
+            "scene": "A younger person confiding in an older friend.",
             "register": "teineigo (polite)",
             "setting": "melancholic",
             "conjugation": "past negative (plain)",
             "speaker_gender": "female",
             "listener_gender": "female",
-            "nuance": "The speaker is being polite 「です」 but informal sharing her feelings about her date."
+            "speaker_age": "younger",
+            "listener_age": "older",
+            "nuance": "The speaker is being polite with 「です」 when sharing her feelings about her date, which is appropriate when speaking to an older friend. Although the content is intimate, the politeness maintains a proper social distance with an older individual."
         },
         {
             "japanese": "その レストラン の 料理 は 美味しく {ありませんでした} 。",
@@ -92,5 +105,17 @@
             "setting": "critical",
             "conjugation": "past negative (polite)"
         }
-    ]
+    ],
+    "false_friends": [],
+    "change": [
+        "violation: Removed 'meaning_warning' because it was null (Rule 3).",
+        "violation: Expanded 'writeup' content to incorporate essential details from the input (Rule 5).",
+        "violation: Adjusted spacing in 'japanese' examples for readability (Rule 6).",
+        "violation: Added a new flirty example to meet requirements (Rule 7).",
+        "violation: Added speaker_age/listener_age and updated nuance for an existing example to ensure variety (Rule 6).",
+        "violation: Changed 'Part of Speech' in 'details' from 'Auxiliary Verb' to 'い-Adjective conjugation' for better accuracy (Rule 16)."
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/い-Adjective-くなかった"
+    }
 }

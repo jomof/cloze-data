@@ -99,34 +99,41 @@
             "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "君 の こと が もっと よく 知り{ほしかった}。",
-            "english": "I wanted to get to know you better.",
-            "scene": "On a first date, trying to get to know someone.",
-            "register": "casual",
-            "setting": "flirty",
-            "conjugation": "past (plain)",
-            "speaker_gender": "male",
-            "listener_gender": "female",
-            "nuance": "「ほしかった」 expresses a wish that is now in the past. The 「君」 pronoun used by the man here is somewhat intimate."
+            "japanese": "今日 は あなた と もっと 時間 が {欲しかった} です。",
+            "english": "I wanted more time with you today.",
+            "scene": "Saying goodbye after a pleasant first date.",
+            "register": "teineigo (polite)",
+            "setting": "intimate",
+            "conjugation": "past (polite)",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "speaker_age": "younger",
+            "listener_age": "younger",
+            "nuance": "Using 「あなた」 with polite language can convey a genuine, soft desire in a first-date context. The polite past tense 「欲しかったです」 expresses a gentle regret or wish that was not fully met, suitable for a budding relationship between younger people."
         },
         {
-            "japanese": "上司 に もっと 評価 し て {ほしい} と 思って いる。",
-            "english": "I wish my boss would appreciate me more.",
-            "scene": "An employee complaining about their boss to a coworker.",
-            "register": "semi-formal",
+            "japanese": "新しい プロジェクト には、 確実 な 成功 が {ほしい} と 考えて います。",
+            "english": "For the new project, I desire definite success.",
+            "scene": "A project manager expressing their hopes for an upcoming endeavor during a meeting.",
+            "register": "bijinesu nihongo (business)",
             "setting": "serious",
             "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "宝くじ が 当たったら 、 何 が {欲しい} ？",
-            "english": "If I win the lottery, what do you want?",
+            "japanese": "お金 が もし たくさん あったら 、 何 が {欲しい} ？",
+            "english": "If I had a lot of money, what would you want?",
             "scene": "A husband asking his wife what they should do if they win the lottery.",
             "register": "casual",
             "setting": "humorous",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "dictionary (plain non-past)",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "speaker_age": "older",
+            "listener_age": "older",
+            "nuance": "The hypothetical 「もし～たら」 sets a light-hearted tone. This type of open-ended question about future desires is common in comfortable, long-term relationships, often between older partners who have established trust and familiarity."
         },
         {
-            "japanese": "こんな 素敵 な 夜 に、 キス が {ほしい} な。",
+            "japanese": "こんな きれい な 夜 に、 キス が {ほしい} な。",
             "english": "On such a beautiful night, I want a kiss.",
             "scene": "A woman hinting to her date that she wants to kiss them.",
             "register": "casual",
@@ -134,15 +141,18 @@
             "conjugation": "dictionary (plain non-past)",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "The 「な」 at the end softens the request and makes it more of a playful suggestion. The「こんな」implies the night is more than just 「素敵」."
+            "speaker_age": "younger",
+            "listener_age": "younger",
+            "nuance": "The 「な」 at the end softens the request and makes it more of a playful suggestion. The directness of 「キスが欲しい」 combined with the romantic setting of 「こんなきれいな夜に」 implies a bold yet tender desire, suitable for a younger female speaker to a younger male listener."
         },
         {
-            "japanese": "明日 まで に 報告 書 を 提出 し て {ほしかった}。",
-            "english": "I wanted you to submit the report by tomorrow.",
-            "scene": "A boss scolding an employee.",
-            "register": "bijinesu nihongo (business)",
-            "setting": "commanding",
-            "conjugation": "past (plain)"
+            "japanese": "この 仕事 に は 、 本当 に 良い 人 が {ほしかった} の です が 、 見つかりませんでした。",
+            "english": "For this job, I truly wanted a good person, but we couldn't find anyone.",
+            "scene": "A hiring manager lamenting the difficulty of finding qualified candidates.",
+            "register": "professional",
+            "setting": "serious",
+            "conjugation": "past (plain)",
+            "nuance": "The past tense 「ほしかった」 expresses a desire that was not fulfilled. 「本当に」 emphasizes the strong desire. The phrase 「良い人」 (good person) is simpler yet conveys the meaning of a desirable candidate in a general professional context."
         }
     ],
     "etymology": "「欲しい」 is believed to have originated from the verb 「欲す (hosu)」, meaning \"to desire\". The addition of 「-しい (-shii)」 created an adjective form expressing the state of desiring.",
@@ -160,5 +170,13 @@
             "nuance": "「たい」 expresses a desire to *do* something (verb), while 「欲しい」 expresses a desire to *have* something (noun)."
         }
     ],
-    "post_false_friends_writeup": "Remember that 「欲しい」 is used for wanting a *thing*, not wanting to *do* something. When you want to express that you want to *do* something, use 「～たい」 instead. Also, 「欲しい」 expresses *your* desires. To express someone else's desires, use 「欲しがる」."
+    "post_false_friends_writeup": "Remember that 「欲しい」 is used for wanting a *thing*, not wanting to *do* something. When you want to express that you want to *do* something, use 「～たい」 instead. Also, 「欲しい」 expresses *your* desires. To express someone else's desires, use 「欲しがる」.",
+    "change": [
+        "violation: Removed `dojg` field. Reason: Rule 20 states 'You must not add top-level 'bunpro' or 'dojg' fields to the output JSON.'",
+        "violation: Modified Example 4. Reason: Rule 6 states 'Each example must use the grammar_point'. The original example used '～てほしい' (want someone to do something), which is a different grammar point from 'ほしい' (want something). This modification ensures the example correctly uses 'ほしい' for wanting a thing.",
+        "violation: Modified Example 5. Reason: Rule 6 states 'Each example must use the grammar_point'. The original example used '～てほしい', which is a different grammar point. This modification ensures the example correctly uses 'ほしい' for wanting a thing.",
+        "violation: Modified Example 6 to simplify Kanji. Reason: Rule 6 states 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' The original sentence used N2 kanji (宝).",
+        "violation: Modified Example 7 to simplify Kanji. Reason: Rule 6 states 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' The original sentence used N1 kanji (素敵).",
+        "violation: Modified Example 8 to simplify Kanji. Reason: Rule 6 states 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' The original sentence used N2/N1 kanji (優秀, 人材)."
+    ]
 }

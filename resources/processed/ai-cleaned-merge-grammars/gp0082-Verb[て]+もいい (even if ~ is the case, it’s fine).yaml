@@ -56,7 +56,7 @@
         "Register": "Standard"
     },
     "etymology": "The grammar point 「～てもいい」 is constructed from the te-form of a verb 「～て」, the particle 「も」 (meaning \"even\"), and 「いい」 (meaning \"good\" or \"okay\"). Literally, it translates to \"even if [verb in te-form], it is good.\"",
-    "writeup": "「～てもいい」 expresses permission or that something is acceptable even if a certain condition is true. It is commonly used to ask for permission, express that something is okay, or to concede a point. Remember that「～てもいい」 is different from 「～てはいけない」, which means \"must not\" or \"is not allowed.\"",
+    "writeup": "The grammar point 「Verb[て]+もいい」 attaches to the te-form of a verb, expressing permission for an action or indicating that an action is acceptable even under certain conditions. It conveys a nuance similar to \"it's fine to do X\" or \"it's okay if X happens.\" When used in a question, such as 「～してもいいですか」, it serves to ask for permission, contrasting directly with 「～してはいけない」, which expresses prohibition or unacceptability.",
     "examples": [
         {
             "japanese": "ここで本を{読んでもいい}ですか。",
@@ -64,14 +64,6 @@
             "scene": "A student asking their teacher for permission.",
             "register": "formal",
             "setting": "polite",
-            "conjugation": "plain present affirmative"
-        },
-        {
-            "japanese": "少しぐらい高く{てもいい}です。",
-            "english": "It's okay even if it's a little expensive.",
-            "scene": "Someone deciding whether to buy something.",
-            "register": "formal",
-            "setting": "serious",
             "conjugation": "plain present affirmative"
         },
         {
@@ -83,17 +75,18 @@
             "conjugation": "plain present affirmative"
         },
         {
-            "japanese": "別に、あなたが嫌{でもいい}けどね。",
-            "english": "I don't care, it's okay if you hate me, you know.",
-            "scene": "A girl being flirty with a boy.",
-            "register": "casual",
+            "japanese": "もっと近くに{来てもいい}よ。",
+            "english": "You can come closer to me.",
+            "scene": "A person subtly inviting someone they are attracted to.",
+            "register": "intimate",
             "setting": "flirty",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "The 「けどね」 at the end adds a soft, slightly teasing tone. The 「別に」 emphasizes the speaker's apparent indifference."
+            "conjugation": "plain present affirmative",
+            "nuance": "The casual 「来てもいいよ」 with the final particle 「よ」 creates an inviting, slightly suggestive tone. The lack of formal politeness indicates a relaxed, personal relationship."
         },
         {
-            "japanese": "もしあなたが来{なくてもいい}なら、私も行かない。",
+            "japanese": "もしあなたが{来なくてもいい}なら、私も行かない。",
             "english": "If it's okay for you not to come, I won't go either.",
             "scene": "Two people discussing whether to attend an event.",
             "register": "casual",
@@ -101,15 +94,24 @@
             "conjugation": "plain present negative"
         },
         {
-            "japanese": "下手{でもよかった}ら、一緒にテニスをしませんか。",
-            "english": "If it's okay that I'm not very good, would you like to play tennis together?",
-            "scene": "Asking someone out while admitting you're not good at the activity.",
+            "japanese": "もしよければ、もっと{話してもいい}ですか。",
+            "english": "If it's alright, may I talk more?",
+            "scene": "Someone on a first date, subtly asking for more time or deeper conversation.",
             "register": "formal",
             "setting": "first-date",
-            "conjugation": "plain past affirmative",
-            "listener_gender": "female",
             "speaker_gender": "male",
-            "nuance": "The speaker is using the plain past affirmative 「よかった」 form of 「～てもいい」, and combining it with 「～ませんか」 to politely invite the listener to play tennis, while also making it clear that they are a beginner."
+            "listener_gender": "female",
+            "conjugation": "plain present affirmative",
+            "nuance": "The polite conditional 「もしよければ」 (\"if it's alright\") combined with the polite question 「話してもいいですか」 shows respect and consideration, ideal for a first meeting. This demonstrates politeness while also indicating a desire for deeper connection."
+        },
+        {
+            "japanese": "あの日、もっと自分の意見を{言ってもよかった}と後悔している。",
+            "english": "I regret that I should have expressed my opinion more that day.",
+            "scene": "Someone reflecting on a past event.",
+            "register": "serious",
+            "setting": "reflective",
+            "conjugation": "plain past affirmative",
+            "nuance": "「言ってもよかった」 implies that it \"would have been okay\" or \"could have been done,\" but the speaker chose not to, leading to a sense of regret or missed opportunity. This illustrates the use of past permission in a reflective context."
         }
     ],
     "false_friends": [
@@ -132,5 +134,38 @@
             "nuance": "「～ても」 without 「いい」 expresses a concession but doesn't imply permission or acceptance. It simply states that even if something is the case, something else is still true."
         }
     ],
-    "post_false_friends_writeup": "To avoid confusion, remember that 「～てもいい」 always implies permission or acceptance. If you only want to express \"even if\" or \"even though,\" use 「～ても」 without 「いい」. If you wish to express that you don't mind, use 「～てもかまわない」"
+    "post_false_friends_writeup": "To avoid confusion, remember that 「～てもいい」 always implies permission or acceptance. If you only want to express \"even if\" or \"even though,\" use 「～ても」 without 「いい」. If you wish to express that you don't mind, use 「～てもかまわない」",
+    "change": [
+        {
+            "category": "violation",
+            "reason": "The input grammar point is strictly 'Verb[て]+もいい'. The original `bunpro` writeup and several examples incorrectly included `い-Adjective` and `な-Adjective` forms, violating instruction 1.2 and 5. This has been corrected to focus solely on verbs."
+        },
+        {
+            "category": "violation",
+            "reason": "Removed example '少しぐらい高く{てもいい}です。' which used an い-adjective, violating the grammar point's specific focus on verbs as per instruction 6."
+        },
+        {
+            "category": "violation",
+            "reason": "Removed example '別に、あなたが嫌{でもいい}けどね。' which used a な-adjective, violating the grammar point's specific focus on verbs as per instruction 6. Replaced with a new flirty verb example."
+        },
+        {
+            "category": "violation",
+            "reason": "Removed example '下手{でもよかった}ら、一緒にテニスをしませんか。' which used a な-adjective, violating the grammar point's specific focus on verbs as per instruction 6. Replaced with a new first-date verb example."
+        },
+        {
+            "category": "command",
+            "reason": "Added a new flirty example using 'Verb[て]+もいい' as per instruction 7, replacing a previously removed non-verb example."
+        },
+        {
+            "category": "command",
+            "reason": "Added a new first-date example using 'Verb[て]+もいい' as per instruction 8, replacing a previously removed non-verb example."
+        },
+        {
+            "category": "unnatural",
+            "reason": "Added a new general example using the plain past affirmative conjugation to ensure broader conjugation coverage and natural usage within the verb-specific context."
+        }
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/てもいい"
+    }
 }

@@ -5,7 +5,6 @@
         "romaji": "to iu fuu ni"
     },
     "id": "gp0683",
-    "conjugations": [],
     "formation": {
         "[Sentence] + という風に": "Expresses a manner or way of doing something, suggesting a specific meaning or intention.",
         "[Noun Phrase 1] + は + [Description 1], [Noun Phrase 2] + は + [Description 2], という風に": "Lists examples or elements in a series, indicating 'and so on' or 'in this manner'."
@@ -25,7 +24,11 @@
             "scene": "Employee gossiping about a co-worker.",
             "register": "semi-formal",
             "setting": "informative",
-            "nuance": "The 「聞いています」 indicates that the speaker is reporting something they heard indirectly, adding a layer of uncertainty conveyed by 「という風に」.",
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "speaker_age": "older",
+            "listener_age": "younger",
+            "nuance": "The use of 「聞いています」 in this context, when spoken by an older female to a younger female, can imply a subtle imparting of workplace gossip or information, characteristic of an older mentor figure sharing insights, albeit informally.",
             "etymology": "「休憩 (kyuukei)」 means 'break', indicating a pause in activity. 「聞く (kiku)」 means 'to hear' or 'to listen'."
         },
         {
@@ -56,13 +59,12 @@
             "etymology": "「役割 (yakuwari)」 means 'role' or 'part'."
         },
         {
-            "japanese": "刑事：「武さんはその事故のことを知っていた{という風に}私を見ていた。」",
-            "english": "Detective: He looked at me as if to suggest that he knew some circumstances of that accident.",
-            "scene": "A detective recounting an interrogation.",
-            "register": "formal",
+            "japanese": "彼はその事故のことを知っていた{という風に}私を見ていた。",
+            "english": "He looked at me as if to suggest that he knew some circumstances of that accident.",
+            "scene": "Someone observing another person's suspicious behavior.",
+            "register": "semi-formal",
             "setting": "serious",
-            "nuance": "This sentence has formal 「〜ていた」 form which indicate that this is an account of an event. 「見ていた」 combined with 「という風に」 implies that the detective interpreted Takeshi's gaze as suggesting knowledge of the accident.",
-            "etymology": "「刑事 (keiji)」 means 'detective'."
+            "nuance": "The phrase 「見ていた」 implies the speaker's interpretation of the person's gaze. 「という風に」 indicates this interpretation is based on the perceived implication or suggestion from the other person's look."
         },
         {
             "japanese": "彼女は命がかかってる{という風に}走っていた。",
@@ -83,12 +85,12 @@
             "etymology": "「秘書 (hisho)」 means 'secretary', and 「辞める (yameru)」 means 'to quit'."
         },
         {
-            "japanese": "父：「母に、遅れるだろう{という風に}言って。」",
-            "english": "Father: \"Tell mom in such a way as to suggest that I will be late.\"",
+            "japanese": "父は、母に遅れるだろう{という風に}言ってほしい、と頼んだ。",
+            "english": "Father asked someone to tell mother that he would be late, in such a way as to suggest it.",
             "scene": "A father asking someone to relay a message to his wife.",
             "register": "casual",
             "setting": "informative",
-            "nuance": "The direct quote suggests the father wants a specific nuance conveyed when the message is relayed.",
+            "nuance": "The phrasing 「〜てほしい、と頼んだ」 indicates a request from the father. The nuance of 「という風に」 implies that the father wants a specific subtle message or impression conveyed when the message about being late is relayed to his wife.",
             "etymology": "「遅れる (okureru)」 means 'to be late'."
         },
         {
@@ -108,8 +110,19 @@
             "setting": "flirty",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "「もしかして、私のこと、好き？」 is a very direct way of asking someone's feelings, but is softened somewhat by the 'what if' approach.",
+            "nuance": "The phrase 「もしかして、私のこと、好き？」 is a direct, yet playful, question. The 「って」 particle after the direct quote is a casual way to present spoken content, which, combined with the female speaker's context, makes the sentence sound more natural for a young woman considering a flirty remark.",
             "etymology": "「好き (suki)」 means 'like'."
+        },
+        {
+            "japanese": "この店は、私たちの初めてのデートを最高にする{という風に}言っているようだね。",
+            "english": "This restaurant seems to promise that it will make our first date the best.",
+            "scene": "A man on a first date, looking at a restaurant's ambiance or menu.",
+            "register": "casual",
+            "setting": "first-date",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "The phrase 「言っているようだね」, combined with 「という風に」, suggests an impression or implication from the restaurant itself, setting a hopeful tone for the date. The use of 「私たち」 emphasizes intimacy in a first-date setting.",
+            "etymology": "「最高 (saikou)」 means 'the best' or 'supreme'. 「デート (deeto)」 is a loanword for 'date'."
         }
     ],
     "false_friends": [
@@ -132,5 +145,15 @@
             "nuance": "「かのようだ」 emphasizes the hypothetical nature of a situation, whereas 「という風に」 focuses on the perceived manner or intention behind an action."
         }
     ],
-    "post_false_friends_writeup": "While these expressions are similar, 「という風に」 specifically implies a perception or interpretation that something is being done or said in a particular way. 「ふうに」 is a more general description of manner, 「ように」 is for direct comparison, and 「かのようだ」 emphasizes hypothetical resemblance. Choose 「という風に」 when you want to highlight the implied message or intention behind an action."
+    "post_false_friends_writeup": "While these expressions are similar, 「という風に」 specifically implies a perception or interpretation that something is being done or said in a particular way. 「ふうに」 is a more general description of manner, 「ように」 is for direct comparison, and 「かのようだ」 emphasizes hypothetical resemblance. Choose 「という風に」 when you want to highlight the implied message or intention behind an action.",
+    "change": [
+        "violation: Fixed example 5 (detective dialogue) from `刑事：「武さんはその事故のことを知っていた{という風に}私を見ていた。」` to `彼はその事故のことを知っていた{という風に}私を見ていた。` and adjusted associated fields. Reason: Rule #9: \"If the input examples contain dialogue (A: ... B: ...), rewrite them into single-sentence statements that preserve the lesson but remove direct dialogue format.\" Also, Rule #20: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\" (刑 is N1).",
+        "violation: Fixed example 8 (father dialogue) from `父：「母に、遅れるだろう{という風に}言って。」` to `父は、母に遅れるだろう{という風に}言ってほしい、と頼んだ。` and adjusted associated fields. Reason: Rule #9: \"If the input examples contain dialogue (A: ... B: ...), rewrite them into single-sentence statements that preserve the lesson but remove direct dialogue format.\"",
+        "violation: Added a new example for \"first-date\" context. Reason: Rule #8: \"At least one example should suit an early romantic or first-meeting context\".",
+        "violation: Modified the new first-date example Japanese from `僕たちの` to `私たちの`. Reason: Rule #20: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\" (僕 is N1).",
+        "suggestion: Added `speaker_gender`, `listener_gender`, `speaker_age`, `listener_age` to example 1, and adjusted its nuance. Reason: To add more variety in `speaker_gender`, `listener_gender`, `speaker_age`, `listener_age` and to ensure at least one example for each gender/age where relevant."
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/という風に"
+    }
 }

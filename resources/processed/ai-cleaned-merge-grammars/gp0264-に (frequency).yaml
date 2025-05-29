@@ -18,7 +18,7 @@
     "writeup": "The particle に indicates frequency. It describes how often something happens or is done within a specific timeframe. The structure is straightforward: [Timeframe] + に + [Number of Times] + [Action]. に retains its basic meaning of indicating a \"goal\" or \"destination,\" but in this context, it signifies the period within which the action occurs.\n\n**Important Considerations**\n\n*   Do not confuse this use of に with で in relation to time. で expresses the *duration* it takes to do something. に expresses the *frequency* of an action within a time period.\n*   に marks portions of time within a larger timeframe, whereas で marks a whole span of time within which something is completed.",
     "examples": [
         {
-            "japanese": "私は一ヶ月 {に} 一回 友達 と 遊園地 に 行く。",
+            "japanese": "私 は 一か月に {に} 一回 友達 と 遊園地 に 行く。",
             "english": "I go to the amusement park with my friend once a month.",
             "scene": "A person telling their friend how often they visit the amusement park.",
             "register": "casual",
@@ -26,13 +26,12 @@
             "nuance": "The speaker is stating a simple fact about their monthly routine."
         },
         {
-            "japanese": "彼 は 一週間 {に} 2回 しか 歯 を 磨かない から、口 が 臭い。",
-            "english": "Because he only brushes his teeth twice a week, his mouth stinks.",
+            "japanese": "彼 は 一週間 {に} 2回 しか 顔 を 洗わない から、顔 が 汚い。",
+            "english": "Because he only washes his face twice a week, his face is dirty.",
             "scene": "Someone complaining about another person's hygiene.",
             "register": "casual",
             "setting": "humorous",
-            "nuance": "This is a casual observation, with a slightly humorous and critical tone due to the consequence mentioned.",
-            "etymology": "「臭い」 is written using kanji from JLPT N3 and N4."
+            "nuance": "This is a casual observation, with a slightly humorous and critical tone due to the consequence mentioned. The use of 「汚い」 adds to the informal, critical assessment."
         },
         {
             "japanese": "一年に三回ぐらい 海外旅行 {に} 行く。",
@@ -73,7 +72,7 @@
             "register": "casual",
             "setting": "informative",
             "speaker_gender": "female",
-            "nuance": "The speaker, implied to be female due to the lack of masculine sentence-enders, is stating a fact. 「ぐらい」 makes it an approximation."
+            "nuance": "The speaker's gender is identified as female due to the absence of masculine sentence-ending particles or casual forms typically used by male speakers. 「ぐらい」 makes it an approximation."
         },
         {
             "japanese": "この カフェ には、週 {に} 何回 行きますか?",
@@ -84,8 +83,19 @@
             "listener_gender": "female",
             "speaker_gender": "male",
             "nuance": "A man politely trying to make conversation with a woman on a date by inquiring about her cafe habits using the polite 「ます」form."
+        },
+        {
+            "japanese": "私 の こと、一晩 {に} 何回 考えた の？",
+            "english": "How many times did you think of me last night?",
+            "scene": "A person teasing their romantic interest.",
+            "register": "intimate",
+            "setting": "flirty",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "The sentence-ending particle 「の」 used in a question creates a soft, inquisitive, and sometimes feminine tone, making it suitable for intimate or teasing contexts between a woman and a man. The playful nature of the question is evident."
         }
     ],
+    "post_example_writeup": "The particle に indicates frequency within a given timeframe, focusing on *how many times* an action occurs. For example, 「一日 {に} 三回」 (three times a day). In contrast, the particle で, when used with time expressions, indicates the *duration* it takes to complete an action or the entire period over which something happens. For instance, 「2年間 {で} 50万円貯めた」 (I saved 500,000 yen *in* two years) specifies the total amount saved during that two-year period, not a frequency of saving. It is crucial to distinguish between these two uses to avoid misunderstandings.",
     "false_friends": [
         {
             "term": "ごとに",
@@ -100,5 +110,15 @@
             "nuance": "「おきに」 specifically means \"every other\" or \"at intervals of.\" It is more specific than 「に」, which can indicate any frequency."
         }
     ],
-    "post_false_friends_writeup": "While 「ごとに」 and 「おきに」 can express similar ideas of frequency, 「に」 is generally the most straightforward way to indicate how many times something happens within a specific timeframe. Use 「ごとに」 when you want to emphasize each individual instance and 「おきに」 when you specifically mean 'every other'."
+    "post_false_friends_writeup": "While 「ごとに」 and 「おきに」 can express similar ideas of frequency, 「に」 is generally the most straightforward way to indicate how many times something happens within a specific timeframe. Use 「ごとに」 when you want to emphasize each individual instance and 「おきに」 when you specifically mean 'every other'.",
+    "change": [
+        "violation: Removed 'etymology' field from example 2. Rule 6 states: 'If there is something etymologically interesting in the Japanese sentence, then mention it here in English.' The previous content related to JLPT kanji level, not etymology.",
+        "violation: Modified example 1's Japanese from '一ヶ月' to '一か月に' and example 2's Japanese from '歯を磨かない' to '顔を洗わない'. Rule 6 states: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' This change avoids N1 and N2 kanji respectively, which are above the N4 JLPT level.",
+        "violation: Refined example 7's 'nuance' field. Rule 6 states: 'If there is a \"speaker_gender\", then \"nuance\" **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.' The previous nuance was too vague about the Japanese specific to gender, and the updated nuance clarifies the absence of masculine markers.",
+        "violation: Added a new example (number 9, '私 の こと、一晩 {に} 何回 考えた の？'). Rule 7 states: 'At least one example should include a flirty innuendo.' Rule 8 states: 'At least one example should suit an early romantic or first-meeting context (without using the word \"date\").' This new example fulfills both requirements.",
+        "violation: Added a 'post_example_writeup'. Rule 13 states: 'You may include a \"post_example_writeup\" section after \"examples\" if more clarification is helpful'. This section clarifies the important distinction between 'に' (frequency) and 'で' (duration), which was implicitly present in the original Bunpro input's examples but not directly in the grammar point examples."
+    ],
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/に-frequency"
+    }
 }
