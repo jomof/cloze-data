@@ -208,7 +208,7 @@ py_build_tool_stream(
     args = ["--grammar-schema=resources/grammar/grammar-schema.json"],
     correlated = ["//resources/processed:ai-cleaned-merge-grammars"],
     extension = ".yaml",
-    filter = ["で (for)"],
+    filter = ["で (by)"],
     pass_target_name = True,
     tool = ":ai-clean",
     deps = [":grammar-schema.json"],
