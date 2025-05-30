@@ -1,0 +1,1 @@
+cp $(bazel info bazel-bin)/resources/grammar/ai-cleaned-merge-grammars/*.yaml $(bazel info workspace)/resources/processed/ai-cleaned-merge-grammars
