@@ -3,82 +3,77 @@
     "id": "gp0044",
     "conjugations": [
         {
-            "type": "plain present affirmative",
+            "type": "dictionary (plain non-past)",
             "form": "好きだ",
             "rarity": "common"
         },
         {
-            "type": "polite present affirmative",
+            "type": "non-past polite (～ます)",
             "form": "好きです",
             "rarity": "common"
         },
         {
-            "type": "plain past affirmative",
+            "type": "past plain (～た)",
             "form": "好きだった",
             "rarity": "common"
         },
         {
-            "type": "polite past affirmative",
+            "type": "past polite (～ました)",
             "form": "好きでした",
             "rarity": "common"
         },
         {
-            "type": "plain present negative",
+            "type": "negative plain (～ない)",
             "form": "好きではない",
             "rarity": "common"
         },
         {
-            "type": "plain present negative (casual)",
+            "type": "negative plain (～ない)",
             "form": "好きじゃない",
             "rarity": "common"
         },
         {
-            "type": "polite present negative",
+            "type": "negative non-past polite (～ません)",
             "form": "好きではありません",
             "rarity": "common"
         },
         {
-            "type": "polite present negative (less formal)",
+            "type": "negative non-past polite (～ません)",
             "form": "好きじゃないです",
             "rarity": "common"
         },
         {
-            "type": "plain past negative",
+            "type": "negative past plain (～なかった)",
             "form": "好きではなかった",
             "rarity": "common"
         },
         {
-            "type": "plain past negative (casual)",
+            "type": "negative past plain (～なかった)",
             "form": "好きじゃなかった",
             "rarity": "common"
         },
         {
-            "type": "polite past negative",
+            "type": "negative past polite (～ませんでした)",
             "form": "好きではありませんでした",
             "rarity": "common"
         },
         {
-            "type": "polite past negative (less formal)",
+            "type": "negative past polite (～ませんでした)",
             "form": "好きじゃありませんでした",
             "rarity": "common"
         },
         {
-            "type": "adjectival form (modifying noun)",
-            "form": "好きな",
-            "rarity": "very common"
-        },
-        {
-            "type": "te-form",
+            "type": "te-form (～て)",
             "form": "好きで",
             "rarity": "common"
         },
         {
-            "type": "conditional (ba-form)",
+            "type": "conditional (～ば)",
             "form": "好きならば",
             "rarity": "less common"
         },
         {
-            "type": "conditional (tara-form)",
+            "type": "conditional (～たら)",
             "form": "好きだったら",
             "rarity": "common"
         }
@@ -89,8 +84,8 @@
     },
     "formation": {
         "[Noun] + が + {好きだ / 好きです}": "To express liking something.",
-        "[Noun] + が + {好きな} + [Noun]": "To modify a noun with 'liked' or 'favorite'.",
-        "[Sentence] + のが + {好きだ / 好きです}": "To express liking an action or activity."
+        "{好きな} + [Noun]": "Used when 「好き」 directly modifies a noun, meaning 'favorite' or 'liked'.",
+        "[Verb in dictionary form] + のが + {好きだ / 好きです}": "To express liking an action or activity."
     },
     "jlpt": "N5",
     "meaning": "Like, fond of",
@@ -108,97 +103,155 @@
             "japanese": "猫が{好き}です。",
             "english": "I like cats.",
             "scene": "Someone expressing their preference for animals.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "猫が好きだ。",
+                    "mitigation": "The scene prompts a polite register, encouraging the use of です over だ, which might be a default for declarative sentences."
+                }
+            ],
             "register": "polite",
             "setting": "informative",
-            "conjugation": "polite present affirmative"
+            "conjugation": "non-past polite (～ます)"
         },
         {
             "japanese": "この歌が{好き}だ。",
             "english": "I like this song.",
             "scene": "A person sharing their musical taste with a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この歌が好きです。",
+                    "mitigation": "The scenario emphasizes a casual, friendly interaction, guiding the student towards the plain form だ rather than the polite です."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
-            "conjugation": "plain present affirmative"
+            "conjugation": "dictionary (plain non-past)"
         },
         {
             "japanese": "私は彼が{好き}じゃない。",
             "english": "I don't like him.",
             "scene": "Someone confiding in a friend about their feelings towards another person.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "私は彼が好きではありません。",
+                    "mitigation": "The scene depicts a casual, intimate conversation between female friends, making the casual negative form じゃない more natural and appropriate than the formal ではありません."
+                }
+            ],
             "register": "casual",
             "setting": "intimate",
             "speaker_gender": "female",
             "listener_gender": "female",
             "nuance": "The speaker uses 「～じゃない」, a casual negation common among younger women when speaking to close friends. It's a less direct way of saying 「～ではない」.",
-            "conjugation": "plain present negative (casual)"
+            "conjugation": "negative plain (～ない)"
         },
         {
             "japanese": "この映画はあまり{好き}ではありません。",
             "english": "I don't really like this movie.",
             "scene": "Someone politely expressing their opinion about a movie.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この映画はあまり好きじゃない。",
+                    "mitigation": "The scenario emphasizes a polite expression of opinion, directing the student toward the formal negative form ではありません, rather than the casual じゃない."
+                }
+            ],
             "register": "polite",
             "setting": "serious",
-            "conjugation": "polite present negative"
+            "conjugation": "negative non-past polite (～ません)"
         },
         {
             "japanese": "ケーキが{好き}ですか。",
             "english": "Do you like cake?",
             "scene": "Someone offering a slice of cake to a guest.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "ケーキが好き？",
+                    "mitigation": "The context of offering food to a guest necessitates a polite register, thus prompting the use of ですか rather than the plain form ?."
+                }
+            ],
             "register": "polite",
             "setting": "friendly",
-            "conjugation": "polite present affirmative"
+            "conjugation": "non-past polite (～ます)"
         },
         {
             "japanese": "あの人が{好き}だった。",
             "english": "I used to like that person.",
             "scene": "Someone reminiscing about a past crush.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あの人が好きでした。",
+                    "mitigation": "The scene of reminiscing with a close friend suggests a casual tone, encouraging the plain past form だった over the polite ました."
+                }
+            ],
             "register": "casual",
             "setting": "melancholic",
             "speaker_gender": "female",
             "listener_gender": "female",
             "nuance": "The use of the past tense 「～だった」 indicates a past feeling or state. The tone is reflective, common when sharing past sentiments.",
-            "conjugation": "plain past affirmative"
+            "conjugation": "past plain (～た)"
         },
         {
             "japanese": "{好き}な食べ物は何ですか。",
             "english": "What is your favorite food?",
             "scene": "Two new acquaintances getting to know each other.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "好きな食べ物は何？",
+                    "mitigation": "The interaction between new acquaintances implies a need for politeness, thus reinforcing the use of ですか at the end of the sentence."
+                }
+            ],
             "register": "polite",
             "setting": "interrogative",
-            "conjugation": "adjectival form (modifying noun)",
             "nuance": "The 「好きな」 directly modifies 「食べ物」, functioning as an adjective meaning \"liked\" or \"favorite.\" This polite phrase is standard when asking about preferences."
         },
         {
             "japanese": "彼女はアニメが{好き}で、週末はよく見ています。",
             "english": "She likes anime, so she often watches it on weekends.",
             "scene": "Someone describing a friend's hobbies.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼女はアニメが好き。そして週末はよく見ています。",
+                    "mitigation": "The scene requires connecting two related statements, which the て-form (好きで) naturally achieves by indicating cause or reason, unlike using separate sentences."
+                }
+            ],
             "register": "polite",
             "setting": "informative",
-            "conjugation": "te-form",
+            "conjugation": "te-form (～て)",
             "nuance": "The 「好きで」 functions as a conjunctive form, connecting two clauses. It signifies that liking anime is the reason or cause for her watching it frequently on weekends."
         },
         {
             "japanese": "初めて会った時から、{君の事}が{好き}だったんだ。",
             "english": "I've liked you ever since we first met.",
             "scene": "A man confessing his feelings to a woman he has liked for a while.",
-            "register": "shitashii kuchō",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "初めて会った時から、あなたのことが好きでした。",
+                    "mitigation": "The scene of a personal confession by a younger man favors the casual, direct tone conveyed by 君の事 (kimi no koto) and the emotional ending んだ (nda), rather than the more formal あなたのこと (anata no koto) and です (desu)."
+                }
+            ],
+            "register": "shitashii kuchō (intimate)",
             "setting": "flirty",
             "speaker_gender": "male",
             "listener_gender": "female",
             "speaker_age": "younger",
-            "listener_age": "younger",
             "nuance": "The use of 「君の事」 (kimi no koto) is a slightly indirect yet intimate way for a man to refer to a woman he is fond of. The sentence ending 「～んだ」 adds emphasis and a personal, emotional tone, common in confessions. This expression is more common for younger men.",
-            "conjugation": "plain past affirmative"
+            "conjugation": "past plain (～た)"
         },
         {
             "japanese": "あなたの笑顔が{好き}です。一緒にいると、私も笑顔になります。",
             "english": "I like your smile. When I'm with you, I smile too.",
             "scene": "A woman subtly flirting with a man on a first date.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あなたの笑顔が好きだ。一緒にいると、私も笑顔になる。",
+                    "mitigation": "For a first date, especially when a woman is subtly flirting, the polite です form is more appropriate than the casual だ form, conveying respect and a gentle approach."
+                }
+            ],
             "register": "polite",
             "setting": "flirty",
             "speaker_gender": "female",
             "listener_gender": "male",
             "nuance": "This sentence uses the polite 「～です」 form, conveying sincerity without being overly direct. The phrase 「あなたの笑顔が」 directly praises a specific feature, a common tactic in polite flirting. The gentle tone is typical of women in romantic contexts.",
-            "conjugation": "polite present affirmative"
+            "conjugation": "non-past polite (～ます)"
         }
     ],
     "false_friends": [
@@ -210,16 +263,12 @@
         }
     ],
     "post_false_friends_writeup": "While 「好き」 and 「嫌い」 are direct opposites, remember that expressing strong negative feelings can be more impactful in Japanese culture. Consider softening 「嫌い」 with adverbs like 「あまり (not really)」 to be more polite.",
-    "change": [
-        "violation (Rule 0): Expanded `conjugations` array to include `adjectival form (modifying noun)`, `te-form`, `conditional (ba-form)`, and `conditional (tara-form)` as these are essential \"conjugations\" (morphological changes) for な-adjectives and were missing.",
-        "violation (Rule 0): Added `rarity` field to all conjugation entries, as demonstrated in the prompt's example for `conjugations`.",
-        "violation (Rule 0): Added `plain present negative (casual)` and `polite present negative (less formal)` forms, and their past tense equivalents, to fully capture common usage variations.",
-        "violation (Rule 1.2): Rewrote `formation` field for clarity and adherence to pseudo-algebraic notation, explicitly showing structures for simple statements, noun modification, and liking activities/actions.",
-        "violation (Rule 5): Minor refinement to the `writeup` phrasing \"な-adjectives behave similarly to verbs...\" for improved precision.",
-        "violation (Rule 6): Added two new example sentences to include the `adjectival form (modifying noun)` (`好きな`) and the `te-form` (`好きで`), ensuring a wider variety of common conjugations are demonstrated as required.",
-        "violation (Rule 6): Refined `nuance` explanations for existing examples to explicitly quote Japanese phrases, as required by the rule, and to provide more detailed contextual insights regarding gender and age-specific language use."
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/すき"
-    }
+    },
+    "change": [
+        "violation: Corrected the `formation` entry for modifying nouns. The previous entry `[Noun] + が + {好きな} + [Noun]` was grammatically incorrect for describing the formation of `好きな` as a noun modifier. The correct form is `{好きな} + [Noun]`. Rule 1.2 requires correct pseudo-algebraic notation.",
+        "schema: Removed `listener_age` from the 9th example, as the schema explicitly states `listener_age` is deprecated and must be removed.",
+        "schema: Modified 'conjugations' array entries and corresponding 'conjugation' fields in examples to strictly adhere to the 'conjugationType' enum. Specifically, 'adjectival form (modifying noun)' (好きな) was removed from the 'conjugations' array as its 'type' is not a valid enum value for the `conjugationType` field. The 'conjugation' field was also removed from the example utilizing this form. Various plain/polite/negative types were mapped to the exact enum names to ensure full schema compliance, despite the enum's verb-centric nature for an adjective grammar point."
+    ]
 }

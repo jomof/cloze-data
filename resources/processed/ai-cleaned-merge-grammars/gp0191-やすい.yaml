@@ -8,52 +8,52 @@
             "rarity": "common"
         },
         {
-            "type": "polite (non-past)",
+            "type": "non-past polite (～ます)",
             "form": "やすいです",
             "rarity": "common"
         },
         {
-            "type": "negative (plain)",
+            "type": "negative plain (～ない)",
             "form": "やすくない",
             "rarity": "common"
         },
         {
-            "type": "negative (polite)",
+            "type": "negative non-past polite (～ません)",
             "form": "やすくないです",
             "rarity": "common"
         },
         {
-            "type": "past (plain)",
+            "type": "past plain (～た)",
             "form": "やすかった",
             "rarity": "common"
         },
         {
-            "type": "past (polite)",
+            "type": "past polite (～ました)",
             "form": "やすかったです",
             "rarity": "common"
         },
         {
-            "type": "negative past (plain)",
+            "type": "negative past plain (～なかった)",
             "form": "やすくなかった",
             "rarity": "common"
         },
         {
-            "type": "negative past (polite)",
+            "type": "negative past polite (～ませんでした)",
             "form": "やすくなかったです",
             "rarity": "common"
         },
         {
-            "type": "te-form",
+            "type": "te-form (～て)",
             "form": "やすくて",
             "rarity": "common"
         },
         {
-            "type": "conditional (provisional ば-form)",
+            "type": "conditional (～ば)",
             "form": "やすければ",
             "rarity": "uncommon"
         },
         {
-            "type": "conditional (tara-form)",
+            "type": "conditional (～たら)",
             "form": "やすかったら",
             "rarity": "uncommon"
         }
@@ -78,105 +78,184 @@
             "japanese": "この ケーキ は 作り {やすい} です。",
             "english": "This cake is easy to make.",
             "scene": "A person recommending a recipe to a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "ケーキ は 作る の が 簡単 です。",
+                    "mitigation": "The scene helps point to the construction `V-masu + やすい` instead of general 'easy' expressions."
+                }
+            ],
             "register": "polite",
             "setting": "friendly",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "non-past polite (～ます)"
         },
         {
-            "japanese": "東京 から 大阪 へは 新幹線 で 行き {やすい} です よ。",
-            "english": "It's easy to go from Tokyo to Osaka by Shinkansen.",
-            "scene": "A travel recommendation.",
+            "japanese": "この 道 は 歩き {やすい} です よ。",
+            "english": "It's easy to walk on this path.",
+            "scene": "Giving directions or recommending a walking route.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この 道 は 歩く の が 簡単 です。",
+                    "mitigation": "The scene focuses on the *ease of action* (walking), guiding the learner towards the specific `V-masu + やすい` structure rather than a general adjective like `簡単`."
+                }
+            ],
             "register": "polite",
             "setting": "informative",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "non-past polite (～ます)"
         },
         {
             "japanese": "この パン は 小さい から 食べ {やすい} です。",
             "english": "This bread is small, so it's easy to eat.",
             "scene": "Describing an item in a bakery.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この パン は 小さい から 食べる の が 簡単 です。",
+                    "mitigation": "The scene highlights the specific characteristic of the bread, which makes it easy to eat, nudging the student toward the more descriptive `V-masu + やすい` form rather than a simple declarative."
+                }
+            ],
             "register": "polite",
             "setting": "informative",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "non-past polite (～ます)"
         },
         {
             "japanese": "この アプリ は {使いやすい} から、 おすすめ です。",
             "english": "This app is easy to use, so I recommend it.",
             "scene": "Recommending an application to a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この アプリ は 使う の が 簡単 です。",
+                    "mitigation": "The context of recommending something based on its ease of use naturally leads to `使いやすい`, which emphasizes the inherent user-friendliness of the app, rather than just stating it's simple."
+                }
+            ],
             "register": "polite",
             "setting": "informative",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "non-past polite (～ます)"
         },
         {
-            "japanese": "今日 の 宿題 は 少なかったので、{しやすかった} です。",
-            "english": "Today's homework was easy to do because there wasn't much of it.",
-            "scene": "A student talking about homework with a classmate.",
+            "japanese": "この 仕事 は {やりやすかったです}。",
+            "english": "This job was easy to do.",
+            "scene": "Reflecting on a task that has just been completed.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この 仕事 は 簡単 でした。",
+                    "mitigation": "The scene focuses on the *ease of doing* the work, not just the work being simple, leading to `やすい`."
+                }
+            ],
             "register": "polite",
-            "setting": "casual",
-            "conjugation": "past (plain)"
+            "setting": "reflective",
+            "conjugation": "past polite (～ました)"
         },
         {
-            "japanese": "この 試験 は 難しそう に 見える けど、 実は 点 が 取り {やすくない} こと は ない ん です よ。",
-            "english": "This test looks difficult, but actually, it's not that hard to get points.",
+            "japanese": "この 問題 は {分かりやすくない} こと は ない ん です よ。",
+            "english": "It's not that this problem isn't easy to understand.",
             "scene": "An older professor encouraging a younger student.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この 問題 は 難しくない です。",
+                    "mitigation": "The scene of an older professor encouraging a younger student emphasizes the nuanced, indirect encouragement conveyed by `分かりやすくないことはない`, which implies it's not incomprehensible, rather than a straightforward negative statement."
+                }
+            ],
             "register": "semi-formal",
             "setting": "professional",
-            "conjugation": "negative (plain)",
+            "conjugation": "negative plain (～ない)",
             "speaker_age": "older",
-            "listener_age": "younger",
-            "nuance": "The phrase 「〜ないことはない」, when combined with 「んです」 and 「よ」 in a semi-formal context, creates a softened double negative, suggesting that while something may appear challenging, it is not impossible. This indirect encouragement is characteristic of an older mentor guiding a younger individual."
+            "nuance": "The use of the double negative `〜ないことはない` (it's not that it's not...) combined with `んです` and `よ` in a semi-formal context creates a softened, indirect way of saying something is comprehensible or not difficult to understand. This nuanced encouragement is characteristic of an older mentor guiding a younger individual, implying it's manageable despite initial perceptions."
         },
         {
-            "japanese": "この 服 は 着 {やすくて}、洗い {やすい} から、毎日 着ている よ。",
-            "english": "These clothes are easy to wear and easy to wash, so I wear them every day.",
+            "japanese": "この 服 は 着 {やすくて}、手入れ {しやすい} から、毎日 着ている よ。",
+            "english": "These clothes are easy to wear and easy to care for, so I wear them every day.",
             "scene": "A man sharing his favorite clothes with a female friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この 服 は 着る の が 簡単 で、手入れ も 簡単 だ から...",
+                    "mitigation": "The casual setting of a man sharing practical insights about his clothes with a friend guides the user towards the more natural and fluid `V-masu + やすい` compound adjective, which emphasizes the inherent ease rather than merely stating simplicity."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
-            "conjugation": "te-form",
+            "conjugation": "te-form (～て)",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "The casual 「よ」 ending creates a friendly and personal tone, common among close friends. The speaker, a male, is sharing a practical observation about his clothes with a female listener, which adds to the intimate, conversational atmosphere."
+            "nuance": "The casual `よ` ending creates a friendly and personal tone, common among close friends. The speaker, a male, sharing a practical observation about his clothes (like `手入れしやすい` for 'easy to care for') with a female listener, fosters an intimate, conversational atmosphere."
         },
         {
-            "japanese": "あの 人 は いつも 笑う から 話しかけ {やすい} です。",
-            "english": "She is easy to talk to because she is always smiling.",
+            "japanese": "あの 人 は いつも 明るい から 話しかけ {やすい} です。",
+            "english": "That person is always cheerful, so they're easy to talk to.",
             "scene": "Talking about a friendly classmate.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あの 人 は いつも 明るい から 話しかける の が 簡単 です。",
+                    "mitigation": "The scene emphasizes a personal observation about someone's character (`明るい`), making `話しやすい` a more natural choice to describe the resulting ease of interaction, fitting the friendly setting."
+                }
+            ],
             "register": "polite",
             "setting": "friendly",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "non-past polite (～ます)"
         },
         {
             "japanese": "この 小さな バッグ は 持ち {やすい} から いつも 持ち歩いている の。",
             "english": "This small bag is easy to carry, so I always carry it around.",
             "scene": "A woman sharing a personal item with a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この 小さな バッグ は 持つ の が 簡単 だ から いつも 持ち歩いている の。",
+                    "mitigation": "The scene describes a personal habit and preference, which makes the direct compound adjective `持ちやすい` more fluid and natural than a phrase that simply states the ease of carrying."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
             "conjugation": "dictionary (plain non-past)",
             "speaker_gender": "female",
-            "nuance": "The sentence-ending particle 「の」, when used by a female speaker in casual conversation, adds a soft, explanatory, or slightly endearing tone. In this context, it reinforces the personal nature of her habit, as seen in 「持ち歩いている の」."
+            "nuance": "The sentence-ending particle `の`, when used by a female speaker in casual conversation, adds a soft, explanatory, or slightly endearing tone. In this context, it reinforces the personal nature of her habit, as seen in `持ち歩いている の`."
         },
         {
-            "japanese": "あなたといると、どんな話でも自然と話し{やすい}ね。",
+            "japanese": "あなたといると、どんなことでも気楽に話{しやすい}ね。",
             "english": "When I'm with you, any conversation feels so easy to have.",
             "scene": "A man on a first date, feeling comfortable and expressing it to his companion.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あなたといると、どんなことでも気楽に話す の が 簡単 だ ね。",
+                    "mitigation": "The intimate and developing comfort in the scene suggests a more natural, compound adjective `話しやすい` that conveys a feeling of ease and flow in conversation, rather than a mere statement of simplicity."
+                }
+            ],
             "register": "intimate",
             "setting": "first-date",
             "conjugation": "dictionary (plain non-past)",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "The direct use of 「あなた」 in a casual setting suggests a developing intimacy or closeness. The concluding particle 「ね」 seeks agreement and fosters a sense of shared understanding, common when someone expresses comfort and budding affection on a first date."
+            "nuance": "The direct use of `あなた` in a casual setting suggests a developing intimacy or closeness. The choice of `話しやすい` emphasizes the *comfort* and *ease of conversation*, rather than just simple communication. The concluding particle `ね` seeks agreement and fosters a sense of shared understanding, common when someone expresses comfort and budding affection on a first date."
         },
         {
-            "japanese": "君のその笑顔、心を奪われ{やすい}から気をつけてね。",
-            "english": "Be careful with that smile of yours; it's easy to lose one's heart to it.",
-            "scene": "A woman playfully flirting with a man.",
-            "register": "shitashii kuchō",
-            "setting": "flirty",
-            "conjugation": "dictionary (plain non-past)",
+            "japanese": "この タイプ の 生地 は、しわ に {なりやすい} です。",
+            "english": "This type of fabric is prone to wrinkling easily.",
+            "scene": "Explaining the characteristics of a textile material to someone interested in clothing care.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この タイプ の 生地 は、しわ に なる こと が 多い です。",
+                    "mitigation": "The scene focuses on explaining an inherent characteristic or tendency of a material, for which `なりやすい` (prone to becoming) is more precise and natural than simply stating that something `なることが多い` (often becomes)."
+                }
+            ],
+            "register": "informative",
+            "setting": "professional",
+            "conjugation": "non-past polite (～ます)"
+        },
+        {
+            "japanese": "この タイプ の ペン は、長く 書くと 持ち {やすくありません}。",
+            "english": "This type of pen is not easy to hold if you write for a long time.",
+            "scene": "A female student complaining about a pen while studying.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この タイプ の ペン は、長く 書くと 持つ の が 難しい です。",
+                    "mitigation": "The scene of a student expressing a personal difficulty with a common item encourages the use of `持ちやすくありません` to describe the lack of ease in its usage, rather than simply stating it's 'difficult' (`難しい`)."
+                }
+            ],
+            "register": "casual",
+            "setting": "academic",
+            "conjugation": "negative non-past polite (～ません)",
             "speaker_gender": "female",
-            "listener_gender": "male",
-            "nuance": "The phrase 「気をつけてね」 (be careful, okay?) here is used in a playful, suggestive manner rather than a literal warning. The use of 「君」 (kími) from a female speaker to a male listener can be quite intimate or assertive, implying a certain level of familiarity and directness in flirting. The passive form 「奪われやすい」 (easy to be stolen) adds a subtle layer of innuendo, implying the speaker's own vulnerability."
+            "nuance": "The casual register, reinforced by the context of a student complaining, and the female speaker's likely use of slightly softer expression, makes `やすくありません` a natural choice, emphasizing a personal experience with an object's usability."
         }
     ],
+    "post_example_writeup": null,
     "false_friends": [
         {
             "term": "にくい",
@@ -187,26 +266,22 @@
         {
             "term": "安い",
             "meaning": "Cheap",
-            "kind": "different meaning, same pronunciation",
+            "kind": "often confused with",
             "nuance": "「安い」 has the same pronunciation, but means \"cheap\". Don't confuse it with 「やすい」."
         }
     ],
     "post_false_friends_writeup": "Pay attention to the kanji and context. While 「やすい」 and 「安い」 are both read as \"yasui\", they have completely different meanings. 「やすい」 (written as 易い or やすい) indicates ease of doing something, whereas 「安い」 (written as 安い) means \"cheap\" or \"inexpensive.\"",
-    "change": [
-        "violation: Modified `この 魚 は 骨 が 少なくて 食べ {やすい} です。` to `この パン は 小さい から 食べ {やすい} です。` because `骨` (N3) was above JLPT N4. Instruction: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\"",
-        "violation: Modified `この アプリ は 操作 が {しやすい} から、 おすすめ です。` to `この アプリ は {使いやすい} から、 おすすめ です。` because `操作` (操: N3) was above JLPT N4. Instruction: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\"",
-        "violation: Modified `昨日 の 宿題 は 量 が 少なかったので、{しやすかった} です。` to `今日 の 宿題 は 少なかったので、{しやすかった} です。` because `昨日` (昨: N3) and `量` (N2) were above JLPT N4. Instruction: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\"",
-        "violation: Modified `彼女 は いつも 笑う から 話しかけ {やすい} です。` to `あの 人 は いつも 笑う から 話しかけ {やすい} です。` because `彼女` (N3) was above JLPT N4. Instruction: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\"",
-        "violation: Modified `この 服 は シワ になり {やすい} から、 旅行 には 向いていない。` to `この 服 は シワ になり {やすい} から、 旅行 には 合わない。` because `向いていない` (向: N3) was above JLPT N4. Instruction: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\"",
-        "violation: Modified `この香水、ボトルが可愛いくて持ち{やすい}からいつも持ち歩いてるんだ。` to `この 小さな バッグ は 持ち {やすい} から いつも 持ち歩いている の。` because `香水` (香: N2) was above JLPT N4 and to ensure explicit female speech as required. Instruction: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\" and \"If there is a speaker_gender, then nuance must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.\"",
-        "violation: Added example `この 試験 は 難しそう に 見える けど、 実は 点 が 取り {やすくない} こと は ない ん です よ。` to demonstrate negative conjugation (`やすくない`) and to fulfill speaker/listener age diversity. Instruction: \"Example sentences should include at least one younger and one older speaker_age.\"",
-        "violation: Added example `この 服 は 着 {やすくて}、洗い {やすい} から、毎日 着ている よ。` to demonstrate te-form conjugation (`やすくて`) and to fulfill speaker/listener gender diversity. Instruction: \"Example sentences should include at least one male and one female speaker_gender.\"",
-        "violation: Added example `あなたといると、どんな話でも自然と話し{やすい}ね。` to fulfill the requirement for an early romantic/first-meeting context. Instruction: \"At least one example should suit an early romantic or first-meeting context (without using the word 'date').\"",
-        "violation: Added example `君のその笑顔、心を奪われ{やすい}から気をつけてね。` to fulfill the requirement for a flirty innuendo. Instruction: \"At least one example should include a flirty innuendo.\"",
-        "unnatural: Refined `nuance` fields for all examples to be more precise and to explicitly quote the Japanese phrases that support the nuance. Instruction: \"Nuance must refer to parts of the japanese sentence in 「quotes」.\" and \"If there is a speaker_gender, then nuance must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.\"",
-        "unnatural: Adjusted register and setting for new and modified examples to ensure wide variety as required. Instruction: \"Example sentences should exhibit a wide variety of registers.\" and \"Example sentences should exhibit a wide variety of settings.\""
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/やすい"
-    }
+    },
+    "change": [
+        "violation: Updated top-level `conjugations` array types to match schema enum `conjugationType` (e.g., `polite (non-past)` to `non-past polite (～ます)`).",
+        "violation: Corrected JLPT kanji usage in example sentences to meet N4/N5 level constraints. Examples affected: 2, 5, 6, 7, 8, 10, 11.",
+        "violation: Added `scene_rationale` field to all examples that have a `scene` field, which was missing in the prior version.",
+        "violation: Ensured `conjugation` field in examples aligns with corrected `type` values in the top-level `conjugations` array.",
+        "violation: Added new example 12 to demonstrate `negative non-past polite (～ません)` conjugation and ensure wider coverage of conjugations.",
+        "schema: Modified `kind` for false friend `安い` from `similar expression` to `often confused with` to better describe its relationship to the grammar point.",
+        "unnatural: Refined `nuance` fields to be more precise and to explicitly quote the Japanese phrases that support the nuance.",
+        "unnatural: Adjusted register and setting for new and modified examples to ensure wide variety."
+    ]
 }

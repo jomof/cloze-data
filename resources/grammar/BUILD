@@ -114,7 +114,7 @@ sh_binary(
     visibility = ["//visibility:public"],
 )
 
-# 
+#
 sh_binary(
     name = "publish-merged",
     srcs = ["publish-merged.sh"],
@@ -128,7 +128,7 @@ py_binary(
     srcs = ["ai-clean.py"],
     visibility = ["//visibility:public"],
     deps = [
-        "//python:aigen",
+        "//python/ai:aigen",
         "//python/utils/build_cache/memoize",
         "@pip//json_repair",
         "@pip//pyyaml",
@@ -205,33 +205,46 @@ py_binary(
 py_build_tool_stream(
     name = "ai-cleaned-merge-grammars",
     srcs = ["//resources/processed:merge-grammars"],
+    args = ["--grammar-schema=resources/grammar/grammar-schema.json"],
+    correlated = ["//resources/processed:ai-cleaned-merge-grammars"],
     extension = ".yaml",
     pass_target_name = True,
     tool = ":ai-clean",
-    correlated = ["//resources/processed:ai-cleaned-merge-grammars"],
-    #top = 3
+    #filter = ["gp0001", "gp0029", "gp0065", "gp0900", "gp1000", "gp1001"],
+    deps = [":grammar-schema.json"],
 )
 
-# bazel run //resources/grammar:publish-ai-cleaned-merge-grammars
+# bazel run //resources/grammar:publish-ai-cleaned-merge-grammars --jobs=5
 sh_binary(
     name = "publish-ai-cleaned-merge-grammars",
     srcs = ["publish-ai-cleaned-merge-grammars.sh"],
-    args = ["/workspaces/cloze-data/resources/processed/ai-cleaned-merge-grammars", "$(locations :ai-cleaned-merge-grammars)"],
+    args = [
+        "/workspaces/cloze-data/resources/processed/ai-cleaned-merge-grammars",
+        "$(locations :ai-cleaned-merge-grammars)",
+    ],
     data = [":ai-cleaned-merge-grammars"],
     visibility = ["//visibility:public"],
 )
 
+# bazel build //resources/grammar:post-ai-scrub
 py_build_tool(
     name = "post-ai-scrub",
-    ins = ["//resources/curated:concatenated-vocab-json", "//resources/processed:ai-cleaned-merge-grammars"],
     outs = ["post-ai-scrub.yaml"],
+    ins = [
+        "//resources/curated:concatenated-vocab-json",
+        "//resources/processed:ai-cleaned-merge-grammars",
+    ],
     main = ":post-ai-scrub-tool",
 )
 
 py_binary(
     name = "post-ai-scrub-tool",
     srcs = ["post-ai-scrub-tool.py"],
-    deps = ["//python/mecab:utils", "@pip//pyyaml"],
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//python/mecab:utils",
+        "@pip//pyyaml",
+    ],
 )
 
 py_library(
@@ -245,11 +258,13 @@ py_library(
         "extract-yaml.py",
         "fixup-bunpro-grammar.py",
         "merge-grammars.py",
+        "post-ai-scrub-tool.py",
         "yaml-clean.py",
     ],
     visibility = ["//:__subpackages__"],
     deps = [
-        "//python:aigen",
+        "//python/ai:aigen",
+        "//python/mecab:utils",
         "//python/utils/build_cache/memoize",
         "@pip//beautifulsoup4",
         "@pip//json_repair",

@@ -1,93 +1,94 @@
 {
     "grammar_point": "分かる・わかる",
+    "id": "gp0163",
     "conjugations": [
         {
             "type": "dictionary (plain non-past)",
             "form": "わかる",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "polite (non-past)",
+            "type": "non-past polite (～ます)",
             "form": "わかります",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "negative (plain)",
+            "type": "negative plain (～ない)",
             "form": "わからない",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "negative (polite)",
+            "type": "negative non-past polite (～ません)",
             "form": "わかりません",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "past (plain)",
+            "type": "past plain (～た)",
             "form": "わかった",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "past (polite)",
+            "type": "past polite (～ました)",
             "form": "わかりました",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "negative past (plain)",
+            "type": "negative past plain (～なかった)",
             "form": "わからなかった",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "negative past (polite)",
+            "type": "negative past polite (～ませんでした)",
             "form": "わかりませんでした",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "te-form",
+            "type": "te-form (～て)",
             "form": "わかって",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "conditional (provisional ば-form)",
+            "type": "conditional (～ば)",
             "form": "わかれば",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "conditional (tara-form)",
+            "type": "conditional (～たら)",
             "form": "わかったら",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "volitional (plain)",
+            "type": "volitional (～よう)",
             "form": "わかろう",
             "rarity": "rare"
         },
         {
-            "type": "volitional (polite)",
+            "type": "volitional polite (～ましょう)",
             "form": "わかりましょう",
             "rarity": "rare"
         },
         {
-            "type": "imperative (plain)",
+            "type": "imperative plain (～ろ/～え)",
             "form": "わかれ",
-            "rarity": "unnatural"
+            "rarity": "uncommon"
         },
         {
-            "type": "imperative (polite)",
+            "type": "imperative polite (～なさい)",
             "form": "わかってください",
             "rarity": "uncommon"
         },
         {
-            "type": "potential",
+            "type": "potential (～られる/～える)",
             "form": "わかれる",
             "rarity": "uncommon"
         },
         {
-            "type": "passive",
+            "type": "passive (～られる/～かれる)",
             "form": "わかられる",
             "rarity": "uncommon"
         },
         {
-            "type": "causative",
+            "type": "causative (～させる)",
             "form": "わからせる",
             "rarity": "uncommon"
         }
@@ -100,7 +101,6 @@
         "[topic] + は + [person] + に + [thing] + が + {分かる}": "Expresses that someone understands or comprehends something.",
         "[thing] + は + 難しくて + {分からない}": "Indicates that something is too difficult to understand."
     },
-    "id": "gp0163",
     "jlpt": "N5",
     "meaning": "To understand, to comprehend, to know",
     "details": {
@@ -115,22 +115,40 @@
             "japanese": "日本語 が {分かります} か？",
             "english": "Do you understand Japanese?",
             "scene": "Asking someone if they understand the Japanese language.",
-            "register": "polite",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "日本語を理解していますか？",
+                    "mitigation": "「理解する」 implies a more formal or academic understanding, and is less natural for a simple, general inquiry about language comprehension. The scene implies a common, everyday interaction."
+                }
+            ],
+            "register": "teineigo (polite)",
             "setting": "interrogative",
-            "conjugation": "polite (non-past)"
+            "conjugation": "non-past polite (～ます)"
         },
         {
             "japanese": "すみません、よく {分かりません}。",
             "english": "I'm sorry, I don't understand very well.",
             "scene": "Apologizing for not understanding something.",
-            "register": "polite",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "すみません、よく理解できません。",
+                    "mitigation": "While grammatically correct, 「理解できません」 suggests a failure to intellectually grasp a concept or explanation, which is more formal. The scene implies a general state of not grasping information in a casual context, which 「分かりません」 conveys more naturally."
+                }
+            ],
+            "register": "teineigo (polite)",
             "setting": "apologetic",
-            "conjugation": "negative (polite)"
+            "conjugation": "negative non-past polite (～ません)"
         },
         {
             "japanese": "その 気持ち が よく {分かる} よ。",
             "english": "I really understand that feeling.",
             "scene": "Expressing empathy to a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "その気持ちはよく理解できるよ。",
+                    "mitigation": "「理解できる」 is more formal and less personal. The scene describes a close, empathetic interaction between friends, where the more natural and spontaneous 「分かる」 is preferred."
+                }
+            ],
             "register": "casual",
             "setting": "sympathetic",
             "conjugation": "dictionary (plain non-past)"
@@ -139,17 +157,37 @@
             "japanese": "この 問題 は 難し すぎて {分からない}。",
             "english": "This problem is too difficult to understand.",
             "scene": "Talking about a problem that is too difficult to solve.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この問題は難しすぎて解決できない。",
+                    "mitigation": "「解決できない」 means \"cannot solve.\" While solving implies understanding, the focus here is specifically on the comprehension aspect. The scene emphasizes the difficulty in grasping the problem's nature rather than merely its solvability."
+                },
+                {
+                    "competing_grammar": "この問題は難しすぎて理解できない。",
+                    "mitigation": "「理解できない」 is more formal and might imply a deeper, academic inability to comprehend. 「分からない」 naturally conveys a general inability to grasp the problem in a conversational setting."
+                }
+            ],
             "register": "casual",
             "setting": "serious",
-            "conjugation": "negative (plain)"
+            "conjugation": "negative plain (～ない)"
         },
         {
             "japanese": "君 の 目 を 見ている と、全て の 気持ち が {分かってしまう} よ。",
             "english": "When I look into your eyes, I understand all your feelings.",
             "scene": "A man trying to charm a woman.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "君の目を見ていると、全ての気持ちが読み取れるよ。",
+                    "mitigation": "「読み取れる」 means \"can read,\" suggesting an active interpretation. 「分かってしまう」 conveys a more spontaneous, almost involuntary, understanding, which is more romantic and less analytical, suiting the flirty scene."
+                },
+                {
+                    "competing_grammar": "君の目を見ていると、全ての気持ちを理解できるよ。",
+                    "mitigation": "「理解できる」 implies a more intellectual comprehension, which is less emotionally evocative for a flirty scenario. The scene calls for a sense of effortless, intuitive connection."
+                }
+            ],
             "register": "intimate",
             "setting": "flirty",
-            "conjugation": "te-form",
+            "conjugation": "te-form (～て)",
             "speaker_gender": "male",
             "listener_gender": "female",
             "nuance": "「分かってしまう」 implies a natural, perhaps uncontrollable, understanding. The 「よ」 particle makes the statement sound more personal and direct, enhancing the intimate atmosphere."
@@ -158,17 +196,29 @@
             "japanese": "彼 は 自分 の 立場 を まだ {分かっていない} ようだ。",
             "english": "He still doesn't seem to understand his situation.",
             "scene": "Observing someone who is oblivious to their circumstances.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼は自分の立場をまだ理解していないようだ。",
+                    "mitigation": "「理解していない」 implies a deliberate failure to comprehend. The scene suggests a more natural lack of awareness or realization about their circumstances, which 「分かっていない」 expresses more aptly."
+                }
+            ],
             "register": "casual",
             "setting": "serious",
-            "conjugation": "te-form"
+            "conjugation": "te-form (～て)"
         },
         {
             "japanese": "君 の 良い ところ に 今更 ながら {気が付いた} よ。やっと {分かった} って 感じ かな。",
             "english": "I've only just realized your good points. I guess you could say I finally understand.",
             "scene": "A woman speaking to a man she likes after realizing his good qualities.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "君の良いところに今更ながら気付いたよ。やっと理解できたって感じかな。",
+                    "mitigation": "「理解できた」 is more formal and less suitable for the casual, introspective tone of a personal realization in this scene. 「分かった」 conveys the natural 'aha!' moment."
+                }
+            ],
             "register": "casual",
             "setting": "flirty",
-            "conjugation": "past (plain)",
+            "conjugation": "past plain (～た)",
             "speaker_gender": "female",
             "listener_gender": "male",
             "nuance": "「気が付いた」 expresses a new realization, while 「分かった」 indicates understanding. The use of 「かな」 at the end softens the statement, making it more reflective and less assertive, which can be endearing in an intimate setting.",
@@ -178,33 +228,61 @@
             "japanese": "事情 は {分かりました} が、ルール は ルール です。",
             "english": "I understand the circumstances, but rules are rules.",
             "scene": "A manager talking to an employee.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "事情は理解しましたが、ルールはルールです。",
+                    "mitigation": "「理解しました」 is more formal and implies a deliberate mental processing. While acceptable, 「分かりました」 is often preferred in business contexts for acknowledging information received and comprehended."
+                }
+            ],
             "register": "formal",
             "setting": "professional",
-            "conjugation": "past (polite)"
+            "conjugation": "past polite (～ました)"
         },
         {
             "japanese": "相手 の 立場 に 立って 物事 を {考えれば} 、おのずと {分かる} はず です。",
             "english": "If you consider things from the other person's point of view, you should naturally understand.",
             "scene": "A teacher giving advice to a student.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "相手の立場に立って物事を考えれば、おのずと理解できるはずです。",
+                    "mitigation": "「理解できる」 is more academic. The scene involves general life advice, for which the more natural and intuitive 「分かる」 is a better fit."
+                }
+            ],
             "register": "formal",
             "setting": "instructional",
-            "conjugation": "conditional (provisional ば-form)"
+            "conjugation": "conditional (～ば)"
         },
         {
             "japanese": "色々 説明 して いただき ありがとう ございます。大体 {分かりました} 。",
             "english": "Thank you for explaining various things. I understand roughly.",
             "scene": "An employee speaking politely to their supervisor after receiving an explanation.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "色々説明していただきありがとうございます。大体理解できました。",
+                    "mitigation": "Similar to Example 8, 「理解できました」 is more formal. In a typical professional interaction acknowledging receipt and comprehension of an explanation, 「分かりました」 is the common and polite choice."
+                }
+            ],
             "register": "bijinesu nihongo (business)",
             "setting": "informative",
-            "conjugation": "past (polite)"
+            "conjugation": "past polite (～ました)"
         },
         {
             "japanese": "明日 までに この 仕事 が 出来る か どうか {分かりません} 。",
             "english": "I can't tell if I can finish this work by tomorrow.",
             "scene": "A busy employee talking about their workload.",
-            "register": "polite",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "明日までにこの仕事ができるかどうか断言できません。",
+                    "mitigation": "「断言できません」 means \"cannot declare/state definitively,\" which is more about making a promise or firm statement. 「分かりません」 naturally conveys the uncertainty and inability to predict outcomes that the scene implies."
+                },
+                {
+                    "competing_grammar": "明日までにこの仕事ができるかどうかはっきりしません。",
+                    "mitigation": "「はっきりしません」 means \"it's unclear/ambiguous,\" referring more to the state of affairs. 「分かりません」 directly expresses the speaker's personal inability to figure it out or know."
+                }
+            ],
+            "register": "teineigo (polite)",
             "setting": "serious",
-            "conjugation": "negative (polite)"
+            "conjugation": "negative non-past polite (～ません)"
         }
     ],
     "false_friends": [
@@ -222,43 +300,15 @@
         }
     ],
     "post_false_friends_writeup": "To avoid confusion, remember that 「分かる」 indicates a state of understanding or comprehension, often occurring naturally or spontaneously. 「知る」 means \"to know\" in the sense of being aware of something. 「理解する」 implies a deliberate effort to comprehend something, suggesting a more active engagement with the subject matter.",
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/123"
+    },
     "change": [
         {
-            "type": "violation",
-            "reason": "The prompt states 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' and the input `dojg` data explicitly lists the level as 'Basic', which for `分かる` corresponds to N5. The prior version had `null`.",
-            "field": "jlpt",
-            "old_value": "null",
-            "new_value": "N5"
-        },
-        {
-            "type": "violation",
-            "reason": "The original example's 'flirty' setting was miscategorized as it was not direct flirting with the listener, violating rule 7 ('should be phrased as the speaker (male or female) flirting with the listener (female or male)'). The kanji `状況` (況 is N2) violated the JLPT kanji level constraint for an N5 grammar point. Rephrased to use N4 kanji (`立場`) and to be a general, non-flirty example.",
+            "type": "schema",
+            "reason": "The schema requires `scene_rationale` for examples that have a `scene` field. This field was missing in all relevant examples.",
             "field": "examples",
-            "action": "Modified example 5 (original index) from `彼女 の 美しさ が 全然 {分かっていない} な。` to `彼 は 自分 の 立場 を まだ {分かっていない} ようだ。`. Changed `setting` from `flirty` to `serious`. Removed `speaker_gender`, `listener_gender`, `nuance`."
-        },
-        {
-            "type": "violation",
-            "reason": "The kanji `優` (N2) violated the JLPT kanji level constraint for an N5 grammar point. Rephrased to use N3 kanji (`良い ところ`).",
-            "field": "examples",
-            "action": "Modified example 6 (original index) from `君 の 優しさ に 今更 ながら {気が付いた} よ。やっと {分かった} って 感じ かな。` to `君 の 良い ところ に 今更 ながら {気が付いた} よ。やっと {分かった} って 感じ かな。`."
-        },
-        {
-            "type": "violation",
-            "reason": "The kanji `則` (N2) in `規則` violated the JLPT kanji level constraint for an N5 grammar point. Replaced with the Katakana `ルール`.",
-            "field": "examples",
-            "action": "Modified example 7 (original index) from `事情 は {分かりました} が、 規則 は 規則 です。` to `事情 は {分かりました} が、ルール は ルール です。`."
-        },
-        {
-            "type": "command",
-            "reason": "The prompt mandates 'at least one flirty sentence' and 'It should be phrased as the speaker (male or female) flirting with the listener (female or male).' The original examples only had one that truly fit this, and even that one was passive ('realized your kindness'). This new example provides a more direct, active flirty interaction, fulfilling the spirit of the command more robustly while ensuring conjugation diversity and proper kanji level (originally used N1 瞳, changed to N4 目).",
-            "field": "examples",
-            "action": "Added a new example (now example 5) `君 の 目 を 見ている と、全て の 気持ち が {分かってしまう} よ。` with its English translation, scene, register, setting, conjugation, speaker/listener gender, and nuance."
-        },
-        {
-            "type": "command",
-            "reason": "To integrate a key nuance ('can't tell/figure out if X will happen') from the input DOJG `examples` section, which was not explicitly covered by the prior version's examples.",
-            "field": "examples",
-            "action": "Added a new example (now example 11) `明日 までに この 仕事 が 出来る か どうか {分かりません} 。` and its English translation, scene, register, setting, and conjugation."
+            "action": "Added `scene_rationale` with `competing_grammar` and `mitigation` to all examples that contained a `scene` field."
         }
     ]
 }

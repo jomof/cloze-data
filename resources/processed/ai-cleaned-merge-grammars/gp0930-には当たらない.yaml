@@ -1,7 +1,28 @@
 {
     "grammar_point": "には当たらない",
     "id": "gp0930",
-    "conjugations": [],
+    "conjugations": [
+        {
+            "type": "negative plain (～ない)",
+            "form": "には当たらない",
+            "rarity": "common"
+        },
+        {
+            "type": "negative non-past polite (～ません)",
+            "form": "には当たりません",
+            "rarity": "common"
+        },
+        {
+            "type": "negative past plain (～なかった)",
+            "form": "には当たらなかった",
+            "rarity": "less common"
+        },
+        {
+            "type": "negative past polite (～ませんでした)",
+            "form": "には当たりませんでした",
+            "rarity": "less common"
+        }
+    ],
     "pronunciation": {
         "katakana": "ニハアタラナイ",
         "romaji": "ni wa ataranai"
@@ -12,6 +33,7 @@
     },
     "jlpt": "N1",
     "meaning": "No need to/for, Cannot, Not worth it to, Not suitable",
+    "meaning_warning": "With する-Verbs, する can be omitted",
     "details": {
         "Register": "Formal",
         "使用域": "硬い"
@@ -20,91 +42,231 @@
     "writeup": "「には当たらない」 is a somewhat formal pattern used to indicate that something is \"not worth (A)\", or that there is \"no need to (A)\". It combines the case marking particle 「に」, the adverbial particle 「は」, and the negative form of the う-Verb 「当たる」 (\"to strike\", or \"to be on the mark\"), 「当たらない」. Thus, the literal meaning can be thought of as \"it's not on the mark to (A)\".\n\n「には当たらない」 appears directly after verbs in their dictionary form, or after 「する」 verbs with or without the 「する」. The 「は」 may occasionally be omitted without changing the meaning.\n\nRather than implying that something is \"way off\", 「には当たらない」 most often highlights that a particular situation is not to the extent where (A) would be appropriate. (A) itself is regularly a verb that relates to reactions or feelings. Some examples include 「驚く」 (\"to be surprised\"), 「非難」 (\"to reproach\"), 「称賛」 (\"to admire\"), 「感心」 (\"to be impressed\"), 「喜ぶ」 (\"to rejoice\"), and other similar words.",
     "examples": [
         {
-            "japanese": "彼がまた彼女に振られたの。まあ、あいつは自分のことしか考えていないから{驚くには当たらない}。",
-            "english": "He was dumped by his girlfriend again? Well, that's not surprising because that guy only ever thinks of himself.",
-            "scene": "Two friends talking about a mutual acquaintance.",
-            "register": "casual",
-            "setting": "humorous",
-            "nuance": "「驚くには当たらない」indicates that the speaker is not surprised given the other guy's behavior.",
-            "etymology": "「振られた」is the passive form of 「振る」 (to dump someone)."
-        },
-        {
-            "japanese": "人として当たり前のことをやったまでです、{感謝するには当たらない}ですよ。",
+            "japanese": "人として当たり前のことをやったまでです、感謝する{には当たらない}ですよ。",
             "english": "I just did what any normal person would do, so no need to thank me.",
             "scene": "Someone downplaying their act of kindness.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "感謝する必要はない",
+                    "mitigation": "The speaker is being humble and formal. While 『～必要はない』 expresses no need, 『には当たらない』 adds a more formal and slightly philosophical nuance, suggesting that the action isn't significant enough to warrant gratitude according to certain standards. The scene highlights this modesty."
+                },
+                {
+                    "competing_grammar": "感謝しなくていい",
+                    "mitigation": "『～しなくていい』 is a more casual and direct way to say 'you don't have to'. The scene's 'modest' setting suggests a more formal and indirect refusal of thanks, which 『には当たらない』 provides."
+                }
+            ],
             "register": "formal",
             "setting": "modest",
-            "nuance": "「感謝するには当たらないですよ」 is a polite and formal way to say there's no need for thanks.",
+            "conjugation": "negative plain (～ない)",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "「感謝する{には当たらない}ですよ」 is a polite and formal way to say there's no need for thanks.",
             "etymology": "「当たり前」 means \"natural\" or \"obvious\"."
         },
         {
-            "japanese": "あの人がやったことは人間としては最低だけど犯罪{には当たらない}から何もできない。",
-            "english": "What that person did was despicable, but not suitable to be a crime, so we cannot do anything about it.",
-            "scene": "A legal discussion about a morally questionable action.",
+            "japanese": "「珍しいことではありません。称賛{には当たりません}。」",
+            "english": "'It is not uncommon. No need for praise.'",
+            "scene": "A humble person downplaying their achievements.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "称賛する必要はありません",
+                    "mitigation": "While 『～必要はありません』 states a lack of necessity, 『には当たりません』 carries a more formal and humble tone, indicating that the action doesn't rise to the level where praise is deserved. The scene of a humble person declining praise fits this nuance perfectly."
+                },
+                {
+                    "competing_grammar": "称賛されるほどのことでありません",
+                    "mitigation": "This alternative is similar in meaning, but 『には当たりません』 is a more concise and idiomatic way to express that something doesn't qualify for a certain reaction in this context. The scene requires a polite and succinct refusal of praise."
+                }
+            ],
             "register": "formal",
-            "setting": "serious",
-            "nuance": "「犯罪には当たらない」 indicates that the action does not meet the criteria to be considered a crime.",
-            "etymology": "「最低」 means \"lowest\" or \"despicable\"."
+            "setting": "modest",
+            "conjugation": "negative non-past polite (～ません)",
+            "speaker_gender": "female",
+            "listener_gender": "group",
+            "nuance": "「称賛{には当たりません}」 is a polite way to decline praise.",
+            "etymology": "「珍しい」 means \"uncommon\" or \"rare\"."
         },
         {
-            "japanese": "あのバンドが新しくリリースした曲は歌詞もメロディーも微妙だから{聴くに当たらない}らしい。",
-            "english": "They say that the newly released song by that band is not worth listening to because the lyrics and melodies are too subtle.",
-            "scene": "Someone giving their opinion about a new song.",
+            "japanese": "「結核は予防接種を受けた健康な人なら、心配する{には当たらない}。」",
+            "english": "'Tuberculosis is not something you need to worry about if the person in question is vaccinated and healthy.'",
+            "scene": "A doctor explaining something to a patient.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "心配する必要はない",
+                    "mitigation": "While 『～必要はない』 states a lack of necessity, 『には当たらない』 conveys that the situation (healthy, vaccinated person) does not warrant or meet the criteria for worry. The 'doctor explaining' scene emphasizes the professional assessment of what is an appropriate level of concern."
+                },
+                {
+                    "competing_grammar": "心配しなくていい",
+                    "mitigation": "『～しなくていい』 is a more casual reassurance. The formal, informative setting of a doctor explaining to a patient calls for the more authoritative and evaluative tone of 『には当たらない』."
+                }
+            ],
+            "register": "formal",
+            "setting": "informative",
+            "conjugation": "negative plain (～ない)",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "「心配する{には当たらない}」 is used to reassure someone that there's no need to worry.",
+            "etymology": "「結核」 means \"tuberculosis\"."
+        },
+        {
+            "japanese": "彼がまた彼女に振られたの。まあ、あいつは自分のことしか考えていないから驚く{には当たらない}。",
+            "english": "He was dumped by his girlfriend again? Well, that's not surprising because that guy only ever thinks of himself.",
+            "scene": "Two friends talking about a mutual acquaintance.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "驚く必要はない",
+                    "mitigation": "The scene implies a comment on the appropriateness of the reaction, not just a simple lack of necessity. 『には当たらない』 conveys a more formal and slightly critical judgment that the situation doesn't warrant such a reaction."
+                },
+                {
+                    "competing_grammar": "驚くに値しない",
+                    "mitigation": "While 『～に値しない』 (not worth) shares some meaning, 『には当たらない』 suggests that the situation doesn't reach the level where such a reaction is appropriate, rather than outright saying it has no worth. The scene emphasizes that his character inherently makes the situation not surprising."
+                }
+            ],
             "register": "casual",
-            "setting": "critical",
-            "nuance": "「聴くに当たらない」suggests that the song isn't worth the effort of listening to.",
-            "etymology": "「微妙」 means \"subtle\" or \"questionable\"."
+            "setting": "humorous",
+            "conjugation": "negative plain (～ない)",
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "nuance": "「驚く{には当たらない}」 indicates that the speaker is not surprised given the other guy's behavior.",
+            "etymology": "「振られた」 is the passive form of 「振る」 (to dump someone)."
+        },
+        {
+            "japanese": "母は息子に、母の友達の息子について話します：「坂本ちゃん、試験にトップで合格したそうよ。」息子：「長年英語を勉強した彼が合格することは当然だよ。びっくりする{には当たらない}よ。」",
+            "english": "Mother speaking to son about her friend's son: 'I heard that Sakamoto passed the exam at the top of his class.' Son: 'It's only natural for someone who has studied English for many years. No need to be so surprised.'",
+            "scene": "A conversation between a mother and her son.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "びっくりする必要はないよ",
+                    "mitigation": "While 『～必要はない』 expresses no need, 『には当たらない』 conveys that the situation doesn't meet the standard or expectation for being surprising, given the prior context. The scene highlights the son's reasoning that it was an obvious outcome, which 『には当たらない』 emphasizes."
+                },
+                {
+                    "competing_grammar": "びっくりしなくていいよ",
+                    "mitigation": "『～しなくていい』 is a more direct and casual way to tell someone not to be surprised. The scene, while a casual conversation, uses 『には当たらない』 to convey a slightly more reasoned judgment that the surprise is unwarranted, rather than just optional."
+                }
+            ],
+            "register": "casual",
+            "setting": "informative",
+            "conjugation": "negative plain (～ない)",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "The son uses 「びっくりする{には当たらない}よ」 to express that the friend's success was expected and not surprising.",
+            "etymology": "「当然」 means \"natural\" or \"obvious\"."
         },
         {
             "japanese": "カグラ：「ギンちゃんは昨日、犬に噛まれたって。かわいそうね。」シンパチ：「同情{には当たらない}。彼はいつも犬を挑発しているから。」",
             "english": "Kagura: 'Gin-chan was bitten by a dog yesterday. Poor guy…' Shinpachi: 'No need to take pity on him. He always provokes dogs.'",
             "scene": "Two characters in a comedy scene.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "同情する必要はない",
+                    "mitigation": "While 『～必要はない』 communicates no need, 『には当たらない』 conveys that the situation does not warrant or meet the criteria for sympathy due to Gin-chan's own actions. The humorous scene highlights this 'deserved' outcome, making 『には当たらない』 more appropriate."
+                },
+                {
+                    "competing_grammar": "同情すべきではない",
+                    "mitigation": "『～すべきではない』 expresses an obligation not to do something. However, the scene's humorous context is about whether sympathy is *appropriate* given the circumstances, not a moral imperative. 『には当たらない』 fits this nuance better."
+                }
+            ],
             "register": "casual",
             "setting": "humorous",
-            "nuance": "「同情には当たらない」 is used to say that Gin-chan doesn't deserve sympathy because he provoked the dog.",
+            "conjugation": "negative plain (～ない)",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "「同情{には当たらない}」 is used to say that Gin-chan doesn't deserve sympathy because he provoked the dog.",
             "etymology": "「噛まれた」 is the passive form of 「噛む」 (to bite)."
         },
         {
-            "japanese": "「珍しいことではありません。{称賛には当たりません}。」",
-            "english": "'It is not uncommon. No need for praise.'",
-            "scene": "A humble person downplaying their achievements.",
-            "register": "formal",
-            "setting": "modest",
-            "nuance": "「称賛には当たりません」 is a polite way to decline praise.",
-            "etymology": "「珍しい」 means \"uncommon\" or \"rare\"."
-        },
-        {
-            "japanese": "母は息子に、母の友達の息子について話します：「坂本ちゃん、試験にトップで合格したそうよ。」息子：「長年英語を勉強した彼が合格することは当然だよ。{びっくりするには当たらない}よ。」",
-            "english": "Mother speaking to son about her friend's son: 'I heard that Sakamoto passed the exam at the top of his class.' Son: 'It's only natural for someone who has studied English for many years. No need to be so surprised.'",
-            "scene": "A conversation between a mother and her son.",
+            "japanese": "あのバンドが新しくリリースした曲は歌詞もメロディーも微妙だから聴く{に当たらない}らしい。",
+            "english": "They say that the newly released song by that band is not worth listening to because the lyrics and melodies are too subtle.",
+            "scene": "Someone giving their opinion about a new song.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "聴く価値がない",
+                    "mitigation": "『～価値がない』 explicitly states 'no value', which is a strong, subjective judgment. 『に当たらない』 implies that the song doesn't reach the standard where it would be considered worth listening to, a slightly softer and more evaluative tone suitable for a critical opinion."
+                },
+                {
+                    "competing_grammar": "聴く必要はない",
+                    "mitigation": "『～必要はない』 focuses on the lack of necessity. The scene, however, is about a critical assessment of the song's quality, suggesting it's not even worth the effort, which 『に当たらない』 captures better."
+                }
+            ],
             "register": "casual",
-            "setting": "informative",
-            "nuance": "The son uses 「びっくりするには当たらないよ」 to express that the friend's success was expected and not surprising.",
-            "etymology": "「当然」 means \"natural\" or \"obvious\"."
+            "setting": "critical",
+            "conjugation": "negative plain (～ない)",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "「聴く{に当たらない}」 suggests that the song isn't worth the effort of listening to.",
+            "etymology": "「微妙」 means \"subtle\" or \"questionable\"."
         },
         {
-            "japanese": "社員１：「田中さんは勤務態度悪いね。」社員２：「でも彼はいつも彼なりに努力をしているのだから、ちょっとだらしないとしても、{非難するには当たらない}。」",
+            "japanese": "社員１：「田中さんは勤務態度悪いね。」社員２：「でも彼はいつも彼なりに努力をしているのだから、ちょっとだらしないとしても、非難する{には当たらない}。」",
             "english": "Company employee1: 'Mr. Tanaka has a poor working attitude, doesn't he?' Company employee2: 'But he is always doing his best, so even if he is a bit undisciplined, there's no need to criticize him.'",
             "scene": "Two employees discussing a coworker.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "非難する必要はない",
+                    "mitigation": "While 『～必要はない』 states a lack of necessity, 『には当たらない』 suggests that Tanaka's actions, despite being somewhat sloppy, do not meet the threshold to warrant harsh criticism, considering his efforts. The scene's nuanced discussion fits the evaluative nature of 『には当たらない』."
+                },
+                {
+                    "competing_grammar": "非難すべきではない",
+                    "mitigation": "『～すべきではない』 implies a moral or obligatory prohibition against criticizing. The scene, however, is about whether criticism is *appropriate* given the mitigating circumstances, which 『には当たらない』 conveys better."
+                }
+            ],
             "register": "semi-formal",
             "setting": "serious",
-            "nuance": "「非難するには当たらない」 indicates that despite some shortcomings, criticism is not warranted.",
+            "conjugation": "negative plain (～ない)",
+            "speaker_gender": "male",
+            "listener_gender": "male",
+            "nuance": "「非難する{には当たらない}」 indicates that despite some shortcomings, criticism is not warranted.",
             "etymology": "「勤務態度」 means \"work attitude\" or \"work ethic\"."
         },
         {
-            "japanese": "「結核は予防接種を受けた健康な人なら、{心配するには当たらない}。」",
-            "english": "'Tuberculosis is not something you need to worry about if the person in question is vaccinated and healthy.'",
-            "scene": "A doctor explaining something to a patient.",
+            "japanese": "あの人がやったことは人間としては最低だけど犯罪{には当たらない}から何もできない。",
+            "english": "What that person did was despicable, but not suitable to be a crime, so we cannot do anything about it.",
+            "scene": "A legal discussion about a morally questionable action.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "犯罪ではない",
+                    "mitigation": "While 『犯罪ではない』 simply states it's not a crime, 『には当たらない』 emphasizes that the action doesn't meet the legal definition or criteria to be classified as a crime, despite its immorality. The 'legal discussion' setting points to this technical distinction."
+                },
+                {
+                    "competing_grammar": "犯罪とは言えない",
+                    "mitigation": "『～とは言えない』 implies that it's difficult to say it's a crime, suggesting some ambiguity. However, the scene requires a more definitive statement that it *doesn't qualify* as a crime, which 『には当たらない』 conveys."
+                }
+            ],
             "register": "formal",
-            "setting": "informative",
-            "nuance": "「心配するには当たらない」 is used to reassure someone that there's no need to worry.",
-            "etymology": "「結核」 means \"tuberculosis\"."
+            "setting": "serious",
+            "conjugation": "negative plain (～ない)",
+            "speaker_gender": "male",
+            "listener_gender": "group",
+            "nuance": "「犯罪{には当たらない}」 indicates that the action does not meet the criteria to be considered a crime.",
+            "etymology": "「最低」 means \"lowest\" or \"despicable\"."
         }
     ],
-    "post_example_writeup": null,
-    "false_friends": [],
+    "false_friends": [
+        {
+            "term": "～必要はない",
+            "meaning": "no need to",
+            "kind": "similar expression",
+            "nuance": "While 『～必要はない』 expresses a simple lack of necessity, 『には当たらない』 implies that a situation does not meet the standard or criteria to warrant a particular action or reaction. 『には当たらない』 often carries a more formal or evaluative tone, suggesting an inappropriateness rather than just a lack of need."
+        },
+        {
+            "term": "～に値しない",
+            "meaning": "not worth (doing/having)",
+            "kind": "similar expression",
+            "nuance": "『～に値しない』 (not worth) is a stronger, more direct negative judgment about the inherent value of something. In contrast, 『には当たらない』 suggests that something doesn't reach the level where a certain action or reaction is appropriate, often implying that while it might not be 'worthless', it's not significant enough to justify the response."
+        }
+    ],
     "post_false_friends_writeup": null,
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/には当たらない"
-    }
+    },
+    "change": [
+        "schema: Populated 'conjugations' array as the grammar point uses a conjugated verb form.",
+        "violation: Added curly braces {} around the grammar point in 'japanese' examples for bolding.",
+        "schema: Added 'conjugation' field to each example, mapping to the top-level conjugations.",
+        "schema: Added 'scene_rationale' to each example, with 'competing_grammar' and 'mitigation' to justify the 'scene'.",
+        "violation: Added 'speaker_gender' and 'listener_gender' to examples to meet diversity requirements and general schema compliance.",
+        "schema: Wrapped Japanese phrases in 'nuance' with 『quotes』.",
+        "violation: Reordered examples from simplest to most complex usage.",
+        "schema: Added two entries to 'false_friends' for clarity.",
+        "schema: Omitted 'post_example_writeup' and 'post_false_friends_writeup' as they were null."
+    ]
 }

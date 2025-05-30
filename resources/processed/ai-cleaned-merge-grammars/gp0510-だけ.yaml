@@ -1,14 +1,16 @@
 {
     "grammar_point": "だけ",
     "id": "gp0510",
-    "conjugations": [],
     "pronunciation": {
         "katakana": "ダケ",
         "romaji": "dake"
     },
     "formation": {
-        "[Noun] + だけ": "Indicates 'only' or 'just' concerning the noun.",
-        "[Verb (dictionary form)] + だけ": "Implies doing something to the fullest extent possible."
+        "[Noun] + だけ": "Indicates that only the noun is relevant or present.",
+        "[Verb (dictionary form)] + だけ": "Indicates that only the action of the verb is performed or relevant.",
+        "[い-Adjective] + だけ": "Indicates that something possesses only the quality of the i-adjective.",
+        "[な-Adjective (stem)] + だけ": "Indicates that something is merely or just that quality, often with a dismissive nuance.",
+        "[な-Adjective (な)] + だけ": "Indicates that something possesses only the quality of the な-adjective, modifying something."
     },
     "jlpt": "N5",
     "meaning": "Only, Just",
@@ -20,96 +22,187 @@
         "使用域": "一般"
     },
     "etymology": "The origin of だけ is debated, with possibilities including a derivation from 「丈 (take)」, referring to length or degree, or from 「竹 (take)」, used metaphorically to indicate a limited quantity. Regardless, its function as a limiting particle has been consistent.",
-    "writeup": "だけ is a particle used to express the idea of \"only\" or \"just\". It indicates that while other possibilities might exist, only the specified thing is true or has been chosen.\n\n*   It attaches directly to nouns.\n*   When modifying a noun with a な-adjective, use the な form of the adjective before だけ. For example, 「きれいなだけ」 (only pretty).",
+    "writeup": "だけ is a particle used to express the idea of \"only\" or \"just.\" It indicates that while other possibilities might exist, only the specified thing is true or has been chosen. It serves to restrict or limit the scope of the preceding word or phrase.\n\n*   It attaches directly to nouns.\n*   When attached to a verb in its dictionary (plain) form, it limits the action to that specific verb.\n*   When used with an い-adjective, it emphasizes that the given quality is the sole characteristic.\n*   For な-adjectives, the formation varies depending on whether you are referring to the essential nature of the adjective (stem form) or its quality as a modifier (な-form). This distinction can subtly shift the nuance, as will be explained in the examples.",
     "examples": [
         {
             "japanese": "水{だけ}飲みます。",
             "english": "I only drink water.",
-            "scene": "Someone specifying their beverage preference.",
+            "scene": "Someone specifying their beverage preference at a restaurant or social gathering.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "水しか飲みません",
+                    "mitigation": "「しか〜ない」 (しか + negative verb) implies a sense of limitation or regret, as in 'I only drink water (because there's nothing else or I prefer not to drink anything else).' The scene is about stating a simple preference, not expressing a lack or regret."
+                },
+                {
+                    "competing_grammar": "水だけを飲みます",
+                    "mitigation": "While grammatically possible, the direct attachment of 「だけ」 to 「水」 already implies the object. The additional 「を」 is often omitted in casual speech when 「だけ」 is present, especially when expressing a simple limitation."
+                }
+            ],
             "register": "casual",
             "setting": "casual",
             "etymology": "「水 (mizu)」 means water, a basic element.",
-            "nuance": "The particle 「だけ」 clarifies that the speaker's preference is strictly limited to water."
+            "nuance": "The particle 「だけ」 clarifies that the speaker's preference is strictly limited to water. There is no implied regret or lack, merely a statement of choice."
         },
         {
             "japanese": "これ{だけ}で十分です。",
             "english": "This alone is enough.",
-            "scene": "Someone being offered more food or assistance.",
+            "scene": "Someone being offered more food or assistance, indicating satisfaction.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "これで十分です",
+                    "mitigation": "Without 「だけ」, this could simply mean 'This amount is enough.' The scene emphasizes that 'this *single item* or *quantity* alone' is sufficient, highlighting exclusivity rather than just sufficiency."
+                }
+            ],
             "register": "polite",
             "setting": "friendly",
             "etymology": "「十分 (jūbun)」 means enough, indicating satisfaction with the quantity.",
-            "nuance": "「です」 indicates politeness."
-        },
-        {
-            "japanese": "今日 は 宿題 を する {だけ} です 。",
-            "english": "I'm just going to do homework today.",
-            "scene": "A student explaining their plans for the day.",
-            "register": "casual",
-            "setting": "informative",
-            "etymology": "「宿題 (shukudai)」 means homework, a common task for students.",
-            "nuance": "「だけ」 limits the activity to just homework."
-        },
-        {
-            "japanese": "あなた{だけ}を愛しています。",
-            "english": "I only love you.",
-            "scene": "A person expressing their feelings to their lover.",
-            "register": "intimate",
-            "setting": "flirty",
-            "etymology": "「愛 (ai)」 means love, a strong emotion.",
-            "nuance": "「愛しています」 conveys deep affection. The use of 「あなただけ」 emphasizes that the speaker's love is exclusively for the listener."
+            "nuance": "「だけ」 here emphasizes the exclusivity of \"this thing,\" meaning that nothing else is needed or desired beyond it. 「です」 indicates politeness."
         },
         {
             "japanese": "今 は 寝る {だけ} です 。",
             "english": "Now, I'm just going to sleep.",
-            "scene": "A tired person explaining their immediate plan.",
+            "scene": "A tired person explaining their immediate, sole plan after a long day.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "今は寝るしかない",
+                    "mitigation": "「〜しかない」 implies 'having no other choice' or 'being forced to do something.' The scene depicts a tired person *choosing* to sleep, not being compelled by circumstances."
+                },
+                {
+                    "competing_grammar": "今は寝ます",
+                    "mitigation": "This simply states 'I will sleep now.' The scene emphasizes that sleeping is the *only* thing the speaker intends to do, excluding all other possibilities."
+                }
+            ],
             "register": "casual",
             "setting": "casual",
             "etymology": "「寝る (neru)」 means to sleep, a basic human need.",
-            "nuance": "「だけ」 emphasizes the singular action the speaker intends to perform."
+            "nuance": "「だけ」 emphasizes that sleeping is the singular action the speaker intends to perform, ruling out any other activities."
+        },
+        {
+            "japanese": "今日 は 宿題 を する {だけ} です 。",
+            "english": "I'm just going to do homework today.",
+            "scene": "A student explaining their plans for the day, implying no other activities.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "今日は宿題しかありません",
+                    "mitigation": "「しか〜ない」 would imply that homework is the *only thing available* or *existing* to do, often with a nuance of limitation or complaint. The scene describes a choice to focus exclusively on homework."
+                }
+            ],
+            "register": "casual",
+            "setting": "informative",
+            "etymology": "「宿題 (shukudai)」 means homework, a common task for students.",
+            "nuance": "「だけ」 clearly limits the day's activity to just homework, implying that nothing else will be done."
+        },
+        {
+            "japanese": "この 本 は 分厚い{だけ}で、内容は薄い。",
+            "english": "This book is just thick; its content is thin.",
+            "scene": "A student or critic complaining about a textbook or academic publication.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この本は分厚くて、内容は薄い",
+                    "mitigation": "「〜て」 simply connects two descriptive clauses. The scene emphasizes that 'being thick' is the *only* notable characteristic, and it's presented critically, implying a lack of other redeeming qualities."
+                }
+            ],
+            "register": "formal",
+            "setting": "academic",
+            "nuance": "Here, 「だけ」 is used with an い-adjective 「分厚い」 to imply that its thickness is its sole (and often negative) distinguishing feature. The contrast to its thin content highlights this critical view."
+        },
+        {
+            "japanese": "彼 は 真面目な{だけ}で、融通が利かない。",
+            "english": "He is just serious and inflexible.",
+            "scene": "Colleagues discussing a difficult coworker, implying that his seriousness is not always an asset.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼は真面目ですが、融通が利きません",
+                    "mitigation": "This would be a neutral statement of facts. The scene uses 「だけ」 to subtly imply that his seriousness is the *only* characteristic, which leads to inflexibility, indicating a critical or slightly negative judgment."
+                }
+            ],
+            "register": "casual",
+            "setting": "critical",
+            "nuance": "This example uses 「だけ」 with the な-adjective 「真面目な」. It suggests that 'being serious' is the only notable quality, and in this context, it is presented as a limitation or a cause for a negative trait (inflexibility). The speaker uses this to imply a subtle critique."
+        },
+        {
+            "japanese": "あなた{だけ}を愛しています。",
+            "english": "I only love you.",
+            "scene": "A person expressing their exclusive feelings to their lover.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あなたしか愛していません",
+                    "mitigation": "「しか〜ない」, when used in this context, can sound more intense or even a bit desperate, implying a lack of other options. The scene is a direct confession of exclusive feelings, which 「だけ」 conveys more broadly without the connotation of insufficiency."
+                }
+            ],
+            "register": "intimate",
+            "setting": "flirty",
+            "etymology": "「愛 (ai)」 means love, a strong emotion.",
+            "nuance": "The use of 「あなただけ」 strongly emphasizes that the speaker's love is exclusively for the listener, without any implication of others being loved."
         },
         {
             "japanese": "君{だけ}がいればいい。",
             "english": "I only need you.",
-            "scene": "A person on a first date, expressing strong feelings.",
+            "scene": "A person expressing deep affection to their partner, indicating their presence is sufficient.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "君しかいらない",
+                    "mitigation": "「しか〜ない」 (いらない) is a direct, strong denial of needing anyone else, which can sound more absolute and perhaps less tender than 「いればいい」. The scene focuses on the comfort and completeness found in the partner's sole presence."
+                }
+            ],
             "register": "casual",
-            "setting": "first-date",
+            "setting": "intimate",
             "etymology": "「君 (kimi)」 means you, often used in intimate or familiar contexts.",
-            "nuance": "This sentence expresses a desire for the presence of only the listener. 「いればいい」 is a casual way of saying 'is enough'.",
-            "speaker_gender": "male",
-            "listener_gender": "female"
+            "nuance": "This sentence expresses that the presence of only the listener is enough. 「いればいい」 is a casual way of saying 'is enough' or 'is sufficient,' reinforcing the exclusive reliance on the listener."
         },
         {
             "japanese": "あなた の ため {だけ} に 生きて いたい 。",
             "english": "I want to live only for you.",
-            "scene": "A person professing their love in a serious manner.",
+            "scene": "A person professing their unwavering dedication and love in a serious manner.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あなたのためでなければ生きていけない",
+                    "mitigation": "This implies a dependency, stating that one cannot live without the other person. The scene conveys a *desire* to dedicate one's life to the other person, emphasizing the exclusive purpose of living rather than a condition for living."
+                }
+            ],
             "register": "intimate",
             "setting": "intimate",
             "etymology": "「生きる (ikiru)」 means to live, referring to the fundamental state of being alive.",
-            "nuance": "The phrase 「あなたのためだけに」 places strong emphasis on the singular devotion to the listener, adding a level of intensity to the declaration of affection."
+            "nuance": "The phrase 「あなたのためだけに」 places strong emphasis on the singular devotion to the listener, conveying a deep and exclusive commitment."
         }
     ],
+    "post_example_writeup": "When だけ is used with な-adjectives, there is a subtle distinction based on the form. If だけ follows the stem of a な-adjective (e.g., 「暇だけ」, 'just leisure'), it tends to imply that the noun's core essence or concept is the only thing present, often with a slightly dismissive or critical nuance. For instance, 「彼は暇だけ」 might imply 'He is nothing but idle' or 'All he has is free time.' Conversely, when だけ follows the な-form (e.g., 「暇なだけ」, 'only free (time)'), it emphasizes that the adjective modifies something, and this specific quality is the only one relevant to the discussion, as in 「彼が来ないのは暇なだけだ」 ('The reason he isn't coming is just that he's free/has nothing else to do').",
     "false_friends": [
         {
             "term": "しか〜ない",
             "meaning": "There is only, nothing but",
             "kind": "similar expression",
-            "nuance": "While both limit options, しか~ない often carries a nuance of regret or insufficiency, whereas だけ is more neutral."
+            "nuance": "While both limit options, 「しか〜ない」 often carries a nuance of regret, insufficiency, or a lack of alternatives, emphasizing what is *not* present. 「だけ」 is more neutral, simply stating what *is* present exclusively."
         },
         {
             "term": "ばかり",
             "meaning": "Just, only, nothing but",
             "kind": "similar expression",
-            "nuance": "ばかり often implies repetition or abundance of something, whereas だけ focuses on exclusivity."
+            "nuance": "「ばかり」 can imply repetition or an abundance of something, or it can focus exclusively on one thing to the neglect of others. Unlike 「だけ」, 「ばかり」 often carries a nuance of 'always doing X' or 'being full of X'."
+        },
+        {
+            "term": "きり",
+            "meaning": "Only, just",
+            "kind": "similar expression",
+            "nuance": "「きり」 emphasizes exclusivity or finality, often implying that something is limited to a single occurrence or state, and nothing else has happened or will happen since then. It can convey a sense of unexpected finality or a slightly stronger, more restrictive limitation than 「だけ」."
         },
         {
             "term": "のみ",
             "meaning": "Only",
             "kind": "similar expression",
-            "nuance": "のみ is a more formal and literary way to express \"only,\" while だけ is more common in everyday conversation."
+            "nuance": "「のみ」 is a more formal and literary way to express \"only\" compared to 「だけ」, which is common in everyday conversation. While their core meanings are similar, 「のみ」 adds a sense of formality or written expression."
         }
     ],
-    "post_false_friends_writeup": "To avoid confusion, remember that だけ simply restricts options, しか〜ない implies a sense of limitation or regret, and ばかり suggests repetition or abundance. のみ is a more formal alternative to だけ. Context is key to choosing the most appropriate expression.",
+    "post_false_friends_writeup": "To avoid confusion between these limiting expressions, consider their nuanced implications. 「だけ」 simply restricts options. 「しか〜ない」 adds a layer of insufficiency or regret. 「ばかり」 suggests repetition or an exclusive focus, sometimes implying neglect of other things. 「きり」 conveys a sense of finality or a singular, unchanging state. Lastly, 「のみ」 functions identically to 「だけ」 but in formal or written contexts. Choosing the correct expression depends on the specific nuance you wish to convey.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/だけ"
-    }
+    },
+    "change": [
+        "violation: Corrected 'formation' section to accurately reflect N5 'Only, Just' usage as per original Bunpro data and instruction 'You *must* add a 'formation' tag that describes, in psuedo-algebraic notation, the formula for creating the grammar point from its component parts.' The prior version included formation for an advanced meaning not relevant to the N5 grammar point provided.",
+        "schema: Added 'scene_rationale' to all examples that contained a 'scene' field, as required by the schema: 'scene_rationale': '{required: true if 'scene' is present}'.",
+        "unnatural: Added new examples (e.g., 'この本は分厚いだけ') to demonstrate 'い-adjective + だけ' and 'な-adjective + だけ' formations, which were missing from the prior examples but are core to the N5 meaning.",
+        "unnatural: Added 'post_example_writeup' to clarify the nuanced usage of だけ with な-adjectives, which is an important detail mentioned in the original Bunpro 'writeup'.",
+        "unnatural: Added 'きり' to 'false_friends' with its appropriate 'kind' and 'nuance'. This was present in the Bunpro source data but omitted from the prior output.",
+        "unnatural: Removed 'speaker_gender' and 'listener_gender' from all examples. The schema dictates 'Use only if this sentence would typically only be spoken by this gender,' and for this grammar point, typical sentences are not exclusively gender-specific. This decision means the requirement 'Example sentences should include at least one male and one female speaker_gender' cannot be met without violating the stricter 'use only if typically spoken by this gender' rule. This is a contradictory instruction in the prompt that I cannot resolve without violating one of the rules. I chose to adhere to the more specific condition on gendered usage."
+    ]
 }

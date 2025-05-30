@@ -1,13 +1,25 @@
 {
     "grammar_point": "てからでないと",
-    "conjugations": [],
+    "conjugations": [
+        {
+            "type": "negative plain (～ない)",
+            "form": "てからでないと",
+            "rarity": "common"
+        },
+        {
+            "type": "conditional (～ば)",
+            "form": "てからでなければ",
+            "rarity": "common"
+        }
+    ],
     "id": "gp0625",
     "pronunciation": {
         "katakana": "テカラデナイト",
         "romaji": "te kara de nai to"
     },
     "formation": {
-        "[Verb in て-form] + からでないと": "Expresses that unless action A is completed, action B cannot happen."
+        "[Verb in て-form] + からでないと": "Expresses that unless action A is completed, action B cannot happen.",
+        "[Verb in て-form] + からでなければ": "Alternative form expressing the same meaning."
     },
     "jlpt": "N2",
     "meaning": "(Not) unless ~ cannot, (Not) until ~ cannot",
@@ -16,109 +28,194 @@
         "使用域": "一般"
     },
     "etymology": "This grammar point is constructed from the て-form of a verb, followed by 「から」 (from), 「で」, 「ない」 (not), and 「と」 (if). Literally, it means something along the lines of \"if it is not from after doing.\"",
-    "writeup": "「てからでないと」 expresses that something cannot happen unless something else happens first. It translates to \"(not) unless (A), (B) will not happen,\" or \"(not) until (A), you cannot (B).\" The (B) part of sentences that use this grammar pattern will always be negative. It simply indicates that (B) must come after (A), whether in terms of completion or possibility.",
+    "writeup": "「てからでないと」 expresses that something cannot happen unless something else happens first. It translates to \"(not) unless (A), (B) will not happen,\" or \"(not) until (A), you cannot (B).\" The (B) part of sentences that use this grammar pattern will always be negative. It simply indicates that (B) must come after (A), whether in terms of completion or possibility. Alternatively, the hypothetical ば form may be used instead of と. This will appear as 「てからでなければ」. This structure functions similarly to 「てからでないと」, expressing the same meaning.",
     "examples": [
         {
             "japanese": "全ての書類が揃って{からでないと}、本申し込みができません。",
             "english": "You can't submit the actual application unless you have all the documents.",
-            "scene": "Filling out an application.",
+            "scene": "You are at a government office, trying to submit a complex application form.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "書類が揃っていなければ、本申し込みができません。",
+                    "mitigation": "This scenario emphasizes that the completion of gathering all documents (書類が揃ってから) is the prerequisite, not just the lack of documents."
+                }
+            ],
             "register": "formal",
             "setting": "informative",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "negative plain (～ない)"
         },
         {
             "japanese": "このアプリをインストールして{からでないと}、携帯に入れた音楽は聴けません。",
-            "english": "You cannot listen to the music you put in your phone until you install this app.",
-            "scene": "Explaining the limitations of an app.",
+            "english": "You cannot listen to the music you put on your phone until you install this app.",
+            "scene": "A customer support representative is explaining why a user cannot access certain features on their new device.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "このアプリをインストールしなければ、携帯に入れた音楽は聴けません。",
+                    "mitigation": "The scene clarifies that the action of installing the app must be completed first, highlighting the prerequisite of the completed action."
+                }
+            ],
             "register": "casual",
             "setting": "informative",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "negative plain (～ない)"
         },
         {
             "japanese": "資格をとって{からでなければ}、面接が受けられません。",
             "english": "Unless you get the qualification, you cannot be interviewed.",
-            "scene": "Explaining necessary qualifications for a job.",
+            "scene": "A career counselor is advising a job seeker on the requirements for a particular position.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "資格がなければ、面接が受けられません。",
+                    "mitigation": "The scene implies that obtaining the qualification (資格をとってから) is a necessary step that must be completed before the interview, rather than simply possessing the qualification."
+                }
+            ],
             "register": "formal",
             "setting": "informative",
-            "conjugation": "conditional (provisional ば-form)"
+            "conjugation": "conditional (～ば)"
         },
         {
             "japanese": "その件については上司と相談して{からでなければ}、ご回答できません。",
             "english": "I will not be able to respond to you until I have discussed this matter with my supervisor.",
-            "scene": "An employee explaining why they can't answer a question immediately.",
+            "scene": "An employee is speaking to a client, explaining why they cannot provide an immediate answer to a query.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "上司と相談しなければ、ご回答できません。",
+                    "mitigation": "The scene highlights that the discussion with the supervisor must be completed (相談してから) before a response can be given, emphasizing the completion of the prior action."
+                }
+            ],
             "register": "bijinesu nihongo (business)",
             "setting": "professional",
-            "conjugation": "conditional (provisional ば-form)"
+            "conjugation": "conditional (～ば)"
         },
         {
             "japanese": "このITコーポレーションでは、修士号を取得して{からでないと}シニアプログラマーになれない。",
-            "english": "In this IT corporation, you cannot become a senior developer until you (get) a master's degree.",
-            "scene": "Describing career advancement requirements.",
+            "english": "In this IT corporation, you cannot become a senior developer until you get a master's degree.",
+            "scene": "During a company orientation, a manager explains the academic requirements for advancement.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "修士号がなければ、シニアプログラマーになれない。",
+                    "mitigation": "The scene emphasizes that the act of acquiring the master's degree (取得してから) is the necessary condition, not just the possession of it, to advance in the company."
+                }
+            ],
             "register": "formal",
             "setting": "professional",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "negative plain (～ない)"
         },
         {
             "japanese": "一人前になって{からでないと}、親が酒なんて飲むのを許さない。",
             "english": "Until I become an adult, my parents won't allow me to drink alcohol.",
-            "scene": "Talking about strict parents.",
+            "scene": "A young person is complaining to a friend about their parents' strict rules.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "一人前にならなければ、親が酒なんて飲むのを許さない。",
+                    "mitigation": "The scene implies that reaching adulthood (一人前になってから) is the point from which permission might be given, focusing on the completion of maturation."
+                }
+            ],
             "register": "casual",
             "setting": "serious",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "negative plain (～ない)"
         },
         {
-            "japanese": "子供：「いま出かけていい?」親：「まだだめ、部屋を片付けて{からでないと}...」",
-            "english": "Child: \"Is it ok if I go out?\" Parent: \"Not yet, not unless you tidy up your room...\"",
-            "scene": "A parent setting rules for a child.",
+            "japanese": "部屋を片付けて{からでないと}、まだ出かけられないわよ。",
+            "english": "Unless you tidy up your room, you still can't go out.",
+            "scene": "A mother tells her son that he must clean his room before he can go out and play.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "部屋を片付けなければ、まだ出かけられないわよ。",
+                    "mitigation": "The scene implies that the action of tidying the room must be completed (片付けてから) before the child is allowed to go out, emphasizing the sequential condition."
+                }
+            ],
             "register": "casual",
             "setting": "instructional",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "conjugation": "dictionary (plain non-past)",
-            "nuance": "The mother's casual tone is captured by 「だめ」 and 「...」, indicating a familiar relationship and an unfinished thought."
+            "conjugation": "negative plain (～ない)",
+            "nuance": "The use of 「～できないわよ」 reflects a common utterance style for a mother speaking to her child, conveying a softer, more instructional tone rather than a harsh command."
         },
         {
             "japanese": "電源を切って{からでないと}、コンセントを抜いてはいけません。",
             "english": "Unless you turn off the power, you cannot unplug it.",
-            "scene": "A safety instruction.",
+            "scene": "An electrician is giving a safety warning about handling electrical appliances.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "電源を切らなければ、コンセントを抜いてはいけません。",
+                    "mitigation": "The scene highlights that the power must be turned off (電源を切ってから) as a completed preliminary step before unplugging, emphasizing safety sequence."
+                }
+            ],
             "register": "formal",
             "setting": "cautious",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "negative plain (～ない)"
         },
         {
             "japanese": "サークルに入って{からでないと}、活動に参加できない。",
-            "english": "Unless you join (enter) the club, you cannot participate in the activities.",
-            "scene": "Explaining club participation rules.",
+            "english": "Unless you join the club, you cannot participate in the activities.",
+            "scene": "A student government representative is explaining the rules for club participation to new students.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "サークルに入らなければ、活動に参加できない。",
+                    "mitigation": "The scene indicates that joining the club (サークルに入ってから) is a prerequisite action that must be completed to participate, focusing on the sequential requirement."
+                }
+            ],
             "register": "casual",
             "setting": "informative",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "negative plain (～ない)"
         },
         {
             "japanese": "恋人とちゃんと話し合って{からでないと}、結婚は考えられません。",
             "english": "Unless you properly discuss things with your partner, you can't even consider marriage.",
-            "scene": "Giving a friend relationship advice.",
+            "scene": "A wise elder is giving relationship advice to a younger friend who is considering marriage.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "恋人とちゃんと話し合わなければ、結婚は考えられません。",
+                    "mitigation": "The scene implies that a thorough discussion (話し合ってから) must be completed before marriage can even be considered, emphasizing the crucial prerequisite."
+                }
+            ],
             "register": "casual",
             "setting": "serious",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "negative plain (～ない)"
+        },
+        {
+            "japanese": "この論文を全部読んで{からでないと}、彼の主張を理解することは難しいだろう。",
+            "english": "Unless you read this entire paper, it will be difficult to understand his argument.",
+            "scene": "A male university student is discussing a complex academic paper with a female classmate, advising her on how to approach it.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この論文を全部読まなければ、彼の主張を理解することは難しいだろう。",
+                    "mitigation": "The scene highlights that the complete reading of the paper (全部読んでから) is the necessary preliminary action for understanding, rather than just the act of not reading it."
+                }
+            ],
+            "register": "academic",
+            "setting": "informative",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "conjugation": "negative plain (～ない)",
+            "nuance": "The use of 「だろう」 (it will likely be) in 「難しいだろう」 is common in academic or objective observations made by male speakers, suggesting a reasoned conclusion."
         }
     ],
-    "post_example_writeup": "Using 「てからでなければ」 provides a slight variation, offering the same meaning but with a slightly different nuance. Both forms are generally interchangeable, but the 「でなければ」 version might sound slightly more formal in some contexts.",
+    "post_example_writeup": "「てからでないと」 と 「てからでなければ」 は、どちらも「～してからでなければ、次の行動はできない」という状況を表します。これらはほぼ同じ意味で使われますが、文脈によって「てからでなければ」の方がやや硬い表現に聞こえることがあります。つまり、どちらを使っても意味は通じますが、 formality の度合いにわずかな差があるということです。",
     "false_friends": [
         {
             "term": "ないことには〜ない",
             "meaning": "Unless you do something",
-            "kind": "synonym",
-            "nuance": "Unlike 「てからでないと」, 「ないことには〜ない」 emphasizes the necessity of the condition for the result to occur."
+            "kind": "similar expression",
+            "nuance": "Unlike 「てからでないと」, 「ないことには〜ない」 emphasizes the necessity of the condition for the result to occur. It implies a stronger logical dependency. 「てからでないと」 specifically points to the completion of an action as a prerequisite."
         },
         {
             "term": "て初めて",
             "meaning": "For the first time, Not until, Only after, Only when, Only because",
-            "kind": "synonym",
-            "nuance": "Unlike 「てからでないと」, 「て初めて」 emphasizes a realization or a new understanding that comes after an experience, rather than a simple sequence of events."
+            "kind": "often confused with",
+            "nuance": "Unlike 「てからでないと」, 「て初めて」 emphasizes a realization or a new understanding that comes *after* an experience, rather than a simple sequence of events or a prerequisite for an action. It implies a new discovery or awareness."
         }
     ],
-    "post_false_friends_writeup": "While 「ないことには〜ない」 and 「て初めて」 share similar meanings with 「てからでないと」, it's important to consider the nuances. 「ないことには〜ない」 places greater emphasis on the necessity of the condition, while 「て初めて」 highlights a realization or understanding gained after an experience.",
+    "post_false_friends_writeup": "「ないことには〜ない」と「て初めて」は、「てからでないと」と似た意味を持つことがありますが、使い分けが重要です。「ないことには〜ない」は、ある条件が満たされない限り結果が得られないという必然性を強調します。一方、「て初めて」は、特定の経験や行動を経たことで初めて何かを認識したり、新しい事態が生じたりすることを表します。これらの表現は、単なる順序だけでなく、その背後にある意味合いを理解して使い分ける必要があります。",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/てからでないと"
-    }
+    },
+    "change": [
+        "schema: Added `conjugations` array at the top level to reflect the two forms of the grammar point used in examples.",
+        "unnatural: Added a second entry to `formation` for `[Verb in て-form] + からでなければ` to fully describe the pattern's variants.",
+        "violation: Rewrote example 7 from a dialogue to a single utterance to comply with the 'no back-and-forth dialogue' rule.",
+        "unnatural: Refined the `japanese` and `english` of example 7 for a more natural single sentence.",
+        "violation: Added `scene_rationale` to examples 1, 2, 3, 4, 5, 6, 8, 9, and 10 to comply with the schema requirement for `scene`.",
+        "violation: Added a new example (example 11) with a male speaker and a female listener to ensure diversity in `speaker_gender` and `listener_gender`."
+    ]
 }

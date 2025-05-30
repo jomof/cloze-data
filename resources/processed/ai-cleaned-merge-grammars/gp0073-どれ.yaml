@@ -1,5 +1,6 @@
 {
     "grammar_point": "どれ",
+    "id": "gp0073",
     "pronunciation": {
         "katakana": "ドレ",
         "romaji": "dore"
@@ -7,10 +8,9 @@
     "formation": {
         "どれ": "Used alone as a pronoun to ask 'which one?' from a group of three or more."
     },
-    "id": "gp0073",
     "jlpt": "N5",
     "meaning": "Which (of three or more)",
-    "meaning_warning": "「どれ」 follows a noun, 「どの」 precedes a noun",
+    "meaning_warning": "「どれ」は代名詞として単独で用いられ、「どの」は必ず名詞の前に置かれる連体詞です。",
     "details": {
         "Part of Speech": "Pronoun",
         "Register": "Standard",
@@ -25,6 +25,16 @@
             "japanese": "{どれ} が いい です か。",
             "english": "Which one is good?",
             "scene": "Someone asking for a recommendation from a selection.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "どちらがいいですか",
+                    "mitigation": "The scene implies a choice from three or more options, making どれ appropriate, unlike どちら which is typically for two options."
+                },
+                {
+                    "competing_grammar": "どの本がいいですか",
+                    "mitigation": "The question is general, without a specified noun, so どれ (a pronoun) is used instead of どの (a determiner that precedes a noun)."
+                }
+            ],
             "register": "polite",
             "setting": "informative"
         },
@@ -32,6 +42,12 @@
             "japanese": "{どれ} でも いい です。",
             "english": "Whichever is fine.",
             "scene": "Responding when you don't have a preference.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "なんでもいいです",
+                    "mitigation": "The context of 'whichever' implies a selection from a previously presented group of options, making どれでも more specific than なんでも ('anything')."
+                }
+            ],
             "register": "polite",
             "setting": "casual slang"
         },
@@ -39,6 +55,16 @@
             "japanese": "{どれ} を 選び ます か。",
             "english": "Which one will you choose?",
             "scene": "Asking someone to make a selection.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "どちらを選びますか",
+                    "mitigation": "The scene implies a selection from multiple options, suitable for どれ, whereas どちら is for two."
+                },
+                {
+                    "competing_grammar": "どの本を選びますか",
+                    "mitigation": "The question is general, without a specific noun, hence どれ is used as a pronoun."
+                }
+            ],
             "register": "polite",
             "setting": "informative"
         },
@@ -46,6 +72,16 @@
             "japanese": "{どれ} が 好き です か。",
             "english": "Which one do you like?",
             "scene": "Asking someone's favorite from a group.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "どちらが好きですか",
+                    "mitigation": "The scene refers to liking one from a group, implying more than two choices, making どれ suitable."
+                },
+                {
+                    "competing_grammar": "どの本が好きですか",
+                    "mitigation": "The question is general, without a specific noun, so どれ is used as a pronoun."
+                }
+            ],
             "register": "polite",
             "setting": "friendly"
         },
@@ -53,6 +89,12 @@
             "japanese": "{どれ} でも 好き だ よ。",
             "english": "I like whichever one.",
             "scene": "Responding flirtatiously that you like any of them.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "なんでも好きだよ",
+                    "mitigation": "The response implies liking any from a specific selection, rather than simply 'anything' in general."
+                }
+            ],
             "register": "shitashii kuchō (intimate)",
             "setting": "flirty",
             "speaker_gender": "male",
@@ -63,15 +105,32 @@
             "japanese": "{どれ} に しよう かな。",
             "english": "Which one should I choose?",
             "scene": "Someone pondering a decision aloud.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "どちらにしようかな",
+                    "mitigation": "The speaker is pondering a choice from multiple options, making どれ appropriate."
+                },
+                {
+                    "competing_grammar": "どの本にしようかな",
+                    "mitigation": "The reflection is general, not specifying a particular type of item, hence どれ is used as a pronoun."
+                }
+            ],
             "register": "casual",
             "setting": "reflective",
             "speaker_gender": "female",
-            "nuance": "The 「かな」 at the end of the sentence is a feminine sentence-ender indicating wondering."
+            "listener_gender": "no one",
+            "nuance": "The 「かな」 at the end of the sentence is a feminine sentence-ender indicating wondering or self-talk."
         },
         {
             "japanese": "この 中 で {どれ} が 一番 高い です か。",
             "english": "Which one is the most expensive in this?",
             "scene": "Asking which item is the most expensive.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "どちらが一番高いですか",
+                    "mitigation": "The phrase 「この中で」 explicitly indicates a selection from a group of items, making どれ the correct choice over どちら (for two)."
+                }
+            ],
             "register": "polite",
             "setting": "informative"
         },
@@ -79,27 +138,39 @@
             "japanese": "ケーキ は {どれ} に します か？",
             "english": "Which cake will you have?",
             "scene": "Asking a customer to choose a cake.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "どちらのケーキにしますか",
+                    "mitigation": "The context of choosing a cake implies a selection from a display with more than two options, making どれ suitable."
+                },
+                {
+                    "competing_grammar": "どのケーキにしますか",
+                    "mitigation": "While grammatically possible, 「どれにしますか」 is a very common and natural way to ask 'which will you have?' when presenting options, especially in a service context."
+                }
+            ],
             "register": "polite",
-            "setting": "first-date"
+            "setting": "first-date",
+            "speaker_gender": "female",
+            "listener_gender": "male"
         }
     ],
     "false_friends": [
         {
             "term": "これ",
             "meaning": "This",
-            "kind": "synonym",
+            "kind": "similar expression",
             "nuance": "「これ」 refers to something near the speaker."
         },
         {
             "term": "それ",
             "meaning": "That",
-            "kind": "synonym",
+            "kind": "similar expression",
             "nuance": "「それ」 refers to something near the listener or previously mentioned."
         },
         {
             "term": "あれ",
             "meaning": "That (over there)",
-            "kind": "synonym",
+            "kind": "similar expression",
             "nuance": "「あれ」 refers to something distant from both the speaker and listener."
         },
         {
@@ -112,5 +183,12 @@
     "post_false_friends_writeup": "The critical difference between 「どれ」 and the other 「こそあど」 words (「これ」, 「それ」, 「あれ」) is that 「どれ」 is interrogative. Use 「どれ」 when asking about selecting from a group of three or more. As for 「どの」, remember that it must always be followed by a noun.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/どれ"
-    }
+    },
+    "change": [
+        "violation: Added `scene_rationale` to all examples with `scene` fields. This was missing, violating schema requirement 'If OTHER_WAYS is not empty, then you **must** have a \"scene\" field. - **Must** set a scene that will hint the user toward the correct grammar point. - **Must not** actually name the grammar point. - **Must** be concise and non-repetitive. - **Must** be interesting and engaging to the learner. - **Must not** use 'male' or 'female'. Use a proper name that's clearly gendered or 'man', 'woman', 'boy', 'girl', etc. - Good examples tell a little story: Tanaka is delivering bad news to his boss. Narumi is confessing her feelings. A waiter is taking an order from a customer.' and 'scene_rationale' section properties.",
+        "violation: Updated `meaning_warning` to be grammatically accurate and reflect the correct usage of 「どれ」 and 「どの」. The previous warning '「どれ」 follows a noun' was factually incorrect for the pronoun 「どれ」. This addresses the implicit instruction for accuracy and clarity.",
+        "schema: Changed `listener_gender` for example 8 to 'male' and added `speaker_gender: female` to ensure representation of a male listener and balance speaker genders as per schema rule 'Example sentences should include at least one male and one female listener_gender.'",
+        "unnatural: Updated `nuance` for example 6 from 'The 「かな」 at the end of the sentence is a feminine sentence-ender indicating wondering.' to 'The 「かな」 at the end of the sentence is a feminine sentence-ender indicating wondering or self-talk.' for more precise description.",
+        "schema: Changed `kind` for 'これ', 'それ', 'あれ' in `false_friends` from 'synonym' to 'similar expression'. They are not synonyms but belong to the same grammatical series (`こそあど言葉`), which aligns with schema rule 'kind': 'similar expression'."
+    ]
 }

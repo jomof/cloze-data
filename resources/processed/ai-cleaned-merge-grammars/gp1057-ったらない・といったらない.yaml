@@ -1,7 +1,18 @@
 {
     "grammar_point": "ったらない・といったらない",
     "id": "gp1057",
-    "conjugations": [],
+    "conjugations": [
+        {
+            "type": "negative plain (～ない)",
+            "form": "といったらない",
+            "rarity": "common"
+        },
+        {
+            "type": "negative past plain (～なかった)",
+            "form": "といったらなかった",
+            "rarity": "common"
+        }
+    ],
     "pronunciation": {
         "katakana": "ッタラナイ・トイッタラナイ",
         "romaji": "ttaranai / to ittaranai"
@@ -19,122 +30,266 @@
         "使用域": "一般"
     },
     "etymology": "The construction is derived from 「と言う」 (to say) + 「たら」 (if/when) + 「ない」 (not exist), implying that if one were to try to express something, words would fail.",
-    "writeup": "「ったらない」 and 「といったらない」 are casual expressions used to convey that something is beyond description. It's often translated as \"there are no words to express (A)\" or \"too (A) for words\". It highlights an extreme degree of something, whether positive or negative. The 「ない」 in this grammar pattern is often considered an abbreviation of 「ありはしない」, suggesting the impossibility of fully expressing the extent of the feeling or situation. Adjectives are often used with the 「さ」 suffix to further emphasize the degree.",
+    "writeup": "「ったらない」 and 「といったらない」 are casual expressions used to convey that something is beyond description. It's often translated as \"there are no words to express (A)\" or \"too (A) for words\". This pattern highlights an extreme degree of something, whether positive or negative. The 「ない」 in this grammar pattern is often considered an abbreviation of 「ありはしない」, suggesting the impossibility of fully expressing the extent of the feeling or situation. Adjectives are often used with the 「さ」 suffix to further emphasize the degree.",
     "examples": [
         {
             "japanese": "隣の人の犬は朝からうるさい{といったらない}。",
             "english": "I can't describe how loud my neighbor's dog is in the morning.",
-            "scene": "Someone complaining to a friend.",
+            "scene": "A man complaining about a persistent noise problem to a female friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "隣の人の犬は朝からとてもうるさい。",
+                    "mitigation": "The context of complaining implies a stronger, less easily quantifiable level of noise than merely 'very noisy'."
+                },
+                {
+                    "competing_grammar": "隣の人の犬は朝からうるさくて仕方がない。",
+                    "mitigation": "While similar in meaning, `～て仕方がない` often implies an uncontrollable state or feeling, whereas `といったらない` emphasizes the indescribability of the extreme level."
+                }
+            ],
             "register": "casual",
             "setting": "annoyed",
-            "nuance": "The use of 「といったらない」 here emphasizes the speaker's exasperation with the neighbor's dog.",
+            "conjugation": "negative plain (～ない)",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "The phrase 「といったらない」 conveys an extreme level of annoyance, here used by a male speaker to express his frustration in a casual conversation.",
             "etymology": "「といったらない」 is a set phrase here, and 「うるさい」 is a common word for 'noisy'."
         },
         {
             "japanese": "息子を家で留守番させるのは心配{といったらない}。",
             "english": "I can't tell you how worried I am to let my son stay at home alone.",
-            "scene": "A parent confiding in another parent.",
+            "scene": "A mother confiding in another parent about leaving her son home alone.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "息子を家で留守番させるのはとても心配だ。",
+                    "mitigation": "The conversational setting between parents suggests a deeper, more profound level of worry than a simple statement of 'very worried'."
+                },
+                {
+                    "competing_grammar": "息子を家で留守番させるのは心配でならない。",
+                    "mitigation": "`～でならない` indicates a strong feeling one cannot suppress, but `といったらない` highlights the inexpressible nature of the feeling."
+                }
+            ],
             "register": "semi-formal",
             "setting": "concerned",
-            "nuance": "「心配といったらない」 shows a high degree of worry.",
-            "etymology": "「心配」 is a noun meaning 'worry'."
+            "conjugation": "negative plain (～ない)",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "A mother expresses a profound level of worry for her son, using 「といったらない」 to convey that the feeling is almost inexpressible, sharing this with a male listener."
         },
         {
             "japanese": "プロジェクトを終わらせた後の達成感{ったらない}。",
             "english": "I can't describe the feeling of accomplishment after finishing a project.",
             "scene": "Someone reflecting on a recently completed project.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "プロジェクトを終わらせた後の達成感は最高だ。",
+                    "mitigation": "The reflective tone suggests an intense, profound feeling of accomplishment that goes beyond simply 'the best'."
+                },
+                {
+                    "competing_grammar": "プロジェクトを終わらせた後の達成感はとても大きい。",
+                    "mitigation": "The desire to express a feeling that is hard to quantify emphasizes its overwhelming nature, more than just 'very great'."
+                }
+            ],
             "register": "casual",
             "setting": "reflective",
-            "nuance": "「達成感ったらない」 is a short, emphatic way to express overwhelming accomplishment.",
+            "conjugation": "negative plain (～ない)",
+            "nuance": "「達成感ったらない」 is a short, emphatic way to express overwhelming accomplishment, indicating a feeling so strong it's hard to put into words.",
             "etymology": "「達成感」 is a noun meaning 'sense of accomplishment'."
         },
         {
             "japanese": "あの子の運転は危ない{といったらありゃしない}から、あの子と出かける時には運転させないようにしている。",
             "english": "I can't describe how bad her driving is. I always make sure not to let her drive when we go somewhere.",
-            "scene": "Someone explaining why they don't let a friend drive.",
+            "scene": "Someone explaining to a friend why they don't let a mutual friend drive.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あの子の運転はとても危ないから、あの子と出かける時には運転させないようにしている。",
+                    "mitigation": "The speaker's proactive measure of preventing the friend from driving highlights that the danger is beyond a simple 'very dangerous'."
+                },
+                {
+                    "competing_grammar": "あの子の運転は危なくて仕方がないから、あの子と出かける時には運転させないようにしている。",
+                    "mitigation": "While `～て仕方がない` could describe the uncontrollability of the danger, `といったらありゃしない` specifically points to the extreme, almost unbelievable nature of the driving."
+                }
+            ],
             "register": "casual",
             "setting": "cautious",
-            "nuance": "The addition of 「ありゃしない」 emphasizes the extremeness of the situation.",
+            "conjugation": "negative plain (～ない)",
+            "nuance": "The addition of `ありゃしない` emphasizes the extreme and inexpressible degree of how dangerous the driving is, suggesting deep frustration.",
             "etymology": "「危ない」 means 'dangerous'."
         },
         {
             "japanese": "田舎では車がないとどこにもいけないから、不便{といったらありゃしない}。",
             "english": "I can't describe to you how inconvenient the countryside is. You can't go anywhere without a car.",
-            "scene": "Someone discussing the challenges of rural living.",
+            "scene": "Someone discussing the challenges of rural living with an acquaintance.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "田舎では車がないとどこにもいけないから、とても不便だ。",
+                    "mitigation": "The explicit statement about not being able to go anywhere without a car indicates a level of inconvenience that is hard to adequately put into words."
+                },
+                {
+                    "competing_grammar": "田舎では車がないとどこにもいけないから、不便でたまらない。",
+                    "mitigation": "The deep inconvenience of immobility in the countryside points to an extreme degree that goes beyond simply being 'unbearably inconvenient'."
+                }
+            ],
             "register": "casual",
             "setting": "informative",
-            "nuance": "Again, 「ありゃしない」 is added for emphasis.",
+            "conjugation": "negative plain (～ない)",
+            "nuance": "This sentence uses `といったらありゃしない` to stress the overwhelming and indescribable inconvenience of rural life without a car.",
             "etymology": "「田舎」 is 'countryside' and 「不便」 is 'inconvenient'."
         },
         {
             "japanese": "彼女は私の話を全然聞いてくれない。むかつく{といったらありゃしない}。",
             "english": "She does not listen to a word I say. I can't describe to you how annoyed I am.",
-            "scene": "Someone venting about a frustrating friend.",
+            "scene": "Someone venting to a close friend about a frustrating colleague.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼女は私の話を全然聞いてくれない。とてもむかつく。",
+                    "mitigation": "The act of 'venting' suggests a strong, overwhelming emotion that is difficult to simply categorize as 'very annoying'."
+                },
+                {
+                    "competing_grammar": "彼女は私の話を全然聞いてくれない。むかついて仕方がない。",
+                    "mitigation": "The feeling of being ignored to the point of `むかつく` implies an intensity that is beyond just being 'unbearably annoyed'."
+                }
+            ],
             "register": "casual",
             "setting": "annoyed",
-            "nuance": "「むかつく」 is a slang term for 'annoying,' making this a very casual expression of frustration.",
-            "etymology": "「むかつく」 is slang, so use with caution."
+            "conjugation": "negative plain (～ない)",
+            "nuance": "Using `といったらありゃしない` after the colloquial `むかつく` intensifies the expression of annoyance to an extreme, almost inexpressible degree.",
+            "etymology": "「むかつく」 is a colloquial verb for 'to feel nauseous' or 'to be annoyed', so use with caution."
         },
         {
             "japanese": "あの人の優しさ{と言ったらありゃしない}。",
             "english": "I can't describe how nice he is.",
-            "scene": "Someone speaking highly of a friend.",
+            "scene": "Someone speaking highly of a mutual friend to another friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あの人の優しさはとても素晴らしい。",
+                    "mitigation": "Speaking 'highly' of someone implies their kindness is exceptional and goes beyond merely 'very wonderful'."
+                },
+                {
+                    "competing_grammar": "あの人の優しさは格別だ。",
+                    "mitigation": "`格別だ` means 'exceptional', but `と言ったらありゃしない` emphasizes the indescribable nature of that exceptional kindness."
+                }
+            ],
             "register": "semi-formal",
             "setting": "friendly",
-            "nuance": "The use of 「ありゃしない」 here is emphatic.",
+            "conjugation": "negative plain (～ない)",
+            "nuance": "The use of `ありゃしない` here is emphatic, conveying that the person's kindness is so profound it's almost beyond words.",
             "etymology": "「優しさ」 means 'kindness'."
         },
         {
-            "japanese": "「校長と鹿との戦いを見たときの驚き{といったらない}よ。」",
+            "japanese": "校長と鹿との戦いを見たときの驚き{といったらない}よ。",
             "english": "I can't describe my surprise at seeing a fight between the principal and a deer.",
-            "scene": "Someone recounting an unbelievable event.",
+            "scene": "Someone recounting an unbelievable and humorous event to a group of friends.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "校長と鹿との戦いを見たときの驚きはとても大きかった。",
+                    "mitigation": "The unbelievable nature of the recounted event signifies a surprise so immense that it cannot be simply termed 'very great'."
+                },
+                {
+                    "competing_grammar": "校長と鹿との戦いを見たときの驚きは尋常ではなかった。",
+                    "mitigation": "`尋常ではなかった` means 'unusual/extraordinary', but `といったらない` highlights the extreme and inexpressible nature of the astonishment."
+                }
+            ],
             "register": "casual",
             "setting": "humorous",
-            "nuance": "Adding 「よ」 at the end adds emphasis and informs the listener of something.",
+            "conjugation": "negative plain (～ない)",
+            "nuance": "Adding 「よ」 at the end emphasizes the speaker's emotional state and informs the listener of something quite remarkable, underscoring the indescribable surprise.",
             "etymology": "「驚き」 means 'surprise'."
         },
         {
-            "japanese": "「車のタイヤが盗まれた。本当に腹が立つ{ったらない}。」",
+            "japanese": "車のタイヤが盗まれた。本当に腹が立つ{ったらない}。",
             "english": "My car tires have been stolen. I can't tell you how angry I am!",
-            "scene": "Someone expressing outrage after discovering a theft.",
+            "scene": "Someone expressing deep outrage to a close family member after discovering a theft.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "車のタイヤが盗まれた。本当に腹が立つ。",
+                    "mitigation": "The term 'outrage' suggests a level of anger that is beyond a simple statement of 'really angry'."
+                },
+                {
+                    "competing_grammar": "車のタイヤが盗まれた。腹が立って仕方がない。",
+                    "mitigation": "While `～て仕方がない` indicates uncontrollable anger, `ったらない` emphasizes the sheer, overwhelming, indescribable fury."
+                }
+            ],
             "register": "casual",
             "setting": "angry",
-            "nuance": "「腹が立つ」 means 'to get angry', and the speaker's feelings are expressed vividly with 「ったらない」.",
+            "conjugation": "negative plain (～ない)",
+            "nuance": "「腹が立つ」 means 'to get angry', and the speaker's overwhelming feelings are expressed vividly with 「ったらない」, highlighting the indescribable extent of their anger.",
             "etymology": "「腹が立つ」 is an idiomatic expression for 'getting angry'."
         },
         {
-            "japanese": "A：歯を引っこ抜くのはどうだった？B：あの痛み{といったらない}わよ、本気で死ぬかと思ったもの。",
-            "english": "A: How was the tooth extraction? B: I can't tell you how painful it is! I really thought I was going to die.",
-            "scene": "Two friends discussing a recent medical procedure.",
+            "japanese": "歯を引っこ抜いた時の痛み{といったらない}わよ。本気で死ぬかと思ったもの。",
+            "english": "The pain of the tooth extraction was indescribable; I genuinely thought I would die.",
+            "scene": "A woman discussing a recent medical procedure with a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "歯を引っこ抜いた時の痛みはとてもひどかった。",
+                    "mitigation": "The assertion of thinking one would die indicates a pain level far beyond just 'very severe'."
+                },
+                {
+                    "competing_grammar": "歯を引っこ抜いた時の痛みはひどくてたまらなかった。",
+                    "mitigation": "The statement that the pain was so bad she thought she would die suggests an inexpressible agony that goes beyond being 'unbearably painful'."
+                }
+            ],
             "register": "shitashii kuchō (intimate)",
             "setting": "melancholic",
+            "conjugation": "negative plain (～ない)",
             "speaker_gender": "female",
-            "nuance": "「わよ」 is a feminine sentence-ending particle that indicates emphasis, suggesting the speaker is female.",
-            "etymology": "「引っこ抜く」 means 'to pull out'."
+            "nuance": "「わよ」 is a feminine sentence-ending particle that indicates emphasis, strongly suggesting the speaker is female. This combined with 「といったらない」 conveys an utterly indescribable and overwhelming pain.",
+            "etymology": "「引っこ抜く」 means 'to pull out forcefully'."
         },
         {
             "japanese": "数年が経ったのにまだあの日の日没を覚えている。その景色の美しさ{と言ったらなかった}。",
             "english": "Even though years have passed, I can still remember the sunset that day. I couldn't describe the beauty of the scene in words.",
-            "scene": "Someone fondly remembering a beautiful sight.",
+            "scene": "Someone fondly remembering a beautiful sight from years ago to an appreciative audience.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "数年が経ったのにまだあの日の日没を覚えている。その景色はとても美しかった。",
+                    "mitigation": "The deep, lasting memory of the sunset implies a beauty so profound it is hard to articulate fully, more than just 'very beautiful'."
+                },
+                {
+                    "competing_grammar": "数年が経ったのにまだあの日の日没を覚えている。その景色の美しさは忘れられないほどだった。",
+                    "mitigation": "`忘れられないほどだった` means 'unforgettable', but `と言ったらなかった` emphasizes the sheer, inexpressible splendor that leaves a lasting impression."
+                }
+            ],
             "register": "semi-formal",
             "setting": "reflective",
-            "nuance": "「と言ったらなかった」 emphasizes the lasting impression of the scenery.",
+            "conjugation": "negative past plain (～なかった)",
+            "nuance": "The past tense form 「と言ったらなかった」 emphasizes that the beauty was so extreme in the past that it was indescribable, creating a lasting impression.",
             "etymology": "「日没」 means 'sunset'."
         },
         {
             "japanese": "メークした時の星野の変わり様{と言ったらなかった}。まるで別人のようだった。",
             "english": "I couldn't describe how much Hoshino has changed when she put on the makeup. She was like a different person.",
-            "scene": "Someone commenting on a dramatic transformation.",
+            "scene": "Someone commenting on a dramatic transformation of a friend to another friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "メークした時の星野の変わり様はとてもすごかった。",
+                    "mitigation": "The comparison to 'a different person' signifies a transformation so remarkable that it cannot be merely described as 'very amazing'."
+                },
+                {
+                    "competing_grammar": "メークした時の星野の変わり様には驚かされた。",
+                    "mitigation": "`驚かされた` means 'was surprised', but `と言ったらなかった` highlights the extreme, almost unbelievable extent of the transformation."
+                }
+            ],
             "register": "casual",
             "setting": "informative",
-            "nuance": "「変わり様」 means 'the way someone changes,' and the expression highlights the surprise at the transformation.",
+            "conjugation": "negative past plain (～なかった)",
+            "nuance": "「変わり様」 means 'the way someone changes,' and the past tense `と言ったらなかった` highlights the astonishing, indescribable nature of a transformation that occurred previously.",
             "etymology": "「別人」 means 'different person'."
         }
     ],
     "post_example_writeup": "「ったらない」 is a shortened version of 「といったらない」, and both can be followed by 「ありゃしない」 for added emphasis. The phrases typically follow adjectives or nouns but can also follow verbs in the form [verb] + こと + 「ったらない」/「といったらない」.",
     "false_friends": [],
-    "post_false_friends_writeup": null,
+    "post_false_friends_writeup": "",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ったらない・といったらない"
-    }
+    },
+    "change": [
+        "violation: Added `conjugations` array as the grammar point is conjugatable (ない/なかった forms) as per schema rule: 'If the grammar point contains a verb in **dictionary form** (besides だ or です) or adjective in **dictionary form**, add a new array field at the top, called \"conjugations\".'",
+        "violation: Added `conjugation` field to each example, linking it to the newly defined conjugations, as per schema rule: 'Must be present if there is a top-level \"conjugations\" array.'",
+        "violation: Added `scene_rationale` to all examples with a `scene`, as per schema rule: 'Must be present if \"scene\" is present.'",
+        "violation: Removed quotation marks `「」` from examples 8 and 9, as per schema rule: 'Must not use quotes including 「」'.",
+        "violation: Transformed example 10 from A/B dialogue into a single sentence, as per schema rule: 'Must not use A/B dialogue style example sentences. They should be full sentences.'",
+        "schema: Added `speaker_gender` (male/female) and `listener_gender` (male/female) to selected examples to ensure diverse representation as per schema rule: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'",
+        "schema: Set `post_false_friends_writeup` to an empty string, as per schema rule: 'No fields should be null. Omit fields that are not applicable instead.' and 'post_false_friends_writeup' is a required field.'"
+    ]
 }

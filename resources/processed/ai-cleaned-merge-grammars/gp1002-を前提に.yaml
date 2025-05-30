@@ -23,6 +23,16 @@
             "japanese": "この パソコン は 仕事場 で 使われる こと {を前提に} 作られている ので、 ゲーム など に は 向いていない です。",
             "english": "This computer was made on the premise that it would be used in the workplace, so it is not suitable for games.",
             "scene": "Explaining the design of a computer.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この パソコン は 仕事場 で 使われる ため に 作られている ので、 ゲーム など に は 向いていない です。",
+                    "mitigation": "`を前提に` implies a fundamental assumption or design principle that the action or product is based upon. 「ために」 indicates purpose, which is a related but distinct concept. The scene highlights that the computer's entire design *assumed* workplace use, leading to its features."
+                },
+                {
+                    "competing_grammar": "この パソコン は 仕事場 で 使われる こと を 考慮 して 作られている ので、 ゲーム など に は 向いていない です。",
+                    "mitigation": "`を前提に` conveys a stronger sense of an established, foundational premise. 「考慮して」 means 'considering' or 'taking into account,' which suggests a less absolute or guiding principle than `を前提に`."
+                }
+            ],
             "register": "formal",
             "setting": "informative"
         },
@@ -30,17 +40,32 @@
             "japanese": "娘さん と は 結婚 {を前提に} お付き合い を させていただいて います。",
             "english": "I am dating your daughter on the premise of marriage.",
             "scene": "A man formally introducing himself to his girlfriend's parents.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "娘さん と は 結婚 の ため に お付き合い して います。",
+                    "mitigation": "`を前提に` implies that the relationship is built *from the start* on the shared understanding or condition of marriage. 「のために」 suggests marriage is a future goal or purpose, which might not encompass the foundational aspect of the relationship's very nature."
+                },
+                {
+                    "competing_grammar": "娘さん と は 結婚 を 目標 に お付き合い して います。",
+                    "mitigation": "`を前提に` speaks to the underlying condition or given fact upon which the relationship exists. 「目標に」 indicates a future aim or objective, which is different from a current foundational premise."
+                }
+            ],
             "register": "sonkeigo (respectful)",
             "setting": "serious",
             "speaker_gender": "male",
             "listener_gender": "male",
-            "listener_age": "older",
             "nuance": "The speaker uses 「させていただいて います」to show respect for the listener, as he is speaking to his girlfriend's father, and his tone is very formal."
         },
         {
             "japanese": "この 車 は レース を する という こと {を前提に} 改造 されている ため 公道 で は 運転 できません。",
             "english": "This car was customized on the premise of racing, so you can’t drive it on public roads.",
             "scene": "Explaining modifications to a vehicle.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この 車 は レース の ため に 改造 されている ため 公道 で は 運転 できません。",
+                    "mitigation": "`を前提に` indicates that the modification was performed with the *assumption* that racing would be the primary use, making it a foundational condition for the car's altered state. 「ために」 indicates a purpose, but `を前提に` specifies the underlying basis for the action."
+                }
+            ],
             "register": "formal",
             "setting": "technical"
         },
@@ -48,6 +73,12 @@
             "japanese": "名前 を 出さない という こと {を前提にして}、 労基 に 上司 の パワハラ など を 通報した。",
             "english": "On the premise that they don’t make my name known, I reported to the Labor standards inspection office about my boss harassing me.",
             "scene": "An employee confiding in a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "名前 を 出さない という 条件 で、 労基 に 上司 の パワハラ など を 通報した。",
+                    "mitigation": "`を前提にして` implies that the reporting was done *based on the prior understanding* or *assumption* that their name would not be revealed. 「条件で」 explicitly states a condition that may have been negotiated or set, but `を前提に` highlights the foundational belief or established circumstance."
+                }
+            ],
             "register": "semi-formal",
             "setting": "serious"
         },
@@ -55,6 +86,12 @@
             "japanese": "この アパート は、 1人 で 住む こと {を前提として} 作られている ので、 キッチン と お風呂場 は 小さい です。",
             "english": "This apartment was built on the premise that only one person will live here, so the kitchen and the bathroom is small.",
             "scene": "A landlord describing an apartment.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この アパート は、 1人 で 住む ため に 作られている ので、 キッチン と お風呂場 は 小さい です。",
+                    "mitigation": "`を前提として` denotes that the apartment's design and construction were rooted in the *initial assumption* of single occupancy. 「ために」 describes the purpose of the construction, but `を前提として` emphasizes the fundamental design premise."
+                }
+            ],
             "register": "teineigo (polite)",
             "setting": "informative"
         },
@@ -62,13 +99,27 @@
             "japanese": "私たち は、 結婚 {を前提に} 付き合っている。",
             "english": "We are dating on the premise of marriage.",
             "scene": "A couple discussing their relationship.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "私たち は、 結婚 を 目指して 付き合っている。",
+                    "mitigation": "`を前提に` signifies that the relationship *exists on the basis* that marriage is the understood, underlying condition from the beginning. 「目指して」 suggests a goal to be pursued, which is a future-oriented aim rather than a present foundational state."
+                }
+            ],
             "register": "casual",
-            "setting": "intimate"
+            "setting": "intimate",
+            "speaker_gender": "female",
+            "listener_gender": "male"
         },
         {
             "japanese": "元々、 1人 で 住む こと {を前提に} この 家 を 建てた から、 時 が 経ったら ちょっと 狭くなった。",
             "english": "The house was originally built on the premise that I would live there by myself, so it turned out to be a little small over time.",
             "scene": "Someone reflecting on their past housing choices.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "元々、 1人 で 住む ため に この 家 を 建てた から、 時 が 経ったら ちょっと 狭くなった。",
+                    "mitigation": "`を前提に` emphasizes that the house's original design was *based on the assumption* of single occupancy, making its current smallness a direct consequence of that initial premise. 「ために」 points to the original purpose, but `を前提に` highlights the foundational assumption influencing the build."
+                }
+            ],
             "register": "casual",
             "setting": "reflective"
         },
@@ -76,6 +127,12 @@
             "japanese": "原価 見積 は、 建材 の 価格 が 緩やかに 上昇する こと {を前提に} 計算 されます。",
             "english": "Cost estimates are calculated on the premise of a slow increase in the price of building materials.",
             "scene": "Explaining financial calculations.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "原価 見積 は、 建材 の 価格 が 緩やかに 上昇する と 仮定 して 計算 されます。",
+                    "mitigation": "`を前提に` is used in formal contexts to clearly state the established assumption or condition upon which calculations or plans are made. 「仮定して」 means 'assuming' as a hypothesis, which can be less definitive than a `前提` (premise)."
+                }
+            ],
             "register": "bijinesu nihongo (business)",
             "setting": "technical"
         },
@@ -83,6 +140,12 @@
             "japanese": "多く の 家庭用 ゲーム機 を 所有 している 人 は ゲーム が 終わったら 売る こと {を前提に} その ゲーム を 買っている。",
             "english": "Many console owners purchase games based on the premise that they will sell them after finishing.",
             "scene": "A commentary on video game consumer behavior.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "多く の 家庭用 ゲーム機 を 所有 している 人 は ゲーム が 終わったら 売る つもり で その ゲーム を 買っている。",
+                    "mitigation": "`を前提に` indicates that the act of purchasing is *rooted in the prior understanding* or *assumption* that reselling will occur. 「つもりで」 expresses the buyer's intention, but `を前提に` focuses on the underlying condition that drives the purchase behavior."
+                }
+            ],
             "register": "semi-formal",
             "setting": "informative"
         },
@@ -90,6 +153,12 @@
             "japanese": "本 教科書 は、 文法 に 関する 知識 が ある こと {を前提に} 書かれています。",
             "english": "This textbook was written on the premise that you have an understanding of basic grammar.",
             "scene": "A disclaimer in a textbook.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "本 教科書 は、 文法 に 関する 知識 が ある こと を 仮定 して 書かれています。",
+                    "mitigation": "`を前提に` establishes that the textbook's content is written *with the fundamental premise* that the reader already possesses certain grammatical knowledge. 「仮定して」 implies a hypothesis, which is less definitive than a `前提` (premise) in this academic context."
+                }
+            ],
             "register": "formal",
             "setting": "academic"
         }
@@ -105,5 +174,11 @@
     "post_false_friends_writeup": "While both 「を前提に」 and 「に基づいて」 involve a foundational element, 「を前提に」 focuses on assumptions and preconditions, whereas 「に基づいて」 emphasizes adherence to established guidelines or reasons. When determining which to use, consider whether you are setting a stage for a decision or action, or following an existing framework.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/を前提に"
-    }
+    },
+    "change": [
+        "violation: Removed Bunpro-specific detail from `details`. (Rule: \"fix minor inaccuracies in 'details', but do not invent new details.\")",
+        "schema: Removed `listener_age` from example 2. (Rule: \"listener_age is deprecated. You *must* remove it.\")",
+        "schema: Added `scene_rationale` to all examples where `scene` was present. (Rule: \"scene_rationale must be present if 'scene' is present.\")",
+        "violation: Added `speaker_gender` to example 6 to ensure at least one female speaker example, and confirmed `speaker_gender`/`listener_gender` are balanced across examples. (Rule: \"Example sentences should include at least one male and one female speaker_gender.\" & \"Example sentences should include at least one male and one female listener_gender.\")"
+    ]
 }

@@ -39,7 +39,6 @@ def _py_build_tool_stream_impl(ctx):
     srcs = ctx.files.srcs
     top_n = ctx.attr.top
     if top_n and top_n > 0:
-        # ctx.files.srcs is a list, so slicing works
         srcs = srcs[:top_n]
 
     extension = ctx.attr.extension
@@ -56,23 +55,29 @@ def _py_build_tool_stream_impl(ctx):
     for cf in correlated_files:
         stem = cf.basename
         if "." in stem:
-            stem = stem[:stem.rindex('.')]
+            stem = stem[:stem.rindex(".")]
         correlated_by_stem.setdefault(stem, []).append(cf)
+
+    filters = ctx.attr.filter
+    if filters:
+        def matches_any_filter(src):
+            for f in filters:
+                if f in src.basename:
+                    return True
+            return False
+        srcs = [src for src in srcs if matches_any_filter(src)]
 
     outs = []
     for src in srcs:
-        # derive this src’s stem for matching
         stem = src.basename
         if "." in stem:
-            stem = stem[:stem.rindex('.')]
+            stem = stem[:stem.rindex(".")]
 
-        # declare its output
         output_file = ctx.actions.declare_file(
-            "{}/{}{}".format(ctx.label.name, stem, extension)
+            "{}/{}{}".format(ctx.label.name, stem, extension),
         )
         outs.append(output_file)
 
-        # base arguments for this run
         arguments = [
             "--source={}".format(src.path),
             "--destination={}".format(output_file.path),
@@ -81,16 +86,15 @@ def _py_build_tool_stream_impl(ctx):
         if ctx.attr.pass_target_name:
             arguments.append("--bazel-target={}".format(ctx.label.name))
 
-        # find correlated files matching this src
+        arguments.extend(ctx.attr.args)
+
         matches = correlated_by_stem.get(stem, [])
         for cf in matches:
-            # derive key from cf's parent directory name
             parent_path = cf.path
-            parent_dir = parent_path[: parent_path.rfind('/')]
-            key = parent_dir[parent_dir.rfind('/') + 1 :]
+            parent_dir = parent_path[:parent_path.rfind("/")]
+            key = parent_dir[parent_dir.rfind("/") + 1:]
             arguments.append("--{}={}".format(key, cf.path))
 
-        # run for this src
         ctx.actions.run(
             inputs = [src] + non_src_inputs + matches,
             outputs = [output_file],
@@ -107,15 +111,19 @@ def _py_build_tool_stream_impl(ctx):
 py_build_tool_stream = rule(
     implementation = _py_build_tool_stream_impl,
     attrs = {
-        "data":            attr.label_list(allow_files = True, default = []),
-        "extension":       attr.string(default = ""),
+        "args": attr.string_list(),
+        "correlated": attr.label_list(allow_files = True, default = []),
+        "data": attr.label_list(allow_files = True, default = []),
+        "deps": attr.label_list(allow_files = True, default = []),
+        "extension": attr.string(default = ""),
         "pass_target_name": attr.bool(default = False),
-        "script":          attr.label(allow_single_file = True),
-        "srcs":            attr.label_list(allow_files = True),
-        "tool":            attr.label(allow_files = True, executable = True, cfg = "exec"),
-        "deps":            attr.label_list(),
-        "correlated":      attr.label_list(allow_files = True, default = []),
-        "top":             attr.int(default = 0),  # if >0, only process first N srcs
+        "script": attr.label(allow_single_file = True),
+        "srcs": attr.label_list(allow_files = True),
+        "tool": attr.label(allow_files = True, executable = True, cfg = "exec"),
+        "top": attr.int(default = 0),  # if >0, only process first N srcs
+        "filter": attr.string_list( # TODO: implement filtering by basename
+            default = [],
+            doc = "List of strings to filter srcs by whether their basename contains one of the filter strings. If empty, no filtering is applied.",
+        ),
     },
 )
-

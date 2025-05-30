@@ -1,14 +1,31 @@
 {
     "grammar_point": "とても〜ない",
     "id": "gp0831",
-    "conjugations": [],
+    "conjugations": [
+        {
+            "type": "dictionary (plain non-past) negative",
+            "form": "とても〜ない",
+            "rarity": "common"
+        },
+        {
+            "type": "potential (～られる/～える) negative",
+            "form": "とても〜られない/〜えない",
+            "rarity": "common"
+        },
+        {
+            "type": "dictionary (plain non-past)",
+            "form": "とても〜だ/ではない",
+            "rarity": "common"
+        }
+    ],
     "pronunciation": {
         "katakana": "トテモナイ",
         "romaji": "totemo nai"
     },
     "formation": {
-        "とても + [Verb in negative form]": "Expresses strong negation or impossibility.",
-        "とても + [Noun] + はない": "Indicates that something is completely lacking or absent."
+        "とても + [動詞のナイ形]": "行為や能力の強い否定、不可能であることを強調します。 （例： とても歩けない）",
+        "とても + [形容詞・形容動詞] + ない/だ": "形容詞や形容動詞の度合いが非常に強く、結果として不可能や不適切であることを示します。 （例： とても無理だ）",
+        "とても + [名詞] + はない": "何かが全く存在しない、あるいは全く期待できないことを表します。 （例： とても望みはない）"
     },
     "jlpt": "N3",
     "meaning": "Not ~ at all, Cannot ~ at all",
@@ -17,113 +34,197 @@
         "Register": "Standard",
         "使用域": "一般"
     },
-    "etymology": "「とても」 originally meant \"exceedingly\" or \"very much.\" When used with a negative, it intensifies the negation, indicating something is absolutely not the case.",
-    "writeup": "「とても〜ない」 is used to express a **strong sense of impossibility** or complete negation. It signifies that something is \"not at all\" possible or that one \"cannot\" do something at all. It emphasizes the speaker's feeling that something is entirely out of the question. Remember this emphasizes impossibility. Be careful to differentiate it from similar grammar points.",
+    "etymology": "「とても」 originally meant \"exceedingly\" or \"very much.\" When used with a negative, it intensifies the negation, indicating something is absolutely not the case. Its usage with negative forms evolved to express an absolute inability or impossibility, reflecting a sense of being 'too much' for something to be achieved or endured.",
+    "writeup": "「とても〜ない」 is used to express a **strong sense of impossibility** or complete negation. It signifies that something is \"not at all\" possible or that one \"cannot\" do something at all. It emphasizes the speaker's feeling that something is entirely out of the question. This phrase is frequently used when conveying an emotional or subjective impossibility, rather than a purely objective one. While it often appears with the potential form of verbs (e.g., `できない`, `食べられない`), it can also combine with adjectival nouns like `無理だ` to convey a similar strong sense of impossibility.",
     "examples": [
         {
-            "japanese": "その 考え方 は {とても} 理解 でき{ない} 。",
+            "japanese": "その 考え方 は {とても} 理解 でき{ない} わ。",
             "english": "I cannot understand that way of thinking at all.",
-            "scene": "Expressing a strong disagreement with someone's opinion.",
+            "scene": "A woman is expressing her profound inability to comprehend a particular viewpoint despite trying.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "その考え方は全然理解できない。",
+                    "mitigation": "The use of '全然' (zenzen) would imply a simple lack of understanding or complete disagreement. However, 'とても〜ない' (totemo ~ nai) emphasizes an absolute, often emotional, impossibility to grasp the concept, even if one wished to. The scene implies a deeper, more fundamental inability to reconcile with the thought process."
+                }
+            ],
             "register": "formal",
             "setting": "serious",
-            "conjugation": "dictionary (plain non-past) negative"
+            "conjugation": "potential (～られる/～える) negative",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "The 「わ」 at the end of 「できないわ」 is a feminine sentence-ending particle that adds a soft, emotional nuance, reinforcing the speaker's internal feeling of impossibility without being overly assertive. It implies the statement is directed towards a male listener in a polite, slightly deferential manner."
         },
         {
             "japanese": "彼 は いつ も 嘘 ばかり 言う から、彼 の 言う 事 は {とても} 信じ られ{ない} 。",
             "english": "He always just lies, so I cannot trust what he says at all.",
-            "scene": "Discussing a person who is known to be untruthful.",
+            "scene": "Two friends are discussing a mutual acquaintance who has a reputation for dishonesty.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼の言うことは全然信じられない。",
+                    "mitigation": "'全然信じられない' would express a general disbelief. The scene intends to highlight that the speaker finds it utterly impossible to trust the person due to a long history of lying, indicating a strong, personal barrier to belief."
+                }
+            ],
             "register": "casual",
             "setting": "informative",
-            "conjugation": "dictionary (plain non-past) negative"
+            "conjugation": "potential (～られる/～える) negative"
         },
         {
             "japanese": "彼 に 子供 が でき た の！？彼 が 親 に なる こと を 想像 する の は {とても} 無理 だ 。",
             "english": "He has a baby coming? I cannot imagine him becoming a parent at all.",
-            "scene": "Expressing disbelief upon hearing surprising news about someone.",
+            "scene": "Friends are reacting to surprising news about someone known for being irresponsible or immature.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼が親になることを想像するのは不可能だ。",
+                    "mitigation": "'不可能だ' would suggest an objective impossibility. The scene aims to convey the subjective, almost humorous, disbelief and unsuitability of the person becoming a parent, which 'とても無理だ' captures more effectively."
+                }
+            ],
             "register": "casual",
             "setting": "humorous",
             "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "どこ の 航空会社 も 今 は チケット を 売っ て い{ない} から、旅行 を する の が {とても} 無理 だ 。",
-            "english": "No airline company is selling airline tickets, so it is not possible to travel at all.",
-            "scene": "Explaining why a trip is not feasible due to current circumstances.",
+            "japanese": "飛行機 が 飛ん で い{ない} から、旅行 する の は {とても} 無理 だ 。",
+            "english": "Since planes aren't flying, traveling is totally impossible.",
+            "scene": "Someone explains why they cannot go on a planned trip due to current restrictions or conditions.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "旅行するのは不可能だ。",
+                    "mitigation": "While '不可能だ' expresses objective impossibility, 'とても無理だ' conveys a stronger sense of impracticality and overwhelming obstacles, emphasizing that the situation makes travel utterly unfeasible."
+                }
+            ],
             "register": "semi-formal",
-            "setting": "informative",
+            "setting": "cautious",
             "conjugation": "dictionary (plain non-past)"
         },
         {
             "japanese": "{とても} 考え られ{ない} 。",
             "english": "I cannot think of it at all.",
-            "scene": "Expressing complete rejection of an idea.",
+            "scene": "Someone is presented with an idea that is utterly incomprehensible or unacceptable.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "全然考えられない。",
+                    "mitigation": "'全然考えられない' might imply a simple inability to conceive of something. The scene suggests a deep-seated impossibility of accepting or processing the idea, making 'とても' more appropriate for expressing profound disbelief or rejection."
+                }
+            ],
             "register": "formal",
             "setting": "serious",
-            "conjugation": "dictionary (plain non-past) negative"
+            "conjugation": "potential (～られる/～える) negative"
         },
         {
             "japanese": "そんな 無茶 な 計画 は {とても} 賛成 でき{ない} よ。",
             "english": "I can't possibly agree with such a reckless plan.",
-            "scene": "Expressing strong disagreement with an unreasonable plan.",
+            "scene": "A man tells his colleague that he cannot endorse a highly irresponsible proposal.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "そんな無茶な計画は賛成できない。",
+                    "mitigation": "Without 'とても', it's a simple statement of disagreement. The scene implies a strong, principled opposition to the recklessness, making it 'impossible' to agree, which 'とても' conveys."
+                }
+            ],
             "register": "casual",
             "setting": "serious",
-            "conjugation": "dictionary (plain non-past) negative"
+            "conjugation": "potential (～られる/～える) negative",
+            "speaker_gender": "male",
+            "nuance": "While the 「よ」 particle is gender-neutral, the context of a man speaking to a colleague about a plan can often lead to more direct and assertive language in casual settings. Here, it emphasizes his firm stance on the impossibility of agreeing to such a reckless plan."
         },
         {
             "japanese": "こんな 大雨 の 中 、{とても} 出かけ られ{ない} 。",
             "english": "I can't possibly go out in this heavy rain.",
-            "scene": "Describing the impossibility of going out due to bad weather.",
+            "scene": "Someone comments on the extreme weather conditions making it impossible to leave the house.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "こんな大雨の中、出かけられない。",
+                    "mitigation": "Simply saying '出かけられない' might mean 'I can't go out'. The scene emphasizes the *severity* of the rain making going out truly out of the question, which 'とても' highlights as an absolute impossibility."
+                }
+            ],
             "register": "semi-formal",
             "setting": "cautious",
-            "conjugation": "dictionary (plain non-past) negative"
+            "conjugation": "potential (～られる/～える) negative"
         },
         {
             "japanese": "こんな 短い 時間 で {とても} 全部 読む こと は でき{ない} 。",
             "english": "I can't possibly read it all in such a short time.",
-            "scene": "Explaining that something can't be completed in the given time.",
+            "scene": "A student realizes the assignment is too long to complete before the deadline.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "こんな短い時間で全部読むことはできない。",
+                    "mitigation": "Without 'とても', it's a statement of inability. The scene implies the task is overwhelmingly impossible given the time constraint, a level of impossibility that 'とても' conveys."
+                }
+            ],
             "register": "formal",
-            "setting": "serious",
-            "conjugation": "dictionary (plain non-past) negative"
+            "setting": "academic",
+            "conjugation": "potential (～られる/～える) negative"
         },
         {
             "japanese": "この 仕事 は {とても} 私 に は でき{ない} 。",
             "english": "I cannot possibly do this job.",
-            "scene": "Declining a job offer because it's beyond your capabilities.",
+            "scene": "An employee declines a new task, feeling it is beyond their capabilities.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この仕事は私にはできない。",
+                    "mitigation": "Simply 'できない' means 'I can't do it'. The scene suggests a deep-seated feeling of inadequacy for the specific job, making it an 'absolute impossibility' for the speaker, which 'とても' emphasizes."
+                }
+            ],
             "register": "formal",
             "setting": "professional",
-            "conjugation": "dictionary (plain non-past) negative"
+            "conjugation": "potential (～られる/～える) negative"
         },
         {
             "japanese": "こんなに たくさん の 料理 、{とても} 食べ られ{ない} よ。",
             "english": "I can't possibly eat all this food.",
-            "scene": "Expressing that you are unable to eat all the food that has been served.",
+            "scene": "A man is served an extremely large portion of food at a restaurant.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "こんなにたくさんの料理、食べられない。",
+                    "mitigation": "Simply '食べられない' means 'I can't eat it'. The scene emphasizes the overwhelming quantity, making it an 'absolute impossibility' to finish, which 'とても' conveys."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
-            "conjugation": "dictionary (plain non-past) negative"
+            "conjugation": "potential (～られる/～える) negative",
+            "speaker_gender": "male"
         }
     ],
-    "post_example_writeup": "Remember that 「とても〜ない」indicates a strong feeling that something is completely impossible.",
+    "post_example_writeup": "Remember that 「とても〜ない」 indicates a strong feeling that something is completely impossible, often expressing the speaker's subjective perception or emotional state regarding the impossibility. It goes beyond simple negation, conveying an absolute lack of ability or possibility.",
     "false_friends": [
         {
             "term": "ぜんぜん",
             "meaning": "(Not) at all",
-            "kind": "synonym",
-            "nuance": "「全然」 can be used in a wider range of situations, while 「とても〜ない」 carries a stronger nuance of impossibility."
+            "kind": "similar expression",
+            "nuance": "While 「全然〜ない」 (zenzen ~ nai) also expresses complete negation, it can be used in a wider range of situations for things that are simply not the case or unexpected. 「とても〜ない」 specifically implies a strong sense of *impossibility* or absolute inability."
         },
         {
             "term": "全く〜ない",
             "meaning": "Not~at all",
-            "kind": "synonym",
-            "nuance": "「全く〜ない」 is similar but can also be used for things that are unexpected, whereas 「とても〜ない」 focuses more on impossibility."
+            "kind": "similar expression",
+            "nuance": "「全く〜ない」 (mattaku ~ nai) is similar to 「全然〜ない」 in expressing complete negation. It can describe something that is entirely absent or untrue. However, 「とても〜ない」 retains its focus on a strong sense of impossibility or difficulty that makes something unachievable."
         },
         {
             "term": "すこしも〜ない",
             "meaning": "Not even a little, Not at all, Not in the least, Never",
-            "kind": "synonym",
-            "nuance": "「少しも〜ない」 emphasizes the lack of even a small amount, while 「とても〜ない」 emphasizes complete impossibility."
+            "kind": "similar expression",
+            "nuance": "「少しも〜ない」 (sukoshimo ~ nai) emphasizes the lack of even a tiny amount or degree of something. It is about quantity or extent. 「とても〜ない」, in contrast, focuses on the absolute impossibility of an action, state, or event occurring."
+        },
+        {
+            "term": "とうてい〜ない",
+            "meaning": "Absolutely impossible, by no means",
+            "kind": "similar expression",
+            "nuance": "「とうてい〜ない」 (tōtei ~ nai) is perhaps the closest in nuance to 「とても〜ない」, also expressing absolute impossibility. However, 「とうてい〜ない」 tends to be more formal and literary, emphasizing a logical or objective conclusion of impossibility, whereas 「とても〜ない」 can carry a more subjective or emotional nuance of 'it's just too much' to be possible."
         }
     ],
-    "post_false_friends_writeup": "While 「全然」、「全く」, and 「少しも」 can express negation, 「とても〜ない」 specifically emphasizes a strong sense of impossibility. Understanding this difference helps avoid misusing them.",
+    "post_false_friends_writeup": "While expressions like 「全然」、「全く」, 「少しも」, and 「とうてい」 can all be used with negation, 「とても〜ない」 specifically conveys a strong, often subjective, feeling that something is utterly impossible, beyond one's capacity, or too difficult to achieve. It is essential to distinguish this nuance of impossibility from simple negation or a lack of degree.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/とても-ない"
-    }
+    },
+    "change": [
+        "schema: Added 'conjugations' array as the grammar point involves verb/adjective forms (Rule: If the grammar point contains a verb in dictionary form... add a new array field at the top, called \"conjugations\").",
+        "violation: Corrected 'conjugation' types in examples to align with the newly added top-level 'conjugations' array (Rule: 'conjugation' must be present if there is a top-level 'conjugations' array. The content... must be taken from the top-level list of conjugations you generated earlier. Use the 'type' field.).",
+        "violation: Revised 'formation' to include '形容詞・形容動詞' and '名詞 + はない' patterns based on DOJG data and observed examples like 'とても無理だ', ensuring Japanese explanations for each pattern. (Rule: 'formation' must be present).",
+        "unnatural: Modified example 4's Japanese sentence (`どこ の 航空会社 も 今 は チケット を 売っ て い{ない} から、旅行 を する の が {とても} 無理 だ 。` -> `飛行機 が 飛ん で い{ない} から、旅行 する の は {とても} 無理 だ 。`) to use N3 appropriate kanji, adhering to JLPT level requirements for example sentences.",
+        "schema: Added 'scene_rationale' to all examples that had a 'scene' field, detailing competing grammar and mitigation strategies (Rule: 'scene_rationale' must be present if 'scene' is present).",
+        "schema: Added 'speaker_gender' and corresponding 'nuance' to examples 1 and 6 to meet the requirement for at least one male and one female speaker (Rule: Example sentences should include at least one male and one female speaker_gender).",
+        "schema: Added 'listener_gender' and corresponding 'nuance' to example 1 (Rule: Example sentences should include at least one male and one female listener_gender).",
+        "violation: Added 'とうてい〜ない' to 'false_friends' with 'nuance' based on DOJG's 'Related Expression' as it is a highly similar expression emphasizing impossibility (Rule: 'false_friends' array with specific structure; 'nuance' for contrast).",
+        "unnatural: Refined the 'nuance' for existing 'false_friends' to provide clearer distinctions based on the grammar point's core meaning of strong impossibility.",
+        "unnatural: Revised 'post_example_writeup' and 'writeup' to be more comprehensive and natural, incorporating nuances observed in DOJG and Bunpro writeups while adhering to prompt guidelines."
+    ]
 }

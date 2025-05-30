@@ -25,16 +25,35 @@
             "japanese": "{あれ} は 何 です か。",
             "english": "What is that over there?",
             "scene": "A child asking their parent about something unfamiliar in the distance.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "これ は 何 です か。",
+                    "mitigation": "The scene specifies something \"unfamiliar in the distance,\" which makes 「あれ」 the appropriate choice over 「これ」 (close to speaker)."
+                },
+                {
+                    "competing_grammar": "それ は 何 です か。",
+                    "mitigation": "The scene specifies something \"unfamiliar in the distance,\" which makes 「あれ」 the appropriate choice over 「それ」 (close to listener)."
+                }
+            ],
             "register": "polite",
             "setting": "interrogative",
             "speaker_age": "younger",
-            "listener_age": "older",
             "nuance": "The polite 「です か」 form is appropriate for a child addressing an adult. The simple question 「何 です か」 is typical for young learners."
         },
         {
             "japanese": "{あれ} は コンビニ です。",
             "english": "That over there is a convenience store.",
             "scene": "Someone giving directions to a tourist.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "これ は コンビニ です。",
+                    "mitigation": "When \"giving directions to a tourist,\" the object being pointed out is typically not immediately next to the speaker, thus 「あれ」 is used to indicate something \"over there.\""
+                },
+                {
+                    "competing_grammar": "それ は コンビニ です。",
+                    "mitigation": "When \"giving directions to a tourist,\" the object being pointed out is typically not immediately next to the listener, thus 「あれ」 is used to indicate something \"over there.\""
+                }
+            ],
             "register": "polite",
             "setting": "informative",
             "speaker_gender": "male",
@@ -45,6 +64,16 @@
             "japanese": "{あれ} は ホテル です。",
             "english": "That over there is a hotel.",
             "scene": "A person confirming a landmark for a taxi driver.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "これ は ホテル です。",
+                    "mitigation": "When \"confirming a landmark for a taxi driver,\" the hotel is likely visible but at a distance from the speaker, thus 「あれ」 is used to indicate something \"over there.\""
+                },
+                {
+                    "competing_grammar": "それ は ホテル です。",
+                    "mitigation": "When \"confirming a landmark for a taxi driver,\" the hotel is likely visible but at a distance from the driver, thus 「あれ」 is used to indicate something \"over there.\""
+                }
+            ],
             "register": "polite",
             "setting": "informative",
             "speaker_gender": "female",
@@ -55,55 +84,96 @@
             "japanese": "{あれ} は 電車 です。",
             "english": "That over there is a train.",
             "scene": "A parent teaching a child about transportation.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "これ は 電車 です。",
+                    "mitigation": "In the context of \"a parent teaching a child about transportation,\" the train is likely seen approaching or passing from a distance, making 「あれ」 the natural choice to refer to something further away from the speaker."
+                },
+                {
+                    "competing_grammar": "それ は 電車 です。",
+                    "mitigation": "In the context of \"a parent teaching a child about transportation,\" the train is likely seen approaching or passing from a distance, making 「あれ」 the natural choice to refer to something further away from the listener."
+                }
+            ],
             "register": "polite",
             "setting": "informative",
             "speaker_age": "older",
-            "listener_age": "younger",
             "nuance": "The simple declarative sentence with 「です」 is clear and appropriate for an older person explaining something to a younger one."
         },
         {
             "japanese": "{あれ} は 兄 です。",
             "english": "That over there is my older brother.",
             "scene": "Introducing a family member at a formal gathering.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼 は 兄 です。",
+                    "mitigation": "While 「彼」 (kare) can mean 'he', using 「あれ」 (are) here is more natural when pointing to someone physically present but at a distance across a room during an introduction, as opposed to simply stating a fact about a male person. The scene specifically implies pointing out someone at a distance, making 「あれ」 more suitable."
+                }
+            ],
             "register": "polite",
             "setting": "informative",
             "speaker_age": "younger",
-            "listener_age": "older",
             "nuance": "Using 「です」 maintains formality. The term 「兄」 (ani) refers to one's own older brother, suitable for a younger person speaking to someone older."
         },
         {
             "japanese": "{あれ} は 何という 意味 です か？",
             "english": "What does that mean?",
             "scene": "A student asking a teacher about a word on the whiteboard.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "これ は 何という 意味 です か？",
+                    "mitigation": "The scene mentions a student asking about a word \"on the whiteboard.\" The whiteboard is typically distant from the student, making 「あれ」 suitable, whereas 「これ」 would imply the word is in the student's hand."
+                },
+                {
+                    "competing_grammar": "それ は 何という 意味 です か？",
+                    "mitigation": "The scene mentions a student asking about a word \"on the whiteboard.\" The whiteboard is typically distant from the student, making 「あれ」 suitable, whereas 「それ」 would imply the word is closer to the teacher but not the student."
+                }
+            ],
             "register": "polite",
             "setting": "interrogative",
             "speaker_age": "younger",
-            "listener_age": "older",
-            "nuance": "The speaker uses 「すみません」 to politely get the listener's attention and 「何という 意味 です か」 is a polite way to inquire about the meaning of something, appropriate from a younger person to an older authority figure."
+            "nuance": "The speaker uses 「何という 意味 です か」 as a polite way to inquire about the meaning of something, appropriate from a younger person to an older authority figure. 「あれ」 refers to the distant word on the whiteboard."
         },
         {
             "japanese": "私たちの将来は、{あれ} くらい輝いていますよ。",
             "english": "Our future is shining like that over there.",
             "scene": "A man confidently telling a woman he's dating about their bright future together.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "これ くらい 輝いていますよ。",
+                    "mitigation": "The speaker is referring to an abstract, grand future, which is conceptually distant from both individuals. 「あれ」 is fitting for this conceptual distance, unlike 「これ」 which implies proximity to a tangible reference point."
+                },
+                {
+                    "competing_grammar": "それ くらい 輝いていますよ。",
+                    "mitigation": "The speaker is referring to an abstract, grand future, which is conceptually distant from both individuals. 「あれ」 is fitting for this conceptual distance, unlike 「それ」 which implies proximity to a tangible reference point."
+                }
+            ],
             "register": "intimate",
             "setting": "flirty",
             "speaker_gender": "male",
             "speaker_age": "older",
             "listener_gender": "female",
-            "listener_age": "younger",
             "nuance": "The phrase 「輝いていますよ」 (kagayaite imasu yo) expresses confidence and a shared positive outlook. The particle 「よ」 adds a personal conviction, often used by male speakers to emphasize a point or express certainty in intimate conversations, making it suitable for a flirty interaction from an older man to a younger woman."
         },
         {
             "japanese": "{あれ} が、僕の好きなカフェです。今度一緒に行きませんか。",
             "english": "That over there is my favorite cafe. Would you like to go together sometime?",
             "scene": "A man pointing out a cafe he likes to a woman he's on a first date with, hinting at a future meeting.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "ここ が、僕の好きなカフェです。",
+                    "mitigation": "The scenario implies the cafe is visible but not immediately at their current location, differentiating it from 「ここ」 (right here)."
+                },
+                {
+                    "competing_grammar": "そこ が、僕の好きなカフェです。",
+                    "mitigation": "The scenario implies the cafe is visible but not directly in front of the listener. 「あれ」 indicates a location visible but at a distance, which differentiates it from 「そこ」 (right there near you)."
+                }
+            ],
             "register": "polite",
             "setting": "first-date",
             "speaker_gender": "male",
             "speaker_age": "younger",
             "listener_gender": "female",
-            "listener_age": "older",
-            "nuance": "The use of 「僕」 (boku) is a casual first-person pronoun typically used by male speakers. The polite invitation 「今度一緒に行きませんか」 (kondo issho ni ikimasen ka) is a common and appropriate way to suggest a future date during a first encounter between a younger male speaker and an older female listener."
+            "nuance": "The use of 「僕」 (boku) is a casual first-person pronoun typically used by male speakers. The polite invitation 「今度一緒に行きませんか」 (kondo issho ni ikimasen ka) is a common and appropriate way to suggest a future date during a first encounter between a younger male speaker and an older female listener. 「あれ」 refers to the cafe visible in the distance."
         }
     ],
     "false_friends": [
@@ -163,18 +233,12 @@
         }
     ],
     "post_false_friends_writeup": "It is important to distinguish 「あれ」 from other similar words like 「これ」, 「それ」, and 「あそこ」. Remember that 「あれ」 refers to something physically distant from both the speaker and listener. 「あの」 can also mean \"that over there,\" but is used as an adjective modifying a noun.",
-    "change": [
-        "violation: Removed the 'bunpro' top-level field and moved its contents to the top level, as per rule 20.",
-        "violation: Added curly braces to '{あれ}' in all 'japanese' examples and removed extraneous spaces, as per rule 6.",
-        "violation: Removed the example sentence that used 'あれ' as an interjection ('ちょっと待って、あれ、スマホがない。'), as it did not preserve the meaning of the grammar point ('あれ' as a demonstrative pronoun) as required by rule 6.",
-        "violation: Added a 'scene' field to all example sentences, as required by rule 6.",
-        "violation: Added an example sentence with 'flirty' setting, as required by rule 7.",
-        "violation: Added an example sentence with 'first-date' setting, as required by rule 8.",
-        "violation: Diversified 'speaker_gender', 'listener_gender', 'speaker_age', and 'listener_age' across examples to meet the variety requirements of rule 6.",
-        "unnatural: Changed 'kind' from 'synonym' to 'related demonstrative' for all false friends, as 'synonym' was not the most accurate description of their relationship to 'あれ'.",
-        "violation: Changed N1 kanji '未来' to N3 kanji '将来' in an example sentence to comply with the JLPT kanji level rule for N5 grammar points (rule in prompt header)."
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/あれ"
-    }
+    },
+    "change": [
+        "schema: Removed top-level 'rank' and 'lesson_order' fields, as they are not defined in the schema.",
+        "schema: Removed 'listener_age' from all examples, as it is a deprecated field per schema comments.",
+        "schema: Added 'scene_rationale' to all examples that have a 'scene' field, as required by the schema."
+    ]
 }

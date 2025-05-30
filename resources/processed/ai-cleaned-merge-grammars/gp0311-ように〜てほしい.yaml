@@ -1,7 +1,43 @@
 {
     "grammar_point": "ように〜てほしい",
     "id": "gp0311",
-    "conjugations": [],
+    "conjugations": [
+        {
+            "type": "dictionary (plain non-past)",
+            "form": "ように〜てほしい",
+            "rarity": "common"
+        },
+        {
+            "type": "negative plain (～ない)",
+            "form": "ように〜てほしくない",
+            "rarity": "common"
+        },
+        {
+            "type": "past plain (～た)",
+            "form": "ように〜てほしかった",
+            "rarity": "common"
+        },
+        {
+            "type": "negative past plain (～なかった)",
+            "form": "ように〜てほしくなかった",
+            "rarity": "common"
+        },
+        {
+            "type": "conditional (～ば)",
+            "form": "ように〜てほしければ",
+            "rarity": "less common"
+        },
+        {
+            "type": "conditional (～たら)",
+            "form": "ように〜てほしかったら",
+            "rarity": "common"
+        },
+        {
+            "type": "concessive (～ても)",
+            "form": "ように〜てほしくても",
+            "rarity": "less common"
+        }
+    ],
     "pronunciation": {
         "katakana": "ヨウニテホシイ",
         "romaji": "youni tehoshii"
@@ -15,107 +51,185 @@
         "Register": "Standard",
         "使用域": "一般"
     },
-    "etymology": "This grammar point is a combination of 「ように」(meaning \"like, in order to\") and 「てほしい」(meaning \"want someone to do something\").",
+    "etymology": "The grammar point 「ように〜てほしい」 is a compound structure formed from two distinct elements: 「ように」 and 「〜てほしい」. The adverbial particle 「ように」 derives from the noun 「様 (よう)」, meaning 'appearance' or 'state'. Over time, 「ように」 evolved to indicate a simile ('like'), purpose ('in order to'), or desired state. The expression 「〜てほしい」 is a volitional form that indicates a desire for someone else to perform an action. 「ほしい」 itself is an adjective meaning 'desirable' or 'wanted', originating from the classical Japanese verb 「欲し (ほし)」. The combination 「ように〜てほしい」 thus expresses a desire for an action to be performed in a certain manner or for a certain state to be achieved, reflecting its etymological roots in appearance, purpose, and desire.",
     "writeup": "「ように〜てほしい」 combines the auxiliary verb 「ようだ」 with the 「てほしい」 structure, indicating that you or someone else wants someone to do something. 「ようだ」 takes the adverbial form 「ように」 when linked to a verb later in the sentence. This expression highlights that you want someone to do something \"in the way of (A)\" or \"so that (A)\" happens. When 「ように」 follows a noun, 「の」 is required. Either 「に」 or 「が」 may mark the thing that the speaker wants to happen, with 「に」 often marking people and 「が」 marking events or objects. Note that 「が」 and 「に」 may be switched to avoid repetition or confusion about the subject of the sentence.",
     "examples": [
         {
-            "japanese": "弁護士になれるように頑張って{ほしい} 。",
-            "english": "I want you to work your hardest so that you can become a lawyer.",
+            "japanese": "良い 先生 になれる {ように頑張ってほしい} 。",
+            "english": "I want you to work your hardest so that you can become a good teacher.",
             "scene": "A parent encouraging their child.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "良い先生になってほしい。",
+                    "mitigation": "The scene clarifies that the parent wants the child to *make an effort* (頑張る) towards becoming a good teacher, emphasizing the *process* or *manner* of achieving the goal, rather than just the outcome."
+                }
+            ],
             "register": "formal",
             "setting": "supportive",
-            "conjugation": null
+            "conjugation": "dictionary (plain non-past)",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "While the Japanese sentence 「良い先生になれるように頑張ってほしい。」 does not contain explicitly gendered speech, in the context of a father (`male speaker`) encouraging his daughter (`female listener`) towards a future career, this supportive tone is natural for both genders."
         },
         {
-            "japanese": "この チーム が 大会 で 勝てる ように なって{ほしい} 。",
+            "japanese": "この チーム が 大会 で 勝てる {ようになってほしい} 。",
             "english": "I want this team to be able to win the tournament.",
             "scene": "A coach talking about their team's future.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "このチームに大会で勝ってほしい。",
+                    "mitigation": "The scene implies a desire for the team to *develop the ability* to win, which is conveyed by `〜ようになる`, rather than just wishing for a win without specifying the development aspect."
+                }
+            ],
             "register": "formal",
             "setting": "optimistic",
-            "conjugation": null
+            "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "もっと アナウンサー の ように 話して{ほしい} な。",
+            "japanese": "もっと アナウンサー の {ように話してほしい} な。",
             "english": "I wish you would talk more like an announcer.",
             "scene": "An acting coach giving feedback to a student.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "もっとアナウンサーみたいに話してほしい。",
+                    "mitigation": "The setting of an acting coach giving feedback suggests a more precise and formal comparison, which `ように` provides over the slightly more casual `みたいに`."
+                }
+            ],
             "register": "casual",
             "setting": "instructional",
-            "conjugation": null
+            "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "あなた に 漢字 を 書ける ように なって{ほしい} 。",
+            "japanese": "あなた に 漢字 を 書ける {ようになってほしい} 。",
             "english": "I want you to be able to write kanji.",
             "scene": "A teacher speaking to their student.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あなたに漢字を書いてほしい。",
+                    "mitigation": "The context of a teacher speaking to a student about learning implies the desire for the student to *acquire the ability* to write kanji, conveyed by `〜ようになる`, rather than a direct request to write them at that moment."
+                }
+            ],
             "register": "formal",
             "setting": "informative",
-            "conjugation": null
+            "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "事故 が 無くなる ように 運転 を して{ほしい} です。",
+            "japanese": "事故 が 無くなる {ように運転をしてほしい} です。",
             "english": "I want people to drive in a way that will reduce accidents.",
             "scene": "A public service announcement.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "事故がなくなるように運転してほしい。",
+                    "mitigation": "The scene of a public service announcement indicates a formal, polite request for people to drive *in a manner* that prevents accidents, emphasizing the purpose `ように` and polite `です`."
+                }
+            ],
             "register": "polite",
             "setting": "informative",
-            "conjugation": null
+            "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "トム に 友達 が できる ように なって{ほしい} 。",
+            "japanese": "トム に 友達 が できる {ようになってほしい} 。",
             "english": "I want Tom to be able to make some friends.",
             "scene": "A friend expressing concern about Tom's social life.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "トムに友達を作ってほしい。",
+                    "mitigation": "The scene suggests a desire for Tom to *gain the ability* or for the situation to naturally lead to him having friends (`友達ができる`), emphasizing the natural process `〜ようになる` rather than a direct action of 'making friends'."
+                }
+            ],
             "register": "formal",
             "setting": "sympathetic",
-            "conjugation": null
+            "conjugation": "dictionary (plain non-past)",
+            "speaker_gender": "male",
+            "listener_gender": "no one",
+            "nuance": "While the Japanese sentence 「トムに友達ができる{ようになってほしい}。」 is gender-neutral, a male speaker (`male speaker`) expressing concern for a friend's social growth in this way is a common and natural interaction."
         },
         {
-            "japanese": "私たち の 子供 には 君 の ように なって{ほしい} 。",
+            "japanese": "私たち の 子供 には 君 の {ようになって欲しい} 。",
             "english": "I want our children to become like you.",
             "scene": "Parents expressing admiration to someone they respect.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "私たちの子供にあなたみたいになってほしい。",
+                    "mitigation": "Parents expressing admiration to someone they respect implies a desire for their children to truly embody the admired qualities, which `のように` conveys more formally than `みたいに`."
+                }
+            ],
             "register": "formal",
             "setting": "supportive",
-            "conjugation": null
+            "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "この 電車 にも 新幹線 の ように 早く 走って{欲しい} です。",
+            "japanese": "この 電車 にも 速い 列車 の {ように早く走って欲しい} です。",
             "english": "I want this train to run as fast as a bullet train.",
             "scene": "A person complaining about a slow train.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この電車にも速く走ってほしい。",
+                    "mitigation": "The scene implies a specific benchmark for speed (like a bullet train), which `のように` clearly expresses as a desired manner of running, unlike a simple request for speed."
+                }
+            ],
             "register": "polite",
             "setting": "humorous",
-            "conjugation": null
+            "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "赤ちゃん の 前 でも 大人 の ように 喋って{欲しい} 。",
+            "japanese": "赤ちゃん の 前 でも 大人 の {ように喋って欲しい} 。",
             "english": "I want you to talk like an adult even in front of the baby.",
             "scene": "A parent playfully scolding someone.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "赤ちゃんの前でも大人みたいに喋ってほしい。",
+                    "mitigation": "Even in a playful scolding, using `のように` implies a standard or a proper manner of speech, making it slightly more direct and instructional than the more observational `みたいに`."
+                }
+            ],
             "register": "formal",
             "setting": "humorous",
-            "conjugation": null
+            "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "頭 が 良く なる ように 勉強して{欲しい} 。",
+            "japanese": "頭 が 良く なる {ように勉強して欲しい} 。",
             "english": "I want you to study in a way that helps you become smart.",
             "scene": "A parent encouraging their child to study harder.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "頭が良くなってほしい。",
+                    "mitigation": "The scene of a parent encouraging studying specifically highlights the *method* or *purpose* of studying (`勉強して`), which `ように` expresses as leading to the desired outcome of becoming smart."
+                }
+            ],
             "register": "formal",
             "setting": "instructional",
-            "conjugation": null
+            "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "ウサインボルト の ように 走って{欲しい} 。",
+            "japanese": "ウサインボルト の {ように走って欲しい} 。",
             "english": "I want you to run like Usain Bolt.",
             "scene": "A coach motivating a runner.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "ウサインボルトみたいに走ってほしい。",
+                    "mitigation": "A coach motivating a runner emphasizes achieving a specific, high-level performance, which `のように` conveys as a precise standard, rather than just a casual comparison with `みたいに`."
+                }
+            ],
             "register": "formal",
             "setting": "inspirational",
-            "conjugation": null
+            "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "明日 、 デート で 完璧 に エスコート できる ように 練習して{欲しい} な。",
+            "japanese": "明日 、 デート で 完璧 に エスコート できる {ように練習して欲しい} な。",
             "english": "I hope you'll practice so that you can escort me perfectly on our date tomorrow.",
             "scene": "A woman flirting with a man before their date.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "明日、デートで完璧にエスコートしてほしい。",
+                    "mitigation": "The scene highlights the desire for the man to *acquire the ability through practice* (`練習できる`), not just perform the action directly, which `ように` emphasizes as the purpose or manner of practicing."
+                }
+            ],
             "register": "casual",
             "setting": "flirty",
-            "conjugation": null,
+            "conjugation": "dictionary (plain non-past)",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "「〜な」 adds a slight sense of hope or desire from the speaker. The speaker_gender is female, because she hopes the man will practice so that he can escort her on their date tomorrow.",
+            "nuance": "While the sentence 「明日、デートで完璧にエスコートできる{ように練習して欲しい}な。」 itself is not exclusively gendered, the context of a woman (`female speaker`) flirting with a man (`male listener`) before a date makes this expression of desire for his practiced escorting particularly fitting.",
             "etymology": "「エスコート」 is a loan word (gairaigo) from the English word \"escort.\""
         }
     ],
@@ -160,5 +274,13 @@
     "post_false_friends_writeup": "The key to distinguishing 「ように〜てほしい」 from these similar expressions is recognizing its core function: expressing a desire for someone to do something in a *specific manner* or to achieve a particular result. Focus on the presence of both the 「ように」 indicating manner or means, and the 「てほしい」 indicating a desire for action. When you want to state a simple desire, use 「がほしい」 or 「てほしい」. When you want to indicate an effort, use 「ようにする」. When you want to describe instructions, use 「ようにいう」. Only use 「ように〜てほしい」 when expressing a desire for someone to act in a specific way to achieve a particular goal or state.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ように-てほしい"
-    }
+    },
+    "change": [
+        "violation: Changed bolding in `japanese` examples from `{ほしい}` to `{ように〜てほしい}` to correctly highlight the grammar point.",
+        "violation: Adjusted kanji usage in `japanese` examples to conform to JLPT N4 level requirements (e.g., `弁護士` to `良い先生`, `新幹線` to `速い列車`).",
+        "schema: Populated the `conjugations` array with relevant forms of `ように〜てほしい` as `ほしい` is an i-adjective.",
+        "violation: Added `scene_rationale` to all examples that had a `scene` field, providing `competing_grammar` and `mitigation` for each.",
+        "unnatural: Expanded and refined the top-level `etymology` section to provide a more linguistically detailed explanation.",
+        "violation: Added `speaker_gender`, `listener_gender`, and specific `nuance` explanations to examples 1 and 6 to ensure at least one male and one female speaker/listener are represented as required."
+    ]
 }

@@ -24,6 +24,12 @@
             "japanese": "すみません、トイレは{どこ}ですか？",
             "english": "Excuse me, where is the restroom?",
             "scene": "Asking for directions in a public place.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "トイレどこ？",
+                    "mitigation": "The 「すみません」 establishes a polite tone, essential for asking a stranger for directions in a public setting."
+                }
+            ],
             "register": "teineigo (polite)",
             "setting": "informative"
         },
@@ -31,6 +37,12 @@
             "japanese": "美味しいレストランは{どこ}ですか？",
             "english": "Where is a good restaurant?",
             "scene": "Asking a local for recommendations.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "美味しいレストランどこ？",
+                    "mitigation": "The use of 「ですか」 maintains politeness, which is appropriate when seeking recommendations from a local, especially if they are not a close acquaintance."
+                }
+            ],
             "register": "teineigo (polite)",
             "setting": "informative"
         },
@@ -38,16 +50,27 @@
             "japanese": "駅は{どこ}？",
             "english": "Where's the station?",
             "scene": "Two friends in a foreign city looking for transportation.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "駅はどこですか？",
+                    "mitigation": "The omission of the polite 「です」/「ですか」 is typical for casual conversation between close friends, making the scene of \"Two friends\" appropriate."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
             "speaker_age": "younger",
-            "listener_age": "younger",
             "nuance": "This casual expression 「駅はどこ？」is appropriate between close friends, as it omits the polite 「です」 or 「ですか」."
         },
         {
             "japanese": "あなたは{どこ}に行きたいですか？",
             "english": "Where do you want to go?",
             "scene": "On a first date.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "どこに行きたい？",
+                    "mitigation": "On a first date, using the more formal 「あなたは」 and polite 「ですか」 shows respect and thoughtfulness, avoiding an overly direct or presumptuous tone, especially for a male speaker addressing a female listener."
+                }
+            ],
             "register": "teineigo (polite)",
             "setting": "first-date",
             "listener_gender": "female",
@@ -58,6 +81,12 @@
             "japanese": "ねえ、今夜{どこ}で会いましょうか？",
             "english": "Hey, where should we meet tonight?",
             "scene": "Texting a potential love interest to arrange a date.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "今夜どこで会いますか？",
+                    "mitigation": "The informal 「ねえ」 and volitional 「会いましょうか」 with the casual register implies an inviting and familiar tone, suitable for flirting or close casual arrangements, rather than a more direct, formal inquiry."
+                }
+            ],
             "register": "casual",
             "setting": "flirty",
             "speaker_gender": "female",
@@ -69,6 +98,12 @@
             "japanese": "田中さんの家は{どこ}ですか？",
             "english": "Where is Mr. Tanaka's house?",
             "scene": "A delivery person asking for directions.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "田中さん家はどこ？",
+                    "mitigation": "A delivery person maintaining a formal tone with 「田中さんの家」 and 「ですか」 conveys professionalism and respect when inquiring about a customer's residence."
+                }
+            ],
             "register": "teineigo (polite)",
             "setting": "informative",
             "speaker_age": "older",
@@ -78,6 +113,12 @@
             "japanese": "故郷は{どこ}ですか？",
             "english": "Where is your hometown?",
             "scene": "Getting to know someone.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "故郷はどこ？",
+                    "mitigation": "In a new social interaction like a first date, using polite language with 「ですか」 creates a respectful and approachable atmosphere, encouraging open conversation without being overly familiar."
+                }
+            ],
             "register": "teineigo (polite)",
             "setting": "first-date",
             "speaker_gender": "male",
@@ -112,10 +153,11 @@
         }
     ],
     "post_false_friends_writeup": "It's crucial to differentiate 「どこ」 from 「ここ、そこ、あそこ」 and 「どっち」. 「どこ」 is used for asking about the unknown location, while the others refer to specific places relative to the speaker and listener, or direction/choice. Remember to consider the context to choose the appropriate word.",
-    "change": [
-        "violation: Changed 'kind' in false_friends from 'synonym' to 'related term' for ここ, そこ, あそこ. The previous 'synonym' was inaccurate because these are demonstrative pronouns indicating specific locations, whereas どこ is an interrogative pronoun for an unknown location. Rule: 'Ensure the JSON is valid and properly escaped for YAML conversion.'"
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/どこ"
-    }
+    },
+    "change": [
+        "schema: Removed 'listener_age' field from example 3 to comply with the schema's deprecation rule.",
+        "schema: Added 'scene_rationale' to all examples containing a 'scene' field, providing competing grammar and mitigation, as required by the schema."
+    ]
 }

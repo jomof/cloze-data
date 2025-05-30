@@ -7,44 +7,49 @@
             "rarity": "commonly used"
         },
         {
-            "type": "polite (non-past)",
+            "type": "non-past polite (～ます)",
             "form": "ていきます",
             "rarity": "commonly used"
         },
         {
-            "type": "past (plain)",
+            "type": "past plain (～た)",
             "form": "ていった",
             "rarity": "commonly used"
         },
         {
-            "type": "past (polite)",
+            "type": "past polite (～ました)",
             "form": "ていきました",
             "rarity": "commonly used"
         },
         {
-            "type": "te-form",
+            "type": "te-form (～て)",
             "form": "ていって",
             "rarity": "uncommon"
         },
         {
-            "type": "conditional (provisional ば-form)",
+            "type": "conditional (～ば)",
             "form": "ていけば",
             "rarity": "uncommon"
         },
         {
-            "type": "conditional (tara-form)",
+            "type": "conditional (～たら)",
             "form": "ていったら",
             "rarity": "uncommon"
         },
         {
-            "type": "volitional (plain)",
+            "type": "volitional (～よう)",
             "form": "ていこう",
             "rarity": "very rare"
         },
         {
-            "type": "volitional (polite)",
+            "type": "volitional polite (～ましょう)",
             "form": "ていきましょう",
             "rarity": "very rare"
+        },
+        {
+            "type": "desiderative (～たい)",
+            "form": "ていきたい",
+            "rarity": "commonly used"
         }
     ],
     "id": "gp0254",
@@ -65,20 +70,32 @@
     "writeup": "This grammar construction combines the 「て」 particle with the verb 「行く」 (iku, \"to go\"). To use it, attach 「て」 to a verb, then follow it with 「いく」. The nuance is usually that \"(A) happened and then went,\" or \"will happen, and then go.\" In other words, it depends on whether 「いく」 is in present or past tense.\n\n「ていく」 can represent time or a physical place. When representing a physical place, the kanji form 「行く」 is more likely, but this isn't a strict rule. When used in relation to time, the nuance is usually that something has already started or is about to start, and then will continue to progress in the same way.\n\nThis is the opposite of 「てくる」, which indicates that something has finally reached a certain state after progressing in that way for some time.\n\nCompared to English, 「ていく」 is similar to the phrase \"to go on to (A)\" in relation to time. It focuses on the speaker's journey to a specific point. For example, \"She went on to become a doctor after university.\"",
     "examples": [
         {
-            "japanese": "子供たちが公園に{走っていく}。",
-            "english": "The children run off to the park.",
-            "scene": "Describing children leaving for the park.",
+            "japanese": "子供たちが学校に{走っていく}。",
+            "english": "The children run off to school.",
+            "scene": "Describing children leaving for school.",
             "register": "casual",
             "setting": "descriptive",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "dictionary (plain non-past)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "子供たちが学校へ行く。",
+                    "mitigation": "The scene implies an action that starts and continues, emphasizing the 'running' aspect of their departure, rather than just the destination."
+                }
+            ]
         },
         {
             "japanese": "これ を 先生 に 持って {いって} ください。",
             "english": "Please take this to the teacher.",
             "scene": "A student being asked to deliver something to a teacher.",
-            "register": "polite",
+            "register": "teineigo (polite)",
             "setting": "instructional",
-            "conjugation": "te-form"
+            "conjugation": "te-form (～て)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "これを先生に渡してください。",
+                    "mitigation": "The scene focuses on the action of *taking* the item to the teacher, implying movement away, rather than just the act of handing it over once there."
+                }
+            ]
         },
         {
             "japanese": "友達 に プレゼント を 買って {いく} 。",
@@ -86,31 +103,63 @@
             "scene": "Planning to buy and deliver a gift.",
             "register": "casual",
             "setting": "friendly",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "dictionary (plain non-past)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "友達にプレゼントを買います。",
+                    "mitigation": "The scene emphasizes the subsequent action of taking the purchased item to the friend, highlighting the continuous action of 'buy and go'."
+                }
+            ]
         },
         {
-            "japanese": "大丈夫！お弁当 を 持って {いく} から。",
-            "english": "It's okay! I'll take a lunch (bento) with me.",
-            "scene": "Reassuring someone by mentioning you'll bring lunch.",
+            "japanese": "昼ご飯 を 持って {いく} から。",
+            "english": "I will take lunch with me.",
+            "scene": "Someone is asking if you've prepared for lunch, and you're reassuring them.",
             "register": "casual",
             "setting": "supportive",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "dictionary (plain non-past)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "昼ご飯を持って行きます。",
+                    "mitigation": "The casual register in the scene helps guide towards the plain form."
+                },
+                {
+                    "competing_grammar": "昼ご飯は用意しています。",
+                    "mitigation": "The scene emphasizes the act of physically taking the lunch, rather than just having it ready."
+                }
+            ]
         },
         {
-            "japanese": "今日 は テスト を 受ける から 鉛筆 を 持って {いく} 。",
-            "english": "Because I am going to take a test today, I will take a pencil.",
-            "scene": "Explaining why you're bringing a pencil.",
+            "japanese": "試験 を する から、ペン を 持って {いく} 。",
+            "english": "Because I am going to take a test today, I will take a pen.",
+            "scene": "Explaining to a friend why you're carrying a pen.",
             "register": "casual",
             "setting": "informative",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "dictionary (plain non-past)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "試験があるから、ペンを持って行きます。",
+                    "mitigation": "The casual tone of the scene helps guide towards the plain form."
+                },
+                {
+                    "competing_grammar": "試験にペンがいる。",
+                    "mitigation": "The scene emphasizes the action of physically bringing the pen with oneself, rather than just its necessity."
+                }
+            ]
         },
         {
             "japanese": "これから、もっと日本語を勉強して{いきたい}です。",
             "english": "From now on, I want to study Japanese more and continue doing so.",
             "scene": "Expressing a desire to continue learning.",
-            "register": "polite",
+            "register": "teineigo (polite)",
             "setting": "serious",
-            "conjugation": "volitional (plain)"
+            "conjugation": "desiderative (～たい)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "これから、もっと日本語を勉強したいです。",
+                    "mitigation": "The scene emphasizes the continuous nature of the desire to keep studying into the future."
+                }
+            ]
         },
         {
             "japanese": "この仕事で、たくさんのことを学んで{いきたい}です。",
@@ -118,38 +167,62 @@
             "scene": "During a job interview, stating career goals.",
             "register": "formal",
             "setting": "professional",
-            "conjugation": "volitional (plain)"
+            "conjugation": "desiderative (～たい)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この仕事で、たくさんのことを学びたいです。",
+                    "mitigation": "The scene highlights the ongoing process of learning throughout the job, not just a desire for a singular learning event."
+                }
+            ]
         },
         {
-            "japanese": "来年も、一緒に旅行して{いこう}ね。",
+            "japanese": "来年も、みんなで旅行して{いこう}ね。",
             "english": "Let's keep traveling together next year too, okay?",
             "scene": "A man speaking to his wife after a trip.",
             "speaker_gender": "male",
             "listener_gender": "female",
             "register": "intimate",
             "setting": "friendly",
-            "conjugation": "volitional (plain)",
-            "nuance": "The speaker uses 「〜いこうね」, which adds a gentle, encouraging, and intimate tone, common between close partners. The phrase 「ね」 at the end further softens the volitional form. The speaker is male."
+            "conjugation": "volitional (～よう)",
+            "nuance": "The speaker uses 「〜いこうね」, which adds a gentle, encouraging, and intimate tone, common between close partners. The phrase 「ね」 at the end further softens the volitional form.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "来年も、みんなで旅行しましょうね。",
+                    "mitigation": "The intimate context between a husband and wife in the scene suggests a casual volitional form."
+                }
+            ]
         },
         {
-            "japanese": "これから、毎日一緒にご飯を食べて{いきたい}な。",
+            "japanese": "これから、毎日みんなでご飯を食べて{いきたい}な。",
             "english": "From now on, I want to eat dinner together every day.",
             "scene": "On a first date, a woman is flirting with the man.",
             "register": "casual",
             "setting": "flirty",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "conjugation": "volitional (plain)",
-            "nuance": "The speaker uses 「〜たいな」, which adds a touch of longing and desire, common in flirty conversation. The speaker is female."
+            "conjugation": "desiderative (～たい)",
+            "nuance": "The speaker uses 「〜たいな」, which adds a touch of longing and desire, common in flirty conversation.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "これから、毎日みんなでご飯を食べたいな。",
+                    "mitigation": "The scene implies a desire for a continuous, ongoing action of eating together every day, rather than a one-time wish."
+                }
+            ]
         },
         {
             "japanese": "子供たちは、だんだん大人に{なっていった}。",
             "english": "The children gradually grew up into adults.",
             "scene": "Describing a natural process of growth over time.",
-            "register": "standard",
+            "register": "casual",
             "setting": "informative",
-            "conjugation": "past (plain)",
-            "nuance": "This sentence describes a continuous, gradual change over time, emphasizing the process of becoming something."
+            "conjugation": "past plain (～た)",
+            "nuance": "This sentence describes a continuous, gradual change over time, emphasizing the process of becoming something.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "子供たちは大人になった。",
+                    "mitigation": "The scene emphasizes the gradual, ongoing process of growing up, which 「〜ていった」 conveys more effectively than a simple past tense."
+                }
+            ]
         }
     ],
     "post_example_writeup": "「ていく」 describes a process that starts and continues, whether physically moving away or progressing in time. The verb tense of 「いく」 indicates whether the action is ongoing or completed. Remember, it's the opposite of 「てくる」, which describes something approaching or accumulating over time.",
@@ -180,10 +253,17 @@
         }
     ],
     "post_false_friends_writeup": "When using 「ていく」, remember that it implies continuation or movement away. Be careful not to confuse it with similar expressions like 「へいく」 (direction), \"Verb+にいく\" (purpose), 「はじめる」 (initiation), or 「てくる」 (approach/accumulation). Focus on whether the action is starting and continuing or simply a one-time event.",
-    "change": [
-        "violation: Example sentences should use kanji appropriate for the JLPT level of the grammar point. The original examples contained N3 or N2 kanji for an N4 grammar point. Replaced examples 1, 7, 8, and 10 to ensure all kanji are N4 or N5: \"子供たちが公園に{走っていく}\", \"この仕事で、たくさんのことを学んで{いきたい}です\", \"来年も、一緒に旅行して{いこう}ね\", \"子供たちは、だんだん大人に{なっていった}\"."
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ていく"
-    }
+    },
+    "change": [
+        "violation: Replaced example 1 (子供たちが公園に{走っていく}) with N4/N5 kanji (子供たちが学校に{走っていく}) to adhere to the JLPT kanji level requirements.",
+        "violation: Replaced example 4 (大丈夫！お弁当 を 持って {いく} から。) with N4/N5 kanji and rephrased (昼ご飯 を 持って {いく} から。) to adhere to the JLPT kanji level requirements.",
+        "violation: Replaced example 5 (今日 は テスト を 受ける から 鉛筆 を 持って {いく} 。) with N4/N5 kanji and rephrased (試験 を する から、ペン を 持って {いく} 。) to adhere to the JLPT kanji level requirements.",
+        "violation: Replaced example 8 (来年も、一緒に旅行して{いこう}ね。) with N4/N5 kanji (来年も、みんなで旅行して{いこう}ね。) to adhere to the JLPT kanji level requirements.",
+        "violation: Replaced example 9 (これから、毎日一緒にご飯を食べて{いきたい}な。) with N4/N5 kanji (これから、毎日みんなでご飯を食べて{いきたい}な。) to adhere to the JLPT kanji level requirements.",
+        "schema: Added `desiderative (～たい)` to the top-level `conjugations` array as it is used in examples but was missing from the list.",
+        "schema: Corrected `conjugation` type for examples 6, 7, and 9 from `volitional (plain)` to `desiderative (～たい)` to accurately reflect the grammar being conjugated.",
+        "schema: Added `scene_rationale` to all examples where a `scene` was present, as required by the schema for effective scaffolding."
+    ]
 }

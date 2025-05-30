@@ -1,5 +1,6 @@
 {
     "grammar_point": "と (quotation)",
+    "id": "gp0067",
     "pronunciation": {
         "katakana": "ト",
         "romaji": "to"
@@ -23,6 +24,16 @@
             "japanese": "彼はとてもいい人だ{と}聞きました。",
             "english": "I heard that he is a very good person.",
             "scene": "Someone passing along a positive comment they heard about someone else.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼はとてもいい人らしいです。",
+                    "mitigation": "The scene emphasizes the *direct hearing* of a specific statement, leading to the use of 「と聞きました」 for direct quotation, rather than just general hearsay like 「らしい」."
+                },
+                {
+                    "competing_grammar": "彼はとてもいい人だそうです。",
+                    "mitigation": "The scene focuses on reporting a specific 'comment' that was *heard*, which is best captured by directly quoting it with 「と」, differentiating it from a general report of information using 「だそうです」."
+                }
+            ],
             "register": "semi-formal",
             "setting": "informative",
             "nuance": "This sentence conveys information in a polite and indirect way, suitable for general conversation. The use of 「いい人だ」 is a common and simple way to describe someone positively at the N5 level.",
@@ -32,6 +43,12 @@
             "japanese": "メモに私は今から学校に行きます{と}書いた。",
             "english": "I wrote, 'I am going to school now' on a note.",
             "scene": "A person explaining what they wrote on a memo.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "メモに今から学校に行く旨を書いた。",
+                    "mitigation": "The scene specifies writing the *exact words* on the note, prompting the use of 「と」 for direct quotation rather than stating the general content with 「旨」."
+                }
+            ],
             "register": "casual",
             "setting": "informative",
             "nuance": "The quoted content 「私は今から学校に行きます」 is presented verbatim, showing precisely what was written on the note.",
@@ -41,6 +58,12 @@
             "japanese": "彼はここに来ますか{と}聞いた。",
             "english": "I asked if he was coming here.",
             "scene": "Someone reporting a question they asked.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼がここに来るかどうか聞いた。",
+                    "mitigation": "The scene highlights reporting a specific *question* that was posed, directing the user to use 「と」 for direct quotation of the question, rather than forming an indirect question with 「かどうか」."
+                }
+            ],
             "register": "semi-formal",
             "setting": "interrogative",
             "nuance": "The 「か」 particle indicates a question, making the quoted content a direct inquiry.",
@@ -50,6 +73,12 @@
             "japanese": "彼女は好きだよ{と}言った。",
             "english": "She said, 'I like you'.",
             "scene": "A girl confessing her feelings to her crush.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼女は彼が好きだと言った。",
+                    "mitigation": "The scene focuses on the direct and personal *confession* of feelings, leading to the precise direct quote 「好きだよ」 with 「と」, rather than a more general report of her feelings."
+                }
+            ],
             "register": "casual",
             "setting": "flirty",
             "speaker_gender": "female",
@@ -61,6 +90,12 @@
             "japanese": "田中さんは明日会いましょう{と}言いました。",
             "english": "Mr. Tanaka said, 'Let's meet tomorrow'.",
             "scene": "Someone reporting a suggestion made by a colleague.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "田中さんは明日会うことを提案しました。",
+                    "mitigation": "The scene emphasizes reporting the colleague's *exact words* as a suggestion, prompting the use of 「と」 for direct quotation, rather than rephrasing it as an indirect suggestion using 「提案しました」."
+                }
+            ],
             "register": "formal",
             "setting": "professional",
             "nuance": "The 「ましょう」 ending is a polite way to suggest or invite someone to do something together. The speaker is reporting what Mr. Tanaka said in a polite, business-appropriate way.",
@@ -70,12 +105,21 @@
             "japanese": "よくできましたね{と}先生は生徒に言いました。",
             "english": "The teacher told the student, 'You did very well'.",
             "scene": "A male teacher commending a female student after an exam.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "先生は生徒を褒めました。",
+                    "mitigation": "The scene describes the specific *words of commendation* used by the teacher, directing the user to quote them directly with 「と」, rather than simply stating that the teacher \"praised\" the student."
+                },
+                {
+                    "competing_grammar": "先生は生徒によくできたことを伝えました。",
+                    "mitigation": "The scene requires the direct wording of the teacher's praise, making 「と」 the appropriate particle for quoting the exact statement, unlike the more general indirect report using 「伝えました」."
+                }
+            ],
             "register": "semi-formal",
             "setting": "instructional",
             "speaker_gender": "male",
             "speaker_age": "older",
             "listener_gender": "female",
-            "listener_age": "younger",
             "nuance": "The phrase 「よくできましたね」 with the polite ending 「ね」 is a common way for an older male authority figure, such as a teacher, to praise a younger female student. The 「ね」 softens the statement and invites agreement.",
             "etymology": "「言いました」 is the polite past tense form of 「言う」 (to say)."
         }
@@ -95,14 +139,11 @@
         }
     ],
     "post_false_friends_writeup": "While 「って」 and 「と」 both mark quotations, 「って」 carries a more casual tone. When you are in more formal situations, it would be more appropriate to use 「と」. 「といってもいい」 is used when you are trying to express something that is similar but not exact.",
-    "id": "gp0067",
-    "change": [
-        "violation: Removed 「」 from `japanese` sentences in examples 2, 3, 4, and 5. Rule 6 states: \"The \"japanese\" **must not** use quotes including 「」, .\".",
-        "violation: Modified `japanese` sentence in Example 1 from \"彼はとても親切だと聞きました。\" to \"彼はとてもいい人だと聞きました。\". Rule 6 states: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\" 「親切」 is N3, but the grammar point is N5. 「いい人」 uses N5 kanji.",
-        "violation: Incorporated the essential detail about requiring 「だ」 before 「と」 when quoting nouns or na-adjectives into the `writeup`. Rule 5 states: \"Incorporate essential details from the input while rephrasing for clarity.\". This detail was present in the initial `bunpro` input's `writeup` but not fully integrated into the `prior_grammar_point_yaml`'s `writeup`.",
-        "unnatural: Added a new example (Example 6) to increase variety in `speaker_gender`, `listener_gender`, `speaker_age`, `listener_age`, `register`, and `setting`. Rules 6 and 8 imply a need for diverse examples (e.g., \"Example sentences should exhibit a wide variety of registers,\" \"There should always be at least one flirty sentence,\" \"There should always be at least one first-date sentence,\" \"Example sentences should include at least one male and one female speaker_gender,\" etc.). Adding this example helped achieve better overall coverage and demonstrate the grammar point in a different context."
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/と"
-    }
+    },
+    "change": [
+        "violation: Removed `listener_age` field from Example 6. The schema explicitly states that `listener_age` is deprecated and must be removed.",
+        "violation: Added `scene_rationale` to all examples (1-6) that include a `scene` field. The schema requires `scene_rationale` to be present if `scene` is present."
+    ]
 }

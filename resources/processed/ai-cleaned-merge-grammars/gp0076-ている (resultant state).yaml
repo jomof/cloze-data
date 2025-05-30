@@ -45,14 +45,14 @@
     ],
     "pronunciation": {
         "katakana": "テイル (ケッカジョウタイ)",
-        "romaji": "teiru (kekka joutai)",
-        "pronunciation_warning": "ている is often shortened to てる in casual speech. This shortening applies to all tenses, including てる, てて, てた, and てます."
+        "romaji": "teiru (kekka joutai)"
     },
     "formation": {
         "[Verb -て form] + いる": "Indicates that something has already happened and is now in a certain state."
     },
     "jlpt": "N5",
     "meaning": "State of being, Has (have) done",
+    "meaning_warning": "ている is often shortened to てる in casual speech. This shortening applies to all tenses, including てる, てて, てた, and てます.",
     "details": {
         "Part of Speech": "Auxiliary verb / Verb ending",
         "Register": "Standard"
@@ -75,7 +75,17 @@
             "scene": "Two friends passing by a store.",
             "register": "casual",
             "setting": "informative",
-            "conjugation": "plain present affirmative"
+            "conjugation": "plain present affirmative",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あの店はもう閉めます。",
+                    "mitigation": "「閉めます」 implies an action that is about to happen or happens regularly. The scene emphasizes that the store is *currently* in a state of being closed, not that it will close or closes every day."
+                },
+                {
+                    "competing_grammar": "あの店はもう閉めました。",
+                    "mitigation": "「閉めました」 implies the action of closing was completed in the past. While correct, it doesn't emphasize the *current state* of being closed, which the scene aims to highlight."
+                }
+            ]
         },
         {
             "japanese": "財布を落として、お金が全部{なくなっている}。",
@@ -84,58 +94,99 @@
             "register": "casual",
             "setting": "melancholic",
             "conjugation": "plain present affirmative",
-            "etymology": "「なくなっている」 uses 「無くなる」 (nakunaru, to disappear), illustrating something that has vanished and is currently absent."
+            "etymology": "「なくなっている」 uses 「無くなる」 (nakunaru, to disappear), illustrating something that has vanished and is currently absent.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "財布を落として、お金が全部なくなった。",
+                    "mitigation": "「なくなった」 indicates the past action of money disappearing. The scene of someone lamenting emphasizes the *current lack* of money as a result of the past action, which is better conveyed by 「なくなっている」."
+                }
+            ]
         },
         {
             "japanese": "初めて会ったのに、なぜかずっと前から{知っている}気がします。",
             "english": "Even though we just met, I feel like I've known you forever.",
-            "scene": "Two people getting to know each other.",
-            "register": "casual",
+            "scene": "A woman expressing a deep connection to a man she just met.",
+            "register": "semi-formal",
             "setting": "first-date",
             "conjugation": "polite present affirmative",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "The phrase 「知っている気がします」 conveys a feeling of familiarity. The polite 「〜ます」 form is appropriate for a first-date setting, where a certain level of respect is maintained, while the casual feeling of knowing someone forever is conveyed by 「知っている」 rather than a formal expression."
+            "nuance": "The phrase 「知っている気がします」 conveys a feeling of familiarity. The polite 「〜ます」 form is appropriate for a first-date setting, where a certain level of respect is maintained, while the casual feeling of knowing someone forever is conveyed by 「知っている」 rather than a more formal expression. The female speaker's choice of language might lean slightly more towards indirectness or feeling-based expressions.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "初めて会ったのに、なぜかずっと前から知っていました。",
+                    "mitigation": "「知っていました」 would imply that the speaker *used* to know them, which contradicts the 'just met' context. The scene requires the current, persistent state of feeling like knowing someone."
+                }
+            ]
         },
         {
             "japanese": "この本は{汚れていません}。",
             "english": "This book isn't dirty.",
-            "scene": "A librarian checking a returned book.",
+            "scene": "A librarian checking a returned book, confirming its condition.",
             "register": "formal",
             "setting": "informative",
-            "conjugation": "polite present negative"
+            "conjugation": "polite present negative",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この本は汚れません。",
+                    "mitigation": "「汚れません」 implies it *won't* get dirty or is never dirty. The scene focuses on the *current state* of the book (not dirty) as a result of it not having been dirtied."
+                },
+                {
+                    "competing_grammar": "この本は汚染しなかった。",
+                    "mitigation": "「汚染しなかった」 is a past negative action, focusing on the act of not polluting. The scene is about the *current clean state* of the book after being used/returned."
+                }
+            ]
         },
         {
             "japanese": "山田さんの住所はもう{変わっていました}。",
             "english": "Mr. Yamada's address had already changed.",
-            "scene": "An older colleague informing a younger one about an administrative detail.",
+            "scene": "An older male colleague informing a younger male colleague about an administrative detail.",
             "register": "bijinesu nihongo (business)",
             "setting": "informative",
             "conjugation": "polite past affirmative",
+            "speaker_gender": "male",
+            "listener_gender": "male",
             "speaker_age": "older",
-            "listener_age": "younger",
-            "nuance": "The use of 「〜ていました」 combined with a business setting is a straightforward, factual statement. The older speaker informs the younger listener of a completed change that results in a current state, maintaining a professional distance without added emotionality."
+            "nuance": "The use of 「〜ていました」 combined with a business setting is a straightforward, factual statement. The older male speaker informs the younger male listener of a completed change that results in a current state, maintaining a professional distance without added emotionality. There is no specific Japanese phrasing here that is exclusive to a male speaker, but the professional and somewhat formal tone is typical in male-dominated business interactions.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "山田さんの住所はもう変わりました。",
+                    "mitigation": "「変わりました」 simply states that the address changed in the past. 「変わっていました」 emphasizes that the change happened and the *resultant state* (the new address) is already in effect, which is relevant when informing someone of a current situation."
+                }
+            ]
         },
         {
             "japanese": "この花はまだ{咲いていません}ね。",
             "english": "These flowers haven't bloomed yet, have they?",
-            "scene": "A gardener observing flowers in the early spring.",
+            "scene": "A female gardener observing flowers in the early spring, seeking agreement from a companion.",
             "register": "semi-formal",
             "setting": "reflective",
             "conjugation": "polite present negative",
             "speaker_gender": "female",
-            "nuance": "The final particle 「ね」 in this context, especially when spoken by a female, adds a gentle, seeking agreement or shared observation to the statement about the flowers not having bloomed yet, emphasizing the *state* of not having bloomed."
+            "nuance": "The final particle 「ね」 in this context, especially when spoken by a female, adds a gentle, seeking agreement or shared observation to the statement about the flowers not having bloomed yet, emphasizing the *state* of not having bloomed. The use of 「咲いていません」 points to the current non-blooming state as a result of the action not having occurred.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この花はまだ咲きませんね。",
+                    "mitigation": "「咲きません」 implies they won't bloom or haven't bloomed yet as a general fact. The scene focuses on the *current state* of not having bloomed yet, which is a result of the action not having happened. The female speaker's gentle observation fits 「咲いていません」 well."
+                }
+            ]
         },
         {
             "japanese": "君に会ってから、僕の心はもう{開いている}よ。",
             "english": "Ever since I met you, my heart has been open.",
-            "scene": "A man confessing deep feelings to a woman.",
+            "scene": "A man confessing deep feelings to a woman after a significant moment.",
             "register": "intimate",
             "setting": "flirty",
             "conjugation": "plain present affirmative",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "The use of 「僕」 (boku) is common for male speakers and contributes to an intimate, personal tone. 「開いている」 refers to the resultant state of his heart being open, indicating a continuous, emotional openness since their encounter. The 「よ」 particle adds a strong, confident assertion of this feeling."
+            "nuance": "The use of 「僕」 (boku) is common for male speakers and contributes to an intimate, personal tone. 「開いている」 refers to the resultant state of his heart being open, indicating a continuous, emotional openness since their encounter. The 「よ」 particle adds a strong, confident assertion of this feeling, common in direct male speech.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "君に会ってから、僕の心はもう開いたよ。",
+                    "mitigation": "「開いた」 would suggest the heart *opened* at a specific past moment, not that it *remains open* as a continuous state. The scene implies an ongoing emotional state since meeting, making 「開いている」 more appropriate."
+                }
+            ]
         }
     ],
     "post_example_writeup": "Remember that the 「ている」 form focuses on the *state* that results from an action, rather than the action in progress. Therefore, context is crucial to understand the nuance conveyed by this grammar point.",
@@ -166,16 +217,13 @@
         }
     ],
     "post_false_friends_writeup": "To distinguish 「ている (resultant state)」 from similar expressions, consider the focus of the sentence. Is it describing an action in progress (ている①), repeated actions (ている③), a sequence of events (Verb+て), or the continuous nature of the action (つづける)? If the emphasis is on the *state* resulting from a completed action, then 「ている (resultant state)」 is likely the correct choice. If the focus is on the verb itself, then consider the other options.",
-    "change": [
-        "violation: Corrected 'Part of Speech' in 'details' from '接続助詞' to 'Auxiliary verb / Verb ending'. Rule 16 states 'You may fix minor inaccuracies in \"details\"'.",
-        "violation: Replaced an example that primarily demonstrated '~てしまう' with one purely focused on 'ている (resultant state)', to align with Rule 6, which requires examples to clearly use the main grammar point.",
-        "unnatural: Integrated the 'fun fact' heuristic from the raw input into the 'writeup' to enrich the explanation and provide a practical tip for understanding resultant state verbs.",
-        "violation: Added a new flirty example and a new first-date example to meet the explicit requirements of Rules 7 and 8.",
-        "violation: Enhanced existing and new examples with 'speaker_gender', 'listener_gender', 'speaker_age', 'listener_age', and corresponding 'nuance' fields to fulfill the variety requirements of Rule 6.",
-        "suggestion: Modified the 'kind' field in 'false_friends' entries from 'synonym' to more precise terms like 'similar expression' or 'often confused with' for improved clarity, as they are not direct synonyms.",
-        "unnatural: Reordered example sentences to progress from simpler to more advanced usage as per Rule 11."
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ている2"
-    }
+    },
+    "change": [
+        "schema: Removed `pronunciation_warning` from `pronunciation` as it is not part of the schema's definition for `pronunciation`.",
+        "schema: Added `meaning_warning` at the top level, moving the content from the former `pronunciation_warning` to align with the schema's explicit `meaning_warning` field.",
+        "schema: Removed `listener_age` from example #6, as the schema explicitly states `listener_age` is deprecated and must be removed.",
+        "violation: Added `scene_rationale` to examples that previously lacked it, as per Rule 6 requirement that `scene_rationale` must be present if `scene` is present."
+    ]
 }

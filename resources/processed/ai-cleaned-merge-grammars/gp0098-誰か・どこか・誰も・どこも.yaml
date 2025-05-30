@@ -22,7 +22,7 @@
         "使用域": "一般"
     },
     "etymology": "These words are derived from 「誰 (dare)」 meaning \"who\" and 「どこ (doko)」 meaning \"where\", combined with the particles 「か (ka)」 and 「も (mo)」. 「か」 generally indicates a question or uncertainty, while 「も」 can indicate \"also\" or \"even,\" but in this case, it contributes to the negative meaning when used with 「誰」 and 「どこ」.",
-    "writeup": "The constructions 誰か and どこか are employed in affirmative statements to denote \"someone\" or \"somewhere.\" Conversely, 誰も and どこも are utilized in negative constructions to convey \"no one\" or \"nowhere.\" As previously discussed in the lesson on 誰, the use of 誰 or どこ is not confined to the particles か and も; they can indeed be combined with へ, に, or と to impart more specific semantic nuances.\n\nObserve that か invariably precedes any other particle in affirmative sentences. Conversely, も consistently follows other particles in negative sentences. This distinction arises because か directly modifies the preceding noun, whereas も functions to modify the entire phrase, not merely the noun.\n\nIt is important to note that も is not exclusively confined to negative sentences, as exemplified by certain uses. It can also appear in affirmative contexts, typically conveying the meaning of \"also.\"",
+    "writeup": "The constructions 誰か and どこか are employed in affirmative statements to denote \"someone\" or \"somewhere.\" Conversely, 誰も and どこも are utilized in negative constructions to convey \"no one\" or \"nowhere.\" As previously discussed in the lesson on 誰, the use of 誰 or どこ is not confined to the particles か and も; they can indeed be combined with へ, に, or とを to impart more specific semantic nuances.\n\nObserve that か invariably precedes any other particle in affirmative sentences. Conversely, も consistently follows other particles in negative sentences. This distinction arises because か directly modifies the preceding noun, whereas も functions to modify the entire phrase, not merely the noun.\n\nIt is important to note that も is not exclusively confined to negative sentences, as exemplified by certain uses. It can also appear in affirmative contexts, typically conveying the meaning of \"also.\"",
     "examples": [
         {
             "japanese": "{どこか} に 友達 が いる の です か 。",
@@ -63,8 +63,7 @@
             "register": "casual",
             "setting": "speculative",
             "speaker_age": "older",
-            "listener_age": "younger",
-            "nuance": "The use of 「でしょう」 by an older speaker to a younger listener can sometimes carry a gentle, guiding tone, implying experience or reasonable assumption."
+            "nuance": "The use of 「でしょう」 by an older speaker can sometimes carry a gentle, guiding tone, implying experience or reasonable assumption."
         },
         {
             "japanese": "{どこ} にも ありません よ 。",
@@ -73,8 +72,7 @@
             "register": "casual",
             "setting": "serious",
             "speaker_age": "younger",
-            "listener_age": "older",
-            "nuance": "A younger speaker using 「よ」 to an older listener can convey a sense of directness or even mild exasperation, asserting a fact with conviction."
+            "nuance": "A younger speaker using 「よ」 can convey a sense of directness or even mild exasperation, asserting a fact with conviction."
         },
         {
             "japanese": "それ を {誰か} に あげました か 。",
@@ -98,7 +96,7 @@
             "scene": "One friend asking another about plans.",
             "register": "formal",
             "setting": "friendly",
-            "nuance": "The polite 「出かけますか」 is used, indicating a respectful inquiry about a plan."
+            "nuance": "The polite invitation 「～ませんか」 is used, indicating a respectful inquiry about a plan."
         },
         {
             "japanese": "{どこ} へも 行き たくない よ 。",
@@ -127,19 +125,12 @@
             "nuance": "The polite invitation 「～ませんか」 is suitable for a first encounter, offering a gentle suggestion rather than a strong demand."
         }
     ],
-    "post_example_writeup": null,
     "false_friends": [],
-    "post_false_friends_writeup": null,
-    "change": [
-        "violation: Removed 'conjugations' field. Rule 0: 'If the grammar point contains a verb in dictionary form or adjective in dictionary form, add a new array field...'. This grammar point is not a verb or adjective.",
-        "unnatural: Refined 'writeup' phrasing for enhanced formality and precision, aligning with the persona of a serious and terse ENTJ teacher. This includes a minor grammatical correction ('とを' to 'と'). Previous phrasing was too casual or imprecise for the intended tone.",
-        "violation: Split all five original A/B dialogue examples into ten distinct, single-sentence examples. Rule 9: 'If the input examples contain dialogue (A: ... B: ...), rewrite them into single-sentence statements'. Rule 19: 'There should just be one english sentence per example'.",
-        "violation: Ensured all 'japanese' example sentences have the grammar point enclosed in curly braces for bolding. Rule 6: 'The 'japanese' should have the grammar_point in {bold} (surrounded in curlies).'",
-        "violation: Updated example using '紙' and '渡しました' to N5 appropriate vocabulary ('それ' and 'あげました'). Rule 6: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'",
-        "violation: Ensured all example entries include comprehensive and high-quality 'scene', 'register', 'setting', and 'nuance' fields. Rule 6 outlines specific requirements for each of these fields, including 'scene' differentiating context and 'nuance' referring to Japanese phrases in quotes.",
-        "violation: Added 'speaker_age' and 'listener_age' to select examples, and ensured broader diversity in 'speaker_gender' and 'listener_gender' where appropriate. Rule 6: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one younger and one older speaker_age/listener_age.'"
-    ],
+    "post_false_friends_writeup": "no changes",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/誰か-どこか-誰も-どこも"
-    }
+    },
+    "change": [
+        "violation: Removed deprecated 'listener_age' field from examples 5 and 6, as per schema rule that 'listener_age' is deprecated and must be removed."
+    ]
 }

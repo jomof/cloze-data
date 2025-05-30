@@ -8,43 +8,41 @@
             "rarity": "commonly used"
         },
         {
-            "type": "polite (non-past)",
+            "type": "non-past polite (～ます)",
             "form": "があります",
             "rarity": "commonly used"
         },
         {
-            "type": "negative (plain)",
+            "type": "negative plain (～ない)",
             "form": "がない",
             "rarity": "commonly used"
         },
         {
-            "type": "negative (polite)",
+            "type": "negative non-past polite (～ません)",
             "form": "がありません",
             "rarity": "commonly used"
         },
         {
-            "type": "past (plain)",
+            "type": "past plain (～た)",
             "form": "があった",
             "rarity": "commonly used"
         },
         {
-            "type": "past (polite)",
+            "type": "past polite (～ました)",
             "form": "がありました",
             "rarity": "commonly used"
         },
         {
-            "type": "negative past (plain)",
+            "type": "negative past plain (～なかった)",
             "form": "がなかった",
             "rarity": "commonly used"
         },
         {
-            "type": "negative past (polite)",
+            "type": "negative past polite (～ませんでした)",
             "form": "がありませんでした",
             "rarity": "commonly used"
         }
     ],
-    "jlpt": "N5",
-    "meaning": "Noun (B) that has Noun (A), Noun (B) with Noun (A)",
     "pronunciation": {
         "katakana": "ガ アル ＋ メイシ",
         "romaji": "ga aru + meishi"
@@ -52,6 +50,8 @@
     "formation": {
         "Noun(A) がある + Noun(B)": "Describes Noun(B) as possessing or being characterized by Noun(A)."
     },
+    "jlpt": "N5",
+    "meaning": "Noun (B) that has Noun (A), Noun (B) with Noun (A)",
     "details": {
         "Part of Speech": "Relative Clause",
         "Register": "Standard",
@@ -60,33 +60,51 @@
         "使用域": "一般"
     },
     "etymology": "The grammar point combines 「ある」 (aru), meaning \"to exist\" (for inanimate objects), with a noun. The 「が」 (ga) particle marks the subject of the verb 「ある」.",
-    "writeup": "This grammar pattern describes a noun by indicating that it possesses or is associated with something. The structure is '(A) がある (B)' = '(B) has/with (A)'. This creates a relative clause, which functions like an adjective modifying the noun. In Japanese, unlike English, relative clauses don't require pronouns like \"who,\" \"which,\" or \"that.\" The noun directly follows 「がある」.\n\n**Important Considerations**\n\n*   In a relative clause, the noun being described (B) is the main topic/subject. Therefore, 「は」 is generally not used in place of 「が」. 「の」 can be used instead of 「が」 to show a relationship between (A) and (B).",
+    "writeup": "この文法パターンは、ある名詞が何かを所有している、または何かと関連していることを示してその名詞を修飾します。構造は「（A）がある（B）」で、「（B）が（A）を持っている／を備えている」という意味になります。これは連体修飾節と呼ばれ、形容詞のように名詞を修飾する働きをします。\n\n英語とは異なり、日本語では「who」「which」「that」のような関係代名詞は不要で、名詞は直接「がある」の後に続きます。\n\n**重要な考慮事項**\n\n*   連体修飾節では、説明されている名詞（B）が主要な話題／主語となります。そのため、「は」が「が」の代わりに使用されることは通常ありません。「の」は（A）と（B）の関係を示すために「が」の代わりに使用されることがあります。",
     "examples": [
         {
-            "japanese": "ベッドが{ある}部屋。",
+            "japanese": "ベッドが{ある}へや。",
             "english": "A room that has a bed.",
             "scene": "Describing a room to a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "ベッド付きのへや",
+                    "mitigation": "The scene emphasizes describing a feature present *within* the room, rather than the room being 'equipped with' or 'attached to' a bed, guiding towards the 「がある」 construction for describing an inherent characteristic or contents."
+                }
+            ],
             "register": "casual",
             "setting": "informative",
             "conjugation": "dictionary (plain non-past)",
             "speaker_gender": "female",
             "listener_gender": "female",
-            "nuance": "This is a simple, straightforward description. The casual register is appropriate for friends. The speaker's gender is neutral to the sentence."
+            "nuance": "This is a simple、 straightforward description. The casual register is appropriate for friends. The speaker's gender is neutral to the sentence."
         },
         {
-            "japanese": "たくさん休みが{ある}五月が好き。",
+            "japanese": "たくさんやすみが{ある}五月がすき。",
             "english": "I like the month of May with its many holidays.",
             "scene": "A person talking about their favorite month.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "休みが多い五月",
+                    "mitigation": "The scene guides towards expressing what the month *possesses* (holidays) as the reason for liking it, rather than simply stating that holidays are 'numerous' or 'frequent' in May."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
             "conjugation": "dictionary (plain non-past)",
             "speaker_age": "younger",
-            "nuance": "The use of 「好き」 indicates a personal preference, common in casual conversation. The younger speaker casually expresses a simple liking."
+            "nuance": "The use of 「すき」 indicates a personal preference, common in casual conversation. The younger speaker casually expresses a simple liking."
         },
         {
             "japanese": "きれいな{いけ}が{ある}こうえん。",
             "english": "A park with a beautiful pond.",
             "scene": "Describing a local park.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "きれいな池付きのこうえん",
+                    "mitigation": "The scene prompts the student to describe an intrinsic feature of the park, rather than one it merely 'comes with' or 'is equipped with.'"
+                }
+            ],
             "register": "casual",
             "setting": "informative",
             "conjugation": "dictionary (plain non-past)",
@@ -94,9 +112,15 @@
             "nuance": "A factual description. The casual tone is standard when simply stating a characteristic of a place. The speaker's gender does not influence the phrasing."
         },
         {
-            "japanese": "家が{ある}人。",
+            "japanese": "いえが{ある}人。",
             "english": "People who have a house.",
             "scene": "Discussing demographics or types of people.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "持ち家の人",
+                    "mitigation": "The scene encourages the use of `がある` to describe people based on what they possess, which is broader than merely 'homeowners.'"
+                }
+            ],
             "register": "casual",
             "setting": "informative",
             "conjugation": "dictionary (plain non-past)",
@@ -106,24 +130,42 @@
             "japanese": "れいぞうこが{ある}だいどころ。",
             "english": "A kitchen with a refrigerator.",
             "scene": "Describing a kitchen's features.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "冷蔵庫付きのだいどころ",
+                    "mitigation": "The scene indicates detailing specific appliances within the kitchen, distinguishing it from merely a kitchen 'coming with' a refrigerator."
+                }
+            ],
             "register": "casual",
             "setting": "informative",
             "conjugation": "dictionary (plain non-past)",
             "nuance": "A straightforward description of a room's contents. The phrasing is neutral."
         },
         {
-            "japanese": "素敵なバスタブが{ある}ホテルを探しています。",
+            "japanese": "すてきなバスタブが{ある}ホテルをさがしています。",
             "english": "I'm looking for a hotel that has a wonderful bathtub.",
             "scene": "A person asking for recommendations at a travel agency.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "素敵なバスタブ付きのホテル",
+                    "mitigation": "The scene emphasizes the desire for a hotel *possessing* this specific quality or item, guiding away from a simple 'with X' construction that might imply it's merely an accessory."
+                }
+            ],
             "register": "teineigo (polite)",
             "setting": "professional",
             "conjugation": "dictionary (plain non-past)",
-            "nuance": "The use of 「ています」 and the general structure convey politeness appropriate for a professional setting. The phrase 「素敵なバスタブがある」 directly modifies 「ホテル」, expressing a specific preference."
+            "nuance": "The use of 「～ています」 and the general structure convey politeness appropriate for a professional setting. The phrase 「すてきなバスタブがある」 directly modifies 「ホテル」, expressing a specific preference."
         },
         {
-            "japanese": "{まんが}が{ある}本屋。",
+            "japanese": "{まんが}が{ある}ほんや。",
             "english": "A bookstore that has manga.",
             "scene": "Talking about a specific type of bookstore.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "漫画を売っている本屋",
+                    "mitigation": "The scene highlights the focus on the presence of manga as a defining characteristic of the bookstore, rather than just what it sells."
+                }
+            ],
             "register": "casual",
             "setting": "informative",
             "conjugation": "dictionary (plain non-past)",
@@ -133,64 +175,95 @@
             "japanese": "きれいな川が{ある}山。",
             "english": "A mountain with a beautiful river.",
             "scene": "Describing a scenic location.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "きれいな川付きの山",
+                    "mitigation": "The scene prompts the description of a natural feature *existing within* the mountain, rather than one it's just 'equipped with.'"
+                }
+            ],
             "register": "casual",
             "setting": "informative",
             "conjugation": "dictionary (plain non-past)",
-            "nuance": "A common way to describe natural features. The use of 「綺麗」 adds aesthetic quality."
+            "nuance": "A common way to describe natural features. The use of 「きれいな」 adds aesthetic quality."
         },
         {
             "japanese": "あなたの{こえ}が{ある}と、どんな{よる}も{かがやく}ね。",
             "english": "When your voice is there, any night shines, doesn't it?",
             "scene": "A person complimenting their crush's voice.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あなたの声が聞こえると",
+                    "mitigation": "The scene emphasizes the *presence* of the voice as a source of positive influence, leading to 「がある」 over phrases that only indicate hearing or a simple conditional."
+                }
+            ],
             "register": "shitashii kuchō (intimate)",
             "setting": "flirty",
             "conjugation": "dictionary (plain non-past)",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "The phrase 「あなたの声がある」 (your voice being present) describes the positive effect of the listener's voice. The particle 「ね」 at the end suggests seeking agreement, making it soft and intimate. The gentle phrasing can make this particularly charming."
+            "nuance": "The phrase 「あなたのこえがある」 (your voice being present) describes the positive effect of the listener's voice. The particle 「ね」 at the end suggests seeking agreement, making it soft and intimate. The gentle phrasing can make this particularly charming."
         },
         {
-            "japanese": "あまり人が{いない}静かなカフェ、どうですか。",
+            "japanese": "あまり人が{いない}しずかなカフェ、どうですか。",
             "english": "How about a quiet cafe where there aren't many people?",
             "scene": "Suggesting a coffee shop for a first meeting.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "人が少ないカフェ",
+                    "mitigation": "The scene focuses on the *absence* of a large number of people as a characteristic, distinguishing it from simply a place with 'few people,' encouraging the explicit negative existence."
+                }
+            ],
             "register": "teineigo (polite)",
             "setting": "first-date",
-            "conjugation": "negative (plain)",
+            "conjugation": "negative plain (～ない)",
             "speaker_age": "older",
-            "listener_age": "younger",
-            "nuance": "The use of 「～ない」 (not exist) as a modifying clause is demonstrated here. 「あまり人がいない静かなカフェ」 describes a cafe that lacks many people and is quiet. The polite 「どうですか」 is suitable for a first interaction, and the older speaker's suggestion considers the comfort of the younger listener by choosing a quiet place."
+            "nuance": "The use of 「～ない」 (not exist) as a modifying clause is demonstrated here. 「あまり人がいないしずかなカフェ」 describes a cafe that lacks many people and is quiet. The polite 「どうですか」 is suitable for a first interaction, and the older speaker's suggestion considers the comfort of the younger listener by choosing a quiet place."
         },
         {
             "japanese": "{むかし}、大きな木が{あった}こうえんを{おぼえて}いますか。",
             "english": "Do you remember the park that used to have a big tree?",
             "scene": "Two old friends reminiscing about their childhood.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "昔、大きな木が生えていたこうえん",
+                    "mitigation": "The scene calls for recalling a past characteristic of the park, making `があった` the appropriate choice for something that 'used to be there.'"
+                }
+            ],
             "register": "casual",
             "setting": "reflective",
-            "conjugation": "past (plain)",
+            "conjugation": "past plain (～た)",
             "speaker_gender": "male",
             "speaker_age": "older",
             "listener_gender": "male",
-            "listener_age": "older",
-            "nuance": "The past tense 「あった」 (used to be) is used to modify 「公園」, indicating a past characteristic. This sentence conveys nostalgia appropriate for older speakers recalling shared memories. The simple 「～ですか」 is casual for friends."
+            "nuance": "The past tense 「あった」 (used to be) is used to modify 「こうえん」, indicating a past characteristic. This sentence conveys nostalgia appropriate for older speakers recalling shared memories. The simple 「～ですか」 is casual for friends."
         },
         {
             "japanese": "Wi-Fiが{なかった}{ばしょ}で一日中{しごと}をした。",
             "english": "I worked all day in a place that didn't have Wi-Fi.",
             "scene": "A person complaining about their work environment.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "Wi-Fiのない場所",
+                    "mitigation": "The scene emphasizes a past negative condition, leaning towards the past negative form `がなかった` to describe the place's characteristic."
+                }
+            ],
             "register": "casual",
             "setting": "serious",
-            "conjugation": "negative past (plain)",
+            "conjugation": "negative past plain (～なかった)",
             "speaker_gender": "female",
-            "nuance": "「Wi-Fiがなかった場所」 describes a location characterized by the absence of Wi-Fi in the past. This is a common way to express a past negative condition of a place. The phrasing is gender-neutral."
+            "nuance": "「Wi-Fiがなかったばしょ」 describes a location characterized by the absence of Wi-Fi in the past. This is a common way to express a past negative condition of a place. The phrasing is gender-neutral."
         }
     ],
-    "change": [
-        "violation: Expanded the `conjugations` array to include the full 'がある' phrase and polite forms, as per Rule 0, which requires listing conjugations of the grammar point itself, not just the base verb.",
-        "violation: Updated the 'conjugation' field in all example sentences to reference the expanded top-level conjugations, as required by Rule 6, ensuring consistency between the top-level list and example usage.",
-        "violation: Converted kanji in example sentences that are above JLPT N5 level to hiragana, such as '公園' to 'こうえん', '仕事' to 'しごと', '場所' to 'ばしょ', '声' to 'こえ', '夜' to 'よる', '輝く' to 'かがやく', '昔' to 'むかし', and '覚えて' to 'おぼえて', to strictly adhere to the N5 kanji usage requirement for N5 grammar points as implied by Rule 6.",
-        "violation: Removed the 'false_friends' section entirely because its 'term' entry 'がある' is a conjugation of the grammar point itself, which violates Rule 14's explicit instruction that false friends MUST NOT be a conjugation of the current grammar point."
-    ],
+    "false_friends": [],
+    "post_false_friends_writeup": "",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/がある-noun"
-    }
+    },
+    "change": [
+        "violation: Removed 'listener_age' from examples 10 and 11, as it is a deprecated field and must be removed.",
+        "schema: Added 'scene_rationale' to all examples containing a 'scene' field, as required by the schema.",
+        "violation: Converted N4 kanji to hiragana in examples 1, 2, 4, 6, and 7 to adhere strictly to the N5 kanji level for an N5 grammar point, as example sentences must use kanji appropriate for the JLPT level.",
+        "schema: Added an empty 'false_friends' array, as the schema requires this field and there are no valid false friends that are not conjugations of the grammar point itself.",
+        "schema: Added an empty string for 'post_false_friends_writeup', as the schema requires this field."
+    ]
 }

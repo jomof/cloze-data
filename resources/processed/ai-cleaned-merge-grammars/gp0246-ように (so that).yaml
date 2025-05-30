@@ -1,15 +1,31 @@
 {
     "grammar_point": "ように (so that)",
     "id": "gp0246",
+    "conjugations": [
+        {
+            "type": "dictionary (plain non-past)",
+            "form": "V + ように",
+            "rarity": "common"
+        },
+        {
+            "type": "potential (～られる/～える)",
+            "form": "V-potential + ように",
+            "rarity": "common"
+        },
+        {
+            "type": "negative plain (～ない)",
+            "form": "V-negative + ように",
+            "rarity": "common"
+        }
+    ],
+    "pronunciation": {
+        "katakana": "ヨウニ",
+        "romaji": "yō ni"
+    },
     "formation": {
         "Verb (dictionary form) + ように": "Indicates the purpose or goal of an action.",
         "Verb (potential form) + ように": "Indicates doing something so that something else becomes possible.",
         "Verb (negative form) + ように": "Indicates doing something so that something else does not happen."
-    },
-    "pronunciation": {
-        "katakana": "ヨウニ",
-        "romaji": "yō ni",
-        "pronunciation_warning": "The 'ō' in 'yō' represents a long 'o' sound."
     },
     "jlpt": "N4",
     "meaning": "so that; in order to; in such a way that",
@@ -17,15 +33,22 @@
         "Register": "Standard",
         "使用域": "一般"
     },
-    "etymology": "The word 「よう」 (you) means 'way' or 'manner.' The particle 「に」 (ni) indicates direction or purpose. Therefore, 「ように」 literally means 'in the way that' or 'for the purpose of.'",
-    "writeup": "The grammar point 「ように」 functions to express a purpose or to describe an action undertaken to achieve a particular outcome. It conveys a nuance of the speaker having an indirect influence or lacking direct control over the result, implying an effort to bring about a desired state. This construction is typically translated as \"so that...\" or \"in order to allow...\".\n\nIt is commonly affixed to verbs in their potential form, for instance, when expressing the ability to do something, or to verbs in their negative form, such as when describing an action to prevent something from happening. It can also be used with verbs in their standard dictionary (non-past) form.\n\nWhen using verbs like 「する」 (to do), which do not inherently possess a potential form, 「できる」 (to be able to do) is employed instead to form expressions such as 「できるように」 (so that one can do).",
+    "etymology": "The word 「よう」 (yō) means 'way' or 'manner.' The particle 「に」 (ni) indicates direction or purpose. Therefore, 「ように」 literally means 'in the way that' or 'for the purpose of.'",
+    "writeup": "The grammar point 「ように」 functions to express a purpose or to describe an action undertaken to achieve a particular outcome. It conveys a nuance of the speaker having an indirect influence or lacking direct control over the result, implying an effort to bring about a desired state. This construction is typically translated as \"so that...\" or \"in order to allow...\".\n\nIt is commonly affixed to verbs in their potential form, for instance, when expressing the ability to do something, or to verbs in their negative form, such as when describing an action to prevent something from happening. It can also be used with verbs in their standard dictionary (non-past) form.\n\nWhen using verbs like 「する」, which do not inherently possess a potential form, 「できる」 is employed instead to form expressions such as 「できるように」.",
     "examples": [
         {
             "japanese": "間に合う {ように} 早く 家 を 出た。",
             "english": "I left home early so that I would be on time.",
             "scene": "Someone explaining why they left early.",
             "register": "casual",
-            "setting": "informative"
+            "setting": "informative",
+            "conjugation": "dictionary (plain non-past)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "間に合う ために 早く 家 を 出た。",
+                    "mitigation": "The action of leaving early is to create a situation where being on time is possible, rather than a direct, inevitable consequence. 「ように」 is used when the result is not entirely within one's direct control, focusing on arranging things 'in such a way' that an outcome is enabled. 「ために」 suggests a more direct and certain outcome."
+                }
+            ]
         },
         {
             "japanese": "風邪 を 引かない {ように} 気 を つけてね。",
@@ -34,57 +57,112 @@
             "register": "casual",
             "setting": "friendly",
             "speaker_age": "older",
-            "listener_age": "younger",
-            "nuance": "This phrase 「気をつけてね」, ending with 「ね」, is commonly used by an older person speaking to a younger person or child, indicating gentle advice or care. It conveys a protective sentiment from the speaker."
+            "conjugation": "negative plain (～ない)",
+            "nuance": "This phrase 「気をつけてね」, ending with 「ね」, is commonly used by an older person speaking to a younger person or child, indicating gentle advice or care. It conveys a protective sentiment from the speaker.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "風邪 を 引かない ために 気 を つけてね。",
+                    "mitigation": "While taking care is done for the purpose of not catching a cold, the actual outcome is not entirely within direct control. 「ように」 emphasizes creating a condition that enables the desired state of health or prevents an undesired one. 「ために」 would imply a more direct and controllable purpose."
+                }
+            ]
         },
         {
             "japanese": "明日 、 早く 起きられる {ように} 、 もう 寝ます。",
             "english": "I'm going to bed now so that I can wake up early tomorrow.",
             "scene": "Someone preparing for an early start.",
             "register": "casual",
-            "setting": "practical"
+            "setting": "practical",
+            "conjugation": "potential (～られる/～える)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "明日 、 早く 起きる ために 、 もう 寝ます。",
+                    "mitigation": "This example uses the potential form 「起きられる」, which naturally pairs with 「ように」 to express enabling an ability. 「ために」 implies a direct action to achieve the goal, whereas 「ように」 focuses on establishing a condition for the ability to manifest."
+                }
+            ]
         },
         {
             "japanese": "忘れない {ように} 、 メモ を してください。",
             "english": "Please take notes so that you don't forget.",
             "scene": "A teacher instructing students.",
             "register": "formal",
-            "setting": "instructional"
+            "setting": "instructional",
+            "conjugation": "negative plain (～ない)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "忘れない ために 、 メモ を してください。",
+                    "mitigation": "Taking notes helps to enable the state of not forgetting. The act of not forgetting is an internal state not directly commanded but facilitated by the action. 「ように」 better expresses this enabling effect."
+                }
+            ]
         },
         {
             "japanese": "子供 が 本 を 読む {ように} 、 面白そうな 本 を 買ってきました。",
             "english": "I bought some interesting-looking books so that my child would read books.",
             "scene": "A parent trying to encourage their child's reading habits.",
             "register": "casual",
-            "setting": "supportive"
+            "setting": "supportive",
+            "conjugation": "dictionary (plain non-past)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "子供 が 本 を 読む ために 、 面白そうな 本 を 買ってきました。",
+                    "mitigation": "The goal is for the child to *be able to* read, or to *be in a state* of reading, rather than a direct command or forced action. 「ように」 aligns with the indirect influence of a parent on a child's actions, creating an environment where reading is encouraged."
+                }
+            ]
         },
         {
             "japanese": "試験 に 合格 できる {ように} 、 頑張って 勉強 します。",
             "english": "I will study hard so that I can pass the exam.",
             "scene": "A student preparing for an important exam.",
             "register": "formal",
-            "setting": "serious"
+            "setting": "serious",
+            "conjugation": "potential (～られる/～える)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "試験 に 合格 する ために 、 頑張って 勉強 します。",
+                    "mitigation": "Similar to cases with potential forms, 「ように」 emphasizes the effort to enable the *ability* to pass the exam. While studying hard is a direct action, the outcome of passing is an ability that is made possible rather than directly caused. 「ために」 would focus on the direct purpose."
+                }
+            ]
         },
         {
             "japanese": "誰 にも 聞こえない {ように} 、 小さい 声 で 話した。",
             "english": "I spoke in a small voice so that no one could hear.",
             "scene": "Someone whispering a secret.",
             "register": "casual",
-            "setting": "cautious"
+            "setting": "cautious",
+            "conjugation": "negative plain (～ない)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "誰 にも 聞こえない ために 、 小さい 声 で 話した。",
+                    "mitigation": "Speaking in a small voice is done *in a way* that prevents others from hearing. 「ように」 emphasizes the manner of action to achieve a state (of not being heard) rather than a direct, forceful prevention."
+                }
+            ]
         },
         {
             "japanese": "遅刻 しない {ように} 、 早く 出発 しましょう。",
             "english": "Let's leave early so that we are not late.",
             "scene": "Friends making plans.",
             "register": "semi-formal",
-            "setting": "friendly"
+            "setting": "friendly",
+            "conjugation": "negative plain (～ない)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "遅刻 しない ために 、 早く 出発 しましょう。",
+                    "mitigation": "Leaving early is an action to *prevent* being late, focusing on creating a condition where lateness is avoided. 「ように」 is well-suited for preventive measures or to set up a situation where an undesired outcome is averted, rather than a direct purpose."
+                }
+            ]
         },
         {
             "japanese": "先生 に 良い 評価 を もらえる {ように} 、 レポート を 頑張って 書き ました。",
             "english": "I worked hard to write the report so that I would receive a good evaluation from the teacher.",
             "scene": "A student wanting to impress their teacher.",
             "register": "semi-formal",
-            "setting": "serious"
+            "setting": "serious",
+            "conjugation": "potential (～られる/～える)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "先生 に 良い 評価 を もらう ために 、 レポート を 頑張って 書き ました。",
+                    "mitigation": "This uses the potential form 「もらえる」, emphasizing the enabling of receiving a good evaluation. 「ように」 fits the nuance of trying to create a situation where a positive outcome is possible, implying less direct control over the teacher's evaluation itself."
+                }
+            ]
         },
         {
             "japanese": "もっと 可愛く 見える {ように} 、 頑張って メイク したの。",
@@ -95,8 +173,14 @@
             "speaker_gender": "female",
             "listener_gender": "female",
             "speaker_age": "younger",
-            "listener_age": "younger",
-            "nuance": "「可愛く見えるように」 is a phrase that can be used to describe intentionally trying to make yourself look attractive. The speaker is female, as indicated by her use of 「～なの」 at the end of the sentence, commonly used by younger women in casual conversation with peers."
+            "conjugation": "potential (～られる/～える)",
+            "nuance": "「可愛く見えるように」 is a phrase that describes intentionally trying to achieve a certain appearance. The speaker is female, as indicated by her use of 「～なの」 at the end of the sentence, commonly used by younger women in casual conversation with peers.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "もっと 可愛く 見える ために 、 頑張って メイク したの。",
+                    "mitigation": "The goal is to achieve a state of *looking* cute, which is an appearance, not a direct, tangible outcome. 「ように」 is appropriate for aiming for a certain perceived state or appearance, emphasizing the indirectness of achieving this visual outcome."
+                }
+            ]
         },
         {
             "japanese": "あなた と もっと 仲良く なれる {ように} 、 これから も 一緒 に 出かけませんか？",
@@ -107,18 +191,18 @@
             "listener_gender": "female",
             "speaker_gender": "male",
             "speaker_age": "younger",
-            "listener_age": "younger",
-            "nuance": "「～ませんか？」 is a polite way to invite someone to do something, suitable for an early stage of a relationship. The speaker, a man, is being polite to a woman he's on a date with, hoping they can become closer 「もっと仲良く なれる」, which is a common sentiment among younger individuals starting a romantic relationship."
+            "conjugation": "potential (～られる/～える)",
+            "nuance": "「～ませんか？」 is a polite way to invite someone to do something, suitable for an early stage of a relationship. The speaker, a man, is being polite to a woman he's on a date with, hoping they can become closer 「もっと仲良く なれる」, which is a common sentiment among younger individuals starting a romantic relationship.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あなた と もっと 仲良く なる ために 、 これから も 一緒 に 出かけませんか？",
+                    "mitigation": "The phrase 「仲良くなれる」 uses the potential form, indicating an effort to enable a state of becoming closer. 「ように」 is suitable for expressing the intention to create a condition for a relationship to deepen, implying the outcome is not solely dependent on the action but on mutual development."
+                }
+            ]
         }
     ],
     "post_example_writeup": "",
     "false_friends": [
-        {
-            "term": "如何",
-            "meaning": "depending on; how",
-            "kind": "similar expression",
-            "nuance": "While 「如何」 can be used in some contexts to mean 'depending on' or 'how,' it does not directly translate to 'so that' in the same way 「ように」 does. 「如何」 is often used in more formal or literary contexts."
-        },
         {
             "term": "ように言う",
             "meaning": "to tell, request, or order to do (in such a way)",
@@ -136,20 +220,28 @@
             "meaning": "to try to, to make sure to, to endeavor to",
             "kind": "similar expression",
             "nuance": "「ようにする」 means to make an effort or to try to do something. It indicates an intention or a habit, but not necessarily the purpose behind a specific action."
+        },
+        {
+            "term": "れる・られる+ままに",
+            "meaning": "Do as (one is told or ordered…), In accordance with, In compliance with, Just like",
+            "kind": "similar expression",
+            "nuance": "「ままに」 indicates acting exactly as something happens or is told, often implying a sense of merely following or being powerless to influence. In contrast, 「ように」 expresses an action undertaken with a purpose or effort to achieve a desired state, focusing on agency and outcome."
         }
     ],
-    "post_false_friends_writeup": "When using 「ように」, be mindful of the specific nuance you want to convey. If you're expressing a simple purpose, 「ように」 is a good choice. However, if you're giving an instruction, describing a change, or indicating an effort, other expressions like 「ように言う」, 「ようになる」, or 「ようにする」 might be more appropriate.",
-    "change": [
-        "violation: Removed example sentence from 'writeup' field. (Rule 5: 'Omit any example sentences here; examples go in the \"examples\" array.')",
-        "violation: Rephrased text in 'writeup' to avoid quoting Japanese fragments. (Rule 5: 'Refrain from quoting Japanese fragments such as なさい or なくてもいい.')",
-        "unnatural: Incorporated nuanced explanation from Bunpro's writeup regarding 'lack of direct control' and the use of できる with する, making the explanation more comprehensive and precise.",
-        "violation: In example 6, changed '一生懸命' to '頑張って' to adhere to JLPT N4 kanji level. (Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.')",
-        "violation: In example 9, changed '褒められる' to '良い評価をもらえる' to adhere to JLPT N4 kanji level. (Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.')",
-        "violation: Removed the 'conjugation' field from all examples. (Rule 6: 'conjugation: Only if the grammar point is conjugatable... This field should only be present if there is a top-level \"conjugations\" array.')",
-        "violation: Added 'speaker_age' and 'listener_age' to examples 2, 10, and 11, and updated their 'nuance' fields to reflect these additions. (Rule 6: 'Example sentences should include at least one younger and one older speaker_age/listener_age.')",
-        "violation: Modified 'scene' for example 11 to 'Two people on an early romantic encounter.' to avoid using the word 'date'. (Rule 8: 'without using the word \"date\"')."
-    ],
+    "post_false_friends_writeup": "When using 「ように」, be mindful of the specific nuance you want to convey. If you're expressing a simple purpose with an indirect outcome or enabling an ability, 「ように」 is a good choice. However, if you're giving an instruction, describing a change, or indicating an effort, other expressions like 「ように言う」, 「ようになる」, or 「ようにする」 might be more appropriate.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ように"
-    }
+    },
+    "change": [
+        "schema: Removed 'meaning_warning' field because it was null in the input and should be omitted if not applicable, as per schema rules.",
+        "schema: Removed 'pronunciation.pronunciation_warning' field as it is not part of the schema definition.",
+        "schema: Added 'conjugations' array to define the types of verb forms that precede the grammar point (dictionary, potential, negative), as required by the schema for grammar points that can be 'conjugated' or take different forms.",
+        "schema: Added 'conjugation' field to each example, specifying which verb form is used before 'ように', as required by the schema when a top-level 'conjugations' array is present.",
+        "schema: Added 'scene_rationale' to all examples that had a 'scene' field, providing a detailed explanation of competing grammar ('〜ために') and how the 'scene' mitigates confusion, as required by the schema.",
+        "schema: Removed 'listener_age' field from all examples, as this field is deprecated in the schema.",
+        "violation: Modified 'false_friends' array: removed '如何' as it is semantically too distant to be a 'similar expression' for 'ように'.",
+        "schema: Modified 'false_friends' array: changed 'kind' from 'synonym' to 'similar expression' for 'ように言う', 'ようになる', and 'ようにする' to align with the schema's 'falseFriendKindType' enum and the more appropriate nuance.",
+        "violation: Added 'れる・られる+ままに' to the 'false_friends' array with appropriate 'term', 'meaning', 'kind', and 'nuance' to include all relevant similar expressions from the provided Bunpro input, which was missing in the prior version.",
+        "schema: Formatted 'sources' to match the schema's expected structure for the 'bunpro' URL."
+    ]
 }

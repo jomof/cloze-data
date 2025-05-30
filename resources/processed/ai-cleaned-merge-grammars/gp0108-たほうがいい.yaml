@@ -1,11 +1,32 @@
 {
     "grammar_point": "たほうがいい",
+    "id": "gp0108",
+    "conjugations": [
+        {
+            "type": "dictionary (plain non-past)",
+            "form": "たほうがいい",
+            "rarity": "common"
+        },
+        {
+            "type": "past plain (～た)",
+            "form": "たほうがよかった",
+            "rarity": "common"
+        },
+        {
+            "type": "negative plain (～ない)",
+            "form": "たほうがよくない",
+            "rarity": "less common"
+        },
+        {
+            "type": "negative past plain (～なかった)",
+            "form": "たほうがよくなかった",
+            "rarity": "less common"
+        }
+    ],
     "pronunciation": {
         "katakana": "タホウガイイ",
         "romaji": "ta hou ga ii"
     },
-    "id": "gp0108",
-    "conjugations": [],
     "formation": {
         "[Verb - Past Tense] + ほうがいい": "Suggests that it would be better to do something.",
         "[Verb - Past Tense] + ほうがいい + よ": "Adding emphasis to the advice.",
@@ -24,55 +45,143 @@
     "writeup": "The 「たほうがいい」 construction is used to give advice or make a suggestion. It carries the nuance that doing something is better than not doing it, and often implies that there may be negative consequences if the advice is not followed. It's a fairly direct expression, so it's important to consider your relationship with the listener. Using 「たほうがいい」 can come across as presumptuous or even rude if used carelessly with someone of higher status or someone you don't know well. In such situations, consider using more polite expressions such as 「方が良い (ほうがよい) 」 or indirect suggestions.",
     "examples": [
         {
-            "japanese": "病院へ行った{ほうがいい} です。",
-            "english": "You should go to the hospital.",
-            "scene": "A friend advising another friend who is feeling sick.",
+            "japanese": "医者 に {行ったほうがいい} です。",
+            "english": "You should go to the doctor.",
+            "scene": "A friend giving practical advice to another friend who has been feeling unwell for days.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "医者に行くといいです。",
+                    "mitigation": "While `といいです` can express a desire or hope, `たほうがいい` provides direct advice, implying a consequence if not followed. The scene emphasizes practical advice given in a situation where inaction might lead to worse outcomes."
+                }
+            ],
             "register": "teineigo (polite)",
-            "setting": "sympathetic"
+            "setting": "informative",
+            "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "少し 休憩し{たほうがいい} よ。",
-            "english": "You should take a short break.",
-            "scene": "A supervisor concerned for their employee's well-being.",
-            "register": "casual",
-            "setting": "supportive"
-        },
-        {
-            "japanese": "もっと野菜を食べ{たほうがいい} よ。",
+            "japanese": "もっと 野菜を {食べたほうがいい} よ。",
             "english": "You should eat more vegetables.",
-            "scene": "A mother advising her child.",
+            "scene": "A mother tells her child to eat their greens at dinner.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "もっと野菜を食べるといいよ。",
+                    "mitigation": "Both can give advice, but `たほうがいい` carries a stronger sense of direct recommendation or gentle command, especially from a parent to a child, implying it's for their well-being. The scene reinforces this parental guidance."
+                }
+            ],
             "register": "casual",
             "setting": "instructional",
-            "speaker_gender": "female"
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "The casual ending 「よ」 softens the advice, making it sound more like a direct suggestion from a mother to her son, rather than a strict command.",
+            "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "薬を飲んだ{ほうがいい} ですか。",
-            "english": "Should I take medicine?",
-            "scene": "A patient asking a doctor for advice.",
+            "japanese": "もう {帰ったほうがいい} ですか。",
+            "english": "Should I go home now?",
+            "scene": "A male employee asking his female boss if it's okay to leave work as it's getting late.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "もう帰っていいですか。",
+                    "mitigation": "While `～ていいですか` asks for permission, `たほうがいいですか` asks for advice on the best course of action, implying a question about what is appropriate or beneficial. The scene highlights the employee seeking guidance rather than just permission."
+                }
+            ],
             "register": "teineigo (polite)",
-            "setting": "interrogative"
+            "setting": "professional",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "謝っ{たほうがいい} と思うよ。",
-            "english": "I think you should apologize.",
-            "scene": "A friend giving advice to another friend who made a mistake.",
+            "japanese": "よく {勉強したほうがいい} です。",
+            "english": "You should study hard.",
+            "scene": "A teacher advising a student who is struggling with their grades.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "よく勉強するといいです。",
+                    "mitigation": "Both can give advice, but `たほうがいい` conveys a stronger, more direct recommendation for improvement, implying that better results depend on this action. The scene emphasizes the teacher's role in guiding the student."
+                }
+            ],
+            "register": "teineigo (polite)",
+            "setting": "academic",
+            "conjugation": "dictionary (plain non-past)"
+        },
+        {
+            "japanese": "この 本を {読んだほうがいい} よ。",
+            "english": "You should read this book.",
+            "scene": "A friend enthusiastically recommending a book to another friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この本を読むといいよ。",
+                    "mitigation": "Both can suggest, but `たほうがいい` frames the suggestion as a beneficial course of action, almost like personal advice, rather than just a general positive statement. The scene shows one friend giving strong, personal advice to another."
+                }
+            ],
             "register": "casual",
-            "setting": "friendly"
+            "setting": "friendly",
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "nuance": "The use of 「よ」 at the end adds a sense of conviction and friendliness to the recommendation, making it sound more personal and encouraging.",
+            "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "明日デートに誘っ{たほうがいい} かな？",
-            "english": "I wonder if I should ask her on a date tomorrow?",
-            "scene": "A man, conflicted, speaking to himself in the mirror.",
+            "japanese": "彼は 新しい 仕事を {探したほうがいい} だろう。",
+            "english": "He probably should look for a new job.",
+            "scene": "Two male colleagues discussing a third colleague's difficult situation.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼は新しい仕事を探すべきだろう。",
+                    "mitigation": "While `べきだろう` implies a stronger obligation, `たほうがいいだろう` suggests a more practical and advisable course of action for someone's benefit, without imposing a duty. The scene reflects a less authoritative, more observational tone."
+                }
+            ],
+            "register": "casual",
+            "setting": "professional",
+            "speaker_gender": "male",
+            "listener_gender": "male",
+            "conjugation": "dictionary (plain non-past)"
+        },
+        {
+            "japanese": "もっと 早く {出発したほうがよかった} です。",
+            "english": "It would have been better if we had left earlier.",
+            "scene": "A woman reflects on a missed train, regretting their timing.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "もっと早く出発すればよかった です。",
+                    "mitigation": "While `すればよかった` also expresses regret about a past action, `たほうがよかった` is more about recognizing a better alternative that should have been chosen. The scene highlights the direct impact of the past decision."
+                }
+            ],
+            "register": "teineigo (polite)",
+            "setting": "melancholic",
+            "speaker_gender": "female",
+            "conjugation": "past plain (～た)"
+        },
+        {
+            "japanese": "そんなに 急に {決めたほうがよくない} です。",
+            "english": "It's not good to decide so suddenly.",
+            "scene": "A cautious person advising against a hasty decision.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "そんなに急に決めないほうがいいです。",
+                    "mitigation": "While `～ないほうがいい` advises against doing something, `～たほうがよくない` states that doing something *is not* the better option. The scene emphasizes that the action itself (deciding suddenly) is deemed unfavorable."
+                }
+            ],
+            "register": "teineigo (polite)",
+            "setting": "cautious",
+            "conjugation": "negative plain (～ない)"
+        },
+        {
+            "japanese": "あの時、彼を {助けたほうがよくなかった} と思う。",
+            "english": "I think it wouldn't have been better to help him then.",
+            "scene": "A person reflecting on a past situation and concluding that a certain action would not have been beneficial.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あの時、彼を助けなかったほうがよかったと思う。",
+                    "mitigation": "While `～なかったほうがよかった` means 'it would have been better not to do X', `～たほうがよくなかった` means 'doing X would not have been better'. The scene reflects a nuanced retrospective judgment that a particular action would have been detrimental, not just that its omission would have been preferable."
+                }
+            ],
             "register": "casual",
             "setting": "reflective",
-            "speaker_gender": "male"
-        },
-        {
-            "japanese": "彼女に正直に話し{たほうがいい} よ。そう しないと、後で もっと 辛くなる と思うよ。",
-            "english": "You should talk to her honestly. If you don't, I think it will be even harder later.",
-            "scene": "A friend giving advice to a friend about their relationship.",
-            "register": "casual",
-            "setting": "serious"
+            "speaker_gender": "male",
+            "nuance": "The casual form `思う` without `です` indicates a personal, internal reflection, common in male speech when expressing opinions to oneself or a close friend.",
+            "conjugation": "negative past plain (～なかった)"
         }
     ],
     "post_example_writeup": "When offering advice or suggestions, it's important to consider the context and relationship with the person you're speaking to. Using 「たほうがいい」 directly can sometimes sound a bit forceful, so be mindful of your tone and choose your words carefully.",
@@ -94,10 +203,40 @@
             "meaning": "It's better to",
             "kind": "similar expression",
             "nuance": "「たほうがいい」 is a more colloquial and direct version, while 「ほうが良い」 is slightly more formal."
+        },
+        {
+            "term": "べき",
+            "meaning": "Must; Should; Ought to",
+            "kind": "synonym",
+            "nuance": "「べき」 implies a stronger sense of moral obligation or duty, suggesting something that *must* be done, whereas 「たほうがいい」 is more of a suggestion or recommendation."
+        },
+        {
+            "term": "ばいい",
+            "meaning": "Can; Should; It'd be good if",
+            "kind": "synonym",
+            "nuance": "「ばいい」 offers a milder suggestion or expresses what would be ideal, without the implied directness or consequence of 「たほうがいい」."
+        },
+        {
+            "term": "たらいい・といい",
+            "meaning": "It would be nice if; It would be good if; Should; I hope",
+            "kind": "synonym",
+            "nuance": "「たらいい・といい」 often expresses hope or a wish for a desirable outcome, or a gentle suggestion, lacking the direct advisory tone of 「たほうがいい」."
         }
     ],
-    "post_false_friends_writeup": "「たほうがいい」 is used for giving advice with an implied consequence if not followed. 「ないほうがいい」 is the opposite, advising against an action. 「べきです」 is a stronger expression indicating a sense of duty. Be mindful of the level of politeness needed; 「たほうがいい」 is more casual than 「ほうが良い」, which is more formal.",
+    "post_false_friends_writeup": "「たほうがいい」 is used for giving advice with an implied consequence if not followed. 「ないほうがいい」 is the opposite, advising against an action. 「べきです」 and 「べき」 convey a stronger sense of obligation or duty. In contrast, 「ばいい」 and 「たらいい・といい」 offer milder suggestions or express a wish for a favorable outcome, without the directness or potential implied consequence of 「たほうがいい」. Be mindful of the level of politeness needed; 「たほうがいい」 is more casual than 「ほうが良い」, which is more formal.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/たほうがいい"
-    }
+    },
+    "change": [
+        "schema: Added `conjugations` array based on schema rules for conjugatable grammar points.",
+        "schema: Added `conjugation` field to each example entry, corresponding to the new `conjugations` array.",
+        "schema: Added `scene_rationale` field to all examples that have a `scene` field, as required by the schema.",
+        "violation: Modified `japanese` examples to use `{bold}` around the grammar point instead of `{}`.",
+        "violation: Replaced kanji in examples with simpler N5/N4 equivalents where original kanji were too high (N3/N1).",
+        "violation: Ensured diverse `speaker_gender` and `listener_gender` coverage in examples, including at least one male and one female for both where applicable.",
+        "violation: Added examples demonstrating the `past plain (～た)`, `negative plain (～ない)`, and `negative past plain (～なかった)` conjugations of the grammar point, as required.",
+        "unnatural: Revised some example sentences to sound more natural and flow better.",
+        "schema: Expanded `false_friends` list to include more common confusions (`べき`, `ばいい`, `たらいい・といい`) based on Bunpro's input, along with their respective nuances.",
+        "schema: Expanded `post_false_friends_writeup` to cover the newly added false friends and their nuances."
+    ]
 }

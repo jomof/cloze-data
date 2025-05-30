@@ -8,87 +8,87 @@
             "rarity": "common"
         },
         {
-            "type": "polite (non-past)",
+            "type": "non-past polite (～ます)",
             "form": "知ります",
             "rarity": "common"
         },
         {
-            "type": "negative (plain)",
+            "type": "negative plain (～ない)",
             "form": "知らない",
             "rarity": "common"
         },
         {
-            "type": "negative (polite)",
+            "type": "negative non-past polite (～ません)",
             "form": "知りません",
             "rarity": "common"
         },
         {
-            "type": "past (plain)",
+            "type": "past plain (～た)",
             "form": "知った",
             "rarity": "common"
         },
         {
-            "type": "past (polite)",
+            "type": "past polite (～ました)",
             "form": "知りました",
             "rarity": "common"
         },
         {
-            "type": "negative past (plain)",
+            "type": "negative past plain (～なかった)",
             "form": "知らなかった",
             "rarity": "common"
         },
         {
-            "type": "negative past (polite)",
+            "type": "negative past polite (～ませんでした)",
             "form": "知りませんでした",
             "rarity": "common"
         },
         {
-            "type": "te-form",
+            "type": "te-form (～て)",
             "form": "知って",
             "rarity": "common"
         },
         {
-            "type": "conditional (provisional ば-form)",
+            "type": "conditional (～ば)",
             "form": "知れば",
             "rarity": "uncommon"
         },
         {
-            "type": "conditional (tara-form)",
+            "type": "conditional (～たら)",
             "form": "知ったら",
             "rarity": "common"
         },
         {
-            "type": "volitional (plain)",
+            "type": "volitional (～よう)",
             "form": "知ろう",
             "rarity": "uncommon"
         },
         {
-            "type": "volitional (polite)",
+            "type": "volitional polite (～ましょう)",
             "form": "知りましょう",
             "rarity": "uncommon"
         },
         {
-            "type": "imperative (plain)",
+            "type": "imperative plain (～ろ/～え)",
             "form": "知れ",
             "rarity": "unnatural"
         },
         {
-            "type": "imperative (polite)",
+            "type": "imperative polite (～なさい)",
             "form": "知ってください",
             "rarity": "uncommon"
         },
         {
-            "type": "potential",
+            "type": "potential (～られる/～える)",
             "form": "知れる",
             "rarity": "uncommon"
         },
         {
-            "type": "passive",
+            "type": "passive (～られる/～かれる)",
             "form": "知られる",
             "rarity": "common"
         },
         {
-            "type": "causative",
+            "type": "causative (～させる)",
             "form": "知らせる",
             "rarity": "common"
         }
@@ -107,65 +107,107 @@
         "Register": "Standard",
         "Nuance": "Indicates the state of knowing something, or the action of getting to know something. This verb is considered a non-stative verb. Therefore, 知っている indicates a state of knowing something, while 知る indicates the action of getting to know something."
     },
-    "writeup": "The verb 「知る・しる」 means \"to know\" or \"to get to know\". It indicates the state of being aware of something or the action of becoming aware of it. Because 「知る」 is a non-stative verb, it often appears in the 「～ている」 form (知っている) to express the **state** of knowing. Without the 「～ている」 form, it indicates the **action** of coming to know something.",
     "etymology": "The etymology of 「知る・しる」 is related to the concept of discerning and distinguishing. It shares roots with other words related to understanding and wisdom. It is one of the core verbs in the Japanese language for expressing knowledge and awareness.",
+    "writeup": "The verb 「知る・しる」 means \"to know\" or \"to get to know\". It indicates the state of being aware of something or the action of becoming aware of it. Because 「知る」 is a non-stative verb, it often appears in the 「～ている」 form (知っている) to express the **state** of knowing. Without the 「～ている」 form, it indicates the **action** of coming to know something.",
     "examples": [
         {
-            "japanese": "田中さんを{知っています} か？",
+            "japanese": "田中 さんを{知っています}か？",
             "english": "Do you know Tanaka-san?",
             "scene": "Asking someone if they are acquainted with a particular person.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "田中 さんを知る？",
+                    "mitigation": "This is grammatically incomplete and unnatural for a polite question about acquaintance. The 'scene' implies a polite, common inquiry, which is best conveyed by the stative '知っていますか'."
+                },
+                {
+                    "competing_grammar": "田中 さんと知り合いですか？",
+                    "mitigation": "This translates to 'Are you acquainted with Tanaka-san?' which has a slightly different nuance focusing on the relationship, whereas '知っていますか' focuses on the knowledge of the person's existence."
+                }
+            ],
             "register": "semi-formal",
             "setting": "interrogative",
-            "conjugation": "polite (non-past)",
-            "listener_gender": "female"
+            "conjugation": "non-past polite (～ます)"
         },
         {
-            "japanese": "彼女が結婚したのを{知らなかった}。",
+            "japanese": "彼女 が 結婚 した のを{知らなかった}。",
             "english": "I didn't know she got married.",
             "scene": "Finding out some important news after the fact.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼女 が 結婚 した のが 分からなかった。",
+                    "mitigation": "「分からなかった」 implies a lack of *understanding* or *comprehension* of the fact, not a lack of prior *awareness* of it. The 'scene' of finding out 'after the fact' clearly points to a lack of prior awareness, making '知らなかった' the appropriate choice."
+                }
+            ],
             "register": "casual",
             "setting": "informative",
-            "conjugation": "negative past (plain)"
+            "conjugation": "negative past plain (～なかった)"
         },
         {
-            "japanese": "この店の名前を{知っています}。",
+            "japanese": "この 店 の 名前 を{知っています}。",
             "english": "I know the name of this shop.",
             "scene": "Confirming that you're familiar with a local establishment.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この 店 の 名前 が 分かります。",
+                    "mitigation": "「分かります」 would imply understanding the *meaning* or *details* behind the name, not simply having knowledge of its existence. The 'scene' describes basic familiarity with the name itself."
+                }
+            ],
             "register": "polite",
             "setting": "informative",
-            "conjugation": "polite (non-past)"
+            "conjugation": "non-past polite (～ます)"
         },
         {
-            "japanese": "新しいレストランができたのを{知っています}か？",
+            "japanese": "新しい レストラン が できた のを{知っています}か？",
             "english": "Did you know a new restaurant opened?",
             "scene": "Casually asking a friend if they are aware of recent local developments.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "新しい レストラン が できた のが 分かりますか？",
+                    "mitigation": "「分かりますか」 suggests asking if one *comprehends* the fact (e.g., understands *why* it opened or its significance), whereas 「知っていますか」 asks about simple *awareness* of the event. The 'scene' is about awareness of local developments."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
-            "conjugation": "polite (non-past)"
+            "conjugation": "non-past polite (～ます)"
         },
         {
-            "japanese": "あなたの連絡先を{教えて}。もっとあなたのことを{知りたい}から。",
+            "japanese": "あなた の 連絡 先 を 教えて。もっと あなた の こと を{知りたい}から。",
             "english": "Tell me your contact information. Because I want to know more about you.",
-            "scene": "A man asking a woman he's just met for her contact information on a first date.",
+            "scene": "Someone expressing a desire to learn more about a person.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "もっと あなた の こと を 理解したいから。",
+                    "mitigation": "「理解したい」 (to want to understand) implies a deeper intellectual comprehension, which is too profound for a casual, initial desire to 'get to know' someone in terms of facts or general information. 「知りたい」 specifically conveys the desire for more general familiarity and information."
+                }
+            ],
             "register": "casual",
             "setting": "flirty",
-            "conjugation": "dictionary (plain non-past)",
-            "speaker_gender": "male",
-            "listener_gender": "female",
-            "nuance": "The speaker is being direct with 「教えて」, which is softened slightly by the use of 「から」."
+            "conjugation": "desiderative (～たい)"
         },
         {
-            "japanese": "お名前は{存じております}。",
+            "japanese": "お 名前 は{存じております}。",
             "english": "I know your name.",
             "scene": "A service worker who recognizes a customer.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "お 名前 を 知っています。",
+                    "mitigation": "While grammatically correct, 「知っています」 lacks the humble politeness of 「存じております」, which is essential for a service worker addressing a customer in a formal setting, as implied by the 'scene'."
+                }
+            ],
             "register": "kenjōgo (humble)",
             "setting": "polite",
-            "etymology": "「存じる」 is the humble form of 「知る」. 「存じております」is a polite form of the humble 「存じる」."
+            "etymology": "「存じる」 is the humble form of 「知る」. 「存じております」 is a polite form of the humble 「存じる」."
         },
         {
-            "japanese": "その秘密を{知る}ものは誰もいない。",
+            "japanese": "その 秘密 を{知る}もの は 誰 も いない。",
             "english": "There's nobody who knows that secret.",
-            "scene": "The narrator in a mystery novel",
+            "scene": "The narrator in a mystery novel.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "その 秘密 を 知っている もの は 誰 も いない。",
+                    "mitigation": "In this literary context, 「知る」 (dictionary form) implies that no one *has ever come to know* or *will ever come to know* this secret, emphasizing the definitive absence of knowledge acquisition, which 「知っている」 (stative, existing knowledge) does not fully capture."
+                }
+            ],
             "register": "bungo (literary)",
             "setting": "melancholic",
             "conjugation": "dictionary (plain non-past)"
@@ -174,21 +216,33 @@
             "scene": "A student talking with their teacher",
             "register": "polite",
             "setting": "informative",
-            "japanese": "先生、日本語の起源を{ご存じですか}？",
+            "japanese": "先生、日本語 の 起源 を{ご存じですか}？",
             "english": "Teacher, do you know the origin of Japanese?",
-            "conjugation": "polite (non-past)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "先生、日本語 の 起源 を 知っていますか？",
+                    "mitigation": "「知っていますか」 is less formal and lacks the appropriate honorific for addressing a teacher in a polite setting. 「ご存じですか」 provides the necessary respect, fitting the student-teacher 'scene'."
+                }
+            ],
+            "conjugation": "non-past polite (～ます)",
             "etymology": "「ご存じ」 is an honorific expression based on 「知る」.",
-            "nuance": "The speaker addresses the teacher as 「先生」. 「ご存じですか」 is more polite than the plain 「知っていますか」.",
-            "listener_gender": "female"
+            "nuance": "The speaker addresses the teacher as 「先生」. 「ご存じですか」 is more polite than the plain 「知っていますか」."
         }
     ],
+    "post_example_writeup": "When using 「知る」 to express a state of knowing, it is almost always used in the stative form 「知っている」. The plain form 「知る」 typically refers to the action of *coming to know* or *finding out*.",
     "false_friends": [
         {
             "term": "分かる・わかる",
             "meaning": "to understand",
             "kind": "similar expression",
-            "nuance": "Unlike 「知る」, 「分かる」 emphasizes comprehension or understanding of something. 「知る」 simply means to be aware of something."
+            "nuance": "Unlike 「知る」, which means to simply be aware of information, 「分かる」 emphasizes comprehension or understanding of something. You can 知る a fact without fully 分かる its implications."
         }
     ],
-    "post_false_friends_writeup": "While both 「知る」 and 「分かる」 involve a form of awareness, remember that 「知る」 focuses on simply *knowing* information, while 「分かる」 focuses on *understanding* it. For example, you can 「知る」 a person's name without 「分かる」 their personality or intentions."
+    "post_false_friends_writeup": "While both 「知る」 and 「分かる」 involve a form of awareness, remember that 「知る」 focuses on simply *knowing* information or being aware of its existence, while 「分かる」 focuses on *understanding* it. For example, you can 「知る」 a person's name without 「分かる」 their personality or intentions. Conversely, you might 「分かる」 a complex concept without 「知る」 every minor detail about its origin.",
+    "change": [
+        "violation: The original input had A/B dialogue format for examples, which is prohibited. The prior version's examples were in a single sentence format, which is now compliant.",
+        "schema: Added `scene_rationale` to all examples where `scene` was present but `scene_rationale` was missing, to comply with schema rules.",
+        "violation: Removed `speaker_gender` and `listener_gender` from Example 5, and `listener_gender` from Example 8. The rule 'Use only if this sentence would typically only be spoken by this gender' was prioritized, as the Japanese phrases used (`教えて`, `知りたいから`, `ご存じですか`) do not inherently carry gender-exclusive nuances. This creates a contradiction with the rule 'Example sentences should include at least one male and one female speaker_gender', which the grammar point itself does not inherently support without adding unnatural examples. This contradiction is noted for future reference.",
+        "schema: Removed the deprecated `listener_age` field from Example 8, as per schema instructions."
+    ]
 }

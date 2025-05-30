@@ -3,92 +3,92 @@
     "id": "gp0156",
     "conjugations": [
         {
-            "type": "dictionary form (plain non-past)",
+            "type": "dictionary (plain non-past)",
             "form": "いる",
             "rarity": "common"
         },
         {
-            "type": "masu form (polite non-past)",
+            "type": "non-past polite (～ます)",
             "form": "います",
             "rarity": "common"
         },
         {
-            "type": "nai form (plain negative)",
+            "type": "negative plain (～ない)",
             "form": "いない",
             "rarity": "common"
         },
         {
-            "type": "masen form (polite negative)",
+            "type": "negative non-past polite (～ません)",
             "form": "いません",
             "rarity": "common"
         },
         {
-            "type": "ta form (plain past)",
+            "type": "past plain (～た)",
             "form": "いた",
             "rarity": "common"
         },
         {
-            "type": "mashita form (polite past)",
+            "type": "past polite (～ました)",
             "form": "いました",
             "rarity": "common"
         },
         {
-            "type": "nakatta form (plain negative past)",
+            "type": "negative past plain (～なかった)",
             "form": "いなかった",
             "rarity": "common"
         },
         {
-            "type": "masen deshita form (polite negative past)",
+            "type": "negative past polite (～ませんでした)",
             "form": "いませんでした",
             "rarity": "common"
         },
         {
-            "type": "te form",
+            "type": "te-form (～て)",
             "form": "いて",
             "rarity": "common"
         },
         {
-            "type": "ba form (provisional conditional)",
+            "type": "conditional (～ば)",
             "form": "いれば",
             "rarity": "common"
         },
         {
-            "type": "tara form (hypothetical conditional)",
+            "type": "conditional (～たら)",
             "form": "いたら",
             "rarity": "common"
         },
         {
-            "type": "volitional form (plain)",
+            "type": "volitional (～よう)",
             "form": "いよう",
             "rarity": "uncommon"
         },
         {
-            "type": "volitional form (polite)",
+            "type": "volitional polite (～ましょう)",
             "form": "いましょう",
             "rarity": "uncommon"
         },
         {
-            "type": "imperative form (plain)",
+            "type": "imperative plain (～ろ/～え)",
             "form": "いろ",
             "rarity": "unnatural"
         },
         {
-            "type": "imperative form (polite)",
-            "form": "いてください",
-            "rarity": "unnatural"
+            "type": "imperative polite (～なさい)",
+            "form": "いなさい",
+            "rarity": "uncommon"
         },
         {
-            "type": "potential form",
+            "type": "potential (～られる/～える)",
             "form": "いられる",
             "rarity": "rare"
         },
         {
-            "type": "passive form",
+            "type": "passive (～られる/～かれる)",
             "form": "いられる",
             "rarity": "rare"
         },
         {
-            "type": "causative form",
+            "type": "causative (～させる)",
             "form": "いさせる",
             "rarity": "rare"
         }
@@ -97,13 +97,13 @@
         "katakana": "イル",
         "romaji": "iru"
     },
-    "jlpt": "N5",
-    "meaning": "to exist (animate objects); to be (animate objects)",
     "formation": {
         "[Noun] + が + いる": "Indicates the existence of an animate object (people, animals, etc.)",
         "[Place] + に + [Noun] + が + いる": "Indicates that an animate object is located in a specific place.",
         "[Noun] + は + [Place] + に + いる": "Specifies where the animate object is."
     },
+    "jlpt": "N5",
+    "meaning": "to exist (animate objects); to be (animate objects)",
     "details": {
         "Usage": "Used for living things, such as people and animals.",
         "Counterpart": "The counterpart for inanimate objects and places is 「ある」.",
@@ -115,74 +115,91 @@
         {
             "japanese": "猫が{いる}。",
             "english": "There is a cat.",
-            "scene": "Someone noticing a cat.",
             "register": "casual",
             "setting": "informative",
-            "conjugation": "dictionary form (plain non-past)"
+            "conjugation": "dictionary (plain non-past)"
         },
         {
             "japanese": "田中さんは会社に{います}。",
             "english": "Mr. Tanaka is at the office.",
             "scene": "An older female colleague informing a younger male colleague about Mr. Tanaka's whereabouts.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "田中さんは会社にいらっしゃる。",
+                    "mitigation": "The scene sets up a slightly formal but not overly honorific interaction between colleagues of different ages, where `います` is appropriate teineigo without needing higher honorifics."
+                }
+            ],
             "register": "teineigo (polite)",
             "setting": "informative",
             "speaker_gender": "female",
             "listener_gender": "male",
             "speaker_age": "older",
-            "listener_age": "younger",
             "nuance": "The use of 「さん」 for Tanaka-san and 「います」 for the polite register makes this appropriate for an older colleague addressing a younger one. The sentence is neutral, but the politeness maintains professional distance.",
-            "conjugation": "masu form (polite non-past)"
+            "conjugation": "non-past polite (～ます)"
         },
         {
             "japanese": "私の部屋にはだれも{いない}。",
             "english": "There isn't anyone in my room.",
-            "scene": "Describing the emptiness of a room.",
             "register": "casual",
             "setting": "informative",
-            "conjugation": "nai form (plain negative)"
+            "conjugation": "negative plain (～ない)"
         },
         {
             "japanese": "子供たちは公園に{いました}。",
             "english": "The children were in the park.",
-            "scene": "Recalling where the children were earlier.",
             "register": "teineigo (polite)",
             "setting": "storytelling",
-            "conjugation": "mashita form (polite past)"
+            "conjugation": "past polite (～ました)"
         },
         {
             "japanese": "ねえ、だれか{いる}の？",
             "english": "Hey, is anyone there?",
             "scene": "Calling out in an empty house.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "だれかいますか？",
+                    "mitigation": "The scene implies a casual, intimate setting, and the use of 「ねえ」 and 「いるの？」 makes the informal tone clear, pointing away from the more formal 「いますか？」."
+                }
+            ],
             "register": "casual",
             "setting": "cautious",
             "speaker_gender": "female",
             "speaker_age": "younger",
-            "listener_age": "younger",
             "nuance": "「ねえ」 is a common way for females to speak casually, often used among friends or peers. 「いるの？」 is a casual way to ask a question, and this informal questioning style is very typical among younger speakers."
         },
         {
             "japanese": "ボーイフレンドが{いる}？",
             "english": "Do you have a boyfriend?",
             "scene": "Flirting on a first date.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼氏はいますか？",
+                    "mitigation": "The flirty setting suggests a casual inquiry, making 「いる？」 more natural than 「いますか？」 for a direct, informal question about someone's relationship status."
+                }
+            ],
             "register": "casual",
             "setting": "flirty",
             "listener_gender": "female",
             "speaker_age": "younger",
-            "listener_age": "younger",
             "nuance": "This is casual and direct, implying familiarity or romantic interest, typical among younger people exploring relationships. The short question form without particles like 「が」 or 「か」 makes it informal, suitable when flirting.",
-            "conjugation": "dictionary form (plain non-past)"
+            "conjugation": "dictionary (plain non-past)"
         },
         {
             "japanese": "この部屋に、まだ{いた}のか。",
             "english": "So you were still in this room, huh.",
             "scene": "Said by a man who's found his friend, passed out, in a bar.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "まだここにいましたか？",
+                    "mitigation": "The scene establishes a casual, intimate relationship between male friends, justifying the use of plain form 「いたのか」 over the more polite 「いましたか？」, and the male-specific 「のか」 expression."
+                }
+            ],
             "register": "shitashii kuchō (intimate)",
             "setting": "melancholic",
             "speaker_gender": "male",
             "speaker_age": "older",
-            "listener_age": "younger",
             "nuance": "「いたのか」 is a casual way for a man to say 'you were here?' among friends. The implication is that they expected the person to have left already, and there is a slight hint of criticism. The use of 「のか」 often suggests a realization or mild surprise, suitable for an older person speaking to a younger one they are familiar with.",
-            "conjugation": "ta form (plain past)"
+            "conjugation": "past plain (～た)"
         }
     ],
     "false_friends": [
@@ -195,8 +212,10 @@
     ],
     "post_false_friends_writeup": "It's crucial to distinguish between 「いる」 and 「ある」. If you're talking about a person or an animal, use 「いる」. If you're talking about a thing or an idea, use 「ある」. Confusing the two can lead to unnatural-sounding Japanese.",
     "change": [
-        "violation: Removed quotes from Japanese example sentence in example 5, as per rule 6: 'The \"japanese\" must have the grammar_point in {bold} (surrounded in curlies). The \"japanese\" must not have parentheses to set context. Must not use quotes including 「」, .'",
-        "violation: Changed N3 kanji in examples to adhere to JLPT N5/N4 kanji restriction, as per JLPT Kanji rule. Specifically, in example 3, '誰も' was changed to 'だれも'. In example 5, '誰か' was changed to 'だれか'. In example 6, '彼氏' was changed to 'ボーイフレンド'. In example 7, 'こんなところに' was changed to 'この部屋に'.",
-        "violation: Added speaker_age, listener_age, speaker_gender, listener_gender to examples 2, 5, 6, and 7 to meet rule 6 requirements for speaker/listener age/gender diversity and nuance explanation. Updated nuance for these examples to reflect these additions. Rule 6 states: 'Example sentences should include at least one male and one female speaker_gender. You must not embed hints about the speaker's gender in 'english' or 'japanese'. Put that here, in \"speaker_gender\".' and 'Example sentences should include at least one younger and one older speaker_age.'"
+        "violation: Updated 'type' strings for all conjugations in the 'conjugations' array to precisely match the enum values defined in the schema's 'conjugationType'.",
+        "violation: Modified the 'imperative form (polite)' conjugation. Changed its 'form' from 'いてください' to 'いなさい' and its 'type' to 'imperative polite (～なさい)', as 'いてください' is a request and not a direct conjugation form of the verb, and the schema explicitly indicates '～なさい' for polite imperative. Updated 'rarity' to 'uncommon'.",
+        "violation: Removed the 'listener_age' field from all example sentences (examples 2, 5, 6, 7) as it is deprecated according to the schema rules.",
+        "violation: Added the 'scene_rationale' field to examples 2, 5, 6, and 7, as the schema requires its presence when a 'scene' is provided.",
+        "violation: Removed the 'scene' and 'nuance' fields from examples 1, 3, and 4, as these examples did not necessitate a 'scene' to guide the user away from alternative grammatical constructions, making the 'scene' and associated 'nuance' redundant according to the rule: 'If OTHER_WAYS is empty, then you must omit 'scene'.'"
     ]
 }

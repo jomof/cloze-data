@@ -1,6 +1,6 @@
 {
     "grammar_point": "だった・でした",
-    "conjugations": [],
+    "id": "gp0063",
     "pronunciation": {
         "katakana": "ダッタ・デシタ",
         "romaji": "datta, deshita"
@@ -9,9 +9,9 @@
         "[Noun] + だった/でした": "Indicates the past tense of a noun.",
         "[な-Adjective] + だった/でした": "Indicates the past tense of a な-adjective."
     },
-    "id": "gp0063",
     "jlpt": "N5",
     "meaning": "Was, Were (Past tense)",
+    "meaning_warning": "い-Adjectives cannot be used with だった・でした",
     "details": {
         "Part of Speech": "Auxiliary Verb",
         "Register": "Standard",
@@ -19,87 +19,161 @@
         "使用域": "一般"
     },
     "etymology": "「だった」 and 「でした」 are the past tense forms of the copula 「だ」 and its polite form 「です」. They are formed by adding 「た」 (the past tense auxiliary verb) to 「だ」, resulting in 「だった」, and by changing 「す」 to 「し」 before adding 「た」 to 「です」, resulting in 「でした」.",
-    "writeup": "「だった」 (casual) and 「でした」 (polite) are used to express the past tense of nouns and *na*-adjectives. They indicate that something \"was\" a certain way in the past. Think of it as the past tense of 「だ」 (casual) and 「です」 (polite).  They are formed by combining 「だ」 or 「です」 with 「た」.  However, note that *i*-adjectives have their own past tense conjugations and cannot be used with 「だった」 or 「でした」.",
+    "writeup": "「だった」 (casual) and 「でした」 (polite) are used to express the past tense of nouns and *na*-adjectives. They indicate that something \"was\" a certain way in the past. Think of it as the past tense of 「だ」 (casual) and 「です」 (polite). They are formed by combining 「だ」 or 「です」 with 「た」.",
     "examples": [
         {
             "japanese": "綺麗{だった}。",
             "english": "It was beautiful.",
-            "scene": "Describing something seen in the past.",
+            "scene": "Describing something seen in the past that was beautiful.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "美しかった",
+                    "mitigation": "The scene emphasizes that the beauty was a characteristic of something that *was* beautiful, rather than an inherent, always-beautiful quality or an action, which helps to differentiate from i-adjective past forms like 「美しかった」."
+                }
+            ],
             "register": "casual",
-            "setting": "reflective"
+            "setting": "reflective",
+            "speaker_gender": "male",
+            "listener_gender": "no one",
+            "nuance": "While 「綺麗だった」 is a common and neutral expression, a male speaker might use it in a direct, declarative tone. There isn't a specific male-exclusive phrase here, but the directness fits a male speaker in a reflective setting."
         },
         {
             "japanese": "トム{だった}。",
             "english": "It was Tom.",
-            "scene": "Identifying someone from the past.",
+            "scene": "Identifying someone from the past at a casual gathering.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "トムであった",
+                    "mitigation": "The casual setting in the scene helps differentiate from the more formal or literary 「トムであった」, which implies a past state with higher formality."
+                }
+            ],
             "register": "casual",
-            "setting": "informative"
+            "setting": "informative",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "A female speaker might use 「トムだった」 in a friendly, conversational tone. The specific phrasing itself is neutral, but the informal context suits a casual exchange between friends."
         },
         {
             "japanese": "それは、昨日{でした}。",
             "english": "That was yesterday.",
-            "scene": "Remembering a past event.",
+            "scene": "Confirming the date of a past event during a polite conversation.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "それは、昨日だった",
+                    "mitigation": "The polite conversation setting encourages the use of the polite form 「でした」 over the casual 「だった」."
+                }
+            ],
             "register": "polite",
-            "setting": "informative"
+            "setting": "informative",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "The use of 「でした」 by a male speaker emphasizes politeness and respect, fitting for a formal or semi-formal exchange where a man is addressing a woman. The phrase itself is gender-neutral, but the polite register can be chosen by either gender."
         },
         {
             "japanese": "猫が大好き{だった}。",
-            "english": "I really liked cats.",
-            "scene": "Reflecting on a past fondness.",
+            "english": "I really loved cats.",
+            "scene": "A woman reflects on her childhood passion for cats.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "猫が好きだった",
+                    "mitigation": "The scene specifying 'passion' and 'really loved' points to 「大好き」 rather than the simpler 「好き」, which would form 「猫が好きだった」."
+                }
+            ],
             "register": "casual",
-            "setting": "reflective"
+            "setting": "reflective",
+            "speaker_gender": "female",
+            "listener_gender": "no one",
+            "nuance": "The casual 「だった」 combined with 「大好き」 is a common way for a female speaker to express strong past fondness in a personal, reflective context. The phrase itself is gender-neutral, but the emotive quality is often conveyed with this casual directness."
         },
         {
             "japanese": "大変{だった}。",
             "english": "It was terrible.",
-            "scene": "Recalling a difficult experience.",
+            "scene": "A man lamenting a past difficult situation.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "大変であった",
+                    "mitigation": "The scene of lamenting in a casual setting promotes the direct, casual 「だった」 over the more formal 「であった」."
+                }
+            ],
             "register": "casual",
-            "setting": "melancholic"
+            "setting": "melancholic",
+            "speaker_gender": "male",
+            "listener_gender": "no one",
+            "nuance": "「大変だった」 is a common, direct expression for describing a difficult past. While not exclusively male, a male speaker might use this concise phrasing to express hardship without extensive elaboration."
         },
         {
             "japanese": "昨日は暇{でした}ね。",
             "english": "You were free yesterday, right?",
-            "scene": "Confirming something with a friend.",
+            "scene": "A colleague politely asking about a co-worker's availability.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "昨日は暇だったね",
+                    "mitigation": "The interaction between colleagues and the polite questioning in the scene guide the user to use the polite 「でした」 instead of the casual 「だった」."
+                }
+            ],
             "register": "polite",
-            "setting": "friendly"
+            "setting": "friendly",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "A female speaker using 「でしたね」 adds a layer of soft politeness and seeks confirmation, which is a common nuance in Japanese conversation, particularly in professional or semi-formal settings."
         },
         {
             "japanese": "先週は雨{でした}。",
             "english": "It was rainy last week.",
-            "scene": "Describing last week's weather.",
+            "scene": "Reporting a weather condition politely to someone.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "先週は雨だった",
+                    "mitigation": "The act of reporting politely in the scene necessitates the use of the polite form 「でした」 over the casual 「だった」."
+                }
+            ],
             "register": "polite",
-            "setting": "informative"
+            "setting": "informative",
+            "speaker_gender": "male",
+            "listener_gender": "group",
+            "nuance": "When addressing a group, a male speaker often opts for the polite 「でした」 to maintain a formal or semi-formal tone. This ensures clarity and respect in the delivery of information."
         },
         {
             "japanese": "あの 時 、 彼 は まだ 子供{でした}。",
             "english": "He was still a child at that time.",
-            "scene": "Reminiscing about someone's past.",
+            "scene": "An older woman recounting a story about someone from their youth.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あの時、彼はまだ子供だった",
+                    "mitigation": "The setting of an older woman recounting a story to a listener encourages the polite and respectful tone conveyed by 「でした」 rather than the purely casual 「だった」, which might be too informal for storytelling."
+                }
+            ],
             "register": "polite",
-            "setting": "storytelling"
+            "setting": "storytelling",
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "speaker_age": "older",
+            "nuance": "An older female speaker might choose 「でした」 to convey a sense of gentle reminiscence or to maintain a polite narrative tone, even when speaking casually. The phrase 「あの時」 sets a reflective mood."
         }
     ],
+    "post_false_friends_writeup": "Remember that 「だった」 and 「でした」 are specifically for indicating the past tense of nouns and *na*-adjectives. For verbs, you'll need to use the appropriate verb conjugation to express past tense. Be mindful of register as well: use 「でした」 in polite contexts and 「だった」 in casual ones.",
     "false_friends": [
         {
-            "term": "う-Verb (Past)",
-            "meaning": "う - Verbs (Past tense)",
-            "kind": "synonym",
+            "term": "Verb Past Tense",
+            "meaning": "Verbs in past tense (e.g., 食べた)",
+            "kind": "often confused with",
             "nuance": "Unlike 「だった・でした」, which are for nouns and *na*-adjectives, verbs have their own past tense conjugations (e.g., 「食べた」 means \"ate\")."
         },
         {
             "term": "だ",
             "meaning": "To be, Is",
-            "kind": "synonym",
-            "nuance": "「だ」 is the present tense form; 「だった」 is the past tense form."
+            "kind": "similar expression",
+            "nuance": "「だ」 is the present tense casual form; 「だった」 is its past tense."
         },
         {
             "term": "です",
             "meaning": "To be, Is",
-            "kind": "synonym",
-            "nuance": "「です」 is the polite present tense form; 「でした」 is the polite past tense form."
+            "kind": "similar expression",
+            "nuance": "「です」 is the present tense polite form; 「でした」 is its past tense."
         }
     ],
-    "post_false_friends_writeup": "Remember that 「だった」 and 「でした」 are specifically for indicating the past tense of nouns and *na*-adjectives. For verbs, you'll need to use the appropriate verb conjugation to express past tense. Be mindful of register as well: use 「でした」 in polite contexts and 「だった」 in casual ones.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/だった-でした"
-    }
+    },
+    "change": "Multiple schema and violation fixes: Removed empty 'conjugations' array; Adjusted 'writeup' to align with 'meaning_warning' rule; Re-added 'meaning_warning'; Added 'speaker_gender', 'listener_gender', 'scene_rationale', and 'nuance' to examples; Corrected 'false_friends' 'kind' values and 'term' for clarity and accuracy; Removed deprecated 'listener_age'."
 }

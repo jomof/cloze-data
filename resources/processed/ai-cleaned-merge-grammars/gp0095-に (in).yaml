@@ -22,6 +22,12 @@
             "japanese": "本が 部屋 {に} あります。",
             "english": "The book is in the room.",
             "scene": "Someone confirming the location of a book.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "本が 部屋 で あります。",
+                    "mitigation": "The scene emphasizes confirming the static location of the book, not an action happening there, thus guiding towards 「に」 for existence rather than 「で」 for location of action."
+                }
+            ],
             "register": "formal",
             "setting": "informative",
             "nuance": "「あります」 (arimasu) indicates the existence of an inanimate object like 「本」 (hon). The polite 「ます」 form is used here for a standard, neutral tone."
@@ -30,6 +36,12 @@
             "japanese": "子供が 公園 {に} います。",
             "english": "The child is in the park.",
             "scene": "A parent looking for their child.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "子供が 公園 で います。",
+                    "mitigation": "The scene sets up a context of inquiring about someone's current location, reinforcing the use of 「に」 for existence over 「で」 for action."
+                }
+            ],
             "register": "formal",
             "setting": "interrogative",
             "speaker_gender": "female",
@@ -40,6 +52,12 @@
             "japanese": "彼は 大阪 {に} 住んでいます。",
             "english": "He lives in Osaka.",
             "scene": "Introducing someone's place of residence.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼は 大阪 で 住んでいます。",
+                    "mitigation": "The verb 「住む」 (sumu), meaning 'to live' or 'reside', strongly pairs with 「に」 to indicate the place of residence, distinguishing it from actions that would typically use 「で」."
+                }
+            ],
             "register": "formal",
             "setting": "informative",
             "nuance": "「住んでいます」 (sunde imasu) indicates living somewhere. 「彼」 (kare) is a standard pronoun for 'he', used in a neutral, informative context."
@@ -48,18 +66,29 @@
             "japanese": "この 場所 {に} あなたと 一緒 {に} いたい。",
             "english": "I want to be with you in this place.",
             "scene": "On a first date, in a beautiful spot.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この 場所 で あなたと 一緒 に いたい。",
+                    "mitigation": "The scene emphasizes the desire for a shared state of being or presence in a specific location, which aligns with 「に」 for existence, rather than an activity that would use 「で」."
+                }
+            ],
             "register": "polite",
             "setting": "first-date",
             "speaker_gender": "male",
             "listener_gender": "female",
             "speaker_age": "younger",
-            "listener_age": "younger",
             "nuance": "The particle 「に」 (ni) marks the location 「この場所」 (kono basho). The polite 「〜たい」 (tai) form expresses desire, conveying a hopeful and gentle romantic sentiment on a first date between younger individuals."
         },
         {
             "japanese": "私は いつも あなたの そば {に} います。",
             "english": "I'm always by your side.",
             "scene": "A romantic confession.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "私は いつも あなたの そば で います。",
+                    "mitigation": "The phrase expresses continuous presence or existence in close proximity, which is consistently marked by 「に」 for static location or position, rather than 「で」 which implies an action."
+                }
+            ],
             "register": "intimate",
             "setting": "flirty",
             "speaker_gender": "female",
@@ -70,10 +99,15 @@
             "japanese": "昔は ここ {に} 大きな 木が あったんだよ。",
             "english": "Long ago, there was a big tree here.",
             "scene": "An elderly person reminiscing with a younger listener.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "昔は ここ で 大きな 木が あったんだよ。",
+                    "mitigation": "The scene describes the past existence of an object in a specific location, making 「に」 the appropriate particle for static presence, rather than 「で」 for an action performed there."
+                }
+            ],
             "register": "casual",
             "setting": "storytelling",
             "speaker_age": "older",
-            "listener_age": "younger",
             "nuance": "The particle 「に」 (ni) indicates a location of past existence. The use of 「あったんだよ」 (atta n da yo) adds a conversational and somewhat nostalgic tone, typical of an older speaker sharing a memory with a younger person."
         }
     ],
@@ -87,12 +121,7 @@
     ],
     "post_false_friends_writeup": "「に」 indicates the location of existence, while 「で」 indicates the location of an action. For example, 「公園にいます」 (I am in the park) indicates your location, while 「公園で 遊びます」 (I play in the park) indicates where the action of playing happens.",
     "change": [
-        "violation: Removed `conjugations: []` as particles do not conjugate (Rule 0).",
-        "violation: Removed `etymology` from example sentences, as it should be at the top level and example etymology should be about specific word origins within the sentence (Rule 6).",
-        "violation: Replaced examples or rephrased to adhere to JLPT kanji level rules (N5, N4, N3 allowed for N5 GP), specifically replacing words with N2 kanji like `机`, `棚`, `財布` (Rule 6).",
-        "violation: Replaced the example using `に` for direction (`明日 学校 に 行きます`) as the grammar point explicitly defines `に` for location of existence (Rule 6, adhering to DOJG `に⑥` meaning).",
-        "violation: Added a first-date example to fulfill specific requirement (Rule 8).",
-        "violation: Ensured sufficient variety in `speaker_gender`, `listener_gender`, `speaker_age`, `listener_age`, `register`, and `setting` across examples, and linked `nuance` to specific Japanese phrases in 「quotes」 (Rule 6).",
-        "violation: Removed `dojg` and `lesson_order` fields which are input processing specific and not part of the required output schema (Rule 20)."
+        "violation: Added `scene_rationale` to example entries where `scene` is present, to comply with schema requirement that `scene_rationale` is required if `scene` is present.",
+        "schema: Removed deprecated `listener_age` field from example entries, as specified by the schema."
     ]
 }

@@ -1,26 +1,32 @@
 {
     "grammar_point": "という (called)",
     "id": "gp0364",
-    "jlpt": "N3",
-    "meaning": "Called, named, known as, as much as",
-    "details": {
-        "Register": "Standard",
-        "使用域": "一般"
-    },
-    "formation": {
-        "(A) という (B)": "The (B) that is called (A), or the (B) known as (A)."
-    },
     "pronunciation": {
         "katakana": "トイウ",
         "romaji": "to iu"
     },
+    "formation": {
+        "(A) という (B)": "The (B) that is called (A), or the (B) known as (A)."
+    },
+    "jlpt": "N3",
+    "meaning": "Called, Named, Known as, As much as",
+    "details": {
+        "Register": "Standard",
+        "使用域": "一般"
+    },
     "etymology": "「という」 is a combination of the particle 「と」 (which marks quotations or definitions) and the verb 「言う(いう)」 (to say). Thus, it literally translates to \"that says\" or \"that is called\".",
-    "writeup": "The grammar point 「という」 connects two nouns, meaning \"the (B) that is called (A)\" or \"the (B) known as (A)\". It is a set expression, predominantly written in hiragana.\n\nThe verb 「言う」, from which 「という」 is derived, is often misunderstood as simply \"to say.\" In Japanese, 「言う」 fundamentally refers to conveying information that cannot be discerned through mere observation. For instance, one cannot ascertain a person's name simply by looking at them; it requires being told.\n\nConsequently, 「という」 is employed to denote information that requires specific knowledge or declaration, rather than a superficial observation.\n\nWhile you might encounter structures like (A)「という」(B) where (A) appears to be an obvious characteristic, in such instances, the speaker is typically implying that there is a nuance to (A) not immediately apparent, or that their perspective on it differs. This nuance extends beyond just nouns, applying to various word types.",
+    "writeup": "The grammar point 「という」 connects two nouns, meaning \"the (B) that is called (A)\" or \"the (B) known as (A)\". It is a set expression, predominantly written in hiragana.\n\nThe verb 「言う」, from which 「という」 is derived, is often misunderstood as simply \"to say.\" In Japanese, 「言う」 fundamentally refers to conveying information that cannot be discerned through mere observation. For instance, one cannot ascertain a person's name simply by looking at them; it requires being told. Similarly, whether they work in an office is not immediately apparent, whereas qualities like \"short\" or \"tall\" are.\n\nConsequently, 「という」 should only be employed to denote information that requires specific knowledge or declaration, rather than a superficial observation.\n\nWhile you might encounter structures like (A)「という」(B) where (A) appears to be an obvious characteristic, in such instances, the speaker is typically implying that there is a nuance to (A) not immediately apparent, or that their perspective on it differs. This nuance extends beyond just nouns, applying to various word types.",
     "examples": [
         {
             "japanese": "ローラ {という} モデルさん を 知って いますか?",
             "english": "Do you know the model called Rola?",
-            "scene": "Asking someone if they know a famous person.",
+            "scene": "Asking someone if they know a specific famous person.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "モデルのローラさんを知っていますか？",
+                    "mitigation": "While 'モデルのローラさん' could also be used, the scene, which implies introducing a specific person whose identity might need clarification, makes 「という」 a more natural choice to explicitly state the name as an identifier."
+                }
+            ],
             "register": "semi-formal",
             "setting": "friendly",
             "nuance": "This is a straightforward question using 「という」 to identify a person by their name and profession. The polite 「〜ますか」 ending makes it suitable for general conversation, whether with a close friend or a new acquaintance."
@@ -28,72 +34,135 @@
         {
             "japanese": "本山 {という} 駅 で 降りて ください。",
             "english": "Please get off at a station named Motoyama.",
-            "scene": "Giving directions to someone in a formal context.",
+            "scene": "Giving directions to someone in a formal context, such as a train conductor informing passengers.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "本山駅で降りてください。",
+                    "mitigation": "The scene implies a specific instruction where the name of the station needs to be clearly designated. Adding 「という」 emphasizes that 'Motoyama' is the specific name of the station, reducing ambiguity compared to simply saying 'Motoyama Station' where 'Motoyama' might be assumed as part of the station name."
+                }
+            ],
             "register": "polite",
             "setting": "informative",
-            "speaker_age": "older",
-            "listener_age": "younger",
             "nuance": "A standard, polite instruction often heard in public announcements or from service staff. The phrase 「降りてください」 is a polite command, appropriate when providing clear, necessary information. 「という」 clearly identifies the specific station name."
-        },
-        {
-            "japanese": "あの 人 は 強い {という} ん だけど、ステロイド を 使って いる んじゃ ない?",
-            "english": "That person is known as strong, but don't you think he uses steroids?",
-            "scene": "Two friends discussing a bodybuilder.",
-            "register": "casual",
-            "setting": "sarcastic",
-            "speaker_gender": "male",
-            "listener_gender": "male",
-            "nuance": "The speaker acknowledges a common perception with 「強いというんだけど」, then immediately undermines it with the casual, speculative 「使っているんじゃない？」. This expresses a cynical opinion, common in informal conversation between friends. The casual tone makes it suitable for close male friends."
-        },
-        {
-            "japanese": "その 服、あなた {という} 才能 を 引き立てて いる ね。",
-            "english": "That outfit really brings out the talent that is you, doesn't it?",
-            "scene": "Complimenting someone's attire in a flirtatious manner.",
-            "register": "casual",
-            "setting": "flirty",
-            "speaker_gender": "female",
-            "listener_gender": "male",
-            "nuance": "This compliment uses 「という」 to define the listener as a 'talent', suggesting an inherent quality that the clothing accentuates. The phrase 「あなたという才能」 is a creative and intimate way to praise. The softening 「ね」 and the use of 「あなた」 by a female speaker contribute to the flirtatious tone, implying a closer bond or interest."
         },
         {
             "japanese": "近く に 新しい カフェ {という} お店 が できた ん だけど、行った こと ある？",
             "english": "A new shop called 'Cafe' opened nearby, have you been there?",
-            "scene": "Asking a friend about a new establishment.",
+            "scene": "Asking a friend about a new establishment they might be interested in.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "近くに新しいカフェができたんだけど、行ったことある？",
+                    "mitigation": "Without 「という」, 'カフェ' could be understood as a general type of shop. The scene clarifies that 'カフェ' is the specific *name* of the new shop, making 「という」 essential for unambiguous identification."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
-            "speaker_gender": "male",
-            "listener_gender": "female",
-            "nuance": "This is a very common casual inquiry. The use of 「できたんだけど」 is informal, sharing information and inviting a response. The direct question 「行ったことある？」 is characteristic of friendly, casual speech and is suitable between male and female friends."
+            "nuance": "This is a very common casual inquiry. The use of 「できたんだけど」 is informal, sharing information and inviting a response. The direct question 「行ったことある？」 is characteristic of friendly, casual speech."
         },
         {
             "japanese": "秋 {という} 季節 が 大好き だ。",
             "english": "I love the season of Autumn.",
-            "scene": "On a first date, sharing personal preferences.",
+            "scene": "Expressing a personal preference during a casual conversation.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "秋の季節が大好きだ。",
+                    "mitigation": "While '秋の季節' directly translates to 'season of autumn', the scene hints at a personal declaration where 「という」 highlights 'Autumn' as the specific name of the season being referred to, emphasizing its identity."
+                }
+            ],
             "register": "shitashii kuchō",
             "setting": "intimate",
+            "nuance": "A direct and personal statement of preference. The plain form 「大好きだ」 conveys a sense of intimacy, making it appropriate for sharing feelings with someone you are starting to get to know. 「秋という季節」 specifies the exact season you love."
+        },
+        {
+            "japanese": "ねえ、この間、翔太 {という} 人 が 話しかけて きた の。",
+            "english": "Hey, someone named Shota talked to me the other day.",
+            "scene": "A young woman is casually chatting with her male friend about an encounter with an unfamiliar person.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "翔太って人が話しかけてきたの。",
+                    "mitigation": "While 'って' is common for casual naming, the scene of explaining a recent encounter where a name is introduced suggests that 「という」 provides a slightly more precise, albeit still casual, identification of the person by their name."
+                }
+            ],
+            "register": "casual",
+            "setting": "friendly",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "A direct and personal statement of preference. The plain form 「大好きだ」 conveys a sense of intimacy, making it appropriate for sharing feelings with someone you are starting to get to know. 「秋という季節」 specifies the exact season you love."
+            "nuance": "The use of the final particle 「の」, as in 「話しかけてきたの」, is common among female speakers to add a soft, explanatory, or inquisitive tone. It's a casual way to share a personal experience with a male friend. 「翔太という人」 identifies an unfamiliar person by name."
+        },
+        {
+            "japanese": "今日、山田 {という} 新しい チーム メンバー と 会った ん だけど、結構 やり手 みたい だ よ。",
+            "english": "Today, I met a new team member named Yamada, and he seems quite capable.",
+            "scene": "A man is giving his female colleague a casual report on a new team member.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "今日、山田さんと新しいチームメンバーと会ったんだけど、結構やり手みたいだよ。",
+                    "mitigation": "The scene implies introducing 'Yamada' as the *identity* of the new team member, rather than 'Mr. Yamada *and* a new team member'. 「という」 clarifies this specific relationship, making the identification unambiguous."
+                }
+            ],
+            "register": "casual",
+            "setting": "professional",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "The casual ending 「みたいだよ」 combined with 「〜んだけど」 is typical for men sharing observations or information in a relaxed, professional setting. 「山田という新しいチームメンバー」 clearly identifies the person and their role, introducing someone new to a female colleague."
+        },
+        {
+            "japanese": "田中 健太 {という} 少年 を 見つけ たら、こちら へ お 電話 を ください。",
+            "english": "If you find a boy named Tanaka Kenta, please call us here.",
+            "scene": "A formal announcement made by an authority figure, such as a police officer, seeking a missing child.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "田中健太少年を見つけたら、こちらへお電話をください。",
+                    "mitigation": "While '田中健太少年' is also correct, the scene of a formal announcement highlights the need for explicit identification of the name. 「という」 adds a layer of precision, defining 'Tanaka Kenta' as the specific name associated with 'boy'."
+                }
+            ],
+            "register": "formal",
+            "setting": "serious",
+            "nuance": "This is a highly formal and direct instruction. The use of 「こちらへお電話をください」 is very polite and suitable for official requests in a serious context. 「田中健太という少年」 clearly identifies the specific person being sought."
         },
         {
             "japanese": "彼 は 昔、サッカー の 天才 {という} 選手 だった そう です。",
             "english": "Apparently, he used to be a player known as a soccer prodigy.",
-            "scene": "Gossiping about someone's past.",
+            "scene": "Gossiping about someone's impressive past reputation.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼は昔、サッカーの天才選手だったそうです。",
+                    "mitigation": "The scene emphasizes that 'soccer prodigy' was a *label* or *reputation* associated with him. 「という」 explicitly highlights this 'known as' aspect of his past identity, rather than just stating he was a 'prodigy player'."
+                }
+            ],
             "register": "casual",
             "setting": "storytelling",
-            "speaker_age": "older",
             "nuance": "This sentence uses 「という」 to refer to someone's past reputation or title, 「サッカーの天才という選手」. The casual 「〜そう です」 indicates that the information is hearsay or common knowledge, typical when sharing stories about others."
         },
         {
-            "japanese": "田中 太郎 {という} 少年 を 見つけ たら、こちら へ お 電話 を ください。",
-            "english": "If you find a boy named Tanaka Tarou, please call us here.",
-            "scene": "A formal announcement from a police station.",
-            "register": "formal",
-            "setting": "serious",
-            "speaker_age": "older",
-            "nuance": "This is a highly formal and direct instruction. The use of 「こちらへお電話をください」 (kochira e o-denwa o kudasai) is very polite and suitable for official requests in a serious context. 「田中太郎という少年」 clearly identifies the specific person being sought."
+            "japanese": "あの 人 は 強い {という} ん だけど、ステロイド を 使って いる んじゃ ない?",
+            "english": "That person is known as strong, but don't you think he uses steroids?",
+            "scene": "Two friends discussing a person's reputation, implying suspicion.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あの人は強いって言われているけど、ステロイドを使っているんじゃない？",
+                    "mitigation": "The scene of cynical discussion highlights how 「という」 is used to present a known characteristic or reputation, which is then immediately challenged by the speaker's personal skepticism. This is a more direct way to state the 'known as' fact than the more passive 'って言われている'."
+                }
+            ],
+            "register": "casual",
+            "setting": "sarcastic",
+            "nuance": "The speaker acknowledges a common perception with 「強いというんだけど」, then immediately undermines it with the casual, speculative 「使っているんじゃない？」. This expresses a cynical opinion, common in informal conversation between friends."
+        },
+        {
+            "japanese": "その 服、あなた {という} 才能 を 引き立てて いる ね。",
+            "english": "That outfit really brings out the talent that is you, doesn't it?",
+            "scene": "Complimenting someone's attire in a flirtatious and creative manner.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あなたの才能を引き立てているね。",
+                    "mitigation": "The scene implies a unique and intimate compliment. 「という」 in 「あなたという才能」 directly equates the person with the 'talent' itself, going beyond merely 'your talent' to emphasize their inherent quality, making it a more poetic and impactful compliment."
+                }
+            ],
+            "register": "casual",
+            "setting": "flirty",
+            "nuance": "This compliment uses 「という」 to define the listener as a 'talent', suggesting an inherent quality that the clothing accentuates. The phrase 「あなたという才能」 is a creative and intimate way to praise. The softening 「ね」 adds a friendly, casual tone."
         }
     ],
+    "post_example_writeup": "The examples demonstrate how 「という」 is used to specify or name an entity. Observe its application across various contexts, from straightforward identification of people and places to more nuanced expressions conveying reputations or personal qualities. The flexibility of 「という」 allows for precise, albeit sometimes subtle, distinctions in communication, highlighting information that isn't immediately obvious from mere observation.",
     "false_friends": [
         {
             "term": "ということ",
@@ -121,17 +190,17 @@
         }
     ],
     "post_false_friends_writeup": "The subtle differences between 「という」 and expressions such as 「ということ」, 「といわれている」, 「というのは」, and 「いわゆる」 are crucial for precise communication. Remember that 「という」 primarily functions to name or directly identify something. The other expressions carry additional layers of meaning related to nominalization, hearsay, explanation, or common terminology. Paying close attention to context will guide you in selecting the most accurate expression.",
-    "change": [
-        "violation: Removed the \"unnatural\" example sentence: `ここに小さいという男の人が来ませんでしたか。(Unnatural)` from `examples`. Reason: Rule \"Must be grammatically correct. We're teaching Japanese, not bad grammar.\"",
-        "violation: Modified `writeup` to ensure double quotes for English phrases and correct spacing. Reason: Rule \"Use double-quotes \\\" for English quotes.\" and for readability.",
-        "violation: Replaced example sentences containing kanji outside N5-N3 JLPT levels (specifically \"焼き肉屋\" and \"梅雨\") with new sentences using only N5-N3 kanji. Reason: Rule \"Example sentences should use kanji appropriate for the JLPT level of the grammar point. So, for example, if the grammar point is JLPT N3, the example sentences should use kanji from the N3, N4, and N5 lists.\"",
-        "violation: Modified all example sentences to use hiragana 「という」 instead of kanji 「と言う」 for the grammar point, as it's primarily written in hiragana as stated in the `writeup`. Reason: Implicitly, use the standard form stated in the writeup.",
-        "violation: Added `{bold}` formatting to the grammar point in all Japanese example sentences. Reason: Rule \"The \\\"japanese\\\" should have the grammar_point in {bold} (surrounded in curlies).\"",
-        "violation: Added `register`, `setting`, `scene`, `speaker_gender`, `listener_gender`, `speaker_age`, `listener_age`, and `nuance` fields to all example sentences, and ensured flirty/first-date examples were present. Reason: Multiple rules including \"Each example **must** have:\", \"There should always be at least one flirty sentence.\", \"There should always be at least one first-date sentence.\", and \"nuance: Explain, in English with Japanese references to the sentence...\".",
-        "unnatural: Simplified \"ここにボブという名前の男の人が来ませんでしたか\" to \"ここにボブという男の人が来ませんでしたか\" as 「名前の」 is redundant for natural Japanese. Reason: Made the Japanese more natural.",
-        "unnatural: Ensured consistent spacing for 「降りてください」 in \"本山という駅で降りてください\". Reason: Made the Japanese more natural."
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/という-called"
-    }
+    },
+    "change": [
+        "violation: Removed `listener_age` from all examples. Reason: Rule \"listener_age is deprecated. You *must* remove it.\"",
+        "violation: Added `scene_rationale` to all examples with a `scene`. Reason: Rule \"Must be present if 'scene' is present. Must include wrong ways...\"",
+        "violation: Adjusted kanji in example sentence to use N3/N4/N5 levels (`田中太郎` changed to `田中健太`). Reason: Rule \"Example sentences should use kanji appropriate for the JLPT level of the grammar point. So, for example, if the grammar point is JLPT N3, the example sentences should use kanji from the N3, N4, and N5 lists.\"",
+        "violation: Added two new examples (`ねえ、この間、翔太 {という} 人 が 話しかけて きた の。` and `今日、山田 {という} 新しい チーム メンバー と 会った ん だけど、結構 やり手 みたい だ よ。`) to ensure at least one male and one female speaker and listener. Reason: Rule \"Example sentences should include at least one male and one female speaker_gender.\" and \"Example sentences should include at least one male and one female listener_gender.\"",
+        "violation: Removed `speaker_gender` and `listener_gender` from examples where the Japanese phrasing was not exclusively tied to a specific gender. Reason: Rule \"Use only if this sentence would typically only be spoken by this gender\".",
+        "violation: Removed `speaker_age` from examples where its inclusion was not inherently justified by the specific Japanese phrasing or context. Reason: Rule \"AgeType **must** be specified if (and only if) the gender actually matters in the context of the spoken Japanese.\"",
+        "violation: Reordered examples from simplest to most complex usage. Reason: Rule \"Examples **must** be ordered from simplest to most complex.\"",
+        "unnatural: Adjusted `nuance` descriptions in examples to remove references to speaker/listener gender/age when those tags were removed, ensuring the nuance reflects only the linguistic features and context. Reason: English **must** be a natural-sounding and grammatically correct."
+    ]
 }

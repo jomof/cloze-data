@@ -3,14 +3,11 @@ import yaml
 import json
 import argparse
 from json_repair import repair_json
-from python.aigen import aigen
+from python.ai import aigen
 from python.utils.build_cache.memoize.memoize import memoize_to_disk
-import sys
 import os
-import shutil
 
-
-def ai_clean(data, bazel_target, prior_grammar_point=None):
+def ai_clean(data, bazel_target, grammar_schema, prior_grammar_point):
     data = yaml.safe_load(data)
 
     prior_input_prelog = ""
@@ -39,16 +36,21 @@ def ai_clean(data, bazel_target, prior_grammar_point=None):
           END_PRIOR_GRAMMAR_POINT_YAML
         """
       prior_input_rules = """
+        You **must** make the output agree with the provided schema.
+        You **must** make the output comply with the command-comments in the provided schema.
+
         Final checklist:
+        [ ] Did you create JSON that follows the schema? Does it follow the commands (in the format of comments) in the schema?
         [ ] Since there is a prior version, mentally confirm that it's okay to not change anything.
         [ ] Since there is a prior version, did you modify it minimally?
         [ ] Since there is a prior version with a comment in it, did you address that comment and then remove the comment? Comments like this have the highest priority and can override the **minimal changed** rule.
         [ ] Check again. Did you address all the comments in the original grammar point?
         [ ] Since there is a prior version, mentally review each change you made one-by-one. Was the change necessary or was the old version already good enough? Don't change it if it's good enough.
         [ ] Since there is a prior version, you **must** go through each change that you made and categorize each change as follows:
-            - "suggestion": A minor change that does not affect the meaning of the grammar point.
+            - "suggestion": A minor change that does not affect the meaning of the grammar point and doesn't satisfy a **must** clause somewhere.
             - "unnatural": A change that makes the grammar point sound more natural in Japanese or English.
             - "violation": A change because some part of the original didn't comply with something in this prompt.
+            - "schema": A change was needed to comply with the schema (including command-comments in the schema).
             - "command": There was a comment in the original that you are now addressing.
           You **must** revert each "suggestion" change.
           If there are any changes remaining, add a "change" field at the bottom of the JSON (it's a string array of lines).
@@ -80,103 +82,27 @@ def ai_clean(data, bazel_target, prior_grammar_point=None):
 
       Follow these rules:
 
-      0. If the grammar point contains a verb in **dictionary form** or adjective in **dictionary form**, add a new array field at the top, called "conjugations". It should list all of the possible conjugations of grammar_point, including the grammar point itself. 
-        Only list conjugations that, when used, preserve the meaning of the grammar point. For example, if the grammar point is about the past, then don't list conjugations that aren't in the past.
-        For example, if the grammar point was, then the array should be: dictionary (plain non-past): とみえる [commonly used], polite (non-past): とみえます [commonly used], negative (plain): とみえない [commonly used], negative (polite): とみえません [commonly used], past (plain): とみえた [commonly used], past (polite): とみえました [commonly used], negative past (plain): とみえなかった [commonly used], negative past (polite): とみえませんでした [commonly used], te-form: とみえて [rare in everyday speech], conditional (provisional ば-form): とみえれば [uncommon], conditional (tara-form): とみえたら [uncommon], volitional (plain): とみえよう [very rare], volitional (polite): とみえましょう [very rare], imperative (plain): とみえろ [unnatural], imperative (polite): とみえてください [unnatural], potential: とみえられる [rare], passive: とみえられる [rare], causative: とみえさせる [extremely unusual]
-        Place this array immediately after the "grammar_point" field.
-      1. Do not modify the "grammar_point" text from [input]; output it exactly as provided.
-        - You **must** add a "pronunciation" field, which contains:
-            - "katakana" the grammar point in katakana.
-            - "romaji" the "gramar_point" in romaji.
-            - "pronunciation_warning" if needed only, explain why the romaji doesn't fully capture the pronunciation.
-            - Example:
-                "pronunciation": {
-                    "katakana": "テイルトコロダ",
-                    "romaji": "teiru tokoro da"
-                },
-      1.2 You *must* add a 'formation' tag right under "grammar_point" that describes, in psuedo-algebraic notation, the formula for creating the grammar point from its component parts.
-          For example, for the grammar point "見える", the formation could be:
-          "formation": {
-            "[Subject が] + 見える": "Indicates that something is visible or can be seen.",
-            "[Object に] + [Subject が] + 見える": "Indicates how something appears to someone (it seems or looks a certain way).",
-            "[Modifier] + 見える": "Adds nuance such as 'clearly visible,' 'looks small,' etc."
-          }
-      2. Avoid Unicode escape sequences like \\u3051, just emit the Unicode.
-      3. If "meaning_warning" is empty or null, omit it entirely.
-      4. You **must** add an "etymology" field here that discusses the etymology of this grammar point.
-      5. The "writeup" field should:
-          - Be primarily in English, supplemented by natural Japanese expressions as needed.
-          - Incorporate essential details from the input while rephrasing for clarity.
-          - Use markdown-style formatting (e.g., **important**).
-          - Omit any example sentences here; examples go in the "examples" array.
-          - Use double-quotes " for English quotes.
-          - Refrain from quoting Japanese fragments such as なさい or なくてもいい.
-          - You may include bullet points or sections like "Important Considerations" for clarity.
-          - Don't mention the meaning_warning if there is one.
-          - If the grammar point is primarily used by one gender, then mention that.
-          - If the grammar point is primarily used by one age group, then mention that.
-          - If the grammar point is primarily used in one region, then mention that.
+
       6. Provide an "examples" array with multiple entries. Each should have:
-          - Each example **must** use the grammar_point, though it may be in conjugated form.
-            - If there are other conjugated forms of the grammar point that are commonly used, then some of the example sentences **must** include those conjugated forms.
-          - "japanese": a natural-sounding Japanese sentence using this grammar point.
-            - The "japanese" should have the grammar_point in {bold} (surrounded in curlies).
-            - The "japanese" **must** have spaces between words, so that it is easy to read.
-            - The "japanese" **must** be grammatically correct. We're teaching Japanese, not bad grammar.
-            - You **must not** use hiragana for words that are typically written in kanji.
-            - **Must** be just one sentence unless. Use "scene" if you need to set up context.
-            - **Must not** use parentheses to set context. If necessary, use a separate "scene" field.
-            - **Must not** use quotes including 「」, .
-          - "english": a natural-sounding English translation. Use quotes sparingly. Reserve them for when the grammar point can't be made without quotes.
-             - **Must** be just one sentence unless. Use "scene" if you need to set up context.
-             - **Must not** use parentheses to set context. If necessary, use a separate "scene" field.
-             - **Should not** use quotes, because that's not really how english is spoken.
-          - "scene": This is english text that will be displayed to the user under the "english" example. 
-            - It sets the scene for the example and gives the user a hint about how to translate the english to japanese.
-            - If there are other common ways to translate the "english" to "japanese" then you **must** have a "scene" that sets the context for the example in a way that differentiates it from those other ways.
-            - It can be like "A man speaking to a woman he likes", "Two friends talking", "A teacher explaining something", "An employee asking a question to his boss".
-            - It should be a short phrase.
-            - "english" and "scene" will be displayed together, so "scene" **must not** repeat facts from "english".
-          - "register": register of the sentence. One of: casual, formal, semi-formal, sonkeigo (respectful), kenjōgo (humble), teineigo (polite), shitashii kuchō (intimate), bijinesu nihongo (business), bungo (literary), hōgen (dialectical), surangu (slang), gun-go (military), wakamono kotoba (youth), meirei-kei no teineigo (polite imperative)
-            - Example sentences **should** exhibit a wide variety of registers.
-            - If possible, include one of the keigo registers in example sentences.
-            - If possible, include a shitashii kuchō (intimate) example
-          - "setting": setting of the sentence: One of: flirty, first-date, professional, academic, humorous, sarcastic, serious, persuasive, apologetic, informative, interrogative, storytelling, instructional, commanding, friendly, condescending, supportive, sympathetic, inspirational, intimate, negotiating, technical, legal, religious, creative, casual slang, emergency/alarm, reflective, optimistic, pessimistic, cautious, excited, melancholic
-            - ** Don't invent new settings** Just use the list provided.
-            - Example sentences should exhibit a wide variety of settings.
-            - There should always be at least one flirty sentence. This teaches the learner to flirt.
-            - There should always be at least one first-date sentence. This teaches the learner to date.
-          - "conjugation": **Only** if the grammar point is conjugatable, then specify which congugation is used.
-            - This field should only be present if there is a top-level "conjugations" array.
-            - The content of this "conjugation" field must be taken from the top-level list of conjugations you generated earlier. Use the 'type' field.
-            - Please include example sentences with a variety of conjugations, especially the ones encountered in common usage.
-            - "conjugation" **must** be about the main grammar point and not other parts of the sentence. 
+
+
+
+
+
           - "speaker_gender": (optional, required if there is a listener gender) gender of the speaker. One of: male, female. **Use only if this sentence would typically only be spoken by this gender**
             - Example sentences should include at least one male and one female speaker_gender.
             - You *must not* embed hints about the speaker's gender in 'english' or 'japanese'. Put that here, in "speaker_gender".
           - "listener_gender": (optional) gender of the listener. One of: male, female (omit if it doesn't matter in this sentence)
             - Example sentences should include at least one male and one female listener_gender.
             You *must not* embed hints about the listeners's gender in 'english' or 'japanese'. Put that here, in "listener_gender".
-          - "speaker_age": (optional) One of: younger, older (can omit if it doesn't matter)
-            - Example sentences should include at least one younger and one older speaker_age.
-          - "listener_age": (optional) One of: younger, older (can omit if it doesn't matter)
-            - Example sentences should include at least one younger and one older listener_age.
-          - "nuance":  Explain, in English with Japanese references to the sentence, how this sentence exhibits the interplay between the "speaker_age" vs "listener_age", "speaker_gender" vs "listener_gender", why the "register" applies.
-            - If there is a "speaker_gender", then "nuance" **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender. 
-            - Nuance **must** refer to parts of the japanese sentence in 「quotes」.
-            - Nuance **must not** refer to the JLPT level of the words in the japanese sentence
+
+
           - "etymology": If there is something etymologically interesting in the Japanese sentence, then mention it here in English.
   
-              
-      7. At least one example should include a flirty innuendo. It should be phrased as the speaker (male or female) flirting with the listener (female or male).
-      8. At least one example should suit an early romantic or first-meeting context (without using the word "date"). It should be phrased as the speaker (male or female) flirting with the listener (female or male).
-      9. If the input examples contain dialogue (A: ... B: ...), rewrite them into single-sentence statements that preserve the lesson but remove direct dialogue format.
-      10. Prefer simpler sentences that are still natural and convey the grammar point. Strongly prefer not using quotes. Reserve quotes for when the grammar point needs them.
-      11. Order examples from simpler to more advanced usage.
-      12. For English contractions, use a single apostrophe ' (e.g., "don't").
+
       13. You may include a "post_example_writeup" section after "examples" if more clarification is helpful, but don't reference examples by any numeric label.
       14. If "false_friends" are present, each entry should have:
-          - "term": the name of the false friend (e.g., "とみえる"). **MUST NOT** be a conjugation of the current grammar point.
+          - "term": the name of the false friend (e.g., "とみえる"). 
           - "meaning": the meaning of the false friend in English (e.g., "to seem, to appear")
           - "kind": relationship to the main grammar point (e.g., "similar expression", "often confused with", etc)
           - "nuance": a concise contrast to the main grammar point (e.g., "Unlike [grammar_point], [false_friend]...").
@@ -184,64 +110,20 @@ def ai_clean(data, bazel_target, prior_grammar_point=None):
       15. You may add a "post_false_friends_writeup" to clarify further differences between the grammar point and these similar expressions. Do not call them "false friends" in that section—just provide a short explanation of how to avoid mixing them up.
       16. You may fix minor inaccuracies in "details", but do not invent new details.
       17. Ensure the JSON is valid and properly escaped for YAML conversion. Avoid additional formatting or code fences.
-      18. Japanese sentences should not have furigana text embedded. 
-      19. There should just be one english sentence per example. Don't make multiple sentences.
+
       20. You **must not** add top-level 'bunpro' or 'dojg' fields to the output JSON.
-      21. You **must not** change the "grammar_point" field from the input. It **must** be exactly the same as the input.
+
       
 
-      ** Template of the Expected Output JSON **
-      Below is a minimal template demonstrating how the final JSON structure should look. You will output something like this, without code fences:
+      ** Schema of the Expected Output JSON **
+      Below is a minimal template demonstrating how the final JSON structure should look. You will output something with this schema, without code fences.
+      Comments in the schema are instructions for you that use *MUST* follow. These comments will apply to the schema element that follows them.
 
+      BEGIN_OUTPUT_SCHEMA
+      json5```
+      [grammar_schema]
       ```
-      {
-          "grammar_point": "...",
-          "id": "gp0001",
-          "conjugations": [
-              { type: "dictionary form",
-                form: "とみえる",
-                rarity: "common"
-              },
-              // etc.
-          ],
-          "jlpt": "...",
-          "meaning": "...", // English
-          "meaning_warning": "...", // English
-          "details": {
-              "Register": "...",
-              // etc
-          },
-          "writeup": "...", // English
-          "examples": [
-              {
-                  "japanese": "晩ご飯を食べて歯を磨いた。", // Japanese
-                  "english": "I ate dinner and brushed my teeth.", // English
-                  "scene": "A person telling their friend what they did last night.", // English
-                  "conjugation": "dictionary form", // From top-level conjugation 'types'
-                  "register": "...", // Required
-                  "setting": "...", // Required
-                  "speaker_gender": "...", // Only if required for the sentence
-                  "listener_gender": "...", // Only if required for the sentence
-                  "speaker_age": "...", // Only if required for the sentence
-                  "listener_age": "...", // Only if required for the sentence
-                  "nuance": "..." // English
-              },
-              // etc
-          ],
-          "post_example_writeup": "", // English
-          "false_friends": [
-              {
-                  "term": "...",
-                  "meaning": "...",
-                  "kind": "...",
-                  "nuance": "" // English
-              },
-              // etc
-          ],
-          "post_false_friends_writeup": "..." // English
-      }```
-          - If "meaning_warning" is null or empty, you omit it entirely.
-          - The same goes for "false_friends", "post_example_writeup", and "post_false_friends_writeup" if they do not apply.
+      END_OUTPUT_SCHEMA
 
       Here are the kanji learned at each JLPT level:
           JLPT Kanji N5, 人, 一, 日, 大, 年, 出, 本, 中, 子, 見, 国, 上, 分, 生, 行, 二, 間, 時, 気, 十, 女, 三, 前, 入, 小, 後, 長, 下, 学, 月, 何, 来, 話, 山, 高, 今, 書, 五, 名, 金, 男, 外, 四, 先, 川, 東, 聞, 語, 九, 食, 八, 水, 天, 木, 六, 万, 白, 七, 円, 電, 父, 北, 車, 母, 半, 百, 土, 西, 読, 千, 校, 右, 南, 左, 友, 火, 毎, 雨, 休, 午, , 
@@ -258,7 +140,7 @@ def ai_clean(data, bazel_target, prior_grammar_point=None):
       [prior_input_replace]
 
       Once you have the JSON content in mind, please do the following steps and make corrections as needed:
-      1. Are the sections that require English as the main language actually in English? Those sections are "writeup", "nuance", "meaning", "meaning_warning", "etymology".
+      1. Are the sections that require English as the main language actually in English?
       2. See #1 above and look again. These fields *must* have English as the main language.
       3. If somehow, you still failed to make those sections English, then apologize (mentally) and fix them.
       4. Make sure there are no A/B dialog style example sentences. They should be full sentences.
@@ -275,6 +157,7 @@ def ai_clean(data, bazel_target, prior_grammar_point=None):
     prompt = prompt.replace("[prior_input_prelog]", prior_input_prelog)
     prompt = prompt.replace("[prior_input_replace]", prior_input_replace)
     prompt = prompt.replace("[prior_input_rules]", prior_input_rules)
+    prompt = prompt.replace("[grammar_schema]", grammar_schema)
 
     grammar_point_name = data["grammar_point"]
     id = data["id"]
@@ -326,10 +209,12 @@ def ai_clean(data, bazel_target, prior_grammar_point=None):
     #return prompt
     # return yaml.dump(json_response, ensure_ascii=False, indent=4)
 
-def main(input_file, output_file, bazel_target, prior_version=None):
+def main(input_file, output_file, bazel_target, grammar_schema_file, prior_version=None):
     with open(input_file, 'r', encoding='utf-8') as file:
         data = file.read()
-    result,prompt = ai_clean(data, bazel_target, prior_version)
+    with open(grammar_schema_file, 'r', encoding='utf-8') as file:
+        grammar_schema = file.read() 
+    result,prompt = ai_clean(data, bazel_target, grammar_schema, prior_version)
 
     with open(output_file, 'w', encoding='utf-8') as file:
         file.write(result)
@@ -343,6 +228,7 @@ if __name__ == '__main__':
     parser.add_argument('--destination', required=True, help='Output file path')
     parser.add_argument('--bazel-target', required=True, help='Name of the bazel target')
     parser.add_argument('--ai-cleaned-merge-grammars', required=False, help='Optional path to the original version of the grammar')
+    parser.add_argument('--grammar-schema', required=True, help='Path to the grammar schema file')
     
     args = parser.parse_args()
     basename = os.path.basename(args.destination)
@@ -351,6 +237,6 @@ if __name__ == '__main__':
         prior_version_file = args.ai_cleaned_merge_grammars
         with open(prior_version_file, 'r', encoding='utf-8') as file:
             prior_version = file.read()
-        main(args.source, args.destination, args.bazel_target, prior_version)
+        main(args.source, args.destination, args.bazel_target, args.grammar_schema, prior_version)
     else:
-        main(args.source, args.destination, args.bazel_target)
+        main(args.source, args.destination, args.bazel_target, args.grammar_schema)

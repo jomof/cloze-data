@@ -2,7 +2,7 @@ import logging
 from google.genai import types
 from google import genai
 import time
-from python.gcp import PROJECT_ID, LOCATION
+import python.gcp
 import vertexai
 from vertexai.generative_models import GenerativeModel
 
@@ -70,8 +70,8 @@ def generate_gemini_2_0(model_name: str, prompt: str) -> str:
     logger.info("Initializing Gemini 2.0 client")
     client = genai.Client(
         vertexai=True,
-        project=PROJECT_ID,
-        location=LOCATION
+        project=python.gcp.PROJECT_ID,
+        location=python.gcp.LOCATION
     )
 
     # Configure content generation settings

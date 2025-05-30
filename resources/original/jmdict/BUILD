@@ -39,6 +39,9 @@ py_binary(
 
 py_library(
     name = "jmdict",
-    srcs = ["sentences.py"],
+    srcs = [
+        "sentences.py",
+        "words.py",
+    ],
     visibility = ["//:__subpackages__"],
 )

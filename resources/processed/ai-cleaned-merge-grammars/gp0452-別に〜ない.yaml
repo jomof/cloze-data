@@ -1,6 +1,47 @@
 {
     "grammar_point": "別に〜ない",
-    "conjugations": [],
+    "conjugations": [
+        {
+            "type": "negative plain (～ない)",
+            "form": "〜ない",
+            "rarity": "common"
+        },
+        {
+            "type": "negative plain (～ない)",
+            "form": "〜じゃない",
+            "rarity": "common"
+        },
+        {
+            "type": "negative non-past polite (～ません)",
+            "form": "〜ません",
+            "rarity": "common"
+        },
+        {
+            "type": "negative non-past polite (～ません)",
+            "form": "〜ではありません",
+            "rarity": "common"
+        },
+        {
+            "type": "negative past plain (～なかった)",
+            "form": "〜なかった",
+            "rarity": "common"
+        },
+        {
+            "type": "negative past plain (～なかった)",
+            "form": "〜じゃなかった",
+            "rarity": "common"
+        },
+        {
+            "type": "progressive (～ている)",
+            "form": "〜ていない",
+            "rarity": "common"
+        },
+        {
+            "type": "desiderative (～たい)",
+            "form": "〜たくない",
+            "rarity": "common"
+        }
+    ],
     "pronunciation": {
         "katakana": "ベツニナイ",
         "romaji": "betsu ni ~ nai"
@@ -19,91 +60,220 @@
     "writeup": "The adverb 「別に」 (betsu ni), meaning \"separately\" or \"particularly\", when paired with a negative verb (〜ない), expresses the idea that something is \"not really\" or \"not particularly\" the case. The implication is that there's no specific or significant reason for something. Think of it as a softer way of disagreeing or expressing indifference. It often carries a slightly detached or cool tone.",
     "examples": [
         {
-            "japanese": "この ケーキ 、{別に} 美味しく{ない} 。",
+            "japanese": "この ケーキ は、{別に} 美味しく{ない}。",
             "english": "This cake? It's not particularly good.",
             "scene": "Two friends eating cake at a cafe.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "このケーキはあまり美味しくない。",
+                    "mitigation": "The scene highlights a casual, understated critique, implying a subtle lack of enthusiasm rather than a complete absence of goodness, distinguishing it from a straightforward 'not much'."
+                },
+                {
+                    "competing_grammar": "このケーキは全然美味しくない。",
+                    "mitigation": "The scene avoids a harsh, definitive rejection of the cake's taste, which would be indicated by '全然', opting instead for a more nuanced, 'not particularly' feeling."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
-            "nuance": "「別に」 adds a subtle sense of indifference to the taste of the cake.",
-            "etymology": "「美味しくない」 is the negative form of the い-adjective 「美味しい」"
+            "conjugation": "negative plain (～ない)",
+            "nuance": "「別に」 adds a subtle sense of indifference to the taste of the cake, implying it's not bad, but also not notably good."
         },
         {
             "japanese": "あの 人 のこと、{別に} 好きじゃ{ない} よ。",
             "english": "It's not like I particularly like that person.",
             "scene": "A girl denying having a crush on someone.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あの人のことあまり好きじゃないよ。",
+                    "mitigation": "The scene suggests a more intentional denial or a nuanced feeling, rather than simply 'not much,' hinting at underlying feelings or a desire to conceal them."
+                },
+                {
+                    "competing_grammar": "あの人のこと全然好きじゃないよ。",
+                    "mitigation": "The scene implies a subtle, indirect denial, not a strong, outright rejection, which would be conveyed by '全然'."
+                }
+            ],
             "register": "casual",
             "setting": "flirty",
             "speaker_gender": "female",
-            "nuance": "The 「よ」 at the end of the sentence emphasizes the speaker's casual tone and adds a touch of flirtatiousness, hinting that she might actually like the person she's talking about.",
-            "etymology": "「好き」 is an na-adjective meaning to like."
+            "nuance": "The 「よ」 at the end of the sentence emphasizes the speaker's casual tone and adds a touch of flirtatiousness, hinting that she might actually like the person she's talking about. This 「よ」 is typically used by female speakers in this context to add a softer, more suggestive tone."
         },
         {
             "japanese": "今日の 天気 は、{別に} 悪く{ない} ですね。",
             "english": "The weather today isn't particularly bad, is it?",
             "scene": "Two coworkers making small talk by the water cooler.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "今日の天気はあまり悪くないですね。",
+                    "mitigation": "The scene implies a mild, almost indifferent observation about the weather, rather than a quantifiable lack of badness, making '別に' more suitable."
+                },
+                {
+                    "competing_grammar": "今日の天気は全然悪くないですね。",
+                    "mitigation": "The scene suggests a more understated and polite assessment, avoiding the strong, definitive assertion of '全然' that might seem too casual in a workplace context."
+                }
+            ],
             "register": "formal",
             "setting": "polite",
-            "nuance": "The polite 「ですね」 adds a level of formality and politeness appropriate for a workplace setting.",
-            "etymology": "「天気」 means weather. 「悪くない」 means not bad."
+            "conjugation": "negative plain (～ない)",
+            "nuance": "The polite 「ですね」 adds a level of formality and politeness appropriate for a workplace setting, while `別に` indicates a nuanced, rather than absolute, assessment of the weather."
         },
         {
             "japanese": "試験の結果は、{別に} 気にして{いない} よ。",
             "english": "I'm not particularly worried about the exam results.",
             "scene": "A student trying to appear nonchalant after a test.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "試験の結果はあまり気にしていないよ。",
+                    "mitigation": "The scene emphasizes an outward appearance of indifference, suggesting the speaker wants to project an image of not caring significantly, which '別に' captures more effectively than 'あまり'."
+                },
+                {
+                    "competing_grammar": "試験の結果は全然気にしていないよ。",
+                    "mitigation": "The scene implies a subtle internal state that might be less absolute than '全然', suitable for a student who might be trying to convince themselves or others."
+                }
+            ],
             "register": "casual",
             "setting": "serious",
-            "nuance": "「いない」 is the negative form of the verb 「いる」, making the statement more casual.",
-            "etymology": "「試験」 means exam or test. 「結果」 means result."
+            "conjugation": "progressive (～ている)",
+            "nuance": "The use of `〜ていない` (the progressive negative form) emphasizes a current state of not caring, reflecting a more relaxed or detached attitude, which fits the student trying to appear nonchalant. The final `よ` adds a touch of casualness and mild assertion to the statement."
         },
         {
             "japanese": "この レストラン は、{別に} 高く{ない} から、気軽に 来れる よ。",
             "english": "This restaurant isn't particularly expensive, so you can come here casually.",
             "scene": "Recommending a restaurant to a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "このレストランはあまり高くないから、気軽にこれないよ。",
+                    "mitigation": "The scene implies that cost isn't a *distinguishing factor* for accessibility, rather than merely 'not very expensive,' which '別に' conveys more precisely for a recommendation."
+                },
+                {
+                    "competing_grammar": "このレストランは全然高くないから、気軽にこれないよ。",
+                    "mitigation": "The scene suggests a more understated positive point about the restaurant, avoiding the strong, definitive claim of '全然' which might sound exaggerated."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
-            "nuance": "「から」 explains the reason. 「来れる」is the potential form of 「来る」.",
-            "etymology": "「高い」means expensive."
+            "conjugation": "negative plain (～ない)",
+            "nuance": "The phrase `高く{ない}` explicitly states that the price is not a significant concern, setting a friendly, inviting tone for the recommendation. The casual `来れるよ` reinforces the ease of coming."
         },
         {
             "japanese": "彼 は、{別に} 怒って{いる} わけじゃ{ない} よ。",
             "english": "It's not like he's particularly angry.",
             "scene": "Explaining someone's mood to a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼はあまり怒っているわけじゃないよ。",
+                    "mitigation": "The scene implies a subtle clarification of mood, indicating that the person's anger isn't a key defining characteristic, rather than simply 'not much' angry."
+                },
+                {
+                    "competing_grammar": "彼は全然怒っているわけじゃないよ。",
+                    "mitigation": "The scene suggests a nuanced explanation, avoiding the strong, absolute denial of '全然' that might overstate the situation."
+                }
+            ],
             "register": "casual",
             "setting": "informative",
-            "nuance": "The 「わけじゃない」 adds a nuance of clarification, indicating that the person's anger is not as intense as it might seem.",
-            "etymology": "「怒る」 means to be angry."
+            "conjugation": "progressive (～ている)",
+            "nuance": "The 「わけじゃ{ない}」 adds a nuance of clarification, indicating that the person's anger is not as intense or as defining as it might seem. This softens the statement."
         },
         {
-            "japanese": "A: この映画、面白かった？ B: {別に} 。",
-            "english": "A: Was this movie interesting? B: Not really.",
-            "scene": "Two people discussing a movie.",
+            "japanese": "この 映画 は、{別に} 面白く{なかった}。",
+            "english": "This movie wasn't particularly interesting.",
+            "scene": "Someone is asked about a movie they just watched.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この映画はあまり面白くなかった。",
+                    "mitigation": "The scene implies a sense of detachment or indifference about the movie's quality, suggesting it wasn't a standout, as opposed to merely 'not much' entertainment."
+                },
+                {
+                    "competing_grammar": "この映画は全然面白くなかった。",
+                    "mitigation": "The scene suggests a more understated critique, avoiding the strong, definitive negative judgment of '全然', which might be too blunt for the implied context."
+                }
+            ],
             "register": "casual",
-            "setting": "friendly",
-            "nuance": "Using just 「別に」 is a very concise way to express that the movie wasn't particularly interesting.",
-            "etymology": "This example can be used as a short answer."
+            "setting": "reflective",
+            "conjugation": "negative past plain (～なかった)",
+            "nuance": "The use of `別に` here suggests a lack of strong opinion, implying that while the movie wasn't bad, it wasn't noteworthy either. It expresses a mild disappointment or indifference."
         },
         {
-            "japanese": "あの 仕事 は、{別に} やりたく{ない} けど、やら{なければならない} 。",
+            "japanese": "あの 仕事 は、{別に} やりたく{ない} けど、やら{なければならない}。",
             "english": "It's not that I particularly want to do that job, but I have to.",
             "scene": "Complaining about a job one must do.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あの仕事はあまりやりたくないけど、やらなければならない。",
+                    "mitigation": "The scene emphasizes a distinct lack of desire for *this particular job*, rather than a general low level of wanting to do it, which '別に' conveys more pointedly."
+                },
+                {
+                    "competing_grammar": "あの仕事は全然やりたくないけど、やらなければならない。",
+                    "mitigation": "The scene suggests a reluctant acceptance, not an absolute refusal of desire, which '別に' captures better than the strong '全然'."
+                }
+            ],
             "register": "casual",
             "setting": "melancholic",
-            "nuance": "「なければならない」 expresses obligation.",
-            "etymology": "「仕事」 means job."
+            "conjugation": "desiderative (～たい)",
+            "nuance": "The use of `別に〜ない` highlights the speaker's internal reluctance, emphasizing that there's no particular desire to do the job, yet the `やらなければならない` conveys the unavoidable obligation. This combination expresses a resigned attitude."
         },
         {
-            "japanese": "私 は {別に} あなた の こと 好き じゃ {ない} よ 、ただ 一緒 に いる と 安心 する だけ だ よ 。",
+            "japanese": "私 は {別に} あなた の こと 好き じゃ {ない} よ 、ただ 一緒 に いる と 安心 する だけ だ よ。",
             "english": "It's not that I particularly like you or anything, I just feel at peace when I'm with you.",
             "scene": "Confessing feelings to someone on a first date.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "私はあまりあなたのこと好きじゃないよ。",
+                    "mitigation": "The scene suggests a coy, indirect admission of feelings by denying a 'particular' liking, which '別に' facilitates, unlike 'あまり' which might imply a genuine lack of strong feeling."
+                },
+                {
+                    "competing_grammar": "私は全然あなたのこと好きじゃないよ。",
+                    "mitigation": "The scene implies a teasing or playful denial, not an absolute one, which '別に' allows for by maintaining a subtle hint of underlying affection."
+                }
+            ],
             "register": "shitashii kuchō (intimate)",
             "setting": "flirty",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "The 「よ」 at the end of the sentence is a feminine speech pattern. This sentence is meant to be a coy, flirty comment. The implication is that she does like him, but doesn't want to admit it directly.",
-            "etymology": "「安心」 means peace of mind."
+            "nuance": "The 「よ」 at the end of the sentence is a feminine speech pattern in this context, used to add a softer, more suggestive tone. This sentence is meant to be a coy, flirty comment. The implication is that she does like him, but doesn't want to admit it directly."
+        },
+        {
+            "japanese": "私は、その噂について{別に}気にし{ていない}よ、君が信じなくても。",
+            "english": "I'm not particularly worried about that rumor, even if you don't believe me.",
+            "scene": "A man reassuring a woman about a baseless rumor.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "私はその噂についてあまり気にしていないよ。",
+                    "mitigation": "The scene emphasizes a firm, reassuring stance that the rumor holds no particular weight, making '別に' more effective than 'あまり' which might suggest a minor level of concern."
+                },
+                {
+                    "competing_grammar": "私はその噂について全然気にしていないよ。",
+                    "mitigation": "The scene suggests a more nuanced, reassuring dismissal rather than a strong, absolute denial, aligning with the subtle tone of '別に'."
+                }
+            ],
+            "register": "casual",
+            "setting": "supportive",
+            "conjugation": "progressive (～ている)",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "The masculine 「よ」 at the end softens the assertion, making it sound more reassuring from a male speaker. The `別に` indicates that for him, the rumor is of no significant concern, despite its potential impact."
+        },
+        {
+            "japanese": "部長からの要求は、{別に}無理なことでは{ない}。",
+            "english": "The boss's request isn't particularly unreasonable.",
+            "scene": "A man responding to a colleague's complaint about a request from their boss.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "部長からの要求はあまり無理なことではない。",
+                    "mitigation": "The scene suggests the speaker's objective assessment that the request is not *especially* unreasonable, which '別に' highlights more than 'あまり' would."
+                },
+                {
+                    "competing_grammar": "部長からの要求は全然無理なことではない。",
+                    "mitigation": "The scene implies a moderate, professional assessment, avoiding the strong, potentially dismissive tone of '全然' in a workplace context."
+                }
+            ],
+            "register": "professional",
+            "setting": "informative",
+            "conjugation": "negative plain (～ない)",
+            "speaker_gender": "male",
+            "nuance": "The formal `ではない` maintains a professional tone, suitable for a workplace setting. The `別に` implies that the speaker doesn't see the request as a particularly difficult or impossible task, suggesting a pragmatic outlook rather than a strong conviction."
         }
     ],
-    "post_example_writeup": "The negative part of the grammar point (ない) can be attached to い-adjectives or verbs. Often the sentence will end with 「わけではない」 to soften the tone and add a nuance of clarification or qualification.",
+    "post_example_writeup": "The negative part of the grammar point (ない) can be attached to い-adjectives, な-adjectives, nouns, or verbs. Often the sentence will end with 「わけではない」 to soften the tone and add a nuance of clarification or qualification.",
     "false_friends": [
         {
             "term": "あまり〜ない",
@@ -121,5 +291,14 @@
     "post_false_friends_writeup": "While 「別に〜ない」, 「あまり〜ない」, and 「なかなか〜ない」 can all express a lack of something, they differ in nuance. 「別に〜ない」 indicates a lack of particular reason or significance. 「あまり〜ない」 indicates a low degree or quantity. And 「なかなか〜ない」 indicates difficulty or infrequency. Pay attention to the context to choose the most appropriate expression.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/別に-ない"
-    }
+    },
+    "change": [
+        "violation: Added `conjugations` array to comply with schema rules for conjugatable grammar points, interpreting the `〜ない` part as the conjugatable element.",
+        "violation: Corrected Japanese sentence structure in Example 1 (`この ケーキ は、{別に} 美味しく{ない}。`) to be a complete sentence, adhering to rule 'Must be just one sentence unless'.",
+        "violation: Rewrote Example 7 to be a single speaker's statement (`この 映画 は、{別に} 面白く{なかった}。`) instead of a dialogue, adhering to rule 'Must be from the point of view of a single speaker. No back-and-forth dialogue'.",
+        "schema: Added `scene_rationale` to all examples where `scene` was present but `scene_rationale` was missing, as required by the schema.",
+        "schema: Removed invalid `etymology` fields from examples that contained grammatical explanations instead of true etymology, as per rule 6.",
+        "unnatural: Refined `nuance` fields in Examples 4, 5, 8 to focus on the impact of `別に〜ない` in context rather than merely stating grammatical facts.",
+        "violation: Added two new examples (10, 11) to ensure coverage of male speaker and female listener genders, fulfilling rule 6 which requires at least one male and one female speaker_gender and listener_gender."
+    ]
 }

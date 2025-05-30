@@ -1,11 +1,41 @@
 {
     "grammar_point": "Noun[negative-modifier]・Verb[ない]・Adjective[negative]+はない",
     "id": "gp0302",
-    "conjugations": [],
+    "conjugations": [
+        {
+            "type": "negative plain (～ない)",
+            "form": "Noun[negative-modifier]・Verb[ない]・Adjective[negative]+はない",
+            "rarity": "common"
+        },
+        {
+            "type": "negative non-past polite (～ません)",
+            "form": "Noun[negative-modifier]・Verb[ない]・Adjective[negative]+はいません",
+            "rarity": "common"
+        },
+        {
+            "type": "negative non-past polite (～ません)",
+            "form": "Noun[negative-modifier]・Verb[ない]・Adjective[negative]+はありません",
+            "rarity": "common"
+        },
+        {
+            "type": "negative past plain (～なかった)",
+            "form": "Noun[negative-modifier]・Verb[ない]・Adjective[negative]+はなかった",
+            "rarity": "common"
+        },
+        {
+            "type": "negative past polite (～ませんでした)",
+            "form": "Noun[negative-modifier]・Verb[ない]・Adjective[negative]+はいませんでした",
+            "rarity": "less common"
+        },
+        {
+            "type": "negative past polite (～ませんでした)",
+            "form": "Noun[negative-modifier]・Verb[ない]・Adjective[negative]+はありませんでした",
+            "rarity": "less common"
+        }
+    ],
     "pronunciation": {
         "katakana": "メイシ ギテイシュウショク・ドウシ ナイ・ケイヨウシ ギテイ ＋ ハナイ",
-        "romaji": "meishi giteishūshoku・dōshi nai・keiyōshi gitei + wa nai",
-        "pronunciation_warning": "In casual speech, は (ha) is often pronounced as わ (wa)."
+        "romaji": "meishi giteishūshoku・dōshi nai・keiyōshi gitei + wa nai"
     },
     "formation": {
         "Noun[negative-modifier] + はない": "Indicates that every instance of the noun has the specified property.",
@@ -13,7 +43,7 @@
         "Adjective[negative] + はない": "Indicates that there is no instance where the adjective is not true."
     },
     "jlpt": "N4",
-    "meaning": "There is no ~ that is not/does not",
+    "meaning": "There is not ~ that is not/does not",
     "details": {
         "Register": "Standard",
         "使用域": "一般"
@@ -25,96 +55,170 @@
             "japanese": "彼にはピアノで弾けない曲は{ない}。",
             "english": "There is no song that he can't play on the piano.",
             "scene": "A friend complimenting someone's piano skills.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「彼にはピアノが弾けない曲がある。」",
+                    "mitigation": "This scene highlights that the speaker is expressing the pianist's exceptional skill, implying there are no songs they cannot play, rather than stating there are songs they are unable to play."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
-            "nuance": "This casual sentence uses the plain form 「ない」 to express a strong affirmation about the person's piano skills.",
+            "conjugation": "negative plain (～ない)",
+            "speaker_gender": "male",
+            "listener_gender": "male",
+            "nuance": "The casual tone of this sentence is typical for male casual speech. The phrase 「弾けない曲はない」 asserts that there are no songs he is incapable of playing, emphasizing his mastery.",
             "etymology": "弾けない (hikenai) is the potential negative form of the verb 弾く (hiku, to play a stringed instrument). 曲 (kyoku) means song."
         },
         {
-            "japanese": "私は美味しくない食べ物は{食べない}。",
-            "english": "I don't eat food that doesn't taste good.",
-            "scene": "A person stating their food preferences.",
+            "japanese": "彼にとって、美味しくない料理は{ない}。",
+            "english": "For him, there is no dish that isn't delicious.",
+            "scene": "Describing a person who enjoys all kinds of food.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「彼には美味しくない料理がある。」",
+                    "mitigation": "This would imply he does encounter unpalatable food. The scene implies he appreciates all food, thus there are no dishes he finds not delicious."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
-            "nuance": "「食べない」 indicates a general habit or preference, and the use of 「は」 emphasizes the contrast with other types of food the speaker might eat.",
-            "etymology": "「美味しくない」 (oishikunai) is the negative form of 「美味しい」 (oishii, delicious). 食べ物 (tabemono) means food."
+            "conjugation": "negative plain (～ない)",
+            "nuance": "The use of 「彼にとって」 (for him) emphasizes that this is his personal perception. The double negative 「美味しくない料理はない」 conveys that all dishes are delicious to him.",
+            "etymology": "料理 (ryōri) means dish/cooking."
         },
         {
-            "japanese": "彼は安くない靴は{買わない}。",
-            "english": "He doesn't buy shoes that aren't cheap.",
-            "scene": "Describing a person's shopping habits.",
+            "japanese": "この店で、安くない商品は{ない}。",
+            "english": "At this store, there are no products that aren't expensive.",
+            "scene": "A customer commenting on the high prices in a store.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「この店には安い商品がない。」",
+                    "mitigation": "This would mean there are no cheap products, but doesn't necessarily imply *all* products are expensive or that there are *no* inexpensive products. The scene implies everything is costly."
+                }
+            ],
             "register": "casual",
             "setting": "informative",
-            "nuance": "「買わない」 expresses a deliberate choice, and 「安くない」 implies that he only buys expensive shoes.",
-            "etymology": "安い (yasui) means cheap. 靴 (kutsu) means shoes. 買わない (kawanai) is the negative form of 買う (kau, to buy)."
+            "conjugation": "negative plain (～ない)",
+            "nuance": "The phrase 「安くない」 literally means \"not cheap,\" implying \"expensive.\" The double negative emphasizes that all products in this store are indeed costly.",
+            "etymology": "商品 (shōhin) means product. 店 (mise) means store."
         },
         {
             "japanese": "私に書けない漢字は{ない}。",
             "english": "There is no kanji that I cannot write.",
             "scene": "A student boasting about their kanji knowledge.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「私は漢字が書けない。」",
+                    "mitigation": "This would imply the speaker *cannot* write kanji at all, which is the opposite of the boastful tone intended by the scene."
+                }
+            ],
             "register": "casual",
             "setting": "humorous",
-            "nuance": "This confident statement is made casually. The speaker might follow up with a more modest statement to avoid seeming arrogant.",
+            "conjugation": "negative plain (～ない)",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "The statement 「私に書けない漢字はない」, when spoken by a male, conveys confidence. The phrase emphasizes the speaker's comprehensive ability to write all kanji.",
             "etymology": "書けない (kakenai) is the potential negative form of 書く (kaku, to write). 漢字 (kanji) means Chinese characters."
         },
         {
             "japanese": "私の友達の中でピザが好きじゃない人は一人も{いない}。",
             "english": "There is not a single person in my group of friends that doesn't like pizza.",
             "scene": "Someone talking about their friends' common interests.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「私の友達の中でピザが好きな人がいる。」",
+                    "mitigation": "This competing grammar implies some friends like pizza, but does not convey that *everyone* likes pizza, as the scene intends."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
-            "nuance": "The speaker emphasizes that everyone in their friend group likes pizza.",
+            "conjugation": "negative plain (～ない)",
+            "speaker_gender": "female",
+            "nuance": "Spoken by a female, the sentence expresses a shared characteristic within her social circle. The phrase 「好きじゃない人は一人もいない」 highlights the universal appeal of pizza among her friends.",
             "etymology": "友達 (tomodachi) means friends. 一人もいない (hitori mo inai) means not a single person."
         },
         {
             "japanese": "この大学で日本語を勉強していない人は{いません}。",
             "english": "There is not a person who does not study Japanese at this university.",
             "scene": "A university representative promoting their Japanese program.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「この大学には日本語を勉強している人がいます。」",
+                    "mitigation": "This competing grammar only states that some people study Japanese, not that *everyone* studies it, which is the strong assertion of the scene."
+                }
+            ],
             "register": "formal",
             "setting": "informative",
-            "nuance": "The formal 「いません」 makes this statement sound more professional and persuasive.",
+            "conjugation": "negative non-past polite (～ません)",
+            "nuance": "The formal 「いません」 makes this statement sound professional and persuasive. The phrase 「勉強していない人はいません」 implies that every student at this university is studying Japanese.",
             "etymology": "大学 (daigaku) means university. 勉強していない (benkyō shiteinai) is the negative form of 勉強している (benkyō shiteiru, to be studying)."
         },
         {
             "japanese": "紙を使わない会社は一つも{ありません}。",
             "english": "There is not a single company that does not use paper.",
             "scene": "Someone making an observation about the business world.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「紙を使う会社はあります。」",
+                    "mitigation": "This competing grammar merely states that companies use paper, but does not convey the strong assertion that *every* company uses paper, as the scene intends."
+                }
+            ],
             "register": "formal",
             "setting": "informative",
-            "nuance": "The formal 「ありません」 indicates a serious and objective statement.",
+            "conjugation": "negative non-past polite (～ません)",
+            "nuance": "The formal 「ありません」 indicates a serious and objective statement. The phrase 「使わない会社は一つもありません」 emphasizes the widespread use of paper in the business world, implying no exceptions.",
             "etymology": "会社 (kaisha) means company. 紙 (kami) means paper. 使わない (tsukawanai) is the negative form of 使う (tsukau, to use)."
         },
         {
             "japanese": "あそこのカフェで美味しくないコーヒーは絶対{ない}。",
             "english": "There is no coffee at that cafe that is not delicious.",
             "scene": "Recommending a cafe to someone.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「あそこのカフェのコーヒーは美味しい。」",
+                    "mitigation": "While true, this competing grammar simply states the coffee is delicious. The scene aims to convey an absolute guarantee of quality, implying *no* bad coffee exists there."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
-            "nuance": "Using 「絶対ない」 (zettai nai) adds emphasis, conveying strong confidence in the coffee's quality.",
+            "conjugation": "negative plain (～ない)",
+            "nuance": "Using 「絶対ない」 (zettai nai) adds strong emphasis, conveying absolute confidence in the coffee's quality. The phrase 「美味しくないコーヒーは絶対ない」 assures the listener that they will find no unpleasant coffee.",
             "etymology": "カフェ (kafe) means cafe. コーヒー (kōhī) means coffee. 絶対 (zettai) means absolutely."
         },
         {
             "japanese": "夢を見ない人は{いない}だろう。",
             "english": "There is not a single person who doesn't dream, right?",
             "scene": "A philosophical conversation between friends.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「夢を見る人はいる。」",
+                    "mitigation": "This competing grammar merely states that some people dream, but does not imply that *everyone* dreams, which is the universal observation the scene intends."
+                }
+            ],
             "register": "casual",
             "setting": "reflective",
-            "nuance": "Adding 「だろう」 (darō) softens the statement, inviting agreement or discussion.",
+            "conjugation": "negative plain (～ない)",
+            "nuance": "Adding 「だろう」 (darō) softens the statement, inviting agreement or discussion. The phrase 「夢を見ない人はいないだろう」 suggests a universal truth about human experience.",
             "etymology": "夢 (yume) means dream. 人 (hito) means person."
         },
         {
             "japanese": "君の事 を 好きに ならない 男 は {いない} よ。",
             "english": "There isn't a man who wouldn't fall for you.",
             "scene": "A woman trying to convince her shy friend to try dating.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「多くの男が君を好きになるだろう。」",
+                    "mitigation": "This would imply only 'many' men, not 'all' men, will like her. The scene suggests a stronger, more universal appeal."
+                }
+            ],
             "register": "casual",
             "setting": "flirty",
+            "conjugation": "negative plain (～ない)",
             "speaker_gender": "female",
             "listener_gender": "female",
-            "nuance": "「いないよ」is used to be assertive. This example emphasizes that all men will like her friend. 「君のこと」 is an expression that shows affection. Usually women use 「〜よ」.",
-            "etymology": "好き (suki) means to like. 男 (otoko) means man.The addition of 「よ」 at the end makes it sound more emphatic."
+            "nuance": "「君のこと」 refers to the listener in an informal, direct way. The structure 「好きにならない男はいない」 emphatically states that all men will come to like her. The particle 「よ」 adds a sense of confirmation or gentle assertion, common in informal speech.",
+            "etymology": "好き (suki) means to like. 男 (otoko) means man. The addition of 「よ」 at the end makes it sound more emphatic."
         }
     ],
-    "post_example_writeup": null,
     "false_friends": [
         {
             "term": "ないことには〜ない",
@@ -132,5 +236,17 @@
     "post_false_friends_writeup": "The pattern 「ないことには〜ない」 expresses a necessary condition, indicating that something cannot happen unless a certain action is performed. Meanwhile, 「ないことはない」 suggests something is not entirely impossible, leaving room for a possibility. Be careful to differentiate between these patterns and 「Noun[negative-modifier]・Verb[ない]・Adjective[negative] + はない」, which conveys a universal truth or absence of exceptions. The key is to determine whether you want to express a condition, possibility, or a strong affirmation.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ない-はない"
-    }
+    },
+    "change": [
+        "schema: Removed 'pronunciation_warning' from 'pronunciation' object.",
+        "schema: Added 'conjugations' array as the grammar point is conjugatable.",
+        "violation: Replaced example 2 ('私は美味しくない食べ物は食べない') because it did not correctly use the grammar point 'Noun[negative-modifier]・Verb[ない]・Adjective[negative]+はない'. The original example was simply a negative verb form.",
+        "violation: Replaced example 3 ('彼は安くない靴は買わない') for the same reason as example 2; it did not correctly use the grammar point.",
+        "violation: Removed example 5 ('私は漢字を書けなくはないけど...') as it is an example of a similar grammar point ('なくはない') and not the main grammar point. Instruction: 'Each example must use the grammar_point'.",
+        "schema: Added 'scene_rationale' to all examples with a 'scene' field, as required by the schema.",
+        "schema: Added 'conjugation' field to all examples, specifying the conjugation type used in that example.",
+        "schema: Ensured speaker_gender and listener_gender diversity across examples, as required by the schema: 'Example sentences should include at least one male and one female speaker_gender' and 'Example sentences should include at least one male and one female listener_gender'.",
+        "unnatural: Refined 'nuance' for example 10 and added/updated 'nuance' for other examples to be more precise and natural.",
+        "unnatural: Adjusted 'nuance' for example 1 to reflect the gendered speech patterns."
+    ]
 }

@@ -5,90 +5,85 @@
         {
             "type": "dictionary (plain non-past)",
             "form": "る",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "polite (non-past)",
+            "type": "non-past polite (～ます)",
             "form": "ます",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "negative (plain)",
+            "type": "negative plain (～ない)",
             "form": "ない",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "negative (polite)",
+            "type": "negative non-past polite (～ません)",
             "form": "ません",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "past (plain)",
+            "type": "past plain (～た)",
             "form": "た",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "past (polite)",
+            "type": "past polite (～ました)",
             "form": "ました",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "negative past (plain)",
+            "type": "negative past plain (～なかった)",
             "form": "なかった",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "negative past (polite)",
+            "type": "negative past polite (～ませんでした)",
             "form": "ませんでした",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "te-form",
+            "type": "te-form (～て)",
             "form": "て",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "conditional (provisional ば-form)",
-            "form": "れば",
-            "rarity": "uncommon"
-        },
-        {
-            "type": "conditional (tara-form)",
+            "type": "conditional (～たら)",
             "form": "たら",
             "rarity": "common"
         },
         {
-            "type": "volitional (plain)",
+            "type": "volitional (～よう)",
             "form": "よう",
             "rarity": "uncommon"
         },
         {
-            "type": "volitional (polite)",
+            "type": "volitional polite (～ましょう)",
             "form": "ましょう",
             "rarity": "common"
         },
         {
-            "type": "imperative (plain)",
+            "type": "imperative plain (～ろ/～え)",
             "form": "ろ",
-            "rarity": "unnatural"
+            "rarity": "very rare"
         },
         {
-            "type": "imperative (polite)",
-            "form": "てください",
+            "type": "imperative polite (～なさい)",
+            "form": "なさい",
             "rarity": "common"
         },
         {
-            "type": "potential",
+            "type": "potential (～られる/～える)",
             "form": "られる",
             "rarity": "common"
         },
         {
-            "type": "passive",
+            "type": "passive (～られる/～かれる)",
             "form": "られる",
             "rarity": "uncommon"
         },
         {
-            "type": "causative",
+            "type": "causative (～させる)",
             "form": "させる",
             "rarity": "uncommon"
         }
@@ -111,95 +106,186 @@
         "使用域": "一般"
     },
     "etymology": "The term 「る-verb」 comes from the fact that these verbs always end in 「る」 in their dictionary form. 「Ichidan (一段)」 means 'one level,' referring to their simple conjugation pattern where the 「る」 is simply replaced.",
-    "writeup": "る-verbs, also known as Ichidan verbs ( 一段動詞 ), are a class of Japanese verbs characterized by their consistent conjugation pattern. The key feature of these verbs is that they always end in 「る」 in their dictionary form (辞書形). To conjugate them, you generally replace the 「る」 with the appropriate ending.\n\n**Important Considerations:**\n\n*   All verbs that end in 「る」 are **not** necessarily る-verbs. Some are う-verbs (Godan verbs), which have different conjugation rules. For example, 取る (to take) is *not* a る-verb because the 「る」 changes to 「り」 in the ます form (取ります).\n*   る-verbs are generally considered simpler to conjugate than う-verbs because of their consistent pattern.",
+    "writeup": "る-verbs, also known as Ichidan verbs (一段動詞), are a class of Japanese verbs characterized by their consistent conjugation pattern. The key feature of these verbs is that they always end in 「る」 in their dictionary form (辞書形). To conjugate them, you generally replace the 「る」 with the appropriate ending.\n\n**Important Considerations:**\n\n*   All verbs that end in 「る」 are **not** necessarily る-verbs. Some are う-verbs (Godan verbs), which have different conjugation rules. For example, 取る (to take) is *not* a る-verb because the 「る」 changes to 「り」 in the ます form (取ります).\n*   る-verbs are generally considered simpler to conjugate than う-verbs because of their consistent pattern.",
     "examples": [
         {
             "japanese": "明日、映画を{見}る。",
             "english": "I'll watch a movie tomorrow.",
-            "scene": "Planning for the next day",
+            "scene": "Planning for the next day.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "明日、映画を見るでしょう",
+                    "mitigation": "The casual register and direct statement imply a plain, certain future action suitable for the dictionary form, avoiding speculative nuances."
+                },
+                {
+                    "competing_grammar": "明日、映画を見たいです",
+                    "mitigation": "The scene focuses on a plan, not a desire, guiding the user towards a direct statement of future action rather than a wish."
+                }
+            ],
             "register": "casual",
             "setting": "casual",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "dictionary (plain non-past)",
+            "speaker_gender": "male"
         },
         {
-            "japanese": "毎日、水を{飲み}ます。",
-            "english": "I drink water every day.",
-            "scene": "A statement of habit.",
+            "japanese": "毎日、ご飯を{食べ}ます。",
+            "english": "I eat rice every day.",
+            "scene": "A woman describing her daily routine.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "毎日、ご飯を食べる",
+                    "mitigation": "The `ます` form indicates a polite register, which is hinted at by the general statement of habit without specific intimate context, steering away from the plain form."
+                }
+            ],
             "register": "polite",
             "setting": "informative",
-            "conjugation": "polite (non-past)"
+            "conjugation": "non-past polite (～ます)",
+            "speaker_gender": "female"
         },
         {
-            "japanese": "このケーキはとても{甘}かった。",
-            "english": "This cake was very sweet.",
-            "scene": "Describing the cake after tasting it.",
+            "japanese": "彼は日本語を{覚え}た。",
+            "english": "He memorized Japanese.",
+            "scene": "A woman describing someone's recent accomplishment to a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼は日本語を覚えました",
+                    "mitigation": "The casual register used in talking about someone else's achievement without direct address implies a plain past form, rather than a polite report."
+                }
+            ],
             "register": "casual",
             "setting": "casual",
-            "conjugation": "past (plain)"
+            "conjugation": "past plain (～た)",
+            "speaker_gender": "female"
         },
         {
             "japanese": "もう{忘れ}ましたか？",
             "english": "Have you already forgotten?",
-            "scene": "A person reminding a friend.",
+            "scene": "A woman reminding a man about something they discussed.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "もう忘れた？",
+                    "mitigation": "The polite 「ましたか」 indicates a polite inquiry, suitable for a more formal or less intimate conversation than the plain form."
+                }
+            ],
             "register": "casual",
             "setting": "interrogative",
-            "conjugation": "past (polite)"
+            "conjugation": "past polite (～ました)",
+            "speaker_gender": "female",
+            "listener_gender": "male"
         },
         {
             "japanese": "シャワーを{浴び}て、さっぱりしました。",
             "english": "I took a shower and feel refreshed.",
-            "scene": "After a shower",
+            "scene": "After a shower, a man reflecting on his current state.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "シャワーを浴びて、さっぱりした",
+                    "mitigation": "The use of 「しました」 at the end sets a polite tone for the entire sentence, even with the te-form, suggesting a slightly more formal reflection."
+                }
+            ],
             "register": "casual",
             "setting": "casual",
-            "conjugation": "te-form"
+            "conjugation": "te-form (～て)",
+            "speaker_gender": "male"
         },
         {
             "japanese": "もっと{褒め}てくれたら、頑張るよ。",
             "english": "If you praise me more, I'll do my best.",
-            "scene": "A person asking to be praised.",
+            "scene": "A young student asking for more encouragement from their female teacher.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "もっと褒めてくれたら、頑張ります",
+                    "mitigation": "The 「よ」 particle and direct address indicate a casual, slightly pleading tone common in informal requests, moving away from a more formal statement."
+                }
+            ],
             "register": "casual",
             "setting": "persuasive",
-            "conjugation": "conditional (tara-form)"
+            "conjugation": "conditional (～たら)",
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "speaker_age": "younger"
         },
         {
             "japanese": "彼女の笑顔を{見}よう。",
             "english": "Let's look at her smile.",
-            "scene": "Suggesting something to someone",
+            "scene": "Two male friends deciding to cheer themselves up by looking at a photo of a mutual friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼女の笑顔を見ましょう",
+                    "mitigation": "The plain volitional form is used for casual, informal suggestions between close friends, avoiding the more formal politeness."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
-            "conjugation": "volitional (plain)"
+            "conjugation": "volitional (～よう)",
+            "speaker_gender": "male"
         },
         {
-            "japanese": "明日、早く{起き}てください。",
-            "english": "Please wake up early tomorrow.",
-            "scene": "Requesting someone to wake up early.",
+            "japanese": "明日、早く{起き}なさい。",
+            "english": "Wake up early tomorrow.",
+            "scene": "A parent giving a direct instruction to a child.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "明日、早く起きろ",
+                    "mitigation": "The use of 「なさい」 provides a polite but firm command, suitable for a parent-child interaction where respect is maintained but the command is direct, unlike the harsh plain imperative."
+                },
+                {
+                    "competing_grammar": "明日、早く起きてください",
+                    "mitigation": "While 「～てください」 is a polite request, 「～なさい」 conveys more authority and directness, which fits the scene of a parent giving a clear instruction."
+                }
+            ],
             "register": "polite",
-            "setting": "instructional",
-            "conjugation": "imperative (polite)"
+            "setting": "commanding",
+            "conjugation": "imperative polite (～なさい)",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "speaker_age": "older",
+            "nuance": "The use of 「なさい」 is a polite but firm command, often used by adults to children or by superiors to subordinates. It is less demanding than the plain imperative 「起きろ」 but more direct than 「起きてください」."
         },
         {
             "japanese": "ここから富士山が{見}られます。",
             "english": "You can see Mount Fuji from here.",
-            "scene": "Pointing out a scenic view.",
+            "scene": "A tour guide explaining the view to a group of tourists.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "ここから富士山が見えます",
+                    "mitigation": "While 「見えます」 is often used for things that are naturally visible, 「見られます」 emphasizes the *ability* or *possibility* of seeing it under certain conditions, which is appropriate when guiding tourists to a specific viewpoint."
+                }
+            ],
             "register": "polite",
             "setting": "informative",
-            "conjugation": "potential"
+            "conjugation": "potential (～られる/～える)",
+            "listener_gender": "group"
         },
         {
-            "japanese": "彼女に{笑わ}れてしまった。",
-            "english": "I was laughed at by her.",
-            "scene": "Describing an embarrassing situation.",
+            "japanese": "上司に{褒め}られた。",
+            "english": "I was praised by my boss.",
+            "scene": "A man talking about a positive unexpected event at work.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "上司に褒められました",
+                    "mitigation": "The plain past passive form indicates a casual discussion of a past event, suitable for an informal conversation among peers rather than a formal report."
+                }
+            ],
             "register": "casual",
-            "setting": "melancholic",
-            "conjugation": "passive"
+            "setting": "reflective",
+            "conjugation": "passive (～られる/～かれる)",
+            "speaker_gender": "male"
         },
         {
             "japanese": "子供に野菜を{食べ}させます。",
             "english": "I make my child eat vegetables.",
-            "scene": "Describing how you force your child to eat vegetables.",
+            "scene": "A mother discussing her parenting strategies with a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "子供に野菜を食べさせる",
+                    "mitigation": "The use of `ます` indicates a polite conversation, suitable for explaining one's actions to another adult in a socially appropriate manner."
+                }
+            ],
             "register": "casual",
             "setting": "informative",
-            "conjugation": "causative"
+            "conjugation": "causative (～させる)",
+            "speaker_gender": "female"
         }
     ],
     "post_example_writeup": "Remember that not all verbs ending in 「る」 are る-verbs (Ichidan verbs). Always check the conjugation pattern to be sure.",
@@ -208,17 +294,30 @@
             "term": "う-verb (dictionary)",
             "meaning": "Dictionary form (present/future tense) of a う-verb (Godan verb)",
             "kind": "similar expression",
-            "nuance": "Unlike る-verbs, う-verbs do not simply replace the 「る」. The ending changes depending on the conjugation. For example, 買う (kau - to buy) becomes 買います (kaimasu)."
+            "nuance": "Unlike る-verbs, う-verbs do not simply replace the 「る」. The ending changes depending on the conjugation. For example, 買う (kau - to buy) becomes 買います (kaimasu), not simply dropping the 「う」."
         },
         {
             "term": "Verb + て",
             "meaning": "and, then (linking events)",
             "kind": "often confused with",
-            "nuance": "While the て-form can connect verbs, it indicates a sequence of actions, not simply the dictionary form of a verb. For example, 食べる (taberu - to eat) can be connected as 食べて (tabete) to link it with another action."
+            "nuance": "While the て-form can connect verbs, it indicates a sequence of actions or a means, not simply the dictionary form of a verb. For example, 食べる (taberu - to eat) can be connected as 食べて (tabete) to link it with another action, but it's not the base form."
         }
     ],
-    "post_false_friends_writeup": "Distinguishing between る-verbs and う-verbs is crucial for correct conjugation. Pay attention to how the verb ending changes in different forms. For example, if the 「る」 is replaced by 「り」 in the ます form, it's an う-verb; if it's simply dropped, it's a る-verb.",
+    "post_false_friends_writeup": "Distinguishing between る-verbs and う-verbs is crucial for correct conjugation. Pay attention to how the verb ending changes in different forms. For example, if the 「る」 is replaced by 「り」 in the ます form, it's an う-verb; if it's simply dropped, it's a る-verb. The て-form, while a common conjugation, serves a different grammatical function of connecting clauses or indicating a continuous action, not presenting the dictionary form itself.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/る-Verbs"
-    }
+    },
+    "change": [
+        "violation: Corrected conjugations 'type' field to match schema enum values, e.g., 'polite (non-past)' -> 'non-past polite (～ます)'. Rule: 'type' field must be one of the enum values.",
+        "violation: Corrected conjugations 'rarity' values to match schema enum values, e.g., 'commonly used' -> 'common', 'unnatural' -> 'very rare'. Rule: 'rarityType' enum.",
+        "violation: Removed 'conditional (provisional ば-form)' from conjugations as it's not in the schema's enum. Rule: 'conjugationType' enum must be strictly followed.",
+        "violation: Changed 'imperative (polite)' conjugation 'form' from 'てください' to 'なさい' to align with schema's 'imperative polite (～なさい)'. Rule: 'conjugationType' enum must be strictly followed.",
+        "violation: Added 'scene_rationale' to all examples where 'scene' is present. Rule: 'scene_rationale' must be present if 'scene' is present.",
+        "violation: Corrected example 2 ('飲みます') to use a る-verb ('食べます') as it was previously a う-verb. Rule: 'Each example **must** use the grammar_point'.",
+        "violation: Corrected example 3 ('甘かった') to use a る-verb ('覚えた') as it was previously an い-adjective. Rule: 'Each example **must** use the grammar_point'.",
+        "violation: Corrected example 10 ('笑わされてしまった') to use a る-verb ('褒められた') as it was previously a う-verb. Rule: 'Each example **must** use the grammar_point'.",
+        "violation: Updated example 8 ('起きなさい') to reflect the 'imperative polite (～なさい)' form and adjusted scene/nuance accordingly. Rule: 'Each example **must** use the grammar_point, though it may be in conjugated form.' and 'If there are conjugations, examples **must** exhibit a wide variety of conjugations.'",
+        "violation: Added 'speaker_gender' and 'listener_gender' to examples to meet diversity requirements and general schema rules. Rule: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'",
+        "unnatural: Adjusted example scenes and dialogues to make sentences more natural sounding for the specific speaker/listener genders and ages."
+    ]
 }

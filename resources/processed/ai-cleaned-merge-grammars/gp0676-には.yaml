@@ -15,27 +15,51 @@
         "Register": "Standard",
         "使用域": "一般"
     },
-    "etymology": "The particle 「には」 is a combination of the particle 「に」, indicating purpose or direction, and the particle 「は」, indicating topic or contrast. The 「に」particle marks the preceding word or phrase as a target or goal, while 「は」 highlights that what follows is specific to that target or goal. Etymologically, this combination emphasizes a specific focus or condition related to the topic.",
+    "etymology": "The particle 「には」 is a combination of the particle 「に」, indicating purpose or direction, and the particle 「は」, indicating topic or contrast. The 「に」 particle marks the preceding word or phrase as a target or goal, while 「は」 highlights that what follows is specific to that target or goal. Etymologically, this combination emphasizes a specific focus or condition related to the topic.",
     "writeup": "「には」 is a common particle combination used to express purpose, condition, or contrast. It combines 「に」, indicating a target or goal, with 「は」, marking the topic or contrast. It can be translated as \"in order to,\" \"in regard to,\" or \"for,\" and is used after verbs in dictionary form or nouns. While it has different translations, it can generally be thought of as meaning \"for\", where 「に」 highlights the target and 「は」 emphasizes that the following information is specific to that target.",
     "examples": [
         {
-            "japanese": "海外に 行く {には} パスポートが 必要です。",
+            "japanese": "海外へ 行く {には} パスポートが 必要です。",
             "english": "You need a passport in order to travel abroad.",
-            "scene": "Explaining travel requirements.",
+            "scene": "A woman is discussing international travel requirements with her friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "海外に行くためにパスポートが必要です。",
+                    "mitigation": "The scene emphasizes a general statement about travel, where 「には」 highlights the necessity specific to the act of going abroad, rather than just the purpose."
+                },
+                {
+                    "competing_grammar": "海外旅行にパスポートが必要です。",
+                    "mitigation": "The scene implies a discussion about the *act* of going, not just the concept of overseas travel, emphasizing the verb-oriented nuance of 「には」."
+                }
+            ],
             "register": "formal",
-            "setting": "informative"
+            "setting": "informative",
+            "speaker_gender": "female"
         },
         {
             "japanese": "この 本は 子供 {には} 難しすぎるだろう。",
             "english": "This book is probably too difficult for children.",
-            "scene": "Evaluating a book's suitability for a certain age group.",
+            "scene": "A father is talking to his daughter about a book, implying it's beyond her current reading level.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この本は子供にとって難しすぎるだろう。",
+                    "mitigation": "The scene highlights the specific characteristic of the book *for* children (a group), implying a contrast with adults, where 「には」 emphasizes the target group for the difficulty."
+                }
+            ],
             "register": "semi-formal",
-            "setting": "informative"
+            "setting": "informative",
+            "listener_gender": "female"
         },
         {
-            "japanese": "日本で 独り暮らしを する {には}、日本語を 話せるように なるべきだ。",
+            "japanese": "日本で 一人暮らしを する {には}、日本語を 話せるように なるべきだ。",
             "english": "In order to live by yourself in Japan, you should be able to speak Japanese.",
             "scene": "Giving advice about living alone in Japan.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "日本で一人暮らしをするために、日本語を話せるようになるべきだ。",
+                    "mitigation": "The scene emphasizes the condition or prerequisite for living alone in Japan, where 「には」 sets the context more broadly than a direct purpose indicated by 「ために」."
+                }
+            ],
             "register": "semi-formal",
             "setting": "advisory"
         },
@@ -43,6 +67,12 @@
             "japanese": "夢を 実現する {には} 時間が かかる。",
             "english": "It takes time in order to make one's dream happen.",
             "scene": "Offering encouragement to someone pursuing a dream.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "夢を実現するためには時間がかかる。",
+                    "mitigation": "The scene implies a general truth or condition for achieving dreams, where 「には」 highlights the necessity of time specific to that goal."
+                }
+            ],
             "register": "semi-formal",
             "setting": "inspirational"
         },
@@ -50,6 +80,12 @@
             "japanese": "彼女を デートに 誘う {には}、どう すれば いいかな。",
             "english": "What should I do to invite her on a date?",
             "scene": "Seeking advice on asking someone out.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼女をデートに誘うために、どうすればいいかな。",
+                    "mitigation": "The scene suggests figuring out the *method* or *condition* for inviting her, where 「には」 points to the object of the action rather than solely the direct purpose."
+                }
+            ],
             "register": "casual",
             "setting": "flirty",
             "speaker_gender": "male"
@@ -58,6 +94,12 @@
             "japanese": "試験に 合格する {には} 一生懸命勉強するしか ありません。",
             "english": "In order to pass the exam, you have no choice but to study hard.",
             "scene": "A student expressing the necessity of studying for an exam.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "試験に合格するためには一生懸命勉強するしかありません。",
+                    "mitigation": "The scene implies a necessary condition or prerequisite for passing, where 「には」 highlights the specific action required for that goal."
+                }
+            ],
             "register": "formal",
             "setting": "serious"
         },
@@ -65,6 +107,12 @@
             "japanese": "美味しいケーキを 作る {には}、良い材料が 必要です。",
             "english": "In order to make a delicious cake, good ingredients are necessary.",
             "scene": "Sharing a baking tip.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "美味しいケーキを作るためには良い材料が必要です。",
+                    "mitigation": "The scene frames this as a general requirement for making delicious cakes, emphasizing the condition for the outcome rather than just the purpose."
+                }
+            ],
             "register": "semi-formal",
             "setting": "instructional"
         },
@@ -72,18 +120,30 @@
             "japanese": "成功する {には} 運も 必要だが、努力も 大切だ。",
             "english": "In order to succeed, luck is also necessary, but effort is also important.",
             "scene": "A teacher explaining to students about success.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "成功するためには運も必要だが、努力も大切だ。",
+                    "mitigation": "The scene presents a general truth about success, where 「には」 establishes the prerequisite or condition for achieving it."
+                }
+            ],
             "register": "formal",
             "setting": "informative"
         },
         {
-            "japanese": "彼女の 心を 掴む {には}、ロマンチックな ディナーが 良いかも ね。",
-            "english": "To capture her heart, a romantic dinner might be good, you know.",
+            "japanese": "彼女の 気を引く {には}、ロマンチックな ディナーが 良いかも ね。",
+            "english": "To attract her attention, a romantic dinner might be good, you know.",
             "scene": "Suggesting a way to win someone's affection.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼女の気を引くためには、ロマンチックなディナーが良いかもね。",
+                    "mitigation": "The scene suggests a specific approach *for* attracting her attention, highlighting the context or condition rather than just the direct purpose."
+                }
+            ],
             "register": "casual",
             "setting": "flirty",
             "speaker_gender": "male",
             "listener_gender": "male",
-            "nuance": "「～かもね」suggests uncertainty, this sentence has a casual tone because it's between men, using 「ね」 at the end."
+            "nuance": "「～かもね」 suggests uncertainty, this sentence has a casual tone because it's between men, using 「ね」 at the end."
         }
     ],
     "false_friends": [
@@ -109,11 +169,20 @@
             "term": "のに",
             "meaning": "In order to",
             "kind": "synonym",
-            "nuance": "「のに」can also mean \"even though\" or \"despite\", so be mindful of the context."
+            "nuance": "「のに」 can also mean \"even though\" or \"despite\", so be mindful of the context."
         }
     ],
     "post_false_friends_writeup": "To avoid confusion with similar expressions, remember that 「には」 often sets a condition or requirement. 「としては」 offers a perspective, 「にとって」 is from a person's viewpoint, 「ために」 is for a reason, and 「のに」 can also express unexpected results or regret.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/には"
-    }
+    },
+    "change": [
+        "violation: Example 1: Added `speaker_gender: female` and `scene_rationale`. Rule: \"Example sentences should include at least one male and one female speaker_gender.\" and \"Must be present if 'scene' is present.\"",
+        "violation: Example 2: Added `listener_gender: female` and `scene_rationale`. Rule: \"Example sentences should include at least one male and one female listener_gender.\" and \"Must be present if 'scene' is present.\"",
+        "violation: Example 3: Changed `独り暮らし` to `一人暮らし`. Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\" (`独` is N1, `一` is N5).",
+        "schema: Added `scene_rationale` to Examples 3, 4, 5, 6, 7, 8, 9. Rule: \"Must be present if 'scene' is present.\"",
+        "violation: Example 5: Removed incorrect `nuance` field. Rule: `nuance` field description. This nuance was for example 9, not example 5.",
+        "violation: Example 9: Changed `彼女の心を掴む` to `彼女の気を引く`. Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\" (`掴` is N1, `気` and `引` are N5).",
+        "schema: Removed top-level `sources` field. Rule: \"You **must not** add top-level 'bunpro' or 'dojg' fields to the output JSON.\""
+    ]
 }

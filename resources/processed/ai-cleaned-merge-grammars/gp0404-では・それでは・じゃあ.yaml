@@ -1,5 +1,6 @@
 {
     "grammar_point": "では・それでは・じゃあ",
+    "id": "gp0404",
     "pronunciation": {
         "katakana": "デハ・ソレデハ・ジャア",
         "romaji": "de wa, sore de wa, jaa"
@@ -7,7 +8,6 @@
     "formation": {
         "では / それでは / じゃあ": "Used to transition topics, indicate a conclusion, or as a polite farewell."
     },
-    "id": "gp0404",
     "jlpt": "N3",
     "meaning": "If so, Well (then), In that case",
     "details": {
@@ -149,16 +149,13 @@
         }
     ],
     "post_false_friends_writeup": "The key to distinguishing between では/それでは/じゃあ, さ, and さて lies in understanding their specific nuances. では/それでは/じゃあ signal a transition, conclusion, or polite farewell. さ is more of a filler word, indicating hesitation or a thought process. さて indicates a change of subject or a new beginning. Context is crucial in determining the correct choice.",
-    "change": [
-        "violation: Updated writeup to be more precise, terse, and formal, aligning with the persona and Rule 5. The previous version was a bit conversational.",
-        "violation: Added two new examples (flirty, first-date) to meet explicit requirements of Rules 7 and 8.",
-        "violation: Ensured all examples have scene, register, setting, and nuance as required by Rule 6.",
-        "violation: Enhanced nuance fields across all examples to consistently reference Japanese phrases in 「quotes」 and explain the interplay of register, gender, and age where applicable, as mandated by Rule 6.",
-        "violation: Ensured speaker/listener gender/age were present for variety and specified where appropriate, as mandated by Rule 6.",
-        "violation: Reordered examples to progress from simpler to more advanced usage as per Rule 11.",
-        "violation: Updated curly braces for grammar point highlighting in all Japanese examples (Rule 6)."
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/では-それでは-じゃあ"
-    }
+    },
+    "change": [
+        "violation: Removed top-level 'bunpro' field and its contents, as per Rule 20, moving relevant data (jlpt, meaning, details, writeup, examples, false_friends) to the top level.",
+        "violation: Removed top-level 'lesson_order' field, as per Rule 20.",
+        "schema: Removed 'meaning_warning' field, as it was null and should be omitted according to the schema's rule 'No fields should be null. Omit fields that are not applicable instead.'",
+        "schema: Added 'sources' top-level field with 'bunpro' URL extracted from the input's 'bunpro.url', as required by the schema."
+    ]
 }
