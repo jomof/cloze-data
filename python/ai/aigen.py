@@ -114,6 +114,7 @@ def generate_gemini_2_5(model_name: str, prompt: str) -> str:
         temperature=1,
         top_p=0.95,
         response_modalities=["TEXT"],
+        responseMimeType="application/json",
         safety_settings=[
             types.SafetySetting(category="HARM_CATEGORY_HATE_SPEECH", threshold="OFF"),
             types.SafetySetting(category="HARM_CATEGORY_DANGEROUS_CONTENT", threshold="OFF"),
