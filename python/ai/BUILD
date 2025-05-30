@@ -9,7 +9,10 @@ py_library(
     visibility = ["//visibility:public"],
     deps = [
         "//python/gcp",
-        "@pip//google_cloud_aiplatform",
+        "@pip//colorlog",
         "@pip//google_genai",
+        "@pip//json5",
+        "@pip//jsonref",
+        "@pip//jsonschema",
     ],
 )

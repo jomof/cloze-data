@@ -6,6 +6,7 @@ from json_repair import repair_json
 from python.ai import aigen
 from python.utils.build_cache.memoize.memoize import memoize_to_disk
 import os
+import textwrap
 
 def ai_clean(data, bazel_target, grammar_schema, prior_grammar_point, output_file):
     data = yaml.safe_load(data)
@@ -20,51 +21,45 @@ def ai_clean(data, bazel_target, grammar_schema, prior_grammar_point, output_fil
       if 'changes' in prior_input_obj:
         del prior_input_obj['changes']
       prior_grammar_point = json.dumps(prior_input_obj, ensure_ascii=False, indent=4)
-      prior_input_prelog = """
+      prior_input_prelog = textwrap.dedent("""
         Possibly, an additional grammar point will appear between:
-        BEGIN_PRIOR_GRAMMAR_POINT_YAML
+        BEGIN_PRIOR_GRAMMAR_POINT
         [input]
-        BEGIN_PRIOR_GRAMMAR_POINT_YAML
-        When present, you **must*** **minimally modify** it just to make sure it follows the rules below. **Do not** change anything that already follows the rules.
-        
-        The one exception is that there may be comments (starting with // ) in the prior grammar points. Such comments are absolute, literal, and atomic commands that you MUST follow. You WILL break any and all other rules, including those concerning the quality, quantity, or specific formatting of other fields (e.g., the number of examples, the required diversity, specific content constraints), to address this command. If a comment specifies a precise action (e.g., 'Add one example', 'Remove this specific phrase', 'Append exactly this sentence'), you will ONLY perform that precise action and will NOT interpret it as a broader directive for a full overhaul or implicit improvement of that section unless explicitly commanded to do so by the comment itself. You will strip these comments from the final output.
-
-        Most of the time, you won't make any changes to the prior grammar point."""
-      prior_input_replace = f"""
-          BEGIN_PRIOR_GRAMMAR_POINT_YAML
+        END_PRIOR_GRAMMAR_POINT
+        When present, you **MUST*** **minimally modify** it just to make sure it follows the rules in this prompt. 
+        You **MUST NOT** change anything that already follows the rules.
+        """)
+      prior_input_replace = textwrap.dedent(f"""
+          BEGIN_PRIOR_GRAMMAR_POINT
           {prior_grammar_point}
-          END_PRIOR_GRAMMAR_POINT_YAML
-        """
-      prior_input_rules = """
-        You **must** make the output agree with the provided schema.
-        You **must** make the output comply with the command-comments in the provided schema.
+          END_PRIOR_GRAMMAR_POINT
+        """)
+      prior_input_rules = textwrap.dedent("""
+        You **MUST** address all comments in PRIOR_GRAMMAR_POINT. These are commands. Use these steps:
+          1. Mentally construct a list comments, one-by-one. Call this PRIOR_COMMANDS.
+          2. For each element in PRIOR_COMMANDS, you **MUST** address it.
+          3. If as you address each element in PRIOR_COMMANDS, you find you need to break some other rule, then
+             you **MUST** still make the change. But record a description of the violation in a list called 
+             VIOLATING_PRIOR_COMMANDS.
+        You **MUST** make the output agree with OUTPUT_SCHEMA.
+        You **MUST** make the output comply with the command-comments in OUTPUT_SCHEMA.
+        You **MAY** decide to make no changes, this grammar point is fairly mature already.
+        You **MUST** provide a changes field if you do make changes. Using these steps:
+          0. Mentally compose the full JSON and simulate reading it in. Let's call this the NEW_GRAMMAR_POINT. 
+          1. Mentally construct a list of changes you made from PRIOR_GRAMMAR_POINT to  NEW_GRAMMAR_POINT, 
+             one-by-one. Differences from GRAMMAR_POINT_YAML don't matter for this purpose. 
+             Call this list CHANGES_MADE.
+          2. For each element in CHANGES_MADE, assign a category from #/definitions/changeType.
+          3. For each 'suggestion' in CHANGES_MADE, does it really improve the grammar point at a holistic level? If not, revert it.
+          4. **Must** add everything in CHANGES_MADE to the changes field.
+          5. Now, mentally compose the full JSON and simulate reading it in. Let's call this the NEW_GRAMMAR_POINT. 
+             a. Look at each value of the change field.
+             b. Check that you actually made that change in the NEW_GRAMMAR_POINT and that there's a difference from PRIOR_GRAMMAR_POINT.
+             c. Fix any descrepancies.
+        A change to the changes field **DOES NOT** count as a change to the grammar point itself. And **MUST NOT** be added to the changes field.
+        """)
 
-        Final checklist:
-        [ ] Did you create JSON that follows the schema? Does it follow the commands (in the format of comments) in the schema?
-        [ ] Since there is a prior version, mentally confirm that it's okay to not change anything.
-        [ ] Since there is a prior version, did you modify it minimally?
-        [ ] Since there is a prior version with a comment in it, did you address that comment and then remove the comment? Comments like this have the highest priority and can override the **minimal changed** rule.
-        [ ] Check again. Did you address all the comments in the original grammar point?
-        [ ] Since there is a prior version, mentally review each change you made one-by-one. Was the change necessary or was the old version already good enough? Don't change it if it's good enough.
-        [ ] Since there is a prior version, you **must** go through each change that you made and categorize each change as follows:
-            - "suggestion": A minor change that does not affect the meaning of the grammar point and doesn't satisfy a **must** clause somewhere.
-            - "unnatural": A change that makes the grammar point sound more natural in Japanese or English.
-            - "violation": A change because some part of the original didn't comply with something in this prompt.
-            - "schema": A change was needed to comply with the schema (including command-comments in the schema).
-            - "command": There was a comment in the original that you are now addressing.
-          You **must** revert each "suggestion" change.
-          If there are any changes remaining, add a "change" field at the bottom of the JSON (it's a string array of lines).
-          The change comment is a single string formatted in a way that's suitable as a checkin comment. 
-          This is a list of all the changes you made, categorized as above.
-          For each item, you must add a reason this change was made. If it is a "violation" you must quote the relevant instruction from this prompt.
-          Then, list the "suggestions" that you reverted.
-          Then, if you noticed contradictions in this prompt that are making it hard for you to satisfy then you may add a comment about that.
-          Note that any existing 'change' comment does not count as a command to you. You don't need to add it to the list of changes and you shouldn't delete it.
-          If there are no remaining changes, then add a change field with a single string (not string array) that says "no changes".
-        [ ] Make sure 'changes' only contains the changes you made, not the prior version's changes. Remove 'changes' if you didn't make any changes.
-        """
-
-    prompt = """
+    prompt = textwrap.dedent(f"""
       You are a highly skilled Japanese teacher. You speak native Japanese that is natural and fluent. 
       Though you are serious and terse, you love Japanese and you love to share the details, nuances, and beauty of the language and the culture with your students. 
       As an ENTJ, love to geek out on explaining Japanese grammar. But you never talk about MBTI in your lessons.
@@ -79,41 +74,6 @@ def ai_clean(data, bazel_target, grammar_schema, prior_grammar_point, output_fil
       [prior_input_prelog]
   
       When you answer, do not wrap your output in code fences or additional commentary. Provide only valid JSON, which will be converted into YAML later.
-
-      Follow these rules:
-
-
-      6. Provide an "examples" array with multiple entries. Each should have:
-
-
-
-
-
-          - "speaker_gender": (optional, required if there is a listener gender) gender of the speaker. One of: male, female. **Use only if this sentence would typically only be spoken by this gender**
-            - Example sentences should include at least one male and one female speaker_gender.
-            - You *must not* embed hints about the speaker's gender in 'english' or 'japanese'. Put that here, in "speaker_gender".
-          - "listener_gender": (optional) gender of the listener. One of: male, female (omit if it doesn't matter in this sentence)
-            - Example sentences should include at least one male and one female listener_gender.
-            You *must not* embed hints about the listeners's gender in 'english' or 'japanese'. Put that here, in "listener_gender".
-
-
-          - "etymology": If there is something etymologically interesting in the Japanese sentence, then mention it here in English.
-  
-
-      13. You may include a "post_example_writeup" section after "examples" if more clarification is helpful, but don't reference examples by any numeric label.
-      14. If "false_friends" are present, each entry should have:
-          - "term": the name of the false friend (e.g., "とみえる"). 
-          - "meaning": the meaning of the false friend in English (e.g., "to seem, to appear")
-          - "kind": relationship to the main grammar point (e.g., "similar expression", "often confused with", etc)
-          - "nuance": a concise contrast to the main grammar point (e.g., "Unlike [grammar_point], [false_friend]...").
-          - false_friends **must not** reference other conjugations of this grammar point.
-      15. You may add a "post_false_friends_writeup" to clarify further differences between the grammar point and these similar expressions. Do not call them "false friends" in that section—just provide a short explanation of how to avoid mixing them up.
-      16. You may fix minor inaccuracies in "details", but do not invent new details.
-      17. Ensure the JSON is valid and properly escaped for YAML conversion. Avoid additional formatting or code fences.
-
-      20. You **must not** add top-level 'bunpro' or 'dojg' fields to the output JSON.
-
-      
 
       ** Schema of the Expected Output JSON **
       Below is a minimal template demonstrating how the final JSON structure should look. You will output something with this schema, without code fences.
@@ -131,11 +91,18 @@ def ai_clean(data, bazel_target, grammar_schema, prior_grammar_point, output_fil
           JLPT Kanji N3, 合, 部, 彼, 内, 実, 当, 戦, 性, 対, 関, 感, 定, 政, 取, 所, 現, 最, 化, 民, 相, 法, 全, 情, 向, 平, 成, 経, 信, 面, 連, 原, 顔, 機, 次, 数, 美, 回, 表, 声, 報, 要, 変, 神, 記, 和, 引, 治, 決, 太, 込, 受, 解, 市, 期, 様, 活, 頭, 組, 指, 説, 能, 葉, 流, 然, 初, 在, 調, 笑, 議, 直, 夫, 選, 権, 利, 制, 続, 石, 進, 伝, 加, 助, 点, 産, 務, 件, 命, 番, 落, 付, 得, 好, 違, 殺, 置, 返, 論, 際, 歳, 反, 形, 光, 首, 勝, 必, 係, 由, 愛, 都, 放, 確, 過, 約, 馬, 状, 想, 官, 交, 米, 配, 若, 資, 常, 果, 呼, 共, 残, 判, 役, 他, 術, 支, 両, 乗, 済, 供, 格, 打, 御, 断, 式, 師, 告, 深, 存, 争, 覚, 側, 飛, 参, 突, 容, 育, 構, 認, 位, 達, 守, 満, 消, 任, 居, 予, 路, 座, 客, 船, 追, 背, 観, 誰, 息, 失, 老, 良, 示, 号, 職, 王, 識, 警, 優, 投, 局, 難, 種, 念, 寄, 商, 害, 頼, 横, 増, 差, 苦, 収, 段, 俺, 渡, 与, 演, 備, 申, 例, 働, 景, 抜, 遠, 絶, 負, 福, 球, 酒, 君, 察, 望, 婚, 単, 押, 割, 限, 戻, 科, 求, 談, 降, 妻, 岡, 熱, 浮, 等, 末, 幸, 草, 越, 登, 類, 未, 規, 精, 抱, 労, 処, 退, 費, 非, 喜, 娘, 逃, 探, 犯, 薬, 園, 疑, 緒, 静, 具, 席, 速, 舞, 宿, 程, 倒, 寝, 宅, 絵, 破, 庭, 婦, 余, 訪, 冷, 暮, 腹, 危, 許, 似, 険, 財, 遊, 雑, 恐, 値, 暗, 積, 夢, 痛, 富, 刻, 鳴, 欲, 途, 曲, 耳, 完, 願, 罪, 陽, 亡, 散, 掛, 昨, 怒, 留, 礼, 列, 雪, 払, 給, 敗, 捕, 忘, 晴, 因, 折, 迎, 悲, 港, 責, 除, 困, 閉, 吸, 髪, 束, 眠, 易, 窓, 祖, 勤, 昔, 便, 適, 吹, 候, 怖, 辞, 否, 遅, 煙, 徒, 欠, 迷, 洗, 互, 才, 更, 歯, 盗, 慣, 晩, 箱, 到, 頂, 杯, 皆, 招, 寒, 恥, 疲, 貧, 猫, 誤, 努, 幾, 賛, 偶, 忙, 泳, 靴, 偉, , 
           JLPT Kanji N2, 軍, 兵, 島, 村, 門, 戸, 武, 城, 総, 団, 線, 設, 勢, 党, 史, 営, 府, 巻, 介, 蔵, 造, 根, 寺, 査, 将, 改, 県, 泉, 像, 細, 谷, 奥, 再, 血, 算, 象, 清, 技, 州, 領, 橋, 芸, 型, 香, 量, 久, 境, 階, 区, 波, 移, 域, 周, 接, 鉄, 頃, 材, 個, 協, 各, 帯, 歴, 編, 裏, 比, 坂, 装, 省, 税, 競, 囲, 辺, 河, 極, 防, 低, 林, 導, 森, 丸, 胸, 陸, 療, 諸, 管, 仲, 革, 担, 効, 賞, 星, 復, 片, 並, 底, 温, 軽, 録, 腰, 著, 乱, 章, 殿, 布, 角, 仏, 永, 誌, 減, 略, 準, 委, 令, 刊, 焼, 里, 圧, 額, 印, 池, 臣, 庫, 農, 板, 恋, 羽, 専, 逆, 腕, 短, 普, 岩, 竹, 児, 毛, 版, 宇, 況, 被, 岸, 超, 豊, 含, 植, 補, 暴, 課, 跡, 触, 玉, 震, 億, 肩, 劇, 刺, 述, 輪, 浅, 純, 薄, 阪, 韓, 固, 巨, 講, 般, 湯, 捨, 衣, 替, 央, 骨, 齢, 照, 層, 弱, 築, 脳, 航, 快, 翌, 旧, 筆, 換, 群, 爆, 捜, 油, 叫, 伸, 承, 雲, 練, 紹, 包, 庁, 測, 占, 混, 倍, 乳, 荒, 詰, 栄, 床, 則, 禁, 順, 枚, 厚, 皮, 輸, 濃, 簡, 孫, 丈, 黄, 届, 絡, 採, 傾, 鼻, 宝, 患, 延, 律, 希, 甘, 湾, 沈, 販, 欧, 砂, 尊, 紅, 複, 泊, 荷, 枝, 依, 幼, 斬, 勇, 昇, 寿, 菜, 季, 液, 券, 祭, 袋, 燃, 毒, 札, 狙, 脇, 卒, 副, 敬, 針, 拝, 浴, 悩, 汚, 灯, 坊, 尻, 涙, 停, 了, 汗, 郵, 幅, 童, 虫, 埋, 舟, 闇, 棒, 貨, 肌, 臓, 塩, 均, 湖, 損, 膝, 辛, 双, 軒, 績, 干, 姓, 掘, 籍, 珍, 訓, 預, 署, 漁, 緑, 畳, 咲, 貿, 踊, 封, 兆, 柱, 駐, 祝, 炭, 柔, 雇, 乾, 鋭, 氷, 隅, 冊, 糸, 募, 硬, 塗, 憎, 泥, 脂, 粉, 詞, 筒, 掃, 塔, 賢, 拾, 麦, 刷, 卵, 械, 皿, 祈, 灰, 召, 溶, 磨, 粒, 喫, 机, 貯, 匹, 綿, 贈, 凍, 瓶, 帽, 涼, 秒, 湿, 蒸, 菓, 耕, 鉱, 膚, 胃, 挟, 郊, 銅, 鈍, 貝, 缶, 枯, 滴, 符, 畜, 軟, 濯, 隻, 伺, 沸, 曇, 肯, 燥, 零, , 
           JLPT Kanji N1, 郎, 結, 氏, 衛, 第, 保, 義, 吉, 士, 藤, 井, 江, 張, 松, 応, 視, 態, 姿, 皇, 宮, 離, 基, 隊, 素, 価, 撃, 振, 証, 派, 僕, 佐, 紀, 統, 器, 異, 護, 条, 独, 源, 影, 眼, 企, 津, 案, 策, 宗, 提, 昭, 密, 司, 検, 康, 沢, 秀, 興, 率, 評, 監, 崎, 鮮, 激, 徳, 挙, 志, 敷, 系, 織, 製, 端, 遺, 房, 街, 尾, 株, 従, 敵, 展, 描, 修, 我, 載, 響, 秘, 攻, 健, 裁, 隠, 環, 援, 故, 幕, 督, 倉, 施, 嫌, 継, 障, 貴, 整, 衆, 及, 盛, 玄, 恵, 授, 弾, 養, 驚, 奈, 推, 樹, 為, 雄, 刀, 弁, 妙, 模, 抗, 級, 瞬, 称, 華, 傷, 闘, 筋, 訳, 射, 善, 黙, 柄, 刑, 節, 脱, 厳, 博, 陣, 奇, 忠, 染, 微, 標, 縁, 壁, 駆, 麻, 甲, 藩, 迫, 踏, 討, 聖, 典, 剣, 症, 納, 弥, 融, 浜, 郷, 惑, 柳, 拠, 奉, 壊, 益, 句, 属, 功, 帝, 賀, 堀, 創, 泣, 憶, 幹, 露, 矢, 握, 儀, 聴, 襲, 徴, 丁, 憲, 閣, 救, 陰, 繰, 那, 操, 騒, 己, 魔, 撮, 携, 隣, 宣, 遣, 訴, 茂, 釣, 批, 誘, 核, 哲, 豪, 締, 鹿, 就, 滅, 仰, 瀬, 致, 伏, 杉, 審, 避, 揺, 浦, 至, 裕, 盟, 執, 崩, 鬼, 酸, 拡, 銃, 維, 縄, 詩, 廃, 充, 鏡, 仮, 吐, 請, 眺, 沖, 躍, 威, 屈, 勘, 徹, 斎, 謝, 艦, 催, 舎, 仁, 衝, 脚, 虎, 潮, 穴, 怪, 仙, 輝, 緊, 唇, 忍, 狂, 奪, 診, 竜, 債, 鈴, 僧, 掲, 伯, 熊, 浪, 梅, 看, 俊, 摘, 項, 霊, 垣, 慢, 扱, 渉, 如, 縮, 詳, 旦, 慮, 雅, 砲, 謀, 懐, 愚, 舌, 駄, 奴, 豆, 又, 銭, 抑, 侍, 宙, 範, 潜, 酔, 呂, 還, 丹, 亜, 亀, 沼, 巡, 臭, 慶, 距, 釈, 侵, 僚, 悟, 隆, 裂, 尋, 旗, 羅, 揮, 票, 稲, 胞, 懸, 稿, 塚, 盤, 災, 曹, 尽, 嫁, 繁, 即, 帳, 飾, 沿, 獲, 伴, 唐, 狭, 添, 剤, 魅, 契, 邪, 挑, 免, 爵, 択, 廊, 析, 輩, 敏, 鶴, 虚, 往, 趣, 烈, 索, 匂, 摩, 菊, 滑, 沙, 裸, 孝, 綱, 邸, 邦, 揚, 卓, 騎, 墓, 姫, 孔, 耐, 須, 臨, 献, 脈, 芝, 唱, 亭, 誕, 貫, 偽, 奮, 桜, 熟, 排, 透, 棄, 削, 奏, 幻, 麗, 逮, 誠, 炎, 椅, 寛, 斉, 穂, 兼, 飼, 促, 尚, 彩, 暖, 俗, 較, 傍, 肝, 畑, 峰, 抵, 恩, 誇, 網, 渋, 魂, 牧, 控, 紛, 戒, 没, 既, 股, 脅, 征, 覆, 郡, 丘, 佳, 叔, 託, 哀, 肥, 朗, 慎, 悠, 眉, 拒, 概, 顧, 腐, 挨, 孤, 拶, 却, 賊, 荘, 匠, 悔, 獄, 滞, 遇, 淡, 購, 併, 崇, 唯, 垂, 岐, 俳, 斜, 嬢, 陥, 償, 鑑, 勧, 葬, 焦, 剛, 膨, 廷, 紫, 銘, 鎌, 菌, 稼, 譲, 随, 猛, 遂, 冒, 泰, 翼, 凄, 序, 扉, 是, 寸, 賃, 偵, 澄, 殊, 緩, 頑, 紋, 糖, 煮, 芳, 惨, 歓, 虐, 喉, 旨, 凝, 圏, 拭, 涯, 貞, 堅, 倫, 壇, 呉, 暇, 貌, 塞, 噴, 婆, 岳, 蹴, 鍵, 膳, 尺, 罰, 漏, 朱, 覧, 漂, 汁, 寂, 嘆, 禅, 浄, 酷, 刃, 漫, 霧, 暑, 棚, 袖, 壮, 旬, 彫, 需, 鎖, 潰, 縦, 粧, 慌, 穏, 枠, 謎, 誉, 逸, 駒, 惜, 措, 晶, 琴, 摂, 拍, 稽, 礎, 遭, 掌, 鍋, 弓, 克, 据, 胆, 跳, 縛, 鎮, 雷, 恨, 顕, 殖, 寧, 湧, 棋, 巧, 浸, 桃, 隔, 班, 甚, 妊, 祉, 獣, 疾, 塾, 潟, 撲, 塊, 絞, 履, 苗, 芋, 冗, 陶, 励, 陳, 猿, 葛, 傘, 啓, 劣, 撤, 殴, 盾, 衰, 滝, 慰, 蛇, 梨, 癖, 潤, 鉢, 戯, 腸, 偏, 巣, 宴, 炉, 棟, 洞, 狩, 陛, 磁, 潔, 膜, 乏, 祥, 曽, 舗, 抽, 睡, 賭, 括, 貢, 犠, 粗, 卑, 貼, 拉, 牲, 帆, 挿, 翻, 羊, 枕, 錯, 謙, 珠, 蓄, 拓, 鼓, 粋, 尉, 后, 粘, 披, 徐, 悦, 堪, 冠, 愉, 尿, 顎, 誓, 憂, 簿, 糧, 架, 芽, 軸, 苛, 蓋, 盆, 凶, 妃, 庶, 秩, 裾, 幽, 凡, 漠, 拙, 恒, 暦, 腫, 峠, 宰, 蛮, 窮, 擦, 爪, 稚, 辱, 嵐, 憤, 癒, 鬱, 疎, 雰, 彰, 肺, 傑, 拘, 頻, 緯, 妖, 豚, 藍, 矛, 鍛, 繊, 縫, 把, 楼, 捉, 漬, 紳, 飽, 宛, 閥, 旋, 坪, 崖, 叱, 鶏, 峡, 溝, 朴, 軌, 瓦, 喪, 墨, 疫, 遍, 濁, 扇, 拳, 乙, 酵, 堤, 阻, 桑, 虜, 乞, 恭, 鐘, 剰, 慈, 径, 培, 擁, 郭, 呪, 砕, 汰, 勃, 翁, 絹, 譜, 陵, 痴, 笛, 昧, 訟, 唾, 肪, 塀, 碁, 敢, 塁, 暁, 胴, 謡, 飢, 欄, 艶, 痕, 怠, 欺, 弦, 泡, 諦, 伐, 餅, 寮, 厄, 奔, 瞳, 昆, 椎, 懇, 唄, 渦, 襟, 吟, 覇, 衡, 呈, 隙, 淫, 娠, 循, 懲, 錦, 猟, 幣, 附, 箇, 醜, 箸, 戚, 喚, 紺, 某, 鋼, 褒, 赴, 媒, 妬, 遮, 窯, 侯, 釜, 茎, 蔑, 嗅, 壌, 蜜, 尼, 肢, 赦, 酬, 戴, 詠, 斗, 宜, 殻, 墳, 炊, 碑, 痩, 但, 奨, 践, 滋, 儒, 薦, 怨, 栽, 刈, 閑, 錠, 扶, 妥, 妨, 醒, 詣, 胎, 窟, 巾, 蜂, 忌, 骸, 弄, 嫉, 粛, 罵, 囚, 鉛, 搭, 諭, 璧, 阜, 喝, 享, 騰, 嗣, 勅, 篤, 勲, 埼, 伎, 曖, 詐, 餌, 岬, 暫, 爽, 肖, 詮, 諾, 柿, 芯, 綻, 訂, 汽, 薫, 隷, 俵, 遷, 枢, 肘, 麓, 憧, 帥, 漆, 酌, 頓, 賠, 渇, 慕, 婿, 妄, 慨, 匿, 渓, 侮, 髄, 穀, 薪, 轄, 洪, 牙, 咽, 迅, 該, 逐, 嘲, 墜, 臆, 餓, 挫, 錬, 桟, 溺, 賄, 盲, 鯨, 侶, 艇, 丼, 堕, 瘍, 槽, 憩, 僅, 閲, 柵, 畔, 睦, 唆, 悼, 吏, 穫, 酢, 賜, 腎, 梗, 瑠, 羨, 搬, 剖, 酎, 畿, 宵, 拐, 醸, 猶, 諮, 畏, 泌, 愁, 逝, 朽, 硫, 瞭, 擬, 叙, 弊, 累, 煩, 踪, 藻, 蚊, 栃, 且, 鋳, 蔽, 茨, 棺, 慄, 傲, 硝, 舶, 租, 倣, 謹, 抹, 虹, 捻, 娯, 臼, 喩, 萎, 蛍, 窒, 腺, 桁, 玩, 冶, 羞, 栓, 惧, 寡, 畝, 淑, 嫡, 屯, 糾, 遡, 陪, 雌, 舷, 霜, 殉, 紡, 貪, 庸, 韻, 繕, 搾, 刹, 采, 堆, 禍, 煎, 姻, 斑, 冥, 抄, 拷, 遜, 旺, 准, 勾, 廉, 礁, 壱, 麺, 升, 卸, 耗, 謁, 璃, 坑, 串, 弔, 賓, 塡, 痢, 嚇, 濫, 俸, 箋, 凸, 脊, 詔, 緻, 凹, 罷, 漸, 賦, 弧, 褐, 辣, 摯, 汎, 斥, 厘, 矯, 毀, 窃, 遵, 賂, 惰, 蚕, 氾, 諧, 倹, 款, 媛, 憾, 哺, 衷, 彙, 迭, 嘱, 恣, 墾, 逓, 劾, 酪, 沃, 塑, 痘, 憬, 朕, 虞, 丙, 斤, 捗, 弐, 訃, 謄, 繭, 璽, 頒, 楷, 剥, 籠, 錮, 頰
-      Example sentences should use kanji appropriate for the JLPT level of the grammar point. So, for example, if the grammar point is JLPT N3, the example sentences should use kanji from the N3, N4, and N5 lists. Don't just convert the sentences to hiragana, create a sentence that uses vocabulary appropriate to that level.
+      If possible, example sentences should use kanji appropriate for the JLPT level of the grammar point. 
+      So, for example, if the grammar point is JLPT N3, the example sentences should use kanji from the N3, N4, and N5 lists. 
+      Don't just convert the sentences to hiragana, create a sentence that uses vocabulary appropriate to that level.
+      If you can't construct the sentences with only level appropriate kanji, then go ahead and use the kanji you wanted.
 
       BEGIN_GRAMMAR_POINT_YAML
       [input_replace]
       END_GRAMMAR_POINT_YAML
+      There *MUST NOT* use any example sentences taken literally from dojg or bunpro. 
+      - **MUST NOT** count this as a change unless PRIOR_GRAMMAR_POINT actually had dojg or bunpro example sentences.
+      - **MAY** use dojg or bunpro example sentences as a reference to create your own example sentences.
+      You *MUST* create your own example sentences that are appropriate for the grammar point.
 
       [prior_input_replace]
 
@@ -147,11 +114,10 @@ def ai_clean(data, bazel_target, grammar_schema, prior_grammar_point, output_fil
       5. If the grammar_point is something conjugatable, like a verb, do the example sentences demonstrate the different conjugations?
       6. Did you change the grammar_point value? If so, chide yourself thoroughly, and set grammar_point to its original value.
 
-      
     [prior_input_rules]
 
     That is all.
-    """
+    """)
 
     prompt = prompt.replace("[input_replace]", json.dumps(data, ensure_ascii=False, indent=4))
     prompt = prompt.replace("[prior_input_prelog]", prior_input_prelog)
@@ -176,7 +142,7 @@ def ai_clean(data, bazel_target, grammar_schema, prior_grammar_point, output_fil
     for i in range(6):
       try:
         log_file = f"{output_file}.log"
-        response = memoize_to_disk(bazel_target, aigen, prompt + str(i), model, log_file)
+        response = memoize_to_disk(bazel_target, aigen, prompt + str(i), model, grammar_schema, log_file)
         response = response.removeprefix("```json").removesuffix("\n").removesuffix("```")
         response = repair_json(response)
         json_response = json.loads(response)

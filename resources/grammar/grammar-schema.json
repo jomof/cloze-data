@@ -49,6 +49,66 @@
         "surangu (slang)", "gun-go (military)", "wakamono kotoba (youth)", "meirei-kei no teineigo (polite imperative)"
       ]
     },
+    "partOfSpeechType": {
+      "type": "string",
+      "enum": [
+        "particle", "noun", "verb", "adjective", "adverb", "interjection", "conjunction", "pronoun",
+        "auxiliary verb", "auxiliary adjective", "prefix", "suffix", "numeral", "counter", "phrase"
+      ]
+    },
+    "particleSyntacticFunction": {
+      "type": "string",
+      "enum": [
+        "case-marking",         // e.g., が, を, に, へ, で
+        "topic",                // は
+        "subject",              // が (when indicating subject)
+        "object",               // を
+        "indirect-object",      // に (recipient)
+        "directional",          // へ, に
+        "locative",             // に, で
+        "temporal",             // に, から, まで (time points)
+        "range",                // から, まで
+        "comparative",          // より
+        "limiter",              // だけ, しか, ほど, ばかり
+        "conjunctive",          // が, けど, ので
+        "conditional",          // なら, たら, ば
+        "concessive",           // のに, けど
+        "causal",               // から, ので
+        "purpose",              // に (～に行く)
+        "passive-agent",        // に (passive voice)
+        "quotative",            // と
+        "listing",              // や, とか, と
+        "adverbializer",        // に (makes nouns into adverbs)
+        "attributive",          // の (noun modifier)
+        "vocative",             // よ (in calling out)
+        "sentence-final"        // e.g., よ, ね, か, な
+      ]
+    },
+    "particlePragmaticFunction": {
+      "type": "string",
+      "enum": [
+        "emphasis",            // よ, ぞ, さ
+        "softening",           // ね, な (in some uses)
+        "confirmation",        // ね
+        "assertion",           // よ
+        "evidential",          // っけ (reminding oneself)
+        "interrogative",       // か
+        "exclamatory",         // なあ, よ (when exclaimed)
+        "focus",               // も, さえ, まで
+        "contrastive",         // は
+        "limiting",            // しか, だけ
+        "negative polarity",   // しか
+        "hedging",             // かな (particle use), かも
+        "intensifier",         // さえ, まで
+        "discourse marker",    // よ, ね, さ, な
+        "emotive",             // なあ, よね
+        "agreement-seeking",   // よね, でしょう (if viewed as particle-like but better excluded)
+        "tentative",           // かも, かな (used as particles)
+        "vocative",            // よ (in 呼びかけ)
+        "engagement",          // ね
+        "sentence-final"       // Used generally for particles like よ, ね, か, な, etc.
+      ]
+    },
     "settingType": {
       "type": "string",
       "enum": [
@@ -130,11 +190,11 @@
       "items": {
         "type": "object",
         "properties": {
-          "type": { "$ref": "#/definitions/conjugationType" },
+          "conjugation-type": { "$ref": "#/definitions/conjugationType" },
           "form": { "type": "string" },
           "rarity": { "$ref": "#/definitions/rarityType" }
         },
-        "required": ["type","form","rarity"],
+        "required": ["conjugation-type","form","rarity"],
         "additionalProperties": false
       }
     },
@@ -168,11 +228,32 @@
     "jlpt": { "$ref": "#/definitions/jlptLevel" },
     "meaning": { "$ref": "#/definitions/english" },
     "meaning_warning": { "$ref": "#/definitions/english" },
-    // details key **MUST** be English. Convert Japanese to English.
+    // details key **MUST** be English.
+    // **MUST NOT** delete japanese language keys, instead convert them to English.
+    // **MUST** forward all details information from the source bunpro grammar point. If none of these detail properties fit perfectly, then create your own property in the form "custom-myproperty".
     "details": {
       "type": "object",
-      "minProperties": 1,
-      "additionalProperties": { "type": "string" }
+      "properties": {
+        "part-of-speech": { "$ref": "#/definitions/partOfSpeechType" },
+        "register": { "$ref": "#/definitions/registerType" },
+        // **ONLY** if 'part-of-speech' is "particle", then you **MAY** include a "particle-syntactic-function" field.
+        "particle-syntactic-function": { "$ref": "#/definitions/particleSyntacticFunction" },
+        // **ONLY** if 'part-of-speech' is "particle", then you **MAY** include a "particle-type" field.
+        "particle-pragmatic-function": { "$ref": "#/definitions/particlePragmaticFunction" },
+        "usage-context": { "type": "string" },
+        "function": { "type": "string" },
+        "nuance": { "type": "string" },
+        "source": { "type": "string" },
+        "counterpoint": { "type": "string" },
+        "colocation": { "type": "string" },
+        "grammatical-role": { "type": "string" },
+        "logical-flow": { "type": "string" },
+        "temporal-flow": { "type": "string" },
+        "spatial-flow": { "type": "string" },
+      },
+      "additionalProperties": {
+        "type": "string"
+      }
     },
     // The "etymology" field will be display to the user in the grammar point's page.
     // It should be a linguistically interesting discussion of the history of how the grammar point evolved.
@@ -341,10 +422,10 @@
       "items": {
         "type": "object",
         "properties": {
-          "type": { "$ref": "#/definitions/changeType" },
+          "change-type": { "$ref": "#/definitions/changeType" },
           "change": { "$ref": "#/definitions/english" }
         },
-        "required": ["type","change"],
+        "required": ["change-type","change"],
         "additionalProperties": false
       }
     }
