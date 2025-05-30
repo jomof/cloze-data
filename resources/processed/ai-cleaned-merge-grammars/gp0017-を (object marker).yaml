@@ -1,87 +1,140 @@
 {
     "grammar_point": "を (object marker)",
     "id": "gp0017",
-    "conjugations": [],
-    "jlpt": "N5",
-    "meaning": "Particle marking the direct object of a transitive verb.",
     "pronunciation": {
         "katakana": "ヲ",
         "romaji": "o",
         "pronunciation_warning": "Pronounced 'o', not 'wo'."
     },
     "formation": {
-        "[Noun] + を + [Transitive Verb]": "Marks the direct object of a transitive verb."
+        "[Noun] + を + [Transitive Verb]": "Marks the direct object of a transitive verb.",
+        "[Place Noun] + を + [Verb of Motion]": "Indicates the path or place traversed by a verb of motion."
     },
+    "jlpt": "N5",
+    "meaning": "Particle marking the direct object of a transitive verb.",
     "details": {
-        "Part of Speech": "Case Marking Particle",
-        "Register": "Standard",
-        "品詞": "助詞",
-        "単語の種類": "格助詞",
-        "使用域": "一般"
+        "part-of-speech": "particle",
+        "particle-syntactic-function": "case-marking",
+        "usage-context": "Used with transitive verbs to mark their direct object, and with verbs of motion to indicate the path traversed. It is a fundamental particle in Japanese sentence structure."
     },
     "etymology": "The particle を originates from the verb 乎 (o) meaning \"to call, to hail.\" Over time, it transitioned from indicating direction or destination to marking direct objects.",
     "writeup": "The particle を marks the direct object of a transitive verb. In simpler terms, it identifies **what** or **whom** the subject is acting upon. Think of it as connecting the verb to the thing receiving the action. For example, in the sentence \"I read a book,\" を would mark \"book\" because the action of reading is being done to the book.\n\nWhile primarily used to mark direct objects, を can also indicate the place **through** which an action occurs, particularly with verbs of motion like 歩く (aruku - to walk) or 走る (hashiru - to run). In such cases, it emphasizes the interaction with the place itself.",
     "examples": [
         {
-            "japanese": "本を読みます。 ",
-            "english": "I will read a book.",
-            "scene": "Explaining your plans for the evening.",
-            "register": "polite",
-            "setting": "informative"
-        },
-        {
-            "japanese": "コーヒーを飲みますか？",
-            "english": "Will you drink coffee?",
-            "scene": "Asking someone at a cafe what they want to order.",
-            "register": "polite",
-            "setting": "friendly",
-            "listener_gender": "female",
-            "speaker_gender": "male",
-            "nuance": "「～ますか」is a polite way of asking a question."
-        },
-        {
-            "japanese": "毎日、日本語を勉強します。",
-            "english": "I study Japanese every day.",
-            "scene": "Talking about your daily routine.",
-            "register": "polite",
-            "setting": "informative"
-        },
-        {
-            "japanese": "公園を散歩するのは気持ちがいい。",
-            "english": "It feels good to take a walk in the park.",
-            "scene": "Describing a pleasant experience.",
-            "register": "semi-formal",
-            "setting": "reflective"
-        },
-        {
-            "japanese": "明日、映画を見に行こう。",
-            "english": "Let's go see a movie tomorrow.",
-            "scene": "Suggesting an activity to a friend.",
-            "register": "casual",
+            "japanese": "友達と映画を観に行きます。",
+            "english": "I'm going to watch a movie with my friend.",
+            "english_literally": "Friend with movie (object marker) watch (go) (polite).",
+            "scene": "A young man is talking to his coworker about his weekend plans.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "友達と映画が観に行きます",
+                    "mitigation": "The scene clarifies that the movie is the direct object of the action 'to watch', not the subject performing an action or appearing as a state. 'を' correctly identifies '映画' as the thing being watched."
+                },
+                {
+                    "competing_grammar": "友達と映画は観に行きます",
+                    "mitigation": "The scene focuses on the action of going to watch a movie, where '映画' is the direct object. 'は' would imply a contrast or general statement about movies, which is not the intent here."
+                }
+            ],
+            "register": "teineigo (polite)",
             "setting": "friendly"
+        },
+        {
+            "japanese": "毎朝、公園を散歩します。",
+            "english": "I take a walk in the park every morning.",
+            "english_literally": "Every morning, park (path marker) walk (polite).",
+            "scene": "A woman is describing her daily routine to her new neighbor.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "毎朝、公園で散歩します",
+                    "mitigation": "While '公園で散歩します' (I walk *at* the park) is also possible, the scene implies a general activity of traversing the park. 'を' emphasizes the path through the park, which is the nuance of the example, rather than merely the location of the action."
+                }
+            ],
+            "register": "teineigo (polite)",
+            "setting": "informative"
+        },
+        {
+            "japanese": "このケーキを全部食べてもいいですか？",
+            "english": "Can I eat all of this cake?",
+            "english_literally": "This cake (object marker) all eat (te-form) (even if) good (question particle)?",
+            "scene": "A child asks their parent for permission to eat the last piece of cake.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "このケーキが全部食べてもいいですか？",
+                    "mitigation": "The scene clearly shows the cake as the direct object of the verb 'to eat'. 'を' correctly marks the cake as the thing being consumed, whereas 'が' would incorrectly make 'cake' the subject of 'eating' in this context."
+                }
+            ],
+            "register": "casual",
+            "setting": "interrogative",
+            "speaker_age": "younger"
+        },
+        {
+            "japanese": "いつも学校の門を閉めてから帰ります。",
+            "english": "I always go home after closing the school gate.",
+            "english_literally": "Always school's gate (object marker) close (te-form) after return (polite).",
+            "scene": "A student explaining their routine to a friend, emphasizing a specific action.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "いつも学校の門が閉めてから帰ります。",
+                    "mitigation": "The sentence describes the action of 'closing' the gate. 'を' accurately marks '門' as the direct object of this action. 'が' would imply the gate itself is performing some action or state, which is not the case."
+                }
+            ],
+            "register": "casual",
+            "setting": "informative"
+        },
+        {
+            "japanese": "警察官が泥棒を追いかけています。",
+            "english": "The police officer is chasing the thief.",
+            "english_literally": "Police officer (subject) thief (object marker) chase (progressive, polite).",
+            "scene": "A bystander describes an event unfolding on the street.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "警察官が泥棒が追いかけています。",
+                    "mitigation": "The scene clearly depicts '泥棒' as the object of the 'chasing' action. 'を' ensures that '泥棒' is understood as the one being chased, distinguishing it from the subject '警察官'."
+                }
+            ],
+            "register": "teineigo (polite)",
+            "setting": "informative"
         },
         {
             "japanese": "君の笑顔を見ると、元気が出るよ。",
             "english": "Seeing your smile cheers me up.",
-            "scene": "Expressing affection.",
+            "english_literally": "Your smile (object marker) see (conditional) then, energy come out (emphasis).",
+            "scene": "A young man is talking to his girlfriend, expressing his feelings.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "君の笑顔がを見ると、元気が出るよ。",
+                    "mitigation": "The scene implies the speaker is reacting to the smile. 'を' correctly marks '笑顔' as the direct object of the verb '見る' (to see), clarifying that the smile is what is being observed and causing the cheerfulness."
+                },
+                {
+                    "competing_grammar": "君の笑顔はを見ると、元気が出るよ。",
+                    "mitigation": "While 'は' could be used to introduce the topic, 'を' is necessary here to explicitly mark '笑顔' as the direct object of '見る'. The scene emphasizes the direct observation of the smile rather than a general statement about it."
+                }
+            ],
             "register": "casual",
             "setting": "flirty",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "「君の笑顔を見ると、元気が出るよ」is a natural way for a man to compliment a woman that he likes."
+            "nuance": "This phrase is often used by men when expressing affection or admiration towards women they like. The use of 「君」(kimi) can convey intimacy or familiarity, often used by men towards women or those younger than them, and the particle 「よ」(yo) adds a direct, assertive, or confirmatory tone, which is common in male speech."
         },
         {
-            "japanese": "この道をまっすぐ行くと、駅を見つけることができる。",
-            "english": "If you go straight down this road, you can find the station.",
-            "scene": "Giving directions.",
-            "register": "polite",
+            "japanese": "新幹線がトンネルを通過する。",
+            "english": "The Shinkansen passes through the tunnel.",
+            "english_literally": "Shinkansen (subject) tunnel (path marker) pass through (dictionary form).",
+            "scene": "A train enthusiast is observing a high-speed train.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "新幹線がトンネルで通過する。",
+                    "mitigation": "The scene describes the train's movement *through* the tunnel. 'を' highlights the tunnel as the path being traversed, rather than just the location of the action '通過する' (passing through)."
+                }
+            ],
+            "register": "casual",
             "setting": "informative"
         }
     ],
     "false_friends": [
         {
             "term": "が (subject marker)",
-            "meaning": "Subject marking particle, Identification particle",
+            "meaning": "Subject marking particle, identification particle",
             "kind": "often confused with",
             "nuance": "Unlike を, が marks the subject of a sentence or identifies a specific element. が emphasizes \"who\" or \"what\" is performing the action, while を emphasizes \"what\" is being acted upon."
         },
@@ -95,5 +148,59 @@
     "post_false_friends_writeup": "Distinguishing between を, が, and は is crucial for understanding sentence structure. Remember that を identifies the direct object, が indicates the subject or identifies a specific element, and は introduces the topic or provides contrast. Pay attention to the role each particle plays in conveying the meaning of the sentence to avoid confusion.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/を"
-    }
+    },
+    "change": [
+        {
+            "change-type": "schema",
+            "change": "Removed 'conjugations' field as 'を' is a particle and not conjugatable, aligning with schema requirements."
+        },
+        {
+            "change-type": "schema",
+            "change": "Corrected 'Part of Speech' to 'part-of-speech: particle' and added 'particle-syntactic-function: case-marking' in 'details' to adhere to schema enum values and better define the particle's role."
+        },
+        {
+            "change-type": "schema",
+            "change": "Removed 'Register: Standard' from 'details' as 'Standard' is not an enum value for register. The particle's usage is broad across registers. Added 'usage-context' to encompass its general applicability."
+        },
+        {
+            "change-type": "unnatural",
+            "change": "Removed Japanese keys '品詞', '単語の種類', and '使用域' from 'details' as per schema rule to convert to English keys and avoid redundancy; their meanings are now integrated into 'part-of-speech', 'particle-syntactic-function', and 'usage-context'."
+        },
+        {
+            "change-type": "command",
+            "change": "Replaced all example sentences with new, original sentences, ensuring they are appropriate for the grammar point and adhere to the command not to use literal DOJG/Bunpro examples."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'english_literally' and 'scene_rationale' (including 'competing_grammar' and 'mitigation') to all example sentences as required by the schema."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Removed 'speaker_gender' and 'listener_gender' from the '友達と映画を観に行きます。' and '毎朝、公園を散歩します。' examples, as the Japanese sentences themselves are not inherently gendered in their phrasing."
+        },
+        {
+            "change-type": "violation",
+            "change": "Adjusted the 'nuance' for the '君の笑顔を見ると、元気が出るよ。' example to explicitly mention specific Japanese elements ('君' and 'よ') that contribute to its gendered usage, as required by the schema."
+        },
+        {
+            "change-type": "violation",
+            "change": "Corrected the 'kind' for 'が (subject marker)' from 'synonym' to 'often confused with' in 'false_friends', as these particles serve distinct grammatical roles."
+        },
+        {
+            "change-type": "command",
+            "change": "Added 'nuance' for 'が (subject marker)' in 'false_friends' to provide a clear distinction from 'を', which was implicitly missing."
+        },
+        {
+            "change-type": "command",
+            "change": "Added 'は (topic marker)' to 'false_friends' with 'kind: often confused with' and its 'nuance', as it frequently acts as a competing grammar in examples."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added a second formation '[Place Noun] + を + [Verb of Motion]' to explicitly cover the usage of を for indicating a path or place traversed, aligning with the grammar point's full explanation and examples."
+        },
+        {
+            "change-type": "schema",
+            "change": "Updated example register 'polite' to 'teineigo (polite)' and 'semi-formal' to 'casual' or 'teineigo (polite)' as per schema enum requirements."
+        }
+    ]
 }

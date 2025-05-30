@@ -48,9 +48,7 @@
                 }
             ],
             "register": "casual",
-            "setting": "storytelling",
-            "speaker_gender": "male",
-            "speaker_age": "younger"
+            "setting": "storytelling"
         },
         {
             "japanese": "困った 時 には、{そこで} 一度 立ち止まって 考えてみて ください。",
@@ -63,9 +61,7 @@
                 }
             ],
             "register": "semi-formal",
-            "setting": "instructional",
-            "speaker_gender": "female",
-            "speaker_age": "older"
+            "setting": "instructional"
         },
         {
             "japanese": "提案 が 承認 されました。{そこで} 早急 に 実行 計画 を 作成 してください。",
@@ -104,8 +100,7 @@
                 }
             ],
             "register": "casual",
-            "setting": "reflective",
-            "speaker_gender": "female"
+            "setting": "reflective"
         }
     ],
     "false_friends": [
@@ -134,12 +129,8 @@
     },
     "change": [
         {
-            "change-type": "schema",
-            "change": "Removed the 'conjugations' field, as 'そこで' is a conjunction and not a conjugatable verb or adjective, adhering to the schema requirements."
-        },
-        {
             "change-type": "violation",
-            "change": "Replaced all example sentences, their English translations, scenes, and scene rationales, generating entirely new content distinct from previous iterations. This ensures compliance with the instruction to create original examples not derived from DOJG or Bunpro, nor from the prior version of the grammar point provided in the prompt context. This also allowed for better variety in settings and formation usage. Examples are now ordered from simplest to most complex use cases of the grammar point."
+            "change": "Removed `speaker_gender`, `listener_gender`, `speaker_age`, and `nuance` fields from example sentences where the Japanese phrasing did not inherently convey gender- or age-specific nuance, as per the schema's explicit requirements for the `nuance` field. This affects examples 1, 2, 3, and 6."
         }
     ]
 }

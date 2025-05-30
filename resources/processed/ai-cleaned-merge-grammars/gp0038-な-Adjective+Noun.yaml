@@ -11,80 +11,196 @@
     "jlpt": "N5",
     "meaning": "Modifying a noun with a な-adjective.",
     "details": {
-        "Part of Speech": "Noun",
-        "Register": "Standard",
-        "品詞": "表現",
-        "単語の種類": "名詞",
-        "使用域": "一般"
+        "part-of-speech": "phrase",
+        "register": "teineigo (polite)",
+        "grammatical-role": "noun modifier",
+        "logical-flow": "attribute of noun",
+        "temporal-flow": "static description",
+        "spatial-flow": "describes characteristic of a location or object within a space"
     },
     "etymology": "The particle 「な」 is required to connect な-adjectives (also known as adjectival nouns) to the nouns they modify. Without 「な」, the sentence would be grammatically incorrect. The 「な」 essentially acts as a copula in this construction, similar to how 「だ」 links nouns and な-adjectives at the end of a sentence.",
-    "writeup": "In Japanese, you can modify a noun by placing a な-adjective directly before it. This construction uses the particle 「な」 to link the adjective to the noun.  This pattern allows you to describe qualities or characteristics of the noun. It's **important** to remember to include 「な」; otherwise, the grammar is incorrect.",
+    "writeup": "In Japanese, な-adjectives (also known as adjectival nouns) modify nouns by placing the particle 「な」 between the adjective and the noun. This construction is used to describe a **quality** or **characteristic** of the noun. It is crucial to include 「な」; omitting it would result in grammatically incorrect Japanese.\n\nWhile many types of words can modify nouns, な-adjectives specifically require 「な」 for this purpose. This sets them apart from い-adjectives, which connect directly to nouns, and from nouns modifying other nouns, which typically use 「の」.\n\nA key distinction to grasp is the nuance between な-adjective + 「な」 + Noun and Noun + 「の」 + Noun, especially when a word can function as both. For instance, (A)な(B) generally means (A) describes a quality or feature of (B), implying an inherent characteristic. Conversely, (A)の(B) usually indicates that (A) is the type, purpose, or possession related to (B). Consider: 「幸せな日」 (a happy day, describing the day's quality) versus 「幸せの日」 (a day *of* happiness, meaning a day designated for happiness or a day that exemplifies happiness). When in doubt, consider whether you are expressing a quality or a type/purpose.",
     "examples": [
         {
-            "japanese": "静かな夜が好きです。",
-            "english": "I like quiet nights.",
-            "register": "casual",
-            "setting": "personal",
-            "etymology": "「静か」is a な-adjective meaning quiet, calm, or still.  Here, it modifies the noun 「夜」 (night) to describe what kind of night the speaker likes.",
-            "speaker_gender": "male",
-            "nuance": "The speaker is expressing a personal preference, which is fairly gender-neutral. Saying 「好きです」 is more polite than 「好きだ」."
-        },
-        {
-            "japanese": "有名なレストランに行きましょう。",
-            "english": "Let's go to a famous restaurant.",
-            "register": "casual",
-            "setting": "invitational",
-            "etymology": "「有名」 is a な-adjective meaning famous. Here, it modifies the noun 「レストラン」 to describe what kind of restaurant the speaker suggests going to.",
-            "nuance": "Expressing an invitation.  This is gender-neutral and suitable for a range of relationships."
-        },
-        {
-            "japanese": "親切な医者を探しています。",
-            "english": "I am looking for a kind doctor.",
+            "japanese": "彼女 は {静かな} 場所 を 探し て い ます。",
+            "english": "She's looking for a quiet place.",
+            "english_literally": "She is looking for a quiet place.",
+            "scene": "A librarian is trying to find a study spot for a student who needs to concentrate.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "静けさ の 場所",
+                    "mitigation": "The scene emphasizes the *quality* of the place, not the *type* of place. 「静か」 describes the attribute, not a category. 「静けさ の 場所」 would imply 'a place of silence'."
+                },
+                {
+                    "competing_grammar": "静か です 場所",
+                    "mitigation": "This construction is grammatically incorrect for modifying a noun. The particle 「な」 is necessary for な-adjectives before nouns."
+                }
+            ],
             "register": "formal",
-            "setting": "informative",
-            "etymology": "「親切」 is a な-adjective meaning kind or considerate. Here, it modifies the noun 「医者」 to describe what kind of doctor the speaker is looking for.",
-            "nuance": "Using 「〜ています」 makes the statement more descriptive and less assertive."
+            "setting": "informative"
         },
         {
-            "japanese": "綺麗な花が好きですか。",
-            "english": "Do you like pretty flowers?",
+            "japanese": "京都 に は {有名な} お寺 が たくさん あり ます。",
+            "english": "Kyoto has many famous temples.",
+            "english_literally": "In Kyoto, famous temples many exist.",
+            "scene": "A tour guide is explaining attractions in Kyoto.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "名高い お寺",
+                    "mitigation": "The scene is for general tourist information, where 「有名」 is more common and less formal/literary than 「名高い」 ('renowned')."
+                },
+                {
+                    "competing_grammar": "評判 の お寺",
+                    "mitigation": "While similar, 「評判」 focuses on reputation, whereas 「有名」 is about general recognition. The scene implies general recognition, making 「有名な」 a better fit."
+                }
+            ],
+            "register": "formal",
+            "setting": "informative"
+        },
+        {
+            "japanese": "彼 は いつも {親切な} 言葉 を かけ て くれ ます。",
+            "english": "He always speaks kind words to me.",
+            "english_literally": "He always kind words casts to me.",
+            "scene": "A patient is describing their doctor to a friend, highlighting the doctor's compassionate nature.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "優しい 言葉",
+                    "mitigation": "While 'gentle' is close to 'kind,' 「親切な」 emphasizes the act of being considerate and helpful, which fits the doctor's interaction with a patient better than just 'gentle'."
+                },
+                {
+                    "competing_grammar": "丁寧な 言葉",
+                    "mitigation": "「丁寧」 implies politeness in speech, but 「親切」 refers to the underlying kindness and consideration in the action, which is what the speaker wants to convey about the doctor."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
-            "etymology": "「綺麗」 is a な-adjective meaning pretty or beautiful.  It is modifying the noun 「花」 to indicate what kind of flowers are being asked about.",
-            "nuance": "The sentence uses 「好きですか」, indicating that the speaker is asking a question of the listener."
-        },
-        {
-            "japanese": "元気な赤ちゃんですね。",
-            "english": "What a healthy baby!",
-            "register": "formal",
-            "setting": "sympathetic",
-            "etymology": "「元気」 is a な-adjective meaning healthy or energetic.  It modifies the noun 「赤ちゃん」 to indicate a quality of the baby. This statement sounds like an observation.",
-            "nuance": "Using 「〜ですね」 indicates that the speaker is making an observation or expressing a feeling."
-        },
-        {
-            "japanese": "彼は誠実な人だから、信用できます。",
-            "english": "Because he is a sincere person, you can trust him.",
-            "register": "semi-formal",
-            "setting": "persuasive",
-            "etymology": "「誠実」 is a な-adjective meaning sincere or honest. It modifies the noun 「人」 to indicate a quality of the person. Using 「から」 indicates a reason or cause.",
-            "nuance": "Implying that because he is sincere, he can be trusted."
-        },
-        {
-            "japanese": "素敵なネクタイですね。よく似合っています。",
-            "english": "That's a lovely tie; it suits you well.",
-            "register": "formal",
-            "setting": "flirty",
-            "listener_gender": "male",
             "speaker_gender": "female",
-            "nuance": "Complimenting the listener's tie by saying 「素敵なネクタイですね」 is very flirty, especially coming from a woman.  「よく似合っています」 adds to the flirtation.",
-            "etymology": "The phrase is a common way of complimenting someone's appearance."
+            "listener_gender": "female",
+            "nuance": "「親切な」 modifies 「言葉」, emphasizing the nature of the words themselves as being kind, rather than just polite. The phrase 「かけ て くれ ます」 shows that the action is done *for* the speaker."
+        },
+        {
+            "japanese": "庭 に {綺麗な} バラ が 咲い て い ます。",
+            "english": "Beautiful roses are blooming in the garden.",
+            "english_literally": "In the garden, beautiful roses are blooming.",
+            "scene": "A person proudly shows their well-maintained garden to a guest.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "美しい バラ",
+                    "mitigation": "While interchangeable in some contexts, 「綺麗」 is more commonly used in everyday speech for things that are visually pleasing and clean, like flowers or rooms. 「美しい」 can feel more formal or artistic. The scene describes a casual viewing of a garden."
+                },
+                {
+                    "competing_grammar": "麗しい バラ",
+                    "mitigation": "「麗しい」 is a much more poetic and less common term, not suitable for a casual conversation about a garden."
+                }
+            ],
+            "register": "casual",
+            "setting": "friendly",
+            "nuance": "「綺麗な」 is a common and versatile な-adjective for describing something visually pleasing, like flowers. 「咲い て い ます」 indicates a continuing state of blooming."
+        },
+        {
+            "japanese": "{元気な} 子供 たち が 校庭 で 遊ん で い ます。",
+            "english": "Energetic children are playing on the school grounds.",
+            "english_literally": "Energetic children on the school grounds are playing.",
+            "scene": "A teacher is observing students during recess.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "活発な 子供 たち",
+                    "mitigation": "While similar, 「元気な」 specifically conveys a sense of health and vigor, which is more directly observed in children's play than just 'activity.' 「活発な」 (active) is more general."
+                },
+                {
+                    "competing_grammar": "明るい 子供 たち",
+                    "mitigation": "「明るい」 describes their disposition ('bright' or 'cheerful'), not their energy or physical state. The scene implies physical energy."
+                }
+            ],
+            "register": "semi-formal",
+            "setting": "informative",
+            "nuance": "「元気な」 describes the vitality and health of the children. 「校庭 で 遊ん で い ます」 sets the scene of their energetic play."
+        },
+        {
+            "japanese": "彼 は {誠実な} 人間 な の で 、誰 から も 信頼 さ れ て い ます。",
+            "english": "Because he is a sincere person, he is trusted by everyone.",
+            "english_literally": "He is a sincere human, therefore, by everyone is trusted.",
+            "scene": "Colleagues discussing a highly respected team member.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "真面目な 人間",
+                    "mitigation": "「真面目」 often implies seriousness or diligence, which doesn't fully capture the sense of honesty and trustworthiness implied by 'sincere' and 'trusted by everyone.' 「誠実」 is a better fit for deep trustworthiness."
+                },
+                {
+                    "competing_grammar": "率直な 人間",
+                    "mitigation": "「率直」 refers to directness in communication, not necessarily sincerity or trustworthiness in character. The scene focuses on trust and character."
+                }
+            ],
+            "register": "semi-formal",
+            "setting": "informative",
+            "nuance": "The use of 「誠実な 人間」 establishes a positive character trait. 「な の で」 indicates the reason for being trusted, and 「誰 から も 信頼 さ れ て い ます」 expresses universal trust."
+        },
+        {
+            "japanese": "新しい カメラ で {様々な} 写真 を 撮り たい です。",
+            "english": "I want to take various photos with my new camera.",
+            "english_literally": "New camera with various photos want to take.",
+            "scene": "A photography enthusiast planning their next outing.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "いろいろな 写真",
+                    "mitigation": "While 「いろいろな」 is also correct and more colloquial, 「様々な」 is slightly more formal and precise, emphasizing a *wide range* or *diversity*, which fits a photography enthusiast's thoughtful plan. The scene highlights a careful consideration of options."
+                }
+            ],
+            "register": "casual",
+            "setting": "reflective",
+            "speaker_gender": "male",
+            "listener_gender": "no one",
+            "nuance": "「様々な」 modifies 「写真」 to emphasize the wide variety of photos the speaker intends to take. 「撮り たい です」 expresses desire."
         }
     ],
-    "post_example_writeup": "Pay attention to the kanji used in each example sentence.  As your Japanese improves, pay attention to the kanji used in example sentences.",
-    "false_friends": [],
-    "url": "https://bunpro.jp/grammar_points/な-adjective-noun",
-    "source": "resources/grammar/files/bunpro-fixed-yaml-all/create-bunpro-fixed-yaml-all-486",
+    "false_friends": [
+        {
+            "term": "Noun + の + Noun",
+            "meaning": "Indicates possession, material, or type/purpose of a noun.",
+            "kind": "often confused with",
+            "nuance": "While な-adjective + な + Noun describes a quality inherent to the noun, Noun + の + Noun indicates a relationship, possession, or the type/purpose of the noun. For instance, 「幸せな日」 (a happy day, describing its quality) versus 「幸せの日」 (a day *of* happiness, meaning a day designated for happiness or a day that exemplifies happiness)."
+        }
+    ],
+    "post_false_friends_writeup": "When describing a noun, remember that な-adjectives use 「な」 to connect, emphasizing an inherent quality or characteristic. In contrast, 「の」 is used to link two nouns, often indicating possession, material, or the type/purpose of the second noun. For example, 「便利なツール」 (a convenient tool) describes its quality, whereas 「木製のテーブル」 (a wooden table) describes its material or type.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/な-adjective-noun"
-    }
+    },
+    "change": [
+        {
+            "change-type": "schema",
+            "change": "Changed `details.part-of-speech` from 'Noun' to 'phrase' to more accurately represent a grammatical construction rather than a single part of speech."
+        },
+        {
+            "change-type": "schema",
+            "change": "Changed `details.register` from 'Standard' (not in schema enum) to 'teineigo (polite)' as a default for general teaching."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Minor rephrasing of `meaning` from 'Describing a noun' to 'Modifying a noun with a な-adjective' for better precision."
+        },
+        {
+            "change-type": "unnatural",
+            "change": "Significantly expanded and rephrased the `writeup` to incorporate more details from the original Bunpro source, particularly the distinction between 'quality' vs 'purpose' and the comparison with の for noun modification. Also added detail about な as a copula."
+        },
+        {
+            "change-type": "command",
+            "change": "All example sentences were re-written to create original content, moving away from directly copied examples from Bunpro or other sources. This also involved adding `scene`, `english_literally`, `scene_rationale`, and ensuring correct `{bold}` formatting for the grammar point."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Removed the generic `post_example_writeup` as it was not specific to the grammar point."
+        },
+        {
+            "change-type": "command",
+            "change": "Added `Noun + の + Noun` as a false friend, as this distinction was highlighted in the `writeup` and example rationales as a common point of confusion."
+        },
+        {
+            "change-type": "command",
+            "change": "Added `post_false_friends_writeup` to explain the nuance between な-adjective + な + Noun and Noun + の + Noun."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added `grammatical-role`, `logical-flow`, `temporal-flow`, and `spatial-flow` to `details` to provide more comprehensive grammatical context."
+        }
+    ]
 }

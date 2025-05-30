@@ -1,118 +1,201 @@
 {
     "grammar_point": "はいいとしても",
     "id": "gp1077",
-    "conjugations": [],
     "pronunciation": {
         "katakana": "ハイイトシテモ",
         "romaji": "ha ii toshitemo"
     },
     "formation": {
-        "[Noun] + はいいとしても": "Expresses that while one thing is acceptable, another thing is not.",
-        "[Verb/Adjective (informal form)] + のはいいとしても": "Indicates acceptance of a situation, but raises an issue with another aspect."
+        "Noun + はいいとしても": "Indicates that while a noun is acceptable, another aspect is problematic.",
+        "Verb (plain form) + のはいいとしても": "Expresses that while a verb's action or state is acceptable, another related issue is not.",
+        "I-Adjective (plain form) + のはいいとしても": "Concedes that an i-adjective's quality is acceptable, but a different aspect is problematic.",
+        "Na-Adjective (stem) + な のはいいとしても": "Acknowledges that a na-adjective's quality is acceptable, but a related issue is not.",
+        "Noun + である のはいいとしても": "Grants that being a certain noun (status/identity) is acceptable, but a related action or consequence is problematic."
     },
     "jlpt": "N1",
-    "meaning": "Even if; granted that; granted; although; but",
+    "meaning": "Even if acceptable; granted that; might be acceptable, but; while X is fine, Y is not",
     "details": {
-        "Register": "Varies depending on context, ranging from casual to formal.",
-        "Nuance": "Expresses a qualified acceptance, where one aspect is conceded while another is questioned or opposed.",
-        "Structure": "Typically used to contrast two related ideas or situations."
+        "part-of-speech": "phrase",
+        "nuance": "Expresses a qualified acceptance, where one aspect is conceded while another is questioned or opposed. It implies that the first point is either genuinely acceptable or tolerated for the sake of argument, but the second point is a significant drawback or problem that cannot be overlooked.",
+        "source": "DOJG (Dictionary of Japanese Grammar)",
+        "grammatical-role": "Conjunction-like phrase",
+        "logical-flow": "Establishes a point of agreement or concession before introducing a contrasting, problematic point.",
+        "temporal-flow": "Indicates a concession that holds true at the time of consideration or generally, contrasting with a present or ongoing problem.",
+        "spatial-flow": "Does not inherently specify spatial flow."
     },
-    "writeup": "The grammar point 「はいいとしても」 is used to express that while one thing is acceptable or granted, another aspect is not. It conveys a sense of qualified acceptance, where the speaker acknowledges one point but raises an issue with another. It's similar to saying \"even if...still...\" or \"granted that..., but...\". This grammar point is versatile and can be used in various contexts, from casual conversations to more formal discussions.  The nuance it adds can often be translated to something being \"fine\" or \"acceptable\", but still not fully satisfactory.",
-    "etymology": "「は」 is a topic marker. 「いい」 means \"good\" or \"acceptable\". 「としても」 means \"even if\" or \"even though\". Combined, they create a structure where something is acknowledged as acceptable, but a condition or reservation is introduced.",
+    "etymology": "The phrase 「はいいとしても」 is formed by combining 「は」 (a topic marker indicating contrast or focus), 「いい」 (an i-adjective meaning 'good' or 'acceptable'), and 「としても」 (a conditional conjunction meaning 'even if' or 'even though'). Together, they construct a pattern that first acknowledges something as acceptable, then introduces a contrasting, unacceptable element. It literally translates to 'even if [topic] is good/acceptable'.",
+    "writeup": "The grammar point 「はいいとしても」 is used to articulate that while one thing is acceptable or granted, another aspect is not. It conveys a sense of qualified acceptance, where the speaker acknowledges one point but raises an issue with another. This structure is often employed to express a complaint or dissatisfaction, where the speaker is willing to concede on one minor point to highlight a more significant problem. It is similar to saying \"even if...still...\" or \"granted that..., but...\". This grammar point is versatile and can be used in various contexts, from casual conversations to more formal discussions. The nuance it adds implies that something is 'fine' or 'acceptable', but not fully satisfactory due to the contrasting element.",
     "examples": [
         {
-            "japanese": "遅刻は{いいとしても}、連絡がないのは問題だ。",
-            "english": "Being late is one thing, but not contacting me is a problem.",
-            "scene": "A boss talking to an employee about their lateness.",
+            "japanese": "遅刻 は {いい としても}、無断欠席 は 許されない。",
+            "english": "Being late is one thing, but unexcused absence is unforgivable.",
+            "english_literally": "Lateness, even if it is good/acceptable, unexcused absence is unforgivable.",
+            "scene": "A strict manager explaining workplace rules to a new employee. The employee has a history of tardiness but has now started not showing up at all without warning.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "遅刻 は 大丈夫 だ けど、無断欠席 は 許されない。",
+                    "mitigation": "「大丈夫だけど」 is too casual and simply states a fact, lacking the formal concession and implicit criticism found in 「はいいとしても」. The scene emphasizes a formal workplace setting where precise language is expected."
+                }
+            ],
+            "register": "formal",
+            "setting": "serious",
+            "nuance": "The phrase 「許されない」 emphasizes the severe and unforgivable nature of the unexcused absence, making it clear that while lateness might be tolerated to some extent, absence without notice is completely unacceptable in a professional setting. This use of a strong negative conveys the manager's firm stance."
+        },
+        {
+            "japanese": "料理 の 腕 は {いい としても}、後片付け を しない のは 困る。",
+            "english": "Even if your cooking skills are good, it's troublesome that you don't clean up afterwards.",
+            "english_literally": "Cooking skill, even if it is good/acceptable, not doing cleanup is troublesome.",
+            "scene": "A housemate gently complaining to another about their habits. One housemate is a great cook but always leaves a mess.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "料理 の 腕 は いい けど、後片付け を しない のは 困る。",
+                    "mitigation": "「いいけど」 offers a simple contrast but doesn't convey the sense of 'conceding a point' as effectively as 「はいいとしても」. The scene focuses on a mild but persistent grievance, where the speaker reluctantly accepts the good but points out the bad."
+                }
+            ],
+            "register": "casual",
+            "setting": "friendly",
+            "nuance": "The use of 「困る」 expresses a difficulty or nuisance rather than severe anger, indicating a common domestic complaint. This phrasing is typical when expressing mild dissatisfaction in an ongoing relationship, where one wants to address an issue without being overly confrontational."
+        },
+        {
+            "japanese": "部屋 が 狭い のは {いい としても}、窓 が ない のは 耐えられない。",
+            "english": "A small room might be acceptable, but not having a window is unbearable.",
+            "english_literally": "Room being small, even if it is good/acceptable, not having a window is unbearable.",
+            "scene": "A student looking for an apartment, discussing a potential rental with a friend. They are willing to compromise on size but not on basic amenities.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "部屋 が 狭い けど、窓 が ない のは 耐えられない。",
+                    "mitigation": "「狭いけど」 is a straightforward conjunction, but 「狭いのはいいとしても」 specifically implies that the small size is *conceded* as acceptable under certain conditions. The scene highlights a crucial deal-breaker, where the first point is accepted but the second is not."
+                }
+            ],
+            "register": "casual",
+            "setting": "cautious",
+            "nuance": "「耐えられない」 signifies an absolute limit of endurance or tolerance. This strong negative expression highlights that while a small room is a minor inconvenience that can be accepted, the lack of a window is a fundamental issue that makes the living space unbearable for the speaker."
+        },
+        {
+            "japanese": "君 が 参加 しない のは {いい としても}、連絡 も なし は 無責任 だ。",
+            "english": "Even if you're not participating, failing to contact us is irresponsible.",
+            "english_literally": "You not participating, even if it is good/acceptable, no contact is irresponsible.",
+            "scene": "A team leader addressing a team member who has been absent without notice from a group project. The leader is upset about the lack of communication.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "君 が 参加 しない のは 構わない けど、連絡 も なし は 無責任 だ。",
+                    "mitigation": "「構わないけど」 can imply indifference or a lack of concern, whereas 「いいとしても」 implies a more formal acknowledgment or allowance. The scene emphasizes a professional context where communication is key, and the leader is explicitly stating a rule violation."
+                }
+            ],
             "register": "semi-formal",
             "setting": "serious",
-            "nuance": "The sentence uses 「問題だ」, which expresses a serious concern. This sentence would be suitable in professional or semi-formal settings.",
-            "etymology": "「問題だ」 literally means \"is a problem.\""
-        },
-        {
-            "japanese": "家賃が安いのは{いいとしても}、駅まで遠すぎる。",
-            "english": "The cheap rent might be fine, but it's too far from the station.",
-            "scene": "Someone complaining about their new apartment.",
-            "register": "casual",
-            "setting": "melancholic",
-            "nuance": "The use of 「すぎる」 indicates that something is excessively far from them. This word is often used in casual conversation when complaining about something.",
-            "etymology": "「すぎる」 means \"too much\" or \"exceeding\"."
-        },
-        {
-            "japanese": "君が忙しいのは{いいとしても}、約束を破るのは許せない。",
-            "english": "Even if you're busy, breaking a promise is unforgivable.",
-            "scene": "A person expressing their anger to a friend.",
-            "register": "casual",
-            "setting": "angry",
             "speaker_gender": "male",
-            "listener_gender": "female",
-            "nuance": "The speaker uses 「許せない」, which indicates a strong sense of unforgiveness. A male speaker is more likely to use this expression in anger when speaking to a female. The omission of 「は」 after 「君」 is slightly more casual and direct.",
-            "etymology": "「許せない」 is the negative potential form of 「許す」, meaning \"to forgive\"."
+            "listener_gender": "male",
+            "nuance": "The term 「無責任だ」 (irresponsible) is a strong accusation, reflecting the speaker's frustration and the violation of an implied duty. This kind of direct, evaluative language is common in a team or professional setting where individuals are expected to uphold certain responsibilities."
         },
         {
-            "japanese": "初期のアイデアは{いいとしても}、実行可能性が低い。",
-            "english": "Even if the initial idea is good, its feasibility is low.",
-            "scene": "An academic discussing a proposal.",
-            "register": "formal",
-            "setting": "academic",
-            "nuance": "The term 「実行可能性」 makes it sound quite formal, and is common in academic settings.",
-            "etymology": "「実行可能性」 means \"feasibility\" or \"practicability\"."
-        },
-        {
-            "japanese": "見た目は{いいとしても}、性格が合わない。",
-            "english": "Even if their looks are good, our personalities don't match.",
-            "scene": "Someone rejecting a potential romantic partner.",
+            "japanese": "彼女 が 気まぐれ な のは {いい としても}、約束 を すぐ 破る のは 問題 だ。",
+            "english": "Her being whimsical might be fine, but breaking promises so easily is a problem.",
+            "english_literally": "Her being whimsical, even if it is good/acceptable, breaking promises quickly is a problem.",
+            "scene": "A person discussing a friend's unreliable behavior with another mutual friend. They find her unpredictability charming sometimes, but her broken promises are a serious issue.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼女 が 気まぐれ だ けど、約束 を すぐ 破る のは 問題 だ。",
+                    "mitigation": "「気まぐれだけど」 is a simple contrasting conjunction. 「気まぐれなのはいいとしても」 implies that the speaker has made a conscious decision to tolerate the 'whimsical' trait, setting up a stronger contrast with the 'problematic' behavior. The scene implies a deeper level of acceptance of the first trait."
+                }
+            ],
             "register": "casual",
             "setting": "reflective",
             "speaker_gender": "female",
-            "nuance": "The speaker uses 「合わない」 to mean that their personalities do not get along.",
-            "etymology": "「性格」 means \"personality\" and 「合う」 means \"to match\" or \"to fit\"."
+            "listener_gender": "female",
+            "nuance": "The contrast between 「気まぐれ」 (whimsical/fickle), which can sometimes be seen as endearing, and 「約束をすぐ破る」 (breaking promises quickly), which is unequivocally negative, is highlighted by 「はいいとしても」. This phrase accurately captures the sentiment of tolerating a personality quirk but finding a breach of trust unacceptable. The use of 「問題だ」 reinforces the seriousness of the latter point."
         },
         {
-            "japanese": "プレゼントは嬉しいのは{いいとしても}、高すぎるものは困るよ。",
-            "english": "Even though I'm happy about the gift, something too expensive would be a problem.",
-            "scene": "Someone receiving a gift they find too extravagant.",
-            "register": "casual",
-            "setting": "cautious",
-            "nuance": "The speaker uses 「困るよ」, indicating a degree of trouble or inconvenience. This is something you would say if you were afraid someone would think you expected such extravagant gifts. The sentence is casual, indicated by the use of 「よ」 at the end.",
-            "etymology": "「困る」 means \"to be troubled\" or \"to have difficulty with\"."
-        },
-        {
-            "japanese": "冗談と{してはいいとしても}、人前で言うべきではない。",
-            "english": "Even if it's meant as a joke, you shouldn't say it in public.",
-            "scene": "Advising someone on appropriate behavior.",
+            "japanese": "彼 が 学生 である のは {いい としても}、夜中 に 大声 を 出す のは 迷惑 だ。",
+            "english": "Even if he is a student, making loud noises in the middle of the night is bothersome.",
+            "english_literally": "He being a student, even if it is good/acceptable, making loud noises in the middle of the night is bothersome.",
+            "scene": "A resident complaining to their landlord about a noisy student tenant. The landlord understands students can be energetic but noise at night is an issue.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼 が 学生 だ けど、夜中 に 大声 を 出す のは 迷惑 だ。",
+                    "mitigation": "「学生だけど」 merely states a fact. 「学生であるのはいいとしても」 formally concedes the student status, implying that the speaker understands the context but the behavior is still unacceptable. The scene emphasizes that the issue isn't *that* he's a student, but *what* he does as a student."
+                }
+            ],
             "register": "semi-formal",
-            "setting": "serious",
-            "nuance": "The grammar suggests that the speaker thinks they are not serious but should be.",
-            "etymology": "「言うべきではない」 implies that it should not be said."
-        },
-        {
-            "japanese": "お酒を飲むのは{いいとしても}、飲み過ぎるのは体に悪い。",
-            "english": "Even if drinking alcohol is acceptable, drinking too much is bad for your health.",
-            "scene": "Someone giving health advice.",
-            "register": "casual",
-            "setting": "informative",
-            "nuance": "The sentence directly addresses the consequence of drinking too much alcohol. The nuance of health advice is added by the use of 「体に悪い」 which means \"bad for your health.\"",
-            "etymology": "「飲み過ぎる」 means \"to drink too much\", with 「過ぎる」 meaning \"too much\"."
-        },
-        {
-            "japanese": "デザインは{いいとしても}、機能性が低すぎる。",
-            "english": "Even if the design is good, the functionality is too low.",
-            "scene": "Evaluating a product.",
-            "register": "semi-formal",
-            "setting": "persuasive",
-            "nuance": "The speaker is talking about a product design, which suggests that it will be used in a business or academic setting.",
-            "etymology": "「機能性」 means \"functionality\"."
+            "setting": "apologetic",
+            "nuance": "The use of 「である」 makes the statement slightly more formal and declarative, which is appropriate when making a complaint to a landlord or authority. 「迷惑だ」 (bothersome/annoying) is a common and direct way to express a nuisance, particularly when someone's behavior disrupts the peace of others, as in this context of noise complaint."
         }
     ],
-    "post_example_writeup": "「はいいとしても」 implies a conditional acceptance. The speaker concedes a point but introduces a contrasting element that requires consideration or criticism.",
+    "post_example_writeup": "「はいいとしても」 implies a conditional acceptance. The speaker concedes a point but introduces a contrasting element that requires consideration or criticism. It is a nuanced way to express that while one aspect is tolerated, another, often more significant, aspect is problematic.",
     "false_friends": [
         {
             "term": "としても",
             "meaning": "even if; even though; granting that",
             "kind": "similar expression",
-            "nuance": "Unlike 「はいいとしても」, 「としても」 simply introduces a condition or assumption, without necessarily implying that the first part is acceptable while another is not. 「としても」 by itself only sets up the premise, whereas 「はいいとしても」 offers a counterpoint."
+            "nuance": "Unlike 「はいいとしても」, 「としても」 simply introduces a condition or assumption, without necessarily implying that the first part is acceptable while another is not. 「としても」 by itself only sets up the premise, whereas 「はいいとしても」 offers a counterpoint, highlighting a conflicting issue."
+        },
+        {
+            "term": "は仕方がないとしても",
+            "meaning": "even if it can't be helped, still...",
+            "kind": "similar expression",
+            "nuance": "While 「はいいとしても」 implies that the first point is acceptable or tolerated, 「は仕方がないとしても」 suggests that the first point is an undesirable but unavoidable circumstance that one must accept, but the second point is still problematic despite this forced acceptance. It carries a heavier sense of resignation regarding the first clause."
         }
     ],
-    "post_false_friends_writeup": "To avoid confusion, remember that 「はいいとしても」 includes an element of concession before introducing the contrasting point, whereas 「としても」 simply states a condition without implying acceptance or concession."
+    "post_false_friends_writeup": "To avoid confusion between these similar expressions, remember that 「はいいとしても」 explicitly concedes or accepts the first point before introducing the contrasting problem. In contrast, 「としても」 merely sets up a hypothetical or factual premise without an inherent judgment of 'acceptability'. Meanwhile, 「は仕方がないとしても」 conveys a reluctant acceptance of an unavoidable situation, followed by a complaint about a related but still problematic aspect.",
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/はいいとしても"
+    },
+    "change": [
+        {
+            "change-type": "schema",
+            "change": "Removed top-level 'conjugations' array as the grammar point itself is a fixed phrase and its internal 'いい' is not meant to be conjugated to alter the grammar point's core meaning or tense."
+        },
+        {
+            "change-type": "violation",
+            "change": "Expanded 'formation' to accurately reflect all three patterns specified in the DOJG source, including Noun, V/Adj-i informal, and Na-Adj/Noun + な/である."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'part-of-speech' as 'phrase' to 'details'."
+        },
+        {
+            "change-type": "schema",
+            "change": "Removed 'Register' from 'details' as it is a descriptive text and not a valid enum value for the schema. Register is instead addressed at the example level."
+        },
+        {
+            "change-type": "unnatural",
+            "change": "Changed 'Structure' in 'details' to 'function' and rephrased its description for clarity and schema compliance."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added 'source', 'grammatical-role', and 'logical-flow' to 'details' for more comprehensive explanation based on the schema."
+        },
+        {
+            "change-type": "command",
+            "change": "Removed all original example sentences as per explicit instruction to not use any example sentences taken literally from DOJG or Bunpro. New example sentences were generated."
+        },
+        {
+            "change-type": "violation",
+            "change": "Added 'english_literally' to all new example sentences for better pedagogical clarity."
+        },
+        {
+            "change-type": "violation",
+            "change": "Added 'scene' and 'scene_rationale' (including 'competing_grammar' and 'mitigation') to all new example sentences for richer context and to guide users away from similar constructions."
+        },
+        {
+            "change-type": "violation",
+            "change": "Removed 'conjugation' from all example sentences, aligning with the decision to omit the top-level 'conjugations' array."
+        },
+        {
+            "change-type": "unnatural",
+            "change": "Refined 'nuance' for all example sentences to be more specific and include references to Japanese phrases in 「quotes」, explaining their implications."
+        },
+        {
+            "change-type": "unnatural",
+            "change": "Adjusted 'speaker_gender' and 'listener_gender' in examples to be specified only when relevant to the nuance of the Japanese expression, as per prompt rules."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added 'bunpro' URL to 'sources'."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added 'は仕方がないとしても' as a new 'false_friend' based on the 'related' field in the DOJG input, providing its meaning, kind, and nuance."
+        }
+    ]
 }

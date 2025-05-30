@@ -3,44 +3,58 @@
     "id": "gp0473",
     "conjugations": [
         {
-            "type": "past plain (～た)",
+            "conjugation-type": "past plain (～た)",
             "form": "ようとしたが",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "Tried to ~ but ~, Was about to ~ but ~"
         },
         {
-            "type": "past polite (～ました)",
+            "conjugation-type": "non-past polite (～ます)",
+            "form": "ようとしますが",
+            "rarity": "less common",
+            "meaning": "Try to ~ but ~, Am about to ~ but ~ (polite)"
+        },
+        {
+            "conjugation-type": "past polite (～ました)",
             "form": "ようとしましたが",
-            "rarity": "less common"
+            "rarity": "less common",
+            "meaning": "Tried to ~ but ~, Was about to ~ but ~ (polite)"
         },
         {
-            "type": "past plain (conditional ～たら)",
+            "conjugation-type": "conditional (～たら)",
             "form": "ようとしたら",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "Was about to ~ when ~, Tried to ~ but then ~"
         },
         {
-            "type": "past polite (conditional ～ましたら)",
+            "conjugation-type": "conditional (～たら)",
             "form": "ようとしましたら",
-            "rarity": "less common"
+            "rarity": "less common",
+            "meaning": "Was about to ~ when ~, Tried to ~ but then ~ (polite)"
         },
         {
-            "type": "past plain (concessive ～ても)",
+            "conjugation-type": "concessive (～ても)",
             "form": "ようとしたけれど",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "Tried to ~ but ~, Was about to ~ but ~"
         },
         {
-            "type": "past polite (concessive ～ましても)",
+            "conjugation-type": "concessive (～ても)",
             "form": "ようとしましたけれど",
-            "rarity": "less common"
+            "rarity": "less common",
+            "meaning": "Tried to ~ but ~, Was about to ~ but ~ (polite)"
         },
         {
-            "type": "past plain (concessive ～ても)",
+            "conjugation-type": "concessive (～ても)",
             "form": "ようとしたけど",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "Tried to ~ but ~, Was about to ~ but ~"
         },
         {
-            "type": "past polite (concessive ～ましても)",
+            "conjugation-type": "concessive (～ても)",
             "form": "ようとしましたけど",
-            "rarity": "less common"
+            "rarity": "less common",
+            "meaning": "Tried to ~ but ~, Was about to ~ but ~ (polite)"
         }
     ],
     "pronunciation": {
@@ -54,160 +68,128 @@
     "meaning": "Tried to ~ but ~, Was about to ~ but ~, Was going to ~ but ~",
     "meaning_warning": "「けど」、「けれど」、「けども」、「けれども」 are all acceptable conjunctions that can be used interchangeably with 「が」 in this structure.",
     "details": {
-        "Register": "Standard",
-        "使用域": "一般"
+        "part-of-speech": "phrase",
+        "register": "casual",
+        "usage-context": "General"
     },
-    "etymology": "「よう」 is the volitional form of a verb, expressing intention. 「とする」 means \"to try to do.\" 「が」 acts as a conjunction, indicating a contrast or unexpected result.",
-    "writeup": "The grammar point 「Verb[volitional-よう] + としたが」 expresses an attempt, intention, or being on the verge of doing something, but something interfered with it. It conveys a sense of interruption or unrealized action. The 「が」 particle indicates a contrast or unexpected result.\n\nThis structure strongly suggests that the interruption was **unanticipated**, preventing the intended action from being completed. It is often used with verbs in the past tense (「ようとした」) to describe a past attempt that was thwarted. The \"but\" clause after 「が」 often describes the reason why the action could not be completed.",
+    "etymology": "The phrase 「～ようとする」 combines the volitional form of a verb (～よう) which expresses a speaker's intention or will, with the verb 「とする」 meaning \"to try to do\" or \"to be about to do\". The particle 「と」 marks the preceding clause as a direct quotation or a thought/intention. The final particle 「が」 (or its variations like 「けれど」/「けど」) acts as a conjunction, indicating a contrast, an unexpected result, or an obstacle. Thus, the entire construction emphasizes an action that was intended or on the verge of happening, but was subsequently interrupted or prevented.",
+    "writeup": "The grammar pattern 「Verb[volitional-よう] + としたが」 is used to describe a situation where someone was *about to* do something, or *tried to* do something, but an unexpected event or circumstance prevented the action from being completed. It conveys a sense of an interrupted or unrealized action.\n\nThis structure strongly implies that the interruption was **unanticipated** or unforeseen, thereby thwarting the intended action. It often describes a specific moment of initiation or intent that was then met with an obstacle. The clause after 「が」 typically provides the reason why the action could not be carried out.\n\nWhile 「～ようとする」 itself expresses intention or an attempt, the addition of 「が」 or similar concessive particles introduces a contrast, highlighting that the intended action did not come to fruition due to some interference.",
     "examples": [
         {
-            "japanese": "クライアント に 電話 を 掛け {ようとしたが} 、夜 遅かった ので 朝 まで 待つ ことにした。",
-            "english": "I tried to call the client, but it was late at night, so I decided to wait until morning.",
-            "scene": "An employee reflecting on their workday.",
+            "japanese": "彼女 に 話し かけ {ようとしたが} 、勇気 が 出なかった。",
+            "english": "I tried to talk to her, but I lost my nerve.",
+            "scene": "You're at a social gathering, and you spot someone you've been wanting to speak with. You take a deep breath and start to approach, but then you hesitate.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "クライアントに電話を掛けたかったが、夜遅かったので朝まで待つことにした。",
-                    "mitigation": "The scene emphasizes the reflective aspect of an employee discussing a specific *attempt* to make a call that was interrupted, rather than just a general desire."
-                }
-            ],
-            "register": "formal",
-            "setting": "professional",
-            "conjugation": "past plain (～た)",
-            "nuance": "This is a professional and polite statement, indicating a standard, formal way of communicating in a business setting."
-        },
-        {
-            "japanese": "川 で 泳ごう {としたら} 、警察 に 止められた。",
-            "english": "I was about to swim in the river when the police stopped me.",
-            "scene": "A person sharing a humorous anecdote.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "川で泳ぎ始めたら、警察に止められた。",
-                    "mitigation": "The scene suggests an action that was prevented *before* it fully began, highlighting the 'about to' nuance of the grammar point rather than an action that was already underway."
-                },
-                {
-                    "competing_grammar": "川で泳ぎたかったが、警察に止められた。",
-                    "mitigation": "The scene implies a thwarted action at the point of attempt, not just a desire or wish."
+                    "competing_grammar": "彼女に話しかけたかったが、勇気が出なかった。",
+                    "mitigation": "The scene highlights the physical act of *starting to approach* and the subsequent hesitation, emphasizing the attempt rather than just a general desire to talk."
                 }
             ],
             "register": "casual",
-            "setting": "humorous",
-            "conjugation": "past plain (conditional ～たら)"
+            "setting": "serious",
+            "conjugation": "past plain (～た)"
         },
         {
-            "japanese": "逃げ {ようとしたけれど} 、見つかったら 大変 な ことになる から 逃げなかった。",
-            "english": "I was about to run away, but I didn't because if I got found out, it would be a disaster.",
-            "scene": "A person reminiscing about a time they were tempted to misbehave.",
+            "japanese": "資料 を 提出 し {ようとしましたけど} 、締め切り を 過ぎて いました。",
+            "english": "I tried to submit the documents, but the deadline had already passed.",
+            "scene": "A junior employee is explaining to their manager why a report is late. They genuinely made an effort to submit it on time.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "逃げたかったけれど、捕まったら大変なことになるから逃げなかった。",
-                    "mitigation": "The scene emphasizes the moment of 'being about to' perform the action, rather than just a general wish or desire to do so."
+                    "competing_grammar": "資料を提出したかったのですが、締め切りを過ぎていました。",
+                    "mitigation": "The scene emphasizes the *attempt* to submit, implying the employee actively prepared or tried to send the documents, not just a desire to do so. The polite `〜ましたけど` fits the junior employee explaining to a manager."
+                }
+            ],
+            "register": "semi-formal",
+            "setting": "professional",
+            "conjugation": "concessive (～ても)"
+        },
+        {
+            "japanese": "家 を 出よ {うとしたら} 、鍵 を 忘れた ことに 気づいた。",
+            "english": "Just as I was about to leave the house, I realized I had forgotten my keys.",
+            "scene": "You're dressed and ready, hand on the doorknob, about to step out for an important appointment. Suddenly, a thought flashes through your mind.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "家を出るつもりだったが、鍵を忘れたことに気づいた。",
+                    "mitigation": "The scene emphasizes the precise moment of being *on the verge* of leaving, highlighting the immediate interruption by a sudden realization, rather than just a pre-planned intention."
+                }
+            ],
+            "register": "casual",
+            "setting": "cautious",
+            "conjugation": "conditional (～たら)"
+        },
+        {
+            "japanese": "宿題 を 始めよ {うとしたけど} 、眠く なって しまった。",
+            "english": "I was going to start my homework, but I ended up getting sleepy.",
+            "scene": "A college student sighs, spreads out their textbooks, and opens a notebook. They pick up their pen, then their eyes start to droop.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "宿題を始めたいけど、眠くなってしまった。",
+                    "mitigation": "The scene illustrates the *commencement* of the action (spreading textbooks, opening notebook), emphasizing that the student actually *began* the attempt before being overcome by sleepiness, not just wishing to start."
                 }
             ],
             "register": "casual",
             "setting": "reflective",
-            "conjugation": "past plain (concessive ～ても)",
-            "nuance": "The use of 「〜けれど」 gives a casual yet slightly emphatic tone. The phrasing 「大変なことになるから」 expresses a practical reason for avoiding the action."
+            "conjugation": "concessive (～ても)"
         },
         {
-            "japanese": "僕 と 彼 は 同時に ジャンプ {しようとしたけれど} 、失敗した。",
-            "english": "He and I both tried to jump at the same time, but we failed.",
-            "scene": "Two friends talking about trying to be better than each other",
+            "japanese": "彼 は 頑張って 走ろ {うとしたけれど} 、足 が もつれて 転んで しまった。",
+            "english": "He tried his best to run, but his feet tangled and he fell.",
+            "scene": "A young boy is practicing for a school sports day. He gets into position, takes a deep breath, and pushes off with all his might, but trips over his own feet.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "僕と彼は同時にジャンプしようと頑張ったが、失敗した。",
-                    "mitigation": "The scene highlights the immediate attempt and its failure, rather than just the effort involved."
+                    "competing_grammar": "彼は頑張って走ろうと努めたが、足がもつれて転んでしまった。",
+                    "mitigation": "The scene emphasizes the immediate *initiation* of the running action right before the fall, highlighting the 'about to' or 'tried to' aspect, rather than a more general effort or resolve."
                 }
             ],
             "register": "casual",
-            "setting": "friendly",
-            "conjugation": "past plain (concessive ～ても)",
+            "setting": "storytelling",
+            "conjugation": "concessive (～ても)",
             "speaker_gender": "male",
             "speaker_age": "younger",
-            "nuance": "The use of 「僕」 (boku) indicates a male speaker. This is a typical casual expression between younger friends, where 「けれど」 adds a slight reflective or explanatory tone."
+            "nuance": "The male speaker's use of 「彼」 (kare) and the narrative description gives this a casual, storytelling tone. The use of 「～けれど」 is slightly more formal than 「～けど」 but still very common in casual narratives among younger speakers."
         },
         {
-            "japanese": "私 は 彼女 の 手伝い を {しようとしたが} 、断られた。",
-            "english": "I tried to offer her my help, but she refused.",
-            "scene": "A person recounting a situation where their offer was declined.",
+            "japanese": "お客様 に お 電話 し {ようとしましたら} 、ちょうど お客様 から お 電話 を いただきました。",
+            "english": "I was just about to call the customer when I received a call from them.",
+            "scene": "You're at your desk in a customer service center, pulling up a client's file to make a follow-up call. As you reach for the phone, it rings.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "私は彼女の手伝いを申し出たかったが、断られた。",
-                    "mitigation": "The scene focuses on the actual, albeit thwarted, *attempt* to offer help, not merely a desire to do so."
+                    "competing_grammar": "お客様に電話をする予定でしたが、お客様から電話をいただきました。",
+                    "mitigation": "The scene highlights the exact timing of being *on the verge* of making the call, emphasizing the synchronous and perhaps surprising nature of the customer's call, rather than merely a pre-arranged plan."
                 }
             ],
-            "register": "semi-formal",
-            "setting": "storytelling",
-            "conjugation": "past plain (～た)"
+            "register": "bijinesu nihongo (business)",
+            "setting": "professional",
+            "conjugation": "conditional (～たら)",
+            "nuance": "This phrase, common in business Japanese (bijinesu nihongo), uses 「～ましたら」 to show politeness and express the exact timing of an intended action being met by an unexpected (but often convenient) event. The mutual action (calling the customer and receiving a call) creates a sense of polite synchronicity."
         },
         {
-            "japanese": "彼 は 夜中 起き {ようとしたけれど} 寝てしまった。",
-            "english": "He tried to stay up all night, but he fell asleep.",
-            "scene": "A friend describing a friend's failed attempt to stay up all night.",
+            "japanese": "お手伝い し {ようとしましたけれど} 、残念 ながら 力 に なれませんでした。",
+            "english": "I tried to help, but unfortunately, I couldn't be of much assistance.",
+            "scene": "You see a friend struggling with a heavy box and rush over to assist. You grab one side, but realize it's far too heavy for the two of you.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "彼は徹夜したかったけれど寝てしまった。",
-                    "mitigation": "The scene indicates an effort that was started and then interrupted, emphasizing the 'tried to' aspect rather than just a wish."
-                }
-            ],
-            "register": "casual",
-            "setting": "humorous",
-            "conjugation": "past plain (concessive ～ても)"
-        },
-        {
-            "japanese": "犯人 は 逃げ {ようとしたが} 、すぐに 警察 が 犯人 を 取り押さえた。",
-            "english": "The criminal tried to run, but the police quickly subdued him.",
-            "scene": "A news report describing an arrest.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "犯人は逃げようと思ったが、すぐに警察が犯人を取り押さえた。",
-                    "mitigation": "The scene implies a direct action or attempt by the criminal that was immediately countered, rather than just an internal thought or plan."
+                    "competing_grammar": "お手伝いしたかったのですが、残念ながら力になれませんでした。",
+                    "mitigation": "The scene illustrates an *active attempt* to help (rushing over, grabbing the box), differentiating it from a simple desire to assist. The politeness of `～ましたけれど` adds sincerity to the apology for being unable to help."
                 }
             ],
             "register": "formal",
-            "setting": "informative",
-            "conjugation": "past plain (～た)"
-        },
-        {
-            "japanese": "勉強 {しようとしたが} 、あまり にも 疲れていた ので やめました。",
-            "english": "I tried to study, but I was too tired, so I gave up.",
-            "scene": "A student explaining why they didn't study.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "勉強したかったが、あまりにも疲れていたのでやめました。",
-                    "mitigation": "The scene emphasizes the beginning of the study attempt that was then abandoned, rather than just a desire to study."
-                }
-            ],
-            "register": "semi-formal",
             "setting": "apologetic",
-            "conjugation": "past plain (～た)"
+            "conjugation": "concessive (～ても)"
         },
         {
-            "japanese": "彼女 の 家 に 行こ {うとしたら} 、急 に 雨 が 降って きた。",
-            "english": "I was about to go to her house when it suddenly started raining.",
-            "scene": "On a first date with a new girlfriend.",
+            "japanese": "締め切り に 間に合わ せ {ようとしましたが} 、時間 が 足りませんでした。",
+            "english": "I tried to meet the deadline, but I didn't have enough time.",
+            "scene": "A team leader is reporting to their boss about a project. They had put in extra hours and worked diligently, but unforeseen delays made it impossible to complete on schedule.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "彼女の家に行こうと思ったが、急に雨が降ってきた。",
-                    "mitigation": "The scene sets up a situation where an action was on the verge of being performed, emphasizing the sudden, unexpected interruption."
+                    "competing_grammar": "締め切りに間に合わせたかったのですが、時間が足りませんでした。",
+                    "mitigation": "The scene implies a significant *effort* and *attempt* to meet the deadline, indicating active work towards it, rather than just a wish. The polite `～ましたが` is appropriate for reporting to a superior."
                 }
             ],
-            "register": "casual",
-            "setting": "first-date",
-            "nuance": "This statement uses 「〜たら」 to indicate a sudden, unexpected interruption to the speaker's intention. The phrase 「彼女の家に行こうとしたら」 shows the speaker's desire to visit, but the sudden rain (「急に雨が降ってきた」) prevented it."
-        },
-        {
-            "japanese": "キス {しようとしたけれど} 、彼女 は 恥ずかしがって 顔 を 隠した。",
-            "english": "I was about to kiss her, but she shyly hid her face.",
-            "scene": "After an early romantic dinner.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "キスしたかったけれど、彼女は恥ずかしがって顔を背けた。",
-                    "mitigation": "The scene implies an action that was initiated or on the immediate verge of happening, not just a desire."
-                }
-            ],
-            "register": "casual",
-            "setting": "flirty",
-            "nuance": "The use of 「〜けれど」 here sets up a contrast between the speaker's intention (「キスしようとした」) and the listener's shy reaction (「顔を隠した」), implying a playful, slightly disappointed tone typical of a flirty interaction."
+            "register": "formal",
+            "setting": "serious",
+            "conjugation": "past polite (～ました)"
         }
     ],
     "false_friends": [
@@ -215,17 +197,63 @@
             "term": "Verb[volitional]とする",
             "meaning": "Try to, Attempt to, To be about to",
             "kind": "similar expression",
-            "nuance": "Unlike 「Verb[volitional] + としたが」, 「Verb[volitional] + とする」 does not necessarily imply an interruption or unrealized action. It simply expresses the intent or attempt."
+            "nuance": "Unlike 「Verb[volitional] + としたが」, 「Verb[volitional] + とする」 does not necessarily imply an interruption or unrealized action. It simply expresses the intent or attempt without commenting on its outcome."
+        },
+        {
+            "term": "Verb[dictionary]たかった",
+            "meaning": "Wanted to do",
+            "kind": "similar expression",
+            "nuance": "While both imply an unfulfilled desire, 「Verb[dictionary]たかった」 expresses a wish or longing to perform an action. 「Verb[volitional] + としたが」, however, describes an actual *attempt* or being *on the verge* of an action that was then thwarted, indicating a more direct engagement with the action itself."
         }
     ],
-    "post_false_friends_writeup": "The key difference lies in the nuance of completion. 「Verb[volitional] + とする」 indicates an intention or attempt, whereas 「Verb[volitional] + としたが」 implies that the attempt was thwarted or interrupted. Therefore, be mindful of whether the action was ultimately completed or not.",
+    "post_false_friends_writeup": "The core distinction lies in whether the action was merely desired or actually attempted. 「Verb[volitional]とする」 indicates an intention or attempt, but when followed by 「が」 (or similar conjunctions), it specifically highlights that this attempt was interrupted or prevented. In contrast, 「Verb[dictionary]たかった」 indicates a desire or wish for an action to occur, without necessarily implying an attempt was made.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/verb-volitional-としたが"
     },
     "change": [
-        "violation: examples array, example 2: Changed `池` (N2 kanji) to `川` (N5 kanji) in Japanese to comply with JLPT N3 kanji level for example sentences. Updated English translation accordingly.",
-        "violation: examples array, example 3: Changed `捕まったら` (N2 kanji for `捕まる`) to `見つかったら` (N5 kanji for `見つかる`) in Japanese to comply with JLPT N3 kanji level for example sentences. Updated English translation accordingly.",
-        "violation: examples array, example 6: Changed `徹夜` (N2 kanji) to `夜中` (N5 kanji) and `起きようとした` in Japanese to comply with JLPT N3 kanji level for example sentences. Updated English translation accordingly.",
-        "violation: examples array, example 10: Changed `背けた` (N2 kanji for `背ける`) to `隠した` (N3 kanji for `隠す`) in Japanese to comply with JLPT N3 kanji level for example sentences. Updated English translation and nuance accordingly."
+        {
+            "change-type": "schema",
+            "change": "Added 'meaning' to each conjugation in the 'conjugations' array to conform to the schema."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'part-of-speech' to 'details' as 'phrase'."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'register' to 'details' as 'casual' as the base register for the plain form."
+        },
+        {
+            "change-type": "unnatural",
+            "change": "Changed '使用域: \"一般\"' to 'usage-context: \"General\"' in 'details' for consistency and English key name."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Expanded the 'etymology' explanation for greater detail and linguistic insight."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Improved the 'writeup' for clarity, comprehensiveness, and adherence to markdown formatting, emphasizing the unanticipated nature of the interruption."
+        },
+        {
+            "change-type": "command",
+            "change": "Replaced all example sentences with new, original ones that adhere to JLPT N3 kanji levels and demonstrate a wider variety of settings, registers, and conjugations, addressing prior command about example source."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Rephrased the 'nuance' for 'Verb[volitional]とする' in 'false_friends'."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added 'Verb[dictionary]たかった' as a 'false_friend' with its meaning, kind, and nuance."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Rephrased the 'post_false_friends_writeup' for better clarity and distinction."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'non-past polite (～ます)' conjugation to the 'conjugations' array as 'ようとします'."
+        }
     ]
 }

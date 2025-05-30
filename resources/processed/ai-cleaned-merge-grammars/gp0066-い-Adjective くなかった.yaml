@@ -1,18 +1,20 @@
 {
     "grammar_point": "い-Adjective くなかった",
+    "id": "gp0066",
     "conjugations": [
         {
-            "type": "negative past plain",
+            "conjugation-type": "negative past plain (～なかった)",
             "form": "い-Adjective くなかった",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "was not (plain)"
         },
         {
-            "type": "negative past polite",
+            "conjugation-type": "negative past polite (～ませんでした)",
             "form": "い-Adjective くありませんでした",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "was not (polite)"
         }
     ],
-    "id": "gp0066",
     "pronunciation": {
         "katakana": "イ ケイヨウシ クナカッタ",
         "romaji": "i keiyooshi kunakatta"
@@ -23,11 +25,9 @@
     "jlpt": "N5",
     "meaning": "Was not, Wasn't (Adjective)",
     "details": {
-        "Part of Speech": "い-Adjective conjugation",
-        "Register": "Standard",
-        "品詞": "形容詞",
-        "単語の種類": "助動詞",
-        "使用域": "一般"
+        "part-of-speech": "auxiliary verb",
+        "register": "teineigo (polite)",
+        "usage-context": "General situations and discourse."
     },
     "etymology": "This grammar point is derived from the い-adjective conjugation where the final 「い」 is dropped and replaced with 「く」. 「なかった」 is the past negative form of 「ない」. Thus, it literally combines the adjectival stem with the past negative auxiliary.",
     "writeup": "To form the negative past tense of い-adjectives, the final 「い」 is removed and replaced with 「く」. This 「く」 form is then followed by 「なかった」 for the plain past negative, or 「ありませんでした」 for the polite past negative. Historically, the polite negative form derived from the usage of the u-verb 「ある」 with the 「く」-form of the い-adjective (e.g., 高くあります → 高くありません → 高くありませんでした). While this is technically the complete and grammatically 'correct' way for all 「く」-form conjugations of い-adjectives, in modern Japanese, it is common and acceptable to form the polite negative by simply attaching 「です」 to the plain past negative form, resulting in expressions like 「高くなかったです」. This is often referred to as the 'semi-polite' form.",
@@ -44,7 +44,7 @@
             ],
             "register": "casual",
             "setting": "reflective",
-            "conjugation": "negative past plain"
+            "conjugation": "negative past plain (～なかった)"
         },
         {
             "japanese": "コーヒー は 熱く {なかった} です。",
@@ -57,8 +57,8 @@
                 }
             ],
             "register": "teineigo (polite)",
-            "setting": "casual",
-            "conjugation": "negative past plain"
+            "setting": "casual slang",
+            "conjugation": "negative past plain (～なかった)"
         },
         {
             "japanese": "私 の 犬 は 強く {なかった} です。",
@@ -71,8 +71,8 @@
                 }
             ],
             "register": "teineigo (polite)",
-            "setting": "casual",
-            "conjugation": "negative past plain"
+            "setting": "casual slang",
+            "conjugation": "negative past plain (～なかった)"
         },
         {
             "japanese": "私 の 姉 の 家 は 高く {なかった} です。",
@@ -85,8 +85,8 @@
                 }
             ],
             "register": "teineigo (polite)",
-            "setting": "casual",
-            "conjugation": "negative past plain"
+            "setting": "casual slang",
+            "conjugation": "negative past plain (～なかった)"
         },
         {
             "japanese": "それ は 安く {ありませんでした} 。",
@@ -95,12 +95,12 @@
             "scene_rationale": [
                 {
                     "competing_grammar": "それ は 安く なかった です。",
-                    "mitigation": "The scene of a shopper making an `informative` comment often uses the slightly more formal `くありませんでした` to convey a more considered or definitive statement about the product's price."
+                    "mitigation": "The scene of a shopper making an `informative` comment often uses the slightly more formal `くありませんでした` to convey a stronger, more objective assessment than the slightly softer `くなかったです`."
                 }
             ],
             "register": "teineigo (polite)",
             "setting": "informative",
-            "conjugation": "negative past polite"
+            "conjugation": "negative past polite (～ませんでした)"
         },
         {
             "japanese": "君 が いなくて 、パーティー は 楽しく {なかった} よ。",
@@ -118,7 +118,7 @@
             ],
             "register": "shitashii kuchō (intimate)",
             "setting": "flirty",
-            "conjugation": "negative past plain",
+            "conjugation": "negative past plain (～なかった)",
             "speaker_gender": "male",
             "listener_gender": "female",
             "nuance": "The casual tone and the direct address 「君」, rarely used except in intimate or condescending contexts, along with the implied regret of the listener's absence, create a flirty atmosphere. The use of 「よ」 further softens the tone and makes it more personal."
@@ -139,7 +139,7 @@
             ],
             "register": "teineigo (polite)",
             "setting": "melancholic",
-            "conjugation": "negative past plain",
+            "conjugation": "negative past plain (～なかった)",
             "speaker_gender": "female",
             "listener_gender": "male",
             "speaker_age": "younger",
@@ -156,8 +156,8 @@
                 }
             ],
             "register": "teineigo (polite)",
-            "setting": "critical",
-            "conjugation": "negative past polite"
+            "setting": "serious",
+            "conjugation": "negative past polite (～ませんでした)"
         }
     ],
     "false_friends": [
@@ -173,6 +173,25 @@
         "bunpro": "https://bunpro.jp/grammar_points/い-Adjective-くなかった"
     },
     "change": [
-        "violation: Changed '漫画 を 読む の は' to '漢字 を 覚える の は' in example 1. Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point. So, for example, if the grammar point is JLPT N3, the example sentences should use kanji from the N3, N4, and N5 lists.' The kanji 漫 (N1) was above the N5/N4/N3 limit for an N5 grammar point."
+        {
+            "change-type": "violation",
+            "change": "The `Part of Speech` in the original `PRIOR_GRAMMAR_POINT` was 'い-Adjective conjugation', which is not a valid enum value. It has been changed to 'auxiliary verb' to align with the schema, as 'くなかった' functions as an auxiliary verb applied to the adverbial form of an i-adjective."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added `meaning` field to `conjugations` entries as required by the schema."
+        },
+        {
+            "change-type": "violation",
+            "change": "Added `usage-context` to `details`, reflecting '一般' from the source `GRAMMAR_POINT_YAML`'s details, which was missing from `PRIOR_GRAMMAR_POINT`."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Changed 'casual' setting to 'casual slang' for two examples to be more specific about the casualness, as it's not simply 'casual' but implies an informal, everyday context."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Changed 'critical' setting to 'serious' for the last example to better reflect a measured, objective criticism rather than an emotionally charged one."
+        }
     ]
 }

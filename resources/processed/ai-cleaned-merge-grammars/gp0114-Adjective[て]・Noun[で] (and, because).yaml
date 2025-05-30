@@ -1,11 +1,30 @@
 {
     "grammar_point": "Adjective[て]・Noun[で] (and, because)",
     "id": "gp0114",
+    "conjugations": [
+        {
+            "conjugation-type": "te-form (～て)",
+            "form": "い-adjective + くて",
+            "rarity": "common",
+            "meaning": "connects i-adjectives: 'is X and is Y'"
+        },
+        {
+            "conjugation-type": "te-form (～て)",
+            "form": "な-adjective + で",
+            "rarity": "common",
+            "meaning": "connects na-adjectives: 'is X and is Y'"
+        },
+        {
+            "conjugation-type": "te-form (～て)",
+            "form": "Noun + で",
+            "rarity": "common",
+            "meaning": "connects nouns: 'is X and is Y', or 'due to X'"
+        }
+    ],
     "pronunciation": {
         "katakana": "ケイヨウシ[テ]・メイシ[デ]",
         "romaji": "keiyoushi [te]・meishi [de]"
     },
-    "conjugations": [],
     "formation": {
         "[い-adjective stem] + くて": "Connects い-adjectives, meaning 'and'.",
         "[な-adjective stem] + で": "Connects な-adjectives, meaning 'and'.",
@@ -14,171 +33,182 @@
     "jlpt": "N5",
     "meaning": "And, because (used to connect adjectives or nouns)",
     "details": {
-        "Part of Speech": "Adjective+Conjunctions",
-        "Register": "Standard",
-        "品詞": "形容詞・名詞",
-        "単語の種類": "助詞・助動詞",
-        "使用域": "一般"
+        "part-of-speech": "phrase",
+        "register": "formal",
+        "usage-context": "Used to connect adjectives or nouns to express multiple qualities, states, or to indicate a reason/cause. The 'standard' register typically means it is appropriate for a broad range of everyday situations without being overly casual or overly formal. It can be used in both written and spoken Japanese.",
+        "function": "Conjunctive, indicating addition or causation",
+        "nuance": "The て/で form of adjectives and nouns integrates the connected elements into a single coherent thought, implying a closer relationship than simply listing separate clauses.",
+        "colocation": "Often followed by descriptive phrases or clauses that continue the description or consequence. Common with various い-adjectives (e.g., 大きい, 小さい, 難しい, 易しい) and な-adjectives/nouns (e.g., 静か, 綺麗, 病気, 晴れ).",
+        "grammatical-role": "Connects predicative elements to form a continuous description or causal statement.",
+        "logical-flow": "Creates a seamless flow of ideas, either adding characteristics or establishing a cause-and-effect relationship.",
+        "temporal-flow": "Does not typically indicate temporal sequence, unlike the て-form of verbs. Instead, it describes co-existing qualities or states. In the case of cause, the cause and effect are often simultaneous or the cause is a state that exists prior to or during the effect.",
+        "spatial-flow": "Not directly related to spatial flow, but can describe multiple attributes of a single object or location simultaneously. For example, describing a room as 'big and bright' (広くて明るい) implies both qualities coexist in the same space."
     },
     "etymology": "The 「て」 form originally evolved from the classical Japanese conjunctive particle 「して」, which itself derived from the verb 「す」 (to do). 「で」 is the conjunctive form of the copula 「だ」.",
-    "writeup": "This grammar point, **Adjective[て]・Noun[で]**, is used to connect adjectives and nouns, similar to \"and\" or \"because\" in English. It allows you to list multiple qualities or states.\n\nFor い-adjectives, change the final い to くて. For example, *atarashii* (新しい - new) becomes *atarashikute* (新しくて).\n\nFor nouns and な-adjectives, simply add で to the base form. For example, *byouki* (病気 - illness) becomes *byoukide* (病気で).\n\nImportant Considerations:\n\n*   This て/で form can also indicate a reason or cause, similar to \"because of\" or \"due to\".\n*   Be aware that いい becomes よくて, not いくて.",
+    "writeup": "This grammar point, **Adjective[て]・Noun[で]**, is used to connect adjectives and nouns, similar to \"and\" or \"because\" in English. It allows you to list multiple qualities or states.\n\nFor い-adjectives, change the final い to 「くて」. For example, *atarashii* (新しい - new) becomes *atarashikute* (新しくて).\n\nFor nouns and な-adjectives, simply add 「で」 to the base form. For example, *byouki* (病気 - illness) becomes *byoukide* (病気で).\n\n**Important Considerations:**\n\n*   This て/で form can also indicate a reason or cause, similar to \"because of\" or \"due to\".\n*   Be aware that いい becomes 「よくて」, not 「いくて」.",
     "examples": [
         {
-            "japanese": "部屋が{綺麗で}明るいです。",
+            "japanese": "部屋が {綺麗で} 明るいです。",
             "english": "The room is clean and bright.",
             "scene": "Describing a room.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "部屋は綺麗です。そして明るいです。",
+                    "competing_grammar": "部屋は 綺麗です。そして 明るいです。",
                     "mitigation": "Using the -te/-de form concisely links two descriptive qualities into a single thought, implying a stronger inherent connection between 'clean' and 'bright' in the room's nature, whereas using 'そして' would simply list them as separate observations."
                 },
                 {
-                    "competing_grammar": "部屋は綺麗です。部屋は明るいです。",
+                    "competing_grammar": "部屋は 綺麗です。部屋は 明るいです。",
                     "mitigation": "This structure avoids the repetitiveness of stating the subject twice, making the description more natural and fluent by combining the adjectives."
                 }
             ],
-            "register": "polite",
+            "register": "formal",
             "setting": "informative",
+            "conjugation": "te-form (～て)",
             "speaker_gender": "female",
             "speaker_age": "younger",
-            "nuance": "「綺麗で明るいです」は客観的な描写ですが、女性が話すことで、より優しく、空間への配慮が感じられます。若い話し言葉では「～です」の丁寧語は一般的です。"
+            "nuance": "The use of 「綺麗で明るいです」 is an objective description, but when spoken by a female, it conveys a gentler impression and consideration for the space. In younger speech, the polite form 「～です」 is commonly used."
         },
         {
-            "japanese": "この料理は{安くて}美味しいです。",
+            "japanese": "この 料理は {安くて} 美味しいです。",
             "english": "This dish is cheap and delicious.",
             "scene": "Describing food.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "この料理は安いです。そして美味しいです。",
+                    "competing_grammar": "この 料理は 安いです。そして 美味しいです。",
                     "mitigation": "The -te form elegantly combines two positive attributes of the dish, emphasizing that these qualities go hand-in-hand rather than being merely listed sequentially with 'そして'."
-                },
-                {
-                    "competing_grammar": "この料理は安いです。この料理は美味しいです。",
-                    "mitigation": "This phrasing avoids the redundancy of repeating the subject, allowing for a more fluid and succinct description of the dish's characteristics."
                 }
             ],
-            "register": "polite",
+            "register": "formal",
             "setting": "friendly",
+            "conjugation": "te-form (～て)",
             "speaker_gender": "male",
             "speaker_age": "older",
-            "nuance": "「安くて美味しい」は、料理の利点を端的に述べる表現です。年配の男性が、実用性を重視しつつ、親しみやすい言葉遣いで評価している様子が伺えます。"
+            "nuance": "The phrase 「安くて美味しい」 concisely states the advantages of the dish. An older male speaker using this casual yet polite tone suggests a practical appreciation for the food."
         },
         {
-            "japanese": "大雨{で}バスが止まりました。",
+            "japanese": "大雨 {で} バスが 止まりました。",
             "english": "The bus stopped because of the heavy rain.",
+            "english_literally": "Due to heavy rain, the bus stopped.",
             "scene": "Explaining the cause of a delay.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "大雨だからバスが止まりました。",
+                    "competing_grammar": "大雨だから バスが 止まりました。",
                     "mitigation": "While 'から' also expresses reason, 'で' here sounds more like 'due to' or 'because of' the state/event of heavy rain itself, making it a concise and objective explanation without emphasizing the speaker's judgment."
                 },
                 {
-                    "competing_grammar": "大雨なのでバスが止まりました。",
+                    "competing_grammar": "大雨なので バスが 止まりました。",
                     "mitigation": "Similar to 'から', 'ので' conveys reason but 'で' specifically highlights the 'heavy rain' as the direct condition or cause leading to the bus stopping, often used when stating a clear, undeniable reason."
                 }
             ],
-            "register": "polite",
+            "register": "formal",
             "setting": "informative",
+            "conjugation": "te-form (～て)",
             "speaker_gender": "female",
             "speaker_age": "older",
-            "listener_gender": "male",
-            "nuance": "「大雨でバスが止まりました」は、天候が原因で交通機関が停止したという事実を伝える際に用いられます。年長の女性が年下の男性に、状況を説明する場面で自然です。"
+            "nuance": "「大雨でバスが止まりました」 is used to convey a factual situation where public transport stopped due to weather. It's natural for an older female to explain a situation to a younger male in this manner."
         },
         {
-            "japanese": "彼は{ハンサムで}優しいです。",
+            "japanese": "彼は {ハンサムで} 優しいです。",
             "english": "He is handsome and kind.",
             "scene": "Talking about a man's qualities with a friend.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "彼はハンサムです。そして優しいです。",
+                    "competing_grammar": "彼は ハンサムです。そして 優しいです。",
                     "mitigation": "Using 'で' seamlessly links 'handsome' and 'kind' as co-existing qualities of the person, conveying a more integrated impression than simply listing them with 'そして'."
                 }
             ],
-            "register": "polite",
+            "register": "formal",
             "setting": "friendly",
+            "conjugation": "te-form (～て)",
             "speaker_gender": "female",
             "listener_gender": "female",
-            "nuance": "女性同士の会話で男性の印象を語る際、「ハンサムで優しいです」と肯定的に評価する表現は一般的です。"
+            "nuance": "In conversations between females, it is common to use expressions like 「ハンサムで優しいです」 to positively describe a man's impression."
         },
         {
-            "japanese": "彼女は{元気で}明るい人です。",
+            "japanese": "彼女は {元気で} 明るい 人です。",
             "english": "She is a cheerful and bright person.",
             "scene": "Describing someone's personality to a colleague.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "彼女は元気な人です。そして明るい人です。",
+                    "competing_grammar": "彼女は 元気な 人です。そして 明るい 人です。",
                     "mitigation": "The 'で' form here efficiently combines two personality traits, presenting them as an integrated whole rather than two separate characteristics listed with 'そして'."
                 }
             ],
-            "register": "polite",
+            "register": "formal",
             "setting": "professional",
+            "conjugation": "te-form (～て)",
             "speaker_gender": "male",
             "listener_gender": "male",
-            "nuance": "男性が同僚について語る際に「元気で明るい人です」と形容することで、その人のポジティブな印象を簡潔に伝えています。"
+            "nuance": "When a male describes a colleague, using 「元気で明るい人です」 concisely conveys a positive impression of that person."
         },
         {
-            "japanese": "今日は{暇で}退屈です。",
+            "japanese": "今日は {暇で} 退屈です。",
             "english": "I'm free and bored today.",
             "scene": "A younger person expressing feelings to an older person.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "今日は暇です。そして退屈です。",
+                    "competing_grammar": "今日は 暇です。そして 退屈です。",
                     "mitigation": "The use of 'で' here connects the two states 'free' and 'bored' as closely related experiences, implying one state leads to or accompanies the other, making the expression more cohesive than a simple 'そして' connection."
                 }
             ],
-            "register": "polite",
+            "register": "formal",
             "setting": "melancholic",
+            "conjugation": "te-form (～て)",
             "speaker_age": "younger",
-            "nuance": "若い人が年長者に対して「暇で退屈です」と伝えるのは、少し甘えや、かまってもらいたい気持ちが込められていることがあります。丁寧語を使いつつも、率直な気持ちを表現しています。"
+            "nuance": "A younger person saying 「暇で退屈です」 to an older person can imply a slight desire for attention or indulgence. It conveys frank feelings while still using polite language."
         },
         {
-            "japanese": "この本は{面白くて}役に立ちます。",
+            "japanese": "この 本は {面白くて} 役に立ちます。",
             "english": "This book is interesting and useful.",
             "scene": "Recommending a book to someone.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "この本は面白いです。そして役に立ちます。",
+                    "competing_grammar": "この 本は 面白いです。そして 役に立ちます。",
                     "mitigation": "Connecting 'interesting' and 'useful' with 'くて' emphasizes that these qualities are both present and contribute to the book's value, making the recommendation stronger than a mere listing with 'そして'."
                 }
             ],
-            "register": "polite",
-            "setting": "informative"
+            "register": "formal",
+            "setting": "informative",
+            "conjugation": "te-form (～て)",
+            "nuance": "This phrase efficiently conveys multiple positive aspects of the book, making the recommendation stronger by linking attributes that contribute to its value."
         },
         {
-            "japanese": "君の笑顔は{素敵で}、いつも元気をもらえるよ。",
+            "japanese": "君の 笑顔は {素敵で}、いつも 元気を もらえるよ。",
             "english": "Your smile is wonderful, and I always feel energized by it.",
             "scene": "Flirting with someone you admire.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "君の笑顔は素敵だ。そしていつも元気をもらえるよ。",
+                    "competing_grammar": "君の 笑顔は 素敵だ。そして いつも 元気を もらえるよ。",
                     "mitigation": "The use of 'で' creates a seamless flow between the observation of the 'wonderful smile' and its immediate effect on the speaker, indicating a direct, linked experience rather than two separate statements joined by 'そして'."
                 }
             ],
             "register": "casual",
             "setting": "flirty",
+            "conjugation": "te-form (～て)",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "「素敵で」と「元気をもらえるよ」という表現は、相手への好意と感謝を伝える際に用いられます。男性が女性に対して、親しみやすい「～だよ」の語尾で気持ちを表現しています。"
+            "nuance": "「素敵で」 and 「元気をもらえるよ」 are expressions used to convey affection and gratitude towards someone. The male speaker's use of the casual ending 「～だよ」 shows intimacy."
         },
         {
-            "japanese": "このカフェは{静かで}落ち着くから、よく来るんだ。",
+            "japanese": "この カフェは {静かで} 落ち着くから、よく 来るんだ。",
             "english": "I often come here because this cafe is quiet and relaxing.",
             "scene": "Suggesting a good place to study together on a first date.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "このカフェは静かだ。落ち着くから、よく来るんだ。",
+                    "competing_grammar": "この カフェは 静かだ。落ち着くから、よく 来るんだ。",
                     "mitigation": "Using 'で' smoothly links 'quiet' and 'relaxing' as a combined reason for frequenting the cafe, creating a more natural and less choppy flow than two separate descriptive clauses."
                 },
                 {
-                    "competing_grammar": "このカフェは静かなので落ち着くから、よく来るんだ。",
+                    "competing_grammar": "この カフェは 静かなので 落ち着くから、よく 来るんだ。",
                     "mitigation": "While 'なので' could imply a reason, 'で' here connects the descriptive attributes of the cafe directly to the subsequent action (coming often), emphasizing the cafe's inherent qualities as the basis for the behavior."
                 }
             ],
             "register": "casual",
             "setting": "first-date",
+            "conjugation": "te-form (～て)",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "「～んだ」は、個人的な理由や背景を相手に打ち明ける際に使われ、親密さを増す効果があります。初対面で相手に安心してほしいという意図が込められています。「静かで落ち着く」という表現は、穏やかな雰囲気を好む人柄を示し、相手との共通点を見つけるきっかけにもなります。"
+            "nuance": "The ending 「～んだ」 is used when revealing personal reasons or background, increasing intimacy. It suggests an intention to make the listener feel comfortable on a first encounter. The phrase 「静かで落ち着く」 indicates a preference for calm environments, potentially helping to find common ground."
         }
     ],
     "false_friends": [
@@ -186,20 +216,73 @@
             "term": "Verb[て] + B",
             "meaning": "And (sequential action)",
             "kind": "similar expression",
-            "nuance": "Unlike Adjective[て]・Noun[で], this connects two verbs in sequence, indicating one action happens after another."
+            "nuance": "Unlike Adjective[て]・Noun[で], this connects two verbs in sequence, indicating one action happens after another, or that the first action is a preparation/means for the second. It implies a temporal or causal relationship between the actions."
         },
         {
             "term": "なくて",
-            "meaning": "Without",
+            "meaning": "Without, not... and...",
             "kind": "often confused with",
-            "nuance": "This is the negative form of a な-adjective or noun. Unlike Adjective[て]・Noun[で], it implies the absence of something rather than connection."
+            "nuance": "This is the negative form of a な-adjective or noun. Unlike Adjective[て]・Noun[で], it expresses a negative state or non-existence, often leading to a consequence, as in 'not X, therefore Y' or 'not X, and also Y'."
+        },
+        {
+            "term": "そして",
+            "meaning": "and, then",
+            "kind": "similar expression",
+            "nuance": "Unlike Adjective[て]・Noun[で] which forms a single coherent phrase, 「そして」 simply links independent clauses or sentences, suggesting a sequential or additive relationship without the same level of grammatical integration. It often feels like a stronger pause between ideas."
+        },
+        {
+            "term": "から",
+            "meaning": "because, so",
+            "kind": "often confused with",
+            "nuance": "While Adjective[て]・Noun[で] can imply a reason, 「から」 explicitly states the cause or reason for something, often followed by a consequence. It expresses a stronger, more direct causal link and can be used at the end of a clause or sentence."
+        },
+        {
+            "term": "ので",
+            "meaning": "because, so",
+            "kind": "often confused with",
+            "nuance": "Similar to 「から」, 「ので」 also states a reason or cause, but it is generally perceived as softer and more objective than 「から」. Adjective[て]・Noun[で] implies a reason as part of a state or characteristic, rather than a separate clause, and tends to integrate the reason more smoothly."
         }
     ],
-    "post_false_friends_writeup": "When connecting concepts, be mindful of the part of speech. The `て` form of verbs, such as `食べて` (tabete), implies a sequential action or a manner, like 'eating and then...' or 'by eating...'. For instance, `ご飯を食べて、出かける` (gohan o tabete, dekakeru) means 'I will eat and then go out'. This differs from `い-adjective + くて` which links attributes, or `な-adjective / noun + で` which connects attributes or states a reason. Furthermore, the negative conjugation `なくて` (nakute), as in `面白くなくて` (omoshirokunakute - 'not interesting and/because'), expresses negation and connection simultaneously. It indicates that something is 'not X, and as a result...' or 'because it's not X...'. Do not confuse this negative form with the conjunctive use of `て` or `で` for positive attributes or states.",
+    "post_false_friends_writeup": "When connecting concepts, be mindful of the part of speech. The 「て」 form of verbs, such as 「食べて」 (tabete), implies a sequential action or a manner, like 'eating and then...' or 'by eating...'. For instance, 「ご飯を食べて、出かける」 (gohan o tabete, dekakeru) means 'I will eat and then go out'. This differs from 「い-adjective + くて」 which links attributes, or 「な-adjective / noun + で」 which connects attributes or states a reason. Furthermore, the negative conjugation 「なくて」, as in 「面白くなくて」 (omoshirokunakute - 'not interesting and/because'), expresses negation and connection simultaneously. It indicates that something is 'not X, and as a result...' or 'because it's not X...'.\n\nUnlike 「そして」, which simply links independent clauses or sentences additively, the 「て/で」 form integrates the elements into a single cohesive thought. Similarly, while 「から」 and 「ので」 explicitly state a cause or reason, the 「で」 form for nouns and な-adjectives implies the reason as part of the state or characteristic itself, often feeling less emphatic than 「から」 or 「ので」.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/adjective-て-noun-で"
     },
     "change": [
-        "violation: Removed 'listener_age' from the example '今日は暇で退屈です。' as it is deprecated by the schema."
+        {
+            "change-type": "violation",
+            "change": "Removed 'listener_age' from the example '今日は暇で退屈です。' as it is deprecated by the schema. This change was already present in the prior grammar point."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'conjugations' array as the grammar point involves conjugations of adjectives and nouns."
+        },
+        {
+            "change-type": "schema",
+            "change": "Changed 'details' structure to align with schema, including converting Japanese keys to English and setting 'part-of-speech' to 'phrase'."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added Japanese characters to forms (「くて」, 「で」, 「よくて」, 「いくて」) in the writeup for clarity."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Updated all example sentences for consistent bolding, spacing, and addition of 'conjugation' field."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added 'english_literally' to example 3 for clarity."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Refined and added 'nuance' explanations for all examples to align with schema requirements and clarify specific Japanese expressions."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added 'そして', 'から', and 'ので' to 'false_friends' to cover common competing grammar points from example rationales."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Updated 'post_false_friends_writeup' to include explanations for 'そして', 'から', and 'ので'."
+        }
     ]
 }

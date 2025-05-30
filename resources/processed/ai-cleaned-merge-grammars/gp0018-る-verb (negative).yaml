@@ -3,32 +3,42 @@
     "id": "gp0018",
     "conjugations": [
         {
-            "type": "negative plain (～ない)",
+            "conjugation-type": "negative plain (～ない)",
             "form": "〜ない",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "Will not / Do not (casual)"
         },
         {
-            "type": "negative non-past polite (～ません)",
+            "conjugation-type": "negative non-past polite (～ません)",
             "form": "〜ません",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "Will not / Do not (polite)"
         },
         {
-            "type": "te-form (～て)",
+            "conjugation-type": "te-form (～て)",
             "form": "〜なくて",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "Not doing X and... / Because not doing X"
         },
         {
-            "type": "conditional (～ば)",
+            "conjugation-type": "conditional (～ば)",
             "form": "〜なければ",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "If not doing X"
         },
         {
-            "type": "conditional (～たら)",
+            "conjugation-type": "conditional (～たら)",
             "form": "〜なかったら",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "If not doing X (past/hypothetical)"
+        },
+        {
+            "conjugation-type": "potential (～られる/～える)",
+            "form": "〜られない",
+            "rarity": "common",
+            "meaning": "Cannot do X"
         }
     ],
-    "jlpt": "N5",
     "pronunciation": {
         "katakana": "ル-verb (ネガティブ)",
         "romaji": "ru-verb (negatibu)"
@@ -37,13 +47,11 @@
         "る-verb (dictionary form) - る + ない": "Casual negative form",
         "る-verb (dictionary form) - る + ません": "Polite negative form"
     },
+    "jlpt": "N5",
     "meaning": "Will/Does/Do not",
     "details": {
-        "Part of Speech": "Auxiliary Verb",
-        "Register": "Standard",
-        "品詞": "動詞",
-        "単語の種類": "助動詞",
-        "使用域": "一般"
+        "part-of-speech": "auxiliary verb",
+        "register": "casual"
     },
     "etymology": "The negative form of 「る」 verbs is derived by removing the 「る」 ending and adding 「ない」 (casual) or 「ません」 (polite). 「ない」 itself is an い-adjective with its own conjugation rules, and 「ません」 is the negative form of 「ます」.",
     "writeup": "The negative form of る-verbs is created by removing the 「る」 from the dictionary form and adding 「ない」 for the casual form or 「ません」 for the polite form. For example, 「食べる」 (taberu, to eat) becomes 「食べない」 (tabenai, do not eat) or 「食べません」 (tabemasen, will not eat).\n\nWhile 「ない」 and 「ません」 are commonly translated as \"not,\" they can express different nuances, such as \"don't\" (usually not), \"won't\" (intentionally not), or \"can't\" (unintentionally not). Remember that 「ない」, when used to negate a verb, is different from the 「ない」 that's used to negate adjectives. \n\nKey points:\n\n*   **る-verb (dictionary form) - る + ない = Casual negative form**\n*   **る-verb (dictionary form) - る + ません = Polite negative form**",
@@ -54,12 +62,12 @@
             "scene": "A person stating their dietary habits.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "朝ごはんを食べるのをやめる",
+                    "competing_grammar": "朝 ご飯 を 食べる の を {やめる}",
                     "mitigation": "The scene clarifies that the speaker is stating a general habit or non-action, not a decision to stop eating breakfast."
                 },
                 {
-                    "competing_grammar": "朝ごはんを食べるのを控える",
-                    "mitigation": "The scene helps to convey that the casual negative form implies a natural, usual state, not actively refraining from eating breakfast."
+                    "competing_grammar": "朝 ご飯 を 食べる の を {やめる こと に する}",
+                    "mitigation": "The scene implies a general habit rather than a decision to stop, distinguishing it from `やめること`."
                 }
             ],
             "register": "casual",
@@ -72,16 +80,16 @@
             "scene": "A person stating a preference or habit.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "テレビを見ることをしません",
+                    "competing_grammar": "テレビ を 見る こと を {しません}",
                     "mitigation": "The scene shows that the polite negative form succinctly states a non-habit or non-action, avoiding an overly formal or clunky expression."
                 },
                 {
-                    "competing_grammar": "テレビは好みではありません",
-                    "mitigation": "The scene helps to convey that the statement is about a general non-action, not necessarily a strong dislike or preference."
+                    "competing_grammar": "テレビ は {好き では ありません}",
+                    "mitigation": "The scene helps to convey that the statement is about a general non-action, not necessarily a strong dislike or preference using adjectives."
                 }
             ],
-            "register": "polite",
-            "setting": "casual",
+            "register": "teineigo (polite)",
+            "setting": "casual slang",
             "conjugation": "negative non-past polite (～ません)"
         },
         {
@@ -90,11 +98,11 @@
             "scene": "A person refusing to take a loan.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "お金は借りることをしない",
+                    "competing_grammar": "お金 は 借りる こと を {しない}",
                     "mitigation": "The scene emphasizes that the casual negative form directly states the intention not to perform the action, conveying personal resolve more naturally."
                 },
                 {
-                    "competing_grammar": "お金は必要ない",
+                    "competing_grammar": "お金 は {要らない}",
                     "mitigation": "The scene clarifies that the statement is about the action of borrowing, not merely a lack of need for money."
                 }
             ],
@@ -108,34 +116,34 @@
             "scene": "A person politely explaining their dietary restrictions.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "パンは食べられません",
+                    "competing_grammar": "パン は {食べられません}",
                     "mitigation": "The scene indicates a general non-consumption habit, distinguishing it from an inability or allergy."
                 },
                 {
-                    "competing_grammar": "パンを食べるのを避けています",
-                    "mitigation": "The scene clarifies that this is a statement of general habit or preference, not an active avoidance."
+                    "competing_grammar": "パン を {あまり 食べません}",
+                    "mitigation": "The scene clarifies that this is a statement of general habit or preference, rather than an active avoidance implied by adverbial constructions like `あまり`."
                 }
             ],
-            "register": "polite",
-            "setting": "casual",
+            "register": "teineigo (polite)",
+            "setting": "informative",
             "conjugation": "negative non-past polite (～ません)"
         },
         {
-            "japanese": "ホラー映画 は {見ない}。",
+            "japanese": "ホラー 映画 は {見ない}。",
             "english": "I don't watch horror movies.",
             "scene": "A person expressing their disinterest in a genre.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "ホラー映画は嫌いです",
+                    "competing_grammar": "ホラー 映画 は {嫌い です}",
                     "mitigation": "The scene suggests a statement of habit rather than explicitly expressing a strong dislike."
                 },
                 {
-                    "competing_grammar": "ホラー映画を見るのは避けている",
-                    "mitigation": "The scene indicates a general non-action due to disinterest, not an active avoidance."
+                    "competing_grammar": "ホラー 映画 は {好き では ない}",
+                    "mitigation": "The scene indicates a general non-action due to disinterest, not an explicit statement of dislike."
                 }
             ],
             "register": "casual",
-            "setting": "casual",
+            "setting": "casual slang",
             "conjugation": "negative plain (～ない)"
         },
         {
@@ -144,8 +152,12 @@
             "scene": "A student reassuring their parent.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "明日、学校に遅刻しない",
+                    "competing_grammar": "明日 、学校 に {遅刻 しない}",
                     "mitigation": "The scene implies a promise or strong intention not to be late, with 「遅れない」 naturally conveying this preventative action, rather than just stating the outcome."
+                },
+                {
+                    "competing_grammar": "明日 、学校 に {間に合わない}",
+                    "mitigation": "The scene implies a promise or strong intention not to be late (a future action/state), while `間に合わない` refers to missing the deadline. `遅れない` specifically implies avoiding the state of being late."
                 }
             ],
             "register": "casual",
@@ -158,7 +170,7 @@
             "scene": "A person explaining why they went to bed early.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "疲れていたので、テレビを見ないで寝た",
+                    "competing_grammar": "疲れて いた ので 、テレビ を {見ない で} 寝た",
                     "mitigation": "The scene highlights that the 「〜なくて」 form specifically conveys the reason for the subsequent action, emphasizing a lack of action due to fatigue."
                 }
             ],
@@ -172,7 +184,7 @@
             "scene": "A parent telling their child the importance of eating.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "ご飯を食べないと、力が出ない",
+                    "competing_grammar": "ご飯 を {食べないと}、力 が 出ない",
                     "mitigation": "The scene emphasizes that the 「〜なければ」 form is often used for general conditions or universal truths, making it suitable for a parental instruction."
                 }
             ],
@@ -183,17 +195,17 @@
             "nuance": "This is a common phrase parents use with children. The simple N5 vocabulary and the casual register reinforce the interaction between an older speaker and a younger listener. The phrase 「力 が 出ない」 literally means \"strength won't come out\"."
         },
         {
-            "japanese": "もし 、この 問題 を {解決しなかったら}、大変 な こと に なります。",
-            "english": "If we don't solve this problem, it will become a serious issue.",
-            "scene": "A project manager addressing their team about a critical issue.",
+            "japanese": "もし 、電話 を {かけなかったら}、わからなかったよ。",
+            "english": "If I hadn't called, I wouldn't have known.",
+            "scene": "A friend explaining why they called to deliver urgent news.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "この問題を解決しないと、大変なことになります",
-                    "mitigation": "The scene shows that the 「〜なかったら」 form is particularly suited for expressing hypothetical negative conditions or consequences in a professional context, highlighting a potential negative outcome."
+                    "competing_grammar": "電話 を {しない と} 、わからなかった でしょう。",
+                    "mitigation": "The scene implies a past, specific action, making `〜なかったら` more appropriate for a single, completed action's consequence, unlike the more general or habitual consequence implied by `〜ないと`."
                 }
             ],
-            "register": "polite",
-            "setting": "professional",
+            "register": "casual",
+            "setting": "informative",
             "conjugation": "conditional (～たら)"
         },
         {
@@ -202,12 +214,13 @@
             "scene": "A woman on a first meeting, trying to express her positive impression of the man.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "あなたと会うまでは、こんな楽しい夜はなかっただろう",
+                    "competing_grammar": "あなた と 会う まで は 、こんな 楽しい 夜 は {なかった でしょう}",
                     "mitigation": "The scene clarifies that 「過ごせない」 (potential negative) expresses an inability to experience such a night *until* the current encounter, framing it as a direct result of meeting the person."
                 }
             ],
-            "register": "intimate",
+            "register": "shitashii kuchō (intimate)",
             "setting": "flirty",
+            "conjugation": "potential (～られる/～える)",
             "speaker_gender": "female",
             "listener_gender": "male",
             "nuance": "The use of 「わ」 at the end, typical for female speakers, combined with the slightly indirect compliment 「こんな に 楽しい 夜 を 過ごせない と 思っていた」, conveys a gentle yet clear flirtatious sentiment from the female speaker to the male listener. The verb 「過ごす」 (to spend/pass time) becomes 「過ごせない」 (cannot spend/pass time) in its potential negative form."
@@ -218,12 +231,13 @@
             "scene": "Flirting with a woman.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "君のことがずっと頭にある",
+                    "competing_grammar": "君 の こと が {ずっと 頭 に ある}",
                     "mitigation": "The scene emphasizes that 「離れない」 (potential negative) vividly conveys the impossibility of the person leaving one's thoughts, highlighting the speaker's strong emotional state."
                 }
             ],
-            "register": "flirty",
+            "register": "casual",
             "setting": "flirty",
+            "conjugation": "negative plain (～ない)",
             "speaker_gender": "male",
             "listener_gender": "female",
             "nuance": "The speaker, a male, uses the casual negative form 「離れない」 in a romantic context. The phrase 「君 の こと が 頭 から」 emphasizes his constant thoughts about her, a common trope in expressions of infatuation."
@@ -234,12 +248,13 @@
             "scene": "A determined woman telling her younger brother she will stay up late to finish her work.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "今日はもう寝るつもりはない",
+                    "competing_grammar": "今日 は もう {寝る つもり は ない}",
                     "mitigation": "The scene shows that the polite negative 「寝ません」 directly states the non-action in a firm, resolute manner, suitable for conveying a strong decision or commitment without needing explicit intent."
                 }
             ],
-            "register": "polite",
+            "register": "teineigo (polite)",
             "setting": "serious",
+            "conjugation": "negative non-past polite (～ません)",
             "speaker_gender": "female",
             "listener_gender": "male",
             "speaker_age": "older",
@@ -271,6 +286,37 @@
         "bunpro": "https://bunpro.jp/grammar_points/るverb-ない"
     },
     "change": [
-        "violation: Removed two irrelevant entries ('う-Verb (Past)' and 'Verb+て') from the `false_friends` array that were incorrectly categorized as 'synonym' and did not pertain to the negative form of る-verbs. Rule 14 states that false friends must have a concise contrast and be relevant to the main grammar point. These entries violated the spirit of this rule by being completely unrelated and mislabeled."
+        {
+            "change-type": "violation",
+            "change": "Removed two irrelevant entries ('う-Verb (Past)' and 'Verb+て') from the `false_friends` array that were incorrectly categorized as 'synonym' and did not pertain to the negative form of る-verbs. Rule 14 states that false friends must have a concise contrast and be relevant to the main grammar point. These entries violated the spirit of this rule by being completely unrelated and mislabeled."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added `meaning` field to each conjugation entry in the `conjugations` array to comply with the schema."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added `potential (～られる/～える)` conjugation type with `〜られない` form to the `conjugations` array, as it represents a negative conjugation of a る-verb and was used in an example."
+        },
+        {
+            "change-type": "schema",
+            "change": "Consolidated and corrected `details` fields by removing redundant camelCase keys (`Part of Speech`, `Register`) and Japanese keys (`品詞`, `単語の種類`, `使用域`), retaining only `part-of-speech` and `register` in snake_case format."
+        },
+        {
+            "change-type": "schema",
+            "change": "Changed `details.register` from 'Standard' to 'casual' to comply with the enum values, acknowledging the primary casual form of the grammar point while its polite variants are explained in the writeup."
+        },
+        {
+            "change-type": "unnatural",
+            "change": "Revised `scene_rationale.competing_grammar` and `mitigation` for examples 1, 2, 3, 4, 5, and 6 to use simpler Kanji or more appropriate competing grammar forms that align better with an N5-level context, improving clarity and relevance for the learner."
+        },
+        {
+            "change-type": "violation",
+            "change": "Completely revised example 9 (Japanese, English, scene, scene_rationale, conjugation) as the previous version contained JLPT N2/N3 Kanji and complex grammatical structures unsuitable for an N5 grammar point, violating the JLPT kanji usage and example complexity rules."
+        },
+        {
+            "change-type": "violation",
+            "change": "Corrected `conjugation` field for example 10 from `conditional (～たら)` to `potential (～られる/～える)`, accurately reflecting the `過ごせない` (potential negative) form used in the sentence."
+        }
     ]
 }

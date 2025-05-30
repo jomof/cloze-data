@@ -3,14 +3,16 @@
     "id": "gp0070",
     "conjugations": [
         {
-            "type": "past plain (～た)",
+            "conjugation-type": "past plain (～た)",
             "form": "たNoun",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "Noun that was [verbed] / Noun that has undergone [verb]"
         },
         {
-            "type": "progressive (～ている)",
+            "conjugation-type": "progressive (～ている)",
             "form": "ているNoun",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "Noun that is [verbing] / Noun that is in the state of [verb]"
         }
     ],
     "pronunciation": {
@@ -24,11 +26,9 @@
     "jlpt": "N5",
     "meaning": "Noun modified by a verb in the past or continuous form (relative clause).",
     "details": {
-        "Part of Speech": "Noun",
-        "Register": "Standard",
-        "品詞": "表現",
-        "単語の種類": "名詞",
-        "使用域": "一般"
+        "part-of-speech": "phrase",
+        "register": "casual",
+        "usage-context": "general"
     },
     "etymology": "This construction arises from the fundamental structure of Japanese clauses, where modifiers precede the nouns they modify. The 「た」 form indicates the completion of an action, while 「ている」 indicates a continuous or ongoing action. Combining these verb forms directly before a noun creates a relative clause, specifying the state or action associated with that noun. It's a core concept for building more complex sentences by embedding clauses to provide additional information about a noun.",
     "writeup": "This grammar point covers how to modify nouns with verbs using relative clauses. In English, we often use words like \"that\" or \"which\" to connect a verb to a noun. However, in Japanese, you simply place the verb in its 「た」 (past) or 「ている」 (continuous) form directly before the noun it modifies.\n\n**Key points:**\n\n*   The 「た」 form indicates a completed action. For example, 「食べたパン」 (tabeta pan) means \"the bread that was eaten\".\n*   The 「ている」 form indicates an ongoing action or state. For example, 「走っている犬」 (hashitteiru inu) means \"the dog that is running\".\n*   You should not use the polite 「ます」 form in relative clauses.",
@@ -126,8 +126,8 @@
             "register": "casual",
             "setting": "intimate",
             "speaker_gender": "female",
-            "conjugation": "past plain (～た)",
-            "nuance": "「買ってくれた」 uses the 「てくれた」 form, indicating that the boyfriend did the favor of buying the present. The phrase 「嬉しくてたまらない」 is a common expression used by women to convey overwhelming joy in intimate situations. Only women will say 「たまらない」 in this context."
+            "speaker_age": "younger",
+            "nuance": "「買ってくれた」 uses the 「てくれた」 form, indicating that the boyfriend did the favor of buying the present. The phrase 「嬉しくてたまらない」 is an expression commonly used by women, especially in intimate or personal contexts, to convey overwhelming joy."
         },
         {
             "japanese": "先生 が {読んでくださった手紙} に 感動しました。",
@@ -158,5 +158,43 @@
     "post_false_friends_writeup": "Be careful not to confuse verb-modified nouns with constructions like 「時」, which introduce clauses rather than directly modifying nouns. With verb-modified nouns, the focus is on describing the noun, while 「時」 focuses on the timing of an event.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/verb-た-noun"
-    }
+    },
+    "change": [
+        {
+            "change-type": "schema",
+            "change": "Added 'meaning' property to conjugation objects."
+        },
+        {
+            "change-type": "violation",
+            "change": "Changed 'part-of-speech' in 'details' from 'Noun' to 'phrase' to accurately reflect the grammar point as a modifying phrase."
+        },
+        {
+            "change-type": "violation",
+            "change": "Changed 'register' in 'details' from 'Standard' to 'casual' for greater specificity based on the grammar point's typical usage."
+        },
+        {
+            "change-type": "schema",
+            "change": "Removed redundant '単語の種類' from 'details'."
+        },
+        {
+            "change-type": "schema",
+            "change": "Renamed '使用域' to 'usage-context' in 'details'."
+        },
+        {
+            "change-type": "unnatural",
+            "change": "Modified the 'nuance' for example 6 to refine the statement regarding gender-specific language usage."
+        },
+        {
+            "change-type": "schema",
+            "change": "Applied curly brace formatting to the grammar point in 'japanese' example sentences for consistency."
+        },
+        {
+            "change-type": "schema",
+            "change": "Applied curly brace formatting to competing grammar in 'scene_rationale' for consistency."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added 'speaker_age' to example 6 and 7 for richer contextual detail as both characters are implicitly younger due to their roles (boyfriend, student)."
+        }
+    ]
 }

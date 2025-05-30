@@ -1,6 +1,32 @@
 {
     "grammar_point": "う-verb (past)",
     "id": "gp0043",
+    "conjugations": [
+        {
+            "conjugation-type": "past plain (～た)",
+            "form": "た",
+            "rarity": "common",
+            "meaning": "plain past"
+        },
+        {
+            "conjugation-type": "past polite (～ました)",
+            "form": "ました",
+            "rarity": "common",
+            "meaning": "polite past"
+        },
+        {
+            "conjugation-type": "negative past plain (～なかった)",
+            "form": "なかった",
+            "rarity": "common",
+            "meaning": "plain negative past"
+        },
+        {
+            "conjugation-type": "negative past polite (～ませんでした)",
+            "form": "ませんでした",
+            "rarity": "common",
+            "meaning": "polite negative past"
+        }
+    ],
     "pronunciation": {
         "katakana": "ウー ドウシ カコケイ",
         "romaji": "ū dōshi kako kei"
@@ -14,36 +40,15 @@
     "jlpt": "N5",
     "meaning": "Past tense of う-verbs",
     "details": {
-        "Part of Speech": "Verb conjugation",
-        "Register": "Standard",
-        "品詞": "動詞",
-        "単語の種類": "活用",
-        "使用域": "一般"
+        "part-of-speech": "auxiliary verb",
+        "register": "formal",
+        "usage-context": "General use in various registers.",
+        "function": "Indicates completion of an action in the past, or a resulting state.",
+        "nuance": "The casual forms often imply intimacy or directness, while polite forms maintain social distance or respect.",
+        "counterpoint": "Distinguish from the て-form, which links clauses, and だった/でした, which are for nouns/adjectives."
     },
     "etymology": "The past tense conjugation of verbs in Japanese, including う-verbs (also known as godan verbs), is formed by altering the verb's ending and adding either た (casual) or ました (polite). The specific change to the verb ending depends on the final sound of the dictionary form of the verb. Historically, the た form evolved from the て form, which is used to connect verbs, reflecting a completed action or state.",
     "writeup": "The past tense of う-verbs (godan verbs) is formed by modifying the verb's final kana before attaching the auxiliary verb た (casual) or ました (polite). For the casual form, the conjugation involves specific sound changes, known as 音便 (onbin). For example, verbs ending in う, つ, る often become った (促音便 - sokuonbin); verbs ending in ぬ, ぶ, む become んだ (撥音便 - hatsuonbin); and verbs ending in く, ぐ become いた or いだ respectively (イ音便 - ionbin). The instances where た becomes だ are due to a historical sound change for smoother pronunciation, not the auxiliary verb だ. In contrast, the polite past form, ending in ました, generally involves a more consistent change of the verb's final う-sound to an い-sound before adding ました. The auxiliary た, when affixed to verbs, can convey three core meanings: past action (\"did/was\"), completion (\"done\"), or a resulting state that continues (\"has been done\"). Be aware that some う-verbs are irregular and do not follow these standard patterns.",
-    "conjugations": [
-        {
-            "type": "past plain",
-            "form": "た",
-            "rarity": "common"
-        },
-        {
-            "type": "past polite",
-            "form": "ました",
-            "rarity": "common"
-        },
-        {
-            "type": "negative past plain",
-            "form": "なかった",
-            "rarity": "common"
-        },
-        {
-            "type": "negative past polite",
-            "form": "ませんでした",
-            "rarity": "common"
-        }
-    ],
     "examples": [
         {
             "japanese": "昨日、本を{読んだ}んだ。",
@@ -55,9 +60,9 @@
                     "mitigation": "The use of the sentence-final particle 「んだ」 (n-da) signals a casual, explanatory tone that aligns with a man speaking intimately to his partner, distinguishing it from the more formal 「読みました」."
                 }
             ],
-            "register": "shitashii kuchō",
+            "register": "shitashii kuchō (intimate)",
             "setting": "intimate",
-            "conjugation": "past plain",
+            "conjugation": "past plain (～た)",
             "speaker_gender": "male",
             "nuance": "The use of the sentence-final particle 「んだ」 (n-da) adds a sense of explanation or emphasis, common in close, intimate conversation. This specific phrase is natural for a male speaker."
         },
@@ -73,7 +78,7 @@
             ],
             "register": "casual",
             "setting": "storytelling",
-            "conjugation": "past plain"
+            "conjugation": "past plain (～た)"
         },
         {
             "japanese": "私たちは{よく休んだ}。",
@@ -87,7 +92,7 @@
             ],
             "register": "casual",
             "setting": "friendly",
-            "conjugation": "past plain"
+            "conjugation": "past plain (～た)"
         },
         {
             "japanese": "山に{入りました}。",
@@ -99,9 +104,9 @@
                     "mitigation": "The polite form 「入りました」 is chosen to convey a standard, informative tone, suitable for recounting an event to someone you are not exceptionally close with, unlike the casual 「入った」."
                 }
             ],
-            "register": "polite",
+            "register": "teineigo (polite)",
             "setting": "informative",
-            "conjugation": "past polite"
+            "conjugation": "past polite (～ました)"
         },
         {
             "japanese": "メアリーは日本に{行きました}。",
@@ -113,26 +118,26 @@
                     "mitigation": "The polite form 「行きました」 is used when providing information to someone for whom a polite register is appropriate, such as in a formal or semi-formal conversation, contrasting with the casual 「行った」."
                 }
             ],
-            "register": "polite",
+            "register": "teineigo (polite)",
             "setting": "professional",
-            "conjugation": "past polite",
+            "conjugation": "past polite (～ました)",
             "speaker_gender": "female",
             "listener_gender": "male",
             "nuance": "The polite form 「行きました」 maintains a professional tone, suitable for a female speaker informing a male colleague about a third party."
         },
         {
-            "japanese": "田中さんは昨日、学校を{休みませんでした}。",
-            "english": "Mr. Tanaka did not take a day off from school yesterday.",
+            "japanese": "田中さんは学校を{休みませんでした}。",
+            "english": "Mr. Tanaka did not take a day off from school.",
             "scene": "Talking about Mr. Tanaka's attendance.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "田中さんは昨日、学校を休まなかった。",
+                    "competing_grammar": "田中さんは学校を休まなかった。",
                     "mitigation": "The polite negative past form 「休みませんでした」 is preferred in a professional setting or when discussing a third party, maintaining a respectful distance, unlike the casual 「休まなかった」."
                 }
             ],
-            "register": "polite",
+            "register": "teineigo (polite)",
             "setting": "professional",
-            "conjugation": "negative past polite",
+            "conjugation": "negative past polite (～ませんでした)",
             "nuance": "The polite form 「～ませんでした」 maintains a professional register when discussing a third party, such as Mr. Tanaka."
         },
         {
@@ -145,10 +150,10 @@
                     "mitigation": "A student speaking to their teacher typically uses polite language, making 「読みました」 the appropriate choice over the casual 「読んだ」 to show respect."
                 }
             ],
-            "register": "polite",
+            "register": "teineigo (polite)",
             "setting": "academic",
+            "conjugation": "past polite (～ました)",
             "speaker_age": "younger",
-            "conjugation": "past polite",
             "nuance": "The use of 「先生」 and 「～ました」 indicates the younger speaker is addressing an older listener with respect."
         },
         {
@@ -161,9 +166,9 @@
                     "mitigation": "The casual forms 「話した」 and 「よかった」 convey a sense of intimacy and personal reflection, fitting a flirty or nostalgic tone that would be lost with the more formal 「話しました」 and 「よかったです」."
                 }
             ],
-            "register": "intimate",
+            "register": "shitashii kuchō (intimate)",
             "setting": "flirty",
-            "conjugation": "past plain"
+            "conjugation": "past plain (～た)"
         },
         {
             "japanese": "テレビを{見ました}。とても{よかった}です。",
@@ -175,25 +180,42 @@
                     "mitigation": "The polite forms 「見ました」 and 「よかったです」 are used to maintain a friendly yet respectful distance, appropriate for a general conversation between friends, as opposed to a very casual or intimate setting."
                 }
             ],
-            "register": "polite",
+            "register": "teineigo (polite)",
             "setting": "friendly",
-            "conjugation": "past polite",
+            "conjugation": "past polite (～ました)",
             "speaker_gender": "male",
             "listener_gender": "female",
             "nuance": "The use of 「～ました」 and 「～です」 indicates a polite yet friendly tone between the male speaker and female listener."
+        },
+        {
+            "japanese": "私は{食べなかった}。",
+            "english": "I didn't eat.",
+            "scene": "A friend asks why you look tired.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "私は食べませんでした。",
+                    "mitigation": "The casual form 「食べなかった」 is appropriate when speaking to a close friend, indicating a relaxed and direct tone, unlike the polite 「食べませんでした」."
+                }
+            ],
+            "register": "casual",
+            "setting": "friendly",
+            "conjugation": "negative plain (～ない)",
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "nuance": "The use of 「食べなかった」 is typical in casual conversation among close friends. It implies a directness without the need for politeness markers."
         }
     ],
     "post_example_writeup": "Remember that the specific ending change (e.g., った, いた, いだ, んだ, した) depends on the last sound of the verb in its dictionary form. Be mindful of these variations to conjugate う-verbs correctly in the past tense. Note that some verbs ending in う will conjugate with a small っ.",
     "false_friends": [
         {
             "term": "る-Verb (Dictionary)",
-            "meaning": "る+ます (Ichidan Verbs)",
+            "meaning": "ru-verb (Ichidan Verbs)",
             "kind": "similar expression",
             "nuance": "Unlike う-verbs, る-verbs conjugate differently in the past tense."
         },
         {
             "term": "う-Verb (Dictionary)",
-            "meaning": "う+ます (Godan Verbs)",
+            "meaning": "u-verb (Godan Verbs)",
             "kind": "similar expression",
             "nuance": "The dictionary form is the base form; it needs to be conjugated to express the past tense."
         },
@@ -227,9 +249,17 @@
         "bunpro": "https://bunpro.jp/grammar_points/う-verb-past"
     },
     "change": [
-        "violation: Removed `speaker_gender` from Example 8. The existing nuance 'The speaker is female.' did not comply with the rule that 'If there is a `speaker_gender` or `listener_gender`, then `nuance` must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.' As no specific gendered Japanese expression was present, the `speaker_gender` field was removed for compliance.",
-        "violation: Example 9 Japanese was changed from `映画を{見ました}。とても{面白かった}です。` to `テレビを{見ました}。とても{よかった}です。` and its English translation was updated. The original example used N4/N3 Kanji (`映`, `画`, `面`), which are above the N5 JLPT level for this grammar point. The updated example uses N5 Kanji (`見`) and Katakana (`テレビ`) to comply with Rule 6 regarding JLPT Kanji levels.",
-        "schema: Updated `scene_rationale` in Example 9 to reflect the change in the Japanese sentence, replacing `面白かったです` with `よかったです` to ensure consistency between the example and its rationale.",
-        "schema: Added `speaker_gender: female` and `listener_gender: male` to Example 5 (`メアリーは日本に{行きました}。`) and updated its `scene` and `nuance`. This change was made to ensure the examples include at least one female speaker and one male listener, fulfilling the diversity requirements of Rule 6."
+        {
+            "change-type": "schema",
+            "change": "Changed 'part-of-speech' in 'details' from 'Verb conjugation' to 'auxiliary verb' to align with the source data and schema enum."
+        },
+        {
+            "change-type": "violation",
+            "change": "Modified Example 6's Japanese from '田中さんは昨日、学校を{休みませんでした}。' to '田中さんは学校を{休みませんでした}。' and updated its 'scene', 'scene_rationale', and 'nuance' to remove the N3 kanji '昨日' and simplify the sentence while maintaining its point for JLPT Kanji level compliance."
+        },
+        {
+            "change-type": "violation",
+            "change": "Added a new Example 10 for the 'negative plain' formation ('Verb (う-verb stem, ない-form) + なかった'), as this formation was listed in 'formation' but not present in 'examples'."
+        }
     ]
 }

@@ -192,9 +192,13 @@
         "properties": {
           "conjugation-type": { "$ref": "#/definitions/conjugationType" },
           "form": { "type": "string" },
-          "rarity": { "$ref": "#/definitions/rarityType" }
+          "rarity": { "$ref": "#/definitions/rarityType" },
+          // The grammar point in this conjugated form. For example, 
+          //   if the grammar point is "いい" and the conjugation-type is "negative plain"
+          //   then "meaning" will be "not good".
+          "meaning": { "$ref": "#/definitions/english" }
         },
-        "required": ["conjugation-type","form","rarity"],
+        "required": ["conjugation-type","form","rarity", "meaning"],
         "additionalProperties": false
       }
     },
@@ -220,6 +224,7 @@
     //   "[Object に] + [Subject が] + 見える": "Indicates how something appears to someone (it seems or looks a certain way).",
     //   "[Modifier] + 見える": "Adds nuance such as 'clearly visible,' 'looks small,' etc."
     // }
+    // Reference to parts of speech in formation **MUST** be in English
     "formation": {
       "type": "object",
       "minProperties": 1,
@@ -303,6 +308,9 @@
           // - **MUST NOT** use parentheses to set context. If necessary, use a separate "scene" field.
           // - **MUST NOT** use quotes unless they are truly essential to the grammar point.
           "english": { "$ref": "#/definitions/english" },
+          // If there is a less natural way to say the same thing in English that would still
+          // hint the user toward the correct japanese, then you **MUST** include it here.
+          "english_literally": { "$ref": "#/definitions/english" },
           // Scene is english text that will be displayed to the user under the "english" example.
           // It sets the scene for the example and gives the user a hint about how to translate the english to japanese. 
           // "english" and "scene" will be displayed together, so "scene" **MUST NOT** repeat facts from "english". 
@@ -311,6 +319,7 @@
           //   to "japanese" that _don't_ use the grammar point or that do don't comply with "speaker_gender", "listener_gender", 
           //   "speaker_age", or "register". 
           //   - **MUST** consider "false_friends" when constructing COMPETING_GRAMMAR.
+          //   - **MUST** try to list all possible orthogonal ways to say the same thing in Japanese.
           // - If COMPETING_GRAMMAR is empty, then you **MUST** omit "scene".
           // - If COMPETING_GRAMMAR is not empty, then you **MUST** have a "scene" field.
           //   - **MUST** set a scene that will hint the user toward the correct grammar point.
@@ -333,6 +342,8 @@
               "type": "object",
               "properties": {
                 // **MUST** be the alternate Japanese way of saying the same "english" from COMPETING_GRAMMAR.
+                // **MUST** put the competing grammar in {bold} the competing grammar.
+                // **MUST** use spaces to help mecab parse the competing grammar.
                 "competing_grammar": { "type": "string" },
                 // **MUST** explain how 'scene' mitigates the chance of the user choosing that other way.
                 "mitigation":       { "type": "string" }
@@ -372,6 +383,7 @@
           // - **MUST** refer to parts of the japanese sentence in「quotes」.
           // - **MUST NOT** refer to the JLPT level of the words in the japanese sentence
           // - **MUST** be English.
+          // - **MUST NOT** be used to define vocabulary terms from the example sentence.
           "nuance": { "$ref": "#/definitions/english" },
           // Etymology of the example sentence or specific phrases in the japanese example sentence.
           // - **MUST NOT** repeat the etymology of the grammar point.
@@ -417,6 +429,7 @@
     // When provided a prior version of the grammar point, and you changed something in it:
     // - **MUST** include a "change" field that lists all changes made to the grammar point.
     // - **MUST NOT** mention changes to the 'change' field, since that would be circular.
+    // - **MUST** omit change field altogether if it is empty.
     "change": {
       "type": "array",
       "items": {
