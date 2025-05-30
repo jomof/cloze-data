@@ -17,7 +17,7 @@
         "単語の種類": "格助詞",
         "使用域": "一般"
     },
-    "etymology": "で is derived from the continuative (te-form) of the verb です (desu), which is a polite copula meaning \"to be.\" Its usage evolved to indicate the location where something occurs or exists.",
+    "etymology": "The particle で historically developed from the Old Japanese particle 「にて」 or 「にもて」, meaning \"by means of\" or \"at.\" This origin explains its broad function in marking the instrument or means by which an action is performed, which then extended to specifying the location where an action takes place. It shares its phonetic form with the te-form of certain verbs and adjectives, but its grammatical function as a particle is distinct.",
     "writeup": "**で** is a particle with several uses in Japanese. Fundamentally, it highlights the location where an action takes place or where a certain state exists. When indicating location, it translates to \"at\" or \"in\" in English. In this usage, the location is essential for the action to occur or the result to be achieved.",
     "examples": [
         {
@@ -159,14 +159,13 @@
             "nuance": "において/における is used for specifying a broader context or scope, often in academic or formal settings."
         }
     ],
-    "post_false_friends_writeup": "で indicates the location where an action occurs, while に specifies the location of existence or a destination. にて is a formal substitute for で, mostly used in formal speech or writing. において/におけるは、より広い範囲や状況、観点を示すために、学術的または公式な文脈で用いられます。",
+    "post_false_friends_writeup": "で indicates the location where an action occurs, while に specifies the location of existence or a destination. にて is a formal substitute for で, mostly used in formal speech or writing. において/における is used to indicate a broader scope, situation, or viewpoint, typically in academic or formal contexts.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/で"
     },
     "change": [
-        "violation: Changed example '家 で 寝る。' to 'うち で 本 を 読む。' to adhere to JLPT N5 kanji constraints (家 is N4, 寝 is N3). The prompt states: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'",
-        "violation: Changed example 'カフェ で お茶 を 飲みませんか？' to 'カフェ で 何か 飲みませんか？' to adhere to JLPT N5 kanji constraints (茶 is N4). The prompt states: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'",
-        "violation: Removed 'listener_age' from '学校 で 話そう。' example as it is deprecated. The prompt states: '\"listener_age\" is deprecated. You *must* remove it.'",
-        "schema: Added 'scene_rationale' to all examples, as the presence of 'scene' requires it according to the schema. The prompt states: '\"scene_rationale\" *must* be present if \"scene\" is present.'"
+        "violation: Corrected the etymology of で. The prior explanation incorrectly stated its derivation from です. The particle で originates from older forms like にて or にもて, signifying 'by means of' or 'at', which more accurately reflects its role in marking the location of an action.",
+        "violation: Removed the redundant 'で (at)' entry from the false_friends list. A grammar point should not be listed as a false friend of itself, even when referring to a different usage.",
+        "violation: Translated the Japanese portion of the 'post_false_friends_writeup' into English. The entire field must be in English as per prompt instructions."
     ]
 }

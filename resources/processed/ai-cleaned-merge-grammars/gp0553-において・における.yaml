@@ -37,7 +37,7 @@
             "nuance": "This statement uses the formal 「において」, typical of academic or general informative discourse, suitable for a male speaker addressing a group on a broad societal topic."
         },
         {
-            "japanese": "自分の住んでいる地域{における}、井戸水の汚染について研究をしている。",
+            "japanese": "自分の住んでいる地域{における}、井戸水の水の汚れについて研究をしている。",
             "english": "I am researching well water contamination in the area where I live.",
             "scene": "A student discussing their research project.",
             "scene_rationale": [
@@ -69,8 +69,8 @@
             "nuance": "The professional setting and the formal language choice of 「においての」 are typical for a male construction worker explaining a complex task to a male colleague or supervisor, emphasizing the specific context of the construction."
         },
         {
-            "japanese": "田舎{における}高齢化の問題は深刻です。",
-            "english": "The problem of the aging population in rural areas is serious.",
+            "japanese": "田舎{における}年を取った人の問題はとても大変です。",
+            "english": "The problem of the aging population in rural areas is very serious.",
             "scene": "Discussing social issues.",
             "scene_rationale": [
                 {
@@ -181,7 +181,7 @@
             "nuance": "The use of 「に於いて」 in this reflective statement indicates a broad context, suitable for a female speaker contemplating their personal situation, emphasizing the completeness within the scope of daily life."
         },
         {
-            "japanese": "この文脈{においての}「空」は、「そら」ではなく「から」だと思う。",
+            "japanese": "この場合{においての}「空」は、「そら」ではなく「から」だと思う。",
             "english": "I think the reading of 「空」 in this context is 「から」, not 「そら」.",
             "scene": "Discussing the reading of a kanji.",
             "scene_rationale": [
@@ -246,13 +246,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/において-における"
     },
     "change": [
-        "violation: Added `meaning_warning` field as it was present in the input data and part of the schema.",
-        "violation: Updated `etymology` to reflect the correct linguistic origin from the classical particle `於` instead of `置く`, as the prior information was inaccurate.",
-        "violation: Bolded the grammar point in the `japanese` examples as required by the schema ('Must have the grammar_point in {bold}').",
-        "schema: Added `scene_rationale` to all examples where `scene` was present, as required by the schema ('Must be present if \"scene\" is present.').",
-        "schema: Added `speaker_gender` and `listener_gender` to examples to ensure gender diversity in examples as per schema requirements ('Example sentences should include at least one male and one female speaker_gender/listener_gender.').",
-        "schema: Added `nuance` to examples where `speaker_gender` or `listener_gender` were specified, as required by the schema ('Must be present if there is a \"speaker_gender\" or \"listener_gender\"').",
-        "violation: Removed top-level fields 'rank', 'bunpro', 'dojg', 'lesson_order' from the output, as they are internal data from the input and not part of the output schema ('You must not add top-level bunpro or dojg fields to the output JSON.').",
-        "unnatural: Corrected 'でわ' to 'に' in the writeup for accuracy and naturalness when listing simpler alternatives."
+        "violation: Modified Japanese example sentences to use kanji appropriate for N3 JLPT level or lower, addressing the rule that examples must use kanji from the grammar point's JLPT level or lower. (Examples 2, 4, 11)"
     ]
 }

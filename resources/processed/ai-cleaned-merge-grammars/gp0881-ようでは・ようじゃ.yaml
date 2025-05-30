@@ -1,7 +1,6 @@
 {
     "grammar_point": "ようでは・ようじゃ",
     "id": "gp0881",
-    "conjugations": [],
     "pronunciation": {
         "katakana": "ヨウデハ・ヨウジャ",
         "romaji": "you dewa / you ja"
@@ -35,6 +34,22 @@
             "register": "formal",
             "setting": "serious",
             "nuance": "The 「よ」 at the end of the sentence emphasizes the speaker's conviction. Because it's a supervisor talking to an employee, the register is formal."
+        },
+        {
+            "japanese": "そんなにゲームばかりしている{ようでは}、宿題が終わらないわよ。",
+            "english": "If you keep playing games like that, your homework won't get done.",
+            "scene": "A mother admonishing her son about his gaming habits.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "そんなにゲームばかりしていたら、宿題が終わらないわよ。",
+                    "mitigation": "The scene implies an observed, ongoing habit that the mother is making a judgment about, fitting the evaluative nature of 「ようでは」 better than a simple conditional 「〜たら」."
+                }
+            ],
+            "register": "casual",
+            "setting": "instructional",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "The final particle 「わよ」 is a feminine casual particle, emphasizing the speaker's conviction and often used by mothers or older women in a gentle but firm tone."
         },
         {
             "japanese": "これらの文法が分からない{ようでは}、N2に合格することはできません。",
@@ -185,7 +200,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/ようでは-ようじゃ"
     },
     "change": [
-        "violation: Added `scene_rationale` to all examples where `scene` was present. Reason: The schema requires `scene_rationale` to be present if `scene` is present, and this was missing in the prior output.",
-        "schema: Omitted `post_example_writeup` field. Reason: The schema states 'No fields should be null. Omit fields that are not applicable instead.' The prior output had this field set to null."
+        "schema: Removed 'conjugations' field because the grammar point 'ようでは・ようじゃ' itself does not conjugate, and the schema states to omit fields that are not applicable.",
+        "violation: Added an example with 'speaker_gender: female' and 'listener_gender: male' to comply with rule 6, which requires examples to include at least one male and one female speaker_gender, and at least one male and one female listener_gender."
     ]
 }

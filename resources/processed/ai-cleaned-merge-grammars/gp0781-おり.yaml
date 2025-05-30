@@ -1,7 +1,6 @@
 {
     "grammar_point": "おり",
     "id": "gp0781",
-    "jlpt": "N3",
     "pronunciation": {
         "katakana": "オリ",
         "romaji": "ori"
@@ -9,12 +8,13 @@
     "formation": {
         "Vて + おり": "Indicates a state or condition resulting from a previous action, used in formal speech and writing."
     },
+    "jlpt": "N3",
     "meaning": "be ~ and; be in the state of ~",
     "details": {
         "Register": "Used in writing and formal speech only."
     },
-    "etymology": "「おり」は、補助動詞「おる」の連用形です。「おる」は「いる」の謙譲語であり、存在や状態を示します。補助動詞として、「おり」は他の動詞のて形に接続し、継続的な状態や、その動作によって生じた状態を表します。",
-    "writeup": "「おり」は、先行する動作の結果として生じる状態や状況を示すために用いられる補助動詞です。主に**改まった文章や話し言葉**で使用されます。これは、補助動詞「いる」のより丁寧で改まった表現と考えることができます。\n\n*   動詞のて形（Vて + おり）に接続します。例えば、「知っています」は「知っております」となります。\n*   「〜であり、その結果として…」や「〜なので、…である」といったニュアンスを持ちます。\n*   謙譲語であるため、聞き手や読者に対する敬意を示す際に用いられます。",
+    "etymology": "\"Ori\" (おり) is the *ren'yōkei* (連用形), or masu-stem, of the auxiliary verb \"oru\" (おる). \"Oru\" itself is the humble form (謙譲語) of \"iru\" (いる), indicating existence or a state. As an auxiliary verb, \"ori\" connects to the *te-form* of other verbs, expressing a continuous state or a state resulting from an action.",
+    "writeup": "\"Ori\" (おり) is an auxiliary verb used to indicate a state or situation that results from a preceding action. It is primarily used in **formal writing and speech**. One can consider it a more polite and formal expression than the auxiliary verb \"iru\" (いる).\n\n*   It connects to the *te-form* of verbs (Vて + おり). For instance, 「知っています」 (shitte imasu) becomes 「知っております」 (shitte orimasu).\n*   It carries the nuance of \"being in a state, and as a result...\" or \"because of being..., therefore...\".\n*   Because it is a humble expression (謙譲語), it is used to show respect to the listener or reader.",
     "examples": [
         {
             "japanese": "この レストラン は 予約制 となって {おり} 、 事前 の 予約 が 必要 です 。",
@@ -164,20 +164,17 @@
             "term": "いる",
             "meaning": "to be, to exist (animate objects)",
             "kind": "similar expression",
-            "nuance": "「おり」は、主に書き言葉や改まった話し言葉で使われる、より丁寧で謙譲の意味合いを持つ存在の表現です。一方、「いる」は、より一般的で日常会話で広く用いられます。"
+            "nuance": "\"Ori\" (おり) is a more polite expression of existence, conveying a sense of humility, primarily used in written language and formal speech. In contrast, \"iru\" (いる) is more general and widely used in everyday conversation."
         }
     ],
-    "post_false_friends_writeup": "混同を避けるためには、「おり」が通常、書き言葉やフォーマルなスピーチ、特に話し手や書き手が丁寧さや謙譲の意を示したい場面で用いられることを覚えておくと良いでしょう。「いる」は、より汎用性が高く、カジュアルな会話や日常的な状況に適しています。",
+    "post_false_friends_writeup": "To avoid confusion, it is beneficial to remember that \"ori\" (おり) is typically used in written language and formal speech, especially in situations where the speaker or writer wishes to express politeness or humility. \"Iru\" (いる) is more versatile and suitable for casual conversation and everyday situations.",
     "sources": {
         "bunpro": "resources/original/dojg/all/おり.yaml"
     },
     "change": [
-        "violation: Removed top-level 'conjugations' array and 'conjugation' fields from examples, as the grammar point 'おり' is a masu-stem, not a dictionary form verb/adjective, per schema rule on 'conjugations'.",
-        "violation: Removed 'listener_age' field from examples as it is deprecated per schema rule.",
-        "violation: Set 'jlpt' level to 'N3' as the grammar point is intermediate and examples adhere to this level's kanji usage.",
-        "schema: Added 'sources' field with 'bunpro' URL.",
-        "unnatural: Corrected 'etymology' to accurately describe 'おり' as the 'masu-stem' of 'おる', instead of 'dictionary form', aligning with the grammar point's definition.",
-        "schema: Added 'scene_rationale' to all existing examples to provide context for the choice of grammar point over alternatives, as required by the schema.",
-        "violation: Added a new example with a female speaker and male listener to fulfill the gender diversity requirements for examples (Rule 6)."
+        "violation: `etymology` was in Japanese, but the schema requires English. Rule: \"EtymologyType **must** be in English.\"",
+        "violation: `writeup` was in Japanese, but the schema requires English. Rule: \"writeup ... Be primarily in English\".",
+        "violation: `false_friends.nuance` was in Japanese, but the schema requires English. Rule: \"English **must** be a natural-sounding and grammatically correct.\" (This applies to the `english` type for the `nuance` field).",
+        "violation: `post_false_friends_writeup` was in Japanese, but the schema requires English. Rule: \"English **must** be a natural-sounding and grammatically correct.\" (This applies to the `english` type for `post_false_friends_writeup`)."
     ]
 }

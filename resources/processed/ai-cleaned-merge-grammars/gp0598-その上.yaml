@@ -190,7 +190,7 @@
                 },
                 {
                     "competing_grammar": "この部屋、二人には広すぎるかしら？加えて、景色も最高だし、夜景もきっと綺麗でしょうね。",
-                    "mitigation": "While 「加えて」 is additive, 「その上」 feels more conversational and less like a formal listing of attributes, fitting the intimate, flirty context."
+                    "mitigation": "While 「加えて」 can also add information, 「その上」 maintains a slightly more natural conversational flow for complimenting someone directly, rather than a more formal, list-like addition."
                 }
             ],
             "register": "intimate",
@@ -263,13 +263,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/その上"
     },
     "change": [
-        "violation: Removed top-level 'bunpro' and 'dojg' objects. Reason: Schema explicitly prohibits them. (Rule 20)",
-        "schema: Removed 'conjugations' field. Reason: 'その上' is a conjunction, not a verb or adjective, and thus not conjugatable in the sense required by the schema's 'conjugations' field definition.",
-        "violation: Added 'scene_rationale' to all examples with a 'scene' field. Reason: Schema requires 'scene_rationale' to be present if 'scene' is present. (Rule 6)",
-        "violation: Removed non-etymological 'etymology' fields from examples 1, 2, 3, 4, 6, 7, 8, 9, 10. Reason: 'etymology' for examples must be a 'linguistically interesting discussion of the history of how the related element evolved', not a semantic or grammatical explanation. (Rule 6)",
-        "violation: Removed 'speaker_gender', 'listener_gender', and associated 'nuance' from example 9. Reason: The Japanese in this example did not contain specific elements that would 'typically only be spoken by this gender' as required by the schema. (Rule 6)",
-        "violation: Added new example 11 with 'speaker_gender: male'. Reason: Schema requires example sentences to 'include at least one male and one female speaker_gender'. (Rule 6)",
-        "schema: Refined 'nuance' for examples 1-9 to focus on how the register and/or setting applies to the specific Japanese, as per schema definition for 'nuance'.",
-        "unnatural: Refined 'nuance' for 'おまけに' in 'false_friends'. The original nuance was slightly redundant. Changed to 'often implies a negative addition, conveying a sense of \"to make matters worse.\"'"
+        "violation: Re-added 'speaker_gender', 'listener_gender', and 'nuance' to example 9. Reason: The Japanese phrase 「～かしら」 is typically female speech, making 'speaker_gender: female' appropriate. The scene also implies a male listener, and the schema requires gender to be specified if it matters. (Rule 6)"
     ]
 }

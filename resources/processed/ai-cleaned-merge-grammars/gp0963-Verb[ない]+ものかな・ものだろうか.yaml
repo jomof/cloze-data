@@ -102,6 +102,24 @@
             "conjugation": "dictionary (plain non-past)"
         },
         {
+            "japanese": "これ よりもっと 燃費 が いい 車 は ない {ものでしょうか} 。",
+            "english": "Are there no cars that have better mileage than this one?",
+            "scene": "A person lamenting the high fuel costs of their current vehicle.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "これ よりもっと 燃費 が いい 車 は ありません か 。",
+                    "mitigation": "This is a direct question, perhaps to a car salesman. The scene implies an internal thought and a wish for something better, not a direct inquiry."
+                },
+                {
+                    "competing_grammar": "これ よりもっと 燃費 が いい 車 が 欲しい 。",
+                    "mitigation": "This expresses a direct desire but doesn't convey the implied rhetorical question of whether such a car even exists or is attainable, which `ものでしょうか` implies."
+                }
+            ],
+            "register": "casual",
+            "setting": "reflective",
+            "conjugation": "dictionary (plain non-past)"
+        },
+        {
             "japanese": "こんなに 美味しい 料理 を 毎日 食べられない {ものかな} 。",
             "english": "I wish I could eat such delicious food every day.",
             "scene": "A person eating at a fancy restaurant.",
@@ -236,9 +254,9 @@
             "nuance": "The male speaker's concern for his girlfriend and his use of 「どうすれば」 to ponder a solution are common expressions of male sentiment when trying to resolve emotional situations. The grammar point emphasizes his internal struggle and wish to make her happy."
         },
         {
-            "japanese": "インタビュアー ：「 その 時 、 工業製品 の 品質 を 何とか 上げられる ように できない {ものかと} 考えました 。」",
-            "english": "Interviewer: 'At that time, I was wondering if there wasn't some way to increase the quality of our industrial products.'",
-            "scene": "A person being interviewed about their career.",
+            "japanese": "その 時 、 工業製品 の 品質 を 何とか 上げられる ように できない {ものかと} 考えました 。",
+            "english": "At that time, I was wondering if there wasn't some way to increase the quality of our industrial products.",
+            "scene": "A person being interviewed about their career, reflecting on past challenges.",
             "scene_rationale": [
                 {
                     "competing_grammar": "品質 を 何とか 上げ たい と 考えていました 。",
@@ -273,14 +291,12 @@
         }
     ],
     "false_friends": [],
-    "post_false_friends_writeup": null,
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/verb-ないもの-だろうか"
     },
     "change": [
-        "violation: Added `scene_rationale` to all examples as required by schema. (Rule: 'If OTHER_WAYS is not empty, then you must have a \"scene\" field. - Must set a scene that will hint the user toward the correct grammar point. - Must be concise and non-repetitive. - Must be interesting and engaging to the learner. - Must not use 'male' or 'female'. Use a proper name that's clearly gendered or 'man', 'woman', 'boy', 'girl', etc.')",
-        "violation: Added three new examples to ensure diversity in `speaker_gender` and `listener_gender`, and to restore useful examples from the Bunpro source data not present in the prior. (Rule: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.')",
-        "violation: Corrected word spacing in all `japanese` sentences to assist MeCab parsing. (Rule: 'Japanese must have a space between words to assist mecab in parsing.')",
-        "schema: Changed `rarity` value from 'commonly used' to 'common' in `conjugations` array for schema compliance."
+        "schema: Removed 'post_false_friends_writeup: null' as null fields must be omitted.",
+        "violation: Removed quotes from Japanese sentence in example 13 (formerly 12) as per rule 'Japanese must not use quotes including 「」'. Adjusted English and scene accordingly.",
+        "violation: Added a new example 'これ よりもっと 燃費 が いい 車 は ない {ものでしょうか} 。' to restore a useful example from the original Bunpro source data."
     ]
 }

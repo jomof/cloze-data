@@ -58,7 +58,7 @@
         "Register": "Standard"
     },
     "etymology": "The 「て」 form indicates a connection or sequence, while 「いる」 signifies existence or a continuing state. Combined, they describe something that continues from a past action to the present.",
-    "writeup": "This grammar point, 「ている」, indicates a **resultant state**. This means something has happened, and its effect continues to exist. It describes something that *has* been done and is *still* in that state. It's crucial to differentiate this from the 「ている」 form that indicates an ongoing action. This form highlights the *current state* resulting from a completed action, rather than the action itself. It's similar to the English past perfect tense, but it focuses on the resulting condition.\n\nVerbs that describe a change that is instantaneous and whose result persists often use this form. For instance, actions like 'to die' (死ぬ), 'to break' (壊れる), 'to turn on' (つく), or 'to fall' (落ちる) inherently describe a single, completed event. Once that event occurs, the resultant state continues. You cannot 'die' twice in succession, nor can something 'break' twice without first being fixed. Therefore, when these verbs are used with 「ている」, they describe the *state* that exists as a consequence of that single, completed action.",
+    "writeup": "This grammar point, 「ている」, indicates a **resultant state**. This means something has happened, and its effect continues to exist. It describes something that *has* been done and is *still* in that state. It's crucial to differentiate this from the 「ている」 form that indicates an ongoing action. This form highlights the *current state* resulting from a completed action, rather than the action itself. It's similar to the English past perfect tense, but it focuses on the resultant condition.\n\nVerbs that describe a change that is instantaneous and whose result persists often use this form. For instance, actions like 'to die' (死ぬ), 'to break' (壊れる), 'to turn on' (つく), or 'to fall' (落ちる) inherently describe a single, completed event. Once that event occurs, the resultant state continues. You cannot 'die' twice in succession, nor can something 'break' twice without first being fixed. Therefore, when these verbs are used with 「ている」, they describe the *state* that exists as a consequence of that single, completed action.",
     "examples": [
         {
             "japanese": "ああ、雨が{降っている}。",
@@ -67,7 +67,17 @@
             "register": "casual",
             "setting": "reflective",
             "conjugation": "plain present affirmative",
-            "etymology": "Here, the emphasis is not that it is raining now, but that it has rained and that's why the current state (wetness) exists."
+            "etymology": "Here, the emphasis is not that it is raining now, but that it has rained and that's why the current state (wetness) exists.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "ああ、雨が降った。",
+                    "mitigation": "「降った」 indicates the past action of raining. The scene emphasizes the *current state* of wetness resulting from the rain, which is better conveyed by 「降っている」."
+                },
+                {
+                    "competing_grammar": "ああ、雨が降っています。",
+                    "mitigation": "「降っています」 (in its ongoing action sense) implies it is *currently* raining. The scene focuses on the *result* of the rain (wet ground), not necessarily that it is raining at this very moment."
+                }
+            ]
         },
         {
             "japanese": "あの店はもう{閉まっている}。",
@@ -221,9 +231,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/ている2"
     },
     "change": [
-        "schema: Removed `pronunciation_warning` from `pronunciation` as it is not part of the schema's definition for `pronunciation`.",
-        "schema: Added `meaning_warning` at the top level, moving the content from the former `pronunciation_warning` to align with the schema's explicit `meaning_warning` field.",
-        "schema: Removed `listener_age` from example #6, as the schema explicitly states `listener_age` is deprecated and must be removed.",
-        "violation: Added `scene_rationale` to examples that previously lacked it, as per Rule 6 requirement that `scene_rationale` must be present if `scene` is present."
+        "violation: Added `scene_rationale` to example 1, as per Rule 6 requirement that `scene_rationale` must be present if `scene` is present."
     ]
 }

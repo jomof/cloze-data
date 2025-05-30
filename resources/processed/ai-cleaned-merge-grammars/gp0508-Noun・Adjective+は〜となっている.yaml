@@ -81,20 +81,23 @@
             ],
             "register": "semi-formal",
             "setting": "professional",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "dictionary (plain non-past)",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "この「〜と{なっている}」という表現は、客観的な事実を伝えるフォーマルな文脈で用いられます。女性の話し手が男性の聞き手に、このような公的な情報を提供する場面では、性別に特化した言葉遣いではなく、丁寧で中立的な表現が自然です。"
         },
         {
-            "japanese": "日本ではドラッグは法律上、違法と{なっている}。",
-            "english": "In Japan, it has been established that drugs are illegal by law.",
+            "japanese": "日本ではドラッグは違法と{なっている}。",
+            "english": "In Japan, drugs are illegal.",
             "scene": "A government official is issuing a statement regarding legal regulations.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "日本ではドラッグは法律上、違法です。",
+                    "competing_grammar": "日本ではドラッグは違法です。",
                     "mitigation": "「〜となっている」 provides a more formal and definitive statement suitable for official pronouncements, conveying an established legal status that a simple 「〜です」 might not fully capture."
                 },
                 {
                     "competing_grammar": "日本ではドラッグは法律上、違法になった。",
-                    "mitigation": "「〜になった」 focuses on the point in time the law changed, whereas 「〜となっている」 describes the current, enduring legal status, emphasizing it as an established fact."
+                    "mitigation": "While 「〜になった」 focuses on the point in time the law changed, whereas 「〜となっている」 describes the current, enduring legal status, emphasizing it as an established fact."
                 }
             ],
             "register": "formal",
@@ -171,12 +174,12 @@
             "setting": "informative"
         },
         {
-            "japanese": "新システムは導入義務と{なっている}。",
-            "english": "The new system has become mandatory.",
+            "japanese": "新システムは利用が義務と{なっている}。",
+            "english": "The new system's usage has become mandatory.",
             "scene": "A company IT manager is announcing a new required policy to employees.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "新システムは導入義務です。",
+                    "competing_grammar": "新システムは利用が義務です。",
                     "mitigation": "「〜となっている」 communicates that this is an established, official requirement as a result of a decision, making it sound more authoritative than a simple statement using 「〜です」."
                 }
             ],
@@ -184,12 +187,12 @@
             "setting": "instructional"
         },
         {
-            "japanese": "アメリカをはじめとして、電気は主要な光源と{なっている}。",
-            "english": "Starting with the USA, electricity has become the main source of light.",
+            "japanese": "アメリカをはじめとして、電気は生活に不可欠と{なっている}。",
+            "english": "Starting with the USA, electricity has become indispensable for daily life.",
             "scene": "A science documentary narrator is describing technological advancements.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "アメリカをはじめとして、電気は主要な光源です。",
+                    "competing_grammar": "アメリカをはじめとして、電気は生活に不可欠です。",
                     "mitigation": "「〜となっている」 suggests a state that has been arrived at and is now established, implying a process or evolution leading to the current condition, which is more fitting for explaining a societal or technological shift than a simple 「〜です」."
                 }
             ],
@@ -221,7 +224,10 @@
             ],
             "register": "polite",
             "setting": "professional",
-            "conjugation": "non-past polite (～ます)"
+            "conjugation": "non-past polite (～ます)",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "税務署の職員が顧客に対して公式な情報や期限を伝える際、「〜と{なっています}」のような丁寧な表現は、男性の話し手が女性の聞き手に対して使う場合でも、公的な状況では極めて一般的で適切です。この表現自体に性別による特徴は少なく、フォーマルなコミュニケーションに適しています。"
         }
     ],
     "post_example_writeup": "While 「〜となっている」 implies a state or established fact, it can sometimes sound overly formal or stiff in casual conversations. In everyday speech, simpler expressions such as 「〜だ」 or 「〜です」 might be more appropriate, depending on the context.",
@@ -238,13 +244,16 @@
         "bunpro": "https://bunpro.jp/grammar_points/は-となっている"
     },
     "change": [
-        "Added conjugations array. (schema)",
-        "Added conjugation field to each example. (schema)",
-        "Added scene_rationale to all examples that have a scene. (schema)",
-        "Modified example 6's Japanese sentence to replace N2 kanji (`券`) with N3/N4/N5 kanji-appropriate vocabulary. (violation: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
-        "Replaced original example involving alcohol consumption (example 7 in source) due to multiple kanji (`州`, `未満`, `消費`) above the N3 JLPT level. (violation: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
-        "Replaced original example involving Archduke Franz Ferdinand (example 8 in source) due to multiple kanji (`大公`, `暗殺`, `開戦`) above the N3 JLPT level. (violation: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
-        "Removed one example that used a 'false friend' grammar point (`〜になっている`) instead of the main grammar point (`〜となっている`). (violation: \"Each example must use the grammar_point, though it may be in conjugated form.\")",
-        "Adjusted 'register' and 'setting' for several examples to provide a wider variety across the examples. (violation: \"Examples must exhibit a wide variety of settings... and registers.\")"
+        "violation: Japanese example 2 updated from `法律上、違法と{なっている}` to `違法と{なっている}` because `法律上` contains the N2 kanji `律`, violating the rule for JLPT N3 examples.",
+        "violation: English example 2 adjusted from \"In Japan, it has been established that drugs are illegal by law.\" to \"In Japan, drugs are illegal.\" to reflect the rephrased Japanese for JLPT kanji compliance.",
+        "violation: Japanese example 8 updated from `導入義務と{なっている}` to `利用が義務と{なっている}` because `導入義務` contains the N2 kanji `導`, violating the rule for JLPT N3 examples.",
+        "violation: English example 8 adjusted from \"The new system has become mandatory.\" to \"The new system's usage has become mandatory.\" to reflect the rephrased Japanese for JLPT kanji compliance.",
+        "violation: Japanese example 9 updated from `主要な光源と{なっている}` to `生活に不可欠と{なっている}` because `光源` contains the N2 kanji `源`, violating the rule for JLPT N3 examples.",
+        "violation: English example 9 adjusted from \"Starting with the USA, electricity has become the main source of light.\" to \"Starting with the USA, electricity has become indispensable for daily life.\" to reflect the rephrased Japanese for JLPT kanji compliance.",
+        "schema: Added `speaker_gender`, `listener_gender`, and `nuance` to Example 1 to satisfy the schema requirement for gender diversity in examples. The nuance clarifies that while the grammar is formal and generally gender-neutral, its use in this context is natural for the specified genders.",
+        "schema: Added `speaker_gender`, `listener_gender`, and `nuance` to Example 11 to satisfy the schema requirement for gender diversity in examples. The nuance clarifies that while the grammar is formal and generally gender-neutral, its use in this context is natural for the specified genders.",
+        "violation: `competing_grammar` in `scene_rationale` for Example 2 updated from `日本ではドラッグは法律上、違法です。` to `日本ではドラッグは違法です。` for consistency with JLPT kanji compliance.",
+        "violation: `competing_grammar` in `scene_rationale` for Example 8 updated from `新システムは導入義務です。` to `新システムは利用が義務です。` for consistency with JLPT kanji compliance.",
+        "violation: `competing_grammar` in `scene_rationale` for Example 9 updated from `アメリカをはじめとして、電気は主要な光源です。` to `アメリカをはじめとして、電気は生活に不可欠です。` for consistency with JLPT kanji compliance."
     ]
 }

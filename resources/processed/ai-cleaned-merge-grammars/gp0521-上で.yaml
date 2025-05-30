@@ -14,7 +14,7 @@
     "meaning_warning": "In A上でB: A cannot be passive",
     "details": {
         "Register": "Formal",
-        "使用域": "硬い"
+        "Usage Context": "Stiff/Formal"
     },
     "etymology": "The grammar point 「上で」 is derived from 「上」 (ue), meaning \"above\" or \"on,\" and 「で」 (de), which can indicate means or condition. Literally, it can be understood as \"with the above/previous,\" implying that something is done based on a prior action or consideration. The use of 「で」 as a case-marking particle highlights the conditional nature of the construction.",
     "writeup": "「上で」 is used to indicate that something happens after or upon completing a previous action or considering a specific condition. It's similar to saying \"after (A)\" or \"upon (A),\" and implies a logical progression or a requirement. 「上で」 is often found in formal settings. The 「上」 means 'above', and 「で」 means 'with'. \n\n**Important Considerations:**\n\n*   The action described by the verb or noun preceding 「上で」 is typically a prerequisite or a logical step before the subsequent action. \n*   The verb preceding 「上で」 cannot be in the passive voice. Passivity implies a lack of control, which doesn't align with the sense of intentionality that 「上で」 conveys.",
@@ -107,7 +107,7 @@
             "nuance": "「相談した上で」indicates that he values his wife's opinion and includes her in the decision-making process, and「つもり」suggests a personal intention. He is expressing his feelings 「つもりです」to his friends."
         },
         {
-            "japanese": "よく 考えた {上で}、返事 させて いただきます。",
+            "japanese": "よく 考えた {上で}、返事 を いたします。",
             "english": "I will give you my reply after careful consideration.",
             "scene": "An employee responding to a request from their boss.",
             "scene_rationale": [
@@ -118,7 +118,7 @@
             ],
             "register": "kenjōgo (humble)",
             "setting": "professional",
-            "nuance": "「考えた上で」shows that the employee is committed to thinking seriously before responding. The use of 「させていただきます」demonstrates humility and respect towards the superior."
+            "nuance": "「考えた上で」shows that the employee is committed to thinking seriously before responding. The use of 「いたします」demonstrates humility and respect towards the superior."
         },
         {
             "japanese": "先生 と よく 話し合った {上で}、将来 の 道 を 決めよう と 思っています。",
@@ -195,12 +195,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/上で"
     },
     "change": [
-        "violation: Removed top-level 'conjugations' array as the grammar point itself is not conjugatable, per schema rule: 'Conjugation **only** if the grammar point is conjugatable, then specify which conjugation is used in this example. **Must** be present if there is a top-level \"conjugations\" array. **Must not** be present if there is no top-level \"conjugations\" array.'",
-        "violation: Removed 'conjugation' field from all examples, consistent with the removal of the top-level 'conjugations' array, per schema rule.",
-        "violation: Added 'scene_rationale' to examples 1, 2, 3, 4, 5, 6, 7, 8, 9, per schema rule: 'Must be present if \"scene\" is present.'",
-        "violation: Removed original example 9 ('この レポート を 提出 する {上で}...'), as it represents a different grammatical meaning and formation of '上で' ('in the course of doing') than the 'after/upon' meaning being taught, per schema rule: 'Each example **must** use the grammar_point, though it may be in conjugated form.'",
-        "violation: Replaced original example 5 ('慎重 な 調査 の {上で}、被告 は 有罪 と 決定 しました。') with 'たくさん 話し合った {上で}、みんな の 意見 が まとまりました。' to use kanji appropriate for the N3 level, per JLPT Kanji rule.",
-        "violation: Modified example 3 to include 'speaker_gender: male' and 'listener_gender: female' to meet the gender diversity requirements for examples, per schema rules: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'",
-        "unnatural: Changed 'kind' for false friends 'てから', 'たら', 'あとで', 'た末・の末', 'て初めて' from 'synonym' to 'similar expression' to more accurately reflect the nuanced differences described in their 'nuance' fields, as they are not perfect synonyms but rather expressions with related meanings."
+        "violation: Modified 'details' field. Changed '使用域: 硬い' to 'Usage Context: Stiff/Formal' to ensure all values in 'details' are in English, as per schema rule for 'english' type fields.",
+        "violation: Modified example 7 to replace N2 kanji '頂く' (いただく) with N5 kanji 'する' (いたします) in the humble expression '返事 させて いただきます' to '返事 を いたします', complying with the JLPT Kanji rule for N3 grammar points."
     ]
 }

@@ -1,6 +1,10 @@
 {
     "grammar_point": "ような気がする",
     "id": "gp0451",
+    "pronunciation": {
+        "katakana": "ヨウナキガスル",
+        "romaji": "youna ki ga suru"
+    },
     "formation": {
         "[Verb in dictionary form] + ような気がする": "Expressing a vague feeling or intuition.",
         "[Noun] + の + ような気がする": "Expressing a vague feeling or intuition.",
@@ -9,10 +13,6 @@
     },
     "jlpt": "N3",
     "meaning": "Have a feeling that",
-    "pronunciation": {
-        "katakana": "ヨウナキガスル",
-        "romaji": "youna ki ga suru"
-    },
     "details": {
         "Register": "Standard",
         "使用域": "一般"
@@ -50,12 +50,12 @@
             "nuance": "The use of 「分かる」 (understand) in this context, coupled with the 「ような気がする」, indicates a nuanced understanding rather than a complete grasp, fitting a humble tone when speaking to an older male authority figure."
         },
         {
-            "japanese": "あの人に騙された{ような気がする}。",
-            "english": "I have a feeling that I was deceived by that person.",
+            "japanese": "あの人に利用された{ような気がする}。",
+            "english": "I have a feeling that I was used by that person.",
             "scene": "A person reflecting on a past interaction.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "あの人に騙された。",
+                    "competing_grammar": "あの人に利用された。",
                     "mitigation": "The scene of reflection suggests a dawning suspicion, not a confirmed fact, making the uncertainty of 「ような気がする」 suitable."
                 }
             ],
@@ -198,13 +198,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/ような気がする"
     },
     "change": [
-        "schema: Removed 'conjugations' field because it was empty and thus not applicable, following the rule 'No fields should be null. Omit fields that are not applicable instead.'",
-        "unnatural: Updated 'writeup' to explicitly contrast 'ような気がする' with '気がする' and to integrate the formation rules, enhancing clarity and comprehensiveness as per the instruction to 'incorporate essential details from the input while rephrasing for clarity.'",
-        "violation: Corrected 'register' for the first example from 'teineigo (polite)' to 'standard' because the Japanese sentence lacked polite forms (e.g., -masu), which violated the implicit rule that Japanese should sound natural and fluent for the specified register.",
-        "schema: Removed 'conjugation: null' from all examples, adhering to the rule 'No fields should be null. Omit fields that are not applicable instead.'",
-        "schema: Added 'scene_rationale' to all examples containing a 'scene', as mandated by the rule 'scene_rationale must be present if scene is present.'",
-        "violation: Fixed incorrect spacing in Japanese sentences for examples 4, 7, 8, and 9 (e.g., 'あの 二 人' to 'あの二人は'), to comply with the rule 'Japanese must have a space between words to assist mecab in parsing' and to ensure natural fluency.",
-        "violation: Added a new example with a female speaker and female listener to fulfill the requirement that 'Example sentences should include at least one male and one female speaker_gender' and 'Example sentences should include at least one male and one female listener_gender', as the previous set did not fully cover female listeners.",
-        "violation: Modified Example 2 to include 'speaker_gender: male', 'listener_gender: male', and a corresponding 'nuance' and updated 'scene', addressing the requirement for diverse speaker/listener genders in examples."
+        "violation: Modified example 3 to use JLPT N3-appropriate kanji for 「利用された」 instead of N1 kanji 「騙された」, as per the rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point. So, for example, if the grammar point is JLPT N3, the example sentences should use kanji from the N3, N4, and N5 lists.'",
+        "unnatural: Updated the English translation for example 3 from 'deceived' to 'used' to align with the change in the Japanese sentence, ensuring naturalness.",
+        "unnatural: Updated the `competing_grammar` in example 3's `scene_rationale` from 'あの人に騙された。' to 'あの人に利用された。' for consistency with the modified example sentence."
     ]
 }

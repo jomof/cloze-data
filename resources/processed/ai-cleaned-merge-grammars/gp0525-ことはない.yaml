@@ -5,15 +5,14 @@
         {
             "type": "dictionary (plain non-past)",
             "form": "ことはない",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "negative plain (～ない)",
+            "type": "negative past plain (～なかった)",
             "form": "ことなかった",
             "rarity": "less common"
         }
     ],
-    "jlpt": "N3",
     "pronunciation": {
         "katakana": "コトハナイ",
         "romaji": "koto wa nai"
@@ -21,6 +20,7 @@
     "formation": {
         "[Verb in dictionary form] + ことはない": "Expresses 'there is no need to do' or 'it never happens'."
     },
+    "jlpt": "N3",
     "meaning": "There is no need to; not necessary; it never happens.",
     "details": {
         "Register": "Standard",
@@ -87,7 +87,7 @@
             "nuance": "「～から」 indicates the reason, emphasizing the reassurance."
         },
         {
-            "japanese": "君は そんなに 気を遣う {ことはない} よ。",
+            "japanese": "君は そんなに 気を 遣う {ことはない} よ。",
             "english": "You don't need to be so considerate.",
             "scene": "Encouraging someone to relax in a social situation.",
             "scene_rationale": [
@@ -159,7 +159,7 @@
             ],
             "register": "casual",
             "setting": "reflective",
-            "conjugation": "negative plain (～ない)",
+            "conjugation": "negative past plain (～なかった)",
             "nuance": "The use of the past tense 「～なかった」 expresses a retrospective realization that a past action was unnecessary, coupled with the reason 「もう持っているから」 (because I already have it)."
         },
         {
@@ -280,10 +280,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/ことはない"
     },
     "change": [
-        "schema: Added 'pronunciation' field as required by the schema.",
-        "schema: Corrected conjugation type for 'negative (plain)' to 'negative plain (～ない)' in the top-level 'conjugations' array and in example 7 to match the schema's enum.",
-        "violation: Added 'scene_rationale' to all examples where 'scene' was present, as required by Rule 6 which states: 'If OTHER_WAYS is not empty, then you **must** have a \"scene\" field. ... - **Must** have a \"scene_rationale\" field. - **Must** be present if \"scene\" is present.'",
-        "violation: Modified example 4's Japanese from '遠慮する' (containing N1 kanji 慮) to '気を遣う' to comply with the JLPT Kanji level rule for N3 grammar points, and updated its English and nuance accordingly.",
-        "violation: Modified example 7's Japanese from '隠す' (containing N1 kanji 隠) to '買う' to comply with the JLPT Kanji level rule for N3 grammar points, and updated its English, scene, register, setting, and nuance accordingly."
+        "schema: Changed rarity 'commonly used' to 'common' for 'ことはない' conjugation to match schema enum.",
+        "schema: Corrected conjugation type from 'negative plain (～ない)' to 'negative past plain (～なかった)' for 'ことなかった' in top-level conjugations to match schema enum.",
+        "schema: Updated conjugation type in example 7 from 'negative plain (～ない)' to 'negative past plain (～なかった)' to reflect the correct past tense form."
     ]
 }

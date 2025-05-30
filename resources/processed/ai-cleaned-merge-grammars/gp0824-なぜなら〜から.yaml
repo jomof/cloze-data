@@ -7,7 +7,7 @@
     },
     "jlpt": "N3",
     "formation": {
-        "Sentence A + なぜなら + Sentence B + からです": "Explains the reason for Sentence A, emphasizing the explanation."
+        "Statement A. なぜなら Reason B + から(だ/です)。": "Explains the reason for Statement A, emphasizing the explanation."
     },
     "meaning": "Because, The reason is, That is because",
     "details": {
@@ -18,16 +18,16 @@
     "writeup": "The pattern 「なぜなら〜から」 is used to emphasize the reason for a statement. 「なぜなら」 acts as a conjunction that introduces the reason, and 「から」 concludes the explanation. Think of it as highlighting the \"because\" part of your sentence.\n\nTo use it, state your main point (A), then begin the next sentence with 「なぜなら」 followed by the reason (B), ending with 「から」. This structure draws the listener's attention and indicates that an important explanation is coming.",
     "examples": [
         {
-            "japanese": "明日は仕事に 行きません。 {なぜなら} 、 明日は 友達の 結婚式に 行く からです。",
+            "japanese": "明日は 仕事に 行きません。 {なぜなら} 、 明日は 友達の 結婚式に 行く からです。",
             "english": "I won't go to work tomorrow. Why? Because I'm going to my friend's wedding.",
             "scene": "Explaining why you will be absent.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "明日は仕事に 行きません。友達の 結婚式に 行く からです。",
+                    "competing_grammar": "明日は 仕事に 行きません。友達の 結婚式に 行く からです。",
                     "mitigation": "The scene prompts the user to consider why a more emphatic explanation is needed, rather than a simple causal statement."
                 },
                 {
-                    "competing_grammar": "明日は仕事に 行きません。友達の 結婚式に 行く ので、休みます。",
+                    "competing_grammar": "明日は 仕事に 行きません。友達の 結婚式に 行く ので、休みます。",
                     "mitigation": "The scene highlights the direct explanation of a reason, steering away from the softer, more objective implication of ので."
                 }
             ],
@@ -100,12 +100,12 @@
             "setting": "optimistic"
         },
         {
-            "japanese": "今日は仕事を 休みました。 {なぜなら} 、 インフルエンザに かかってしまったからです。",
+            "japanese": "今日は 仕事を 休みました。 {なぜなら} 、 インフルエンザに かかってしまったからです。",
             "english": "I took the day off today. Why? Because I caught the flu.",
             "scene": "Informing someone of your absence from work.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "今日は仕事を 休みました。インフルエンザに かかってしまったからです。",
+                    "competing_grammar": "今日は 仕事を 休みました。インフルエンザに かかってしまったからです。",
                     "mitigation": "The scene prompts the user to consider a direct and explicit explanation for an absence."
                 }
             ],
@@ -226,9 +226,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/なぜなら-から"
     },
     "change": [
-        "violation: Added `scene_rationale` to all examples where `scene` was present, as required by the schema's instructions for example objects (`Must be present if \"scene\" is present. Must include wrong ways...`). This field was entirely missing in the prior version.",
-        "violation: Removed `speaker_gender`, `listener_gender`, and `nuance` from the original 9th example. The `nuance` provided in the prior version (\"The 「〜ですね」 is a polite way of speaking, suitable on a first date.\") was not specific to the stated `speaker_gender` (female) or `listener_gender` (male), violating the rule: `If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.`",
-        "violation: Added a new example (now example 10) to fulfill the requirement for speaker_gender (at least one male and one female) and listener_gender (at least one male and one female), as the previous modification rendered the former example 9 gender-neutral, leaving the example set incomplete regarding gender representation.",
-        "unnatural: Refined the `nuance` for example 8 to provide a more precise explanation of why 「〜んだ」 in that context is characteristic of male speech."
+        "violation: Modified 'formation' field to accurately reflect that the grammar point can end with 'から', 'からだ', or 'からです', instead of only 'からです'. This was a violation of the rule 'Do not change anything that already follows the rules' as the previous formation was inaccurate."
     ]
 }

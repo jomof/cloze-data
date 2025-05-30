@@ -19,8 +19,8 @@
     "writeup": "「って」 is a versatile particle primarily used in spoken Japanese as a casual substitute for the topic marker 「は」. It carries the nuance of \"as for\" or \"speaking of.\" It's important to note that this usage is informal and should be reserved for casual conversations. Think of it as a more relaxed way to introduce a topic compared to the more formal 「は」. Be cautious using 「って」 in formal settings.",
     "examples": [
         {
-            "japanese": "私{って}皆に好かれてない？",
-            "english": "Am I not liked by everyone?",
+            "japanese": "私{って}皆に嫌われている？",
+            "english": "Am I disliked by everyone?",
             "scene": "Someone insecure asking a question.",
             "scene_rationale": [
                 {
@@ -31,10 +31,10 @@
             "register": "casual",
             "setting": "reflective",
             "speaker_gender": "female",
-            "nuance": "The use of 「って」 makes the question sound more personal and less formal. The phrase 「好かれてない」 captures a sense of insecurity about one's likability. If expressing this sentiment about oneself, 「私って」 is a natural casual opening."
+            "nuance": "The use of 「って」 makes the question sound more personal and less formal. The phrase 「嫌われている」 captures a sense of insecurity about one's likability. If expressing this sentiment about oneself, 「私って」 is a natural casual opening."
         },
         {
-            "japanese": "トマト{って}野菜なの? フルーツなの?",
+            "japanese": "トマト{って}野菜なの？ フルーツなの？",
             "english": "Are tomatoes vegetables? Are they fruits?",
             "scene": "Two friends discussing classifications of food.",
             "scene_rationale": [
@@ -62,7 +62,7 @@
             "nuance": "「よね」 is a tag question seeking agreement, commonly used in casual conversation."
         },
         {
-            "japanese": "あの人{って}誰?",
+            "japanese": "あの人{って}誰？",
             "english": "As for that person, who are they?",
             "scene": "Two coworkers gossiping about a stranger.",
             "scene_rationale": [
@@ -191,7 +191,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/って-slang"
     },
     "change": [
-        "violation: Added 'scene_rationale' to examples 1-9 to comply with schema rule that requires it when 'scene' is present.",
-        "violation: Added a new example (Example 10) to ensure the 'examples' array includes at least one male listener gender, as required by Rule 6."
+        "schema: Removed top-level `bunpro` object and moved `bunpro.url` to `sources.bunpro` to comply with the schema's prohibition on top-level `bunpro` fields and the requirement for `sources.bunpro`.",
+        "schema: Removed `source` field as it is not part of the output schema.",
+        "schema: Removed `lesson_order` field as it is not part of the output schema."
     ]
 }

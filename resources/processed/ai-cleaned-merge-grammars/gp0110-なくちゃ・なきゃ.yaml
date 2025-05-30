@@ -37,7 +37,9 @@
                 }
             ],
             "register": "casual",
-            "setting": "reflective"
+            "setting": "reflective",
+            "speaker_age": "younger",
+            "nuance": "The casual phrase 「しなくちゃ」 is suitable for internal thoughts or informal expressions, particularly common among younger speakers like students, reflecting a personal and immediate sense of obligation."
         },
         {
             "japanese": "明日早く起き{なきゃ}。",
@@ -54,7 +56,10 @@
                 }
             ],
             "register": "casual",
-            "setting": "reflective"
+            "setting": "reflective",
+            "speaker_gender": "male",
+            "speaker_age": "older",
+            "nuance": "The use of 「なきゃ」 for an internal thought is common across genders and ages. For an older male, this casual form, especially in internal monologue, suggests a straightforward approach to daily obligations. The lack of polite endings makes it a direct self-address."
         },
         {
             "japanese": "もっと日本語を勉強{しなくちゃ}いけない。",
@@ -188,6 +193,7 @@
             "nuance": "The phrase 「君のこと」 creates a sense of personal intimacy and tenderness, often used by a male speaker towards a female partner in romantic contexts. The speaker's possessiveness is amplified by 「～ちゃだめだ」, making it clear that he will not allow anyone else to have her, which can be interpreted as flirty and intense in an early romantic stage."
         }
     ],
+    "post_example_writeup": null,
     "false_friends": [
         {
             "term": "てはいけない",
@@ -237,8 +243,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/なくちゃ-なきゃ"
     },
     "change": [
-        "violation: Added `scene_rationale` to all examples where `scene` was present, as required by the schema ('scene_rationale' must be present if 'scene' is present).",
-        "violation: Changed `register` from `formal` to `shitashii kuchō (intimate)` and `setting` from `persuasive` to `serious` for example 6 (`あなたを{守らなきゃ}。`) to align with the grammar point's inherent casual nature, as `なきゃ` is primarily used in casual speech, making a 'formal' register unnatural and contradictory to the `writeup`. The scene was adjusted to fit this intimate context.",
-        "schema: Added `listener_gender: male` to example 7 (`もう行か{なくちゃ}、お母さんが心配するから。`), inferring the listener's gender from the scene description ('younger brother') to ensure all relevant fields are populated as per schema."
+        "command: Added 'speaker_age: younger' and 'nuance' to example 1, as explicitly commanded by an internal comment.",
+        "command: Added 'speaker_age: older', 'speaker_gender: male', and 'nuance' to example 2, as explicitly commanded by an internal comment. Note: This assumes a context where an older male might internally reflect on obligations, even if the phrasing itself isn't gender/age specific."
     ]
 }

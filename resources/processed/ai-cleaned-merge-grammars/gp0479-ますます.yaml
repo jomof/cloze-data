@@ -156,7 +156,7 @@
             "nuance": "「ますます」 indicates the ongoing decline in tourist numbers due to the pandemic."
         },
         {
-            "japanese": "水不足が{益々}深刻になってきている。",
+            "japanese": "水不足が{益々}ひどくなっている。",
             "english": "The water shortage is growing more and more severe.",
             "scene": "A news report about a water crisis.",
             "scene_rationale": [
@@ -216,7 +216,7 @@
             "scene": "A formal announcement or greeting during winter.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "どんどん寒さが厳しくなってまいりました",
+                    "computing_grammar": "どんどん寒さが厳しくなってまいりました",
                     "mitigation": "A formal announcement typically observes a steady, natural progression of conditions rather than a rapid or sudden change suggested by 「どんどん」."
                 },
                 {
@@ -250,8 +250,8 @@
             "nuance": "The phrase 「～からすごい」, as in 「元気になっているからすごい」, expresses admiration or surprise, common in friendly conversation among younger people. 「益々」 emphasizes the continuous increase in vigor."
         },
         {
-            "japanese": "今日会って、{ますます}君の魅力に引き込まれちゃったよ。",
-            "english": "Meeting you today, I've become more and more drawn to your charm.",
+            "japanese": "今日会って、{ますます}君の良いところに引き込まれちゃったよ。",
+            "english": "Meeting you today, I've become more and more drawn to your good qualities.",
             "scene": "A man confessing his feelings to a woman he's just started to like.",
             "scene_rationale": [
                 {
@@ -290,8 +290,8 @@
             "nuance": "The polite form 「～きました」, as in 「興味が湧いてきました」, is appropriate for a first meeting, showing respect while conveying growing interest. 「ますます」 indicates the continuous development of this interest."
         },
         {
-            "japanese": "君たちのおかげで、このプロジェクトへの情熱が{ますます}高まっていくばかりだよ。",
-            "english": "Thanks to you all, my passion for this project is just growing stronger and stronger.",
+            "japanese": "君たちのおかげで、このプロジェクトへのやる気が{ますます}高まっていくばかりだよ。",
+            "english": "Thanks to you all, my motivation for this project is just growing stronger and stronger.",
             "scene": "An older mentor encouraging their younger team members.",
             "scene_rationale": [
                 {
@@ -335,14 +335,14 @@
             "nuance": "「一方だ」 emphasizes a one-directional trend, often with a sense of inevitability, whereas 「ますます」 simply highlights the continuous nature of the change without necessarily implying a specific outcome."
         }
     ],
-    "post_false_friends_writeup": "「ますます」は、ある状態や変化が継続的に、かつその度合いを増していく様子を表します。単に量が増えるのではなく、質的な変化や進行の強調に適しています。「更に」は追加的な増大や、さらに進んだ段階を示し、「どんどん」は変化の速さや勢いを強調します。「ば～ほど」は比例関係を表し、「一方だ」は変化が一方的な方向へ進むことを示唆します。これらの表現は類似していますが、それぞれが持つニュアンスの違いを理解することが重要です。",
+    "post_false_friends_writeup": "「ますます」 expresses a state or change that continues and increasingly intensifies. It is suitable for emphasizing qualitative changes and ongoing progression, not merely an increase in quantity. 「更に」 indicates an additional increase or a further stage. 「どんどん」 emphasizes the speed or force of a change. 「ば～ほど」 expresses a proportional relationship. 「一方だ」 suggests that a change is progressing in one direction. While these expressions are similar, understanding the nuances of each is crucial.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ますます"
     },
     "change": [
-        "violation: Removed 'meaning_warning' field because its value was null. Rule: 'No fields should be null. Omit fields that are not applicable instead.'",
-        "schema: Added 'scene_rationale' to all example sentences that included a 'scene' field. Rule: 'Must be present if 'scene' is present.'",
-        "unnatural: Added detailed content to 'post_false_friends_writeup'. The previous empty string was unnatural for a teacher who loves to explain nuances.",
-        "schema: Removed the 'change' array from the 'sources' object. This field is not part of the defined schema for 'sources'. Rule: 'additionalProperties: false' for sources."
+        "violation: Example 8 Japanese was updated from 「深刻」 (N2) to 「ひどくなっている」 (N4) to align with JLPT N3 kanji limitations, as per the explicit list provided in the prompt.",
+        "violation: Example 13 Japanese was updated from 「魅力」 (N2) to 「良いところ」 (N5/N4 level words) and its English translation adjusted, to align with JLPT N3 kanji limitations, as per the explicit list provided in the prompt.",
+        "violation: Example 15 Japanese was updated from 「情熱」 (N2) to 「やる気」 (N4) and its English translation adjusted, to align with JLPT N3 kanji limitations, as per the explicit list provided in the prompt.",
+        "schema: The 'post_false_friends_writeup' field was translated from Japanese to English to comply with the schema's requirement that this field references the 'english' definition."
     ]
 }

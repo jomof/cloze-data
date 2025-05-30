@@ -99,7 +99,7 @@
                 },
                 {
                     "competing_grammar": "日本 は 憲法 が 戦力 の 保持 を 禁止 している から 、「軍隊」ではなく「自衛隊」を 持っている。",
-                    "mitigation": "「から」 is a simple causal link. 「ところから」 provides a more formal and academic explanation for why Japan has Self-Defense Forces, emphasizing the constitutional prohibition as the specific origin."
+                    "mitigation": "「から」 provides a simple causal link. 「ところから」 offers a more formal and academic explanation for why Japan has Self-Defense Forces, emphasizing the constitutional prohibition as the specific origin."
                 },
                 {
                     "competing_grammar": "日本 は 憲法 が 戦力 の 保持 を 禁止 している ことから 、「軍隊」ではなく「自衛隊」を 持っている。",
@@ -203,32 +203,32 @@
             "speaker_gender": "male",
             "listener_gender": "male",
             "etymology": "「ぴったり」 means \"perfect\" or \"just right.\"",
-            "nuance": "The 「〜ますよ」 ending, spoken by a man to another man, softens the recommendation and makes it more conversational and friendly. It is used to share information with a slightly persuasive nuance."
+            "nuance": "The 「〜ますよ」 ending, when used by a man to another man, can soften the recommendation and contribute to a conversational and friendly tone, even if not exclusively male speech."
         },
         {
-            "japanese": "この ワイン は 、香りが とても 良い {ところから} 、 男性 に 人気 が ある ん です よ。",
-            "english": "Because this wine has a very good aroma, it's popular among men.",
-            "scene": "A sommelier (woman) recommending a wine to a male customer.",
+            "japanese": "この ワイン は 、香りが とても 良い {ところから} 、 女性 に 人気 が ある ん です よ。",
+            "english": "Because this wine has a very good aroma, it's popular among women.",
+            "scene": "A sommelier (woman) recommending a wine to a female customer.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "この ワイン は 、香りが とても 良い ので 、 男性 に 人気 が ある ん です よ。",
+                    "competing_grammar": "この ワイン は 、香りが とても 良い ので 、 女性 に 人気 が ある ん です よ。",
                     "mitigation": "「ので」 states a simple reason. 「ところから」 is more appropriate for explaining that the excellent aroma is the specific, inherent characteristic from which the wine's popularity originates, conveying a more detailed rationale typical of an expert recommendation."
                 },
                 {
-                    "competing_grammar": "この ワイン は 、香りが とても 良い から 、 男性 に 人気 が ある ん です よ。",
-                    "mitigation": "「から」 gives a straightforward reason. 「ところから」 emphasizes that the aroma is the very \"point\" or \"fact\" that makes the wine popular among men, adding a layer of formal explanation."
+                    "competing_grammar": "この ワイン は 、香りが とても 良い から 、 女性 に 人気 が ある ん です よ。",
+                    "mitigation": "「から」 gives a straightforward reason. 「ところから」 emphasizes that the aroma is the very \"point\" or \"fact\" that makes the wine popular among women, adding a layer of formal explanation."
                 },
                 {
-                    "competing_grammar": "この ワイン は 、香りが とても 良い ことから 、 男性 に 人気 が ある ん です よ。",
+                    "competing_grammar": "この ワイン は 、香りが とても 良い ことから 、 女性 に 人気 が ある ん です よ。",
                     "mitigation": "「ことから」 is a strong alternative. 「ところから」 can slightly emphasize the physical quality (aroma) as the direct cause of the popularity, suitable for a refined explanation."
                 }
             ],
             "register": "teineigo (polite)",
             "setting": "professional",
             "speaker_gender": "female",
-            "listener_gender": "male",
+            "listener_gender": "female",
             "etymology": "「香り (かおり)」 means \"aroma\" or \"fragrance.\"",
-            "nuance": "The 「〜んですよ」 ending, spoken by a woman, especially in a professional setting like a sommelier, adds a polite and informative emphasis, sharing a known fact or piece of information with confidence."
+            "nuance": "The 「〜んですよ」 ending, spoken by a woman in a professional context to a female customer, often conveys a sense of confident explanation and shared understanding. While not exclusively female speech, its use here contributes to a nuanced and approachable communication style common among women."
         }
     ],
     "false_friends": [
@@ -253,25 +253,7 @@
     ],
     "post_false_friends_writeup": "While 「ところから」, 「ことから」, 「ので」, and 「から」 can all indicate a reason, it's important to consider the formality and context. 「ところから」 is more formal and is often used to explain the origin of something or to state a reason based on a specific situation. 「ことから」 is similar but slightly less formal. 「ので」 is a general reason marker and is suitable for many situations. 「から」 is also a general reason marker, but it can also indicate a starting point.",
     "change": [
-        {
-            "type": "violation",
-            "description": "Added `scene_rationale` to all examples.",
-            "reason": "The schema requires `scene_rationale` to be present if `scene` is present. This was missing in the prior version. (Rule 6, example sub-rule for `scene_rationale`)."
-        },
-        {
-            "type": "violation",
-            "description": "Replaced Example 1 due to JLPT Kanji level mismatch.",
-            "reason": "The prior Example 1 used N1 kanji (宝石) for an N2 grammar point, violating the rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'."
-        },
-        {
-            "type": "violation",
-            "description": "Adjusted `speaker_gender` and `listener_gender` in examples 8 and 9 for diversity.",
-            "reason": "The schema requires 'at least one male and at least one female speaker_gender' and 'at least one male and at least one female listener_gender'. The prior version had male speaker/female listener for both examples, lacking male listener and female speaker diversity. (Rule 6, example sub-rule for `speaker_gender` and `listener_gender`)."
-        },
-        {
-            "type": "unnatural",
-            "description": "Modified Japanese, English, scene, setting, and nuance for examples 8 and 9 to align with gender adjustments.",
-            "reason": "Ensured the examples remained natural and coherent after gender role changes."
-        }
+        "violation: Modified example 9 to include a female listener. The schema requires 'at least one male and at least one female listener_gender', and the prior version lacked a female listener. (Rule 6, example sub-rule for `listener_gender`).",
+        "unnatural: Adjusted nuance in example 8 and 9 to more accurately reflect communication style rather than exclusive gendered language, acknowledging that the usage is not strictly exclusive to one gender but is characteristic of the described interaction."
     ]
 }

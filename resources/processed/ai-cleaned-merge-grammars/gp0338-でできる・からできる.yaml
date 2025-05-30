@@ -71,10 +71,10 @@
     "meaning_warning": "できている → more specific, できる → more general",
     "details": {
         "Register": "Standard",
-        "使用域": "一般"
+        "Usage Area": "General"
     },
     "etymology": "「できる」 means \"to be made\" or \"to be possible.\" 「で」 indicates the means or method, while 「から」 indicates the origin or source.",
-    "writeup": "「でできる」 and 「からできる」 both indicate that something is made from something else, but they have slightly different nuances. 「でできる」 (made *with*) is generally used when the material is obvious or directly used in the process. 「からできる」 (made *from*) is used when the material is less obvious or undergoes a transformation. However, in modern Japanese, 「でできる」 is often used more broadly, making the distinction less strict.\n\n*   「できる」 refers to something in general, while 「できている」 refers to something specific. For example, 「コンクリートでできる家」 (houses made of concrete) refers to houses in general, while 「この箸は竹でできている」 (these chopsticks are made from bamboo) refers to a specific pair of chopsticks.",
+    "writeup": "「でできる」 and 「からできる」 both indicate that something is made from something else, but they have slightly different nuances. 「でできる」 (made *with*) is generally used when the material is obvious or directly used in the process. 「からできる」 (made *from*) is used when the material is less obvious or undergoes a transformation. However, in modern Japanese, 「でできる」 is often used more broadly, making the distinction less strict.\n\n「できる」 refers to something in general, while 「できている」 refers to something specific. Like the difference between 「で」 and 「から」 though, they are largely interchangeable. For example, when talking about something broadly, you might use 「できる」, but for a specific item, 「できている」 might be preferred.",
     "examples": [
         {
             "japanese": "納豆は 大豆 {から できる}。",
@@ -223,7 +223,7 @@
             "register": "semi-formal",
             "setting": "informative",
             "nuance": "「でできていない」 means that this building is not made of wood. The negative form is used to state an absence of composition.",
-            "conjugation": "negative (plain)"
+            "conjugation": "negative plain (～ない)"
         },
         {
             "japanese": "この 服 は シルク {から できている} らしい よ。",
@@ -262,8 +262,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/でできる-からできる"
     },
     "change": [
-        "schema: Standardized conjugation 'rarity' values to match schema enum ('commonly used' to 'common').",
-        "violation: Added 'scene_rationale' to all examples containing a 'scene', as required by schema Rule 6.",
-        "violation: Modified example 2 to include a 'male' listener gender to ensure diversity as per Rule 6, and updated 'register' and 'nuance' for consistency."
+        "violation: Changed 'details' key '使用域' (Japanese) to 'Usage Area' (English) and its value '一般' to 'General'. Rule 16: 'You may fix minor inaccuracies in \"details\", but do not invent new details.' This also aligns with the schema's type string for additionalProperties in details.",
+        "violation: Removed embedded example sentences from 'writeup' section. Rule for 'writeup': 'Omit any example sentences here; examples go in the \"examples\" array.'",
+        "schema: Corrected conjugation type from 'negative (plain)' to 'negative plain (～ない)' in an example to match schema enum. Rule for conjugation: 'The content of this \"conjugation\" field must be taken from the top-level list of conjugations you generated earlier. Use the 'type' field.'"
     ]
 }

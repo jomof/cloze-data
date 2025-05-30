@@ -96,8 +96,8 @@
             "setting": "serious"
         },
         {
-            "japanese": "壊れた 機械を、彼は {再び} 直そうとした。",
-            "english": "He tried to fix the broken machine once more.",
+            "japanese": "壊れた 時計を、彼は {再び} 直そうとした。",
+            "english": "He tried to fix the broken watch once more.",
             "scene": "A man is trying to repair a broken machine.",
             "scene_rationale": [
                 {
@@ -193,11 +193,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/再び"
     },
     "change": [
-        "violation: Rewrote example 3 (`japanese` and `english` fields) to ensure all kanji are N3 level or lower. (Original `取り掛かった` is N2).",
-        "violation: Rewrote example 7 (`japanese` and `english` fields) to ensure all kanji are N3 level or lower, as the original contained N1 kanji and problematic structure.",
-        "violation: Added `scene_rationale` field to examples 1, 2, 3, 4, 5, 6, 8, 9, as it was missing despite `scene` being present, violating schema rules.",
-        "violation: Added two new examples (10 and 11) to ensure the `examples` array includes at least one female speaker, as required by the schema.",
-        "unnatural: Changed `scene` in example 5 from \"A child is throwing a paper airplane.\" to \"A boy is throwing a paper airplane.\" for more precise gender context where `speaker_gender` is not explicitly set, aligning with best practices for `scene` descriptions.",
-        "schema: Added `post_example_writeup` for further clarification regarding the nuance of \"second time.\""
+        "schema: Removed top-level 'bunpro' and 'lesson_order' fields, as they are not part of the schema.",
+        "schema: Added top-level 'sources' field with the 'bunpro' URL, as required by the schema.",
+        "violation: Rewrote example 7 (japanese and english fields) to ensure all kanji are N3 level or lower. The original Japanese contained '機械' (N2), which has been replaced with '時計' (N3), to comply with the JLPT Kanji rule for N3 grammar points. (Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.')"
     ]
 }

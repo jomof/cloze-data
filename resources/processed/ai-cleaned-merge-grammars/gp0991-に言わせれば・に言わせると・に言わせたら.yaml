@@ -35,7 +35,7 @@
         "使用域": "一般"
     },
     "etymology": "The grammar point 「に言わせれば」 comes from 「言う(iu)」(to say), combined with the causative-passive form of the auxiliary verb 「せる(seru)」 (to let/make do), and the conditional 「ば(ba)」. Literally, it means something close to \"if one were allowed to say.\"",
-    "writeup": "「に言わせれば」 is used to indicate that the following statement is an opinion or perspective from a particular person or group. It is similar to saying \"if you ask me\" or \"according to [someone]\". The other forms, 「に言わせると」 and 「に言わせたら」, are nearly identical in meaning. This pattern can sometimes sound assertive or self-important, so use it judiciously, especially when expressing your own opinions.",
+    "writeup": "「に言わせれば」は、続く発言が特定の人物や集団の意見や視点であることを示す際に用います。「If you ask me」や「According to [someone]」といった意味合いに近い表現です。他の形である「に言わせると」や「に言わせたら」も、意味合いはほぼ同じです。この表現は時に断定的、あるいは自己中心的と聞こえる場合があるため、特に自身の意見を述べる際には、慎重に、控えめに使用することが望ましいでしょう。また、「せる」や「させる」のような使役動詞を伴う文を構成する際、助詞の「に」は、その行為を「許された」主体を示すのが一般的です。一方で、「を」は、その行為を「強制された」主体を指す場合が多く、この「に言わせる」の構造における「に」の用法は、前者の「許される」意味合いに沿ったものです。",
     "examples": [
         {
             "japanese": "私に{言わせれば}５キロを25分で走るのは簡単だ。",
@@ -173,17 +173,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/に言わせれば"
     },
     "change": [
-        "violation: Added `conjugations` array with `言わせる`, `言わせれば`, `言わせたら` as it's required for grammar points containing verbs in dictionary form. (Schema: 'If the grammar point contains a verb in dictionary form...add a new array field at the top, called \"conjugations\".')",
-        "violation: Added `meaning_warning` field which was present in the input but missing from the prior. (Schema: missing data from input.)",
-        "violation: Modified `writeup` to remove information about `に言わせたら` rarity and `から` usage, as these details are now in `meaning_warning`. (Schema: 'Don't mention the meaning_warning if there is one.')",
-        "violation: Added `scene_rationale` to all examples, as required when `scene` is present. (Schema: 'scene_rationale' must be present if 'scene' is present.)",
-        "violation: Added `conjugation` field to all examples, as required when a top-level `conjugations` array is present. (Schema: 'Conjugation...Must be present if there is a top-level \"conjugations\" array.')",
-        "violation: Modified Japanese sentences in Examples 2, 5, 7, 9 to use `言わせたら` to ensure a wide variety of conjugations from the top-level `conjugations` list. (Schema: 'Examples must exhibit a wide variety of conjugations.')",
-        "violation: Added `speaker_gender` (female for E4, male for E5) to ensure at least one male and one female speaker example. (Schema: 'Example sentences should include at least one male and one female speaker_gender.')",
-        "violation: Added `nuance` to Examples 4 and 5, specifying gender-specific usage with quoted Japanese, as required when `speaker_gender` is present. (Schema: 'If there is a \"speaker_gender\"...then \"nuance\" must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.')",
-        "violation: Removed `nuance` from examples where `speaker_gender` and `listener_gender` were not specified, as it is only required in such cases. (Schema: `nuance` requirement linked to gender/age.)",
-        "unnatural: Modified `setting` in Example 5 from 'sarcastic' to 'critical' for better contextual fit.",
-        "violation: Modified `post_example_writeup` to remove content duplicated in `meaning_warning`. (Schema: Overlap with `meaning_warning`.)",
-        "violation: Changed `post_false_friends_writeup` from `null` to an empty string. (Schema: 'No fields should be null.')"
+        "violation: Modified `writeup` to incorporate essential details from the input regarding the distinction between `に` and `を` with causative verbs, as specified by the prompt's instruction to 'incorporate essential details from the input while rephrasing for clarity'."
     ]
 }

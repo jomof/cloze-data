@@ -1,5 +1,6 @@
 {
     "grammar_point": "のがすき",
+    "id": "gp0046",
     "conjugations": [
         {
             "type": "dictionary (plain non-past)",
@@ -87,7 +88,6 @@
             "rarity": "uncommon"
         }
     ],
-    "id": "gp0046",
     "pronunciation": {
         "katakana": "ノガスキ",
         "romaji": "no ga suki"
@@ -305,10 +305,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/のがすき"
     },
     "change": [
-        "schema: Populated `scene_rationale` for all examples that had a `scene` but lacked this field, per schema rule that `scene_rationale` must be present if `scene` is present.",
-        "violation: Removed `speaker_gender` and `nuance` from '静かなところでゆっくり{するのが好き}なんです。' as the nuance provided ('んです' adds explanation) is not gender-specific, violating the rule that gender be used only if typically spoken by that gender.",
-        "violation: Removed `speaker_gender`, `listener_gender`, and `nuance` from '彼女と映画を見る{のが好き}です。' as the Japanese sentence itself does not contain gender-specific phrasing or nuance, violating the rule that gender be used only if typically spoken by that gender and that nuance mention specific Japanese.",
-        "schema: Added a new example '田中さん、ゲームをする{のが好き}ですか？' with `listener_gender: male` to ensure that example sentences include at least one male listener, as required by the schema.",
-        "unnatural: Reordered existing examples for better progression from simpler plain forms to more complex and nuanced expressions, improving overall flow and adherence to the rule that examples must be ordered from simplest to most complex."
+        "schema: Added `listener_gender: female` to the example '毎日あなたに会える{のが好き}だよ。' to meet the schema requirement for at least one female listener example."
     ]
 }

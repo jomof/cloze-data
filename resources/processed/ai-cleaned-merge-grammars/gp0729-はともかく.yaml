@@ -1,5 +1,6 @@
 {
     "grammar_point": "はともかく",
+    "id": "gp0729",
     "pronunciation": {
         "katakana": "ハトモカク",
         "romaji": "wa tomokaku"
@@ -8,7 +9,6 @@
         "[Noun] + はともかく": "Setting aside [Noun], focusing on something else.",
         "[Clause] + かどうかはともかく": "Regardless of whether [Clause] is true or not."
     },
-    "id": "gp0729",
     "jlpt": "N2",
     "meaning": "Setting aside, apart from",
     "details": {
@@ -187,7 +187,7 @@
                 },
                 {
                     "competing_grammar": "この実験、方法は問わず、結果は予想外に素晴らしい。",
-                    "mitigation": "The scene suggests that the methods are a known quantity but are being set aside as less important, whereas '問わず' implies that the methods are not relevant or not a concern at all."
+                    "mitigation": "The scene implies that the methods are a known quantity but are being set aside as less important, whereas '問わず' implies that the methods are not relevant or not a concern at all."
                 }
             ],
             "register": "formal",
@@ -276,13 +276,13 @@
     "change": [
         {
             "type": "schema",
-            "description": "Added 'scene_rationale' to all example sentences that contained a 'scene' field.",
-            "reason": "Rule: 'Must be present if \"scene\" is present. Must include wrong ways (for this grammar point and example) of translating \"english\" to \"japanese\" that \"scene\" text is trying to point the user away from. Must list the exact content of OTHER_WAYS from \"scene\".'"
+            "description": "Removed 'lesson_order' from the top level.",
+            "reason": "Rule: 'lesson_order' is not part of the schema and must be omitted."
         },
         {
-            "type": "schema",
-            "description": "Changed 'register' from 'surangu' to 'casual slang' for the last example.",
-            "reason": "Rule: 'registerType' enum does not include 'surangu', 'casual slang' is the closest valid option."
+            "type": "violation",
+            "description": "Removed redundant etymology discussion from 'writeup'.",
+            "reason": "Rule: The 'etymology' field is for the linguistic history, and the 'writeup' should be a comprehensive explanation of usage. Duplicating the etymology within the 'writeup' when a dedicated 'etymology' field exists creates redundancy. The 'writeup' was adjusted to focus on usage and context."
         }
     ]
 }

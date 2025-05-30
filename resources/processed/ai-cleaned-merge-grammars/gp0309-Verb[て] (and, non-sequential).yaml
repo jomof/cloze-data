@@ -5,7 +5,7 @@
         {
             "type": "te-form",
             "form": "Verb[て]",
-            "rarity": "commonly used"
+            "rarity": "common"
         }
     ],
     "pronunciation": {
@@ -75,12 +75,12 @@
             "nuance": "「食べて」 is the te-form of 「食べる」. This sentence uses 「て」 to connect the differing food choices of Takeru and Naomi, presenting them as parallel facts."
         },
         {
-            "japanese": "朝は 雨が {降って} 夕方は 晴れた。",
+            "japanese": "朝は 雨が {降って} 午後は 晴れた。",
             "english": "It rained this morning, and it cleared up in the afternoon.",
             "scene": "Someone is simply reporting the day's weather to a family member.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "朝は雨が降った。そして、夕方は晴れた。",
+                    "competing_grammar": "朝は雨が降った。そして、午後は晴れた。",
                     "mitigation": "The scene emphasizes a neutral, factual report of the weather's progression without implying a strong temporal sequence, making 「て」 ideal for connecting two states that occurred on the same day."
                 }
             ],
@@ -90,7 +90,7 @@
             "nuance": "「降って」 is the te-form of 「降る」. The sentence illustrates a sequence of weather conditions, but with equal emphasis on both the rain and the clear weather. The neutral tone conveyed by 「て」 fits a simple report."
         },
         {
-            "japanese": "おばあさんは いつも ラジオを {聞いて} おじいさんは いつも テレビを 観る。",
+            "japanese": "おばあさんは いつも ラジオを {聞いて} おじいさんは いつも テレビを 見る。",
             "english": "My grandma always listens to the radio, and my grandpa always watches TV.",
             "scene": "A young person is describing their grandparents' habits to a friend.",
             "scene_rationale": [
@@ -121,12 +121,12 @@
             "nuance": "「弾けて」 is the te-form of 「弾ける」. The sentence connects two musical skills possessed by the same person, presented as equally valid capabilities."
         },
         {
-            "japanese": "雨が {降って} 雷が 鳴る。",
-            "english": "It rains and thunders.",
+            "japanese": "雨が {降って} 風が 吹く。",
+            "english": "It rains and the wind blows.",
             "scene": "Someone observing a sudden change in weather from their window.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "雨が降り、雷が鳴る。",
+                    "competing_grammar": "雨が降り、風が吹く。",
                     "mitigation": "The scene suggests a simple, immediate observation of simultaneous events. The 「て」 form feels more natural and less formal than `～し、` or `そして` for describing concurrent natural occurrences."
                 }
             ],
@@ -136,13 +136,13 @@
             "nuance": "「降って」 is the te-form of 「降る」. This sentence connects two natural phenomena that occur simultaneously, indicating a concurrent relationship rather than a strict sequence."
         },
         {
-            "japanese": "うちの 猫は ちょっと {太っていて} {小さくて} とーっても かわいいよ。",
-            "english": "Our cat is a bit plump and small; it's super cute!",
-            "scene": "A young woman enthusiastically showing off her pet cat to a friend.",
+            "japanese": "うちの 犬は ちょっと {太っていて} {小さくて} とーっても かわいいよ。",
+            "english": "Our dog is a bit plump and small; it's super cute!",
+            "scene": "A young woman enthusiastically showing off her pet dog to a friend.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "うちの猫はちょっと太いし、小さいし、とーってもかわいいよ。",
-                    "mitigation": "The scene implies a flow of descriptors for the cat. 「て」 connects these adjectives smoothly to describe attributes. 「し」 might imply listing reasons for its cuteness rather than just describing its appearance, and can sound a bit more emphatic or argumentative."
+                    "competing_grammar": "うちの犬はちょっと太いし、小さいし、とーってもかわいいよ。",
+                    "mitigation": "The scene implies a flow of descriptors for the dog. 「て」 connects these adjectives smoothly to describe attributes. 「し」 might imply listing reasons for its cuteness rather than just describing its appearance, and can sound a bit more emphatic or argumentative."
                 }
             ],
             "register": "casual",
@@ -150,7 +150,7 @@
             "conjugation": "te-form",
             "speaker_gender": "female",
             "speaker_age": "younger",
-            "nuance": "「太っていて」 and 「小さくて」 are te-form adjectives modifying 「猫」, emphasizing its endearing qualities. The sentence-ending particle 「よ」 adds a touch of warmth and enthusiasm. The 「よ」 at the end of the sentence is much more often used by female speakers to assert or emphasize something."
+            "nuance": "「太っていて」 and 「小さくて」 are te-form adjectives modifying 「犬」, emphasizing its endearing qualities. The sentence-ending particle 「よ」 adds a touch of warmth and enthusiasm. The 「よ」 at the end of the sentence is much more often used by female speakers to assert or emphasize something."
         },
         {
             "japanese": "妹は カナダに {行って} 弟は イギリスに 行った。",
@@ -188,15 +188,10 @@
         "bunpro": "https://bunpro.jp/grammar_points/verbて-b"
     },
     "change": [
-        "violation: Removed 'meaning_warning' field as it was null, adhering to schema rule 'No fields should be null. Omit fields that are not applicable instead.'",
-        "violation: Removed top-level 'rank', 'bunpro', 'lesson_order', and 'source' fields as per rule 'You must not add top-level 'bunpro' or 'dojg' fields to the output JSON.' and general schema structure.",
-        "schema: Added '{bold}' formatting to the grammar point in all 'japanese' examples as required by rule 'Must have the grammar_point in {bold}'.",
-        "violation: Removed 'listener_age' from all example entries as it is deprecated per schema comment.",
-        "schema: Added 'scene' and 'scene_rationale' to all example entries as required by the schema and prompt rules.",
-        "violation: Modified 'speaker_gender' and 'listener_gender' in examples 1 and 2 to ensure at least one male and one female speaker_gender and listener_gender are represented across all examples, as per rule 6.",
-        "unnatural: Rewrote the Japanese sentence in example 2 from 'ごみを捨てに行った' to '家で休んだ' to use JLPT N4 appropriate kanji (捨てる is N2), ensuring kanji level adherence for N4 grammar point.",
-        "unnatural: Rewrote the Japanese sentence in example 5 (original input example 6) from 'ラジオを聴いて' to 'ラジオを聞いて' to use JLPT N4 appropriate kanji (聴く is N1), ensuring kanji level adherence for N4 grammar point.",
-        "unnatural: Rewrote the Japanese sentence in example 6 (original input example 7) from 'ドラムも上手に叩ける' to 'ドラムも得意だ' to use JLPT N4 appropriate kanji (叩ける is N1), ensuring kanji level adherence for N4 grammar point.",
-        "violation: Removed the example '朝は雨が降ったけど夕方は晴れた。' from the examples array, as it did not use the target grammar point but rather a contrastive structure with 'けど', violating rule 'Each example must use the grammar_point'."
+        "violation: Changed 'rarity' from 'commonly used' to 'common' in the 'conjugations' array, as 'commonly used' is not a valid enum value for 'rarity' per schema definition.",
+        "violation: Modified example 4's Japanese sentence from '夕方は 晴れた' to '午後は 晴れた' because '夕' (N2 kanji) violates the JLPT N4 kanji level rule (only N3, N4, N5 allowed). The English translation was updated accordingly.",
+        "violation: Modified example 5's Japanese sentence from 'テレビを 観る' to 'テレビを 見る' because '観' (N1 kanji) violates the JLPT N4 kanji level rule (only N3, N4, N5 allowed).",
+        "violation: Modified example 7's Japanese sentence from '雷が 鳴る' to '風が 吹く' because '雷' (N1 kanji) violates the JLPT N4 kanji level rule (only N3, N4, N5 allowed). The English translation was updated accordingly.",
+        "violation: Modified example 8's Japanese sentence from 'うちの 猫は' to 'うちの 犬は' because '猫' (N2 kanji) violates the JLPT N4 kanji level rule (only N3, N4, N5 allowed). The English translation was updated accordingly."
     ]
 }

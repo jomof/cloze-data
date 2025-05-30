@@ -289,20 +289,5 @@
     "post_false_friends_writeup": "",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/化する"
-    },
-    "change": [
-        "violation: Removed top-level 'rank', 'lesson_order', and 'bunpro' fields. This aligns with the schema's 'additionalProperties: false' requirement at the top level and the instruction 'You *must not* add top-level 'bunpro' or 'dojg' fields'.",
-        "violation: Removed 'listener_age' from Example 8. The schema explicitly states '\"listener_age\" is deprecated. You *must* remove it.'",
-        "violation: Corrected 'rarity' from 'unnatural' to 'very rare' for 'imperative plain' and 'imperative polite' conjugations. The schema's 'rarityType' enum does not include 'unnatural'.",
-        "violation: Updated conjugation 'type' names to match the exact `conjugationType` enum values in the schema (e.g., 'polite (non-past)' to 'non-past polite (～ます)').",
-        "violation: Replaced Example 3 ('劣化 した 家 を 立て直す 仕事 を したい') as it did not directly use the grammar point '[Noun] + 化する'. The example now correctly uses '{化した}' with a noun.",
-        "violation: Modified Japanese and English in Example 8 ('お父さん' to 'お母さん', 'Dad' to 'Mom') to ensure diverse speaker/listener genders as required ('Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.').",
-        "violation: Added a new example (total 11) to include a female speaker and a male listener, fulfilling the gender diversity requirements.",
-        "violation: Added 'scene_rationale' to all examples where a 'scene' is present. The schema dictates '\"scene_rationale\" Must be present if \"scene\" is present.'",
-        "violation: Ensured all 'japanese' example sentences have the grammar point explicitly enclosed in '{bold}' curly braces.",
-        "violation: Moved the 'url' from the 'bunpro' sub-object to 'sources.bunpro' and removed the 'source' field, adhering to the 'sources' schema definition.",
-        "violation: Set 'post_false_friends_writeup' to an empty string. This field is required by the schema and was null in the input.",
-        "unnatural: Enhanced the 'writeup' section by incorporating more detailed explanations from the original input data and improving its formatting to be more comprehensive and natural.",
-        "unnatural: Added missing spaces between words in various 'japanese' example sentences to improve readability and align with natural Japanese writing for parsing."
-    ]
+    }
 }

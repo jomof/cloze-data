@@ -260,30 +260,18 @@
     "post_example_writeup": "Remember that 「ところだった」 always implies that the action *didn't* actually happen. It's crucial to understand the context to differentiate between situations where something was truly avoided versus situations where it is currently ongoing or completed.",
     "false_friends": [
         {
-            "term": "ところだ",
-            "meaning": "About to, on the verge of, in the process of",
-            "kind": "similar expression",
-            "nuance": "Unlike 「ところだった」, 「ところだ」 indicates an action that is either about to happen or is currently in progress, without the implication of a narrowly avoided outcome."
-        },
-        {
             "term": "はずだった",
             "meaning": "Was supposed to, was expected to",
             "kind": "often confused with",
             "nuance": "Unlike 「ところだった」, 「はずだった」 describes something that was planned or expected to happen but didn't, often due to external circumstances or a change in plans, not necessarily a near miss."
         }
     ],
-    "post_false_friends_writeup": "To avoid confusion, remember that 「ところだった」 specifically highlights a near miss, something that was on the verge of happening but ultimately did not. 「ところだ」 focuses on the present or immediate future, while 「はずだった」 deals with unfulfilled expectations or plans.",
+    "post_false_friends_writeup": "To avoid confusion, remember that 「ところだった」 specifically highlights a near miss, something that was on the verge of happening but ultimately did not. 「はずだった」 deals with unfulfilled expectations or plans.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ところだった1"
     },
     "change": [
-        "schema: Removed top-level 'bunpro' field and integrated its contents into the main structure, as per rule 20.",
-        "violation: Added 'scene_rationale' to all examples that contain a 'scene' field, addressing a missing required field as per schema definition for examples.",
-        "violation: Modified example 1's Japanese sentence to use 'ひかれる' (in hiragana) instead of '轢かれる' to ensure all kanji are within JLPT N3 level or lower, as '轢' is an N1 kanji.",
-        "violation: Modified example 7's Japanese sentence from '告白する' to '気持ちを伝える' to ensure all kanji are within JLPT N3 level or lower, as '告白' (specifically '白') contains N2 kanji. '伝える' is N3.",
-        "violation: Modified example 9's Japanese sentence from '恋をする' to '好きになる' to ensure all kanji are within JLPT N3 level or lower, as '恋' is an N2 kanji.",
-        "violation: Modified example 12's Japanese sentence from '提出し忘れる' to '出し忘れる' to ensure all kanji are within JLPT N3 level or lower, as '提' is an N2 kanji. '出す' is N5.",
-        "violation: Modified example 13's Japanese sentence from '本音を打ち明けない' to '本当の気持ちを打ち明けない' to ensure all kanji are within JLPT N3 level or lower, as '本音' is primarily an N2 compound word.",
-        "violation: Removed 'ところだった ②' from the 'false_friends' array, as it represents a different nuance/usage of the same grammar point rather than a distinct false friend, violating rule 14 which states 'false_friends must not reference other conjugations of this grammar point'."
+        "violation: Removed 'ところだ' from 'false_friends' because it is a direct conjugation of the grammar point ('ところだった' is past tense, 'ところだ' is non-past), violating rule 14 which states 'false_friends must not reference other conjugations of this grammar point'.",
+        "violation: Updated 'post_false_friends_writeup' to remove references to 'ところだ' due to its removal from 'false_friends', ensuring consistency with rule 14."
     ]
 }

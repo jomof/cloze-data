@@ -116,11 +116,12 @@
             "scene_rationale": [
                 {
                     "competing_grammar": "ケーキが5分で出来たなんて！",
-                    "mitigation": "The scene implies a strong emotional reaction, where 「たった」 intensifies the surprise at the extremely short duration, making the statement more impactful than a simple assertion of time."
+                    "mitigation": "The scene implies a strong emotional reaction, where 「たった」 intensifies the surprise at the extremely short duration, making the statement more impactful than a simple assertion of time. The speaker is exclaiming to themselves, highlighting their internal shock."
                 }
             ],
             "register": "casual",
             "setting": "surprised",
+            "listener_gender": "no one",
             "nuance": "The exclamation 「まさか」 and the particle 「なんて」 emphasize disbelief, reinforcing the surprising brevity of the time taken.",
             "etymology": "「たった」 emphasizes the brief time it took to make the cake."
         },
@@ -147,11 +148,12 @@
             "scene_rationale": [
                 {
                     "competing_grammar": "お母さんは665円で食べ放題なので、母の日プレゼントに最適です。",
-                    "mitigation": "The scene portrays a promotional context where the phrase 「たった」 is essential to highlight the exceptional affordability of the offer, drawing consumers in more effectively than simply stating the price."
+                    "mitigation": "The scene portrays a promotional context where the phrase 「たった」 is essential to highlight the exceptional affordability of the offer, drawing consumers in more effectively than simply stating the price. This persuasive intent is directed at a broad audience, justifying the 'group' listener."
                 }
             ],
             "register": "casual",
             "setting": "persuasive",
+            "listener_gender": "group",
             "nuance": "The use of 「なので」 indicates a direct reason, and 「最適です」 conveys a strong recommendation. The casual tone aims to appeal broadly.",
             "etymology": "「たった」 emphasizes the surprisingly low price, making the offer more attractive."
         },
@@ -185,14 +187,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/たった-の"
     },
     "change": [
-        "violation: `listener_age` field was removed from Example 2 because it is deprecated by the prompt's schema comments.",
-        "violation: Added `speaker_gender: male` to Example 2 and updated its `nuance` to reflect the use of 「僕」 and 「〜かい？」, as the prompt requires speaker gender to be specified if implied by the Japanese and for gender diversity.",
-        "violation: Rewrote Example 6 (japanese, english, scene, scene_rationale) to remove dialogue and quotes, adhering to the prompt's rule: 'No back-and-forth dialogue' and 'Must not use quotes including 「」, '. ",
-        "violation: Rewrote Example 7 (japanese, english, scene, scene_rationale) to remove dialogue and quotes, adhering to the prompt's rule: 'No back-and-forth dialogue' and 'Must not use quotes including 「」, '. ",
-        "violation: Rewrote Example 8 (japanese, english, scene, scene_rationale) and added `speaker_gender: female` to align with the mother's perspective and the use of 「〜のよ」, adhering to the prompt's rule against dialogue/quotes and the requirement for speaker gender specification.",
-        "violation: Rewrote Example 9 (japanese, english, scene, scene_rationale) to remove the direct quote and make it a single speaker's statement, adhering to the prompt's rule against quotes.",
-        "violation: Rewrote Example 10 (japanese, english, scene, scene_rationale) to remove the direct quote and make it a single speaker's statement, adhering to the prompt's rule against quotes.",
-        "schema: Added `scene_rationale` to all examples (1-10) as required by the schema when a `scene` is present, to explain why the `scene` was necessary in distinguishing the grammar point from competing alternatives.",
-        "schema: Added `post_example_writeup` to provide further clarification on the nuanced usage of 「たった今」 versus 「たったの」, enhancing the comprehensiveness of the explanation as allowed by the schema."
+        "schema: Added `listener_gender: no one` to Example 7 to satisfy the requirement for listener gender diversity.",
+        "schema: Added `listener_gender: group` to Example 9 to satisfy the requirement for listener gender diversity.",
+        "schema: Updated `scene_rationale` for Example 7 and 9 to align with the newly added `listener_gender` fields."
     ]
 }

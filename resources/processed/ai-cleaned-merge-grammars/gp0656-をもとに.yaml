@@ -83,7 +83,7 @@
             "setting": "informative"
         },
         {
-            "japanese": "本当 の 魚 の 姿 {をもとに} した ロボット は 普通 の 魚 とともに 暮らし、海洋生物 について の データ を 収集 しています。",
+            "japanese": "本当 の 魚 の 形 {をもとに} した ロボット は 普通 の 魚 とともに 暮らし、海洋生物 について の データ を 収集 しています。",
             "english": "Robots based on the shape of an actual fish are living with ordinary fish and are collecting data about marine life.",
             "scene": "A scientist describing a new research tool.",
             "scene_rationale": [
@@ -109,7 +109,7 @@
             "setting": "serious"
         },
         {
-            "japanese": "住所録 {をもとに} 宛名 を 書いて ください。",
+            "japanese": "住所録 {をもとに} 名前 と 住所 を 書いて ください。",
             "english": "Please write the name and address according to the address book.",
             "scene": "An office manager instructs an assistant on addressing envelopes.",
             "scene_rationale": [
@@ -154,7 +154,7 @@
             "nuance": "The speaker is using the 「んだ」 at the end of the sentence to emphasize their feelings and connection to the listener, which is common in romantic contexts."
         },
         {
-            "japanese": "この街の美しい景色 {をもとに} して、絵を描いてみませんか？",
+            "japanese": "この 町 の 美しい 景色 {をもとに} して、絵 を かいて みませんか？",
             "english": "Why don't you try painting a picture based on the beautiful scenery of this town?",
             "scene": "Kenji suggests to Mika who likes to paint.",
             "scene_rationale": [
@@ -215,13 +215,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/をもとに"
     },
     "change": [
-        "violation: Removed example: 「彼は法律に基づいて処分されるだろう。」 because it did not use the main grammar point. (Rule: \"Each example **must** use the grammar_point\")",
-        "violation: Corrected kanji in example 4 from N1 (漫画) to N3/N4 (恋愛物語). (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
-        "violation: Corrected kanji in example 8 from N1 (宛名 in 電話帳) to N2/N3/N4 (住所録). (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
-        "schema: Added `scene_rationale` to all existing examples. (Rule: \"`scene_rationale`: Must be present if `scene` is present.\")",
-        "schema: Added a new example with `speaker_gender: female` and `listener_gender: male` to ensure gender diversity. (Rule: \"Example sentences should include at least one male and one female speaker_gender.\" and \"Example sentences should include at least one male and one female listener_gender.\")",
-        "unnatural: Refined `scene` descriptions for examples 10 and 11 to use proper names for characters, enhancing naturalness and complying with scene rules. (Rule: \"You *must not* use 'male' or 'female'. Use a proper name that's clearly gendered or 'man', 'woman', 'boy', 'girl', etc.\")",
-        "unnatural: Added `post_example_writeup` for clarity on usage. (Rule: \"You may include a 'post_example_writeup' section after 'examples' if more clarification is helpful\")",
-        "unnatural: Adjusted false friends `kind` from `synonym` to `similar expression` for `にしたがって`, `に応じて`, and `によると・によれば` to better reflect their nuanced relationship to `をもとに`."
+        "violation: Changed N1 kanji 「姿」 to N3 kanji 「形」 in example 6 to comply with JLPT level requirements. (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
+        "violation: Changed N1 kanji 「宛名」 to N5 「名前」 and N3 「住所」 in example 8 to comply with JLPT level requirements. (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
+        "violation: Changed N1 kanji 「街」 to N4 「町」 and N1 kanji 「描いて」 to hiragana 「かいて」 in example 11 to comply with JLPT level requirements. (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\" and \"Must not use hiragana for words that are typically written in kanji.\" - prioritized JLPT level over typical writing here)."
     ]
 }

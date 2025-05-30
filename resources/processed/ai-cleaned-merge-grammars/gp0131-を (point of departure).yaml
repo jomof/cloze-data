@@ -1,10 +1,10 @@
 {
     "grammar_point": "を (point of departure)",
+    "id": "gp0131",
     "pronunciation": {
         "katakana": "ヲ",
         "romaji": "o"
     },
-    "id": "gp0131",
     "formation": {
         "[Place] + を + [Verb of Movement]": "Indicates the location from which movement begins."
     },
@@ -30,8 +30,23 @@
             ],
             "register": "teineigo (polite)",
             "setting": "informative",
-            "nuance": "「ます」 indicates a polite and formal register, suitable for general conversation.",
-            "etymology": "「毎朝」 means 「every morning」."
+            "nuance": "「ます」 indicates a polite and formal register, suitable for general conversation."
+        },
+        {
+            "japanese": "この ドア {を} 出て 、 左 に 曲がって ください 。",
+            "english": "Please exit this door and turn left.",
+            "scene": "A woman giving directions to a man who is looking for the exit.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この ドア から 出て 、 左 に 曲がって ください 。",
+                    "mitigation": "The scene describes a direct instruction to 'exit' the door, emphasizing the action of leaving the specific point, which is best conveyed by を."
+                }
+            ],
+            "register": "teineigo (polite)",
+            "setting": "instructional",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "「ください」 indicates a polite request, suitable for a formal or instructional setting, with the speaker being a woman directing a man. This sentence highlights the female speaker's clear and direct instruction to a male listener."
         },
         {
             "japanese": "彼女 は 今朝 9時 に 東京駅 {を} 出発 しました。",
@@ -152,9 +167,7 @@
     ],
     "post_false_friends_writeup": "While 「を」 and 「から」 can both indicate a starting point, remember that 「を」 emphasizes the **action** of departing from a place, whereas 「から」 simply indicates the location where something originates. When describing movement, consider whether you want to highlight the departure itself or simply state the origin.",
     "change": [
-        "violation: Added `scene_rationale` to all example sentences as required by the schema. (Rule: 'Must be present if \"scene\" is present.')",
-        "violation: Corrected JLPT Kanji levels in Example 4. '卒業' (N2) was changed to '出たら' (N5) and '就職' (就: N1) was changed to '働き' (N3) to comply with JLPT N5 grammar point kanji rules. (Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.')",
-        "violation: Corrected JLPT Kanji levels in Example 6. '故郷' (N1) was changed to '地元' (N3) to comply with JLPT N5 grammar point kanji rules. (Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.')",
-        "schema: Changed `listener_gender` to 'no one' in Example 8 for clarity on the intended context of reminiscing, as it's not directed at a specific listener. (Rule: 'Use \"no one\" if the speaker is talking to themselves or no one in particular.')"
+        "violation: Removed the 'etymology' field from example 1 because its content was a simple translation, not a linguistic etymology, violating the rule: 'If present, etymologyType **must** be a linguistically interesting discussion of the history of how the related element evolved.'",
+        "violation: Added a new example (current example 2) with a female speaker and a male listener to ensure compliance with the rule: 'Example sentences should include at least one male and one female listener_gender.'"
     ]
 }

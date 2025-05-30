@@ -107,11 +107,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/あわよくば"
     },
     "change": [
-        "violation: Changed `details` content from `{\"Get more example sentences!\": \"Premium users get access to 12 example sentences on all Grammar Points.\"}` to `{\"Register\": \"Typically used in casual conversation, but can be used in some formal situations depending on the context.\"}`. Reason: The initial `details` was a website message, not a grammar detail, violating \"fix minor inaccuracies in 'details', but do not invent new details\" and the schema's implied usage for grammar details.",
-        "violation: Added `scene_rationale` to all examples. Reason: Prompt rule: \"If OTHER_WAYS is not empty, then you **must** have a 'scene' field. ... **Must** set a scene that will hint the user toward the correct grammar point. ... **Must** be present if 'scene' is present.\" All examples had a `scene` but no `scene_rationale`.",
-        "violation: Ensured `speaker_gender` and `listener_gender` diversity across examples. Reason: Prompt rule: \"Example sentences should include at least one male and one female speaker_gender.\" and \"Example sentences should include at least one male and one female listener_gender.\" The prior examples did not fully meet this.",
-        "unnatural: Adjusted `japanese` for examples 2 and 5 (adding `な`, `んだ`) and their corresponding `nuance` explanations to better reflect typical gendered speech patterns and register. Reason: To make the Japanese sound more natural and fluent, especially in the context of specified speaker/listener genders.",
-        "violation: Added `post_false_friends_writeup`. Reason: Schema requirement: `post_false_friends_writeup` is a required field.",
-        "unnatural: Clarified `scene` descriptions for examples 2, 4, and 5 to provide better context for gender and listener type. Reason: To make the scenes more engaging and precise as per prompt \"Good examples tell a little story\"."
+        "violation: Removed `lesson_order` field. Reason: Not present in the schema for the top-level grammar point object.",
+        "schema: Removed the inherited `change` field. Reason: The `change` field should only contain changes made by the current process, or \"no changes\" if no changes were made."
     ]
 }

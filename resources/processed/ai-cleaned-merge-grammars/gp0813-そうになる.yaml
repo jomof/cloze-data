@@ -5,12 +5,12 @@
         {
             "type": "dictionary (plain non-past)",
             "form": "そうになる",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "non-past polite (～ます)",
             "form": "そうになります",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "negative plain (～ない)",
@@ -25,12 +25,12 @@
         {
             "type": "past plain (～た)",
             "form": "そうになった",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "past polite (～ました)",
             "form": "そうになりました",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "negative past plain (～なかった)",
@@ -90,7 +90,7 @@
         {
             "type": "causative (～させる)",
             "form": "そうにさせる",
-            "rarity": "extremely unusual"
+            "rarity": "very rare"
         }
     ],
     "pronunciation": {
@@ -197,18 +197,16 @@
         {
             "japanese": "課長の冗談で、うっかり笑い{そうになった}が、何とかこらえた。",
             "english": "I almost burst out laughing at the section chief's joke, but I managed to hold it in.",
-            "scene": "A man in a professional setting struggling to maintain composure.",
+            "scene": "A person in a professional setting struggling to maintain composure.",
             "scene_rationale": [
                 {
                     "competing_grammar": "課長の冗談で、うっかり笑うところだったが、何とかこらえた。",
-                    "mitigation": "The scene emphasizes the act of nearly losing composure in a formal environment, where a man might be expected to maintain a serious demeanor towards a superior. This highlights the internal struggle to prevent an action, fitting 「そうになる」."
+                    "mitigation": "The scenario emphasizes the act of nearly losing composure in a formal environment, highlighting the internal struggle to prevent an action, fitting 「そうになる」."
                 }
             ],
             "register": "semi-formal",
             "setting": "professional",
-            "conjugation": "past plain (～た)",
-            "speaker_gender": "male",
-            "nuance": "While anyone can nearly laugh, the context of a 'section chief's joke' (課長の冗談) in a professional setting and the act of 'holding it in' (何とかこらえた) might more acutely highlight a male's perceived need to maintain composure or dignity in a business environment."
+            "conjugation": "past plain (～た)"
         },
         {
             "japanese": "こんなひどい仕打ちを受けて、涙が溢れ{そうになった}わ。",
@@ -267,6 +265,40 @@
             "register": "shitashii kuchō (intimate)",
             "setting": "intimate",
             "conjugation": "past plain (～た)"
+        },
+        {
+            "japanese": "この仕事、あまりにも大変で、途中で投げ出し{そうになった}よ、なぁ？",
+            "english": "This job was so tough, I almost gave up halfway through, wasn't it?",
+            "scene": "A man complaining to his male colleague about a difficult project they just finished.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この仕事、あまりにも大変で、途中で投げ出すところだったよ、なぁ？",
+                    "mitigation": "The scene emphasizes a casual conversation between male colleagues, where the nuance of 「なぁ」 makes 「そうになる」 feel natural for describing a shared, almost-happened struggle, focusing on the shared experience rather than relief from giving up."
+                }
+            ],
+            "register": "casual",
+            "setting": "complaining",
+            "conjugation": "past plain (～た)",
+            "speaker_gender": "male",
+            "listener_gender": "male",
+            "nuance": "The sentence-ending particle 「なぁ (naa)」 is commonly used by male speakers to seek agreement or confirm understanding, often in a casual context with another male."
+        },
+        {
+            "japanese": "ダイエット中なのに、ケーキを見て、思わず手を出し{そうになった}のよ。",
+            "english": "Even though I'm on a diet, seeing the cake, I almost instinctively reached out for it, you know.",
+            "scene": "A woman confessing to her female friend about a moment of weakness during her diet.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "ダイエット中なのに、ケーキを見て、思わず手を出すところだったのよ。",
+                    "mitigation": "The scene depicts a confidential conversation between female friends, where the personal and confessional tone, emphasized by 「のよ」, fits well with the nuance of 「そうになる」 describing a nearly succumbed internal struggle."
+                }
+            ],
+            "register": "casual",
+            "setting": "confessional",
+            "conjugation": "past plain (～た)",
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "nuance": "The sentence-ending particle 「のよ (no yo)」 is a gentle, somewhat emphatic, and common ending used by female speakers, conveying a sense of personal feeling or explanation."
         }
     ],
     "false_friends": [
@@ -285,11 +317,8 @@
     ],
     "post_false_friends_writeup": "While 「そう」 indicates appearance or hearsay, 「そうになる」 specifies that an action or event nearly occurred. 「ところだった」 similarly expresses a near occurrence but emphasizes the speaker's emotional response (relief or regret), whereas 「そうになる」 focuses more on the event itself.",
     "change": [
-        "violation: Corrected `conjugation` `type` values in the top-level `conjugations` array to match the `conjugationType` enum exactly (e.g., \"dictionary form\" to \"dictionary (plain non-past)\"). This was a schema compliance issue.",
-        "violation: Corrected `conjugation` field values within each example to reflect the updated `conjugationType` enum values from the top-level `conjugations` array (e.g., \"plain past form\" to \"past plain (～た)\"). This was a schema compliance issue.",
-        "violation: Specifically corrected `conjugation` for example 3 and 8 from \"polite form\" to \"past polite (～ました)\" as the Japanese sentences `そうになりました` are in the past polite form. This was a factual inaccuracy in the prior data not matching the example.",
-        "violation: Removed `speaker_gender`, `listener_gender`, and `speaker_age` from examples 1, 2, 3, 4, 5, 7, 8, and 9 where the associated `nuance` did not refer to a specific, unique gender- or age-bound linguistic marker in the Japanese sentence, as required by the rule: \"Use only if this sentence would typically only be spoken by this gender.\"",
-        "violation: Removed the `nuance` field from examples 7 and 9 as the previous descriptions were not specific enough to justify the assigned `speaker_gender` based on the strict rule.",
-        "command: Added two new examples (male and female speaker) to ensure the presence of `speaker_gender` with specific, justified linguistic `nuance` markers, fulfilling the rule: \"Example sentences should include at least one male and one female speaker_gender.\" This also addressed the issue created by removing unjustified gender markers from previous examples."
+        "violation: Removed `speaker_gender` and `nuance` from example 7 as the nuance did not specify a Japanese linguistic marker unique to the male gender, violating the rule: \"If there is a 'speaker_gender' or 'listener_gender', then 'nuance' **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.\"",
+        "command: Added a new example (example 12) with `speaker_gender: male` and `listener_gender: male`, including specific, justified linguistic nuance referring to 「なぁ」, to fulfill the command to include at least one male speaker example with justified nuance and to ensure at least one male listener example.",
+        "command: Added a new example (example 13) with `speaker_gender: female` and `listener_gender: female`, including specific, justified linguistic nuance referring to 「のよ」, to fulfill the command to include at least one female speaker example with justified nuance and to ensure at least one female listener example. Kanji for 誘惑 was changed to N3 compliant vocabulary for example 13."
     ]
 }

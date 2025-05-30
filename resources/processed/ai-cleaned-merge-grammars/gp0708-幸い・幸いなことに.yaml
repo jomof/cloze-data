@@ -161,5 +161,9 @@
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/幸い-幸いなことに"
     },
-    "change": "violation: Added {bold} to grammar point in Japanese examples as per rule 'Must have the grammar_point in {bold}'.\nviolation: Added 'scene_rationale' to all examples with 'scene' as per schema rule 'Must be present if \"scene\" is present'.\nviolation: Removed 'speaker_gender' from examples where the Japanese phrasing itself is not gender-specific, adhering to the rule 'Use only if this sentence would typically only be spoken by this gender'. This means the rule 'Example sentences should include at least one male and one female speaker_gender' could not be fully met for this grammar point type.\nviolation: Merged and refined 'etymology' and 'writeup' content from the original Bunpro source and the prior version, ensuring consistency and adherence to the schema's definitions for these fields.\nviolation: Moved 'bunpro.url' from the internal 'bunpro' object to 'sources.bunpro' as per schema requirements.\nno changes"
+    "change": [
+        "violation: Removed `speaker_gender` and `nuance` from examples where the Japanese phrasing was not inherently gender-specific, adhering to the rule 'Use only if this sentence would typically only be spoken by this gender'. This means the rule 'Example sentences should include at least one male and one female speaker_gender' could not be met for this grammar point type, as the grammar point itself and example phrasing do not naturally imply gender-specific usage.",
+        "violation: Changed `false_friends.kind` for the term 'ことに' from 'synonym' to 'similar expression'. This reflects the accurate linguistic relationship between 'ことに' and '幸い・幸いなことに', as 'ことに' functions as an intensifier or a component within the phrase, not a direct synonym for 'luckily' on its own.",
+        "schema: Moved the Bunpro URL from an internal 'bunpro' object structure to the top-level 'sources.bunpro' field to comply with the defined schema structure."
+    ]
 }

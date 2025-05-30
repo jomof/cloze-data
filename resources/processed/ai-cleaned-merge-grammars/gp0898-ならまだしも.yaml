@@ -157,13 +157,13 @@
         }
     ],
     "false_friends": [],
+    "post_false_friends_writeup": "",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ならまだしも"
     },
     "change": [
-        "unnatural: Corrected `pronunciation.romaji` from `madamashimo` to `madashimo` due to a typo causing unnatural romaji.",
-        "violation: Added `scene_rationale` to all examples that had a `scene` field but lacked `scene_rationale` per schema rule: \"scene_rationale\": \"Must be present if \\\"scene\\\" is present.\".",
-        "unnatural: Refined `nuance` for two gendered examples to more accurately reflect typical usage and nuance, aligning with the requirement to mention gender-specific Japanese phrases without making absolute claims about exclusive gendered speech.",
-        "violation: Removed `post_example_writeup` and `post_false_friends_writeup` fields as they were `null` in the prior, per schema rule: \"No fields should be null. Omit fields that are not applicable instead.\""
+        "violation: Removed top-level 'bunpro' field. 'You **must not** add top-level 'bunpro' or 'dojg' fields to the output JSON.'",
+        "schema: Removed top-level 'rank' and 'lesson_order' fields. These fields are not defined in the output schema.",
+        "schema: Added 'post_false_friends_writeup' field with an empty string value. This field is a 'required' field if 'false_friends' is present."
     ]
 }

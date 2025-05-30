@@ -288,6 +288,23 @@
             "speaker_gender": "female",
             "listener_gender": "male",
             "nuance": "「話せるようになりました」 expresses a gradual change in ability, indicating increased comfort. The polite form 「なりました」 is appropriate for a first-date setting, showing respect while sharing a personal feeling. This phrasing is natural for a female speaker expressing growing comfort in a new relationship."
+        },
+        {
+            "japanese": "もっと練習すれば、お母さんみたいにピアノが弾ける{ようになる}わよ。",
+            "english": "If you practice more, you'll become able to play the piano like your mother.",
+            "scene": "A mother encouraging her daughter.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "もっと練習すれば、お母さんみたいにピアノが弾けるわよ。",
+                    "mitigation": "The scene highlights the gradual *acquisition of the ability* to play the piano, rather than just the potential for it, a nuance that `ようになる` emphasizes."
+                }
+            ],
+            "register": "shitashii kuchō (intimate)",
+            "setting": "supportive",
+            "conjugation": "dictionary (plain non-past)",
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "nuance": "The use of 「～わよ」 (wa yo) is a sentence-ending particle often used by female speakers to add a soft, encouraging, or sometimes mildly assertive tone. In this context, it conveys warmth and encouragement from a mother to her daughter, characteristic of natural female speech."
         }
     ],
     "false_friends": [
@@ -315,8 +332,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/ようになる"
     },
     "change": [
-        "violation: Added `scene_rationale` to all examples to comply with rule 6 regarding the presence of `scene`.",
-        "violation: Removed the deprecated `listener_age` field from example 4 as per schema rules.",
-        "schema: Removed top-level `rank` and `lesson_order` fields which are not part of the output schema."
+        "violation: Added an example to include a female listener, as required by rule 6 specifying that example sentences must include at least one male and one female listener_gender."
     ]
 }

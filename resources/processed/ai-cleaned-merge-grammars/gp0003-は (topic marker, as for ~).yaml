@@ -123,18 +123,18 @@
             "nuance": "During a date, the speaker politely comments on the cake's sweetness. The 「ね」 adds a seeking of agreement from the listener."
         },
         {
-            "japanese": "田中 さん {は} 会議 に 出席 しません。",
-            "english": "As for Mr. Tanaka, he will not attend the meeting.",
-            "scene": "A manager is informing a team about meeting attendance.",
+            "japanese": "田中 さん {は} 学校 に 来ません。",
+            "english": "As for Mr. Tanaka, he will not come to school.",
+            "scene": "A teacher is informing students about a classmate's absence.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "田中 さん が 会議 に 出席 しません。",
-                    "mitigation": "「田中さんが会議に出席しません。」would highlight \"Mr. Tanaka\" as the specific person who will not attend, perhaps in response to \"Who won't attend?\". The scene clarifies a general statement of fact."
+                    "competing_grammar": "田中 さん が 学校 に 来ません。",
+                    "mitigation": "「田中さんが学校に来ません。」would highlight \"Mr. Tanaka\" as the specific person who will not come, perhaps in response to \"Who won't come?\". The scene clarifies a general statement of fact."
                 }
             ],
-            "register": "formal",
-            "setting": "professional",
-            "nuance": "「は」 marks 「田中さん」 as the topic, conveying information about his attendance at the meeting."
+            "register": "semi-formal",
+            "setting": "academic",
+            "nuance": "「は」 marks 「田中さん」 as the topic, conveying information about his absence from school."
         },
         {
             "japanese": "お 酒 {は} 飲み ます けど 、ビール {は} ちょっと …",
@@ -151,20 +151,20 @@
             "nuance": "Using 「は」to contrast different kinds of alcoholic beverages. This implies the speaker drinks alcohol in general but has a reservation about beer specifically. The pauses indicated by 「…」 further emphasize the hesitation."
         },
         {
-            "japanese": "私 {は} 、あなた の 笑顔 が 一番 好き よ。",
-            "english": "As for me, I like your smile the best.",
+            "japanese": "私 {は} 、あなた の 顔 が とても 好き よ。",
+            "english": "As for me, I like your face very much.",
             "scene": "A woman complimenting a man intimately.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "私 が あなた の 笑顔 が 一番 好き よ。",
-                    "mitigation": "「私があなたの笑顔が一番好きよ。」would emphasize \"I\" as the specific person who likes the smile best, possibly if others were discussing their preferences. The scene clarifies that the speaker is simply stating her overall preference."
+                    "competing_grammar": "私 が あなた の 顔 が とても 好き よ。",
+                    "mitigation": "「私があなたの顔がとても好きよ。」would emphasize \"I\" as the specific person who likes the face best, possibly if others were discussing their preferences. The scene clarifies that the speaker is simply stating her overall preference."
                 }
             ],
             "register": "shitashii kuchō",
             "setting": "intimate",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "「は」 marks 「私」 as the topic, indicating the speaker's personal preference. The 「よ」 particle at the end, often used by female speakers, adds a soft, reassuring, or informing nuance, making the compliment more intimate and direct."
+            "nuance": "「は」 marks 「私」 as the topic, indicating the speaker's personal preference. The 「よ」 particle at the end, often used by female speakers, adds a soft, reassuring, or informing nuance."
         }
     ],
     "post_example_writeup": "Remember that using 「は」correctly requires understanding the context and what the speaker wants to emphasize. It's a nuanced particle that can significantly alter the meaning of a sentence.",
@@ -195,13 +195,12 @@
         }
     ],
     "post_false_friends_writeup": "To avoid mixing up 「は」with similar particles, focus on the role each particle plays in the sentence. 「は」sets the stage by introducing the topic, 「が」highlights specific information, and 「の」indicates possession or modification. When unsure, consider whether you are introducing a topic or emphasizing a subject; this will guide your choice.",
-    "change": [
-        "schema: Removed top-level 'sources' field. The schema does not include this field at the top level, and the prior 'change' array already noted this as a violation.",
-        "violation: Added spaces between words in 'japanese' example sentences to improve Mecab parsing, as required by the rule 'Japanese must have a space between words to assist mecab in parsing.'.",
-        "violation: Modified kanji and vocabulary in example sentences to align with JLPT N5 level, as required by the rule 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'. Specifically: '嫌い' (N1) was changed to '好きではありません', '寿司' (N1) was changed to 'りんご', and '綺麗' (N1) was changed to '素敵' (N3).",
-        "violation: Added 'scene' and 'scene_rationale' to examples where 'OTHER_WAYS' (alternative grammatical constructions) were identified, as required by the rule 'If OTHER_WAYS is not empty, then you must have a \"scene\" field.'."
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/は"
-    }
+    },
+    "change": [
+        "violation: Example sentences should use kanji appropriate for the JLPT level of the grammar point. The previous example 8 used N3 kanji (`会議`, `出席`) for an N5 grammar point. This was changed to use N5 kanji (`学校`, `来ません`). This change necessitated adjustments to the English translation, scene, scene rationale, register, setting, and nuance to maintain coherence.",
+        "violation: Example sentences should use kanji appropriate for the JLPT level of the grammar point. The previous example 10 used N3 kanji (`笑顔`, `一番`) for an N5 grammar point. This was changed to use N5 kanji/vocabulary (`顔`, `とても好き`). This change necessitated adjustments to the English translation, scene rationale, and nuance to maintain coherence. The nuance field was also previously incorrect for this specific example's meaning, which was an unnatural fix.",
+        "violation: false_friends must not reference other conjugations of this grammar point. The entry `{\"term\": \"Number/Amount+は\", ...}` was removed as it refers to a usage of the particle `は` itself, rather than a distinct false friend."
+    ]
 }

@@ -197,6 +197,27 @@
             "listener_gender": "female",
             "nuance": "The 「～な」 at the end is a masculine sentence ending particle used to express emotion or conviction. This, combined with 「彼女がそんなに頼むのなら」 makes it a male speaker.",
             "conjugation": "dictionary (plain non-past)"
+        },
+        {
+            "japanese": "会社の規則なので、この書類を提出{せざるを得ない}わね。",
+            "english": "It's a company rule, so I have no choice but to submit this document, you know.",
+            "scene": "A female employee explaining to a male colleague why she has to follow a certain procedure.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "提出しなければならないわね",
+                    "mitigation": "While `提出しなければならないわね` (must submit) implies an obligation, the scene emphasizes that the action is compelled by an external, formal rule, making `ざるを得ない` a more suitable expression for the unavoidable nature of the situation."
+                },
+                {
+                    "competing_grammar": "提出するしかないわね",
+                    "mitigation": "Similar to `提出するしかないわね` (have no choice but to submit), but `ざるを得ない` highlights the external rule as the compelling factor, rather than merely the absence of alternatives, conveying a slightly more formal and resigned tone in a professional context."
+                }
+            ],
+            "register": "formal",
+            "setting": "professional",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "conjugation": "dictionary (plain non-past)",
+            "nuance": "The use of 「～わね」 is characteristic of female speech, adding a softer, confirmatory tone. The phrase 「会社の規則なので」 clearly states the external, unavoidable reason for the action."
         }
     ],
     "false_friends": [
@@ -242,9 +263,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/ざるを得ない"
     },
     "change": [
-        "violation: Added 'scene_rationale' to all examples to comply with the schema's requirement that it be present if 'scene' is, and to provide the necessary context for avoiding competing grammar.",
-        "schema: Changed 'rarity' values in 'conjugations' array from 'commonly used' to 'common' and 'rare in everyday speech' to 'rare' to align with the predefined enum values in the schema.",
-        "violation: Added 'てたまらない' and 'てしょうがない' to 'false_friends' to fully reflect the data provided in the input Bunpro grammar point.",
-        "violation: Added 'post_false_friends_writeup' to comply with the schema's requirement that it be present if 'false_friends' exists."
+        "violation: Added curly braces to highlight the grammar point in all 'japanese' example sentences, as required by the schema's instructions to have the grammar_point in {bold}.",
+        "violation: Added an additional example sentence to ensure the presence of at least one female speaker and one male listener gender in the examples, as required by the schema's instructions for diverse examples."
     ]
 }

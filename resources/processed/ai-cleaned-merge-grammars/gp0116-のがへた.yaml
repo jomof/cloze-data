@@ -226,13 +226,5 @@
     "post_false_friends_writeup": "To avoid confusion, remember that 「のが好き」 indicates enjoyment, while 「のが上手」 indicates skill. 「のが下手」 is always about lacking skill or proficiency, never about preference.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/のがへた"
-    },
-    "change": [
-        "schema: Added top-level `conjugations` array because the grammar point (na-adjective `下手`) is conjugatable, as per rule \"If the grammar point contains a verb in **dictionary form** (besides だ or です) or adjective in **dictionary form**, add a new array field at the top, called \"conjugations\".\"",
-        "schema: Added `conjugation` field to each example because a top-level `conjugations` array was added, as per rule \"Must be present if there is a top-level \"conjugations\" array.\"",
-        "schema: Added `scene_rationale` to each example that had a `scene`, as per rule \"Must be present if \\\"scene\\\" is present.\"",
-        "violation: Changed `false_friends.kind` for `のがすき` from \"synonym\" to \"similar expression\" because \"synonym\" was inaccurate.",
-        "violation: Changed `false_friends.kind` for `のがじょうず` from \"synonym\" to \"antonym\" because \"synonym\" was inaccurate.",
-        "violation: Added a new example (games) to ensure at least one male and one female `speaker_gender` and `listener_gender` are present across the examples, as per rules \"Example sentences should include at least one male and one female speaker_gender.\" and \"Example sentences should include at least one male and one female listener_gender.\""
-    ]
+    }
 }

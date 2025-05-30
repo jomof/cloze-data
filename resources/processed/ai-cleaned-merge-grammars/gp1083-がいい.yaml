@@ -172,14 +172,5 @@
     "post_false_friends_writeup": "Be mindful of the degree of forcefulness you want to convey. For polite suggestions or advice, opt for 「たほうがいい」. Reserve 「がいい」 for situations where you have legitimate authority or wish to express a strong recommendation, knowing it may sound somewhat pompous.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/がいい"
-    },
-    "change": [
-        "violation: The initial `details` field from the input YAML (`'Get more example sentences!'`) was not a grammatical detail. Replaced it with the accurate details from the prior YAML, which correctly describe the grammar point's register, usage, and connotation. (Rule: 'Fix minor inaccuracies in \"details\", but do not invent new details.')",
-        "violation: The top-level `bunpro` field from the input YAML was removed as per the schema rule: 'You **must not** add top-level 'bunpro' or 'dojg' fields to the output JSON.' Data was extracted and integrated into the correct fields.",
-        "schema: Added `conjugations` array as the grammar point contains an i-adjective in dictionary form (`いい`), and included relevant forms (`がいい`, `がよい`, `がよかろう`) that preserve the meaning as per the schema definition. (Rule: 'If the grammar point contains a verb in dictionary form (besides だ or です) or adjective in dictionary form, add a new array field at the top, called \"conjugations\". It should list all of the possible conjugations of grammar_point, including the grammar point itself.')",
-        "schema: Added `conjugation` field to each example object, specifying the type based on the new top-level `conjugations` array. (Rule: 'Must be present if there is a top-level \"conjugations\" array.')",
-        "schema: Added `scene_rationale` to all examples where `scene` was present, as required by the schema. (Rule: 'Must be present if \"scene\" is present.')",
-        "unnatural: Added a new example to ensure diversity in `speaker_gender` (female) and `listener_gender` (female) as required by the schema. (Rule: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.')",
-        "schema: Removed the `etymology` field from example 6 (now example 7) (`お前 は もう 少し 私 に 感謝 する {が いい}。`) as it was a translation of `感謝する` rather than an etymological discussion, violating the definition of `etymologyType`. (Rule: 'Etymology of the example sentence or specific phrases in the japanese example sentence. - **Must not** repeat the etymology of the grammar point.' and implicit type definition of 'etymologyType' as a 'linguistically interesting discussion of the history of how the related element evolved.')"
-    ]
+    }
 }

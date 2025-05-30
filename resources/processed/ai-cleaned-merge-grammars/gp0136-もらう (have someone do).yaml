@@ -104,7 +104,8 @@
     },
     "details": {
         "Register": "Neutral",
-        "Usage": "Used to express that the speaker, or someone the speaker empathizes with, receives a benefit from an action performed by another person, where the doer's status is not higher than the recipient's."
+        "Usage": "Used to express that the speaker, or someone the speaker empathizes with, receives a benefit from an action performed by another person, where the doer's status is not higher than the recipient's.",
+        "Part of Speech": "Auxiliary Verb (Group 1)"
     },
     "etymology": "The grammar point もらう is derived from the verb もらう, which means \"to receive\". When used as an auxiliary verb, it retains the sense of receiving, but in the context of someone performing an action that benefits the speaker.",
     "writeup": "The grammar point **もらう (morau)** is used to express that someone does something for the speaker's benefit. It's attached to the te-form of a verb (Vて + もらう). This grammar point implies that the speaker is receiving a favor or a benefit from someone else's action. It is important to remember that the person doing the action is typically of equal or lower status than the person who benefits. The related verbs are くれる (kureru), which indicates that someone does something for the speaker, and あげる (ageru), which indicates the speaker does something for someone else.",
@@ -278,12 +279,7 @@
     ],
     "post_false_friends_writeup": "To avoid confusion, remember that もらう focuses on receiving a benefit, くれる focuses on someone giving a benefit to the speaker or their in-group, and あげる focuses on the speaker giving a benefit to someone else (who is typically of equal or lower status).",
     "change": [
-        "schema: Removed 'listener_age' from examples as per schema deprecation.",
-        "schema: Added 'conjugation' field to example 6 ('desiderative (～たい)') and corrected conjugation type for example 7 to 'conditional (～ば)' to align with schema and grammatical function.",
-        "schema: Added 'scene_rationale' to all examples containing a 'scene' field to comply with schema requirements.",
-        "schema: Modified register for example 8 from 'shitashii kuchō' to 'shitashii kuchō (intimate)' to match the exact enum value.",
-        "violation: Added a new example (example 9) to include a 'male' listener gender, fulfilling the diversity requirement of rule 6.",
-        "violation: Modified Japanese in example 7 from '承認して' (N1 Kanji) to '許可して' (N3 Kanji) to ensure JLPT compliance for an N3 grammar point.",
-        "accuracy: Corrected 'imperative polite' form in 'conjugations' from 'もらってください' to 'もらいなさい' to be a direct conjugation of the verb もらう as per the schema's '～なさい' type."
+        "schema: Removed top-level 'dojg' field, as per rule 20 which forbids it.",
+        "violation: Moved 'Part of Speech: Auxiliary Verb (Group 1)' from the removed 'dojg' field into the 'details' field to preserve this relevant grammatical information."
     ]
 }

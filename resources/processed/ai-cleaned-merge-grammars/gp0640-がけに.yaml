@@ -10,6 +10,7 @@
     },
     "jlpt": "N2",
     "meaning": "On the way to, As you go, While doing",
+    "meaning_warning": "Kanji is rarely used",
     "details": {
         "Register": "Standard",
         "使用域": "一般"
@@ -111,8 +112,8 @@
             "nuance": "The speaker uses the 「ね」 particle to seek agreement from the listener, indicating a casual, gossipy tone that is typically associated with female speech in this context."
         },
         {
-            "japanese": "子供の頃、学校への行き{がけに}この店によく立ち寄ったものだ。",
-            "english": "During my childhood, I often stopped by this store on my way to school.",
+            "japanese": "子供の頃、学校への行き{がけに}この駄菓子屋によく立ち寄ったものだ。",
+            "english": "During my childhood, I often stopped by this small-time candy store on my way to school.",
             "scene": "A parent reminiscing with their child.",
             "scene_rationale": [
                 {
@@ -123,7 +124,7 @@
             "register": "casual",
             "setting": "storytelling",
             "speaker_age": "older",
-            "nuance": "The phrase 「〜ものだ」 expresses nostalgia or a past habit, often used by older speakers when sharing memories with younger listeners. The context of stopping by a store on the way to school evokes a childhood memory."
+            "nuance": "The phrase 「〜ものだ」 expresses nostalgia or a past habit, often used by older speakers when sharing memories with younger listeners. The context of stopping by a candy store on the way to school evokes a childhood memory."
         },
         {
             "japanese": "ねぇ、帰り{がけに}一杯どう？話したいことがたくさんあるんだ。",
@@ -177,7 +178,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/がけに"
     },
     "change": [
-        "violation: All examples with 'scene' must also have 'scene_rationale'. Added 'scene_rationale' to all examples that previously had 'scene' but lacked this field, to comply with the schema's internal comment: 'scene_rationale: **Must** be present if \"scene\" is present.'",
-        "schema: Removed 'listener_age' from example 8 as it is deprecated according to the schema comment: 'listener_age is deprecated. You *must* remove it.'"
+        "violation: Added 'meaning_warning' from the input Bunpro data, as it was missing in the prior version. (Rule: 'You may fix minor inaccuracies in \"details\", but do not invent new details.')",
+        "unnatural: Reverted 'この店' to 'この駄菓子屋' in example 8 for more specific and natural vocabulary, aligning with the nuance of childhood reminiscence."
     ]
 }

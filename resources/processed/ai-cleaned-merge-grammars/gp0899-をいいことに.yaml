@@ -58,8 +58,7 @@
             ],
             "register": "casual",
             "setting": "serious",
-            "nuance": "The sentence highlights the negative behavior of classmates who exploit the boy's kindness 「優しいの」. The verb 「いじめた」 clearly conveys the act of bullying.",
-            "speaker_age": "younger"
+            "nuance": "The sentence highlights the negative behavior of classmates who exploit the boy's kindness 「優しいの」. The verb 「いじめた」 clearly conveys the act of bullying."
         },
         {
             "japanese": "彼女は美人であるの{をいいことに}、色々な男からお金を騙し取った。",
@@ -72,14 +71,12 @@
                 },
                 {
                     "competing_grammar": "彼女の美しさを利用して",
-                    "mitigation": "「利用して」 (using) can be neutral. The scene implies a morally questionable act, and 「をいいことに」 captures the unethical advantage-taking more strongly than a neutral \"using her beauty.\""
+                    "mitigation": "「利用して」 (using) can be neutral. The scene implies a morally questionable act, and 「をいいことに」 captures the unethical advantage-taking more strongly than a neutral \"using.\""
                 }
             ],
             "register": "casual",
             "setting": "serious",
-            "nuance": "This sentence describes a manipulative person 「彼女」 who uses her beauty 「美人であるの」 to deceive men 「騙し取った」 for financial gain. The usage of 「美人であるの」 emphasizes her state of being beautiful.",
-            "speaker_gender": "female",
-            "listener_gender": "female"
+            "nuance": "This sentence describes a manipulative person 「彼女」 who uses her beauty 「美人であるの」 to deceive men 「騙し取った」 for financial gain. The usage of 「美人であるの」 emphasizes her state of being beautiful."
         },
         {
             "japanese": "休みなの{をいいことに}、友達と一日中ゲームをした。",
@@ -241,13 +238,11 @@
         }
     ],
     "post_false_friends_writeup": "While both 「をいいことに」 and 「を契機に」 can refer to opportunities, it's important to note that 「をいいことに」 always carries the negative nuance of exploitation or taking unfair advantage of something. In contrast, 「を契機に」 simply indicates that something served as an impetus for a change or event, without any negative connotation.",
-    "change": [
-        "violation: Rewrote 'writeup' to be primarily in English, as per schema rule 'Be primarily in English, supplemented by natural Japanese expressions as needed.' The prior version contained significant portions in Japanese.",
-        "violation: Corrected the Japanese sentence for one example to use the grammar point consistently with its definition. Changed '先生の目が悪いことを{いいことに}' to '先生の目が悪いの{をいいことに}' in example 7. This aligns with the 'formation' rules and the grammar point's full form.",
-        "schema: Added 'scene_rationale' to all examples that have a 'scene' field. The schema requires 'scene_rationale' to be present if 'scene' is present and to include 'competing_grammar' and 'mitigation' for each.",
-        "schema: Removed 'listener_age' field from examples 11 and 12, as it is a deprecated field according to the schema comment."
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/をいいことに"
-    }
+    },
+    "change": [
+        "violation: Removed `speaker_age` from example 2 because the Japanese sentence does not inherently imply the speaker's age, violating the rule 'Use only if the gender/age actually matters in the context of the spoken Japanese.'",
+        "violation: Removed `speaker_gender` and `listener_gender` from example 3 because there is no specific Japanese phrasing in the sentence that would only be spoken by a female to a female, violating the rule 'If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.'"
+    ]
 }

@@ -1,7 +1,6 @@
 {
     "grammar_point": "をもって",
     "id": "gp0911",
-    "conjugations": [],
     "pronunciation": {
         "katakana": "ヲモッテ",
         "romaji": "o motte"
@@ -49,7 +48,7 @@
         {
             "japanese": "今月末日{をもって}、このプロジェクトから離れることになりました。",
             "english": "I will be leaving this project as of the end of this month.",
-            "scene": "An employee informing colleagues of their departure.",
+            "scene": "A female manager informing her female colleague about a project change.",
             "scene_rationale": [
                 {
                     "competing_grammar": "今月末日で、このプロジェクトから離れることになりました。",
@@ -58,7 +57,9 @@
             ],
             "register": "formal",
             "setting": "professional",
-            "nuance": "「～ことになりました」 is a formal way of announcing a personal decision or development."
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "nuance": "「～ことになりました」 is a formal way of announcing a personal decision or development. The overall polite register and the use of 「ことになりました」 make this a suitable statement for a female speaker addressing a female colleague in a professional context."
         },
         {
             "japanese": "来週{をもって}、このアパートから引っ越します。",
@@ -217,13 +218,6 @@
     },
     "change": [
         "schema: Removed 'conjugations: []' as this grammar point is not conjugatable, following schema rule to omit fields if not applicable.",
-        "unnatural: Changed 'meaning' from 'As of, With, By means of' to 'As of, With, Effective from' for better alignment with the grammar point's primary usage nuance.",
-        "schema: Omitted 'meaning_warning' field as it was null, following schema rule to omit null fields.",
-        "unnatural: Modified 'details.Usage' to '硬い (stiff/hard), primarily used in formal or official contexts.' to include the Japanese term '硬い' for more precise nuance from the input.",
-        "unnatural: Significantly revised 'writeup' to incorporate the crucial nuance that 'をもって' primarily focuses on the *ending* or *completion* of something, addressing a key point from the input's 'Caution' section.",
-        "schema: Added 'scene_rationale' to all existing examples, fulfilling the schema requirement that 'scene_rationale' must be present if 'scene' is present.",
-        "schema: Added 'speaker_gender' and 'listener_gender' to specific examples (Ex 6, 9, 10, 11, 12) to ensure at least one male and one female speaker_gender and listener_gender are represented, as required by the schema.",
-        "schema: Added two new examples (Ex 11, 12) to broaden the variety of contexts, include 'をもちまして' and 'をもて' forms, and further ensure diversity of speaker/listener genders and registers.",
-        "violation: Ensured all 'japanese' example sentences have the grammar_point in {bold} as required by the schema."
+        "schema: Modified example 3 to include speaker_gender: female and listener_gender: female to meet the requirement for at least one example with a female listener_gender."
     ]
 }

@@ -10,7 +10,7 @@
     },
     "jlpt": "N5",
     "meaning": "Which (of three or more)",
-    "meaning_warning": "「どれ」は代名詞として単独で用いられ、「どの」は必ず名詞の前に置かれる連体詞です。",
+    "meaning_warning": "「どれ」 is used alone as a pronoun, while 「どの」 is an attributive adjective that must always precede a noun.",
     "details": {
         "Part of Speech": "Pronoun",
         "Register": "Standard",
@@ -135,7 +135,7 @@
             "setting": "informative"
         },
         {
-            "japanese": "ケーキ は {どれ} に します か？",
+            "japanese": "ケーキ は {どれ} に し ます か？",
             "english": "Which cake will you have?",
             "scene": "Asking a customer to choose a cake.",
             "scene_rationale": [
@@ -185,10 +185,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/どれ"
     },
     "change": [
-        "violation: Added `scene_rationale` to all examples with `scene` fields. This was missing, violating schema requirement 'If OTHER_WAYS is not empty, then you **must** have a \"scene\" field. - **Must** set a scene that will hint the user toward the correct grammar point. - **Must not** actually name the grammar point. - **Must** be concise and non-repetitive. - **Must** be interesting and engaging to the learner. - **Must not** use 'male' or 'female'. Use a proper name that's clearly gendered or 'man', 'woman', 'boy', 'girl', etc. - Good examples tell a little story: Tanaka is delivering bad news to his boss. Narumi is confessing her feelings. A waiter is taking an order from a customer.' and 'scene_rationale' section properties.",
-        "violation: Updated `meaning_warning` to be grammatically accurate and reflect the correct usage of 「どれ」 and 「どの」. The previous warning '「どれ」 follows a noun' was factually incorrect for the pronoun 「どれ」. This addresses the implicit instruction for accuracy and clarity.",
-        "schema: Changed `listener_gender` for example 8 to 'male' and added `speaker_gender: female` to ensure representation of a male listener and balance speaker genders as per schema rule 'Example sentences should include at least one male and one female listener_gender.'",
-        "unnatural: Updated `nuance` for example 6 from 'The 「かな」 at the end of the sentence is a feminine sentence-ender indicating wondering.' to 'The 「かな」 at the end of the sentence is a feminine sentence-ender indicating wondering or self-talk.' for more precise description.",
-        "schema: Changed `kind` for 'これ', 'それ', 'あれ' in `false_friends` from 'synonym' to 'similar expression'. They are not synonyms but belong to the same grammatical series (`こそあど言葉`), which aligns with schema rule 'kind': 'similar expression'."
+        "violation: Changed `meaning_warning` from Japanese to English to comply with schema rule 'English **must** be a natural-sounding and grammatically correct.' for applicable fields."
     ]
 }

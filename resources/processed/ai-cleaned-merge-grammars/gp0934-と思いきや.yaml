@@ -12,7 +12,7 @@
     "meaning": "Despite having thought..., When...thought that...but, Thought...but",
     "details": {
         "Register": "Standard",
-        "Usage Area": "General"
+        "使用域": "一般"
     },
     "etymology": "The expression 「と思いきや」 is derived from 「と」 (case-marking particle), 「思い」 (conjunctive form of the verb 「思う」, 'to think'), 「き」 (classical auxiliary verb indicating past tense), and 「や」 (classical binding particle marking questions). Literally, it translates to something like 'I thought it *had* been (A), but I guess (B)'.",
     "writeup": "「と思いきや」 is used to express that something turned out differently than expected. It often translates to \"despite having thought (A), (B),\" or \"when I thought that (A), it was actually (B).\" It emphasizes the speaker's surprise that the reality (B) does not match the initial assumption (A). A past tense phrase will almost always appear in the second part of the sentence, (B), as it is considered to be the actual situation which has come about, or has been realized by the speaker. Caution: this grammar point is used when the speaker has come to realize that their initial thought was wrong.",
@@ -148,7 +148,8 @@
             "register": "casual",
             "setting": "humorous",
             "speaker_gender": "male",
-            "nuance": "「驚くことに」 emphasizes the speaker's surprise. The 「〜さん」 suffix, commonly used in general polite address, contributes to the casual but respectful tone. The speaker's gender is indicated as male."
+            "listener_gender": "female",
+            "nuance": "「驚くことに」 emphasizes the speaker's surprise. The speaker (male) is recounting this to a female listener. The 「〜さん」 suffix, commonly used in general polite address, contributes to the casual but respectful tone appropriate for a general conversation."
         },
         {
             "japanese": "納豆はまずそうに見えるから、間違いなくまずい{と思いきや}、実際は、そうではなかった。",
@@ -192,7 +193,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/と思いきや"
     },
     "change": [
-        "violation: Added 'scene_rationale' to all examples where 'scene' was present, as required by Rule 6, which mandates its presence if 'scene' is there.",
-        "violation: Removed the 'listener_age' field from example 7, as this field is deprecated according to the schema definition and accompanying comment."
+        "command: Removed the 'listener_age' field from example 7, as this field is deprecated according to the schema definition and accompanying comment.",
+        "violation: Changed 'Usage Area' to '使用域' in 'details' to align with the source data and maintain minimal modification, as per the instruction to 'fix minor inaccuracies in 'details', but do not invent new details.' This ensures consistency with the provided raw grammar point data.",
+        "violation: Added 'listener_gender: female' to example 9 and updated its 'nuance' to meet the requirement that 'Example sentences should include at least one male and one female listener_gender' as per Rule 6."
     ]
 }

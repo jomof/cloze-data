@@ -173,9 +173,9 @@
             "nuance": "The phrase 「まとめたものです」 is a standard polite and informative way to present a report or summary in a business context, emphasizing the compiled nature of the information."
         },
         {
-            "scene": "Talking to someone you're interested in.",
             "japanese": "二人 {分} の幸せ、一緒に分け合おうよ。",
             "english": "Let's share a double portion of happiness together.",
+            "scene": "Talking to someone you're interested in.",
             "scene_rationale": [
                 {
                     "competing_grammar": "二倍の幸せ、一緒に分け合おうよ。",
@@ -201,10 +201,7 @@
     ],
     "post_false_friends_writeup": "While 「分」 indicates a quantity or share, 「部分」 refers to a general part. Thus, use 「分」 when quantifying and 「部分」 when describing a component.",
     "change": [
-        "violation: Removed 'listener_age' from all example entries. Reason: '\"listener_age\" is deprecated. You *must* remove it.'",
-        "violation: Corrected 'speaker_gender' and 'listener_gender' values in Example 3. Reason: 'speaker_gender': (optional, required if there is a listener gender) gender of the speaker. One of: male, female.",
-        "violation: Added 'scene_rationale' to all example entries where 'scene' was present. Reason: 'If OTHER_WAYS is not empty, then you **must** have a \"scene\" field. - **Must** have a \"scene_rationale\" field.'",
-        "violation: Refined 'nuance' for all example entries to include Japanese phrases in 「quotes」. Reason: 'nuance: - **Must** refer to parts of the japanese sentence in「quotes」.'",
-        "unnatural: Rephrased English translation for Example 3 for clarity and naturalness. Original: 'I'll pay the remaining amount in cash with a check.' -> New: 'I'll pay the cash shortfall by check.'"
+        "violation: Removed top-level 'dojg' field. Rule: 'You **must not** add top-level 'bunpro' or 'dojg' fields to the output JSON.'",
+        "violation: Removed top-level 'lesson_order' field. Rule: Not part of the specified schema."
     ]
 }

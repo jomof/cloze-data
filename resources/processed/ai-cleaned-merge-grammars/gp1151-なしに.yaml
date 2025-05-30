@@ -162,34 +162,34 @@
             "register": "casual",
             "setting": "intimate",
             "nuance": "The 「～なしには～ない」 construction expresses a strong dependence on music.",
-            "etymology": "「音楽」 (ongaku) means 'music,' and 「生きていけない」 (ikite ikenai) means 'cannot live.'"
+            "etymology": "「音楽」 (ongaku) means 'music,' and 「生きていけない」 (ikiru) means 'cannot live.'"
         },
         {
-            "japanese": "きちんと 確認すること {なしに} 契約してしまった。",
-            "english": "I signed the contract without properly checking it.",
+            "japanese": "きちんと 確認すること {なしに} 書類に サインしてしまった。",
+            "english": "I signed the document without properly checking it.",
             "scene": "An employee talking to their boss.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "きちんと確認せずに契約してしまった。",
+                    "competing_grammar": "きちんと確認せずに書類にサインしてしまった。",
                     "mitigation": "The scene involves an employee apologizing to their boss, suggesting a need for a slightly more formal or precise expression. 「なしに」 often implies a more significant omission, fitting the apologetic context."
                 },
                 {
-                    "competing_grammar": "きちんと確認しないで契約してしまった。",
+                    "competing_grammar": "きちんと確認しないで書類にサインしてしまった。",
                     "mitigation": "For an apology in a professional setting, 「なしに」 provides a more formal and slightly more regretful nuance than the casual 「～ないで」."
                 }
             ],
             "register": "semi-formal",
             "setting": "apologetic",
-            "nuance": "The 「～てしまった」 implies regret about signing the contract without proper verification.",
-            "etymology": "「確認する」 (kakunin suru) means 'to confirm.'"
+            "nuance": "The 「～てしまった」 implies regret about signing the document without proper verification.",
+            "etymology": "「確認する」 (kakunin suru) means 'to confirm.' 「書類」 (shorui) means 'document.'"
         },
         {
-            "japanese": "そんなに 見つめないで。許可 {なしに} 君の 心に 侵入しちゃうぞ。",
-            "english": "Don't stare at me like that. I might just invade your heart without permission, you know.",
+            "japanese": "そんなに 見つめないで。許可 {なしに} 君の 心に 入ってしまうぞ。",
+            "english": "Don't stare at me like that. I might just enter your heart without permission, you know.",
             "scene": "A man trying to flirt with a woman.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "そんなに見つめないで。許可なしで君の心に侵入しちゃうぞ。",
+                    "competing_grammar": "そんなに見つめないで。許可なしで君の心に入ってしまうぞ。",
                     "mitigation": "In this playful, slightly aggressive flirting context, 「なしに」 lends a touch of dramatic flair, emphasizing the audacity of the implied action more effectively than the more neutral 「なしで」."
                 }
             ],
@@ -197,8 +197,8 @@
             "setting": "flirty",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "The man uses 「侵入しちゃうぞ」 to playfully joke about invading the woman's heart. The sentence-final particle 「ぞ」 is typically used by male speakers to add emphasis or conviction.",
-            "etymology": "「見つめないで」 (mitsumenaide) means 'don't stare,' 「許可」 (kyoka) means 'permission,' and 「侵入」 (shinnyū) means 'invasion.'"
+            "nuance": "The man uses 「入ってしまうぞ」 to playfully joke about entering the woman's heart. The sentence-final particle 「ぞ」 is typically used by male speakers to add emphasis or conviction.",
+            "etymology": "「見つめないで」 (mitsumenaide) means 'don't stare,' 「許可」 (kyoka) means 'permission,' and 「心」 (kokoro) means 'heart.' 「入る」 (hairu) means 'to enter.'"
         },
         {
             "japanese": "この データ {なしには} 彼に 説明できないわ。",
@@ -237,12 +237,7 @@
     ],
     "post_false_friends_writeup": "「なしに」、「ないで」, and 「ずに」 all express the idea of doing something 'without' something else. However, 「なしに」 is more formal and often emphasizes the absence of a specific noun or action, while 「ないで」 connects two actions performed by the same subject, and 「ずに」 is a more literary alternative to 「ないで」.",
     "change": [
-        "violation: Removed 'meaning_warning' and 'post_example_writeup' fields because they were null, violating 'No fields should be null. Omit fields that are not applicable instead.'",
-        "violation: Added 'scene_rationale' to all examples that had a 'scene' field, as per 'If OTHER_WAYS is not empty, then you **must** have a \"scene\" field.' which implies that any existing 'scene' requires 'scene_rationale'.",
-        "violation: Added a new example with a female speaker and male listener to meet the diversity requirement: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'",
-        "violation: Removed 'speaker_gender' from Example 4 as the Japanese phrase '決めてしまった' is not exclusively spoken by females, violating 'Use only if this sentence would typically only be spoken by this gender'.",
-        "violation: Removed 'speaker_age' from Example 8 as the Japanese phrase '生きていけない' is not exclusively spoken by younger speakers, violating 'Use only if this sentence would typically only be spoken by this gender' (applied to age).",
-        "unnatural: Refined the nuance for Example 4 (formerly female speaker) to reflect that the phrase '決めてしまった' itself isn't gender-specific but the context makes it natural for anyone.",
-        "unnatural: Refined the nuance for Example 8 (formerly younger speaker) to remove the age-specific claim as the phrase '生きていけない' isn't inherently age-specific."
+        "violation: Modified example 9 to replace N1 kanji `契約` (keiyaku) with N4 kanji `書類` (shorui) to adhere to the JLPT kanji level requirements for N2 grammar points. The sentence is now `きちんと 確認すること {なしに} 書類に サインしてしまった。`",
+        "violation: Modified example 10 to replace N1 kanji `侵入` (shinnyuu) with N5 kanji `入る` (hairu) to adhere to the JLPT kanji level requirements for N2 grammar points. The sentence is now `そんなに 見つめないで。許可 {なしに} 君の 心に 入ってしまうぞ。`"
     ]
 }

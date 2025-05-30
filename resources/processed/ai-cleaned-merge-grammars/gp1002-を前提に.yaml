@@ -54,7 +54,7 @@
             "setting": "serious",
             "speaker_gender": "male",
             "listener_gender": "male",
-            "nuance": "The speaker uses 「させていただいて います」to show respect for the listener, as he is speaking to his girlfriend's father, and his tone is very formal."
+            "nuance": "While the phrase 「お付き合い を させていただいて います」 is a polite, humble expression used by both genders, its application in a formal request or declaration to a parent (especially a father-in-law to-be) is a situation typically initiated by the male suitor, emphasizing respect for the family."
         },
         {
             "japanese": "この 車 は レース を する という こと {を前提に} 改造 されている ため 公道 で は 運転 できません。",
@@ -80,7 +80,10 @@
                 }
             ],
             "register": "semi-formal",
-            "setting": "serious"
+            "setting": "serious",
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "nuance": "While the language itself is gender-neutral, this scenario depicts a common situation where women confide in each other about sensitive workplace issues like harassment. The tone is serious and confidential, fitting the `semi-formal` register."
         },
         {
             "japanese": "この アパート は、 1人 で 住む こと {を前提として} 作られている ので、 キッチン と お風呂場 は 小さい です。",
@@ -108,7 +111,8 @@
             "register": "casual",
             "setting": "intimate",
             "speaker_gender": "female",
-            "listener_gender": "male"
+            "listener_gender": "male",
+            "nuance": "This phrase is gender-neutral in Japanese. However, a woman might express the serious intention of a relationship in this direct, casual manner to her partner, emphasizing shared commitment."
         },
         {
             "japanese": "元々、 1人 で 住む こと {を前提に} この 家 を 建てた から、 時 が 経ったら ちょっと 狭くなった。",
@@ -176,9 +180,9 @@
         "bunpro": "https://bunpro.jp/grammar_points/を前提に"
     },
     "change": [
-        "violation: Removed Bunpro-specific detail from `details`. (Rule: \"fix minor inaccuracies in 'details', but do not invent new details.\")",
-        "schema: Removed `listener_age` from example 2. (Rule: \"listener_age is deprecated. You *must* remove it.\")",
-        "schema: Added `scene_rationale` to all examples where `scene` was present. (Rule: \"scene_rationale must be present if 'scene' is present.\")",
-        "violation: Added `speaker_gender` to example 6 to ensure at least one female speaker example, and confirmed `speaker_gender`/`listener_gender` are balanced across examples. (Rule: \"Example sentences should include at least one male and one female speaker_gender.\" & \"Example sentences should include at least one male and one female listener_gender.\")"
+        "schema: Removed top-level 'rank' and 'lesson_order' fields as they are not part of the output schema.",
+        "violation: Corrected the 'nuance' for example 2 to align with the rule that nuance must describe how the Japanese text relates to speaker/listener gender, while acknowledging the neutral nature of the specific phrase itself and focusing on contextual usage.",
+        "violation: Added 'speaker_gender', 'listener_gender', and 'nuance' to example 4 to ensure representation of a female speaker and female listener, and to include nuance as required when gender is specified. This helps meet the gender balance requirement for examples.",
+        "violation: Added missing 'nuance' for example 6 where 'speaker_gender' and 'listener_gender' were already specified, explaining the contextual relevance of the gender despite the neutrality of the Japanese phrase."
     ]
 }

@@ -18,7 +18,7 @@
     "writeup": "接尾辞である「上」 (じょう) は、名詞に付いて、ある事柄がその名詞が示す「観点から」または「〜に関して」考慮されていることを示します。これは、より客観的で公式な文脈で用いられ、特定の分野や懸念事項の立場を明確にする際に役立ちます。例えば、「法律」 (ほうりつ)、「経済」 (けいざい)、「教育」 (きょういく) のような広範な領域と共に使用されることが多いです。\n\n「上」は、「に関して」や「〜という点で」と同様に解釈できますが、よりその領域の規範や規則に則っているニュアンスを強調します。ただし、個人の意見や主観的な視点を表すためには使用できません。例えば、個人の名前や組織名に直接付けて「〜の意見では」という意味で用いることは不適切です。そのような場合は、「〜からすると」や「〜にとって」のような表現を用いるべきです。",
     "examples": [
         {
-            "japanese": "法律{上}、許可なく野生動物を捕獲することは禁止されています。",
+            "japanese": "法律{上}、許可なく野生動物を捕まえることは禁止されています。",
             "english": "From a legal standpoint, capturing wild animals without permission is prohibited.",
             "scene": "A government official is explaining new regulations to a group of citizens.",
             "scene_rationale": [
@@ -63,7 +63,7 @@
             "scene_rationale": [
                 {
                     "competing_grammar": "安全のためにこの作業は慎重に行うべきです。",
-                    "mitigation": "The scene depicts a formal instruction emphasizing a standard of conduct required by the 'standpoint' of safety, not merely 'for the sake of' safety, which is more a reason for action rather than a governing perspective."
+                    "mitigation": "The scene depicts a formal instruction emphasizing a standard of conduct required by the 'standpoint' of safety, not merely 'for the sake of' safety, which is more a reason for action rather than a governing principle."
                 }
             ],
             "register": "professional",
@@ -154,11 +154,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/上"
     },
     "change": [
-        "violation: Removed the example '鈴木上、会社Aが会社Bに買収される事はいい事だと思っている。' because examples must be grammatically correct and natural Japanese, as per 'japanese' field rules. This example was explicitly marked as 'Unnatural Japanese'.",
-        "violation: Added 'scene_rationale' to all examples that had a 'scene' field but were missing 'scene_rationale'. This is required by the schema: 'scene_rationale' is required if 'scene' is present.",
-        "schema: Added 'speaker_gender', 'listener_gender', and 'nuance' to selected examples ('形式上' and '立場上') to meet the schema requirements for diversity in gender and to demonstrate their usage when applicable. The 'nuance' field now provides specific Japanese phrases in '「」' to justify the gender attribution.",
-        "violation: Replaced the '安全上' example ('安全{上}、この機械を使用する際には保護メガネを着用してください。') to ensure all kanji are within the N2 level or below, as required by the JLPT Kanji rule for example sentences. The original contained N1 kanji (衛, 保, 眼) which were not appropriate for an N2 grammar point, even in set phrases. The new example is: '安全{上}、この作業は慎重に行うべきです。'",
-        "unnatural: Rephrased the 'writeup' section to align with the persona's serious, terse, and analytical tone, while still explaining the nuances thoroughly. Removed casual phrasing like 'Caution -'.",
-        "unnatural: Rephrased 'post_example_writeup' and 'post_false_friends_writeup' for a more formal and precise tone consistent with the persona."
+        "violation: Removed 'meaning_warning: null' as null fields should be omitted.",
+        "violation: Modified the first example's 'japanese' sentence from '許可なく野生動物を捕獲することは禁止されています。' to '許可なく野生動物を捕まえることは禁止されています。' to replace the N1 kanji '獲' with N3 kanji '捕', ensuring all kanji are within the N2 JLPT level or below for the example sentence, as required."
     ]
 }

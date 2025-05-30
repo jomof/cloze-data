@@ -271,9 +271,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/るverb-ない"
     },
     "change": [
-        "violation: Changed conjugation types in `conjugations` array and `examples` array to align with the `conjugationType` enum provided in the schema. Rule: 'The content of this \"conjugation\" field must be taken from the top-level list of conjugations you generated earlier. Use the \"type\" field.' and 'The \"type\" field must be one of the `conjugationType` enum values.'",
-        "violation: Removed the 'negative volitional (〜まい)' conjugation from `conjugations` and its corresponding example because there is no `conjugationType` enum value that accurately represents this form. Rule: 'The \"type\" field must be one of the `conjugationType` enum values.'",
-        "violation: Removed `listener_age` from example 8 and 12, as it is deprecated by the schema. Rule: '\"listener_age\" is deprecated. You *must* remove it.'",
-        "schema: Added `scene_rationale` to all examples where `scene` was present, as required by the schema. Rule: 'If OTHER_WAYS is not empty, then you **must** have a \"scene\" field. - **Must** set a scene that will hint the user toward the correct grammar point. - **Must** be present if \"scene\" is present.'"
+        "violation: Removed two irrelevant entries ('う-Verb (Past)' and 'Verb+て') from the `false_friends` array that were incorrectly categorized as 'synonym' and did not pertain to the negative form of る-verbs. Rule 14 states that false friends must have a concise contrast and be relevant to the main grammar point. These entries violated the spirit of this rule by being completely unrelated and mislabeled."
     ]
 }

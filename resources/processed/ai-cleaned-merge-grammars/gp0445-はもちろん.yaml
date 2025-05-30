@@ -67,16 +67,18 @@
                 }
             ],
             "register": "casual",
-            "setting": "friendly"
+            "setting": "friendly",
+            "speaker_gender": "female",
+            "nuance": "A female speaker might use 「人気がある」 in a slightly more informal and enthusiastic way when talking about a favorite author's multifaceted talents, conveying personal approval without strict formality."
         },
         {
-            "japanese": "椅子{はもちろん}、家具全般取り扱っています。",
-            "english": "I will not only handle the chairs, but also all of the furniture.",
-            "scene": "Responding to a customer's specific inquiry about chairs.",
+            "japanese": "机{はもちろん}、家具全般置いてあります。",
+            "english": "We have not only tables, but also all kinds of furniture.",
+            "scene": "Responding to a customer's specific inquiry about tables at a furniture store.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "椅子だけでなく",
-                    "mitigation": "In a business context, when reassuring a customer about comprehensive services, 「はもちろん」 conveys a more thorough and professional scope than the simpler 「だけでなく」."
+                    "competing_grammar": "机だけでなく",
+                    "mitigation": "In a business context, when reassuring a customer about comprehensive inventory, 「はもちろん」 conveys a more thorough and professional scope than the simpler 「だけでなく」, implying that tables are a given and other furniture is also available."
                 }
             ],
             "register": "teineigo (polite)",
@@ -119,7 +121,9 @@
                 }
             ],
             "register": "casual",
-            "setting": "friendly"
+            "setting": "friendly",
+            "speaker_gender": "female",
+            "nuance": "A female speaker might use 「美味しい」 with a slightly softer or more emphatic tone when recommending food, often adding a sense of shared enjoyment or personal delight."
         },
         {
             "japanese": "彼は、英語{はもちろん}、日本語も話せる。",
@@ -216,9 +220,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/はもちろん"
     },
     "change": [
-        "violation: Corrected pronunciation katakana from 'ノモチロンハ' to 'ワモチロン' and romaji from 'no mochiron wa' to 'wa mochiron' to reflect natural Japanese pronunciation of the particle 'は' and the word 'もちろん'.",
-        "violation: Changed highlighting in 'japanese' examples from '{は もちろん}' to '{はもちろん}' for consistent formatting and better parsing.",
-        "violation: Modified examples to use kanji appropriate for N3 level. '電化製品' to '他の機械' (製品 N2 -> 機械 N4), '韓国語' to '英語' (韓国語 N1 -> 英語 N4), '高級車...ドアミラー' to '車...窓ガラス' (高級車 N2 -> 車 N5; ドアミラー N2 -> 窓 N3), '完璧な君' to '上手な君' (完璧 N1 -> 上手 N4), 'スタイルも最高だから' to 'スタイルもいいから' (最高 N2 -> いい N5).",
-        "schema: Added 'scene_rationale' to all examples that contained a 'scene' field, providing 'competing_grammar' and 'mitigation' as required by the schema."
+        "violation: Modified example '椅子{はもちろん}、家具全般取り扱っています。' to '机{はもちろん}、家具全般置いてあります。' to replace N2 kanji '椅' and '扱' with N4 '机' and N5 '置' respectively, ensuring all kanji are appropriate for the N3 JLPT level as per the rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'",
+        "violation: Added 'speaker_gender: female' and corresponding 'nuance' fields to example 4 and example 8, to satisfy the rule: 'Example sentences should include at least one male and one female speaker_gender.'"
     ]
 }

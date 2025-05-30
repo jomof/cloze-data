@@ -122,27 +122,27 @@
             "conjugation": "te-form (～て)"
         },
         {
-            "japanese": "事故 に あった 際 に は 弁護士 {を通して} 相手 に 連絡 を する よう に してください。",
-            "english": "If you are involved in an accident, you should contact the other party through your attorney.",
-            "scene": "A legal professional giving advice to a client, emphasizing the formal, indirect channel of communication.",
+            "japanese": "何か 問題 が 生じた 際 に は、仲介者 {を通して} 相手 に 連絡 を する よう に してください。",
+            "english": "If a problem arises, please contact the other party through an intermediary.",
+            "scene": "A professional giving advice in a formal setting, emphasizing the need for an indirect, authorized channel of communication.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "弁護士に連絡してもらうようにしてください。",
-                    "mitigation": "Using a simple 『弁護士に』 (to the lawyer) might imply the communication is *with* the lawyer, not *through* the lawyer as an intermediary for contact with another party. 『を通して』 clearly establishes the lawyer as the agent or channel of communication."
+                    "competing_grammar": "何か問題が生じた際には、仲介者に連絡してもらうようにしてください。",
+                    "mitigation": "Using 『仲介者に』 (to the intermediary) might imply the communication is *with* the intermediary, not *through* them as an intermediary for contact with another party. 『を通して』 clearly establishes the intermediary as the agent or channel of communication."
                 }
             ],
             "register": "professional",
-            "setting": "legal",
+            "setting": "informative",
             "conjugation": "te-form (～て)"
         },
         {
-            "japanese": "親 と 弁護士 だけ {を通じて} 連絡 できる こと に なった。親 が 私 の こと を 憎んでいる。",
-            "english": "I ended up being able to communicate with my parents only via the lawyer. My parents hate me.",
+            "japanese": "親 と 仲介者 だけ {を通じて} 連絡 できる こと に なった。親 が 私 の こと を 憎んでいる。",
+            "english": "I ended up being able to communicate with my parents only via an intermediary. My parents hate me.",
             "scene": "A young adult explaining a strained family situation to a therapist or close confidant, highlighting the necessary intermediary for communication.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "親と弁護士にしか連絡できないことになった。",
-                    "mitigation": "『弁護士にしか』 would mean 'only to the lawyer'. 『を通じて』 clearly states that the lawyer is the *medium* or *channel* for communication between the two parties, not the sole recipient."
+                    "competing_grammar": "親と仲介者にしか連絡できないことになった。",
+                    "mitigation": "『仲介者にしか』 would mean 'only to the intermediary'. 『を通じて』 clearly states that the intermediary is the *medium* or *channel* for communication between the two parties, not the sole recipient."
                 }
             ],
             "register": "formal",
@@ -183,12 +183,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/を通じて-を通して"
     },
     "change": [
-        "schema: Added 'conjugations' array at the top level as the grammar point includes dictionary form verbs (通じる, 通す) used in their -te form, as required by the schema.",
-        "schema: Added 'meaning_warning' field, which was present in the raw input data but missing from the prior version.",
-        "violation: Improved 'writeup' clarity and added markdown bolding (`**`) for emphasis, as required by the schema's instructions for the 'writeup' field.",
-        "violation: Refined 'examples' to ensure at least one 'male' and one 'female' for both 'speaker_gender' and 'listener_gender', as per rule 6. Added 'nuance' to explain these specific gender/age related usages.",
-        "violation: Added the 'conjugation' field to each example, explicitly setting it to 'te-form (～て)', as required by the schema when a top-level 'conjugations' array is present.",
-        "violation: Added 'scene' and 'scene_rationale' to all examples where competing grammar options (OTHER_WAYS) could exist, per schema rules. Ensured 'scene_rationale' includes 'competing_grammar' and 'mitigation'.",
-        "unnatural: Curated the example set by removing some redundant examples (e.g., '演劇を通じて' as it was covered by other learning examples, and '友達を通じて' since '仕事を通して' covered the 'meeting via context' point). This optimization allowed for the inclusion of new examples that better illustrate other specific nuances, such as physical passage or temporal extent, ensuring a more diverse and focused set of examples as per 'Examples must exhibit a wide variety of settings' and 'from simplest to most complex' requirements."
+        "violation: Modified examples 7 and 8 to replace N1 kanji (故, 弁, 護, 士) with N2 or below kanji (問題, 仲介者), as per instruction: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'"
     ]
 }

@@ -22,7 +22,7 @@
     "writeup": "The particle 「や」 is used to list **non-exhaustive examples** of nouns. It indicates that the items mentioned are just a few examples from a larger group. It's similar to \"and so on\" or \"things like\" in English. Unlike 「と」, which provides an exhaustive list, 「や」 implies that there are other unmentioned items. For example, saying 「りんご {や} みかん」 suggests there are other fruits besides apples and oranges. It is always used with nouns, not verbs. You would use 「とか」 or 「たり」 when listing verbs.",
     "examples": [
         {
-            "japanese": "コンビニでお水 {や} お菓子を買いました。",
+            "japanese": "コンビニでお水 {や} おやつを買いました。",
             "english": "I bought things like water and snacks at the convenience store.",
             "scene": "A woman quickly listing a couple of items she picked up at the convenience store, implying she also got other things not worth mentioning individually.",
             "scene_rationale": [
@@ -51,8 +51,8 @@
             "nuance": "Using 「や」 suggests there might be other writing systems or related concepts the teacher isn't explicitly listing, suitable for an informative setting."
         },
         {
-            "japanese": "京都 {や} 東京 {や} 大阪に行きました。",
-            "english": "I went to places like Kyoto, Tokyo, and Osaka.",
+            "japanese": "京都 {や} 東京 {や} 奈良に行きました。",
+            "english": "I went to places like Kyoto, Tokyo, and Nara.",
             "scene": "A man casually sharing a few highlights from his recent travels, not intending to list every single destination.",
             "scene_rationale": [
                 {
@@ -80,7 +80,7 @@
             "nuance": "The speaker indicates that they play sports such as soccer and tennis, implying other activities as well, common when discussing hobbies casually."
         },
         {
-            "japanese": "リンゴ {や} ミカンを食べてください。",
+            "japanese": "りんご {や} みかんを食べてください。",
             "english": "Please eat things like apples and oranges.",
             "scene": "A female parent instructing her male child on healthy eating habits, offering specific examples of fruit.",
             "scene_rationale": [
@@ -96,7 +96,7 @@
             "nuance": "This request, from a female parent to her male child, uses 「や」 to suggest a non-exhaustive range of foods. The polite command 「食べてください」 is appropriate for instructing a child."
         },
         {
-            "japanese": "お酒 {や} ジュース {や} 、何か飲みますか？",
+            "japanese": "おさけ {や} ジュース {や} 、何か飲みますか？",
             "english": "Would you like something to drink? Like alcohol or juice?",
             "scene": "A young man at a party offering a drink to a woman he just met, hinting at a range of options without being exhaustive.",
             "scene_rationale": [
@@ -117,8 +117,8 @@
         {
             "term": "と (and)",
             "meaning": "And (exhaustive list)",
-            "kind": "synonym",
-            "nuance": "Unlike 「や」, 「と」 implies a complete list. If you use 「と」, you are including *all* possibilities. For example, 「りんご と ミカン」 means *only* apples and oranges, whereas 「リンゴ {や} ミカン」 means apples and oranges, *among other things*."
+            "kind": "antonym",
+            "nuance": "Unlike 「や」, 「と」 implies a complete list. If you use 「と」, you are including *all* possibilities. For example, 「りんご と ミカン」 means *only* apples and oranges, whereas 「りんご {や} みかん」 means apples and oranges, *among other things*."
         },
         {
             "term": "および",
@@ -150,11 +150,10 @@
         "bunpro": "https://bunpro.jp/grammar_points/や"
     },
     "change": [
-        "violation: Added `scene_rationale` with `competing_grammar` and `mitigation` to all examples with a `scene` field, as required by the schema's `examples` rules. (Rule: `scene_rationale` must be present if `scene` is present, and must include `competing_grammar` and `mitigation`.)",
-        "violation: Modified Example 4 (`japanese` and `english`) and Example 5 (`japanese` and `english`) to ensure all kanji used are appropriate for JLPT N5 level, as specified by the prompt. (Rule: Example sentences should use kanji appropriate for the JLPT level of the grammar point.)",
-        "violation: Added `speaker_gender` to Example 1 (female), Example 3 (male), Example 5 (female), and Example 6 (male), and `listener_gender` to Example 5 (male) and Example 6 (female) to ensure at least one male and one female speaker and listener are present across examples. (Rule: Example sentences should include at least one male and one female speaker_gender; at least one male and one female listener_gender.)",
-        "unnatural: Adjusted `register` in examples 1, 3, 4, 5 to `teineigo (polite)` from `casual`, and Example 6 to `semi-formal` from `flirty`, to align with the politeness level of the verbs used (`～ました`, `～です`, `～ます`, `～ください`).",
-        "violation: Refined `nuance` for examples where `speaker_gender` or `listener_gender` is specified, to explicitly mention the gender in the explanation and to clarify how the chosen Japanese (or lack thereof) fits the context. (Rule: If there is a `speaker_gender` or `listener_gender`, then `nuance` must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.)",
-        "unnatural: Adjusted spacing in Japanese example sentences for improved readability and naturalness."
+        "violation: Modified Example 1's Japanese sentence from 「お菓子」 (N3 kanji) to 「おやつ」 (no kanji) to comply with the JLPT N5 kanji rule. (Rule: Example sentences should use kanji appropriate for the JLPT level of the grammar point.)",
+        "violation: Modified Example 3's Japanese sentence from 「大阪」 (N2 kanji) to 「奈良」 (N4 kanji) and updated the English translation, to comply with the JLPT N5 kanji rule. (Rule: Example sentences should use kanji appropriate for the JLPT level of the grammar point.)",
+        "violation: Modified Example 5's Japanese sentence from 「リンゴ」 and 「ミカン」 (N3 kanji) to 「りんご」 and 「みかん」 (hiragana) to comply with the JLPT N5 kanji rule. (Rule: Example sentences should use kanji appropriate for the JLPT level of the grammar point.)",
+        "violation: Modified Example 6's Japanese sentence from 「お酒」 (N2 kanji) to 「おさけ」 (hiragana) to comply with the JLPT N5 kanji rule. (Rule: Example sentences should use kanji appropriate for the JLPT level of the grammar point.)",
+        "violation: Changed `kind` from \"synonym\" to \"antonym\" for the false friend \"と (and)\" to accurately reflect its opposing nature in listing (exhaustive vs. non-exhaustive). (Rule: `kind` must accurately describe the relationship.)"
     ]
 }

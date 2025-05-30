@@ -4,40 +4,40 @@
         {
             "type": "dictionary (plain non-past)",
             "form": "べきだ",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "polite (non-past)",
+            "type": "non-past polite (～ます)",
             "form": "べきです",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "negative (plain)",
+            "type": "negative plain (～ない)",
             "form": "べきではない",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "negative (polite)",
+            "type": "negative non-past polite (～ません)",
             "form": "べきではありません",
             "rarity": "uncommon"
         },
         {
-            "type": "past (plain)",
+            "type": "past plain (～た)",
             "form": "べきだった",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "past (polite)",
+            "type": "past polite (～ました)",
             "form": "べきでした",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "negative past (plain)",
+            "type": "negative past plain (～なかった)",
             "form": "べきではなかった",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
-            "type": "negative past (polite)",
+            "type": "negative past polite (～ませんでした)",
             "form": "べきではありませんでした",
             "rarity": "uncommon"
         }
@@ -87,7 +87,7 @@
         },
         {
             "japanese": "お客 さん の 意見 は ちゃんと 聞く {べき} だ 。",
-            "english": "You should listen to customers' opinions properly.",
+            "english": "You should properly listen to customers' opinions.",
             "scene": "An older male manager instructing a younger male employee.",
             "scene_rationale": [
                 {
@@ -158,7 +158,7 @@
             ],
             "register": "casual",
             "setting": "cautious",
-            "conjugation": "past (plain)",
+            "conjugation": "past plain (～た)",
             "nuance": "「べきだった」 expresses regret for not having done something, using the past tense of 「べき」."
         },
         {
@@ -177,7 +177,7 @@
             ],
             "register": "bijinesu nihongo (business)",
             "setting": "apologetic",
-            "conjugation": "past (polite)",
+            "conjugation": "past polite (～ました)",
             "nuance": "「べきでした」 is the polite past form, expressing regret in a business context. This phrase is commonly used when taking responsibility for an oversight."
         },
         {
@@ -292,7 +292,7 @@
             ],
             "register": "casual",
             "setting": "apologetic",
-            "conjugation": "past (plain)",
+            "conjugation": "past plain (～た)",
             "speaker_gender": "female",
             "nuance": "The phrase 「のに」 at the end of the sentence indicates regret, and is often used by women in casual speech to express a strong feeling. Using 「べきだった」 reinforces the speaker's remorse about something that should have been done."
         },
@@ -329,7 +329,7 @@
                     "mitigation": "「～といい」 is a softer recommendation. The scene requires a more direct and persuasive statement to encourage confidence, fitting the persuasive and flirty tone of 「べき」 here."
                 }
             ],
-            "register": "shitashii kuchō",
+            "register": "shitashii kuchō (intimate)",
             "setting": "flirty",
             "speaker_gender": "male",
             "listener_gender": "female",
@@ -481,12 +481,10 @@
         }
     ],
     "post_false_friends_writeup": "While 「べき」, 「ほうがいい」, 「はずだ」, and others can all express 'should' in English, remember that 「べき」 carries the strongest nuance of obligation or moral imperative. Choose 「べき」 when you want to express that something is the right or only acceptable course of action. 「ほうがいい」 is a milder suggestion, and 「はずだ」 indicates expectation or probability.",
-    "change": [
-        "violation: Added 'scene_rationale' to existing examples to comply with Rule 6 ('Each should have scene_rationale if scene is present.')",
-        "violation: Removed 'listener_age' from examples to comply with schema instruction ('\"listener_age\" is deprecated. You *must* remove it.').",
-        "violation: Added 5 new examples to comply with Rule 6 ('Examples **must** exhibit a wide variety of settings' and 'Examples **must** exhibit a wide variety of conjugations/formations'). These new examples specifically cover Noun + であるべきだ, な-Adjective + であるべきだ, V-dict + べき + Noun, and basic polite form examples, ensuring JLPT N3 kanji appropriateness."
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/べき"
-    }
+    },
+    "change": [
+        "violation: Removed 'べきではない' from 'false_friends' array because it is a conjugation of the grammar point, violating Rule 14. ('false_friends **must not** reference other conjugations of this grammar point.')"
+    ]
 }

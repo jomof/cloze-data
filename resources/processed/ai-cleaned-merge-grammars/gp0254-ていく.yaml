@@ -130,20 +130,20 @@
             ]
         },
         {
-            "japanese": "試験 を する から、ペン を 持って {いく} 。",
-            "english": "Because I am going to take a test today, I will take a pen.",
-            "scene": "Explaining to a friend why you're carrying a pen.",
+            "japanese": "今日はテストを受けるから鉛筆を持って{いく}。",
+            "english": "Because I am going to take a test today, I will take a pencil.",
+            "scene": "Explaining to a friend why you're carrying a pencil.",
             "register": "casual",
             "setting": "informative",
             "conjugation": "dictionary (plain non-past)",
             "scene_rationale": [
                 {
-                    "competing_grammar": "試験があるから、ペンを持って行きます。",
+                    "competing_grammar": "今日はテストがあるので、鉛筆を持って行きます。",
                     "mitigation": "The casual tone of the scene helps guide towards the plain form."
                 },
                 {
-                    "competing_grammar": "試験にペンがいる。",
-                    "mitigation": "The scene emphasizes the action of physically bringing the pen with oneself, rather than just its necessity."
+                    "competing_grammar": "テストに鉛筆がいる。",
+                    "mitigation": "The scene emphasizes the action of physically bringing the pencil with oneself, rather than just its necessity."
                 }
             ]
         },
@@ -230,25 +230,25 @@
         {
             "term": "へいく",
             "meaning": "To go to, To head toward",
-            "kind": "synonym",
+            "kind": "similar expression",
             "nuance": "Unlike 「ていく」, 「へいく」 simply indicates direction or destination and doesn't imply an ongoing action."
         },
         {
             "term": "Verb+にいく",
             "meaning": "To go to ~, To go in order to ~",
-            "kind": "synonym",
+            "kind": "similar expression",
             "nuance": "Unlike 「ていく」, \"Verb+にいく\" expresses the purpose of going somewhere, not the continuation of an action."
         },
         {
             "term": "はじめる",
             "meaning": "To start, To begin to",
-            "kind": "synonym",
+            "kind": "similar expression",
             "nuance": "Unlike 「ていく」, 「はじめる」 focuses solely on the initiation of an action, not its continuation."
         },
         {
             "term": "てくる",
             "meaning": "To come to, To become, To continue, To be starting to, Has been ~ing",
-            "kind": "synonym",
+            "kind": "similar expression",
             "nuance": "Unlike 「ていく」, 「てくる」 describes something approaching or accumulating over time, not moving away."
         }
     ],
@@ -257,13 +257,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/ていく"
     },
     "change": [
-        "violation: Replaced example 1 (子供たちが公園に{走っていく}) with N4/N5 kanji (子供たちが学校に{走っていく}) to adhere to the JLPT kanji level requirements.",
-        "violation: Replaced example 4 (大丈夫！お弁当 を 持って {いく} から。) with N4/N5 kanji and rephrased (昼ご飯 を 持って {いく} から。) to adhere to the JLPT kanji level requirements.",
-        "violation: Replaced example 5 (今日 は テスト を 受ける から 鉛筆 を 持って {いく} 。) with N4/N5 kanji and rephrased (試験 を する から、ペン を 持って {いく} 。) to adhere to the JLPT kanji level requirements.",
-        "violation: Replaced example 8 (来年も、一緒に旅行して{いこう}ね。) with N4/N5 kanji (来年も、みんなで旅行して{いこう}ね。) to adhere to the JLPT kanji level requirements.",
-        "violation: Replaced example 9 (これから、毎日一緒にご飯を食べて{いきたい}な。) with N4/N5 kanji (これから、毎日みんなでご飯を食べて{いきたい}な。) to adhere to the JLPT kanji level requirements.",
-        "schema: Added `desiderative (～たい)` to the top-level `conjugations` array as it is used in examples but was missing from the list.",
-        "schema: Corrected `conjugation` type for examples 6, 7, and 9 from `volitional (plain)` to `desiderative (～たい)` to accurately reflect the grammar being conjugated.",
-        "schema: Added `scene_rationale` to all examples where a `scene` was present, as required by the schema for effective scaffolding."
+        "violation: Reverted Example 5 Japanese from 『試験 を する から、ペン を 持って {いく} 。』 to 『今日はテストを受けるから鉛筆を持って{いく}。』 to align with the JLPT N4 level's kanji usage guidelines, as 『試験』 is an N3 kanji. Updated scene and scene_rationale accordingly. (Instruction: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.').",
+        "violation: Changed 'kind' for all false_friends from 'synonym' to 'similar expression' to more accurately reflect their relationship to the main grammar point. (Instruction: 'kind': relationship to the main grammar point (e.g., \"similar expression\", \"often confused with\", etc)'.)"
     ]
 }

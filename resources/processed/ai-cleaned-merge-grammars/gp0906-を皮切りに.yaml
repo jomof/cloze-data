@@ -18,12 +18,12 @@
     "writeup": "「を皮切りに」 (o kawakiri ni) indicates the starting point of something that then expands or continues. It translates to \"starting with (A)\" or \"beginning with (A).\" It is used with nouns or nominalized phrases to show how something developed after the initial point.\n\nVariations include 「にして」 (ni shite) and 「として」 (to shite) in place of 「に」 (ni), offering the same meaning.\n\n**Important Considerations:**\n*   It's uncommon to use 「を皮切りに」 with natural phenomena or negative outcomes. The result of (A) is usually positive and has a specific 'doer'.\n*   While 「皮切り」 specifically means \"beginning,\" the kanji 「皮」 (hide) and 「切」 (cut) can help you remember the nuance of creating a starting point that leads to broader expansion, similar to skinning an animal.",
     "examples": [
         {
-            "japanese": "東京{を皮切りに}して、明治時代を舞台にした演劇「〇〇」が全国３０劇場で公演されます。",
+            "japanese": "東京{を皮切りに}して、明治時代を舞台にした演劇「XX」が全国３０劇場で公演されます。",
             "english": "Starting with Tokyo, the play \"XX,\" set in the Meiji era, will be performed at 30 theaters nationwide.",
             "scene": "A theater company announcing their tour.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "東京から始まって、演劇「〇〇」が全国３０劇場で公演されます。",
+                    "competing_grammar": "東京から始まって、演劇「XX」が全国３０劇場で公演されます。",
                     "mitigation": "The scene emphasizes an \"announcement\" or \"tour,\" implying a planned progression and expansion, which 「を皮切りに」 captures more formally than a simple \"starting from.\""
                 }
             ],
@@ -214,8 +214,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/を皮切りに"
     },
     "change": [
-        "violation: Removed 'listener_age' from all examples, as it is a deprecated field and its removal is mandated by the schema.",
-        "schema: Added 'scene_rationale' to all examples that contain a 'scene' field, providing 'competing_grammar' and 'mitigation' as required by the schema.",
-        "violation: Removed 'speaker_gender', 'listener_gender' from examples 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 where the 'nuance' field explicitly stated gender neutrality or where the Japanese phrasing itself did not inherently imply a specific gender for the speaker or listener, aligning with the schema's 'use only if it matters' clause. 'speaker_age' was also removed from examples 1, 3, 4, 5, 7, 9, 10, 11 for the same reason. 'speaker_age' was retained in examples 2, 6, 8 where the nuance supported its relevance."
+        "schema: Removed 'conjugation' field from all examples. This field should only be present if a top-level 'conjugations' array exists, which is not the case for this grammar point."
     ]
 }

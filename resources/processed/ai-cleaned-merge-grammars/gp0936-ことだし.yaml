@@ -179,14 +179,13 @@
         }
     ],
     "false_friends": [],
-    "change": [
-        "violation: Removed top-level 'lesson_order' field to comply with schema. Rule: 'No fields should be null. Omit fields that are not applicable instead.' (Implies fields not in schema should be omitted).",
-        "violation: Removed redundant 'bunpro' and 'source' top-level fields to comply with schema. Rule: 'You **must not** add top-level 'bunpro' or 'dojg' fields to the output JSON.'",
-        "violation: Added 'scene_rationale' to all existing examples to comply with schema. Rule: 'Must be present if \"scene\" is present.'",
-        "violation: Added a new example to ensure at least one 'speaker_gender: female' example is present. Rule: 'Example sentences should include at least one male and one female speaker_gender.'",
-        "violation: Modified Example 1 to include 'speaker_gender: female' and 'listener_gender: male' to fulfill the requirement for both genders in speaker/listener roles. Rule: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'"
-    ],
+    "post_false_friends_writeup": "",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ことだし"
-    }
+    },
+    "change": [
+        "schema: Removed top-level 'lesson_order' field as it is not part of the output schema.",
+        "violation: Removed top-level 'bunpro' field to comply with the rule 'You **must not** add top-level 'bunpro' or 'dojg' fields to the output JSON.'",
+        "schema: Ensured 'post_false_friends_writeup' is present as an empty string to satisfy schema's 'required' field constraint, as there are no false friends to elaborate on."
+    ]
 }

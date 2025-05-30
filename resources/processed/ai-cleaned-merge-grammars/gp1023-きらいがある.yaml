@@ -13,16 +13,6 @@
             "rarity": "less common"
         },
         {
-            "type": "negative plain",
-            "form": "きらいがない",
-            "rarity": "less common"
-        },
-        {
-            "type": "negative past plain",
-            "form": "きらいがなかった",
-            "rarity": "less common"
-        },
-        {
             "type": "non-past polite",
             "form": "きらいがあります",
             "rarity": "less common"
@@ -30,16 +20,6 @@
         {
             "type": "past polite",
             "form": "きらいがありました",
-            "rarity": "less common"
-        },
-        {
-            "type": "negative non-past polite",
-            "form": "きらいがありません",
-            "rarity": "less common"
-        },
-        {
-            "type": "negative past polite",
-            "form": "きらいがありませんでした",
             "rarity": "less common"
         },
         {
@@ -167,6 +147,40 @@
             "conjugation": "te-form (～て)"
         },
         {
+            "japanese": "昔の彼は、約束をすぐに破る{きらいがあった}。",
+            "english": "The old him had a tendency to break promises quickly.",
+            "scene": "A friend reminiscing about a mutual acquaintance's past untrustworthy behavior before they changed.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "約束を破ることが多かった",
+                    "mitigation": "The scene emphasizes a past inherent negative trait of character, distinguishing it from merely a frequent action, hinting at a more fundamental flaw."
+                }
+            ],
+            "register": "casual",
+            "setting": "reflective",
+            "speaker_gender": "male",
+            "listener_gender": "male",
+            "nuance": "The phrase 「昔の彼」 (the old him) clearly indicates a past behavior or personality trait. The use of 「きらいがあった」 highlights that this was an undesirable tendency that the person exhibited in the past.",
+            "conjugation": "past plain"
+        },
+        {
+            "japanese": "恐れ入りますが、先生は少し話が長い{きらいがあります}。",
+            "english": "Excuse me, but Sensei tends to speak a bit too long.",
+            "scene": "A student politely and discreetly informs a professor about their lecture length.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "話が長くなる傾向があります",
+                    "mitigation": "The scene emphasizes a polite, delicate criticism of a persistent, undesirable habit in a formal context, making 'きらいがあります' more suitable than a neutral statement of '傾向があります'."
+                }
+            ],
+            "register": "formal",
+            "setting": "academic",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "The use of 「恐れ入りますが」 (excuse me, but) and the polite 「きらいがあります」 makes this a very respectful and indirect way to point out a potentially undesirable habit. The phrase 「話が長い」 (speaks long) itself implies a negative observation about the lecture's duration, which 「きらいがあります」 subtly reinforces.",
+            "conjugation": "non-past polite"
+        },
+        {
             "japanese": "ある人は、民族だけで人の性格を判断してしまう{きらいがある}。",
             "english": "A certain person tends to judge a person's nature just by their ethnic group.",
             "scene": "In an academic discussion, a scholar points out a common cognitive bias.",
@@ -269,13 +283,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/きらいがある"
     },
     "change": [
-        "violation: Removed the example '私はなんでもすぐ飽きる嫌いがある。' because the writeup explicitly states 'it will usually not be used in relation to oneself' and the original source marked it as 'Unnatural Japanese', violating the rule against using unnatural Japanese and the instruction to omit fields that are not applicable (like an unnatural example).",
-        "schema: Added top-level 'conjugations' array as the grammar point contains a verb ('ある') in dictionary form, as per schema rule. This required adding 'conjugation' to each example.",
-        "schema: Added 'speaker_gender' and 'listener_gender' to examples to meet the schema requirement of including at least one male and one female speaker/listener gender.",
-        "schema: Modified 'scene' and added 'scene_rationale' to all examples that previously lacked them, ensuring they hint towards the grammar point and explain competing grammar, as per schema rules.",
-        "schema: Updated 'setting' for several examples to be more specific and aligned with the scene and nuance.",
-        "unnatural: Refined the 'etymology' for the grammar point to include a reference to the kanji 嫌 to strengthen the explanation of its negative connotation.",
-        "unnatural: Enhanced the 'nuance' for each example to more thoroughly explain how specific Japanese phrasing or context reinforces the use of 'きらいがある' and its subtle implications, as well as addressing speaker/listener gender implications where applicable.",
-        "unnatural: Changed 'kind' for false friends from 'synonym' to 'similar expression' to better reflect their nuanced differences rather than direct interchangeability."
+        "violation: Removed negative conjugations (e.g., 'きらいがない', 'きらいがなかった') from the 'conjugations' array because, when used, they do not preserve the core meaning of this grammar point, which is to indicate an *undesirable* tendency, thus violating the rule: 'Only list conjugations that, when used, preserve the meaning of the grammar point.'",
+        "schema: Added two new examples to the 'examples' array to demonstrate a wider variety of conjugations ('past plain' and 'non-past polite'), fulfilling the rule: 'If there are conjugations, examples **must** exhibit a wide variety of conjugations.'"
     ]
 }

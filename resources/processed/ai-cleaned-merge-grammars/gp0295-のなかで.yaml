@@ -19,7 +19,7 @@
     "writeup": "「のなかで」 is used to specify something's location **within** a certain scope or group. It can mean \"in\", \"among\", or \"within\", depending on the context. It is often used to express a preference or selection from a group, similar to `「の中で〜が一番〜」` but without indicating that something is the \"best\" or \"most\".",
     "examples": [
         {
-            "japanese": "ラーメンの {中で} 、 味噌ラーメンが好きだ。",
+            "japanese": "ラーメンの {中で} 、味噌ラーメンが好きだ。",
             "english": "Among ramen, I like miso ramen.",
             "scene": "Expressing your preference to your friend.",
             "scene_rationale": [
@@ -68,7 +68,7 @@
             "scene_rationale": [
                 {
                     "competing_grammar": "この三つなら赤色が好きです。",
-                    "mitigation": "「〜なら」 implies a conditional choice ('if it's these three, then...'). The scene of expressing a preference *among* a set of options is better conveyed by 「この三つの中では」, which explicitly designates the group from which a selection is made."
+                    "mitigation": "「〜なら」 implies a conditional choice ('if it's these three, then...'). The scene of expressing a preference *among* a set of options is better conveyed by 「この三つの中で」, which explicitly designates the group from which a selection is made."
                 }
             ],
             "register": "polite",
@@ -76,7 +76,7 @@
             "nuance": "Ending the sentence with 「〜です」 maintains a polite register, suitable for a friendly but respectful interaction where one expresses a preference."
         },
         {
-            "japanese": "フルーツ の {中で} 、 イチゴ と か パイン が 好き だ。",
+            "japanese": "フルーツ の {中で} 、イチゴ と か パイン が 好き だ。",
             "english": "Among all fruits, I like strawberries and pineapple.",
             "scene": "Sharing your favorite fruits with a friend.",
             "scene_rationale": [
@@ -90,7 +90,7 @@
             "nuance": "The plain form 「好きだ」 and the use of 「〜とか」 for listing examples establish a casual register, perfect for sharing personal preferences with a friend."
         },
         {
-            "japanese": "ひらがな と カタカナ と 漢字 の {中で} 、 ひらがな しか 書けない。",
+            "japanese": "ひらがな と カタカナ と 漢字 の {中で} 、ひらがな しか 書けない。",
             "english": "Among hiragana, katakana, and kanji, I can only write hiragana.",
             "scene": "Confessing your limited writing skills.",
             "scene_rationale": [
@@ -106,7 +106,7 @@
         {
             "japanese": "この {中で} 一つ を 選んで ください。",
             "english": "Please choose one from among these.",
-            "scene": "A shopkeeper instructs a male customer to pick an item.",
+            "scene": "A shopkeeper instructs a man to pick an item.",
             "scene_rationale": [
                 {
                     "competing_grammar": "これらから一つ選んでください。",
@@ -134,7 +134,7 @@
         },
         {
             "scene": "Flirting on a first date.",
-            "japanese": "今まで出会った人 の {中で} 、 君が一番面白いよ。",
+            "japanese": "今まで出会った人 の {中で} 、君が一番面白いよ。",
             "english": "Among all the people I've met so far, you're the most interesting.",
             "scene_rationale": [
                 {
@@ -188,7 +188,7 @@
         {
             "term": "なかなか",
             "meaning": "Very, Quite, Considerably",
-            "kind": "false friend",
+            "kind": "often confused with",
             "nuance": "「なかなか」 is an adverb that means \"quite\" or \"considerably\" and does not indicate location or context within a group."
         }
     ],
@@ -197,10 +197,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/のなかで"
     },
     "change": [
-        "schema: Removed top-level 'bunpro' object, 'rank', and 'lesson_order' fields as they are not part of the specified schema.",
+        "schema: Removed top-level 'bunpro' object, 'rank', 'lesson_order', and 'meaning_warning' fields to align with schema requirements.",
         "schema: Removed the 'change' array from the prior version, as it is not part of the final output schema.",
-        "violation: Added 'listener_gender: male' to an example ('この {中で} 一つ を 選んで ください。') to meet the rule requiring at least one male and one female listener gender.",
-        "violation: Added 'scene_rationale' to all examples that contain a 'scene' field, as required by the schema, and provided a competing grammar and mitigation for each. This was a significant modification to ensure schema compliance despite the 'minimal modification' instruction.",
-        "unnatural: Revised 'nuance' explanations in several examples to focus on their relation to 'register' and 'setting' rather than just basic grammatical definitions, making them more natural and contextually relevant."
+        "violation: Changed 'false_friends' kind for 'なかなか' from 'false friend' to 'often confused with' to adhere to the allowed enum values."
     ]
 }

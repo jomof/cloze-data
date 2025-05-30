@@ -18,9 +18,9 @@
     "writeup": "The particle 「しか」 is similar to 「だけ」 in that both can express \"only.\" However, 「しか」 **must** be used with a negative verb. Therefore, 「しか〜ない」 translates to \"there's only (A)\" or \"there's nothing but (A).\" This grammar point is used with numbers to indicate a limited quantity.",
     "examples": [
         {
-            "japanese": "今日 は 5 キロ {しか} 走れ {ない} 。",
+            "japanese": "今日 は 5 キロ {しか} 走れ {ない} わ 。",
             "english": "I can only run 5 km today.",
-            "scene": "A person explaining their limited ability due to fatigue.",
+            "scene": "A woman telling her male running partner she's tired and can't run further.",
             "scene_rationale": [
                 {
                     "competing_grammar": "今日は5キロだけ走れる。",
@@ -28,7 +28,10 @@
                 }
             ],
             "register": "casual",
-            "setting": "informative"
+            "setting": "informative",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "The use of 「わ」 by a female speaker adds a soft, somewhat resigned tone, emphasizing her physical limitation of only being able to run 「5キロしか」. This is a common ending particle for female speech."
         },
         {
             "japanese": "今日 は 100 円 {しか} 持っ て い {ない} 。",
@@ -89,7 +92,7 @@
             "scene_rationale": [
                 {
                     "competing_grammar": "彼女にはまだ1回だけ会っている。",
-                    "mitigation": "The speaker's reflection implies that one meeting is insufficient or few, highlighting the restricted number of encounters, which is the nuance of 「しか〜ない」. 「だけ」 would just state the number of meetings without implying dissatisfaction or insufficiency."
+                    "mitigation": "The speaker's reflection implies that one meeting is insufficient or few, highlighting the restricted number of encounters, which is the nuance of 「しか〜ない」. 「だけ」 would simply state the number of meetings without implying dissatisfaction or insufficiency."
                 }
             ],
             "register": "casual",
@@ -183,6 +186,7 @@
         "violation: Added `scene_rationale` to all examples that have a `scene` field, as required by the schema.",
         "violation: Modified `冷蔵庫 の 中 に は りんご {しか} なかっ た から 、 りんご を 食べ た 。` to `食べる 物 は りんご {しか} なかっ た から 、 りんご を 食べ た 。` to use N4 or lower JLPT kanji, as `蔵` and `庫` are N2.",
         "violation: Modified `一ヶ月 {しか} 期間 が {ない} の に 、 あなた は 変われる の ？` to `1ヶ月 {しか} 時間 が {ない} の に 、 あなた は 変われる の ？` to use N4 or lower JLPT kanji, as `箇` is N1.",
-        "schema: Added a new example `私 は お 金 が 500 円 {しか} 持っ て い {ない} 。` with `speaker_gender: female` to ensure the required diversity of speaker genders in examples."
+        "schema: Added a new example `私 は お 金 が 500 円 {しか} 持っ て い {ない} 。` with `speaker_gender: female` to ensure the required diversity of speaker genders in examples.",
+        "schema: Modified the first example to include `speaker_gender: female` and `listener_gender: male`, along with `nuance` and an updated `scene`, to ensure compliance with the required diversity of speaker and listener genders in examples."
     ]
 }

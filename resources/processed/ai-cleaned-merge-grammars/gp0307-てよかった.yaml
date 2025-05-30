@@ -246,15 +246,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/てよかった"
     },
     "change": [
-        "violation: Added curly braces `{}` around the grammar point in all Japanese examples, as per instruction '6. Each should have: - \"japanese\": - Must have the grammar_point in {bold}'.",
-        "violation: Added `scene_rationale` to all examples where `scene` was present, as per instruction '6. - \"scene_rationale\": - Must be present if \"scene\" is present'.",
-        "violation: Removed `listener_age` from example 6 (now example 7 in reordered list), as per instruction 'listener_age is deprecated. You *must* remove it. Use \"speaker_age\" of \"older\" or \"younger\" to indicate a difference.'",
-        "violation: Modified Japanese sentences in example 6 (now 7) and 7 (now 6) to use N4-level Kanji, as per JLPT Kanji level instruction 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' Specifically, changed '会議に遅刻しない' to '電車に乗り遅れない' and '会議で余計なこと' to '変なこと'.",
-        "violation: Adjusted `conjugation` types to align with the standard conjugation type names provided in the schema's `conjugationType` enum, e.g., 'polite (non-past)' to 'non-past polite (～ます)'.",
-        "violation: Revised speaker/listener gender assignments and corresponding `nuance` fields in multiple examples to ensure justification for gender specification and to meet the requirement for at least one male and one female speaker_gender and listener_gender. This included swapping speaker/listener gender in example 5 (now 9) to make the use of 「君」 more natural for a male speaker, and removing unjustified gender specifications in examples 1, 2, 4, and 8, as per instruction '6. - \"speaker_gender\": (optional, required if there is a listener gender) gender of the speaker. One of: male, female. Use only if this sentence would typically only be spoken by this gender' and '6. - \"nuance\": - If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.'",
-        "violation: Changed '勉強しなくてよかった' to '勉強しないでよかった' in example 3 to align with the 'writeup' explanation that 「ないでよかった」 is more common in casual speech, while 「なくてよかった」 is more formal, as per implicit instruction to maintain consistency between explanations and examples.",
-        "violation: Added a new example (now example 11) to include a female speaker and a male listener, fulfilling the instruction 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'",
-        "unnatural: Reordered examples from simplest to most complex, and grouped by positive/negative and plain/polite forms for better pedagogical flow, as per instruction '6. - Examples must be ordered from simplest to most complex.'",
-        "unnatural: Adjusted `nuance` for several examples to provide more precise and linguistically sound explanations, clarifying the specific elements that contribute to the tone or gendered usage."
+        "schema: Removed top-level fields 'rank' and 'lesson_order' because the schema disallows additional properties at the root level."
     ]
 }

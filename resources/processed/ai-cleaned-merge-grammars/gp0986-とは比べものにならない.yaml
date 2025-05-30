@@ -1,6 +1,28 @@
 {
     "grammar_point": "とは比べものにならない",
     "id": "gp0986",
+    "conjugations": [
+        {
+            "type": "dictionary (plain non-past)",
+            "form": "とは比べものにならない",
+            "rarity": "common"
+        },
+        {
+            "type": "negative non-past polite (～ません)",
+            "form": "とは比べものになりません",
+            "rarity": "common"
+        },
+        {
+            "type": "negative past plain (～なかった)",
+            "form": "とは比べものにならなかった",
+            "rarity": "common"
+        },
+        {
+            "type": "negative past polite (～ませんでした)",
+            "form": "とは比べものになりませんでした",
+            "rarity": "common"
+        }
+    ],
     "pronunciation": {
         "katakana": "トハクラベモノニハナラナイ",
         "romaji": "to wa kurabemono ni wa naranai"
@@ -34,6 +56,7 @@
             ],
             "register": "semi-formal",
             "setting": "professional",
+            "conjugation": "negative plain (～ない)",
             "speaker_gender": "male",
             "listener_gender": "male",
             "nuance": "A male speaker might use this phrasing in a professional context to convey a definitive, objective assessment without excessive politeness. The directness of 「とは比べものにならない」 suits this straightforward communication style."
@@ -54,6 +77,7 @@
             ],
             "register": "casual",
             "setting": "friendly",
+            "conjugation": "negative plain (～ない)",
             "speaker_gender": "female",
             "listener_gender": "female",
             "nuance": "A female speaker might use 「お母さん の スパゲティー」 with a warm, nostalgic tone. The gentle contrast of 「とは比べものにならない」 combined with 「が」 and 「なかな美味しい」 allows for expressing affection while still offering a compliment. This casual, personal sentiment is typical."
@@ -74,6 +98,7 @@
             ],
             "register": "casual",
             "setting": "informative",
+            "conjugation": "negative plain (～ない)",
             "speaker_gender": "male",
             "listener_gender": "female",
             "nuance": "A male speaker might offer this objective assessment of regional coldness to a female listener in a straightforward manner. The phrase 「とは比べものにはならない」, with the additional 「には」, is used for emphasis without being overly aggressive, making it suitable for a casual but informative conversation between friends."
@@ -93,7 +118,8 @@
                 }
             ],
             "register": "formal",
-            "setting": "reflective"
+            "setting": "reflective",
+            "conjugation": "negative plain (～ない)"
         },
         {
             "japanese": "この 寿司 は 悪く は ない が 良質 の 寿司 {とは比べものにならない}。",
@@ -110,7 +136,8 @@
                 }
             ],
             "register": "semi-formal",
-            "setting": "critical"
+            "setting": "critical",
+            "conjugation": "negative plain (～ない)"
         },
         {
             "japanese": "スーパー 火山 の 噴火 の 被害 は 他 の 火山 {とは比べものにならない} と されます。",
@@ -127,7 +154,8 @@
                 }
             ],
             "register": "formal",
-            "setting": "informative"
+            "setting": "informative",
+            "conjugation": "negative plain (～ない)"
         },
         {
             "japanese": "スマホ の パフォーマンス は 当時 {とは比べものにならない} ほど 上がってます。",
@@ -144,7 +172,8 @@
                 }
             ],
             "register": "semi-formal",
-            "setting": "informative"
+            "setting": "informative",
+            "conjugation": "negative plain (～ない)"
         },
         {
             "japanese": "私 の 絵画 など 須ノ宮 さん の {とは比べものにならない}。",
@@ -162,6 +191,7 @@
             ],
             "register": "semi-formal",
             "setting": "humble",
+            "conjugation": "negative plain (～ない)",
             "speaker_gender": "female",
             "listener_gender": "no one",
             "nuance": "A female artist might use the humble expression 「など」 to downplay her own work, followed by 「とは比べものにならない」 to express sincere admiration for another's superior talent. This reflects a typically modest communication style when discussing personal achievements or comparisons."
@@ -186,16 +216,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/とは比べものにならない"
     },
     "change": [
-        "violation: Removed top-level 'bunpro' field as per rule \"You must not add top-level 'bunpro' or 'dojg' fields to the output JSON.\"",
-        "violation: Refined 'formation' descriptions to accurately reflect usage patterns, improving clarity.",
-        "violation: Retained grammatically relevant 'details' from prior version and removed irrelevant placeholder from initial input as per rule 16.",
-        "unnatural: Integrated 'Fun Fact' from the original writeup into the 'etymology' field for a more comprehensive linguistic explanation.",
-        "unnatural: Rewrote 'writeup' by synthesizing content from both provided versions, excluding etymology, for improved clarity and flow.",
-        "violation: Corrected spacing within grammar point bolding `{ }` in all examples as per rule 6.",
-        "violation: Added 'scene_rationale' to all examples as per rule 6, which requires it if 'scene' is present.",
-        "violation: Added 'speaker_gender' and 'listener_gender' to selected examples to ensure diversity as per rule 6.",
-        "schema: Updated 'nuance' for gendered examples to align with rule 6, ensuring it refers to specific Japanese phrases.",
-        "violation: Added 'false_friends' entries and populated 'post_false_friends_writeup' as these fields were required by the schema and were empty in the initial input.",
-        "violation: Corrected the 'sources' field format to contain only the Bunpro URL, removing the extraneous object structure as per rule 20."
+        "schema: Added 'conjugations' array at the top level and 'conjugation' field to each example, as the grammar point contains a conjugatable verb ('なる') and the schema requires this if a top-level 'conjugations' array exists."
     ]
 }

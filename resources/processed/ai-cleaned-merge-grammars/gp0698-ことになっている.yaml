@@ -236,6 +236,20 @@
             "speaker_gender": "female",
             "nuance": "The use of 「わ」 at the end is a common female sentence-final particle, making the speech sound softer and more feminine. 「ことになっている」 expresses an established local custom.",
             "conjugation": "dictionary (plain non-past)"
+        },
+        {
+            "japanese": "昨日の会議は中止する{ことになっていた}が、結局行われた。",
+            "english": "Yesterday's meeting was supposed to be canceled, but it ended up being held.",
+            "scene": "An office worker discussing a change in a previous schedule with a colleague.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "昨日の会議は中止されるはずだったが、結局行われた。",
+                    "mitigation": "While 「はずだった」 expresses a strong expectation that didn't materialize, 「ことになっていた」 specifically emphasizes the pre-established plan or schedule that was subsequently overridden, highlighting the discrepancy between the initial arrangement and the actual outcome. This focuses more on the 'scheduled to' aspect being defied."
+                }
+            ],
+            "register": "formal",
+            "setting": "informative",
+            "conjugation": "past plain (～た)"
         }
     ],
     "post_example_writeup": "When using 「ことになっている」, it's important to consider the context and the implied authority or source of the expectation. It is often used to describe rules, schedules, or common practices.",
@@ -258,10 +272,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/ことになっている"
     },
     "change": [
-        "violation: Added 'conjugations' array at the top level. The schema states: 'If the grammar point contains a verb in dictionary form (besides だ or です) or adjective in dictionary form, add a new array field at the top, called \"conjugations\".'",
-        "schema: Removed 'meaning_warning: null'. The schema states: 'No fields should be null. Omit fields that are not applicable instead.'",
-        "violation: Added 'conjugation' field to all examples, specifying the type from the new 'conjugations' array. The schema states: 'Conjugation... Must be present if there is a top-level \"conjugations\" array.'",
-        "violation: Added 'scene_rationale' to all examples that have a 'scene'. The schema states: 'scene_rationale: Must be present if \"scene\" is present.'",
-        "violation: Added a new example with 'speaker_gender: female'. The schema states: 'Example sentences should include at least one male and one female speaker_gender.'"
+        "violation: Added an example demonstrating the `past plain (～た)` conjugation to fulfill the requirement for a wide variety of conjugations in examples. (Rule 6, bullet 5: \"If there are conjugations, examples **must** exhibit a wide variety of conjugations.\")"
     ]
 }

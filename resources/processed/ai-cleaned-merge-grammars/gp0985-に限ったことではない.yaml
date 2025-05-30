@@ -195,12 +195,14 @@
         "bunpro": "https://bunpro.jp/grammar_points/に限ったことではない"
     },
     "change": [
-        "violation: Replaced placeholder 'details' with actual descriptive content from prior version, as input 'details' violated instruction 16 which states 'You may fix minor inaccuracies in \"details\", but do not invent new details' and implies placeholder details should be fixed.",
-        "violation: Used the 'writeup' from the prior version, as the input 'writeup' had minor formatting issues and was less concise, violating implicit clarity requirements of instruction 5.",
-        "schema: Removed 'listener_age' from all examples, as this field is deprecated per schema definition.",
-        "schema: Added 'scene_rationale' to all examples that included a 'scene', as required by the schema.",
-        "command: Added a 9th example as explicitly requested by the comment in the prior grammar point, ensuring it met all specified criteria (complex, formal, academic, male speaker, female listener, example etymology).",
-        "violation: Added 'false_friends' array with 'だけではない' and 'のみならず' as similar expressions, to provide more comprehensive information and adhere to instruction 14 which outlines the structure for false friends if present. The input had an empty array.",
-        "violation: Added 'post_false_friends_writeup' as required by instruction 15 when 'false_friends' are present. Corrected its content to only reference the newly added false friends."
+        "schema: Added `pronunciation` and `formation` fields which were missing in the input, to comply with the schema's required properties.",
+        "violation: Replaced placeholder content in `details` with descriptive text, as instruction 16 permits fixing inaccuracies and the input's content was a placeholder.",
+        "violation: Enhanced `writeup` content for clarity and completeness, adhering to general quality requirements for comprehensive explanations.",
+        "violation: Added 9th example sentence and associated metadata (register, setting, gender, age, nuance, scene, scene_rationale) to the `examples` array to comply with the schema's requirements for diverse and fully detailed examples, which were missing in the input.",
+        "violation: Added `scene`, `scene_rationale`, `register`, `setting`, `speaker_gender`, `listener_gender`, `speaker_age`, and `nuance` to existing examples, which were missing in the input, to meet schema requirements for example completeness and diversity.",
+        "schema: Added `post_example_writeup` field which was missing in the input, to comply with schema.",
+        "violation: Added `false_friends` array with `だけではない` and `のみならず` as similar expressions, to provide comprehensive information as implied by instruction 14. The input had an empty array.",
+        "violation: Added `post_false_friends_writeup` as required by instruction 15 when `false_friends` are present.",
+        "schema: Removed `rank` and `lesson_order` from the top level, and adjusted `sources` to only include `bunpro` as per schema definition."
     ]
 }

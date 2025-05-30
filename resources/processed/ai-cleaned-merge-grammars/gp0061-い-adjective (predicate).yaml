@@ -110,27 +110,27 @@
             "conjugation": "past polite (～ました)"
         },
         {
-            "japanese": "この 問題 は そんなに {難しくない} です。",
-            "english": "This problem isn't that difficult.",
-            "scene": "A student discussing the difficulty of a problem.",
+            "japanese": "この ケーキ は そんなに {甘くない} です。",
+            "english": "This cake isn't that sweet.",
+            "scene": "Someone commenting on the taste of a cake.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "この 問題 は そんなに 難しくない。",
-                    "mitigation": "The 'です' ensures the statement remains polite and appropriate for an academic or general discussion setting, avoiding a purely plain assertion."
+                    "competing_grammar": "この ケーキ は そんなに 甘くない。",
+                    "mitigation": "The 'です' ensures the statement remains polite and appropriate for a general social setting, avoiding a purely plain assertion."
                 }
             ],
             "register": "polite",
-            "setting": "academic",
+            "setting": "informative",
             "conjugation": "negative non-past polite (～ません)"
         },
         {
-            "japanese": "試験 は {簡単} だった?",
-            "english": "Was the exam easy?",
-            "scene": "Two students chatting after taking an exam.",
+            "japanese": "テスト は {良かった}？",
+            "english": "Was the test good?",
+            "scene": "Two students chatting after taking a test.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "試験 は 簡単でしたか？",
-                    "mitigation": "The plain past form 'だった?' is typical among peers in a casual setting, conveying a sense of familiarity, unlike the more formal 'でしたか？' which would sound unnatural here."
+                    "competing_grammar": "テスト は 良かったです か？",
+                    "mitigation": "The plain past form '良かった？' is typical among peers in a casual setting, conveying a sense of familiarity, unlike the more formal '良かったです か？' which would sound unnatural here."
                 }
             ],
             "register": "casual",
@@ -138,13 +138,13 @@
             "conjugation": "past plain (～た)"
         },
         {
-            "japanese": "大丈夫？顔色 が {悪い} よ。",
-            "english": "Are you okay? You look pale.",
-            "scene": "A woman sees her male friend looking unwell.",
+            "japanese": "大丈夫？ {眠い} の？",
+            "english": "Are you okay? Are you sleepy?",
+            "scene": "A woman asks her male friend if he's sleepy.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "大丈夫 です か？顔色 が 悪いです よ。",
-                    "mitigation": "The casual plain form '悪い よ' is more appropriate for a close friend, conveying intimacy and concern more directly than the polite '悪いです よ' in this sympathetic context."
+                    "competing_grammar": "大丈夫 です か？ 眠い です か？",
+                    "mitigation": "The casual plain form '眠い の？' is more appropriate for a close friend, conveying intimacy and concern more directly than the polite '眠い です か？' in this sympathetic context."
                 }
             ],
             "register": "casual",
@@ -152,7 +152,7 @@
             "speaker_gender": "female",
             "listener_gender": "male",
             "conjugation": "dictionary (plain non-past)",
-            "nuance": "The casual plain form 「悪い よ」 is a direct way for a female speaker to express concern to a close male friend. The 「よ」 adds a gentle emphasis, indicating the speaker is conveying new information or a strong opinion."
+            "nuance": "The casual plain form 「眠い の？」 is a direct way for a female speaker to express concern to a close male friend. The 「の？」 adds a gentle, inquisitive tone, indicating the speaker is asking for confirmation or expressing a slight observation."
         },
         {
             "japanese": "この ワイン は {美味しい} です ね。もっと 飲みたく なっちゃう な。",
@@ -176,19 +176,22 @@
             "nuance": "The 「なっちゃう な」 conveys the speaker's enjoyment in a slightly flirtatious way, indicating a spontaneous feeling. It implies a sense of shared enjoyment or a personal indulgence."
         }
     ],
-    "false_friends": [],
-    "post_false_friends_writeup": "",
+    "false_friends": [
+        {
+            "term": "な-形容詞 + だ/です",
+            "meaning": "Na-adjective used as predicate (e.g., 静かだ/静かです)",
+            "kind": "similar expression",
+            "nuance": "Unlike い-adjectives which directly conjugate to end a sentence, な-adjectives require だ or です (or their conjugated forms) to serve as a predicate. For example, 「静かです」 vs 「美味しいです」."
+        }
+    ],
+    "post_false_friends_writeup": "While い-adjectives and な-adjectives both function as predicates, it is crucial to remember their structural differences. い-adjectives can stand alone at the end of a sentence in their plain form, while な-adjectives always require a copula like だ or です. This distinction is fundamental for correct sentence construction and politeness levels.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/い-adjective-predicate"
     },
     "change": [
-        "violation: Corrected `conjugations` array `type` and `form` fields to accurately reflect plain and polite i-adjective conjugations. (Rule: \"Only list conjugations that, when used, preserve the meaning of the grammar point.\", \"The content of this \"conjugation\" field must be taken from the top-level list of conjugations you generated earlier. Use the 'type' field.\")",
-        "schema: Removed `pronunciation_warning` from `pronunciation` object as it was an explanation, not a pronunciation warning. (Schema: `pronunciation_warning` implies pronunciation issues)",
-        "violation: Removed the example sentence from `writeup` section, rephrasing the explanation to discuss the concept abstractly. (Rule: \"Omit any example sentences here; examples go in the \"examples\" array.\")",
-        "schema: Added `scene_rationale` array to all examples that have a `scene` field. (Schema: `\"scene_rationale\": { \"type\": \"array\", ... \"minItems\": 1 }` if `scene` is present)",
-        "violation: Corrected `conjugation` field in multiple examples to align with the updated `conjugations` array `type` names. (Rule: \"The content of this \"conjugation\" field must be taken from the top-level list of conjugations you generated earlier. Use the 'type' field.\")",
-        "unnatural: Changed `register` for the flirty wine example from `casual` to `semi-formal` to better reflect the use of `です` with casual trailing phrases.",
-        "violation: Added a new example with a female speaker and male listener to satisfy the requirement for speaker/listener gender diversity in examples. (Rule: \"Example sentences should include at least one male and one female speaker_gender.\", \"Example sentences should include at least one male and one female listener_gender.\")",
-        "schema: Added `post_false_friends_writeup: \"\"` as it is a required field in the schema. (Schema: `\"required\": [..., \"post_false_friends_writeup\"]`)"
+        "violation: Corrected example 4 to use N5-level vocabulary. The original sentence used N4 kanji (問題, 難しい), which violates the rule that examples should use kanji appropriate for the JLPT level of the grammar point. Replaced with ケーキ and 甘い.",
+        "violation: Corrected example 5 to use N5-level vocabulary. The original sentence used N3 kanji (試験, 簡単), which violates the rule that examples should use kanji appropriate for the JLPT level of the grammar point. Replaced with テスト and 良い (conjugated to 良かった).",
+        "violation: Corrected example 6 to use N5-level vocabulary. The original sentence used N4 kanji (顔), which violates the rule that examples should use kanji appropriate for the JLPT level of the grammar point. Replaced with 眠い.",
+        "schema: Added content to `false_friends` and `post_false_friends_writeup` fields, as they were empty in the prior version but are required by the schema. This clarifies the distinction between い-adjectives and な-adjectives as predicates."
     ]
 }

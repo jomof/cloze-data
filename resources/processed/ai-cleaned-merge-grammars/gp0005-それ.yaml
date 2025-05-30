@@ -19,19 +19,20 @@
     "writeup": "「それ」 is a pronoun (代名詞, *daimeishi*) that translates to \"that\" in English. It points to something closer to the listener than the speaker, either physically or conceptually.\n\n「それ」 can also refer back to something previously mentioned in the conversation, whether in the same sentence or by another speaker. Think of it as a way to say, \"That thing we were just talking about.\"\n\n*   「これ」 refers to something close to the speaker.\n*   「あれ」 refers to something distant from both the speaker and listener.",
     "examples": [
         {
-            "japanese": "生徒が指差した本について、司書は{それ}がとてもおもしろいと伝えました。",
-            "english": "Regarding the book the student pointed to, the librarian conveyed that it was very interesting.",
-            "scene": "A librarian tells a student about a book they are interested in.",
+            "japanese": "あ、{それ}、私の傘です。",
+            "english": "Oh, that, that's my umbrella.",
+            "scene": "A person mistakenly picks up someone else's umbrella at the entrance.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "生徒が指差した本について、司書は「その」本がとてもおもしろいと伝えました。",
-                    "mitigation": "The scene establishes that the book was already pointed out, implying a shared, immediate context for the object. This makes 「それ」, which refers to something known or conceptually close to the listener, more natural than 「その」 which functions as a demonstrative adjective requiring a noun."
+                    "competing_grammar": "あ、その傘、私の傘です。",
+                    "mitigation": "The scene emphasizes an immediate, shared context where the object is physically present and being interacted with by the listener. 「それ」 naturally refers to this object close to the listener, without needing to explicitly state 'that umbrella' with 「その」. It's a quick, direct correction."
                 }
             ],
-            "register": "semi-formal",
+            "register": "casual",
             "setting": "informative",
-            "speaker_age": "older",
-            "nuance": "「{それ}」 refers to the book the student is interested in, which is conceptually or physically closer to the student. The librarian's statement conveys information in a polite tone appropriate for an older speaker in an informative setting."
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "「あ、{それ}」 uses 「それ」 to directly refer to the umbrella the listener is holding. The particle 「あ」 conveys a sudden realization or gentle correction. The directness of the statement with 「私のです」 is common for a female speaker making a polite but firm claim."
         },
         {
             "japanese": "きのう言ってたおもしろい話、まさか{それ}がほんとうだなんて。",
@@ -173,8 +174,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/それ"
     },
     "change": [
-        "violation: Removed deprecated 'listener_age' field from examples. (Rule: \"'listener_age' is deprecated. You *must* remove it.\")",
-        "violation: Added 'scene_rationale' to all examples, as it is required when 'scene' is present. (Rule: \"'scene_rationale' is required if 'scene' present\")",
-        "unnatural: Adjusted 'nuance' phrasing for examples 1, 5, and 6 to remove references to 'listener_age'."
+        "violation: The first example was too complex and used N3/N4 kanji for an N5 grammar point. Replaced with a simpler, N5-appropriate example. (Rule: \"The first example must be the simplest and most common usage of the grammar point.\", \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")"
     ]
 }

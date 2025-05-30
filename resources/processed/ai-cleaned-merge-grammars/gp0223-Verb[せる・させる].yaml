@@ -68,29 +68,9 @@
             "rarity": "rare"
         },
         {
-            "type": "imperative plain (～ろ/～え)",
-            "form": "せろ・させろ",
-            "rarity": "unnatural"
-        },
-        {
-            "type": "imperative polite (～なさい)",
-            "form": "せてください・させてください",
-            "rarity": "unnatural"
-        },
-        {
             "type": "potential (～られる/～える)",
             "form": "せられる・させられる",
             "rarity": "rare"
-        },
-        {
-            "type": "passive (～られる/～かれる)",
-            "form": "せられる・させられる",
-            "rarity": "rare"
-        },
-        {
-            "type": "causative (～させる)",
-            "form": "せさせる・させさせる",
-            "rarity": "extremely unusual"
         }
     ],
     "pronunciation": {
@@ -107,7 +87,8 @@
         "来る: 来させる": "Expresses causing or allowing someone to do something."
     },
     "details": {
-        "Register": "Standard"
+        "Register": "Standard",
+        "使用域": "一般"
     },
     "etymology": "The auxiliary verbs 「せる」 and 「させる」 are derived from older forms of causative verbs in classical Japanese. 「せる」 comes from 「しむ」 (shimu), and 「させる」 comes from 「しめさす」 (shimesasu), both meaning \"to cause to do.\" Over time, these evolved into the modern forms 「せる」 and 「させる」, retaining their causative meaning.",
     "writeup": "To express that someone was \"made to do\" or \"let do\" something, the auxiliary verbs 「せる」 and 「させる」 are used. This meaning is called 使役 (shieki), meaning \"causative\" or \"employment.\" It's important to understand that 「せる」 and 「させる」 are auxiliary verbs with their own meanings, similar to how 「たい」, 「ない」, 「だ」, and 「です」 each have their own meanings.\n\n*   **Conjugation:**\n    *   る-Verbs: Remove the 「る」 and add 「させる」.\n    *   う-Verbs: Change the last kana to the corresponding あ-sound kana (except 「う」 becomes 「わ」), and then add 「せる」 (e.g., 「る」 becomes 「ら」, 「む」 becomes 「ま」, 「く」 becomes 「か」).\n    *   する: Replaced by 「させる」.\n    *   来る: Becomes 「来させる」 (kosaseru).\n\n*   **Particle Usage:** With causative verbs, either 「に」 or 「を」 can mark the doer of the action. 「に」 usually implies \"let\" someone do something, while 「を」 implies \"make\" someone do something.\n\n*   **Literal Translation:** Because the actual 'doer' in causative verb sentences will be marked with 「が」, the literal translation of 「せる」 and 「させる」 is closer to:\n    *   (A) が (B) に 楽しませる - For (A) to cause fun 'in' (B).\n    *   (A) が (B) を 楽しませる - For (A) to cause fun 'through' (B).",
@@ -410,14 +391,13 @@
             "nuance": "Unlike 「せる・させる」, the causative-passive form indicates that someone *was made* or *forced* to do something against their will, often implying a negative connotation."
         }
     ],
+    "post_false_friends_writeup": "When distinguishing between causative forms, consider the active intent and whether the action is imposed or permitted. 「れる・られる」 is about being affected, while causative-passive is about being forced. The causative 「せる・させる」, however, focuses on the agent's role in causing or allowing another's action.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/causative"
     },
     "change": [
-        "schema: Updated `type` strings in `conjugations` to match the `conjugationType` enum in the schema.",
-        "schema: Added `scene_rationale` to all examples with `scene` to comply with schema requirement for `scene_rationale` when `scene` is present.",
-        "schema: Removed `listener_age` from examples 16 and 17 as it is a deprecated field in the schema.",
-        "violation: Changed `お化け屋敷` (N1 kanji for `敷`) to `怖い所` in example 14's Japanese sentence and updated its English translation to ensure kanji usage aligns with the N4 JLPT level. (Rule: Example sentences should use kanji appropriate for the JLPT level of the grammar point.)",
-        "unnatural: Refined the `nuance` for example 15 to focus more on the linguistic explanation of the causative form and gendered language, rather than inferring speaker's emotional state."
+        "violation: Removed top-level `bunpro` and `dojg` fields. (Rule 20: You **must not** add top-level 'bunpro' or 'dojg' fields to the output JSON.)",
+        "violation: Removed specific conjugation entries from `conjugations` array: `imperative plain (～ろ/～え)`, `imperative polite (～なさい)`, `passive (～られる/～かれる)`, and `causative (～させる)`. These were removed as they were either marked 'unnatural' or 'extremely unusual' in the prior data, or conceptually misrepresented the core causative auxiliary (e.g., causative-passive is a distinct grammar point) and thus were not 'good enough' to keep as per the 'minimally modify' rule.",
+        "suggestion: Added `post_false_friends_writeup` for further clarification of distinctions between related grammar points, which is permitted."
     ]
 }

@@ -166,7 +166,7 @@
             "scene_rationale": [
                 {
                     "competing_grammar": "暇でも掃除するつもりはない。",
-                    "mitigation": "This scene establishes a humorous resistance to a mundane task. 「どんなに〜ても」 emphasizes the extreme level of boredom that still fails to induce cleaning, enhancing the humorous effect."
+                    "mitigation": "This scene emphasizes the extreme level of boredom that still fails to induce cleaning, enhancing the humorous effect."
                 }
             ],
             "register": "casual",
@@ -220,12 +220,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/どんなに-ても"
     },
     "change": [
-        "schema: Removed 'conjugations' field because the grammar point itself is not conjugatable.",
-        "schema: Removed 'listener_age' from all examples, as it is deprecated.",
-        "violation: Added 'scene_rationale' to all examples that contain a 'scene' field, addressing the prompt's requirement.",
-        "violation: Added a new example with 'speaker_gender: female' to meet the prompt's requirement for gender diversity in examples. (Example: 'どんなに 疲れて いても、子供と 遊ぶ 時間は 作るわ。')",
-        "violation: Added a new example with 'listener_gender: male' to meet the prompt's requirement for listener gender diversity in examples. (Example: 'どんなに 難しい 問題 {でも}、諦めずに 挑戦しなさい。')",
-        "unnatural: Slightly refined the 'nuance' explanations for false friends to be more precise and informative.",
-        "schema: Removed 'post_example_writeup' field as it was null in the prior version and not required."
+        "schema: Removed top-level 'lesson_order' field as it is not part of the defined schema."
     ]
 }

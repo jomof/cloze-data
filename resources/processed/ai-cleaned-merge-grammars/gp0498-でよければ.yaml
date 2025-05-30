@@ -1,6 +1,13 @@
 {
     "grammar_point": "でよければ",
     "id": "gp0498",
+    "conjugations": [
+        {
+            "type": "conditional (～ば)",
+            "form": "でよければ",
+            "rarity": "common"
+        }
+    ],
     "pronunciation": {
         "katakana": "デヨケレバ",
         "romaji": "de yokereba"
@@ -245,13 +252,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/でよければ"
     },
     "change": [
-        "command: Added one example using これでよければ to comply with the explicit command.",
-        "violation: Removed 'listener_age' field from all examples as it is deprecated per schema rules.",
-        "violation: Added 'scene_rationale' field to all examples, as it is required when 'scene' is present per schema rules.",
-        "schema: Removed top-level 'rank' and 'lesson_order' fields as they are not part of the defined schema.",
-        "schema: Removed top-level 'bunpro' object and moved its 'url' to 'sources.bunpro' to align with the schema.",
-        "schema: Removed 'meaning_warning: null' as null fields are not allowed per schema rules.",
-        "unnatural: Added backticks to Japanese terms in the 'writeup' for improved readability and clarity.",
-        "unnatural: Changed 'kind' for 'てもかまわない' in 'false_friends' from 'synonym' to 'similar expression' for more precise nuance distinction."
+        "schema: Added 'conjugations' field as the grammar point implies a conjugatable adjective and needs to list its relevant conjugations per schema rules."
     ]
 }

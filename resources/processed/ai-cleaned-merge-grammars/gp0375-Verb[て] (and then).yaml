@@ -22,7 +22,6 @@
     },
     "jlpt": "N5",
     "meaning": "And, then (linking events)",
-    "meaning_warning": "ている is often shortened to てる. This applies to all tenses, including てる, てて, てた, and even てます",
     "details": {
         "Part of Speech": "Conjunctive Particle",
         "Register": "Standard",
@@ -221,12 +220,7 @@
     ],
     "post_false_friends_writeup": "While 「ている」 and 「てから」 are related to the 「て」 form, their functions differ. 「ている」 describes an action in progress, a habitual action, or a state. 「てから」 specifically denotes that the first action is completed before the second action commences, emphasizing the sequential order. The simple 「て」 form, however, offers a broader sense of connection between actions, indicating sequence, reason, or means, without necessarily stressing completion or continuity in the same way.",
     "change": [
-        "violation: Added `scene_rationale` to all examples that had a `scene` but lacked `scene_rationale`. Rule 6: 'If OTHER_WAYS is not empty, then you **must** have a \"scene\" field. - **Must** include wrong ways (for this grammar point and example) of translating \"english\" to \"japanese\" that \"scene\" text is trying to point the user away from.'",
-        "violation: Corrected the `register` for example 7 from 'casual' to 'polite' (ご飯を{食べなくて}、学校に行きました。) because `行きました` makes the sentence polite. Rule 6: 'Japanese **must** sound natural and fluent to a native speaker.' (Implicitly, register should be accurate to the Japanese sentence).",
-        "violation: Removed irrelevant entries from `false_friends` (e.g., `る-Verb (Dictionary)`, `う-Verb (Dictionary)`, `る-Verb (Negative)`, `てくれてありがとう`, `Verb+てもいい`, `Verb[て]`, `ていた`). Rule 14: 'false_friends **must not** reference other conjugations of this grammar point.' and Rule 14.a: 'Term **MUST NOT** be a conjugation of the current grammar point.' Also, these were not true 'false friends' or 'similar expressions' in the context of the grammar point's meaning.",
-        "unnatural: Refined the `nuance` for `ている` and `てから` in `false_friends` for greater clarity and precision in distinguishing their usage from the main grammar point. Rule 14.d: 'nuance: a concise contrast to the main grammar point.'",
-        "unnatural: Rewrote `post_false_friends_writeup` to align with the refined `false_friends` list and provide a clearer distinction between the grammar point and the refined false friends.",
-        "unnatural: Added one new example (`昨日、たくさん{走って}、疲れたよ。`) to further diversify example settings, registers, and speaker/listener demographics while maintaining JLPT N5 kanji level. Rule 6: 'Examples **must** exhibit a wide variety of settings.' and 'Example sentences should include at least one male and one female speaker_gender.'"
+        "violation: Removed `meaning_warning` as it discussed contractions of `ている` which is a usage of the te-form + iru, not the core meaning of `Verb[て]` as a linking particle. This was a minor inaccuracy in placement for this specific grammar point. Rule 16: 'You may fix minor inaccuracies in 'details', but do not invent new details.'"
     ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/verb-て"

@@ -38,7 +38,7 @@
             "register": "semi-formal",
             "setting": "reflective",
             "speaker_gender": "female",
-            "nuance": "This statement uses 「なしでは」 to highlight the absolute necessity of money for life, delivered in a semi-formal tone. The use of 「〜です」 is neutral but appropriate for a woman sharing a universal truth."
+            "nuance": "This statement uses 「なしでは」 to highlight the absolute necessity of money for life. The use of 「〜です」 is neutral but appropriate for a woman sharing a universal truth."
         },
         {
             "japanese": "あなた {なしでは} 、 このプロジェクトは成功しなかったでしょう。",
@@ -194,10 +194,7 @@
     ],
     "post_false_friends_writeup": "While 「なしに」, 「なしでは」, and 「がなければ」 all convey the idea of \"without,\" it's important to consider the subtle differences in emphasis and usage. 「なしに」 is a general substitute. 「なしでは」 emphasizes the negative consequence of an absence as being critical or making something impossible. 「がなければ」 sets up a conditional situation of non-existence. Choosing the right expression will add nuance to your communication.",
     "change": [
-        "violation: Added `scene_rationale` to all 7 examples because `scene_rationale` is required if `scene` is present (Rule 6, schema requirement).",
-        "violation: Updated `nuance` for examples 1, 2, 3, 4 because `nuance` must refer to parts of the Japanese sentence and be specific (Rule 6, schema requirement).",
-        "violation: Added `speaker_gender: female` to example 1 and updated its `scene` and `nuance` to ensure diversity (Rule 6: Example sentences should include at least one male and one female speaker_gender and adhere to `nuance` requirements).",
-        "violation: Added `listener_gender: male` to example 2 and updated its `scene` and `nuance` to ensure listener gender diversity (Rule 6: Example sentences should include at least one male and one female listener_gender and adhere to `nuance` requirements).",
-        "unnatural: Adjusted `setting` for example 1 and 5 for better contextual fit with the updated scenarios."
+        "violation: Removed top-level 'dojg' field, as per rule \"You must not add top-level 'bunpro' or 'dojg' fields to the output JSON.\"",
+        "schema: Removed the 'change' field from the prior grammar point, as it is a log of previous modifications, not current ones."
     ]
 }

@@ -156,24 +156,25 @@
             "etymology": "「勘違い」 (kanchigai) means 'misunderstanding.' This usage emphasizes how a simple expression of liking led to a romantic misinterpretation."
         },
         {
-            "japanese": "いい ね と 言った {ばかりに} 、 彼 は ずっと 喋り 続けた。",
-            "english": "Just because I said \"good,\" he kept talking endlessly.",
-            "scene": "A woman is lamenting to her friend about a man she casually complimented, who then wouldn't stop talking about himself.",
+            "japanese": "親切心 から 手伝った {ばかりに} 、 余計 な 仕事 が 増えて しまった。",
+            "english": "Simply because I helped out of kindness, I ended up with extra work.",
+            "scene": "A female colleague complains to a male colleague about a task she regrets taking on.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "いい ね と 言った から 、 彼 は ずっと 喋り 続けた。",
-                    "mitigation": "The scene highlights that even a *small* compliment was enough to cause the negative reaction, emphasizing the unexpected consequence."
+                    "competing_grammar": "親切心 から 手伝った から 、 余計 な 仕事 が 増えて しまった。",
+                    "mitigation": "The scene emphasizes that the help was given *solely* out of kindness, and this single action unexpectedly led to more work, highlighting the specific, regrettable cause."
                 },
                 {
-                    "competing_grammar": "いい ね と 言った ので 、 彼 は ずっと 喋り 続けた。",
-                    "mitigation": "The scene underlines that the compliment, in and of itself, was the direct cause of his continuous talking, making it a singular, regretful trigger."
+                    "competing_grammar": "親切心 から 手伝った ので 、 余計 な 仕事 が 増えて しまった。",
+                    "mitigation": "The scene indicates that the well-intentioned help, as the sole factor, directly led to the unfortunate increase in work, suggesting an unintended negative consequence."
                 }
             ],
             "register": "casual",
-            "setting": "humorous",
+            "setting": "complaining",
             "speaker_gender": "female",
-            "nuance": "The phrase 「いい ね と 言った」 (ii ne to itta) is a simple, casual compliment. The phrase 「ずっと 喋り 続けた」 (zutto shaberi tsuzuketa) expresses that he kept talking endlessly, implying the speaker's exasperation. This scenario is typically experienced by women dealing with overly enthusiastic men.",
-            "etymology": "「喋る」 (shaberu) means 'to chat' or 'to talk'. 「続ける」 (tsuzukeru) means 'to continue'. Combined, 「喋り続ける」 means 'to keep talking'. This illustrates how a simple comment led to a prolonged, unwanted situation."
+            "listener_gender": "male",
+            "nuance": "「親切心 から 手伝った」 (shinsetsu-shin kara tetsudatta) means \"helped out of kindness.\" The phrase 「余計 な 仕事 が 増えて しまった」 (yokei na shigoto ga fuete shimatta) implies an unintended negative consequence, typical when one's good intentions backfire. The situation is common in workplaces regardless of gender, and the use of female speaker and male listener adds a specific conversational dynamic.",
+            "etymology": "「親切心」 (shinsetsu-shin) combines 「親切」 (kindness, N4) and 「心」 (heart, N4), meaning 'kind heart' or 'good intentions'. 「手伝う」 (tetsudau) means 'to help'. 「余計」 (yokei, N3) means 'extra' or 'unnecessary'. The combination highlights how a well-intentioned action can surprisingly lead to an undesirable outcome."
         },
         {
             "japanese": "会議 が 長かった {ばかりに} 、 昼ごはん を 食べる 時間 が なかった。",
@@ -221,15 +222,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/ばかりに"
     },
     "change": [
-        "violation: Removed top-level 'conjugations' field, as 'ばかりに' itself is not conjugatable. (Rule: \"Conjugation **only** if the grammar point is conjugatable... Must be present if there is a top-level \"conjugations\" array. Must not be present if there is no top-level \"conjugations\" array.\")",
-        "violation: Removed 'conjugation' field from all examples, as 'ばかりに' is not conjugatable and thus no top-level 'conjugations' field exists. (Rule: \"Conjugation **only** if the grammar point is conjugatable... Must be present if there is a top-level \"conjugations\" array. Must not be present if there is no top-level \"conjugations\" array.\")",
-        "violation: Added '{ }' around 'ばかりに' in all 'japanese' example sentences. (Rule: \"Must have the grammar_point in {bold} (surrounded in curlies).\")",
-        "violation: Added 'scene_rationale' field to all examples that have a 'scene'. (Rule: \"scene_rationale: Must be present if 'scene' is present.\")",
-        "violation: Changed '遅刻 した' to '遅れた' in example 2 to use N5 kanji (遅) instead of N2 (遅刻). (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
-        "violation: Replaced example 4 due to presence of N2 kanji (正直, 損). (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
-        "violation: Replaced example 8 due to presence of N1 kanji (褒) and uncommon kanji (狗). (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
-        "violation: Replaced example 9 due to presence of N2 kanji (忙). (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
-        "schema: Moved 'bunpro' URL from the input's nested 'bunpro' object to the top-level 'sources.bunpro' field to match schema.",
-        "unnatural: Adjusted scene text for clarity and to better hint at the specific nuance of 'ばかりに'."
+        "schema: Removed 'meaning_warning' field as it is not part of the output schema.",
+        "violation: Replaced example 8 due to presence of N2 kanji (喋) which exceeded the N3 JLPT level. (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
+        "violation: Added 'listener_gender: male' to example 8 to ensure there is at least one example with a male listener. (Rule: \"Example sentences should include at least one male and one female listener_gender.\")"
     ]
 }

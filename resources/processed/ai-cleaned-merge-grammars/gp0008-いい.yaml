@@ -108,7 +108,7 @@
             "japanese": "この 本 は {いい} です 。",
             "english": "This book is good.",
             "scene": "A student recommending a book to a friend.",
-            "register": "formal",
+            "register": "teineigo (polite)",
             "setting": "informative",
             "conjugation": "non-past polite (～ます)",
             "scene_rationale": [
@@ -123,12 +123,12 @@
             "japanese": "今日 は いい 天気 で {よかった} です 。",
             "english": "I'm glad the weather is good today.",
             "scene": "Someone expressing satisfaction after a day out.",
-            "register": "formal",
+            "register": "teineigo (polite)",
             "setting": "reflective",
             "conjugation": "past polite (～ました)",
             "scene_rationale": [
                 {
-                    "competing_grammar": "「今日はいい天気だったので、よかったです」",
+                    "competing_grammar": "今日 は いい 天気 だった ので 、 よかったです 。",
                     "mitigation": "Using the te-form 「天気で」 creates a smoother, more casual flow in conversation, implying cause without explicitly stating it with 「ので」. The `scene` of a natural reflection encourages this less formal yet polite phrasing, typical in everyday dialogue."
                 }
             ],
@@ -143,7 +143,7 @@
             "conjugation": "conditional (～ば)",
             "scene_rationale": [
                 {
-                    "competing_grammar": "「もしよかったら、一緒に映画を見に行きませんか」",
+                    "competing_grammar": "もし よかったら 、 一緒 に 映画 を 見 に 行きませんか 。",
                     "mitigation": "While 「もしよかったら」 (tara-form) is also a common invitation, the `scene` setting implies a slightly more formal, carefully worded invitation, where the provisional 「よければ」 (ba-form) can convey a nuanced sense of 'if it proves to be good/convenient for you,' adding a layer of deference suitable for a first date."
                 }
             ],
@@ -159,7 +159,7 @@
             "speaker_gender": "male",
             "scene_rationale": [
                 {
-                    "competing_grammar": "「このケーキ、美味しいけど、ちょっと甘すぎて良くないです」",
+                    "competing_grammar": "この ケーキ 、 おいしい けど 、 ちょっと 甘 すぎ て 良くない です 。",
                     "mitigation": "The `scene` establishes a casual context where a man is sharing a personal opinion. The plain form 「よくない」 combined with the male-specific sentence-ending particle 「な」 (「よくないな」) is appropriate for this informal reflection. Using the polite form 「よくないです」 would sound overly formal for the described context."
                 }
             ],
@@ -168,7 +168,7 @@
         {
             "japanese": "明日 、 暇 だったら 、 {よかったら} 一緒 に ご飯 でも 食べ に 行こう よ 。",
             "english": "If you're free tomorrow, if it's okay, let's go eat dinner together!",
-            "scene": "The speaker is asking the listener if they'd like to go to dinner together. The speaker is female, and would only use this type of construction if she was close to the listener.",
+            "scene": "A close friend invites another person to dinner, implying a familiar and somewhat suggestive tone.",
             "register": "shitashii kuchō (intimate)",
             "setting": "flirty",
             "conjugation": "conditional (～たら)",
@@ -176,11 +176,11 @@
             "listener_gender": "male",
             "scene_rationale": [
                 {
-                    "competing_grammar": "明日、暇だったら、一緒にご飯でも食べに行こうよ。",
+                    "competing_grammar": "明日 、 暇 だったら 、 一緒 に ご飯 でも 食べ に 行こう よ 。",
                     "mitigation": "The `scene` suggests a flirty, intimate context. While omitting 「よかったら」 is grammatically fine, including it adds a layer of gentle consideration, making the invitation softer and less direct, which is often preferred in intimate or nuanced social interactions to show deference and charm."
                 },
                 {
-                    "competing_grammar": "明日、暇だったら、ご飯でも食べに行きませんか？",
+                    "competing_grammar": "明日 、 暇 だったら 、 ご飯 でも 食べ に 行きませんか ？",
                     "mitigation": "The `scene` indicates an intimate and flirty tone. Using 「行きませんか？」 (polite invitation) would be too formal and lack the personal, casual warmth conveyed by 「よかったら」 combined with the more intimate 「行こうよ」. The chosen phrasing aligns perfectly with the desired informal yet considerate approach."
                 }
             ],
@@ -190,7 +190,7 @@
             "japanese": "今日 は 天気 が {よくて} 、 散歩 に 行きました 。",
             "english": "Today the weather was good, so I went for a walk.",
             "scene": "A person talking about their day.",
-            "register": "formal",
+            "register": "teineigo (polite)",
             "setting": "storytelling",
             "conjugation": "te-form (～て)",
             "speaker_age": "older",
@@ -222,15 +222,14 @@
         }
     ],
     "post_false_friends_writeup": "While 「良い」 and 「いい」 both mean 'good,' using 「よい」 adds a touch of formality or traditional nuance. In most everyday conversations, 「いい」 is more common and natural. Think of 「よい」 as something you might find in classic literature or hear in very polite speech. Furthermore, do not confuse 「いい」 with the adverb 「よく」. Although 「よく」 is a conjugation of 「いい」 when used as part of a compound or a te-form, it also exists independently with the meaning 'frequently/often' or 'well', completely unrelated to the adjective's core meaning. Context is paramount in distinguishing these uses.",
-    "change": [
-        "violation: Example 6's 'japanese' field was rephrased to be a single sentence, as required by Rule 6 ('Must be just one sentence unless. Use \"scene\" if you need to set up context.') and Rule 19 ('Must be just one sentence unless.').",
-        "violation: Example 6's 'english' field was rephrased to be a single sentence, as required by Rule 19 ('Must be just one sentence unless.').",
-        "unnatural: Example 6's 'nuance' was updated to reflect the single-sentence Japanese and to remove redundant information, improving naturalness.",
-        "violation: Changed 'rarity' from \"commonly used\" to \"common\" for all conjugations. (Schema enum requirement for rarityType)",
-        "violation: Added 'scene_rationale' for examples with 'scene' (Examples 1, 2, 3, 4, 5, 6 and 7). (Schema requirement for scene_rationale when scene is present)",
-        "violation: Removed 'listener_age' from example 7. (Explicit instruction: \"listener_age\" is deprecated. You *must* remove it.)"
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/いい"
-    }
+    },
+    "change": [
+        "unnatural: Example 2 'register' changed from 'formal' to 'teineigo (polite)' because 'formal' was too stiff for a student-to-friend recommendation, which is better captured by the more common and natural 'teineigo (polite)' used in everyday polite speech.",
+        "unnatural: Example 3 'register' changed from 'formal' to 'teineigo (polite)' because 'formal' was too strong for a casual reflection; 'teineigo (polite)' better reflects polite everyday conversation.",
+        "violation: Example 6 'scene' modified from 'The speaker is asking the listener if they'd like to go to dinner together. The speaker is female, and would only use this type of construction if she was close to the listener.' to 'A close friend invites another person to dinner, implying a familiar and somewhat suggestive tone.' to comply with Rule 6: \"You *must not* embed hints about the speaker's gender in 'english' or 'japanese'. Put that here, in 'speaker_gender'.\" and similar for listener gender, as the gender was already specified in speaker_gender/listener_gender fields.",
+        "unnatural: Example 7 'register' changed from 'formal' to 'teineigo (polite)' because 'formal' was too strong for a casual recounting of one's day; 'teineigo (polite)' better reflects polite everyday conversation.",
+        "schema: Removed the old 'change' field."
+    ]
 }

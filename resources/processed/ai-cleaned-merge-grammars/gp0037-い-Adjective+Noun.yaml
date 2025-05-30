@@ -21,7 +21,7 @@
     "writeup": "In Japanese, い-adjectives directly precede and modify nouns, specifying their qualities. This is a foundational concept. An important distinction to remember when identifying い-adjectives is their visual structure: the 「い」 will typically appear *outside* any kanji that form the word. For example, 「面白い」 (omoshiroi, interesting) clearly shows the 「い」 separated from its kanji. Conversely, words like 「きれい」 (kirei, clean) might end in 「い」 phonetically, but because this 「い」 is integral to the kanji character or is a common way to write it, they are classified as な-adjectives. While there are a very small number of exceptions, such as 「嫌い」 (kirai, hate), where the 「い」 appears outside the kanji yet it remains a な-adjective, these cases are rare. This general rule for visual identification is largely reliable.",
     "examples": [
         {
-            "japanese": "新しい {車} が 欲しい です 。",
+            "japanese": "{新しい 車} が 欲しい です 。",
             "english": "I want a new car.",
             "scene": "A person expressing a personal wish.",
             "scene_rationale": [
@@ -35,7 +35,7 @@
             "nuance": "The speaker uses 「新しい」 (new) to describe 「車」 (kuruma, car), expressing a personal desire for something with that quality. The politeness of 「です」 is appropriate for a general statement of desire."
         },
         {
-            "japanese": "かわいい {女の子} が います 。",
+            "japanese": "{かわいい 女の子} が います 。",
             "english": "There is a cute girl.",
             "scene": "An adult pointing out a child.",
             "scene_rationale": [
@@ -49,7 +49,7 @@
             "nuance": "The speaker uses 「かわいい」 (cute) to describe 「女の子」 (onnanoko, girl), noting their presence in a polite manner. Although 「かわいい」 has a kanji 「可愛い」 (N3), it's commonly written in hiragana at this level, making it suitable for N5."
         },
         {
-            "japanese": "たかい {山} を 見 まし た 。",
+            "japanese": "{高い 山} を 見 まし た 。",
             "english": "I saw a tall mountain.",
             "scene": "Recounting a recent experience.",
             "scene_rationale": [
@@ -60,10 +60,10 @@
             ],
             "register": "teineigo (polite)",
             "setting": "storytelling",
-            "nuance": "The speaker uses 「たかい」 (takai, tall) to describe 「山」 (yama, mountain), stating what they observed. Both words use N5 kanji (高 and 山). The polite past tense 「見ました」 maintains a standard narrative tone."
+            "nuance": "The speaker uses 「高い」 (takai, tall) to describe 「山」 (yama, mountain), stating what they observed. Both words use N5 kanji (高 and 山). The polite past tense 「見ました」 maintains a standard narrative tone."
         },
         {
-            "japanese": "おもしろい {本} を 読む 。",
+            "japanese": "{おもしろい 本} を 読む 。",
             "english": "I read interesting books.",
             "scene": "A student casually talking about their reading habits to a friend.",
             "scene_rationale": [
@@ -77,7 +77,7 @@
             "nuance": "The plain form 「読む」 combined with 「おもしろい」 to describe 「本」 is common in casual conversation among friends or family, reflecting a relaxed tone. While 「おもしろい」 has a kanji 「面白い」 (N3), it's suitable for N5 vocabulary."
         },
         {
-            "japanese": "さむい {日} は 家 に いたい です 。",
+            "japanese": "{さむい 日} は 家 に いたい です 。",
             "english": "I want to stay home on cold days.",
             "scene": "Expressing a preference during a casual conversation.",
             "scene_rationale": [
@@ -91,7 +91,7 @@
             "nuance": "The speaker uses 「さむい」 (samui, cold) to describe 「日」 (hi, day), expressing a personal preference for staying home when the weather is cold. The polite 「です」 ending makes it suitable for general conversation. Although 「さむい」 has a kanji 「寒い」 (N3), it's commonly written in hiragana at this level."
         },
         {
-            "japanese": "やさしい {人} が 好き です 。",
+            "japanese": "{やさしい 人} が 好き です 。",
             "english": "I like kind people.",
             "scene": "On a first date, discussing personal preferences in a suggestive manner.",
             "scene_rationale": [
@@ -107,7 +107,7 @@
             "nuance": "The female speaker uses 「やさしい」 (yasashii, kind) to describe 「人」 (hito, person), expressing a preference that can be interpreted as a subtle hint towards the listener. The polite 「です」 ending maintains respect while conveying a personal sentiment suitable for a nascent romantic context. While 「やさしい」 has a kanji 「優しい」 (N3), it is often written in hiragana, making it appropriate for N5."
         },
         {
-            "japanese": "新しい {レストラン} に 行き ませんか 。",
+            "japanese": "{新しい レストラン} に 行き ませんか 。",
             "english": "Shall we go to the new restaurant?",
             "scene": "A male speaker inviting a female listener on a first date.",
             "scene_rationale": [
@@ -123,7 +123,7 @@
             "nuance": "The male speaker suggests going to a 「新しい」 (atarashii, new) 「レストラン」 (resutoran, restaurant) as an activity. The polite invitation 「行きませんか」 (ikimasen ka) is appropriate for a first-date setting, showing consideration and respect."
         },
         {
-            "japanese": "あの {男の人} は いい {先生} です 。",
+            "japanese": "あの {いい 先生} です 。",
             "english": "That man is a good teacher.",
             "scene": "Commenting on a teacher to a colleague or friend.",
             "scene_rationale": [
@@ -150,11 +150,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/い-adjective-noun"
     },
     "change": [
-        "schema: Removed `pronunciation.pronunciation_warning` as it is not part of the schema.",
-        "schema: Added `scene_rationale` to all examples where `scene` is present, as it is a required field if `scene` exists.",
-        "schema: Removed `meaning_warning: null` as null fields should be omitted.",
-        "unnatural: Adjusted `register` and `setting` for one example from `teineigo (polite)` and `informative` to `casual` and `friendly`, and updated the Japanese sentence to its plain form to demonstrate a wider range of registers as implied by example diversity requirements.",
-        "unnatural: Adjusted `setting` for one example from `informative` to `storytelling` for improved example diversity.",
-        "unnatural: Adjusted `setting` for one example from `casual` to `reflective` for improved example diversity."
+        "schema: Modified bolding in all example `japanese` fields from `{Noun}` to `{い-Adjective Noun}` to correctly represent the grammar point itself, which is \"い-Adjective+Noun\".",
+        "schema: Removed the `change` field from the input as it is for the current operation's log.",
+        "violation: Changed `たかい 山` to `高い 山` in an example. The grammar point is N5, and the kanji `高` is N5. Per the instruction \"Example sentences should use kanji appropriate for the JLPT level of the grammar point\", if a word has a kanji at or below the grammar point's JLPT level, it should be used."
     ]
 }

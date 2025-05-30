@@ -48,7 +48,6 @@
             "register": "casual",
             "setting": "confirmation",
             "speaker_age": "younger",
-            "listener_age": "younger",
             "nuance": "「よね」 seeks confirmation, implying a shared understanding. This usage is common among younger speakers to confirm information with peers."
         },
         {
@@ -57,13 +56,18 @@
             "register": "formal",
             "setting": "informative",
             "speaker_age": "older",
-            "listener_age": "younger",
             "nuance": "Formal language indicated by 「教えます」, suitable for a teacher explaining something to a student. The use of 「私」 is standard and neutral."
         },
         {
             "scene": "A boy is flirting with a girl.",
             "japanese": "君 {と} 一緒 に いたい な 。",
             "english": "I want to be with you.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あなたと一緒にいたいです",
+                    "mitigation": "The scene sets a romantic/flirty context, and the use of 「君と」 combined with the masculine-leaning 「な」 at the end makes this phrasing more appropriate for a male speaker in a casual, intimate setting, differentiating it from a general polite statement."
+                }
+            ],
             "register": "casual",
             "setting": "flirty",
             "speaker_gender": "male",
@@ -74,6 +78,12 @@
             "scene": "First-date situation.",
             "japanese": "あなた {と} いる と 落ち着くな。",
             "english": "I feel relaxed when I'm with you.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "一緒にいると落ち着きます",
+                    "mitigation": "The scene establishes a first-date setting, and the direct address 「あなたと」 combined with the soft, reflective 「な」 at the end creates an intimate and personal nuance, often used by female speakers to express a feeling, steering the learner away from more general, less personal expressions."
+                }
+            ],
             "register": "casual",
             "setting": "first-date",
             "speaker_gender": "female",
@@ -116,5 +126,9 @@
     "post_false_friends_writeup": "To avoid mixing up 「と」 with similar expressions, remember that 「と」 is for exhaustively listing nouns or indicating something is done 'with' someone/something. Use 「や」 for non-exhaustive lists, 「も」 to add something that is 'also' true or present, 「と共に」 for simultaneous actions or shared states, 「につれて」 for proportional changes, and 「および」 for a more formal 'and' in written or official contexts.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/と-and"
-    }
+    },
+    "change": [
+        "schema: Removed 'listener_age' from examples 4 and 5 because the schema states it is deprecated.",
+        "violation: Added 'scene_rationale' to examples 6 and 7 as rule 6 requires its presence when a 'scene' is provided."
+    ]
 }

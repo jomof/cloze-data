@@ -287,49 +287,49 @@
             "nuance": "「はずだった」 expresses a strong past expectation that was not fulfilled, conveying a sense of disappointment or frustration at the unexpected continuation."
         },
         {
-            "japanese": "その笑顔を見たら、誰もが恋に落ちる{はずだ}ね。",
-            "english": "When they see that smile, everyone is bound to fall in love, aren't they?",
-            "scene": "A person observing someone's captivating smile and making a confident, almost inevitable prediction about its effect.",
+            "japanese": "電車は時間通りに来る{はずだ}。",
+            "english": "The train should arrive on time.",
+            "scene": "A passenger waiting at the station, confirming the train's expected arrival time.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "その笑顔を見たら、誰もが恋に落ちるでしょうね。",
-                    "mitigation": "「でしょうね」 indicates a softer, more speculative agreement. The scene suggests a stronger, more definite inevitability and logical outcome, which 「はずだ」 conveys more powerfully."
-                }
-            ],
-            "register": "intimate",
-            "setting": "flirty",
-            "conjugation": "dictionary (plain non-past)",
-            "nuance": "「はずだ」 is used to express a strong, almost unavoidable consequence. The ending 「ね」 seeks confirmation or shared sentiment, creating a conversational and intimate tone."
-        },
-        {
-            "japanese": "君みたいな素敵な人には、もう恋人がいる{はずだ}って思ってた。",
-            "english": "I thought someone as wonderful as you surely must already have a partner.",
-            "scene": "A person on a first date expresses surprise at their companion being single, based on their perceived qualities.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "君みたいな素敵な人には、もう恋人がいるだろうと思ってた。",
-                    "mitigation": "「だろう」 implies a weaker assumption. The scene suggests a stronger, more logical expectation based on the person's perceived qualities, making 「はずだ」 more fitting for expressing a strong prior conviction."
+                    "competing_grammar": "電車は時間通りに来るだろう。",
+                    "mitigation": "「だろう」 expresses a weaker prediction. The scene emphasizes a stronger expectation based on reliability, which 「はずだ」 conveys."
                 }
             ],
             "register": "casual",
-            "setting": "first-date",
+            "setting": "informative",
             "conjugation": "dictionary (plain non-past)",
-            "nuance": "The phrase 「はずだと思ってた」 indicates a strong prior assumption that turned out to be incorrect, used here as a compliment. The casual 「君」 (kimi) and 「思ってた」 create an informal and charming first-date atmosphere."
+            "nuance": "「時間通りに来るはずだ」 indicates a logical expectation based on the train's known punctuality."
         },
         {
-            "japanese": "当社の製品であれば、お客様にご満足いただける{はずでございます}。",
-            "english": "If it's our company's product, you should certainly be satisfied.",
-            "scene": "A salesperson confidently assuring a client about the quality and performance of their company's product.",
+            "japanese": "鍵はこの引き出しにある{はずだ}。昨日ここに入れたから。",
+            "english": "The key should be in this drawer. I put it here yesterday.",
+            "scene": "Someone is searching for a lost item, expressing certainty about its location.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "当社の製品であれば、お客様にご満足いただけるでしょう。",
-                    "mitigation": "「でしょう」 indicates a prediction or conjecture. The scene requires a stronger assurance based on the company's product quality, which 「はずでございます」 conveys more effectively and humbly in a formal business context."
+                    "competing_grammar": "鍵はこの引き出しにあるだろう。昨日ここに入れたから。",
+                    "mitigation": "「だろう」 indicates a weaker assumption. The scene implies a stronger, memory-based expectation, which 「はずだ」 conveys."
+                }
+            ],
+            "register": "casual",
+            "setting": "reflective",
+            "conjugation": "dictionary (plain non-past)",
+            "nuance": "「鍵はこの引き出しにあるはずだ」 expresses a confident expectation about the key's location, based on the speaker's memory of putting it there."
+        },
+        {
+            "japanese": "報告書は明日朝までに、完成する{はずでございます}。",
+            "english": "The report should be ready by tomorrow morning.",
+            "scene": "An office manager reassuring a superior about a deadline for a report.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "報告書は明日朝までに、完成するでしょう。",
+                    "mitigation": "「でしょう」 offers a weaker prediction. The scene requires a humble yet confident assurance of completion for a superior, making 「はずでございます」 more appropriate."
                 }
             ],
             "register": "kenjōgo (humble)",
             "setting": "professional",
             "conjugation": "non-past polite (～ます)",
-            "nuance": "「はずでございます」 is a highly polite form combining 「はずです」 with the humble copula 「ございます」, appropriate for formal business interactions to express conviction humbly and respectfully to a client, emphasizing a strong expectation of satisfaction."
+            "nuance": "The use of 「はずでございます」 conveys a humble yet confident expectation, common in business Japanese when speaking to a superior, assuring them that the report will be completed."
         }
     ],
     "false_friends": [
@@ -411,13 +411,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/はずだ"
     },
     "change": [
-        "schema: Changed conjugation `type` from \"plain (da omitted)\" to \"dictionary (plain non-past)\" for the `form: \"はず\"` entry to align with schema's `conjugationType` enum.",
-        "unnatural: Expanded the writeup to provide more comprehensive details and nuances about `はずだ` (e.g., distinction from \"should\" for advice, effect of omitting 「だ」), aligning with the persona's love for sharing language details.",
-        "schema: Removed `listener_age` field from example 2 as it is deprecated by the schema.",
-        "violation: Added `scene` and `scene_rationale` fields to all examples (1-15) as they were missing and required if competing grammar exists.",
-        "violation: Removed `speaker_gender` from examples 3, 7, 11, and `listener_gender` from examples 11, 12, and `speaker_age` from examples 2 and 8, as the specific Japanese phrases in those examples were not exclusive to those genders/ages per the strict rule \"Use only if this sentence would typically only be spoken by this gender/age\".",
-        "violation: Added two new examples (4, 5) to ensure at least one male and one female `speaker_gender` is present, fulfilling the requirement after previous gender field removals. These new examples explicitly use gender-specific language.",
-        "schema: Updated `conjugation` type for examples 7 and 8 from \"plain (da omitted)\" to \"dictionary (plain non-past)\" to align with the revised top-level `conjugations` entry.",
-        "unnatural: Reordered examples to flow from simplest to most complex, and to better integrate the newly added gendered examples while maintaining variety in settings and conjugations."
+        "violation: Replaced example sentences 13, 14, and 15 due to the use of N3 kanji in a grammar point specified as N4, which violates the rule that examples should use kanji appropriate for the grammar point's JLPT level (N4 in this case, meaning N4 and N5 kanji only)."
     ]
 }

@@ -5,42 +5,42 @@
         {
             "type": "dictionary (plain non-past)",
             "form": "一方だ",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "non-past polite (～ます)",
             "form": "一方です",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "negative plain (～ない)",
             "form": "一方ではない",
-            "rarity": "rare in everyday speech"
+            "rarity": "rare"
         },
         {
             "type": "negative non-past polite (～ません)",
             "form": "一方ではありません",
-            "rarity": "rare in everyday speech"
+            "rarity": "rare"
         },
         {
             "type": "past plain (～た)",
             "form": "一方だった",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "past polite (～ました)",
             "form": "一方でした",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "negative past plain (～なかった)",
             "form": "一方ではなかった",
-            "rarity": "rare in everyday speech"
+            "rarity": "rare"
         },
         {
             "type": "negative past polite (～ませんでした)",
             "form": "一方ではありませんでした",
-            "rarity": "rare in everyday speech"
+            "rarity": "rare"
         }
     ],
     "pronunciation": {
@@ -75,7 +75,7 @@
             "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "仕事 の 量 が 増える {一方 で} 、 休み が 取れない 。",
+            "japanese": "仕事 が 増える {一方 で} 、 休み が 取れない 。",
             "english": "Because the amount of work keeps increasing, I can't take a day off.",
             "scene": "Complaining about increasing workload.",
             "scene_rationale": [
@@ -132,9 +132,9 @@
             "conjugation": "non-past polite (～ます)"
         },
         {
-            "japanese": "環境問題 は 悪く なる {一方だ} から、心配 です 。",
-            "english": "Because environmental issues are continuing to worsen, I'm worried.",
-            "scene": "Expressing concern about environmental issues.",
+            "japanese": "世の中 の 問題 は 悪く なる {一方だ} から、心配 です 。",
+            "english": "Because societal issues are continuing to worsen, I'm worried.",
+            "scene": "Expressing concern about societal issues.",
             "scene_rationale": [
                 {
                     "competing_grammar": "環境問題は悪くなっているから、心配です。",
@@ -160,8 +160,8 @@
             "conjugation": "past plain (～た)"
         },
         {
-            "japanese": "景気 は 悪く なる {一方だった} ので、ボーナス は 出なかった んです。",
-            "english": "Since the economy kept worsening, we didn't get a bonus.",
+            "japanese": "経済 の 状況 は 悪く なる {一方だった} ので、ボーナス は 出なかった んです。",
+            "english": "Since the economic situation kept worsening, we didn't get a bonus.",
             "scene": "Explaining why a bonus was not received.",
             "scene_rationale": [
                 {
@@ -240,13 +240,10 @@
         "bunpro": "https://bunpro.jp/grammar_points/一方だ"
     },
     "change": [
-        "violation: Rephrased example 3 (from '高齢化') to '社会の変化が進んで' to comply with JLPT kanji level (N3, N4, N5 only).",
-        "violation: Rephrased example 4 (from '物価は上昇する') to '値段が上がる' to comply with JLPT kanji level (N3, N4, N5 only).",
-        "violation: Rephrased example 6 (from '地球温暖化') to '環境問題は' to comply with JLPT kanji level (N3, N4, N5 only).",
-        "schema: Added 'scene_rationale' field to all examples that have a 'scene', as required by the schema.",
-        "violation: Refined 'nuance' for example 9 to explicitly link to the 'male' speaker, as required by the schema ('If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.').",
-        "violation: Added 'nuance' for example 10 to explicitly link to the 'male' speaker, as required by the schema ('If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.').",
-        "unnatural: Corrected the 'nuance' for the 'ますます' false friend to more accurately differentiate it from '一方だ'.",
-        "schema: Corrected conjugation 'type' values to precisely match the enum values defined in the schema."
+        "schema: Removed top-level 'bunpro', 'dojg', and 'lesson_order' fields as they are not part of the output schema and 'additionalProperties: false' is set at the root.",
+        "schema: Normalized 'rarity' values in 'conjugations' array from 'commonly used' to 'common' and 'rare in everyday speech' to 'rare' to comply with the schema's enum definitions for rarityType.",
+        "violation: Rephrased example 2 (from '仕事 の 量') to '仕事 が' to comply with JLPT N3 kanji level for '量' (N2).",
+        "violation: Rephrased example 6 (from '環境問題') to '世の中 の 問題' and updated English meaning to 'societal issues' to comply with JLPT N3 kanji level for '環境' (N2).",
+        "violation: Rephrased example 8 (from '景気') to '経済 の 状況' and updated English meaning to 'economic situation' to comply with JLPT N3 kanji level for '景気' (N2)."
     ]
 }

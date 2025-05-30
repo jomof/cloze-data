@@ -77,11 +77,6 @@
             "rarity": "unnatural"
         },
         {
-            "type": "imperative polite (～なさい)",
-            "form": "願ってください",
-            "rarity": "common"
-        },
-        {
             "type": "passive (～られる/～かれる)",
             "form": "願われる",
             "rarity": "uncommon"
@@ -101,8 +96,7 @@
     },
     "formation": {
         "おVます + 願います": "Please do V (humble request). Example: お書き願います (please write).",
-        "ごVN + 願います": "Please do VN (humble request, VN is a Sino-Japanese word). Example: ご報告願います (please report).",
-        "Vて + 願います": "Please do V (humble request). Example: 食べて願います (please eat)."
+        "ごVN + 願います": "Please do VN (humble request, VN is a Sino-Japanese word). Example: ご報告願います (please report)."
     },
     "etymology": "The verb 「願う(ねがう)」 originates from the noun 「願い(ねがい)」, which means \"wish\" or \"request.\" The kanji 「願」 combines the elements 「頁」 (head) and 「原」 (source), suggesting the idea of expressing one's desires or thoughts from the core of one's being. Over time, it evolved into a verb to express the act of wishing or requesting something.",
     "writeup": "「願う・願います」 is a versatile verb with meanings ranging from wishing and hoping to requesting and praying. It is commonly used to make polite requests, especially in formal or business settings. The 「ます」 form, 「願います」, adds a level of politeness suitable for addressing superiors or customers.\n\n**Key usages:**\n*   **Polite requests:** Often used with the 「お～ください」 or 「ご～ください」 pattern to request actions politely. For example, 「ご協力願います」 (Please cooperate).\n*   **Expressing wishes:** Can also express a desire or hope, though less common in everyday conversation.\n*   **Formal settings:** Frequently found in business emails, announcements, and public service announcements.\n\nWhen using 「願う」, remember that it conveys a sense of humility and respect. It is a step up in politeness from 「ください」, making it ideal for situations where you want to show extra consideration.",
@@ -235,11 +229,7 @@
         "bunpro": null
     },
     "change": [
-        "command: Removed etymology field from example 4 (original example 8) because it was an internal note, not a true etymology for the sentence.",
-        "violation: Removed original examples 2, 4, 5, 6, 8 because they did not use the grammar point '願う・願います' in its core meaning or formation as specified by the grammar point definition. (Rule: \"Each example **must** use the grammar_point, though it may be in conjugated form.\")",
-        "violation: Modified the JLPT level of original Example 6, replacing '口外' (N1) with '話さない' (N5) to adhere to the N2 kanji constraint for the grammar point. (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
-        "violation: Added 4 new examples (now examples 1, 2, 3, 4, 6, 7) that correctly use '願う・願います' in the 'おVます + 願います' or 'ごVN + 願います' formation, adhere to JLPT N2 kanji, and provide required gender diversity. (Rule: \"Each example **must** use the grammar_point\"; \"Example sentences should include at least one male and one female speaker_gender.\"; \"Example sentences should include at least one male and one female listener_gender.\")",
-        "violation: Ensured all examples properly use 'speaker_gender', 'listener_gender', and 'nuance' where appropriate, adding these fields to new examples to meet the diversity requirement. (Rule: \"Example sentences should include at least one male and one female speaker_gender.\"; \"Example sentences should include at least one male and one female listener_gender.\"; \"If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.\")",
-        "violation: Reordered examples from simplest to most complex. (Rule: \"Examples **must** be ordered from simplest to most complex.\")"
+        "violation: Removed `Vて + 願います` from `formation` because it is an inaccurate representation of how 「願う・願います」 is used to make polite requests, and `食べて願います` is an unnatural example for this meaning. (Rule: \"16. You may fix minor inaccuracies in \"details\", but do not invent new details.\")",
+        "schema: Removed `願ってください` from the `conjugations` array because it is not a direct conjugation of the verb `願う`, but rather a phrase using its te-form. (Rule: \"It should list all of the possible conjugations of grammar_point, including the grammar point itself.\")"
     ]
 }

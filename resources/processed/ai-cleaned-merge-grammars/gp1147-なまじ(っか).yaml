@@ -184,6 +184,44 @@
             "register": "casual",
             "setting": "critical",
             "nuance": "The phrase `{なまじっか}約束するくらいなら` (if you're only going to make a half-hearted promise) indicates that such an action is so poor in quality that it's better to avoid it entirely (「しない方がましだ」). The 「～だよ」 adds a direct, admonishing tone to a friend."
+        },
+        {
+            "japanese": "{なまじっか} プログラミング が できる おかげで 、 休日 も 会社から 連絡が 来て しまう 。",
+            "english": "Because I can program somewhat, I end up getting contacted by the company even on holidays.",
+            "scene": "A man is complaining to his friend about his demanding job.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "少しプログラミングができるおかげで、休日も会社から連絡が来てしまう。",
+                    "mitigation": "'少し' lacks the nuance that the *limited* skill is the cause of the unwanted consequence. The scene emphasizes the negative impact of this specific level of ability."
+                },
+                {
+                    "competing_grammar": "プログラミングができるから、休日も会社から連絡が来てしまう。",
+                    "mitigation": "This is simply a factual statement of cause and effect. 'なまじっか' adds the specific nuance of regret that the speaker has *any* ability in programming due to the negative outcome."
+                }
+            ],
+            "register": "casual",
+            "setting": "melancholic",
+            "speaker_gender": "male",
+            "nuance": "「できるおかげで」 normally implies a positive consequence. However, with `{なまじっか}` and the negative outcome 「連絡が来てしまう」, it conveys a sense of regret that even a partial ability in programming leads to unwanted work during holidays. Men often share such work-related frustrations with friends."
+        },
+        {
+            "japanese": "{なまじっか} 流行に 詳しい ふりを したら 、 結局 恥を かいて しまった わ。",
+            "english": "Because I pretended to know a bit about trends, I ended up embarrassing myself after all.",
+            "scene": "A young woman is recounting an embarrassing social mishap to her close friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "少し流行に詳しいふりをしたら、結局恥をかいてしまったわ。",
+                    "mitigation": "'少し' lacks the critical nuance of 'なまじっか' where the insufficient knowledge *itself* led to the embarrassing situation. The scene highlights a social gaffe where 'somewhat' knowledge is the problem."
+                },
+                {
+                    "competing_grammar": "流行に詳しいふりをしたら、結局恥をかいてしまったわ。",
+                    "mitigation": "This is a direct statement. 'なまじっか' implies that her superficial pretense of knowledge was the unwise action that directly led to the negative outcome."
+                }
+            ],
+            "register": "casual",
+            "setting": "humorous",
+            "speaker_gender": "female",
+            "nuance": "「詳しいふりをしたら」 (pretended to know) combined with `{なまじっか}` emphasizes that her superficial knowledge or pretense led directly to an embarrassing situation (「恥をかいてしまった」). The informal ending 「わ」 is a common female particle used in casual conversation."
         }
     ],
     "false_friends": [
@@ -202,13 +240,8 @@
     ],
     "post_false_friends_writeup": "When using these expressions, be mindful of the specific nuance you wish to convey. If you want to emphasize the negative consequences resulting from insufficient effort or ability, 「なまじ(っか)」 is appropriate. If you want to describe something that is simply unfinished or incomplete, 「中途半端」 is a better choice. If you want to express irresponsibility or negligence, 「いい加減」 is more suitable.",
     "change": [
-        "violation: The previous 'formation' was too generic. It has been expanded to include more specific and illustrative patterns for combining with verbs, adjectives, and nouns, as per the DOJG source.",
-        "unnatural: The 'Usage' detail was rephrased to more comprehensively capture the core meaning of 'なまじ(っか)', including the nuance that it often implies 'it would have been better if the action or state had not occurred at all'.",
-        "violation: The 'Register' detail in the previous version inaccurately stated 'Generally used in formal speech or writing.' It has been corrected to reflect that 'なまじ(っか)' is used in both formal and casual contexts, as demonstrated by the provided examples, in compliance with rule 16 (fix minor inaccuracies).",
-        "violation: The 'writeup' was entirely in Japanese. It has been translated to English to comply with the instruction that it 'Be primarily in English, supplemented by natural Japanese expressions as needed'.",
-        "violation: The 'examples' previously lacked the 'scene_rationale' field despite having 'scene' fields. This has been added to all relevant examples to explain the 'OTHER_WAYS' and how the scene mitigates them, as required by the schema.",
-        "violation: The 'nuance' field for examples with 'speaker_gender' previously did not explicitly refer to the gendered part of the Japanese sentence. This has been rectified to specify which part of the Japanese would be typically associated with that gender, as required by rule 6.",
-        "schema: The 'conjugation' field was present in examples despite 'なまじ(っか)' being an adverb and not conjugatable. This field has been removed from all examples, in compliance with the schema rule that it 'Must not be present if there is no top-level 'conjugations' array'.",
-        "schema: The 'sources' field was removed. The prior 'sources' included an internal DOJG file path and lacked a valid Bunpro URI. As per schema rules, sources must contain valid URIs, and fields should be omitted if not applicable/null."
+        "command: Added two examples, one with male speaker_gender and one with female speaker_gender, as explicitly commanded by the prior version's `change` array comment.",
+        "schema: Removed top-level `dojg` object as per schema rule 20: 'You *must not* add top-level 'bunpro' or 'dojg' fields to the output JSON'.",
+        "schema: Removed `sources` field as no valid Bunpro URI was available and the schema requires it to be a valid URI (Rule 20 'You *must not* add top-level 'bunpro' or 'dojg' fields to the output JSON' and the `sources` definition requiring `format: uri')."
     ]
 }

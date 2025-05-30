@@ -63,7 +63,13 @@
             "setting": "inspirational",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "The speaker, a male mentor, uses the more general and slightly instructional tone of 「〜が大切だ」 'it is important' rather than a more direct command, which is typical for a mentor-mentee relationship."
+            "nuance": "The speaker, a male mentor, uses the more general and slightly instructional tone of 「〜が大切だ」 'it is important' rather than a more direct command, which is typical for a mentor-mentee relationship.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "上手くても下手でも、何事も一生懸命やるのが大切だ。",
+                    "mitigation": "The mentor's advice emphasizes a universal principle for success, not just a casual observation. 「にかかわらず」 provides a more objective and impactful statement about the irrelevance of skill level, fitting for guidance that seeks to instill a core value."
+                }
+            ]
         },
         {
             "japanese": "彼女は性別や国籍{にかかわらず}、誰とでも友達になれる。",
@@ -73,7 +79,13 @@
             "setting": "informative",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "The speaker, a female, uses 「彼女は〜」 to describe a third person. The overall tone is slightly admiring, which is common in casual conversation among female friends."
+            "nuance": "The speaker, a female, uses 「彼女は〜」 to describe a third person. The overall tone is slightly admiring, which is common in casual conversation among female friends.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼女は性別や国籍に関係なく、誰とでも友達になれる。",
+                    "mitigation": "While 「関係なく」 is similar, 「にかかわらず」 in this context slightly elevates the description, making it sound more like a defining characteristic or a statement of fact rather than a mere observation. This emphasizes her remarkable openness."
+                }
+            ]
         },
         {
             "japanese": "このゲームは年齢{にかかわらず}、誰でも楽しめます！",
@@ -185,13 +197,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/にかかわらず"
     },
     "change": [
-        "Removed `conjugations` array: schema, because the grammar point itself is not a verb or adjective that takes conjugations, as per schema definition.",
-        "Refined `formation`: schema, unnatural, violation. The prior `formation` was too simplistic. A more comprehensive and precise set of patterns from the DOJG input was adopted to fulfill the schema's requirement to 'describe, in pseudo-algebraic notation, the formula for creating the grammar point from its component parts'.",
-        "Expanded `writeup`: unnatural. Added more detailed nuance regarding the repetition of positive/negative forms and `かどうか` for a more comprehensive explanation.",
-        "Corrected `{かかわらず}` to `{にかかわらず}` in examples: violation. The original did not correctly bold the entire grammar point as required by the schema: 'Each example **must** use the grammar_point... The grammar_point **must** be in {bold}'.",
-        "Removed `conjugation: null` from examples: schema. The schema states 'Conjugation **Must not** be present if there is no top-level \"conjugations\" array', and the top-level array was removed.",
-        "Added `scene_rationale` to all examples with `scene`: violation. The schema explicitly states '`scene_rationale` **Must** be present if \"scene\" is present. **Must** include wrong ways... **Must** list the exact content of OTHER_WAYS'. This was completely missing.",
-        "Added `speaker_gender`, `listener_gender`, and `nuance` to examples: violation. The schema requires 'at least one male and one female speaker_gender' and 'at least one male and one female listener_gender', and that '`nuance` **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender'. These were missing.",
-        "Ensured natural phrasing and diversity in `register` and `setting` across examples: unnatural, violation. Examples were reviewed and adjusted to meet the schema's requirement that they 'exhibit a wide variety of settings' and 'exhibit a wide variety of registers'."
+        "Added scene_rationale to example 3: violation. The schema explicitly states 'scene_rationale **Must** be present if \"scene\" is present. **Must** include wrong ways... **Must** list the exact content of OTHER_WAYS'. This was missing.",
+        "Added scene_rationale to example 4: violation. The schema explicitly states 'scene_rationale **Must** be present if \"scene\" is present. **Must** include wrong ways... **Must** list the exact content of OTHER_WAYS'. This was missing."
     ]
 }

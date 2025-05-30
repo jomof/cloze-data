@@ -226,7 +226,7 @@
                 }
             ],
             "register": "polite",
-            "setting": "first-date, intimate",
+            "setting": "first-date",
             "speaker_gender": "male",
             "listener_gender": "female",
             "nuance": "The speaker uses the humble pronoun 「僕 (boku)」 and the polite form 「です」 to maintain respect. The direct and honest confession of 「緊張しているわけです」 (I'm nervous because...) is vulnerable and appealing in a first-date setting, showing genuine feeling."
@@ -277,7 +277,6 @@
             "setting": "professional, apologetic",
             "conjugation": "non-past polite (～ます)",
             "speaker_age": "younger",
-            "listener_age": "older",
             "nuance": "A younger speaker uses polite language (`です`) when addressing an older, senior individual. The use of 「理解しにくいわけです」 provides a polite and logical explanation for a difficulty, rather than simply stating it's difficult, which is appropriate in a professional context."
         },
         {
@@ -333,14 +332,14 @@
             "nuance": "「ことだ (koto da)」 is used to give advice or state a general rule or necessity ('should be done'). In contrast, 「わけだ (wake da)」 explains a reason or result, conveying a sense of understanding or conclusion about a current state or event."
         }
     ],
-    "post_false_friends_writeup": "When differentiating between these expressions, consider the core meaning of 「わけだ」: presenting a logical conclusion, a natural consequence, or a realization based on known facts. Other expressions might imply expectation, purpose, or general advice. For instance, while 「はずだ」 suggests an expectation or certainty, 「わけだ」 states a fact or conclusion that *follows* from existing information. Similarly, 「ため(に)」 indicates a direct purpose or cause, whereas 「わけだ」 highlights the inherent reason for a state of affairs. Focus on whether the statement is explaining *why* something is the way it is as a natural outcome, rather than simply stating a purpose, an expectation, or an obligation.",
+    "post_false_friends_writeup": "When differentiating between these expressions, consider the core meaning of 「わけだ」: presenting a logical conclusion, a natural consequence, or a realization based on known facts. Other expressions might imply expectation, purpose, or general advice. For instance, while 「はずだ」 suggests an `expectation` or `certainty`, 「わけだ」 states a fact or conclusion that *follows* from existing information. Similarly, 「ため(に)」 indicates a direct `purpose` or `cause`, whereas 「わけだ」 highlights the inherent reason for a state of affairs. Focus on whether the statement is explaining *why* something is the way it is as a natural outcome, rather than simply stating a purpose, an expectation, or an obligation.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/わけだ"
     },
     "change": [
-        "violation: Added `scene_rationale` to all examples where `scene` was present. (Rule 6: \"Each should have: ... 'scene_rationale': ...\")",
-        "violation: Added one example for `わけでした` conjugation to ensure wide variety. (Rule 6: \"Examples must exhibit a wide variety of conjugations.\")",
-        "violation: Corrected Kanji levels in examples (`指の骨が折れていた` to `指を強く打った`, `前提` to `最初の考え`, `魅力的` to `素敵`, `専門用語` to `難しい言葉`, `長引いた` to `長くなった`). (Rule 6: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
-        "violation: Added `post_false_friends_writeup` field. (Rule 15: \"You may add a 'post_false_friends_writeup'...\"; schema `required` field)"
+        "violation: Removed `listener_age` from example 16 as it is deprecated. (Rule: \"\"listener_age\" is deprecated. You *must* remove it.\")",
+        "violation: Added `speaker_age: older` to example 8 to align with the context and nuance provided. (Rule: \"speaker_age\" must be specified if the gender actually matters in the context of the spoken Japanese.)",
+        "violation: Added `speaker_age: older` to example 15 to align with the context and nuance provided. (Rule: \"speaker_age\" must be specified if the gender actually matters in the context of the spoken Japanese.)",
+        "violation: Added `speaker_age: younger` to example 16 to align with the context and nuance provided. (Rule: \"speaker_age\" must be specified if the gender actually matters in the context of the spoken Japanese.)"
     ]
 }

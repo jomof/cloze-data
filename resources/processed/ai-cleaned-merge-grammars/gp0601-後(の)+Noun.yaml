@@ -20,7 +20,7 @@
         {
             "japanese": "今あなたが持っている段ボール箱はキッチンまで運んでおいてください。{後の}段ボール箱は全部寝室までお願いします。",
             "english": "Please bring the cardboard box you are carrying into the kitchen, and please take all the rest of the cardboard boxes to the master bedroom.",
-            "scene": "A supervisor gives instructions for a multi-step task involving a large number of items. The first item is handled separately, and then instructions for the remaining items are given.",
+            "scene": "A supervisor gives instructions for a multi-step task involving a large number of items. The first item is handled separately, then instructions for the remaining items are given.",
             "scene_rationale": [
                 {
                     "competing_grammar": "残りの段ボール箱は全部寝室までお願いします。",
@@ -55,6 +55,36 @@
             ],
             "register": "casual",
             "setting": "excited"
+        },
+        {
+            "japanese": "{後}少しで準備ができるわ。みんな、ちょっと待っててね。",
+            "english": "Just a little more and the preparations will be done. Everyone, please wait a moment.",
+            "scene": "A woman, managing a group of people for an event, checks the status of preparations and reassures everyone that things are almost ready.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "もうすぐ準備ができるから、みんな、ちょっと待っててね。",
+                    "mitigation": "The use of 「後少し」 explicitly emphasizes the remaining time until completion, aligning with the nuance of the grammar point, rather than simply stating \"soon.\" The feminine sentence-ending particle 「わ」 is a specific marker that guides the user to a female speaker."
+                }
+            ],
+            "register": "casual",
+            "setting": "supportive",
+            "speaker_gender": "female",
+            "nuance": "The sentence ends with 「わ」, which is a feminine sentence-ending particle often used by women to express a gentle assertion or confirmation."
+        },
+        {
+            "japanese": "宿題はこれで全部だぞ。{後}は明日 に するか。",
+            "english": "This is all the homework for now. I'll leave the rest for tomorrow.",
+            "scene": "A man, finishing a portion of his work, decides to postpone the remaining tasks until the next day.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "宿題はこれで全部だ。残りは明日 に するか。",
+                    "mitigation": "「後」 here specifically refers to what comes after the current completed task, emphasizing the sequence. The phrase 「〜だぞ」 marks this as male speech, guiding the user to the correct speaker."
+                }
+            ],
+            "register": "casual",
+            "setting": "reflective",
+            "speaker_gender": "male",
+            "nuance": "The sentence ends with 「だぞ」, a masculine sentence-ending particle used by men to add emphasis, assertion, or a slight warning."
         },
         {
             "japanese": "うちでは七匹動物を飼っています。猫が五匹、{後の}二匹は犬です。",
@@ -128,13 +158,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/後-のnoun"
     },
     "change": [
-        "violation: The original 'meaning' field included 'N Later', which is not expressed by '後(の)+Noun' but rather '後で' or '〜の後'. This was removed to accurately reflect the grammar point's scope.",
-        "violation: The original 'writeup' field included 'another (A)' and '(A) later' in its translation examples, similar to the 'meaning' field. These were removed to ensure accuracy.",
-        "unnatural: The 'writeup' was updated to incorporate more natural phrasing and details from the provided Bunpro source, clarifying the usage with numbers and phrases.",
-        "violation: All Japanese example sentences previously included external descriptive text or quotation marks (「」) which violates the rule 'Must not use quotes including 「」' and 'Must be just one sentence unless'. These were removed or moved to the 'scene' field.",
-        "violation: All English example sentences were adjusted to be single sentences or structured with 'scene' to set context, adhering to the rule 'Must be just one sentence unless. Use \"scene\" if you need to set up context.'.",
-        "schema: 'scene' and 'scene_rationale' fields were added to all examples where 'OTHER_WAYS' of translation existed, as required by the schema.",
-        "violation: The example previously identified as '砂漠 で 独り言 を 言う' contained N1 kanji (砂漠, 独り言) in the Japanese text, which violates the rule that examples must use kanji appropriate for the JLPT level (N2 or below). The problematic context was removed from the 'japanese' field and moved into the 'scene' field.",
-        "violation: 'speaker_gender', 'listener_gender', and 'nuance' fields were removed from all examples as the Japanese phrases used did not contain any expressions that are typically or exclusively spoken by a specific gender, thus violating the rule 'Use only if this sentence would typically only be spoken by this gender'."
+        "schema: Added two new examples to satisfy the requirement for at least one male and one female speaker_gender, along with corresponding 'nuance' fields.",
+        "violation: Ensured the new examples include explicit gendered speech in Japanese to align with the rule 'Use only if this sentence would typically only be spoken by this gender' when 'speaker_gender' is specified."
     ]
 }

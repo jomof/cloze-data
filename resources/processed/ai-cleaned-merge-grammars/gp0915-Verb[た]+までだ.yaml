@@ -145,7 +145,7 @@
             "scene_rationale": [
                 {
                     "competing_grammar": "ただ趣味で勉強してたけど、まだまだだけどね。",
-                    "mitigation": "The scene requires a modest deflection of praise. 「までのことで」 clarifies that their studying was limited to being a hobby, not serious or exceptional, thus downplaying the compliment."
+                    "mitigation": "The scene needs a modest deflection of praise. 「までのことで」 clarifies that their studying was limited to being a hobby, not serious or exceptional, thus downplaying the compliment."
                 }
             ],
             "register": "casual",
@@ -217,9 +217,5 @@
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/たまでだ"
     },
-    "change": [
-        "violation: Removed `使用域: 一般` from `details` as it was not in English. (Rule 16: 'fix minor inaccuracies in \"details\", but do not invent new details.')",
-        "violation: Corrected bolding in example 8 (`{勉強してたまでのことで}` to `勉強してた{までのことで}`) to highlight only the grammar point portion. (Rule 6: 'The \"japanese\" should have the grammar_point in {bold} (surrounded in curlies).')",
-        "violation: Added `scene_rationale` with `competing_grammar` and `mitigation` to all examples where it was missing. (Schema requirement: `scene_rationale` `minItems: 1` if `scene` is present.)"
-    ]
+    "change": "Removed top-level 'lesson_order' field as it is not part of the output schema. (schema)"
 }

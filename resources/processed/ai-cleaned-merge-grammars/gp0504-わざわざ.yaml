@@ -137,6 +137,22 @@
             "setting": "polite"
         },
         {
+            "japanese": "先輩、こんな 時間 まで {わざわざ} 残って くださって 、 本当に 申し訳 ありません 。",
+            "english": "Senpai, I'm truly sorry you went out of your way to stay until this late hour.",
+            "scene": "A junior colleague apologizes to their senior for having to stay late.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "先輩、こんな 時間 まで 残って くださって 、 本当に 申し訳 ありません 。",
+                    "mitigation": "The scene emphasizes the junior colleague's apology for the *extra effort* the senior took to stay late, rather than just staying late, highlighting the special consideration."
+                }
+            ],
+            "register": "kenjōgo (humble)",
+            "setting": "professional",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "The use of 「先輩」 (senpai) and the humble expression 「申し訳ありません」 (mōshiwake arimasen) combined with 「残ってくださって」 (nokotte kudasatte) demonstrates a respectful and apologetic tone, common from a junior female colleague to a senior in a professional setting. The phrase 「残ってくださって」 implies that the senior's staying late was an act of kindness or consideration that caused them extra effort."
+        },
+        {
             "japanese": "{わざわざ} 傘 を 返し に 来て くれた の ?",
             "english": "Did you come all the way here expressly to return the umbrella?",
             "scene": "Expressing surprise and gratitude for the return of an umbrella.",
@@ -180,11 +196,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/わざわざ"
     },
     "change": [
-        "violation: Bolded `{わざわざ}` in all example sentences. Rule 6 states: 'Must have the grammar_point in {bold}'.",
-        "schema: Added `scene_rationale` to all examples with a `scene` field. The schema requires `scene_rationale` if `scene` is present.",
-        "violation: Removed the example sentence `わざと 押した でしょ ? あんた 最低 。` as it used `わざと` instead of the main grammar point `わざわざ`. Rule 6 states: 'Each example **must** use the grammar_point'.",
-        "violation: Replaced high JLPT level kanji in example sentences with N3/N4/N5 appropriate vocabulary. `饅頭` (N1) was changed to `好きなもの` (`好き` N5, `もの` N5). `邪魔` (N1) was changed to `困らせる` (`困` N3). `批判` (N1) was changed to `文句` (`文` N3, `句` N3). Rule regarding example sentences using kanji appropriate for the JLPT level of the grammar point was followed.",
-        "unnatural: Expanded the `etymology` section to include more details from the original Bunpro `writeup` regarding the kanji `態態` for better linguistic explanation.",
-        "violation: Refined the `nuance` for the last example (`{わざわざ} 君 に 会い に 来た ん だ 。`) to explicitly mention the specific Japanese text 「君」 in quotes, justifying the `speaker_gender` and `listener_gender` being present. Rule 6 states: 'If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.'"
+        "violation: Added an example sentence to include a listener_gender: male, fulfilling the requirement for at least one male and one female listener_gender in examples. Rule 6 states: 'Example sentences should include at least one male and one female listener_gender.'"
     ]
 }

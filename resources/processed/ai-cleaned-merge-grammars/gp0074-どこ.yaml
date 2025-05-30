@@ -1,10 +1,10 @@
 {
     "grammar_point": "どこ",
+    "id": "gp0074",
     "pronunciation": {
         "katakana": "ドコ",
         "romaji": "doko"
     },
-    "id": "gp0074",
     "formation": {
         "どこ": "Indicates 'where' in a question about location."
     },
@@ -59,7 +59,7 @@
             "register": "casual",
             "setting": "friendly",
             "speaker_age": "younger",
-            "nuance": "This casual expression 「駅はどこ？」is appropriate between close friends, as it omits the polite 「です」 or 「ですか」."
+            "nuance": "This casual expression 「駅はどこ？」 is appropriate between close friends, as it omits the polite 「です」 or 「ですか」."
         },
         {
             "japanese": "あなたは{どこ}に行きたいですか？",
@@ -68,14 +68,11 @@
             "scene_rationale": [
                 {
                     "competing_grammar": "どこに行きたい？",
-                    "mitigation": "On a first date, using the more formal 「あなたは」 and polite 「ですか」 shows respect and thoughtfulness, avoiding an overly direct or presumptuous tone, especially for a male speaker addressing a female listener."
+                    "mitigation": "On a first date, using the more formal 「あなたは」 and polite 「ですか」 shows respect and thoughtfulness, avoiding an overly direct or presumptuous tone."
                 }
             ],
             "register": "teineigo (polite)",
-            "setting": "first-date",
-            "listener_gender": "female",
-            "speaker_gender": "male",
-            "nuance": "The speaker, a male, is asking his female companion where she would like to go. This phrasing is polite and considerate, setting a respectful tone for a first date."
+            "setting": "first-date"
         },
         {
             "japanese": "ねえ、今夜{どこ}で会いましょうか？",
@@ -105,9 +102,7 @@
                 }
             ],
             "register": "teineigo (polite)",
-            "setting": "informative",
-            "speaker_age": "older",
-            "nuance": "Using 「田中さんの家」 rather than just 「田中さん家」 maintains a formal and polite register, appropriate for a professional seeking specific information from a possibly unfamiliar individual."
+            "setting": "informative"
         },
         {
             "japanese": "故郷は{どこ}ですか？",
@@ -120,29 +115,42 @@
                 }
             ],
             "register": "teineigo (polite)",
-            "setting": "first-date",
+            "setting": "first-date"
+        },
+        {
+            "japanese": "おい、俺の鍵は{どこ}に行ったか知らないか？",
+            "english": "Hey, do you know where my keys went?",
+            "scene": "A man casually asking a close female friend about his lost keys.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "私の鍵はどこに行ったか知りませんか？",
+                    "mitigation": "The use of 「おい」 and 「俺」 clearly indicates a casual tone and is characteristic of male speech when addressing a close acquaintance, making it distinct from a general polite inquiry."
+                }
+            ],
+            "register": "casual",
+            "setting": "friendly",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "Asking about 「故郷」 (hometown) is a common way to build rapport and find common ground, especially in early social interactions like a first date. The polite 「ですか」 ensures a respectful tone."
+            "nuance": "The use of 「おい」 as an interjection and 「俺 (おれ)」 as a first-person pronoun is highly characteristic of informal male speech. This casualness is suitable for speaking to a close female friend."
         }
     ],
     "false_friends": [
         {
             "term": "ここ",
             "meaning": "Here, This place",
-            "kind": "related term",
+            "kind": "similar expression",
             "nuance": "Unlike 「どこ」, which inquires about an unknown location, 「ここ」 refers to the place where the speaker is currently located or a specific nearby location."
         },
         {
             "term": "そこ",
             "meaning": "There, That place",
-            "kind": "related term",
+            "kind": "similar expression",
             "nuance": "Unlike 「どこ」, 「そこ」 refers to a place near the listener or a place that has already been mentioned in the conversation."
         },
         {
             "term": "あそこ",
             "meaning": "Over there",
-            "kind": "related term",
+            "kind": "similar expression",
             "nuance": "Unlike 「どこ」, 「あそこ」 refers to a place distant from both the speaker and the listener."
         },
         {
@@ -157,7 +165,10 @@
         "bunpro": "https://bunpro.jp/grammar_points/どこ"
     },
     "change": [
-        "schema: Removed 'listener_age' field from example 3 to comply with the schema's deprecation rule.",
-        "schema: Added 'scene_rationale' to all examples containing a 'scene' field, providing competing grammar and mitigation, as required by the schema."
+        "violation: Example 4's speaker_gender, listener_gender, and nuance fields were removed because the sentence is not gender-specific, violating the rule: 'If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.'",
+        "violation: Example 6's speaker_age and nuance fields were removed because the formality is context-driven, not age-specific, violating the rule: 'If there is a \"speaker_age\", then \"nuance\" must mention the specific Japanese, in 「quotes」, that would only be spoken by someone of that age.'",
+        "violation: Example 7's speaker_gender, listener_gender, and nuance fields were removed because the sentence is not gender-specific, violating the rule: 'If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.'",
+        "violation: Added a new example (Example 8) to satisfy the rule: 'Example sentences should include at least one male and one female speaker_gender' and 'Example sentences should include at least one male and one female listener_gender', with explicit gendered Japanese in the nuance.",
+        "violation: Changed 'kind' for 'ここ', 'そこ', and 'あそこ' in 'false_friends' from 'related term' to 'similar expression' to comply with the schema's enum constraint for 'kind'."
     ]
 }

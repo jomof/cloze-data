@@ -1,15 +1,16 @@
 {
     "grammar_point": "を以て",
+    "id": "gp0897",
     "pronunciation": {
         "katakana": "ヲモッテ",
         "romaji": "o motte"
     },
-    "id": "gp0897",
     "formation": {
         "[Noun] + を以て": "Indicates means, method, reason, or time limit in formal or written contexts. Similar to 「で」 but more emphatic."
     },
     "jlpt": "N1",
     "meaning": "By means of, With, By, Via, In view of",
+    "meaning_warning": "Generally not used for simple means, such as transportation (e.g., \"going by bus\").",
     "details": {
         "Register": "Formal",
         "使用域": "硬い"
@@ -71,7 +72,7 @@
                 },
                 {
                     "competing_grammar": "最新の技術によって",
-                    "mitigation": "「最新の技術によって」 is grammatically correct but lacks the strong emphasis and hypothetical nuance of 「を以てすれば」, which is specifically used to discuss what becomes possible when a certain means or condition is met."
+                    "mitigation": "While 「最新の技術によって」 is grammatically correct, 「を以てすれば」 lacks the strong emphasis and hypothetical nuance of 「を以てすれば」, which is specifically used to discuss what becomes possible when a certain means or condition is met."
                 }
             ],
             "register": "semi-formal",
@@ -125,7 +126,7 @@
                 },
                 {
                     "competing_grammar": "多数決によって",
-                    "mitigation": "「多数決によって」 is a valid alternative, but 「を以て」 provides a higher degree of formality and emphasis, fitting for an official announcement of a decision made through a specific, authorized method like a majority vote."
+                    "mitigation": "While 「多数決によって」 is a valid alternative, 「を以て」 provides a higher degree of formality and emphasis, fitting for an official announcement of a decision made through a specific, authorized method like a majority vote."
                 }
             ],
             "register": "formal",
@@ -206,11 +207,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/を以て"
     },
     "change": [
-        "violation: Added missing 'scene_rationale' to all examples that contained a 'scene' field, per schema requirements.",
-        "violation: Corrected bolding for example 3 to only include '{を以て}', not '{持って}', as the grammar point is 'を以て' and the first '持って' is a different verb. Also, removed 'scene' and 'scene_rationale' from example 3 because '身を以て' is an idiomatic expression for which standard 'で' or 'によって' alternatives do not exist in the same grammatical context.",
-        "unnatural: Adjusted nuance for example 3 to accurately describe '身を以て' as a fixed expression.",
-        "violation: Refactored examples 8 and 9 from dialogue/scene descriptions to single-speaker sentences, as per the rule: 'Must be from the point of view of a single speaker. No back-and-forth dialogue.' Adjusted 'scene' fields accordingly.",
-        "violation: Removed 'speaker_gender' and 'listener_gender' from example 8, as the Japanese sentence uses gender-neutral polite language and does not inherently require these specifications, aligning with the rule: 'Must not be specified if the spoken Japanese does not depend on the gender of the speaker.'",
-        "violation: Removed 'etymology' field from example 1 as its content was a nuance explanation, not linguistic etymology, per the rule: 'If present, etymologyType **must** be a linguistically interesting discussion of the history of how the related element evolved.'"
+        "violation: Added 'meaning_warning' field which was present in the original Bunpro input but missing from the prior grammar point output.",
+        "contradiction: Did not add 'speaker_gender' or 'listener_gender' to examples despite the general rule to include at least one male/female speaker/listener. This grammar point is formal and gender-neutral, making it impossible to meet the conflicting rule 'Use only if this sentence would typically only be spoken by this gender' when adding gender. Prioritized the more specific rule."
     ]
 }

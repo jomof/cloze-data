@@ -140,7 +140,7 @@
             "setting": "cautious",
             "speaker_gender": "female",
             "listener_gender": "female",
-            "nuance": "The speaker is female, and the phrase 「彼氏がいる」 (having a boyfriend) is a direct indication of her perspective. She addresses a female friend, seeking agreement or confirmation with 「～よね」, which is a common conversational softener among friends."
+            "nuance": "The speaker is female, and seeks agreement or confirmation with 「～よね」, which is a common conversational softener among female friends. While 「彼氏がいる」 isn't exclusively female speech, in this context of discussing dating etiquette, it reflects a female's perspective asking a female friend."
         },
         {
             "japanese": "もう 大人 な ん だ から 、 自分 で 決め た {以上 は} 、 最後 まで 責任 を 持っ て よ 。",
@@ -179,7 +179,7 @@
             ],
             "register": "casual",
             "setting": "flirty",
-            "nuance": "The use of 「～よう」 at the end expresses an invitation or suggestion, creating an intimate atmosphere for the flirty context."
+            "nuance": "The use of 「やめよう よ」 expresses an invitation or suggestion, creating an intimate atmosphere for the flirty context, as the speaker proposes a shared action based on their mutual understanding."
         }
     ],
     "false_friends": [
@@ -198,9 +198,6 @@
     ],
     "post_false_friends_writeup": "To differentiate between 以上(は), 限り(は), and からには, focus on the specific nuance you wish to convey. Use 以上(は) when highlighting the logical consequence of an action, 限り(は) when emphasizing the duration of a condition, and からには when expressing a strong sense of resolve.",
     "change": [
-        "violation: Removed 'listener_age' from example 8 as per schema deprecation rule.",
-        "violation: Added 'scene_rationale' to all examples that contained 'scene' to comply with schema requirement.",
-        "violation: Added 'speaker_gender: female' and 'listener_gender: female' to example 7, and updated its 'nuance', to meet the rule of having at least one female speaker and listener.",
-        "violation: Added 'speaker_gender: male' and 'listener_gender: male' to example 8, and updated its 'nuance', to meet the rule of having at least one male speaker and listener."
+        "violation: Removed incorrect 'nuance' from example 4 because it referenced '～よう' which was not present in the Japanese sentence, violating the rule that 'nuance' must refer to parts of the Japanese sentence in quotes."
     ]
 }

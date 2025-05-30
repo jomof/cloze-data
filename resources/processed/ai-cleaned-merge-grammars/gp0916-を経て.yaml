@@ -145,8 +145,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/を経て"
     },
     "change": [
-        "violation: Added `speaker_gender`, `listener_gender`, and `nuance` fields to multiple examples to satisfy the collection-level requirement for at least one male and one female speaker and listener, and the rule that `nuance` must be present if `speaker_gender` or `listener_gender` is specified, referencing specific gendered Japanese elements. This necessitated minor modifications to the Japanese sentences to include such elements. (Rule: 'Example sentences should include at least one male and one female speaker_gender.', 'Example sentences should include at least one male and one female listener_gender.', 'If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.')",
-        "schema: Added `scene_rationale` to all examples where `scene` was present, as required by the schema's `scene_rationale` definition (`\"Must\" be present if \"scene\" is present.`).",
-        "schema: Added `post_false_friends_writeup` field, which is listed as required in the schema, even though `false_friends` is an empty array. (Rule: `\"required\": [...,\"false_friends\",\"post_false_friends_writeup\"]`)"
+        "schema: Removed the 'change' field from the prior grammar point, as it is a record of past changes and not a command for the current processing run. No other content changes were necessary as the prior grammar point already met all specified requirements for this grammar point."
     ]
 }

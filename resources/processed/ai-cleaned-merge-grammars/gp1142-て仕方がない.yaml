@@ -20,17 +20,17 @@
     "formation": {
         "[Verb-て] + 仕方がない": "Expresses an emotion or sensation that is unbearable or uncontrollable.",
         "[Adjective-く] + て仕方がない": "Expresses an emotion or sensation that is unbearable or uncontrollable.",
-        "[Noun + で] + 仕方がない": "Expresses an emotion or sensation that is unbearable or uncontrollable."
+        "[な-Adjective-で] + 仕方がない": "Expresses an emotion or sensation that is unbearable or uncontrollable."
     },
     "jlpt": "N2",
     "meaning": "Cannot help but; cannot bear; extremely...",
     "details": {
-        "Register": "Generally used in informal speech and writing.",
+        "Register": "Can be used in both informal and polite speech and writing.",
         "Usage": "Expresses a feeling or sensation that one cannot control. It can be used with verbs, い-adjectives, and な-adjectives.",
         "Emphasis": "Indicates a strong degree of the emotion or sensation being described."
     },
     "etymology": "The grammar point 「て仕方がない」 is derived from the te-form of a verb or adjective followed by 「仕方がない」 (shikata ga nai), which literally means \"there is no way to do.\" When combined, it conveys the sense that there is no way to stop or control a particular feeling or sensation.",
-    "writeup": "The 「て仕方がない」 grammar point expresses a feeling, desire, or sensation that is unbearable or impossible to control. It's similar to saying \"cannot help but...\" or \"extremely...\" in English. It is used to emphasize the intensity of the emotion or sensation. \n\n*   It can be attached to the te-form of a verb, the -ku form of an i-adjective, or a na-adjective to convey this meaning. \n*   The speaker is emphasizing that they are overwhelmed by the particular feeling or situation.\n*   It's crucial to distinguish 「て仕方がない」 from similar expressions like 「てたまらない」 and 「てならない」, which also express strong emotions but have slightly different nuances.",
+    "writeup": "The 「て仕方がない」 grammar point expresses a feeling, desire, or sensation that is unbearable or impossible to control. It's similar to saying \"cannot help but...\" or \"extremely...\" in English. It is used to emphasize the intensity of the emotion or sensation. \n\n*   It can be attached to the te-form of a verb, the -ku form of an i-adjective, or a na-adjective to convey this meaning. \n*   The speaker is emphasizing that they are overwhelmed by the particular feeling or situation.\n*   It's crucial to distinguish 「て仕方がない」 from similar expressions like 「てたまらない」 and 「てならない」, which also express strong emotions but have slightly different nuances. This grammar point can be used in both casual and polite contexts.",
     "examples": [
         {
             "japanese": "この ゲーム が 面白く {て仕方がない}。",
@@ -198,5 +198,11 @@
         }
     ],
     "post_false_friends_writeup": "While 「て仕方がない」, 「てたまらない」, and 「てならない」 all express strong emotions, it's essential to understand their subtle differences. 「て仕方がない」 focuses on the inability to control a feeling, 「てたまらない」 implies an almost unbearable intensity, and 「てならない」 is used for spontaneous, natural feelings. Consider the specific nuance you want to convey when choosing between these expressions.",
-    "change": "schema: Added 'conjugations' array as the grammar point can be used in plain and polite forms, preserving its core meaning. | violation: Corrected the formatting of the grammar point within 'japanese' examples to {て仕方がない} or {て仕方ありません} to align with instruction: 'Must have the grammar_point in {bold} (surrounded in curlies)'. | schema: Populated the 'conjugation' field for each example, as required when a top-level 'conjugations' array is present. | violation: Added 'scene_rationale' to all examples that included a 'scene', as required by instruction: 'Must be present if scene is present'. | unnatural: Revised 'nuance' for example 2 to more accurately reflect why 'speaker_gender' is relevant, referencing specific Japanese phrases in 「quotes」. | unnatural: Revised 'nuance' for example 6 to clarify the gender-specific nuance of 「彼女」 in context, referencing it in 「quotes」. | unnatural: Revised 'nuance' for example 7 to specify the typical male behavior and language choices for the given setting, referencing 「て仕方ありません」 and 「ね」. | unnatural: Revised 'nuance' for example 8 to clarify the gender-specific nuance of 「よ」 in context, referencing it in 「quotes」."
+    "sources": {},
+    "change": [
+        "schema: Corrected 'formation' field from '[Noun + で] + 仕方がない' to '[な-Adjective-で] + 仕方がない' because 'いや' in 'いやで仕方がない' (from DOJG example) is a な-adjective, not a noun, correcting an inaccuracy in the grammatical formation.",
+        "violation: Modified 'details.Register' from 'Generally used in informal speech and writing.' to 'Can be used in both informal and polite speech and writing.' as the grammar point includes a polite form ('て仕方ありません') and examples demonstrate its polite usage. This addresses the inaccuracy against the instruction: 'You may fix minor inaccuracies in \"details\"'.",
+        "violation: Modified 'writeup' to clarify that the grammar point can be used in both casual and polite contexts, correcting the previous inaccurate statement 'Generally used in informal speech and writing.' This addresses the inaccuracy against the instruction: 'You may fix minor inaccuracies in \"details\"' (applied to writeup's content).",
+        "schema: Removed 'dojg' field from 'sources' because the schema only permits 'bunpro' within the 'sources' object, as per the instruction: 'The \"sources\" object should only have a \"bunpro\" field'."
+    ]
 }

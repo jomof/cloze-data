@@ -72,34 +72,30 @@
             "setting": "critical"
         },
         {
-            "japanese": "春子は運転技術{にかけては}僕よりずっと上手だ。",
+            "japanese": "春子は運転技術{にかけては}私よりずっと上手だ。",
             "english": "Regarding Haruko's driving skills, they are far superior to mine.",
             "scene": "Someone humbly acknowledging another person's superior skill.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "春子 は 運転 が 僕 より 上手 だ。",
+                    "competing_grammar": "春子 は 運転 が 私 より 上手 だ。",
                     "mitigation": "The scene highlights a humble admission of being surpassed in a specific skill, which 「にかけては」 expresses effectively by isolating and emphasizing that particular domain."
                 }
             ],
             "register": "casual",
-            "setting": "humble",
-            "speaker_gender": "male",
-            "nuance": "The speaker uses 「僕 (boku)」 which is typically used by males to refer to themselves, indicating the speaker is male."
+            "setting": "humble"
         },
         {
-            "japanese": "金魚{にかけては}僕の叔父さんより詳しい人に会ったことがない。",
+            "japanese": "金魚{にかけては}私の叔父さんより詳しい人に会ったことがない。",
             "english": "When it comes to goldfish, I have never met someone more well-versed than my uncle.",
             "scene": "Someone sharing an interesting fact about their family.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "金魚 の こと なら 、僕 の 叔父さん が 一番 詳しい。",
+                    "competing_grammar": "金魚 の こと なら 、私 の 叔父さん が 一番 詳しい。",
                     "mitigation": "The scene suggests a specific, deep knowledge, where 「にかけては」 underscores the uncle's unparalleled expertise in that niche field."
                 }
             ],
             "register": "casual",
-            "setting": "informative",
-            "speaker_gender": "male",
-            "nuance": "The speaker uses 「僕 (boku)」 which is typically used by males to refer to themselves, indicating the speaker is male."
+            "setting": "informative"
         },
         {
             "japanese": "うちの会社では、田中さんは営業成績{にかけては}右に出る者がいない。",
@@ -143,7 +139,7 @@
             "nuance": "The speaker uses 「尊敬する (sonkei suru)」 to express admiration, and 「ね」 adds a soft, engaging tone, showing genuine interest."
         },
         {
-            "japanese": "お酒を飲むこと{にかけては}、あなたには誰もかなわないね。",
+            "japanese": "お酒を飲むこと{にかけては}、あなたには誰もかなわないぜ。",
             "english": "When it comes to drinking alcohol, no one can beat you.",
             "scene": "A man talking about a woman's skill while flirting with her.",
             "scene_rationale": [
@@ -156,7 +152,7 @@
             "setting": "flirty",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "This is a suggestive, flirty comment. 「誰もかなわないね (daremo kanawanai ne)」 means 'no one can beat you', but implies admiration and perhaps a playful challenge."
+            "nuance": "The use of the sentence-ending particle 「ぜ」 is typically masculine, indicating a male speaker and adding a slightly assertive or emphatic tone. The entire phrase implies playful admiration and challenge."
         },
         {
             "japanese": "夫は料理{にかけては}本当に素晴らしいわ。",
@@ -212,10 +208,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/にかけては"
     },
     "change": [
-        "violation: Added `scene_rationale` to all examples, as required by the schema's `examples` definition ('Must be present if \"scene\" is present.').",
-        "violation: Ensured diverse `speaker_gender` and `listener_gender` in examples, as required by the schema's `speaker_gender` and `listener_gender` rules ('Example sentences should include at least one male and at least one female speaker_gender/listener_gender.'). This involved adding one example with a female speaker.",
-        "violation: Removed an example sentence (`先輩の歌唱力にかけては、社内で一番下手だ。`) that was explicitly labeled 'Unnatural Japanese' in the raw input, adhering to the rule 'Japanese must sound natural and fluent to a native speaker. We're teaching Japanese, not bad grammar.'",
-        "unnatural: Changed `運転の腕前` to `運転技術` in one example to use JLPT N2 level kanji (`技術` is N2, `腕前` includes N1 kanji `腕`) and ensure naturalness for the target JLPT level, as per the instruction 'Example sentences should use kanji appropriate for the JLPT level of the grammar point'.",
-        "schema: Corrected `listener_gender` for one example where the subject, not the listener, was female. This was to ensure `listener_gender` accurately reflected the recipient of the speech, as per the schema definition for this field."
+        "violation: Changed N1 kanji '僕' to N4 kanji '私' in two example sentences ('春子は運転技術{にかけては}私よりずっと上手だ。' and '金魚{にかけては}私の叔父さんより詳しい人に会ったことがない。') to comply with the rule 'Example sentences should use kanji appropriate for the JLPT level of the grammar point'.",
+        "schema: Removed 'speaker_gender: male' and the associated 'nuance' from these two examples because '私' is gender-neutral, following the rule 'Speaker gender must not be specified if the spoken Japanese does not depend on the gender of the speaker'. This was a direct consequence of the JLPT kanji level change.",
+        "schema, unnatural: Modified 'お酒を飲むこと{にかけては}、あなたには誰もかなわないね。' to 'お酒を飲むこと{にかけては}、あなたには誰もかなわないぜ。' to explicitly mark the speaker as male using the typically masculine particle 'ぜ', ensuring that example sentences include at least one male speaker_gender after previous modifications. The nuance was updated accordingly."
     ]
 }

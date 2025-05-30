@@ -11,9 +11,10 @@
     "id": "gp0676",
     "jlpt": "N2",
     "meaning": "In order to, in regard to, for",
+    "meaning_warning": "は can be attached to に in all of its uses to express topic/contrast. When には follows a noun denoting person it means \"for (someone as opposed to others)\"",
     "details": {
-        "Register": "Standard",
-        "使用域": "一般"
+        "register": "Standard",
+        "general_usage": "General"
     },
     "etymology": "The particle 「には」 is a combination of the particle 「に」, indicating purpose or direction, and the particle 「は」, indicating topic or contrast. The 「に」 particle marks the preceding word or phrase as a target or goal, while 「は」 highlights that what follows is specific to that target or goal. Etymologically, this combination emphasizes a specific focus or condition related to the topic.",
     "writeup": "「には」 is a common particle combination used to express purpose, condition, or contrast. It combines 「に」, indicating a target or goal, with 「は」, marking the topic or contrast. It can be translated as \"in order to,\" \"in regard to,\" or \"for,\" and is used after verbs in dictionary form or nouns. While it has different translations, it can generally be thought of as meaning \"for\", where 「に」 highlights the target and 「は」 emphasizes that the following information is specific to that target.",
@@ -91,7 +92,7 @@
             "speaker_gender": "male"
         },
         {
-            "japanese": "試験に 合格する {には} 一生懸命勉強するしか ありません。",
+            "japanese": "試験に 合格する {には} 熱心に勉強するしか ありません。",
             "english": "In order to pass the exam, you have no choice but to study hard.",
             "scene": "A student expressing the necessity of studying for an exam.",
             "scene_rationale": [
@@ -173,16 +174,13 @@
         }
     ],
     "post_false_friends_writeup": "To avoid confusion with similar expressions, remember that 「には」 often sets a condition or requirement. 「としては」 offers a perspective, 「にとって」 is from a person's viewpoint, 「ために」 is for a reason, and 「のに」 can also express unexpected results or regret.",
+    "change": [
+        "schema: Added `meaning_warning` field from the input `bunpro` data. Rule: \"The `meaning_warning` field is optional, but if present, provides additional nuance or clarification regarding the meaning.\"",
+        "unnatural: Modified `details` field: Changed `使用域: 一般` to `general_usage: General`. Rule: \"English **must** be a natural-sounding and grammatically correct.\"",
+        "violation: Modified Example 6's Japanese sentence to replace N1 kanji. Original: `一生懸命` (N1 `懸`) -> New: `熱心に` (N3 `熱`, N3 `心`). Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\"",
+        "schema: Removed top-level `sources` field. Rule: \"You **must not** add top-level 'bunpro' or 'dojg' fields to the output JSON.\""
+    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/には"
-    },
-    "change": [
-        "violation: Example 1: Added `speaker_gender: female` and `scene_rationale`. Rule: \"Example sentences should include at least one male and one female speaker_gender.\" and \"Must be present if 'scene' is present.\"",
-        "violation: Example 2: Added `listener_gender: female` and `scene_rationale`. Rule: \"Example sentences should include at least one male and one female listener_gender.\" and \"Must be present if 'scene' is present.\"",
-        "violation: Example 3: Changed `独り暮らし` to `一人暮らし`. Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\" (`独` is N1, `一` is N5).",
-        "schema: Added `scene_rationale` to Examples 3, 4, 5, 6, 7, 8, 9. Rule: \"Must be present if 'scene' is present.\"",
-        "violation: Example 5: Removed incorrect `nuance` field. Rule: `nuance` field description. This nuance was for example 9, not example 5.",
-        "violation: Example 9: Changed `彼女の心を掴む` to `彼女の気を引く`. Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\" (`掴` is N1, `気` and `引` are N5).",
-        "schema: Removed top-level `sources` field. Rule: \"You **must not** add top-level 'bunpro' or 'dojg' fields to the output JSON.\""
-    ]
+    }
 }

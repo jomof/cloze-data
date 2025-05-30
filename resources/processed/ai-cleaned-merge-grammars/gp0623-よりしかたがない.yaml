@@ -108,12 +108,12 @@
             "setting": "apologetic"
         },
         {
-            "japanese": "税金 は、高くとも納める {よりしかたがない} 。",
+            "japanese": "税金 は、高くとも 支払う {よりしかたがない} 。",
             "english": "We have no choice but to pay taxes, even if they are high.",
             "scene": "During a public forum, a government official explains the unavoidable nature of tax payments.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "納めるしかない",
+                    "competing_grammar": "支払うしかない",
                     "mitigation": "The formal setting and the speaker's role imply an explanation of a fundamental societal *method* for public finance, where there is no alternative way to contribute. This context highlights the inherent obligation more strongly than a simple statement of resignation."
                 }
             ],
@@ -121,12 +121,12 @@
             "setting": "serious"
         },
         {
-            "japanese": "税金 は、納める {より仕方 の ない} ものだ。",
+            "japanese": "税金 は、支払う {より仕方 の ない} ものだ。",
             "english": "It is a fact that there is no choice but to pay taxes.",
             "scene": "A professor lecturing on economics defines taxes as an unavoidable aspect of modern society.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "納めるしかないものだ",
+                    "competing_grammar": "支払うしかないものだ",
                     "mitigation": "The academic setting and the formal phrasing 「より仕方のないものだ」 reinforce that it's a statement of an unalterable *method* or reality within the economic system, a truth that applies generally, rather than a personal \"no choice.\""
                 }
             ],
@@ -176,7 +176,6 @@
             "setting": "instructional"
         }
     ],
-    "post_example_writeup": null,
     "false_friends": [
         {
             "term": "よりほかない",
@@ -196,21 +195,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/よりしかたがない"
     },
     "change": [
-        {
-            "type": "schema",
-            "description": "Removed top-level 'conjugations' field as the grammar point itself does not conjugate, aligning with schema definition."
-        },
-        {
-            "type": "violation",
-            "description": "Added 'scene_rationale' to all examples, as required by Rule 6, which states that if 'scene' is present, 'scene_rationale' must also be present and explain why the scene was necessary, including competing grammar."
-        },
-        {
-            "type": "violation",
-            "description": "Introduced 'speaker_gender', 'listener_gender', and corresponding 'nuance' to multiple examples (1, 3, 4, 5, 10) to fulfill Rule 6's requirement for diverse gender representation and the associated nuance explanations."
-        },
-        {
-            "type": "unnatural",
-            "description": "Refined 'scene' descriptions across several examples to provide clearer context and more effectively guide the student toward the intended nuance of 'よりしかたがない' or 'よりほかにない', and to integrate gendered scenarios more naturally."
-        }
+        "schema: Removed 'post_example_writeup' field as it was null, aligning with schema rule 'No fields should be null. Omit fields that are not applicable instead.'",
+        "violation: Changed '納める' (N1 kanji) to '支払う' (N3 kanji) in examples 7 and 8 to comply with the rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'"
     ]
 }

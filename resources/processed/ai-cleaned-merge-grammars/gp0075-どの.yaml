@@ -75,7 +75,7 @@
             "nuance": "The speaker is asking politely for information using 「～ですか」. This polite form is appropriate when a younger person seeks advice or information from an older person."
         },
         {
-            "japanese": "{どの} 車 が 欲しい？",
+            "japanese": "{どの} 車 が ほしい？",
             "english": "Which car do you want?",
             "scene": "A parent asking their child which car they want.",
             "scene_rationale": [
@@ -138,7 +138,7 @@
             "nuance": "The speaker uses polite language 「～ますか」 to offer tea to a guest. This demonstrates hospitality and politeness appropriate for welcoming someone into one's home."
         },
         {
-            "japanese": "{どの} 服 が 一番 好き です か。",
+            "japanese": "{どの} 服 が いちばん 好き です か。",
             "english": "Which outfit do you like the most?",
             "scene": "On a first date, subtly gauging their fashion preferences to imagine future encounters.",
             "scene_rationale": [
@@ -155,7 +155,7 @@
         },
         {
             "japanese": "お前、{どの} 道 を 行く つもり だい？",
-            "english": "Which path do you intend to take, kid?",
+            "english": "Which path do you intend to take?",
             "scene": "An older mentor speaking intimately to a younger mentee about their future.",
             "scene_rationale": [
                 {
@@ -206,6 +206,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/どの"
     },
     "change": [
-        "violation: Added `scene_rationale` to all examples where `scene` was present but `scene_rationale` was missing. Rule 6: 'If OTHER_WAYS is not empty, then you must have a \"scene\" field. -- Must set a scene that will hint the user toward the correct grammar point. -- Must not actually name the grammar point. -- Must be concise and non-repetitive. -- Must be interesting and engaging to the learner. -- Must not use 'male' or 'female'. Use a proper name that's clearly gendered or 'man', 'woman', 'boy', 'girl', etc.'"
+        "violation: Example 4 Japanese changed from `欲しい` to `ほしい` to use N5 appropriate kanji. Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'",
+        "violation: Example 8 Japanese changed from `一番` to `いちばん` to use N5 appropriate kanji. Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'",
+        "violation: Example 9 English changed from 'Which path do you intend to take, kid?' to 'Which path do you intend to take?' to remove hints about listener age. Rule: 'You *must not* embed hints about the speaker's gender in 'english' or 'japanese'.'"
     ]
 }

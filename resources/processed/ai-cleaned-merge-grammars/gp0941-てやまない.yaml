@@ -156,18 +156,5 @@
     "false_friends": [],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/てやまない"
-    },
-    "change": [
-        "violation: Removed example '上司に子供や妻のことを悪く言われて、腹が立ってやまない。' because its usage contradicts the grammar point's explanation that 'てやまない' is not used with temporary emotions like anger. (Rule: 'Grammatically correct. We're teaching Japanese, not bad grammar.')",
-        "violation: Updated 'formation' and 'writeup' to acknowledge the use of 'い-Adjective て-form' with 'てやまない', specifically 'ほしくてやまない', to resolve inconsistency with 'meaning_warning'. (Implicit rule: Internal consistency of grammar point definition)",
-        "schema: Added 'conjugations' array as the grammar point involves a conjugatable verb 'やむ' which appears in plain and polite negative forms. (Rule: 'If the grammar point contains a verb in **dictionary form** (besides だ or です) or adjective in **dictionary form**, add a new array field at the top, called \"conjugations\".')",
-        "schema: Changed 'details' field key '使用域' to 'Usage Context' and translated its value to English 'Primarily formal or literary.'. (Rule: 'details' values must be English)",
-        "schema: Reformatted 'writeup' to include Japanese terms in 「quotes」 and ensure general formatting consistency. (Rule: 'Be primarily in English, supplemented by natural Japanese expressions as needed.')",
-        "schema: Added 'scene' and 'scene_rationale' to all examples that previously lacked them, to provide context and distinguish the target grammar from other possible expressions. (Rule: 'If OTHER_WAYS is not empty, then you **must** have a \"scene\" field.')",
-        "schema: Removed Japanese labels and quotes from the beginning of example 'japanese' sentences (e.g., '献辞：「...」'). (Rule: 'Japanese **must not** use quotes including 「」' and 'Must be just one sentence unless. Use \"scene\" if you need to set up context.')",
-        "schema: Added 'speaker_gender' to some examples to ensure diversity of speakers, as required by the schema. (Rule: 'Example sentences should include at least one male and one female speaker_gender.')",
-        "schema: Added 'listener_gender' to appropriate examples to ensure diversity of listeners. (Rule: 'Example sentences should include at least one male and one female listener_gender.')",
-        "schema: Ensured all example 'nuance' fields refer to specific Japanese phrases in 「quotes」. (Rule: 'Must refer to parts of the japanese sentence in 「quotes」.')",
-        "schema: Removed 'post_example_writeup' and 'post_false_friends_writeup' fields as they were null in the prior version. (Rule: 'No fields should be null. Omit fields that are not applicable instead.')"
-    ]
+    }
 }

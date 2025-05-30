@@ -47,7 +47,7 @@
             "nuance": "The phrase 「連絡します」 is a polite and business-appropriate expression, often used by male speakers in formal settings."
         },
         {
-            "japanese": "待ち合わせ場所に{到着し次第}、私に連絡してください。",
+            "japanese": "待ち合わせ場所に{着き次第}、私に連絡してください。",
             "english": "Please contact me as soon as you arrive at the meeting spot.",
             "scene": "Two friends are planning to meet, and one asks the other to inform them upon arrival.",
             "scene_rationale": [
@@ -120,12 +120,18 @@
             "nuance": "The final 「から」 adds a slightly informal, explanatory, or reassuring tone, often used in casual conversation, and is common for female speakers in intimate settings."
         },
         {
-            "japanese": "地獄の沙汰も金{次第}。",
-            "english": "Even the affairs of hell depend on money.",
-            "scene": "Discussing traditional Japanese sayings about the power of money.",
-            "register": "academic",
-            "setting": "informative",
-            "etymology": "This is a well-known Japanese proverb. 「沙汰」 originally refers to \"judgment\" or \"decision,\" particularly in legal or divine contexts. 「金」 means money."
+            "japanese": "ご注文{次第}で、どんな物でも料理致します。",
+            "english": "Depending on your order, I will cook anything you like.",
+            "scene": "A chef or restaurant staff member assuring a customer that their culinary desires can be met.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "ご注文によって、どんな物でも料理致します。",
+                    "mitigation": "次第 here highlights that the cooking action is directly and solely determined by the customer's order, implying full customizability based on their preference."
+                }
+            ],
+            "register": "semi-formal",
+            "setting": "professional",
+            "nuance": "The phrase 「致します」 is a humble form of 「します」, commonly used in service industries to show politeness and respect to customers. The structure 「ご注文次第で」 emphasizes that the service is entirely driven by the customer's preference."
         },
         {
             "japanese": "受付が{始まり次第}、お入りください。",
@@ -178,12 +184,6 @@
             "meaning": "By means of, according to, depending on, because of, due to",
             "kind": "similar expression",
             "nuance": "While 「次第」 focuses on a direct determination or outcome based on a factor, 「によって」 can indicate a broader range of influences, means, or reasons."
-        },
-        {
-            "term": "次第だ・次第で",
-            "meaning": "Depending on, so",
-            "kind": "similar expression",
-            "nuance": "「次第だ/で」 can describe a situation's outcome depending on a condition, or explain the reason/circumstance behind a situation, often less formal or less about immediate sequence than 「次第」 on its own."
         }
     ],
     "post_false_friends_writeup": "To avoid confusion, remember that 次第 often implies a sequence of actions or a direct dependency, whereas other expressions like なり or 直ちに focus on different aspects like immediacy or means. Pay attention to the context to choose the most appropriate expression.",
@@ -191,13 +191,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/次第"
     },
     "change": [
-        "violation: The `conjugations` field was removed as 次第 is a noun and not conjugated, per schema rule 'If the grammar point contains a verb in dictionary form (besides だ or です) or adjective in dictionary form, add a new array field at the top, called \"conjugations\".'.",
-        "violation: `details` field key '使用域' was translated to 'Usage Domain' to be in English, as per schema rule 'English **must** be a natural-sounding and grammatically correct.'.",
-        "violation: The `writeup` was significantly rephrased and expanded to incorporate the 'Fun Fact' and 'Important Considerations' from the Bunpro input, and to explain the 'determining sequence' concept more thoroughly for verbs and nouns, per schema rule 'It should be a comprehensive explanation of the grammar point, including: - Incorporate essential details from the input while rephrasing for clarity.'.",
-        "violation: All example entries now include `scene_rationale` where a `scene` is present, to comply with schema rule 'Must be present if \"scene\" is present.'",
-        "violation: The `conjugation` field was removed from all example entries, as 次第 itself is not conjugated, per schema rule 'Must not be present if there is no top-level \"conjugations\" array.'",
-        "violation: One example sentence (`調査結果が{判明し次第}、速やかにご報告いたします。`) was replaced with `結果が{分かり次第}、すぐにご連絡いたします。` to ensure all kanji used are within the N3, N4, or N5 JLPT levels, as specified by the prompt regarding JLPT Kanji usage for examples.",
-        "violation: Added `speaker_gender`, `listener_gender` and accompanying `nuance` to ensure diversity requirements are met across examples, per schema rules 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'.",
-        "unnatural: Reordered examples to flow from simpler forms to more complex or specific use cases, improving the pedagogical progression."
+        "violation: The kanji 「到着」 (N2) in the example \"待ち合わせ場所に到着し次第、私に連絡してください。\" was replaced with 「着き」 (N5) to comply with the JLPT Kanji rule for N3 grammar points, ensuring all kanji are N3 or below.",
+        "violation: The example \"地獄の沙汰も金次第。\" which contained N1 kanji (地獄, 沙汰) was replaced with \"ご注文次第で、どんな物でも料理致します。\" to comply with the JLPT Kanji rule for N3 grammar points, ensuring all kanji are N3 or below. This new example also maintains the 'depending on' meaning of 次第.",
+        "violation: The false friend \"次第だ・次第で\" was removed from the `false_friends` array to comply with rule 14, which states that false_friends must not reference other conjugations of the main grammar point."
     ]
 }

@@ -38,13 +38,13 @@
             "nuance": "「電気をつけっぱなしにしないで」 is a common expression used to remind someone to turn off the lights, as the speaker is a mother speaking to a younger male child."
         },
         {
-            "japanese": "冷蔵庫を開け{っぱなし} にしないでください。",
-            "english": "Please don't leave the refrigerator open.",
+            "japanese": "ドアを開け{っぱなし} にしないでください。",
+            "english": "Please don't leave the door open.",
             "scene": "A mother reminding a child.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "冷蔵庫を閉めてください",
-                    "mitigation": "The scene sets up a situation where the action has already occurred (the refrigerator is left open), making `開けっぱなし` the appropriate choice to describe this unintended state, rather than just requesting to close it."
+                    "competing_grammar": "ドアを閉めてください",
+                    "mitigation": "The scene sets up a situation where the action has already occurred (the door is left open), making `開けっぱなし` the appropriate choice to describe this unintended state, rather than just requesting to close it."
                 }
             ],
             "register": "polite",
@@ -70,8 +70,8 @@
             "nuance": "This sentence expresses self-reflection on a careless action, typical when a speaker recounts a minor oversight."
         },
         {
-            "japanese": "歯を磨いている間、水を出し{っぱなし} にしていたら、母に𠮟られた。",
-            "english": "Because I left the water running while brushing my teeth, my mother scolded me.",
+            "japanese": "水を出し{っぱなし} にしていたら、母に𠮟られた。",
+            "english": "Because I left the water running, my mother scolded me.",
             "scene": "Someone recounting a childhood memory.",
             "scene_rationale": [
                 {
@@ -118,13 +118,13 @@
             "nuance": "A concerned inquiry between friends, where the speaker expresses worry about the listener's well-being given a continuous, potentially stressful situation."
         },
         {
-            "japanese": "会議中ずっと喋り{っぱなし} で、のどが渇きました。",
+            "japanese": "会議中ずっと話し{っぱなし} で、のどが渇きました。",
             "english": "I was talking non-stop during the meeting, and now my throat is dry.",
             "scene": "An employee complaining about a meeting.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "会議中ずっと喋り続けていたので",
-                    "mitigation": "The scene of 'complaining' reinforces the slightly negative or burdensome nature of `喋りっぱなし` (talking without interruption), implying it was excessive, rather than just merely 'continuing to talk'."
+                    "competing_grammar": "会議中ずっと話し続けていたので",
+                    "mitigation": "The scene of 'complaining' reinforces the slightly negative or burdensome nature of `話しっぱなし` (talking without interruption), implying it was excessive, rather than just merely 'continuing to talk'."
                 }
             ],
             "register": "semi-formal",
@@ -170,7 +170,7 @@
             "scene_rationale": [
                 {
                     "competing_grammar": "一日中聞き続けてしまいそうだよ",
-                    "mitigation": "The scene of 'playfully complimenting someone they are attracted to' fits the nuance of `聞きっぱなし` which implies an uncontrollable, continuous state due to attraction, rather than just merely 'continuing to listen'."
+                    "mitigation": "The scene implies an uncontrollable, continuous state due to attraction, making `聞きっぱなし` more fitting than merely 'continuing to listen'."
                 }
             ],
             "register": "shitashii kuchō (intimate)",
@@ -221,12 +221,24 @@
         }
     ],
     "post_false_friends_writeup": "To avoid confusion, remember that 「っぱなし」 usually implies a negative consequence or a lack of attention, while 「ままに」 simply describes a continued state. Therefore, use 「っぱなし」 when you want to emphasize the undesirable result of leaving something as is and 「ままに」 when simply describing a continued state.",
-    "change": [
-        "schema: Added 'pronunciation' field, which was missing.",
-        "violation: Removed 'listener_age' from examples 1, 2, and 4, as per schema rule: 'listener_age' is deprecated. You *must* remove it.",
-        "schema: Added 'scene_rationale' to all examples containing a 'scene' field, as required by the schema."
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/っぱなし"
-    }
+    },
+    "change": [
+        {
+            "type": "violation",
+            "reason": "The kanji 蔵 (N2) and 庫 (N2) in `冷蔵庫` are above N3, violating 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' Changed to `ドア` (Katakana) to comply.",
+            "description": "Changed '冷蔵庫を開け{っぱなし} にしないでください。' to 'ドアを開け{っぱなし} にしないでください。'"
+        },
+        {
+            "type": "violation",
+            "reason": "The kanji 磨 (N2) in `磨いている` is above N3, violating 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' The problematic phrase was removed to comply.",
+            "description": "Changed '歯を磨いている間、水を出し{っぱなし} にしていたら、母に𠮟られた。' to '水を出し{っぱなし} にしていたら、母に𠮟られた。'"
+        },
+        {
+            "type": "violation",
+            "reason": "The kanji 喋 (N1) in `喋り` is above N3, violating 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' Changed to `話し` (話 N5) to comply.",
+            "description": "Changed '会議中ずっと喋り{っぱなし} で、のどが渇きました。' to '会議中ずっと話し{っぱなし} で、のどが渇きました。'"
+        }
+    ]
 }

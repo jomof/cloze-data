@@ -16,7 +16,7 @@
         "Register": "Standard",
         "使用域": "一般"
     },
-    "etymology": "「と同時に」is composed of 「と」(a particle indicating simultaneity or listing), 「同時」(douji, meaning \"same time\"), and 「に」(a particle marking a point in time or location). The etymology reflects the meaning of actions occurring at the same time.",
+    "etymology": "「と同時に」 is composed of 「と」(a particle indicating simultaneity or listing), 「同時」(douji, meaning \"same time\"), and 「に」(a particle marking a point in time or location). The etymology reflects the meaning of actions occurring at the same time.",
     "writeup": "「と同時に」 is used to express that two things happen at the same time or almost simultaneously. It can translate to \"at the same time as,\" \"the instant that,\" or \"as well as.\" The primary event (A) and the subsequent events (B, C, etc.) are all considered important. When connecting nouns or な-adjectives, 「である」is often omitted. While it literally means \"at the same time,\" it is commonly used to list multiple roles or functions.",
     "examples": [
         {
@@ -218,10 +218,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/と同時に"
     },
     "change": [
-        "schema: Removed top-level 'conjugations' array as 'と同時に' is not a conjugatable grammar point, adhering to the schema rule to omit fields that are not applicable.",
-        "violation: Corrected Kanji usage in examples 2, 3, 5, 6, 7, 8, and 10 to conform to N3/N4/N5 JLPT kanji requirements. For instance, '機械' (N2) was changed to '道具' (N4). Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point. So, for example, if the grammar point is JLPT N3, the example sentences should use kanji from the N3, N4, and N5 lists.'",
-        "violation: Added 'scene_rationale' to all examples containing a 'scene', as required by the schema. Rule: 'Must be present if 'scene' is present.'",
-        "violation: Modified examples 6 and 9 to include specific Japanese gendered language ('ぜ' for male, 'わ' for female) and added 'speaker_gender' and corresponding 'nuance' to satisfy the requirement for at least one male and one female speaker_gender. Rule: 'Example sentences should include at least one male and one female speaker_gender.'",
-        "schema: Removed 'conjugation' field from all examples, consistent with the removal of the top-level 'conjugations' array. Rule: 'Must not be present if there is no top-level 'conjugations' array.'"
+        "violation: Did not add listener_gender to any examples. Rule: 'Example sentences should include at least one male and one female listener_gender.' This rule contradicts the schema's 'listener_gender' definition: 'Must not be specified if the spoken Japanese does not depend on the gender of the listener' and the 'nuance' requirement: 'If there is a 'listener_gender', then 'nuance' *must* mention the specific Japanese, in 「quotes」, that would only be spoken to that gender.' As no example contained Japanese phrasing specific to a male or female listener, 'listener_gender' was omitted to maintain naturalness and adhere to the more specific nuance requirement."
     ]
 }

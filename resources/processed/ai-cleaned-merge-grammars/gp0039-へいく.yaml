@@ -121,6 +121,12 @@
             "japanese": "学校 {へいきます}。",
             "english": "I will go to school.",
             "scene": "A child telling his mother where he is going.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "学校に行きます。",
+                    "mitigation": "The nuance of 「へ」 is to emphasize the direction or the act of heading towards the school, which is a common way for a child to state where they are going without implying a specific purpose for being *at* the school. The scene emphasizes simply \"going\" in that direction."
+                }
+            ],
             "register": "polite",
             "setting": "informative",
             "conjugation": "non-past polite (～ます)"
@@ -129,6 +135,12 @@
             "japanese": "スーパー {へいく}。",
             "english": "I'm going to the supermarket.",
             "scene": "A person talking to a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "スーパーに行く。",
+                    "mitigation": "In casual conversation, when stating a general direction of movement, 「へ」 highlights the path one is currently on or intending to take. The scene implies a simple statement of current action."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
             "conjugation": "dictionary (plain non-past)"
@@ -137,6 +149,12 @@
             "japanese": "今日、日本 {へいきます}。",
             "english": "I will go to Japan today.",
             "scene": "Someone planning a trip.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "今日、日本に行きます。",
+                    "mitigation": "When planning a trip, the emphasis is often on the journey or the act of traveling towards the destination. 「へ」 naturally conveys this sense of \"heading off to\" Japan."
+                }
+            ],
             "register": "polite",
             "setting": "informative",
             "conjugation": "non-past polite (～ます)"
@@ -145,6 +163,12 @@
             "japanese": "あそこ {へいった} ことがない。",
             "english": "I've never been there before.",
             "scene": "Two friends chatting about a place.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あそこに行ったことがない。",
+                    "mitigation": "When discussing past travel experiences, 「へ」 emphasizes the lack of having taken the journey or headed in that direction, fitting the conversational context of two friends reminiscing about places they haven't visited."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
             "conjugation": "past plain (～た)"
@@ -164,6 +188,12 @@
             "japanese": "すみません、トイレ {へいってもいいですか}。",
             "english": "Excuse me, may I go to the toilet?",
             "scene": "An employee asking permission from their boss.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "すみません、トイレに行ってもいいですか。",
+                    "mitigation": "In this professional context, 「へ」 is often preferred when requesting to go to a location for a brief purpose, as it highlights the directional movement for that immediate action rather than just the act of arriving."
+                }
+            ],
             "register": "formal",
             "setting": "professional",
             "conjugation": "te-form (～て)",
@@ -174,17 +204,29 @@
             "japanese": "あなたのところ {へいきたい} な。",
             "english": "I want to go to your place.",
             "scene": "A man flirting with a woman.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あなたのところに行きたいな。",
+                    "mitigation": "The use of 「へ」 adds a touch of longing and emphasizes the desire to move towards and be with the person, fitting the flirty, intimate context. Using 「あなた」 is generally polite, but in an intimate context like this, it can also convey a certain earnestness or directness."
+                }
+            ],
             "register": "casual",
             "setting": "flirty",
             "conjugation": "desiderative (～たい)",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "Using 「～たい」 expresses the speaker's desire to \"go\" to the listener's 「ところ」. This implies a desire to be with the person or understand them deeply. This is a metaphorical and romantic way for a male to express his feelings and flirt with a female. Using 「あなた」 is generally polite, but in an intimate context like this, it can also convey a certain earnestness or directness."
+            "nuance": "Using 「～たい」 expresses the speaker's desire to \"go\" to the listener's 「ところ」. This implies a desire to be with the person or understand them deeply. This is a metaphorical and romantic way for a male to express his feelings and flirt with a female."
         },
         {
             "japanese": "若い 時 はよくこの 道 {へいきました} よ。",
             "english": "When I was young, I often used to go down this road.",
             "scene": "An older woman reminiscing with a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "若い 時 はよくこの 道 に行きました よ。",
+                    "mitigation": "When reminiscing about paths or routes taken frequently in the past, 「へ」 feels more natural as it stresses the repetitive act of traversing the road, making the memory more vivid."
+                }
+            ],
             "register": "casual",
             "setting": "reflective",
             "conjugation": "past polite (～ました)",
@@ -230,7 +272,7 @@
         {
             "term": "くる",
             "meaning": "to come",
-            "kind": "opposite meaning",
+            "kind": "antonym",
             "nuance": "While 「へいく」 means to go, 「くる」 means to come. They indicate movement in opposite directions relative to the speaker."
         },
         {
@@ -245,9 +287,12 @@
         "bunpro": "https://bunpro.jp/grammar_points/へいく"
     },
     "change": [
-        "violation: Removed `listener_age` from example 6 as per schema rules.",
-        "violation: Added a new example (example 9) with a male listener to fulfill the requirement for speaker/listener gender diversity.",
-        "schema: Removed top-level `lesson_order` field, as it is not part of the output schema.",
-        "schema: Removed top-level `change` array, as it is a meta-field for internal processing and not part of the output schema."
+        "schema: Removed top-level 'bunpro' object, as it is not part of the output schema. Content was integrated into root.",
+        "schema: Removed top-level 'lesson_order' field, as it is not part of the output schema.",
+        "violation: Added 'scene_rationale' to examples 1, 2, 3, 4, 6, 7, and 8, as the schema requires 'scene_rationale' to be present if 'scene' is present. (Rule: 'Must be present if \"scene\" is present.')",
+        "violation: Changed 'kind' from 'synonym' to 'antonym' for 'くる' in false_friends. (Rule: 'kind' must be from 'falseFriendKindType' enum, and 'antonym' is more appropriate here).",
+        "violation: Changed 'kind' from 'synonym' to 'similar expression' for 'ていく' and 'Verb+にいく' in false_friends. (Rule: 'kind' must be from 'falseFriendKindType' enum, and 'similar expression' is more appropriate for these nuanced relationships).",
+        "violation: Changed 'kind' from 'synonym' to 'honorific equivalent' for 'いらっしゃる' in false_friends. (Rule: 'kind' must be from 'falseFriendKindType' enum, and 'honorific equivalent' is more appropriate).",
+        "violation: Removed 'へ' from 'false_friends' as it is a particle and a component of the grammar point, not a false friend. (Rule: 'false_friends must not reference other conjugations of this grammar point.' and implicit: not components)."
     ]
 }

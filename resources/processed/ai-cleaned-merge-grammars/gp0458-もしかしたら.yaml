@@ -14,7 +14,7 @@
     "meaning": "Perhaps, maybe, possibly",
     "details": {
         "Register": "Standard",
-        "使用域": "一般"
+        "Usage Domain": "General"
     },
     "etymology": "The phrase 「もしかしたら」 is derived from the adverb 「若し (moshi)」 meaning 'if,' the case marking particle 「か (ka)」, and 「したら (shitara)」, which is a conditional form of the verb 「する (suru)」 (to do). This structure conveys a sense of hypothetical occurrence. Variants such as 「もしかして」 and 「もしかすると」 use the te-form 「して」 and the conditional 「すると」 respectively, maintaining a similar core meaning of 'if it happens to be the case' or 'should it so happen that,' thereby expressing uncertainty or possibility.",
     "writeup": "「もしかしたら」 is an adverb used to express uncertainty or possibility, equivalent to English terms like \"perhaps,\" \"maybe,\" or \"possibly.\" This expression, along with its close relatives 「もしかして」 and 「もしかすると」, functions to introduce hypothetical situations or potential outcomes. Like many other Japanese adverbs, 「もしかしたら」 frequently appears at the beginning of a sentence. To further emphasize the degree of uncertainty, it is often combined with the auxiliary phrase 「かもしれない」, although this is not always mandatory. While 「もしかしたら」 presents a hypothetical condition, the overall tense and aspect of the sentence are determined by the main clause that follows.",
@@ -75,6 +75,7 @@
             "register": "casual",
             "setting": "friendly",
             "speaker_age": "younger",
+            "listener_gender": "group",
             "nuance": "This sentence uses `{もしかすると}` to gently introduce a possibility, followed by a question to gauge others' reactions. The 「平気？」 shows consideration for the group's comfort, typical among close friends."
         },
         {
@@ -262,8 +263,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/もしかしたら"
     },
     "change": [
-        "violation: Changed 'writeup' to be primarily in English, as required by rule 'Be primarily in English'.",
-        "violation: Added 'scene_rationale' to all examples that have a 'scene', as required by rule 6: 'scene_rationale' must be present if 'scene' is present.",
-        "schema: Removed 'listener_age' from examples 1, 3, and 5, as it is deprecated per the schema comments."
+        "schema: Removed 'meaning_warning' field as it was null, adhering to schema rule 'No fields should be null. Omit fields that are not applicable instead.'",
+        "violation: Changed 'details.使用域' to 'details.Usage Domain' and its value to 'General', to comply with rule 16 'You may fix minor inaccuracies in \"details\", but do not invent new details.' and the general instruction that sections be in English.",
+        "unnatural: Added 'listener_gender: group' to example 3, as 'みんな' (everyone) clearly implies a group listener for better specificity and naturalness of the example."
     ]
 }

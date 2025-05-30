@@ -158,14 +158,5 @@
     "post_false_friends_writeup": "Be careful not to confuse verb-modified nouns with constructions like 「時」, which introduce clauses rather than directly modifying nouns. With verb-modified nouns, the focus is on describing the noun, while 「時」 focuses on the timing of an event.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/verb-た-noun"
-    },
-    "change": [
-        "violation/schema: Corrected 'conjugations' 'type' values to match 'conjugationType' enum (e.g., 'た + noun' -> 'past plain (～た)') as required by the schema's enum definitions.",
-        "violation/schema: Removed 'pronunciation_warning' from 'pronunciation' object, as it is not specified in the output schema.",
-        "violation/schema: Added 'scene_rationale' to all examples that contained a 'scene' field, as required by the schema rule 'Must be present if 'scene' is present.'",
-        "violation/schema: Removed 'listener_age' from Example 7, as the schema explicitly states 'listener_age' is deprecated and should be removed.",
-        "violation/schema: Added 'speaker_gender: female' to Example 6, based on the existing nuance that explicitly states 'Only women will say 「たまらない」 in this context,' to comply with the rule 'speaker_gender': (optional, required if there is a listener gender) gender of the speaker. One of: male, female. Use only if this sentence would typically only be spoken by this gender'.",
-        "violation/schema: Added 'speaker_gender: male' to Example 1 to ensure the examples include at least one male speaker, as required by the rule 'Example sentences should include at least one male and one female speaker_gender'.",
-        "violation/schema: Updated the 'conjugation' field in all examples to reflect the corrected 'type' values from the top-level 'conjugations' array, as required by the rule 'The content of this 'conjugation' field must be taken from the top-level list of conjugations you generated earlier. Use the 'type' field'."
-    ]
+    }
 }

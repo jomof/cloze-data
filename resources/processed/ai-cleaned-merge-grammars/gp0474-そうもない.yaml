@@ -64,8 +64,8 @@
             "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "今日 は 雷 が 酷い から、釣り に 行け {そうもない} 。",
-            "english": "Since the thunder is terrible today, it doesn't even seem like I can go fishing.",
+            "japanese": "今日 は 天気 が 酷い から、釣り に 行け {そうもない} 。",
+            "english": "Since the weather is terrible today, it doesn't even seem like I can go fishing.",
             "scene": "A man looks out the window at a severe thunderstorm, lamenting his cancelled fishing plans.",
             "scene_rationale": [
                 {
@@ -74,7 +74,7 @@
                 },
                 {
                     "competing_grammar": "釣りに行けないと思う。",
-                    "mitigation": "「〜と思う」 conveys a personal thought. The scene describes an objective, observable condition (severe thunder) that makes the activity seem impossible. 「そうもない」 is used when the appearance or state of things strongly suggests the outcome."
+                    "mitigation": "「〜と思う」 conveys a personal thought. The scene describes an objective, observable condition (severe weather) that makes the activity seem impossible. 「そうもない」 is used when the appearance or state of things strongly suggests the outcome."
                 }
             ],
             "register": "casual",
@@ -281,12 +281,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/そうもない"
     },
     "change": [
-        "schema: Added conjugations array with detailed conjugation forms for そうもない which behaves like an i-adjective. Reason: The prior array was empty, violating the schema requirement to list all possible conjugations if the grammar point is conjugatable.",
-        "schema: Added meaning_warning field. Reason: The new input provided this important nuance, which was missing in the prior version, and is a valid field in the schema.",
-        "violation: Refined writeup content and rephrased to be more formal and adhere to the persona of a serious teacher while retaining all necessary details. Reason: Improve clarity and professionalism as per persona and general quality.",
-        "schema: Added scene_rationale to all examples that had a scene field. Reason: The schema explicitly requires scene_rationale when scene is present, which was missing in the prior examples.",
-        "schema: Set conjugation field for all examples to dictionary (plain non-past). Reason: The schema requires conjugation to be present if a top-level conjugations array exists, and it was null in prior examples.",
-        "schema: Added a new example to include a female speaker_gender. Reason: The schema requires at least one example for male and female speaker genders, and the prior version only had male examples. This new example includes the 「わ」 particle, which typically indicates a female speaker, fulfilling the nuance requirement.",
-        "schema: Added post_false_friends_writeup. Reason: To provide additional clarification as allowed by the schema, enhancing the explanation of false friends."
+        "violation: Updated example sentence. Replaced N2 kanji `雷` with N5 kanji `天気` in `今日 は 雷 が 酷い から、釣り に 行け {そうもない} 。` to comply with the rule 'Example sentences should use kanji appropriate for the JLPT level of the grammar point. So, for example, if the grammar point is JLPT N3, the example sentences should use kanji from the N3, N4, and N5 lists.'",
+        "violation: Updated English translation of example sentence 'Since the thunder is terrible today, it doesn't even seem like I can go fishing.' to 'Since the weather is terrible today, it doesn't even seem like I can go fishing.' to match the Japanese modification."
     ]
 }

@@ -237,16 +237,5 @@
     "post_false_friends_writeup": "To distinguish these expressions, remember that `に堪えない` focuses on an overwhelming inability to *tolerate* something due to its unacceptability or inherent unpleasantness. `に耐えない` is about an inability to *physically or mentally withstand* a difficult situation or pressure. `に絶えない`, on the other hand, describes an *uncontrollable outpouring* of an emotion or action, where the action itself cannot be stopped or contained.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/に堪えない"
-    },
-    "change": [
-        "violation: The `formation` field was updated to remove the `[Noun] + に堪えない` entry, as the `meaning` and `writeup` of this grammar point specifically focus on the verb usage of \"cannot bear to,\" making the noun usage a distinct grammar point or nuance not covered by this entry's primary definition. This aligns the `formation` with the explicit scope defined in the `meaning` and `writeup`.",
-        "violation: The `writeup` field was completely replaced with the more detailed and nuanced explanation provided in the Bunpro input. The original `writeup` did not fully elaborate on the distinctions between `堪える`, `耐える`, and `絶える`, nor did it clearly delineate the different grammatical uses of 「に堪えない」 (verb vs. noun). The new `writeup` from the Bunpro input is more comprehensive and aligns better with the persona of a skilled Japanese teacher sharing detailed nuances.",
-        "violation: Examples 6 and 7 (original indexing) were removed because they used the affirmative form `に堪える`, which, as per the rules, expresses a different meaning (\"is worth doing\") and therefore does not \"preserve the meaning of the grammar point\" (which is \"cannot bear to\").",
-        "schema: `scene_rationale` was added to all examples. This field was missing in the prior version but is required by the schema if `scene` is present, to explain why the `scene` hints away from competing grammar.",
-        "schema: `speaker_gender` and `listener_gender` fields were added to examples 1, 2, and 9 to meet the schema requirement of having at least one male and one female speaker and listener (where applicable).",
-        "schema: The `nuance` field for examples 1, 2, and 9 was updated to specifically mention and quote the Japanese phrasing that indicates gender, as required by the schema when `speaker_gender` or `listener_gender` is present.",
-        "schema: `conjugation` types were adjusted to match the enum definitions in the schema (e.g., `past (plain)` changed to `negative past plain (～なかった)` for examples using negative past plain form).",
-        "violation: The `false_friends` array was populated with `に堪える`, `に耐えない`, and `に絶えない`, along with their `meaning`, `kind`, and `nuance`. The prior version had an empty `false_friends` array, despite the `writeup` discussing these similar expressions, which is a violation of the instruction to include false friends when applicable.",
-        "schema: The `post_false_friends_writeup` field was added to provide further clarification on distinguishing between the grammar point and its false friends, as required by the schema when `false_friends` are present."
-    ]
+    }
 }

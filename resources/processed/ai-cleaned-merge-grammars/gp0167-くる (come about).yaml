@@ -5,47 +5,47 @@
         {
             "type": "dictionary (plain non-past)",
             "form": "くる",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "non-past polite (～ます)",
             "form": "きます",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "negative plain (～ない)",
             "form": "こない",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "negative non-past polite (～ません)",
             "form": "きません",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "past plain (～た)",
             "form": "きた",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "past polite (～ました)",
             "form": "きました",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "negative past plain (～なかった)",
             "form": "こなかった",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "negative past polite (～ませんでした)",
             "form": "きませんでした",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "te-form (～て)",
             "form": "きて",
-            "rarity": "commonly used"
+            "rarity": "common"
         },
         {
             "type": "conditional (～ば)",
@@ -248,6 +248,24 @@
             "nuance": "While grammatically neutral, the expression 「体が少しずつ良くなって{きました}」 can be particularly common among women when discussing their health or well-being in a polite, reflective manner, often implying a delicate yet persistent progress."
         },
         {
+            "japanese": "この資料、今まで集めて{きました}。",
+            "english": "I've collected these materials up until now.",
+            "scene": "A female project manager presenting a report to her male director, emphasizing the cumulative effort.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この資料、今まで集めました。",
+                    "mitigation": "This alternative uses a simple past tense, which states the action of collecting was completed in the past. It lacks the nuance of the continuous and cumulative effort of collecting materials up to the present moment, which `〜てきました` effectively conveys. The scene highlights this ongoing effort leading to the current state."
+                }
+            ],
+            "register": "professional",
+            "setting": "professional",
+            "conjugation": "past polite (～ました)",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "The use of 「〜てきました」 emphasizes the continuous effort of collecting the materials over time, leading to the current completion. This provides a sense of diligence and thoroughness. The polite form 「〜ました」 is appropriate for a professional setting when addressing a superior.",
+            "etymology": "「集める」 (atsumeru) means 'to collect' or 'to gather.'"
+        },
+        {
             "japanese": "あなたと会うたびに、もっと知りたく{なってくる}んだ。",
             "english": "Every time I meet you, I start to want to know you more.",
             "scene": "A man expressing his growing interest in a woman on a first date.",
@@ -347,9 +365,8 @@
     ],
     "post_false_friends_writeup": "Be careful not to confuse 「〜てくる」 with 「〜ていく」. While both express a change or process, 「〜てくる」 looks at the change from the perspective of something approaching or starting from the past to the present. 「〜ていく」, on the other hand, views the change as something moving away from the present into the future. Also, be careful not to confuse it with 「始める」 which means \"to start\". 「始める」 focuses on the act of starting, while 「〜てくる」 focuses on the process that has begun.",
     "change": [
-        "violation: Added `scene_rationale` to all examples that contained a `scene` field, as per schema rule requiring `scene_rationale` if `scene` is present.",
-        "violation: Added a new example with `speaker_gender: female` to ensure at least one male and one female speaker_gender example is present, as required by the schema.",
-        "schema: Updated conjugation `type` names in the top-level `conjugations` array and in each example's `conjugation` field to align with the provided schema's `conjugationType` enum.",
-        "unnatural: Corrected typo 'Laction' to 'action' in the `false_friends` nuance for '始める'."
+        "schema: Updated 'rarity' values from 'commonly used' to 'common' in the top-level 'conjugations' array to comply with the 'rarityType' enum.",
+        "violation: Added a new example (example 8) with 'listener_gender: male' to fulfill the requirement that example sentences include at least one male and one female listener_gender.",
+        "violation: Corrected the 'conjugation' type in the new example (example 8) from 'non-past polite (～ます)' to 'past polite (～ました)' to accurately reflect the use of '集めてきました'."
     ]
 }

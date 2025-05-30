@@ -2,12 +2,12 @@
     "grammar_point": "い-Adjective くなかった",
     "conjugations": [
         {
-            "type": "past negative (plain)",
+            "type": "negative past plain",
             "form": "い-Adjective くなかった",
             "rarity": "common"
         },
         {
-            "type": "past negative (polite)",
+            "type": "negative past polite",
             "form": "い-Adjective くありませんでした",
             "rarity": "common"
         }
@@ -33,18 +33,18 @@
     "writeup": "To form the negative past tense of い-adjectives, the final 「い」 is removed and replaced with 「く」. This 「く」 form is then followed by 「なかった」 for the plain past negative, or 「ありませんでした」 for the polite past negative. Historically, the polite negative form derived from the usage of the u-verb 「ある」 with the 「く」-form of the い-adjective (e.g., 高くあります → 高くありません → 高くありませんでした). While this is technically the complete and grammatically 'correct' way for all 「く」-form conjugations of い-adjectives, in modern Japanese, it is common and acceptable to form the polite negative by simply attaching 「です」 to the plain past negative form, resulting in expressions like 「高くなかったです」. This is often referred to as the 'semi-polite' form.",
     "examples": [
         {
-            "japanese": "漫画 を 読む の は 難しく {なかった} 。",
-            "english": "Reading manga wasn't difficult.",
-            "scene": "Someone reflecting on an activity.",
+            "japanese": "漢字 を 覚える の は 難しく {なかった} 。",
+            "english": "Learning kanji wasn't difficult.",
+            "scene": "Someone reflecting on a past learning experience.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "漫画 を 読む の は 難しく ありませんでした。",
+                    "competing_grammar": "漢字 を 覚える の は 難しく ありませんでした。",
                     "mitigation": "The scene implies a casual, personal reflection, making the plain form `なかった` more natural than the polite `ありませんでした`."
                 }
             ],
             "register": "casual",
             "setting": "reflective",
-            "conjugation": "past negative (plain)"
+            "conjugation": "negative past plain"
         },
         {
             "japanese": "コーヒー は 熱く {なかった} です。",
@@ -58,7 +58,7 @@
             ],
             "register": "teineigo (polite)",
             "setting": "casual",
-            "conjugation": "past negative (plain)"
+            "conjugation": "negative past plain"
         },
         {
             "japanese": "私 の 犬 は 強く {なかった} です。",
@@ -72,7 +72,7 @@
             ],
             "register": "teineigo (polite)",
             "setting": "casual",
-            "conjugation": "past negative (plain)"
+            "conjugation": "negative past plain"
         },
         {
             "japanese": "私 の 姉 の 家 は 高く {なかった} です。",
@@ -86,7 +86,7 @@
             ],
             "register": "teineigo (polite)",
             "setting": "casual",
-            "conjugation": "past negative (plain)"
+            "conjugation": "negative past plain"
         },
         {
             "japanese": "それ は 安く {ありませんでした} 。",
@@ -100,7 +100,7 @@
             ],
             "register": "teineigo (polite)",
             "setting": "informative",
-            "conjugation": "past negative (polite)"
+            "conjugation": "negative past polite"
         },
         {
             "japanese": "君 が いなくて 、パーティー は 楽しく {なかった} よ。",
@@ -118,7 +118,7 @@
             ],
             "register": "shitashii kuchō (intimate)",
             "setting": "flirty",
-            "conjugation": "past negative (plain)",
+            "conjugation": "negative past plain",
             "speaker_gender": "male",
             "listener_gender": "female",
             "nuance": "The casual tone and the direct address 「君」, rarely used except in intimate or condescending contexts, along with the implied regret of the listener's absence, create a flirty atmosphere. The use of 「よ」 further softens the tone and makes it more personal."
@@ -126,7 +126,7 @@
         {
             "japanese": "昨日 の デート は 楽しく {なかった} です。",
             "english": "Yesterday's date wasn't fun.",
-            "scene": "A younger person confiding in an older male friend.",
+            "scene": "A younger woman confiding in an older male friend.",
             "scene_rationale": [
                 {
                     "competing_grammar": "昨日 の デート は 楽しく なかった。",
@@ -139,7 +139,7 @@
             ],
             "register": "teineigo (polite)",
             "setting": "melancholic",
-            "conjugation": "past negative (plain)",
+            "conjugation": "negative past plain",
             "speaker_gender": "female",
             "listener_gender": "male",
             "speaker_age": "younger",
@@ -157,7 +157,7 @@
             ],
             "register": "teineigo (polite)",
             "setting": "critical",
-            "conjugation": "past negative (polite)"
+            "conjugation": "negative past polite"
         }
     ],
     "false_friends": [
@@ -173,11 +173,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/い-Adjective-くなかった"
     },
     "change": [
-        "schema: Removed 'pronunciation.pronunciation_warning' as it is not part of the schema for 'pronunciation'.",
-        "schema: Removed 'meaning_warning: null' as null fields must be omitted according to schema rules.",
-        "schema: Added 'false_friends' array and 'post_false_friends_writeup' as they are required top-level fields by the schema.",
-        "schema: Removed 'listener_age' from example 7 as it is a deprecated field and must be removed.",
-        "schema: Added 'scene_rationale' to all examples containing a 'scene' field, as required by the schema.",
-        "violation: Modified example 7's 'listener_gender' from 'female' to 'male' to ensure at least one male and one female listener gender are present in examples, as required by Rule 6."
+        "violation: Changed '漫画 を 読む の は' to '漢字 を 覚える の は' in example 1. Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point. So, for example, if the grammar point is JLPT N3, the example sentences should use kanji from the N3, N4, and N5 lists.' The kanji 漫 (N1) was above the N5/N4/N3 limit for an N5 grammar point."
     ]
 }

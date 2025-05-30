@@ -109,7 +109,7 @@
     "writeup": "る-verbs, also known as Ichidan verbs (一段動詞), are a class of Japanese verbs characterized by their consistent conjugation pattern. The key feature of these verbs is that they always end in 「る」 in their dictionary form (辞書形). To conjugate them, you generally replace the 「る」 with the appropriate ending.\n\n**Important Considerations:**\n\n*   All verbs that end in 「る」 are **not** necessarily る-verbs. Some are う-verbs (Godan verbs), which have different conjugation rules. For example, 取る (to take) is *not* a る-verb because the 「る」 changes to 「り」 in the ます form (取ります).\n*   る-verbs are generally considered simpler to conjugate than う-verbs because of their consistent pattern.",
     "examples": [
         {
-            "japanese": "明日、映画を{見}る。",
+            "japanese": "明日、映画を{見る}。",
             "english": "I'll watch a movie tomorrow.",
             "scene": "Planning for the next day.",
             "scene_rationale": [
@@ -128,7 +128,7 @@
             "speaker_gender": "male"
         },
         {
-            "japanese": "毎日、ご飯を{食べ}ます。",
+            "japanese": "毎日、ご飯を{食べます}。",
             "english": "I eat rice every day.",
             "scene": "A woman describing her daily routine.",
             "scene_rationale": [
@@ -143,7 +143,7 @@
             "speaker_gender": "female"
         },
         {
-            "japanese": "彼は日本語を{覚え}た。",
+            "japanese": "彼は日本語を{覚えた}。",
             "english": "He memorized Japanese.",
             "scene": "A woman describing someone's recent accomplishment to a friend.",
             "scene_rationale": [
@@ -158,7 +158,7 @@
             "speaker_gender": "female"
         },
         {
-            "japanese": "もう{忘れ}ましたか？",
+            "japanese": "もう{わすれました}か？",
             "english": "Have you already forgotten?",
             "scene": "A woman reminding a man about something they discussed.",
             "scene_rationale": [
@@ -174,7 +174,7 @@
             "listener_gender": "male"
         },
         {
-            "japanese": "シャワーを{浴び}て、さっぱりしました。",
+            "japanese": "シャワーを{あびて}、さっぱりしました。",
             "english": "I took a shower and feel refreshed.",
             "scene": "After a shower, a man reflecting on his current state.",
             "scene_rationale": [
@@ -189,7 +189,7 @@
             "speaker_gender": "male"
         },
         {
-            "japanese": "もっと{褒め}てくれたら、頑張るよ。",
+            "japanese": "もっと{ほめて}くれたら、頑張るよ。",
             "english": "If you praise me more, I'll do my best.",
             "scene": "A young student asking for more encouragement from their female teacher.",
             "scene_rationale": [
@@ -206,7 +206,7 @@
             "speaker_age": "younger"
         },
         {
-            "japanese": "彼女の笑顔を{見}よう。",
+            "japanese": "彼女の笑顔を{見よう}。",
             "english": "Let's look at her smile.",
             "scene": "Two male friends deciding to cheer themselves up by looking at a photo of a mutual friend.",
             "scene_rationale": [
@@ -221,7 +221,7 @@
             "speaker_gender": "male"
         },
         {
-            "japanese": "明日、早く{起き}なさい。",
+            "japanese": "明日、早く{起きなさい}。",
             "english": "Wake up early tomorrow.",
             "scene": "A parent giving a direct instruction to a child.",
             "scene_rationale": [
@@ -243,12 +243,12 @@
             "nuance": "The use of 「なさい」 is a polite but firm command, often used by adults to children or by superiors to subordinates. It is less demanding than the plain imperative 「起きろ」 but more direct than 「起きてください」."
         },
         {
-            "japanese": "ここから富士山が{見}られます。",
-            "english": "You can see Mount Fuji from here.",
+            "japanese": "ここからタワーが{見られます}。",
+            "english": "You can see the tower from here.",
             "scene": "A tour guide explaining the view to a group of tourists.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "ここから富士山が見えます",
+                    "competing_grammar": "ここからタワーが見えます",
                     "mitigation": "While 「見えます」 is often used for things that are naturally visible, 「見られます」 emphasizes the *ability* or *possibility* of seeing it under certain conditions, which is appropriate when guiding tourists to a specific viewpoint."
                 }
             ],
@@ -258,7 +258,7 @@
             "listener_gender": "group"
         },
         {
-            "japanese": "上司に{褒め}られた。",
+            "japanese": "上司に{ほめられた}。",
             "english": "I was praised by my boss.",
             "scene": "A man talking about a positive unexpected event at work.",
             "scene_rationale": [
@@ -273,7 +273,7 @@
             "speaker_gender": "male"
         },
         {
-            "japanese": "子供に野菜を{食べ}させます。",
+            "japanese": "子供に野菜を{食べさせます}。",
             "english": "I make my child eat vegetables.",
             "scene": "A mother discussing her parenting strategies with a friend.",
             "scene_rationale": [
@@ -308,16 +308,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/る-Verbs"
     },
     "change": [
-        "violation: Corrected conjugations 'type' field to match schema enum values, e.g., 'polite (non-past)' -> 'non-past polite (～ます)'. Rule: 'type' field must be one of the enum values.",
-        "violation: Corrected conjugations 'rarity' values to match schema enum values, e.g., 'commonly used' -> 'common', 'unnatural' -> 'very rare'. Rule: 'rarityType' enum.",
-        "violation: Removed 'conditional (provisional ば-form)' from conjugations as it's not in the schema's enum. Rule: 'conjugationType' enum must be strictly followed.",
-        "violation: Changed 'imperative (polite)' conjugation 'form' from 'てください' to 'なさい' to align with schema's 'imperative polite (～なさい)'. Rule: 'conjugationType' enum must be strictly followed.",
-        "violation: Added 'scene_rationale' to all examples where 'scene' is present. Rule: 'scene_rationale' must be present if 'scene' is present.",
-        "violation: Corrected example 2 ('飲みます') to use a る-verb ('食べます') as it was previously a う-verb. Rule: 'Each example **must** use the grammar_point'.",
-        "violation: Corrected example 3 ('甘かった') to use a る-verb ('覚えた') as it was previously an い-adjective. Rule: 'Each example **must** use the grammar_point'.",
-        "violation: Corrected example 10 ('笑わされてしまった') to use a る-verb ('褒められた') as it was previously a う-verb. Rule: 'Each example **must** use the grammar_point'.",
-        "violation: Updated example 8 ('起きなさい') to reflect the 'imperative polite (～なさい)' form and adjusted scene/nuance accordingly. Rule: 'Each example **must** use the grammar_point, though it may be in conjugated form.' and 'If there are conjugations, examples **must** exhibit a wide variety of conjugations.'",
-        "violation: Added 'speaker_gender' and 'listener_gender' to examples to meet diversity requirements and general schema rules. Rule: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'",
-        "unnatural: Adjusted example scenes and dialogues to make sentences more natural sounding for the specific speaker/listener genders and ages."
+        "violation: Removed top-level 'lesson_order' field as it is not part of the schema. Rule: 'No fields should be null. Omit fields that are not applicable instead.' (and by extension, omit fields not in schema).",
+        "violation: Corrected grammar point bolding syntax in all 'japanese' examples from '{Verb}る' to '{Verbる}'. Rule: 'Must have the grammar_point in {bold}'.",
+        "violation: Changed N3/N2 kanji to hiragana or suitable N5/N4 vocabulary in 'japanese' examples to comply with JLPT N5 kanji level requirement. Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' Specifically: '忘れました' -> 'わすれました', '浴びて' -> 'あびて', '褒めて' -> 'ほめて', '上司に褒められた' -> '上司にほめられた', and '富士山' -> 'タワー'."
     ]
 }

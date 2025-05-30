@@ -13,16 +13,6 @@
             "rarity": "common"
         },
         {
-            "type": "negative plain (～ない)",
-            "form": "あまり〜なくない",
-            "rarity": "rare"
-        },
-        {
-            "type": "negative non-past polite (～ません)",
-            "form": "あまり〜なくありません",
-            "rarity": "rare"
-        },
-        {
             "type": "past plain (～た)",
             "form": "あまり〜なかった",
             "rarity": "common"
@@ -31,16 +21,6 @@
             "type": "past polite (～ました)",
             "form": "あまり〜ませんでした",
             "rarity": "common"
-        },
-        {
-            "type": "negative past plain (～なかった)",
-            "form": "あまり〜なくなかった",
-            "rarity": "rare"
-        },
-        {
-            "type": "negative past polite (～ませんでした)",
-            "form": "あまり〜なくありませんでした",
-            "rarity": "rare"
         },
         {
             "type": "te-form (～て)",
@@ -58,39 +38,9 @@
             "rarity": "uncommon"
         },
         {
-            "type": "volitional (～よう)",
-            "form": "あまり〜なかろう",
-            "rarity": "very rare"
-        },
-        {
-            "type": "volitional polite (～ましょう)",
-            "form": "あまり〜なくしましょう",
-            "rarity": "very rare"
-        },
-        {
-            "type": "imperative plain (～ろ/～え)",
-            "form": "あまり〜な",
-            "rarity": "very rare"
-        },
-        {
             "type": "imperative polite (～なさい)",
             "form": "あまり〜ないでください",
             "rarity": "common"
-        },
-        {
-            "type": "potential (～られる/～える)",
-            "form": "あまり〜なれる",
-            "rarity": "very rare"
-        },
-        {
-            "type": "passive (～られる/～かれる)",
-            "form": "あまり〜なれる",
-            "rarity": "very rare"
-        },
-        {
-            "type": "causative (～させる)",
-            "form": "あまり〜なくさせる",
-            "rarity": "very rare"
         }
     ],
     "pronunciation": {
@@ -310,6 +260,34 @@
             "listener_gender": "female",
             "nuance": "The use of 「僕 (boku)」 is typically masculine speech, used by boys and men. The sentence-ending particle 「よ」 indicates an informal statement or sharing information, common among friends.",
             "conjugation": "dictionary (plain non-past)"
+        },
+        {
+            "japanese": "電車が {あまり} 混んでい{なくて} よかった。",
+            "english": "It was good that the train wasn't very crowded.",
+            "scene": "Someone commenting on their commute experience.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "電車が混んでいなくてよかった。",
+                    "mitigation": "The scene implies a subtle relief that the train was *not excessively* crowded, guiding the learner to use 「あまり」 rather than a simple statement of no crowding."
+                }
+            ],
+            "register": "casual",
+            "setting": "casual",
+            "conjugation": "te-form (～て)"
+        },
+        {
+            "japanese": "{あまり} 勉強し{なかったら} 試験に落ちるよ。",
+            "english": "If you don't study much, you'll fail the exam.",
+            "scene": "An older student advising a younger student.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "勉強しなかったら試験に落ちるよ。",
+                    "mitigation": "The scene implies a warning about the *degree* of effort required, guiding the learner to use 「あまり」 to suggest that insufficient study, rather than complete lack of study, will lead to failure."
+                }
+            ],
+            "register": "casual",
+            "setting": "academic",
+            "conjugation": "conditional (～たら)"
         }
     ],
     "false_friends": [
@@ -367,8 +345,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/あまり-ない"
     },
     "change": [
-        "violation: Corrected 'rarity' values in 'conjugations' to conform to the `rarityType` enum (e.g., 'commonly used' to 'common', 'unnatural' and 'extremely unusual' to 'very rare').",
-        "schema: Added 'scene_rationale' to all examples containing a 'scene' as required by the schema.",
-        "violation: Added a new example with 'speaker_gender' as male and 'listener_gender' as female to ensure at least one example for each gender type was present, as required by Rule 6."
+        "schema: Removed top-level 'bunpro' field and distributed its contents according to the schema requirements.",
+        "violation: Refined 'conjugations' list by removing forms that are conceptually inaccurate for the grammar point 'あまり〜ない' (potential, passive, causative), are grammatically awkward or extremely rare for N4 level (double negatives, specific volitional forms), or apply to the verb rather than the negative form itself (plain imperative '〜な').",
+        "schema: Added two new examples to increase conjugation diversity, specifically for 'te-form' and 'conditional (～たら)', and included their 'scene' and 'scene_rationale' fields as required by the schema."
     ]
 }

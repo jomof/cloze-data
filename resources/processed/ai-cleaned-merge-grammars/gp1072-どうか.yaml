@@ -80,16 +80,18 @@
         {
             "japanese": "どうか 私を 許してください。",
             "english": "Please forgive me.",
-            "scene": "Apologizing sincerely for a mistake.",
+            "scene": "A daughter apologizing sincerely to her mother for a mistake.",
             "scene_rationale": [
                 {
                     "competing_grammar": "私を許してください。",
                     "mitigation": "The scene requires a sincere apology for a mistake, which implies a strong plea for forgiveness, making 「どうか」 essential to convey the speaker's earnestness."
                 }
             ],
-            "register": "formal",
+            "register": "semi-formal",
             "setting": "apologetic",
-            "nuance": "「許してください」 is a polite request for forgiveness, and 「どうか」 emphasizes the speaker's remorse and earnestness in seeking pardon.",
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "nuance": "「許してください」 is a polite request for forgiveness, and 「どうか」 emphasizes the speaker's remorse and earnestness in seeking pardon. The phrasing is gentle and suitable for a female speaker seeking forgiveness from another female, such as a mother.",
             "etymology": "「許」, meaning 'to permit,' combines 「言」 (word) and 「午」 (noon), suggesting a spoken agreement or acceptance."
         },
         {
@@ -123,7 +125,7 @@
             "etymology": "「忘れる」, meaning 'to forget,' combines 「亡」 (lost) and 「心」 (heart), suggesting the loss of something from one's heart or mind."
         },
         {
-            "japanese": "どうか、{今日} は {綺麗} な {私} の {姿} だけを {見} ていてくださいね。",
+            "japanese": "どうか、今日 は 綺麗 な 私 の 姿 だけを 見 ていてくださいね。",
             "english": "Please, just look at my beautiful self today, okay?",
             "scene": "A woman on a first date, batting her eyelashes at the man she is with.",
             "scene_rationale": [
@@ -170,9 +172,6 @@
         "bunpro": null
     },
     "change": [
-        "violation: Added 'scene_rationale' to all examples that had 'scene', as required by schema rule 6.",
-        "violation: Updated 'nuance' for examples 1-7 to refer to specific Japanese phrases in 「quotes」, as required by schema rule 6.",
-        "violation: Added 'speaker_gender' and 'listener_gender' to example 9 to ensure at least one male speaker and listener, as required by schema rule 6.",
-        "violation: Refined 'nuance' for example 9 to reflect the newly added gender specifications and to quote specific Japanese phrases."
+        "violation: Added 'speaker_gender: female' and 'listener_gender: female' to example 5, and adjusted its 'register' and 'nuance' to meet the requirement for diversity in speaker/listener gender combinations in examples (schema rule 6)."
     ]
 }

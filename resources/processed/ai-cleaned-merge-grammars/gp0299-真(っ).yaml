@@ -232,17 +232,6 @@
     ],
     "false_friends": [],
     "post_false_friends_writeup": "This grammar point is a prefix and does not typically have false friends in the sense of easily confused expressions. However, it is crucial to understand that it serves to emphasize the following word, often a color or a state, conveying a sense of completeness or exactness. Distinguishing it from simple adjectives or adverbs relies on recognizing this intensification of meaning.",
-    "change": [
-        "violation: Removed top-level 'bunpro' field as per rule \"You must not add top-level 'bunpro' or 'dojg' fields to the output JSON.\"",
-        "schema: Removed 'conjugations' field as it was an empty array and the grammar point is not conjugatable, adhering to the schema rule \"No fields should be null. Omit fields that are not applicable instead.\"",
-        "schema: Removed 'post_false_friends_writeup' field as it was null, adhering to the schema rule \"No fields should be null. Omit fields that are not applicable instead.\"",
-        "violation: Added 'scene_rationale' to all examples that had a 'scene' but lacked this field, as required by rule \"'scene_rationale' must be present if 'scene' is present.\"",
-        "violation: Ensured at least one male and one female listener_gender in examples as per rule \"Example sentences should include at least one male and one female listener_gender.\"",
-        "violation: Removed 'listener_age' from examples as it is deprecated, as per rule \"'listener_age' is deprecated. You must remove it.\"",
-        "violation: Refined 'nuance' fields to explicitly reference specific Japanese phrases in 「quotes」 that are characteristic of the specified speaker/listener gender or age, as per rule \"If there is a 'speaker_gender' or 'listener_gender', then 'nuance' must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.\"",
-        "unnatural: Minor rephrasing in 'writeup' and 'etymology' for better flow and clarity without altering meaning.",
-        "unnatural: Adjusted 'nuance' descriptions for better clarity and precision."
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/真(っ)"
     }

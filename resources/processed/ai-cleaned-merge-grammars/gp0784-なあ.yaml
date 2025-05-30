@@ -1,10 +1,10 @@
 {
     "grammar_point": "なあ",
+    "id": "gp0784",
     "pronunciation": {
         "katakana": "ナー",
         "romaji": "naa"
     },
-    "id": "gp0784",
     "formation": {
         "Informal sentence + なあ": "Used to express strong emotion such as admiration, wonder, or deep feeling (e.g., 'How ~!', 'What a ~!').",
         "Informal sentence + かなあ": "Used to express doubt, a wish, or hope ('I wonder if ~', 'I wish ~')."
@@ -191,9 +191,8 @@
         }
     ],
     "post_false_friends_writeup": "While 「ね」 is used to seek agreement or confirmation, 「なあ」 conveys more emotion and doesn't necessarily expect a response. Think of 「ね」 as a gentle nudge for agreement and 「なあ」 as a sigh of feeling. Use 「なあ」 when you are expressing a deep personal sentiment, and 「ね」 when you want to confirm or share information with someone.",
+    "sources": {},
     "change": [
-        "violation: All examples had `scene` fields but lacked `scene_rationale`, violating Rule 6 which states 'If OTHER_WAYS is not empty, then you **must** have a \"scene\" field.' I added `scene_rationale` to all examples where `scene` was present, ensuring compliance with Rule 6. The `scene` fields were also refined to better hint away from alternative grammar.",
-        "violation: Rule 6 requires at least one male and one female speaker_gender and listener_gender. The prior examples predominantly featured male speakers and female listeners or no specified gender. I added a new example featuring a female speaker and a male listener to meet this requirement, and adjusted genders and nuances for existing examples to ensure balance and accuracy.",
-        "violation: Rule on JLPT Kanji level was not strictly followed, as one example used an N2 kanji (`頃`). I replaced `若い頃` with `昔` (N3) to ensure all kanji are within the N3 level or below."
+        "schema: Removed 'bunpro: null' from 'sources' field because the schema requires 'bunpro' to be a string URI and disallows null values. The 'sources' object is now empty to reflect no URI is available."
     ]
 }

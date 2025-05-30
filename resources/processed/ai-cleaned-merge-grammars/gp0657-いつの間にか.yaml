@@ -116,18 +116,20 @@
             "nuance": "「～てしまった」 implies a sense of regret or surprise that time has passed so quickly."
         },
         {
-            "japanese": "帽子を被ってないと{いつの間にか}風邪を引く。だからきちんと帽子を被って。",
-            "english": "If you don't wear a hat, you will catch a cold before you know it. That's why you should put on a hat.",
-            "scene": "Advising someone to wear a hat to avoid catching a cold.",
+            "japanese": "息子よ、帽子を被ってないと{いつの間にか}風邪を引くよ。だからきちんと帽子を被ってね。",
+            "english": "My son, if you don't wear a hat, you'll catch a cold before you know it. So put on your hat properly.",
+            "scene": "A mother advising her son about wearing a hat to prevent illness.",
             "scene_rationale": [
                 {
                     "competing_grammar": "帽子を被ってないと風邪を引く。だからきちんと帽子を被って。",
-                    "mitigation": "The scene warns of an unexpected, unnoticed consequence, which `いつの間にか` effectively conveys."
+                    "mitigation": "The scene personalizes the advice to a parent-child relationship, emphasizing the unsolicited yet caring nature of the warning that `いつの間にか` supports."
                 }
             ],
             "register": "casual",
-            "setting": "cautious",
-            "nuance": "「～ないと」 is a casual contraction of 「～ないと」, meaning \"if you don't.\""
+            "setting": "friendly",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "「息子よ」 and the ending 「～よ」 are familiar forms typical of a mother addressing her child. The addition of 「～てね」 makes the instruction softer and more caring, which is common in a parent-child context. This example highlights how something can happen without being noticed if precautions are not taken."
         },
         {
             "japanese": "初めて会ったのに、{いつの間にか} 俺はあなたのことが頭から離れなくなったよ。",
@@ -175,6 +177,21 @@
             "listener_gender": "female",
             "speaker_age": "older",
             "nuance": "Endings like 「～か」 and 「～ものだな」 are typical male speech patterns, expressing a sentiment of wonder at the passage of time. The casual register is appropriate for conversation among close acquaintances. It conveys the speaker's surprise at the listener's growth."
+        },
+        {
+            "japanese": "忙しい毎日を送っていたら、{いつの間にか} 娘がこんなに大きくなっていたわ。",
+            "english": "I've been so busy with my daily life, and before I knew it, my daughter had grown so big!",
+            "scene": "A mother feeling a mixture of joy and surprise at her daughter's rapid growth.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "忙しい毎日を送っていたら、娘がこんなに大きくなっていた。",
+                    "mitigation": "The scene emphasizes the mother's surprise at the unnoticed passage of time and her daughter's growth, which `いつの間にか` perfectly captures."
+                }
+            ],
+            "register": "casual",
+            "setting": "reflective",
+            "speaker_gender": "female",
+            "nuance": "The use of 「～わ」 at the end of the sentence is characteristic of female speech, conveying a gentle and sometimes emotional tone. This sentence highlights the feeling of time passing unnoticed due to a busy life, a common experience for parents."
         }
     ],
     "false_friends": [
@@ -202,10 +219,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/いつの間にか"
     },
     "change": [
-        "schema: Removed 'meaning_warning' field as it was null. Rule: 'No fields should be null. Omit fields that are not applicable instead.'",
-        "violation: Removed 'listener_age' from example 11. Rule: 'listener_age is deprecated. You *must* remove it.'",
-        "violation: Modified Japanese in example 2 from '自動車保険の値段' to '電気代の値段' to use kanji appropriate for JLPT N2 or below. Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'",
-        "violation: Modified English in example 2 from 'car insurance' to 'electricity bill' to match Japanese change.",
-        "schema: Added 'scene_rationale' to all examples that have a 'scene' field. Rule: 'scene_rationale' must be present if 'scene' is present."
+        "violation: Modified example 8 to include 'speaker_gender: female' and 'listener_gender: male' to fulfill the requirement that example sentences include at least one male and one female speaker_gender, and at least one male and one female listener_gender. Rule: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'",
+        "violation: Added a new example (example 12) with 'speaker_gender: female' to fulfill the requirement that example sentences include at least one male and one female speaker_gender. Rule: 'Example sentences should include at least one male and one female speaker_gender.'",
+        "schema: Removed 'post_example_writeup' field as it was null. Rule: 'No fields should be null. Omit fields that are not applicable instead.'"
     ]
 }

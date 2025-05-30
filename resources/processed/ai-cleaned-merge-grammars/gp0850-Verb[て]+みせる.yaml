@@ -256,19 +256,5 @@
     "post_false_friends_writeup": "",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/verb-て-みせる"
-    },
-    "change": [
-        "schema: Added 'rarity' field to all entries in 'conjugations' array, as required by the schema.",
-        "violation: Removed 'imperative plain (～ろ/～え)', 'imperative polite (～なさい)', 'potential (～られる/～える)', 'passive (～られる/～かれる)', and 'causative (～させる)' forms from 'conjugations'. Rule: 'Only list conjugations that, when used, preserve the meaning of the grammar point.' These forms do not align with the core meaning of the *speaker's* determination to *show* something.",
-        "violation: Corrected the 'type' field for 'non-past polite' and 'negative non-past polite' in 'conjugations' to conform to the schema's 'conjugationType' enum (e.g., 'non-past polite (～ます)' instead of 'polite (non-past)').",
-        "violation: Rephrased example 5 to remove A/B dialogue. Rule: 'Must be from the point of view of a single speaker. No back-and-forth dialogue.'",
-        "violation: Rephrased example 7 to remove A/B dialogue. Rule: 'Must be from the point of view of a single speaker. No back-and-forth dialogue.'",
-        "violation: Rephrased example 8 to remove explicit quotes. Rule: 'Must not use quotes including 「」'.",
-        "violation: Rephrased example 10 to combine two sentences into one. Rule: 'Must be just one sentence unless. Use \"scene\" if you need to set up context.'",
-        "schema: Added 'conjugation' field to all example sentences, as required by the schema when a top-level 'conjugations' array is present.",
-        "schema: Added 'scene_rationale' to all examples where a 'scene' was present and alternative grammar existed, as required by the schema. This involved identifying 'competing_grammar' and providing 'mitigation'.",
-        "violation: Ensured 'listener_gender' diversity by setting example 5 to include a male listener. Rule: 'Example sentences should include at least one male and one female listener_gender.'",
-        "unnatural: Adjusted 'rarity' values for certain conjugations (e.g., 'てみせれば', 'てみせたら', 'てみせよう', 'てみせましょう') to 'uncommon' or 'rare' as appropriate, reflecting more natural usage.",
-        "unnatural: Added a new example (11) using the 'volitional polite' conjugation to demonstrate a broader range of conjugations and further diversify the examples' settings and registers."
-    ]
+    }
 }

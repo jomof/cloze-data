@@ -1,6 +1,18 @@
 {
     "grammar_point": "ということだ",
     "id": "gp0519",
+    "conjugations": [
+        {
+            "type": "dictionary (plain non-past)",
+            "form": "ということだ",
+            "rarity": "common"
+        },
+        {
+            "type": "non-past polite (～ます)",
+            "form": "ということです",
+            "rarity": "common"
+        }
+    ],
     "pronunciation": {
         "katakana": "トイウコトダ",
         "romaji": "to iu koto da"
@@ -35,8 +47,7 @@
             ],
             "register": "formal",
             "setting": "informative",
-            "etymology": "「井戸水」 is well water. 「汚染」 is pollution.",
-            "nuance": "The use of 「ということだ」 indicates that the contamination of the well water is a reported fact, likely from an official source or common knowledge, rather than a personal observation."
+            "etymology": "「井戸水」 is well water. 「汚染」 is pollution."
         },
         {
             "japanese": "この 魚 は 全く 臭く ない 。 まだ 新鮮 {ということだ} 。",
@@ -54,8 +65,7 @@
             ],
             "register": "casual",
             "setting": "informative",
-            "etymology": "「新鮮」 means fresh.",
-            "nuance": "The phrase 「ということだ」 functions here to convey the conclusion or explanation that the fish is fresh, based on the observation that it has no smell."
+            "etymology": "「新鮮」 means fresh."
         },
         {
             "japanese": "先生 に よると 、 この 病気 は 薬 では 治せ ない {ということだ} 。",
@@ -245,6 +255,7 @@
             "register": "formal",
             "setting": "informative",
             "speaker_age": "older",
+            "conjugation": "non-past polite (～ます)",
             "etymology": "「治療方法」 is treatment method. 「見つかった」 is was discovered.",
             "nuance": "The formal phrasing 「によりますと」 (according to) emphasizes Professor Nintai as the authoritative source. 「ということです」 further elevates the tone, indicating a significant and officially reported discovery, suitable for important news."
         },
@@ -267,6 +278,26 @@
             "speaker_gender": "male",
             "listener_gender": "male",
             "nuance": "The use of 「部長の話だと」 (according to the department head) clearly indicates the source of the information, and the male speaker uses 「ということだ」 to formally convey this information to a male junior colleague."
+        },
+        {
+            "japanese": "母 の 話 だ と 、 明日 は 買い物 に 行く {ということだ} 。",
+            "english": "According to my mother, we're going shopping tomorrow.",
+            "scene": "A daughter tells her friend about her mother's plans for the next day.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "明日 は 買い物 に 行く らしい 。",
+                    "mitigation": "This implies less certainty or more speculation. The scene suggests a confirmed plan relayed by the mother, making 「ということだ」 more appropriate for reporting a definite arrangement."
+                },
+                {
+                    "competing_grammar": "明日 は 買い物 に 行く と 聞いた 。",
+                    "mitigation": "While this directly states 'I heard', 「ということだ」 frames the information as a general known fact or arrangement from the mother, rather than just a personal act of hearing."
+                }
+            ],
+            "register": "casual",
+            "setting": "friendly",
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "nuance": "The phrase 「母の話だと」 indicates the information's source. The use of 「ということだ」 in a casual setting conveys this information as a confirmed plan or arrangement, common among family and friends."
         }
     ],
     "false_friends": [
@@ -312,12 +343,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/ということだ"
     },
     "change": [
-        "violation: Added `meaning_warning` field. (Rule: \"meaning_warning\": { \"$ref\": \"#/definitions/english\" } in schema, implied useful to add if available.)",
-        "violation: Modified `details.使用域` to `Usage domain` and `一般` to `General`. (Rule: \"English **must** be a natural-sounding and grammatically correct.\" - `使用域: 一般` was not English).",
-        "unnatural: Changed `{と言う 事 だ}` or `{という 事 です}` to `{ということだ}` or `{ということです}` in examples 2, 9, 10, 11, 12, 13 for consistency with grammar point notation.",
-        "violation: Removed example 7 (`彼 は 家族 に 内緒 で 旅行 に 行った {そうだ} 。`) because it did not use the target grammar point `ということだ`. (Rule: \"Each example **must** use the grammar_point, though it may be in conjugated form.\")",
-        "violation: Added `scene_rationale` to all examples that had a `scene` field. (Rule: \"Must be present if \\\"scene\\\" is present.\")",
-        "violation: Added a new example with a male speaker and male listener (部長 の 話 だ と...) to satisfy the diversity requirement for speaker/listener gender. (Rule: \"Example sentences should include at least one male and one female speaker_gender. ... at least one male and one female listener_gender.\")",
-        "unnatural: Refined `nuance` for several examples (1, 2, 7, 9, 10, 12) to be more specific and directly reference the Japanese phrasing, improving clarity and adherence to the character persona."
+        "schema: Added `conjugations` field as `だ` and `です` forms are used in examples, as required by the schema.",
+        "violation: Added a new example with female speaker and female listener to satisfy the diversity requirement for speaker/listener gender. (Rule: \"Example sentences should include at least one male and one female speaker_gender. ... at least one male and one female listener_gender.\")"
     ]
 }

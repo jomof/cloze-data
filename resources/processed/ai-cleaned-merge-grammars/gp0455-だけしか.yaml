@@ -53,6 +53,23 @@
             "setting": "negotiating"
         },
         {
+            "japanese": "日曜日{だけしか} 休みが取れない。",
+            "english": "I can only take breaks on Sunday.",
+            "scene": "A very busy professional discussing their tight schedule with a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "日曜日しか休みが取れない。",
+                    "mitigation": "The speaker feels overwhelmed by the strict lack of free time, emphasizing the *single* day available with no flexibility. 『だけしか』 conveys this more intensely than 『しか』."
+                },
+                {
+                    "competing_grammar": "日曜日だけ休みが取れる。",
+                    "mitigation": "The nuance is not just about what day is free, but the *absence* of free time on other days, implying a frustration or limitation. The negative verb with 『だけしか』 captures this."
+                }
+            ],
+            "register": "casual",
+            "setting": "informative"
+        },
+        {
             "japanese": "この中ではタケシ{だけしか} 下手じゃない。他の人はみんな上手だ。",
             "english": "In this group, Takeshi is the only one who isn't good. Everyone else is skilled.",
             "scene": "Evaluating skill levels within a group.",
@@ -236,7 +253,6 @@
             "nuance": "「あなた」 is a formal way of addressing someone, often used in intimate contexts between adults. The plain form 「信じられない」, rather than a polite form, conveys raw emotion and vulnerability, suitable for an older female expressing deep trust to an older male."
         }
     ],
-    "post_example_writeup": null,
     "false_friends": [
         {
             "term": "だけ",
@@ -268,11 +284,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/だけしか"
     },
     "change": [
-        "violation: Removed 'listener_age' field from examples. (Rule: \"listener_age\" is deprecated. You *must* remove it.)",
-        "violation: Added 'scene_rationale' to examples that include a 'scene'. (Rule: \"Must\" be present if \"scene\" is present.)",
-        "violation: Removed example '僕は日本語だけしかできません。' which was re-introduced by the input, as '僕' is an N1 kanji for an N3 grammar point. (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
-        "unnatural: Corrected Japanese description '使用域: \"一般\"' in 'details' to English 'Usage Area: \"General\"'. (Rule: \"English must be a natural-sounding and grammatically correct.\")",
-        "violation: Replaced example '私には従兄弟が一人{だけしか}いません。' with '私には親友が一人{だけしか}いません。' to remove the N2 kanji '従'. (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
-        "violation: Reverted 'false_friends' 'kind' back to 'similar expression' from 'synonym' and restored original 'nuance' to ensure more accurate contrast. (Rule: \"nuance\": a concise contrast to the main grammar point)"
+        "schema: Omitted the 'post_example_writeup' field because it was 'null', aligning with the schema requirement to omit null fields.",
+        "violation: Added a new example, '日曜日{だけしか} 休みが取れない。', which was present in the input data but missing from the prior version, to ensure a comprehensive set of examples."
     ]
 }

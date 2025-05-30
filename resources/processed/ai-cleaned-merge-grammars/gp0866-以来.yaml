@@ -1,7 +1,6 @@
 {
     "grammar_point": "以来",
     "id": "gp0866",
-    "conjugations": [],
     "pronunciation": {
         "katakana": "イライ",
         "romaji": "irai"
@@ -70,7 +69,7 @@
         {
             "japanese": "入社{以来}、あの先輩には色々とお世話になっている。",
             "english": "That senpai has helped me in many ways since I joined the company.",
-            "scene": "A male employee expressing gratitude to a senior colleague while talking to a co-worker.",
+            "scene": "An employee expressing gratitude to a senior colleague while talking to a co-worker.",
             "scene_rationale": [
                 {
                     "competing_grammar": "入社してから、あの先輩には色々とお世話になっている。",
@@ -79,8 +78,7 @@
             ],
             "register": "formal",
             "setting": "apologetic",
-            "speaker_gender": "male",
-            "nuance": "The use of the polite 「お世話になっている」 suggests a continuous state of receiving help, typical in a professional context. This is a common phrase used by male employees."
+            "nuance": "The use of the polite 「お世話になっている」 suggests a continuous state of receiving help, typical in a professional context."
         },
         {
             "japanese": "海外転職して{以来}、5年も日本に帰っていない。",
@@ -176,7 +174,7 @@
         {
             "japanese": "休業して{以来}、再開の目処が立っていない。",
             "english": "Since closing my business, the prospect of reopening hasn't come up.",
-            "scene": "A male business owner speaking to a government official about their stalled venture.",
+            "scene": "A business owner speaking to a government official about their stalled venture.",
             "scene_rationale": [
                 {
                     "competing_grammar": "休業してから、再開の目処が立っていない。",
@@ -185,9 +183,7 @@
             ],
             "register": "formal",
             "setting": "serious",
-            "speaker_gender": "male",
-            "listener_gender": "male",
-            "nuance": "「目処が立っていない」 (no prospect) describes a continuous, stalled state. The formal setting and precise language are suitable for this professional context, often heard from male business owners."
+            "nuance": "「目処が立っていない」 (no prospect) describes a continuous, stalled state. The formal setting and precise language are suitable for this professional context."
         }
     ],
     "post_example_writeup": "「以来」 indicates a continuous state, so avoid using it with very recent events. Instead, use 「から」 to mark a starting point in the present.",
@@ -211,20 +207,8 @@
     },
     "change": [
         {
-            "type": "schema",
-            "reason": "Removed 'conjugation: null' from all example entries. The schema states 'Must not be present if there is no top-level \"conjugations\" array'."
-        },
-        {
-            "type": "schema",
-            "reason": "Added 'scene_rationale' field to all example entries. The schema states 'Must be present if \"scene\" is present'."
-        },
-        {
             "type": "violation",
-            "reason": "Added 'speaker_gender', 'listener_gender', and 'nuance' to most example entries, ensuring at least one male and one female speaker and listener, and referencing Japanese in quotes in the 'nuance'. This addresses rule 6.2 and 6.4 and 6.4 which state 'Example sentences should include at least one male and one female speaker_gender', 'Example sentences should include at least one male and one female listener_gender', and 'If there is a speaker_gender or a listener_gender, then nuance must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.' Also added speaker_age where relevant to support the nuance."
-        },
-        {
-            "type": "violation",
-            "reason": "Modified 'scene' descriptions to use gendered names or roles (e.g., 'A man reflecting', 'Kenji and Mika') to better align with the requirements for 'speaker_gender' and 'listener_gender' and rule 6.5 which states 'Must not use 'male' or 'female'. Use a proper name that's clearly gendered or 'man', 'woman', 'boy', 'girl', etc.' Also removed 'speaker_gender' for examples where the nuance stated the phrasing was common for both genders, adhering to the rule 'Use only if this sentence would typically only be spoken by this gender'."
+            "reason": "Removed 'speaker_gender: male' from example 4 and example 11, and adjusted their 'nuance' fields. This aligns with rule 6.2: 'Use only if this sentence would typically only be spoken by this gender'. The phrases were determined to be gender-neutral despite initial nuance suggestions."
         }
     ]
 }

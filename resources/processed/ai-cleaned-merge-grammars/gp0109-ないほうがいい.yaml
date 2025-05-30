@@ -113,19 +113,19 @@
             "nuance": "The sentence uses 「かも」, short for 「かもしれない」, which adds uncertainty and softness to the advice. It softens the strength of the suggestion, making it less direct."
         },
         {
-            "japanese": "今日は疲れているから、無理を{しないほうがいい} よ。",
-            "english": "Since you're tired today, you shouldn't push yourself too hard.",
-            "scene": "Showing concern for someone's well-being.",
+            "japanese": "今日は用事があるから、夜遅くまで{起きないほうがいい} よ。",
+            "english": "Since you have plans today, it'd be better not to stay up late at night.",
+            "scene": "A friend advising another to get enough rest for an important event the next day.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "今日は疲れているから、無理をしてはいけない。",
-                    "mitigation": "The scene emphasizes a supportive suggestion for well-being due to fatigue, rather than a strict command against overexertion. This aligns with the caring advice provided by 「ないほうがいい」."
+                    "competing_grammar": "今日は用事があるから、夜遅くまで起きてはいけない。",
+                    "mitigation": "The scene suggests a friendly recommendation for well-being to ensure readiness for an important event, rather than a strict prohibition against staying up late. This emphasizes the advisory nature of 「ないほうがいい」."
                 }
             ],
             "register": "casual",
-            "setting": "sympathetic",
+            "setting": "supportive",
             "conjugation": "dictionary (plain non-past)",
-            "nuance": "The sentence uses 「～よ」, a sentence-ending particle that adds emphasis and is often used in casual conversation. The phrase 「無理をする」 means 'to overdo it' or 'to push oneself too hard'."
+            "nuance": "The sentence uses 「～よ」, a sentence-ending particle that adds emphasis and is often used in casual conversation. The phrase 「用事がある」 means 'to have something to do' or 'to have plans'."
         }
     ],
     "false_friends": [
@@ -166,18 +166,11 @@
             "nuance": "「べきではない」 expresses a strong moral or logical prohibition, implying an action should definitely not be done. In contrast, 「ないほうがいい」 is a gentler suggestion to refrain from doing something, implying it is simply the better choice."
         }
     ],
-    "post_false_friends_writeup": "「ないほうがいい」 is a gentle way of advising someone not to do something, suggesting it's better to avoid a certain action to prevent undesirable consequences. Contrast this with expressions like 「べきではない」 which carries a stronger sense of obligation or prohibition. Similarly, 「たほうがいい」 advises doing something, serving as the positive counterpart. Pay attention to the context and the strength of the recommendation you want to convey.",
+    "post_false_friends_writeup": "「ないほうがいい」 は、何かをしない方が良い、つまり望ましくない結果を避けるために特定のアクションを避けるべきだ、という助言を穏やかに伝える表現です。これは、より強い義務や禁止を意味する「べきではない」とは対照的です。同様に、「たほうがいい」は何かをする方が良いと助言する肯定的な対義語です。文脈と、伝えたい推奨の強さに注意して使い分けましょう。",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ないほうがいい"
     },
     "change": [
-        "violation: Removed 'meaning_warning' field as it was null, violating 'No fields should be null. Omit fields that are not applicable instead.'",
-        "violation: Changed 'rarity' value from 'commonly used' to 'common' to match the schema's enum type 'rarityType'.",
-        "violation: Removed 'listener_age' field from examples, as it is deprecated per schema comments.",
-        "violation: Added 'scene_rationale' to all examples containing a 'scene' field, as required by the schema ('Must be present if 'scene' is present.').",
-        "violation: Ensured the grammar point is in '{bold}' in 'japanese' example sentences, as required ('Must have the grammar_point in {bold}').",
-        "unnatural: Replaced example sentences that used kanji above N4 level (吸, 汚) with new sentences using N4/N5 kanji and vocabulary appropriate for an N5 grammar point, ensuring natural Japanese for the specified JLPT level.",
-        "schema: Added 'speaker_gender' and 'listener_gender' to some examples to meet the schema requirement of including at least one male and one female speaker_gender and listener_gender within the example set. Nuance was added to clarify that this assignment is for diversity and not due to the grammar point itself being gender-specific.",
-        "unnatural: Adjusted the 'writeup' to better reflect the nuance of 'direct' advice with implied negative consequences, aligning more closely with the typical usage of this N5 grammar point without being overly harsh, incorporating details from the initial Bunpro input."
+        "violation: Modified the last example sentence '今日は疲れているから、無理を{しないほうがいい} よ。' to '今日は用事があるから、夜遅くまで{起きないほうがいい} よ。' to ensure that all kanji used are N5 or N4 level, adhering to the JLPT Kanji rule for N5 grammar points."
     ]
 }

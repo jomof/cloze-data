@@ -1,7 +1,6 @@
 {
     "grammar_point": "にひきかえ",
     "id": "gp1066",
-    "conjugations": [],
     "pronunciation": {
         "katakana": "ニヒキカエ",
         "romaji": "ni hiki kae"
@@ -21,7 +20,7 @@
     "writeup": "に引き換え is used to make stark comparisons between two things, often translated as \"in comparison to (A), (B)\" or \"in stark contrast to (A), (B).\" It highlights a significant difference or opposition between two observable or measurable facts, where one is usually considered good and the other bad, based on the speaker's subjective opinion.\n\n*   **Structure:** It can follow nouns or demonstrative pronouns directly. When used with い-adjectives or verbs, の is required before に引き換え. For な-adjectives, なの is required.\n*   **Emphasis on Contrast:** This pattern emphasizes a substantial difference, indicating that (A) and (B) are at opposite ends of a spectrum.\n*   **Observable Facts:** It is crucial that both (A) and (B) are based on observable or measurable facts rather than assumptions or guesses.\n*   **Sentence Initial Use:** それにひきかえ can be used to begin sentences, drawing a comparison to a previous statement.",
     "examples": [
         {
-            "japanese": "周りの人たちはどんどん就職して いっているのに{引き換え}、俺はまだ面接さえしていない。",
+            "japanese": "周りの人たちはどんどん就職していっているのに{引き換え}、俺はまだ面接さえしていない。",
             "english": "In stark contrast to the people around me, who are getting jobs, I haven’t even gone to an interview.",
             "scene": "A person complaining about their job search.",
             "scene_rationale": [
@@ -169,12 +168,12 @@
             "nuance": "「〜だなあ」 expresses a sense of observation or mild complaint about the cat's laziness."
         },
         {
-            "japanese": "あの 子は いつも 元気に 踊って いる。それに{引き換え}、私は 家で ゴロゴロ して いる だけよ。",
+            "japanese": "あの 子は いつも 元気に 踊っている。それに{引き換え}、私は 家で ゴロゴロ している だけよ。",
             "english": "That child is always dancing energetically. In stark contrast, I'm just lazing around at home.",
             "scene": "Someone feeling lazy and comparing themselves to an energetic child.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "あの子は いつも 元気に 踊って いる。それに 私は 家で ゴロゴロ して いる だけよ。",
+                    "competing_grammar": "あの子は いつも 元気に 踊っている。それに 私は 家で ゴロゴロ している だけよ。",
                     "mitigation": "The scene conveys a sense of self-deprecating humor and personal reflection, where にひきかえ precisely captures the ironic and clear contrast between the child's energy and the speaker's laziness."
                 }
             ],
@@ -219,11 +218,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/にひきかえ"
     },
     "change": [
-        "command: Added mandated example. Filled in `scene_rationale` and ensured grammar point was bolded `{}`. Ensured all examples used consistent bolding for the grammar point.",
-        "schema: Added `scene_rationale` to all examples where `scene` was present to comply with schema requirements (scene_rationale must be present if scene is present).",
-        "unnatural: Corrected spacing in Japanese sentences for better readability and parsing.",
-        "violation: Removed etymology from example 1 as it was a usage note, not etymology. (Rule: \"Etymology of the example sentence or specific phrases in the japanese example sentence. - Must not repeat the etymology of the grammar point.\")",
-        "schema: Added `listener_gender: \"no one\"` to examples where the speaker is reflecting or making a general statement to ensure the `listener_gender` field is present where applicable, as the schema requires speaker/listener gender diversity in examples. This helps satisfy the requirement when specific gendered speech forms are not dictated by the grammar point itself.",
-        "schema: Added `false_friends` and `post_false_friends_writeup` based on DOJG's related expressions, providing distinct nuances from the main grammar point."
+        "schema: Removed 'conjugations' field because it's not applicable to this grammar point according to the schema rules (only for dictionary form verbs/adjectives), and it was present as an empty array."
     ]
 }

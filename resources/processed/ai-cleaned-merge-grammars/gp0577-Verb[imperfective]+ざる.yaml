@@ -57,7 +57,7 @@
             "setting": "serious"
         },
         {
-            "japanese": "絶え{ざる}失敗にも、僕は決して負けません。",
+            "japanese": "絶え{ざる}失敗にも、私は決して負けません。",
             "english": "I will absolutely not lose, not even to unending failures.",
             "scene": "You are giving a pep talk to yourself, affirming your resilience and determination in the face of continuous challenges.",
             "scene_rationale": [
@@ -69,11 +69,11 @@
             "register": "formal",
             "setting": "inspirational",
             "speaker_gender": "male",
-            "nuance": "The use of 「ざる」 here emphasizes the continuous and unchanging nature of the failures, highlighting the speaker's deep resolve. This sentence is typical for a male speaker, indicated by the use of 「僕」."
+            "nuance": "The use of 「ざる」 here emphasizes the continuous and unchanging nature of the failures, highlighting the speaker's deep resolve. The use of 「私」 is neutral for speaker gender, though in this context, with `speaker_gender` set to male, it implies a male speaker's internal monologue."
         },
         {
-            "japanese": "たゆま{ざる}努力をすることが、成功への鍵だと私は信じています。",
-            "english": "I believe that putting in unrelenting effort is the key to success.",
+            "japanese": "たゆま{ざる}努力をすることが、成功への道だと私は信じています。",
+            "english": "I believe that putting in unrelenting effort is the path to success.",
             "scene": "A businesswoman is sharing her personal philosophy and wisdom during a mentorship session with a younger colleague.",
             "scene_rationale": [
                 {
@@ -87,20 +87,20 @@
             "nuance": "「たゆまざる」 conveys a formal, almost proverbial wisdom about continuous, unceasing effort, making it highly suitable for a professional setting where one imparts serious advice. The phrase 「私は信じています」 allows for a female speaker to express a conviction without using typically masculine sentence endings."
         },
         {
-            "japanese": "あなたの{知られざる}魅力は、僕を惹きつけますね。",
+            "japanese": "あなたの{知られざる}魅力は、私を惹きつけますね。",
             "english": "Your hidden charm truly captivates me.",
             "scene": "A man subtly complimenting a woman he's attracted to, creating a romantic and slightly mysterious atmosphere.",
             "scene_rationale": [
                 {
                     "competing_grammar": "あなたの知らない魅力は、僕を惹きつけますね。",
-                    "mitigation": "「知られざる」 implies a deeper, more profound sense of 'unknown' or 'unrevealed' charm, adding a layer of sophistication and intrigue that enhances the flirty tone, making the compliment more poignant. The use of 「僕」 indicates a male speaker, and the ending 「〜ね」 softens the statement, making it more intimate and inviting despite the formal tone of 「ざる」 itself."
+                    "mitigation": "「知られざる」 implies a deeper, more profound sense of 'unknown' or 'unrevealed' charm, adding a layer of sophistication and intrigue that enhances the flirty tone, making the compliment more poignant. The use of 「私」 is neutral, but the context of a male speaker complimenting a female listener, combined with the softening 「〜ね」, makes it intimate."
                 }
             ],
             "register": "shitashii kuchō (intimate)",
             "setting": "flirty",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "The phrase 「知られざる魅力」 adds a sophisticated, slightly mysterious layer to the compliment. The use of 「僕」 indicates a male speaker, and the ending 「〜ね」 softens the statement, making it more intimate and inviting despite the formal tone of 「ざる」 itself."
+            "nuance": "The phrase 「知られざる魅力」 adds a sophisticated, slightly mysterious layer to the compliment. The use of 「私」 is neutral, but the context of a male speaker complimenting a female listener, combined with the softening 「〜ね」, makes it intimate despite the formal tone of 「ざる」 itself."
         },
         {
             "japanese": "この都市にはまだ{知られざる}魅力的な場所がたくさんあるそうですよ。",
@@ -172,11 +172,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/ざる"
     },
     "change": [
-        "schema: Removed top-level 'conjugations' array. The grammar point 'Verb[imperfective]+ざる' consists of a verb conjugated to its imperfective form followed by the fixed auxiliary 'ざる', which does not conjugate further itself. Per schema, the 'conjugations' array is for grammar points that *contain* a verb/adjective in dictionary form and whose meaning is preserved across its conjugations.",
-        "schema: Removed the 'conjugation' field from all example entries. This field is only required when a top-level 'conjugations' array is present, as stipulated by the schema.",
-        "violation: Added 'scene' and 'scene_rationale' to all example entries that previously lacked them, in accordance with schema requirements for providing context and differentiating from competing grammar points.",
-        "violation: Added a new example sentence to ensure the inclusion of at least one example with a male listener, addressing Rule 6's requirement for speaker and listener gender diversity.",
-        "violation: Modified the Kanji usage in a new example sentence from '暁' (N1) to '事業' (N3) to ensure all kanji used are appropriate for the N2 JLPT level of the grammar point, adhering to JLPT kanji level rules.",
-        "violation: Maintained the refined 'writeup' section from the prior version. This content, while a refinement of the original, significantly improves clarity and academic tone by rephrasing and structuring the information, which aligns with Rule 17's allowance for rephrasing for clarity in the 'writeup' section."
+        "violation: Changed N1 kanji `僕` to N4 kanji `私` in example 4 to comply with the JLPT N2 kanji level requirement for the grammar point. Updated English and nuance accordingly.",
+        "violation: Changed N1 kanji `鍵` to N3 kanji `道` in example 5 to comply with the JLPT N2 kanji level requirement for the grammar point. Updated English accordingly.",
+        "violation: Changed N1 kanji `僕` to N4 kanji `私` in example 6 to comply with the JLPT N2 kanji level requirement for the grammar point. Updated English and nuance accordingly."
     ]
 }

@@ -46,7 +46,7 @@
             "nuance": "「{確かに}」 acknowledges the speaker's wrongdoing with conviction. The use of 「ごめん」 indicates a casual register."
         },
         {
-            "japanese": "{確かに}結構難しいね。ちょっと甘く見てたわ。",
+            "japanese": "{確かに}かなり難しいね。ちょっと甘く見てたわ。",
             "english": "This is certainly difficult. I underestimated it.",
             "scene": "Acknowledging the difficulty of a task.",
             "scene_rationale": [
@@ -91,18 +91,18 @@
             "nuance": "「{確かに}」 adds sincerity to the compliment, suggesting genuine appreciation of the woman's appearance."
         },
         {
-            "japanese": "移籍金はかなりの額だったが、{確かに}活躍している。",
-            "english": "The fee for transferring was a considerable amount, but he is certainly actively participating.",
+            "japanese": "移籍金はかなりの額だったが、{確かに}よくやっている。",
+            "english": "The fee for transferring was a considerable amount, but he is certainly doing well.",
             "scene": "Discussing a sports player's performance after a costly transfer.",
             "scene_rationale": [
                 {
                     "competing_grammar": "移籍金はかなりの額だったが、活躍している。",
-                    "mitigation": "The scene is discussing a player's performance. 「確かに」 acknowledges and confirms the player's performance, often in contrast to potential skepticism due to the high fee, or affirming a widely observed fact."
+                    "mitigation": "The scene involves discussing a player's performance. 「確かに」 acknowledges and confirms the player's performance, often in contrast to potential skepticism due to the high fee, or affirming a widely observed fact."
                 }
             ],
             "register": "casual",
             "setting": "informative",
-            "nuance": "「{確かに}」 is used to confirm that despite the high transfer fee, the player is performing well."
+            "nuance": "「{確かに}」 is used to confirm that despite the high transfer fee, the player is indeed doing well."
         },
         {
             "japanese": "{確かに}君の言う通りだ。よく気が付いたね。",
@@ -135,8 +135,8 @@
             "nuance": "The older speaker uses 「{確かに}」 to reinforce the obligation of students based on school rules. This sentence has a formal tone due to 「規則上」 and 「べきだ」, fitting for an instructional setting."
         },
         {
-            "japanese": "彼のうちは音楽一家らしいが、{確かに}楽器がうまい。",
-            "english": "I heard he is from a musical household, but he is certainly skilled with an instrument.",
+            "japanese": "彼のうちは音楽一家らしいが、{確かに}音楽の才能がある。",
+            "english": "I heard he is from a musical household, but he certainly has musical talent.",
             "scene": "Two friends discussing a mutual acquaintance's talent.",
             "scene_rationale": [
                 {
@@ -146,7 +146,7 @@
             ],
             "register": "casual",
             "setting": "informative",
-            "nuance": "「{確かに}」 confirms the speaker's observation that the person is indeed skilled, reinforcing the rumor."
+            "nuance": "「{確かに}」 confirms the speaker's observation that the person indeed has musical talent, reinforcing the rumor."
         },
         {
             "japanese": "{確かに}君の話は面白いね。もっと聞きたいな。",
@@ -165,8 +165,8 @@
             "nuance": "「{確かに}」 adds a genuine, thoughtful tone to the compliment, implying the speaker truly finds the conversation engaging and wants to continue. The particle 「な」 at the end, used by a male speaker, can soften the request and make it sound more inviting."
         },
         {
-            "japanese": "部長の意見は{確かに}的を射ていますね。",
-            "english": "The manager's opinion is certainly spot on, isn't it?",
+            "japanese": "部長の意見は{確かに}ごもっともですね。",
+            "english": "The manager's opinion is certainly valid, isn't it?",
             "scene": "A female employee agreeing with her male boss in a meeting.",
             "scene_rationale": [
                 {
@@ -178,7 +178,7 @@
             "setting": "professional",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "「{確かに}」 is used by a female speaker to express strong agreement and affirmation of the manager's correctness in a professional setting. The polite 「～ですね」 confirms this."
+            "nuance": "「{確かに}」 is used by a female speaker to express strong agreement and affirmation of the manager's opinion in a professional setting. The polite 「～ですね」 confirms this."
         }
     ],
     "post_example_writeup": "Note that while 「確かに」 can mean \"certainly\" in the sense of verifying information, it does *not* carry the nuance of giving permission, as it sometimes does in English. Saying 「確かに！宿題が終わってるならゲームをしてもいいよ。」 sounds unnatural in Japanese.",
@@ -195,10 +195,9 @@
         "bunpro": "https://bunpro.jp/grammar_points/確かに"
     },
     "change": [
-        "violation: Added 'scene_rationale' to all examples that previously lacked it, as required by the schema's definition of 'scene_rationale' which states it 'Must be present if 'scene' is present.'",
-        "violation: Adjusted 'register' types in examples 1, 4, 5, 6, 7, and 10 to conform to the predefined 'registerType' enum (e.g., 'standard' to 'teineigo (polite)', 'semi-formal' to 'casual' or 'teineigo (polite)'), as required by the schema.",
-        "schema: Removed the deprecated 'listener_age' field from examples 7 and 8, as instructed by the schema comment: 'listener_age' is deprecated. You *must* remove it.'",
-        "unnatural: Refined 'nuance' for examples 7 and 8 to explicitly incorporate the 'speaker_age' context as suggested by the schema's 'nuance' definition: 'If there is a \"speaker_age\", then \"nuance\" **must** mention the specific Japanese, in 「quotes」, that would only be spoken by someone of that age.'",
-        "violation: Added a new example (example 11) with a 'female' speaker and 'male' listener to ensure the examples include at least one male and one female listener_gender, as required by rule 6: 'Example sentences should include at least one male and one female listener_gender.'"
+        "violation: Example 3 'japanese' changed from '結構難しいね' to 'かなり難しいね' because '結' in '結構' is an N1 kanji, violating the JLPT N2 level requirement for the grammar point.",
+        "violation: Example 6 'japanese' changed from '活躍している' to 'よくやっている' because '躍' in '活躍' is an N1 kanji, violating the JLPT N2 level requirement. The 'english' and 'nuance' were updated for consistency.",
+        "violation: Example 9 'japanese' changed from '楽器がうまい' to '音楽の才能がある' because '器' in '楽器' is an N1 kanji, violating the JLPT N2 level requirement. The 'english' and 'nuance' were updated for consistency.",
+        "violation: Example 11 'japanese' changed from '的を射ていますね' to 'ごもっともですね' because '射' in '的を射る' is an N1 kanji, violating the JLPT N2 level requirement. The 'english' and 'nuance' were updated for consistency."
     ]
 }

@@ -19,7 +19,7 @@
     "writeup": "「だらけ」 is a suffix used to express that something is \"covered in\" or \"full of\" something else. It attaches directly to nouns. Often, it implies that the thing it's covered in is undesirable or excessive.\n\n*   When 「だらけ」 is followed by the particle 「の」, it modifies another noun. For example, 「ゴミだらけの部屋」 (a room full of garbage).\n*   The noun after 「の」 can be omitted if the context is clear.\n\n**Important Considerations**\n\n*   「だらけ」 is often used to describe things scattered or spread out. Thus, it may sound unnatural to describe something covered uniformly unless that scattered quality is implied.\n*   It carries a negative connotation. Thus, you would not use 「だらけ」 to describe something covered with something desirable, unless the speaker intentionally uses it to imply an *overwhelming* or *excessive* amount, even if generally positive, to convey a specific nuanced meaning.",
     "examples": [
         {
-            "japanese": "パンケーキ の 裏側 が 穴 {だらけ} で 気持ち悪い。",
+            "japanese": "パンケーキ の 下 の 面 が 穴 {だらけ} で 気持ち悪い。",
             "english": "The underside of this pancake is covered in holes so it is gross.",
             "scene": "Someone is complaining about their pancake.",
             "scene_rationale": [
@@ -58,7 +58,7 @@
             "setting": "serious"
         },
         {
-            "japanese": "泥 {だらけ} の 服 を 洗濯機 に いれないで！",
+            "japanese": "どろ {だらけ} の 服 を 洗濯機 に いれないで！",
             "english": "Don't put mud-covered clothes in the washing machine!",
             "scene": "Someone is upset that muddy clothes are about to go in the washing machine.",
             "scene_rationale": [
@@ -71,7 +71,7 @@
             "setting": "commanding"
         },
         {
-            "japanese": "血 {だらけ} の シャツ を クリーニング に 出した。",
+            "japanese": "ち {だらけ} の シャツ を クリーニング に 出した。",
             "english": "I took my blood-covered shirt to the dry cleaner.",
             "scene": "Someone needs to clean a shirt with many bloodstains.",
             "scene_rationale": [
@@ -84,7 +84,7 @@
             "setting": "serious"
         },
         {
-            "japanese": "床 が 泥 {だらけ} になった。",
+            "japanese": "ゆか が どろ {だらけ} になった。",
             "english": "The floor became covered in dirt.",
             "scene": "Someone is observing the state of the floor.",
             "scene_rationale": [
@@ -110,7 +110,7 @@
             "setting": "informative"
         },
         {
-            "japanese": "汗 {だらけ} でも かまわない。",
+            "japanese": "あせ {だらけ} でも かまわない。",
             "english": "I don't mind being covered in sweat.",
             "scene": "Someone is shrugging off being sweaty.",
             "scene_rationale": [
@@ -178,7 +178,7 @@
             "nuance": "This sentence uses 「笑顔{だらけ}」 in a positive context, which is a nuanced departure from the typical negative connotation of 「だらけ」. It implies an overwhelming abundance of smiles, emphasizing the speaker's positive impression. The 「ね」 ending invites agreement and reinforces the casual, intimate tone suitable for a first date."
         },
         {
-            "japanese": "君 の ハート は 嘘 {だらけ} だね。",
+            "japanese": "君 の ハート は うそ {だらけ} だね。",
             "english": "Your heart is full of lies, isn't it?",
             "scene": "A scorned lover confronts their partner.",
             "scene_rationale": [
@@ -194,7 +194,7 @@
             "nuance": "「だね」 is a sentence ending particle expressing confirmation or seeking agreement. Its use, in this context, indicates a casual and possibly accusatory tone, where the speaker is expressing their observation about the listener."
         },
         {
-            "japanese": "彼 の 部屋 は 漫画 {だらけ} で、足 の 踏み場 も ない わ。",
+            "japanese": "彼 の 部屋 は まんが {だらけ} で、足 の 踏み場 も ない わ。",
             "english": "His room is full of manga; there's nowhere to step.",
             "scene": "A mother complaining about her son's messy room.",
             "scene_rationale": [
@@ -236,11 +236,13 @@
         "bunpro": "https://bunpro.jp/grammar_points/だらけ"
     },
     "change": [
-        "violation: Removed 'meaning_warning: null' as it should be omitted according to the schema rule: 'No fields should be null. Omit fields that are not applicable instead.'",
-        "schema: Added 'scene_rationale' to all examples that have a 'scene' field, as required by the schema's item properties for examples ('scene_rationale' must be present if 'scene' is present).",
-        "unnatural: Removed the example '壁をしろだらけに塗ってください。' because it describes a uniform covering, which is unnatural for 'だらけ' as explained in the 'writeup' (it implies scattered elements).",
-        "unnatural: Refined the English translation for '血だらけのシャツをクリーニングに出した。' to remove explanatory comments that should not be in the 'english' field, improving naturalness.",
-        "violation: Added a new example ('彼の部屋は漫画だらけで、足の踏み場もないわ。') with a female speaker and male listener to meet the requirement of having at least one example for both male and female speaker and listener genders.",
-        "schema: Ensured consistent usage of spaces around {grammar_point} in Japanese examples, adhering to the schema rule: 'Japanese **must** have a space between words to assist mecab in parsing. For example imamoto should be '今本' but 'ima hon' should be '今 本'.'"
+        "violation: Removed 'lesson_order' field as it is not part of the output schema and should be omitted. (Rule: 'No fields should be null. Omit fields that are not applicable instead.')",
+        "violation: Replaced N2 kanji 「裏側」 with N5/N3 kanji 「下の面」 in 'パンケーキ の 下 の 面 が 穴 {だらけ} で 気持ち悪い。' to comply with JLPT N3 kanji usage rules for examples.",
+        "violation: Replaced N2 kanji 「泥」 with hiragana 「どろ」 in 'どろ {だらけ} の 服 を 洗濯機 に いれないで！' to comply with JLPT N3 kanji usage rules for examples.",
+        "violation: Replaced N2 kanji 「血」 with hiragana 「ち」 in 'ち {だらけ} の シャツ を クリーニング に 出した。' to comply with JLPT N3 kanji usage rules for examples.",
+        "violation: Replaced N2 kanji 「床」 with hiragana 「ゆか」 in 'ゆか が どろ {だらけ} になった。' to comply with JLPT N3 kanji usage rules for examples.",
+        "violation: Replaced N2 kanji 「汗」 with hiragana 「あせ」 in 'あせ {だらけ} でも かまわない。' to comply with JLPT N3 kanji usage rules for examples.",
+        "violation: Replaced N2 kanji 「嘘」 with hiragana 「うそ」 in '君 の ハート は うそ {だらけ} だね。' to comply with JLPT N3 kanji usage rules for examples.",
+        "violation: Replaced N2 kanji 「漫画」 with hiragana 「まんが」 in '彼 の 部屋 は まんが {だらけ} で、足 の 踏み場 も ない わ。' to comply with JLPT N3 kanji usage rules for examples."
     ]
 }

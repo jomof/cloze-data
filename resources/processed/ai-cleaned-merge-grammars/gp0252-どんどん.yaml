@@ -48,9 +48,7 @@
                 }
             ],
             "register": "casual",
-            "setting": "friendly",
-            "speaker_gender": "male",
-            "nuance": "「飲もう」 is an invitation to drink. A man might say 「飲もう」 in this context."
+            "setting": "friendly"
         },
         {
             "japanese": "{どんどん} 暑く なる。",
@@ -166,7 +164,7 @@
             "setting": "first-date",
             "listener_gender": "female",
             "speaker_gender": "male",
-            "nuance": "A man uses 「なります」 and says 「あなた」 to express his growing feelings toward a woman he is on a date with, making it clear that he likes her cooking and her."
+            "nuance": "The speaker uses polite language (「なります」) appropriate for a first date, emphasizing a sincere and rapidly growing appreciation for the listener's cooking."
         }
     ],
     "false_friends": [
@@ -200,11 +198,9 @@
         "bunpro": "https://bunpro.jp/grammar_points/どんどん"
     },
     "change": [
-        "schema: Added `meaning_warning` field as it was present in the input and is part of the schema.",
-        "schema: Added `scene_rationale` to all examples that included a `scene` field, as required by the schema.",
-        "violation: Removed `etymology` fields from example sentences where the content was not genuinely etymological, as per Rule 6.",
-        "violation: Replaced three example sentences to ensure primary usage of JLPT N4/N5 kanji, adhering to the JLPT kanji usage rules for example sentences.",
-        "violation: Added one new example sentence to ensure the presence of at least one female speaker and one male listener across all examples, as required by Rule 6.",
-        "schema: Removed extraneous top-level fields (`rank`, `lesson_order`) and fields from the `bunpro` nested object (`rank`, `source`, `lesson_order`) that are not part of the defined schema, as per Rule 20."
+        "violation: Removed top-level 'rank' and 'lesson_order' fields, as they are not part of the output schema (Rule 20).",
+        "violation: Flattened the 'bunpro' object structure and moved its contents to the top level, as the 'bunpro' field itself is not a top-level field in the schema (Rule 20). Extracted 'url' to 'sources.bunpro'. Removed 'bunpro.rank', 'bunpro.source', and 'bunpro.lesson_order' for the same reason.",
+        "violation: Removed 'speaker_gender' and associated 'nuance' from the second example, as the usage of 「飲もう」 is not exclusively tied to male speech, violating the rule 'Use only if this sentence would typically only be spoken by this gender' (Rule 6).",
+        "unnatural: Rephrased the 'nuance' for the tenth example to avoid over-interpretation and provide a more accurate explanation of the chosen phrasing in the context of a first date."
     ]
 }

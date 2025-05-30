@@ -217,6 +217,34 @@
                     "mitigation": "This describes a concrete past attempt. 「ようにも」 conveys the immediate and inherent impossibility of moving due to the body's condition, making the 'unable to move' aspect of the scene more central."
                 }
             ]
+        },
+        {
+            "japanese": "その本は買{おうにも}、もう絶版だった。",
+            "english": "Even though I wanted to buy that book, it was already out of print.",
+            "scene": "A person trying to purchase a specific book, but discovering it's no longer available.",
+            "register": "casual",
+            "setting": "informative",
+            "conjugation": "past plain (～た)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "その本を買いたかったけど、もう絶版だった。",
+                    "mitigation": "While expressing desire, 「ようにも」 emphasizes the direct frustration of the attempt to acquire the book being thwarted by its unavailability, aligning with the scene of a discovery during purchase."
+                }
+            ]
+        },
+        {
+            "japanese": "携帯の電池が切れたから、電話をかけ{ようにも}かけられない。",
+            "english": "Since my phone battery died, I can't make a call even if I want to.",
+            "scene": "Someone in an urgent situation where they need to contact someone but their phone is dead.",
+            "register": "casual",
+            "setting": "emergency/alarm",
+            "conjugation": "dictionary (plain non-past)",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "携帯の電池が切れたから、電話をかけたいけどかけられない。",
+                    "mitigation": "This phrase simply states a desire and an obstacle. 「ようにも」 emphasizes the complete inability to perform the action due to the external circumstance (dead battery), highlighting the helplessness in an urgent scenario."
+                }
+            ]
         }
     ],
     "false_friends": [
@@ -234,14 +262,10 @@
         }
     ],
     "post_false_friends_writeup": "While 「つもり」 simply states an intention, 「ようにも〜ない」 indicates an attempt or desire to do something that is ultimately impossible due to circumstances. Similarly, 「たい」 conveys a wish, whereas 「ようにも〜ない」 adds a layer of frustration by highlighting the inability to fulfill that wish.",
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/ようにも"
+    },
     "change": [
-        "violation: Added `scene_rationale` to all examples that had a `scene` but were missing `scene_rationale`, as required by Rule 6 ('Must be present if \"scene\" is present.' for `scene_rationale`).",
-        "violation: Removed top-level `dojg` and `lesson_order` fields, as required by Rule 20 ('You **must not** add top-level 'bunpro' or 'dojg' fields to the output JSON.').",
-        "unnatural: Changed `conjugation` type from `dictionary (plain non-past)` to `past plain (～た)` for examples 1 and 10 to accurately reflect the past tense usage in the Japanese sentences.",
-        "unnatural: Modified the Japanese for example 8 to include `んだ` (`もう体力がないんだ`) to better fit the male casual lament for a more natural expression.",
-        "unnatural: Refined `register` and `setting` for example 7 (from 'casual', 'flirty' to 'flirty', 'first-date') and example 6 (from 'formal', 'melancholic' to 'formal', 'melancholic') for better thematic consistency and accuracy.",
-        "unnatural: Modified `nuance` for examples 3, 7, and 8 to be more specific and directly tied to the Japanese text, justifying the assigned `speaker_gender` and `listener_gender`.",
-        "schema: Added `speaker_gender` (female) to example 3 to ensure at least one female speaker, as required by Rule 6.",
-        "schema: Added `speaker_gender` (male) and `listener_gender` (male) to example 8 to satisfy the requirement for at least one male speaker and at least one male listener, as required by Rule 6."
+        "schema: Added two new examples (Example 11: 'その本は買おうにも、もう絶版だった。', Example 12: '携帯の電池が切れたから、電話をかけようにもかけられない。') to enhance diversity and provide practical scenarios, as examples 'must exhibit a wide variety of settings' (Rule 6)."
     ]
 }

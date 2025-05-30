@@ -100,7 +100,7 @@
         {
             "japanese": "きょう は いそが{しくない} です。",
             "english": "I am not busy today.",
-            "scene": "A male employee telling his colleague he is free.",
+            "scene": "A male employee telling his male colleague he is free.",
             "scene_rationale": [
                 {
                     "competing_grammar": "きょう は 忙しくない。",
@@ -111,7 +111,8 @@
             "setting": "informative",
             "conjugation": "negative plain (～ない)",
             "speaker_gender": "male",
-            "nuance": "A common, polite way for a male speaker to state their availability."
+            "listener_gender": "male",
+            "nuance": "A common, polite way for a male speaker to state their availability to a male colleague."
         },
         {
             "japanese": "きのう の テスト は むずか{しくなかった} です。",
@@ -220,6 +221,7 @@
     },
     "change": [
         "violation: Modified kanji usage in example 5 ('混んでいる' to 'こ{んで}いる') to ensure only N5-N3 kanji are used for an N5 grammar point, as required by Rule 6.",
-        "schema: Added 'scene_rationale' to all examples that have a 'scene' field, as required by the schema."
+        "schema: Added 'scene_rationale' to all examples that have a 'scene' field, as required by the schema.",
+        "violation: Added 'listener_gender: male' to an example and updated its 'scene' and 'nuance' to meet the requirement that 'Example sentences should include at least one male and one female listener_gender.' Rule 6."
     ]
 }

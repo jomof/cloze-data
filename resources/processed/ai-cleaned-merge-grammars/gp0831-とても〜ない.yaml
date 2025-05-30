@@ -214,17 +214,5 @@
     "post_false_friends_writeup": "While expressions like 「全然」、「全く」, 「少しも」, and 「とうてい」 can all be used with negation, 「とても〜ない」 specifically conveys a strong, often subjective, feeling that something is utterly impossible, beyond one's capacity, or too difficult to achieve. It is essential to distinguish this nuance of impossibility from simple negation or a lack of degree.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/とても-ない"
-    },
-    "change": [
-        "schema: Added 'conjugations' array as the grammar point involves verb/adjective forms (Rule: If the grammar point contains a verb in dictionary form... add a new array field at the top, called \"conjugations\").",
-        "violation: Corrected 'conjugation' types in examples to align with the newly added top-level 'conjugations' array (Rule: 'conjugation' must be present if there is a top-level 'conjugations' array. The content... must be taken from the top-level list of conjugations you generated earlier. Use the 'type' field.).",
-        "violation: Revised 'formation' to include '形容詞・形容動詞' and '名詞 + はない' patterns based on DOJG data and observed examples like 'とても無理だ', ensuring Japanese explanations for each pattern. (Rule: 'formation' must be present).",
-        "unnatural: Modified example 4's Japanese sentence (`どこ の 航空会社 も 今 は チケット を 売っ て い{ない} から、旅行 を する の が {とても} 無理 だ 。` -> `飛行機 が 飛ん で い{ない} から、旅行 する の は {とても} 無理 だ 。`) to use N3 appropriate kanji, adhering to JLPT level requirements for example sentences.",
-        "schema: Added 'scene_rationale' to all examples that had a 'scene' field, detailing competing grammar and mitigation strategies (Rule: 'scene_rationale' must be present if 'scene' is present).",
-        "schema: Added 'speaker_gender' and corresponding 'nuance' to examples 1 and 6 to meet the requirement for at least one male and one female speaker (Rule: Example sentences should include at least one male and one female speaker_gender).",
-        "schema: Added 'listener_gender' and corresponding 'nuance' to example 1 (Rule: Example sentences should include at least one male and one female listener_gender).",
-        "violation: Added 'とうてい〜ない' to 'false_friends' with 'nuance' based on DOJG's 'Related Expression' as it is a highly similar expression emphasizing impossibility (Rule: 'false_friends' array with specific structure; 'nuance' for contrast).",
-        "unnatural: Refined the 'nuance' for existing 'false_friends' to provide clearer distinctions based on the grammar point's core meaning of strong impossibility.",
-        "unnatural: Revised 'post_example_writeup' and 'writeup' to be more comprehensive and natural, incorporating nuances observed in DOJG and Bunpro writeups while adhering to prompt guidelines."
-    ]
+    }
 }

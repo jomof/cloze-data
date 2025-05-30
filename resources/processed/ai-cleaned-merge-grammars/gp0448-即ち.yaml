@@ -133,21 +133,21 @@
             "nuance": "The sentence uses 「〜たいです」 for expressing desire and 「〜のです」 for providing an explanation, both contributing to a polite and determined tone. The use of 「即ち」 makes the clarification explicit and formal. The personal pronoun 「私」 (watashi) is used, which is appropriate for male speakers in formal settings, reinforcing a serious and dedicated demeanor."
         },
         {
-            "japanese": "日本の議会は 二院制、{即ち} 衆議院と参議院です。",
-            "english": "The Diet in Japan consists of two Houses, namely the House of Representatives and the House of Councilors.",
-            "scene": "A professor explains the Japanese political system to her students.",
+            "japanese": "この動物は猫科の動物です。{即ち} ライオンやトラの仲間です。",
+            "english": "This animal is a feline. In other words, it's a relative of lions and tigers.",
+            "scene": "A zookeeper explains animal classifications to a group of children.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "日本の議会は二院制、つまり衆議院と参議院です。",
-                    "mitigation": "The scene involves an academic explanation, making 「即ち」 the preferred choice for defining specific governmental bodies. It functions as a precise enumeration, unlike 「つまり」 which might imply a simpler summarization."
+                    "competing_grammar": "この動物は猫科の動物です。つまりライオンやトラの仲間です。",
+                    "mitigation": "The scene involves explaining a classification and providing specific examples. 「即ち」 is used to precisely specify what 'feline' entails, making it a more accurate clarifying term than the summarizing 「つまり」."
                 }
             ],
-            "register": "academic",
-            "setting": "informative",
+            "register": "informative",
+            "setting": "academic",
             "speaker_gender": "female",
             "listener_gender": "group",
-            "etymology": "「衆議院」 (shūgiin) is the House of Representatives, and 「参議院」 (sangiin) is the House of Councilors. 「二院制」 (niinsei) means bicameral system.",
-            "nuance": "This sentence is highly formal and factual, typical of academic discourse. The use of 「です」 (desu) and 「即ち」 provides a clear and precise definition. This formal language is gender-neutral, making it appropriate for a female professor explaining a complex political structure to her students."
+            "etymology": "「猫科」 (nekoka) refers to the 'cat family' or 'feline family'. 「仲間」 (nakama) means 'fellow' or 'comrade', here indicating shared classification.",
+            "nuance": "The sentence uses polite and clear language suitable for teaching children, with 「です」 (desu) for formality. The use of 「即ち」 serves to precisely define and exemplify the previous statement. This formal and explanatory tone is gender-neutral and appropriate for a female zookeeper providing educational information."
         },
         {
             "japanese": "彼女は 私の弟の妻、{即ち} 義理の妹です。",
@@ -193,12 +193,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/即ち"
     },
     "change": [
-        "violation: Removed top-level 'bunpro' and 'lesson_order' fields, as per rule 20: 'You **must not** add top-level 'bunpro' or 'dojg' fields to the output JSON.'",
-        "schema: Omitted 'meaning_warning' field as it was null, adhering to schema rule 'No fields should be null. Omit fields that are not applicable instead.'",
-        "violation: Adjusted Japanese example spacing and bolding ({即ち}) for consistency and mecab parsing, as per rule 'Japanese **must** have a space between words to assist mecab in parsing.' and 'Each example **must** have the grammar_point in {bold}'.",
-        "violation: Added 'scene_rationale' to all examples containing 'scene', as per schema rule 'Must be present if scene is present.'",
-        "violation: Added 'speaker_gender' and 'listener_gender' to multiple examples to meet the requirement of 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'",
-        "violation: Revised 'nuance' for examples with specified genders to explain how gender is conveyed (or not) in the Japanese, as per schema rule 'If there is a speaker_gender or listener_gender, then nuance **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.'",
-        "violation: Modified kanji in example 6 from '半額' (N2) to '半分' (N5) and example 7 from '将来' (N2) to '未来' (N3) to better align with JLPT N3 kanji usage for the grammar point, as per rule 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'"
+        "violation: Modified example 8 due to presence of N2 kanji (`院`, `衆`) which violated the rule 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' Replaced with an example using N3, N4, and N5 kanji: 'この動物は猫科の動物です。{即ち} ライオンやトラの仲間です。'"
     ]
 }

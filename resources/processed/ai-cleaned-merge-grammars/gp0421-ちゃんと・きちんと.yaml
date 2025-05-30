@@ -190,17 +190,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/ちゃんと-きちんと"
     },
     "change": [
-        "violation: Removed 'conjugations' field, as adverbs like 'ちゃんと・きちんと' are not conjugatable according to the schema rule for this field (grammar point containing a verb or adjective in dictionary form).",
-        "schema: Changed 'post_false_friends_writeup' from 'null' to '\"\"' to comply with the schema rule: 'No fields should be null. Omit fields that are not applicable instead.'",
-        "violation: Example 4, '服装' (N2 kanji) changed to '格好' (N3 kanji) to comply with JLPT kanji level rule for example sentences.",
-        "violation: Example 6, '掃除' (N2 kanji) changed to '片付け' (N3/N4 kanji) to comply with JLPT kanji level rule for example sentences.",
-        "violation: Example 9, '独り' (N1 kanji) changed to '一人' (N5 kanji) to comply with JLPT kanji level rule for example sentences.",
-        "violation: Example 7, rewrote the A/B dialogue '優しい 次長：「昼休み なんだ から ちゃんと 休んで ね。」部下：「はい! わかりました、次長！」' into a single speaker sentence '昼休み なんだ から {ちゃんと} 休んで ね。' to comply with the rule 'Must be from the point of view of a single speaker. No back-and-forth dialogue.'",
-        "violation: Example 9, removed quotes from 'アルバイト の 面接：「独り で 暮らせる よう に、何か ちゃんと した 仕事 を 見つけたい のです。」' to comply with the rule 'Must not use quotes including 「」'.",
-        "violation: Example 10, removed quotes from '書き方 について 教師 が 学生 に 言う：「この 言葉 読みにくい ね。もっと きちんと 書きましょう。」' to comply with the rule 'Must not use quotes including 「」'.",
-        "schema: Added 'scene_rationale' to all examples that had a 'scene' field, to comply with the schema rule: 'If OTHER_WAYS is not empty, then you must have a \"scene\" field.' and 'Must be present if \"scene\" is present.'",
-        "schema: Added 'speaker_gender' and 'listener_gender' to examples 1, 5, 8, 11 to ensure at least one male and one female speaker/listener are present, as required by the schema.",
-        "schema: Removed 'listener_age' from example 10, as it is deprecated in the schema.",
-        "unnatural: Revised 'scene' and 'nuance' for various examples to enhance clarity and provide more natural context, especially for gender-specific nuances."
+        "violation: Removed 'meaning_warning' field because its value was null, complying with the schema rule 'No fields should be null. Omit fields that are not applicable instead.'"
     ]
 }

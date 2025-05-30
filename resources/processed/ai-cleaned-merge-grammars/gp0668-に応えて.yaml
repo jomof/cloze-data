@@ -294,15 +294,5 @@
     "post_false_friends_writeup": "The key difference between 「に応えて」 and 「に応じて」 lies in the nuance of responding to a specific demand versus adapting to a situation. Use 「に応えて」 when an action is taken to directly fulfill a stated need or expectation. Use 「に応じて」 when adjusting to prevailing conditions or varying circumstances.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/に応えて"
-    },
-    "change": [
-        "schema: Changed rarity values in `conjugations` array from 'commonly used' to 'common' and 'very unusual' to 'very rare' to comply with `rarityType` enum constraints.",
-        "schema: Renamed `type` fields in `conjugations` array (e.g., 'polite (non-past)' to 'non-past polite (～ます)') to match `conjugationType` enum names.",
-        "schema: Removed 'stem (連用形)' entry from the `conjugations` array because it is not a valid `conjugationType` per schema.",
-        "unnatural: Changed the 'form' of `imperative polite (～なさい)` in `conjugations` from 'に応えてください' to 'に応えなさい' for strict adherence to the `～なさい` imperative form.",
-        "schema: Added `scene_rationale` to examples 1 through 9 to comply with the rule: 'Must be present if scene is present.'",
-        "schema: Removed `listener_age` field from examples 10, 11, and 12 to comply with the rule: 'listener_age is deprecated. You must remove it.'",
-        "violation: Modified `japanese` for example 7 from '住民の皆様の希望に{応え}' to '住民の皆様の希望に{応えて}' and its `conjugation` from 'stem (連用形)' to 'te-form (～て)'. This was necessary because 'stem (連用形)' is not a valid `conjugationType` in the schema.",
-        "unnatural: Refined `nuance` explanations for examples 10, 11, and 12 to accurately quote specific Japanese phrases with 「」 to comply with the rule: 'Must refer to parts of the japanese sentence in「quotes」.'"
-    ]
+    }
 }

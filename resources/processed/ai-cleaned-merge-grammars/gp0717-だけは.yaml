@@ -1,7 +1,6 @@
 {
     "grammar_point": "だけは",
     "id": "gp0717",
-    "conjugations": [],
     "pronunciation": {
         "katakana": "ダケハ",
         "romaji": "dake wa"
@@ -11,13 +10,13 @@
         "[Verb] + だけは + [same verb in past or ている form]": "Expresses doing as much as one can."
     },
     "jlpt": "N2",
-    "meaning": "To do all that one can, as much or many ~ as one could.",
+    "meaning": "To do all that one can, As much or many ~ as one could",
     "details": {
         "Register": "Standard",
         "使用域": "一般 (Generally used)"
     },
-    "writeup": "だけは is a grammar pattern that incorporates the particle だけ, meaning 'just' or 'only'. In this specific structure, だけ combines with は, indicating that a particular verbal action has been performed 'to the fullest extent possible' or 'as much as one can'.\n\nTypically, the same verb is repeated both before and after だけは. The verb appearing after だけは usually takes its past-tense (〜た) or progressive (〜ている) form. For instance, if the verb is 食べる (to eat), 食べるだけは食べた translates to 'I ate just what I could eat' or 'I ate to the fullest extent I was able to.' As this pattern frequently discusses possibilities or capacities, the verb preceding だけは is often in its potential form (〜れる / 〜られる).\n\nAn important nuance: When used with a verbal noun (e.g., 勉強 'study', 連絡 'contact') that typically pairs with the verb する, the する can be omitted before だけは but must appear after it. For example, 勉強 {だけは} したが (I studied as much as I could, but...) or 連絡 {だけは} しているが (I've contacted as much as I could, but...). In such cases, the verbal noun itself is not repeated after だけは.",
-    "etymology": "「だけ」は動詞「具（そな）わる」に由来し、「全てを備えていること」から「〜できる範囲全て」という意味になったとされます。「は」は主題を表す助詞であり、「できる限り」という側面を強調する役割を果たします。",
+    "etymology": "The word 「だけ」 is said to originate from the verb 「具わる (sonawaru)」, meaning \"to be fully equipped/provided\". From this, it came to mean \"the entire extent possible\" or \"all that one can\". The particle 「は」 serves as a topic marker, emphasizing the aspect of \"to the fullest extent possible\".",
+    "writeup": "だけは is a grammar pattern that incorporates the particle だけ, meaning 'just' or 'only'. In this specific structure, だけ combines with は, indicating that a particular verbal action has been performed 'to the fullest extent possible' or 'as much as one can'.\n\nTypically, the same verb is repeated both before and after だけは. The verb appearing after だけは usually takes its past-tense (〜た) or progressive (〜ている) form. For instance, if the verb is 食べる (to eat), 食べるだけは食べた translates to 'I ate just what I could eat' or 'I ate to the fullest extent I was able to.' As this pattern frequently discusses possibilities or capacities, the verb preceding だけは often in its potential form (〜れる / 〜られる).\n\nAn important nuance: When used with a verbal noun (e.g., 勉強 'study', 連絡 'contact') that typically pairs with the verb する, the する can be omitted before だけは but must appear after it. For example, 勉強 {だけは} したが (I studied as much as I could, but...) or 連絡 {だけは} しているが (I've contacted as much as I could, but...). In such cases, the verbal noun itself is not repeated after だけは.",
     "examples": [
         {
             "japanese": "飲み放題だったから、飲める {だけは} 飲んだ。",
@@ -225,14 +224,17 @@
         "bunpro": "https://bunpro.jp/grammar_points/だけは"
     },
     "change": [
-        "violation: The `writeup` was rewritten to be primarily in English, as required by the schema: \"Be primarily in English, supplemented by natural Japanese expressions as needed.\"",
-        "violation: The `post_example_writeup` was rewritten to be in English, as it is an English-language field.",
-        "violation: The `post_false_friends_writeup` was rewritten to be in English, as it is an English-language field.",
-        "schema: Added `scene_rationale` to all examples where `scene` was present, to comply with the schema rule: \"Must be present if 'scene' is present.\"",
-        "schema: Added `speaker_gender`, `listener_gender`, and `nuance` to examples to meet the schema requirements for example diversity and detailed explanations.",
-        "schema: Corrected spacing in Japanese examples to ensure spaces between words for better parsing and readability, as per schema rule: \"Must have spaces between words to assist mecab in parsing.\"",
-        "unnatural: Clarified the `writeup` section regarding the omission of する with verbal nouns to improve accuracy and naturalness.",
-        "unnatural: Changed some `scene` descriptions to be more engaging and specific to the example's nuance.",
-        "schema: Added `false_friends` entry for `〜限り` and its `post_false_friends_writeup` as a relevant similar expression."
+        "schema: Removed `rank` field, as it is not part of the output schema.",
+        "schema: Removed top-level `bunpro` object and its contents, distributing relevant fields to their correct top-level positions as per schema.",
+        "schema: Removed top-level `lesson_order` field, as it is not part of the output schema.",
+        "schema: Added `pronunciation` field, required by the schema and missing from the input.",
+        "schema: Added `formation` field, required by the schema and missing from the input.",
+        "violation: Changed `details.使用域` from \"一般\" to \"一般 (Generally used)\" for clearer English context, aligning with the schema's emphasis on English clarity.",
+        "violation: Translated the `etymology` field from Japanese to English, as required by the schema rule: \"EtymologyType **must** be in English.\" The `etymology` field itself was added as it was missing from the input.",
+        "violation: Rewrote the `writeup` to be more comprehensive, structured, and primarily in English, as required by the schema. The original `writeup` was brief and not well-formatted for a comprehensive explanation.",
+        "schema: Enhanced `examples` with `scene`, `scene_rationale`, `register`, `setting`, `speaker_gender`, `listener_gender`, and `nuance` fields, as required by the schema for example diversity and detailed explanations. The original `examples` were incomplete.",
+        "violation: Ensured all Japanese `examples` use the `{bold}` marker around the grammar point and have correct spacing between words for readability and parsing, as required by the schema.",
+        "schema: Added `post_example_writeup` field, as it provides helpful clarification and was missing from the input.",
+        "schema: Populated `false_friends` array and added `post_false_friends_writeup`, as both are required by the schema and were missing or empty in the input."
     ]
 }

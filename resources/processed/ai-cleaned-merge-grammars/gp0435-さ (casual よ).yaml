@@ -92,6 +92,25 @@
             "nuance": "「さ」 expresses a strong feeling of optimism and confidence about a good day."
         },
         {
+            "japanese": "そんなの俺にだってできる{さ}。分からないけど。",
+            "english": "Even I could do something like that. I'm not sure, though.",
+            "scene": "A person is boasting about their capability, but then admits to a lack of certainty.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "そんなの俺にだってできると思う。分からないけど。",
+                    "mitigation": "「さ」 emphasizes the speaker's personal conviction and slight boast, making it more direct and less uncertain than 「と思う」, despite the following admission of doubt."
+                },
+                {
+                    "competing_grammar": "そんなの俺にだってできるよ。分からないけど。",
+                    "mitigation": "「さ」 offers a softer, more reflective confidence than the more assertive 「よ」, fitting the context of expressing personal capability despite a caveat."
+                }
+            ],
+            "register": "casual",
+            "setting": "reflective",
+            "speaker_gender": "male",
+            "nuance": "The use of 「さ」 here expresses a confident, somewhat boastful assertion of capability, even though the speaker immediately adds a disclaimer of uncertainty with 「分からないけど」. This highlights 「さ」's ability to convey personal conviction regardless of complete factual certainty, especially with the male pronoun 「俺」."
+        },
+        {
             "japanese": "もっと こっち に 近づいて も いい ん じゃ ない {さ} ？",
             "english": "Why don't you move a little closer to me?",
             "scene": "Someone flirting with another person at a bar.",
@@ -205,12 +224,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/さ-casualよ"
     },
     "change": [
-        "violation: The `conjugations` field was removed as it was empty and the grammar point is not conjugatable, per schema rule that empty fields should be omitted.",
-        "violation: Added `meaning_warning` from the input as it was missing from the prior version, per schema allowance.",
-        "unnatural: The `writeup` was refined to first explain 「さ」 as a general interjection before narrowing down to its specific use as a sentence-ending particle. This provides a more comprehensive and natural explanation, aligning with the intent of a 'comprehensive explanation' without inventing new details.",
-        "violation: Added `scene_rationale` to all example sentences that included a `scene` field, as required by the schema rule 'If OTHER_WAYS is not empty, then you **must** have a \"scene\" field.'",
-        "violation: Modified example 8 to explicitly include a `listener_gender: female` and updated its `nuance` to reflect this, addressing the requirement for at least one female listener.",
-        "violation: Added a new example (number 9) with a `speaker_gender: female` and `listener_gender: male`, and provided appropriate `nuance` and `scene_rationale`, addressing the requirements for at least one female speaker and male listener.",
-        "unnatural: Replaced the original example 3 (restaurant information) with a new example adapted from the input (Takashi-kun wants to go), to better showcase a specific nuance of 「さ」 (conveying hearsay and prompting discussion) not fully covered by other examples. This improves the diversity of example usages."
+        "violation: Removed problematic example 'お前さ...' from consideration, as it does not end a sentence and violates the grammar point's meaning_warning of 'Used only at the end of a sentence'.",
+        "unnatural: Added a new example 'そんなの俺にだってできる{さ}。分からないけど。' to showcase the nuance of confidence despite expressed uncertainty, enhancing example diversity."
     ]
 }

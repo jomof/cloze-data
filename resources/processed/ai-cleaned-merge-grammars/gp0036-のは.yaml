@@ -153,14 +153,6 @@
             "nuance": "「Particle + の」 forms a combined particle, like 「への」 (e.g., 「AからBへの移動」, 'movement from A to B'), where 「の」 modifies the preceding particle's sense. This is distinct from 「particle + のは」, where 「の」 nominalizes the clause, and 「は」 marks the entire nominalized phrase as the topic (e.g., 「東京に行くのは明日です」, 'It is tomorrow that I go to Tokyo')."
         }
     ],
-    "change": [
-        "schema: Removed 'listener_age' field from all examples as it is deprecated by the schema.",
-        "schema: Added 'scene_rationale' field to all examples that have a 'scene' field, as required by the schema.",
-        "violation: Modified example Japanese sentences and 'nuance' to include specific gendered language (e.g., 'だよ', 'よ') where 'speaker_gender' was specified, to adhere to the rule 'Use only if this sentence would typically only be spoken by this gender' and to fulfill the requirement of having at least one male and one female speaker example. The original examples did not contain Japanese specific to a gender.",
-        "violation: Removed 'speaker_gender' and 'listener_gender' from examples where the Japanese sentence did not contain gender-specific language, adhering to the rule 'Use only if this sentence would typically only be spoken by this gender'.",
-        "violation: Adjusted 'nuance' for examples to explicitly reference the specific Japanese phrasing (in quotes) that indicates gender or age, as required by the schema.",
-        "schema: Changed 'kind' in 'false_friends' entries from 'synonym' to more appropriate classifications ('often confused with', 'similar expression') based on their defined 'nuance' which clearly highlights differences rather than direct synonymity."
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/のは"
     }

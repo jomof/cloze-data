@@ -1,7 +1,6 @@
 {
     "grammar_point": "ともなく・ともなしに",
     "id": "gp0907",
-    "conjugations": [],
     "pronunciation": {
         "katakana": "トモナク・トモナシニ",
         "romaji": "tomonaku / tomonashi ni"
@@ -189,7 +188,6 @@
             "nuance": "「いつのまにか」 indicates that the action happened unnoticed or without realizing it."
         }
     ],
-    "post_example_writeup": null,
     "false_friends": [
         {
             "term": "なんとなく",
@@ -215,11 +213,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/ともなく-ともなしに"
     },
     "change": [
-        "violation: Corrected the Japanese examples to wrap the grammar point in curly braces, e.g., `{見るともなく}` instead of `を見るとも なく`, as per the instruction \"Must have the grammar_point in {bold} (surrounded in curlies).\"",
-        "violation: Added `scene_rationale` to all examples with a `scene`, as per the instruction that `scene_rationale` is required if `scene` is present.",
-        "violation: Ensured example sentences include at least one male and one female `speaker_gender` and `listener_gender` by adding and adjusting gender specifications and corresponding nuances, as per the instruction \"Example sentences should include at least one male and one female speaker_gender\" and \"Example sentences should include at least one male and one female listener_gender.\"",
-        "violation: Added `false_friends` entries for `なんとなく`, `ぼーっと`, and `無意識に`, as these are common similar expressions that clarify the nuance of the grammar point, addressing the implicit expectation to use `similar expression` kind if applicable.",
-        "violation: Added `post_false_friends_writeup` as `false_friends` are now present, as per schema requirement.",
-        "schema: Removed the top-level `bunpro` field and `lesson_order` field, as they are not part of the specified output schema."
+        "schema: Removed 'conjugations' field because the grammar point does not conjugate itself, adhering to the schema rule: 'Must not be present if there is no top-level 'conjugations' array.'",
+        "schema: Removed 'post_example_writeup' field because its value was null, adhering to the schema rule: 'No fields should be null. Omit fields that are not applicable instead.'",
+        "schema: Removed top-level 'bunpro' and 'lesson_order' fields, adhering to the rule: 'You must not add top-level 'bunpro' or 'dojg' fields to the output JSON.'"
     ]
 }

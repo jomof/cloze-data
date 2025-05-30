@@ -24,73 +24,163 @@
         {
             "japanese": "先生が、{そこ} の本を読むようにと指示しました。",
             "english": "The teacher instructed to read the book there.",
-            "scene": "A teacher giving instructions in a classroom.",
+            "scene": "A teacher giving instructions in a classroom, pointing to a specific book on a desk not next to them.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「この本」",
+                    "mitigation": "The scene implies the teacher points to a book near the student (listener), making 「そこ」 the appropriate demonstrative for a location near the listener, rather than one near the speaker."
+                },
+                {
+                    "competing_grammar": "「あの本」",
+                    "mitigation": "The scene implies the teacher points to a book near the student (listener), making 「そこ」 the appropriate demonstrative for a location near the listener, rather than one far from both speaker and listener."
+                }
+            ],
             "register": "formal",
             "setting": "instructional",
             "speaker_age": "older",
-            "listener_age": "younger",
-            "nuance": "The use of 「ようにと指示しました」 (instructed to...) makes this an indirect command, typical for a formal instructional setting from an older speaker to a younger listener. 「そこ」 pinpoints the specific book's location."
+            "nuance": "The use of 「ようにと指示しました」 (instructed to...) makes this an indirect command, typical for a formal instructional setting from an older speaker. 「そこ」 pinpoints the specific book's location relative to the listener."
         },
         {
             "japanese": "たぶん、{そこ} です。",
             "english": "Maybe it's there.",
-            "scene": "A person is unsure about the location of something.",
+            "scene": "Two people are searching for something. One is closer to the potential location.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「たぶん、ここです」",
+                    "mitigation": "The scene guides the user to 「そこ」 by suggesting the listener is closer to the uncertain location, aligning with 「そこ」's meaning of \"there, near the listener,\" as opposed to a location near the speaker."
+                },
+                {
+                    "competing_grammar": "「たぶん、あそこです」",
+                    "mitigation": "The scene guides the user to 「そこ」 by suggesting the listener is closer to the uncertain location, aligning with 「そこ」's meaning of \"there, near the listener,\" as opposed to a location far from both."
+                },
+                {
+                    "competing_grammar": "「たぶん、そっちです」",
+                    "mitigation": "The scene implies a specific spot, not just a general direction, making 「そこ」 more precise."
+                }
+            ],
             "register": "casual",
             "setting": "cautious"
         },
         {
             "japanese": "{そこ} に 置く。",
             "english": "Put it there.",
-            "scene": "Someone giving a simple instruction about placement.",
+            "scene": "Someone giving a simple instruction about placement on a spot near the listener but not next to the speaker.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「ここに置く」",
+                    "mitigation": "The scene specifies that the instruction is to place an item on a spot *near the listener*, which is the core usage of 「そこ」, differentiating it from a location near the speaker."
+                },
+                {
+                    "competing_grammar": "「あそこに置く」",
+                    "mitigation": "The scene specifies that the instruction is to place an item on a spot *near the listener*, which is the core usage of 「そこ」, differentiating it from a location far from both."
+                },
+                {
+                    "competing_grammar": "「そっちに置く」",
+                    "mitigation": "The instruction is about placing something on a specific spot, not just in a general direction."
+                }
+            ],
             "register": "casual",
             "setting": "informative"
         },
         {
             "japanese": "{そこ} が いい。",
             "english": "That place is good.",
-            "scene": "A friend expressing their preference for a particular spot.",
+            "scene": "Two friends are choosing a spot to sit in a cafe. One friend points to a table near the other friend, who is a man.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「ここがいい」",
+                    "mitigation": "By having one friend point to a table near the other friend, the scene clarifies that the preferred spot is \"there\" relative to the listener, distinguishing it from options near the speaker."
+                },
+                {
+                    "competing_grammar": "「あそこがいい」",
+                    "mitigation": "By having one friend point to a table near the other friend, the scene clarifies that the preferred spot is \"there\" relative to the listener, distinguishing it from options far from both speaker and listener."
+                }
+            ],
             "register": "casual",
-            "setting": "friendly"
+            "setting": "friendly",
+            "listener_gender": "male",
+            "nuance": "The speaker points to a place near the listener, making 「そこ」 the correct choice for indicating \"that place\" from the listener's perspective. The casual tone 「が いい」 is typical in friendly conversation among peers."
         },
         {
             "japanese": "初デートで、彼は{そこ} の席を指した。",
             "english": "On our first date, he pointed to the seat there.",
-            "scene": "A person recalling a detail from their first date.",
+            "scene": "A woman recalling a detail from her first date, describing how her date gestured towards a particular seat that was near her.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「あの席」",
+                    "mitigation": "The scene highlights that \"he pointed to the seat *there*\", implying it was a location near the woman (listener in the story's context), making 「そこ」 the natural choice for a location in the listener's vicinity, rather than a general \"that seat\"."
+                },
+                {
+                    "competing_grammar": "「この席」",
+                    "mitigation": "The scene highlights that \"he pointed to the seat *there*\", implying it was a location near the woman (listener in the story's context), making 「そこ」 the natural choice for a location in the listener's vicinity, rather than a seat near the speaker."
+                }
+            ],
             "register": "casual",
             "setting": "first-date",
             "speaker_gender": "female",
             "listener_gender": "female",
-            "nuance": "This sentence describes a moment on a first date. 「そこ」 refers to a specific seat that he pointed to, setting a scene of shared attention."
+            "nuance": "This sentence describes a moment on a first date. 「そこ」 refers to a specific seat that he pointed to, implying it was near the speaker (the woman recalling the story) in the context of the memory being shared with another woman."
         },
         {
             "japanese": "{そこ} のレストランは美味しいです。",
             "english": "The restaurant there is delicious.",
-            "scene": "A person recommending a good restaurant.",
+            "scene": "Two colleagues are talking about restaurants. One recommends a restaurant that is in a part of town familiar to the listener.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「あそこのレストラン」",
+                    "mitigation": "The scene implies that the restaurant's location is understood to be \"there\" in the listener's context or knowledge base, aligning with 「そこ」 rather than a place generally \"over there\" far from both."
+                },
+                {
+                    "competing_grammar": "「このレストラン」",
+                    "mitigation": "The scene implies that the restaurant's location is understood to be \"there\" in the listener's context or knowledge base, aligning with 「そこ」 rather than a restaurant directly next to the speaker."
+                }
+            ],
             "register": "polite",
             "setting": "informative"
         },
         {
             "japanese": "ここと{そこ}も明るいね。",
             "english": "It's bright here and there too.",
-            "scene": "Two friends noticing bright spots in a room.",
+            "scene": "Two friends are decorating a room and commenting on the lighting. One is standing in a brightly lit spot, and the other is near another brightly lit spot.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「こことあそこも明るいね」",
+                    "mitigation": "The scene explicitly describes one friend being in a brightly lit spot (`ここ`) and the other near *another* brightly lit spot, which is \"there\" from the first friend's perspective, guiding the use of 「そこ」 for the listener's immediate vicinity, distinguishing it from a spot far from both."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
             "speaker_age": "younger",
-            "listener_age": "younger",
-            "nuance": "The casual ending 「ね」 indicates agreement or seeking confirmation, common in friendly conversation among younger individuals. 「こことそこ」 contrasts two nearby locations, implying a shared observation."
+            "nuance": "The casual ending 「ね」 indicates agreement or seeking confirmation, common in friendly conversation among younger individuals. 「こことそこ」 contrasts two nearby locations, one near the speaker and one near the listener, implying a shared observation."
         },
         {
             "japanese": "危険なので、{そこ} に近づかないでください。",
             "english": "Please do not approach that place as it is dangerous.",
-            "scene": "A person giving a safety instruction or warning.",
+            "scene": "A tour guide warns tourists not to go to a dangerous area located near them but not immediately beside the guide.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「ここに近づかないでください」",
+                    "mitigation": "The scene establishes a warning about a dangerous area located *near the tourists (listeners)*, making 「そこ」 the precise word to indicate \"that place\" relative to their position, as opposed to an area near the speaker."
+                },
+                {
+                    "competing_grammar": "「あそこに近づかないでください」",
+                    "mitigation": "The scene establishes a warning about a dangerous area located *near the tourists (listeners)*, making 「そこ」 the precise word to indicate \"that place\" relative to their position, as opposed to an area far from both."
+                }
+            ],
             "register": "formal",
             "setting": "commanding",
-            "nuance": "The imperative 「近づかないでください」 (approach) softens a command, suitable for warning. 「危険なので」 provides the reason."
+            "nuance": "The imperative 「近づかないでください」 (approach) softens a command, suitable for warning. 「危険なので」 provides the reason. 「そこ」 indicates the dangerous place is within the listeners' proximity."
         },
         {
-            "scene": "A man trying to initiate a kiss.",
             "japanese": "{そこ} にキスしてもいいですか？",
             "english": "May I kiss you there?",
+            "scene": "A man trying to initiate a kiss, indicating a specific spot on the woman's body.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "「唇にキスしてもいいですか？」 (or other specific body parts)",
+                    "mitigation": "The scene's intimate context, where a specific, implied location on the listener's body is being referenced, directly supports the use of 「そこ」 as a general placeholder for \"that spot\" on the listener, maintaining a level of discretion."
+                }
+            ],
             "register": "polite",
             "setting": "flirty",
             "speaker_gender": "male",
@@ -102,37 +192,37 @@
         {
             "term": "ここ",
             "meaning": "Here, This place",
-            "kind": "related location pronoun",
+            "kind": "similar expression",
             "nuance": "Unlike 「そこ」, 「ここ」 refers to a location near the speaker."
         },
         {
             "term": "それ",
             "meaning": "That",
-            "kind": "related demonstrative pronoun",
+            "kind": "similar expression",
             "nuance": "Unlike 「そこ」 which refers to a place, 「それ」 refers to an object or concept near the listener."
         },
         {
             "term": "あれ",
             "meaning": "That (over there)",
-            "kind": "related demonstrative pronoun",
+            "kind": "similar expression",
             "nuance": "Unlike 「そこ」 which refers to a place, 「あれ」 refers to an object or concept far from both speaker and listener."
         },
         {
             "term": "あそこ",
             "meaning": "Over there",
-            "kind": "related location pronoun",
+            "kind": "similar expression",
             "nuance": "Unlike 「そこ」 which refers to a place near the listener, 「あそこ」 refers to a place far from both speaker and listener."
         },
         {
             "term": "その",
             "meaning": "That",
-            "kind": "related demonstrative adnominal",
+            "kind": "similar expression",
             "nuance": "Unlike 「そこ」 which is a noun referring to a place, 「その」 modifies a noun to indicate something near the listener."
         },
         {
             "term": "どこ",
             "meaning": "Where",
-            "kind": "interrogative location pronoun",
+            "kind": "similar expression",
             "nuance": "Unlike 「そこ」 which indicates a specific location, 「どこ」 is an interrogative pronoun asking for a location."
         },
         {
@@ -145,5 +235,11 @@
     "post_false_friends_writeup": "Remember that 「そこ」 specifies a location near the listener or previously mentioned. Contrast this with 「ここ」 (here), 「あそこ」 (over there), and 「どこ」 (where). Also, be careful not to mix up 「そこ」 with 「そっち」, which emphasizes direction.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/そこ"
-    }
+    },
+    "change": [
+        "Removed 'listener_age' from examples 1 and 7 (violation: 'listener_age' is deprecated).",
+        "Added 'scene_rationale' to all examples (violation: required field if 'scene' is present).",
+        "Modified example 4 to include a 'listener_gender' of male to ensure diversity (violation: must include at least one male listener example).",
+        "Changed 'kind' values in 'false_friends' from custom strings to enum 'similar expression' (violation: 'kind' must be one of the specified enum values)."
+    ]
 }

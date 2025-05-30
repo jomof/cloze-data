@@ -1,11 +1,10 @@
 {
     "grammar_point": "にせよ・にしろ",
+    "id": "gp0890",
     "pronunciation": {
         "katakana": "ニセヨ・ニシロ",
         "romaji": "ni seyo / ni shiro"
     },
-    "id": "gp0890",
-    "conjugations": [],
     "formation": {
         "[Verb (any form)] + にせよ / にしろ": "Even if (this verb occurs),...",
         "[い-adjective (any form)] + にせよ / にしろ": "Even if (this adjective is true),...",
@@ -137,9 +136,9 @@
             "nuance": "「ある にせよ」 indicates a concession, the speaker acknowledges that differences may exist, but that they are so minute to be of no real significance. This usage allows for precise acknowledgement of a minor point while maintaining focus on the larger, more important aspect."
         },
         {
-            "scene": "A man wants to ask a girl to spend time with him.",
             "japanese": "忙しい {にしろ} 、少し だけ 時間 を 貰えませんか。",
             "english": "Even if you're busy, could I have a little of your time?",
+            "scene": "A man wants to ask a girl to spend time with him.",
             "scene_rationale": [
                 {
                     "competing_grammar": "忙しくても、少し だけ 時間 を 貰えませんか。",
@@ -150,7 +149,7 @@
             "setting": "flirty",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "This is a polite and suggestive way for a man to start a conversation with a woman he likes. He is using 「にしろ」 to concede that she might be busy, but hopes she will find a little time for him. 「貰えませんか」is used to soften the request. The use of 「にしろ」 here adds a subtle layer of persuasion, suggesting that her busyness is a minor consideration compared to his desire for her time.",
+            "nuance": "This is a polite and suggestive way for a man to start a conversation with a woman he likes. He is using 「にしろ」 to concede that she might be busy, but hopes she will find a little time for him. 「貰えませんか」 is used to soften the request. The use of 「にしろ」 here adds a subtle layer of persuasion, suggesting that her busyness is a minor consideration compared to his desire for her time.",
             "etymology": "Using 「少し だけ」 in this context is a way to be polite and respectful of her time."
         }
     ],
@@ -222,13 +221,7 @@
     },
     "change": [
         "violation: Removed top-level 'bunpro' and 'dojg' fields as per rule 20.",
-        "schema: Removed 'meaning_warning' field because its value was null, as per schema rule 'No fields should be null. Omit fields that are not applicable instead.'",
-        "schema: Modified 'formation' section to include '∅' option for な-adjective and Noun and 'であった' as per DOJG formation, aligning with schema completeness and accuracy.",
-        "schema: Added 'Adverb' formation as per DOJG formation, improving completeness.",
-        "violation: Added 'scene_rationale' to examples 1-8 to comply with schema rule 'If OTHER_WAYS is not empty, then you must have a \"scene\" field.'",
-        "violation: Added 'scene_rationale' to example 9 to comply with schema rule 'If OTHER_WAYS is not empty, then you must have a \"scene\" field.'",
-        "command: Removed 'listener_age' from example 9 as per the comment in the prior grammar point.",
-        "violation: Added 'speaker_gender' (female) to example 2 and 'listener_gender' (male) to example 1 to ensure at least one male and one female speaker_gender/listener_gender in examples as per rule 6.",
-        "unnatural: Improved 'nuance' for examples 1, 2, 3, 4, 5, 6, 7, 8, 9 to more explicitly connect the nuance to the specific Japanese phrase in quotes and to better explain the distinction of 「にせよ・にしろ」, making it more natural and helpful for a learner."
+        "schema: Removed 'meaning_warning' field because its value was null, as per schema rule 'No fields should be null. Omit fields that are not applicable instead.'.",
+        "schema: Removed top-level 'conjugations' field. The grammar point 'にせよ・にしろ' itself is not conjugatable, therefore the 'conjugations' array should be omitted as per schema definitions, which then ensures consistency with the omission of the 'conjugation' field in examples."
     ]
 }

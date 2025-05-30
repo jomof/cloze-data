@@ -66,7 +66,7 @@
         },
         {
             "japanese": "あなた が お 勧め する {だけあって}、この ワイン、本当に 美味しい わ ね。",
-            "english": "Since you recommended it, as expected, this wine is truly delicious, isn't it?",
+            "english": "Since you recommended it, as expected, this wine is truly delicious, isn_t it?",
             "scene": "A woman appreciating a drink recommended by her date.",
             "scene_rationale": [
                 {
@@ -117,7 +117,7 @@
         {
             "japanese": "スタイル が いい {だけあって}、彼女 は 何 を 着 て も 似合う ね。",
             "english": "As might be expected, with her great figure, she looks good in anything she wears.",
-            "scene": "Commenting on someone's fashion.",
+            "scene": "A man is commenting on a mutual friend's fashion to a female friend.",
             "scene_rationale": [
                 {
                     "competing_grammar": "スタイル が いい から、彼女 は 何 を 着 て も 似合う ね。",
@@ -125,8 +125,10 @@
                 }
             ],
             "register": "casual",
-            "setting": "flirty",
-            "nuance": "The sentence is using 「だけあって」 to link her good figure to her ability to look good in anything, and 「～ね」 to invite agreement and show admiration.",
+            "setting": "friendly",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "The speaker, a male, uses 「似合う ね」 to comment on a third person's style. The use of 「ね」 invites agreement from the female listener, indicating a casual, friendly conversation between peers.",
             "etymology": "「似合う ね」 (niau ne) is often used to compliment someone's appearance."
         },
         {
@@ -230,8 +232,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/だけあって"
     },
     "change": [
-        "violation: Removed the 'listener_age' field from example 5 because the schema deprecates it and explicitly commands its removal. (Rule: '\"listener_age\" is deprecated. You *must* remove it. Use \"speaker_age\" of \"older\" or \"younger\" to indicate a difference.')",
-        "schema: Added 'scene_rationale' to all examples that had a 'scene' field, as required by the schema when 'scene' is present. (Rule: '\"scene_rationale\" must be present if \"scene\" is present.')",
-        "schema: Added spaces between words in all Japanese example sentences to assist Mecab parsing, as required by the schema. (Rule: 'Japanese must have a space between words to assist mecab in parsing.')"
+        "violation: Added 'speaker_gender', 'listener_gender', and updated 'nuance' and 'setting' for example 7 to ensure the example sentences include at least one male and one female listener_gender, as required by the schema. (Rule: 'Example sentences should include at least one male and one female listener_gender.')"
     ]
 }

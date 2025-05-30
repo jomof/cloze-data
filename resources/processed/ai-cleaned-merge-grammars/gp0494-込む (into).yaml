@@ -8,87 +8,87 @@
             "rarity": "common"
         },
         {
-            "type": "polite (non-past)",
+            "type": "non-past polite (～ます)",
             "form": "込みます",
             "rarity": "common"
         },
         {
-            "type": "negative (plain)",
+            "type": "negative plain (～ない)",
             "form": "込まない",
             "rarity": "common"
         },
         {
-            "type": "negative (polite)",
+            "type": "negative non-past polite (～ません)",
             "form": "込みません",
             "rarity": "common"
         },
         {
-            "type": "past (plain)",
+            "type": "past plain (～た)",
             "form": "込んだ",
             "rarity": "common"
         },
         {
-            "type": "past (polite)",
+            "type": "past polite (～ました)",
             "form": "込みました",
             "rarity": "common"
         },
         {
-            "type": "negative past (plain)",
+            "type": "negative past plain (～なかった)",
             "form": "込まなかった",
             "rarity": "common"
         },
         {
-            "type": "negative past (polite)",
+            "type": "negative past polite (～ませんでした)",
             "form": "込みませんでした",
             "rarity": "common"
         },
         {
-            "type": "te-form",
+            "type": "te-form (～て)",
             "form": "込んで",
             "rarity": "common"
         },
         {
-            "type": "conditional (provisional ば-form)",
+            "type": "conditional (～ば)",
             "form": "込めば",
             "rarity": "uncommon"
         },
         {
-            "type": "conditional (tara-form)",
+            "type": "conditional (～たら)",
             "form": "込んだら",
             "rarity": "uncommon"
         },
         {
-            "type": "volitional (plain)",
+            "type": "volitional (～よう)",
             "form": "込もう",
             "rarity": "rare"
         },
         {
-            "type": "volitional (polite)",
+            "type": "volitional polite (～ましょう)",
             "form": "込みましょう",
             "rarity": "rare"
         },
         {
-            "type": "imperative (plain)",
+            "type": "imperative plain (～ろ/～え)",
             "form": "込め",
             "rarity": "very rare"
         },
         {
-            "type": "imperative (polite)",
+            "type": "imperative polite (～なさい)",
             "form": "込んでください",
             "rarity": "very rare"
         },
         {
-            "type": "potential",
+            "type": "potential (～られる/～える)",
             "form": "込める",
             "rarity": "rare"
         },
         {
-            "type": "passive",
+            "type": "passive (～られる/～かれる)",
             "form": "込まれる",
             "rarity": "rare"
         },
         {
-            "type": "causative",
+            "type": "causative (～させる)",
             "form": "込ませる",
             "rarity": "uncommon"
         }
@@ -148,7 +148,7 @@
             ],
             "register": "casual",
             "setting": "storytelling",
-            "conjugation": "past (plain)"
+            "conjugation": "past plain (～た)"
         },
         {
             "japanese": "サウナから出て、水風呂に飛び{込む}ように入った。",
@@ -176,7 +176,7 @@
             ],
             "register": "formal",
             "setting": "informative",
-            "conjugation": "te-form"
+            "conjugation": "te-form (～て)"
         },
         {
             "japanese": "ちょっと、割り{込む}なんて失礼ですよ！",
@@ -223,7 +223,7 @@
             "setting": "flirty",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "conjugation": "past (plain)",
+            "conjugation": "past plain (～た)",
             "nuance": "The male speaker's determined action of 「無理やり割り込んだ」 (forcefully squeezing in) to sit next to the female listener implies a proactive, perhaps even aggressive, romantic intent often associated with male pursuit in a flirty context."
         },
         {
@@ -248,20 +248,15 @@
         {
             "term": "込む ②",
             "meaning": "To do thoroughly, deeply, intensely",
-            "kind": "synonym",
+            "kind": "often confused with",
             "nuance": "While this grammar point focuses on going 'into' something, 込む can also mean doing something thoroughly or deeply."
         }
     ],
     "post_false_friends_writeup": "Remember that 「込む」 has multiple meanings. While this lesson focuses on the 'going into' meaning, be aware that it can also intensify an action, meaning 'to do something thoroughly' or 'intensely.' Context is crucial in determining the correct interpretation.",
     "change": [
-        "violation: Changed 'rarity' values from 'commonly used' to 'common' and from 'unnatural' to 'very rare' in the 'conjugations' array. Reason: Schema definition for 'rarityType' enum.",
-        "violation: Added 'scene_rationale' to all examples containing a 'scene' field. Reason: Rule 6 requires 'scene_rationale' to be present if 'scene' is present.",
-        "violation: Modified example 6 'japanese' from '割り{込む}なんて、失礼ですよ。' to 'ちょっと、割り{込む}なんて失礼ですよ！'. Reason: To provide a natural example for a female speaker to demonstrate gender-specific language required by Rule 6. The previous phrasing was too generic for specific gender nuance.",
-        "violation: Added 'speaker_gender: female', 'listener_gender: male' and updated 'nuance' for example 6. Reason: Rule 6 requires example sentences to include at least one male and one female speaker_gender and listener_gender.",
-        "violation: Modified example 7 'japanese' from '魔王の城に一人で乗り{込む}のは危険だ。おやめなさい。' to '敵の建物に一人で乗り{込む}のは危険だ。おやめなさい。'. Reason: Rule 6 requires example sentences to use kanji appropriate for the JLPT level. '魔' (N1) and '城' (N2) were replaced with '敵' (N3) and '建物' (N4).",
-        "violation: Modified example 8 'japanese' from '彼は混んだ電車に無理やり割り{込んだ}。' to '彼は満員の電車に無理やり割り{込んだ}。'. Reason: Rule 6 requires example sentences to use kanji appropriate for the JLPT level. '混' (N2) was replaced with '満員' (満 N3, 員 N4), which is appropriate for N3, correcting a previous error in the prior YAML's change log.",
-        "unnatural: Rephrased 'nuance' for example 8. Reason: To provide a more accurate and natural explanation of the male speaker's nuance based on the provided Japanese phrase as per Rule 6's nuance requirements.",
-        "unnatural: Rephrased 'nuance' for example 9. Reason: To provide a more accurate and natural explanation of the male speaker's nuance based on the provided Japanese phrase as per Rule 6's nuance requirements."
+        "violation: Changed 'kind' in 'false_friends' from 'synonym' to 'often confused with'. Reason: The original 'synonym' was incorrect as 込む ② represents a different meaning of the same term, not a synonym of 込む ①. 'Often confused with' more accurately describes the relationship between the polysemous usages as per 'falseFriendKindType' enum.",
+        "schema: Updated 'type' fields in the 'conjugations' array to match the 'conjugationType' enum in the schema. Reason: Violation of schema definition for 'type' field in conjugations.",
+        "schema: Updated 'conjugation' fields in 'examples' array to match the new 'type' values from the 'conjugations' array. Reason: Consistency with updated conjugation types."
     ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/込む1"

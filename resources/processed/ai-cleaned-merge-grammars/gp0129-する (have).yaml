@@ -171,7 +171,7 @@
             "conjugation": "progressive (～ている)",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "Using 「してる」 is casual and friendly, serving as a compliment about her appearance. The phrase 「ねえ」 and the sentence-ending 「ね」 contribute to the flirtatious and informal tone typically used by a man in this context."
+            "nuance": "Using 「してる」 is casual and friendly, serving as a compliment about her appearance. The phrase 「ねえ」 and the sentence-ending 「ね」 contributes to the flirtatious and informal tone typically used by a man in this context."
         },
         {
             "japanese": "その指輪、素敵ですね。どちらで{なさった}んですか？",
@@ -222,14 +222,6 @@
     ],
     "post_false_friends_writeup": "To avoid confusion, remember that 「～をしている」 is about describing qualities or characteristics someone or something *possesses*, often visually or perceptibly. 「ある」 indicates existence or possession in a broader, more general sense. 「できる」 refers to ability or composition, completely different from describing inherent attributes.",
     "change": [
-        "violation: Corrected the meaning of the grammar point for Example 2 to fit 'have (characteristic)' instead of 'to do', and ensured Kanji usage is within JLPT N5/N4/N3 levels, by replacing the example 'この会社は、環境保護に力を入れています。' with 'この美術館は、美しい 庭園 をしています。'",
-        "violation: Added a new example with a female speaker to satisfy the requirement that at least one male and one female speaker_gender must be included in example sentences.",
-        "schema: Added 'jlpt' field and set it to 'N5'.",
-        "schema: Changed 'rarity' values from 'commonly used' to 'common' in the 'conjugations' array to match schema enum.",
-        "violation: Pruned 'conjugations' array to include only forms that preserve the meaning of 'have (characteristic)', removing volitional, imperative, potential, passive, and causative conjugations, and updated conjugation types to match schema's 'conjugationType' enum (e.g., 'polite (non-past)' to 'non-past polite (～ます)').",
-        "schema: Added 'progressive (～ている)' conjugation type to the 'conjugations' array as it is frequently used with this grammar point's meaning.",
-        "violation: Added curly braces `{}` around the grammar point in all 'japanese' example sentences.",
-        "schema: Added 'scene_rationale' field to all examples that have a 'scene', providing competing grammar and mitigation details.",
-        "schema: Removed 'speaker_gender' and 'listener_gender' from Example 1 and Example 7, as the sentences are not inherently gender-specific in their Japanese phrasing, even if the scene implies a gendered context. This ensures gender fields are only used when the language itself is typically gender-specific, while still maintaining at least one male and one female speaker_gender overall with other examples."
+        "schema: Removed 'change' array from top-level as it is not part of the output schema."
     ]
 }

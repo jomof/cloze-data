@@ -1,7 +1,6 @@
 {
     "grammar_point": "について",
     "id": "gp0526",
-    "conjugations": [],
     "formation": {
         "Noun + について": "Indicates the topic or subject being discussed or considered.",
         "Noun + についての + Noun": "Describes a noun that is related to or about the specified noun."
@@ -114,13 +113,13 @@
             "nuance": "The speaker is a man trying to impress a woman he likes. The use of 「君」 (k͟imi), often used by men to women, or superiors to subordinates, adds a direct and somewhat intimate, yet slightly possessive, tone. By saying 「君{について}もっと知りたい」, it shows a deeper interest in her character and thoughts, enhancing the flirty sentiment."
         },
         {
-            "japanese": "この論文は、AI技術の未来{について}考察している。",
-            "english": "This thesis examines the future of AI technology.",
-            "scene": "Describing the content of an academic paper.",
+            "japanese": "この報告書は、AI技術の未来{について}書いています。",
+            "english": "This report is written about the future of AI technology.",
+            "scene": "Describing the content of a report.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "AI技術の未来を考察している。",
-                    "mitigation": "In academic writing, 『について考察する』 is standard for 'to consider/examine something,' clearly indicating the subject of the discussion rather than just a direct object of the verb 『考察する』 (to consider)."
+                    "competing_grammar": "AI技術の未来を書いています。",
+                    "mitigation": "In formal writing, 『について書いています』 is standard for 'to write about something,' clearly indicating the subject of the writing rather than just a direct object of the verb 『書く』 (to write)."
                 }
             ],
             "register": "formal",
@@ -218,8 +217,9 @@
         "bunpro": "https://bunpro.jp/grammar_points/について"
     },
     "change": [
-        "violation: Added `scene_rationale` to all examples because the schema mandates it when `scene` is present and `OTHER_WAYS` exist.",
-        "violation: Refined `nuance` for example 7 to explicitly mention the gendered nature of 「君」 as per schema rule: 'If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.'",
-        "violation: Added a new example (Example 11) with `speaker_gender: female` and `listener_gender: male` to satisfy the schema rule: 'Example sentences should include at least one male and one female speaker_gender' and 'Example sentences should include at least one male and one female listener_gender'."
+        "violation: Added curly braces `{}` around the grammar point 「について」 in all 'japanese' example sentences. (Schema rule: 'japanese': **Must** have the grammar_point in {bold} (surrounded in curlies).)",
+        "violation: Modified example 8 to use N3/N4/N5 kanji only. Original Japanese had N1 kanji (論文, 考察). Changed to use 『報告書』 (N3/N5/N4) and 『書いています』 (N5). (Schema rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point. So, for example, if the grammar point is JLPT N3, the example sentences should use kanji from the N3, N4, and N5 lists.')",
+        "violation: Updated 'english', 'scene', and 'scene_rationale' for example 8 to reflect the change in kanji usage from 'thesis'/'examine' to 'report'/'written about'. (Schema rule: 'japanese' and 'english' must be consistent; 'scene' and 'scene_rationale' must accurately reflect the example.)",
+        "schema: Removed 'conjugations' field. This grammar point is not a conjugatable verb or adjective, and the schema dictates that 'conjugations' should only be present if the grammar point contains a verb/adjective in dictionary form."
     ]
 }

@@ -1,16 +1,16 @@
 {
     "grammar_point": "ずじまい",
+    "id": "gp0990",
     "pronunciation": {
         "katakana": "ズジマイ",
         "romaji": "zujimai"
     },
-    "conjugations": [],
     "formation": {
         "Verb (未然形 / Indeterminate form) + ずじまい": "Indicates that an action or state did not materialize or was left undone, often with a sense of regret or unfulfillment."
     },
-    "id": "gp0990",
     "jlpt": "N1",
     "meaning": "Ended up not, Did not (in the end), Never did",
+    "meaning_warning": "originates from the voiced verb[stem] form of しまう. Very often used in past form.",
     "details": {
         "Register": "Standard",
         "使用域": "一般"
@@ -46,7 +46,7 @@
                 },
                 {
                     "competing_grammar": "コンサートのチケットを買ったが、行くことができなかった。",
-                    "mitigation": "「行くことができなかった」 states an inability. 「行かずじまい」 emphasizes that the situation concluded without the action happening, conveying a sense of being stuck in a state of not going, with a nuance of regret over the missed opportunity."
+                    "mitigation": "「行くことができなかった」 states an inability. 「ずじまい」 emphasizes that the situation concluded without the action happening, conveying a sense of being stuck in a state of not going, with a nuance of regret over the missed opportunity."
                 }
             ],
             "register": "casual",
@@ -178,19 +178,14 @@
             "setting": "reflective"
         }
     ],
-    "post_example_writeup": null,
     "false_friends": [],
-    "post_false_friends_writeup": null,
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ずじまい"
     },
     "change": [
-        "violation: The `formation` field was inaccurate. Changed from `[Verb - dictionary form] + ずじまい` to `Verb (未然形 / Indeterminate form) + ずじまい` to correctly reflect the grammatical attachment, as stated in the `writeup` and demonstrated by `せずじまい`. (Rule 16: 'fix minor inaccuracies in",
-        "details",
-        "but do not invent new details' - applied to `formation` which functions as a detail of how to form the grammar point).",
-        "violation: Example 5 was a dialogue. Rewrote it as a single sentence from a single speaker's perspective to comply with 'Must be from the point of view of a single speaker. No back-and-forth dialogue.' (Rule 6).",
-        "schema: Added missing `scene_rationale` field to all examples, as `scene` was present and required its presence. (Schema definition for `examples.items.properties.scene_rationale`).",
-        "schema: Added `speaker_gender` to two examples (one male, one female) to ensure at least one male and one female speaker_gender is present, as required by the schema. (Rule 6, point 1, sub-point 1).",
-        "schema: Added `nuance` to examples where `speaker_gender` was specified, explaining how the specific Japanese reflects the gender. (Rule 6, point 1, sub-point 4)."
+        "schema: Removed 'conjugations' array as the grammar point itself is not a verb or adjective in dictionary form, per schema definition.",
+        "schema: Added 'meaning_warning' field, which was present in the raw input and is allowed by the schema.",
+        "schema: Removed 'post_example_writeup' and 'post_false_friends_writeup' fields as they were null and should be omitted.",
+        "violation: Ensured Example 5's Japanese remained the single-speaker version from the prior grammar point, as the raw input's version was a dialogue, violating rule 6 ('Must be from the point of view of a single speaker. No back-and-forth dialogue.')."
     ]
 }

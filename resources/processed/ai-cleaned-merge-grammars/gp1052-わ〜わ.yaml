@@ -13,11 +13,10 @@
     "jlpt": "N1",
     "meaning": "And... and..., Keeps ...ing, One after another, So much, So many",
     "details": {
-        "Register": "Formal",
-        "使用域": "硬い"
+        "Register": "casual"
     },
     "etymology": "The particle 「わ」 is considered an emphatic version of 「は」, an adverbial particle. It emphasizes the speaker's surprise or strong feelings about the amount or extent of something.",
-    "writeup": "The structure 「わ〜わ」 は、行動や状態の量、頻度、または程度を強調するために用いられる副詞的な表現です。話し手の驚き、感嘆、あるいは状況に圧倒されている感情を伝える際によく使用されます。おおよそ「～と～と」「～し続ける」「次から次へと」「非常に多くの～」「大変な～」といった意味合いで訳されます。\n\nこのパターンは、動詞の辞書形に「わ」を付けて繰り返し使用されることが最も一般的です。「する」動詞と共に用いる場合、二度目の動詞は「する」のみに短縮されることがよくあります。この構造は男女共に使用されますが、男性の話し言葉でより多く見受けられます。文中のどこに置かれるかによって「わ」には様々な用法や性別による傾向があるため、注意深く学習する必要があります。",
+    "writeup": "The structure 「わ〜わ」 is an adverbial expression used to emphasize the quantity, frequency, or degree of actions or states. It is frequently employed to convey the speaker's surprise, admiration, or a feeling of being overwhelmed by a situation. It can generally be translated as \"and... and...\", \"keeps ...ing\", \"one after another\", \"so much/many\", or \"a great deal of...\".\n\nThis pattern is most commonly used by repeating a verb in its dictionary form, with 「わ」 placed after each instance. When used with する-verbs, the second instance of the verb is often shortened to just 「する」. While this structure is used by both men and women, it is observed more frequently in male spoken Japanese. It is important to note that the particle 「わ」 has various usages and gender-specific tendencies depending on its position within a sentence, which require careful study.",
     "examples": [
         {
             "japanese": "もう、昨日 子供達 が 喧嘩 して {泣く わ 泣く わ} で 大変 だったんだから。",
@@ -80,7 +79,7 @@
             "nuance": "「～って」 is a casual way of quoting someone's statement. 「勉強するわするわ」 emphasizes the extent and consistency of his studying, a strong statement of observation often made by men when impressed by determination."
         },
         {
-            "japanese": "病院 に 入院 してた 時、いろいろ 検査 したら まあ、{出る わ 出る わ}…。",
+            "japanese": "病院 に 入院 してた 時、いろいろ 検査 したら まあ、{出る わ 出る わ}。",
             "english": "When I was in the hospital, they did various tests and, well, the findings just kept coming up, more than I expected.",
             "scene": "A woman recounting a difficult hospital experience to a friend, emphasizing the surprising number of findings.",
             "scene_rationale": [
@@ -158,17 +157,11 @@
     "post_example_writeup": "This grammar point adds emphasis to a repeated action or state, conveying a sense of surprise or being overwhelmed by the degree or frequency of the event. Remember to use it when you want to express how something keeps happening or is present in a large amount.",
     "false_friends": [],
     "post_false_friends_writeup": "",
-    "change": [
-        "conjugations: Removed. Reason: schema. Removed because `わ〜わ` is a particle pattern, not a conjugatable verb or adjective, so it does not meet the schema's condition for including this field.",
-        "japanese example fields: Added `{}` for bolding the grammar point and ensured correct spacing (`{verb わ verb わ}`). Reason: schema/unnatural. Compliance with the schema's requirement for bolding the grammar point and natural Japanese spacing.",
-        "english for example 5: Rephrased for clarity and integration of context. Reason: unnatural. The original phrasing felt slightly disjointed with the parenthetical note.",
-        "japanese for example 5: Removed internal English hint `(思 った 以上 のことが 指摘 された)`. Reason: schema. Hints must not be embedded in the Japanese text.",
-        "scene_rationale for all examples with `scene`: Added with `competing_grammar` and `mitigation`. Reason: schema. Required by the schema when `scene` is present.",
-        "speaker_gender for all examples: Added and diversified. Reason: schema. Required by the schema to include gender information when relevant and to have diversity.",
-        "writeup: Slightly rephrased for precision and to better align with the persona's tone (terse, serious, analytical). Reason: unnatural. Improved flow and terminology to reflect a highly skilled teacher's explanation.",
-        "post_false_friends_writeup: Changed from `null` to `\"\"`. Reason: schema. The schema requires this field to be present and non-null if `false_friends` is present, even if empty."
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/わ-わ"
-    }
+    },
+    "change": [
+        "details: Register changed from 'Formal' to 'casual', '使用域' removed. (violation) Reason: The previous `details.Register: Formal` and `使用域: 硬い` directly contradicted the grammar point's actual usage as described in the DOJG source (`usually used in conversation`) and exemplified by the provided `casual` `register` examples. This change aligns `details` with common usage and other parts of the grammar explanation, resolving an inaccuracy. (Rule 16: \"You may fix minor inaccuracies in 'details', but do not invent new details.\")",
+        "writeup: Entire section translated from Japanese to English. (violation) Reason: The `writeup` section was primarily in Japanese, which violates the schema rule requiring it to be \"primarily in English\"."
+    ]
 }

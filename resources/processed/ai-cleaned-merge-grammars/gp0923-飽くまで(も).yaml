@@ -96,17 +96,19 @@
             "setting": "cautious"
         },
         {
-            "japanese": "その 影響 で 東京オリンピック は 20XX 年 も 開催 できない と 思います。でもまぁ、{あくまでも} 私 の 想像 に 過ぎないので、真剣 に 考えないでください。",
-            "english": "I think that due to its influence, the Olympics might also not happen in 20XX. But this is just what I imagine will happen, so don't look into it too much.",
-            "scene": "Expressing a speculative opinion casually.",
+            "japanese": "その 火 が 上がった の は 偶然 で は なかった かも しれない。まぁ、これ は {あくまで} 僕 の 仮説 です が。",
+            "english": "That fire might not have been entirely an accident. This is just my hypothesis, though.",
+            "scene": "A detective sharing a preliminary thought during an investigation.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "でもまぁ、ただ私の想像に過ぎないので...",
-                    "mitigation": "「ただ」 would simply state it's imagination. The scene, a casual yet pessimistic speculation, uses 「あくまでも」 to underline that the thought is *strictly* within the realm of personal imagination and not a definite prediction, subtly tempering the speaker's own strong feeling."
+                    "competing_grammar": "これはただ僕の仮説ですが。",
+                    "mitigation": "「ただ」 would simply state it's a hypothesis. The scene, a detective's preliminary thought, uses 「あくまで」 to stress that it is *strictly* a hypothesis, emphasizing its unconfirmed and theoretical nature rather than just a simple idea."
                 }
             ],
-            "register": "casual",
-            "setting": "pessimistic"
+            "register": "semi-formal",
+            "setting": "serious",
+            "speaker_gender": "male",
+            "nuance": "The 「僕」 is a first-person pronoun that is typically used by males."
         },
         {
             "japanese": "この アルゴリズム の 実世界 で の 使用法 は 場合 によって 異なり ます ので、{あくまでも} 本稿 は ガイドライン として 取り扱い ください。",
@@ -122,19 +124,17 @@
             "setting": "technical"
         },
         {
-            "japanese": "その 火 が 上がった の は 偶然 で は なかった かも しれない。まぁ、これ は {あくまで} 僕 の 仮説 です が。",
-            "english": "That fire might not have been entirely an accident. This is just my hypothesis, though.",
-            "scene": "A detective sharing a preliminary thought during an investigation.",
+            "japanese": "その 影響 で 東京オリンピック は 20XX 年 も 開催 できない と 思います。でもまぁ、{あくまでも} 私 の 想像 に 過ぎないので、真剣 に 考えないでください。",
+            "english": "I think that due to its influence, the Olympics might also not happen in 20XX. But this is just what I imagine will happen, so don't look into it too much.",
+            "scene": "Expressing a speculative opinion casually.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "これはただ僕の仮説ですが。",
-                    "mitigation": "「ただ」 would simply state it's a hypothesis. The scene, a detective's preliminary thought, uses 「あくまで」 to stress that it is *strictly* a hypothesis, emphasizing its unconfirmed and theoretical nature rather than just a simple idea."
+                    "competing_grammar": "でもまぁ、ただ私の想像に過ぎないので...",
+                    "mitigation": "「ただ」 would simply state it's imagination. The scene, a casual yet pessimistic speculation, uses 「あくまでも」 to underline that the thought is *strictly* within the realm of personal imagination and not a definite prediction, subtly tempering the speaker's own strong feeling."
                 }
             ],
-            "register": "semi-formal",
-            "setting": "serious",
-            "speaker_gender": "male",
-            "nuance": "The 「僕」 is a first-person pronoun that is typically used by males."
+            "register": "casual",
+            "setting": "pessimistic"
         },
         {
             "japanese": "私は {あくまでも} 自分の信念に従うだけよ。",
@@ -153,15 +153,11 @@
         }
     ],
     "false_friends": [],
+    "post_false_friends_writeup": "",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/飽くまで-も"
     },
     "change": [
-        "violation: Added curly braces `{}` around the grammar point in examples 1, 2, 3, 4. (Rule: \"Must have the grammar_point in {bold} (surrounded in curlies).\")",
-        "violation: Removed Japanese quotes `「」` from examples 5, 6, 7, 8, 9. (Rule: \"Must not use quotes including 「」, .\")",
-        "violation: Corrected English quote characters from `‘` to `\"` and `’` to `\"` in examples 5, 6, 7, 8, 9. (Rule: \"If quotes are allowed in the context, then **must** use double-quotes (\") for quotes.\")",
-        "unnatural: Revised `english` and `scene` for examples 5 and 6 to separate scene description from the spoken English, making both fields more natural. (Rule: \"'english' and 'scene' will be displayed together, so 'scene' **must not** repeat facts from 'english'. They should sound natural and not redundant when read together.\")",
-        "schema: Added `scene_rationale` to all existing examples (1-9). (Rule: \"'scene_rationale' **must** be present if 'scene' is present.\")",
-        "command: Added a new example (10) with `speaker_gender: female` and corresponding `nuance`, `scene`, and `scene_rationale`. (Command from prior grammar point: '// Add a speaker_gender: female example with a nuance that explains how it's female speech')"
+        "schema: Removed the 'change' field from the input JSON as it is not part of the output schema."
     ]
 }

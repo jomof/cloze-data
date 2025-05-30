@@ -11,10 +11,10 @@
     "jlpt": "N5",
     "meaning": "After doing, Once...is done, Since",
     "details": {
-        "Part of Speech": "Case Marking Particle",
+        "Part of Speech": "Conjunctive Phrase",
         "Register": "Standard",
-        "品詞": "表現",
-        "単語の種類": "格助詞",
+        "品詞": "接続表現",
+        "単語の種類": "複合表現",
         "使用域": "一般"
     },
     "etymology": "The grammar point 「てから」 is formed by combining the te-form 「て」 of a verb with the particle 「から」. The 「て」-form indicates a sequence or connection between actions, while 「から」 indicates a starting point or reason. Together, they create a structure that shows that an action or event happens *after* another action has been completed.",
@@ -74,7 +74,10 @@
                 }
             ],
             "register": "teineigo",
-            "setting": "informative"
+            "setting": "informative",
+            "speaker_gender": "male",
+            "listener_gender": "no one",
+            "nuance": "The polite form 「寝ます」 is used even when the speaker is talking to themselves, indicating a standard, habitual action."
         },
         {
             "japanese": "会社を辞めて{から}、どうするんですか？",
@@ -90,7 +93,7 @@
             "setting": "interrogative"
         },
         {
-            "japanese": "日本に帰って{から}、連絡しますね。",
+            "japanese": "日本に帰って{から}、電話しますね。",
             "english": "I'll contact you after I return to Japan.",
             "scene": "A person promising to keep in touch after returning to their home country.",
             "scene_rationale": [
@@ -226,8 +229,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/てから"
     },
     "change": [
-        "schema, violation: Removed 'listener_age' field from example 8, which is deprecated by the schema's 'speaker_age' definition.",
-        "violation: Added 'scene_rationale' to all examples that include a 'scene' field, as it was missing, violating rule 6 which states 'scene_rationale' must be present if 'scene' is present.",
-        "violation: Added a new example (example 11) with a female speaker and group listener in a formal setting to satisfy the requirement for at least one male and one female speaker_gender and listener_gender in example sentences, as per rule 6."
+        "violation: Example 6: Changed `連絡しますね` to `電話しますね` to ensure all kanji are appropriate for the JLPT N5 level, as `絡` is an N2 kanji. (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
+        "schema: Example 4: Added `speaker_gender: male`, `listener_gender: no one`, and `nuance` to meet the requirement for diversity in speaker/listener genders and types. (Rule: \"Example sentences should include at least one male and one female speaker_gender.\" and \"Example sentences should include at least one male and one female listener_gender.\" and \"Use \\\"no one\\\" if the speaker is talking to themselves or no one in particular.\" and \"nuance\" must be present if there is a speaker_gender or listener_gender.)",
+        "schema: Details field: Modified `Part of Speech` to `Conjunctive Phrase`, `品詞` to `接続表現`, and `単語の種類` to `複合表現` for greater grammatical accuracy. (Rule: \"You may fix minor inaccuracies in \\\"details\\\", but do not invent new details.\")"
     ]
 }

@@ -168,34 +168,14 @@
             "nuance": "「～ても」 without 「いい」 expresses a concession but doesn't imply permission or acceptance. It simply states that even if something is the case, something else is still true."
         }
     ],
-    "post_false_friends_writeup": "To avoid confusion, remember that 「～てもいい」 always implies permission or acceptance. If you only want to express \"even if\" or \"even though,\" use 「～ても」 without 「いい」. If you wish to express that you don't mind, use 「～てもかまわない」.",
+    "post_false_friends_writeup": "To avoid confusion, remember that 「～てもいい」 always implies permission or acceptance. If you only want to express \"even if\" or \"even though,\" use 「～ても」 without 「いい」. If you wish to express that you don’t mind, use 「～てもかまわない」.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/てもいい"
     },
     "change": [
         {
-            "category": "violation",
-            "reason": "Removed 'plain present negative' `てはいけない` and 'plain past negative' `てはいけなかった` from `conjugations`. Instruction 6 of the schema states that conjugations must 'preserve the meaning of the grammar point'. These forms express prohibition, which negates the permission/acceptability meaning of `てもいい`, rather than preserving it as a negative variation."
-        },
-        {
-            "category": "violation",
-            "reason": "Replaced the removed `てはいけない` and `てはいけなかった` with `てもよくない` and `てもよくなかった` respectively in `conjugations`. These forms correctly represent the negative of 'it's okay even if...' or 'it's not good even if...', thereby preserving the core meaning of `てもいい`. This aligns with instruction 6 of the schema."
-        },
-        {
             "category": "schema",
-            "reason": "Updated `type` fields in `conjugations` (e.g., `plain present affirmative` to `present plain`) to align with the `conjugationType` enum defined in the schema."
-        },
-        {
-            "category": "suggestion",
-            "reason": "Adjusted `rarity` for negative conjugations to `common`, as they are standard and regularly used expressions in their context."
-        },
-        {
-            "category": "violation",
-            "reason": "Removed `Verb+てもいい` from `false_friends`. Instruction 14 states 'false_friends must not reference other conjugations of this grammar point'. While not a conjugation, this entry was effectively a redundant self-reference to the main grammar point itself, making it an inappropriate false friend."
-        },
-        {
-            "category": "violation",
-            "reason": "Added `scene_rationale` to all examples that included a `scene` field. Instruction 6 mandates that if `scene` is present, `scene_rationale` must also be present, explaining why the scene was necessary."
+            "reason": "Added missing 'form' field to the 'negative non-past polite' conjugation entry in 'conjugations' array, as required by the schema's 'required' properties for conjugation items. The previous input was missing this field."
         }
     ]
 }

@@ -139,7 +139,7 @@
             "setting": "friendly"
         },
         {
-            "japanese": "彼女 が 僕 の こと を どう 思っ ている {かどうか} 気 に なる。",
+            "japanese": "彼女 が 私 の こと を どう 思っ ている {かどうか} 気 に なる。",
             "english": "I'm curious about whether or not she has feelings for me.",
             "scene": "A man speaking to a close friend.",
             "scene_rationale": [
@@ -230,8 +230,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/かどうか"
     },
     "change": [
-        "violation: Removed the 'conjugation' field from all example sentences. The schema states, 'Conjugation **only** if the grammar point is conjugatable... **Must not** be present if there is no top-level \"conjugations\" array.' Since 'かどうか' itself is not conjugatable, and no top-level 'conjugations' array is present, this field is not applicable.",
-        "schema: Added 'scene_rationale' to all example sentences that include a 'scene' field. The schema requires that if 'scene' is present, 'scene_rationale' must also be present.",
-        "unnatural: Refined the 'nuance' for Example 9 to correctly reference the Japanese phrase `不安 だ な` within the sentence and link it to the male speaker and setting, rather than incorrectly mentioning `～かな` which was not present in the Japanese sentence."
+        "violation: Changed N1 kanji `僕` to N4 kanji `私` in example 8 Japanese sentence to adhere to the rule 'Example sentences should use kanji appropriate for the JLPT level of the grammar point'."
     ]
 }

@@ -216,7 +216,7 @@
             "conjugation": "non-past polite (～ません)"
         },
         {
-            "japanese": "お忙しいのは重々承知しておりますが、あなたを今夜の飲みにお誘い{しないわけにはいきません}。",
+            "japanese": "お忙しいことはよく分かっていますが、あなたを今夜の飲みにお誘い{しないわけにはいきません}。",
             "english": "I'm well aware you're busy, but I simply cannot not invite you for a drink tonight.",
             "scene": "An older man (boss) talking to a younger female employee after work hours.",
             "scene_rationale": [
@@ -234,7 +234,7 @@
             "speaker_gender": "male",
             "listener_gender": "female",
             "speaker_age": "older",
-            "nuance": "The use of 「重々承知しております」 (I am fully aware) and the polite 「お誘いしないわけにはいきません」 makes the invitation very formal and almost humble. This can be seen as charmingly persistent in a flirty context. The older male, using respectful language, subtly implies an irresistible urge to invite her, framing it as an unavoidable necessity.",
+            "nuance": "The use of 「よく分かっていますが」 and the polite 「お誘いしないわけにはいきません」 makes the invitation formal and persistent. This can be seen as charmingly persistent in a flirty context. The older male, using respectful language, subtly implies an irresistible urge to invite her, framing it as an unavoidable necessity.",
             "conjugation": "non-past polite (～ません)"
         },
         {
@@ -258,6 +258,28 @@
             "speaker_age": "younger",
             "nuance": "The phrase 「まるで運命のよう」 (just like fate) explicitly sets a romantic tone. The speaker, a younger female, uses 「もう二度とあなたに会わないわけにはいきませんね」 which expresses an unavoidable desire to meet again. The ending particle 「ね」 softens the statement, making it sound more like an intimate observation or a shared realization than a forceful demand.",
             "conjugation": "non-past polite (～ません)"
+        },
+        {
+            "japanese": "昨日、風邪で辛かったけど、大事な会議があったから、出勤{しないわけにはいかなかった}。",
+            "english": "Yesterday, even though I felt terrible with a cold, I couldn't avoid going to work because there was an important meeting.",
+            "scene": "An employee explaining to a colleague why they came to work sick.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "出勤しなければならなかった",
+                    "mitigation": "The scene emphasizes the personal struggle and the external, compelling circumstance (important meeting) that made coming to work unavoidable despite being sick, which 「ないわけにはいかなかった」 conveys better than a simple obligation."
+                },
+                {
+                    "competing_grammar": "出勤するしかなかった",
+                    "mitigation": "While similar, 「～するしかなかった」 often implies a complete lack of alternatives. 「ないわけにはいかなかった」 still carries the nuance of reluctance and an underlying reason why the negative action (not going) was impossible."
+                }
+            ],
+            "register": "semi-formal",
+            "setting": "serious",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "speaker_age": "older",
+            "nuance": "The phrase 「風邪で辛かったけど」 expresses the speaker's physical discomfort, highlighting the specific circumstance that made going to work difficult. However, the external factor of 「大事な会議」 (important meeting) made it impossible to avoid. The older male speaks in a semi-formal tone to a female colleague, justifying his presence despite illness.",
+            "conjugation": "past plain (～た)"
         }
     ],
     "false_friends": [
@@ -303,9 +325,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/ないわけにはいかない"
     },
     "change": [
-        "schema: Removed 'listener_age' field from all examples as it is deprecated per schema definition.",
-        "schema: Added 'scene_rationale' field to all examples that have a 'scene' field, as required by the schema. This involved identifying 'competing_grammar' and providing 'mitigation' for each.",
-        "schema: Updated 'conjugations' array to use exact 'conjugationType' enum values for 'non-past polite (～ません)', 'past plain (～た)', and 'past polite (～ました)'.",
-        "schema: Updated 'conjugation' field in examples to match updated 'conjugationType' enum values and correct the conjugation for example 10 from 'dictionary (plain non-past)' to 'non-past polite (～ません)'."
+        "schema: Modified Example 9's Japanese from 'お忙しいのは重々承知しておりますが' to 'お忙しいことはよく分かっていますが' to ensure kanji usage is appropriate for N2 JLPT level, avoiding N1 kanji. (violation)",
+        "schema: Added a new example demonstrating the 'past plain (～た)' conjugation to exhibit a wider variety of conjugations as required by the schema. (violation)"
     ]
 }

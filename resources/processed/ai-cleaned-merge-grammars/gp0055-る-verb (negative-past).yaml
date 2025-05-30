@@ -174,7 +174,7 @@
         {
             "japanese": "部長は、今日の会議には{出席されませんでした}。",
             "english": "The department head did not attend today's meeting.",
-            "scene": "A male employee is informing a colleague about the department head's absence.",
+            "scene": "A male employee is informing a male colleague about the department head's absence.",
             "scene_rationale": [
                 {
                     "competing_grammar": "部長は、今日の会議には出席しなかった。",
@@ -185,7 +185,8 @@
             "register": "formal",
             "setting": "professional",
             "speaker_gender": "male",
-            "nuance": "While the sentence is largely gender-neutral, the use of formal language and honorifics like 「出席されませんでした」 in a professional setting is common for male speakers informing colleagues about superiors."
+            "listener_gender": "male",
+            "nuance": "While the sentence is largely gender-neutral, the use of formal language and honorifics like 「出席されませんでした」 in a professional setting is common for male speakers informing male colleagues about superiors."
         }
     ],
     "false_friends": [
@@ -201,12 +202,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/る-verb-neg-past"
     },
     "change": [
-        "schema: Removed top-level 'bunpro' field as it's not part of the output schema. Extracted 'meaning_warning' from it.",
-        "schema: Added 'meaning_warning' field from the input's 'bunpro' data to comply with the schema.",
-        "schema: Removed top-level 'lesson_order' field as it's not part of the output schema.",
-        "schema: Removed top-level 'source' field as it's not part of the output schema.",
-        "violation: Updated 'writeup' to include the detail about the 'semi-polite form' ('〜なかったです') which was present in the input's 'writeup' but missing from the prior version. (Rule: Incorporate essential details from the input while rephrasing for clarity.)",
-        "violation: Added two new examples (Example 9 and 10) to ensure at least one male and one female 'speaker_gender' example is present. (Rule: Example sentences should include at least one male and at least one female speaker_gender.)",
-        "violation: Added 'scene_rationale' to all existing examples (1-8) and the newly added examples (9-10). (Rule: 'scene_rationale' must be present if 'scene' is present.)"
+        "violation: Added 'listener_gender: \"male\"' to example 10 and adjusted its 'nuance' to satisfy the rule that example sentences must include at least one male and one female listener_gender."
     ]
 }

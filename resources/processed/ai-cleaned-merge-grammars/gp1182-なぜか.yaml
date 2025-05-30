@@ -138,11 +138,6 @@
     ],
     "post_false_friends_writeup": "While 「なぜか」, 「どうして」, and 「わけもなく」 all relate to reasons, they are used in distinct contexts. Use 「どうして」 when directly asking for an explanation. Use 「わけもなく」 when stating that there is absolutely no reason or cause for something. Use 「なぜか」 when the reason is unknown, yet you sense one might exist, or when expressing a puzzling, unexplainable occurrence.",
     "change": [
-        "violation: Changed formation value format to be pseudo-algebraic. Instruction: \"You *must* add a 'formation' tag that describes, in psuedo-algebraic notation...\"",
-        "violation: Combined and refined 'details' field to incorporate information from both input and prior data, specifically regarding 'Register' and 'Part of Speech'. Instruction: \"fix minor inaccuracies in 'details', but do not invent new details.\"",
-        "violation: Added 'scene_rationale' to all examples that have a 'scene' field. Instruction: \"If OTHER_WAYS is not empty, then you **must** have a 'scene' field... **Must** be present if 'scene' is present. **Must** include wrong ways... **Must** list the exact content of OTHER_WAYS from 'scene'.\"",
-        "violation: Modified example 5 to include 'speaker_gender: female' and adjusted its Japanese to include 'わ' for female speech, and updated its 'nuance' accordingly, to ensure at least one male and one female speaker example. Instruction: \"Example sentences should include at least one male and one female speaker_gender.\" and \"If there is a 'speaker_gender' or 'listener_gender', then 'nuance' **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.\"",
-        "violation: Refined 'nuance' for existing male-gendered examples (2 & 6) to more explicitly link the phrasing to the speaker gender. Instruction: \"If there is a 'speaker_gender' or 'listener_gender', then 'nuance' **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.\"",
-        "schema: Omitted the 'sources' field because the input's 'dojg' path is not a URL for a 'bunpro' field, and the schema forbids top-level 'bunpro' or 'dojg' fields. Instruction: \"You **must not** add top-level 'bunpro' or 'dojg' fields to the output JSON.\""
+        "schema: Removed 'sources' field because the input 'dojg' data does not provide a Bunpro URI, and the schema for 'sources' only allows a 'bunpro' URI."
     ]
 }

@@ -36,22 +36,22 @@
             "nuance": "The speaker is stating a simple fact about their monthly routine."
         },
         {
-            "japanese": "彼 は 一週間 {に} 2回 しか 顔 を 洗わない から、顔 が 汚い。",
-            "english": "Because he only washes his face twice a week, his face is dirty.",
-            "scene": "Someone complaining about another person's hygiene.",
+            "japanese": "彼 は 一週間 {に} 二回 しか 練習 しません。",
+            "english": "He only practices twice a week.",
+            "scene": "A coach complaining about a lazy student.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "彼は一週間で2回しか顔を洗わないから、顔が汚い。",
-                    "mitigation": "The scene highlights a recurring negative habit (frequency), not a task completed *within* a certain timeframe using 「で」."
+                    "competing_grammar": "彼 は 一週間 で 二回 しか 練習 しません。",
+                    "mitigation": "The scene highlights a recurring habit (frequency), not a task completed *within* a certain timeframe using 「で」."
                 },
                 {
-                    "competing_grammar": "彼は一週間2回しか顔を洗わないから、顔が汚い。",
+                    "competing_grammar": "彼 は 一週間 二回 しか 練習 しません。",
                     "mitigation": "Omitting 「に」 removes the explicit marking of frequency *within* the week, making the statement less precise about the interval."
                 }
             ],
             "register": "casual",
-            "setting": "humorous",
-            "nuance": "This is a casual observation, with a slightly humorous and critical tone due to the consequence mentioned. The use of 「汚い」 adds to the informal, critical assessment."
+            "setting": "serious",
+            "nuance": "This is a casual, somewhat critical observation about someone's habit."
         },
         {
             "japanese": "一年に三回ぐらい 海外旅行 {に} 行く。",
@@ -110,24 +110,24 @@
             "nuance": "This is a formal statement of fact, suitable for a professional context."
         },
         {
-            "japanese": "彼 は タバコ を 1日 {に} 40本ぐらい 吸う。",
-            "english": "He smokes about 40 cigarettes every day.",
-            "scene": "Talking about someone's smoking habit.",
+            "japanese": "俺 は タバコ を 1日 {に} 40本ぐらい 吸うんだよな。",
+            "english": "I smoke about 40 cigarettes a day, you know.",
+            "scene": "A man confessing a bad habit to a friend.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "彼はタバコを一日で40本ぐらい吸う。",
+                    "competing_grammar": "俺 は タバコ を 1日 で 40本ぐらい 吸う。",
                     "mitigation": "The scene concerns a daily *habit* (frequency), not the completion of smoking 40 cigarettes within a specific day's duration, which 「で」 would imply."
                 }
             ],
             "register": "casual",
-            "setting": "informative",
-            "speaker_gender": "female",
-            "nuance": "The speaker's gender is identified as female due to the absence of masculine sentence-ending particles or casual forms typically used by male speakers. 「ぐらい」 makes it an approximation."
+            "setting": "friendly",
+            "speaker_gender": "male",
+            "nuance": "The use of the first-person pronoun 「俺 (おれ)」 is typically masculine. The sentence-ending particle 「～んだよな」 also lends a casual, masculine tone, often used when stating a fact or seeking agreement from a close acquaintance."
         },
         {
             "japanese": "この カフェ には、週 {に} 何回 行きますか？",
             "english": "How many times a week do you go to this cafe?",
-            "scene": "On a first date.",
+            "scene": "On a first date, someone is inquiring about the other person's habits.",
             "scene_rationale": [
                 {
                     "competing_grammar": "このカフェには、週で何回行きますか？",
@@ -136,9 +136,7 @@
             ],
             "register": "polite",
             "setting": "first-date",
-            "listener_gender": "female",
-            "speaker_gender": "male",
-            "nuance": "A man politely trying to make conversation with a woman on a date by inquiring about her cafe habits using the polite 「ます」 form."
+            "nuance": "This is a polite question, suitable for making conversation in a new acquaintance context."
         },
         {
             "japanese": "私 の こと、一晩 {に} 何回 考えた の？",
@@ -177,6 +175,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/に-frequency"
     },
     "change": [
-        "violation: Removed Bunpro's original example '2年間で50万円も貯めた。' because it uses the particle 'で' for duration, not 'に' for frequency, violating the rule 'Each example **must** use the grammar_point'."
+        "violation: Example 2's Japanese sentence was modified from '彼 は 一週間 {に} 2回 しか 顔 を 洗わない から、顔 が 汚い。' to '彼 は 一週間 {に} 二回 しか 練習 しません。' because the kanji '汚' (きたな) is JLPT N2, violating the rule 'Example sentences should use kanji appropriate for the JLPT level of the grammar point'. Replaced with N4 kanji '練習'.",
+        "schema: Example 7's Japanese sentence was modified from '彼 は タバコ を 1日 {に} 40本ぐらい 吸う。' to '俺 は タバコ を 1日 {に} 40本ぐらい 吸うんだよな。' to fulfill the requirement that example sentences include at least one male speaker, and the original sentence was gender-neutral. Added 'speaker_gender' and corresponding 'nuance'.",
+        "schema: Example 8 had its 'speaker_gender', 'listener_gender', and 'nuance' fields removed because the Japanese sentence 'この カフェ には、週 {に} 何回 行きますか？' is gender-neutral. The schema states 'speaker_gender **must not** be specified if the spoken Japanese does not depend on the gender of the speaker'."
     ]
 }

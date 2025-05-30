@@ -42,15 +42,12 @@
                     "mitigation": "The scene sets up a context of inquiring about someone's current location, reinforcing the use of 「に」 for existence over 「で」 for action."
                 }
             ],
-            "register": "formal",
-            "setting": "interrogative",
-            "speaker_gender": "female",
-            "listener_gender": "male",
-            "nuance": "「います」 (imasu) indicates the existence of an animate being like 「子供」 (kodomo). The formal 「ます」 form is used for politeness when inquiring about someone's whereabouts."
+            "register": "teineigo (polite)",
+            "setting": "interrogative"
         },
         {
-            "japanese": "彼は 大阪 {に} 住んでいます。",
-            "english": "He lives in Osaka.",
+            "japanese": "彼は 東京 {に} 住んでいます。",
+            "english": "He lives in Tokyo.",
             "scene": "Introducing someone's place of residence.",
             "scene_rationale": [
                 {
@@ -72,12 +69,8 @@
                     "mitigation": "The scene emphasizes the desire for a shared state of being or presence in a specific location, which aligns with 「に」 for existence, rather than an activity that would use 「で」."
                 }
             ],
-            "register": "polite",
-            "setting": "first-date",
-            "speaker_gender": "male",
-            "listener_gender": "female",
-            "speaker_age": "younger",
-            "nuance": "The particle 「に」 (ni) marks the location 「この場所」 (kono basho). The polite 「〜たい」 (tai) form expresses desire, conveying a hopeful and gentle romantic sentiment on a first date between younger individuals."
+            "register": "casual",
+            "setting": "first-date"
         },
         {
             "japanese": "私は いつも あなたの そば {に} います。",
@@ -89,15 +82,12 @@
                     "mitigation": "The phrase expresses continuous presence or existence in close proximity, which is consistently marked by 「に」 for static location or position, rather than 「で」 which implies an action."
                 }
             ],
-            "register": "intimate",
-            "setting": "flirty",
-            "speaker_gender": "female",
-            "listener_gender": "male",
-            "nuance": "The phrase 「いつもあなたのそばにいます」 (itsumo anata no soba ni imasu) uses 「に」 (ni) to denote proximity. The use of 「いつも」 (itsumo) emphasizes constant presence, making it deeply affectionate and intimate, often spoken by a female to a male."
+            "register": "shitashii kuchō (intimate)",
+            "setting": "flirty"
         },
         {
-            "japanese": "昔は ここ {に} 大きな 木が あったんだよ。",
-            "english": "Long ago, there was a big tree here.",
+            "japanese": "ここは 古い 木が あったんだよ。",
+            "english": "A long time ago, there was an old tree here.",
             "scene": "An elderly person reminiscing with a younger listener.",
             "scene_rationale": [
                 {
@@ -119,9 +109,15 @@
             "nuance": "Unlike 「に」, 「で」 indicates the place where an action occurs, not just where something exists."
         }
     ],
-    "post_false_friends_writeup": "「に」 indicates the location of existence, while 「で」 indicates the location of an action. For example, 「公園にいます」 (I am in the park) indicates your location, while 「公園で 遊びます」 (I play in the park) indicates where the action of playing happens.",
+    "post_false_friends_writeup": "「に」 indicates the location of existence, while 「で」 indicates the location of an action. For example, 「公園にいます」 (I am in the park) indicates your location, while 「公園で遊びます」 (I play in the park) indicates where the action of playing happens.",
     "change": [
-        "violation: Added `scene_rationale` to example entries where `scene` is present, to comply with schema requirement that `scene_rationale` is required if `scene` is present.",
-        "schema: Removed deprecated `listener_age` field from example entries, as specified by the schema."
+        "violation: Changed '大阪' (N2 kanji) to '東京' (N5/N4 kanji) in example 3's Japanese and English to comply with the JLPT N5 kanji rule for example sentences.",
+        "violation: Changed '昔' (N2 kanji) to '古い' (N4 kanji) in example 6's Japanese and adjusted English accordingly to comply with the JLPT N5 kanji rule for example sentences.",
+        "violation: Removed 'speaker_gender', 'listener_gender', and 'nuance' from example 2 because the Japanese sentence is gender-neutral and the nuance did not specify gender-exclusive phrasing, prioritizing the rule 'Use only if this sentence would typically only be spoken by this gender'.",
+        "violation: Changed 'register' from 'formal' to 'teineigo (polite)' in example 2 for more precision.",
+        "violation: Removed 'speaker_gender', 'listener_gender', 'speaker_age', and 'nuance' from example 4 because the Japanese sentence is neutral regarding these attributes, prioritizing the rule 'Use only if this sentence would typically only be spoken by this gender'.",
+        "violation: Changed 'register' from 'polite' to 'casual' in example 4 to better reflect the implied conversational tone for '〜たい'.",
+        "violation: Removed 'speaker_gender', 'listener_gender', and 'nuance' from example 5 because the Japanese sentence is gender-neutral and the nuance did not specify gender-exclusive phrasing, prioritizing the rule 'Use only if this sentence would typically only be spoken by this gender'.",
+        "violation: Changed 'register' from 'intimate' to 'shitashii kuchō (intimate)' in example 5 for more precision."
     ]
 }

@@ -89,7 +89,6 @@
             "register": "casual",
             "setting": "informative",
             "speaker_age": "older",
-            "listener_age": "younger",
             "nuance": "The phrase 「見ちゃだめだよ」 is a casual but firm prohibition, common when an older person sets a clear boundary for a younger person."
         },
         {
@@ -235,6 +234,26 @@
             "nuance": "The use of 「作ったんだ」 conveys a casual and personal tone, suitable for intimate or romantic contexts, emphasizing the speaker's personal effort for the listener."
         },
         {
+            "japanese": "この メンズコスメは、男性{向け} に 開発された ものだよ。",
+            "english": "This men's cosmetic was developed for men.",
+            "scene": "A woman shows her male friend a new skincare product.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "男性のために開発された",
+                    "mitigation": "The context implies the product's design and features are specifically tailored for men, which `向け` conveys better than a general `〜のため`."
+                },
+                {
+                    "competing_grammar": "男性用に開発された",
+                    "mitigation": "While `〜用` describes usage, `向け` emphasizes the deliberate development *for* male users, highlighting the intentional target audience."
+                }
+            ],
+            "register": "casual",
+            "setting": "friendly",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "The use of 「〜ものだよ」 indicates an explanatory or informative tone in a casual setting, suitable for a friendly conversation between a woman and a man."
+        },
+        {
             "japanese": "この ワインは 特別な日{向け} に とっておいたんだ。",
             "english": "I've been saving this wine for a special occasion.",
             "scene": "A couple is celebrating an anniversary, and one person reveals a special bottle of wine they had kept aside.",
@@ -274,9 +293,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/向け"
     },
     "change": [
-        "violation: Kanji level for N3 was not consistently applied in examples. Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point. So, for example, if the grammar point is JLPT N3, the example sentences should use kanji from the N3, N4, and N5 lists.' Replaced '製品は電圧が違う' with 'パンフレットは英語で書かれている' in '海外{向け} の パンフレットは 英語で 書かれている。'.",
-        "violation: Kanji level for N3 was not consistently applied in examples. Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' Replaced '企業' with '会社' in 'この サービスは 会社{向け} に 提供されています。'.",
-        "violation: Kanji level for N3 was not consistently applied in examples. Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' Replaced '経営者' with '社長' in 'この セミナーは 社長{向け} に 企画されました。'.",
-        "schema: All examples lacked 'scene' and 'scene_rationale'. Rule: 'If OTHER_WAYS is not empty, then you *must* have a 'scene' field.' and 'Must be present if 'scene' is present.' Added 'scene' and 'scene_rationale' to all examples."
+        "violation: Removed 'listener_age' from example 'これは 大人{向け} の 映画だから、子供は 見ちゃ だめだよ。' because the schema states 'listener_age' is deprecated and must be removed.",
+        "violation: Added an example with 'listener_gender: male' to satisfy the rule 'Example sentences should include at least one male and one female listener_gender.'"
     ]
 }

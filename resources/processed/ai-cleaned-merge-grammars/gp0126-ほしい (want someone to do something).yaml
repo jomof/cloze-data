@@ -61,7 +61,7 @@
     "writeup": "The grammar point 「ほしい」 expresses the speaker's desire for someone to do something. It follows the pattern [Person] + に + [Verb in te-form] + ほしい. The person you want to perform the action is marked with the 「に」 particle.\n\n**Important Considerations:**\n*   This grammar is generally not used when the person you're asking is of higher status. Using 「もらいたい」 is more appropriate in such cases.",
     "examples": [
         {
-            "japanese": "あなた に 英語 を 教え て {ほしい} です。",
+            "japanese": "あなた に 英語 を 教え て {ほしいです}。",
             "english": "I want you to teach me English.",
             "scene": "A student asking a friend for help with their studies.",
             "scene_rationale": [
@@ -97,7 +97,7 @@
             "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "誰 に 来 て {ほしい} ですか？",
+            "japanese": "誰 に 来 て {ほしいです}か？",
             "english": "Who do you want to come?",
             "scene": "Asking someone who they want at a party.",
             "scene_rationale": [
@@ -115,7 +115,7 @@
             "conjugation": "non-past polite (～ます)"
         },
         {
-            "japanese": "彼女 に は もっと 自分 を 大切 に し て {ほしかっ} た。",
+            "japanese": "彼女 に は もっと 自分 を 大切 に し て {ほしかった}。",
             "english": "I wished she had taken better care of herself.",
             "scene": "Someone reflecting on a past relationship.",
             "scene_rationale": [
@@ -209,9 +209,7 @@
     ],
     "post_false_friends_writeup": "To avoid confusion, remember that 「ほしい」 is used when you want someone to do something for you (and they are not superior to you), while 「たい」 is used for your own desires. For requests to superiors, consider using 「もらいたい」 instead to maintain proper politeness.",
     "change": [
-        "violation: Set jlpt to 'N4' because the jlpt field cannot be null and 'Basic' in DOJG corresponds to N4.",
-        "schema: Added 'scene_rationale' to all examples as it is required when 'scene' is present.",
-        "schema: Added 'conjugation' to examples 2, 3, 4, 6, 7 as it is required when a top-level 'conjugations' array exists.",
-        "violation: Modified Japanese in Example 5 to '上司 に は 早く 退職 し て {ほしくありません}。' and its conjugation to 'negative non-past polite (～ません)' to ensure the example uses a form explicitly listed in the 'conjugations' array, as 'ほしくないです' was not listed."
+        "schema: Modified example 1's Japanese to wrap the entire conjugated form {ほしいです} in curly braces to align with schema requirements.",
+        "schema: Modified example 3's Japanese to wrap the entire conjugated form {ほしいです} in curly braces to align with schema requirements."
     ]
 }

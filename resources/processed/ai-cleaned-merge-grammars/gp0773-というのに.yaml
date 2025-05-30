@@ -1,7 +1,6 @@
 {
     "grammar_point": "というのに",
     "id": "gp0773",
-    "conjugations": [],
     "pronunciation": {
         "katakana": "トイウノニ",
         "romaji": "to iu noni"
@@ -19,13 +18,19 @@
         "Function": "Expresses a sense of disappointment, disapproval, or surprise that the actual situation is contrary to what is expected. Similar to 「のに」, but slightly stronger in expressing the speaker's emotion.",
         "Usage": "Can connect clauses with contrasting or unexpected outcomes. Often used when the speaker feels that someone or something should have acted differently given the circumstances."
     },
-    "etymology": "「と」is a particle indicating quotation or content. 「言う」means \"to say.\" 「のに」is a conjunction expressing contrast or unexpectedness. Together, 「というのに」literally means \"even though it is said that...\" or \"despite the fact that...\"",
+    "etymology": "「と」 is a particle indicating quotation or content. 「言う」 means \"to say.\" 「のに」 is a conjunction expressing contrast or unexpectedness. Together, 「というのに」 literally means \"even though it is said that...\" or \"despite the fact that...\"",
     "writeup": "「というのに」 is a conjunction used to express **disappointment, disapproval, or surprise** about a situation that contradicts one's expectations. It's similar to 「のに」 but often carries a stronger emotional weight. It connects clauses to show contrast or an unexpected outcome. You'll often find it used when the speaker believes someone or something should have behaved differently. It's versatile, attaching to various sentence types: informal, い-adjective, な-adjective, and noun sentences.",
     "examples": [
         {
             "japanese": "４月 だ {というのに} 、まだ 肌寒い ですね。",
             "english": "Even though it's April, it's still chilly, isn't it?",
             "scene": "Two people making small talk about the weather.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "４月なのに、まだ肌寒いですね。",
+                    "mitigation": "この場面では、話し手は4月なのに肌寒いことに対する期待とのずれや軽い驚きを表現しています。「というのに」は、より感情的なニュアンスを含み、単なる事実の対比以上の気持ちを伝えるのに適しています。"
+                }
+            ],
             "register": "semi-formal",
             "setting": "casual",
             "nuance": "「肌寒いですね」は、相手に自分の意見を丁寧に伝える表現です。話し手は、4月なのにまだ肌寒いことに少し驚きを表しています。",
@@ -159,11 +164,8 @@
     ],
     "post_false_friends_writeup": "While 「のに」, 「というのに」, and 「にもかかわらず」 all indicate contrast or unexpectedness, they differ in nuance and formality. 「のに」 is the most neutral, 「というのに」 adds a stronger emotional emphasis, and 「にもかかわらず」 is the most formal.",
     "change": [
-        "violation: Added `scene_rationale` to existing examples where `scene` was present but `scene_rationale` was not, as per schema rule: 'Must be present if \"scene\" is present.'",
-        "violation: Added a new example with a female speaker and male listener to fulfill the schema requirement for diverse `speaker_gender` and `listener_gender`.",
-        "violation: Corrected kanji usage in Example 6 (`結婚` (N1) changed to `選んだ` (N3)) to adhere to the JLPT N3 level kanji restriction for example sentences.",
-        "suggestion: Minor rephrasing of Japanese in Example 1 (`寒い` to `肌寒い`) and English (`cold` to `chilly`) for consistency with the raw DOJG input example.",
-        "unnatural: Changed `setting` in Example 7 from `flirty` to `emotional` for better alignment with the example's context of unrequited love and desperate pleading.",
-        "schema: Added `post_example_writeup` to provide further clarification on the grammar point's usage, as permitted by the schema's optional field rule: 'You may include a \"post_example_writeup\" section after \"examples\" if more clarification is helpful.'"
+        "schema: Removed `conjugations` array at the top level because the grammar point is a fixed phrase that attaches to forms, not a conjugatable verb or adjective, as per schema rule for `conjugations`.",
+        "schema: Removed `conjugation` field from all examples because the top-level `conjugations` array was removed, as per schema rule: 'Must not be present if there is no top-level \"conjugations\" array.'",
+        "schema: Added `scene_rationale` to Example 1 because `scene` was present but `scene_rationale` was missing, as per schema rule: 'Must be present if \"scene\" is present.'"
     ]
 }

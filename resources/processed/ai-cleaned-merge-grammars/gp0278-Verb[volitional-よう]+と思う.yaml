@@ -53,7 +53,7 @@
             "rarity": "common"
         },
         {
-            "type": "progressive (～ている) polite",
+            "type": "progressive (～ている)",
             "form": "Verb[volitional-よう]と思っています",
             "rarity": "common"
         },
@@ -148,7 +148,7 @@
                     "mitigation": "This implies a gentle, personal desire or decision, less formal than `食べるつもりです` and more appropriate for a casual, internal thought expressed politely."
                 }
             ],
-            "register": "non-past polite (～ます)",
+            "register": "teineigo (polite)",
             "setting": "informative",
             "conjugation": "non-past polite (～ます)"
         },
@@ -244,7 +244,7 @@
             ],
             "register": "teineigo (polite)",
             "setting": "flirty",
-            "conjugation": "progressive (～ている) polite"
+            "conjugation": "progressive (～ている)"
         },
         {
             "japanese": "今日 は 早く 帰って ゆっくり 休もう と {思っています}。",
@@ -258,7 +258,7 @@
             ],
             "register": "teineigo (polite)",
             "setting": "reflective",
-            "conjugation": "progressive (～ている) polite"
+            "conjugation": "progressive (～ている)"
         },
         {
             "japanese": "もっと 君 の こと を 知ろう と {思った}。",
@@ -309,9 +309,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/ようと思う-おうと思う"
     },
     "change": [
-        "violation: Removed `pronunciation_warning` from `pronunciation` field, as per schema.",
-        "violation: Removed `listener_age` from example with '明日、勉強をしようと{思う}わ', as `listener_age` is deprecated by schema.",
-        "violation: Added `scene_rationale` to examples 6-12 (previously had `scene` but no `scene_rationale`), as per schema requiring `scene_rationale` if `scene` is present.",
-        "violation: Added `scene` and `scene_rationale` to examples 1-5 (previously had neither), as per schema requiring `scene` if competing grammar exists and `scene_rationale` if `scene` is present."
+        "schema: Changed `type` for polite progressive conjugations from `\"progressive (～ている) polite\"` to `\"progressive (～ている)\"` as per `conjugationType` enum. The form itself `思っています` indicates politeness.",
+        "schema: Changed `register` for '帰って から 、 お菓子 を 食べよう と {思います}。' from `\"non-past polite (～ます)\"` to `\"teineigo (polite)\"` because `non-past polite (～ます)` is a `conjugationType` not a `registerType`."
     ]
 }

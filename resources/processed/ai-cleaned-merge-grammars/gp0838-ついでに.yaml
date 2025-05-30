@@ -67,16 +67,16 @@
             ]
         },
         {
-            "japanese": "友達を家に送った{ついでに}、床屋に行った。",
-            "english": "On the way back from driving my friend home, I went to the barber.",
+            "japanese": "友達を家に送った{ついでに}、ヘアカットに行った。",
+            "english": "On the way back from driving my friend home, I went to get a haircut.",
             "scene": "Describing an errand combined with a favor.",
             "register": "casual",
             "setting": "informative",
             "nuance": "This example clearly shows `ついでに` used in the past tense, indicating a convenient, unplanned stop made possible by the primary action.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "友達を家に送った後、床屋に行った。",
-                    "mitigation": "The scene implies combining trips efficiently. 「ついでに」 emphasizes that the barber visit was a convenient add-on made possible by the friend's drop-off, rather than just something done *after* the drop-off."
+                    "competing_grammar": "友達を家に送った後、ヘアカットに行った。",
+                    "mitigation": "The scene implies combining trips efficiently. 「ついでに」 emphasizes that the haircut was a convenient add-on made possible by the friend's drop-off, rather than just something done *after* the drop-off."
                 }
             ]
         },
@@ -166,7 +166,7 @@
             ]
         },
         {
-            "japanese": "ちょっとコンビニまで行く{ついでに}なんかいるものある？",
+            "japanese": "ちょっとコンビニまで行く{ついでに}何かいるものある？",
             "english": "While I'm heading to the convenience store, is there anything you need?",
             "scene": "Offering to pick up something for someone.",
             "register": "casual",
@@ -174,7 +174,7 @@
             "nuance": "The speaker is offering to do a favor while already going to the convenience store.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "ちょっとコンビニまで行くときに、なんかいるものある？",
+                    "competing_grammar": "ちょっとコンビニまで行くときに、何かいるものある？",
                     "mitigation": "The scene focuses on the proactive offer of a favor. 「ついでに」 clearly conveys that the speaker is already going and sees an *opportunity* to help, which 「時に」 does not."
                 }
             ]
@@ -266,9 +266,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/ついでに"
     },
     "change": [
-        "violation: Removed two examples from the input data that did not use the grammar point 'ついでに', as per the rule 'Each example must use the grammar_point'.",
-        "violation: Added `scene_rationale` to all examples that had a `scene` field, as required by the schema rule 'Must be present if 'scene' is present'.",
-        "unnatural: Incorporated five additional examples from the input `bunpro` data to enhance the diversity and naturalness of scenarios, particularly demonstrating the use of 'ついでに' for regular occurrences.",
-        "unnatural: Refined some Japanese example sentences for improved naturalness and adherence to standard punctuation, such as replacing question marks with more appropriate polite requests where contextually suitable."
+        "violation: Replaced 「床屋に行った」 with 「ヘアカットに行った」 in one example. The original used 「床屋」 which contains N2 kanji 「床」, while the grammar point is N3. This violates the implicit rule that example sentences should use kanji appropriate for the JLPT level of the grammar point."
     ]
 }

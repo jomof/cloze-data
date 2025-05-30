@@ -168,7 +168,6 @@
             ],
             "register": "casual",
             "setting": "first-date",
-            "speaker_age": "younger",
             "nuance": "The casual phrase 「信じられないね」, particularly with the 「ね」 particle, fosters a sense of shared experience and intimacy, which is common in early romantic encounters. 「二人で」 emphasizes the cost being for both individuals."
         }
     ],
@@ -189,10 +188,6 @@
     ],
     "post_false_friends_writeup": "Both 「に」 and 「につき」 can express rates, but 「で」 is more specific to pricing. 「につき」 is more formal, whereas 「で」 can be used in more casual settings. Pay attention to the context to choose the most appropriate particle.",
     "change": [
-        "schema: Removed 'conjugations' field as the grammar point 'で (for)' is a particle and not conjugatable.",
-        "schema: Removed 'listener_age' field from all examples per schema deprecation.",
-        "violation: Removed 'speaker_gender', 'listener_gender', and 'speaker_age' from examples 1, 2, 3, 4, 5, 6, and 8, because the 'nuance' section could not specify specific gendered Japanese phrases, violating the schema rule: 'If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.' This action results in not meeting the diversity requirement 'Example sentences should include at least one male and one female speaker_gender', indicating a contradiction in the prompt's instructions.",
-        "unnatural: Added 'scene_rationale' to all examples as alternatives (e.g., omitting the particle, or using 'につき') can almost always be found, fulfilling the 'scene' and 'scene_rationale' requirements.",
-        "unnatural: Refined the nuance for example 7 to explicitly state why 「君は」 is gender-specific for the speaker."
+        "violation: The rule 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.' could not be fully met without violating the rule 'If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.' Only example 7 contains a phrase ('君は') typically associated with a specific gender use (male speaker addressing female listener). Other examples do not contain such phrases, thus gender/age information was omitted for those examples to adhere to the nuance rule."
     ]
 }

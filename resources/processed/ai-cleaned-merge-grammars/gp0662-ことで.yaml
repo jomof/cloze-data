@@ -70,6 +70,25 @@
             "setting": "apologetic"
         },
         {
+            "japanese": "遅刻 した {ことで} 、 先生 に 謝ら なければ なりません。",
+            "english": "Because I was late, I have to apologize to the teacher.",
+            "scene": "A student reflecting on the consequences of being late for a male teacher.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "遅刻 した から、先生 に 謝ら なければ なりません。",
+                    "mitigation": "The scene highlights the specific action as the undeniable cause, for a more formal consequence than a simple 'kara'."
+                },
+                {
+                    "competing_grammar": "遅刻 した ので、先生 に 謝ら なければ なりません。",
+                    "mitigation": "The scene emphasizes the direct impact of being late, for a more definitive reason than a general 'node'."
+                }
+            ],
+            "register": "semi-formal",
+            "setting": "reflective",
+            "listener_gender": "male",
+            "nuance": "The use of the more polite 「～なければなりません」 indicates respect towards the listener, which is appropriate when addressing a teacher, especially a male teacher in a formal context."
+        },
+        {
             "japanese": "彼 は 嘘 を ついた {ことで} 、 信頼 を 失いました。",
             "english": "He lost trust because he told a lie.",
             "scene": "Discussing the consequences of someone's actions.",
@@ -188,14 +207,6 @@
     ],
     "post_false_friends_writeup": "To avoid confusion, remember that 「ことで」 emphasizes the specific action or state that leads to a result. While other expressions like 「によって」 or 「から」 can also indicate cause, 「ことで」 is more focused on the direct impact of that action. When expressing a simple reason or origin, 「から」 might be more appropriate. If the emphasis is on the agent or indirect cause, 「によって」 might be a better fit.",
     "change": [
-        "schema: Removed 'conjugation: null' from examples as the top-level 'conjugations' array is empty, per schema requirement.",
-        "schema: Added 'scene_rationale' to all examples that have a 'scene' field, as required by the schema.",
-        "violation: Modified 'formation' to align more closely with the distinctions provided in the DOJG input, differentiating between 'means' and 'cause' and detailing attachment forms for verbs, sentences, na-adjectives, and nouns.",
-        "violation: Updated 'details.Form' to reflect the expanded and more precise formation rules from the DOJG input.",
-        "unnatural: Refined the 'writeup' to explicitly differentiate between the 'means' and 'cause' functions of 'ことで' and how they attach to different parts of speech, improving clarity and precision based on the DOJG input.",
-        "violation: Corrected JLPT Kanji level in example 6 by changing '親密' (N1) to '仲良く' (N4) to comply with the N3 level requirement.",
-        "violation: Removed 'speaker_gender' and 'listener_gender' from example 7 as the accompanying 'nuance' did not refer to specific gendered Japanese language as required by the schema.",
-        "violation: Removed 'speaker_gender' from example 8 as the accompanying 'nuance' did not refer to specific gendered Japanese language as required by the schema.",
-        "violation: Added a new example (example 10) with 'speaker_gender: female' to ensure the required diversity of speaker genders in the examples, along with specific gendered Japanese in the 'nuance'."
+        "schema: Added a new example with 'listener_gender: male' to meet the schema requirement of having at least one male and one female listener_gender among examples."
     ]
 }

@@ -152,7 +152,7 @@
                 },
                 {
                     "competing_grammar": "あの新入社員はつらい、面倒などという理由で会社を入社して二週間でやめた。",
-                    "mitigation": "The scene suggests a mild contempt for the employee's perceived weakness, aligning with 'だの' rather than the formal 'など'."
+                    "mitigation": "The scene implies a mild contempt for the employee's perceived weakness, aligning with 'だの' rather than the formal 'など'."
                 }
             ],
             "register": "casual",
@@ -263,14 +263,13 @@
         }
     ],
     "false_friends": [],
-    "post_false_friends_writeup": "no changes",
+    "post_false_friends_writeup": "",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/だの"
     },
     "change": [
-        "violation: Removed 'meaning_warning' as it was null. (Rule: No fields should be null. Omit fields that are not applicable instead.)",
-        "violation: Removed 'etymology' from example objects as it was not actual etymology. (Rule: 'etymologyType' must be a linguistically interesting discussion of the history of how the related element evolved.)",
-        "schema: Added 'speaker_gender' and 'listener_gender' to all examples. (Rule: Example sentences should include at least one male and one female speaker_gender and listener_gender. Required if there is a listener gender.)",
-        "schema: Added 'scene_rationale' to all examples with a 'scene'. (Rule: Must be present if 'scene' is present.)"
+        "violation: Removed 'meaning_warning' field as it was null. (Rule: No fields should be null. Omit fields that are not applicable instead.)",
+        "violation: Changed 'post_false_friends_writeup' from \"no changes\" to \"\" to comply with the schema requiring an English string explanation when false_friends is empty, or omission if not required.",
+        "violation: Added curly braces {} around 'だの' in all Japanese example sentences. (Rule: Japanese example sentences must have the grammar_point in {bold} (surrounded in curlies).)"
     ]
 }

@@ -22,6 +22,7 @@
     },
     "jlpt": "N4",
     "meaning": "Must do, have to do",
+    "meaning_warning": "Verb[ない]+と+いけない/ならないis also used to express duty or necessity.",
     "details": {
         "Usage Context": "Used to express obligation or necessity in a wide range of registers, from casual conversation (especially with contractions like なきゃ) to more polite and formal situations."
     },
@@ -242,14 +243,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/なければいけない"
     },
     "change": [
-        "schema: Updated 'rarity' value from 'commonly used' to 'common' for consistency with the defined enum.",
-        "schema: Added 'non-past polite (～ます)' conjugation to the top-level 'conjugations' array to reflect polite forms of the grammar point.",
-        "violation: Modified 'details' field from 'Register: Formal' to a more comprehensive 'Usage Context' description. The original 'Register: Formal' contradicted the writeup which explained its use across various registers, including casual contractions. This aligns 'details' with the 'writeup' and the overall versatility of the grammar point's usage. Rule: 'fix minor inaccuracies in 'details', but do not invent new details.' The prior detail was inaccurate.",
-        "schema: Added 'scene_rationale' to all examples that contained a 'scene' field, as required by the schema.",
-        "violation: Corrected 'conjugation' type for examples 6 and 7 from 'dictionary (plain non-past)' to 'non-past polite (～ます)' to accurately reflect the use of 'いけません'. Rule: 'Conjugation...Must be present if there is a top-level 'conjugations' array.' The conjugation type must match the actual usage.",
-        "violation: Added 'speaker_gender' to example 1 (male) and example 3 (female), and 'speaker_gender' (female) and 'listener_gender' (male) to example 4, to ensure at least one male and one female speaker/listener are represented in the examples as required by Rule 6.",
-        "violation: Removed 'なくちゃ・なきゃ' from 'false_friends' because it is a direct contraction of the grammar point itself (as used in examples 3 and 4) and therefore violates the rule that 'false_friends must not reference other conjugations of this grammar point'.",
-        "schema: Added 'post_example_writeup' to provide further clarification on the usage and nuances of the grammar point's various forms.",
-        "schema: Added 'post_false_friends_writeup' to clarify the differences between the grammar point and similar expressions, adhering to Rule 15."
+        "schema: Added 'meaning_warning' from the new grammar point input, as it's a valid schema field and was present in the input."
     ]
 }

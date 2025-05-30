@@ -322,6 +322,7 @@
             "conjugation": "past plain (～た)",
             "speaker_gender": "male",
             "listener_gender": "female",
+            "speaker_age": "older",
             "etymology": "「からかわれた」 is the past passive of 「からかう」 (karakau - to tease).",
             "nuance": "The male speaker uses 「もんだ」 at the end, a common casual expression for reminiscing or stating something as a general truth, often used by older men. This adds a sense of nostalgia and personal history."
         },
@@ -388,11 +389,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/Verb[passive]"
     },
     "change": [
-        "violation: The 'type' fields in 'conjugations' were updated to match the 'conjugationType' enum in the schema. (Rule: 'type' field must be taken from 'conjugationType' enum).",
-        "violation: The key '使用域' in 'details' was changed to 'Usage context' to comply with the implicit rule that keys should be in English (schema uses English keys for properties like 'Register').",
-        "violation: Added 'scene_rationale' to all examples that had a 'scene' but lacked this field, as per schema rule: 'Must be present if 'scene' is present.'. This involved identifying 'competing_grammar' and 'mitigation' for each. (Rule: 'Must be present if \"scene\" is present.')",
-        "violation: Added new examples to include at least one male and one female speaker_gender, and at least one male and one female listener_gender, as required by Rule 6. (Rule: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.')",
-        "violation: The 'kind' field in 'false_friends' was updated from 'synonym' to 'similar expression' to match the 'falseFriendKindType' enum. (Rule: 'kind' field must be taken from 'falseFriendKindType' enum).",
-        "violation: Removed the 'false_friends' entry with 'term': 'れる・られる (Potential)' as it referenced a conjugation of the main grammar point, which is prohibited by Rule 14. (Rule: 'false_friends **must not** reference other conjugations of this grammar point.')"
+        "violation: Added 'speaker_age: older' to example 14. Rule 6: 'AgeType **must** be specified if (and only if) the gender actually matters in the context of the spoken Japanese.' The 'nuance' for this example explicitly states 'often used by older men', indicating age matters."
     ]
 }

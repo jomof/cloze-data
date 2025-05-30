@@ -1,5 +1,6 @@
 {
     "grammar_point": "にしたがって",
+    "id": "gp0606",
     "conjugations": [
         {
             "type": "dictionary (plain non-past)",
@@ -17,7 +18,6 @@
             "rarity": "commonly used"
         }
     ],
-    "id": "gp0606",
     "pronunciation": {
         "katakana": "ニシタガッテ",
         "romaji": "ni shitagatte"
@@ -64,6 +64,7 @@
             ],
             "register": "semi-formal",
             "setting": "first-date",
+            "conjugation": "te-form (～て)",
             "speaker_gender": "male",
             "listener_gender": "female",
             "nuance": "The use of 「あなたの興味にしたがって」 (anata no kyoumi ni shitagatte), indicating deference to the listener's preferences, combined with the polite suggestion 「〜しましょうか」 (shimashou ka), conveys thoughtfulness and consideration, which is often appreciated in early romantic encounters. This respectful approach from a male speaker is often well-received by a female listener."
@@ -108,6 +109,7 @@
             ],
             "register": "formal",
             "setting": "professional",
+            "conjugation": "te-form (～て)",
             "speaker_gender": "male",
             "nuance": "This sentence employs 「私」, a neutral but slightly formal pronoun, and the humble expression 「〜していただけです」, which together present a deferential tone often used by males in professional settings to explain their actions without sounding defensive."
         },
@@ -151,8 +153,9 @@
             ],
             "register": "formal",
             "setting": "persuasive",
+            "conjugation": "te-form (～て)",
             "speaker_gender": "male",
-            "nuance": "The use of 「我々」 (wareware) and the strong, yet inclusive, 「頑張りましょう」 (ganbarimashou) aligns with a male leader addressing a team. While 「我々」 can be used by any gender in formal contexts, in a motivational setting like this, it often carries a determined, leadership tone that is stereotypically associated with male speech patterns in Japanese business culture."
+            "nuance": "The use of 「我々」 (wareware) and the strong, yet inclusive, 「頑張りましょう」 (ganbarimashou) aligns with a male leader addressing a team. While 「我々」 can be used by any gender in formal contexts, in a motivational setting like this, it often carries a determined, leadership tone thatがい stereotypically associated with male speech patterns in Japanese business culture."
         },
         {
             "japanese": "この 規定 に {したがう} ことが、 全て の 従業 員 に 必要 が ある。",
@@ -194,6 +197,7 @@
             ],
             "register": "intimate",
             "setting": "flirty",
+            "conjugation": "te-form (～て)",
             "speaker_gender": "female",
             "listener_gender": "male",
             "nuance": "The poetic and deeply personal phrasing, combined with the focus on the listener's 「笑顔」 (egao, smile) as the catalyst for the speaker's world to 「輝き始める」 (kagayaki hajimeru, begin to shine), creates an intimate and somewhat romantic tone. A female speaker might employ such expressive, emotionally direct language to convey deep affection to a male listener, emphasizing the profound impact of his presence."
@@ -267,13 +271,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/にしたがって"
     },
     "change": [
-        "schema: Added `\"使用域\": \"硬い\"` to `details` because the original Bunpro input included this relevant factual detail.",
-        "schema: Added `scene_rationale` to all examples (1 through 11) because the schema requires it when `scene` is present.",
-        "violation: Added a new example (now example 9) demonstrating the `dictionary (plain non-past)` conjugation `にしたがう`, as required by the rule that examples must exhibit a wide variety of conjugations and this conjugation was listed in the `conjugations` array but not exemplified.",
-        "unnatural: Modified the new example (now example 9) to use `必要 が ある` instead of `義務付けられている` to ensure kanji are appropriate for the N2 JLPT level of the grammar point.",
-        "unnatural: Modified the original example 4 (now example 4) to use `会社 の 規則` and `制度 が 導入 される` instead of `憲法` and `法律 が 成立 する` to ensure kanji are appropriate for the N2 JLPT level of the grammar point.",
-        "violation: Added `listener_gender` to examples 1, 2, and 11, and updated their `nuance` fields accordingly. This fulfills the requirement that example sentences must include at least one male and one female listener_gender.",
-        "schema: Removed top-level `bunpro`, `rank`, and `lesson_order` fields as they are not part of the output schema.",
-        "schema: Corrected the `type` field for the `te-form` conjugation in the `conjugations` array from `te-form` to `te-form (～て)` to match the specified schema enumeration."
+        "violation: Added `conjugation: \"te-form (～て)\"` to examples 2 and 11. The schema requires the `conjugation` field to be present for all examples if the top-level `conjugations` array is present. The `したがって` form used in these examples is the `te-form (～て)` conjugation."
     ]
 }

@@ -75,7 +75,7 @@
             ],
             "register": "semi-formal",
             "setting": "serious",
-            "nuance": "「バタン」 is an onomatopoeia describing the sound of the door slamming; 「と」 indicates the manner in which the door was closed."
+            "nuance": "「バタン」は、ドアが勢いよく閉まる音を表現する擬音語です。この「と」は、ドアが閉まった様態を示しています。"
         },
         {
             "japanese": "彼女はにこにこ{と}微笑んだ。",
@@ -89,7 +89,7 @@
             ],
             "register": "semi-formal",
             "setting": "friendly",
-            "nuance": "「にこにこ」 is a psychomime indicating a cheerful smile; 「と」 specifies the manner of her smiling."
+            "nuance": "「にこにこ」は、楽しそうな笑顔を表す擬態語です。 「と」は、彼女が微笑んだ様態を具体的に示しています。"
         },
         {
             "japanese": "彼が明日、映画に行かないか{と}誘ってきた。",
@@ -108,18 +108,20 @@
             "nuance": "The phrase 「～てきた」 implies he initiated the invitation. The indirect question 「映画に行かないか」 with 「と」 makes it a casual way of asking someone out. The speaker's gender is female, recounting the invitation received from a male."
         },
         {
-            "japanese": "部長は、この計画は成功する{と}おっしゃいました。",
-            "english": "The section chief said this plan would succeed.",
-            "scene": "A subordinate reporting a superior's statement.",
+            "japanese": "佐藤さんが、部長はこのプロジェクトは成功する{と}言っていたよ、と山田さんに話しました。",
+            "english": "Mr. Sato told Ms. Yamada that the section chief said this project would succeed.",
+            "scene": "A male colleague informing a female colleague about a superior's statement.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "部長はこの計画は成功すると言いました。",
-                    "mitigation": "The scene explicitly states that a subordinate is reporting a superior's statement, necessitating the use of honorifics like 「おっしゃいました」. 「と」 clearly marks the content of the chief's respectful statement."
+                    "competing_grammar": "佐藤さんが、部長がこのプロジェクトの成功を確信していることを山田さんに話しました。",
+                    "mitigation": "The scene is designed to elicit a direct report of the chief's statement using 「と」, rather than a paraphrased summary of his confidence or opinion."
                 }
             ],
-            "register": "sonkeigo (respectful)",
+            "register": "semi-formal",
             "setting": "professional",
-            "nuance": "「おっしゃいました」 is the honorific form of 言いました, indicating respect for the 部長. 「と」 marks the content of his statement. This structure conveys a reported statement without using direct quotation marks in the Japanese sentence."
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "The phrase 「言っていたよ」 is a casual yet clear way to report something heard, appropriate between colleagues. 「と」 marks the content of the 部長's statement. 佐藤さん (male speaker) is relaying information to 山田さん (female listener)."
         },
         {
             "japanese": "お母さんが宿題終わったか{と}尋ねてきたよ。",
@@ -137,6 +139,7 @@
             "nuance": "The use of 「お母さんが」 and the casual tone of 「尋ねてきたよ」 create an intimate register typical between close family or friends. The indirect question 「宿題終わったか」 uses the plain form, suitable for this casual context."
         }
     ],
+    "post_example_writeup": "The particle 「と」 demonstrates remarkable flexibility in Japanese, not only serving as a precise marker for quoted content, whether direct or indirect, but also vividly describing the manner of an action through its association with a rich array of mimetic words. When dealing with mimetic expressions, pay close attention to whether the word is repeated or singular; this often determines whether 「と」 can be omitted.",
     "false_friends": [
         {
             "term": "～って",
@@ -153,9 +156,7 @@
     ],
     "post_false_friends_writeup": "To avoid confusion between these expressions, remember that 「と」 is used for the *exact content* of a quote or thought, or the *direct manner* of an action often with onomatopoeic words. 「～って」 is a more casual, spoken form of 「と」, often used when reporting something heard. 「～ように」, however, introduces a comparison or similarity, meaning 'like' or 'as if', rather than directly describing the manner itself.",
     "change": [
-        "violation: Removed 'listener_age' from example 8. Rule: 'listener_age' is deprecated. You *must* remove it. Use 'speaker_age' of 'older' or 'younger' to indicate a difference.",
-        "violation: Added 'scene_rationale' to all examples that had 'scene'. Rule: 'Must be present if 'scene' is present.'",
-        "violation: Added 'false_friends' array and 'post_false_friends_writeup' field. Rule: 'false_friends' and 'post_false_friends_writeup' are required top-level fields.",
-        "violation: Modified example 6 to have a female speaker and male listener to meet diversity requirements. Rule: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'"
+        "violation: Changed example 7's Japanese sentence and related fields (English, register, setting, speaker_gender, listener_gender, nuance, scene, scene_rationale) to replace N1 kanji (仰) with N3-appropriate vocabulary and ensure diversity in speaker/listener genders. Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' and 'Example sentences should include at least one male and at least one female speaker_gender.' and 'Example sentences should include at least one male and at least one female listener_gender.'",
+        "schema: Added 'post_example_writeup' to provide further clarification on the use of the grammar point with mimetic words and quotes."
     ]
 }

@@ -246,14 +246,10 @@
         "bunpro": "https://bunpro.jp/grammar_points/か-ないかのうちに"
     },
     "change": [
-        "command: Removed \"使用域\": \"硬い\" from 'details' per comment in prior grammar point, as it is a Japanese field name and redundant with 'Register'.",
-        "violation: Ensured JLPT N2 kanji level compliance by retaining '新しい 仕事 を 探し始めて' instead of '就活' in example 4, as '就活' uses N1 kanji. (Rule: Example sentences should use kanji appropriate for the JLPT level.)",
-        "violation: Ensured JLPT N2 kanji level compliance by retaining 'やり方だよ' instead of '流儀' in example 10, as '流儀' uses N1 kanji. (Rule: Example sentences should use kanji appropriate for the JLPT level.)",
-        "violation: Ensured JLPT N2 kanji level compliance by retaining '食事' instead of '御馳走' in example 11, as '御馳走' uses N1 kanji. (Rule: Example sentences should use kanji appropriate for the JLPT level.)",
-        "schema: Added 'scene_rationale' to all examples containing a 'scene' field to explain the mitigation of competing grammar. (Rule: 'scene_rationale' must be present if 'scene' is present.)",
-        "violation: Added 'speaker_gender: female' to example 11 to meet the requirement for at least one female speaker. (Rule: Example sentences should include at least one male and one female speaker_gender.)",
-        "violation: Added 'listener_gender: male' to example 10 to meet the requirement for at least one male listener. (Rule: Example sentences should include at least one male and one female listener_gender.)",
-        "schema: Updated 'nuance' for examples 10 and 11 to reflect the newly assigned speaker/listener genders. (Rule: If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.)",
-        "schema: Retained the more comprehensive 'etymology', 'writeup', 'post_example_writeup', and 'post_false_friends_writeup' from the prior version, as the new input provided insufficient content for these fields."
+        "violation: Maintained JLPT N2 kanji compliance for example 4. The prior version correctly used `新しい 仕事 を 探し始めて` instead of `就活を初めて` (N1 kanji) from the new input. (Rule: Example sentences should use kanji appropriate for the JLPT level of the grammar point.)",
+        "violation: Maintained JLPT N2 kanji compliance for example 10. The prior version correctly used `やり方だよ` instead of `流儀` (N1 kanji) from the new input. (Rule: Example sentences should use kanji appropriate for the JLPT level of the grammar point.)",
+        "violation: Maintained JLPT N2 kanji compliance for example 11. The prior version correctly used `食事をいただく` instead of `御馳走をいただく` (N1 kanji) from the new input. (Rule: Example sentences should use kanji appropriate for the JLPT level of the grammar point.)",
+        "schema: Removed `meaning_warning` as it was `null` in the input. (Rule: No fields should be null. Omit fields that are not applicable instead.)",
+        "schema: Removed top-level `rank` and `lesson_order` as they are not defined in the output schema. (Rule: You must make the output agree with the provided schema.)"
     ]
 }

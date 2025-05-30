@@ -1,10 +1,10 @@
 {
     "grammar_point": "およそ・おおよそ",
+    "id": "gp0854",
     "pronunciation": {
         "katakana": "オヨソ・オオヨソ",
         "romaji": "oyoso / ooyoso"
     },
-    "id": "gp0854",
     "formation": {
         "およそ + Noun + は": "Indicates 'all' or 'in general' for the noun. Example: およそ優れた研究者は (excellent researchers in general).",
         "およそ + い-Adjective / な-Adjective": "Used for emphasis, meaning 'quite' or 'totally'. Example: およそつまらない (quite boring), およそ不可能だ (totally impossible).",
@@ -21,7 +21,7 @@
         "Note": "Can be written as 凡そ (primarily used when meaning 'generally' or 'as a rule') or 大凡 (more commonly used when meaning 'approximately' or 'roughly').",
         "Nuance of およそ vs. おおよそ": "While often interchangeable, 「およそ」 can convey the nuance of 'not at all' when used with negative expressions, a usage less common for 「おおよそ」."
     },
-    "etymology": "「凡そ」の「凡」は「ありふれた」という意味で、「大凡」の「大」は「だいたい」という意味を持ちます。どちらも「おおむね」「だいたい」という意味合いで使われます。In 「凡そ」, the kanji 「凡」 means commonplace. In 「大凡」, the kanji 「大」means roughly. Both convey the sense of 'generally' or 'approximately'.",
+    "etymology": "In the kanji 「凡そ」, the character 「凡」 (bon) signifies 'commonplace' or 'ordinary'. In 「大凡」, the character 「大」 (dai) implies 'large' or 'great', extending to 'roughly' or 'approximately'. Both expressions convey a sense of 'generally' or 'for the most part'.",
     "writeup": "「およそ」 or 「おおよそ」, alternatively written as 凡そ or 大凡, is an adverb with versatile meanings including **approximately**, **roughly**, **generally**, **mostly**, and when used with negation, **not at all**. It is typically found in slightly more formal contexts, such as official announcements, but can also appear in casual speech, particularly for approximations. \n\nIts usage extends beyond mere numerical estimations (time, distance, quantity). 「凡そ」 often conveys a sense of generality or 'for the most part', as hinted by its kanji 凡, which means 'commonplace' or 'as a rule'. For instance, it can indicate that something broadly applies, though not necessarily 100% of the time. \n\nFurthermore, when paired with negative expressions, 「およそ」 takes on a strong prohibitive or emphatic meaning, translating to **not at all** or **completely unsuited**. This specific nuance is more commonly associated with 「およそ」 than 「おおよそ」, which tends to stick more strictly to approximation.",
     "examples": [
         {
@@ -125,7 +125,7 @@
             "register": "formal",
             "setting": "serious",
             "speaker_gender": "female",
-            "listener_gender": "male",
+            "listener_gender": "group",
             "speaker_age": "older",
             "nuance": "The formal register 「です」 and objective tone are appropriate for reporting factual information in a serious context, like a news broadcast. 「おおよそ」 conveys a numerical approximation."
         },
@@ -276,10 +276,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/おおよそ"
     },
     "change": [
-        "violation: Removed `listener_age` from all examples as it is deprecated. (Rule: \"listener_age is deprecated. You *must* remove it.\")",
-        "schema: Changed `listener_gender` from 'female' to 'group' in example 3 to accurately reflect the 'group' in the scene description. (Rule: \"Use 'group' if the listener is an audience or group of people.\")",
-        "schema: Changed `listener_gender` from 'male' to 'group' in example 4 to accurately reflect the 'team meeting' in the scene description. (Rule: \"Use 'group' if the listener is an audience or group of people.\")",
-        "schema: Added `scene_rationale` to all examples to explain the purpose of the `scene` field. (Rule: \"If scene is present, then scene_rationale *must* be present.\")",
-        "unnatural: Added spaces between words in all Japanese examples for better readability and parsing. (Rule: \"Japanese *must* have a space between words to assist mecab in parsing.\")"
+        "violation: `etymology` must be in English. (Rule: \"EtymologyType **must** be in English.\")",
+        "schema: Changed `listener_gender` from 'male' to 'group' in example 5 to accurately reflect the 'news reporter' in the scene description. (Rule: \"Use 'group' if the listener is an audience or group of people.\")",
+        "violation: Replaced N1 kanji `犠牲者` with N2 kanji `被害者` in example 5. (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")"
     ]
 }

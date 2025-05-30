@@ -253,14 +253,5 @@
     "post_false_friends_writeup": "To avoid confusion, remember that 「ものだ」 typically describes inherent qualities, general expectations, or common sense truths. The other expressions, while sometimes conveying expectation, generally imply stronger obligations, logical deductions, or serve as explanations or direct advice. 「ものですから」 and 「ものだから」 are used to provide reasons, not to state general truths.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ものだ"
-    },
-    "change": [
-        "violation: Removed 'もんじゃないよ' from conjugations as 'よ' is a particle, not part of the conjugation. (schema: 'conjugationType' enum values are specific conjugation types, not including sentence-ending particles.)",
-        "violation: Corrected the conjugation type for '家族は捨てるものじゃない。' from 'negative (plain)' to 'casual negative abbreviation' to accurately reflect its form. (schema: 'conjugation' field must correspond to the 'type' in the top-level 'conjugations' array.)",
-        "violation: Corrected the grammar point highlighting in '人生はそんなに簡単な物ではない。' from '{ない}' to '{物ではない}' to properly bold the entire grammar point. (schema: 'japanese' field must have the grammar_point in {bold}.)",
-        "schema: Added 'scene' and 'scene_rationale' to all examples that required them, providing competing grammar and mitigation details. (schema: 'scene' and 'scene_rationale' are required if competing grammar exists.)",
-        "schema: Ensured diversity in 'speaker_gender', 'listener_gender', and 'speaker_age' across examples, adding them where appropriate. (schema: examples should include at least one male/female speaker_gender and listener_gender.)",
-        "schema: Removed 'listener_age' from examples as it is deprecated. (schema: 'listener_age' is deprecated, use 'speaker_age' to indicate difference.)",
-        "schema: Refined 'nuance' fields for all examples to explicitly refer to parts of the Japanese sentence in 「quotes」 and to explain how gender/age/register apply. (schema: 'nuance' must refer to parts of the japanese sentence in「quotes」 and explain applicability of gender/age/register.)"
-    ]
+    }
 }

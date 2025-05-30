@@ -148,34 +148,34 @@
             "nuance": "The mention of 「としこちゃん」 (Toshiko-chan), a common female name with the 「ちゃん」 suffix, clearly indicates a female listener."
         },
         {
-            "japanese": "母は僕にかっこいいペンを{くれた}。",
+            "japanese": "母は私にかっこいいペンを{くれた}。",
             "english": "My mom gave me a cool pen.",
-            "scene": "A child speaking to his friends.",
+            "scene": "A child speaking to friends about a gift from their mother.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "僕は母にかっこいいペンを**もらった**。",
+                    "competing_grammar": "私は母にかっこいいペンを**もらった**。",
                     "mitigation": "The scene emphasizes the mother's thoughtful act, making 「くれる」 which highlights the giver's action towards the speaker, more suitable than 「もらう」 which focuses on the speaker's reception."
+                }
+            ],
+            "conjugation": "past plain (～た)",
+            "register": "casual",
+            "setting": "friendly"
+        },
+        {
+            "japanese": "兄は俺に便利な箱を{くれた}。",
+            "english": "My brother gave me a convenient box.",
+            "scene": "A man describing a gift from his brother.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "俺は兄に便利な箱を**もらった**。",
+                    "mitigation": "The scene highlights the brother's action of giving, making 「くれる」 a natural choice over 「もらう」 which emphasizes the speaker's act of receiving."
                 }
             ],
             "conjugation": "past plain (～た)",
             "register": "casual",
             "setting": "friendly",
             "speaker_gender": "male",
-            "nuance": "The use of the first-person pronoun 「僕」 indicates a male speaker."
-        },
-        {
-            "japanese": "兄は便利な箱を{くれた}。",
-            "english": "My brother gave me a convenient box.",
-            "scene": "Describing a gift from a sibling.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "私は兄に便利な箱を**もらった**。",
-                    "mitigation": "The scene highlights the brother's action of giving, making 「くれる」 a natural choice over 「もらう」 which emphasizes the speaker's act of receiving."
-                }
-            ],
-            "conjugation": "past plain (～た)",
-            "register": "casual",
-            "setting": "friendly"
+            "nuance": "The use of the first-person pronoun 「俺」 indicates a male speaker and a casual register."
         },
         {
             "japanese": "おじいちゃんは古い自転車を{くれた}。",
@@ -192,7 +192,7 @@
             "setting": "storytelling"
         },
         {
-            "japanese": "彼がかわいい靴を{くれて}、嬉しいです。",
+            "japanese": "彼がかわいい靴を{くれて}、よかったです。",
             "english": "I'm happy that he gave me some cute shoes.",
             "scene": "After receiving a thoughtful gift.",
             "scene_rationale": [
@@ -234,7 +234,7 @@
             "setting": "melancholic"
         },
         {
-            "japanese": "もし宝くじが当たったら、あなたに半分{あげる}よ。だから、あたしにも{くれない}？",
+            "japanese": "もし たからくじ が当たったら、あなたに半分{あげる}よ。だから、あたしにも{くれない}？",
             "english": "If I win the lottery, I'll give you half. So, won't you give some to me now?",
             "scene": "A woman flirting with a man she hopes will buy her a lottery ticket.",
             "scene_rationale": [
@@ -255,8 +255,8 @@
             "nuance": "The phrase 「あげるよ」 is a casual way of saying \"I'll give you,\" and 「くれない」 is a playful way of asking \"won't you give me?\" The informal 「あたし」 is typically used by female speakers."
         },
         {
-            "japanese": "ねえ、そのネクタイ素敵だね。どこで{くれた}の？",
-            "english": "Hey, that's a nice tie. Where did you get it? (Who gave it to you?)",
+            "japanese": "ねえ、そのネクタイかっこいいね。どこで{くれた}の？",
+            "english": "Hey, that's a cool tie. Where did you get it? (Who gave it to you?)",
             "scene": "Flirting on a first date.",
             "scene_rationale": [
                 {
@@ -273,7 +273,7 @@
             "setting": "flirty",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "Using the phrase 「どこでくれたの？」 implies that the woman suspects the man was given the tie by someone else, and she is subtly fishing for the truth. The particle 「ね」 at the end of the first clause makes the statement softer and more inviting, common in casual conversation."
+            "nuance": "The phrase 「かっこいいね」 is a casual compliment. Using 「どこでくれたの？」 implies that the woman suspects the man was given the tie by someone else, and she is subtly fishing for the truth. The particle 「ね」 at the end of the first clause makes the statement softer and more inviting, common in casual conversation."
         }
     ],
     "false_friends": [
@@ -307,9 +307,10 @@
         "bunpro": "https://bunpro.jp/grammar_points/くれる"
     },
     "change": [
-        "schema: Updated conjugation 'type' fields to match exact enum values in the schema (e.g., 'polite (non-past)' to 'non-past polite (～ます)').",
-        "schema: Changed 'rarity' values from 'commonly used' to 'common' and 'extremely unusual' to 'very rare' to align with schema enum.",
-        "violation: Added 'scene' and 'scene_rationale' to all examples (1-10) to comply with Rule 6, which requires these fields if alternative ways of expressing the sentence exist.",
-        "violation: Added 'listener_gender: female' and corresponding 'nuance' to Example 2 to ensure at least one example includes a female listener, as required by Rule 6."
+        "violation: Replaced N1 kanji 僕 with N4 kanji 私 in Example 3 to comply with the rule regarding JLPT kanji levels for N5 grammar points. Removed speaker_gender and nuance as 私 is not gender-specific.",
+        "violation: Modified Example 4 to include 俺 (N3 kanji) and added speaker_gender: male and corresponding nuance to ensure at least one male speaker example as required by Rule 6, after removing 僕 from Example 3.",
+        "violation: Replaced N1 kanji 嬉しい with N5 word よかった in Example 6 to comply with the rule regarding JLPT kanji levels for N5 grammar points.",
+        "violation: Replaced N2 kanji 宝くじ with hiragana たからくじ in Example 9 to comply with the rule regarding JLPT kanji levels for N5 grammar points.",
+        "violation: Replaced N1 kanji 素敵 with N5 word かっこいい in Example 10 to comply with the rule regarding JLPT kanji levels for N5 grammar points. Adjusted nuance to reflect the change."
     ]
 }

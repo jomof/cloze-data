@@ -19,7 +19,7 @@
     "examples": [
         {
             "japanese": "俺の食べ{かけ}だけど、大丈夫？",
-            "english": "I've already started eating this, is that okay with you?",
+            "english": "This is my half-eaten portion, but is that okay with you?",
             "scene": "A young man, Kenji, offers his friend, Takeshi, a snack he has already taken a bite out of.",
             "scene_rationale": [
                 {
@@ -63,7 +63,7 @@
         },
         {
             "japanese": "彼女は壊れ{かけ}のパソコンを直すのが好きだ。",
-            "english": "Her hobby is liking to fix computers that are on the verge of breaking.",
+            "english": "Her hobby is fixing computers that are on the verge of breaking.",
             "scene": "A university student is explaining their friend, Yumi's, unusual hobby to a classmate.",
             "scene_rationale": [
                 {
@@ -248,15 +248,15 @@
         "bunpro": "https://bunpro.jp/grammar_points/かけ"
     },
     "change": [
-        "schema: Removed `conjugations` field because it was an empty array and the grammar point itself is not a verb in dictionary form.",
-        "schema: Removed `meaning_warning` field because its value was null.",
-        "violation: Updated `writeup` content to incorporate more details and nuances as per prompt's requirement for a comprehensive explanation.",
-        "violation: Corrected Japanese example sentence formatting (spacing, punctuation) to be natural and parseable.",
-        "violation: Modified Example 3 (`救った` to `助けた`) to use N4 Kanji instead of N2, aligning with the JLPT N3 level of the grammar point.",
-        "violation: Modified Example 4 (`趣味だ` to `好きだ`) to avoid N1 Kanji (`趣`), aligning with the JLPT N3 level of the grammar point.",
-        "violation: Updated `scene` content for all examples to be more story-like and engaging.",
-        "schema: Added `scene_rationale` for all examples as it is required when `scene` is present.",
-        "violation: Added `speaker_gender` to Example 2 and Example 9 to ensure at least one female speaker example, fulfilling the diversity requirement.",
-        "violation: Updated `nuance` for Example 2 and Example 9 to include specific Japanese phrases relevant to the specified speaker gender."
+        {
+            "type": "violation",
+            "description": "Example 1 English translation was refined to better convey the 'half-eaten' nuance of 「食べかけ」. The previous translation 'I've already started eating this, is that okay with you?' was too broad. This ensures accuracy with the grammar point's core meaning.",
+            "reason": "The original translation did not fully capture the specific 'half-eaten' meaning of 「食べかけ」. Rule: 'English **must** be a natural-sounding and grammatically correct.'"
+        },
+        {
+            "type": "unnatural",
+            "description": "Example 4 English translation was refined from 'Her hobby is liking to fix computers' to 'Her hobby is fixing computers'.",
+            "reason": "'Liking to fix' is grammatically awkward and less natural English. This change improves fluency."
+        }
     ]
 }

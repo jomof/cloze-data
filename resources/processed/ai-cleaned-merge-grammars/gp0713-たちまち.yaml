@@ -43,7 +43,8 @@
             ],
             "register": "casual",
             "setting": "humorous",
-            "speaker_gender": "male"
+            "speaker_gender": "male",
+            "nuance": "The casual phrasing and domestic context, particularly the reference to 「妻の胃袋」 (my wife's stomach), is a common and natural expression for a male speaker in a relaxed setting."
         },
         {
             "japanese": "小さな 村 で 噂 が {たちまち} 広がる の は 当然 だ よ！",
@@ -113,20 +114,20 @@
             "setting": "cautious"
         },
         {
-            "japanese": "君 と 出会って、私 の 世界 は {たちまち} 輝き 始めた よ。",
-            "english": "Meeting you, my world immediately began to shine.",
+            "japanese": "君 と 出会って、私 の 世界 は {たちまち} 明るく なった よ。",
+            "english": "Meeting you, my world immediately became bright.",
             "scene": "A man expressing his strong, instantaneous feelings of attraction to a woman on a first date, emphasizing how quickly his perspective changed.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "君と出会って、私の世界はすぐに輝き始めたよ。",
-                    "mitigation": "The scene implies a spontaneous and powerful shift in emotion, where the world's 'shining' began almost involuntarily upon meeting, a nuance better captured by 'たちまち' than 'すぐに'."
+                    "competing_grammar": "君と出会って、私の世界はすぐに明るくなったよ。",
+                    "mitigation": "The scene implies a spontaneous and powerful shift in emotion, where the world's 'brightness' began almost involuntarily upon meeting, a nuance better captured by 'たちまち' than 'すぐに'."
                 }
             ],
             "register": "intimate",
             "setting": "flirty",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "The use of 「君 (きみ)」 by a male speaker towards a female listener in a romantic context can be very intimate and affectionate. The casual 「始めたよ」 also adds to the directness of the sentiment."
+            "nuance": "The use of 「君 (きみ)」 by a male speaker towards a female listener in a romantic context can be very intimate and affectionate. The casual 「なったよ」 also adds to the directness of the sentiment."
         },
         {
             "japanese": "あなた の 目 を 見つめている と、心臓 が {たちまち} 高鳴り 始めました。",
@@ -171,8 +172,10 @@
         "bunpro": "https://bunpro.jp/grammar_points/たちまち"
     },
     "change": [
-        "Violation: Removed `nuance` from examples 4 and 5. Reason: The schema's `nuance` field is optional unless `speaker_gender`, `listener_gender`, or `speaker_age` is specified. Prior output incorrectly had it for examples without these, violating the schema's implied optionality.",
-        "Unnatural: Reverted Japanese in example 4. Reason: Changed '情報' to '噂' and '広まる' to '広がる' to maintain original nuance and naturalness; '噂' (N3) and '広がる' (N4) are appropriate JLPT words for an N2 grammar point, making the prior change to '情報' (N3) and '広まる' (N3) unnecessary and less natural.",
-        "Violation: Modified example 6 to avoid N1 kanji `途端`. Reason: Rephrased the Japanese sentence from '有名 な 本 は、本棚 に 並べられた とたん に、{たちまち} 売り切れた。' to 'その 有名 な 本 は、店 に 並べられる と {たちまち} 売り切れた。' to remove the N1 kanji `途端` (とたん) and ensure all kanji used are N2 level or lower, as required by the rule 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'"
+        "Violation - schema: Removed `rank` field. Reason: The `rank` field is not defined in the output JSON schema and should be omitted.",
+        "Violation - schema: Removed `lesson_order` field. Reason: The `lesson_order` field is not defined in the output JSON schema and should be omitted.",
+        "Violation - schema: Removed the top-level `bunpro` object. Reason: Rule 20 states \"You *must not* add top-level 'bunpro' or 'dojg' fields to the output JSON.\" Its contents (`meaning`, `details`, `writeup`, `examples`, `false_friends`, `url`) were moved to their respective top-level fields or the `sources` object, ensuring no data loss.",
+        "Violation - schema: Added `nuance` to Example 3. Reason: The schema requires `nuance` to be present if `speaker_gender` or `listener_gender` is specified, as stated in the rule: \"If there is a 'speaker_gender' or 'listener_gender', then 'nuance' *must* mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.\"",
+        "Violation - JLPT Kanji level: Modified Example 9's Japanese. Reason: The original example used `輝き` (かがやき), which contains the N1 kanji `輝`. To adhere to the rule \"Example sentences should use kanji appropriate for the JLPT level of the grammar point\" (N2 in this case), `輝き始めた` was replaced with `明るくなった`, using the N4 kanji `明`."
     ]
 }

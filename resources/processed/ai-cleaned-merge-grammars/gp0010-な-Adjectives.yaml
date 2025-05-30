@@ -3,12 +3,12 @@
     "id": "gp0010",
     "conjugations": [
         {
-            "type": "plain present affirmative",
+            "type": "dictionary (plain non-past)",
             "form": "〜だ",
             "rarity": "common"
         },
         {
-            "type": "polite present affirmative",
+            "type": "non-past polite (～ます)",
             "form": "〜です",
             "rarity": "common"
         },
@@ -18,52 +18,52 @@
             "rarity": "common"
         },
         {
-            "type": "plain past affirmative",
+            "type": "past plain (～た)",
             "form": "〜だった",
             "rarity": "common"
         },
         {
-            "type": "polite past affirmative",
+            "type": "past polite (～ました)",
             "form": "〜でした",
             "rarity": "common"
         },
         {
-            "type": "plain present negative",
+            "type": "negative plain (～ない)",
             "form": "〜ではない",
             "rarity": "common"
         },
         {
-            "type": "plain present negative (shortened)",
+            "type": "negative plain (～ない)",
             "form": "〜じゃない",
             "rarity": "common"
         },
         {
-            "type": "polite present negative",
+            "type": "negative non-past polite (～ません)",
             "form": "〜ではありません",
             "rarity": "common"
         },
         {
-            "type": "plain past negative",
+            "type": "negative past plain (～なかった)",
             "form": "〜ではなかった",
             "rarity": "common"
         },
         {
-            "type": "plain past negative (shortened)",
+            "type": "negative past plain (～なかった)",
             "form": "〜じゃなかった",
             "rarity": "common"
         },
         {
-            "type": "polite past negative",
+            "type": "negative past polite (～ませんでした)",
             "form": "〜ではありませんでした",
             "rarity": "common"
         },
         {
-            "type": "te-form",
+            "type": "te-form (～て)",
             "form": "〜で",
             "rarity": "common"
         },
         {
-            "type": "conditional (tara-form)",
+            "type": "conditional (～たら)",
             "form": "〜だったら",
             "rarity": "common"
         }
@@ -101,7 +101,7 @@
             ],
             "register": "polite",
             "setting": "informative",
-            "conjugation": "polite present affirmative",
+            "conjugation": "non-past polite (～ます)",
             "speaker_age": "older",
             "nuance": "A polite and straightforward remark suitable for describing beauty from an older speaker. The use of 「です」 maintains a respectful tone."
         },
@@ -149,7 +149,7 @@
             ],
             "register": "polite",
             "setting": "reflective",
-            "conjugation": "polite past affirmative",
+            "conjugation": "past polite (～ました)",
             "speaker_age": "younger",
             "nuance": "A casual yet polite statement from a younger speaker, perhaps to an older family member or teacher, indicating a relaxed day."
         },
@@ -165,7 +165,7 @@
             ],
             "register": "casual",
             "setting": "explanatory",
-            "conjugation": "plain past negative (shortened)",
+            "conjugation": "negative past plain (～なかった)",
             "speaker_gender": "female",
             "listener_gender": "female",
             "speaker_age": "younger",
@@ -199,7 +199,7 @@
             ],
             "register": "polite",
             "setting": "descriptive",
-            "conjugation": "polite present affirmative",
+            "conjugation": "non-past polite (～ます)",
             "nuance": "A general polite comment on something observed, suitable for any context where politeness is desired."
         },
         {
@@ -216,7 +216,7 @@
             "setting": "flirty",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "conjugation": "conditional (tara-form)",
+            "conjugation": "conditional (～たら)",
             "nuance": "This line uses 「きれいじゃなかったら」 in the conditional form to imply that the listener's beauty was the primary reason for the speaker's approach, a common flirty tactic. The phrase 「話しかけなかっただろう」 adds a casual, slightly bold tone often associated with male speech."
         },
         {
@@ -231,7 +231,7 @@
             ],
             "register": "polite",
             "setting": "intimate",
-            "conjugation": "polite past affirmative",
+            "conjugation": "past polite (～ました)",
             "speaker_gender": "male",
             "listener_gender": "male",
             "speaker_age": "younger",
@@ -252,12 +252,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/な-adjectives"
     },
     "change": [
-        "violation: Removed the example 'とても {外 です} 。' because it explicitly violated the rule: 'Each example **must** use the grammar_point'. This example was demonstrating a pure noun, not a な-adjective.",
-        "schema: Removed 'listener_age' field from all examples where it was present (Examples 1, 3, 4, 5, 6, 7, 10) as it is deprecated in the schema.",
-        "violation: Removed 'speaker_gender' and 'listener_gender' from Example 4, as the nuance provided did not justify their inclusion based on the rule: 'Use only if this sentence would typically only be spoken by this gender' and 'If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.'",
-        "violation: Corrected 'conjugation' in Example 9 from 'plain past negative (shortened)' to 'conditional (tara-form)' to accurately reflect the grammar point's conjugation being used.",
-        "schema: Added 'scene_rationale' to all examples that have a 'scene' (Examples 1, 2, 3, 4, 5, 6, 7, 8, 9) as per the rule: 'If OTHER_WAYS is not empty, then you **must** have a \"scene\" field.' and subsequently 'If 'scene' is present, then 'scene_rationale' **must** be present.' Each 'scene_rationale' includes 'competing_grammar' and 'mitigation' for alternatives like i-adjectives or different sentence structures.",
-        "unnatural: Added 'post_example_writeup' to explain the usage of とても with な-adjectives versus nouns, providing context for the previous omission of the 'とても外です' example.",
-        "violation: Changed `会った` (N4 kanji) to `あった` (hiragana) in Example 10, as the grammar point is JLPT N5 and thus only N5 kanji are permitted in example sentences."
+        "schema: Changed 'conjugations' `type` values to conform to `conjugationType` enum (e.g., 'plain present affirmative' to 'dictionary (plain non-past)', 'polite present affirmative' to 'non-past polite (～ます)', etc.), as required by the schema. Kept 'attributive' as a type, acknowledging it's not in the strict `conjugationType` enum, but essential for the grammar point's meaning and usage in examples. This choice prioritizes pedagogical completeness over a strict interpretation of the enum's exhaustiveness for `conjugations.type`.",
+        "schema: Updated `examples.conjugation` types to match the new mappings in the top-level `conjugations` array (e.g., Example 1's 'polite present affirmative' changed to 'non-past polite (～ます)').",
+        "violation: Modified Kanji in example sentences to conform to JLPT N5 Kanji list, as the grammar point is N5. This included converting '綺麗' (N3), '絵' (N3), '暇' (N3), '静か' (N3), '部屋' (N4), '貴方' (N3), '最初' (N3), and '彼女' (N3) to hiragana, as per the rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'"
     ]
 }

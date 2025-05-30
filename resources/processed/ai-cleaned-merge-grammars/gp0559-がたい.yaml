@@ -190,7 +190,7 @@
             "setting": "serious",
             "speaker_gender": "male",
             "conjugation": "dictionary (plain non-past)",
-            "nuance": "「僕」は男性が使う一般的な一人称代名詞です。"
+            "nuance": "「僕」 is a common first-person pronoun used by males."
         },
         {
             "japanese": "忘れ {がたい} 経験 に 出会った。",
@@ -247,43 +247,33 @@
             "speaker_gender": "male",
             "listener_gender": "female",
             "conjugation": "dictionary (plain non-past)",
-            "nuance": "The casual tone with 「君」 (you) and the sentence-ending particle 「ね」は、男性が親密さや強い意見を示す際、特に軽薄な文脈でよく用いられます。"
+            "nuance": "The casual tone with 「君」 (you) and the sentence-ending particle 「ね」 is often used by males to show intimacy or express strong opinions, especially in lighthearted contexts."
         }
     ],
-    "post_example_writeup": "「がたい」は、多くの場合、形式的または深刻な文脈で使われますが、いくつかの例文に示すように、客観的な困難さを強く表現する際には、くだけた状況でも現れることがあります。それは、ほとんど不可能なほど高度な困難を伝えます。命令形では使用されません。最後の例文は、やや軽薄な調子を示しています。",
+    "post_example_writeup": "While 「がたい」 is often used in formal or serious contexts, as shown in some examples, it can appear in casual situations when strongly expressing objective difficulty. It conveys a high degree of difficulty, almost to the point of impossibility. It is not used in imperative forms. The last example shows a somewhat flirty tone.",
     "false_friends": [
         {
             "term": "ようがない・ようもない",
             "meaning": "There's no way to, it's impossible to",
             "kind": "similar expression",
-            "nuance": "「ようがない」と「ようもない」は、何かをする手段や方法が全くないことを表し、解決策の欠如に焦点を当てます。「がたい」が行動そのものの固有の困難さを強調するのに対し、これらの表現は、実行可能な方法や選択肢がないため、行動が不可能であることを示します。"
+            "nuance": "「ようがない」 and 「ようもない」 express that there is absolutely no means or way to do something, focusing on the lack of a solution. While 「がたい」 emphasizes the inherent difficulty of the action itself, these expressions indicate that an action is impossible because there are no feasible methods or options."
         },
         {
             "term": "にくい",
             "meaning": "Difficult to, hard to",
             "kind": "often confused with",
-            "nuance": "「にくい」は、個人的な感情、経験、または身体的な不快感に基づいて困難さを示し、「〜しにくい」または「〜するのに不快である」という意味合いを持ちます。対照的に、「がたい」は、行動そのものの固有の、客観的な困難さや実現不可能性を意味し、「事実上不可能である」または「極めて困難である」というニュアンスを伝えます。"
+            "nuance": "「にくい」 indicates difficulty based on personal feelings, experience, or physical discomfort, implying 'it's difficult to do' or 'it's unpleasant to do'. In contrast, 「がたい」 signifies inherent, objective difficulty or impossibility of the action itself, conveying a nuance of 'virtually impossible' or 'extremely difficult'."
         }
     ],
-    "post_false_friends_writeup": "これらの表現を区別する際には、困難さの原因を考慮してください。本当に手段や選択肢がない場合は、「ようがない」を選びます。個人的な感情、経験、または身体的な容易さから困難が生じる場合は、「にくい」が適切です。行動自体が固有の客観的な困難さを持ち、それがほとんど不可能にしている場合は、「がたい」が最も適切な表現です。",
+    "post_false_friends_writeup": "When distinguishing these expressions, consider the cause of the difficulty. If there are truly no means or options, choose 「ようがない」. If the difficulty arises from personal feelings, experience, or physical ease, 「にくい」 is appropriate. If the action itself possesses an inherent, objective difficulty that makes it almost impossible, 「がたい」 is the most suitable expression.",
+    "change": [
+        "violation: post_example_writeup: Changed the language from Japanese to English. Reason: The schema specifies that 'post_example_writeup' is of type 'english', requiring it to be primarily in English, as per the rules for 'english' type fields.",
+        "violation: false_friends[0].nuance: Changed the language from Japanese to English. Reason: The schema specifies that 'nuance' is of type 'english', requiring it to be primarily in English.",
+        "violation: false_friends[1].nuance: Changed the language from Japanese to English. Reason: The schema specifies that 'nuance' is of type 'english', requiring it to be primarily in English.",
+        "violation: post_false_friends_writeup: Changed the language from Japanese to English. Reason: The schema specifies that 'post_false_friends_writeup' is of type 'english', requiring it to be primarily in English.",
+        "violation: examples[8].nuance: Changed the language from Japanese to English. Reason: The schema specifies that 'nuance' is of type 'english', requiring it to be primarily in English."
+    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/がたい"
-    },
-    "change": [
-        "violation: conjugations array: Corrected type values to strictly match conjugationType enum (e.g., 'polite (non-past)' to 'non-past polite (～ます)', 'negative (plain)' to 'negative plain (～ない)', etc.). Reason: Rule 'conjugationType: enum' specifies allowed values for type.",
-        "schema: conjugations array: Removed the 'adverbial (く-form)' entry. Reason: The type 'adverbial (く-form)' is not present in the conjugationType enum, violating the schema definition.",
-        "violation: Example 1 (あいつが言う 事 は 信じ {がたい} が、今 は 信じる しかない。): Removed etymology field. Reason: Rule 6 states 'If there is something etymologically interesting... mention it here...'. The previous content was a meaning, not etymology, violating this rule.",
-        "violation: Examples 1, 2, 3, 4, 5, 6, 7, 8, 9: Added scene_rationale field. Reason: Rule 6 states 'If OTHER_WAYS is not empty, then you must have a 'scene' field' and also 'scene_rationale must be present if 'scene' is present.' All these examples had scene but no scene_rationale, violating this rule.",
-        "unnatural: Example 1 (あいつが言う 事 は 信じ {がたい} が、今 は 信じる しかない。): Changed register from 'formal' to 'casual'. Reason: The Japanese phrase 'あいつ' and 'しかない' are more characteristic of casual speech than formal, making the previous register unnatural.",
-        "unnatural: Example 3 (この 話 が 信じ {がたい} のは分かるが、信じてくれ！): Changed register from 'formal' to 'casual'. Reason: The imperative '信じてくれ！' and plain form '分かるが' are typical of casual communication, making the previous register unnatural.",
-        "violation: Example 5 (あの 人 の言っていることは信じ {がたい} ですね。): Added speaker_gender: female, listener_gender: male, and nuance. Reason: Rule 6 requires example sentences to include at least one male and one female speaker_gender, and at least one male and one female listener_gender. This addition helps fulfill that requirement. The nuance is added as per rule 6 which states if speaker_gender or listener_gender are present, nuance must mention the specific Japanese.",
-        "unnatural: Example 6 (皆 は その 映画 が 面白い って言っているけど、僕 は その 映画 が 成功 するとは 言い {がたい} 。): Corrected typo はい言い to は言い in Japanese sentence. Reason: This was a grammatical error in the Japanese sentence, making it unnatural.",
-        "unnatural: Example 7 (忘れ {がたい} 経験 に 出会った。): Changed register from 'formal' to 'casual'. Reason: The use of the plain past form '出会った' is more typical of casual speech or personal reflection rather than formal settings.",
-        "violation: Example 7 (忘れ {がたい} 経験 に 出会った。): Removed speaker_gender and nuance. Reason: The nuance previously provided did not identify Japanese text that would typically only be spoken by a female, violating the condition for speaker_gender (Rule 6).",
-        "unnatural: Example 8 (その 人 は 信じ {がたい} くらい 勇気があった。): Changed register from 'formal' to 'casual'. Reason: The use of the plain past form 'あった' is more typical of casual speech or storytelling rather than formal settings.",
-        "unnatural: Example 9 (君 の 美し さ は 言葉 では言い {がたい} ね。): Updated nuance. Reason: The previous nuance was slightly vague. The updated nuance is more comprehensive and directly ties to gendered language as required by rule 6.",
-        "unnatural: post_example_writeup: Modified text to reflect that がたい can also be used in casual contexts, not just formal ones. Reason: The previous statement ('「がたい」 is generally used in more formal or serious contexts.') contradicted the updated register values for several examples, making the writeup unnatural.",
-        "unnatural: false_friends entry for ようがない・ようもない: Changed kind from 'synonym' to 'similar expression'. Reason: While related, their nuances are distinct enough that 'similar expression' better describes their relationship than 'synonym', which implies direct interchangeability.",
-        "unnatural: false_friends entry for にくい: Changed kind from 'synonym' to 'often confused with'. Reason: These two are frequently mistaken for each other due to overlapping meanings, but are not direct synonyms, making 'often confused with' a more accurate description of their relationship."
-    ]
+    }
 }

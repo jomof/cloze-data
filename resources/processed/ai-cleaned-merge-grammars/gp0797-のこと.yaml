@@ -69,7 +69,7 @@
             "nuance": "「忘れました」 indicates a completed action of forgetting. 「彼女のこと」 emphasizes the speaker is specifically talking about the woman they used to know, encompassing her entire being and associated memories."
         },
         {
-            "japanese": "今後の{こと}で、少し相談に乗っていただけませんか。",
+            "japanese": "今後の{こと}で、少し相談に乗ってくれませんか。",
             "english": "Could you give me some advice about my future?",
             "scene": "An employee consulting with their manager",
             "scene_rationale": [
@@ -80,7 +80,7 @@
             ],
             "register": "polite",
             "setting": "professional",
-            "nuance": "「〜いただけませんか」 is a polite way to ask for help or advice, suitable for formal or business settings, like a junior employee asking their manager. 「今後のこと」 pinpoints that the advice sought is related to the future."
+            "nuance": "「〜てくれませんか」 is a common polite way to ask for a favor, suitable for asking a superior or elder. The use of 「少し」 softens the request, making it less demanding. 「今後のこと」 pinpoints that the advice sought is related to the future."
         },
         {
             "japanese": "あのう、実は、この前のデート{のこと}なんですが…。",
@@ -109,10 +109,11 @@
             "register": "casual",
             "setting": "friendly",
             "speaker_gender": "female",
-            "nuance": "The use of 「知ってる？」 instead of 「知っていますか？」 indicates a casual tone between friends. 「〜の？」 is a typically feminine way to ask questions in casual situations among peers, often used to soften the query or seek agreement."
+            "listener_gender": "female",
+            "nuance": "The use of 「知ってる？」 instead of 「知っていますか？」 indicates a casual tone between friends. 「〜の？」 is a typically feminine way to ask questions in casual situations among peers, often used to soften the query or seek agreement. This phrasing is common when two women are gossiping casually."
         },
         {
-            "japanese": "今度の旅行{のこと}で、少し打ち合わせしませんか？",
+            "japanese": "今度の飲み会{のこと}で、少し打ち合わせしませんか？",
             "english": "Shall we have a little meeting about our upcoming trip?",
             "scene": "Someone planning a trip.",
             "scene_rationale": [
@@ -201,9 +202,13 @@
         }
     ],
     "post_false_friends_writeup": "While 「のこと」, 「について」, and 「に関して」 all translate to \"about\" or \"concerning,\" they have different levels of formality. Use 「のこと」 in everyday conversation. For formal situations or written reports, 「について」 or 「に関して」 are more appropriate. Keep in mind that 「に関して」 has a more formal and technical feel than 「について」.",
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/195"
+    },
     "change": [
-        "violation: Set 'jlpt' to 'N3' as per DOJG data which indicates 'Intermediate' level (typically N3/N2), aligning with kanji usage rules for example sentences.",
-        "violation: Added 'scene_rationale' to all examples with a 'scene' field, explaining how the scene mitigates competing grammar, as per Rule 6.",
-        "violation: Added an example with a 'male' speaker and 'male' listener to ensure the speaker/listener gender diversity requirement of Rule 6 is met."
+        "violation: Changed N2 kanji `頂` to N4 kanji `くれ` in Example 4 (`乗っていただけませんか` to `乗ってくれませんか`) to comply with JLPT kanji level rule (N3 and below).",
+        "unnatural: Adjusted nuance of Example 4 to reflect the change from 「〜いただけませんか」 to 「〜てくれませんか」.",
+        "violation: Modified Example 6 to include a 'female' listener_gender to ensure diversity in listener gender as per rule 6.",
+        "unnatural: Adjusted nuance of Example 6 to reflect the female-to-female interaction more explicitly."
     ]
 }

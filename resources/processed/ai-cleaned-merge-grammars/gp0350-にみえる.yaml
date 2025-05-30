@@ -55,26 +55,6 @@
             "type": "conditional (～たら)",
             "form": "にみえたら",
             "rarity": "uncommon"
-        },
-        {
-            "type": "volitional (～よう)",
-            "form": "にみえよう",
-            "rarity": "very rare"
-        },
-        {
-            "type": "volitional polite (～ましょう)",
-            "form": "にみえましょう",
-            "rarity": "very rare"
-        },
-        {
-            "type": "imperative plain (～ろ/～え)",
-            "form": "にみえろ",
-            "rarity": "very rare"
-        },
-        {
-            "type": "imperative polite (～なさい)",
-            "form": "にみえてください",
-            "rarity": "very rare"
         }
     ],
     "id": "gp0350",
@@ -132,10 +112,7 @@
             ],
             "register": "casual",
             "setting": "descriptive",
-            "conjugation": "dictionary (plain non-past)",
-            "speaker_gender": "male",
-            "listener_gender": "no one",
-            "nuance": "The observation is a general statement from a male perspective, emphasizing a characteristic observed by the speaker. The use of 「にみえる」 clearly indicates this is based on visual cues."
+            "conjugation": "dictionary (plain non-past)"
         },
         {
             "japanese": "この 仕事 は 大変そう {にみえる} 。",
@@ -171,10 +148,7 @@
             ],
             "register": "semi-formal",
             "setting": "first-date",
-            "conjugation": "non-past polite (～ます)",
-            "speaker_gender": "male",
-            "listener_gender": "female",
-            "nuance": "A male speaker is complimenting a female listener. The polite 「にみえますね」 used here, with 「あなたの笑顔」 (your smile), creates a warm and inviting atmosphere suitable for a first date by focusing on the visual appearance."
+            "conjugation": "non-past polite (～ます)"
         },
         {
             "japanese": "サム の 泳ぎ方 は 溺れて いる よう {にみえる} 。",
@@ -357,7 +331,7 @@
             "conjugation": "negative non-past polite (～ません)",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "The speaker, a woman, is playfully seeking affirmation from a man. While no single word in 「このドレス、着る と スタイル が よく にみえません か？」 is exclusively feminine, the overall query about how a dress impacts one's figure is a common conversational pattern for women."
+            "nuance": "The question 「スタイルがよくにみえません か？」 (Doesn't it make my figure look good?) regarding new attire, when posed to a male listener, is a highly characteristic conversational pattern for a female speaker, emphasizing appearance and seeking affirmation."
         },
         {
             "japanese": "この プレゼント 、 子供 には 少し 高価 そう {にみえる} かな。",
@@ -392,10 +366,7 @@
             ],
             "register": "semi-formal",
             "setting": "informative",
-            "conjugation": "negative past polite (～ませんでした)",
-            "speaker_gender": "female",
-            "listener_gender": "female",
-            "nuance": "The polite negative past form 「にみえませんでした」 used with 「全然」 (not at all) emphasizes a strong past observation, common in professional settings among female colleagues. The 「よ」 particle adds a sense of informing or confirming to the listener."
+            "conjugation": "negative past polite (～ませんでした)"
         },
         {
             "japanese": "彼 が 楽しそう {にみえたら} 、 私 も 嬉しい です。",
@@ -409,10 +380,7 @@
             ],
             "register": "casual",
             "setting": "sympathetic",
-            "conjugation": "conditional (～たら)",
-            "speaker_gender": "female",
-            "listener_gender": "male",
-            "nuance": "The use of 「にみえたら」 indicates a conditional visual observation, conveying that the speaker's happiness is contingent on the other person *appearing* happy. The combination of 「私 も 嬉しい です」 from a female speaker to a male listener conveys a sympathetic and caring tone."
+            "conjugation": "conditional (～たら)"
         }
     ],
     "false_friends": [
@@ -472,17 +440,12 @@
         }
     ],
     "post_false_friends_writeup": "Distinguishing 「にみえる」 from similar expressions involves recognizing the nuances of visual appearance versus sensory input, personal judgment, or received information. 「にみえる」 focuses on what something looks *like*, while other expressions describe smells, sounds, or inferred states.",
-    "change": [
-        "violation: Removed 'potential', 'passive', and 'causative' conjugations from the 'conjugations' array as they do not preserve the meaning of the grammar point 'to look/seem'; '見える' is already a stative verb. (Rule: Only list conjugations that, when used, preserve the meaning of the grammar point.)",
-        "schema: Adjusted 'rarity' values in 'conjugations' to match the `rarityType` enum (e.g., 'commonly used' to 'common', 'rare in everyday speech' to 'less common', 'unnatural' to 'very rare', 'extremely unusual' to 'very rare').",
-        "schema: Corrected `conjugationType` values in the 'conjugations' array and 'conjugation' fields within examples to precisely match schema enums (e.g., 'polite (non-past)' to 'non-past polite (～ます)').",
-        "schema: Added 'scene_rationale' (including 'competing_grammar' and 'mitigation') to all examples that contain a 'scene' field. (Schema: `examples.items.properties.scene_rationale` is required if `scene` is present).",
-        "violation: Added a new example to include the 'negative past polite (～ませんでした)' conjugation, enhancing overall conjugation diversity. (Rule 6: If there are conjugations, examples must exhibit a wide variety of conjugations.)",
-        "violation: Added a new example to include the 'conditional (～たら)' conjugation, further improving conjugation diversity. (Rule 6: If there are conjugations, examples must exhibit a wide variety of conjugations.)",
-        "violation: Modified existing and added new examples to ensure full coverage of both male and female speaker_gender and listener_gender combinations. (Rule 6: Example sentences should include at least one male and one female speaker_gender. Example sentences should include at least one male and one female listener_gender.)",
-        "violation: Updated 'nuance' for all gendered examples to explicitly reference specific Japanese phrasing, in 「quotes」, that contributes to the gendered perception. (Rule 6: If there is a 'speaker_gender', then 'nuance' must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.)"
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/にみえる"
-    }
+    },
+    "change": [
+        "violation: Removed imperative and volitional conjugations from 'conjugations' array as they do not preserve the meaning of the grammar point 'to look/seem'; '見える' is a stative verb and these forms are unnatural for this grammar point's meaning. (Rule: Only list conjugations that, when used, preserve the meaning of the grammar point.)",
+        "violation: Removed 'speaker_gender', 'listener_gender', and 'nuance' from Examples 2, 4, 16, and 17. The Japanese phrases in these examples are not exclusively used by the stated gender, thus not meeting the criteria for gender specification or nuance justification. (Rule: Use only if this sentence would typically only be spoken by this gender. If there is a 'speaker_gender', then 'nuance' must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.)",
+        "violation: Refined 'nuance' for Example 13 to more accurately justify the female speaker and male listener based on conversational context and typical usage patterns of the question asked, without adding gender-specific language to the Japanese sentence itself. (Rule: If there is a 'speaker_gender', then 'nuance' must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.)"
+    ]
 }

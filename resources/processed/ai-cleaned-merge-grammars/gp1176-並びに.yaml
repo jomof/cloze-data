@@ -53,7 +53,8 @@
             "register": "formal",
             "setting": "legal",
             "speaker_gender": "male",
-            "nuance": "In legal and formal discussions, a male speaker might use 「並びに」 to convey precision and authority when detailing important clauses like 「権利」 (rights) and 「義務」 (obligations). The phrase 「はっきりと記されています」 reinforces the objective, clear nature of the statement."
+            "listener_gender": "female",
+            "nuance": "In legal and formal discussions, a male speaker might use 「並びに」 to convey precision and authority when detailing important clauses like 「権利」 (rights) and 「義務」 (obligations) to a female client. The phrase 「はっきりと記されています」 reinforces the objective, clear nature of the statement, maintaining a professional and informative tone for the listener."
         },
         {
             "japanese": "会議では、新商品の企画{並びに}販売戦略について議論しました。",
@@ -72,7 +73,8 @@
             "register": "bijinesu nihongo (business)",
             "setting": "professional",
             "speaker_gender": "female",
-            "nuance": "A female professional in a business context might use 「並びに」 to succinctly connect two equally critical aspects like 「新商品の企画」 (new product planning) and 「販売戦略」 (sales strategies), maintaining a professional and precise tone. This usage reflects a structured approach to communication."
+            "listener_gender": "group",
+            "nuance": "A female professional in a business context might use 「並びに」 to succinctly connect two equally critical aspects like 「新商品の企画」 (new product planning) and 「販売戦略」 (sales strategies) when reporting to her team, maintaining a professional and precise tone. This usage reflects a structured approach to communication appropriate for addressing a group."
         },
         {
             "japanese": "そのレストランでは、美味しい料理{並びに}素晴らしいサービスが楽しめます。",
@@ -177,11 +179,9 @@
     ],
     "post_false_friends_writeup": "To avoid confusing 「並びに」 with similar expressions, remember that 「並びに」 is reserved for formal contexts where you want to emphasize that the items being connected are of equal importance. When in doubt, if the situation isn't particularly formal, opt for 「と」.",
     "change": [
-        "violation: Added {bold} to the grammar point in all Japanese example sentences, as required by the schema's `japanese` field rules.",
-        "violation: Added `scene_rationale` to all example sentences, as required by the schema's `examples` field rules for 'scene'.",
-        "violation: Modified kanji usage in examples to adhere to JLPT N2 level. Specifically: '記載' (which contains N1 kanji 載) was changed to 'はっきりと記されています' (N3/N3), '氏名' (which contains N1 kanji 氏) was changed to 'お名前' (N5) for simplicity and N5 compliance, and '博物館' and '彫刻' (which contain N1 kanji 博 and 彫 respectively) were changed to '美術館' (N3/N3/N4) and '像' (N2) for N2 compliance.",
-        "violation: Added `speaker_gender` to two examples (one male, one female) and corresponding `nuance` fields to fulfill the requirement for gender diversity in examples. This was done by focusing on the context and implied speaker type, acknowledging the grammar point itself is gender-neutral.",
-        "schema: Added `post_example_writeup` as an optional field to provide additional clarification, adhering to schema allowance.",
-        "schema: Removed the `source` field from the top level, as it is not part of the output schema."
+        "schema: Removed 'dojg' top-level field as it is not part of the output schema.",
+        "schema: Removed 'lesson_order' top-level field as it is not part of the output schema.",
+        "schema: Removed 'source' top-level field as it is not part of the output schema.",
+        "violation: Added 'listener_gender: female' to example 2 and 'listener_gender: group' to example 3, and updated their 'nuance' fields to meet the requirement for at least one male and one female listener_gender example."
     ]
 }

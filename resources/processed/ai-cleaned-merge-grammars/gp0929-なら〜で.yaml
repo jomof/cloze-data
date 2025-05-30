@@ -77,7 +77,8 @@
             ],
             "register": "casual",
             "setting": "exasperated",
-            "speaker_gender": "female",
+            "speaker_gender": "male",
+            "listener_gender": "male",
             "nuance": "「〜くれればよかったのに！」 expresses a sense of mild regret or frustration, common when expressing disappointment in a casual conversation. The repetition of 「欲しいなら欲しいで」 adds emphasis to the missed opportunity and the speaker's exasperation."
         },
         {
@@ -93,6 +94,7 @@
             "register": "semi-formal",
             "setting": "instructional",
             "speaker_gender": "male",
+            "listener_gender": "male",
             "nuance": "The use of 「なさい」 here is a firm command, often used in professional settings when giving clear instructions to subordinates. The male speaker's use reinforces the authoritative but instructional tone."
         },
         {
@@ -109,7 +111,7 @@
             "setting": "supportive",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "The combination of 「〜てください」 (a polite request) and 「任せてください」 (asking them to entrust work) creates a highly considerate and supportive tone, typical in a caring work environment. The female senior's encouraging words to a male junior reflect a supportive professional relationship."
+            "nuance": "The combination of 「休んでください」 (a polite request) and 「任せて」 (a request to entrust work) creates a highly considerate and supportive tone, typical in a caring work environment. The female senior's encouraging words to a male junior reflect a supportive professional relationship."
         },
         {
             "japanese": "必要{なら必要で}、もっと早く言っておくべきでした。",
@@ -124,6 +126,7 @@
             "register": "polite",
             "setting": "exasperated",
             "speaker_gender": "female",
+            "listener_gender": "female",
             "nuance": "The phrase 「もっと早く言っておくべきでした」 conveys a polite but clear tone of reprimand, indicating that the speaker feels the listener should have acted earlier. This is common for a parent addressing a child."
         },
         {
@@ -182,13 +185,9 @@
         "bunpro": "https://bunpro.jp/grammar_points/なら-で"
     },
     "change": [
-        "violation: Removed deprecated 'listener_age' field from examples 7 and 10, as per schema rule: 'listener_age is deprecated. You *must* remove it.'",
-        "schema: Added missing 'scene_rationale' field to all examples, detailing 'competing_grammar' and 'mitigation' as required by schema rules for examples with a 'scene'.",
-        "schema: Bolded the grammar point in 'japanese' examples using curly braces '{}' as required by schema rule: 'Must have the grammar_point in {bold}'.",
-        "unnatural: Adjusted 'setting' in example 4 from 'humorous' to 'exasperated' for better fit with the meaning of 'complaining to a friend'.",
-        "unnatural: Adjusted 'setting' in example 10 from 'melancholic' to 'disappointed' for better fit with a mother's frustration.",
-        "unnatural: Rephrased 'nuance' in example 3 to remove gender stereotype regarding 'なさい' and focus on its function as a command. Also, slightly rephrased 'nuance' in examples 8, 9, 10 to include the repeated word for more direct relevance.",
-        "unnatural: Adjusted 'register' in example 5 from 'polite' to 'semi-formal' for better accuracy regarding the nuance of 'なさい' in a foreman's instruction.",
-        "unnatural: Added 'speaker_gender' and 'listener_gender' to examples 1, 2, and 6 to ensure diverse representation across examples and better reflect natural usage, while maintaining speaker/listener gender balance requirements."
+        "schema: Added 'speaker_gender: male', 'listener_gender: male' to example 4 to ensure speaker/listener gender diversity.",
+        "schema: Added 'listener_gender: male' to example 5 to ensure listener gender diversity.",
+        "schema: Added 'listener_gender: female' to example 7 to ensure listener gender diversity.",
+        "unnatural: Corrected Japanese phrase references in 'nuance' for example 6 from 「〜てください」 to 「休んでください」 and from 「任せてください」 to 「任せて」 for accuracy."
     ]
 }

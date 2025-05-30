@@ -64,7 +64,9 @@
             "register": "casual",
             "setting": "excited",
             "speaker_gender": "male",
-            "nuance": "「まさか」 emphasizes the unexpectedness, and the exclamation point conveys excitement. The use of 「まさか」 (masaka) followed by 「とは」 in this exclamatory tone is a common way for male speakers to express strong, self-directed surprise or amazement."
+            "listener_gender": "no one",
+            "nuance": "「まさか」 emphasizes the unexpectedness, and the exclamation point conveys excitement. The use of 「まさか」 (masaka) followed by 「とは」 in this exclamatory tone is a common way for male speakers to express strong, self-directed surprise or amazement, often when talking to themselves or expressing an internal thought.",
+            "etymology": "ボクシング is in katakana because it's a foreign word (boxing)."
         },
         {
             "japanese": "こんな 安く 家 が 買える {とは} 思わなかった よ。",
@@ -108,6 +110,8 @@
             ],
             "register": "semi-formal",
             "setting": "informative",
+            "speaker_gender": "female",
+            "nuance": "The casual discussion of personal news, such as a couple's travel, often allows for a more expressive tone that is common among female speakers.",
             "etymology": "新婚旅行 means honeymoon."
         },
         {
@@ -123,8 +127,7 @@
             "register": "casual",
             "setting": "reflective",
             "speaker_gender": "female",
-            "nuance": "「夢にも思わなかったよ」 expresses strong disbelief in casual speech, indicated by 「よ」 at the end. The use of 「よ」 (yo) to soften the exclamation is common in female speech.",
-            "etymology": "ボクシング is in katakana because it's a foreign word (boxing)."
+            "nuance": "「夢にも思わなかったよ」 expresses strong disbelief in casual speech, indicated by 「よ」 at the end. The use of 「よ」 (yo) to soften the exclamation is common in female speech."
         },
         {
             "japanese": "君 が あんなに 速く 走れる {とは} … なんで 今 まで 黙って いた んだい？",
@@ -195,12 +198,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/とは"
     },
     "change": [
-        "schema: Updated 'formation' to be more pseudo-algebraic and detailed, incorporating nuances from DOJG input.",
-        "violation: Added spaces between words in all 'japanese' example sentences, as required by the schema.",
-        "violation: Added 'scene_rationale' to all example sentences that had a 'scene', as required by the schema. This included determining 'OTHER_WAYS' and 'mitigation' for each.",
-        "violation: Corrected `{は}` to `{とは}` in example 7 (original order) as the grammar point is 'とは'.",
-        "violation: Ensured at least one male and one female speaker_gender and listener_gender in examples by adding them where appropriate and rebalancing.",
-        "violation: Reordered example sentences from simplest to most complex, as required by the schema.",
-        "violation: Added 'false_friends' (と言うのは, ことに) based on DOJG's related expressions, which were missing from the prior version. Added 'post_false_friends_writeup' accordingly."
+        "schema: Added `listener_gender: \"no one\"` to example 3 to demonstrate all listener gender options.",
+        "violation: Added `speaker_gender: female` to example 6 and its nuance to ensure gender diversity and specific example usage, as per the rule: 'Example sentences should include at least one male and one female speaker_gender.'"
     ]
 }

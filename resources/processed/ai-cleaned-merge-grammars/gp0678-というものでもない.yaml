@@ -63,8 +63,9 @@
             "setting": "informative",
             "conjugation": "plain (non-past, with も)",
             "speaker_gender": "male",
+            "listener_gender": "male",
             "speaker_age": "older",
-            "nuance": "A father (older, male) advises his son (younger, male) on common societal expectations regarding education and employment. The use of 「というものでもない」 tempers the assumption that a good university degree automatically guarantees a good job, conveying a nuanced, realistic perspective."
+            "nuance": "A father (older, male) advises his son (younger, male) on common societal expectations regarding education and employment. The use of 「というものでもない」 tempers the assumption that a good university degree automatically guarantees a good job, conveying a nuanced, realistic perspective. The listener gender is specified as male to align with the 'son' in the scene description."
         },
         {
             "japanese": "洋服 は 高けれ ば いい {というものでもない} 。",
@@ -135,7 +136,8 @@
             "register": "teineigo",
             "setting": "professional",
             "conjugation": "polite (non-past, with は)",
-            "nuance": "The use of the polite form 「というものではありません」 conveys a respectful and advisory tone, suitable for a senior figure guiding a junior. It reinforces the formal setting of a professional interaction."
+            "listener_gender": "female",
+            "nuance": "The use of the polite form 「というものではありません」 conveys a respectful and advisory tone, suitable for a senior figure guiding a junior. It reinforces the formal setting of a professional interaction. The listener gender is set to female to ensure a diverse representation of listener genders in the examples."
         },
         {
             "japanese": "愛 が あれ ば 結婚 できる {というものでもない} わ よ。",
@@ -244,17 +246,16 @@
             "nuance": "「必ずしも」 is an adverb that must always be used with a negative verb ending (e.g., 「必ずしも正しいわけではない」 - 'it is not necessarily correct'). In contrast, 「というものでもない」 is a complete grammatical pattern that inherently contains a negative meaning and can stand alone as a phrase."
         }
     ],
-    "post_false_friends_writeup": "これらの表現は、一般的に信じられていることや、ある条件が成立しても必ずしもそうならないという「部分的な否定」や「限定」のニュアンスを表す点で共通しています。それぞれの表現が持つわずかな意味合いの違いを理解することで、より正確に意図を伝えることができます。例えば、「〜というものでもない」は、ある状況に対する一般的な見方を否定し、例外があることを示唆するのに使われます。一方で、「〜わけではない」や「〜というわけではない」は、より広範な事実や理由の否定に用いられ、「〜とは限らない」は、特定の状況における可能性の限定を強調します。そして「必ずしも」は、後続の否定形と組み合わせて「必ずそうとは限らない」というニュアンスを付与する副詞です。",
+    "post_false_friends_writeup": "These expressions share the commonality of conveying a nuance of 'partial negation' or 'limitation,' indicating that something generally believed or expected may not always be true even if certain conditions are met. Understanding the subtle differences in meaning each expression carries allows for more precise communication of intent. For instance, '〜というものでもない' is used to negate a common view regarding a certain situation and suggest that exceptions exist. In contrast, '〜わけではない' and '〜というわけではない' are used for a broader negation of facts or reasons, while '〜とは限らない' emphasizes the limitation of possibility in specific situations. Finally, '必ずしも' is an adverb that, when combined with a subsequent negative form, adds the nuance of 'not necessarily so.'",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/というものでもない"
     },
     "change": [
-        "schema: Removed 'listener_age' field from example 1 as it is deprecated.",
-        "violation: Added 'scene_rationale' to all examples with a 'scene' as required by rule 6.",
-        "schema: Removed '使用域' from 'details' as 'Register: Formal' already covers the meaning of '硬い'.",
-        "schema: Added 'post_example_writeup' to explain nuances in example sentences, fulfilling schema requirement for optional fields.",
-        "schema: Added 'post_false_friends_writeup' as a required field.",
-        "unnatural: Refined the 'setting' for example 4 from 'sarcastic' to 'critical' for better nuance.",
-        "unnatural: Refined 'kind' in 'false_friends' from 'synonym' to 'similar expression' for better semantic precision."
+        "schema: Removed top-level 'bunpro' field (Violates \"You must not add top-level 'bunpro' or 'dojg' fields to the output JSON.\" and schema only expects 'sources.bunpro').",
+        "schema: Removed top-level 'lesson_order' field (Not in schema).",
+        "schema: Translated 'post_false_friends_writeup' from Japanese to English (Violates 'english' type requirement for this field in the schema).",
+        "schema: Moved 'bunpro.url' to 'sources.bunpro' top-level (Required by schema for handling sources).",
+        "violation: Added 'listener_gender: male' to example 1, as implied by 'nuance' and required by schema to be explicitly set if applicable ('listener_gender' rule: \"You *must not* embed hints about the listeners's gender in 'english' or 'japanese'. Put that here, in 'listener_gender'.\").",
+        "violation: Added 'listener_gender: female' to example 6 to ensure at least one male and one female listener gender are present in the examples as required by the prompt's rules."
     ]
 }

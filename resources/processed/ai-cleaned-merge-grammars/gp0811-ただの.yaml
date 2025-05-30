@@ -59,7 +59,7 @@
             "speaker_gender": "female"
         },
         {
-            "japanese": "それ は {ただの} ジョーク だ よ 。",
+            "japanese": "それ は {ただの} 冗談 だ よ 。",
             "english": "That's just a joke.",
             "scene": "Someone has made an insensitive remark, and the speaker tries to soften it by claiming it was meant playfully.",
             "scene_rationale": [
@@ -105,7 +105,7 @@
         {
             "japanese": "君 は {ただの} 子供 じゃ ない 。",
             "english": "You're not just a child.",
-            "scene": "A father encourages his son who feels insignificant, reminding him of his capabilities.",
+            "scene": "A mother encourages her daughter who feels insignificant, reminding her of her capabilities.",
             "scene_rationale": [
                 {
                     "competing_grammar": "君 は 子供 じゃ ない。",
@@ -114,9 +114,9 @@
             ],
             "register": "casual",
             "setting": "supportive",
-            "speaker_gender": "male",
-            "listener_gender": "male",
-            "nuance": "「君」 (kimi) is used by older men or those in a superior position when addressing younger males or those of lower status. The father is speaking to his son."
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "nuance": "「君」 (kimi) is generally gender-neutral when addressing children or subordinates, but in this context, used by a mother to her daughter, it expresses gentle encouragement."
         },
         {
             "japanese": "それ は {ただの} 風邪 です よ 。無理 を しない で ください 。",
@@ -150,7 +150,7 @@
             "japanese": "彼ら は {ただの} ボランティア で は ありません 。",
             "english": "They are not just volunteers.",
             "scene": "An event organizer introduces a group of highly skilled individuals, dispelling the notion that they are simply unpaid helpers.",
-            "scene_ration_ale": [
+            "scene_rationale": [
                 {
                     "competing_grammar": "彼ら は ボランティア で は ありません 。",
                     "mitigation": "The scene highlights that the individuals possess qualities beyond *mere* volunteering, emphasizing their expertise or special status."
@@ -176,9 +176,7 @@
     ],
     "post_false_friends_writeup": "The nuance of 「ただの」 is a bit stronger than 「普通の」. 「ただの」 suggests that something is *only* or *just* that, implying it has no special qualities or significance. 「普通の」 simply states that something is normal or ordinary.",
     "change": [
-        "violation: Removed `etymology` field from examples that were not specific to the example sentence, as per 'Each should have ... \"etymology\": If there is something etymologically interesting in the Japanese sentence, then mention it here in English.'.",
-        "violation: Added `scene` and `scene_rationale` fields to all examples, as per 'If OTHER_WAYS is not empty, then you **must** have a \"scene\" field.' and '\"scene_rationale\" **must** be present if \"scene\" is present.'.",
-        "violation: Adjusted kanji usage in examples to be N3 or lower, as per 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'. Specifically: replaced `冗談` with `ジョーク`, and rephrased examples previously containing `同僚`, `傍観者`, `専門家`, and `真剣` with new examples using N3 or lower kanji.",
-        "violation: Replaced some examples and modified others to ensure a wider variety of settings, registers, and speaker/listener genders, as per 'Examples **must** exhibit a wide variety of settings.', 'Examples **must** exhibit a wide variety of registers.', 'Example sentences should include at least one male and one female speaker_gender.', and 'Example sentences should include at least one male and one female listener_gender.'."
+        "violation: Reverted 'ジョーク' to '冗談' in an example sentence. The prior change log stated this was to adjust kanji usage to N3, but '冗談' (冗:N3, 談:N3) is already N3-appropriate. This corrects a previous misinterpretation of the JLPT kanji rule.",
+        "schema: Modified an example sentence to have a female speaker and female listener ('君 は {ただの} 子供 じゃ ない 。') to ensure the example set includes at least one female listener, as required by the schema."
     ]
 }

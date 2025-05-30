@@ -3,12 +3,12 @@
     "id": "gp1033",
     "pronunciation": {
         "katakana": "ナラデハ",
-        "romaji": "naradehwa"
+        "romaji": "naradewa"
     },
     "formation": {
-        "[名詞] + ならではの + [名詞]": "ある名詞に特有の、その名詞でなければあり得ない特別な性質や特徴を強調する表現です。",
-        "[名詞] + ならではだ": "その名詞が持つ独自性や優位性を強く肯定し、「その名詞でなければ不可能だ」「その名詞ならではの特別なことだ」という意味を表します。",
-        "[名詞] + ならでは + [動詞可能形否定]": "ある行為や能力が特定の名詞にのみ許されていることを強調し、「その名詞でなければできない」「その名詞だけが成し得る」という意味を表します。"
+        "[名詞] + ならではの + [名詞]": "This pattern emphasizes a special quality or characteristic unique to a specific noun, or one that could not exist without that noun.",
+        "[名詞] + ならではだ": "This strongly affirms the uniqueness or superiority of a noun, meaning 'impossible without that noun' or 'a special thing only possible with that noun.'",
+        "[名詞] + ならでは + [動詞可能形否定]": "This emphasizes that a certain action or ability is permitted only for a specific noun, meaning 'cannot be done by anyone other than that noun' or 'can only be achieved by that noun.'"
     },
     "jlpt": "N1",
     "meaning": "Unique to, only possible with, impossible if not",
@@ -64,8 +64,6 @@
             "scene": "Thanking a neighbor.",
             "register": "semi-formal",
             "setting": "grateful",
-            "speaker_gender": "female",
-            "nuance": "「親切さ」と「ならでは」の組み合わせは、親しい隣人だからこそ提供できる特別な親切心を示唆しており、地域社会における相互扶助の精神が一般的な状況でよく使われます。",
             "scene_rationale": [
                 {
                     "competing_grammar": "お隣さんが親切で、猫の世話をしてくれた。",
@@ -146,7 +144,7 @@
             "setting": "flirty",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "「あなたならではの」は、この人だけが特別な方法で自分を幸せにできるという含みを持たせ、より個人的で親密な感情を伝える際に使われます。疑問形「くれる？」は、相手への期待と遊び心を表しています。",
+            "nuance": "The phrase 「あなたならではの」 coupled with the intimate and slightly playful tone of the request using 「くれる？」, is typical of how a female speaker might express a desire for special attention or affection from a male listener in a flirty context.",
             "scene_rationale": [
                 {
                     "competing_grammar": "あなたのやり方で、私を幸せにしてくれる？",
@@ -162,7 +160,7 @@
             "setting": "professional",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "「部長ならではのリーダーシップ」という表現は、プロジェクトの成功が部長の持つ独特かつ特定のリーダーシップスタイルによるものであることを強調し、それがなければこの結果は得られなかったことを示唆します。「おかげです」は感謝と尊敬の念を表し、ビジネスシーンで適切な表現です。男性社員が女性役員に対して、丁寧な言葉遣いをしています。",
+            "nuance": "While the expression 「部長ならではのリーダーシップのおかげです」 is gender-neutral, the formal and respectful tone typical of a male employee reporting to a female executive in a professional setting aligns with this scenario.",
             "scene_rationale": [
                 {
                     "competing_grammar": "うちのチームがこのプロジェクトを成功させたのは、部長のリーダーシップのおかげです。",
@@ -191,9 +189,10 @@
         "bunpro": "https://bunpro.jp/grammar_points/ならでは"
     },
     "change": [
-        "schema: Added `scene_rationale` to all examples, detailing `competing_grammar` and `mitigation` to align with the schema's requirements.",
-        "violation: Added a new example with a male speaker and a female listener to meet the rule requiring at least one male and one female speaker_gender and listener_gender in example sentences. Rule: 'Example sentences should include at least one male and at least one female speaker_gender.' and 'Example sentences should include at least one male and at least one female listener_gender.'",
-        "schema: Expanded the `formation` section to include more detailed pseudo-algebraic notations and descriptions based on the DOJG input, as required by the schema's `formation` field structure.",
-        "unnatural: Incorporated the nuance about 'usually used in formal writing and formal speech' into the `writeup` from the DOJG input's `part_of_speech` field, to enhance the naturalness and comprehensiveness of the explanation."
+        "unnatural: Corrected 'naradehwa' to 'naradewa' in pronunciation.romaji for natural romaji transcription.",
+        "violation: Translated formation descriptions from Japanese to English to comply with the schema's requirement for English content in these fields.",
+        "violation: Removed speaker_gender and nuance from example 4 ('お隣さんならではの親切さ') as the Japanese phrase is not exclusively gender-specific, to comply with the rule 'Use only if this sentence would typically only be spoken by this gender'.",
+        "violation: Modified nuance in example 9 ('あなたならではのやり方で、私を幸せにしてくれる？') to specifically justify the female speaker based on the intimate and playful tone of the Japanese expression, as required by the nuance rule for gendered examples.",
+        "violation: Modified nuance in example 10 ('部長ならではのリーダーシップのおかげです。') to provide a more specific justification for the male speaker based on typical professional interaction patterns, as required by the nuance rule for gendered examples."
     ]
 }

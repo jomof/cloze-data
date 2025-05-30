@@ -33,7 +33,8 @@
             ],
             "register": "casual",
             "setting": "casual",
-            "nuance": "The speaker is expressing a personal desire to eat something different from Japanese food today, using the plain form 「食べたい」 to convey their wish casually."
+            "speaker_gender": "female",
+            "nuance": "The speaker, a woman, expresses her personal desire casually using the plain form 「食べたい」 to convey their wish."
         },
         {
             "japanese": "タロウ は ゲーム {以外} に 好きなこと は ある の ？",
@@ -68,7 +69,9 @@
             ],
             "register": "teineigo",
             "setting": "informative",
-            "nuance": "The use of the polite past negative form 「来ませんでした」 makes this a formal and objective statement, suitable for general communication where politeness is expected."
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "A female speaker formally reports the attendance to a man using the polite past negative form 「来ませんでした」, suitable for objective statements where politeness is expected."
         },
         {
             "japanese": "今まで 漢字 {以外} 、 何 も 勉強 し て い なかっ た 。",
@@ -86,8 +89,10 @@
             ],
             "register": "casual",
             "setting": "reflective",
+            "speaker_gender": "male",
             "speaker_age": "older",
-            "nuance": "An older speaker casually reflects on past actions using 「勉強していなかった」, a plain past progressive negative. This informal tone is appropriate for speaking to a younger family member or close acquaintance."
+            "listener_gender": "male",
+            "nuance": "An older male speaker casually reflects on past actions to a younger male, using 「勉強していなかった」. This informal tone is appropriate for speaking to a younger family member or close acquaintance."
         },
         {
             "japanese": "それ {以外} 、 聞い て ない よ 。",
@@ -105,7 +110,9 @@
             ],
             "register": "casual",
             "setting": "informative",
-            "nuance": "The casual negative progressive 「聞いてない」 combined with the particle 「よ」 provides a definitive statement, indicating the speaker has no further information on the matter."
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "A male speaker uses the casual negative progressive 「聞いてない」 combined with the particle 「よ」 to provide a definitive statement to a female listener, indicating no further information on the matter."
         },
         {
             "japanese": "納豆 {以外} 何 でも 食べ られる 。",
@@ -123,7 +130,9 @@
             ],
             "register": "casual",
             "setting": "friendly",
-            "nuance": "This casual expression uses the potential form 「食べられる」 to state one's capability, common in relaxed conversations about personal tastes."
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "A female speaker casually expresses her dietary flexibility to a male listener using the potential form 「食べられる」, common in relaxed conversations about personal tastes."
         },
         {
             "japanese": "彼 は 言わ れ た こと {以外} 何 も し ない よ 。",
@@ -141,8 +150,10 @@
             ],
             "register": "casual",
             "setting": "informative",
+            "speaker_gender": "female",
             "speaker_age": "older",
-            "nuance": "An older speaker, perhaps a manager, uses the casual phrase 「何もしないよ」 to describe a younger employee's passive approach. The 「よ」 adds a definitive, slightly critical nuance to the observation, common in informal work discussions."
+            "listener_gender": "male",
+            "nuance": "An older female speaker, perhaps a manager, uses the casual phrase 「何もしないよ」 to describe an employee's passive approach to a male colleague. The 「よ」 adds a definitive, slightly critical nuance to the observation, common in informal work discussions."
         },
         {
             "japanese": "かわいい あなた {以外} 、 目 に 入ら ない。",
@@ -229,6 +240,12 @@
         "violation: Removed examples using '意外' (unexpected) from the input YAML because the grammar point is '以外' (except). Instruction: 'Each example **must** use the grammar_point.'",
         "violation: Added 'scene_rationale' to all examples that have a 'scene' field. Instruction: 'If OTHER_WAYS is not empty, then you **must** have a \"scene\" field. ... \"scene_rationale\" **must** be present if \"scene\" is present.'",
         "schema: Removed 'listener_age' from examples 2, 4, and 7. Instruction: '\"listener_age\" is deprecated. You *must* remove it.'",
-        "unnatural: Added 'post_false_friends_writeup' for a more comprehensive explanation of similar expressions."
+        "unnatural: Added 'post_false_friends_writeup' for a more comprehensive explanation of similar expressions.",
+        "schema: Added speaker_gender to example 1 (female). Instruction: 'Example sentences should include at least one male and one female speaker_gender.'",
+        "schema: Added speaker_gender (female) and listener_gender (male) to example 3. Instruction: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'",
+        "schema: Added speaker_gender (male) and listener_gender (male) to example 4. Instruction: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'",
+        "schema: Added speaker_gender (male) and listener_gender (female) to example 5. Instruction: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'",
+        "schema: Added speaker_gender (female) and listener_gender (male) to example 6. Instruction: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'",
+        "schema: Added speaker_gender (female) and listener_gender (male) to example 7. Instruction: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'"
     ]
 }

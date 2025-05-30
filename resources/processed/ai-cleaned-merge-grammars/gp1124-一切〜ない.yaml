@@ -56,7 +56,7 @@
     "details": {
         "Register": "Usually used in formal writing and formal speech."
     },
-    "etymology": "「一切」originally comes from Buddhist terminology, referring to \"everything\" or \"all.\" When used with a negative verb, it creates the meaning of \"not at all\" or \"nothing at all.\"",
+    "etymology": "「一切」 originally comes from Buddhist terminology, referring to \"everything\" or \"all.\" When used with a negative verb, it creates the meaning of \"not at all\" or \"nothing at all.\"",
     "writeup": "The grammar point 「一切〜ない」 (issai ~ nai) is used to express a complete negation, meaning \"not at all,\" \"absolutely not,\" or \"not whatsoever.\" It emphasizes that something is entirely absent or does not occur in any way. 「一切」 is an adverb that intensifies the negative meaning of the verb. It's often used in formal settings, writing, or when making a strong statement. It can be interchangeable with 「全然〜ない」 or 「全く〜ない」, but 「一切〜ない」 carries a stronger and more formal tone.",
     "examples": [
         {
@@ -149,7 +149,6 @@
             "register": "formal",
             "setting": "serious",
             "conjugation": "negative plain (～ない)",
-            "speaker_age": "older",
             "nuance": "「許さない」 is the plain negative form of 「許す」, conveying a strong, uncompromising prohibition. This usage is forceful and official, typical of corporate policy."
         },
         {
@@ -182,9 +181,7 @@
             "register": "shitashii kuchō (intimate)",
             "setting": "humorous",
             "conjugation": "negative plain (～ない)",
-            "speaker_gender": "male",
-            "listener_gender": "male",
-            "nuance": "The phrase 「関係ない」 is the plain negative form meaning \"unrelated.\" The addition of 「〜じゃない」 adds emphasis and can convey frustration or dismissiveness, common in informal, emphatic speech, often heard from male speakers in a confrontational setting."
+            "nuance": "The phrase 「関係ない」 is the plain negative form meaning \"unrelated.\" The addition of 「〜じゃない」 adds emphasis and can convey frustration or dismissiveness, common in informal, emphatic speech."
         }
     ],
     "post_example_writeup": "Observe how 「一切〜ない」 is employed across these varied scenarios. The core function remains consistent: to convey absolute negation. The choice of verb conjugation—from polite 「〜ません」 to plain 「〜ない」 or past tense 「〜なかった」—adapts the formality and temporal aspect of the statement, but 「一切」 maintains its strong emphasis on complete absence or denial. This makes it a versatile tool for expressing definitive stances in Japanese.",
@@ -207,14 +204,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/一切〜ない"
     },
     "change": [
-        "violation: Added 'conjugations' array as per schema rule: 'If the grammar point contains a verb in dictionary form (besides だ or です) or adjective in dictionary form, add a new array field at the top, called \"conjugations\".'",
-        "violation: Updated 'formation' to use the pseudo-algebraic notation required by the schema and expanded it to include the 'Noun + ではない/じゃない' pattern, which is used in an example. The prior version's formation was not in the correct schema format. (Rule: 'You *must* add a 'formation' tag that describes, in psuedo-algebraic notation, the formula for creating the grammar point from its component parts.')",
-        "violation: Added 'scene_rationale' to all examples that had a 'scene' but lacked this required field. (Rule: 'Must be present if \"scene\" is present.')",
-        "violation: Corrected the 'conjugation' type for '一切入っていない' to 'negative plain (～ない)' for consistency with schema enum. (Rule: 'The content of this \"conjugation\" field must be taken from the top-level list of conjugations you generated earlier.')",
-        "unnatural: Removed 'speaker_gender' from example 4 and 5 where the Japanese sentence itself does not contain gender-specific language. The nuance was also generalized to reflect this. (Rule: 'Use only if this sentence would typically only be spoken by this gender')",
-        "unnatural: Clarified nuance for example 7 and 8 to accurately reflect the Japanese text and avoid stating specific gender usage where it is not exclusively applicable, while maintaining stylistic observations.",
-        "violation: Added 'speaker_gender: male' to example 1 and 'speaker_gender: female' to example 4 to ensure at least one male and one female speaker_gender example as required by the schema. (Rule: 'Example sentences should include at least one male and one female speaker_gender.')",
-        "schema: Added 'post_example_writeup' as it was missing and provides helpful clarification. (Rule: 'You may include a \"post_example_writeup\" section after \"examples\" if more clarification is helpful')",
-        "schema: Added 'sources' field with 'bunpro' entry as required by the schema and because it's a valid source. (Rule: 'sources' field is required)"
+        "unnatural: Removed 'speaker_age' from example 6 (`この会社はセクハラを{一切}許さ{ない}。`) because the statement itself does not naturally imply an older speaker; it is a general policy statement. (Rule: 'Use only if this sentence would typically only be spoken by this gender')",
+        "unnatural: Removed 'speaker_gender' and 'listener_gender' from example 8 (`そんなこと{一切}関係{ない}じゃない。`) because the phrase `関係ないじゃない` is not exclusive to male speakers or male listeners to the point of being 'typically only spoken by this gender/to this gender.' (Rule: 'Use only if this sentence would typically only be spoken by this gender')",
+        "unnatural: Adjusted the 'nuance' for example 8 to remove gender-specific references, reflecting the removal of 'speaker_gender' and 'listener_gender' for that example."
     ]
 }

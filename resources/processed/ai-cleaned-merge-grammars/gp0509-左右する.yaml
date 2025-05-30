@@ -288,7 +288,7 @@
             "scene_rationale": [
                 {
                     "competing_grammar": "あなたの意見が、私の決断を大きく決めるわ。",
-                    "mitigation": "The intimate setting and the woman's direct statement emphasize that the man's opinion is not just a factor but a decisive one that governs her decision, reflecting the strong control implied by 「左右する」. 「決める」 (decide/determine) lacks the nuance of direct shaping and governance."
+                    "mitigation": "The intimate setting and the woman's direct statement emphasize that the man's opinion is not just a factor but a decisive one that governs her decision, reflecting the strong control implied by 「左右する」. 「決める」 (determine) lacks the nuance of direct shaping and governance."
                 }
             ],
             "register": "casual",
@@ -304,9 +304,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/左右する"
     },
     "change": [
-        "schema: Added `scene_rationale` to all examples, as it was missing despite `scene` being present. This adheres to the schema's requirement that `scene_rationale` must be present if `scene` is present.",
-        "violation: Added one example with `speaker_gender: female` and `listener_gender: male` to satisfy the rule: 'Example sentences should include at least one male and one female speaker_gender' and 'Example sentences should include at least one male and one female listener_gender'.",
-        "schema: Changed `details.使用域` from Japanese \"一般\" to English \"General usage\" to comply with the schema's implicit requirement for English in `details` values.",
-        "schema: Removed `post_false_friends_writeup` because it was an empty string, adhering to the rule 'Omit fields that are not applicable instead'."
+        "schema: Removed top-level 'lesson_order' field as it is not present in the output schema.",
+        "schema: Removed top-level 'meaning_warning' field, as it was null, adhering to the schema rule 'No fields should be null. Omit fields that are not applicable instead.'",
+        "schema: Removed top-level 'post_false_friends_writeup' field, as it was null, adhering to the schema rule 'No fields should be null. Omit fields that are not applicable instead.'"
     ]
 }

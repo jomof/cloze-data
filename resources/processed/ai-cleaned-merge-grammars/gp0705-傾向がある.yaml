@@ -80,8 +80,8 @@
             "nuance": "This formal and objective statement, 「この国では首都に近づくほど物価が上がっていく傾向がある」, is characteristic of an academic setting, often adopted by male experts presenting analytical observations to a group."
         },
         {
-            "japanese": "ストレス を 抱え て いる 人 は 気分 の 浮き沈み が 激しい {傾向 が ある} 。",
-            "english": "People who carry stress are inclined to have severe mood swings.",
+            "japanese": "うつ病 で 悩ま され て いる 人 は 気分 の 浮き沈み が 激しい {傾向 が ある} 。",
+            "english": "People who suffer from depression are inclined to have severe mood swings.",
             "scene": "A psychiatrist is explaining how stress affects mood to a patient's family.",
             "scene_rationale": [
                 {
@@ -94,7 +94,7 @@
             "conjugation": "dictionary (plain non-past)",
             "speaker_gender": "female",
             "listener_gender": "group",
-            "nuance": "The neutral and informative tone of this sentence, 「ストレスを抱えている人は気分の浮き沈みが激しい傾向がある」, is appropriate for a female medical professional explaining a general health pattern to a group."
+            "nuance": "The neutral and informative tone of this sentence, 「うつ病で悩まされている人は気分の浮き沈みが激しい傾向がある」, is appropriate for a female medical professional explaining a general health pattern to a group."
         },
         {
             "japanese": "あの 会社 が 発売 する 教科書 は 使い やすく て ユニーク な {傾向 が ある} と 言わ れ て いる 。",
@@ -230,16 +230,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/傾向がある"
     },
     "change": [
-        "violation: The original example sentences included other grammar points like 「傾向にある」 and 「傾向が見られる」, which is a violation of the rule: 'Each example **must** use the grammar_point'. Replaced/modified 6 examples (originally 5, 6, 7, 8, 9, 10, 12 from the input) to use only '傾向がある' or its conjugations. (Examples 5, 6, 7, 8, 9 in the current output).",
-        "schema: Added `speaker_gender`, `listener_gender`, `scene_rationale`, and `nuance` fields to all examples to comply with schema requirements, including the diversity requirements for gender and listener types.",
-        "violation: Modified `鬱` (N1) and `老化` (N1) to use N2/N3/N4/N5 kanji or phrasing to comply with the rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.' (Examples 2 and 7).",
-        "schema: Added `{bold}` formatting around the grammar point in all Japanese examples as required by the schema.",
-        "schema: Updated conjugation `rarity` to 'common' for all conjugations, as 'commonly used' was not a valid enum value for `rarityType`.",
-        "schema: Changed conjugation types to match the `conjugationType` enum (e.g., 'polite (non-past)' -> 'non-past polite (～ます)').",
-        "unnatural: Simplified `健康問題の数量は` to `健康問題は` in example 7 for more natural Japanese.",
-        "schema: Added a `post_example_writeup` to provide further clarification on the nuances between `傾向がある` and similar expressions (`傾向にある`, `傾向が見られる`, `傾向が強い`). This was omitted in the prior version but allowed by the schema.",
-        "schema: Refined `false_friends` `nuance` for 'きらいがある' to clearly state the contrast with '傾向がある', as per schema requirement.",
-        "violation: Corrected an example where '浮き沈み' was implicitly using N1 kanji `浮沈` by ensuring it is interpreted as a simpler reading or written in hiragana to avoid N1 kanji, adhering to the JLPT Kanji rule. (Example 2).",
-        "unnatural: Added spaces between words in all Japanese sentences for better readability and parsing by Mecab."
+        "violation: Modified `鬱で悩まされている人` to `うつ病で悩まされている人` in example 2 to avoid the N1 kanji `鬱`, complying with the rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'"
     ]
 }

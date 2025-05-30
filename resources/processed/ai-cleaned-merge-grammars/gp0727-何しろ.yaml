@@ -20,7 +20,7 @@
         {
             "japanese": "{何しろ} 彼はまだ始めたばかりなので大目に見てやってください。",
             "english": "After all, he's just started, so please cut him some slack.",
-            "scene": "A female manager is speaking to a new male employee's supervisor, requesting patience for the new hire.",
+            "scene": "A manager is speaking to a new employee's supervisor, requesting patience for the new hire.",
             "scene_rationale": [
                 {
                     "competing_grammar": "彼はまだ始めたばかりなので大目に見てやってください。",
@@ -28,9 +28,7 @@
                 }
             ],
             "register": "formal",
-            "setting": "persuasive",
-            "speaker_gender": "female",
-            "listener_gender": "male"
+            "setting": "persuasive"
         },
         {
             "japanese": "彼はできて当たり前だよ。{何しろ} 彼はプロなんだから。",
@@ -43,13 +41,12 @@
                 }
             ],
             "register": "casual",
-            "setting": "informative",
-            "speaker_gender": "male"
+            "setting": "informative"
         },
         {
             "japanese": "{何しろ} 今日は普段より暑かったからクタクタだよ。",
             "english": "After all, it was hotter than usual today, so I'm exhausted.",
-            "scene": "A woman is reflecting on her day, explaining why she feels so tired.",
+            "scene": "A person is reflecting on their day, explaining why they feel so tired.",
             "scene_rationale": [
                 {
                     "competing_grammar": "今日は普段より暑かったからクタクタだよ。",
@@ -57,8 +54,7 @@
                 }
             ],
             "register": "casual",
-            "setting": "reflective",
-            "speaker_gender": "female"
+            "setting": "reflective"
         },
         {
             "japanese": "{何しろ} この商品は不便すぎるので、どれだけ値下げをしても売れないでしょう。",
@@ -84,8 +80,7 @@
                 }
             ],
             "register": "casual",
-            "setting": "melancholic",
-            "speaker_gender": "male"
+            "setting": "melancholic"
         },
         {
             "japanese": "トムはぐっすり寝ているよ。{何しろ} 一日中遊んで疲れたからね。",
@@ -98,8 +93,7 @@
                 }
             ],
             "register": "casual",
-            "setting": "friendly",
-            "speaker_gender": "female"
+            "setting": "friendly"
         },
         {
             "japanese": "{何しろ} 暑いからね。食欲も出ないよ。",
@@ -115,20 +109,17 @@
             "setting": "reflective"
         },
         {
-            "japanese": "{何しろ} 期限が迫っている。急いでくれないか。",
-            "english": "At any rate, the deadline is drawing near. Could you please hurry up?",
-            "scene": "A female project manager is urgently telling a male team member to accelerate his work.",
+            "japanese": "{何しろ} 時間はあまりない。急いでくれないか。",
+            "english": "At any rate, time is short. Could you please hurry up?",
+            "scene": "A project manager is urgently telling a team member to accelerate their work.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "期限が迫っている。急いでくれないか。",
-                    "mitigation": "In this urgent professional setting, stating '期限が迫っている' alone might not convey the full weight of the situation. 「何しろ」 emphasizes the absolute, undeniable reality of the approaching deadline as the critical reason for the immediate need to hurry, reinforcing the manager's command."
+                    "competing_grammar": "時間はあまりない。急いでくれないか。",
+                    "mitigation": "In this urgent professional setting, stating '時間はあまりない' alone might not convey the full weight of the situation. 「何しろ」 emphasizes the absolute, undeniable reality of limited time as the critical reason for the immediate need to hurry, reinforcing the manager's command."
                 }
             ],
             "register": "formal",
-            "setting": "serious",
-            "speaker_gender": "female",
-            "listener_gender": "male",
-            "nuance": "The phrase 「急いでくれないか」, while polite, can be used by a female manager to a male subordinate to convey a firm expectation and urgency, especially when combined with the emphatic 「何しろ」."
+            "setting": "serious"
         },
         {
             "japanese": "{何しろ} 基礎ができていないから、彼に数学を教えるのは大変だ。",
@@ -154,10 +145,7 @@
                 }
             ],
             "register": "casual",
-            "setting": "flirty",
-            "speaker_gender": "male",
-            "listener_gender": "female",
-            "nuance": "The phrase 「君のことが好きだから」 is a direct and sincere confession of affection. Used by a male speaker, it conveys a straightforward and earnest feeling, making the subsequent action (thinking about the listener) a natural and unavoidable outcome of this deep emotion."
+            "setting": "flirty"
         }
     ],
     "post_example_writeup": "「何しろ」 typically introduces a reason or explanation that the speaker considers to be obvious, undeniable, or fundamental, making the preceding or succeeding statement seem like an inevitable consequence. It often implies a sense of \"it's only natural because...\" or \"no wonder...\" when providing a justification.",
@@ -216,11 +204,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/何しろ"
     },
     "change": [
-        "violation: Rephrased example 'どうして そんなに悲しそうにしてるの？悲しいのも当然だろ。何しろ ガールフレンドにフラれたんだから。' to '悲しいのも当然だ。{何しろ} ガールフレンドにフラれたのだから。' to remove dialogue, as per rule 'Must be from the point of view of a single speaker. No back-and-forth dialogue.'",
-        "violation: Rephrased example 'トムちゃんはやっと寝付いたね？何しろ、一日中遊んで疲れたからね。' to 'トムはぐっすり寝ているよ。{何しろ} 一日中遊んで疲れたからね。' to remove dialogue, as per rule 'Must be from the point of view of a single speaker. No back-and-forth dialogue.'",
-        "schema: Added 'scene_rationale' to all examples with a 'scene' field, as required by the schema.",
-        "violation: Ensured at least one male and one female speaker_gender, and at least one male and one female listener_gender across examples, as per rule 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'.",
-        "unnatural: Improved the 'writeup' to incorporate details from Bunpro's explanation regarding the usage with 'から' or 'ので' and its nuance of 'no wonder' or 'after all', enhancing clarity and naturalness.",
-        "unnatural: Added 'post_example_writeup' to provide further clarification on the common usage and nuance of '何しろ' based on the collected examples."
+        "violation: Removed 'speaker_gender', 'listener_gender', and 'nuance' from examples 1, 2, 3, 5, 6, 8, and 10. The original examples did not contain specific Japanese phrases that 'would typically only be spoken by' a particular gender, which is a strict requirement for including these fields. This action is in accordance with the rule: 'speaker_gender': 'Use only if this sentence would typically only be spoken by this gender' and 'If there is a 'speaker_gender' or 'listener_gender', then 'nuance' **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.' This action prioritizes linguistic accuracy, leading to a temporary non-fulfillment of the 'Example sentences should include at least one male and one female speaker_gender' rule, which is a contradiction in the prompt's instructions that cannot be resolved without compromising linguistic truth.",
+        "violation: Modified example 8's 'japanese' from '何しろ期限が迫っている。急いでくれないか。' to '何しろ時間はあまりない。急いでくれないか。' to replace the N1 kanji '迫' (迫る) with N5 kanji '時' (時間) and '間' (時間), ensuring the example adheres to the N2 JLPT kanji level for the grammar point.",
+        "violation: Modified example 8's 'scene' from 'A female project manager is urgently telling a male team member to accelerate his work.' to 'A project manager is urgently telling a team member to accelerate their work.' to align with the removal of 'speaker_gender' and 'listener_gender' fields, ensuring consistency with the rule that gender information should only be specified in the dedicated fields if linguistically justified."
     ]
 }

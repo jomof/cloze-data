@@ -23,7 +23,7 @@
         {
             "japanese": "この 問題 は 難しすぎて、 私には {どうにも} 解けない。",
             "english": "This problem is too difficult; there's no way I can solve it.",
-            "scene": "A female student struggling with a homework question, feeling completely stuck.",
+            "scene": "A student struggling with a homework question, feeling completely stuck.",
             "scene_rationale": [
                 {
                     "competing_grammar": "この 問題 は 難しすぎて、 私には 解くことができない。",
@@ -32,14 +32,13 @@
             ],
             "register": "semi-formal",
             "setting": "academic",
-            "speaker_gender": "female",
-            "nuance": "The speaker, a female student, uses 「私には」 to emphasize her personal inability. 「解けない」 is the negative potential form of the verb 「解く」 (to solve), indicating the impossibility of solving the problem despite her efforts.",
+            "nuance": "The speaker uses 「私には」 to emphasize their personal inability. 「解けない」 is the negative potential form of the verb 「解く」 (to solve), indicating the impossibility of solving the problem despite their efforts.",
             "etymology": "「解けない」 is the potential negative form of 「解く」, meaning 'unable to solve'."
         },
         {
             "japanese": "いくら 頑張っても、 {どうにも} 眠れない。",
             "english": "No matter how hard I try, I just can't fall asleep.",
-            "scene": "Someone tossing and turning in bed, feeling utterly frustrated and sharing this with their male partner.",
+            "scene": "Someone tossing and turning in bed, feeling utterly frustrated and sharing this with a partner.",
             "scene_rationale": [
                 {
                     "competing_grammar": "いくら 頑張っても、 眠ることができない。",
@@ -48,8 +47,7 @@
             ],
             "register": "casual",
             "setting": "melancholic",
-            "listener_gender": "male",
-            "nuance": "The speaker expresses their frustration to a male listener, implying an intimate setting. 「眠れない」 is the negative potential form of 「眠る」 (to sleep), showing the inability to sleep despite persistent effort.",
+            "nuance": "The speaker conveys their deep frustration. 「眠れない」 is the negative potential form of 「眠る」 (to sleep), showing the inability to sleep despite persistent effort.",
             "etymology": "「眠れない」 is the potential negative form of 「眠る」, meaning 'unable to sleep'."
         },
         {
@@ -115,7 +113,7 @@
         {
             "japanese": "いくら 謝っても、 彼女 は {どうにも} 許してくれない。",
             "english": "No matter how much I apologize, she just won't forgive me.",
-            "scene": "A man trying desperately to apologize to his girlfriend, but realizing his efforts are completely futile.",
+            "scene": "Someone trying desperately to apologize to their partner, but realizing their efforts are completely futile.",
             "scene_rationale": [
                 {
                     "competing_grammar": "いくら 謝っても、 彼女 は 許してくれない。",
@@ -124,9 +122,7 @@
             ],
             "register": "casual",
             "setting": "apologetic",
-            "speaker_gender": "male",
-            "listener_gender": "female",
-            "nuance": "The male speaker uses 「許してくれない」, indicating that despite his sincere efforts to apologize, his female partner refuses to forgive him. The casual tone and use of 「くれない」 imply a close relationship and his personal frustration.",
+            "nuance": "「許してくれない」 indicates that despite sincere efforts to apologize, forgiveness is not granted. The use of 「くれない」 implies an action not done for the speaker's benefit, highlighting their personal frustration.",
             "etymology": "「許してくれない」 means 'won't forgive me', with 「くれる」 indicating an action done for the speaker's benefit, here in the negative."
         },
         {
@@ -141,7 +137,7 @@
             ],
             "register": "formal",
             "setting": "informative",
-            "nuance": "The speaker, likely a teacher, uses 「理解できないだろう」, the negative potential form of 「理解する」 (to understand) followed by 「だろう」 (probably), expressing a strong belief that the listener will not grasp the explanation, regardless of effort. 「どうにも」 adds to this sense of utter futility.",
+            "nuance": "The speaker uses 「理解できないだろう」, the negative potential form of 「理解する」 (to understand) followed by 「だろう」 (probably), expressing a strong belief that the listener will not grasp the explanation, regardless of effort. 「どうにも」 adds to this sense of utter futility.",
             "etymology": "「理解できないだろう」 combines the potential negative 「理解できない」 with the conjecture 「だろう」, meaning 'probably won't be able to understand'."
         }
     ],
@@ -155,5 +151,8 @@
         }
     ],
     "post_false_friends_writeup": "While both 「どうにも〜ない」 and 「どうにもこうにも〜ない」 express impossibility, the latter carries a stronger, more emphatic nuance. Think of 「どうにもこうにも〜ない」 as saying 'absolutely no way' or 'under no circumstances,' whereas 「どうにも〜ない」 is simply 'no way' or 'cannot.' The added 'こうにも' reinforces the idea of trying various methods and finding all of them to be fruitless, expressing a higher degree of exasperation or resignation.",
-    "change": "['schema: Removed top-level conjugations field as the grammar point does not conjugate itself but attaches to conjugated forms.','violation: Added `scene_rationale` to all examples as required by the schema when `scene` is present.','violation: Ensured `speaker_gender` and `listener_gender` diversity by adding them to relevant examples, as required by the prompt (at least one male, one female for each).','schema: Added `false_friends` and `post_false_friends_writeup` based on `related` field in original DOJG data, as this is a similar expression.']"
+    "change": [
+        "violation: Removed `speaker_gender` and `listener_gender` fields from examples and adjusted `nuance` accordingly. This was done because the Japanese sentences do not contain explicitly gendered language, in strict adherence to the rule 'Use only if this sentence would typically only be spoken by this gender' and 'If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.' This action, however, leads to a violation of the rule 'Example sentences should include at least one male and one female speaker_gender' and 'Example sentences should include at least one male and one female listener_gender', as this grammar point (どうにも〜ない) does not typically involve gender-specific speech patterns.",
+        "violation: Corrected `scene` descriptions in example 2 and 7 to remove direct gender references like 'male partner' and 'his girlfriend', replacing them with gender-neutral terms like 'a partner' to comply with the rule 'You must not use 'male' or 'female'. Use a proper name that's clearly gendered or 'man', 'woman', 'boy', 'girl', etc.'"
+    ]
 }

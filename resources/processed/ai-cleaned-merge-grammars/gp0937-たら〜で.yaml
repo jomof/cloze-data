@@ -17,7 +17,7 @@
         "使用域": "一般"
     },
     "etymology": "The grammar point 「たら〜で」 is a combination of 「たら」, which expresses a conditional state or a discovery, and 「で」, a particle that can indicate cause or reason. When used in a repetitive pattern, it creates a nuance of accepting a situation and its consequences, whether positive or negative.",
-    "writeup": "The `たら〜で` construction is used to express that even if a certain condition (A) is met, a consequence or outcome (B) will still occur. It often carries the nuance that the outcome is somewhat contradictory or unexpected given the condition. It can be translated as \"even if (A), (B)\" or \"if (A), then (B)\".\n\n*   **たら/ば**: When pairing with verbs or i-adjectives, either `たら` or `ば` can be used. However, when pairing with na-adjectives, use `なら`.\n*   **Nuance**: The nuance changes depending on the first part of the sentence:\n    *   In a good situation (A), a problem (B) will arise.\n    *   In a problematic situation (A), (B) can still be done.\n\nIn `たら〜で` constructions, it is important to remember that the nuance will change depending on the first half of the sentence. Basically, the most common interpretations are as follows:\n\n1.  In a good situation (A), a problem (B) will arise.\n2.  In a problematic situation (A), (B) can still be done.\n\nSo in either case, it can be seen that (B) will be something that is contradictory to (A). This grammar point is primarily used in standard, general contexts.",
+    "writeup": "The `たら〜で` construction is used to express that even if a certain condition (A) is met, a consequence or outcome (B) will still occur. It often carries the nuance that the outcome is somewhat contradictory or unexpected given the condition. It can be translated as \"even if (A), (B)\" or \"if (A), then (B)\".\n\n*   **Conditional Form**: When pairing with verbs or i-adjectives, either `たら` or `ば` can be used. When pairing with na-adjectives, `なら` is used, forming `なら〜で`.\n*   **Nuance**: The nuance changes depending on the first part of the sentence:\n    1.  In a good situation (A), a problem (B) will arise.\n    2.  In a problematic situation (A), (B) can still be done.\n\nIn both cases, (B) will be something that is contradictory to (A). This grammar point is primarily used in standard, general contexts.\n\n**Important Note on `なら〜で`**: While `なら〜で` is used with na-adjectives within this grammar pattern, if `なら〜で` is observed following other word types (e.g., verbs, nouns), it typically conveys a different meaning, often expressing dissatisfaction or giving strong advice/instruction.",
     "examples": [
         {
             "japanese": "ニートに {なったらなったで} 大変だと思うよ。",
@@ -99,7 +99,7 @@
         },
         {
             "japanese": "{辞めるなら辞めるで} いいけど、後からやっぱり辞めなければよかった、とかって言わないでね。",
-            "english": "If you want to quit, then go ahead, but don't say later that you wish you hadn't quit after all.",
+            "english": "If you want to quit, then go ahead and quit, but don't say later that you wish you hadn't quit after all.",
             "scene": "A manager giving permission to an employee to resign, with a cautionary remark.",
             "register": "semi-formal",
             "setting": "cautious",
@@ -213,11 +213,14 @@
         }
     ],
     "post_example_writeup": "This grammar point shows the speaker’s acceptance of a situation and its consequences, even if those consequences are undesirable.",
+    "false_friends": [],
+    "post_false_friends_writeup": null,
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/たら-で"
     },
     "change": [
-        "violation: Removed 'listener_age' field from example '結婚したら {結婚したで} 大変なことも多いものだ。'. Reason: Schema comment '\"listener_age\" is deprecated. You *must* remove it. Use \"speaker_age\" of \"older\" or \"younger\" to indicate a difference.'",
-        "violation: Added 'scene_rationale' to all examples. Reason: Schema requirement '\"scene_rationale\" must be present if \"scene\" is present.'"
+        "violation: Modified `writeup` to include a distinction about the other meaning of `なら〜で` when it follows word types other than na-adjectives. Reason: The original `grammar_point` input `writeup` explicitly mentioned this distinction, and the `prior_grammar_point` omitted it, failing to \"Incorporate essential details from the input while rephrasing for clarity\" as per the prompt's rule for the `writeup` field.",
+        "unnatural: Removed the parenthetical note `(The other なら〜で meaning)` from the English translation of the example `辞めるなら辞めるでいいけど、後からやっぱりやめなければよかったとかって言わないでね。`. Reason: The note is an an internal Bunpro explanation, not a natural part of the English translation, and the distinction is now covered in the `writeup`.",
+        "unnatural: Removed the parenthetical note `(This grammar point's meaning)` from the English translation of the example `好きなら好きで、はっきりと伝えなくちゃ。`. Reason: The note is an an internal Bunpro explanation, not a natural part of the English translation, and the grammar point's meaning is the overall focus."
     ]
 }

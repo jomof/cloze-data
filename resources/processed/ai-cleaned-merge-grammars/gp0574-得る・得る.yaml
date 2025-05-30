@@ -319,9 +319,7 @@
             "register": "polite",
             "setting": "serious",
             "conjugation": "non-past polite (～ます)",
-            "speaker_gender": "male",
-            "listener_gender": "female",
-            "nuance": "The 「ます」 ending marks the sentence as 「polite」. The use of 「話し{えます}か」 instead of the more common 「話せますか」 (potential form) indicates a nuanced inquiry about the *feasibility* or *potential* of a private conversation, rather than just the speaker's ability to speak. This adds a level of deference common when a 「male」 speaker is addressing a 「female」 listener in a formal context."
+            "nuance": "The 「ます」 ending marks the sentence as 「polite」. The use of 「話し{えます}か」 instead of the more common 「話せますか」 (potential form) indicates a nuanced inquiry about the *feasibility* or *potential* of a private conversation, rather than just the speaker's ability to speak. This adds a level of deference common when a male speaker is addressing a female listener in a formal context."
         },
         {
             "japanese": "この状況から抜け出し {うる} 道は、本当に限られているわ。",
@@ -364,11 +362,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/得る-得る"
     },
     "change": [
-        "violation: Added `scene_rationale` to all examples that had `scene`. Reason: Required by schema: \"Scene is English text... If OTHER_WAYS is not empty, then you **must** have a 'scene' field. ... **Must** include wrong ways... **Must** list the exact content of OTHER_WAYS...\". The prior version had `scene` but no `scene_rationale`.",
-        "unnatural: Added a new example with `speaker_gender: female` and `listener_gender: no one` to ensure gender diversity in examples. Reason: Required by schema: \"Example sentences should include at least one male and one female speaker_gender.\" and \"Example sentences should include at least one male and one female listener_gender.\"",
-        "violation: Changed `false_friends[0].kind` from `synonym` to `antonym`. Reason: Semantically `〜得ない` is an antonym of `得る`.",
-        "unnatural: Changed `false_friends[1].kind` from `synonym` to `similar expression`. Reason: While technically a synonym, `similar expression` better conveys the nuanced difference described in `nuance`, making the explanation more precise.",
-        "schema: Removed `pronunciation_warning` from `pronunciation` object. Reason: This field is not defined in the output schema.",
-        "unnatural: Refined the `writeup` content by removing duplicate information already present in `etymology` and `pronunciation_warning`. Reason: To ensure `writeup` is concise and avoids redundancy, as per general quality requirements for a well-structured explanation."
+        "violation: Removed `speaker_gender` and `listener_gender` from the example \"あなたと二人きりで話し {え} {ます} か？\". Reason: The `nuance` section for this example did not identify specific Japanese phrases, in quotes, that would *only* be spoken by the specified gender, as required by the schema: \"If there is a speaker_gender or listener_gender, then nuance must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.\""
     ]
 }

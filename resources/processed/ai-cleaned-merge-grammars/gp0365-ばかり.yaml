@@ -1,7 +1,6 @@
 {
     "grammar_point": "ばかり",
     "id": "gp0365",
-    "conjugations": [],
     "jlpt": "N3",
     "meaning": "Just, only, nothing but",
     "meaning_warning": "ばっかり, ばっか, ばかし, and ばっかし are all fairly common casual variations of ばかり",
@@ -271,11 +270,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/ばかり"
     },
     "change": [
-        "violation: Removed '[Verb past-form] + ばかり + だ/です' from 'formation' and its corresponding explanation from 'writeup'. The prompt requires focusing the main grammar point on the meaning 'Just, Only, Nothing but', and this form ('just happened') is considered a distinct usage, as indicated by the 'false_friends' entry for 'ばかりだ' (though 'ばかりだ' in false_friends is defined differently, the examples for the main grammar point do not include the 'just happened' meaning).",
-        "violation: Removed the sentence mentioning variations like 'ばっかり' from 'writeup'. The prompt states: 'Don't mention the meaning_warning if there is one.'",
-        "schema: Added 'scene_rationale' to all examples. The schema dictates that 'scene_rationale' must be present if 'scene' is present.",
-        "schema: Added 'speaker_gender' and 'listener_gender' to all examples. The schema requires examples to include at least one male and one female speaker_gender, and at least one male and one female listener_gender.",
-        "schema: Modified 'etymology' field in all examples, or removed it if not applicable. The schema specifies that 'etymology' in examples should discuss the etymology of phrases *within* the example sentence, not repeat the grammar point's etymology or explain its grammar.",
-        "schema: Modified 'nuance' for 'だけでなく(て)〜も' in 'false_friends'. The schema requires the 'nuance' to be a concise contrast to the main grammar point. The previous nuance contrasted with 'ばかりでなく' instead of the main grammar point 'ばかり'."
+        "schema: Removed top-level 'conjugations' array because 'ばかり' is a particle and not conjugatable, aligning with the schema's instruction to omit inapplicable fields and the rule that 'conjugation' field in examples should only be present if a top-level 'conjugations' array exists.",
+        "schema: Removed 'conjugation' field from all example entries because 'ばかり' is not conjugatable, aligning with the schema's instruction that this field 'Must not be present if there is no top-level \"conjugations\" array'."
     ]
 }

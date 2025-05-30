@@ -112,7 +112,8 @@
             "register": "casual",
             "setting": "humorous",
             "speaker_gender": "female",
-            "nuance": "The sentence ends with 「よ」, which is often used by female speakers to add emphasis or a sense of mild protest or annoyance."
+            "listener_gender": "male",
+            "nuance": "The speaker's use of the informal 「よ」 and the context of a woman speaking to a man indicate a casual relationship. The female speaker's 「よ」 emphasizes her annoyance at the male listener's 「油まみれの手」 (oily hands)."
         },
         {
             "japanese": "雪{まみれ}になった子供たちが楽しそうに遊んでいる。",
@@ -139,7 +140,10 @@
             ],
             "register": "casual",
             "setting": "friendly",
-            "listener_gender": "female"
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "speaker_age": "younger",
+            "nuance": "The speaker's address to their mother 「お母さん」 and the casual tone with 「だよ」 and 「どうしたの？」 are typical of a younger speaker, like a child, talking to their parent. The male speaker's use of 「お母さん」 indicates the female listener."
         },
         {
             "japanese": "試験後、答案用紙が先生の赤ペン{まみれ}になっていた。",
@@ -168,12 +172,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/塗れ"
     },
     "change": [
-        "violation: Added 'scene_rationale' to all examples that have 'scene', as required by the schema. The schema states: 'Must be present if 'scene' is present.'",
-        "violation: Removed 'conjugation: null' from all examples. The schema states: 'Must not be present if there is no top-level 'conjugations' array.'",
-        "violation: Ensured example sentences include at least one male and one female speaker_gender. Added a new example with 'speaker_gender: male' and updated an existing one with 'speaker_gender: female' and corresponding 'nuance'. The schema states: 'Example sentences should include at least one male and at least one female speaker_gender.'",
-        "violation: Ensured example sentences include at least one male and one female listener_gender. Added a new example with 'listener_gender: female'. The schema states: 'Example sentences should include at least one male and at least one female listener_gender.'",
-        "unnatural: Revised the 'writeup' to explicitly mention the '〜まみれの' form, which is a common usage.",
-        "violation: Added a 'false_friends' entry for 'だらけ' as it is a highly similar expression often confused with 'まみれ'. The schema implies that if false friends exist, they should be present.",
-        "violation: Added 'post_false_friends_writeup' to clarify the difference between 'まみれ' and 'だらけ', as required by the schema when 'false_friends' are present."
+        "violation: Added `listener_gender: male` to Example 7 and updated its `nuance` to satisfy the schema requirement that example sentences include at least one male and one female listener_gender. The prior version had a female listener example but no explicit male listener example.",
+        "violation: Added `speaker_gender: male` and `speaker_age: younger` to Example 9, along with `nuance`, to explicitly define the speaker's gender and age as implied by the scene, and to contribute to the requirement for diverse speaker genders."
     ]
 }

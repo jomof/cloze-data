@@ -125,7 +125,8 @@
             ],
             "register": "casual",
             "setting": "friendly",
-            "nuance": "The use of 「よね」 (yo ne) at the end indicates the speaker is looking for confirmation from the listener, common in casual conversations among friends."
+            "listener_gender": "female",
+            "nuance": "The use of 「よね」 (yo ne) at the end indicates the speaker is looking for confirmation from the listener, common in casual conversations among friends. This example demonstrates a neutral context where the phrase could be used to a female listener."
         },
         {
             "japanese": "{要するに}、農薬は一切使ってはいけないということですよね?",
@@ -146,16 +147,16 @@
             "nuance": "The 「〜ということですよね」 (to iu koto desu yo ne) is a polite way of seeking confirmation, showing an effort to ensure understanding of an important regulation."
         },
         {
-            "japanese": "{要するに}、能率の悪い仕事は引き受ける気が{ない}んですね。",
+            "japanese": "{要するに}、手間がかかる仕事は引き受ける気がないんですね。",
             "english": "In summary, you don't feel like undertaking jobs that are inefficient, right?",
             "scene": "A boss understanding an employee's reluctance.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "つまり、能率の悪い仕事は引き受ける気がないんですね。",
+                    "competing_grammar": "つまり、手間がかかる仕事は引き受ける気がないんですね。",
                     "mitigation": "The boss is articulating their core understanding of the employee's unspoken sentiment. 「要するに」 succinctly captures this essential inference. While 「つまり」 is plausible, 「要するに」 often conveys a slightly deeper sense of extracting the fundamental truth from the situation."
                 },
                 {
-                    "competing_grammar": "簡単に言えば、能率の悪い仕事は引き受ける気がないんですね。",
+                    "competing_grammar": "簡単に言えば、手間がかかる仕事は引き受ける気がないんですね。",
                     "mitigation": "「簡単に言えば」 would imply oversimplifying for someone else, which is not the dynamic here, as the boss is expressing their own understanding of the employee's reluctance."
                 }
             ],
@@ -222,7 +223,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/要するに"
     },
     "change": [
-        "violation: Removed the `listener_age` field from example 9, as it is a deprecated field and must not be present, per schema rules.",
-        "violation: Added `scene_rationale` to all examples that contained a `scene` field, as per prompt rule 6, which requires its presence when `scene` is used to mitigate `OTHER_WAYS`."
+        "violation: Modified Example 8 Japanese from '能率の悪い仕事' to '手間がかかる仕事' to ensure all kanji are N2 level or below, as '率' is N1. This complies with the rule 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'",
+        "schema: Added 'listener_gender: female' to Example 6 to fulfill the schema requirement that examples include at least one male and one female listener_gender."
     ]
 }

@@ -53,7 +53,7 @@
         {
             "japanese": "日本製 {であれ} ベトナム製 {であれ} 同じ 機械 で できてるから質に変わりはないわ。",
             "english": "Whether it is made in Japan or Vietnam, it is made with the same machine, so there is no difference in the quality.",
-            "scene": "A female company representative, addressing a customer's concern about product origin.",
+            "scene": "A female company representative, addressing a female customer's concern about product origin.",
             "scene_rationale": [
                 {
                     "competing_grammar": "日本製だろうとベトナム製だろうと、同じ機械でできてるから質に変わりはない。",
@@ -68,7 +68,8 @@
             "setting": "professional",
             "conjugation": "imperative plain (～ろ/～え)",
             "speaker_gender": "female",
-            "nuance": "The use of the sentence-ending particle 「わ」 lends a slightly softer, more explanatory or reflective nuance, commonly associated with female speech, to the objective statement about product quality. 「であれ」 itself signifies that the origin is irrelevant to the quality."
+            "listener_gender": "female",
+            "nuance": "The use of the sentence-ending particle 「わ」 lends a slightly softer, more explanatory or reflective nuance, commonly associated with female speech, to the objective statement about product quality. 「であれ」 itself signifies that the origin is irrelevant to the quality. The representative addresses a female customer with this explanatory tone."
         },
         {
             "japanese": "正社員 {であろうと} アルバイト {であろうと}、客には関係がない話だぞ。",
@@ -216,14 +217,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/であれ-であれ"
     },
     "change": [
-        "violation: Added `scene_rationale` to all examples that had `scene`, as required by the schema's example properties rules.",
-        "violation: Updated `japanese` examples to use `{bolded}` curly braces around the grammar point, as required by the schema's `japanese` example property rules.",
-        "violation: Added `speaker_gender` and `listener_gender` to examples, ensuring diversity. Modified Japanese sentences to include subtle gendered particles (`わ`, `だぞ`) to justify the gender attribution, and updated `nuance` fields to explain these specific Japanese elements, as required by schema rules for `speaker_gender`, `listener_gender`, and `nuance`.",
-        "schema: Added `conjugations` array at the top-level, including `であれ`, `であろうと`, and `であろうが`. This was added because `であれ` is derived from the imperative form of `ある`, making it a conjugation according to schema rules.",
-        "schema: Added `conjugation` field to each example, linking it to the top-level `conjugations` array, as required by the schema when a top-level `conjugations` array is present.",
-        "violation: Translated `使用域: 硬い` in the `details` field to `Usage Tone: Stiff/Rigid` to conform to the schema's requirement that details be in English and accurate.",
-        "unnatural: Rewrote the `writeup` for improved clarity, accuracy, and consistency with the grammar point's structure, including correcting the reference from `てあれ` to `であれ` and clarifying the formal nature of `である`.",
-        "violation: Updated the `formation` field to indicate that `であれ` can be used with more than two items (e.g., `AであれBであれCであれ`), aligning with example #9, as required for accurate grammar point description.",
-        "schema: Removed the top-level `lesson_order` field, as per the schema's explicit instruction not to include top-level `bunpro` or `dojg` related fields."
+        "violation: Added `listener_gender: \"female\"` to example 2, and updated its `scene` and `nuance` fields, to satisfy the requirement that \"Example sentences should include at least one male and one female listener_gender.\"",
+        "schema: Removed top-level `lesson_order` field to comply with the schema rule: \"You must not add top-level 'bunpro' or 'dojg' fields to the output JSON.\""
     ]
 }

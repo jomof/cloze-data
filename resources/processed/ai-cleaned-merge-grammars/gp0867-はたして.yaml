@@ -1,16 +1,19 @@
 {
     "grammar_point": "はたして",
+    "id": "gp0867",
     "pronunciation": {
         "katakana": "ハタシテ",
         "romaji": "hatashite"
     },
     "formation": {
-        "はたして + question": "Expresses doubt or wonder about a situation, often expecting a negative outcome.",
-        "はたして + result": "Indicates a result that confirms an expectation or assumption."
+        "はたして + (V / い-Adj) た形": "(V / い-Adj) in the past tense, used for \"sure enough\" or \"as expected\" outcomes.",
+        "はたして + (な-Adj stem / Noun) + だった": "(な-Adj stem / Noun) followed by だ／です in the past tense, used for \"sure enough\" or \"as expected\" outcomes.",
+        "はたして + (V / い-Adj) (plain) + (の)だろうか": "Used with plain verb or い-adjective, expressing strong doubt or wonder.",
+        "はたして + (な-Adj stem / Noun) + (だ/な/だった) + (の)だろうか": "Used with な-adjective or noun, expressing strong doubt or wonder.",
+        "はたして + (V / い-Adj / な-Adj / Noun + Copula) (plain) + としても": "Used in a concession clause to express strong doubt or skepticism, often translated as \"even if... really\"."
     },
-    "id": "gp0867",
     "jlpt": "N2",
-    "meaning": "Indeed, really?, As one thought, as expected",
+    "meaning": "Indeed, really?, As expected, Sure enough, I wonder if... (really), I wonder how... (actually)",
     "meaning_warning": "「果たして + Phrase」 is mostly found in literature.",
     "details": {
         "Register": "Standard",
@@ -62,7 +65,7 @@
             "register": "semi-formal",
             "setting": "serious",
             "nuance": "The speaker had expected this result to happen. 「果たして」 here acts as a strong confirmation that the anticipated negative outcome has indeed materialized.",
-            "etymology": "クビにする (kubi ni suru) means \"to fire someone\". It literally means \"to cut off the neck\", showing the historical severity of losing a job."
+            "etymology": "「クビ」 (kubi) meaning \"neck\" is colloquially used to mean being fired. The phrase 「クビになった」 literally refers to the \"neck\" being cut off, indicating the severance of one's employment."
         },
         {
             "japanese": "彼女は自分の意見を彼に押し付けようとしたが、{果たして}彼は自分の意見を変えなかった。",
@@ -162,12 +165,12 @@
             "scene_rationale": [
                 {
                     "competing_grammar": "彼女はバンジージャンプに挑戦したいと思ったが、できるかしらと不安になった。",
-                    "mitigation": "The scene focuses on the speaker's intense self-doubt about a physically challenging task. 「果たして」 intensifies this internal questioning, adding a layer of deep uncertainty about her own capability."
+                    "mitigation": "The scene focuses on the speaker's intense self-doubt about a physically challenging task. 「はたして」 intensifies this internal questioning, adding a layer of deep uncertainty about her own capability."
                 }
             ],
             "register": "casual",
             "setting": "cautious",
-            "nuance": "「かしら」 is typically used by women to express a soft doubt or uncertainty. 「果たして」 emphasizes this doubt, conveying a strong sense of 'I really wonder if I can do this.'",
+            "nuance": "「かしら」は typically used by women to express a soft doubt or uncertainty. 「果たして」 emphasizes this doubt, conveying a strong sense of 'I really wonder if I can do this.'",
             "speaker_gender": "female",
             "listener_gender": "no one"
         },
@@ -178,7 +181,7 @@
             "scene_rationale": [
                 {
                     "competing_grammar": "大学を中退するのは賢明な行動でしょうか。",
-                    "mitigation": "The scene underscores the seriousness of this life-altering decision. 「果たして」 conveys the speaker's profound deliberation and questioning of the true wisdom behind such an action, making it a very serious internal inquiry."
+                    "mitigation": "The scene underscores the seriousness of this life-altering decision. 「はたして」 conveys the speaker's profound deliberation and questioning of the true wisdom behind such an action, making it a very serious internal inquiry."
                 }
             ],
             "register": "semi-formal",
@@ -206,7 +209,7 @@
             "term": "〜のだろうか",
             "meaning": "I wonder...",
             "kind": "similar expression",
-            "nuance": "「〜のだろうか」 expresses a wondering tone in a question, but adding 「はたして」 emphasizes the doubt the speaker has. "
+            "nuance": "「〜のだろうか」 expresses a wondering tone in a question, but adding 「はたして」 emphasizes the doubt the speaker has."
         }
     ],
     "post_false_friends_writeup": "While 「さすが」, 「かな」, and 「〜のだろうか」 share some overlap with 「はたして」, they carry distinct nuances. Use 「さすが」 when you want to express admiration, 「かな」 for simple wonder, and 「〜のだろうか」 for expressing an actual question. Choose 「はたして」 when you want to emphasize doubt or confirm an expectation.",
@@ -214,11 +217,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/はたして"
     },
     "change": [
-        "schema: Removed 'conjugations' field because はたして is an adverb and does not conjugate, therefore this field should be omitted per schema rules.",
-        "violation: Removed furigana (e.g., '彼 かれ') from all 'japanese' example sentences to comply with Rule 6, which states 'Must not have furigana text embedded'.",
-        "violation: Converted A/B dialogue example sentences (7 and 10) to single-speaker sentences to comply with Rule 6, which states 'Must be from the point of view of a single speaker. No back-and-forth dialogue'.",
-        "schema: Added 'scene_rationale' with 'competing_grammar' and 'mitigation' to all examples that had a 'scene' field, as required by the schema when 'scene' is present.",
-        "violation: Added 'listener_gender' to multiple examples to ensure representation of male, female, group, and no one listeners, as required by Rule 6 ('Example sentences should include at least one male and one female listener_gender').",
-        "violation: Changed '使用域: 一般' to 'Usage: General' in the 'details' field to comply with Rule 1/2, which states that sections requiring English as the main language must be in English."
+        "schema: Updated 'formation' to be more detailed and pseudo-algebraic, leveraging the comprehensive patterns from DOJG data, as the previous formation was overly general and lacked specificity for various uses of the grammar point.",
+        "unnatural: Expanded 'meaning' by combining definitions from both Bunpro and DOJG to provide a more comprehensive and accurate overview of the grammar point's various nuances, encompassing both the 'wonder/doubt' and 'as expected' senses.",
+        "unnatural: Refined the 'etymology' for example 3 to specifically refer to the colloquial usage of 「クビ」 (kubi) within the phrase 「クビになった」, aligning the explanation more precisely with the Japanese text and its cultural context."
     ]
 }

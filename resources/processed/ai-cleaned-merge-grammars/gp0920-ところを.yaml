@@ -14,7 +14,8 @@
     "jlpt": "N1",
     "meaning": "In spite of (the circumstances), Regardless of (the circumstances), When, While",
     "details": {
-        "Register": "Formal"
+        "Register": "Formal",
+        "使用域": "硬い"
     },
     "etymology": "「ところ」 refers to a specific point in time or a situation. The particle 「を」 indicates the object of an action. Thus, 「ところを」 literally marks a situation which is being 'used' or 'affected' in some way, either by the speaker apologizing for intruding or by an event interrupting the ongoing situation.",
     "writeup": "「ところを」 combines the noun **ところ** (place, situation) with the particle **を**. This grammar construction expresses two primary meanings. Firstly, it conveys \"in spite of\" or \"regardless of\" a situation, typically used to politely acknowledge someone's circumstances and apologize for an interruption. This nuance can follow verbs in their plain forms, い-adjectives, な-adjectives followed by な, or nouns followed by の. Secondly, it can mean \"when\" or \"while,\" focusing on an action that is interrupted. This usage primarily follows verbs in their plain forms. Both meanings can have positive or negative implications depending on the context, and the particle **を** can sometimes be omitted. It is considered formal.",
@@ -22,20 +23,22 @@
         {
             "japanese": "お 忙しい {ところを} 申し訳ありませんが、ちょっと ご 相談に乗って いただけませんか。",
             "english": "I'm sorry to bother you while you're busy, but could you give me some advice?",
-            "scene": "An employee asking a busy colleague for advice.",
+            "scene": "A female employee asking her male supervisor for advice.",
             "scene_rationale": [
                 {
                     "competing_grammar": "忙しい時にすみませんが...",
-                    "mitigation": "The scene depicts a professional interaction where high formality and deference are expected. While 「忙しい時に」 is grammatically valid, it lacks the specific nuance of acknowledging the listener's ongoing state and expressing a polite apology for interrupting that precise situation, which 「ところを」 inherently carries. The scene guides the learner towards this higher degree of politeness."
+                    "mitigation": "The scene depicts a professional interaction where high formality and deference are expected, especially from a subordinate to a supervisor. While 「忙しい時に」 is grammatically valid, it lacks the specific nuance of acknowledging the listener's ongoing state and expressing a polite apology for interrupting that precise situation, which 「ところを」 inherently carries. The scene guides the learner towards this higher degree of politeness."
                 },
                 {
                     "competing_grammar": "忙しいので...",
-                    "mitigation": "Simply stating the reason with 「ので」 would be too direct and informal for this professional setting, failing to convey the necessary respect and apology for the intrusion. The scene prompts the use of a more deferential expression."
+                    "mitigation": "Simply stating the reason with 「ので」 would be too direct and informal for this professional setting, failing to convey the necessary respect and apology for the intrusion from a subordinate to a supervisor. The scene prompts the use of a more deferential expression."
                 }
             ],
             "register": "formal",
             "setting": "professional",
-            "nuance": "The 「お忙しいところを」 phrase demonstrates the speaker's awareness and politeness toward the listener's busy state. The use of 「～いただけませんか」 makes the request more polite."
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "The formal language and humble expressions like 「申し訳ありませんが」 and 「～いただけませんか」 are appropriate when a female employee addresses her male supervisor, emphasizing respect in a professional setting. The polite tone reflects the hierarchical relationship."
         },
         {
             "japanese": "パーティーの 準備をしている {ところを} 邪魔して ごめんね。",
@@ -108,8 +111,8 @@
             ],
             "register": "casual",
             "setting": "melancholic",
-            "nuance": "This sentence describes a common, slightly frustrating situation – interruption during a private moment. The grammar point refers to the precise time when the speaker's action was interrupted by an external event.",
-            "etymology": "「浴びる」 (abiru) specifically means 'to shower' or 'to bathe', adding context to the interrupted moment."
+            "etymology": "「浴びる」 (abiru) specifically means 'to shower' or 'to bathe', adding context to the interrupted moment.",
+            "nuance": "This sentence describes a common, slightly frustrating situation – interruption during a private moment. The grammar point refers to the precise time when the speaker's action was interrupted by an external event."
         },
         {
             "japanese": "デートの 待ち合わせに 遅れて、彼女に 謝る時、「お 忙しい {ところを} 待たせて ごめんね」と 言った。",
@@ -227,8 +230,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/ところを"
     },
     "change": [
-        "schema: Added 'scene_rationale' to all examples that had a 'scene' field, as required by the schema's example object definition (Rule 6).",
-        "schema: Removed the top-level 'conjugations' field and the 'conjugation' field within examples, as 'ところを' itself is not a conjugatable grammar point (Rule 6.conjugation).",
-        "command: Removed the 'change' field from the prior grammar point data as per instructions."
+        "command: Removed the 'change' field from the prior grammar point data as per the command comment in the prior data.",
+        "schema: Modified the first example to ensure diverse speaker/listener genders (female speaker, male listener) as required by Rule 6, updating 'scene', 'nuance', and 'scene_rationale' for consistency.",
+        "violation: Added '使用域: 硬い' to the 'details' field, as it was present in the raw input and 'details' allows additional string properties (Rule 16: 'You may fix minor inaccuracies in \"details\", but do not invent new details.')."
     ]
 }

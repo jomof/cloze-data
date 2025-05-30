@@ -231,17 +231,5 @@
     "post_false_friends_writeup": "When using 「ように」, be mindful of the specific nuance you want to convey. If you're expressing a simple purpose with an indirect outcome or enabling an ability, 「ように」 is a good choice. However, if you're giving an instruction, describing a change, or indicating an effort, other expressions like 「ように言う」, 「ようになる」, or 「ようにする」 might be more appropriate.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ように"
-    },
-    "change": [
-        "schema: Removed 'meaning_warning' field because it was null in the input and should be omitted if not applicable, as per schema rules.",
-        "schema: Removed 'pronunciation.pronunciation_warning' field as it is not part of the schema definition.",
-        "schema: Added 'conjugations' array to define the types of verb forms that precede the grammar point (dictionary, potential, negative), as required by the schema for grammar points that can be 'conjugated' or take different forms.",
-        "schema: Added 'conjugation' field to each example, specifying which verb form is used before 'ように', as required by the schema when a top-level 'conjugations' array is present.",
-        "schema: Added 'scene_rationale' to all examples that had a 'scene' field, providing a detailed explanation of competing grammar ('〜ために') and how the 'scene' mitigates confusion, as required by the schema.",
-        "schema: Removed 'listener_age' field from all examples, as this field is deprecated in the schema.",
-        "violation: Modified 'false_friends' array: removed '如何' as it is semantically too distant to be a 'similar expression' for 'ように'.",
-        "schema: Modified 'false_friends' array: changed 'kind' from 'synonym' to 'similar expression' for 'ように言う', 'ようになる', and 'ようにする' to align with the schema's 'falseFriendKindType' enum and the more appropriate nuance.",
-        "violation: Added 'れる・られる+ままに' to the 'false_friends' array with appropriate 'term', 'meaning', 'kind', and 'nuance' to include all relevant similar expressions from the provided Bunpro input, which was missing in the prior version.",
-        "schema: Formatted 'sources' to match the schema's expected structure for the 'bunpro' URL."
-    ]
+    }
 }

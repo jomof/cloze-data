@@ -33,8 +33,7 @@
             ],
             "register": "polite",
             "setting": "informative",
-            "speaker_gender": "female",
-            "nuance": "The use of 「です」 makes this a polite and straightforward statement. 「私 の ペン」 indicates possession of the pen by the speaker. If spoken by a female, 「私」 adds a slightly softer impression than 「僕」 or 「俺」."
+            "nuance": "The use of 「です」 makes this a polite and straightforward statement. 「私 の ペン」 indicates possession of the pen by the speaker."
         },
         {
             "japanese": "これも 私 {の} ペンです。",
@@ -49,7 +48,7 @@
             "register": "polite",
             "setting": "informative",
             "speaker_age": "younger",
-            "nuance": "「これも」 emphasizes that this item, in addition to others, belongs to the speaker. The young speaker uses 「です」 to maintain politeness towards an older listener."
+            "nuance": "「これも」 emphasizes that this item, in addition to others, belongs to the speaker. The young speaker uses 「です」 to maintain politeness."
         },
         {
             "japanese": "これは 私 {の} 猫です。",
@@ -63,8 +62,7 @@
             ],
             "register": "polite",
             "setting": "informative",
-            "speaker_gender": "male",
-            "nuance": "The straightforward nature and use of 「です」 make this a polite statement suitable for casual interaction between peers. 「私 の 猫」 clearly indicates possession. While 「私」 is often associated with female speech, it is also used by males in polite or formal contexts."
+            "nuance": "The straightforward nature and use of 「です」 make this a polite statement suitable for casual interaction between peers. 「私 の 猫」 clearly indicates possession."
         },
         {
             "japanese": "先生 {の} 傘です。",
@@ -92,9 +90,7 @@
             ],
             "register": "semi-formal",
             "setting": "first-date",
-            "speaker_gender": "male",
-            "listener_gender": "female",
-            "nuance": "This is a direct yet polite way to inquire about someone's name. The particle 「は」 marks 「名前」 as the topic, making 「あなた の 名前」 (your name) the subject of inquiry. The male speaker uses 「あなた」 which, while polite, can sometimes feel direct depending on context."
+            "nuance": "This is a direct yet polite way to inquire about someone's name. The particle 「は」 marks 「名前」 as the topic, making 「あなた の 名前」 (your name) the subject of inquiry."
         },
         {
             "japanese": "今日 {の} デート 、楽しみだね。",
@@ -151,10 +147,7 @@
             ],
             "register": "polite",
             "setting": "friendly",
-            "speaker_gender": "female",
-            "listener_gender": "male",
-            "speaker_age": "older",
-            "nuance": "This is a polite observation. The 「あなた」 is acceptable in this context from an older, female colleague to a younger, male one. 「ですね」 adds a sense of shared observation or mild inquiry, common in friendly conversation, without being overly direct. The feminine 「あなた」 is generally softer than 「君」."
+            "nuance": "This is a polite observation. The 「あなた」 is acceptable in this context. 「ですね」 adds a sense of shared observation or mild inquiry, common in friendly conversation."
         }
     ],
     "false_friends": [
@@ -170,8 +163,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/の"
     },
     "change": [
-        "violation: listener_age is deprecated: Removed `listener_age` field from examples 2, 8, and 9.",
-        "violation: scene_rationale is required if scene is present: Added `scene_rationale` with `competing_grammar` and `mitigation` to all examples (1-9).",
-        "violation: speaker_gender/listener_gender/nuance mismatch: Removed `speaker_gender` and `listener_gender` from example 6, and updated its `nuance` to reflect that `楽しみだね` is not typically exclusive to one gender."
+        "violation: speaker_gender/listener_gender/nuance mismatch: Removed `speaker_gender` from examples 1 and 3, and `speaker_gender`/`listener_gender` from examples 5 and 9. The nuance fields for these examples were updated to remove gender-specific justifications. This was done because the Japanese sentences themselves are gender-neutral at the N5 level, and adding gender would violate the rule 'Use only if this sentence would typically only be spoken by this gender', creating a conflict with the 'Example sentences should include at least one male and one female speaker_gender/listener_gender' rule. Prioritizing the former, more specific constraint, results in omitting these fields for this N5 grammar point where gender is not inherently typical."
     ]
 }

@@ -40,18 +40,18 @@
             "nuance": "The speaker's use of 「私」 combined with the casual 「飲んでいる」 suggests a personal reflection, common among female speakers. 「にしても」 indicates that even with the condition of going to the party, the speaker's shyness remains a constant factor, leading to the same outcome."
         },
         {
-            "japanese": "うちの犬は可愛い {にしても} 、子供が近づくと怖がるから子供がいない公園に行かないといけない。",
-            "english": "Even though my dog is cute, if a child approaches, he gets scared, so we have to go to a park with no children.",
+            "japanese": "うちの犬は可愛い {にしても} 、子供が近づくと落ち着かなくなるから子供がいない公園に行かないといけない。",
+            "english": "Even though my dog is cute, if a child approaches, he becomes unsettled, so we have to go to a park with no children.",
             "scene": "A dog owner explaining their park choices.",
             "register": "casual",
             "setting": "informative",
             "scene_rationale": [
                 {
                     "competing_grammar": "うちの犬は可愛いけど",
-                    "mitigation": "「にしても」 conveys a concession, emphasizing that despite the dog's cuteness, its tendency to get scared is a significant consideration, making the outcome (avoiding children) surprising given its positive trait. 「けど」 is a simple contrast."
+                    "mitigation": "「にしても」 conveys a concession, emphasizing that despite the dog's cuteness, its tendency to become unsettled is a significant consideration, making the outcome (avoiding children) surprising given its positive trait. 「けど」 is a simple contrast."
                 }
             ],
-            "nuance": "「にしても」 contrasts the dog's cuteness with its tendency to be afraid of children, highlighting a key characteristic that impacts their daily routine."
+            "nuance": "「にしても」 contrasts the dog's cuteness with its tendency to become unsettled by children, highlighting a characteristic that impacts their daily routine."
         },
         {
             "japanese": "独身 {にしても} 、家具が少なくない？",
@@ -112,7 +112,7 @@
             "nuance": "「にしても」 acknowledges the difficulty but emphasizes the obligation to the client, showing a professional commitment despite challenges."
         },
         {
-            "japanese": "このプロジェクトが難しい {にしても} 、締め切りまでには終わらせないといけない。",
+            "japanese": "このプロジェクトが難しい {にしても} 、期限までには終わらせないといけない。",
             "english": "Even if this project is hard, we must finish it by the deadline.",
             "scene": "Stressing project deadlines.",
             "register": "formal",
@@ -206,7 +206,7 @@
             "nuance": "Unlike にしても, 何しろ provides a reason or emphasizes the obviousness of a situation, often leading to a conclusion."
         },
         {
-            "term": "のに (in order to)",
+            "term": "のに",
             "meaning": "Despite, Although, Even though",
             "kind": "similar expression",
             "nuance": "Unlike にしても, のに often expresses a sense of surprise, dissatisfaction, or criticism regarding a situation that contradicts expectations."
@@ -267,7 +267,7 @@
         },
         {
             "term": "としても",
-            "meaning": "Even if (we assume), Assuming,  Also as",
+            "meaning": "Even if (we assume), Assuming, Also as",
             "kind": "similar expression",
             "nuance": "Unlike にしても, としても often introduces a hypothetical assumption or a concessive clause where the subsequent statement is a logical consequence of that assumption. It tends to imply a closer causal link."
         },
@@ -283,11 +283,9 @@
         "bunpro": "https://bunpro.jp/grammar_points/にしても"
     },
     "change": [
-        "command: Removed example that did not use the grammar point as instructed by the comment in the prior grammar point.",
-        "violation: Added speaker_gender, listener_gender, and scene_rationale to examples to comply with schema requirements for example diversity and completeness.",
-        "violation: Corrected JLPT Kanji levels in several examples (吠える -> 怖がる, 肝心 -> 重要, 樽 -> 大きい入れ物, 忙しく -> 時間がなく) to comply with the rule that examples should use Kanji appropriate for the grammar point's JLPT level.",
-        "violation: Corrected the English translation of example 4 to accurately reflect the Japanese \"少なくない？\" (isn't it little?)",
-        "violation: Refined 'kind' and 'nuance' for all 'false_friends' to provide more precise distinctions and comply with the schema's 'nuance' requirements.",
-        "schema: Added 'post_false_friends_writeup' section as an optional but beneficial addition to clarify differences."
+        "violation: Removed 'meaning_warning' field as its value was null, per schema rule 'No fields should be null. Omit fields that are not applicable instead.'",
+        "violation: Replaced N2 kanji '怖がる' with N3 kanji '落ち着かなくなる' in example 2's Japanese sentence and adjusted English translation to 'becomes unsettled' to comply with JLPT N3 kanji level requirements and ensure naturalness.",
+        "violation: Replaced N1 kanji '締め切り' with N3 kanji '期限' in example 7's Japanese sentence to comply with JLPT N3 kanji level requirements.",
+        "violation: Corrected the 'term' for the false friend entry 'のに (in order to)' to 'のに' to adhere to the schema's 'term' format (name only)."
     ]
 }

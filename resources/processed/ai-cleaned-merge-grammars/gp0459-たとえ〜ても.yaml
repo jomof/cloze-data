@@ -15,7 +15,7 @@
         "Register": "Standard"
     },
     "etymology": "「たとえ」 comes from the verb 「例える (tatoeru)」, meaning \"to compare\" or \"to use as an example.\" It sets up a hypothetical situation. 「〜ても」 expresses \"even if\" or \"even though,\" indicating a contrast or concession.",
-    "writeup": "「たとえ〜ても」 is used to express that even if something is the case, it doesn't necessarily affect the outcome. 「たとえ」 introduces a hypothetical situation, and 「〜ても」 indicates that regardless of that situation, the result remains the same or is still possible.  It is a contrastive conjunction, meaning that while situation A might lead you to expect Result X, that is not the case. Sometimes 「たとい」 is used, but 「たとえ」 is more common.",
+    "writeup": "「たとえ〜ても」 is used to express that even if something is the case, it doesn't necessarily affect the outcome. 「たとえ」 introduces a hypothetical situation, and 「〜ても」 indicates that regardless of that situation, the result remains the same or is still possible. It is a contrastive conjunction, meaning that while situation A might lead you to expect Result X, that is not the case. Sometimes 「たとい」 is used, but 「たとえ」 is more common.",
     "examples": [
         {
             "japanese": "{たとえ}雨が{降っても}、ピクニックに行く。",
@@ -129,6 +129,22 @@
             "nuance": "The phrase 「君のことを想っている」 is used to express the continuing feelings of affection that the speaker feels towards the listener. The use of 「俺」 is a common informal male pronoun, and the direct address 「君」 (you, informal) is often used by men towards women they are intimate with or pursuing."
         },
         {
+            "japanese": "{たとえ}君が理解して{くれなくても}、俺は君のために頑張る。",
+            "english": "Even if you don't understand, I'll do my best for you.",
+            "scene": "A determined man is talking to his male friend who doubts his aspirations.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "君が理解してくれなくても、俺は君のために頑張る。",
+                    "mitigation": "「たとえ」 adds emphasis to the speaker's unwavering commitment despite the potential lack of understanding from the listener, highlighting their strong resolve. The scene clarifies the context of one male friend addressing another."
+                }
+            ],
+            "register": "casual",
+            "setting": "persuasive",
+            "speaker_gender": "male",
+            "listener_gender": "male",
+            "nuance": "The use of 「君」 (you, informal) by a male speaker towards another male implies a close friendship or a slightly older/more experienced speaker addressing a younger male. 「俺」 is a common male pronoun. The phrase 「頑張る」 expresses determination and effort, fitting the context of personal resolve in a friendship."
+        },
+        {
             "japanese": "{たとえ}お金が{なくても}、愛があれば幸せだ。",
             "english": "Even if we don't have money, we can be happy if we have love.",
             "scene": "Two people are discussing their simple lifestyle and priorities.",
@@ -198,18 +214,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/たとえ-ても"
     },
     "change": [
-        "schema: Removed top-level 'conjugations' array as the grammar point itself is not a conjugatable verb/adjective.",
-        "schema: Removed 'conjugation' field from all examples as the top-level 'conjugations' array was removed.",
-        "violation: Added 'meaning_warning' field from the raw input data, as it was missing in the prior version. (Instruction: 'If 'meaning_warning' is present in the raw input, then add it to the output.')",
-        "violation: Removed '使用域: 一般' from 'details' as it was redundant with 'Register: Standard' and in Japanese. (Instruction: 'The \"details\" field should be primarily in English.')",
-        "violation: Modified example 4 to include a female speaker and added corresponding 'speaker_gender' and 'nuance' fields to ensure diversity. (Instruction: 'Example sentences should include at least one male and one female speaker_gender.')",
-        "unnatural: Bolded 'たとえ' in all examples to fully highlight the grammar point, as the instruction states 'Must have the grammar_point in {bold}'. Previously only 'ても' was bolded.",
-        "schema: Added 'scene_rationale' to all examples, as 'scene' was present and a 'scene_rationale' must be present if 'scene' is present. (Instruction: 'Must be present if \"scene\" is present.')",
-        "unnatural: Changed 'kind' from 'synonym' to 'similar expression' for all 'false_friends' to better reflect their relationship to the main grammar point. While they have similar meanings, they are not direct synonyms in usage context or nuance, which the 'nuance' field elaborates upon.",
-        "unnatural: Refined 'nuance' for all 'false_friends' to provide clearer distinctions with 'たとえ〜ても', emphasizing its specific contrastive and emphatic nature.",
-        "violation: Modified example 5's Japanese from '世界中の人' to '皆' to comply with JLPT N3 kanji requirements. (Instruction: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.')",
-        "violation: Modified example 6's Japanese from '僕' to '俺' and '大丈夫' to '平気' to comply with JLPT N3 kanji requirements. (Instruction: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.')",
-        "violation: Modified example 7's Japanese sentence and removed its specific etymology to comply with JLPT N3 kanji requirements and maintain coherence. (Instruction: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.')",
-        "violation: Modified example 8's Japanese from '僕' to '俺' to comply with JLPT N3 kanji requirements. (Instruction: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.')"
+        "violation: Added a new example to ensure at least one male listener gender is present, as required by the schema rule 'Example sentences should include at least one male and one female listener_gender.'"
     ]
 }

@@ -24,7 +24,7 @@
     "writeup": "「です」 serves as an auxiliary verb, indicating assertion or determination, essentially meaning 'to be' or 'it is'. It is the polite counterpart to 「だ」. While their functions are similar, 「です」 and 「だ」 are distinct grammatical structures.\n\n「です」 connects to nouns and な-adjectives in the same manner as 「だ」. However, it is also frequently attached to the end of い-adjectives. This usage with い-adjectives, while common in everyday spoken Japanese and casual communication like texting, is sometimes considered grammatically incorrect in formal written Japanese.\n\n**Important Considerations:**\n\nAlthough attaching 「です」 to い-adjectives is widely accepted in colloquial Japanese, it is advisable to avoid it in official documents or highly rigid contexts. Nevertheless, in contemporary Japanese, this usage is gradually becoming more standard.",
     "examples": [
         {
-            "japanese": "本 {です} 。",
+            "japanese": "本 {です}。",
             "english": "It is a book.",
             "scene": "A child showing a book to an adult.",
             "scene_rationale": [
@@ -43,7 +43,7 @@
             "nuance": "A younger speaker using 「本です」 to an older listener shows basic politeness and respect for age."
         },
         {
-            "japanese": "あなた {です} 。",
+            "japanese": "あなた {です}。",
             "english": "It is you.",
             "scene": "Someone pointing out who it is.",
             "scene_rationale": [
@@ -56,7 +56,7 @@
             "setting": "informative"
         },
         {
-            "japanese": "ペン {です} 。",
+            "japanese": "ペン {です}。",
             "english": "It is a pen.",
             "scene": "Identifying an object.",
             "scene_rationale": [
@@ -69,7 +69,7 @@
             "setting": "informative"
         },
         {
-            "japanese": "さくら {です} 。",
+            "japanese": "さくら {です}。",
             "english": "(I) am Sakura.",
             "scene": "Someone introducing themselves.",
             "scene_rationale": [
@@ -88,7 +88,7 @@
             "nuance": "A common way for women to introduce themselves politely on a first meeting. The phrase 「さくらです」 sets a polite but open tone, especially relevant when introducing oneself on a first meeting."
         },
         {
-            "japanese": "友だち {です} 。",
+            "japanese": "友だち {です}。",
             "english": "(He/she) is a friend.",
             "scene": "Two male friends confirming someone's relationship.",
             "scene_rationale": [
@@ -104,7 +104,7 @@
             "nuance": "A male speaker stating that someone is a friend to another male. The use of 「友だちです」 conveys a straightforward and polite confirmation of relationship without being overly formal."
         },
         {
-            "japanese": "暑い {です} 。",
+            "japanese": "暑い {です}。",
             "english": "It is hot.",
             "scene": "Describing the weather.",
             "scene_rationale": [
@@ -149,7 +149,7 @@
             "nuance": "When a man says 「優しい人ですね」 to a woman, it is often a compliment that implies a deeper admiration or attraction beyond mere politeness, aiming to establish a connection. The use of 「です」 maintains politeness while allowing for a subtle romantic overtone."
         },
         {
-            "japanese": "今日 は 初めて 会う 日 {でした} 。",
+            "japanese": "今日 は 初めて 会う 日 {でした}。",
             "english": "Today was the day we met for the first time.",
             "scene": "Reflecting on a past significant event.",
             "scene_rationale": [
@@ -162,7 +162,7 @@
             "setting": "storytelling"
         },
         {
-            "japanese": "山田さん {ではありません} 。",
+            "japanese": "山田さん {ではありません}。",
             "english": "I'm not Mr. Yamada.",
             "scene": "Correcting a misunderstanding about someone's identity.",
             "scene_rationale": [
@@ -175,7 +175,7 @@
             "setting": "informative"
         },
         {
-            "japanese": "これ は 私 の で は ない {です} 。",
+            "japanese": "これ は 私 の で は ない {です}。",
             "english": "This is not mine.",
             "scene": "Denying ownership of an item.",
             "scene_rationale": [
@@ -192,7 +192,7 @@
             "setting": "informative"
         },
         {
-            "japanese": "昨日 は 忙しくなかった {です} 。",
+            "japanese": "昨日 は 忙しくなかった {です}。",
             "english": "I wasn't busy yesterday.",
             "scene": "Explaining one's past availability.",
             "scene_rationale": [
@@ -209,7 +209,7 @@
             "setting": "informative"
         },
         {
-            "japanese": "あの 人 は 学生 {ではなかったです} 。",
+            "japanese": "あの 人 は 学生 {ではなかったです}。",
             "english": "That person wasn't a student.",
             "scene": "Stating a past fact about someone's student status.",
             "scene_rationale": [
@@ -226,7 +226,7 @@
             "setting": "informative"
         },
         {
-            "japanese": "それ は 本当 {ではありませんでした} 。",
+            "japanese": "それ は 本当 {ではありませんでした}。",
             "english": "That wasn't true.",
             "scene": "Confirming the falsehood of a past statement.",
             "scene_rationale": [
@@ -302,9 +302,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/です"
     },
     "change": [
-        "violation: Removed top-level 'conjugations' array and all 'conjugation' fields from examples, as 'です' is explicitly excluded from the condition for having a 'conjugations' array by the schema.",
-        "violation: Removed 'listener_age' field from examples, as it is deprecated by the schema.",
-        "violation: Added 'scene_rationale' to all examples that contain a 'scene', as this is a required field when 'scene' is present.",
-        "schema: Modified 'details' keys from Japanese to English for consistency with the rest of the schema's expected English keys, and updated values to include English translations for clarity (e.g., '品詞' to 'Grammatical Category')."
+        "violation: Removed 'だった・でした' from false_friends because the prompt explicitly states that 'false_friends must not reference other conjugations of this grammar point'."
     ]
 }

@@ -17,7 +17,7 @@
         "使用域": "一般"
     },
     "etymology": "にして is derived from the particle に combined with the て-form of the verb する (to do). The に marks a specific point or condition, and する in this context implies 'becoming' or 'reaching' that point. Thus, にして signifies that something happens *at* the moment of reaching that point, often implying surprise or significance.",
-    "writeup": "にして is used to express that something happens **at** or **after** a certain point or stage, often implying that the event is surprising or noteworthy. It combines the particle に with the te-form of する. It commonly appears after counters, nouns, or time expressions, marking a specific instance from which something significant occurs. It is often followed by adverbs or grammar patterns like ようやく or 初めて to emphasize the importance of the moment.",
+    "writeup": "にして is used to express that something happens **at** or **after** a certain point or stage, often implying that the event is surprising, noteworthy, or represents a significant milestone. It combines the particle に with the te-form of する, signifying a state or condition that has been reached or accepted as fact, from which a new situation emerges. This expression frequently follows counters, nouns, or time expressions, marking the specific instance as a critical juncture. It can suggest that the point in question is of a high standard or a prime example, and the subsequent event either aligns with or deviates from expectations for such a point. To further emphasize the importance or unexpectedness of the moment, にして is often followed by adverbs or grammar patterns such as ようやく (finally) or 初めて (for the first time). This expression carries a somewhat formal or literary tone and is commonly encountered in formal writing and speech.",
     "examples": [
         {
             "japanese": "30歳{にして}初めて海外旅行に行った。",
@@ -168,6 +168,52 @@
             "setting": "storytelling",
             "nuance": "「年目にして」 emphasizes how long the couple waited for a child.",
             "etymology": "授かった (sazukatta) means 'blessed with'."
+        },
+        {
+            "japanese": "まったく、この年{にして}こんな失敗をするとはな。",
+            "english": "Honestly, to make such a mistake at this age...",
+            "scene": "An older man grumbling to himself after a blunder, expressing exasperation.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "まったく、この年でこんな失敗をするとは。",
+                    "mitigation": "Using にして emphasizes the significance of the age as a point of reflection, making the blunder more surprising than a simple で."
+                }
+            ],
+            "register": "casual",
+            "setting": "reflective",
+            "speaker_gender": "male",
+            "nuance": "The opening 「まったく」 and the sentence-ending 「とはな」 are characteristic of informal male speech, often used to express exasperation, frustration, or self-admonishment."
+        },
+        {
+            "japanese": "まあ、この年{にして}こんな素敵な出会いがあるなんて！",
+            "english": "Oh my, to have such a wonderful encounter at this age!",
+            "scene": "A woman expressing surprised delight about meeting someone special later in life.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "まあ、この年でこんな素敵な出会いがあるなんて！",
+                    "mitigation": "にして highlights the unexpectedness and significance of having such an encounter at this particular age, conveying more surprise than a simple で."
+                }
+            ],
+            "register": "casual",
+            "setting": "excited",
+            "speaker_gender": "female",
+            "nuance": "The interjection 「まあ」 and the sentence-ending particle 「なんて」 are commonly used in expressive female speech to convey surprise, wonder, or delight."
+        },
+        {
+            "japanese": "ねえ、聞いて。50歳{にして}ようやく、イタリアに住んでいる従兄弟の家に行くことができたのよ。",
+            "english": "Hey, listen. At age 50, I was finally able to visit my cousin who lives in Italy, you know.",
+            "scene": "A woman excitedly sharing a personal achievement with her male friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "ねえ、聞いて。50歳でようやく、イタリアに住んでいる従兄弟の家に行くことができたのよ。",
+                    "mitigation": "The use of にして emphasizes the milestone of reaching 50 years old before finally achieving this, adding more emphasis than a simple で."
+                }
+            ],
+            "register": "casual",
+            "setting": "friendly",
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "The opening 「ねえ、聞いて」 (Hey, listen) and the sentence-ending particle 「のよ」 (you know) are common in casual, conversational female speech when sharing news or personal anecdotes. While not exclusively female, their combined use here establishes a conversational, friendly tone appropriate for sharing with a male friend."
         }
     ],
     "false_friends": [
@@ -179,14 +225,11 @@
         }
     ],
     "post_false_friends_writeup": "While で can mark a point in time or condition, にして adds a nuance of significance, surprise, or a noteworthy achievement at that specific juncture. When choosing between them, consider if you want to simply state the time or condition (で), or if you want to highlight the importance or unexpectedness of the event occurring at that point (にして).",
-    "change": [
-        "schema: Removed 'conjugations' field because the grammar point 'にして' is not a conjugatable verb or adjective, thus 'conjugations' is not applicable as per schema rule: 'No fields should be null. Omit fields that are not applicable instead.'",
-        "schema: Removed 'meaning_warning' field because its value was null, as per schema rule: 'No fields should be null. Omit fields that are not applicable instead.'",
-        "schema: Removed 'post_example_writeup' field because its value was null, as per schema rule: 'No fields should be null. Omit fields that are not applicable instead.'",
-        "violation: Added 'scene_rationale' to all examples that included a 'scene' field, addressing the rule: 'scene_rationale' must be present if 'scene' is present.'",
-        "violation: Added a 'false_friends' entry for 'で' and 'post_false_friends_writeup', as the schema requires 'false_friends' to be present and non-empty if applicable, and 'post_false_friends_writeup' is a required field."
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/にして1"
-    }
+    },
+    "change": [
+        "violation: Added three new examples to ensure the presence of at least one male speaker, one female speaker, and one male listener example, as required by the rules 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'.",
+        "unnatural: Modified the 'writeup' field to enhance its clarity and completeness by integrating nuances from the input data regarding the 'high level/prime example' and 'decided upon/accepted as fact' aspects, and explicitly mentioning its formal/literary tone. This improves the naturalness and accuracy of the explanation."
+    ]
 }

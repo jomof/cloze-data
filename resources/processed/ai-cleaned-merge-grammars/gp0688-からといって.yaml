@@ -102,6 +102,24 @@
             "nuance": "The speaker is giving an opinion about raising a child, saying that looks shouldn't be a factor in deciding if a child should be allowed to behave in a selfish way."
         },
         {
+            "japanese": "日本に2年間住んでいた{からとて}、日本語が話せるとは限らない。",
+            "english": "Just because someone has lived in Japan for 2 years doesn't mean that they can speak Japanese.",
+            "scene": "Someone explaining a common misconception about language acquisition.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "日本に2年間住んでいたけど、日本語が話せない人もいる。",
+                    "mitigation": "The scene implies the speaker is correcting a common belief, which 「からとて」 emphasizes as a lack of sufficient reason for fluent Japanese."
+                },
+                {
+                    "competing_grammar": "日本に2年間住んでいたから、日本語が話せるはずだと思われがちだ。",
+                    "mitigation": "The scene implies the speaker is correcting a common belief, which 「からとて」 emphasizes as a lack of sufficient reason for fluent Japanese."
+                }
+            ],
+            "register": "semi-formal",
+            "setting": "informative",
+            "nuance": "The use of 「からとて」 highlights a common misconception that mere residence in a country automatically grants language fluency. This example reinforces the idea that the condition (living in Japan) is not a sufficient reason for the expected outcome (speaking Japanese fluently)."
+        },
+        {
             "japanese": "お酒を飲んだ{からといって}、運転してはいけません。",
             "english": "Just because you drank alcohol, you must not drive.",
             "scene": "A police officer speaking to a driver.",
@@ -223,10 +241,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/からといって"
     },
     "change": [
-        "violation: Changed 'meaning' field from 'Just because; even if; even though' to 'Just because' to align with the more precise meaning provided by the Bunpro input data.",
-        "schema: Removed 'listener_age' field from examples 2, 3, 4, and 9 because the schema explicitly states it is deprecated and must be removed.",
-        "schema: Added 'speaker_age: \"older\"' to examples 2, 3, and 4 to explicitly state the speaker's age where an age difference was implied and 'listener_age' was removed, as per schema guidance.",
-        "schema: Added 'scene_rationale' field to all original 11 examples, as the schema requires 'scene_rationale' to be present if a 'scene' is present.",
-        "violation: Added one new example (example 12) to ensure at least one example includes a 'male' listener, satisfying the schema rule for 'listener_gender' diversity."
+        "command: Added a new example demonstrating the colloquial form 「からとて」, as mentioned in the writeup, to improve completeness and example diversity. This directly addresses the implied command to illustrate all listed forms in examples."
     ]
 }

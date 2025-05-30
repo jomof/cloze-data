@@ -34,7 +34,7 @@
         }
     ],
     "pronunciation": {
-        "katakana": "ナンナイ",
+        "katakana": "ナン…ナイ",
         "romaji": "nan...nai"
     },
     "formation": {
@@ -74,16 +74,16 @@
             "conjugation": "negative plain (～ない)"
         },
         {
-            "japanese": "彼は{何} の 才能{ない} 人だったが、努力で成功した。",
-            "english": "He was a man without any talent, but he succeeded through hard work.",
+            "japanese": "彼は{何} の 才能{ない} 人だったが、努力で目標を達成した。",
+            "english": "He was a man without any talent, but he achieved his goal through hard work.",
             "scene": "Someone is discussing someone who achieved success despite lacking natural abilities, to a woman.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "「彼は全く才能がない人だったが、努力で成功した。」",
+                    "competing_grammar": "「彼は全く才能がない人だったが、努力で目標を達成した。」",
                     "mitigation": "The scene presents a narrative about overcoming adversity, where the refined emphasis of 「何〜ない」 fits a more descriptive or academic tone, guiding the learner away from the simpler, blunter negation of `全く〜ない`."
                 },
                 {
-                    "competing_grammar": "「彼は全然才能がない人だったが、努力で成功した。」",
+                    "competing_grammar": "「彼は全然才能がない人だったが、努力で目標を達成した。」",
                     "mitigation": "The scene presents a narrative about overcoming adversity, where the refined emphasis of 「何〜ない」 fits a more descriptive or academic tone, guiding the learner away from the simpler, blunter negation of `全然〜ない`."
                 }
             ],
@@ -108,7 +108,7 @@
                     "mitigation": "The scene focuses on a personal, decisive judgment about a place, where the definitive and somewhat resigned tone of 「何〜ない」 is more fitting for a strong, formal negative assessment than the general negative expression of `全然〜ない`."
                 }
             ],
-            "register": "casual",
+            "register": "semi-formal",
             "setting": "melancholic",
             "nuance": "「何の面白みもない」 conveys a complete lack of interesting qualities or appeal. The usage of 「ので」 provides a strong reason for the speaker's decision not to return, emphasizing a definitive negative assessment.",
             "etymology": "「面白み」 (omoroshimi) means 'interesting quality' or 'appeal.'",
@@ -170,7 +170,7 @@
                     "mitigation": "The scene suggests a conversation reflecting a nuanced observation or veiled sarcasm, where the formal, slightly detached nature of 「何〜なく」 lends itself to a more sophisticated commentary on the situation, distinguishing it from the general \"not at all\" phrase `全然〜ない`."
                 }
             ],
-            "register": "casual slang",
+            "register": "casual",
             "setting": "sarcastic",
             "nuance": "The use of 「何の苦労なく」 suggests that the person achieved their promotion without experiencing any difficulties or struggles. In a sarcastic context, it implies an unfair or unearned advancement, highlighting the complete absence of struggle.",
             "etymology": "「苦労」 (kurō) means 'hardship' or 'trouble.'",
@@ -206,7 +206,7 @@
                     "mitigation": "In a persuasive, business context, the use of 「何〜なく」 conveys a strong, formal guarantee of unrestricted usage, implying a comprehensive lack of limitations that resonates more effectively than casual or simple negations like `全く〜ない` when promoting a product."
                 },
                 {
-                    "competing_grammar": "「このアプリは全然制限なく自由に使える。」",
+                    "comping_grammar": "「このアプリは全然制限なく自由に使える。」",
                     "mitigation": "In a persuasive, business context, the use of 「何〜なく」 conveys a strong, formal guarantee of unrestricted usage, implying a comprehensive lack of limitations that resonates more effectively than casual or simple negations like `全然〜ない` when promoting a product."
                 }
             ],
@@ -233,13 +233,11 @@
     ],
     "post_false_friends_writeup": "While 「全く〜ない」 and 「全然〜ない」 are similar in meaning, 「何〜ない」 has a more formal tone and emphasizes a structural absence. Use 「何〜ない」 in situations where you want to highlight the complete lack of something in a more formal or literary context.",
     "change": [
-        "schema: Added 'conjugations' array as 'ない' is conjugatable.",
-        "schema: Added 'conjugation' field to all example sentences as required by schema when 'conjugations' array is present.",
-        "schema: Added 'scene_rationale' to examples 1, 2, 3, 4, 6, 7, 8 as required when 'scene' is present.",
-        "violation: Modified example 1 to include 'speaker_gender: male' to satisfy diversity requirement for speaker gender.",
-        "violation: Modified example 2 to include 'listener_gender: female' to satisfy diversity requirement for listener gender.",
-        "violation: Modified example 3 ('魅力がない' to '面白みがない') to ensure kanji is appropriate for JLPT N2 level (魅 is N1). Updated 'etymology' and 'nuance' accordingly.",
-        "violation: Modified example 5 ('躊躇なく' to '迷いなく') to ensure kanji is appropriate for JLPT N2 level (躊 and 躇 are N1). Updated 'etymology' and 'nuance' accordingly.",
-        "violation: Refined 'scene' for examples 5, 6, 7, 8 to provide clearer context and better justify the necessity of 'scene_rationale'."
+        "violation: Corrected 'pronunciation.katakana' from 'ナンナイ' to 'ナン…ナイ' as the previous value was incorrect for the pronunciation of the grammar point, which involves a particle or pause.",
+        "violation: Corrected a typo in 'examples[1].scene_rationale[1].competing_grammar' from '国民' to '成功' to match the meaning of the example sentence.",
+        "violation: Modified 'examples[1].japanese' and 'examples[1].english' to replace '成功した' with '目標を達成した' to ensure all kanji are appropriate for JLPT N2 level, as '功' is N1.",
+        "violation: Updated 'examples[1].scene_rationale[0].competing_grammar' and 'examples[1].scene_rationale[1].competing_grammar' to reflect the change in the Japanese sentence to '目標を達成した'.",
+        "violation: Changed 'examples[2].register' from 'casual' to 'semi-formal' to align with the 'formal' tone described in its 'nuance' and 'mitigation' sections.",
+        "violation: Changed 'examples[5].register' from 'casual slang' to 'casual' to better reflect the 'formal, slightly detached nature' mentioned in its 'mitigation' while maintaining a 'sarcastic' setting."
     ]
 }

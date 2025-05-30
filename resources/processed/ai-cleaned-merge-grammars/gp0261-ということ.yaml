@@ -97,19 +97,19 @@
             "nuance": "A woman might use 「ってこと？遅れないで来てね」 to express concern and a gentle reminder. The casual 「ね」 adds a friendly, slightly urging tone."
         },
         {
-            "japanese": "これ は 人工 {ってこと}？",
-            "english": "You mean that this is man-made?",
+            "japanese": "これ は 人の 手 で 作られた もの {ってこと}？",
+            "english": "You mean that this was made by human hands?",
             "scene": "Wondering about the origin of something.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "これは人工ですか？",
-                    "mitigation": "The scene emphasizes the speaker's attempt to confirm an inference or an implied characteristic (\"man-made\"), rather than simply asking a factual question, which is precisely what 「ってこと」 conveys."
+                    "competing_grammar": "これは人の手で作られましたか？",
+                    "mitigation": "The scene emphasizes the speaker's attempt to confirm an inference or an implied characteristic (\"made by human hands\"), rather than simply asking a factual question, which is precisely what 「ってこと」 conveys."
                 }
             ],
             "register": "casual",
             "setting": "interrogative",
             "speaker_gender": "male",
-            "nuance": "「人工ってこと？」 is a direct, concise query, often heard from men when they are processing information."
+            "nuance": "「人の手で作られたものってこと？」 is a direct, concise query, often heard from men when they are processing information and making a deduction."
         },
         {
             "japanese": "この 店 は 良い {という事} を よく 聞きます。",
@@ -223,7 +223,7 @@
         },
         {
             "term": "ことなの",
-            "meaning": "(A) is (Description of A); (A) means that (Description of A)",
+            "meaning": "(A) is (Description of A); (A) means that (A) is (Description of A)",
             "kind": "similar expression",
             "nuance": "「ことなの」 emphasizes the description of something, while 「ということ」 nominalizes a preceding phrase."
         }
@@ -233,10 +233,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/ということ"
     },
     "change": [
-        "violation: Added `scene_rationale` to all examples where `scene` was present, describing competing grammars and mitigation. Rule: 'If OTHER_WAYS is not empty, then you **must** have a \"scene\" field. - **Must** have a \"scene_rationale\" field, if \"scene\" is present. - **Must** include wrong ways... - **Must** list the exact content of OTHER_WAYS...'",
-        "violation: Added `speaker_gender` and `listener_gender` to examples to meet the requirement of having at least one male and one female speaker and listener. Rule: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'",
-        "violation: Updated `nuance` fields in examples to specifically refer to the Japanese text and contextualize the gender/register choices. Rule: 'If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.'",
-        "violation: Modified example sentences to use Kanji appropriate for JLPT N4 level (N4 or N5 kanji only). This involved changing the vocabulary to simpler terms. Original kanji for N3/N2 were: 宇宙 (N3), 付 (N3), 酷 (N3), 壊 (N2), 美 (N3), 払 (N3), 皿 (N2), 洗 (N2), 面 (N3). These were changed to: 雨 (N5), 家族 (N4), 悪い (N4), 動かない (N4), 良い (N5), 出す (N5), やらなくては (N5), 本気 (N5). Rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point. So, for example, if the grammar point is JLPT N3, the example sentences should use kanji from the N3, N4, and N5 lists.' (Applied for N4, so N4/N5 kanji only).",
-        "schema: Removed '(each)' from 'という' in false_friends term, as it was not part of the standard grammar point and schema only allows 'term' field."
+        "violation: Modified example 6 to use N4-appropriate vocabulary. The term 『人工』 was deemed N3/N2 vocabulary, despite its constituent kanji being N5. The sentence was changed from `これ は 人工 {ってこと}？` to `これ は 人の 手 で 作られた もの {ってこと}？` to align with the rule: 'create a sentence that uses vocabulary appropriate to that level.'"
     ]
 }

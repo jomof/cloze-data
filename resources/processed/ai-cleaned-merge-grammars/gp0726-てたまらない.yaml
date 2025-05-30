@@ -154,7 +154,7 @@
             "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "あなたと　会{あ}えなくて {寂{さび}しくてたまらない} 。",
+            "japanese": "あなたと 会{あ}えなくて 寂{さび}しくて{たまらない} 。",
             "english": "I am so lonely without being able to meet you.",
             "scene": "A person expressing profound loneliness.",
             "scene_rationale": [
@@ -170,7 +170,7 @@
             "nuance": "A woman might use 「あなたと会えなくて寂しくてたまらない」 to express an overwhelming sense of loneliness to a man she deeply cares about, making the feeling sound unbearable and deeply personal."
         },
         {
-            "japanese": "君{きみ}の そばに ずっと 居{い}たくて {たまらなかった} 。",
+            "japanese": "君{きみ}の そばに ずっと 居{い}たくて{たまらなかった} 。",
             "english": "I desperately wanted to stay by your side forever.",
             "scene": "Confessing feelings after a long separation.",
             "scene_rationale": [
@@ -237,14 +237,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/てたまらない"
     },
     "change": [
-        "violation: Corrected the `conjugation` types in the top-level 'conjugations' array to align with the `conjugationType` enum, as required by the schema's command-comments.",
-        "violation: Added `scene_rationale` to all example sentences, as it is a required field when `scene` is present, per the schema's command-comments.",
-        "violation: Ensured diverse `speaker_gender` and `listener_gender` in examples. Modified example 3 to have a female speaker and example 9 to have a female speaker and male listener, to meet the rule of having at least one male and one female speaker and listener.",
-        "violation: Updated the `details` field to be in English and more descriptive, as the original Japanese '使用域: 一般' was not in English and was redundant with 'Register: Standard'. This aligns with the rule that English should be the main language in certain sections and allows minor inaccuracies to be fixed.",
-        "unnatural: Refined the `formation` descriptions for greater clarity and precision.",
-        "unnatural: Improved the `nuance` descriptions in examples 3, 9, and 10 to better align with the assigned speaker/listener genders and overall tone.",
-        "unnatural: Corrected the `kind` field for all `false_friends` entries from 'synonym' to more precise categories like 'similar expression' or 'often confused with', reflecting their nuanced differences more accurately.",
-        "suggestion: Added `post_example_writeup` for further clarification of the examples.",
-        "suggestion: Added `post_false_friends_writeup` to clarify differences between the grammar point and similar expressions."
+        "violation: Removed `meaning_warning: null` to comply with the schema rule: \"No fields should be null. Omit fields that are not applicable instead.\"",
+        "violation: Corrected the bolding in example 10's `japanese` field from `{たまらなかった}` to `居{い}たくて{たまらなかった}` to correctly highlight the full grammatical structure of the grammar point's usage in the sentence."
     ]
 }

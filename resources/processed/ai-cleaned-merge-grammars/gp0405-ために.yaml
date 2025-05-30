@@ -22,8 +22,8 @@
     "etymology": "The word 「ため」 originally meant \"for the sake of\" or \"for the purpose of.\" Over time, it evolved to also express the meaning of \"due to\" or \"because of,\" highlighting the connection between a cause and its resulting effect. Adding 「に」 to 「ため」 creates an adverbial phrase that modifies the verb or adjective that follows.",
     "examples": [
         {
-            "japanese": "昨日の飲み会で お酒をたくさん飲んだ{ために}、今日は二日酔いで体がだるいんだ。",
-            "english": "Because I drank a lot of alcohol at the party last night, I have a hangover and my body feels heavy.",
+            "japanese": "昨日の飲み会で お酒をたくさん飲んだ{ために}、今日は頭が痛いし、身体がだるいんだ。",
+            "english": "Because I drank a lot of alcohol at the party last night, I have a headache and my body feels heavy.",
             "scene": "Explaining why you are feeling unwell after a party.",
             "scene_rationale": [
                 {
@@ -38,8 +38,8 @@
             "register": "casual",
             "setting": "melancholic",
             "speaker_gender": "male",
-            "nuance": "「たくさん飲んだ」 indicates a large quantity of alcohol consumed. 「二日酔いで体がだるい」 describes the physical condition of a hangover, 「だるい」 being the key descriptor for fatigue. The sentence ending 「だるいんだ」 with 「ん」 and 「だ」 suggests a male speaker casually explaining a state of being.",
-            "etymology": "「二日酔い」 literally means \"two-day drunk,\" referring to the hangover experienced the day after drinking."
+            "listener_gender": "male",
+            "nuance": "「たくさん飲んだ」 indicates a large quantity of alcohol consumed. 「頭が痛いし、身体がだるい」 describes the physical discomfort. The sentence ending 「だるいんだ」 with 「ん」 and 「だ」 suggests a casual tone often used by male speakers, suitable when addressing another man."
         },
         {
             "japanese": "暑い{ために}、職場で何人かが倒れた。",
@@ -127,7 +127,8 @@
             "register": "casual",
             "setting": "melancholic",
             "speaker_gender": "female",
-            "nuance": "「夜遅くまで頑張っていた」 indicates working hard until late at night. 「何もしたくない」 expresses a desire to do nothing, indicating exhaustion. The sentence ending 「したくないわ」 with 「わ」 is often used by female speakers to express their feelings.",
+            "listener_gender": "female",
+            "nuance": "「夜遅くまで頑張っていた」 indicates working hard until late at night. 「何もしたくない」 expresses a desire to do nothing, indicating exhaustion. The sentence ending 「したくないわ」 with 「わ」 is a feminine particle, commonly used by female speakers, especially when addressing another woman.",
             "etymology": "「何も」 emphasizes doing nothing at all, highlighting the extent of the speaker's fatigue."
         },
         {
@@ -283,10 +284,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/ために"
     },
     "change": [
-        "violation: Added `scene_rationale` to all examples as required by schema rule: \"Must be present if 'scene' is present.\" (Rule 6)",
-        "violation: Corrected `ため` to `ために` in Japanese examples 4, 5, 6, and 10 to consistently match the grammar point `ために` as highlighted and in the `formation` section. (Rule 6, naturalness)",
-        "violation: Rephrased Japanese example 5 (`練習` (N2 kanji 練)) to `頑張っていた` to comply with JLPT N3 kanji constraint. Updated English, scene, and nuance accordingly. (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
-        "violation: Rephrased Japanese example 7 (`故障` (N1 kanji 障)) to `車が動かなくなってしまった` to comply with JLPT N3 kanji constraint. Updated English, scene, and nuance, and removed irrelevant etymology. (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
-        "violation: Added `speaker_gender` to examples 1 (male) and 5 (female), along with corresponding subtle changes in Japanese sentence endings and `nuance` explanations, to fulfill the requirement of including at least one male and one female speaker_gender across examples. (Rule: \"Example sentences should include at least one male and one female speaker_gender.\")"
+        "violation: Rephrased Japanese example 1 to replace N1 kanji '酔' in '二日酔い' with '頭が痛いし、身体がだるい' to comply with JLPT N3 kanji constraint. Updated English translation and removed corresponding etymology. (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
+        "schema: Added 'listener_gender: male' to example 1 and updated its 'nuance' to satisfy the schema requirement for at least one male listener_gender example. (Rule: \"Example sentences should include at least one male and one female listener_gender.\")",
+        "schema: Added 'listener_gender: female' to example 5 and updated its 'nuance' to satisfy the schema requirement for at least one female listener_gender example. (Rule: \"Example sentences should include at least one male and one female listener_gender.\")"
     ]
 }

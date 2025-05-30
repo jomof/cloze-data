@@ -95,7 +95,7 @@
             "nuance": "A female staff member uses polite language (ます form) to inform a male customer about the benefit of 「待たずに済みます」. Her professional, helpful tone is conveyed through the polite register and the direct explanation."
         },
         {
-            "japanese": "今月 契約 すると 初期費用 を 支払わ{ずに済む}ので、 今月中に 契約 すること を お勧めします。",
+            "japanese": "今月 契約 すると 初期費用 を 支払わ{ないで済む}ので、 今月中に 契約 すること を お勧めします。",
             "english": "We recommend signing the contract within this month so you can get by without paying the initial costs.",
             "scene": "A salesperson trying to close a deal.",
             "scene_rationale": [
@@ -110,7 +110,7 @@
             "speaker_gender": "male",
             "listener_gender": "female",
             "speaker_age": "older",
-            "nuance": "A male salesperson uses formal and persuasive language (お勧めします) to encourage a female client to sign a contract, emphasizing the financial benefit of 「支払わずに済む」. This formal tone is typical in business negotiations."
+            "nuance": "A male salesperson uses formal and persuasive language (お勧めします) to encourage a female client to sign a contract, emphasizing the financial benefit of 「支払わないで済む」. This formal tone is typical in business negotiations."
         },
         {
             "japanese": "今年の 冬 は 去年 より 暖かかったので、暖房 を つけ{ずに済み}ました。",
@@ -135,7 +135,7 @@
             "scene_rationale": [
                 {
                     "competing_grammar": "洗い物 を しなくていい なんて、 最高だね！",
-                    "mitigation": "The scene emphasizes the speaker's excitement and relief at avoiding a chore. This emotional aspect is strongly conveyed by 「せずに済む」, which highlights the successful avoidance of something undesirable, unlike the more neutral permission expressed by 「しなくていい」."
+                    "mitigation": "The scene emphasizes the speaker's excitement and relief at avoiding a chore. This emotional aspect is strongly conveyed by 「ずに済む」, which highlights the successful avoidance of something undesirable, unlike the more neutral permission expressed by 「しなくていい」."
                 }
             ],
             "register": "casual",
@@ -275,13 +275,14 @@
         }
     ],
     "post_false_friends_writeup": "「ずに」 simply means \"without doing\", whereas 「ずに済む」 means \"to get by without doing\". The former is a simple description of an action, while the latter implies that not doing something was a preferable outcome. For example, 「朝ご飯を食べずに学校へ行った」 (I went to school without eating breakfast) simply states a fact, but 「朝ご飯を食べずに済んだ」 (I got by without eating breakfast) implies that skipping breakfast was not a problem or was even a good thing in that situation.",
+    "change": [
+        {
+            "type": "command",
+            "description": "Modified the Japanese sentence in Example 3 from 「支払わずに済む」 to 「支払わないで済む」 to comply with the explicit command in the prior grammar point data. This also aligns with the original Bunpro input.",
+            "reason": "Direct command in `PRIOR_GRAMMAR_POINT_YAML`."
+        }
+    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ずに済む"
-    },
-    "change": [
-        "violation: Removed 'lesson_order' from the top-level object to comply with the schema's 'additionalProperties: false' rule, as it is not a defined property.",
-        "violation: Removed 'listener_age' from all examples, as this field is explicitly deprecated in the provided schema.",
-        "violation: Added 'scene_rationale' to all examples that contain a 'scene' field, to comply with the schema rule that requires 'scene_rationale' when 'scene' is present.",
-        "violation: Modified Example 4's Japanese sentence from 'ヒーター なしで 済みました' to '暖房 を つけずに済みました' and adjusted its bolding, to ensure the example directly uses the core grammar point 'ずに済む' as required by example rules, rather than a related variant."
-    ]
+    }
 }

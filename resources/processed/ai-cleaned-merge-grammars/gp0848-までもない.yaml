@@ -177,7 +177,9 @@
             "register": "casual",
             "setting": "sarcastic",
             "conjugation": "dictionary (plain non-past)",
-            "nuance": "The expression 「あんな奴」 (anna yatsu) is a dismissive term for someone, conveying disdain and a lack of respect for them."
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "The phrase 「あんな奴」 (anna yatsu) is a dismissive term. When spoken by a female speaker to a male listener, it can convey strong disapproval and a resolute stance, indicating that showing kindness is not warranted for someone so contemptible."
         },
         {
             "japanese": "今さら訂正する{までもなく}、明らかに間違っている。",
@@ -278,7 +280,7 @@
         "bunpro": "https://bunpro.jp/grammar_points/までもない"
     },
     "change": [
-        "violation: Removed 'listener_age' from Example 3 as it is deprecated in the schema. (Rule: '\"listener_age\" is deprecated. You *must* remove it.')",
-        "violation: Added 'scene_rationale' to all examples that contain a 'scene' field, as required by the schema. (Rule 6: 'If OTHER_WAYS is not empty, then you *must* have a \"scene\" field. - *Must* have a \"scene_rationale\" field with at least one entry.')"
+        "violation: Added speaker_gender: female and listener_gender: male to Example 7. Reason: To satisfy the rule \"Example sentences should include at least one male and one female speaker_gender\" and \"Example sentences should include at least one male and one female listener_gender,\" which implies diversity in gender usage across examples.",
+        "unnatural: Updated nuance in Example 7 to incorporate specified speaker and listener genders. Reason: To make the nuance consistent with the new gender specifications."
     ]
 }

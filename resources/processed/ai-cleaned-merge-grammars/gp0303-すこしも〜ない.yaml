@@ -1,10 +1,10 @@
 {
     "grammar_point": "すこしも〜ない",
+    "id": "gp0303",
     "pronunciation": {
         "katakana": "スコシモナイ",
         "romaji": "sukoshi mo nai"
     },
-    "id": "gp0303",
     "formation": {
         "すこしも + [negative verb/adjective]": "Indicates 'not even a little bit,' 'not at all,' or 'never.'"
     },
@@ -12,7 +12,7 @@
     "meaning": "Not even a little, Not at all, Not in the least, Never",
     "details": {
         "Register": "Standard",
-        "使用域": "一般"
+        "Usage context": "General"
     },
     "etymology": "The grammar point 「すこしも〜ない」 is derived from 「少し」 (sukoshi), meaning 'a little,' combined with the particle 「も」, which here emphasizes the 'even' in 'not even a little.' The 「ない」 part is the negative form, which creates the overall negative meaning.",
     "writeup": "「すこしも〜ない」 translates to \"not even a little bit\" or \"not at all.\" It emphasizes the lack of something, indicating that there is 'no (A),' '(A) never happens,' or 'not (A) at all,' depending on whether a verb or adjective is being negated. 「すこしも」 can come at the beginning of the sentence or directly before the word/statement it modifies. The particle 「も」 here expresses surprise or unexpectedness, highlighting 「少し」.",
@@ -33,8 +33,6 @@
             ],
             "register": "casual",
             "setting": "cautious",
-            "listener_gender": "female",
-            "speaker_gender": "female",
             "nuance": "The 「ね」 at the end of the sentence softens the command and makes it more of a gentle reminder."
         },
         {
@@ -71,8 +69,6 @@
             ],
             "register": "casual",
             "setting": "humorous",
-            "speaker_gender": "female",
-            "listener_gender": "female",
             "nuance": "「イケメン」 is a slang term for a handsome man."
         },
         {
@@ -109,8 +105,6 @@
             ],
             "register": "casual",
             "setting": "serious",
-            "speaker_gender": "female",
-            "listener_gender": "male",
             "nuance": "「〜あげる」 implies doing something for someone's benefit, and the negative 「〜てない」 emphasizes the lack of care."
         },
         {
@@ -150,22 +144,22 @@
             "nuance": "The plain form 「美味しくない」 is used, typical of a casual conversation expressing a direct opinion."
         },
         {
-            "japanese": "{すこしも}暑くないのに、汗をかいている。",
-            "english": "It is not in the least bit hot, but I am sweating.",
-            "scene": "Someone confused about sweating despite the lack of heat.",
+            "japanese": "{すこしも} 眠くないのに、朝まで本を読んだ。",
+            "english": "I wasn't sleepy at all, but I read a book until morning.",
+            "scene": "Someone reflecting on staying up late reading.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "全然暑くないのに、汗をかいている。",
-                    "mitigation": "The confusion about sweating in cool weather highlights `すこしも` for 'not even a bit hot,' emphasizing the unexpectedness of the situation."
+                    "competing_grammar": "全然眠くないのに、朝まで本を読んだ。",
+                    "mitigation": "The scene highlights a complete lack of sleepiness that is surprising given the late hour, making `すこしも` suitable for emphasizing 'not even a bit sleepy'."
                 },
                 {
-                    "competing_grammar": "暑くないのに、汗をかいている。",
-                    "mitigation": "The unexpectedness of sweating in cool weather is better conveyed by `すこしも`, which stresses the complete absence of heat, making the contradiction more pronounced."
+                    "competing_grammar": "眠くないのに、朝まで本を読んだ。",
+                    "mitigation": "The context of staying up late to read implies an unexpected situation where the speaker is not sleepy at all, which `すこしも` conveys more emphatically than a simple negative."
                 }
             ],
             "register": "casual",
-            "setting": "confused",
-            "nuance": "The use of 「のに」 shows contrast or surprise."
+            "setting": "reflective",
+            "nuance": "The use of 「のに」 creates a sense of mild contradiction or unexpectedness."
         },
         {
             "japanese": "ガソリンの値段が{すこしも} 下がらないね。",
@@ -255,9 +249,10 @@
         "bunpro": "https://bunpro.jp/grammar_points/すこしも-ない"
     },
     "change": [
-        "violation: Added `scene_rationale` to all examples where `scene` was present, as required by the schema instruction: \"Must be present if 'scene' is present.\"",
-        "violation: Corrected the `register` and refined the `nuance` for example 6 and 7 to align with the plain form of adjectives used, as required by the schema instruction: \"Japanese must sound natural and fluent to a native speaker\" (implies accurate register representation) and \"nuance must refer to parts of the Japanese sentence in 「quotes」.\"",
-        "violation: Refined the `nuance` for example 10 to provide a more precise explanation of the gender-specific usage of 「君」, as required by the schema instruction: \"If there is a 'speaker_gender' or 'listener_gender', then 'nuance' must mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.\"",
-        "violation: Included `決して〜ない` in the `post_false_friends_writeup` to ensure all false friends listed are adequately addressed, as required by the instruction: \"post_false_friends_writeup: to clarify further differences between the grammar point and these similar expressions\" which implies comprehensive coverage."
+        "violation: Removed `speaker_gender` and `listener_gender` from Example 1 because the Japanese sentence uses generic language and is not typically spoken by specific genders, as per the schema's rule: \"Use only if this sentence would typically only be spoken by this gender.\"",
+        "violation: Removed `speaker_gender` and `listener_gender` from Example 3 because the Japanese sentence uses generic language and is not typically spoken by specific genders, as per the schema's rule: \"Use only if this sentence would typically only be spoken by this gender.\"",
+        "violation: Removed `speaker_gender` and `listener_gender` from Example 5 because the Japanese sentence uses generic language and is not typically spoken by specific genders, as per the schema's rule: \"Use only if this sentence would typically only be spoken by this gender.\"",
+        "violation: Changed `details` field key from Japanese \"使用域\" to English \"Usage context\" and its value from \"一般\" to \"General\" for consistency with English language requirements for explanatory text fields.",
+        "violation: Replaced Example 8 entirely to address the use of N2 kanji (汗) in an N4 grammar point example, violating the instruction: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point. So, for example, if the grammar point is JLPT N3, the example sentences should use kanji from the N3, N4, and N5 lists.\""
     ]
 }

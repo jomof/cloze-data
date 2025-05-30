@@ -119,7 +119,7 @@
             "nuance": "The speaker, likely a mother (indicated by the context of scolding a child and the generally softer tone of 「～でしょう」 compared to 「～だろ」), expresses frustration. The particle 「も」 after 「何回」 stresses the surprisingly numerous times they have repeated the request, implying the child should have complied already."
         },
         {
-            "japanese": "私 は 一回{も} 地下鉄 に 乗った ことが 無い。",
+            "japanese": "私 は 一回{も} 電車 に 乗った ことが 無い。",
             "english": "I have never taken the subway, not even once.",
             "scene": "Someone explaining their lack of subway experience.",
             "scene_rationale": [
@@ -149,7 +149,7 @@
             "nuance": "The particle 「も」 emphasizes that *not even one day* has passed without him thinking of her, highlighting the absolute nature of his unwavering remembrance. The use of 「～だよ」, commonly used by male speakers in intimate contexts, adds a direct and affectionate tone, enhancing the flirty sentiment."
         }
     ],
-    "post_example_writeup": "「数量詞＋も」は、その数量が話し手にとって予想外であったり、強調したい場合に用いられます。数が多い場合（「～も」）と、少ない場合（「～すら」「～さえ」に近い否定的なニュアンス）の両方で使われます。多くの場合、驚き、不満、感心などの感情が込められます。否定形と共に使われる場合は、「全く～ない」という強調の意味合いが強くなります。",
+    "post_example_writeup": "\"Quantity + も\" is used when the quantity is unexpected by the speaker or when they want to emphasize it. It is used for both large quantities (e.g., \"as many as\") and small quantities (with a negative nuance similar to \"すら\" or \"さえ\"). In many cases, it conveys feelings such as surprise, dissatisfaction, or admiration. When used with a negative form, the nuance of \"not at all\" or \"absolutely not\" is strengthened.",
     "false_friends": [
         {
             "term": "ばかり",
@@ -158,20 +158,14 @@
             "nuance": "Unlike 「Number+も」, 「ばかり」 indicates an exclusive focus on one thing, implying that there is nothing else. For example, 「彼はゲームばかりしている」 (He only plays games) means he does nothing but play games. 「Number+も」 emphasizes the surprising quantity of something, not its exclusivity."
         }
     ],
-    "post_false_friends_writeup": "「数量詞＋も」は、ある数量が話し手の予想を超える、あるいは特に強調したい場合に用いられる表現です。対して「ばかり」は、あるものだけ、あるいはある状態がずっと続いていることを表し、他の可能性を排除するニュアンスを持ちます。したがって、数量の強調をしたい場合は「も」を、排他的な意味合いを伝えたい場合は「ばかり」を適切に使い分けることが重要です。",
-    "change": [
-        "command: Removed 'listener_age' field from the example as it is deprecated.",
-        "unnatural: Revised 'formation' to use English descriptions for clarity and consistency with schema examples.",
-        "violation: Added 'scene_rationale' to all examples containing a 'scene' field, as required by the schema.",
-        "unnatural: Improved the 'nuance' for the first example ('12時間も仕事をしたから疲れた') to provide a more detailed explanation of the emphatic use of 'も'.",
-        "violation: Corrected the 'etymology' for the '君のこと、一日も忘れたことはないよ。' example to accurately define '～たことはない'.",
-        "unnatural: Adjusted the 'nuance' for the '君のこと、一日も忘れたことはないよ。' example to avoid an overly strict gender claim while retaining the male speaker context.",
-        "violation: Added 'speaker_gender: female' to the '「掃除をして」って 何回も 言ったでしょう。' example and adjusted its 'nuance' to meet the requirement for gender diversity in examples.",
-        "violation: Reordered examples from simplest to most complex usage to comply with the ordering requirement.",
-        "schema: Added 'post_example_writeup' to provide further clarification on the usage nuances of 'Number+も'.",
-        "schema: Added 'post_false_friends_writeup' to further explain the distinction between 'Number+も' and 'ばかり'."
-    ],
+    "post_false_friends_writeup": "\"Quantity + も\" is an expression used when a certain quantity exceeds the speaker's expectations or when they particularly want to emphasize it. In contrast, \"ばかり\" indicates that only a certain thing exists or that a certain state continues, carrying the nuance of excluding other possibilities. Therefore, it is important to properly differentiate and use \"も\" when emphasizing quantity, and \"ばかり\" when conveying an exclusive meaning.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/number-も"
-    }
+    },
+    "change": [
+        "violation: Translated 'post_example_writeup' to English. Rule: English is required for this field.",
+        "violation: Translated 'post_false_friends_writeup' to English. Rule: English is required for this field.",
+        "violation: Changed '地下鉄' to '電車' in example 8 (japanese and scene_rationale.competing_grammar) to comply with JLPT N4 kanji level requirements (鉄 is N2). Rule: Example sentences should use kanji appropriate for the JLPT level of the grammar point.",
+        "schema: Removed the 'change' array from the prior grammar point as it is not part of the final output schema."
+    ]
 }

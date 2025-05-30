@@ -52,7 +52,7 @@
             "register": "casual",
             "setting": "angry",
             "speaker_gender": "male",
-            "conjugation": "past plain",
+            "conjugation": "past (plain)",
             "nuance": "「やがった」 is the past form, indicating that the action has already occurred and caused the speaker's anger. The sentence uses the casual male pronoun 「俺」."
         },
         {
@@ -68,7 +68,7 @@
             "register": "casual",
             "setting": "angry",
             "speaker_gender": "female",
-            "conjugation": "past plain",
+            "conjugation": "past (plain)",
             "nuance": "The use of 「あたし」 and the sentence ending 「のよ」 clearly indicates a female speaker expressing strong anger and personal affront."
         },
         {
@@ -99,7 +99,7 @@
             "register": "casual",
             "setting": "angry",
             "speaker_gender": "male",
-            "conjugation": "past plain",
+            "conjugation": "past (plain)",
             "nuance": "「野郎」 and 「俺」 are both rough, masculine terms, emphasizing the speaker's anger and frustration. 「やがった」 indicates the action happened in the past and is still bothering him."
         },
         {
@@ -131,7 +131,7 @@
             "register": "casual",
             "setting": "angry",
             "speaker_gender": "male",
-            "conjugation": "past plain",
+            "conjugation": "past (plain)",
             "nuance": "「やがった」 shows extreme anger that the woman not only deceived him but also stole his money. The use of 「俺」 marks it as a statement made by a male speaker, and is used to show anger and disgust."
         },
         {
@@ -146,7 +146,7 @@
             ],
             "register": "semi-formal",
             "setting": "serious",
-            "conjugation": "past plain",
+            "conjugation": "past (plain)",
             "nuance": "「んですよ」 softens the tone slightly, making it less directly confrontational but still conveying the speaker's annoyance and resentment towards their senior. This nuance is appropriate in a workplace setting where direct expressions of anger might be frowned upon."
         },
         {
@@ -164,6 +164,38 @@
             "speaker_gender": "male",
             "conjugation": "te-form",
             "nuance": "「マジむかつく！」 is slang for \"seriously irritating!\" and 「やがって」 emphasizes the speaker's frustration and jealousy regarding the continuous annoying action."
+        },
+        {
+            "japanese": "課長が、また俺に無理な仕事を押し付け {やがった} んですよ、先輩！",
+            "english": "The section chief had the nerve to push an unreasonable task on me again, senpai!",
+            "scene": "A junior male employee complaining to his senior male colleague about their boss.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "課長がまた俺に無理な仕事を押し付けた、先輩。",
+                    "mitigation": "The scene highlights the speaker's strong frustration expressed directly to a male senior, making 「やがった」 appropriate for conveying the speaker's sense of indignation while maintaining a conversational tone with 「先輩」."
+                }
+            ],
+            "register": "casual",
+            "setting": "annoyed",
+            "speaker_gender": "male",
+            "listener_gender": "male",
+            "nuance": "The use of the male pronoun 「俺」 and addressing a male senior 「先輩」 makes this a natural complaint between male colleagues. 「やがった」 emphasizes the speaker's strong annoyance at the boss's recurring unreasonable behavior."
+        },
+        {
+            "japanese": "あの店員、私を馬鹿にし {やがった} のよ、ひどくない？",
+            "english": "That shop assistant had the nerve to make a fool of me, isn't that awful?",
+            "scene": "A woman complaining to her female friend about poor customer service.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あの店員が私を馬鹿にしたの、ひどくない？",
+                    "mitigation": "The scene sets up a situation where a woman is expressing strong personal offense to a female friend, making the forceful 「やがった」 and the feminine ending 「のよ」 natural in this context."
+                }
+            ],
+            "register": "casual",
+            "setting": "angry",
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "nuance": "The sentence ending 「のよ」 and the direct question 「ひどくない？」 are characteristic female speech patterns when seeking affirmation or expressing strong feelings to another woman. 「やがった」 conveys deep personal offense."
         }
     ],
     "false_friends": [
@@ -180,11 +212,8 @@
     },
     "change": [
         "violation: Removed 'meaning_warning' field because it was null, violating schema rule 'No fields should be null. Omit fields that are not applicable instead.'",
-        "violation: Added 'scene_rationale' to examples 1, 2, 3, 4, 5, 6, and 7 to comply with schema rule 'Must be present if 'scene' is present.'",
-        "unnatural: Changed 'setting' in example 2 from 'humorous' to 'annoyed' for a more accurate emotional representation.",
-        "unnatural: Changed 'setting' in example 5 from 'melancholic' to 'angry' for a more accurate emotional representation.",
-        "command: Removed 'listener_age' from example 6 as per explicit instruction '\"listener_age\" is deprecated. You *must* remove it.'",
-        "violation: Removed 'speaker_age' from example 6. The Japanese phrasing 「僕」 and 「んですよ」 does not exclusively indicate a 'younger' speaker in a way that necessitates the 'speaker_age' field, as per schema rule 'Use only if this sentence would typically only be spoken by this gender/age'. Its inclusion was ambiguous regarding the relative age being conveyed.",
-        "violation: Added a new example (now example 2) with 'speaker_gender: \"female\"' to comply with schema rule 'Example sentences should include at least one male and at least one female speaker_gender'."
+        "violation: Modified 'details' field by removing a promotional message, as per rule 16 which states 'fix minor inaccuracies in 'details', but do not invent new details.'",
+        "schema: Corrected 'conjugation' type in examples 1, 2, 4, 6, 7 from 'past plain' to 'past (plain)' to exactly match the 'type' in the top-level 'conjugations' array, as required by the schema rule 'The content of this 'conjugation' field must be taken from the top-level list of conjugations you generated earlier. Use the 'type' field.'",
+        "schema: Added two new examples (Example 9 and 10) to ensure the presence of at least one male and one female 'listener_gender', as required by schema rule 6: 'Example sentences should include at least one male and at least one female listener_gender.'"
     ]
 }

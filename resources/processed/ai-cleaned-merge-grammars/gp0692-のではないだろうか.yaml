@@ -1,17 +1,16 @@
 {
     "grammar_point": "のではないだろうか",
+    "id": "gp0692",
     "pronunciation": {
         "katakana": "ノデハナイダロウカ",
-        "romaji": "no de wa nai darō ka",
-        "pronunciation_warning": "「は」は「わ」と発音されます。"
+        "romaji": "no de wa nai darō ka"
     },
     "formation": {
-        "[Verb (plain form)] + のではないだろうか": "間接的に意見を表明したり、同意を求めたりする際に用います。",
-        "[い-Adjective] + のではないだろうか": "間接的に意見を表明したり、同意を求めたりする際に用います。",
-        "[な-Adjective + な] + のではないだろうか": "間接的に意見を表明したり、同意を求めたりする際に用います。",
-        "[Noun + な] + のではないだろうか": "間接的に意見を表明したり、同意を求めたりする際に用います。"
+        "[Verb (plain form)] + のではないだろうか": "Used to indirectly express an opinion or seek agreement.",
+        "[い-Adjective] + のではないだろうか": "Used to indirectly express an opinion or seek agreement.",
+        "[な-Adjective + な] + のではないだろうか": "Used to indirectly express an opinion or seek agreement.",
+        "[Noun + な] + のではないだろうか": "Used to indirectly express an opinion or seek agreement."
     },
-    "id": "gp0692",
     "jlpt": "N2",
     "meaning": "I think ... isn't it?, It might be that..., Don't you agree?",
     "details": {
@@ -158,7 +157,7 @@
             "setting": "first-date",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "「と思っているのではないだろうか」という表現は、話し手の願望を間接的な疑問形として表現し、聞き手の同意を促します。これは、会話を続けることへの興味を、あまり要求的にならずに伝える穏やかな方法です。「いい夜」という表現は、穏やかな雰囲気を醸し出します。"
+            "nuance": "「と思っているのではないだろうか」という表現は、話し手の願望を間接的な疑問形として表現し、聞き手の同意を促します。これは、会話を続けることへの興味を、あまり要求 的にならずに伝える穏やかな方法です。「いい夜」という表現は、穏やかな雰囲気を醸し出します。"
         },
         {
             "japanese": "仕事に真剣な様子は、憧れる {のではないだろうか}。",
@@ -241,7 +240,7 @@
             "nuance": "話し手は「のではないでしょうか」を用いて、価格について丁寧な観察を述べつつ、店員に確認を求めています。これは、丁寧なビジネス上のやり取りを示しています。より丁寧な表現は、年上の女性客が若い男性店員に話すのに適切です。「定価」は、商品の正規の価格を指します。「随分」は、非常に、かなり、といった強調を表す副詞です。"
         }
     ],
-    "post_example_writeup": "「だろう」と「でしょう」の微妙な違いは重要です。「でしょう」の方が丁寧であり、見知らぬ人や目上の人との会話に適しています。",
+    "post_example_writeup": "「だろう」と「でしょう」の微妙な違いは重要です。「でしょう」の方が丁寧であり、見知らぬ人や目上の方との会話に適しています。",
     "false_friends": [
         {
             "term": "でしょう",
@@ -262,15 +261,13 @@
             "nuance": "「じゃないか」は、同意を求めるより直接的で断定的な方法です。これは、自分の考えを表現するというよりも、共通の理解を確認したり、異なる視点に異議を唱えたりすることに重点が置かれます。"
         }
     ],
-    "post_false_friends_writeup": "「でしょう」、「だろう」、そして「じゃないか」はすべて、同意を求めたり推測を表現したりする類似の意味を伝えることができますが、「のではないだろうか」はその間接性と丁寧さにおいて独特です。控えめに、謙虚に、または目上の人と話す際に使用してください。他の表現はより直接的で、文脈に応じて丁寧さが異なります。",
-    "change": [
-        "schema: Removed 'listener_age' field from all examples because it is deprecated by the schema.",
-        "schema: Removed top-level 'conjugations' array and 'conjugation' field from all examples. The 'conjugationType' enum in the schema is designed for verb/adjective conjugations, not politeness variations of a fixed phrase. This was a schema violation in the prior version.",
-        "schema: Added 'scene_rationale' to all examples containing a 'scene' field to comply with the schema's requirement for this field.",
-        "violation: Corrected Kanji usage in example 7. Changed 「こんな素敵な夜は」 to 「こんなにいい夜は」 to avoid the N1 kanji 敵 (teki), adhering to the rule that example sentences should use kanji appropriate for the JLPT level of the grammar point (N2).",
-        "violation: Reverted Kanji usage in example 11. Changed 「元の値段」 to 「定価」 and 「かなり」 to 「随分」, as these kanji (定:N3, 随:N2) are appropriate for the JLPT N2 level, correcting a previous misclassification as N1. This ensures consistency with the JLPT Kanji rule."
-    ],
+    "post_false_friends_writeup": "「でしょう」、「だろう」、そして「じゃないか」はすべて、同意を求めたり推測を表現したりする類似の意味を伝えることができますが、「のではないだろうか」はその間接性と丁寧さにおいて独特です。控えめに、謙虚に、または目上の方と話す際に使用してください。他の表現はより直接的で、文脈に応じて丁寧さが異なります。",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/のではないだろうか"
-    }
+    },
+    "change": [
+        "schema: Removed 'pronunciation_warning' field from 'pronunciation' as it is not defined in the schema.",
+        "unnatural: Translated 'formation' descriptions from Japanese to English for improved clarity and consistency with the overall English-centric output.",
+        "schema: Omitted 'meaning_warning' field as its value was null, adhering to the schema rule 'No fields should be null. Omit fields that are not applicable instead.'"
+    ]
 }

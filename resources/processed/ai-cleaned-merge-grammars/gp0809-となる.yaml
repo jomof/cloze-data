@@ -228,6 +228,23 @@
             "setting": "persuasive",
             "conjugation": "dictionary (plain non-past)",
             "speaker_gender": "male"
+        },
+        {
+            "japanese": "この プロジェクト は 、あなたが 主要 な 担当 と {なります}。",
+            "english": "For this project, you will become the main person in charge.",
+            "scene": "A male project manager is assigning a new role to a female team member.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あなたが主要な担当になります。",
+                    "mitigation": "In a professional setting, the male project manager uses `となります` to formally convey the official assignment of a new, significant role to the female team member, emphasizing the definitive nature of this change over the more casual `になります`."
+                }
+            ],
+            "register": "professional",
+            "setting": "instructional",
+            "conjugation": "non-past polite (～ます)",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "The use of 「となります」 emphasizes the official assignment of the new role and responsibility, fitting for a male manager addressing a female team member in a professional context. The phrase 「主要 な 担当」 (main person in charge) reinforces this formality."
         }
     ],
     "post_example_writeup": "Keep in mind that 「となる」 often implies a sense of finality or a significant change. It's not just a simple \"to be\" but rather \"to become\" something different from what it was before.",
@@ -241,9 +258,6 @@
     ],
     "post_false_friends_writeup": "While 「となる」 and 「になる」 both translate to \"to become,\" the choice between them depends on the formality of the situation. When in doubt, consider the audience and the context. If you're writing an essay or giving a presentation, 「となる」 is often the safer choice. In casual conversation, 「になる」 is perfectly fine.",
     "change": [
-        "violation: Replaced three examples (originally #6, #7, #8) that did not use the grammar point `となる`, but instead used `になる` or `にした` per instruction: 'Each example must use the grammar_point, though it may be in conjugated form.'",
-        "schema: Added `scene_rationale` to all examples that have a `scene` field, per schema instruction: 'Must be present if scene is present.'",
-        "violation: Ensured at least one male and one female speaker_gender, and one male and one female listener_gender across the examples, per instruction: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'",
-        "schema: Added top-level `etymology` field, which was missing in the prior grammar point data, per schema instruction: 'The \"etymology\" field will be display to the user in the grammar point's page.'"
+        "command: Added one example to ensure at least one male and one female listener_gender, as specified by the comment in the prior grammar point's 'change' log: 'Example sentences should include at least one male and one female listener_gender.'"
     ]
 }

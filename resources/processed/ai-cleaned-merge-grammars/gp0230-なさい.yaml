@@ -1,6 +1,13 @@
 {
     "grammar_point": "なさい",
     "id": "gp0230",
+    "conjugations": [
+        {
+            "type": "imperative polite (～なさい)",
+            "form": "なさい",
+            "rarity": "common"
+        }
+    ],
     "pronunciation": {
         "katakana": "ナサイ",
         "romaji": "nasai"
@@ -34,6 +41,7 @@
             ],
             "register": "semi-formal",
             "setting": "commanding",
+            "conjugation": "imperative polite (～なさい)",
             "speaker_gender": "female",
             "speaker_age": "older",
             "nuance": "The use of 「なさい」 conveys a gentle command from an older female figure, like a mother. The phrase 「早く」 (hayaku) emphasizes the urgency of the action without being overly harsh."
@@ -54,6 +62,7 @@
             ],
             "register": "semi-formal",
             "setting": "instructional",
+            "conjugation": "imperative polite (～なさい)",
             "speaker_gender": "male",
             "speaker_age": "older",
             "nuance": "A male teacher uses 「なさい」 to firmly yet appropriately instruct the student. The phrase 「遊んでいないで」 indicates that the student should cease playing and focus on studying."
@@ -74,6 +83,7 @@
             ],
             "register": "casual",
             "setting": "flirty",
+            "conjugation": "imperative polite (～なさい)",
             "speaker_gender": "female",
             "speaker_age": "younger",
             "listener_gender": "male",
@@ -90,11 +100,12 @@
                 },
                 {
                     "competing_grammar": "一緒に飲みましょうか",
-                    "mitigation": "While 「飲みましょうか」 is a polite suggestion, the scene calls for a softer, more tentative invitation. The 「な」 form, particularly with the interrogative, allows for a less direct, more gentle approach."
+                    "mitigation": "While polite, 「飲みましょうか」 is a general invitation. The scene calls for a softer, more tentative invitation. The 「な」 form, particularly with the interrogative, allows for a less direct, more gentle approach."
                 }
             ],
             "register": "casual",
             "setting": "interrogative",
+            "conjugation": "imperative polite (～なさい)",
             "speaker_gender": "male",
             "speaker_age": "younger",
             "listener_gender": "female",
@@ -116,6 +127,7 @@
             ],
             "register": "semi-formal",
             "setting": "supportive",
+            "conjugation": "imperative polite (～なさい)",
             "speaker_gender": "female",
             "speaker_age": "older",
             "nuance": "The 「なさい」 form, coupled with 「もっと」 (motto), is used in a caring yet firm way to suggest eating more vegetables, typical of a supportive older figure encouraging a younger one's well-being."
@@ -136,6 +148,7 @@
             ],
             "register": "semi-formal",
             "setting": "instructional",
+            "conjugation": "imperative polite (～なさい)",
             "speaker_gender": "female",
             "speaker_age": "older",
             "nuance": "This is a straightforward instruction using 「なさい」, common when a parent wants a child to perform a simple task. The phrase 「持って行き{なさい}」 (motte iki nasai) is a direct, clear command for the child to transport the item."
@@ -156,6 +169,7 @@
             ],
             "register": "semi-formal",
             "setting": "cautious",
+            "conjugation": "imperative polite (～なさい)",
             "speaker_gender": "male",
             "speaker_age": "older",
             "nuance": "The coach uses 「なさい」 to impress upon the young athlete the importance of being more careful. The addition of 「もっと」 (motto) emphasizes the need for increased caution. The phrase 「気をつけ{なさい}」 (ki o tsuke nasai) is a common way to advise someone to be careful."
@@ -176,6 +190,7 @@
             ],
             "register": "semi-formal",
             "setting": "instructional",
+            "conjugation": "imperative polite (～なさい)",
             "speaker_gender": "female",
             "speaker_age": "older",
             "nuance": "This is a common instruction used by someone in authority, such as a librarian or teacher, to request silence. The phrase 「静かにし{なさい}」 (shizuka ni shi nasai) is a direct but polite command."
@@ -231,22 +246,21 @@
             "nuance": "「お〜願う」 is a more humble and polite way to ask someone to do something, implying a favor or request. 「なさい」 is a more direct command, even if polite."
         }
     ],
-    "post_false_friends_writeup": null,
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/なさい"
     },
     "change": [
         {
             "type": "schema",
-            "reason": "Removed 'listener_age' field from all examples as per schema instruction: 'listener_age' is deprecated. You *must* remove it."
-        },
-        {
-            "type": "violation",
-            "reason": "Added 'meaning_warning' from input, as it contains important nuance not captured elsewhere and enriches the grammar point's definition."
+            "reason": "Added top-level 'conjugations' array as the grammar point is conjugatable and the schema requires it."
         },
         {
             "type": "schema",
-            "reason": "Added 'scene_rationale' to all examples that include a 'scene' as required by the schema."
+            "reason": "Added 'conjugation' field to each example, mapping to the 'imperative polite (～なさい)' type, as required by the schema when a top-level 'conjugations' array is present."
+        },
+        {
+            "type": "schema",
+            "reason": "Removed 'post_false_friends_writeup' field as its value was null and the schema prohibits null fields for non-required fields."
         }
     ]
 }

@@ -196,8 +196,8 @@
             "etymology": "「驚き」 means 'surprise'."
         },
         {
-            "japanese": "車のタイヤが盗まれた。本当に腹が立つ{ったらない}。",
-            "english": "My car tires have been stolen. I can't tell you how angry I am!",
+            "japanese": "車のタイヤが盗まれた時の腹立たしさ{ったらない}。",
+            "english": "I can't tell you how angry I am that my car tires were stolen.",
             "scene": "Someone expressing deep outrage to a close family member after discovering a theft.",
             "scene_rationale": [
                 {
@@ -216,7 +216,7 @@
             "etymology": "「腹が立つ」 is an idiomatic expression for 'getting angry'."
         },
         {
-            "japanese": "歯を引っこ抜いた時の痛み{といったらない}わよ。本気で死ぬかと思ったもの。",
+            "japanese": "歯を引っこ抜いた時の痛み{といったらない}わよ、本気で死ぬかと思ったもの。",
             "english": "The pain of the tooth extraction was indescribable; I genuinely thought I would die.",
             "scene": "A woman discussing a recent medical procedure with a friend.",
             "scene_rationale": [
@@ -284,12 +284,9 @@
         "bunpro": "https://bunpro.jp/grammar_points/ったらない・といったらない"
     },
     "change": [
-        "violation: Added `conjugations` array as the grammar point is conjugatable (ない/なかった forms) as per schema rule: 'If the grammar point contains a verb in **dictionary form** (besides だ or です) or adjective in **dictionary form**, add a new array field at the top, called \"conjugations\".'",
-        "violation: Added `conjugation` field to each example, linking it to the newly defined conjugations, as per schema rule: 'Must be present if there is a top-level \"conjugations\" array.'",
-        "violation: Added `scene_rationale` to all examples with a `scene`, as per schema rule: 'Must be present if \"scene\" is present.'",
-        "violation: Removed quotation marks `「」` from examples 8 and 9, as per schema rule: 'Must not use quotes including 「」'.",
-        "violation: Transformed example 10 from A/B dialogue into a single sentence, as per schema rule: 'Must not use A/B dialogue style example sentences. They should be full sentences.'",
-        "schema: Added `speaker_gender` (male/female) and `listener_gender` (male/female) to selected examples to ensure diverse representation as per schema rule: 'Example sentences should include at least one male and one female speaker_gender.' and 'Example sentences should include at least one male and one female listener_gender.'",
-        "schema: Set `post_false_friends_writeup` to an empty string, as per schema rule: 'No fields should be null. Omit fields that are not applicable instead.' and 'post_false_friends_writeup' is a required field.'"
+        "schema: Removed `meaning_warning` field as it was null, in compliance with the schema rule: 'No fields should be null. Omit fields that are not applicable instead.'",
+        "violation: Merged example 9 Japanese into a single sentence, as per schema rule: 'Must be just one sentence unless. Use \"scene\" if you need to set up context.'",
+        "violation: Merged example 9 English into a single sentence, as per schema rule: 'Must be just one sentence unless. Use \"scene\" if you need to set up context.'",
+        "violation: Merged example 10 Japanese into a single sentence using a comma, as per schema rule: 'Must be just one sentence unless. Use \"scene\" if you need to set up context.'"
     ]
 }

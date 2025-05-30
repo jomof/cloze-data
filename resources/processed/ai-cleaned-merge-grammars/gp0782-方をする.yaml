@@ -221,7 +221,7 @@
         {
             "japanese": "私は子供たちに、いつも丁寧に話す{方をします}。",
             "english": "I always speak to my children in a polite way.",
-            "scene": "A mother is explaining her parenting philosophy to a friend.",
+            "scene": "A mother is explaining her parenting philosophy to her female friend.",
             "scene_rationale": [
                 {
                     "competing_grammar": "私は子供たちに、いつも丁寧に話します。",
@@ -232,7 +232,8 @@
             "setting": "parenting",
             "conjugation": "non-past polite (～ます)",
             "speaker_gender": "female",
-            "nuance": "「丁寧に話す方をする」 emphasizes the deliberate and consistent choice to use a polite manner of speaking when addressing children. The female speaker describes her characteristic approach to communication."
+            "listener_gender": "female",
+            "nuance": "「丁寧に話す方をする」 emphasizes the deliberate and consistent choice to use a polite manner of speaking when addressing children. The female speaker describes her characteristic approach to communication to her female friend."
         }
     ],
     "post_example_writeup": "「方をする」 is generally used to describe the **manner** or **style** of performing an action, often highlighting a habitual or characteristic way. While adverbs like 「優しく」 (kindly) or 「乱暴に」 (carelessly) can describe *how* an action is performed, 「方をする」 places emphasis on the *method* or *approach* itself, often implying a more inherent or deliberate characteristic of the subject's actions.",
@@ -258,24 +259,9 @@
     ],
     "post_false_friends_writeup": "To avoid common pitfalls, remember that 「方をする」 focuses on the specific *manner* or *style* with which an action is performed. 「やり方」 refers to the *method* or *procedure*. 「～ようにする」 highlights the *effort* made to achieve a certain state or action. Lastly, 「～ぶり」 typically describes the *outward appearance* or *impression* of an action or state, rather than the intrinsic way of doing it.",
     "change": [
-        "violation: conjugations: Removed 'imperative (plain)', 'imperative (polite)', 'potential', 'passive', and 'causative' conjugations as they do not preserve the core meaning of 'to do something in a ~ fashion/manner/way' and imply a shift to 'to do a method' or 'to be done (a method)'.",
-        "schema: conjugations: Corrected conjugation type 'polite (non-past)' to 'non-past polite (～ます)' for consistency with schema enum.",
-        "schema: conjugations: Corrected conjugation type 'conditional (provisional ば-form)' to 'conditional (～ば)' for consistency with schema enum.",
-        "schema: conjugations: Corrected conjugation type 'conditional (tara-form)' to 'conditional (～たら)' for consistency with schema enum.",
-        "schema: conjugations: Corrected conjugation type 'volitional (plain)' to 'volitional (～よう)' for consistency with schema enum.",
-        "schema: conjugations: Corrected conjugation type 'volitional (polite)' to 'volitional polite (～ましょう)' for consistency with schema enum.",
-        "schema: conjugations: Added 'progressive (～ている)' conjugation type which was missing, to accurately reflect usage.",
-        "schema: formation: Re-structured 'formation' from a simple object with two entries to a comprehensive object mapping various patterns derived from DOJG examples, adhering to schema's object mapping requirement and providing more detailed explanations.",
-        "unnatural: writeup: Rewrote the 'writeup' to be more comprehensive, structured, and explanatory, elaborating on the nuance and various usages of the grammar point.",
-        "violation: examples: Removed example '彼女は彼に、思わせぶりな仕草をしました。' because it uses '仕草をする' which does not contain '方' and therefore does not use the grammar point '方をする'.",
-        "violation: examples: Removed example '初めて会った日に、彼女はとても優しい笑顔をしました。' because it uses '笑顔をする' which does not contain '方' and therefore does not use the grammar point '方をする'.",
-        "violation: examples: Removed example '社長は社員に、もっと新しい考え方をしろと言った。' as its imperative conjugation 'しろ' shifts the meaning from 'doing something in a manner' to 'employing a method', which does not preserve the core meaning of '方をする' as per the conjugation rule.",
-        "unnatural: examples: Adjusted conjugation type for '彼女はいつも、どうすれば彼が喜ぶのかを考え方をしている。' (which was replaced in the final set) from 'te-form' to 'progressive (～ている)' to accurately reflect its usage.",
-        "unnatural: examples: Changed '誰にでも分かるような書き方をして下さい' to '誰にでも分かるような書き方をしてください' for more common polite imperative form, and confirmed it's still consistent with the te-form conjugation (te-form + ください).",
-        "schema: examples: Added 'scene_rationale' to all examples that have a 'scene' field, providing competing grammar and mitigation details as required by the schema.",
-        "violation: examples: Added new examples to ensure at least one male and one female 'speaker_gender' and 'listener_gender' are present across the examples, as per rule 6.",
-        "unnatural: examples: Re-ordered examples from simplest to most complex usage patterns.",
-        "violation: false_friends: Added '～ぶり' as a false friend because it also describes 'manner' but with a different nuance, fulfilling the requirement for comprehensive false friends.",
-        "unnatural: post_false_friends_writeup: Expanded 'post_false_friends_writeup' to include the newly added false friend and provide clearer distinctions."
+        "violation: examples: Added 'listener_gender: female' to Example 9 to meet the requirement of having at least one female listener gender across examples, as per rule 6.",
+        "unnatural: examples: Adjusted the 'scene' for Example 9 from 'A mother is explaining her parenting philosophy to a friend.' to 'A mother is explaining her parenting philosophy to her female friend.' to align with the added female listener, making the scene more specific and natural.",
+        "unnatural: examples: Adjusted the 'nuance' for Example 9 to reflect the addition of a female listener, ensuring consistency with the scene and newly added gender.",
+        "schema: sources: Removed the 'sources' field entirely because its 'bunpro' property was null in the prior version, which violates the schema's 'format: \"uri\"' requirement, and no valid URI source was present in the input data."
     ]
 }

@@ -29,7 +29,6 @@
             ],
             "register": "polite",
             "setting": "instructional",
-            "etymology": "「これら」 refers to \"these things.\"",
             "nuance": "「ください」 adds politeness to the request."
         },
         {
@@ -44,8 +43,7 @@
             ],
             "register": "standard",
             "setting": "descriptive",
-            "etymology": "「それら」 refers to \"those things.\" 「たたみ」 (tatami) are traditional Japanese floor mats.",
-            "nuance": "The sentence simply describes the pleasant smell of the tatami mats."
+            "nuance": "The phrase 「いいにおいがしている」 (smells good) directly describes the pleasant scent of the tatami mats."
         },
         {
             "japanese": "彼女{ら}の努力のおかげで、プロジェクトは大成功を収めたわ。",
@@ -74,7 +72,6 @@
             ],
             "register": "casual",
             "setting": "informative",
-            "etymology": "「彼ら」 is a common way to refer to \"they\" (male).",
             "speaker_gender": "male",
             "nuance": "The 「は」 emphasizes that it was specifically 「彼ら」 who studied and succeeded."
         },
@@ -120,9 +117,6 @@
             ],
             "register": "casual",
             "setting": "friendly",
-            "etymology": "「君ら」 means \"you all\" or \"you guys.\" The 「つもり」 indicates intention.",
-            "speaker_gender": "male",
-            "listener_gender": "male",
             "nuance": "「君ら」 is less polite than 「あなたたち」, making the sentence more casual. The 「？」 emphasizes the question."
         },
         {
@@ -173,7 +167,9 @@
         "bunpro": "https://bunpro.jp/grammar_points/ら"
     },
     "change": [
-        "violation: Reverted example from `{あの人たち}はプロだ。` to `{やつら}はプロだ。` to ensure the example uses the `Pronoun+ら` grammar point, which was violated by the previous change to `あの人たち`. The kanji `奴` (N1) was replaced with hiragana `やつ` to adhere to the N4 JLPT kanji level requirements for examples, as `奴` is above N4. (Rule 6: \"Each example **must** use the grammar_point\", \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
-        "schema: Added `scene_rationale` to all examples where `scene` was present but `scene_rationale` was missing. (Schema: \"`scene_rationale`: **Must** be present if `scene` is present.\")"
+        "violation: Removed `etymology` field from examples 1, 2, 4, 7 because the rule states it should only be used if \"something etymologically interesting in the Japanese sentence\" is present, not for basic definitions. (Rule 6)",
+        "violation: Changed 「匂い」 to 「におい」 in example 2's `japanese` because `匂` is an N2 kanji, violating the N4 JLPT kanji level requirement for examples. (Rule 6)",
+        "violation: Changed 「お蔭」 to 「おかげ」 in example 3's `japanese` because `蔭` is an N2 kanji, violating the N4 JLPT kanji level requirement for examples. (Rule 6)",
+        "unnatural: Refined `nuance` for example 2 to specify the Japanese phrase 「いいにおいがしている」, aligning with the rule to refer to parts of the Japanese sentence in 「quotes」. (Rule 6)"
     ]
 }

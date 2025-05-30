@@ -70,12 +70,12 @@
         {
             "type": "imperative plain (～ろ/～え)",
             "form": "たがれ",
-            "rarity": "unnatural"
+            "rarity": "very rare"
         },
         {
             "type": "imperative polite (～なさい)",
             "form": "たがってください",
-            "rarity": "unnatural"
+            "rarity": "very rare"
         },
         {
             "type": "potential (～られる/～える)",
@@ -153,6 +153,23 @@
             "setting": "informative",
             "conjugation": "dictionary (plain non-past)",
             "nuance": "「田中君」 (Tanaka-kun) identifies the subject. 「～と、～」 (to, ) is a common grammar construction showing that, whenever Tanaka-kun finds a new game, he habitually wants it."
+        },
+        {
+            "japanese": "娘 は いつも スポーツ を し {たがる} ね。",
+            "english": "Our daughter always wants to play sports, doesn't she?",
+            "scene": "A father talking to his wife about their active daughter.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "娘はいつもスポーツがしたい",
+                    "mitigation": "The particle 「ね」 (ne) here is used to seek agreement on an observation about a third party, common in casual family conversation, emphasizing the observed behavior rather than a direct report of internal desire."
+                }
+            ],
+            "register": "casual",
+            "setting": "friendly",
+            "conjugation": "dictionary (plain non-past)",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "「～ね」 (ne) adds a softer, conversational tone, suitable for intimate conversation between husband and wife. The speaker, a father, observes his daughter's consistent desire for sports."
         },
         {
             "japanese": "ジョン は なんで いつも 悪口 を 言い {たがる} んだろう。",
@@ -251,15 +268,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/たがる"
     },
     "change": [
-        "violation: Corrected 'rarity' values in conjugations from 'commonly used' to 'common' as per schema enum. (Rule: rarityType enum specifies allowed values)",
-        "violation: Corrected conjugation 'type' values to match schema enums (e.g., 'conditional (provisional ば-form)' to 'conditional (～ば)') as per schema. (Rule: conjugationType enum specifies allowed values)",
-        "violation: Changed 'extremely unusual' rarity to 'very rare' for the causative conjugation as per schema enum. (Rule: rarityType enum specifies allowed values)",
-        "violation: Removed the example '彼 に この ステーキ を 食べ て ほしい 。' as it does not use the grammar point 'たがる'. (Rule: Each example **must** use the grammar_point, though it may be in conjugated form.)",
-        "violation: Reordered examples from simplest to most complex usage. (Rule: Examples **must** be ordered from simplest to most complex.)",
-        "violation: Added `scene_rationale` for all examples that have a `scene`. (Rule: **Must** be present if 'scene' is present.)",
-        "violation: Removed deprecated `listener_age` field from the first example. (Schema: 'listener_age' is deprecated. You *must* remove it.)",
-        "violation: Ensured at least one male and one female `speaker_gender` across the example sentences. (Rule: Example sentences should include at least one male and one female speaker_gender.)",
-        "violation: Ensured at least one male and one female `listener_gender` across the example sentences. (Rule: Example sentences should include at least one male and one female listener_gender.)",
-        "violation: Added a `post_example_writeup` section for further clarification on the nuance of 'たがる'. (Rule: You may include a 'post_example_writeup' section after 'examples' if more clarification is helpful.)"
+        "schema: Changed `rarity` for imperative conjugations (\"imperative plain\", \"imperative polite\") from \"unnatural\" to \"very rare\", as \"unnatural\" is not a valid enum value for `rarityType`.",
+        "violation: Added a new example, \"娘はいつもスポーツを{したがる}ね。\", with `speaker_gender: male` and `listener_gender: female` to fully satisfy the rule: \"Example sentences should include at least one male and one female listener_gender.\"",
+        "schema: Reordered examples to ensure logical progression after adding a new example, adhering to the rule: \"Examples **must** be ordered from simplest to most complex.\""
     ]
 }

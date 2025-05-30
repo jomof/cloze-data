@@ -142,8 +142,8 @@
             "nuance": "A female speaker recounts to a male listener how a friend helped her, using the polite form `〜してくれました` to express gratitude in a casual conversation."
         },
         {
-            "japanese": "先生 は 私 に 丁寧 に 説明 {し て くれ た} 。",
-            "english": "The teacher explained it to me very carefully.",
+            "japanese": "先生 は 私 に 詳しく 説明 {し て くれ た} 。",
+            "english": "The teacher explained it to me in detail.",
             "scene": "A student describing a teacher's helpfulness.",
             "scene_rationale": [
                 {
@@ -156,13 +156,13 @@
             "conjugation": "past plain (～た)"
         },
         {
-            "japanese": "先輩 が レポート を チェック {し て くれ て} 、 本当 に 助かり まし た 。",
-            "english": "My senior checked my report, and I was really saved.",
-            "scene": "Expressing relief and gratitude to a senior colleague.",
+            "japanese": "友達 が レポート を チェック {し て くれ て} 、 本当 に 助かり まし た 。",
+            "english": "My friend checked my report, and I was really saved.",
+            "scene": "Expressing relief and gratitude to a friend.",
             "scene_rationale": [
                 {
                     "competing_grammar": "私が先輩にレポートをチェックしてもらって、本当に助かりました。",
-                    "mitigation": "The scene (expressing relief and gratitude to a senior colleague) underscores the senior's helpful action for the speaker, aligning with `くれる`, rather than the speaker's act of having received the help, as with `もらう`."
+                    "mitigation": "The scene (expressing relief and gratitude to a friend) underscores the friend's helpful action for the speaker, aligning with `くれる`, rather than the speaker's act of having received the help, as with `もらう`."
                 }
             ],
             "register": "semi-formal",
@@ -259,11 +259,7 @@
     ],
     "post_false_friends_writeup": "It's important to remember the direction of the action when using くれる, あげる, and もらう. くれる is always about someone doing something for you (or someone in your in-group). あげる is about you doing something for someone else. もらう is about you receiving something.",
     "change": [
-        "violation: Corrected conjugation `type` strings to strictly match schema's `conjugationType` enum values, ensuring consistency and adherence to predefined types.",
-        "violation: Corrected `pronunciation`'s `katakana` and `romaji` to reflect the singular pronunciation of the grammar point 'くれる', not the composite '呉れる・くれる', per schema guidelines.",
-        "violation: Added `scene_rationale` to examples where `scene` was present but `scene_rationale` was missing, per rule 6 which requires `scene_rationale` if `scene` is present.",
-        "violation: Removed `speaker_age` and `listener_age` from examples where the sentence's usage was not typically restricted by age, per rule 6's condition 'Use only if this sentence would typically only be spoken by this gender/age'. Removed associated `nuance` where it explained these fields.",
-        "violation: Removed `listener_age` field entirely as it is deprecated by the schema.",
-        "unnatural: Modified `nuance` for example #5 and #8 to better align with the specific `speaker_gender` and `speaker_age` justifications."
+        "violation: Changed '丁寧' to '詳しく' in example 3's Japanese sentence to ensure all kanji are N3 or below, as '寧' is N1. The English translation was updated accordingly. (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
+        "violation: Changed '先輩' to '友達' in example 4's Japanese sentence to ensure all kanji are N3 or below, as '輩' is N1. The English translation and scene/scene_rationale were updated accordingly. (Rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")"
     ]
 }

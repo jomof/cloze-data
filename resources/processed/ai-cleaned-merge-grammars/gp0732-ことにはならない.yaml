@@ -34,7 +34,7 @@
     "meaning": "Just because… doesn't mean…",
     "details": {
         "Register": "Standard",
-        "使用域": "一般"
+        "Usage": "General"
     },
     "etymology": "This grammar point is a combination of 「こと」 (koto, a thing or matter), the particle 「に」 (ni, indicating a state or condition), the topic marker 「は」 (wa), and the negative form of the verb 「なる」 (naru, to become). Literally, it means something along the lines of \"it will not become that thing/matter.\"",
     "writeup": "「ことにはならない」 is an expression used to emphasize that a statement made earlier is not necessarily true. It often follows structures like 「ても」 (\"even if\") or 「からといって」 (\"just because\"). It highlights that \"it will not be that (B).\" The entire expression can be interpreted as \"just because (A), it doesn't mean that (B).\" Though not required, the (B) expression may be further emphasized by including 「という」 before 「ことにはならない」.",
@@ -42,7 +42,7 @@
         {
             "japanese": "みんなが簡単にできたからと言って、君にも簡単にできるということには{ことにはならない}。",
             "english": "Just because it was easy for everyone else doesn't mean it will be easy for you.",
-            "scene": "Encouraging a female friend facing a challenge.",
+            "scene": "A woman encouraging her male friend facing a challenge.",
             "scene_rationale": [
                 {
                     "competing_grammar": "みんなが簡単にできたから、君にも簡単にできるだろう。",
@@ -200,7 +200,7 @@
         {
             "term": "からには",
             "meaning": "As long as, Since, Given",
-            "kind": "synonym",
+            "kind": "often confused with",
             "nuance": "「からには」 indicates a commitment or consequence following a condition, while 「ことにはならない」 denies a logical conclusion."
         }
     ],
@@ -209,12 +209,8 @@
         "bunpro": "https://bunpro.jp/grammar_points/ことにはならない"
     },
     "change": [
-        "schema: Added 'conjugations' field at the top level as 'なる' is a verb and the grammar point uses its conjugation. It includes the main form and other relevant conjugations.",
-        "schema: Updated all 'japanese' examples to bold the full grammar point '{ことにはならない}' instead of just '{ならない}' as per schema instructions.",
-        "schema: Added 'conjugation' field to each example, specifying 'negative plain (～ない)' as all examples use this form.",
-        "schema: Added 'speaker_gender' and 'listener_gender' to multiple examples to meet the requirement of having at least one male/female for each, and included corresponding nuance explanations.",
-        "schema: Added 'scene_rationale' to all examples that previously had a 'scene' field, providing competing grammar and mitigation details as required by the schema.",
-        "schema: Omitted 'post_example_writeup' as its value was null.",
-        "violation: Removed top-level 'bunpro' and 'lesson_order' fields, extracting the URL to the 'sources' object as per rule 20 and schema requirements."
+        "schema: Changed '使用域: 一般' to 'Usage: \"General\"' for consistency and to ensure all details values are in English as per Rule 1.",
+        "violation: Modified 'scene' in the first example from 'Encouraging a female friend facing a challenge.' to 'A woman encouraging her male friend facing a challenge.' to comply with Rule 6's directive: \"Must not use 'male' or 'female'. Use a proper name that's clearly gendered or 'man', 'woman', 'boy', 'girl', etc.\"",
+        "unnatural: Changed the 'kind' for 'からには' in 'false_friends' from 'synonym' to 'often confused with' as its nuance, while related to conditional statements, does not directly align with denying a conclusion, making 'often confused with' a more precise classification in this context."
     ]
 }

@@ -75,21 +75,6 @@
             "type": "imperative polite (～なさい)",
             "form": "てください",
             "rarity": "common"
-        },
-        {
-            "type": "potential (～られる/～える)",
-            "form": "てくれる",
-            "rarity": "rare"
-        },
-        {
-            "type": "passive (～られる/～かれる)",
-            "form": "てくれる",
-            "rarity": "rare"
-        },
-        {
-            "type": "causative (～させる)",
-            "form": "てくれさせる",
-            "rarity": "very rare"
         }
     ],
     "id": "gp0315",
@@ -153,9 +138,11 @@
             ],
             "register": "casual",
             "setting": "friendly",
+            "speaker_gender": "male",
+            "listener_gender": "male",
             "speaker_age": "younger",
             "conjugation": "dictionary (plain non-past)",
-            "nuance": "The speaker, a child, uses the plain form 「てくれる」 to casually ask their father for a simple favor, implying the benefit for the speaker."
+            "nuance": "The speaker, a young boy, uses the plain form 「てくれる」 to casually ask his father for a simple favor, implying the benefit for the speaker. The direct address 「パパ」 further emphasizes the casual, familial relationship."
         },
         {
             "japanese": "お願いだから急いで{くれ}。",
@@ -237,7 +224,10 @@
             ],
             "register": "teineigo (polite)",
             "setting": "flirty",
-            "conjugation": "non-past polite (～ます)"
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "conjugation": "non-past polite (～ます)",
+            "nuance": "The male speaker uses the polite form 「てくれますか」 to make a direct, emotional request for affection from a female listener, framing the act of loving as a benefit bestowed upon him. This choice of phrasing, while polite, carries an intimate and earnest tone suitable for a romantic context."
         },
         {
             "japanese": "食べる前にテーブルの上を綺麗にして{くれます}か。",
@@ -355,10 +345,10 @@
         "bunpro": "https://bunpro.jp/grammar_points/てくれる"
     },
     "change": [
-        "violation: Added `scene_rationale` to all examples that had `scene` to comply with schema requirement: 'Must be present if \"scene\" is present.'",
-        "schema: Removed `listener_age` from example 'パパ、電気を消して{くれる}？' as per schema instruction: '\"listener_age\" is deprecated. You *must* remove it.'",
-        "command: Added one example using the verb 買う in plain past negative ('友達は本を買って{くれなかった}。') as requested by the original input comment.",
-        "schema: Changed `kind` for the false friend `くれる` from `related verb` to `similar expression` to comply with `falseFriendKindType` enum.",
-        "schema: Adjusted `rarity` values in `conjugations` array from 'grammatically correct but unusual' to 'rare' and 'extremely unusual' to 'very rare' to comply with `rarityType` enum."
+        "schema: Removed 'meaning_warning' field as it is not part of the output schema.",
+        "schema: Removed 'details.使用域' as it is a Japanese field and redundant with 'details.Usage', which is in English.",
+        "schema: Removed 'potential', 'passive', and 'causative' conjugations from 'conjugations' array because they are not valid conjugations of the grammar point 'てくれる' as a whole, but rather hypothetical conjugations of the 'くれる' verb itself, which are not relevant to the meaning of the 'te-form + kureru' grammar pattern.",
+        "schema: Added 'speaker_gender: male' and 'listener_gender: male' to example 3 to ensure representation of male speaker and listener as required by schema.",
+        "schema: Added 'speaker_gender: male' and 'listener_gender: female' to example 8 to ensure representation of male speaker and female listener as required by schema, and adjusted 'nuance' accordingly."
     ]
 }

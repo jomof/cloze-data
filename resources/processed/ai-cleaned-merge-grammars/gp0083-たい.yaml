@@ -125,7 +125,7 @@
         {
             "japanese": "新しいゲームが{買いたい}。",
             "english": "I want to buy a new game.",
-            "scene": "A young man is excitedly telling his friend about his plans.",
+            "scene": "A young man is excitedly telling his male friend about his plans.",
             "scene_rationale": [
                 {
                     "competing_grammar": "新しいゲームが欲しい。",
@@ -135,7 +135,8 @@
             "register": "casual",
             "setting": "excited",
             "conjugation": "dictionary (plain non-past)",
-            "speaker_gender": "male"
+            "speaker_gender": "male",
+            "listener_gender": "male"
         },
         {
             "japanese": "今日は何も{したくない}。",
@@ -249,17 +250,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/たい"
     },
     "change": [
-        "violation: Conjugations: Renamed conjugation types to match schema's enum `conjugationType` for consistency (e.g., 'dictionary form (plain non-past)' to 'dictionary (plain non-past)').",
-        "violation: Conjugations: Changed `rarity` value 'commonly used' to 'common' to align with schema's enum `rarityType`.",
-        "violation: Examples: Added `{}` to bold the grammar point `たい` in all Japanese example sentences, as required.",
-        "violation: Examples: Removed `listener_age` field from Example 8 as it is deprecated per schema instructions.",
-        "violation: Examples: Removed problematic Example 8 ('お金が{欲しかったら}、もっと働きなさい。') which used `欲しい` instead of `たい` and replaced it with a new example ('もし夢を{叶えたければ}、努力し続けなさい。') that properly demonstrates a conjugation of `たい` ('たければ'). This ensures all examples directly use the grammar point.",
-        "schema: Examples: Updated `scene` field in Examples 1, 2, 3, 4, 5, 6, 7 to be more specific and to set a clearer context for the example.",
-        "schema: Examples: Added `scene_rationale` field to Examples 1, 2, 3, 4, 5, 6, 7, and the new Example 8, providing competing grammar forms and mitigation explanations, as required by the schema when `scene` is present.",
-        "unnatural: Examples: Adjusted `setting` in Example 1 from 'casual' to 'friendly' for better contextual fit with 'politely expressing'.",
-        "schema: Examples: Corrected `listener_gender` in Example 6 from 'male' to 'no one' as the scene indicates reminiscing to oneself or a non-specific listener.",
-        "schema: False Friends: Adjusted `kind` field for 'てほしい' from 'synonym' to 'often confused with' to better reflect its relationship to `たい`.",
-        "schema: False Friends: Adjusted `kind` field for 'がほしい', 'たがる', and 'がる' from 'synonym' to 'similar expression' for more precise categorization.",
-        "schema: Added `post_false_friends_writeup` section to provide further clarification on the distinctions between the grammar point and its false friends, as required."
+        "schema: Examples: Added `listener_gender: male` to Example 3 and updated its `scene` to reflect a male listener, to ensure the output adheres to the schema rule 'Example sentences should include at least one male and one female listener_gender'."
     ]
 }

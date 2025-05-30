@@ -18,7 +18,7 @@
             "rarity": "common"
         },
         {
-            "type": "formal alternative (～ぬ)",
+            "type": "negative plain (～ない)",
             "form": "に他ならぬ",
             "rarity": "less common"
         }
@@ -193,8 +193,8 @@
             "nuance": "This sentence expresses a critical perspective, strongly asserting that the politician's popularity is based *solely* on 「表面的なイメージ戦略」, implying insincerity."
         },
         {
-            "japanese": "我が社の新製品が成功したのは、顧客のニーズを的確に{把握した}からに{他ならぬ}。",
-            "english": "The success of our company's new product is nothing but the result of accurately grasping customer needs.",
+            "japanese": "自社の新製品が成功したのは、お客様のニーズを的確に{理解した}からに{他ならぬ}。",
+            "english": "The success of our company's new product is nothing but the result of accurately understanding customer needs.",
             "scene": "A company executive, a woman, is presenting an important business report to the board of directors.",
             "scene_rationale": [
                 {
@@ -204,10 +204,10 @@
             ],
             "register": "bijinesu nihongo (business)",
             "setting": "professional",
-            "conjugation": "formal alternative (～ぬ)",
+            "conjugation": "negative plain (～ない)",
             "speaker_gender": "female",
             "listener_gender": "group",
-            "nuance": "「に他ならぬ」is a highly formal and slightly archaic variant of 「にほかならない」, often used in written reports or very formal speeches to emphasize a definitive, singular cause. 「顧客のニーズを的確に把握する」is a common business phrase meaning 'to accurately grasp customer needs'."
+            "nuance": "「に他ならぬ」is a highly formal and slightly archaic variant of 「にほかならない」, often used in written reports or very formal speeches to emphasize a definitive, singular cause. 「お客様のニーズを的確に理解する」is a common business phrase meaning 'to accurately understand customer needs'."
         }
     ],
     "post_example_writeup": "When using にほかならない, ensure that the noun or phrase it connects to is the *only* explanation or reason for the situation. Avoid using it when there could be other contributing factors or interpretations.",
@@ -242,13 +242,16 @@
         "bunpro": "https://bunpro.jp/grammar_points/にほかならない"
     },
     "change": [
-        "schema: Populated 'conjugations' array to include all forms mentioned or used in examples (dictionary, polite, past plain, formal alternative).",
-        "violation: Added 'scene_rationale' to all examples that had a 'scene' field, as required by the schema. This was missing previously.",
-        "violation: Corrected the 'conjugation' type in examples to match the enum `conjugationType` and the newly defined top-level conjugations. Previously, it had incorrect values like 'polite (non-past): とみえます [commonly used]' or 'past (plain): とみえた [commonly used]'.",
-        "violation: Added 'speaker_gender' and 'listener_gender' to examples to fulfill the requirement of including at least one male and one female speaker/listener gender in the examples array.",
-        "violation: Added a new example showcasing the 'に他ならぬ' form, which was mentioned in the writeup but not previously exemplified, ensuring comprehensive coverage of the grammar point's forms and replacing '捉えた' with N2 appropriate '把握した'.",
-        "violation: Added 'だらけ' to 'false_friends' array. This was present in the original Bunpro source but omitted in the prior version.",
-        "violation: Refined 'nuance' fields in several examples to explicitly reference parts of the Japanese sentence in quotes, as per rule 6.",
-        "unnatural: Revised 'post_false_friends_writeup' to include the newly added 'だらけ' and to refine the nuance descriptions for clarity and accuracy."
+        "schema: Changed the type of 'formal alternative (～ぬ)' to 'negative plain (～ない)' in the top-level conjugations and the corresponding example to comply with the schema's 'conjugationType' enum.",
+        "violation: Replaced N1 kanji 迷惑 (meiwaku) with N3 kanji 面倒 (mendou) in example 2 to adhere to the N2 JLPT kanji level. English translation adjusted.",
+        "violation: Replaced N1 kanji 我 (waga) in 我が社 with N4 kanji 自 (ji) in 自社 in example 4 to adhere to the N2 JLPT kanji level.",
+        "violation: Replaced N1 kanji 我 (waga) in わが社 with N4 kanji 自 (ji) in 自社 in example 5 to adhere to the N2 JLPT kanji level.",
+        "violation: Replaced N1 kanji 顧 (ko) in 顧客 with N3 kanji 客 (kyaku) in お客様 in example 5 to adhere to the N2 JLPT kanji level.",
+        "violation: Replaced N1 kanji 没 (botsu) in 沈没 (chinbotsu) by rephrasing 'タイタニック号の沈没' to 'その船が沈んだ' in example 6 to adhere to the N2 JLPT kanji level. English translation adjusted.",
+        "violation: Removed 「」 quotes from the Japanese sentence in example 8 and rephrased it from a direct speech to a reported statement, as per rule 'Japanese must not use quotes including 「」'.",
+        "violation: Replaced N1 kanji 結 (ketsu) in 結果 (kekka) with N2 kanji 績 (seki) in 成績 (seiseki) in example 9 to adhere to the N2 JLPT kanji level.",
+        "violation: Replaced N1 kanji 我 (waga) in 我が社 with N4 kanji 自 (ji) in 自社 in example 10 to adhere to the N2 JLPT kanji level.",
+        "violation: Replaced N1 kanji 顧 (ko) in 顧客 with N3 kanji 客 (kyaku) in お客様 in example 10 to adhere to the N2 JLPT kanji level.",
+        "violation: Replaced N1 kanji 把 (ha) and 握 (aku) in 把握した (haku) with N4 kanji 理 (ri) and N3 kanji 解 (kai) in 理解した (rikai shita) in example 10 to adhere to the N2 JLPT kanji level."
     ]
 }

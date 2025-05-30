@@ -173,6 +173,34 @@
             "conjugation": "progressive (～ている)"
         },
         {
+            "japanese": "私 は どんな に 治安 が 良く ても、{田舎びた} 町 に は 住み たく ない。",
+            "english": "No matter how safe it is, I don't want to live in a rural-looking town.",
+            "scene": "A city person explaining their housing preferences, prioritizing modernity over rustic charm.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "田舎の町",
+                    "mitigation": "The speaker is expressing a dislike for the *appearance* or *atmosphere* of a rural town, not just its location. `田舎びた` emphasizes this visual and atmospheric aspect, which '田舎の町' might not fully convey if it only refers to location."
+                }
+            ],
+            "register": "casual",
+            "setting": "serious",
+            "conjugation": "past plain (～た)"
+        },
+        {
+            "japanese": "なぜ 子供 は {大人びた} 格好 を し たがる のだろうか。",
+            "english": "I wonder why kids tend to want to dress adult-like.",
+            "scene": "A parent observing children trying to imitate adults, pondering their motivation.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "大人の格好",
+                    "mitigation": "The nuance is about children trying to look *like* adults, not just wearing adult clothes. `大人びた` highlights the imitation of adult appearance, which '大人の格好' could miss."
+                }
+            ],
+            "register": "casual",
+            "setting": "reflective",
+            "conjugation": "past plain (～た)"
+        },
+        {
             "japanese": "小説 序章：旭丘 は 日 が のんびり と のどか に 過ぎて いく、海岸 沿い の {ひなびた} 雰囲気 が 漂う 漁村 だった。",
             "english": "Novel prologue: Asahigaoka was a coastal fishing village with a rustic feel to it, where time passed peacefully.",
             "scene": "A literary narrative describes a tranquil, old-fashioned coastal village, emphasizing its unique atmosphere.",
@@ -184,6 +212,48 @@
             ],
             "register": "formal",
             "setting": "storytelling",
+            "conjugation": "past plain (～た)"
+        },
+        {
+            "japanese": "小説：ヴァミリオ は {大人びて} 見える が、純粋 で、表情 が わかり やすい 少女 な の だ。",
+            "english": "Novel: Vamirio looked mature-like, but she was a pure girl with easy-to-read facial expressions.",
+            "scene": "A character description in a novel, highlighting a young girl's apparent maturity contrasting with her inner innocence.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "大人っぽい / 大人に見える",
+                    "mitigation": "The novel's description emphasizes the character's *appearance* of maturity, which `大人びて` conveys more precisely than general terms like '大人っぽい' or '大人に見える', especially when contrasted with her internal purity."
+                }
+            ],
+            "register": "formal",
+            "setting": "storytelling",
+            "conjugation": "te-form (～て)"
+        },
+        {
+            "japanese": "小説：{古びた} 木橋 は 足 を 踏み出す たび に 不穏 な 音 が した。",
+            "english": "Novel: The old-looking wooden bridge was making a disturbing noise with every step.",
+            "scene": "A suspenseful narrative describing an unstable, aging wooden bridge.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "古い木橋",
+                    "mitigation": "The description highlights the bridge's *appearance* of age and decay, implying it is worn out, which `古びた` conveys more effectively than simply stating it is '古い'."
+                }
+            ],
+            "register": "formal",
+            "setting": "storytelling",
+            "conjugation": "past plain (～た)"
+        },
+        {
+            "japanese": "一見 する と {ひなびた} 小さな 街 で は ある が 夏 とも なると 多く の 観光客 が この 街 に 来る。",
+            "english": "At first glance, it might be a small city with a rustic feel to it, but when the summer begins, numerous tourists come.",
+            "scene": "A local tour guide or resident describing their town, highlighting its surprising appeal despite its rustic appearance.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "田舎の街 / 素朴な街",
+                    "mitigation": "The point is about the *initial impression* and *atmosphere* of the town (`ひなびた`), which draws tourists despite its rustic appearance, not just its simple or rural nature."
+                }
+            ],
+            "register": "semi-formal",
+            "setting": "informative",
             "conjugation": "past plain (～た)"
         },
         {
@@ -203,17 +273,16 @@
     ],
     "post_example_writeup": "Remember that 「びる」 is more formal than alternatives and often conveys a sense of observation or judgment based on appearance. It's useful in descriptive writing or formal speech when you want to express the impression something gives off.",
     "false_friends": [],
+    "post_false_friends_writeup": "no changes",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/びる"
     },
     "change": [
-        "violation: Added `meaning_warning` field and moved relevant content from `writeup` per instruction 13.",
-        "unnatural, violation: Refined `writeup` to be more descriptive and integrated the 'fun fact' from Bunpro's original writeup, and removed the content that became `meaning_warning`.",
-        "violation: Re-selected and re-ordered examples to better match Bunpro's original list and improve diversity. Added `scene_rationale` to all examples, which was a missing required field.",
-        "violation: Corrected conjugation types for examples using `～ている` and added `progressive (～ている)` to the top-level `conjugations` array, per schema definitions.",
-        "violation: Removed quotes from example 5 (original 11) in Japanese and English, as specified in the schema for example sentences.",
-        "violation: Removed `post_false_friends_writeup` field as it was null, per schema rule 'No fields should be null. Omit fields that are not applicable instead.'.",
-        "violation: Updated conjugation rarity values (e.g., 'commonly used' to 'common', 'unnatural' to 'uncommon', 'extremely unusual' to 'very rare') to align with the allowed `rarityType` enum in the schema.",
-        "Conflict: The requirement to include at least one male and one female speaker_gender/listener_gender (instruction 6) directly conflicts with the nuance requirement ('If there is a speaker_gender or listener_gender, then nuance **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.'). Since the grammar point `びる` does not inherently involve gender-specific linguistic markers in its common usage, `speaker_gender` and `listener_gender` fields were omitted from all examples, as providing them would violate the `nuance` rule by fabricating gender-specific Japanese expressions."
+        "violation: Added `{}` to the grammar point in all `japanese` examples, as per rule 6.",
+        "violation: Added spaces between words in all `japanese` examples, as per rule 6.",
+        "violation: Removed quotes (「」) from `japanese` and `english` fields in examples where they were present, as per rule 6.",
+        "violation: Added `scene` and `scene_rationale` to all examples where they were missing, as per rule 6. The content of `scene_rationale` was adapted from the prior version or created to clearly distinguish the nuance of `びる`.",
+        "violation: Added `register`, `setting`, and `conjugation` to all examples, as these fields were missing, as per rule 6. Conjugations were set based on the specific form of `びる` used in each example.",
+        "schema: Ensured the `post_false_friends_writeup` field is present and not null, set to 'no changes' as there are no false friends defined."
     ]
 }

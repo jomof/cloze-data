@@ -98,7 +98,7 @@
         "romaji": "ni suru"
     },
     "formation": {
-        "[Noun] + に + する": "To decide on something, to make something into something else, or to view something as something."
+        "[Noun] + に + する": "To decide on something, to make something into something else, or to view something as."
     },
     "jlpt": "N5",
     "meaning": "To decide on, to choose, to make something into, to view something as.",
@@ -305,6 +305,7 @@
         "schema: Added 'scene_rationale' field to all examples (Ex1 through Ex11). The schema mandates this field when a 'scene' is present, which was missing in the prior version.",
         "unnatural: Removed 'speaker_age' field from Ex3 and Ex6. These instances lacked specific Japanese phrasing in the 'nuance' section to justify the age distinction, making their inclusion arbitrary and not minimally modifying the output.",
         "violation: Modified Japanese in Ex9 from '君' (N3 Kanji) to 'あなた' (N4 Kanji) and updated the associated 'nuance'. This change was necessary to comply with the JLPT Kanji rule for N5 grammar points, which specifies that example sentences should only use Kanji from N5, N4, or N3 lists. While '君' is N3, 'あなた' is N4 and also typically used by males in this context, aligning better with the intent of the example without violating the JLPT Kanji levels for an N5 grammar point more stringently.",
-        "violation: Modified Japanese in Ex11 from '僕' (N1 Kanji) and '君' (N3 Kanji) to '私' (N5 Kanji) and 'あなた' (N4 Kanji) respectively, and updated the 'nuance'. The 'speaker_gender', 'listener_gender', and 'speaker_age' fields were removed as the Japanese phrasing became gender-neutral. This was done to comply with the JLPT Kanji rule for N5 grammar points and to adhere to the rule 'You must not embed hints about the speaker's gender in 'english' or 'japanese'. Put that here, in 'speaker_gender'.'"
+        "violation: Modified Japanese in Ex11 from '僕' (N1 Kanji) and '君' (N3 Kanji) to '私' (N5 Kanji) and 'あなた' (N4 Kanji) respectively, and updated the 'nuance'. The 'speaker_gender', 'listener_gender', and 'speaker_age' fields were removed as the Japanese phrasing became gender-neutral. This was done to comply with the JLPT Kanji rule for N5 grammar points and to adhere to the rule 'You must not embed hints about the speaker's gender in 'english' or 'japanese'. Put that here, in 'speaker_gender'.'",
+        "violation: Removed 'speaker_gender' and 'listener_gender' from Example 11. The Japanese phrase '私 は あなた を 元気 に {する} こと が できる。' is gender-neutral, and the 'nuance' provided does not offer linguistic justification for these gender specifications, violating the rule that these fields should only be specified if the gender actually matters in the context of the spoken Japanese."
     ]
 }

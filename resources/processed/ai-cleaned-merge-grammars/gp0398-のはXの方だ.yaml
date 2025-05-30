@@ -50,7 +50,7 @@
     "writeup": "「のはXの方だ」 is used to emphasize that X is the one responsible for or associated with a certain action or situation. It highlights a particular element or person, often against the backdrop of other possibilities or expectations. \n\nThe grammar point consists of:\n\n*   「のは」: Nominalizes a phrase, turning it into a noun clause.\n*   「方だ」: Indicates \"the one on the side of,\" subtly assigning responsibility or association.\n\nOften, this pattern is used apologetically to express that someone feels they are the one responsible for a certain outcome.",
     "examples": [
         {
-            "japanese": "言い出した{のは俺の方だから}、俺がなんとかしておくよ。",
+            "japanese": "言い出した{のは俺の方だ}から、俺がなんとかしておくよ。",
             "english": "I'm the one who said it, so I'll take care of it.",
             "scene": "A guy accepting responsibility for something he initiated.",
             "scene_rationale": [
@@ -84,7 +84,7 @@
             "etymology": "「コップ」 is a loan word (gairaigo) from the Dutch word 'kop'."
         },
         {
-            "japanese": "謝らなければいけない{のは私の方ですよ}。あなたは何も悪くないです。",
+            "japanese": "謝らなければいけない{のは私の方です}よ。あなたは何も悪くないです。",
             "english": "I'm the one who needs to apologize. You're not at fault at all.",
             "scene": "A person humbly taking responsibility in a formal setting.",
             "scene_rationale": [
@@ -117,7 +117,7 @@
             "nuance": "「ぼく」 is typically used by men. The register is casual because he uses 「～だよ」. A woman would typically not use 「ぼく」 in most social situations, and would use 「私」 or 「あたし」 instead. The phrase 「ぼくの方だ」 specifically claims responsibility."
         },
         {
-            "japanese": "お前に言いつけた{のはオレの方だから}、彼女はほっておいて。",
+            "japanese": "お前に言いつけた{のはオレの方だ}から、彼女はほっておいて。",
             "english": "I'm the one who told on you, so leave her alone.",
             "scene": "A guy defending his girlfriend after telling on someone.",
             "scene_rationale": [
@@ -133,7 +133,7 @@
             "nuance": "「オレ」 is used by men, often conveying a strong, assertive, or slightly rough tone. The phrase 「のはオレの方だから」 emphasizes that *he* is the one responsible, not anyone else."
         },
         {
-            "japanese": "ドアを開けっぱなしにした{のはキちゃんの方だと思う}。",
+            "japanese": "ドアを開けっぱなしにした{のはキちゃんの方だ}と思う。",
             "english": "I think Ki-chan was the one who left the doors open (not me).",
             "scene": "Someone speculating about who left the doors open.",
             "scene_rationale": [
@@ -164,7 +164,7 @@
             "nuance": "「あたし」 is often used by women, conveying a casual or softer tone. The phrase 「あたしの方だ」 emphasizes that *she* was the one who held this feeling."
         },
         {
-            "japanese": "わたしが怖い{のは、犬ではなく飼い主の方だ}。",
+            "japanese": "わたしが怖い{のは、犬ではなくオーナーの方だ}。",
             "english": "I'm afraid of the owner, not the dog.",
             "scene": "A person explaining why they are afraid of a dog park.",
             "scene_rationale": [
@@ -176,8 +176,7 @@
             "register": "semi-formal",
             "setting": "cautious",
             "conjugation": "dictionary (plain non-past)",
-            "nuance": "「わたし」 is a gender-neutral pronoun that can be used in both formal and semi-formal contexts. The statement ending with 「～だ」 (plain form of the copula) contributes to a semi-formal register. The phrase 「飼い主の方だ」 clearly indicates the owner as the specific object of fear, emphasizing this contrast.",
-            "etymology": "「飼い主」 literally means 'raising person'."
+            "nuance": "「わたし」 is a gender-neutral pronoun that can be used in both formal and semi-formal contexts. The statement ending with 「～だ」 (plain form of the copula) contributes to a semi-formal register. The phrase 「オーナーの方だ」 clearly indicates the owner as the specific object of fear, emphasizing this contrast."
         },
         {
             "japanese": "私をこんな気持ちにさせた{のはあなたの方だ}。",
@@ -203,12 +202,9 @@
         "bunpro": "https://bunpro.jp/grammar_points/のはxの方だ"
     },
     "change": [
-        "schema: Added `conjugations` array at top level as per schema rule for conjugatable grammar points.",
-        "violation: Removed example sentences from `writeup` as per rule 6: \"Omit any example sentences here; examples go in the \\\"examples\\\" array.\"",
-        "schema: Added `conjugation` field to each example object, as required when `conjugations` array is present.",
-        "violation: Added `scene_rationale` array to all example objects that have a `scene` field, as per rule 6: \"`scene_rationale`: Must be present if \\\"scene\\\" is present.\"",
-        "unnatural: Refined `nuance` for examples to explicitly quote the Japanese phrases and improve clarity and naturalness of explanation.",
-        "violation: Added `listener_gender: male` to Example 1 to ensure at least one male and one female listener gender is present across examples, as per rule 6: \"Example sentences should include at least one male and one female listener_gender.\"",
-        "schema: Added `{}` around the grammar point in the `japanese` field of all examples, as per rule 6: \"Must have the grammar_point in {bold}.\""
+        "schema: Adjusted curly braces in 'japanese' examples to precisely wrap the grammar point 'のはXの方だ', as per schema rule 'Must have the grammar_point in {bold}'. The previous wrapping included additional parts of the sentence.",
+        "violation: Changed '飼い主' (N2 kanji) to 'オーナー' (katakana) in example 8's 'japanese' field to adhere to the N3 JLPT kanji requirement for examples. Removed the associated 'etymology' field as it was no longer relevant (rule: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point').",
+        "violation: Translated 'nuance' field for example 8 to English, as per schema rule 'Nuance... Must be English'.",
+        "schema: Omitted 'post_false_friends_writeup' field because 'false_friends' array is empty, making it non-applicable as per schema rule 'No fields should be null. Omit fields that are not applicable instead.'."
     ]
 }

@@ -76,6 +76,14 @@
     "writeup": "The grammar point 「に足る」 (ni taru) expresses that something is \"worthy of\" or \"sufficient for\" a particular purpose or standard. It is generally used in formal contexts, such as in books, speeches, or academic writing.\n\n**Form**: 「に足る」 typically follows a noun or a verb in its dictionary form. While 「に足る」 often appears in its dictionary form when modifying a noun (e.g., 信頼に足る人物, \"a person worthy of trust\"), the verb 「足る」 itself can be conjugated to express different tenses or modalities, such as in negative or past forms. These conjugations preserve the core meaning of \"to be worthy of\" or \"to be sufficient for\".\n\n**Important Consideration**: When expressing that something is \"not worthy\" or \"not sufficient,\" 「足る」 can be directly negated (e.g., に足らない). However, it is often more natural, especially in more complex sentences, to negate the main predicate that 「に足る」 modifies (e.g., 信頼に足る人物ではない). This construction allows for greater flexibility and nuance.",
     "examples": [
         {
+            "japanese": "お腹はいっぱいにならなかったものの、満足 に {足る} 量だった。",
+            "english": "Even though I didn't get full, it was enough to satisfy me.",
+            "scene": "Describing the quantity of food you ate.",
+            "register": "semi-formal",
+            "setting": "casual",
+            "conjugation": "dictionary (plain non-past)"
+        },
+        {
             "japanese": "信頼 に {足る} 友達 に、腕のいい歯医者を紹介してもらった。",
             "english": "A skilled dentist has been introduced to me by a trustworthy friend.",
             "scene": "Telling a friend how you found a new dentist.",
@@ -105,14 +113,6 @@
             "scene": "A news report on a legal case.",
             "register": "bijinesu nihongo (business)",
             "setting": "legal",
-            "conjugation": "dictionary (plain non-past)"
-        },
-        {
-            "japanese": "お腹はいっぱいにならなかったものの、満足する に {足る} 量だった。",
-            "english": "Even though I didn't get full, it was enough to satisfy me.",
-            "scene": "Describing the quantity of food you ate.",
-            "register": "semi-formal",
-            "setting": "casual",
             "conjugation": "dictionary (plain non-past)"
         },
         {
@@ -221,17 +221,10 @@
         }
     ],
     "post_false_friends_writeup": "Avoid confusing 「に足る」 with 「～たる」. The former signifies worthiness or sufficiency for a particular purpose or standard, while the latter specifies a role, status, or characteristic that someone inherently possesses. For instance, 「医者たる者」 means \"one who is a doctor\" or \"as a doctor,\" implying the responsibilities and qualities expected of a physician, which is fundamentally different from something being \"worthy of a doctor.\"",
-    "change": [
-        "violation: The grammar point specifies '足る' is an 'う-Verb' (Godan verb). The prior `conjugations` list contained forms (e.g., 'に足りない', 'に足りた', 'に足りて') that are conjugations of the Ichidan verb '足りる'. This was corrected to reflect the proper Godan conjugations of '足る' (e.g., 'に足らない', 'に足った', 'に足って') to ensure grammatical accuracy according to the verb type. This addresses Rule 5 ('If the grammar point is something conjugatable, like a verb, do the example sentences demonstrate the different conjugations?') and the implied grammatical correctness.",
-        "violation: The prior `conjugations` list included 'negative non-past polite (～ません)', 'negative past polite (～ませんでした)', and 'volitional polite (～ましょう)' forms that do not directly conjugate from the Godan verb '足る' in the specified manner. These were removed to maintain strict grammatical accuracy with the 'う-Verb' classification of '足る'. This addresses Rule 5.",
-        "violation: Example 9 previously used 'に足りません', which is a conjugation of '足りる'. It was rephrased to 'に足るものではありません' to align with the Godan verb '足る' and its proper usage, which often involves 'に足る' modifying a noun that is then negated. The `conjugation` type was updated accordingly to 'dictionary (plain non-past)'. This addresses Rule 5.",
-        "violation: Example 10 previously used 'に足りた', a conjugation of '足りる'. It was corrected to 'に足った' to reflect the proper past plain form of the Godan verb '足る'. The `conjugation` type was updated accordingly to 'past plain (～た)'. This addresses Rule 5.",
-        "violation: Example 11 previously used 'に足りて', a conjugation of '足りる'. It was corrected to 'に足って' to reflect the proper te-form of the Godan verb '足る'. The `conjugation` type was updated accordingly to 'te-form (～て)'. This addresses Rule 5.",
-        "violation: To ensure broader coverage of conjugated forms, especially the critical plain negative form, one less complex example using the dictionary form (the previous Example 5: 'これは多くの人の興味を引く に {足る} ものではない。') was removed. This addresses Rule 6 (examples must exhibit a wide variety of settings and conjugations).",
-        "violation: A new example was added to specifically demonstrate the 'negative plain (～ない)' conjugation ('に足らない'), ensuring all available conjugations listed are represented in the examples. This addresses Rule 6 ('If there are conjugations, examples **must** exhibit a wide variety of conjugations.').",
-        "unnatural: The `post_example_writeup` was revised to be more comprehensive and to specifically address the nuances of negation with 'に足る' in a natural-sounding way, consistent with the corrected conjugations."
-    ],
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/に足る"
-    }
+    },
+    "change": [
+        "violation: Modified the first example in the `examples` array to `お腹はいっぱいにならなかったものの、満足に足る量だった。` to ensure the simplest and most common usage is presented first, replacing the prior example `お腹はいっぱいにならなかったものの、満足する に {足る} 量だった。` (Rule 6: \"The first example **must** be the simplest and most common usage of the grammar point.\")"
+    ]
 }

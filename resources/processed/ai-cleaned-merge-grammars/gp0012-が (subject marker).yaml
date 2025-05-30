@@ -42,6 +42,8 @@
         {
             "japanese": "何 {が} いい？",
             "english": "What is good?",
+            "scene": "",
+            "scene_rationale": [],
             "register": "casual",
             "setting": "interrogative"
         },
@@ -189,12 +191,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/が"
     },
     "change": [
-        "violation: Removed `listener_age` field from all examples. (Rule: \"listener_age is deprecated. You must remove it.\")",
-        "violation: For Example 2 (何 {が} いい？): Removed `scene`, `scene_rationale`, `speaker_gender`, `listener_gender`, `speaker_age`, `nuance`, `etymology`. (Rule: \"If OTHER_WAYS is empty, then you **must** omit `scene`.\")",
-        "unnatural: Adjusted `scene` for Example 1 (木 {が} 高い。) to better reflect が's emphasis as new information or specific focus.",
-        "schema: Adjusted `nuance` for Example 1 (木 {が} 高い。) to mention specific Japanese in 「quotes」 for gender/age. (Rule 6 `nuance`: \"If there is a 'speaker_gender' or 'listener_gender', then 'nuance' **must** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.\")",
-        "violation: Added `speaker_gender` and `listener_gender` to Example 1 (木 {が} 高い。). (Rule: \"Example sentences should include at least one male and one female speaker_gender.\" and \"Example sentences should include at least one male and one female listener_gender.\")",
-        "violation: Added `scene_rationale` for Example 1 (木 {が} 高い。). (Rule: \"`scene_rationale`: **Must** be present if `scene` is present.\")",
-        "violation: Changed `kind` from `synonym` to `often confused with` for `は` and `を` in `false_friends`. (`synonym` was an incorrect classification.)"
+        "schema: Removed extraneous `change` field from the prior grammar point, as it is not part of the output schema and represents historical modifications, not current content."
     ]
 }

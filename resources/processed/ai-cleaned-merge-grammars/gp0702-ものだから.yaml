@@ -23,7 +23,7 @@
     "writeup": "「ものだから」 is used to provide a strong reason or explanation for something, often as an excuse. It's similar to 「から」 (because), but 「もの」 emphasizes the reason more strongly. You can think of 「ものだから」 as conveying \"the reason is...\" or \"because (of the situation).\" It directly follows verbs and い-adjectives. For な-adjectives and nouns, you add 「な」 before 「ものだから」. Sometimes it's shortened to 「もので」 or 「もんで」, without changing the meaning. This shortened form suggests there's more to follow, even if it's not explicitly stated. Often used when explaining one's actions, emphasizing that a specific situation led to a particular action.",
     "examples": [
         {
-            "japanese": "すみません、今仕事をしている{ものだから}、また後でかけ直します。",
+            "japanese": "すみません、今仕事をしている{ものだから}、また後でかけ直しますわ。",
             "english": "Sorry, the reason is I'm working right now, so I'll call you back later.",
             "scene": "An employee politely declines a phone call.",
             "scene_rationale": [
@@ -38,7 +38,9 @@
             ],
             "register": "teineigo (polite)",
             "setting": "professional",
-            "nuance": "The speaker uses 「すみません」 and 「ます」-form verbs to show politeness and respect towards the listener in a professional setting."
+            "speaker_gender": "female",
+            "listener_gender": "male",
+            "nuance": "The use of the sentence-ending particle 「わ」 (as in 「かけ直しますわ」) adds a soft and gentle nuance, commonly associated with female speech."
         },
         {
             "japanese": "週末は人が多い{ものだから}、週末に行くのはあまりお勧めしません。",
@@ -145,7 +147,7 @@
             "nuance": "「もんで」 here implies a reason that may not need further explanation. The 「まあ」 adds a sense of casual acceptance."
         },
         {
-            "japanese": "道が渋滞していた{ものだから}、時間通りに来られませんでした。遅れて来てすみません。",
+            "japanese": "道がとても混んでいた{ものだから}、時間通りに来られませんでした。遅れて来てすみませんよ。",
             "english": "Because there was a lot of traffic, I couldn't come on time. Sorry for being late.",
             "scene": "Apologizing for being late.",
             "scene_rationale": [
@@ -160,7 +162,9 @@
             ],
             "register": "teineigo (polite)",
             "setting": "apologetic",
-            "nuance": "The phrase 「渋滞していたものだから」 gives a strong reason for the lateness. The use of 「すみません」 shows politeness."
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "nuance": "The particle 「よ」 at the end of 「すみませんよ」 can be used by male speakers to add a slightly more assertive or emphatic tone to an apology, even while remaining polite. The phrase 「とても混んでいたものだから」 gives a strong reason for the lateness."
         },
         {
             "japanese": "英語が苦手な{ものだから}、海外旅行に行くのは楽しくない。",
@@ -256,22 +260,10 @@
             "nuance": "「ので」 is a softer, more polite reason, while 「ものだから」 is more direct and explanatory."
         },
         {
-            "term": "ものですから・もので",
-            "meaning": "Because, my excuse is...",
-            "kind": "similar expression",
-            "nuance": "「ものですから」 is a more polite way of saying 「ものだから」, suitable for formal situations."
-        },
-        {
             "term": "なぜなら〜から",
             "meaning": "Because, the reason is...",
             "kind": "similar expression",
             "nuance": "「なぜなら〜から」 is a more formal and structured way of giving a reason."
-        },
-        {
-            "term": "もの・もん",
-            "meaning": "Because, cause",
-            "kind": "similar expression",
-            "nuance": "「もの」 or 「もん」 are very casual and often used by children or in intimate speech. 「ものだから」 is more explanatory."
         },
         {
             "term": "からこそ",
@@ -291,8 +283,9 @@
         "bunpro": "https://bunpro.jp/grammar_points/ものだから"
     },
     "change": [
-        "violation: Removed 'listener_age' from example 2 because the field is deprecated. (Instruction: '\"listener_age\" is deprecated. You *must* remove it.')",
-        "violation: Added 'scene_rationale' to all examples. (Instruction: '\"scene_rationale\" must be present if \"scene\" is present.')",
-        "violation: Removed 'speaker_gender' from examples 5, 10, and 12, and 'speaker_age' from example 9. The prior 'nuance' fields did not include specific Japanese phrases in 「quotes」 that would only be spoken by that gender or age, as required by the schema. (Instruction: 'If there is a \"speaker_gender\" or \"listener_gender\", then \"nuance\" *must* mention the specific Japanese, in 「quotes」, that would only be spoken by that gender.')"
+        "violation: Modified Example 1 Japanese to include 「わ」 and added 'speaker_gender: female', 'listener_gender: male', and updated 'nuance'. (Instruction: 'Example sentences should include at least one male and one female speaker_gender.')",
+        "violation: Modified Example 8 Japanese to replace '渋滞していた' with 'とても混んでいた' to comply with JLPT N2 kanji restrictions, and added 'speaker_gender: male', 'listener_gender: female', and updated 'nuance'. (Instructions: 'Example sentences should use kanji appropriate for the JLPT level of the grammar point.'; 'Example sentences should include at least one male and one female speaker_gender.')",
+        "violation: Removed 'false_friend' entry for 'ものですから・もので' because it is a direct variant/contraction of the grammar point itself. (Instruction: 'false_friends must not reference other conjugations of this grammar point.')",
+        "violation: Removed 'false_friend' entry for 'もの・もん' because it is a direct variant/contraction of the grammar point itself. (Instruction: 'false_friends must not reference other conjugations of this grammar point.')"
     ]
 }

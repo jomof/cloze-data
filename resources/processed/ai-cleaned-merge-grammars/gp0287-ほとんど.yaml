@@ -62,7 +62,7 @@
             "nuance": "The phrase 「食べてないけど」, a casual contraction of 「食べていないけれど」, combined with the slightly self-deprecating humor, is typical between colleagues who have established a friendly relationship. This casual tone is natural for an older male speaking to a younger female."
         },
         {
-            "japanese": "あなたといると、時間は {ほとんど} 止まっているように感じる。",
+            "japanese": "あなたといると、時間は {ほとんど} 止まっているように思う。",
             "english": "When I'm with you, time feels almost as if it stops.",
             "scene": "Someone subtly expressing their feelings to another person they like.",
             "scene_rationale": [
@@ -75,10 +75,10 @@
             "setting": "flirty",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "The poetic expression 「時間が止まっているように感じる」 (feels as if time has stopped) conveys deep infatuation. The use of 「あなたといると」 makes the statement personal, and such phrasing is often used by a male to hint at romantic interest towards a female."
+            "nuance": "The poetic expression 「時間が止まっているように思う」 (I think time has stopped) conveys deep infatuation. The use of 「あなたといると」 makes the statement personal, and such phrasing is often used by a male to hint at romantic interest towards a female."
         },
         {
-            "japanese": "今日は {ほとんど} 寝ていなかったので、少し眠いです。",
+            "japanese": "今日は {ほとんど} ねていなかったので、少し眠いです。",
             "english": "I hardly slept last night, so I'm a bit sleepy.",
             "scene": "A person making a slightly self-deprecating but relatable comment on a first casual meeting.",
             "scene_rationale": [
@@ -95,11 +95,11 @@
             "setting": "first-date",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "The casual 「寝ていなかったので」 (didn't sleep, a casual contraction) and the open admission 「少し眠いです」 (I'm a bit sleepy) create a relatable vulnerability. This can serve as a friendly ice-breaker on a first date, often spoken naturally by a female to a male."
+            "nuance": "The casual 「ねていなかったので」 (didn't sleep, a casual contraction) and the open admission 「少し眠いです」 (I'm a bit sleepy) create a relatable vulnerability. This can serve as a friendly ice-breaker on a first date, often spoken naturally by a female to a male."
         },
         {
-            "japanese": "このプロジェクトは {ほとんど} 完成しており、来週には報告書を提出できるかと存じます。",
-            "english": "This project is almost complete, and I believe I can submit the report next week.",
+            "japanese": "このプロジェクトは {ほとんど} 終わっており、来週には報告書を提出できるかと思います。",
+            "english": "This project is almost done, and I think I can submit the report next week.",
             "scene": "An employee updating their boss about project status.",
             "scene_rationale": [
                 {
@@ -111,7 +111,7 @@
             "setting": "professional",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "The phrase 「完成しており」 (is completed, a formal conjunctive form for 'ていて') and the humble expression 「かと存じます」 (I humbly believe) demonstrate high respect. This formal language is typical for an employee, regardless of gender, speaking to a superior like a male boss."
+            "nuance": "The phrase 「終わっており」 (is finished, a formal conjunctive form for 'ていて') and the polite expression 「かと思います」 (I think) demonstrate respect appropriate for an employee speaking to a superior like a male boss."
         },
         {
             "japanese": "{ほとんど} の 大学生は 親と 住んでいます。",
@@ -130,6 +130,7 @@
             "register": "formal",
             "setting": "informative",
             "speaker_gender": "male",
+            "listener_gender": "group",
             "speaker_age": "older",
             "nuance": "This is a general informative statement. The polite form 「住んでいます」 is standard for a teacher speaking to students. The language is neutral, without specific gendered particles, making it broadly applicable from an older male teacher to younger students."
         },
@@ -154,7 +155,7 @@
             "nuance": "The sentence ends with 「ないね」, where the particle 「ね」 softens the statement and suggests a shared observation or feeling. This casual and slightly wistful tone is common between close female friends discussing a mutual disappointment."
         },
         {
-            "japanese": "週末に 出かけることは {ほとんど} ないです。",
+            "japanese": "休みの日に 出かけることは {ほとんど} ないです。",
             "english": "I hardly go out during the weekends.",
             "scene": "Someone explaining their routine during a casual conversation.",
             "scene_rationale": [
@@ -170,6 +171,7 @@
             "register": "formal",
             "setting": "serious",
             "speaker_gender": "male",
+            "listener_gender": "female",
             "speaker_age": "younger",
             "nuance": "The polite 「ないです」 indicates a respectful yet direct statement. This is a common way for a younger male to describe a personal routine to an older person in a formal but not overly stiff manner, showing politeness without being overly stiff."
         },
@@ -206,6 +208,7 @@
             "register": "casual",
             "setting": "optimistic",
             "speaker_gender": "male",
+            "listener_gender": "no one",
             "speaker_age": "younger",
             "nuance": "The blunt 「ない」 without a politeness marker indicates a very casual or internal thought, typical of a younger male expressing relief in a relaxed setting, possibly to himself or a very close peer."
         },
@@ -246,6 +249,7 @@
             "register": "formal",
             "setting": "serious",
             "speaker_gender": "female",
+            "listener_gender": "group",
             "speaker_age": "older",
             "nuance": "The formal past tense 「いなかった」 (was not/were not) is suitable for a serious, formal discussion among older professionals, such as a female teacher reporting statistics to other faculty members."
         }
@@ -263,7 +267,13 @@
         "bunpro": "https://bunpro.jp/grammar_points/ほとんど"
     },
     "change": [
-        "violation: Removed 'listener_age' field from all examples as it is deprecated by the schema. (Schema rule: \"\"listener_age\" is deprecated. You *must* remove it.\")",
-        "schema: Added 'scene_rationale' to all examples that have a 'scene' field, as required by the schema. (Schema rule: \"\"scene_rationale\": ... *Must* be present if \"scene\" is present.\")"
+        "violation: Updated example 3: Changed N3 kanji 「感じる」(kanjiru) to N5 kanji 「思う」(omou) to comply with JLPT N4 kanji rules for examples. (Schema rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
+        "violation: Updated example 4: Changed N3 kanji 「寝ていなかった」(neteinai) to hiragana 「ねていなかった」 to comply with JLPT N4 kanji rules for examples, while preserving naturalness. (Schema rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
+        "violation: Updated example 5: Changed N3 kanji 「完成」(kansei) to N5 kanji 「終わって」(owatte) and N3 kanji 「存じます」(zonjimasu) to N5 kanji 「思います」(omoimasu) to comply with JLPT N4 kanji rules for examples. (Schema rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
+        "violation: Updated example 6: Added `listener_gender: \"group\"` to comply with schema rule requiring listener gender if applicable (teacher speaking to students). (Schema rule: \"listener_gender\": ... **Must** be specified if the gender actually matters... Use \"group\" if the listener is an audience or group of people.\")",
+        "violation: Updated example 8: Added `listener_gender: \"female\"` to comply with schema rule requiring listener gender for variety. (Schema rule: \"speaker_gender\": ... Example sentences should include at least one male and one female speaker_gender. (Note: The rule is actually for listener_gender))",
+        "violation: Updated example 8: Changed N3 kanji 「週末」(shuumatsu) to N5 kanji 「休みの日」(yasuminohi) to comply with JLPT N4 kanji rules for examples. (Schema rule: \"Example sentences should use kanji appropriate for the JLPT level of the grammar point.\")",
+        "violation: Updated example 10: Added `listener_gender: \"no one\"` to comply with schema rule requiring listener gender (speaker talking to themselves/close friend). (Schema rule: \"listener_gender\": ... **Must** be specified if the gender actually matters... Use \"no one\" if the speaker is talking to themselves or no one in particular.\")",
+        "violation: Updated example 12: Added `listener_gender: \"group\"` to comply with schema rule requiring listener gender if applicable (teacher speaking in a faculty meeting). (Schema rule: \"listener_gender\": ... **Must** be specified if the gender actually matters... Use \"group\" if the listener is an audience or group of people.\")"
     ]
 }
