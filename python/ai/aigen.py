@@ -1,17 +1,40 @@
 import logging
+import time
 from google.genai import types
 from google import genai
-import time
 import python.gcp
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
+# Attempt to use color logging if available
+try:
+    import colorlog
+    COLORLOG_AVAILABLE = True
+except ImportError:
+    COLORLOG_AVAILABLE = False
 
-def aigen(prompt: str, model: str, retries: int = 10, backoff_seconds: int = 60) -> str:
+# Configure module-level logger
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# Console handler with optional color
+if COLORLOG_AVAILABLE:
+    console_handler = colorlog.StreamHandler()
+    console_handler.setFormatter(colorlog.ColoredFormatter(
+        "%(log_color)s%(asctime)s - %(levelname)s - %(message)s"
+    ))
+else:
+    console_handler = logging.StreamHandler()
+    console_handler.setFormatter(logging.Formatter(
+        "%(asctime)s - %(levelname)s - %(message)s"
+    ))
+logger.addHandler(console_handler)
+
+def aigen(
+    prompt: str,
+    model: str,
+    log_file: str,
+    retries: int = 10,
+    backoff_seconds: int = 60,
+) -> str:
     """
     Generate AI content using specified Gemini 2.5 model with retry logic.
 
@@ -20,6 +43,7 @@ def aigen(prompt: str, model: str, retries: int = 10, backoff_seconds: int = 60)
         model: Gemini 2.5 model identifier (e.g., 'gemini-2.5-flash-preview-05-20')
         retries: Maximum number of retry attempts
         backoff_seconds: Seconds to wait between retries
+        log_file: Path to a log file. Logs will also be written to this file.
 
     Returns:
         Generated text content
@@ -28,21 +52,38 @@ def aigen(prompt: str, model: str, retries: int = 10, backoff_seconds: int = 60)
         ValueError: If model is not a Gemini 2.5 variant
         Exception: If generation fails after all retries
     """
-    for attempt in range(retries):
-        try:
+    file_handler = None
+    if log_file:
+        file_handler = logging.FileHandler(log_file)
+        file_handler.setFormatter(logging.Formatter(
+            "%(asctime)s - %(levelname)s - %(message)s"
+        ))
+        logger.addHandler(file_handler)
+
+    try:
+        for attempt in range(retries):
             logger.info(f"Attempt {attempt + 1}/{retries} generating content with model {model}")
             if not model.startswith("gemini-2.5"):
-                raise ValueError(f"Unsupported model: '{model}'. Only Gemini 2.5 models are supported.")
+                raise ValueError(
+                    f"Unsupported model: '{model}'. Only Gemini 2.5 models are supported."
+                )
             return generate_gemini_2_5(model, prompt)
-        except Exception as e:
-            if "RESOURCE_EXHAUSTED" in str(e):
-                logger.warning(f"Resource exhausted, sleeping for {backoff_seconds}s before retry")
-                time.sleep(backoff_seconds)
-            else:
-                logger.error(f"Generation failed with error: {e}")
-                raise
+    except Exception as e:
+        if "RESOURCE_EXHAUSTED" in str(e):
+            logger.warning(
+                f"Resource exhausted, sleeping for {backoff_seconds}s before retry"
+            )
+            time.sleep(backoff_seconds)
+        else:
+            logger.error(f"Generation failed with error: {e}")
+            raise
+    finally:
+        if file_handler:
+            logger.removeHandler(file_handler)
 
-    raise Exception(f"Failed to generate content after {retries} retries")
+    raise Exception(
+        f"Failed to generate content after {retries} retries"
+    )
 
 def generate_gemini_2_5(model_name: str, prompt: str) -> str:
     """
@@ -62,7 +103,6 @@ def generate_gemini_2_5(model_name: str, prompt: str) -> str:
         location=python.gcp.LOCATION
     )
 
-    # Configure content generation settings
     contents = [
         types.Content(
             role="user",

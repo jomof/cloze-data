@@ -7,7 +7,7 @@ from python.ai import aigen
 from python.utils.build_cache.memoize.memoize import memoize_to_disk
 import os
 
-def ai_clean(data, bazel_target, grammar_schema, prior_grammar_point):
+def ai_clean(data, bazel_target, grammar_schema, prior_grammar_point, output_file):
     data = yaml.safe_load(data)
 
     prior_input_prelog = ""
@@ -175,7 +175,8 @@ def ai_clean(data, bazel_target, grammar_schema, prior_grammar_point):
     
     for i in range(6):
       try:
-        response = memoize_to_disk(bazel_target, aigen, prompt + str(i), model)
+        log_file = f"{output_file}.log"
+        response = memoize_to_disk(bazel_target, aigen, prompt + str(i), model, log_file)
         response = response.removeprefix("```json").removesuffix("\n").removesuffix("```")
         response = repair_json(response)
         json_response = json.loads(response)
@@ -214,12 +215,12 @@ def main(input_file, output_file, bazel_target, grammar_schema_file, prior_versi
         data = file.read()
     with open(grammar_schema_file, 'r', encoding='utf-8') as file:
         grammar_schema = file.read() 
-    result,prompt = ai_clean(data, bazel_target, grammar_schema, prior_version)
+    result,prompt = ai_clean(data, bazel_target, grammar_schema, prior_version, output_file)
 
     with open(output_file, 'w', encoding='utf-8') as file:
         file.write(result)
 
-    with open(output_file + ".txt", 'w', encoding='utf-8') as file:
+    with open(output_file + ".prompt", 'w', encoding='utf-8') as file:
         file.write(prompt)
 
 if __name__ == '__main__':
