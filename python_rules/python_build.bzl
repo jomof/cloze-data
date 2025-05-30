@@ -65,6 +65,7 @@ def _py_build_tool_stream_impl(ctx):
                 if f in src.basename:
                     return True
             return False
+
         srcs = [src for src in srcs if matches_any_filter(src)]
 
     outs = []
@@ -116,14 +117,15 @@ py_build_tool_stream = rule(
         "data": attr.label_list(allow_files = True, default = []),
         "deps": attr.label_list(allow_files = True, default = []),
         "extension": attr.string(default = ""),
+        "filter": attr.string_list(
+            # TODO: implement filtering by basename
+            default = [],
+            doc = "List of strings to filter srcs by whether their basename contains one of the filter strings. If empty, no filtering is applied.",
+        ),
         "pass_target_name": attr.bool(default = False),
         "script": attr.label(allow_single_file = True),
         "srcs": attr.label_list(allow_files = True),
         "tool": attr.label(allow_files = True, executable = True, cfg = "exec"),
         "top": attr.int(default = 0),  # if >0, only process first N srcs
-        "filter": attr.string_list( # TODO: implement filtering by basename
-            default = [],
-            doc = "List of strings to filter srcs by whether their basename contains one of the filter strings. If empty, no filtering is applied.",
-        ),
     },
 )

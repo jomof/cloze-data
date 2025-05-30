@@ -7,94 +7,6 @@ manifest:
   modules_mapping:
     MeCab: mecab_python3
     MeCab.cli: mecab_python3
-    PIL: pillow
-    PIL.BdfFontFile: pillow
-    PIL.BlpImagePlugin: pillow
-    PIL.BmpImagePlugin: pillow
-    PIL.BufrStubImagePlugin: pillow
-    PIL.ContainerIO: pillow
-    PIL.CurImagePlugin: pillow
-    PIL.DcxImagePlugin: pillow
-    PIL.DdsImagePlugin: pillow
-    PIL.EpsImagePlugin: pillow
-    PIL.ExifTags: pillow
-    PIL.FitsImagePlugin: pillow
-    PIL.FliImagePlugin: pillow
-    PIL.FontFile: pillow
-    PIL.FpxImagePlugin: pillow
-    PIL.FtexImagePlugin: pillow
-    PIL.GbrImagePlugin: pillow
-    PIL.GdImageFile: pillow
-    PIL.GifImagePlugin: pillow
-    PIL.GimpGradientFile: pillow
-    PIL.GimpPaletteFile: pillow
-    PIL.GribStubImagePlugin: pillow
-    PIL.Hdf5StubImagePlugin: pillow
-    PIL.IcnsImagePlugin: pillow
-    PIL.IcoImagePlugin: pillow
-    PIL.ImImagePlugin: pillow
-    PIL.Image: pillow
-    PIL.ImageChops: pillow
-    PIL.ImageCms: pillow
-    PIL.ImageColor: pillow
-    PIL.ImageDraw: pillow
-    PIL.ImageDraw2: pillow
-    PIL.ImageEnhance: pillow
-    PIL.ImageFile: pillow
-    PIL.ImageFilter: pillow
-    PIL.ImageFont: pillow
-    PIL.ImageGrab: pillow
-    PIL.ImageMath: pillow
-    PIL.ImageMode: pillow
-    PIL.ImageMorph: pillow
-    PIL.ImageOps: pillow
-    PIL.ImagePalette: pillow
-    PIL.ImagePath: pillow
-    PIL.ImageQt: pillow
-    PIL.ImageSequence: pillow
-    PIL.ImageShow: pillow
-    PIL.ImageStat: pillow
-    PIL.ImageTk: pillow
-    PIL.ImageTransform: pillow
-    PIL.ImageWin: pillow
-    PIL.ImtImagePlugin: pillow
-    PIL.IptcImagePlugin: pillow
-    PIL.Jpeg2KImagePlugin: pillow
-    PIL.JpegImagePlugin: pillow
-    PIL.JpegPresets: pillow
-    PIL.McIdasImagePlugin: pillow
-    PIL.MicImagePlugin: pillow
-    PIL.MpegImagePlugin: pillow
-    PIL.MpoImagePlugin: pillow
-    PIL.MspImagePlugin: pillow
-    PIL.PSDraw: pillow
-    PIL.PaletteFile: pillow
-    PIL.PalmImagePlugin: pillow
-    PIL.PcdImagePlugin: pillow
-    PIL.PcfFontFile: pillow
-    PIL.PcxImagePlugin: pillow
-    PIL.PdfImagePlugin: pillow
-    PIL.PdfParser: pillow
-    PIL.PixarImagePlugin: pillow
-    PIL.PngImagePlugin: pillow
-    PIL.PpmImagePlugin: pillow
-    PIL.PsdImagePlugin: pillow
-    PIL.QoiImagePlugin: pillow
-    PIL.SgiImagePlugin: pillow
-    PIL.SpiderImagePlugin: pillow
-    PIL.SunImagePlugin: pillow
-    PIL.TarIO: pillow
-    PIL.TgaImagePlugin: pillow
-    PIL.TiffImagePlugin: pillow
-    PIL.TiffTags: pillow
-    PIL.WalImageFile: pillow
-    PIL.WebPImagePlugin: pillow
-    PIL.WmfImagePlugin: pillow
-    PIL.XVThumbImagePlugin: pillow
-    PIL.XbmImagePlugin: pillow
-    PIL.XpmImagePlugin: pillow
-    PIL.features: pillow
-    PIL.report: pillow
     annotated_types: annotated_types
     annotated_types.test_cases: annotated_types
     anyio: anyio
@@ -109,6 +21,7 @@ manifest:
     anyio.streams.stapled: anyio
     anyio.streams.text: anyio
     anyio.streams.tls: anyio
+    anyio.to_interpreter: anyio
     anyio.to_process: anyio
     anyio.to_thread: anyio
     apiclient: google_api_python_client
@@ -132,6 +45,8 @@ manifest:
     bs4.dammit: beautifulsoup4
     bs4.diagnose: beautifulsoup4
     bs4.element: beautifulsoup4
+    bs4.exceptions: beautifulsoup4
+    bs4.filter: beautifulsoup4
     bs4.formatter: beautifulsoup4
     cachetools: cachetools
     cachetools.func: cachetools
@@ -179,6 +94,7 @@ manifest:
     deprecated.sphinx: Deprecated
     distro: distro
     distro.distro: distro
+    docs.conf: google_cloud_audit_log
     docstring_parser: docstring_parser
     docstring_parser.attrdoc: docstring_parser
     docstring_parser.common: docstring_parser
@@ -225,6 +141,7 @@ manifest:
     google.ai.generativelanguage_v1.services.generative_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1.services.generative_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1.services.generative_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1.services.generative_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1.services.model_service: google_ai_generativelanguage
     google.ai.generativelanguage_v1.services.model_service.async_client: google_ai_generativelanguage
     google.ai.generativelanguage_v1.services.model_service.client: google_ai_generativelanguage
@@ -234,6 +151,7 @@ manifest:
     google.ai.generativelanguage_v1.services.model_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1.services.model_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1.services.model_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1.services.model_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1.types: google_ai_generativelanguage
     google.ai.generativelanguage_v1.types.citation: google_ai_generativelanguage
     google.ai.generativelanguage_v1.types.content: google_ai_generativelanguage
@@ -241,6 +159,114 @@ manifest:
     google.ai.generativelanguage_v1.types.model: google_ai_generativelanguage
     google.ai.generativelanguage_v1.types.model_service: google_ai_generativelanguage
     google.ai.generativelanguage_v1.types.safety: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.gapic_version: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.cache_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.cache_service.async_client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.cache_service.client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.cache_service.pagers: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.cache_service.transports: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.cache_service.transports.base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.cache_service.transports.grpc: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.cache_service.transports.grpc_asyncio: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.cache_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.cache_service.transports.rest_base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.discuss_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.discuss_service.async_client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.discuss_service.client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.discuss_service.transports: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.discuss_service.transports.base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.discuss_service.transports.grpc: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.discuss_service.transports.grpc_asyncio: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.discuss_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.discuss_service.transports.rest_base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.file_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.file_service.async_client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.file_service.client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.file_service.pagers: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.file_service.transports: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.file_service.transports.base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.file_service.transports.grpc: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.file_service.transports.grpc_asyncio: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.file_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.file_service.transports.rest_base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.generative_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.generative_service.async_client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.generative_service.client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.generative_service.transports: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.generative_service.transports.base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.generative_service.transports.grpc: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.generative_service.transports.grpc_asyncio: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.generative_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.generative_service.transports.rest_base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.model_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.model_service.async_client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.model_service.client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.model_service.pagers: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.model_service.transports: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.model_service.transports.base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.model_service.transports.grpc: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.model_service.transports.grpc_asyncio: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.model_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.model_service.transports.rest_base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.permission_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.permission_service.async_client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.permission_service.client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.permission_service.pagers: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.permission_service.transports: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.permission_service.transports.base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.permission_service.transports.grpc: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.permission_service.transports.grpc_asyncio: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.permission_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.permission_service.transports.rest_base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.prediction_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.prediction_service.async_client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.prediction_service.client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.prediction_service.transports: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.prediction_service.transports.base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.prediction_service.transports.grpc: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.prediction_service.transports.grpc_asyncio: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.prediction_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.prediction_service.transports.rest_base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.retriever_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.retriever_service.async_client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.retriever_service.client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.retriever_service.pagers: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.retriever_service.transports: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.retriever_service.transports.base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.retriever_service.transports.grpc: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.retriever_service.transports.grpc_asyncio: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.retriever_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.retriever_service.transports.rest_base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.text_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.text_service.async_client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.text_service.client: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.text_service.transports: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.text_service.transports.base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.text_service.transports.grpc: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.text_service.transports.grpc_asyncio: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.text_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.services.text_service.transports.rest_base: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.cache_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.cached_content: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.citation: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.content: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.discuss_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.file: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.file_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.generative_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.model: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.model_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.permission: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.permission_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.prediction_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.retriever: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.retriever_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.safety: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.text_service: google_ai_generativelanguage
+    google.ai.generativelanguage_v1alpha.types.tuned_model: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.gapic_version: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services: google_ai_generativelanguage
@@ -253,6 +279,7 @@ manifest:
     google.ai.generativelanguage_v1beta.services.cache_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.cache_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.cache_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1beta.services.cache_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.discuss_service: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.discuss_service.async_client: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.discuss_service.client: google_ai_generativelanguage
@@ -261,6 +288,7 @@ manifest:
     google.ai.generativelanguage_v1beta.services.discuss_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.discuss_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.discuss_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1beta.services.discuss_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.file_service: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.file_service.async_client: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.file_service.client: google_ai_generativelanguage
@@ -270,6 +298,7 @@ manifest:
     google.ai.generativelanguage_v1beta.services.file_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.file_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.file_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1beta.services.file_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.generative_service: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.generative_service.async_client: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.generative_service.client: google_ai_generativelanguage
@@ -278,6 +307,7 @@ manifest:
     google.ai.generativelanguage_v1beta.services.generative_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.generative_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.generative_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1beta.services.generative_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.model_service: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.model_service.async_client: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.model_service.client: google_ai_generativelanguage
@@ -287,6 +317,7 @@ manifest:
     google.ai.generativelanguage_v1beta.services.model_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.model_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.model_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1beta.services.model_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.permission_service: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.permission_service.async_client: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.permission_service.client: google_ai_generativelanguage
@@ -296,6 +327,7 @@ manifest:
     google.ai.generativelanguage_v1beta.services.permission_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.permission_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.permission_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1beta.services.permission_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.prediction_service: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.prediction_service.async_client: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.prediction_service.client: google_ai_generativelanguage
@@ -304,6 +336,7 @@ manifest:
     google.ai.generativelanguage_v1beta.services.prediction_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.prediction_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.prediction_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1beta.services.prediction_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.retriever_service: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.retriever_service.async_client: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.retriever_service.client: google_ai_generativelanguage
@@ -313,6 +346,7 @@ manifest:
     google.ai.generativelanguage_v1beta.services.retriever_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.retriever_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.retriever_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1beta.services.retriever_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.text_service: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.text_service.async_client: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.text_service.client: google_ai_generativelanguage
@@ -321,6 +355,7 @@ manifest:
     google.ai.generativelanguage_v1beta.services.text_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.text_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.services.text_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1beta.services.text_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.types: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.types.cache_service: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta.types.cached_content: google_ai_generativelanguage
@@ -351,6 +386,7 @@ manifest:
     google.ai.generativelanguage_v1beta2.services.discuss_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta2.services.discuss_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta2.services.discuss_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1beta2.services.discuss_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta2.services.model_service: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta2.services.model_service.async_client: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta2.services.model_service.client: google_ai_generativelanguage
@@ -360,6 +396,7 @@ manifest:
     google.ai.generativelanguage_v1beta2.services.model_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta2.services.model_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta2.services.model_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1beta2.services.model_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta2.services.text_service: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta2.services.text_service.async_client: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta2.services.text_service.client: google_ai_generativelanguage
@@ -368,6 +405,7 @@ manifest:
     google.ai.generativelanguage_v1beta2.services.text_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta2.services.text_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta2.services.text_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1beta2.services.text_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta2.types: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta2.types.citation: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta2.types.discuss_service: google_ai_generativelanguage
@@ -386,6 +424,7 @@ manifest:
     google.ai.generativelanguage_v1beta3.services.discuss_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.discuss_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.discuss_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1beta3.services.discuss_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.model_service: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.model_service.async_client: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.model_service.client: google_ai_generativelanguage
@@ -395,6 +434,7 @@ manifest:
     google.ai.generativelanguage_v1beta3.services.model_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.model_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.model_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1beta3.services.model_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.permission_service: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.permission_service.async_client: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.permission_service.client: google_ai_generativelanguage
@@ -404,6 +444,7 @@ manifest:
     google.ai.generativelanguage_v1beta3.services.permission_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.permission_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.permission_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1beta3.services.permission_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.text_service: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.text_service.async_client: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.text_service.client: google_ai_generativelanguage
@@ -412,6 +453,7 @@ manifest:
     google.ai.generativelanguage_v1beta3.services.text_service.transports.grpc: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.text_service.transports.grpc_asyncio: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.services.text_service.transports.rest: google_ai_generativelanguage
+    google.ai.generativelanguage_v1beta3.services.text_service.transports.rest_base: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.types: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.types.citation: google_ai_generativelanguage
     google.ai.generativelanguage_v1beta3.types.discuss_service: google_ai_generativelanguage
@@ -458,6 +500,7 @@ manifest:
     google.api_core: google_api_core
     google.api_core.bidi: google_api_core
     google.api_core.client_info: google_api_core
+    google.api_core.client_logging: google_api_core
     google.api_core.client_options: google_api_core
     google.api_core.datetime_helpers: google_api_core
     google.api_core.exceptions: google_api_core
@@ -480,20 +523,26 @@ manifest:
     google.api_core.operation: google_api_core
     google.api_core.operation_async: google_api_core
     google.api_core.operations_v1: google_api_core
+    google.api_core.operations_v1.abstract_operations_base_client: google_api_core
     google.api_core.operations_v1.abstract_operations_client: google_api_core
     google.api_core.operations_v1.operations_async_client: google_api_core
     google.api_core.operations_v1.operations_client: google_api_core
     google.api_core.operations_v1.operations_client_config: google_api_core
+    google.api_core.operations_v1.operations_rest_client_async: google_api_core
     google.api_core.operations_v1.pagers: google_api_core
+    google.api_core.operations_v1.pagers_async: google_api_core
+    google.api_core.operations_v1.pagers_base: google_api_core
     google.api_core.operations_v1.transports: google_api_core
     google.api_core.operations_v1.transports.base: google_api_core
     google.api_core.operations_v1.transports.rest: google_api_core
+    google.api_core.operations_v1.transports.rest_asyncio: google_api_core
     google.api_core.page_iterator: google_api_core
     google.api_core.page_iterator_async: google_api_core
     google.api_core.path_template: google_api_core
     google.api_core.protobuf_helpers: google_api_core
     google.api_core.rest_helpers: google_api_core
     google.api_core.rest_streaming: google_api_core
+    google.api_core.rest_streaming_async: google_api_core
     google.api_core.retry: google_api_core
     google.api_core.retry.retry_base: google_api_core
     google.api_core.retry.retry_streaming: google_api_core
@@ -506,6 +555,11 @@ manifest:
     google.api_core.version: google_api_core
     google.api_core.version_header: google_api_core
     google.auth: google_auth
+    google.auth.aio: google_auth
+    google.auth.aio.credentials: google_auth
+    google.auth.aio.transport: google_auth
+    google.auth.aio.transport.aiohttp: google_auth
+    google.auth.aio.transport.sessions: google_auth
     google.auth.api_key: google_auth
     google.auth.app_engine: google_auth
     google.auth.aws: google_auth
@@ -625,6 +679,7 @@ manifest:
     google.cloud.aiplatform.prediction.sklearn.predictor: google_cloud_aiplatform
     google.cloud.aiplatform.prediction.xgboost: google_cloud_aiplatform
     google.cloud.aiplatform.prediction.xgboost.predictor: google_cloud_aiplatform
+    google.cloud.aiplatform.preview.datasets: google_cloud_aiplatform
     google.cloud.aiplatform.preview.featurestore.entity_type: google_cloud_aiplatform
     google.cloud.aiplatform.preview.jobs: google_cloud_aiplatform
     google.cloud.aiplatform.preview.models: google_cloud_aiplatform
@@ -842,6 +897,8 @@ manifest:
     google.cloud.aiplatform_v1.services.dataset_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.dataset_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.dataset_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.dataset_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.dataset_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.deployment_resource_pool_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.deployment_resource_pool_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.deployment_resource_pool_service.client: google_cloud_aiplatform
@@ -851,6 +908,8 @@ manifest:
     google.cloud.aiplatform_v1.services.deployment_resource_pool_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.deployment_resource_pool_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.deployment_resource_pool_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.deployment_resource_pool_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.deployment_resource_pool_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.endpoint_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.endpoint_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.endpoint_service.client: google_cloud_aiplatform
@@ -860,6 +919,18 @@ manifest:
     google.cloud.aiplatform_v1.services.endpoint_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.endpoint_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.endpoint_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.endpoint_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.endpoint_service.transports.rest_base: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.evaluation_service: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.evaluation_service.async_client: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.evaluation_service.client: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.evaluation_service.transports: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.evaluation_service.transports.base: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.evaluation_service.transports.grpc: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.evaluation_service.transports.grpc_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.evaluation_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.evaluation_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.evaluation_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.feature_online_store_admin_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.feature_online_store_admin_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.feature_online_store_admin_service.client: google_cloud_aiplatform
@@ -869,6 +940,8 @@ manifest:
     google.cloud.aiplatform_v1.services.feature_online_store_admin_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.feature_online_store_admin_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.feature_online_store_admin_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.feature_online_store_admin_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.feature_online_store_admin_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.feature_online_store_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.feature_online_store_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.feature_online_store_service.client: google_cloud_aiplatform
@@ -877,6 +950,8 @@ manifest:
     google.cloud.aiplatform_v1.services.feature_online_store_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.feature_online_store_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.feature_online_store_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.feature_online_store_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.feature_online_store_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.feature_registry_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.feature_registry_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.feature_registry_service.client: google_cloud_aiplatform
@@ -886,6 +961,8 @@ manifest:
     google.cloud.aiplatform_v1.services.feature_registry_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.feature_registry_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.feature_registry_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.feature_registry_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.feature_registry_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.featurestore_online_serving_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.featurestore_online_serving_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.featurestore_online_serving_service.client: google_cloud_aiplatform
@@ -894,6 +971,8 @@ manifest:
     google.cloud.aiplatform_v1.services.featurestore_online_serving_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.featurestore_online_serving_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.featurestore_online_serving_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.featurestore_online_serving_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.featurestore_online_serving_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.featurestore_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.featurestore_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.featurestore_service.client: google_cloud_aiplatform
@@ -903,6 +982,19 @@ manifest:
     google.cloud.aiplatform_v1.services.featurestore_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.featurestore_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.featurestore_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.featurestore_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.featurestore_service.transports.rest_base: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.gen_ai_cache_service: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.gen_ai_cache_service.async_client: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.gen_ai_cache_service.client: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.gen_ai_cache_service.pagers: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.gen_ai_cache_service.transports: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.gen_ai_cache_service.transports.base: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.gen_ai_cache_service.transports.grpc: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.gen_ai_cache_service.transports.grpc_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.gen_ai_cache_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.gen_ai_cache_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.gen_ai_cache_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.gen_ai_tuning_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.gen_ai_tuning_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.gen_ai_tuning_service.client: google_cloud_aiplatform
@@ -912,6 +1004,8 @@ manifest:
     google.cloud.aiplatform_v1.services.gen_ai_tuning_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.gen_ai_tuning_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.gen_ai_tuning_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.gen_ai_tuning_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.gen_ai_tuning_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.index_endpoint_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.index_endpoint_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.index_endpoint_service.client: google_cloud_aiplatform
@@ -921,6 +1015,8 @@ manifest:
     google.cloud.aiplatform_v1.services.index_endpoint_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.index_endpoint_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.index_endpoint_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.index_endpoint_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.index_endpoint_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.index_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.index_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.index_service.client: google_cloud_aiplatform
@@ -930,6 +1026,8 @@ manifest:
     google.cloud.aiplatform_v1.services.index_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.index_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.index_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.index_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.index_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.job_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.job_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.job_service.client: google_cloud_aiplatform
@@ -939,6 +1037,8 @@ manifest:
     google.cloud.aiplatform_v1.services.job_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.job_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.job_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.job_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.job_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.llm_utility_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.llm_utility_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.llm_utility_service.client: google_cloud_aiplatform
@@ -947,6 +1047,8 @@ manifest:
     google.cloud.aiplatform_v1.services.llm_utility_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.llm_utility_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.llm_utility_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.llm_utility_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.llm_utility_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.match_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.match_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.match_service.client: google_cloud_aiplatform
@@ -955,6 +1057,8 @@ manifest:
     google.cloud.aiplatform_v1.services.match_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.match_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.match_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.match_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.match_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.metadata_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.metadata_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.metadata_service.client: google_cloud_aiplatform
@@ -964,6 +1068,8 @@ manifest:
     google.cloud.aiplatform_v1.services.metadata_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.metadata_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.metadata_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.metadata_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.metadata_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.migration_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.migration_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.migration_service.client: google_cloud_aiplatform
@@ -973,6 +1079,8 @@ manifest:
     google.cloud.aiplatform_v1.services.migration_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.migration_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.migration_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.migration_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.migration_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.model_garden_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.model_garden_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.model_garden_service.client: google_cloud_aiplatform
@@ -981,6 +1089,8 @@ manifest:
     google.cloud.aiplatform_v1.services.model_garden_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.model_garden_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.model_garden_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.model_garden_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.model_garden_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.model_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.model_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.model_service.client: google_cloud_aiplatform
@@ -990,6 +1100,8 @@ manifest:
     google.cloud.aiplatform_v1.services.model_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.model_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.model_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.model_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.model_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.notebook_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.notebook_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.notebook_service.client: google_cloud_aiplatform
@@ -999,6 +1111,8 @@ manifest:
     google.cloud.aiplatform_v1.services.notebook_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.notebook_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.notebook_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.notebook_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.notebook_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.persistent_resource_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.persistent_resource_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.persistent_resource_service.client: google_cloud_aiplatform
@@ -1008,6 +1122,8 @@ manifest:
     google.cloud.aiplatform_v1.services.persistent_resource_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.persistent_resource_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.persistent_resource_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.persistent_resource_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.persistent_resource_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.pipeline_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.pipeline_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.pipeline_service.client: google_cloud_aiplatform
@@ -1017,6 +1133,8 @@ manifest:
     google.cloud.aiplatform_v1.services.pipeline_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.pipeline_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.pipeline_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.pipeline_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.pipeline_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.prediction_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.prediction_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.prediction_service.client: google_cloud_aiplatform
@@ -1025,6 +1143,29 @@ manifest:
     google.cloud.aiplatform_v1.services.prediction_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.prediction_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.prediction_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.prediction_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.prediction_service.transports.rest_base: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_execution_service: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_execution_service.async_client: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_execution_service.client: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_execution_service.transports: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_execution_service.transports.base: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_execution_service.transports.grpc: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_execution_service.transports.grpc_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_execution_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_execution_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_execution_service.transports.rest_base: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_service: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_service.async_client: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_service.client: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_service.pagers: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_service.transports: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_service.transports.base: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_service.transports.grpc: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_service.transports.grpc_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.reasoning_engine_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.schedule_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.schedule_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.schedule_service.client: google_cloud_aiplatform
@@ -1034,6 +1175,8 @@ manifest:
     google.cloud.aiplatform_v1.services.schedule_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.schedule_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.schedule_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.schedule_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.schedule_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.specialist_pool_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.specialist_pool_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.specialist_pool_service.client: google_cloud_aiplatform
@@ -1043,6 +1186,8 @@ manifest:
     google.cloud.aiplatform_v1.services.specialist_pool_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.specialist_pool_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.specialist_pool_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.specialist_pool_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.specialist_pool_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.tensorboard_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.tensorboard_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.tensorboard_service.client: google_cloud_aiplatform
@@ -1052,6 +1197,29 @@ manifest:
     google.cloud.aiplatform_v1.services.tensorboard_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.tensorboard_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.tensorboard_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.tensorboard_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.tensorboard_service.transports.rest_base: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_data_service: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_data_service.async_client: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_data_service.client: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_data_service.pagers: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_data_service.transports: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_data_service.transports.base: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_data_service.transports.grpc: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_data_service.transports.grpc_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_data_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_data_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_data_service.transports.rest_base: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_service: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_service.async_client: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_service.client: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_service.transports: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_service.transports.base: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_service.transports.grpc: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_service.transports.grpc_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vertex_rag_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.vizier_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.vizier_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.vizier_service.client: google_cloud_aiplatform
@@ -1061,12 +1229,16 @@ manifest:
     google.cloud.aiplatform_v1.services.vizier_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.vizier_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1.services.vizier_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vizier_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.services.vizier_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.accelerator_type: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.annotation: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.annotation_spec: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.types.api_auth: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.artifact: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.batch_prediction_job: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.types.cached_content: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.completion_stats: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.content: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.context: google_cloud_aiplatform
@@ -1086,6 +1258,7 @@ manifest:
     google.cloud.aiplatform_v1.types.entity_type: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.env_var: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.evaluated_annotation: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.types.evaluation_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.event: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.execution: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.explanation: google_cloud_aiplatform
@@ -1104,6 +1277,7 @@ manifest:
     google.cloud.aiplatform_v1.types.featurestore_monitoring: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.featurestore_online_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.featurestore_service: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.types.gen_ai_cache_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.genai_tuning_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.hyperparameter_tuning_job: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.index: google_cloud_aiplatform
@@ -1133,10 +1307,12 @@ manifest:
     google.cloud.aiplatform_v1.types.nas_job: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.network_spec: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.notebook_euc_config: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.types.notebook_execution_job: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.notebook_idle_shutdown_config: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.notebook_runtime: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.notebook_runtime_template_ref: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.notebook_service: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.types.notebook_software_config: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.openapi: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.operation: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.persistent_resource: google_cloud_aiplatform
@@ -1147,6 +1323,10 @@ manifest:
     google.cloud.aiplatform_v1.types.pipeline_state: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.prediction_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.publisher_model: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.types.reasoning_engine: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.types.reasoning_engine_execution_service: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.types.reasoning_engine_service: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.types.reservation_affinity: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.saved_query: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.schedule: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.schedule_service: google_cloud_aiplatform
@@ -1167,6 +1347,9 @@ manifest:
     google.cloud.aiplatform_v1.types.unmanaged_container_model: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.user_action_reference: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.value: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.types.vertex_rag_data: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.types.vertex_rag_data_service: google_cloud_aiplatform
+    google.cloud.aiplatform_v1.types.vertex_rag_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1.types.vizier_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.gapic_version: google_cloud_aiplatform
@@ -1180,6 +1363,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.dataset_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.dataset_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.dataset_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.dataset_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.dataset_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.deployment_resource_pool_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.deployment_resource_pool_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.deployment_resource_pool_service.client: google_cloud_aiplatform
@@ -1189,6 +1374,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.deployment_resource_pool_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.deployment_resource_pool_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.deployment_resource_pool_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.deployment_resource_pool_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.deployment_resource_pool_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.endpoint_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.endpoint_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.endpoint_service.client: google_cloud_aiplatform
@@ -1198,6 +1385,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.endpoint_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.endpoint_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.endpoint_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.endpoint_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.endpoint_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.evaluation_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.evaluation_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.evaluation_service.client: google_cloud_aiplatform
@@ -1206,6 +1395,19 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.evaluation_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.evaluation_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.evaluation_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.evaluation_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.evaluation_service.transports.rest_base: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.example_store_service: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.example_store_service.async_client: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.example_store_service.client: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.example_store_service.pagers: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.example_store_service.transports: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.example_store_service.transports.base: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.example_store_service.transports.grpc: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.example_store_service.transports.grpc_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.example_store_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.example_store_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.example_store_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.extension_execution_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.extension_execution_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.extension_execution_service.client: google_cloud_aiplatform
@@ -1214,6 +1416,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.extension_execution_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.extension_execution_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.extension_execution_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.extension_execution_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.extension_execution_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.extension_registry_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.extension_registry_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.extension_registry_service.client: google_cloud_aiplatform
@@ -1223,6 +1427,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.extension_registry_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.extension_registry_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.extension_registry_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.extension_registry_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.extension_registry_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.feature_online_store_admin_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.feature_online_store_admin_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.feature_online_store_admin_service.client: google_cloud_aiplatform
@@ -1232,6 +1438,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.feature_online_store_admin_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.feature_online_store_admin_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.feature_online_store_admin_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.feature_online_store_admin_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.feature_online_store_admin_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.feature_online_store_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.feature_online_store_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.feature_online_store_service.client: google_cloud_aiplatform
@@ -1240,6 +1448,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.feature_online_store_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.feature_online_store_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.feature_online_store_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.feature_online_store_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.feature_online_store_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.feature_registry_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.feature_registry_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.feature_registry_service.client: google_cloud_aiplatform
@@ -1249,6 +1459,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.feature_registry_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.feature_registry_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.feature_registry_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.feature_registry_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.feature_registry_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service.client: google_cloud_aiplatform
@@ -1257,6 +1469,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.featurestore_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.featurestore_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.featurestore_service.client: google_cloud_aiplatform
@@ -1266,6 +1480,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.featurestore_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.featurestore_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.featurestore_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.featurestore_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.featurestore_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.gen_ai_cache_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.gen_ai_cache_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.gen_ai_cache_service.client: google_cloud_aiplatform
@@ -1275,6 +1491,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.gen_ai_cache_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.gen_ai_cache_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.gen_ai_cache_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.gen_ai_cache_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.gen_ai_cache_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.gen_ai_tuning_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.gen_ai_tuning_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.gen_ai_tuning_service.client: google_cloud_aiplatform
@@ -1284,6 +1502,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.gen_ai_tuning_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.gen_ai_tuning_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.gen_ai_tuning_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.gen_ai_tuning_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.gen_ai_tuning_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.index_endpoint_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.index_endpoint_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.index_endpoint_service.client: google_cloud_aiplatform
@@ -1293,6 +1513,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.index_endpoint_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.index_endpoint_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.index_endpoint_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.index_endpoint_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.index_endpoint_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.index_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.index_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.index_service.client: google_cloud_aiplatform
@@ -1302,6 +1524,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.index_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.index_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.index_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.index_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.index_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.job_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.job_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.job_service.client: google_cloud_aiplatform
@@ -1311,6 +1535,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.job_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.job_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.job_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.job_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.job_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.llm_utility_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.llm_utility_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.llm_utility_service.client: google_cloud_aiplatform
@@ -1319,6 +1545,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.llm_utility_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.llm_utility_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.llm_utility_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.llm_utility_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.llm_utility_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.match_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.match_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.match_service.client: google_cloud_aiplatform
@@ -1327,6 +1555,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.match_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.match_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.match_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.match_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.match_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.metadata_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.metadata_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.metadata_service.client: google_cloud_aiplatform
@@ -1336,6 +1566,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.metadata_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.metadata_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.metadata_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.metadata_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.metadata_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.migration_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.migration_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.migration_service.client: google_cloud_aiplatform
@@ -1345,6 +1577,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.migration_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.migration_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.migration_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.migration_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.migration_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.model_garden_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.model_garden_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.model_garden_service.client: google_cloud_aiplatform
@@ -1354,6 +1588,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.model_garden_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.model_garden_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.model_garden_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.model_garden_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.model_garden_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.model_monitoring_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.model_monitoring_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.model_monitoring_service.client: google_cloud_aiplatform
@@ -1363,6 +1599,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.model_monitoring_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.model_monitoring_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.model_monitoring_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.model_monitoring_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.model_monitoring_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.model_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.model_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.model_service.client: google_cloud_aiplatform
@@ -1372,6 +1610,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.model_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.model_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.model_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.model_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.model_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.notebook_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.notebook_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.notebook_service.client: google_cloud_aiplatform
@@ -1381,6 +1621,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.notebook_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.notebook_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.notebook_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.notebook_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.notebook_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.persistent_resource_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.persistent_resource_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.persistent_resource_service.client: google_cloud_aiplatform
@@ -1390,6 +1632,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.persistent_resource_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.persistent_resource_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.persistent_resource_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.persistent_resource_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.persistent_resource_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.pipeline_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.pipeline_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.pipeline_service.client: google_cloud_aiplatform
@@ -1399,6 +1643,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.pipeline_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.pipeline_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.pipeline_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.pipeline_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.pipeline_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.prediction_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.prediction_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.prediction_service.client: google_cloud_aiplatform
@@ -1407,6 +1653,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.prediction_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.prediction_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.prediction_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.prediction_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.prediction_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.reasoning_engine_execution_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.reasoning_engine_execution_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.reasoning_engine_execution_service.client: google_cloud_aiplatform
@@ -1415,6 +1663,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.reasoning_engine_execution_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.reasoning_engine_execution_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.reasoning_engine_execution_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.reasoning_engine_execution_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.reasoning_engine_execution_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.reasoning_engine_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.reasoning_engine_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.reasoning_engine_service.client: google_cloud_aiplatform
@@ -1424,6 +1674,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.reasoning_engine_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.reasoning_engine_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.reasoning_engine_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.reasoning_engine_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.reasoning_engine_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.schedule_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.schedule_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.schedule_service.client: google_cloud_aiplatform
@@ -1433,6 +1685,19 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.schedule_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.schedule_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.schedule_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.schedule_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.schedule_service.transports.rest_base: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.session_service: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.session_service.async_client: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.session_service.client: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.session_service.pagers: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.session_service.transports: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.session_service.transports.base: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.session_service.transports.grpc: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.session_service.transports.grpc_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.session_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.session_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.session_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.specialist_pool_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.specialist_pool_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.specialist_pool_service.client: google_cloud_aiplatform
@@ -1442,6 +1707,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.specialist_pool_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.specialist_pool_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.specialist_pool_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.specialist_pool_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.specialist_pool_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.tensorboard_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.tensorboard_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.tensorboard_service.client: google_cloud_aiplatform
@@ -1451,6 +1718,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.tensorboard_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.tensorboard_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.tensorboard_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.tensorboard_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.tensorboard_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.vertex_rag_data_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.vertex_rag_data_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.vertex_rag_data_service.client: google_cloud_aiplatform
@@ -1460,6 +1729,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.vertex_rag_data_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.vertex_rag_data_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.vertex_rag_data_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.vertex_rag_data_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.vertex_rag_data_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.vertex_rag_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.vertex_rag_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.vertex_rag_service.client: google_cloud_aiplatform
@@ -1468,6 +1739,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.vertex_rag_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.vertex_rag_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.vertex_rag_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.vertex_rag_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.vertex_rag_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.vizier_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.vizier_service.async_client: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.vizier_service.client: google_cloud_aiplatform
@@ -1477,10 +1750,13 @@ manifest:
     google.cloud.aiplatform_v1beta1.services.vizier_service.transports.grpc: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.vizier_service.transports.grpc_asyncio: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.services.vizier_service.transports.rest: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.vizier_service.transports.rest_asyncio: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.services.vizier_service.transports.rest_base: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.accelerator_type: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.annotation: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.annotation_spec: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.types.api_auth: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.artifact: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.batch_prediction_job: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.cached_content: google_cloud_aiplatform
@@ -1505,6 +1781,9 @@ manifest:
     google.cloud.aiplatform_v1beta1.types.evaluated_annotation: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.evaluation_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.event: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.types.example: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.types.example_store: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.types.example_store_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.execution: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.explanation: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.explanation_metadata: google_cloud_aiplatform
@@ -1513,6 +1792,8 @@ manifest:
     google.cloud.aiplatform_v1beta1.types.extension_registry_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.feature: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.feature_group: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.types.feature_monitor: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.types.feature_monitor_job: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.feature_monitoring_stats: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.feature_online_store: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.feature_online_store_admin_service: google_cloud_aiplatform
@@ -1566,6 +1847,7 @@ manifest:
     google.cloud.aiplatform_v1beta1.types.notebook_runtime: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.notebook_runtime_template_ref: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.notebook_service: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.types.notebook_software_config: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.openapi: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.operation: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.persistent_resource: google_cloud_aiplatform
@@ -1579,10 +1861,13 @@ manifest:
     google.cloud.aiplatform_v1beta1.types.reasoning_engine: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.reasoning_engine_execution_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.reasoning_engine_service: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.types.reservation_affinity: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.saved_query: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.schedule: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.schedule_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.service_networking: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.types.session: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.types.session_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.specialist_pool: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.specialist_pool_service: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.study: google_cloud_aiplatform
@@ -1596,6 +1881,7 @@ manifest:
     google.cloud.aiplatform_v1beta1.types.training_pipeline: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.tuning_job: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.types: google_cloud_aiplatform
+    google.cloud.aiplatform_v1beta1.types.ui_pipeline_spec: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.unmanaged_container_model: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.user_action_reference: google_cloud_aiplatform
     google.cloud.aiplatform_v1beta1.types.value: google_cloud_aiplatform
@@ -1612,6 +1898,7 @@ manifest:
     google.cloud.appengine_logging_v1.types.request_log: google_cloud_appengine_logging
     google.cloud.audit: google_cloud_audit_log
     google.cloud.audit.audit_log_pb2: google_cloud_audit_log
+    google.cloud.audit.bigquery_audit_metadata_pb2: google_cloud_audit_log
     google.cloud.bigquery: google_cloud_bigquery
     google.cloud.bigquery.client: google_cloud_bigquery
     google.cloud.bigquery.dataset: google_cloud_bigquery
@@ -1731,6 +2018,7 @@ manifest:
     google.cloud.resourcemanager_v3.services.folders.transports.grpc: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.folders.transports.grpc_asyncio: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.folders.transports.rest: google_cloud_resource_manager
+    google.cloud.resourcemanager_v3.services.folders.transports.rest_base: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.organizations: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.organizations.async_client: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.organizations.client: google_cloud_resource_manager
@@ -1740,6 +2028,7 @@ manifest:
     google.cloud.resourcemanager_v3.services.organizations.transports.grpc: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.organizations.transports.grpc_asyncio: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.organizations.transports.rest: google_cloud_resource_manager
+    google.cloud.resourcemanager_v3.services.organizations.transports.rest_base: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.projects: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.projects.async_client: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.projects.client: google_cloud_resource_manager
@@ -1749,6 +2038,7 @@ manifest:
     google.cloud.resourcemanager_v3.services.projects.transports.grpc: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.projects.transports.grpc_asyncio: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.projects.transports.rest: google_cloud_resource_manager
+    google.cloud.resourcemanager_v3.services.projects.transports.rest_base: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_bindings: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_bindings.async_client: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_bindings.client: google_cloud_resource_manager
@@ -1758,6 +2048,7 @@ manifest:
     google.cloud.resourcemanager_v3.services.tag_bindings.transports.grpc: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_bindings.transports.grpc_asyncio: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_bindings.transports.rest: google_cloud_resource_manager
+    google.cloud.resourcemanager_v3.services.tag_bindings.transports.rest_base: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_holds: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_holds.async_client: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_holds.client: google_cloud_resource_manager
@@ -1767,6 +2058,7 @@ manifest:
     google.cloud.resourcemanager_v3.services.tag_holds.transports.grpc: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_holds.transports.grpc_asyncio: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_holds.transports.rest: google_cloud_resource_manager
+    google.cloud.resourcemanager_v3.services.tag_holds.transports.rest_base: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_keys: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_keys.async_client: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_keys.client: google_cloud_resource_manager
@@ -1776,6 +2068,7 @@ manifest:
     google.cloud.resourcemanager_v3.services.tag_keys.transports.grpc: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_keys.transports.grpc_asyncio: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_keys.transports.rest: google_cloud_resource_manager
+    google.cloud.resourcemanager_v3.services.tag_keys.transports.rest_base: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_values: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_values.async_client: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_values.client: google_cloud_resource_manager
@@ -1785,6 +2078,7 @@ manifest:
     google.cloud.resourcemanager_v3.services.tag_values.transports.grpc: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_values.transports.grpc_asyncio: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.services.tag_values.transports.rest: google_cloud_resource_manager
+    google.cloud.resourcemanager_v3.services.tag_values.transports.rest_base: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.types: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.types.folders: google_cloud_resource_manager
     google.cloud.resourcemanager_v3.types.organizations: google_cloud_resource_manager
@@ -1817,12 +2111,17 @@ manifest:
     google.genai.errors: google_genai
     google.genai.files: google_genai
     google.genai.live: google_genai
+    google.genai.live_music: google_genai
     google.genai.models: google_genai
+    google.genai.operations: google_genai
     google.genai.pagers: google_genai
+    google.genai.tokens: google_genai
     google.genai.tunings: google_genai
     google.genai.types: google_genai
+    google.genai.version: google_genai
     google.generativeai: google_generativeai
     google.generativeai.answer: google_generativeai
+    google.generativeai.audio_models: google_generativeai
     google.generativeai.caching: google_generativeai
     google.generativeai.client: google_generativeai
     google.generativeai.embedding: google_generativeai
@@ -1889,7 +2188,6 @@ manifest:
     google.generativeai.types.text_types: google_generativeai
     google.generativeai.utils: google_generativeai
     google.generativeai.version: google_generativeai
-    google.generativeai.vision_models: google_generativeai
     google.iam.v1: grpc_google_iam_v1
     google.iam.v1.iam_policy_pb2: grpc_google_iam_v1
     google.iam.v1.iam_policy_pb2_grpc: grpc_google_iam_v1
@@ -1899,6 +2197,7 @@ manifest:
     google.iam.v1.options_pb2_grpc: grpc_google_iam_v1
     google.iam.v1.policy_pb2: grpc_google_iam_v1
     google.iam.v1.policy_pb2_grpc: grpc_google_iam_v1
+    google.iam.v1.resource_policy_member_pb2: grpc_google_iam_v1
     google.logging.type.http_request_pb2: googleapis_common_protos
     google.logging.type.log_severity_pb2: googleapis_common_protos
     google.longrunning.operations_grpc: googleapis_common_protos
@@ -1920,6 +2219,7 @@ manifest:
     google.oauth2.webauthn_handler_factory: google_auth
     google.oauth2.webauthn_types: google_auth
     google.protobuf: protobuf
+    google.protobuf.any: protobuf
     google.protobuf.any_pb2: protobuf
     google.protobuf.api_pb2: protobuf
     google.protobuf.compiler: protobuf
@@ -1928,6 +2228,7 @@ manifest:
     google.protobuf.descriptor_database: protobuf
     google.protobuf.descriptor_pb2: protobuf
     google.protobuf.descriptor_pool: protobuf
+    google.protobuf.duration: protobuf
     google.protobuf.duration_pb2: protobuf
     google.protobuf.empty_pb2: protobuf
     google.protobuf.field_mask_pb2: protobuf
@@ -1941,6 +2242,7 @@ manifest:
     google.protobuf.internal.extension_dict: protobuf
     google.protobuf.internal.field_mask: protobuf
     google.protobuf.internal.message_listener: protobuf
+    google.protobuf.internal.python_edition_defaults: protobuf
     google.protobuf.internal.python_message: protobuf
     google.protobuf.internal.testing_refleaks: protobuf
     google.protobuf.internal.type_checkers: protobuf
@@ -1949,10 +2251,13 @@ manifest:
     google.protobuf.json_format: protobuf
     google.protobuf.message: protobuf
     google.protobuf.message_factory: protobuf
+    google.protobuf.proto: protobuf
     google.protobuf.proto_builder: protobuf
+    google.protobuf.proto_json: protobuf
     google.protobuf.pyext: protobuf
     google.protobuf.pyext.cpp_message: protobuf
     google.protobuf.reflection: protobuf
+    google.protobuf.runtime_version: protobuf
     google.protobuf.service: protobuf
     google.protobuf.service_reflection: protobuf
     google.protobuf.source_context_pb2: protobuf
@@ -1961,6 +2266,7 @@ manifest:
     google.protobuf.testdata: protobuf
     google.protobuf.text_encoding: protobuf
     google.protobuf.text_format: protobuf
+    google.protobuf.timestamp: protobuf
     google.protobuf.timestamp_pb2: protobuf
     google.protobuf.type_pb2: protobuf
     google.protobuf.unknown_fields: protobuf
@@ -2106,6 +2412,7 @@ manifest:
     json_repair.json_context: json_repair
     json_repair.json_parser: json_repair
     json_repair.json_repair: json_repair
+    json_repair.object_comparer: json_repair
     json_repair.string_file_wrapper: json_repair
     jsonschema: jsonschema
     jsonschema.benchmarks: jsonschema
@@ -2270,10 +2577,14 @@ manifest:
     numpy.version: numpy
     openai: openai
     openai.cli: openai
+    openai.helpers: openai
+    openai.helpers.local_audio_player: openai
+    openai.helpers.microphone: openai
     openai.lib: openai
     openai.lib.azure: openai
     openai.lib.streaming: openai
     openai.lib.streaming.chat: openai
+    openai.lib.streaming.responses: openai
     openai.pagination: openai
     openai.resources: openai
     openai.resources.audio: openai
@@ -2291,23 +2602,38 @@ manifest:
     openai.resources.beta.realtime: openai
     openai.resources.beta.realtime.realtime: openai
     openai.resources.beta.realtime.sessions: openai
+    openai.resources.beta.realtime.transcription_sessions: openai
     openai.resources.beta.threads: openai
     openai.resources.beta.threads.messages: openai
     openai.resources.beta.threads.runs: openai
     openai.resources.beta.threads.runs.runs: openai
     openai.resources.beta.threads.runs.steps: openai
     openai.resources.beta.threads.threads: openai
-    openai.resources.beta.vector_stores: openai
-    openai.resources.beta.vector_stores.file_batches: openai
-    openai.resources.beta.vector_stores.files: openai
-    openai.resources.beta.vector_stores.vector_stores: openai
     openai.resources.chat: openai
     openai.resources.chat.chat: openai
     openai.resources.chat.completions: openai
+    openai.resources.chat.completions.completions: openai
+    openai.resources.chat.completions.messages: openai
     openai.resources.completions: openai
+    openai.resources.containers: openai
+    openai.resources.containers.containers: openai
+    openai.resources.containers.files: openai
+    openai.resources.containers.files.content: openai
+    openai.resources.containers.files.files: openai
     openai.resources.embeddings: openai
+    openai.resources.evals: openai
+    openai.resources.evals.evals: openai
+    openai.resources.evals.runs: openai
+    openai.resources.evals.runs.output_items: openai
+    openai.resources.evals.runs.runs: openai
     openai.resources.files: openai
     openai.resources.fine_tuning: openai
+    openai.resources.fine_tuning.alpha: openai
+    openai.resources.fine_tuning.alpha.alpha: openai
+    openai.resources.fine_tuning.alpha.graders: openai
+    openai.resources.fine_tuning.checkpoints: openai
+    openai.resources.fine_tuning.checkpoints.checkpoints: openai
+    openai.resources.fine_tuning.checkpoints.permissions: openai
     openai.resources.fine_tuning.fine_tuning: openai
     openai.resources.fine_tuning.jobs: openai
     openai.resources.fine_tuning.jobs.checkpoints: openai
@@ -2315,9 +2641,16 @@ manifest:
     openai.resources.images: openai
     openai.resources.models: openai
     openai.resources.moderations: openai
+    openai.resources.responses: openai
+    openai.resources.responses.input_items: openai
+    openai.resources.responses.responses: openai
     openai.resources.uploads: openai
     openai.resources.uploads.parts: openai
     openai.resources.uploads.uploads: openai
+    openai.resources.vector_stores: openai
+    openai.resources.vector_stores.file_batches: openai
+    openai.resources.vector_stores.files: openai
+    openai.resources.vector_stores.vector_stores: openai
     openai.types: openai
     openai.types.audio: openai
     openai.types.audio.speech_create_params: openai
@@ -2325,7 +2658,11 @@ manifest:
     openai.types.audio.transcription: openai
     openai.types.audio.transcription_create_params: openai
     openai.types.audio.transcription_create_response: openai
+    openai.types.audio.transcription_include: openai
     openai.types.audio.transcription_segment: openai
+    openai.types.audio.transcription_stream_event: openai
+    openai.types.audio.transcription_text_delta_event: openai
+    openai.types.audio.transcription_text_done_event: openai
     openai.types.audio.transcription_verbose: openai
     openai.types.audio.transcription_word: openai
     openai.types.audio.translation: openai
@@ -2334,6 +2671,7 @@ manifest:
     openai.types.audio.translation_verbose: openai
     openai.types.audio_model: openai
     openai.types.audio_response_format: openai
+    openai.types.auto_file_chunking_strategy_param: openai
     openai.types.batch: openai
     openai.types.batch_create_params: openai
     openai.types.batch_error: openai
@@ -2356,17 +2694,13 @@ manifest:
     openai.types.beta.assistant_tool_choice_param: openai
     openai.types.beta.assistant_tool_param: openai
     openai.types.beta.assistant_update_params: openai
-    openai.types.beta.auto_file_chunking_strategy_param: openai
     openai.types.beta.chat: openai
     openai.types.beta.code_interpreter_tool: openai
     openai.types.beta.code_interpreter_tool_param: openai
-    openai.types.beta.file_chunking_strategy: openai
-    openai.types.beta.file_chunking_strategy_param: openai
     openai.types.beta.file_search_tool: openai
     openai.types.beta.file_search_tool_param: openai
     openai.types.beta.function_tool: openai
     openai.types.beta.function_tool_param: openai
-    openai.types.beta.other_file_chunking_strategy_object: openai
     openai.types.beta.realtime: openai
     openai.types.beta.realtime.conversation_created_event: openai
     openai.types.beta.realtime.conversation_item: openai
@@ -2379,11 +2713,16 @@ manifest:
     openai.types.beta.realtime.conversation_item_delete_event_param: openai
     openai.types.beta.realtime.conversation_item_deleted_event: openai
     openai.types.beta.realtime.conversation_item_input_audio_transcription_completed_event: openai
+    openai.types.beta.realtime.conversation_item_input_audio_transcription_delta_event: openai
     openai.types.beta.realtime.conversation_item_input_audio_transcription_failed_event: openai
     openai.types.beta.realtime.conversation_item_param: openai
+    openai.types.beta.realtime.conversation_item_retrieve_event: openai
+    openai.types.beta.realtime.conversation_item_retrieve_event_param: openai
     openai.types.beta.realtime.conversation_item_truncate_event: openai
     openai.types.beta.realtime.conversation_item_truncate_event_param: openai
     openai.types.beta.realtime.conversation_item_truncated_event: openai
+    openai.types.beta.realtime.conversation_item_with_reference: openai
+    openai.types.beta.realtime.conversation_item_with_reference_param: openai
     openai.types.beta.realtime.error_event: openai
     openai.types.beta.realtime.input_audio_buffer_append_event: openai
     openai.types.beta.realtime.input_audio_buffer_append_event_param: openai
@@ -2428,9 +2767,11 @@ manifest:
     openai.types.beta.realtime.session_update_event: openai
     openai.types.beta.realtime.session_update_event_param: openai
     openai.types.beta.realtime.session_updated_event: openai
-    openai.types.beta.static_file_chunking_strategy: openai
-    openai.types.beta.static_file_chunking_strategy_object: openai
-    openai.types.beta.static_file_chunking_strategy_param: openai
+    openai.types.beta.realtime.transcription_session: openai
+    openai.types.beta.realtime.transcription_session_create_params: openai
+    openai.types.beta.realtime.transcription_session_update: openai
+    openai.types.beta.realtime.transcription_session_update_param: openai
+    openai.types.beta.realtime.transcription_session_updated_event: openai
     openai.types.beta.thread: openai
     openai.types.beta.thread_create_and_run_params: openai
     openai.types.beta.thread_create_params: openai
@@ -2500,19 +2841,6 @@ manifest:
     openai.types.beta.threads.text_content_block_param: openai
     openai.types.beta.threads.text_delta: openai
     openai.types.beta.threads.text_delta_block: openai
-    openai.types.beta.vector_store: openai
-    openai.types.beta.vector_store_create_params: openai
-    openai.types.beta.vector_store_deleted: openai
-    openai.types.beta.vector_store_list_params: openai
-    openai.types.beta.vector_store_update_params: openai
-    openai.types.beta.vector_stores: openai
-    openai.types.beta.vector_stores.file_batch_create_params: openai
-    openai.types.beta.vector_stores.file_batch_list_files_params: openai
-    openai.types.beta.vector_stores.file_create_params: openai
-    openai.types.beta.vector_stores.file_list_params: openai
-    openai.types.beta.vector_stores.vector_store_file: openai
-    openai.types.beta.vector_stores.vector_store_file_batch: openai
-    openai.types.beta.vector_stores.vector_store_file_deleted: openai
     openai.types.chat: openai
     openai.types.chat.chat_completion: openai
     openai.types.chat.chat_completion_assistant_message_param: openai
@@ -2524,6 +2852,7 @@ manifest:
     openai.types.chat.chat_completion_content_part_param: openai
     openai.types.chat.chat_completion_content_part_refusal_param: openai
     openai.types.chat.chat_completion_content_part_text_param: openai
+    openai.types.chat.chat_completion_deleted: openai
     openai.types.chat.chat_completion_developer_message_param: openai
     openai.types.chat.chat_completion_function_call_option_param: openai
     openai.types.chat.chat_completion_function_message_param: openai
@@ -2536,6 +2865,7 @@ manifest:
     openai.types.chat.chat_completion_prediction_content_param: openai
     openai.types.chat.chat_completion_reasoning_effort: openai
     openai.types.chat.chat_completion_role: openai
+    openai.types.chat.chat_completion_store_message: openai
     openai.types.chat.chat_completion_stream_options_param: openai
     openai.types.chat.chat_completion_system_message_param: openai
     openai.types.chat.chat_completion_token_logprob: openai
@@ -2544,6 +2874,10 @@ manifest:
     openai.types.chat.chat_completion_tool_param: openai
     openai.types.chat.chat_completion_user_message_param: openai
     openai.types.chat.completion_create_params: openai
+    openai.types.chat.completion_list_params: openai
+    openai.types.chat.completion_update_params: openai
+    openai.types.chat.completions: openai
+    openai.types.chat.completions.message_list_params: openai
     openai.types.chat.parsed_chat_completion: openai
     openai.types.chat.parsed_function_tool_call: openai
     openai.types.chat_model: openai
@@ -2551,10 +2885,51 @@ manifest:
     openai.types.completion_choice: openai
     openai.types.completion_create_params: openai
     openai.types.completion_usage: openai
+    openai.types.container_create_params: openai
+    openai.types.container_create_response: openai
+    openai.types.container_list_params: openai
+    openai.types.container_list_response: openai
+    openai.types.container_retrieve_response: openai
+    openai.types.containers: openai
+    openai.types.containers.file_create_params: openai
+    openai.types.containers.file_create_response: openai
+    openai.types.containers.file_list_params: openai
+    openai.types.containers.file_list_response: openai
+    openai.types.containers.file_retrieve_response: openai
+    openai.types.containers.files: openai
     openai.types.create_embedding_response: openai
     openai.types.embedding: openai
     openai.types.embedding_create_params: openai
     openai.types.embedding_model: openai
+    openai.types.eval_create_params: openai
+    openai.types.eval_create_response: openai
+    openai.types.eval_custom_data_source_config: openai
+    openai.types.eval_delete_response: openai
+    openai.types.eval_list_params: openai
+    openai.types.eval_list_response: openai
+    openai.types.eval_retrieve_response: openai
+    openai.types.eval_stored_completions_data_source_config: openai
+    openai.types.eval_update_params: openai
+    openai.types.eval_update_response: openai
+    openai.types.evals: openai
+    openai.types.evals.create_eval_completions_run_data_source: openai
+    openai.types.evals.create_eval_completions_run_data_source_param: openai
+    openai.types.evals.create_eval_jsonl_run_data_source: openai
+    openai.types.evals.create_eval_jsonl_run_data_source_param: openai
+    openai.types.evals.eval_api_error: openai
+    openai.types.evals.run_cancel_response: openai
+    openai.types.evals.run_create_params: openai
+    openai.types.evals.run_create_response: openai
+    openai.types.evals.run_delete_response: openai
+    openai.types.evals.run_list_params: openai
+    openai.types.evals.run_list_response: openai
+    openai.types.evals.run_retrieve_response: openai
+    openai.types.evals.runs: openai
+    openai.types.evals.runs.output_item_list_params: openai
+    openai.types.evals.runs.output_item_list_response: openai
+    openai.types.evals.runs.output_item_retrieve_response: openai
+    openai.types.file_chunking_strategy: openai
+    openai.types.file_chunking_strategy_param: openai
     openai.types.file_content: openai
     openai.types.file_create_params: openai
     openai.types.file_deleted: openai
@@ -2562,6 +2937,21 @@ manifest:
     openai.types.file_object: openai
     openai.types.file_purpose: openai
     openai.types.fine_tuning: openai
+    openai.types.fine_tuning.alpha: openai
+    openai.types.fine_tuning.alpha.grader_run_params: openai
+    openai.types.fine_tuning.alpha.grader_run_response: openai
+    openai.types.fine_tuning.alpha.grader_validate_params: openai
+    openai.types.fine_tuning.alpha.grader_validate_response: openai
+    openai.types.fine_tuning.checkpoints: openai
+    openai.types.fine_tuning.checkpoints.permission_create_params: openai
+    openai.types.fine_tuning.checkpoints.permission_create_response: openai
+    openai.types.fine_tuning.checkpoints.permission_delete_response: openai
+    openai.types.fine_tuning.checkpoints.permission_retrieve_params: openai
+    openai.types.fine_tuning.checkpoints.permission_retrieve_response: openai
+    openai.types.fine_tuning.dpo_hyperparameters: openai
+    openai.types.fine_tuning.dpo_hyperparameters_param: openai
+    openai.types.fine_tuning.dpo_method: openai
+    openai.types.fine_tuning.dpo_method_param: openai
     openai.types.fine_tuning.fine_tuning_job: openai
     openai.types.fine_tuning.fine_tuning_job_event: openai
     openai.types.fine_tuning.fine_tuning_job_integration: openai
@@ -2573,6 +2963,27 @@ manifest:
     openai.types.fine_tuning.jobs: openai
     openai.types.fine_tuning.jobs.checkpoint_list_params: openai
     openai.types.fine_tuning.jobs.fine_tuning_job_checkpoint: openai
+    openai.types.fine_tuning.reinforcement_hyperparameters: openai
+    openai.types.fine_tuning.reinforcement_hyperparameters_param: openai
+    openai.types.fine_tuning.reinforcement_method: openai
+    openai.types.fine_tuning.reinforcement_method_param: openai
+    openai.types.fine_tuning.supervised_hyperparameters: openai
+    openai.types.fine_tuning.supervised_hyperparameters_param: openai
+    openai.types.fine_tuning.supervised_method: openai
+    openai.types.fine_tuning.supervised_method_param: openai
+    openai.types.graders: openai
+    openai.types.graders.label_model_grader: openai
+    openai.types.graders.label_model_grader_param: openai
+    openai.types.graders.multi_grader: openai
+    openai.types.graders.multi_grader_param: openai
+    openai.types.graders.python_grader: openai
+    openai.types.graders.python_grader_param: openai
+    openai.types.graders.score_model_grader: openai
+    openai.types.graders.score_model_grader_param: openai
+    openai.types.graders.string_check_grader: openai
+    openai.types.graders.string_check_grader_param: openai
+    openai.types.graders.text_similarity_grader: openai
+    openai.types.graders.text_similarity_grader_param: openai
     openai.types.image: openai
     openai.types.image_create_variation_params: openai
     openai.types.image_edit_params: openai
@@ -2588,25 +2999,188 @@ manifest:
     openai.types.moderation_model: openai
     openai.types.moderation_multi_modal_input_param: openai
     openai.types.moderation_text_input_param: openai
+    openai.types.other_file_chunking_strategy_object: openai
+    openai.types.responses: openai
+    openai.types.responses.computer_tool: openai
+    openai.types.responses.computer_tool_param: openai
+    openai.types.responses.easy_input_message: openai
+    openai.types.responses.easy_input_message_param: openai
+    openai.types.responses.file_search_tool: openai
+    openai.types.responses.file_search_tool_param: openai
+    openai.types.responses.function_tool: openai
+    openai.types.responses.function_tool_param: openai
+    openai.types.responses.input_item_list_params: openai
+    openai.types.responses.parsed_response: openai
+    openai.types.responses.response: openai
+    openai.types.responses.response_audio_delta_event: openai
+    openai.types.responses.response_audio_done_event: openai
+    openai.types.responses.response_audio_transcript_delta_event: openai
+    openai.types.responses.response_audio_transcript_done_event: openai
+    openai.types.responses.response_code_interpreter_call_code_delta_event: openai
+    openai.types.responses.response_code_interpreter_call_code_done_event: openai
+    openai.types.responses.response_code_interpreter_call_completed_event: openai
+    openai.types.responses.response_code_interpreter_call_in_progress_event: openai
+    openai.types.responses.response_code_interpreter_call_interpreting_event: openai
+    openai.types.responses.response_code_interpreter_tool_call: openai
+    openai.types.responses.response_code_interpreter_tool_call_param: openai
+    openai.types.responses.response_completed_event: openai
+    openai.types.responses.response_computer_tool_call: openai
+    openai.types.responses.response_computer_tool_call_output_item: openai
+    openai.types.responses.response_computer_tool_call_output_screenshot: openai
+    openai.types.responses.response_computer_tool_call_output_screenshot_param: openai
+    openai.types.responses.response_computer_tool_call_param: openai
+    openai.types.responses.response_content_part_added_event: openai
+    openai.types.responses.response_content_part_done_event: openai
+    openai.types.responses.response_create_params: openai
+    openai.types.responses.response_created_event: openai
+    openai.types.responses.response_error: openai
+    openai.types.responses.response_error_event: openai
+    openai.types.responses.response_failed_event: openai
+    openai.types.responses.response_file_search_call_completed_event: openai
+    openai.types.responses.response_file_search_call_in_progress_event: openai
+    openai.types.responses.response_file_search_call_searching_event: openai
+    openai.types.responses.response_file_search_tool_call: openai
+    openai.types.responses.response_file_search_tool_call_param: openai
+    openai.types.responses.response_format_text_config: openai
+    openai.types.responses.response_format_text_config_param: openai
+    openai.types.responses.response_format_text_json_schema_config: openai
+    openai.types.responses.response_format_text_json_schema_config_param: openai
+    openai.types.responses.response_function_call_arguments_delta_event: openai
+    openai.types.responses.response_function_call_arguments_done_event: openai
+    openai.types.responses.response_function_tool_call: openai
+    openai.types.responses.response_function_tool_call_item: openai
+    openai.types.responses.response_function_tool_call_output_item: openai
+    openai.types.responses.response_function_tool_call_param: openai
+    openai.types.responses.response_function_web_search: openai
+    openai.types.responses.response_function_web_search_param: openai
+    openai.types.responses.response_image_gen_call_completed_event: openai
+    openai.types.responses.response_image_gen_call_generating_event: openai
+    openai.types.responses.response_image_gen_call_in_progress_event: openai
+    openai.types.responses.response_image_gen_call_partial_image_event: openai
+    openai.types.responses.response_in_progress_event: openai
+    openai.types.responses.response_includable: openai
+    openai.types.responses.response_incomplete_event: openai
+    openai.types.responses.response_input_content: openai
+    openai.types.responses.response_input_content_param: openai
+    openai.types.responses.response_input_file: openai
+    openai.types.responses.response_input_file_param: openai
+    openai.types.responses.response_input_image: openai
+    openai.types.responses.response_input_image_param: openai
+    openai.types.responses.response_input_item_param: openai
+    openai.types.responses.response_input_message_content_list: openai
+    openai.types.responses.response_input_message_content_list_param: openai
+    openai.types.responses.response_input_message_item: openai
+    openai.types.responses.response_input_param: openai
+    openai.types.responses.response_input_text: openai
+    openai.types.responses.response_input_text_param: openai
+    openai.types.responses.response_item: openai
+    openai.types.responses.response_item_list: openai
+    openai.types.responses.response_mcp_call_arguments_delta_event: openai
+    openai.types.responses.response_mcp_call_arguments_done_event: openai
+    openai.types.responses.response_mcp_call_completed_event: openai
+    openai.types.responses.response_mcp_call_failed_event: openai
+    openai.types.responses.response_mcp_call_in_progress_event: openai
+    openai.types.responses.response_mcp_list_tools_completed_event: openai
+    openai.types.responses.response_mcp_list_tools_failed_event: openai
+    openai.types.responses.response_mcp_list_tools_in_progress_event: openai
+    openai.types.responses.response_output_item: openai
+    openai.types.responses.response_output_item_added_event: openai
+    openai.types.responses.response_output_item_done_event: openai
+    openai.types.responses.response_output_message: openai
+    openai.types.responses.response_output_message_param: openai
+    openai.types.responses.response_output_refusal: openai
+    openai.types.responses.response_output_refusal_param: openai
+    openai.types.responses.response_output_text: openai
+    openai.types.responses.response_output_text_annotation_added_event: openai
+    openai.types.responses.response_output_text_param: openai
+    openai.types.responses.response_queued_event: openai
+    openai.types.responses.response_reasoning_delta_event: openai
+    openai.types.responses.response_reasoning_done_event: openai
+    openai.types.responses.response_reasoning_item: openai
+    openai.types.responses.response_reasoning_item_param: openai
+    openai.types.responses.response_reasoning_summary_delta_event: openai
+    openai.types.responses.response_reasoning_summary_done_event: openai
+    openai.types.responses.response_reasoning_summary_part_added_event: openai
+    openai.types.responses.response_reasoning_summary_part_done_event: openai
+    openai.types.responses.response_reasoning_summary_text_delta_event: openai
+    openai.types.responses.response_reasoning_summary_text_done_event: openai
+    openai.types.responses.response_refusal_delta_event: openai
+    openai.types.responses.response_refusal_done_event: openai
+    openai.types.responses.response_retrieve_params: openai
+    openai.types.responses.response_status: openai
+    openai.types.responses.response_stream_event: openai
+    openai.types.responses.response_text_config: openai
+    openai.types.responses.response_text_config_param: openai
+    openai.types.responses.response_text_delta_event: openai
+    openai.types.responses.response_text_done_event: openai
+    openai.types.responses.response_usage: openai
+    openai.types.responses.response_web_search_call_completed_event: openai
+    openai.types.responses.response_web_search_call_in_progress_event: openai
+    openai.types.responses.response_web_search_call_searching_event: openai
+    openai.types.responses.tool: openai
+    openai.types.responses.tool_choice_function: openai
+    openai.types.responses.tool_choice_function_param: openai
+    openai.types.responses.tool_choice_options: openai
+    openai.types.responses.tool_choice_types: openai
+    openai.types.responses.tool_choice_types_param: openai
+    openai.types.responses.tool_param: openai
+    openai.types.responses.web_search_tool: openai
+    openai.types.responses.web_search_tool_param: openai
     openai.types.shared: openai
+    openai.types.shared.all_models: openai
+    openai.types.shared.chat_model: openai
+    openai.types.shared.comparison_filter: openai
+    openai.types.shared.compound_filter: openai
     openai.types.shared.error_object: openai
     openai.types.shared.function_definition: openai
     openai.types.shared.function_parameters: openai
+    openai.types.shared.metadata: openai
+    openai.types.shared.reasoning: openai
+    openai.types.shared.reasoning_effort: openai
     openai.types.shared.response_format_json_object: openai
     openai.types.shared.response_format_json_schema: openai
     openai.types.shared.response_format_text: openai
+    openai.types.shared.responses_model: openai
     openai.types.shared_params: openai
+    openai.types.shared_params.chat_model: openai
+    openai.types.shared_params.comparison_filter: openai
+    openai.types.shared_params.compound_filter: openai
     openai.types.shared_params.function_definition: openai
     openai.types.shared_params.function_parameters: openai
+    openai.types.shared_params.metadata: openai
+    openai.types.shared_params.reasoning: openai
+    openai.types.shared_params.reasoning_effort: openai
     openai.types.shared_params.response_format_json_object: openai
     openai.types.shared_params.response_format_json_schema: openai
     openai.types.shared_params.response_format_text: openai
+    openai.types.shared_params.responses_model: openai
+    openai.types.static_file_chunking_strategy: openai
+    openai.types.static_file_chunking_strategy_object: openai
+    openai.types.static_file_chunking_strategy_object_param: openai
+    openai.types.static_file_chunking_strategy_param: openai
     openai.types.upload: openai
     openai.types.upload_complete_params: openai
     openai.types.upload_create_params: openai
     openai.types.uploads: openai
     openai.types.uploads.part_create_params: openai
     openai.types.uploads.upload_part: openai
+    openai.types.vector_store: openai
+    openai.types.vector_store_create_params: openai
+    openai.types.vector_store_deleted: openai
+    openai.types.vector_store_list_params: openai
+    openai.types.vector_store_search_params: openai
+    openai.types.vector_store_search_response: openai
+    openai.types.vector_store_update_params: openai
+    openai.types.vector_stores: openai
+    openai.types.vector_stores.file_batch_create_params: openai
+    openai.types.vector_stores.file_batch_list_files_params: openai
+    openai.types.vector_stores.file_content_response: openai
+    openai.types.vector_stores.file_create_params: openai
+    openai.types.vector_stores.file_list_params: openai
+    openai.types.vector_stores.file_update_params: openai
+    openai.types.vector_stores.vector_store_file: openai
+    openai.types.vector_stores.vector_store_file_batch: openai
+    openai.types.vector_stores.vector_store_file_deleted: openai
     openai.types.websocket_connection_options: openai
     openai.version: openai
     opentelemetry.attributes: opentelemetry_api
@@ -2629,6 +3203,7 @@ manifest:
     opentelemetry.util.types: opentelemetry_api
     opentelemetry.version: opentelemetry_api
     packaging: packaging
+    packaging.licenses: packaging
     packaging.markers: packaging
     packaging.metadata: packaging
     packaging.requirements: packaging
@@ -2636,7 +3211,6 @@ manifest:
     packaging.tags: packaging
     packaging.utils: packaging
     packaging.version: packaging
-    pillow.libs.libopenjp2-05423b53: pillow
     plac: plac
     plac_core: plac
     plac_ext: plac
@@ -2683,7 +3257,6 @@ manifest:
     pyasn1.codec.streaming: pyasn1
     pyasn1.compat: pyasn1
     pyasn1.compat.integer: pyasn1
-    pyasn1.compat.octets: pyasn1
     pyasn1.debug: pyasn1
     pyasn1.error: pyasn1
     pyasn1.type: pyasn1
@@ -2852,6 +3425,7 @@ manifest:
     pydantic.error_wrappers: pydantic
     pydantic.errors: pydantic
     pydantic.experimental: pydantic
+    pydantic.experimental.arguments_schema: pydantic
     pydantic.experimental.pipeline: pydantic
     pydantic.fields: pydantic
     pydantic.functional_serializers: pydantic
@@ -2911,6 +3485,8 @@ manifest:
     pyparsing.helpers: pyparsing
     pyparsing.results: pyparsing
     pyparsing.testing: pyparsing
+    pyparsing.tools: pyparsing
+    pyparsing.tools.cvt_pyparsing_pep8_names: pyparsing
     pyparsing.unicode: pyparsing
     pyparsing.util: pyparsing
     referencing: referencing
@@ -3021,6 +3597,9 @@ manifest:
     tqdm.utils: tqdm
     tqdm.version: tqdm
     typing_extensions: typing_extensions
+    typing_inspection: typing_inspection
+    typing_inspection.introspection: typing_inspection
+    typing_inspection.typing_objects: typing_inspection
     unidic: unidic
     unidic.download: unidic
     unidic.unidic: unidic
@@ -3044,6 +3623,8 @@ manifest:
     urllib3.fields: urllib3
     urllib3.filepost: urllib3
     urllib3.http2: urllib3
+    urllib3.http2.connection: urllib3
+    urllib3.http2.probe: urllib3
     urllib3.poolmanager: urllib3
     urllib3.response: urllib3
     urllib3.util: urllib3
@@ -3080,35 +3661,79 @@ manifest:
     vertex_ray.render: google_cloud_aiplatform
     vertex_ray.util.resources: google_cloud_aiplatform
     vertexai: google_cloud_aiplatform
+    vertexai.agent_engines: google_cloud_aiplatform
+    vertexai.agent_engines.templates.ag2: google_cloud_aiplatform
+    vertexai.agent_engines.templates.langchain: google_cloud_aiplatform
+    vertexai.agent_engines.templates.langgraph: google_cloud_aiplatform
+    vertexai.batch_prediction: google_cloud_aiplatform
+    vertexai.caching: google_cloud_aiplatform
+    vertexai.evaluation: google_cloud_aiplatform
+    vertexai.evaluation.constants: google_cloud_aiplatform
+    vertexai.evaluation.eval_task: google_cloud_aiplatform
+    vertexai.evaluation.metrics: google_cloud_aiplatform
+    vertexai.evaluation.metrics.metric_prompt_template: google_cloud_aiplatform
+    vertexai.evaluation.metrics.metric_prompt_template_examples: google_cloud_aiplatform
+    vertexai.evaluation.metrics.pairwise_metric: google_cloud_aiplatform
+    vertexai.evaluation.metrics.pointwise_metric: google_cloud_aiplatform
+    vertexai.evaluation.notebook_utils: google_cloud_aiplatform
+    vertexai.evaluation.prompt_template: google_cloud_aiplatform
+    vertexai.evaluation.utils: google_cloud_aiplatform
     vertexai.generative_models: google_cloud_aiplatform
     vertexai.language_models: google_cloud_aiplatform
+    vertexai.model_garden: google_cloud_aiplatform
     vertexai.preview: google_cloud_aiplatform
     vertexai.preview.batch_prediction: google_cloud_aiplatform
     vertexai.preview.caching: google_cloud_aiplatform
     vertexai.preview.evaluation: google_cloud_aiplatform
+    vertexai.preview.evaluation.autorater_utils: google_cloud_aiplatform
     vertexai.preview.evaluation.constants: google_cloud_aiplatform
+    vertexai.preview.evaluation.eval_task: google_cloud_aiplatform
+    vertexai.preview.evaluation.metric_utils: google_cloud_aiplatform
     vertexai.preview.evaluation.metrics: google_cloud_aiplatform
+    vertexai.preview.evaluation.metrics.custom_output_config: google_cloud_aiplatform
+    vertexai.preview.evaluation.metrics.metric_prompt_template: google_cloud_aiplatform
+    vertexai.preview.evaluation.metrics.metric_prompt_template_examples: google_cloud_aiplatform
+    vertexai.preview.evaluation.metrics.pairwise_metric: google_cloud_aiplatform
+    vertexai.preview.evaluation.metrics.pointwise_metric: google_cloud_aiplatform
+    vertexai.preview.evaluation.metrics.predefined_rubric_metrics: google_cloud_aiplatform
+    vertexai.preview.evaluation.metrics.rubric_based_metric: google_cloud_aiplatform
+    vertexai.preview.evaluation.multimodal_utils: google_cloud_aiplatform
+    vertexai.preview.evaluation.notebook_utils: google_cloud_aiplatform
     vertexai.preview.evaluation.prompt_template: google_cloud_aiplatform
     vertexai.preview.evaluation.utils: google_cloud_aiplatform
+    vertexai.preview.example_stores: google_cloud_aiplatform
     vertexai.preview.extensions: google_cloud_aiplatform
     vertexai.preview.generative_models: google_cloud_aiplatform
     vertexai.preview.language_models: google_cloud_aiplatform
+    vertexai.preview.model_garden: google_cloud_aiplatform
+    vertexai.preview.prompts: google_cloud_aiplatform
     vertexai.preview.rag: google_cloud_aiplatform
     vertexai.preview.rag.rag_data: google_cloud_aiplatform
     vertexai.preview.rag.rag_retrieval: google_cloud_aiplatform
     vertexai.preview.rag.rag_store: google_cloud_aiplatform
     vertexai.preview.rag.utils.resources: google_cloud_aiplatform
     vertexai.preview.reasoning_engines: google_cloud_aiplatform
+    vertexai.preview.reasoning_engines.templates.adk: google_cloud_aiplatform
+    vertexai.preview.reasoning_engines.templates.ag2: google_cloud_aiplatform
     vertexai.preview.reasoning_engines.templates.langchain: google_cloud_aiplatform
+    vertexai.preview.reasoning_engines.templates.langgraph: google_cloud_aiplatform
+    vertexai.preview.reasoning_engines.templates.llama_index: google_cloud_aiplatform
     vertexai.preview.tokenization: google_cloud_aiplatform
     vertexai.preview.tuning: google_cloud_aiplatform
     vertexai.preview.tuning.sft: google_cloud_aiplatform
     vertexai.preview.vision_models: google_cloud_aiplatform
+    vertexai.rag: google_cloud_aiplatform
+    vertexai.rag.rag_data: google_cloud_aiplatform
+    vertexai.rag.rag_inline_citations: google_cloud_aiplatform
+    vertexai.rag.rag_retrieval: google_cloud_aiplatform
+    vertexai.rag.rag_store: google_cloud_aiplatform
+    vertexai.rag.utils.resources: google_cloud_aiplatform
     vertexai.resources: google_cloud_aiplatform
     vertexai.resources.preview: google_cloud_aiplatform
     vertexai.resources.preview.feature_store: google_cloud_aiplatform
     vertexai.resources.preview.feature_store.feature: google_cloud_aiplatform
     vertexai.resources.preview.feature_store.feature_group: google_cloud_aiplatform
+    vertexai.resources.preview.feature_store.feature_monitor: google_cloud_aiplatform
     vertexai.resources.preview.feature_store.feature_online_store: google_cloud_aiplatform
     vertexai.resources.preview.feature_store.feature_view: google_cloud_aiplatform
     vertexai.resources.preview.feature_store.offline_store: google_cloud_aiplatform
@@ -3137,8 +3762,10 @@ manifest:
     websockets.asyncio.compatibility: websockets
     websockets.asyncio.connection: websockets
     websockets.asyncio.messages: websockets
+    websockets.asyncio.router: websockets
     websockets.asyncio.server: websockets
     websockets.auth: websockets
+    websockets.cli: websockets
     websockets.client: websockets
     websockets.connection: websockets
     websockets.datastructures: websockets
@@ -3168,6 +3795,7 @@ manifest:
     websockets.sync.client: websockets
     websockets.sync.connection: websockets
     websockets.sync.messages: websockets
+    websockets.sync.router: websockets
     websockets.sync.server: websockets
     websockets.sync.utils: websockets
     websockets.typing: websockets
@@ -3250,6 +3878,7 @@ manifest:
     yaml.tokens: PyYAML
     zipp: zipp
     zipp.compat: zipp
+    zipp.compat.overlay: zipp
     zipp.compat.py310: zipp
     zipp.glob: zipp
   pip_repository:

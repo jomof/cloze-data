@@ -78,7 +78,7 @@ def generate_gemini_2_0(model_name: str, prompt: str) -> str:
     contents = [
         types.Content(
             role="user",
-            parts=[types.Part.from_text(prompt)]
+            parts=[types.Part.from_text(text=prompt)]
         )
     ]
     
