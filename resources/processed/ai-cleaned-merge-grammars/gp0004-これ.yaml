@@ -14,7 +14,8 @@
     "meaning_warning": "Although uncommon, its kanji can be seen as 此れ",
     "details": {
         "part-of-speech": "pronoun",
-        "register": "teineigo (polite)"
+        "register": "teineigo (polite)",
+        "usage-context": "general use"
     },
     "etymology": "The word 「これ」 originated from the demonstrative prefix 「こ-」 (ko-), indicating proximity to the speaker, combined with the noun 「れ」 (re), a general term for 'thing.'",
     "writeup": "「これ」 is often translated as \"this\" in English, which is generally accurate. 「これ」 is used to refer to something that is physically or emotionally close to the speaker. While often described as a \"pronoun\" in English, it can be more helpful to think of 「これ」 as a substitute noun. It replaces something that has its own specific name but whose name is not needed in the context of the sentence, or whose name is unknown to the speaker.",
@@ -25,7 +26,7 @@
             "scene": "A student showing their new bag to a friend.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "{この} カバン は 私 の です。",
+                    "competing_grammar": "この カバン は 私 の です。",
                     "mitigation": "The scene encourages the use of 「これ」 to identify the object itself, rather than using 「この」 to modify the noun 'bag' before identifying it. The focus is on *this thing*."
                 }
             ],
@@ -38,7 +39,7 @@
             "scene": "A person showing an item they just bought on a trip to a family member.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "{この} おみやげ は 京都 の です。",
+                    "competing_grammar": "この おみやげ は 京都 の です。",
                     "mitigation": "The scene emphasizes presenting a specific item to someone and identifying it simply as 'this'. The context makes 「これ」 a natural choice over specifying 'this souvenir'."
                 }
             ],
@@ -51,7 +52,7 @@
             "scene": "A cleaner asking about an item found next to another belonging.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "{これも} あなた の 物 ですか？",
+                    "competing_grammar": "これも あなた の 物 ですか？",
                     "mitigation": "The scene implies a context where the listener has multiple items, and the speaker is asking about an additional, unspecified item using 「これ」, rather than explicitly referring to it as 'this thing' (物)."
                 }
             ],
@@ -64,7 +65,7 @@
             "scene": "A girl playfully claiming ownership of a toy from a friend.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "{この} オモチャ は 私 の だよ。",
+                    "competing_grammar": "この オモチャ は 私 の だよ。",
                     "mitigation": "The scene focuses on the direct assertion of 'this thing' belonging to the speaker in a casual, possessive manner, making 「これ」 more direct than specifying 'this toy'."
                 }
             ],
@@ -79,12 +80,13 @@
             "scene": "A child excitedly pointing out a small bug to their parent.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "{これを} 見て！",
+                    "competing_grammar": "これを 見て！",
                     "mitigation": "The scene emphasizes the immediate, direct pointing to 'this (thing)' to draw attention, where the particle を can be omitted in casual speech for directness."
                 }
             ],
             "register": "casual",
-            "setting": "excited"
+            "setting": "excited",
+            "speaker_age": "younger"
         },
         {
             "japanese": "{これ} 、本当に 美味しいね。",
@@ -92,7 +94,7 @@
             "scene": "Two friends sharing a meal at a new restaurant.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "{この} 料理 は 本当 に 美味しいね。",
+                    "competing_grammar": "この 料理 は 本当 に 美味しいね。",
                     "mitigation": "The scene highlights the shared experience and direct feeling about 'this (unspecified food item)', making 「これ」 a natural way to refer to the current dish without needing to specify the noun 'dish'."
                 }
             ],
@@ -105,7 +107,7 @@
             "scene": "A shop assistant presenting an item to a customer.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "{この} 商品 は どう ですか？",
+                    "competing_grammar": "この 商品 は どう ですか？",
                     "mitigation": "The scene focuses on the presentation of 'this (specific item)' as a suggestion, where 「これ」 naturally stands in for the object being offered, without needing to specify 'this product'."
                 }
             ],
@@ -119,7 +121,7 @@
             "scene": "Someone explaining a personal decision to a close friend.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "{この} 決断 は 私 にとって 大切な 事 です。",
+                    "competing_grammar": "この 決断 は 私 にとって 大切な 事 です。",
                     "mitigation": "The scene emphasizes the internal, abstract importance of 'this (matter or decision)', making 「これ」 suitable for referring to an unspecified situation or abstract concept without a concrete noun."
                 }
             ],
@@ -132,7 +134,7 @@
             "scene": "A team leader kicking off a new project meeting.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "{この} プロジェクト を 始め ましょう。",
+                    "competing_grammar": "この プロジェクト を 始め ましょう。",
                     "mitigation": "The scene implies starting with 'this (general task or phase)' rather than a specific noun like 'this project', allowing 「これ」 to refer to an action or a starting point."
                 }
             ],
@@ -145,7 +147,7 @@
             "scene": "A sibling asking their brother to borrow a pencil.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "ちょっと {この} 鉛筆 を 貸して。",
+                    "competing_grammar": "ちょっと この 鉛筆 を 貸して。",
                     "mitigation": "The scene emphasizes a quick, informal request for 'this (unspecified item)', where 「これ」 directly refers to the object without needing to specify 'this pencil'."
                 }
             ],
@@ -192,27 +194,15 @@
     "change": [
         {
             "change-type": "violation",
-            "change": "Removed 'listener_age' from all applicable examples, as it is a deprecated field according to the schema."
+            "change": "Ensured that the 'register' value in the 'details' section is 'teineigo (polite)' instead of 'Standard' for greater specificity and consistency with common usage."
         },
         {
             "change-type": "violation",
-            "change": "Rewrote all example sentences to be original, rather than directly taken from Bunpro or Dojg, ensuring adherence to the new instruction."
-        },
-        {
-            "change-type": "violation",
-            "change": "Updated 'scene' and 'scene_rationale' for all examples to align with the new sentences and provide robust competing grammar analysis and mitigation strategies."
-        },
-        {
-            "change-type": "violation",
-            "change": "Updated 'nuance' explanations for relevant examples to reflect changes in speaker/listener gender/age dynamics and to precisely point to specific Japanese phrasing."
-        },
-        {
-            "change-type": "schema",
-            "change": "Refactored 'details' keys from mixed English/Japanese (e.g., 'Part of Speech', '品詞') to consistent snake-case English keys (e.g., 'part-of-speech') to comply with schema structure."
+            "change": "Updated the 'part-of-speech' in the 'details' section to be lowercase 'pronoun' to match the schema's enum."
         },
         {
             "change-type": "suggestion",
-            "change": "Changed the 'kind' field in 'false_friends' from 'synonym' to 'similar expression' for better accuracy regarding the grammatical relationship of demonstratives."
+            "change": "Added 'speaker_age': 'younger' to the example 'これ 、見て！' to better reflect the child context and provide a more complete example with all relevant contextual metadata."
         }
     ]
 }

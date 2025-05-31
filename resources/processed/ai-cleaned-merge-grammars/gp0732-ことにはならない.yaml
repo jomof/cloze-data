@@ -3,24 +3,28 @@
     "id": "gp0732",
     "conjugations": [
         {
-            "type": "negative plain (～ない)",
+            "conjugation-type": "negative plain (～ない)",
             "form": "ことにはならない",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "doesn't mean"
         },
         {
-            "type": "negative past plain (～なかった)",
+            "conjugation-type": "negative past plain (～なかった)",
             "form": "ことにはならなかった",
-            "rarity": "less common"
+            "rarity": "less common",
+            "meaning": "didn't mean"
         },
         {
-            "type": "negative non-past polite (～ません)",
+            "conjugation-type": "negative non-past polite (～ません)",
             "form": "ことにはなりません",
-            "rarity": "less common"
+            "rarity": "less common",
+            "meaning": "doesn't mean (polite)"
         },
         {
-            "type": "negative past polite (～ませんでした)",
+            "conjugation-type": "negative past polite (～ませんでした)",
             "form": "ことにはなりませんでした",
-            "rarity": "less common"
+            "rarity": "less common",
+            "meaning": "didn't mean (polite)"
         }
     ],
     "pronunciation": {
@@ -28,160 +32,115 @@
         "romaji": "koto ni wa naranai"
     },
     "formation": {
-        "A + ことにはならない": "Just because A, it doesn't mean B."
+        "Plain Form (verb/i-adj/na-adj/noun) + からといって + ことにはならない": "Emphasizes that something is not necessarily the case, despite a preceding reason or condition.",
+        "Plain Form (verb/i-adj/na-adj/noun) + といって + ことにはならない": "A slightly more casual or abbreviated form of からといって, conveying the same nuance.",
+        "Plain Form (verb/i-adj/na-adj/noun) + ても + ことにはならない": "Even if a certain condition is met, a particular outcome will not necessarily follow."
     },
     "jlpt": "N2",
     "meaning": "Just because… doesn't mean…",
     "details": {
-        "Register": "Standard",
-        "Usage": "General"
+        "usage-context": "Used to deny a direct implication or logical conclusion from a previous statement."
     },
     "etymology": "This grammar point is a combination of 「こと」 (koto, a thing or matter), the particle 「に」 (ni, indicating a state or condition), the topic marker 「は」 (wa), and the negative form of the verb 「なる」 (naru, to become). Literally, it means something along the lines of \"it will not become that thing/matter.\"",
     "writeup": "「ことにはならない」 is an expression used to emphasize that a statement made earlier is not necessarily true. It often follows structures like 「ても」 (\"even if\") or 「からといって」 (\"just because\"). It highlights that \"it will not be that (B).\" The entire expression can be interpreted as \"just because (A), it doesn't mean that (B).\" Though not required, the (B) expression may be further emphasized by including 「という」 before 「ことにはならない」.",
     "examples": [
         {
-            "japanese": "みんなが簡単にできたからと言って、君にも簡単にできるということには{ことにはならない}。",
-            "english": "Just because it was easy for everyone else doesn't mean it will be easy for you.",
-            "scene": "A woman encouraging her male friend facing a challenge.",
+            "japanese": "少し 疲れた から といって、もう 帰る ことには {ことにはならない}。",
+            "english": "Just because I'm a little tired doesn't mean I'm going home already.",
+            "english_literally": "Just because I became a little tired, it does not become the matter of going home already.",
+            "scene": "A student expressing mild fatigue to a friend, who wants to continue an activity together.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "みんなが簡単にできたから、君にも簡単にできるだろう。",
-                    "mitigation": "The scene encourages the user to consider the negative implication of the grammar point, emphasizing that the general success of others doesn't guarantee the listener's own success. It steers away from a simple positive prediction."
+                    "competing_grammar": "少し疲れたから、もう帰らない。",
+                    "mitigation": "The scene implies a subtle refusal of a reason given, emphasizing that the fatigue is not a sufficient condition for leaving, guiding the user away from a simple negation."
                 }
             ],
             "register": "casual",
-            "setting": "supportive",
+            "setting": "friendly",
             "conjugation": "negative plain (～ない)",
-            "speaker_gender": "female",
-            "listener_gender": "male",
-            "nuance": "The speaker is using 「君にも」 to focus on the listener, and the casual tone indicates a close relationship. The female speaker's choice of 「君にも」 (kimi ni mo) is a common, friendly address, appropriate for a female addressing a male friend."
+            "nuance": "The informal tone of 「少し疲れた」 and the use of the plain form 「ことにはならない」 are appropriate for a casual conversation between friends."
         },
         {
-            "japanese": "いくら上司でも、仕事を全部部下たちに押し付けてもいいことには{ことにはならない}。",
-            "english": "Just because you are the boss doesn't mean that you can force all your work onto your subordinates.",
-            "scene": "A male direct report pushing back on workload to a male boss.",
+            "japanese": "一度 失敗した から といって、もう チャンスが ない ことには {ことにはならなかった}。",
+            "english": "Just because I failed once didn't mean there would be no more chances.",
+            "english_literally": "Just because I failed once, it did not become the matter of there being no more chances.",
+            "scene": "A person reflecting on a past setback, emphasizing that it wasn't the end of opportunities.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "いくら上司でも、仕事を全部部下たちに押し付けるのは良くないです。",
-                    "mitigation": "The scene sets up a situation where a boundary is being established, leading the user towards the strong denial implied by 「ことにはならない」 rather than a softer admonition."
+                    "competing_grammar": "一度失敗したから、もうチャンスがないわけではない。",
+                    "mitigation": "The past tense and reflective setting lead to 'didn't mean,' emphasizing that the past event did not imply a lack of future opportunities, rather than merely stating that it's not the case."
+                }
+            ],
+            "register": "casual",
+            "setting": "reflective",
+            "conjugation": "negative past plain (～なかった)",
+            "nuance": "The past plain form 「ことにはならなかった」 combined with the reflective setting indicates a personal realization or lesson learned."
+        },
+        {
+            "japanese": "お客様 だから といって、何を しても 許される ことには {ことにはなりません}。",
+            "english": "Just because someone is a customer doesn't mean they can do anything they want.",
+            "english_literally": "Just because it is a customer, it does not become the matter of being allowed to do anything.",
+            "scene": "A shop manager explaining store policy to an employee about dealing with difficult customers.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "お客様だから、何をしても許されるわけではありません。",
+                    "mitigation": "The professional setting and polite tone reinforce the strong denial of permission implied by 「ことにはなりません」, guiding the user towards a more definitive rejection of the implication."
                 }
             ],
             "register": "formal",
-            "setting": "serious",
-            "conjugation": "negative plain (～ない)",
-            "speaker_gender": "male",
-            "listener_gender": "male",
-            "nuance": "The use of 「いくら」 and 「～てもいい」 adds emphasis to the unacceptability of the boss's behavior. The formal register and specific context make this appropriate for a male subordinate addressing a male superior."
+            "setting": "professional",
+            "conjugation": "negative non-past polite (～ません)",
+            "nuance": "The polite form 「ことにはなりません」 is used to maintain a professional distance and formality in a workplace setting. The phrase 「お客様だからといって」 clearly states the premise being refuted in a neutral, informative tone."
         },
         {
-            "japanese": "5分ノートを見直しただけでは、勉強したことには{ことにはならない}。",
-            "english": "Just because you reviewed your notes for five minutes doesn't mean that you have studied.",
-            "scene": "Giving a student study advice.",
+            "japanese": "安い から といって、品質が 悪い という ことには {ことにはならない}。",
+            "english": "Just because it's cheap doesn't mean the quality is bad.",
+            "english_literally": "Just because it is cheap, it does not become the matter of quality being bad.",
+            "scene": "Someone commenting on an inexpensive item, dispelling the notion that low price implies low quality.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "5分ノートを見直しただけでは、勉強したことにならないでしょう。",
-                    "mitigation": "The scene emphasizes the informative and slightly admonishing tone, guiding the user to the definitive statement of 「ことにはならない」, which conveys a stronger sense of 'it absolutely does not count' rather than a mere prediction."
+                    "competing_grammar": "安いからと言って、品質が悪いとは限りません。",
+                    "mitigation": "The scene focuses on debunking a common assumption, emphasizing the lack of a necessary implication, rather than simply stating it's 'not always true'."
                 }
             ],
             "register": "casual",
             "setting": "informative",
             "conjugation": "negative plain (～ない)",
-            "nuance": "「だけでは」 emphasizes the insufficiency of the action. This phrasing is common in educational contexts, regardless of speaker or listener gender, to convey a direct, unequivocal message."
+            "nuance": "The direct and common phrasing with 「安いからといって」 and the plain form 「ことにはならない」 make this a typical statement of practical wisdom, applicable in various casual contexts."
         },
         {
-            "japanese": "殴られたからと言って、殴り返してもいいということには{ことにはならない}。",
-            "english": "Just because someone hits you doesn't mean it's okay to hit back.",
-            "scene": "Explaining morality to a child.",
+            "japanese": "毎日 漢字を 練習しても、すぐ に 日本語が 上達する ことには {ことにはならない}。",
+            "english": "Even if you practice kanji every day, it doesn't mean your Japanese will improve quickly.",
+            "english_literally": "Even if you practice kanji every day, it does not become the matter of Japanese improving quickly.",
+            "scene": "A teacher explaining realistic expectations for language learning to a student.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "殴られたら、殴り返してはいけません。",
-                    "mitigation": "The scene highlights a moral instruction, encouraging the use of 「ことにはならない」 to express a principle that something is not justifiable, rather than a simple prohibition."
+                    "competing_grammar": "毎日漢字を練習しても、すぐに日本語が上達するわけではない。",
+                    "mitigation": "The instructional setting emphasizes a general truth about learning, steering away from a direct negation of specific improvement and towards the broader implication of what doesn't automatically follow."
+                }
+            ],
+            "register": "semi-formal",
+            "setting": "academic",
+            "conjugation": "negative plain (～ない)",
+            "nuance": "The use of 「毎日練習しても」 implies a consistent effort, and the semi-formal register fits the educational context of a teacher setting realistic expectations for a student."
+        },
+        {
+            "japanese": "一度の 勝利 で、もう 負ける ことはない という ことには {ことにはなりませんでした}。",
+            "english": "A single victory didn't mean that we would never lose again.",
+            "english_literally": "With a single victory, it did not become the matter of never losing again.",
+            "scene": "A coach addressing their team after a tough loss, reminding them not to get complacent after an earlier win.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "一度の勝利で、もう負けることはないとは限りませんでした。",
+                    "mitigation": "The coach's speech uses 「ことにはなりませんでした」 to forcefully state that the past victory did not guarantee future success, countering potential overconfidence and emphasizing the lack of an implied outcome."
                 }
             ],
             "register": "semi-formal",
             "setting": "serious",
-            "conjugation": "negative plain (～ない)",
-            "nuance": "The speaker is imparting a moral lesson about retaliation. The phrasing 「殴られたからと言って」 is a general ethical statement, suitable for anyone explaining principles to another, regardless of gender."
-        },
-        {
-            "japanese": "母親が美しいと言われても、必ずその娘が成長して美人になるということには{ことにはならない}。",
-            "english": "Just because a mother happens to be beautiful does not necessarily mean that her daughter will grow up to be the same.",
-            "scene": "Two women commenting on genetics.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "母親が美しいと言われても、必ずその娘が成長して美人になるとは限りません。",
-                    "mitigation": "The scene prompts the user to express a more general statement about what doesn't logically follow, steering them towards 「ことにはならない」 rather than simply stating it's 'not always true'."
-                }
-            ],
-            "register": "formal",
-            "setting": "informative",
-            "conjugation": "negative plain (～ない)",
-            "speaker_gender": "female",
-            "listener_gender": "female",
-            "nuance": "The phrase expresses a general truth or observation, making the formal register appropriate for a detached, informative discussion between adults. The observation about genetics is gender-neutral but placed in a context of female interaction."
-        },
-        {
-            "japanese": "いいホテルに泊まろうと言ったとしても、一流ホテルに泊まることには{ことにはならない}。",
-            "english": "Just because I said let's stay at a nice hotel, that doesn't mean we will stay at a five star hotel.",
-            "scene": "A man managing expectations while planning a trip with his female partner.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "いいホテルに泊まろうと言ったとしても、一流ホテルに泊まる必要はありません。",
-                    "mitigation": "The scene implies clarification and setting realistic expectations, guiding the user to express that a certain outcome is not implied or required by the previous statement, which is the core function of 「ことにはならない」."
-                }
-            ],
-            "register": "casual",
-            "setting": "negotiating",
-            "conjugation": "negative plain (～ない)",
+            "conjugation": "negative past polite (～ませんでした)",
             "speaker_gender": "male",
-            "listener_gender": "female",
-            "nuance": "Using 「～よう」 indicates volition or suggestion, softening the statement. This casual negotiation is typical in personal relationships, making the male speaker's slightly hedging tone appropriate for addressing a female partner."
-        },
-        {
-            "japanese": "サンタさんが単に太っているからと言って、煙突から入れないということには{ことにはならない}。",
-            "english": "Simply because Santa is fat, doesn't mean that he can't come in through the chimney.",
-            "scene": "Explaining fantasy to a child.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "サンタさんは太っていても、煙突から入れるよ。",
-                    "mitigation": "The scene implies a playful rebuttal to a child's logical deduction, making 「ことにはならない」 suitable for stating that a simple fact does not logically lead to the child's conclusion."
-                }
-            ],
-            "register": "casual",
-            "setting": "humorous",
-            "conjugation": "negative plain (～ない)",
-            "nuance": "Using 「単に」 (tan ni) adds emphasis to the fact that Santa's weight is the only stated reason. This humorous denial of a logical conclusion is common in conversations with children, transcending specific gender roles."
-        },
-        {
-            "japanese": "お金を払うからといって、いくらでもお酒を飲んでいいということには{ことにはならない}。",
-            "english": "Just because I am paying doesn't mean that it is okay to drink as much as you like.",
-            "scene": "Setting boundaries when hosting a group gathering.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "お金を払っても、お酒をいくらでも飲んでいいわけではありません。",
-                    "mitigation": "The scene indicates setting a clear limit or condition, which aligns with the strong denial of permission or logical outcome expressed by 「ことにはならない」."
-                }
-            ],
-            "register": "casual",
-            "setting": "serious",
-            "conjugation": "negative plain (～ない)",
             "listener_gender": "group",
-            "nuance": "This is a common expression to set boundaries when you're paying for things. The use of 「いくらでも」 (ikura demo) emphasizes the extent of what is not permitted. Addressing a group, the tone is direct and unambiguous."
-        },
-        {
-            "japanese": "撮影だからと言って、近所の人に迷惑をかけてもいいということには{ことにはならない}。",
-            "english": "Just because it is photography, doesn't mean that it is okay to create a nuisance for your neighbors.",
-            "scene": "An adult setting boundaries to a photographer.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "撮影だからといって、近所の人に迷惑をかけるべきではありません。",
-                    "mitigation": "The scene emphasizes a principled stance against negative behavior, steering the user towards the definitive 'it does not become permissible' meaning of 「ことにはならない」, rather than a softer 'you shouldn't' statement."
-                }
-            ],
-            "register": "formal",
-            "setting": "serious",
-            "conjugation": "negative plain (～ない)",
-            "nuance": "The speaker emphasizes the importance of considering other people despite an activity's purpose. The formal register implies a context where clear rules or expectations are being laid out, applicable regardless of gender."
+            "nuance": "The use of the polite past form 「ことにはなりませんでした」 is appropriate for a coach addressing a group, conveying a serious tone. The phrase 「一度の勝利で」 highlights the single event that might have led to false confidence, making the denial of implication more forceful."
         }
     ],
     "false_friends": [
@@ -209,8 +168,41 @@
         "bunpro": "https://bunpro.jp/grammar_points/ことにはならない"
     },
     "change": [
-        "schema: Changed '使用域: 一般' to 'Usage: \"General\"' for consistency and to ensure all details values are in English as per Rule 1.",
-        "violation: Modified 'scene' in the first example from 'Encouraging a female friend facing a challenge.' to 'A woman encouraging her male friend facing a challenge.' to comply with Rule 6's directive: \"Must not use 'male' or 'female'. Use a proper name that's clearly gendered or 'man', 'woman', 'boy', 'girl', etc.\"",
-        "unnatural: Changed the 'kind' for 'からには' in 'false_friends' from 'synonym' to 'often confused with' as its nuance, while related to conditional statements, does not directly align with denying a conclusion, making 'often confused with' a more precise classification in this context."
+        {
+            "change-type": "violation",
+            "change": "Fixed all [rule-2] warnings by adding spaces between Japanese words in all example sentences."
+        },
+        {
+            "change-type": "command",
+            "change": "Rewrote all example sentences to be original, not taken literally from Bunpro or DOJG, as per the new instruction."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'meaning' property to each object within the 'conjugations' array, as required by the schema."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Refined 'formation' definitions to be more specific and cover common antecedent structures like からといって and ても, as suggested by the Bunpro writeup."
+        },
+        {
+            "change-type": "schema",
+            "change": "Removed 'details.register' as 'Standard' is not a valid enum value and the grammar point itself is not tied to a single register."
+        },
+        {
+            "change-type": "schema",
+            "change": "Changed 'details.Usage' to 'details.usage-context' to align with the schema's property names and converted its value to English."
+        },
+        {
+            "change-type": "violation",
+            "change": "Removed existing 'change' field entries from the prior grammar point, as new changes are being generated."
+        },
+        {
+            "change-type": "violation",
+            "change": "Modified example 4 to use JLPT N3/N4/N5 kanji instead of N1, adhering to JLPT level kanji usage guidelines for examples."
+        },
+        {
+            "change-type": "violation",
+            "change": "Removed 'speaker_gender', 'listener_gender', and 'speaker_age' from examples where the Japanese phrasing did not inherently necessitate these distinctions, adhering to the rule that they should only be specified if gender/age actually matters to the Japanese."
+        }
     ]
 }

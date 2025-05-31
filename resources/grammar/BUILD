@@ -208,13 +208,11 @@ py_build_tool_stream(
     args = ["--grammar-schema=resources/grammar/grammar-schema.json"],
     correlated = ["//resources/processed:ai-cleaned-merge-grammars"],
     extension = ".yaml",
-    # filter = ["る"],
+    # filter = ["0176"],
     pass_target_name = True,
     tool = ":ai-clean",
-    deps = [":grammar-schema.json"],
+    file_args = [":grammar-schema.json"],
 )
-
-
 
 # bazel run //resources/grammar:publish-ai-cleaned-merge-grammars --jobs=5
 sh_binary(

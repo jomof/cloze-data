@@ -14,9 +14,14 @@
     "jlpt": "N3",
     "meaning": "Even though; despite the fact that; although; but",
     "details": {
-        "Register": "Generally used in casual to semi-formal contexts.",
-        "Function": "Expresses a sense of disappointment, disapproval, or surprise that the actual situation is contrary to what is expected. Similar to 「のに」, but slightly stronger in expressing the speaker's emotion.",
-        "Usage": "Can connect clauses with contrasting or unexpected outcomes. Often used when the speaker feels that someone or something should have acted differently given the circumstances."
+        "part-of-speech": "conjunction",
+        "register": "semi-formal",
+        "function": "Expresses a sense of disappointment, disapproval, or surprise that the actual situation is contrary to what is expected. Similar to のに, but slightly stronger in expressing the speaker's emotion.",
+        "source": "resources/original/dojg/all/というのに.yaml",
+        "grammatical-role": "Connects clauses.",
+        "logical-flow": "Indicates an unexpected outcome.",
+        "temporal-flow": "Concurrent or consequential.",
+        "spatial-flow": "Not applicable. Use-context is more logical flow. For Example, the context is about how the speaker's emotional state has changed. This is covered by the phrase 'unexpected outcome'."
     },
     "etymology": "「と」 is a particle indicating quotation or content. 「言う」 means \"to say.\" 「のに」 is a conjunction expressing contrast or unexpectedness. Together, 「というのに」 literally means \"even though it is said that...\" or \"despite the fact that...\"",
     "writeup": "「というのに」 is a conjunction used to express **disappointment, disapproval, or surprise** about a situation that contradicts one's expectations. It's similar to 「のに」 but often carries a stronger emotional weight. It connects clauses to show contrast or an unexpected outcome. You'll often find it used when the speaker believes someone or something should have behaved differently. It's versatile, attaching to various sentence types: informal, い-adjective, な-adjective, and noun sentences.",
@@ -32,7 +37,7 @@
                 }
             ],
             "register": "semi-formal",
-            "setting": "casual",
+            "setting": "friendly",
             "nuance": "「肌寒いですね」は、相手に自分の意見を丁寧に伝える表現です。話し手は、4月なのにまだ肌寒いことに少し驚きを表しています。",
             "etymology": "四月 (shigatsu) means April. 肌寒い (hadazamui) means chilly, a compound of 肌 (hada, skin) and 寒い (samui, cold)."
         },
@@ -123,7 +128,7 @@
                 }
             ],
             "register": "shitashii kuchō (intimate)",
-            "setting": "emotional",
+            "setting": "melancholic",
             "speaker_gender": "male",
             "listener_gender": "female",
             "nuance": "話し手が男性であることは、文末の 「～んだ」 に表れており、気持ちをくだけて説明するニュアンスがあります。これは男性の話し方でより一般的です。「君 の こと が 大好き だ」 は、相手に対する強い愛情を直接的に表現する非常に率直な言い方です。彼は、彼女に自分の気持ちに気づいてもらい、受け入れてもらいたいと必死に訴えかけています。",
@@ -140,7 +145,7 @@
                 }
             ],
             "register": "casual",
-            "setting": "reprimanding",
+            "setting": "commanding",
             "speaker_gender": "female",
             "listener_gender": "male",
             "nuance": "文末の 「の？」 は、女性の話し方で家族に対して使われる際に、より柔らかく、問いかけるような、あるいは少し非難するような調子を与えることがあります。母親の落胆が明白です。",
@@ -163,9 +168,33 @@
         }
     ],
     "post_false_friends_writeup": "While 「のに」, 「というのに」, and 「にもかかわらず」 all indicate contrast or unexpectedness, they differ in nuance and formality. 「のに」 is the most neutral, 「というのに」 adds a stronger emotional emphasis, and 「にもかかわらず」 is the most formal.",
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/というのに"
+    },
     "change": [
-        "schema: Removed `conjugations` array at the top level because the grammar point is a fixed phrase that attaches to forms, not a conjugatable verb or adjective, as per schema rule for `conjugations`.",
-        "schema: Removed `conjugation` field from all examples because the top-level `conjugations` array was removed, as per schema rule: 'Must not be present if there is no top-level \"conjugations\" array.'",
-        "schema: Added `scene_rationale` to Example 1 because `scene` was present but `scene_rationale` was missing, as per schema rule: 'Must be present if \"scene\" is present.'"
+        {
+            "change-type": "schema",
+            "change": "Removed `conjugations` array at the top level because the grammar point is a fixed phrase that attaches to forms, not a conjugatable verb or adjective, as per schema rule for `conjugations`."
+        },
+        {
+            "change-type": "schema",
+            "change": "Removed `conjugation` field from all examples because the top-level `conjugations` array was removed, as per schema rule: 'Must not be present if there is no top-level \"conjugations\" array.'"
+        },
+        {
+            "change-type": "schema",
+            "change": "Added `scene_rationale` to Example 1 because `scene` was present but `scene_rationale` was missing, as per schema rule: 'Must be present if \"scene\" is present.'"
+        },
+        {
+            "change-type": "violation",
+            "change": "Changed `setting` for example 0 from 'casual' to 'friendly' to comply with enum values."
+        },
+        {
+            "change-type": "violation",
+            "change": "Changed `setting` for example 6 from 'emotional' to 'melancholic' to comply with enum values."
+        },
+        {
+            "change-type": "violation",
+            "change": "Changed `setting` for example 7 from 'reprimanding' to 'commanding' to comply with enum values."
+        }
     ]
 }

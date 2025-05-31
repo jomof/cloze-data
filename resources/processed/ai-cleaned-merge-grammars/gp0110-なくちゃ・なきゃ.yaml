@@ -50,7 +50,7 @@
             "scene_rationale": [
                 {
                     "competing_grammar": "明日、早く 起きなければなりません。",
-                    "mitigation": "For an internal thought or a casual self-reflection, the abbreviated 「なきゃな」 is more natural and less stiff than the formal 「なければなりません」, even for an older speaker."
+                    "mitigation": "For an internal thought or a casual self-reflection, the abbreviated 「なきゃな」 is more natural and less stiff than the formal 「しなければなりません」, even for an older speaker."
                 },
                 {
                     "competing_grammar": "明日、早く 起きる必要がある。",
@@ -146,12 +146,13 @@
             "nuance": "The strong emotive tone of 「なきゃ」 is amplified by 「絶対に」, signifying an unshakeable resolve. Addressing the listener directly with 「君」 adds to the intensity and intimacy, often used by a male speaker towards a female in dramatic contexts to convey deep commitment."
         }
     ],
+    "post_example_writeup": "The examples above demonstrate various contexts for 「なくちゃ・なきゃ」, ranging from personal reflection to urgent declarations. Note how the omission of 「いけない」 or 「ならない」 in some instances further enhances the casual and direct feel of the obligation. The context and speaker's tone often dictate the subtle nuances of necessity being conveyed.",
     "false_friends": [
         {
             "term": "てはいけない",
             "meaning": "Must not, may not",
             "kind": "antonym",
-            "nuance": "Unlike 「なくちゃ・なきゃ」, which indicates an obligation to do something, 「てはいけない」 expresses prohibition or something that must *not* be done."
+            "nuance": "Unlike 「なくちゃ・なきゃ」, which indicates an obligation to do something, 「てはいけない」 expresses prohibition or something that must not be done."
         },
         {
             "term": "べきではない",
@@ -188,48 +189,34 @@
             "meaning": "Must, have to",
             "kind": "synonym",
             "nuance": "「ないと」 implies necessity, similar to 「なくちゃ・なきゃ」, but often carries a conditional nuance, suggesting that a negative consequence will occur if the action is not performed."
+        },
+        {
+            "term": "べきだ",
+            "meaning": "Should, Ought to",
+            "kind": "similar expression",
+            "nuance": "「なくちゃ・なきゃ」 expresses a direct personal or inherent necessity, whereas 「べきだ」 indicates advisability, what one 'should' do, or moral obligation, often with a more objective or general application."
         }
     ],
-    "post_false_friends_writeup": "While 「なくちゃ・なきゃ」 are highly colloquial, keep in mind that the full forms 「なくてはいけない/ならない」 and 「なければいけない/ならない」 are used when a more formal or explicit statement of obligation is required. Remember that particles such as 「てはいけない」 and 「べきではない」 convey prohibition or strong advisability against an action, which is the opposite of the necessity expressed by 「なくちゃ・なきゃ」. Finally, 「ないと」 is a close synonym but often emphasizes the conditional aspect of the obligation, implying a negative outcome if the action is not taken.",
+    "post_false_friends_writeup": "While 「なくちゃ・なきゃ」 are highly colloquial, keep in mind that the full forms 「なくてはいけない/ならない」 and 「なければいけない/ならない」 are used when a more formal or explicit statement of obligation is required. Remember that particles such as 「てはいけない」 and 「べきではない」 convey prohibition or strong advisability against an action, which is the opposite of the necessity expressed by 「なくちゃ・なきゃ」. 「べきだ」 also indicates a sense of 'should' or 'ought to' rather than the direct 'must' of 「なくちゃ・なきゃ」. Finally, 「ないと」 is a close synonym but often emphasizes the conditional aspect of the obligation, implying a negative outcome if the action is not taken.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/なくちゃ-なきゃ"
     },
     "change": [
         {
             "change-type": "violation",
-            "change": "All example sentences were replaced with new ones to avoid literal reproduction from Bunpro or DOJG, as per instructions."
+            "change": "Removed the 'conjugation' field from all example sentences, as the grammar point 'なくちゃ・なきゃ' itself is not a dictionary form of a verb/adjective, precluding a top-level 'conjugations' array as per schema rules, and thus making the 'conjugation' field invalid in examples."
         },
         {
             "change-type": "violation",
-            "change": "Added 'english_literally' field to all example sentences as required by the schema."
+            "change": "Added 'べきだ' to 'false_friends' with 'similar expression' kind, as it was a 'competing_grammar' in an example's 'scene_rationale' but not previously included, violating the rule to include all competing grammar."
         },
         {
-            "change-type": "command",
-            "change": "Incorporated speaker age, gender, and nuance details into example sentences, fulfilling prior commands from the 'change' field of the previous grammar point."
+            "change-type": "suggestion",
+            "change": "Modified 'post_false_friends_writeup' to include a nuanced distinction for 'べきだ' after adding it to the false friends list, improving clarity."
         },
         {
-            "change-type": "schema",
-            "change": "Removed the 'post_example_writeup' field which was null in the prior version, adhering to the schema rule of omitting null fields."
-        },
-        {
-            "change-type": "schema",
-            "change": "Updated 'Part of Speech' in 'details' to 'part-of-speech: phrase' to match schema enumeration, and converted other Japanese keys to English, adding 'function' and 'nuance'."
-        },
-        {
-            "change-type": "unnatural",
-            "change": "Refined the 'etymology' text for improved clarity and alignment with the teacher persona."
-        },
-        {
-            "change-type": "unnatural",
-            "change": "Rewrote the 'writeup' to enhance clarity, flow, and persona, ensuring no direct references to examples and incorporating details on gender/age specific usage."
-        },
-        {
-            "change-type": "unnatural",
-            "change": "Refined the 'nuance' explanations within 'false_friends' for better clarity and consistency, ensuring they directly contrast with the main grammar point."
-        },
-        {
-            "change-type": "unnatural",
-            "change": "Improved the 'post_false_friends_writeup' for better clarity and to avoid the term 'false friends' as instructed."
+            "change-type": "meta",
+            "change": "Acknowledged that strict adherence to N5 kanji for example sentences proved challenging while maintaining naturalness and variety. The existing examples (from PRIOR_GRAMMAR_POINT) were retained as they represented 'wanted' kanji that enabled appropriate example construction, aligning with the prompt's allowance to use preferred kanji when strict JLPT-level kanji limits naturalness."
         }
     ]
 }

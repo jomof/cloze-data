@@ -26,7 +26,8 @@
     "examples": [
         {
             "japanese": "信号 が 青 に なったら、{そこで} 渡り ましょう。",
-            "english": "When the light turns green, then let's cross.",
+            "english": "When the light turns green, let's cross.",
+            "english_literally": "If the traffic light turns green, then let's cross.",
             "scene": "You are waiting at a crosswalk with a friend and giving a gentle reminder.",
             "scene_rationale": [
                 {
@@ -40,6 +41,7 @@
         {
             "japanese": "課題 が 終わらなかった。{そこで} 夜 遅くまで 勉強 した。",
             "english": "The assignment wasn't finished. So, I studied late into the night.",
+            "english_literally": "The assignment did not finish. At that point, I studied until late at night.",
             "scene": "A student is explaining to a friend why they look tired.",
             "scene_rationale": [
                 {
@@ -52,7 +54,8 @@
         },
         {
             "japanese": "困った 時 には、{そこで} 一度 立ち止まって 考えてみて ください。",
-            "english": "When you're in trouble, then please stop once and try to think.",
+            "english": "When you're in trouble, please stop once and try to think.",
+            "english_literally": "When you are troubled, then please stop once and try to think.",
             "scene": "A senior colleague is offering advice to a junior one on how to approach problems.",
             "scene_rationale": [
                 {
@@ -66,6 +69,7 @@
         {
             "japanese": "提案 が 承認 されました。{そこで} 早急 に 実行 計画 を 作成 してください。",
             "english": "The proposal has been approved. Therefore, please immediately create an implementation plan.",
+            "english_literally": "The proposal was approved. Therefore, please create an implementation plan urgently.",
             "scene": "A project manager is giving instructions to a team member after a successful meeting.",
             "scene_rationale": [
                 {
@@ -79,6 +83,7 @@
         {
             "japanese": "突然 雨 が 降り出した。{そこで} 近く の カフェ に 避難 した。",
             "english": "It suddenly started raining. So, I took shelter in a nearby cafe.",
+            "english_literally": "Suddenly rain started to fall. At that point, I took shelter in a nearby cafe.",
             "scene": "You are recounting how an unexpected change in weather led to a spontaneous decision.",
             "scene_rationale": [
                 {
@@ -92,6 +97,7 @@
         {
             "japanese": "彼 の 話 は 嘘 だと 分かった。{そこで} 彼 を 信頼 する こと を やめた。",
             "english": "I realized his story was a lie. At that point, I stopped trusting him.",
+            "english_literally": "I understood his story was a lie. At that point, I stopped trusting him.",
             "scene": "Someone is reflecting on a personal realization that led to a change in their relationship with another person.",
             "scene_rationale": [
                 {
@@ -129,8 +135,8 @@
     },
     "change": [
         {
-            "change-type": "violation",
-            "change": "Removed `speaker_gender`, `listener_gender`, `speaker_age`, and `nuance` fields from example sentences where the Japanese phrasing did not inherently convey gender- or age-specific nuance, as per the schema's explicit requirements for the `nuance` field. This affects examples 1, 2, 3, and 6."
+            "change-type": "schema",
+            "change": "Added 'english_literally' field to all example sentences as per schema requirements for optional fields when a less natural translation can hint the user."
         }
     ]
 }

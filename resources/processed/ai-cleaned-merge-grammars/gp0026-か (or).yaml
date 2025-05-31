@@ -16,9 +16,8 @@
     "meaning": "Or; whether (alternative marker)",
     "details": {
         "part-of-speech": "particle",
-        "register": "casual",
+        "register": "semi-formal",
         "particle-syntactic-function": "conjunctive",
-        "particle-pragmatic-function": "interrogative",
         "function": "Used to connect two or more alternatives, forming a choice, question, or an uncertain statement.",
         "nuance": "While sharing its form with the question marker, this usage of か explicitly presents options without necessarily forming a direct question. It can imply a choice between things, actions, or states, or simply indicate uncertainty regarding which of several options is true. When connecting phrases, especially for choices between actions, it often implies 'either... or...'."
     },
@@ -94,7 +93,7 @@
             "scene_rationale": [
                 {
                     "competing_grammar": "この りんご は 大きい？それとも 小さい？",
-                    "mitigation": "This would separate the two size inquiries into distinct questions, making the conversation less concise and natural for friends. 「か」 combines them into a single, flowing thought."
+                    "mitigation": "This would separate the two size inquiries into distinct questions, losing the direct comparison implied by 「か」 between the two activities. 「か」 combines them into a single, flowing thought."
                 },
                 {
                     "competing_grammar": "この りんご は 大きい？小さい？どっち？",
@@ -106,6 +105,24 @@
             "speaker_gender": "female",
             "listener_gender": "female",
             "nuance": "Here, 「か」 connects two plain-form い-adjectives, 「大きい」 (big) and 「小さい」 (small), indicating a choice between descriptive states. The casual 「どっち？」 (which one?) is common among friends when asking for a simple assessment."
+        },
+        {
+            "japanese": "忙しい {か} 暇 {か}、どっちのほうがいい？",
+            "english": "Busy or free, which do you prefer?",
+            "english_literally": "Busy or free, which direction better?",
+            "scene": "Two coworkers discussing their schedule preferences for a project.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "忙しい の が いい です か。それとも 暇 な の が いい です か。",
+                    "mitigation": "This phrasing is overly formal and verbose for a casual conversation between colleagues, making it less natural. 「か」 offers a concise and direct way to inquire about a preference."
+                }
+            ],
+            "register": "casual",
+            "setting": "professional",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "speaker_age": "younger",
+            "nuance": "The use of 「か」 to connect 「忙しい」 (busy) and 「暇」 (free time), both な-adjectives, clearly presents a choice between states. The casual 「どっちのほうがいい？」 (which is better?) is natural for coworkers discussing preferences."
         },
         {
             "japanese": "犬 {か} 猫 {か}、どっちを 飼って いる の？",
@@ -129,23 +146,23 @@
             "nuance": "The use of 「か」 between 「犬」 (dog) and 「猫」 (cat) presents two common pet options. The casual 「どっちを 飼って いる の？」 (which one are you raising?) is typical for younger speakers discussing everyday topics."
         },
         {
-            "japanese": "とうきょう {か} おおさか {か}、行きたい 所 は どこ です か。",
+            "japanese": "東京 {か} 大阪 {か}、行きたい 所 は どこ です か。",
             "english": "Tokyo or Osaka, where do you want to go?",
             "english_literally": "Tokyo or Osaka, the place you want to go is where?",
             "scene": "A travel agent discussing holiday destinations with a client.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "とうきょう に 行きたい です か。それとも おおさか に 行きたい です か。",
+                    "competing_grammar": "東京 に 行きたい です か。それとも 大阪 に 行きたい です か。",
                     "mitigation": "This creates two separate, slightly rigid questions. 「か」 offers a more natural flow for presenting multiple destination choices within a single inquiry, which is more common in professional client interactions."
                 },
                 {
-                    "competing_grammar": "とうきょう。おおさか。行きたい 所 は どこ です か。",
+                    "competing_grammar": "東京。大阪。行きたい 所 は どこ です か。",
                     "mitigation": "Merely stating the cities without 「か」 makes them sound like isolated words rather than a pair of related options being presented for a choice. The scene emphasizes providing clear choices to a client."
                 }
             ],
             "register": "formal",
             "setting": "professional",
-            "nuance": "Using 「か」 to connect 「とうきょう」 (Tokyo) and 「おおさか」 (Osaka) efficiently presents two major city options. The phrase 「行きたい 所 は どこ です か」 (where do you want to go?) maintains a polite and professional tone, suitable for formal settings."
+            "nuance": "Using 「か」 to connect 「東京」 (Tokyo) and 「大阪」 (Osaka) efficiently presents two major city options. The phrase 「行きたい 所 は どこ です か」 (where do you want to go?) maintains a polite and professional tone, suitable for formal settings."
         },
         {
             "japanese": "今日 {か} 明日、あえます か。",
@@ -228,44 +245,20 @@
     },
     "change": [
         {
-            "change-type": "command",
-            "change": "Created entirely new example sentences to avoid literal copying from Bunpro or DOJG, while adhering to JLPT N5 kanji levels as previously commanded. This involved careful selection of N5 vocabulary and writing non-N5 kanji words in hiragana."
+            "change-type": "violation",
+            "change": "Changed 'details.register' from 'casual' to 'semi-formal' to better reflect the range of usage indicated by the Bunpro source's 'Standard' and the examples' formality."
         },
         {
             "change-type": "suggestion",
-            "change": "Added an explicit example for 'い-adjective (plain) + か + い-adjective (plain)' formation to ensure all specified formation types are explicitly demonstrated in examples."
+            "change": "Removed 'details.particle-pragmatic-function' as its role is primarily syntactic (conjunctive) in this context, and the nuance of its interrogative origin is explained elsewhere."
         },
         {
             "change-type": "suggestion",
-            "change": "Refined the 'formation' descriptions to be more explicit about plain forms and the types of words connected (e.g., 'い-adjective (plain)', 'な-adjective (stem)')."
+            "change": "Added an example sentence to cover the 'な-adjective (stem) + か + な-adjective (stem/だ)' formation, which was previously missing."
         },
         {
-            "change-type": "suggestion",
-            "change": "Expanded the 'details' section to include 'function' and 'nuance' for the grammar point itself, providing a more comprehensive overview."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Refined the 'etymology' and 'writeup' to be more detailed and comprehensive, elaborating on the connection between its question marker and 'or' functions, and adding important considerations."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Updated the 'false_friends' 'nuance' descriptions to provide clearer distinctions and examples for each term, and ensured 'Question-phrase+か' was properly categorized as a 'similar expression' rather than 'synonym' given its distinct grammatical role."
-        },
-        {
-            "change-type": "command",
-            "change": "Re-evaluated and adjusted 'speaker_gender', 'listener_gender', and 'speaker_age' in examples to ensure they are only specified when relevant to the Japanese phrasing or nuance, following the rule 'Use only if this sentence would typically only be spoken by this gender'."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Added 'english_literally' for examples where a literal translation might be helpful for clarity."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Enhanced 'scene' and 'scene_rationale' for all new examples to provide clearer context and justify the choice of 'か' over competing grammar, following previous instructions about story-like scenes and comprehensive mitigation explanations."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Improved 'nuance' for each example to specifically reference Japanese phrases in 「quotes」 and explain the connection to speaker/listener attributes and register, as required."
+            "change-type": "violation",
+            "change": "Replaced hiragana with kanji for '東京' and '大阪' in example sentences to follow best practices for Japanese writing."
         }
     ]
 }

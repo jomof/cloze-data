@@ -15,8 +15,10 @@
     "meaning": "Approximately; To the extent that",
     "details": {
         "part-of-speech": "particle",
-        "register": "formal",
+        "register": "teineigo (polite)",
+        "particle-syntactic-function": "limiter",
         "usage-context": "General",
+        "function": "Functions as a degree or extent indicator, often modifying verbs, adjectives, or entire clauses.",
         "nuance": "Unlike expressions such as くらい (which focuses on the speaker's uncertainty about an exact number), ほど emphasizes that an upper or lower limit has been reached. It refers specifically to a 'limit' and cannot describe something exceeding it. Therefore, ほど is frequently used to express an exaggerated limit, even when the actual extent is far less.",
         "colocation": "Often found with verbs like `~すぎる` (to overdo), or expressions of intensity like `痛い` (painful) or `驚く` (surprising) to emphasize an extreme degree.",
         "grammatical-role": "Functions as a degree or extent indicator, often modifying verbs, adjectives, or entire clauses.",
@@ -69,6 +71,22 @@
             "speaker_gender": "female",
             "listener_gender": "female",
             "nuance": "The sentence ends with the particle 「わ」, which is typically used by female speakers to express a personal feeling, often with a soft or appreciative tone. The phrase `想像できないほど` stresses the incredible and almost unimaginable quality of the cake."
+        },
+        {
+            "japanese": "彼の 説明は 明快な{ほど} 理解しやすかった。",
+            "english": "His explanation was so clear that it was easy to understand.",
+            "scene": "A student is praising a professor's lecture, emphasizing how well they grasped the concept due to the clarity.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼の 説明は 明快なくらい 理解しやすかった。",
+                    "mitigation": "The scene emphasizes the direct, remarkable clarity of the explanation leading to understanding, aligning with 'ほど's nuance of reaching a significant degree, rather than just an approximation as 'くらい' might imply."
+                }
+            ],
+            "register": "formal",
+            "setting": "informative",
+            "speaker_gender": "male",
+            "listener_gender": "group",
+            "nuance": "The use of 「明快なほど」 highlights the exceptional clarity of the explanation, indicating that it reached a level that made understanding almost effortless. The phrase is often used in academic or professional settings to describe a high degree of quality."
         },
         {
             "japanese": "彼女の 部屋は、足の 踏み場も ない{ほど} 散らかっている。",
@@ -141,40 +159,12 @@
     },
     "change": [
         {
-            "change-type": "schema",
-            "change": "Removed 'conjugation' field from all 'examples' as 'ほど' is not a conjugatable grammar point."
-        },
-        {
-            "change-type": "schema",
-            "change": "Removed 'listener_age' from all 'examples' as it is deprecated."
-        },
-        {
-            "change-type": "violation",
-            "change": "Replaced examples that were literal or near-literal copies of Bunpro examples (or the prior input's examples derived from Bunpro) with new, unique examples to comply with the instruction to create original examples."
-        },
-        {
-            "change-type": "schema",
-            "change": "Added 'part-of-speech' and 'function' to 'details' based on schema requirements and DOJG definition."
-        },
-        {
-            "change-type": "schema",
-            "change": "Renamed 'details.Nuance of Extent' to 'details.nuance' to match schema property name."
-        },
-        {
-            "change-type": "unnatural",
-            "change": "Modified 'meaning' slightly from 'To the extent that, About, Approximately' to 'Approximately; To the extent that' for better flow and clarity."
-        },
-        {
-            "change-type": "schema",
-            "change": "Changed 'register' values in 'examples' from 'polite' to 'formal' and 'casual' to lowercase 'casual' as per schema enum values."
-        },
-        {
-            "change-type": "schema",
-            "change": "Changed 'kind' values in 'false_friends' for 'くらい' (both instances) and 'まで' from 'synonym' to 'often confused with', and for 'は〜くらいです' from 'synonym' to 'similar expression' for better accuracy regarding their relationship to 'ほど'."
+            "change-type": "suggestion",
+            "change": "Added a new example sentence to cover the `[Adjective (na-form)] + な/である + ほど` formation, ensuring all formations are exemplified."
         },
         {
             "change-type": "suggestion",
-            "change": "Added 'colocation', 'grammatical-role', and 'logical-flow' to 'details' to provide more comprehensive information about the grammar point's usage."
+            "change": "Adjusted `details.register` from 'formal' to 'teineigo (polite)' to better reflect the particle's general usage across various contexts, encompassing both casual and formal speech depending on the surrounding words."
         }
     ]
 }

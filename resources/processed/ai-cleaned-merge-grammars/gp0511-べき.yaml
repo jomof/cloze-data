@@ -65,11 +65,12 @@
     "meaning": "Should, ought to, must",
     "meaning_warning": "With する, both 「するべき」 and 「すべき」 are correct.",
     "details": {
-        "register": "teineigo (polite)",
+        "part-of-speech": "auxiliary verb",
+        "register": "casual",
         "usage-context": "General"
     },
     "etymology": "「べき」 comes from the classical auxiliary verb 「べし」, which indicates necessity or obligation. 「べし」 itself is derived from the kanji 「可」, meaning 'permissible' or 'possible', implying that the action is the most reasonable or only acceptable choice. Thus, 「べき」 carries a strong nuance of obligation.",
-    "writeup": "The auxiliary verb 「べき」 expresses a strong sense of obligation, recommendation, or what *should* be done. It is attached to the dictionary form of a verb (except for 「する」, which can become 「するべき」 or 「すべき」) and followed by 「だ」. It conveys that something 'ought to be done' or 'must be done' because it's the right or reasonable thing to do.\n\n*   「べき」 implies a moral or logical imperative, suggesting that other courses of action are less desirable or unacceptable. It is a highly versatile expression used across all registers and age groups, without specific gendered usage.\n*   To express something that *should have* been done, use 「べきだった」.\n*   「べきではない」 expresses that something *should not* be done.\n\n**Important Considerations**\n\n*   The nuance of 「べき」 is stronger than 「ほうがいい」 but weaker than 「なければならない」.",
+    "writeup": "The auxiliary verb 「べき」 expresses a strong sense of obligation, recommendation, or what **should** be done. It is attached to the dictionary form of a verb (except for 「する」, which can become 「するべき」 or 「すべき」) and followed by 「だ」. It conveys that something 'ought to be done' or 'must be done' because it's the right or reasonable thing to do.\n\n*   「べき」 implies a moral or logical imperative, suggesting that other courses of action are less desirable or unacceptable. It is a highly versatile expression used across all registers and age groups, without specific gendered usage.\n*   To express something that **should have** been done, use 「べきだった」.\n*   「べきではない」 expresses that something **should not** be done.\n\n**Important Considerations**\n\n*   The nuance of 「べき」 is stronger than 「ほうがいい」 but weaker than 「なければならない」.",
     "examples": [
         {
             "japanese": "大事 な こと は 直接 {話す べき} です。",
@@ -268,7 +269,7 @@
                 },
                 {
                     "competing_grammar": "この絵は今買うといい。後悔しないために。",
-                    "mitigation": "「～といい」 is a softer recommendation. The scene suggests a more direct and emphatic endorsement to seize a rare find, fitting the persuasive tone of an art dealer."
+                    "mitigation": "「～といい」 is a softer recommendation. The scene suggests a more direct and emphatic endorsement to seize a rare find, fitting the tone of earnest encouragement based on ability, which 「べき」 captures better."
                 }
             ],
             "register": "semi-formal",
@@ -364,7 +365,7 @@
                 },
                 {
                     "competing_grammar": "健康を考えるなら、定期的に運動しなければならないと思う。",
-                    "mitigation": "「～なければならない」 is a stronger, more absolute necessity. The scene is about giving general health advice rather than a strict command, making 「べき」 a more appropriate balance of strong recommendation without being overly prescriptive."
+                    "mitigation": "「～しなければならない」 is a stronger, more absolute necessity. The scene is about giving general health advice rather than a strict command, making 「べき」 a more appropriate balance of strong recommendation without being overly prescriptive."
                 }
             ],
             "register": "semi-formal",
@@ -526,6 +527,12 @@
             "nuance": "「ないほうがいい」 suggests that it is preferable *not* to do something, while 「べき」 advises what *should* be done."
         },
         {
+            "term": "べきではない",
+            "meaning": "Should not, Must not, Ought not to",
+            "kind": "antonym",
+            "nuance": "「べきではない」 is the direct negative form of 「べき」, expressing that something absolutely should not be done."
+        },
+        {
             "term": "たほうがいい",
             "meaning": "It'd be better to, should do",
             "kind": "synonym",
@@ -563,35 +570,11 @@
     "change": [
         {
             "change-type": "violation",
-            "change": "Added \"meaning\" field to all entries in the \"conjugations\" array, as required by the schema."
-        },
-        {
-            "change-type": "violation",
-            "change": "Renamed \"使用域\" key in \"details\" to \"usage-context\" and its value to \"General\" to comply with English key and enum requirements."
-        },
-        {
-            "change-type": "violation",
-            "change": "Rewrote all example sentences and their associated \"english_literally\", \"scene\", \"scene_rationale\", and \"nuance\" fields to be original and not taken verbatim from source materials, while adhering to JLPT N3 kanji usage as much as possible."
-        },
-        {
-            "change-type": "schema",
-            "change": "Ensured all example sentences have a \"conjugation\" field, derived from the top-level conjugations list."
-        },
-        {
-            "change-type": "schema",
-            "change": "Removed \"listener_age\" field from all example sentences as it is deprecated by the schema."
-        },
-        {
-            "change-type": "schema",
-            "change": "Ensured \"nuance\" fields in examples correctly use Japanese text in 「quotes」 for references."
+            "change": "Changed details.register from 'teineigo (polite)' to 'casual' to better reflect the broad applicability of 「べき」 across different registers, especially its use with plain forms like べきだ."
         },
         {
             "change-type": "suggestion",
-            "change": "Added example sentences for negative plain, negative non-past polite, and negative past plain/polite conjugations to ensure full coverage of the top-level conjugations, providing a wider variety of settings and contexts."
-        },
-        {
-            "change-type": "violation",
-            "change": "Corrected the register in details from \"Standard\" to \"teineigo (polite)\" based on common usage of べき in standard, non-casual contexts."
+            "change": "Added `べきではない` to `false_friends` as a direct antonym for completeness."
         }
     ]
 }

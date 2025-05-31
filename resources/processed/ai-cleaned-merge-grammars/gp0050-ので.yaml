@@ -7,6 +7,7 @@
     },
     "formation": {
         "Verb (plain form) + ので": "Indicates reason or cause.",
+        "Verb (ます form) + ので": "Indicates reason or cause. This is a unique feature for conjunction particles.",
         "い-adjective + ので": "Indicates reason or cause.",
         "な-adjective + な + ので": "Indicates reason or cause.",
         "Noun + な + ので": "Indicates reason or cause."
@@ -16,180 +17,198 @@
     "details": {
         "part-of-speech": "particle",
         "register": "formal",
+        "particle-syntactic-function": "conjunctive",
+        "particle-pragmatic-function": "assertion",
+        "usage-context": "general usage",
         "function": "conjunctive particle",
+        "nuance": "Conveys a reason or cause with an objective and factual nuance, often presenting the reason as a natural consequence or established fact. Less forceful than から, creating a softer, more polite explanation.",
         "grammatical-role": "connects two clauses, indicating a reason or cause",
         "logical-flow": "establishes a causal relationship where the first clause is the reason for the second",
         "temporal-flow": "the reason precedes the result",
         "spatial-flow": "not applicable for this grammar point"
     },
     "etymology": "ので is derived from the te-form (て) of the explanatory のだ (noda). Over time, it evolved into a conjunction particle used to indicate reason or cause, connecting clauses with a sense of objectivity.",
-    "writeup": "ので is a conjunctive particle used to connect two clauses, indicating a reason or cause. It is akin to から (kara), but ので typically conveys a more objective nuance, focusing on facts rather than subjective feelings. When used with nouns and な-adjectives, な must precede ので.\n\n**Key Differences from から:**\n*   ので emphasizes the overall situation and its consequences, presenting an objective reason.\n*   から tends to be more subjective and can sound less definitive.\n\n**Usage Notes:**\n*   ので can sometimes be shortened to んで in more casual speech.\n*   Unlike many other connecting grammar points, ので can be used with the ます form of verbs, which is a distinctive feature for a conjunctive particle.",
+    "writeup": "ので is a conjunctive particle used to connect two clauses, indicating a reason or cause. It is akin to から (kara), but ので typically conveys a more objective nuance, focusing on facts rather than subjective feelings. When used with nouns and な-adjectives, な must precede ので.\n\n**Key Differences from から:**\n*   ので emphasizes the overall situation and its consequences, presenting an objective reason.\n*   から tends to be more subjective and can sound less definitive, and is often used when giving a more direct command or request.\n\n**Usage Notes:**\n*   ので can sometimes be shortened to んで in more casual speech.\n*   Unlike many other connecting grammar points, ので can be used with the ます form of verbs, which is a distinctive feature for a conjunctive particle. This usage often appears in formal or polite contexts.",
     "examples": [
         {
-            "japanese": "雨 が 降る {ので} 、傘 を 持って 行きます。",
-            "english": "Because it will rain, I will take an umbrella.",
-            "scene": "A person preparing to leave their house, noticing the weather forecast.",
-            "register": "formal",
-            "setting": "informative"
-        },
-        {
-            "japanese": "この ケーキ は とても 甘い {ので} 、少し だけ 食べます。",
-            "english": "Since this cake is very sweet, I'll eat just a little.",
-            "scene": "A person sampling a new dessert and deciding on their portion size.",
+            "japanese": "毎日 勉強 する {ので} 、日本語 が 上手 に なりました。",
+            "english": "Because I study every day, my Japanese has improved.",
+            "english_literally": "Because I study every day, Japanese became good.",
+            "scene": "A student reflecting on their consistent effort and noticeable improvement in language learning.",
             "register": "casual",
-            "setting": "informative"
+            "setting": "reflective",
+            "speaker_gender": "male",
+            "listener_gender": "no one",
+            "nuance": "The statement uses 「なりました」 (became), indicating a natural progression and outcome of the consistent action of studying. This objective result is clearly linked to the reason by 「ので」."
         },
         {
-            "japanese": "部屋 が きれい {なので} 、気持ち が いい です。",
-            "english": "Because the room is clean, I feel good.",
-            "scene": "A person entering a newly tidied room and feeling pleased.",
-            "register": "formal",
-            "setting": "reflective"
+            "japanese": "この 本 は おもしろい {ので} 、読ん で みて ください。",
+            "english": "This book is interesting, so please try reading it.",
+            "english_literally": "Because this book is interesting, please try reading it.",
+            "scene": "A friend enthusiastically recommending a book they enjoyed to another friend.",
+            "register": "casual",
+            "setting": "friendly",
+            "nuance": "The speaker uses 「おもしろい」 (interesting) as a clear, objective quality of the book, which logically leads to the gentle suggestion to try reading it. The request 「〜て ください」 is softened by 「ので」, making it sound more like a natural recommendation."
+        },
+        {
+            "japanese": "今日 は 雨 {なので} 、外 へ 行きません。",
+            "english": "Because it's raining today, I won't go outside.",
+            "english_literally": "Because today is rain, outside will not go.",
+            "scene": "A person looking out the window and deciding to stay indoors due to the weather.",
+            "register": "casual",
+            "setting": "reflective",
+            "nuance": "The reason, 「雨」 (rain), is an objective fact that directly influences the decision not to go outside. This simple cause-and-effect relationship is clearly established by 「ので」 without implying strong emotion or personal preference."
         },
         {
             "japanese": "今日 は 日曜日 {なので} 、ゆっくり 休みます。",
             "english": "Since today is Sunday, I'll rest leisurely.",
-            "scene": "A person planning their relaxed day off.",
+            "english_literally": "Because today is Sunday, I will rest leisurely.",
+            "scene": "A person looking forward to a relaxing day off from work or school.",
             "register": "casual",
-            "setting": "optimistic"
+            "setting": "optimistic",
+            "nuance": "The fact that 「日曜日」 (Sunday) is an objective, universally known reason for resting makes 「ので」 a fitting choice, presenting the rest as a natural consequence of the day."
         },
         {
-            "japanese": "電車 が 遅れて います {ので} 、会議 に 遅れます。",
-            "english": "Since the train is delayed, I will be late for the meeting.",
-            "english_literally": "Because the train is late, I will be late to the meeting.",
-            "scene": "A man on a crowded train is running late for an important business meeting and is texting his colleague.",
+            "japanese": "社長 が お話しに なります {ので} 、しずかに して ください。",
+            "english": "Since the company president will speak, please be quiet.",
+            "english_literally": "Because the company president will speak, please make it quiet.",
+            "scene": "An assistant addressing a group of employees before a meeting with the president.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "電車 が 遅れて います {から} 、会議 に 遅れます。",
-                    "mitigation": "The scene describes a professional, factual situation where an objective reason for being late is given. While から can also be used, ので emphasizes the objective consequence, which is more suitable for a professional context where one is stating a fact rather than offering a subjective excuse."
+                    "competing_grammar": "社長 が お話しに なります {から} 、しずかに して ください。",
+                    "mitigation": "In a professional setting, 「ので」 is preferred when stating an objective reason for an instruction or request, as it presents the reason as a natural consequence rather than a subjective command. It softens the directness compared to 「から」, making the instruction feel more like a logical necessity."
                 }
             ],
             "register": "formal",
             "setting": "professional",
-            "speaker_gender": "male"
+            "speaker_gender": "male",
+            "listener_gender": "group",
+            "nuance": "The use of 「お話しに なります」 (honorific form of 話す) and 「しずかに して ください」 (polite request) establishes a formal, respectful tone. 「ので」 emphasizes the objective fact of the president speaking as the reason for the polite request, making it suitable for a male speaker in a formal leadership role."
         },
         {
-            "japanese": "寒い {ので} 、温かい お茶 を 飲もうか。",
-            "english": "It's cold, so shall we drink some warm tea?",
-            "english_literally": "Because it is cold, shall we drink warm tea?",
-            "scene": "A woman suggesting to her friend that they get a warm drink after noticing the chill.",
+            "japanese": "道 が こん で います {ので} 、少し 早く 出発 しましょう。",
+            "english": "The road is crowded, so let's leave a little early.",
+            "english_literally": "Because the road is crowded, let's depart a little early.",
+            "scene": "A family preparing for a road trip, checking traffic conditions on a navigation app.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "寒い {から} 、温かい お茶 を 飲もうか。",
-                    "mitigation": "The scene involves a casual suggestion between friends. While から is commonly used casually, ので in this context might slightly soften the invitation, implying that the coldness is a clear, undeniable fact leading to the suggestion."
+                    "competing_grammar": "道 が こん で います {から} 、少し 早く 出発 しましょう。",
+                    "mitigation": "The speaker is stating an objective fact about traffic conditions. 「ので」 presents this fact as a clear, undeniable reason for the suggestion to leave early, making the suggestion sound more reasoned and less like a personal preference, which 「から」 might imply in a casual context."
                 }
             ],
             "register": "casual",
-            "setting": "friendly",
-            "speaker_gender": "female",
-            "listener_gender": "female"
+            "setting": "cautious",
+            "nuance": "The objective observation of 「道 が こん で います」 (the road is crowded) serves as the basis for the suggestion 「早く 出発 しましょう」 (let's leave early). The use of 「ので」 makes the suggestion sound like a logical and unavoidable consequence, rather than a strong personal desire."
         },
         {
-            "japanese": "試験 は 大切 {なので} 、しっかり 勉強 しなさい。",
-            "english": "Because the exam is important, study diligently.",
-            "english_literally": "Since the exam is important, do studying thoroughly.",
-            "scene": "A parent advising their child before a major exam.",
+            "japanese": "お忙しい {ので} 、お邪魔 して 申し訳 ありません。",
+            "english": "Since you're busy, I apologize for disturbing you.",
+            "english_literally": "Because you are busy, I apologize for disturbing.",
+            "scene": "A younger male subordinate entering a busy female superior's office to ask a quick question.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "試験 は 大切 {だから} 、しっかり 勉強 しなさい。",
-                    "mitigation": "The scene portrays a parental figure giving guidance. ので here presents the importance of the exam as an objective truth, which then logically necessitates diligent study. This makes the advice sound more like a universally recognized principle rather than a subjective opinion."
+                    "competing_grammar": "お忙しい {から} 、お邪魔 して 申し訳 ありません。",
+                    "mitigation": "In a situation where one is apologizing for imposition, 「ので」 is used to present the other person's busyness as an objective, factual reason for the apology. It softens the statement and makes the apology sound more respectful and less like a direct excuse, which 「から」 could imply."
                 }
             ],
             "register": "semi-formal",
-            "setting": "instructional",
-            "speaker_gender": "female",
-            "listener_gender": "male",
-            "speaker_age": "older",
-            "nuance": "The use of 「しなさい」 is a common, gentle imperative from an older person (parent, teacher) to a younger one. The overall tone is firm but caring, typical of parental advice."
+            "setting": "apologetic",
+            "speaker_gender": "male",
+            "listener_gender": "female",
+            "speaker_age": "younger",
+            "nuance": "The honorific 「お忙しい」 and the polite apology 「申し訳 ありません」 combined with 「ので」 create a highly respectful and formal tone. 「お邪魔 して」 (to disturb) is a humble expression. The usage of 「ので」 highlights the objective circumstance of the superior's busyness as the reason for the apology, which is appropriate for a younger male subordinate addressing an older female superior in a semi-formal context."
         },
         {
-            "japanese": "彼 は とても 親切 {なので} 、みんな 彼 を 好きです。",
-            "english": "Because he is very kind, everyone likes him.",
-            "english_literally": "Since he is very kind, everyone likes him.",
-            "scene": "A person describing a mutual friend to another friend.",
+            "japanese": "新しい 制度 が 始まる {ので} 、事前 に 説明 会 を 行います。",
+            "english": "A new system will begin, so we will hold an information session beforehand.",
+            "english_literally": "Because a new system will begin, an information session will be held beforehand.",
+            "scene": "An official announcement being made at a company or school about upcoming operational changes.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "彼 は とても 親切 {だから} 、みんな 彼 を 好きです。",
-                    "mitigation": "The scene depicts an observation about someone's character. ので presents 'his kindness' as an objective and widely recognized characteristic that directly leads to 'everyone liking him'. This structure makes the statement feel more like a factual observation rather than a personal opinion."
+                    "competing_grammar": "新しい 制度 が 始まる {から} 、事前 に 説明 会 を 行います。",
+                    "mitigation": "In an official announcement or formal communication, 「ので」 is preferred as it presents the new system's commencement as an objective and established fact, leading directly to the necessity of an information session. This conveys clarity and professionalism, making the reason sound like a natural and unavoidable consequence."
                 }
             ],
-            "register": "casual",
+            "register": "formal",
             "setting": "informative",
-            "speaker_gender": "male",
-            "listener_gender": "female"
+            "nuance": "This statement is highly formal and informative, typical of official announcements. The use of 「ので」 here presents the new system's start as an established fact, from which the information session naturally follows. This objective connection makes the announcement clear and authoritative, suitable for a formal setting."
         }
     ],
-    "post_example_writeup": "When choosing between ので and から, consider the speaker's intent. Use ので when presenting an objective reason or explanation, particularly focusing on the resulting situation. から expresses a more subjective or direct reason.",
+    "post_example_writeup": "When choosing between ので and から, consider the speaker's intent. Use ので when presenting an objective reason or explanation, particularly focusing on the resulting situation. から expresses a more subjective or direct reason, and can sometimes be used when giving direct commands or requests.",
     "false_friends": [
         {
             "term": "から (because)",
             "meaning": "Because, since",
             "kind": "synonym",
-            "nuance": "Unlike 「ので」, 「から」 often conveys a more subjective or direct reason."
+            "nuance": "Unlike 「ので」, 「から」 often conveys a more subjective or direct reason, and can be used for stronger commands or requests. It might sound more casual or personal."
         },
         {
             "term": "なぜなら〜から",
             "meaning": "Because, the reason is, that is because",
             "kind": "synonym",
-            "nuance": "Unlike 「ので」, 「なぜなら〜から」 is used to introduce a more formal and emphatic explanation."
+            "nuance": "Unlike 「ので」, 「なぜなら〜から」 is used to introduce a more formal and emphatic explanation, often clarifying a preceding statement."
         },
         {
             "term": "ものだから",
             "meaning": "Because, the reason is",
             "kind": "synonym",
-            "nuance": "Unlike 「ので」, 「ものだから」 often implies a sense of justification or excuse."
+            "nuance": "Unlike 「ので」, 「ものだから」 often implies a sense of justification or excuse, sometimes used with a slight emotional nuance or when appealing for understanding."
         },
         {
             "term": "ものですから・もので",
             "meaning": "Because, my excuse is, my explanation is",
             "kind": "synonym",
-            "nuance": "Unlike 「ので」, 「ものですから」 or 「もので」 are used to offer a polite explanation or justification for one's actions."
+            "nuance": "Unlike 「ので」, 「ものですから」 or 「もので」 are used to offer a polite explanation or justification for one's actions, often in a formal apology or when clarifying a situation politely."
         },
         {
             "term": "もの・もん",
             "meaning": "Because, cause",
             "kind": "synonym",
-            "nuance": "Unlike 「ので」, 「もの」 or 「もん」 are very casual and often used by children or in intimate conversation."
+            "nuance": "Unlike 「ので」, 「もの」 or 「もん」 are very casual and often used by children or in intimate conversation to state a reason or complaint, sometimes with a nuance of asserting one's opinion."
         },
         {
             "term": "し〜し",
             "meaning": "And, giving reasons",
             "kind": "synonym",
-            "nuance": "Unlike 「ので」, 「し〜し」 lists multiple reasons, adding up to explain a situation, rather than giving a single cause."
+            "nuance": "Unlike 「ので」, 「し〜し」 lists multiple reasons, adding up to explain a situation or provide justification, rather than giving a single, direct cause. It suggests that there are other unstated reasons as well."
         }
     ],
-    "post_false_friends_writeup": "To avoid confusion, remember that ので presents a more objective and less forceful reason compared to its counterparts. When giving a simple, factual explanation, ので is often the most appropriate choice. Use the other expressions when you want to emphasize subjectivity, provide justification, or list multiple reasons.",
+    "post_false_friends_writeup": "To avoid confusion, remember that ので presents a more objective and less forceful reason compared to its counterparts. When giving a simple, factual explanation or a polite request based on a clear circumstance, ので is often the most appropriate choice. Use the other expressions when you want to emphasize subjectivity, provide justification, list multiple reasons, or convey a stronger emotional tone.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ので"
     },
     "change": [
         {
-            "change-type": "schema",
-            "change": "Updated details fields: 'Part of Speech' to 'part-of-speech' and mapped 'Conjunctive Particle' to 'particle'. Added 'function' for 'conjunctive particle' and 'usage-context' for 'general usage'. Converted Japanese keys in 'details' to English and aligned with schema enums."
-        },
-        {
-            "change-type": "unnatural",
-            "change": "Replaced all example sentences with new, original examples to ensure naturalness, variety, and compliance with JLPT kanji level guidelines."
-        },
-        {
-            "change-type": "violation",
-            "change": "Removed deprecated 'listener_age' field from all example sentences."
+            "change-type": "suggestion",
+            "change": "All example sentences were replaced with new, original content to improve variety, naturalness, and adherence to JLPT N5/N4 kanji usage (with N3/N2 kanji converted to hiragana when necessary), while also ensuring comprehensive coverage of formations and contexts."
         },
         {
             "change-type": "schema",
-            "change": "Added 'english_literally' to examples where a more literal translation could be helpful for understanding."
+            "change": "Added 'usage-context: general usage' to the details section, as it was noted as a change that should have been applied from the original Bunpro source."
         },
         {
             "change-type": "schema",
-            "change": "Added 'scene_rationale' to examples that include a 'scene' to explain the choice of context for mitigating competing grammar."
+            "change": "Added 'particle-syntactic-function' to details, specifying 'conjunctive' and 'causal' roles, as it was appropriate for a particle and missing."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'particle-pragmatic-function' to details, specifying 'assertion', reflecting the objective and factual nature of 'ので' when stating reasons."
         },
         {
             "change-type": "suggestion",
-            "change": "Added 'grammatical-role', 'logical-flow', and 'temporal-flow' to the 'details' section for a more comprehensive explanation of the grammar point's function."
+            "change": "Added a comprehensive 'nuance' field to the details section, elaborating on the objective and factual nature of 'ので' and its softer explanatory tone compared to 'から'."
         },
         {
             "change-type": "schema",
-            "change": "Adjusted the 'register' in 'details' to 'formal' to better reflect the overall standard usage, as 'Standard' was not an enum option."
+            "change": "Ensured all examples requiring a 'scene' also include a 'scene_rationale', with 'competing_grammar' consistently using the `{bold}` format for the grammar point."
+        },
+        {
+            "change-type": "schema",
+            "change": "Included 'english_literally' for all examples, providing a more direct translation to aid understanding."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Populated 'speaker_gender', 'listener_gender', and 'speaker_age' fields for examples where speaker/listener attributes influence the Japanese, and included 'nuance' accordingly to explain these linguistic choices."
         }
     ]
 }

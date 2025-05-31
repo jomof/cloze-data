@@ -293,7 +293,7 @@
         "properties": {
           // A natural-sounding Japanese sentence using this grammar point.
           // - **MUST** have the grammar_point in {bold} (surrounded in curlies).
-          // - **MUST** have spaces between words, so that it is easy to read and to parse with mecab.
+          // - [rule-2] **MUST** have spaces between words, so that it is easy to read and to parse with mecab.
           // - **MUST** be grammatically correct. We're teaching Japanese, not bad grammar.
           // - **MUST NOT** use hiragana for words that are typically written in kanji.
           // - **MUST** be just one sentence unless. Use "scene" if you need to set up context.
@@ -306,7 +306,7 @@
           // - Will be display to the user when they are practicing. 
           // - **MUST** be just one sentence unless. Use "scene" if you need to set up context.
           // - **MUST NOT** use parentheses to set context. If necessary, use a separate "scene" field.
-          // - **MUST NOT** use quotes unless they are truly essential to the grammar point.
+          // - [rule-1] **MUST NOT** use quotes unless they are truly essential to the grammar point.
           "english": { "$ref": "#/definitions/english" },
           // If there is a less natural way to say the same thing in English that would still
           // hint the user toward the correct japanese, then you **MUST** include it here.
@@ -342,7 +342,6 @@
               "type": "object",
               "properties": {
                 // **MUST** be the alternate Japanese way of saying the same "english" from COMPETING_GRAMMAR.
-                // **MUST** put the competing grammar in {bold} the competing grammar.
                 // **MUST** use spaces to help mecab parse the competing grammar.
                 "competing_grammar": { "type": "string" },
                 // **MUST** explain how 'scene' mitigates the chance of the user choosing that other way.

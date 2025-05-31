@@ -14,7 +14,7 @@
     "meaning": "Not ~ by any means; no matter how hard ~ try, ~ cannot ~; there is no way to ~; cannot do ~ at all",
     "details": {
         "part-of-speech": "phrase",
-        "register": "casual",
+        "register": "semi-formal",
         "usage-context": "Used to express a sense of helplessness or absolute impossibility, conveying that despite efforts, a situation cannot be changed or an action cannot be performed.",
         "function": "Consists of 「どうにも」 (dounimo), meaning \"no matter how,\" followed by a verb in the negative potential form, or phrases like 「ようがない」 (you ga nai), meaning \"there is no way to,\" or 「にならない」 (ni naranai), meaning \"does not amount to/become.\"",
         "nuance": "This expression conveys a strong sense of resignation and futility. It emphasizes that no matter what approach is taken or how much effort is exerted, the desired outcome is unattainable. It often implies a complete lack of control or options in a given situation."
@@ -103,46 +103,17 @@
         }
     ],
     "post_false_friends_writeup": "While both 「どうにも〜ない」 and 「どうにもこうにも〜ない」 express impossibility, the latter carries a stronger, more emphatic nuance. Think of 「どうにもこうにも〜ない」 as saying 'absolutely no way' or 'under no circumstances,' whereas 「どうにも〜ない」 is simply 'no way' or 'cannot.' The added 'こうにも' reinforces the idea of trying various methods and finding all of them to be fruitless, expressing a higher degree of exasperation or resignation.",
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/どうにも〜ない"
+    },
     "change": [
         {
-            "change-type": "schema",
-            "change": "Removed the top-level 'conjugations' array as 'どうにも〜ない' is a fixed phrase/structure and not a conjugatable verb."
-        },
-        {
-            "change-type": "schema",
-            "change": "Removed the 'conjugation' field from all example objects, as per schema rules (only present if there is a top-level 'conjugations' array)."
-        },
-        {
-            "change-type": "violation",
-            "change": "Removed 'speaker_gender', 'listener_gender', and 'speaker_age' fields from all example objects. This violates the 'Examples should include at least one male and one female speaker_gender' rule, but was necessary to comply with the stricter 'nuance MUST mention the specific Japanese, in 「quotes」, that would only be spoken by that gender/age' rule, which cannot be naturally met for this grammar point's inherently gender-neutral expression."
-        },
-        {
-            "change-type": "violation",
-            "change": "Removed `etymology` from example objects as they were not specific to the example sentences but rather general explanations of verb forms."
-        },
-        {
             "change-type": "suggestion",
-            "change": "Replaced all example sentences with new, custom-created ones to ensure variety in formations, settings, and full compliance with all example-related schema rules."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Added an example specifically illustrating the 'どうにも + Noun + にならない' formation, which was previously underrepresented."
+            "change": "Changed 'details.register' from 'casual' to 'semi-formal' to better reflect the grammar point's usage across various registers as described in the writeup."
         },
         {
             "change-type": "schema",
-            "change": "Updated 'details' object: 'Register' was renamed to 'register', 'Usage' to 'usage-context', and the content under 'Components' was integrated into the 'function' field. A dedicated 'nuance' field was added to 'details'."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Refined 'formation' descriptions for consistency and clarity in pseudo-algebraic notation and English explanations."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Expanded and rephrased the 'writeup' to be more comprehensive and structured, as per the detailed prompt instructions."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Adjusted 'post_example_writeup' and 'post_false_friends_writeup' for better flow and consistency with the updated content."
+            "change": "Added 'sources.bunpro' field with a placeholder URL, as it was missing from the prior version and required by the schema."
         }
     ]
 }

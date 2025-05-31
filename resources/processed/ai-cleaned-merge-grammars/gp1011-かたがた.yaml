@@ -11,11 +11,12 @@
     "jlpt": "N1",
     "meaning": "Partly for (the purpose of), In addition to, Along with, By the way, And also to, Incidentally, While",
     "details": {
-        "Register": "Formal",
-        "使用域": "硬い"
+        "part-of-speech": "conjunction",
+        "register": "formal",
+        "usage-context": "Common in writing and in formal apologies or expressions of gratitude, often indicating a dual purpose for an action. Sounds unnatural if the linked actions lack a specific purpose."
     },
     "etymology": "「かたがた」 is derived from 「方々(かたがた)」, which means \"various people\" or \"various places.\" The grammar point evolved to express the idea of visiting various people or places for multiple purposes simultaneously. It carries a sense of performing one action while also incidentally or intentionally accomplishing another.",
-    "writeup": "「かたがた」 is a conjunction primarily written in hiragana. It translates to \"in addition to (A), (B),\" \"along with (A), (B),\" or \"incidentally to (A), (B).\" While both (A) and (B) may have equal priority, (B) carries the nuance of \"while doing (A), also doing (B) in passing.\" 「かたがた」 attaches to a noun marking (A), while (B) often involves a verb of action, though not always. When (A) is a noun typically used with 「する」, the 「する」 is omitted.\n\n**Important Considerations:**\n\n*   「かたがた」 is a formal structure, common in writing and used in apologies or expressions of gratitude. It may sound unnatural if the linked actions lack a specific purpose.",
+    "writeup": "「かたがた」 is a conjunction primarily written in hiragana. It translates to \"in addition to doing (A), also doing (B),\" \"along with (A), (B),\" or \"incidentally to (A), (B).\" While both (A) and (B) may have equal priority, (B) carries the nuance of \"while doing (A), also doing (B) in passing.\" 「かたがた」 attaches to a noun marking (A), while (B) often involves a verb of action, though not always. When (A) is a noun typically used with 「する」, the 「する」 is omitted.\n\nThis structure is formal and commonly seen in writing, particularly in contexts of apologies or expressions of gratitude. It can sound unnatural if the linked actions lack a clear, albeit sometimes implicit, dual purpose. Therefore, it is important to use 「かたがた」 when there is a genuine combination of objectives rather than merely sequential or casual actions.",
     "examples": [
         {
             "japanese": "婚約の報告 {かたがた}、お父様と お母様に 会いに行きます。",
@@ -44,7 +45,7 @@
                 }
             ],
             "register": "semi-formal",
-            "setting": "informative",
+            "setting": "professional",
             "nuance": "「妊娠」 means pregnancy, a sensitive topic where a formal tone (using 「かたがた」) is preferable. This sentence would be used when speaking to an acquaintance. It would be inappropriate to use it with close friends.",
             "etymology": "「妊娠」 means pregnancy. 「報告」 means report."
         },
@@ -59,7 +60,7 @@
                 }
             ],
             "register": "teineigo (polite)",
-            "setting": "formal",
+            "setting": "professional",
             "listener_gender": "male",
             "nuance": "The use of 「お礼」 and 「お伺いをしたい」 indicates politeness, befitting the use of 「かたがた」. Using 「社長」 clearly designates a male superior. When addressing a male superior, the formality of 「かたがた」 is highly appropriate, emphasizing respectful communication. It is used when speaking to someone of a higher status, such as a boss or client.",
             "etymology": "「お礼」 is a polite way to say thank you. 「伺いをしたい」 is a humble way to say to visit."
@@ -129,7 +130,7 @@
             "japanese": "旧友に会いに、旅行 {かたがた} 京都を訪れました。",
             "english": "I visited Kyoto partly for a trip, and partly to see an old friend.",
             "scene": "Someone explaining their reason for visiting Kyoto, which combined a leisure trip with a personal reunion.",
-            "scene_rationation": [
+            "scene_rationale": [
                 {
                     "competing_grammar": "京都へ旅行に行った時、旧友に会いました。",
                     "mitigation": "This simpler phrasing focuses on the sequence of events. The scene implies that both the trip and meeting the friend were deliberate objectives of the visit, which 「かたがた」 conveys more formally than 「〜ついでに」. As noted in nuance, 「かたがた」 is still somewhat unnatural here given the context, highlighting its formality."
@@ -164,9 +165,17 @@
         "bunpro": "https://bunpro.jp/grammar_points/かたがた"
     },
     "change": [
-        "violation: Modified example 1's `speaker_gender` and `nuance` to ensure diversity, as the rule states: 'Example sentences should include at least one male and one female speaker_gender.' The `nuance` was refined to specifically justify the female speaker for this example.",
-        "violation: Modified example 3's `japanese`, `english`, `scene`, `listener_gender`, and `nuance` to ensure diversity, as the rule states: 'Example sentences should include at least one male and one female listener_gender.' The example was adapted to clearly represent a male listener.",
-        "violation: Added `speaker_gender: male` to example 4, as the sentence inherently implies a male speaker ('妻の兄弟') and this helps fulfill the diversity requirement for speaker gender, as per the rule 'Example sentences should include at least one male and one female speaker_gender.'",
-        "schema: Removed `post_false_friends_writeup` field because the `false_friends` array is empty, as per the schema rule: 'No fields should be null. Omit fields that are not applicable instead.'"
+        {
+            "change-type": "violation",
+            "change": "Corrected examples[2].setting from 'formal' to 'professional' to comply with the 'settingType' enum."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Updated examples[3].setting from 'formal' to 'professional' for consistency and better fit with the context."
+        },
+        {
+            "change-type": "violating-command",
+            "change": "Removed 'post_false_friends_writeup' as 'false_friends' array is empty, correcting a previous violation where the field was present despite an empty array."
+        }
     ]
 }

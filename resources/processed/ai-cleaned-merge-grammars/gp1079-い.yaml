@@ -6,7 +6,8 @@
         "romaji": "i"
     },
     "formation": {
-        "[Sentence] + い": "Adds a friendly or familiar tone, often used to soften a question or command, particularly when paired with か or だ."
+        "Plain form verb/adjective + か + い": "Used to form a friendly or familiar question, primarily by men to those younger or in a lower social position.",
+        "Noun/な-adjective stem + だ + い": "Used to form a friendly or familiar question or softened assertion, primarily by men to those younger or in a lower social position."
     },
     "jlpt": "N3",
     "meaning": "So?, Well? (friendly or familiar)",
@@ -22,7 +23,7 @@
     "writeup": "「い」 is a distinct sentence-ending particle in Japanese that imbues a sense of familiarity and friendliness into an utterance. While it can appear alone, it is most commonly found paired with other particles, particularly the interrogative 「か」 (forming 「かい」) or the plain form copula 「だ」 (forming 「だい」). These combinations serve to soften questions or statements, making them less direct and more approachable.\n\nHistorically and predominantly, 「い」 is used by men, especially when addressing individuals perceived to be of a lower social standing or younger age. For instance, an elder man might use 「かい」 when inquiring of a child, conveying warmth and familiarity. However, this is not an absolute rule; women may occasionally use 「い」, especially when combined with 「か」 or 「だ」, typically to express concern or affection, often in a motherly or caring context.\n\n**Important Considerations**:\n\n*   The primary function of 「い」 is to establish or reinforce familiarity. It signals that the speaker views the listener as someone they can speak informally and closely with.\n*   While the base form 「い」 is the particle, its most common manifestations are 「かい」 and 「だい」, which serve as casual, friendly forms of asking questions or making rhetorical points.\n*   This particle is a hallmark of casual, intimate speech and should be used with discretion to avoid appearing overly familiar or condescending in formal settings.",
     "examples": [
         {
-            "japanese": "新しいゲームはもう買った{かい}？",
+            "japanese": "新しい ゲーム は もう 買った{かい}？",
             "english": "Have you already bought the new game?",
             "english_literally": "New game already bought?",
             "scene": "A man in his late 40s is casually asking his younger colleague, who is known for his love of video games, about a recently released title.",
@@ -43,7 +44,7 @@
             "nuance": "The use of 「かい」 here adds a warm, familiar tone, typical of an older man speaking to a younger one. It softens the direct question."
         },
         {
-            "japanese": "仕事、ちゃんと終わった{かい}？",
+            "japanese": "仕事、ちゃんと 終わった{かい}？",
             "english": "Did you finish your work properly?",
             "english_literally": "Work, properly finished?",
             "scene": "A male supervisor, who has a good rapport with his team, checks in on a younger team member at the end of the day.",
@@ -64,7 +65,7 @@
             "nuance": "The speaker, a male supervisor, uses 「かい」 to convey a sense of care and familiarity while still checking on work status. This is common when an older male is talking to a younger male in a comfortable working relationship."
         },
         {
-            "japanese": "疲れてるん{かい}？少し休憩しない{かい}？",
+            "japanese": "疲れてるん{かい}？少し 休憩しない{かい}？",
             "english": "Are you tired? Why don't we take a short break?",
             "english_literally": "Tired? A little rest not do?",
             "scene": "A female team leader notices one of her younger team members looking exhausted and gently offers a break.",
@@ -85,7 +86,7 @@
             "nuance": "Here, a female speaker uses 「かい」 to show genuine concern and offer a gentle suggestion. This usage by women often carries a warm, nurturing nuance, especially when directed at someone younger."
         },
         {
-            "japanese": "将来、どんな大人になりたいん{だい}？",
+            "japanese": "将来、どんな 大人 に なりたいん{だい}？",
             "english": "What kind of adult do you want to be in the future?",
             "english_literally": "Future, what kind of adult want to become?",
             "scene": "A father is having a heart-to-heart conversation with his young son about his dreams and aspirations.",
@@ -106,7 +107,7 @@
             "nuance": "This is a classic use of 「だい」 by an older male (father) speaking to a younger person (son). The 「ん」 preceding 「だい」 further softens the question, making it feel gentle and inquisitive."
         },
         {
-            "japanese": "最近、元気がないようだけど、何かあったん{だい}？",
+            "japanese": "最近、元気 が ない ようだけど、何か あったん{だい}？",
             "english": "You seem to have been down lately, did something happen?",
             "english_literally": "Recently, don't seem lively, something happened?",
             "scene": "An older brother notices his younger sister seems troubled and gently asks if something is wrong.",
@@ -127,7 +128,7 @@
             "nuance": "The older brother's use of 「だい」 expresses gentle concern for his younger sister. This shows how men can use 「だい」 to convey empathy and a supportive tone within close relationships."
         },
         {
-            "japanese": "明日は何時から仕事なんだ{い}？",
+            "japanese": "明日 は 何時 から 仕事なんだ{い}？",
             "english": "What time do you start work tomorrow?",
             "english_literally": "Tomorrow from what time work is?",
             "scene": "An older female roommate is casually asking her younger male roommate about his work schedule for the next day.",
@@ -175,47 +176,19 @@
     "change": [
         {
             "change-type": "violation",
-            "change": "Changed 'jlpt' level from 'N0' to 'N3' to comply with schema constraints. This level is more appropriate given the nuanced usage of the particle."
+            "change": "Added spaces between words in Japanese example sentences to aid mecab parsing, addressing pre-lint warnings."
         },
         {
             "change-type": "schema",
-            "change": "Converted 'details.Register' to 'details.register' and transformed 'details.Usage' into 'details.usage-context' and 'details.nuance' for schema compliance and improved categorization."
-        },
-        {
-            "change-type": "schema",
-            "change": "Added 'details.part-of-speech: particle', 'details.particle-syntactic-function: sentence-final', and 'details.particle-pragmatic-function' with specific functions to align with the schema for particles."
-        },
-        {
-            "change-type": "unnatural",
-            "change": "Rewrote all example sentences and their contexts. The original examples contained instances where the 'い' particle was presented as part of an irregular imperative verb form (e.g., '来い', 'やりい') rather than an appended particle, which contradicts the 'formation' and 'part-of-speech: particle' definition of this grammar point. The new examples clearly show 'い' appended to 'か' or 'だ'."
-        },
-        {
-            "change-type": "schema",
-            "change": "Removed the deprecated 'listener_age' field from all examples."
+            "change": "Ensured the grammar point 'い' is properly bolded within curly braces in all Japanese example sentences, as required by the schema."
         },
         {
             "change-type": "suggestion",
-            "change": "Added 'english_literally' to all example sentences for better clarity."
+            "change": "Refined the 'formation' field to more accurately reflect the common usage of 'い' primarily in the forms 'かい' and 'だい', aligning with the writeup and examples."
         },
         {
-            "change-type": "suggestion",
-            "change": "Populated 'scene' and 'scene_rationale' for all examples to provide context and clarify potential competing grammar."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Omitted the 'conjugation' field in examples, as 'い' is a particle and does not undergo conjugation from the provided list."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Populated the 'false_friends' array with common alternative question forms (e.g., '〜の？', '〜ですか？') that learners might confuse with 'い'."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Refined the 'writeup' and 'nuance' sections for improved clarity and to better align with the persona's emphasis on linguistic detail."
-        },
-        {
-            "change-type": "schema",
-            "change": "Omitted 'meaning_warning', 'post_example_writeup', and 'post_false_friends_writeup' as they were null in the prior version, adhering to the schema's requirement to omit empty fields."
+            "change-type": "meta",
+            "change": "Corrected the 'change' log entry from the prior version regarding 'post_false_friends_writeup' being omitted; it was actually included in the prior grammar point and remains so."
         }
     ]
 }

@@ -1,6 +1,32 @@
 {
     "grammar_point": "も〜ば〜も",
     "id": "gp0724",
+    "conjugations": [
+        {
+            "conjugation-type": "conditional (～ば)",
+            "form": "Verb Stem + れば",
+            "rarity": "common",
+            "meaning": "If (verb) and also..."
+        },
+        {
+            "conjugation-type": "conditional (～ば)",
+            "form": "い-Adjective (drop い) + ければ",
+            "rarity": "common",
+            "meaning": "If (い-adjective) and also..."
+        },
+        {
+            "conjugation-type": "conditional (～ば)",
+            "form": "な-Adjective + なら(ば)",
+            "rarity": "common",
+            "meaning": "If (な-adjective) and also..."
+        },
+        {
+            "conjugation-type": "conditional (～ば)",
+            "form": "Noun + なら(ば)",
+            "rarity": "common",
+            "meaning": "If (noun) and also..."
+        }
+    ],
     "pronunciation": {
         "katakana": "モ～バ～モ",
         "romaji": "mo ~ ba ~ mo"
@@ -9,194 +35,199 @@
         "[Noun] + も + [Verb/い-Adjective/な-Adjective/Noun] + ば + [も + Similar Predicate]": "Expresses that if one condition is true, a related condition is also true; 'both...and...'"
     },
     "jlpt": "N2",
-    "meaning": "...And..., Both ... and ..., ... And ... as well",
+    "meaning": "Both ... and ..., ... and ... as well",
     "details": {
-        "Register": "Standard",
-        "使用域": "一般"
+        "part-of-speech": "phrase",
+        "register": "semi-formal",
+        "usage-context": "general"
     },
     "etymology": "The structure combines the particle 「も」, indicating 'also' or 'too,' with the conditional 「ば」 form of a verb or adjective, creating a parallel structure that emphasizes the co-occurrence of two related elements. The repeated 「も」 emphasizes that both elements are true or applicable.",
-    "writeup": "The 「も〜ば〜も」 construction in Japanese highlights that if one thing is true, another related thing is also true. It emphasizes that traits or characteristics often go hand-in-hand. The general idea is \"If (A) is true, then (B) is also true.\" \n\nHere's the breakdown:\n\n*   「も」 connects to a noun.\n*   「ば」 follows a verb, い-adjective, な-adjective, or noun. For nouns and な-adjectives, use 「なら」 or 「ならば」.\n\n**Important Considerations:**\n\n*   Both traits must share a mutual connection; they should both be positive, neutral, or negative.\n*   It's unnatural to mix positive and negative traits in this construction.\n*   Be mindful of the register; it's generally considered standard.",
+    "writeup": "The 「も〜ば〜も」 construction in Japanese highlights that if one thing is true, another related thing is also true. It emphasizes that traits or characteristics often go hand-in-hand. The general idea is \"If (A) is true, then (B) is also true.\"\n\nHere's the breakdown:\n\n*   「も」 connects to a noun.\n*   「ば」 follows a verb, い-adjective, な-adjective, or noun. For nouns and な-adjectives, use 「なら」 or 「ならば」.\n\n**Important Considerations:**\n\n*   Both traits must share a mutual connection; they should both be positive, neutral, or negative.\n*   It's unnatural to mix positive and negative traits in this construction.\n*   Be mindful of the register; it's generally considered standard.",
     "examples": [
         {
-            "japanese": "お父さんは{イタリア語も出来れば、スペイン語も話せる}。",
+            "japanese": "父 は {イタリア 語 も でき れば 、 スペイン 語 も 話せる} 。",
             "english": "My father can speak both Italian and Spanish.",
-            "scene": "A person mentioning their father's language abilities.",
+            "scene": "A person is describing their father's linguistic talents, highlighting his proficiency in multiple languages.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "お父さんはイタリア語とスペイン語ができます。",
-                    "mitigation": "This simpler structure does not convey the nuance of two abilities co-existing or implying each other. The scene hints at emphasizing both abilities equally, suggesting 'も〜ば〜も' for a stronger sense of dual proficiency."
+                    "competing_grammar": "父 は イタリア 語 と スペイン 語 が でき ます 。",
+                    "mitigation": "This simpler phrasing is grammatically correct but lacks the emphasis on the co-existence of two distinct abilities. The scene hints at presenting these abilities as inherently linked, suggesting 「も〜ば〜も」 for a stronger sense of dual proficiency."
                 },
                 {
-                    "competing_grammar": "お父さんはイタリア語ができます。そしてスペイン語も話せます。",
-                    "mitigation": "This breaks the sentence into two separate statements, losing the direct linkage and emphasis on the father possessing both skills simultaneously. The scene encourages a structure that ties the two abilities together."
+                    "competing_grammar": "父 は イタリア 語 が でき ます 。 そして スペイン 語 も 話せ ます 。",
+                    "mitigation": "This alternative separates the two abilities into distinct statements, losing the nuance of simultaneous possession and the inherent connection implied by the grammar point. The scene encourages a structure that ties the two skills together as complementary."
                 }
             ],
             "register": "semi-formal",
             "setting": "informative",
-            "nuance": "This is a straightforward statement indicating the father's language abilities. 「も」 is used to link Italian and Spanish as things the father can do.",
-            "etymology": "「出来る」 (dekiru) and 「話せる」 (hanaseru) mean, respectively, 'can do' and 'can speak.'"
+            "conjugation": "conditional (～ば)",
+            "nuance": "The structure 「も〜ば〜も」 is used to emphasize that both abilities, speaking Italian 「イタリア 語 も でき れば」 and speaking Spanish 「スペイン 語 も 話せる」, are true for the father. It implies a comprehensive skill set."
         },
         {
-            "japanese": "日本の冬は{湿度も低ければ、温度も低い}から外で火を使う時は気をつけないといけない。",
-            "english": "Winter in Japan is both dry and cold, so you have to be careful when using fire outside.",
-            "scene": "Someone explaining the characteristics of winter in Japan.",
+            "japanese": "日本 の 冬 は {湿度 も 低けれ ば 、 温度 も 低い} から 、 外 で 火 を 使う 時 は 気 を つけ なければ なり ませ ん 。",
+            "english": "Winter in Japan is both dry and cold, so you must be careful when using fire outside.",
+            "english_literally": "Japanese winter, humidity also being low, temperature also being low, so outside fire use when must be careful.",
+            "scene": "Someone explains the harsh conditions of winter in Japan and the necessary precautions.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "日本の冬は湿度が低くて、温度も低いです。",
-                    "mitigation": "While grammatically correct, this phrasing simply lists two characteristics using the て-form without emphasizing their combined impact or the 'if this, then also this' aspect. The scene implies a need to present these characteristics as inherently linked conditions."
+                    "competing_grammar": "日本 の 冬 は 湿度 が 低く て 、 温度 も 低い です 。",
+                    "mitigation": "While grammatically sound, this alternative simply lists two characteristics using the て-form. It doesn't convey the inherent connection or joint impact emphasized by 「も〜ば〜も」. The scene of explaining precautions implies that both conditions contribute equally to the need for caution."
                 }
             ],
-            "register": "semi-formal",
+            "register": "formal",
             "setting": "informative",
-            "nuance": "This sentence highlights two characteristics of winter in Japan, both linked by 「も」 and 「ば」. The latter half of the sentence provides context as to why these features are important.",
-            "etymology": "「湿度」 (shitsudo) means 'humidity,' and 「温度」 (ondo) means 'temperature.'"
+            "conjugation": "conditional (～ば)",
+            "nuance": "This example highlights two characteristics of winter in Japan using 「湿度 も 低けれ ば」 (humidity is low) and 「温度 も 低い」 (temperature is low). The particle 「も」 reinforces that both aspects are true, leading to the necessity of caution stated with 「気 を つけ なければ なり ませ ん」."
         },
         {
-            "japanese": "このギターは{音も好きなら柄も好き}なので、一生手放したくありません。",
+            "japanese": "この ギター は {音 も 好き なら 、 柄 も 好き} な ので 、 一生 手放し たくありません 。",
             "english": "I like both the sound and the design of this guitar, so I never want to let it go.",
-            "scene": "A person expressing their strong affection for their guitar.",
+            "scene": "A musician expressing deep affection for their guitar, emphasizing two distinct features.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "このギターは音が好きで、柄も好きです。",
-                    "mitigation": "This construction lists two reasons but doesn't convey the sense of *both* attributes being equally appealing and contributing to the strong affection. The scene suggests a stronger connection between the two liked features."
-                }
-            ],
-            "register": "semi-formal",
-            "setting": "reflective",
-            "nuance": "The speaker is expressing their fondness for two aspects of the guitar, sound and design, using 「も」 to link them.",
-            "etymology": "「柄」 (gara) means 'design' or 'pattern.'"
-        },
-        {
-            "japanese": "マルチ商法の話を聞くたびに、{騙す方も騙す方なら、騙される方も騙される方}だといつも思う。",
-            "english": "Whenever I hear about pyramid schemes, I always think that both the scammers and the scammed are to blame.",
-            "scene": "Someone sharing their opinion on pyramid schemes.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "騙す方と騙される方、両方に責任がある。",
-                    "mitigation": "This simpler phrasing is direct but loses the nuance of the speaker's repeated observation and the inherent 'if one is like this, then the other is also like this' judgment implied by 'も〜ば〜も'. The scene hints at a more nuanced, observed pattern."
+                    "competing_grammar": "この ギター は 音 が 好き で 、 柄 も 好き です 。",
+                    "mitigation": "This alternative lists two reasons, but it doesn't convey the same strong sense of *both* attributes being equally appealing and contributing to the speaker's unwavering affection. The scene suggests a need for a phrasing that highlights the combined appeal of the guitar's features."
                 }
             ],
             "register": "casual",
-            "setting": "serious",
-            "nuance": "This sentence uses 「も」 and 「なら」 to express a balanced view, stating that both the scammers 「騙す方」 and the scammed 「騙される方」 share responsibility.",
-            "etymology": "「騙す」 (damasu) means 'to deceive,' and 「騙される」 (damasareru) means 'to be deceived.'"
+            "setting": "reflective",
+            "conjugation": "conditional (～ば)",
+            "nuance": "Here, 「好き なら」 is used with the な-adjective 「好き」 to show that both the sound 「音」 and the design 「柄」 are reasons for the speaker's strong attachment. The repetition of 「も」 highlights the equal importance of both aspects."
         },
         {
-            "japanese": "あの居酒屋は{スタッフの態度も良ければ、料理も絶品}だから、いつも満席だね。",
-            "english": "That izakaya is always full because both the staff's attitude is good and the food is exquisite.",
-            "scene": "Two male friends discussing their favorite izakaya.",
+            "japanese": "マルチ 商法 の 話 を 聞く たび に 、 {騙す 方 も 騙す 方 なら 、 騙さ れる 方 も 騙さ れる 方} だ と いつも 思い ます 。",
+            "english": "Whenever I hear about pyramid schemes, I always think that both the scammers and the scammed are at fault.",
+            "english_literally": "Pyramid scheme's story hear each time, deceiving side also deceiving side if, deceived side also deceived side is, always think.",
+            "scene": "Someone reflects critically on pyramid schemes, expressing a balanced perspective on who is responsible.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "あの居酒屋はスタッフの態度も良いし、料理も絶品だよ。",
-                    "mitigation": "While '〜し' can list reasons, 'も〜ば〜も' emphasizes that these two positive aspects jointly contribute to the outcome (always being full), highlighting their consistent presence together. The scene, depicting friends admiring a place, suggests a stronger, shared positive evaluation."
+                    "competing_grammar": "騙す 方 と 騙さ れる 方 、 両方 に 責任 が あり ます 。",
+                    "mitigation": "While direct, this alternative lacks the nuanced, observed pattern of behavior implied by 「も〜ば〜も」, which conveys that if one party acts a certain way, the other is also inherently characterized by their actions. The scene encourages a statement that presents these behaviors as inherently linked."
+                }
+            ],
+            "register": "formal",
+            "setting": "serious",
+            "conjugation": "conditional (～ば)",
+            "nuance": "This complex sentence uses 「騙す 方 も 騙す 方 なら」 (the scammer is a scammer) and 「騙さ れる 方 も 騙さ れる 方」 (the scammed is scammed) with 「なら」 to express a critical, balanced view. It implies a certain inevitability or characteristic nature for both sides in such schemes."
+        },
+        {
+            "japanese": "あの 居酒屋 は {スタッフ の 態度 も 良けれ ば 、 料理 も 絶品} だ から 、 いつも 満席 だ ね 。",
+            "english": "That izakaya is always full because both the staff's attitude is good and the food is exquisite.",
+            "scene": "Two friends casually discussing why a popular izakaya is always crowded, admiring its consistent quality.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あの 居酒屋 は スタッフ の 態度 も 良い し 、 料理 も 絶品 だ よ 。",
+                    "mitigation": "While 「〜し」 can list reasons, 「も〜ば〜も」 emphasizes that these two positive aspects jointly contribute to the outcome (always being full), highlighting their consistent presence together. The scene, depicting friends admiring a place, suggests a stronger, shared positive evaluation that stresses the combined excellence."
                 }
             ],
             "register": "casual",
             "setting": "friendly",
             "speaker_gender": "male",
             "listener_gender": "male",
-            "nuance": "This example highlights two positive attributes of the izakaya: the staff's attitude 「スタッフの態度も良い」 and the exquisite food 「料理も絶品」. The casual ending 「ね」 is appropriate for a conversation between male friends, seeking agreement."
+            "speaker_age": "younger",
+            "nuance": "This example highlights two positive attributes of the izakaya: the staff's attitude 「スタッフ の 態度 も 良けれ ば」 and the exquisite food 「料理 も 絶品」. The casual ending 「ね」 is appropriate for a conversation between male friends, seeking agreement and sharing an observation."
         },
         {
-            "japanese": "彼は、{スポーツも上手にできれば、仕事も効率よくできる}から、尊敬するよ。",
-            "english": "I admire him because he's good at sports and efficient at work.",
-            "scene": "Talking about an admirable person to a friend.",
+            "japanese": "彼 は 、 {スポーツ も 上手 に でき れば 、 仕事 も 効率 よく できる} から 、 尊敬 する よ 。",
+            "english": "I admire him because he's good at both sports and efficient at work.",
+            "scene": "A person expressing admiration for a colleague or friend who excels in multiple areas.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "彼はスポーツが上手で、仕事も効率よくできます。",
-                    "mitigation": "This phrasing lists the two abilities separately. 'も〜ば〜も' emphasizes that these two positive traits exist in conjunction, contributing to why he is admired, suggesting a more integrated understanding of his capabilities."
+                    "competing_grammar": "彼 は スポーツ が 上手 で 、 仕事 も 効率 よく でき ます 。",
+                    "mitigation": "This alternative lists the two abilities separately. 「も〜ば〜も」 emphasizes that these two positive traits exist in conjunction, contributing significantly to why he is admired, suggesting a more integrated understanding of his comprehensive capabilities."
                 }
             ],
             "register": "casual",
             "setting": "friendly",
-            "nuance": "The speaker notes that this 「彼」 has both good athletic and professional abilities.",
-            "etymology": "「効率よく」 (kōritsu yoku) means 'efficiently.'"
+            "speaker_age": "younger",
+            "nuance": "The speaker expresses admiration for a person who excels in both sports 「スポーツ も 上手 に でき れば」 and work 「仕事 も 効率 よく できる」. The use of 「できる」 in the ば-form highlights the combination of abilities, making the person truly respectable."
         },
         {
-            "japanese": "彼女は{地位もなければお金もない}。",
+            "japanese": "彼女 は {地位 も なけれ ば お金 も ない} 。",
             "english": "She has neither status nor money.",
-            "scene": "Gossip about a woman's unfortunate situation.",
+            "scene": "Someone commenting on a person's unfortunate circumstances, highlighting a complete lack of certain advantages.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "彼女は地位もお金もありません。",
-                    "mitigation": "This simpler negative statement is factual but does not carry the same nuance of 'if she doesn't have this, then she also doesn't have that,' which 'も〜ば〜も' provides, emphasizing a complete lack. The scene of gossip suggests a more expressive and lamenting tone."
+                    "competing_grammar": "彼女 は 地位 も お金 も あり ませ ん 。",
+                    "mitigation": "This simpler negative statement is factual but does not carry the same nuance of 'if she doesn't have this, then she also doesn't have that,' which 「も〜ば〜も」 provides. It emphasizes a complete and inherent lack of both. The scene implies a tone of unfortunate observation, where the double negative reinforces the total absence."
                 }
             ],
             "register": "semi-formal",
             "setting": "melancholic",
-            "nuance": "This sentence uses 「も」 and 「ない」 to express the absence of both status and money, indicating a lack of both.",
-            "etymology": "「地位」 (chii) means 'status' or 'position.'"
+            "conjugation": "conditional (～ば)",
+            "nuance": "This sentence uses the negative form 「なけれ ば」 (if there is not) with 「も」 to express the absence of both status 「地位」 and money 「お金」. It implies a situation where neither is present, emphasizing a comprehensive lack."
         },
         {
-            "japanese": "総理大臣は、{経済も見直しできれば、人権問題も解決できそう}です。",
+            "japanese": "総理 大臣 は 、 {経済 も 見直し でき れば 、 人権 問題 も 解決 でき そう} です 。",
             "english": "It seems the Prime Minister can both reform the economy and resolve human rights issues.",
-            "scene": "A news commentator discussing the Prime Minister's potential.",
+            "english_literally": "Prime Minister, economy also able to review if, human rights issues also able to solve seems.",
+            "scene": "A political analyst discusses the promising capabilities of the Prime Minister, anticipating positive outcomes in multiple policy areas.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "総理大臣は経済も見直しできるし、人権問題も解決できそうです。",
-                    "mitigation": "While '〜し' can list abilities, 'も〜ば〜も' more strongly emphasizes that these two significant actions are achievable in parallel or that the ability to do one implies the ability to do the other, suitable for a commentator's comprehensive assessment."
+                    "competing_grammar": "総理 大臣 は 経済 も 見直し できる し 、 人権 問題 も 解決 でき そう です 。",
+                    "mitigation": "While 「〜し」 can list abilities, 「も〜ば〜も」 more strongly emphasizes that these two significant actions are achievable in parallel or that the ability to do one implies the ability to do the other. This makes it suitable for a comprehensive assessment by an analyst."
                 }
             ],
             "register": "formal",
             "setting": "informative",
-            "nuance": "The speaker mentions that the Prime Minister has both good economic 「経済」 and social 「人権問題」 abilities.",
-            "etymology": "「見直し」 (minaoshi) means 're-examination' or 'reform,' and 「解決」 (kaiketsu) means 'resolution.'"
+            "conjugation": "conditional (～ば)",
+            "nuance": "The speaker uses 「見直し でき れば」 (if able to reform) and 「解決 でき そう」 (seems able to solve) to suggest the Prime Minister's dual capacity for handling complex issues like the economy 「経済」 and human rights 「人権 問題」. This highlights a holistic competence."
         },
         {
-            "japanese": "彼は{撮影もできれば、ナレーションもできる}から、重宝されている。",
+            "japanese": "彼 は {撮影 も でき れば 、 ナレーション も できる} から 、 重宝 さ れ て い ます 。",
             "english": "He is valued because he can do both photography and narration.",
-            "scene": "Explaining why someone is a valuable asset.",
+            "scene": "A manager explains why a particular employee is highly valued within their team.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "彼は撮影もできるし、ナレーションもできます。",
-                    "mitigation": "The use of '〜し' merely lists the skills. 'も〜ば〜も' highlights that his value stems from possessing *both* skills, emphasizing their simultaneous presence and contribution to his being a valuable asset, which the scene implies."
+                    "competing_grammar": "彼 は 撮影 も できる し 、 ナレーション も でき ます 。",
+                    "mitigation": "The use of 「〜し」 merely lists the skills. 「も〜ば〜も」 highlights that his value stems from possessing *both* skills simultaneously, emphasizing their combined contribution to his being a valuable asset, which the scene implies as the reason for his high valuation."
                 }
             ],
             "register": "semi-formal",
             "setting": "informative",
-            "nuance": "This highlights the individual's diverse skill set, allowing them to perform both photography 「撮影」 and narration 「ナレーション」.",
-            "etymology": "「撮影」 (satsuei) means 'photography,' and 「ナレーション」 (narēshon) is 'narration' (loanword)."
+            "conjugation": "conditional (～ば)",
+            "nuance": "This sentence highlights the individual's diverse skill set, using 「撮影 も でき れば」 (if able to photograph) and 「ナレーション も できる」 (also able to narrate) to show he can perform both tasks. The grammar point emphasizes that this dual capability is why he is highly valued 「重宝 さ れ て い ます」."
         },
         {
-            "japanese": "あの曲芸師は、{茶碗も回せれば、座布団も回せる}ので、いつも観客を湧かせる。",
+            "japanese": "あの 曲芸師 は 、 {茶碗 も 回せ れば 、 座布団 も 回せる} の で 、 いつも 観客 を 湧か せ ます 。",
             "english": "That acrobat can spin both a teacup and a cushion, so they always excite the audience.",
-            "scene": "Describing an acrobat's impressive skills.",
+            "scene": "A narrator describing the impressive and multifaceted skills of an acrobat during a performance.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "あの曲芸師は茶碗も座布団も回せます。",
-                    "mitigation": "This alternative is a simple enumeration of abilities. 'も〜ば〜も' specifically emphasizes that the acrobat's impressive skill lies in being able to perform *both* difficult feats, which is what excites the audience. The scene of describing impressive skills points towards this emphasis."
+                    "competing_grammar": "あの 曲芸師 は 茶碗 も 座布団 も 回せ ます 。",
+                    "mitigation": "This alternative is a simple enumeration of abilities. 「も〜ば〜も」 specifically emphasizes that the acrobat's impressive skill lies in being able to perform *both* difficult feats, which is what truly excites the audience. The scene of describing impressive skills points towards this emphasis on dual mastery."
                 }
             ],
-            "register": "semi-formal",
+            "register": "formal",
             "setting": "storytelling",
-            "nuance": "This sentence describes an acrobat who has the ability to spin a teacup 「茶碗」 and a cushion 「座布団」. 「回せ」 indicates the ability to make something spin.",
-            "etymology": "「曲芸師」 (kyokugeishi) means 'acrobat,' and 「茶碗」 (chawan) means 'teacup.'"
+            "conjugation": "conditional (～ば)",
+            "nuance": "This sentence describes an acrobat with impressive dual talents: spinning a teacup 「茶碗 も 回せ れば」 and a cushion 「座布団 も 回せる」. The use of 「も〜ば〜も」 highlights the rare combination of skills that consistently thrills the audience 「観客 を 湧か せ ます」."
         },
         {
-            "japanese": "あの子は{勉強もできれば、性格も良い}から、モテるだろうね。",
+            "japanese": "あの 子 は {勉強 も でき れば 、 性格 も 良い} から 、 モテる だろう ね 。",
             "english": "Since that child is good at both studying and has a good personality, I bet they're popular.",
-            "scene": "Two mothers gossiping about a popular child.",
+            "scene": "Two mothers gossiping good-naturedly about a child who seems to effortlessly excel in various aspects.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "あの子は勉強もできるし、性格も良いから、モテるだろうね。",
-                    "mitigation": "While '〜し' can list attributes, 'も〜ば〜も' conveys a stronger sense that these two positive qualities are inherently linked in the child, making them popular. The scene of gossiping mothers suggests an observation of this consistent dual excellence."
+                    "competing_grammar": "あの 子 は 勉強 も できる し 、 性格 も 良い から 、 モテる だろう ね 。",
+                    "mitigation": "While 「〜し」 can list attributes, 「も〜ば〜も」 conveys a stronger sense that these two positive qualities are inherently linked in the child, making them popular. The scene of gossiping mothers suggests an observation of this consistent dual excellence that makes the child attractive to others."
                 }
             ],
             "register": "casual",
-            "setting": "humorous",
+            "setting": "friendly",
             "speaker_gender": "female",
             "listener_gender": "female",
             "speaker_age": "older",
-            "nuance": "The speaker is a mother gossiping with another mother about the studiousness 「勉強もでき」 and likability 「性格も良い」 of a child. 「〜だろうね」 is a common casual expression, implying speculation and often used by female speakers to seek agreement."
+            "nuance": "The speaker, likely an older female, observes that a child is both academically strong 「勉強 も でき れば」 and has a good personality 「性格 も 良い」. The casual ending 「だろう ね」 is common among female speakers when speculating or seeking soft agreement, implying a shared understanding of the child's attractiveness."
         },
         {
-            "japanese": "君は{頭も良いなら、外見も良い}から、本当に魅力的な人だね。",
+            "japanese": "君 は {頭 も 良い なら 、 外見 も 良い} から 、 本当 に 魅力 的 な 人 だ ね 。",
             "english": "You're truly a captivating person, as you're both intelligent and good-looking.",
-            "scene": "A person on a first date complimenting their partner.",
+            "scene": "A person on a first date giving a genuine compliment to their partner, admiring their well-rounded qualities.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "君は頭も良いし、外見も良いから、本当に魅力的な人だね。",
-                    "mitigation": "While '〜し' lists attributes, 'も〜ば〜も' more strongly emphasizes that these two positive qualities are inherently linked in the person, making them captivating. The first-date compliment context suggests a desire to highlight their complete appeal."
+                    "competing_grammar": "君 は 頭 も 良い し 、 外見 も 良い から 、 本当 に 魅力 的 な 人 だ ね 。",
+                    "mitigation": "While 「〜し」 lists attributes, 「も〜ば〜も」 more strongly emphasizes that these two positive qualities are inherently linked in the person, making them captivating. The first-date context suggests a desire to highlight their complete and undeniable appeal."
                 }
             ],
             "register": "casual",
@@ -204,13 +235,78 @@
             "speaker_gender": "male",
             "listener_gender": "female",
             "speaker_age": "younger",
-            "nuance": "This sentence highlights two positive attributes, intelligence 「頭も良い」 and good looks 「外見も良い」, using 「も〜なら〜も」. The phrase 「本当に魅力的な人だね」 adds a personal, complimentary touch suitable for a first date. 「〜だね」 is a casual ending often used to soften statements or invite agreement, creating an intimate atmosphere."
+            "nuance": "This casual compliment, likely from a younger male speaker, highlights two appealing attributes: intelligence 「頭 も 良い」 and good looks 「外見 も 良い」. The use of 「良い なら」 for the い-adjective with 「も」 emphasizes that both qualities contribute to the person being truly captivating 「本当 に 魅力 的 な 人 だ ね」. The ending 「だ ね」 seeks agreement and conveys a friendly, admiring tone."
         }
     ],
     "post_example_writeup": "Keep in mind that the 'both...and...' structure indicates that if one thing is true, the other is also likely to be true, or that they exist in conjunction. This emphasizes a strong correlation between the two elements. While this construction highlights characteristics that go hand-in-hand, it does not imply causation, nor is it universally applicable to all situations.",
-    "false_friends": [],
-    "post_false_friends_writeup": "",
+    "false_friends": [
+        {
+            "term": "〜し",
+            "meaning": "And, moreover, in addition to",
+            "kind": "similar expression",
+            "nuance": "While 「〜し」 can list multiple reasons or facts, it simply enumerates them. 「も〜ば〜も」, on the other hand, strongly emphasizes that two things exist in conjunction, often implying that if one is true, the other also tends to be true, highlighting a deeper, inherent correlation rather than just a simple list."
+        }
+    ],
+    "post_false_friends_writeup": "When distinguishing between 「も〜ば〜も」 and 「〜し」, consider the emphasis. 「〜し」 is primarily for listing reasons or adding supplementary information. 「も〜ば〜も」 conveys a stronger sense of parallelism and inherent connection, suggesting that two elements consistently appear together or share a strong mutual relationship.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/も-ば-も"
-    }
+    },
+    "change": [
+        {
+            "change-type": "violation",
+            "change": "Added spaces to Japanese example sentences as per [rule-2] to aid Mecab parsing."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'part-of-speech' field to 'details', setting its value to 'phrase'."
+        },
+        {
+            "change-type": "violation",
+            "change": "Changed '使用域' in 'details' to 'usage-context' and translated its value to English as 'general'."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'conjugations' array as the grammar point involves conjugations of verbs, adjectives, and nouns into the ば/なら forms."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'conjugation' field to each example sentence, specifying the type of conjugation used within the example's context (e.g., conditional (～ば) for both ば and なら forms, as both are conditional in this context)."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Improved the 'nuance' explanation for each example to specifically reference the Japanese phrases in 「quotes」 and clarify the relevance of register, gender, and age where specified."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added 'english_literally' to examples where a more literal translation could aid understanding."
+        },
+        {
+            "change-type": "violation",
+            "change": "Highlighted the grammar point in Japanese examples using curly braces { } as per instruction."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Modified example Japanese sentences slightly to make them sound more natural and fit the specified contexts better, without changing their core meaning or JLPT level."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Refined 'scene' and 'scene_rationale' to ensure competing grammar correctly reflects plausible alternatives and mitigation explains how the scene guides the user to the target grammar point."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'false_friends' array with '〜し' and its corresponding details, as it is a common similar expression identified from 'competing_grammar' in examples."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'post_false_friends_writeup' to explain the distinction between the grammar point and the false friend."
+        },
+        {
+            "change-type": "violation",
+            "change": "Removed 'etymology' field from individual example sentences as they did not meet the requirement of providing a linguistically interesting discussion of the history or evolution of a word/phrase."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Set 'register' in 'details' to 'semi-formal' as 'standard' was not an allowed enum value. This aligns with the common usage of the grammar point."
+        }
+    ]
 }

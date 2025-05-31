@@ -41,6 +41,7 @@
             "register": "formal",
             "setting": "informative",
             "speaker_gender": "male",
+            "listener_gender": "no one",
             "nuance": "The use of 「しか使えません」 clearly indicates a limitation or restriction, emphasizing that payments must be made in 100-yen units and nothing smaller."
         },
         {
@@ -73,7 +74,7 @@
             "register": "formal",
             "setting": "informative",
             "speaker_gender": "female",
-            "listener_gender": "no one",
+            "listener_gender": "male",
             "nuance": "「販売されています」 (hanbai sarete imasu) is a common passive construction used to describe how products are sold or presented to the public, implying a general rule or established practice."
         },
         {
@@ -149,39 +150,7 @@
     "change": [
         {
             "change-type": "violation",
-            "change": "The 'meaning' field was refined to be more precise and natural."
-        },
-        {
-            "change-type": "violation",
-            "change": "Added 'part-of-speech' to 'details' based on DOJG classification and schema requirement."
-        },
-        {
-            "change-type": "violation",
-            "change": "Adjusted 'register' in 'details' to a valid enum value ('formal') for the overall description."
-        },
-        {
-            "change-type": "violation",
-            "change": "Renamed 'Usage' to 'usage-context' in 'details' to match schema. Also added 'colocation', 'grammatical-role', 'logical-flow', 'temporal-flow', and 'spatial-flow' to 'details' for comprehensive coverage as per schema."
-        },
-        {
-            "change-type": "violation",
-            "change": "Rewrote the 'writeup' to remove direct examples and align with the persona and schema requirements (no examples in writeup, focus on comprehensive explanation)."
-        },
-        {
-            "change-type": "violation",
-            "change": "Replaced all example sentences with entirely new ones, as per the strict instruction to not use examples taken literally from DOJG or Bunpro. Ensured variety in formation usage, register, setting, speaker/listener genders, and included 'scene', 'scene_rationale', and 'nuance' for each."
-        },
-        {
-            "change-type": "violation",
-            "change": "Ensured all Japanese examples have spaces between words and use appropriate kanji for N1 level."
-        },
-        {
-            "change-type": "violation",
-            "change": "Added 'english_literally' to examples where a more direct translation might clarify meaning."
-        },
-        {
-            "change-type": "violation",
-            "change": "Removed 'listener_age' from all example objects, as it is deprecated by the schema."
+            "change": "Corrected 'listener_gender' in an example to align with the described 'scene'."
         }
     ]
 }

@@ -1,8 +1,5 @@
 def _py_build_tool_impl(ctx):
     # Generate the locations for the main script, input files, and output files
-    main = ctx.executable.main.path
-    ins = [f.path for f in ctx.files.ins]
-    outs = [f.path for f in ctx.outputs.outs]
     out_dirs = [ctx.actions.declare_directory("{}".format(f)) for f in ctx.attr.out_dirs]
     out_dirs_paths = [f.path for f in out_dirs]
 
@@ -47,7 +44,7 @@ def _py_build_tool_stream_impl(ctx):
     correlated_files = ctx.files.correlated
 
     # constant inputs & flags
-    non_src_inputs = ctx.files.data + ctx.files.deps
+    non_src_inputs = ctx.files.data + ctx.files.file_args
     data_args = ["--data={}".format(df.path) for df in ctx.files.data]
 
     # group correlated files by stem
@@ -115,7 +112,7 @@ py_build_tool_stream = rule(
         "args": attr.string_list(),
         "correlated": attr.label_list(allow_files = True, default = []),
         "data": attr.label_list(allow_files = True, default = []),
-        "deps": attr.label_list(allow_files = True, default = []),
+        "file_args": attr.label_list(allow_files = True, default = []),
         "extension": attr.string(default = ""),
         "filter": attr.string_list(
             # TODO: implement filtering by basename

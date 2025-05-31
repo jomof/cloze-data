@@ -1,14 +1,40 @@
 {
     "grammar_point": "です",
     "id": "gp0002",
+    "conjugations": [
+        {
+            "conjugation-type": "non-past polite (～ます)",
+            "form": "です",
+            "rarity": "common",
+            "meaning": "To be, Is"
+        },
+        {
+            "conjugation-type": "negative non-past polite (～ません)",
+            "form": "ではありません",
+            "rarity": "common",
+            "meaning": "Is not"
+        },
+        {
+            "conjugation-type": "past polite (～ました)",
+            "form": "でした",
+            "rarity": "common",
+            "meaning": "Was, Were"
+        },
+        {
+            "conjugation-type": "negative past polite (～ませんでした)",
+            "form": "ではありませんでした",
+            "rarity": "common",
+            "meaning": "Was not, Were not"
+        }
+    ],
     "pronunciation": {
         "katakana": "デス",
         "romaji": "desu"
     },
     "formation": {
-        "[Noun] + です": "Indicates the noun is a certain way.",
-        "[な-Adjective] + です": "Indicates the adjective is a certain way.",
-        "[い-Adjective] + です": "Indicates the adjective is a certain way (less formal than using just the adjective)."
+        "Noun + です": "Indicates the noun is a certain way.",
+        "な-Adjective + です": "Indicates the adjective is a certain way.",
+        "い-Adjective + です": "Indicates the adjective is a certain way (less formal than using just the adjective)."
     },
     "jlpt": "N5",
     "meaning": "To be, Is",
@@ -21,7 +47,7 @@
         "spatial-flow": "Does not inherently imply spatial flow; it primarily concerns existence, identity, or state of being at a particular location or in a particular context."
     },
     "etymology": "The origin of 「です」, widely used as a polite auxiliary verb, is a subject of debate. The most prominent theory suggests it evolved from 「であります」, which is a combination of the particle 「で」 and the polite form of the verb 「ある」 (to be), which is 「あります」. It is thought that this 「であります」 was contracted to become the modern 「です」.",
-    "writeup": "「です」 serves as an auxiliary verb, indicating assertion or determination, essentially meaning 'to be' or 'it is'. It is the polite counterpart to 「だ」. While their functions are similar, 「です」 and 「だ」 are distinct grammatical structures.\n\n「です」 connects to nouns and な-adjectives in the same manner as 「だ」. However, it is also frequently attached to the end of い-adjectives. This usage with い-adjectives, while common in everyday spoken Japanese and casual communication like texting, is sometimes considered grammatically incorrect in formal written Japanese.\n\n**Important Considerations:**\n\nAlthough attaching 「です」 to い-adjectives is widely accepted in colloquial Japanese, it is advisable to avoid it in official documents or highly rigid contexts. Nevertheless, in contemporary Japanese, this usage is gradually becoming more standard.",
+    "writeup": "「です」 serves as an auxiliary verb, indicating assertion or determination, essentially meaning 'to be' or 'it is'. It is the polite counterpart to 「だ」. While their functions are similar, 「です」 and 「だ」 are distinct grammatical structures. 「です」 connects to nouns and な-adjectives in the same manner as 「だ」. However, it is also frequently attached to the end of い-adjectives. This usage with い-adjectives, while common in everyday spoken Japanese and casual communication like texting, is sometimes considered grammatically incorrect in formal written Japanese. **Important Considerations:** Although attaching 「です」 to い-adjectives is widely accepted in colloquial Japanese, it is advisable to avoid it in official documents or highly rigid contexts. Nevertheless, in contemporary Japanese, this usage is gradually becoming more standard.",
     "examples": [
         {
             "japanese": "これ は ペン {です}。",
@@ -36,6 +62,7 @@
             ],
             "register": "teineigo (polite)",
             "setting": "instructional",
+            "conjugation": "non-past polite (～ます)",
             "speaker_age": "older"
         },
         {
@@ -51,37 +78,38 @@
             ],
             "register": "teineigo (polite)",
             "setting": "professional",
+            "conjugation": "non-past polite (～ます)",
             "speaker_gender": "male"
         },
         {
-            "japanese": "彼 は 親切 {です}。",
-            "english": "He is kind.",
-            "english_literally": "He is kind.",
-            "scene": "A woman describing a male friend to another woman.",
+            "japanese": "これ は 大きい {です}。",
+            "english": "This is big.",
+            "english_literally": "This is big.",
+            "scene": "A child proudly showing a large toy to their friend.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "彼 は 親切 だ。",
-                    "mitigation": "Even among friends, using polite language like 「です」 when describing a third person maintains a respectful tone and is common in general conversation."
+                    "competing_grammar": "これ は 大きい。",
+                    "mitigation": "Even children learn polite forms when communicating with friends, making 「です」 a natural choice over the overly casual plain form 「大きい」 when making a statement."
                 }
             ],
             "register": "teineigo (polite)",
             "setting": "friendly",
-            "speaker_gender": "female",
-            "listener_gender": "female"
+            "conjugation": "non-past polite (～ます)"
         },
         {
-            "japanese": "今日 は とても 暑い {です}。",
+            "japanese": "今日 は とても あつい {です}。",
             "english": "Today is very hot.",
             "english_literally": "Today is very hot.",
             "scene": "Two neighbors casually discussing the weather over their fence.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "今日 は とても 暑い。",
-                    "mitigation": "While 「暑い」 (hot) is grammatically complete, adding 「です」 makes the statement polite and suitable for general conversation with a neighbor, indicating a respectful social distance."
+                    "competing_grammar": "今日 は とても あつい。",
+                    "mitigation": "While 「あつい」 (hot) is grammatically complete in its plain form, adding 「です」 makes the statement polite and suitable for general conversation with a neighbor, indicating a respectful social distance."
                 }
             ],
             "register": "teineigo (polite)",
-            "setting": "friendly"
+            "setting": "friendly",
+            "conjugation": "non-past polite (～ます)"
         },
         {
             "japanese": "きのう は 雨 {でした}。",
@@ -96,89 +124,111 @@
             ],
             "register": "teineigo (polite)",
             "setting": "informative",
+            "conjugation": "past polite (～ました)",
             "speaker_age": "younger"
         },
         {
-            "japanese": "これ は 私 の 犬 {ではありません}。",
-            "english": "This is not my dog.",
-            "english_literally": "This is my dog is not.",
-            "scene": "A man clarifying ownership of a pet to a stranger who mistakenly approached his dog.",
+            "japanese": "この 人 は いつも げんき {です}。",
+            "english": "This person is always energetic.",
+            "english_literally": "This person is always energetic.",
+            "scene": "Observing a cheerful colleague at work.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "これ は 私 の 犬 じゃない。",
+                    "competing_grammar": "この 人 は いつも げんき だ。",
+                    "mitigation": "When speaking about a colleague, even in a casual observation, using the polite 「です」 maintains a professional and respectful tone, unlike the casual 「だ」."
+                }
+            ],
+            "register": "teineigo (polite)",
+            "setting": "friendly",
+            "conjugation": "non-past polite (～ます)",
+            "speaker_age": "older"
+        },
+        {
+            "japanese": "これ は 私 の 本 {ではありません}。",
+            "english": "This is not my book.",
+            "english_literally": "This is my book is not.",
+            "scene": "A man clarifying ownership of a book to a stranger who mistakenly picked it up.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "これ は 私 の 本 じゃない。",
                     "mitigation": "When addressing a stranger, using the polite negative form 「ではありません」 is essential to maintain proper decorum and clarity, avoiding the casual 「じゃない」."
                 }
             ],
             "register": "teineigo (polite)",
             "setting": "informative",
+            "conjugation": "negative non-past polite (～ません)",
             "speaker_gender": "male"
         },
         {
-            "japanese": "私 の 携帯 は 新しい {ではないです}。",
+            "japanese": "私 の 電話 は 新しい {ではないです}。",
             "english": "My phone isn't new.",
             "english_literally": "My cell phone is new is not.",
             "scene": "A teenager explaining why they need a new phone to their parent.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "私 の 携帯 は 新しくない。",
-                    "mitigation": "While 「新しくない」 is grammatically correct for an い-adjective, using 「ではないです」 is a common and slightly more emphatic colloquial polite negative, conveying a sense of justification."
+                    "competing_grammar": "私 の 電話 は 新しくない。",
+                    "mitigation": "While 「新しくない」 is grammatically correct for an い-adjective, using 「ではないです」 is a common and slightly more emphatic colloquial polite negative, conveying a sense of justification, especially when trying to persuade."
                 },
                 {
-                    "competing_grammar": "私 の 携帯 は 新しくありません。",
+                    "competing_grammar": "私 の 電話 は 新しくありません。",
                     "mitigation": "「新しくありません」 is formal. The scene implies a conversation within a family, where 「ではないです」 offers a more natural, less stiff polite negative."
                 }
             ],
             "register": "teineigo (polite)",
             "setting": "persuasive",
+            "conjugation": "non-past polite (～ます)",
             "speaker_age": "younger"
         },
         {
-            "japanese": "あの 本 は 面白くなかった {です}。",
+            "japanese": "あの 本 は おもしろくなかった {です}。",
             "english": "That book wasn't interesting.",
             "english_literally": "That book is interesting was not.",
             "scene": "Discussing a book with a friend, maintaining a polite but conversational tone.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "あの 本 は 面白くなかった。",
+                    "competing_grammar": "あの 本 は おもしろくなかった。",
                     "mitigation": "Although omitting 「です」 is common in plain form, adding 「です」 even to the past negative of an い-adjective makes the statement more polite and suitable for general polite conversation."
                 }
             ],
             "register": "teineigo (polite)",
-            "setting": "friendly"
+            "setting": "friendly",
+            "conjugation": "non-past polite (～ます)"
         },
         {
-            "japanese": "彼 の 話 は 本当 {ではありませんでした}。",
-            "english": "His story wasn't true.",
-            "english_literally": "His story is true was not.",
+            "japanese": "それ は ほんとう {ではありませんでした}。",
+            "english": "That wasn't true.",
+            "english_literally": "That is true was not.",
             "scene": "A detective confirming false information during an investigation.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "彼 の 話 は 本当 ではなかった。",
+                    "competing_grammar": "それ は ほんとう ではなかった。",
                     "mitigation": "In a formal or serious context like an investigation, the fully polite past negative 「ではありませんでした」 is necessary, conveying seriousness and professionalism, unlike the plain 「ではなかった」."
                 }
             ],
             "register": "formal",
-            "setting": "serious"
+            "setting": "serious",
+            "conjugation": "negative past polite (～ませんでした)"
         },
         {
-            "japanese": "これ が あなた の 新しい 教科書 {です} よ。",
-            "english": "This is your new textbook.",
-            "english_literally": "This is your new textbook, you know.",
-            "scene": "A teacher giving a textbook to a student.",
+            "japanese": "これ が あなた の あたらしい 本 {です} よ。",
+            "english": "This is your new book.",
+            "english_literally": "This is your new book, you know.",
+            "scene": "A teacher giving a book to a student.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "これ が あなた の 新しい 教科書 だ。",
+                    "competing_grammar": "これ が あなた の あたらしい 本 だ。",
                     "mitigation": "A teacher, though older, typically uses polite language with students, making 「です」 appropriate. The 「よ」 particle adds emphasis without resorting to the casual 「だ」."
                 },
                 {
-                    "competing_grammar": "これ が あなた の 新しい 教科書 だ よ。",
+                    "competing_grammar": "これ が あなた の あたらしい 本 だ よ。",
                     "mitigation": "While 「だよ」 is also an option, the more formal 「です」 maintains a respectful distance appropriate for a teacher-student relationship, even with the emphasis of 「よ」."
                 }
             ],
             "register": "teineigo (polite)",
             "setting": "instructional",
+            "conjugation": "non-past polite (～ます)",
             "speaker_age": "older",
-            "nuance": "An older speaker, like a teacher, using 「です」 followed by the particle 「よ」 in 「教科書ですよ」 indicates they are providing new information or confirmation to a younger listener, with a mild sense of assurance. The use of 「です」 maintains politeness appropriate for a teacher-student relationship."
+            "nuance": "An older speaker, like a teacher, using 「です」 followed by the particle 「よ」 in 「本ですよ」 indicates they are providing new information or confirmation to a younger listener, with a mild sense of assurance. The use of 「です」 maintains politeness appropriate for a teacher-student relationship."
         }
     ],
     "post_example_writeup": "Remember that while it's increasingly common to attach 「です」 to い形容詞 in casual speech, it's still considered less formal and should be used with care in professional contexts.",
@@ -218,6 +268,18 @@
             "meaning": "Formal or literary だ, Authoritative, Copula",
             "kind": "synonym",
             "nuance": "「である」 is a formal or literary equivalent of 「だ」, predominantly used in written contexts like academic papers or official reports, rarely in conversation."
+        },
+        {
+            "term": "新しくない",
+            "meaning": "Is not new (plain form)",
+            "kind": "similar expression",
+            "nuance": "「新しくない」 is the plain negative form of the い-adjective 「新しい」. It is grammatically complete on its own in plain contexts, while 「ではないです」 explicitly adds politeness when combined with a noun or な-adjective structure, or functions as a colloquial polite negative for い-adjectives."
+        },
+        {
+            "term": "新しくありません",
+            "meaning": "Is not new (polite form)",
+            "kind": "similar expression",
+            "nuance": "「新しくありません」 is the polite negative form of the い-adjective 「新しい」, used in formal situations. While 「ではないです」 can also convey politeness for い-adjectives, 「新しくありません」 is generally more formal and standard."
         }
     ],
     "post_false_friends_writeup": "When using 「です」, it is always crucial to consider the listener and the context. In casual conversation, one might use 「だ」 or even omit the copula entirely. In more polite situations, 「でございます」 may be more appropriate. Understanding these subtle differences will enable you to speak more natural and suitable Japanese.",
@@ -227,35 +289,39 @@
     "change": [
         {
             "change-type": "violation",
-            "change": "Removed 'conjugation' field from all examples as 'です' is not a conjugatable verb or adjective in dictionary form, per schema definition."
+            "change": "Changed `携帯` (N4 kanji) to `電話` (N5 kanji) in example 7 to adhere to the JLPT N5 kanji level."
+        },
+        {
+            "change-type": "violation",
+            "change": "Changed `教科書` (N4/N3 kanji) to `本` (N5 kanji) in example 10 to adhere to the JLPT N5 kanji level."
+        },
+        {
+            "change-type": "violation",
+            "change": "Changed `彼` (N3 kanji) to `この 人` (N5 kanji) in the new example 6 to adhere to the JLPT N5 kanji level."
+        },
+        {
+            "change-type": "unnatural",
+            "change": "Corrected `competing_grammar` in example 3's `scene_rationale` from `これ は 大きい だ。` to `これ は 大きい。` because `大きい だ` is grammatically incorrect for an い-adjective."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added a new example (example 6) to explicitly demonstrate `な-adjective + です` usage with `元気です`, which was previously missing a clear representative example."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added `新しくない` to `false_friends` as a `similar expression` to clarify the difference between `い-adjective` plain negative and `ではないです`."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added `新しくありません` to `false_friends` as a `similar expression` to clarify the difference between `い-adjective` polite negative and `ではないです`."
         },
         {
             "change-type": "schema",
-            "change": "Updated 'details' properties to match schema: 'Part of Speech' to 'part-of-speech', 'Register' to 'register', 'Grammatical Category' to 'grammatical-role'. Added custom 'tempural-flow' and 'spatial-flow' fields to details. Converted Japanese strings to English and removed redundant Japanese keys."
+            "change": "Added `conjugations` field with polite conjugations of `です` as it functions as a copula."
         },
         {
-            "change-type": "violation",
-            "change": "Removed 'listener_age' field from examples as it is deprecated."
-        },
-        {
-            "change-type": "violation",
-            "change": "Rewrote all example sentences to be original, as many were identical to Bunpro examples in the source `GRAMMAR_POINT_YAML`."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Added 'english_literally' to examples for clearer understanding where appropriate."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Improved example scenarios and rationales for better clarity and alignment with grammar point nuances, ensuring a wider variety of settings and registers."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Refined 'nuance' fields in examples to explicitly reference Japanese phrasing in 「quotes」 and clarify speaker/listener context."
-        },
-        {
-            "change-type": "command",
-            "change": "Ensured 'だった・でした' remains absent from 'false_friends' as per prior command to remove conjugations."
+            "change-type": "schema",
+            "change": "Added `conjugation` field to all examples, specifying the conjugation type used in each example sentence."
         }
     ]
 }

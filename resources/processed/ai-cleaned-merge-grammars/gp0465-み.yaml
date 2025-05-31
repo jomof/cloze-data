@@ -6,14 +6,13 @@
         "romaji": "mi"
     },
     "formation": {
-        "[い-Adjective stem] + み": "Forms a noun indicating a condition or quality.",
-        "[な-Adjective stem] + み": "Forms a noun indicating a condition or quality."
+        "い-Adjective stem + み": "Forms a noun indicating a condition or quality.",
+        "な-Adjective stem + み": "Forms a noun indicating a quality or state."
     },
     "jlpt": "N3",
     "meaning": "~ness; Used to indicate conditions or nature",
     "details": {
         "part-of-speech": "suffix",
-        "register": "teineigo (polite)",
         "usage-context": "general"
     },
     "etymology": "The suffix 「み」 is thought to originate from the noun 「身 (み)」 meaning \"body\" or \"substance.\" Over time, it evolved to abstractly represent the inherent qualities or conditions associated with something.",
@@ -35,19 +34,19 @@
             "nuance": "「温かみ」 describes the inherent, cozy quality of the room, suggesting a feeling rather than a measurable temperature."
         },
         {
-            "japanese": "この ケーキ は {甘み} が ちょうど いい。",
-            "english": "The sweetness of this cake is just right.",
-            "english_literally": "This cake, its sweetness is exactly good.",
-            "scene": "A person enjoying a dessert.",
+            "japanese": "この チョコレート は {甘み} が 濃厚 だ。",
+            "english": "This chocolate has a rich sweetness.",
+            "english_literally": "This chocolate, its sweetness is rich.",
+            "scene": "A pastry chef describing their signature chocolate.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "この ケーキ は 甘さ が ちょうど いい。",
-                    "mitigation": "The scene highlights the inherent taste of sweetness as a characteristic of the cake, not a quantifiable level of sweetness."
+                    "competing_grammar": "この チョコレート は 甘さ が 濃厚 だ。",
+                    "mitigation": "The scene highlights the specific, inherent taste quality of the chocolate, not merely the degree of sweetness. 「甘み」 conveys the characteristic flavor."
                 }
             ],
-            "register": "casual",
-            "setting": "friendly",
-            "nuance": "「甘み」 refers to the inherent taste of sweetness, rather than the degree of sweetness which would be 「甘さ」. 「ちょうど いい」 emphasizes the perfect balance."
+            "register": "formal",
+            "setting": "professional",
+            "nuance": "「甘み」 here refers to the inherent taste of sweetness as a characteristic of the chocolate, distinct from a quantifiable level. 「濃厚」 emphasizes the richness of this quality."
         },
         {
             "japanese": "夕焼け 空 に は 深い {赤み} が あった。",
@@ -80,19 +79,19 @@
             "nuance": "「大切み」 emphasizes the inherent value or preciousness of family, not a quantifiable degree of importance. 「再認識 した」 implies a newfound appreciation."
         },
         {
-            "japanese": "人 の {痛み} を 理解 する ことが 重要 だ。",
-            "english": "It is important to understand the pain of others.",
-            "english_literally": "Understanding the pain of people is important.",
-            "scene": "A counselor advising a student on empathy.",
+            "japanese": "彼 の 目 から {痛み} が 伝わって きた。",
+            "english": "Pain was conveyed through his eyes.",
+            "english_literally": "From his eyes, pain was conveyed.",
+            "scene": "A doctor observing a patient's subtle expressions.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "人 の 痛さ を 理解 する ことが 重要 だ。",
-                    "mitigation": "The scene emphasizes empathy and understanding the inherent suffering or emotional pain of others, not simply measuring the degree of physical pain."
+                    "competing_grammar": "彼 の 目 から 痛さ が 伝わって きた。",
+                    "mitigation": "The scene focuses on the inherent quality of suffering or emotional pain being expressed, not the measurable intensity of physical pain."
                 }
             ],
             "register": "semi-formal",
-            "setting": "informative",
-            "nuance": "「痛み」 refers to suffering or emotional pain, not the physical intensity of pain. 「理解する ことが 重要 だ」 conveys a moral or ethical imperative."
+            "setting": "serious",
+            "nuance": "「痛み」 refers to suffering or emotional pain, not merely the physical intensity. The phrase 「目から伝わって きた」 highlights the subtle, internal nature of the pain being perceived."
         },
         {
             "japanese": "彼 の {強み} は どんな 困難 も 乗り越える 精神 力 だ。",
@@ -208,52 +207,16 @@
     },
     "change": [
         {
-            "change-type": "violation",
-            "change": "Added 'part-of-speech' field to 'details' as 'suffix' to comply with schema requirements."
-        },
-        {
-            "change-type": "violation",
-            "change": "Converted Japanese key '使用域' to English 'usage-context' in 'details' to comply with schema requirements for English keys."
-        },
-        {
-            "change-type": "unnatural",
-            "change": "Removed the example sentence '「悲しい」 (sad) becomes 「悲しみ」 (sadness)' from 'writeup' to adhere to the rule that examples should only be in the 'examples' array."
-        },
-        {
-            "change-type": "violation",
-            "change": "Completely rewrote all example sentences and their 'english' translations to avoid literal usage of Bunpro/DOJG examples, as per strict instruction."
-        },
-        {
             "change-type": "schema",
-            "change": "Added 'english_literally' field for all examples, as it is a required field in the schema when present."
+            "change": "Removed 'register' field from 'details' as the suffix 'み' itself does not dictate a specific register, and it is used across various registers shown in examples. Setting it to 'teineigo (polite)' was misleading."
         },
         {
-            "change-type": "suggestion",
-            "change": "Ensured all Japanese example sentences have spaces between words for better readability and Mecab parsing."
+            "change-type": "violation",
+            "change": "Rewrote the example sentence concerning '甘み' (`このケーキは{甘み}がちょうど いい。`) to be distinct from the Bunpro original. The new sentence is `この チョコレート は {甘み} が 濃厚 だ。`"
         },
         {
-            "change-type": "suggestion",
-            "change": "Verified all kanji used in new example sentences are N3 level or lower to match the grammar point's JLPT level."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Ensured a variety of settings, registers, and where appropriate, speaker/listener genders and speaker age for new examples."
-        },
-        {
-            "change-type": "unnatural",
-            "change": "Refined the 'nuance' for 'さ' in 'false_friends' to include specific examples like '甘さ' vs '甘み' for clarity."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Ensured the first example is the simplest and most common usage of the grammar point."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Ensured all formations were covered by the examples (both い-adjective stem and な-adjective stem were covered by the variety of adjectives used)."
-        },
-        {
-            "change-type": "unnatural",
-            "change": "Changed the 'kind' of the false friend 'さ' from 'synonym' to 'similar expression' to more accurately reflect its relationship with 'み'."
+            "change-type": "violation",
+            "change": "Rewrote the example sentence concerning '痛み' (`人の{痛み}を理解することが重要だ。`) to be distinct and less similar to the Bunpro original. The new sentence is `彼 の 目 から {痛み} が 伝わって きた。`"
         }
     ]
 }

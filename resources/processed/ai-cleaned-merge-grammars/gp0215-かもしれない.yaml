@@ -3,24 +3,28 @@
     "id": "gp0215",
     "conjugations": [
         {
-            "type": "dictionary (plain non-past)",
+            "conjugation-type": "dictionary (plain non-past)",
             "form": "かもしれない",
-            "rarity": "commonly used"
+            "rarity": "common",
+            "meaning": "might, maybe"
         },
         {
-            "type": "polite (non-past)",
+            "conjugation-type": "non-past polite (～ます)",
             "form": "かもしれません",
-            "rarity": "commonly used"
+            "rarity": "common",
+            "meaning": "might, maybe (polite)"
         },
         {
-            "type": "plain past",
+            "conjugation-type": "past plain (～た)",
             "form": "たかもしれない",
-            "rarity": "commonly used"
+            "rarity": "common",
+            "meaning": "might have, maybe did"
         },
         {
-            "type": "polite past",
+            "conjugation-type": "past polite (～ました)",
             "form": "たかもしれません",
-            "rarity": "commonly used"
+            "rarity": "common",
+            "meaning": "might have, maybe did (polite)"
         }
     ],
     "pronunciation": {
@@ -28,119 +32,199 @@
         "romaji": "kamoshirenai"
     },
     "formation": {
-        "[Verb (plain form)] + かもしれない": "Expresses uncertainty about an action or event.",
-        "[い-adjective (plain form)] + かもしれない": "Expresses uncertainty about a quality or state.",
-        "[な-adjective (plain form) + かもしれない": "Expresses uncertainty about a quality or state.",
-        "[Noun] + かもしれない": "Expresses uncertainty about the identity or nature of something."
+        "Verb (plain non-past form) + かもしれない": "Expresses uncertainty about a present or future action or event.",
+        "Verb (plain past form) + かもしれない": "Expresses uncertainty about a past action or event.",
+        "い-adjective (plain non-past form) + かもしれない": "Expresses uncertainty about a present quality or state.",
+        "い-adjective (plain past form) + かもしれない": "Expresses uncertainty about a past quality or state.",
+        "な-adjective (plain non-past form / stem + だ) + かもしれない": "Expresses uncertainty about a present quality or state. The 「だ」 is often omitted in plain speech.",
+        "な-adjective (plain past form / stem + だった) + かもしれない": "Expresses uncertainty about a past quality or state.",
+        "Noun + (だ) かもしれない": "Expresses uncertainty about the identity or nature of something. The 「だ」 is often omitted in plain speech.",
+        "Noun + だった かもしれない": "Expresses uncertainty about a past identity or nature."
     },
     "jlpt": "N4",
     "meaning": "Might, maybe, probably",
     "meaning_warning": "Colloquial: かも or かもしらん; Polite: かもしれません",
     "details": {
-        "Register": "Standard",
-        "使用域": "一般"
+        "part-of-speech": "auxiliary adjective",
+        "register": "teineigo (polite)",
+        "usage-context": "Generally used in daily conversations and writing to express possibility or uncertainty."
     },
     "etymology": "The expression 「かもしれない」 is derived from 「かも」 (kamo), which means \"perhaps\" or \"maybe,\" combined with the potential form of the verb 「知る」 (shiru, to know) in the negative, 「しれない」 (shirenai, cannot know). Thus, literally, it suggests \"even (A), we cannot know,\" conveying uncertainty.",
-    "writeup": "「かもしれない」 is a common Japanese expression used to express uncertainty or possibility. It's often translated as \"might,\" \"maybe,\" or \"perhaps.\" While often treated as a single word, it combines the particle 「かも」 (kamo) with the potential form of the verb 「知る」 (shiru - to know) and the auxiliary verb 「ない」 (nai). To use 「かもしれない」, attach it to the end of a verb, *i*-adjective, *na*-adjective, or noun in its plain form.\n\n*   **Polite Form:** The polite form, 「かもしれません」, is created by changing 「しれない」 to its polite potential form.\n*   **Colloquial Forms:** Several colloquial variations exist, including 「かも」, 「かもしらん」, and 「かもしれん」. 「かも」 is the most common, while 「かもしらん」 might sound a bit rough or boyish.",
+    "writeup": "「かもしれない」 is a common Japanese expression used to express uncertainty or possibility. It's often translated as \"might,\" \"maybe,\" or \"perhaps.\" While often treated as a single unit, it combines the particle 「かも」 (kamo) with the potential form of the verb 「知る」 (shiru - to know) and the auxiliary verb 「ない」 (nai). To use 「かもしれない」, attach it to the plain form of a verb, *i*-adjective, *na*-adjective, or noun.\n\n*   **Polite Form:** The polite form, 「かもしれません」, is created by changing 「しれない」 to its polite equivalent. This form is suitable for more formal contexts.\n*   **Colloquial Forms:** Several colloquial variations exist, including 「かも」, 「かもしらん」, and 「かもしれん」. 「かも」 is the most common and widely used in casual conversation. 「かもしらん」 and 「かもしれん」 are less common and can sometimes sound a bit rough or boyish, particularly 「かもしらん」.",
     "examples": [
         {
-            "japanese": "明日 は 雨 が 降る {かも} しれない 。",
-            "english": "It might rain tomorrow.",
-            "scene": "A person checking the weather forecast.",
-            "register": "standard",
-            "setting": "cautious",
-            "conjugation": "dictionary (plain non-past)"
-        },
-        {
-            "japanese": "彼 は 来 ない {かも} しれない 。",
-            "english": "He might not come.",
-            "scene": "Two friends discussing whether someone will attend an event.",
-            "register": "standard",
-            "setting": "pessimistic",
-            "conjugation": "dictionary (plain non-past)"
-        },
-        {
-            "japanese": "これ は 偽物 {かも} しれない 。",
-            "english": "This might be a fake.",
-            "scene": "Someone examining a suspicious item.",
-            "register": "standard",
-            "setting": "cautious",
-            "conjugation": "dictionary (plain non-past)"
-        },
-        {
-            "japanese": "彼女 は もう 知って いる {かも} しれない よ 。",
-            "english": "She might already know, you know.",
-            "scene": "Two friends speculating about someone's knowledge.",
+            "japanese": "明日 は 晴れる {かも} しれない 。",
+            "english": "It might be sunny tomorrow.",
+            "english_literally": "Tomorrow it might be sunny.",
+            "scene": "You're checking the weather forecast and it looks like it'll clear up, but you're not 100% sure.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "明日 は 晴れる だろう 。",
+                    "mitigation": "Using 「だろう」 implies a higher degree of certainty or an expectation based on some evidence, whereas 「かもしれない」 suggests a weaker possibility or mere speculation. The scene emphasizes the uncertainty."
+                },
+                {
+                    "competing_grammar": "明日 は 晴れ そうだ 。",
+                    "mitigation": "「そうだ」 (hearsay) indicates you've heard it will be sunny, or (appearance) it looks like it will be sunny based on visual cues. The scene focuses on simply stating a possibility without necessarily relying on external information or appearance."
+                }
+            ],
             "register": "casual",
             "setting": "informative",
-            "speaker_gender": "male",
-            "nuance": "The 「よ」 adds a bit of emphasis and casualness to the statement, typical of male speech."
-        },
-        {
-            "japanese": "もしかしたら 、 彼 は 怒って いる {かも} しれません 。",
-            "english": "He might be angry.",
-            "scene": "Someone speculating about another person's mood.",
-            "register": "polite",
-            "setting": "cautious",
-            "conjugation": "polite (non-past)"
-        },
-        {
-            "japanese": "明日 、 デート に 行ける {かも} しれません 。",
-            "english": "I might be able to go on a date tomorrow.",
-            "scene": "Someone tentatively planning a date.",
-            "register": "polite",
-            "setting": "optimistic",
-            "conjugation": "polite (non-past)"
-        },
-        {
-            "japanese": "彼 は 私 の こと が 好き {かも} しれない 。",
-            "english": "He might like me.",
-            "scene": "A woman thinking about a man she likes.",
-            "register": "standard",
-            "setting": "flirty",
-            "speaker_gender": "female",
-            "nuance": "This sentence is something a girl would say when they're interested in someone. Also, note the 「こと」 which indicates interest or affection for the other person.",
             "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "もっと 早く 着いて いれば 、 助かった {かも} しれない 。",
-            "english": "If I had arrived earlier, I might have been saved.",
-            "scene": "Someone reflecting on a past event with regret.",
-            "register": "standard",
-            "setting": "melancholic",
-            "conjugation": "plain past"
-        },
-        {
-            "japanese": "彼女 は 嘘 を ついて いない {かも} しれない 。",
-            "english": "She might not be lying.",
-            "scene": "Someone considering the possibility of someone's honesty.",
-            "register": "standard",
+            "japanese": "あの 建物 は 教会 {かも} しれません 。",
+            "english": "That building might be a church.",
+            "english_literally": "That building might be a church.",
+            "scene": "You and a friend are walking through an unfamiliar town and pass an old, unusual building that resembles a church, but you're not entirely certain.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "あの 建物 は 教会 だろう 。",
+                    "mitigation": "「だろう」 here would suggest a stronger belief or assumption, perhaps based on architectural knowledge. 「かもしれません」 reflects a more tentative guess based on observation."
+                },
+                {
+                    "competing_grammar": "あの 建物 は 教会 みたいだ 。",
+                    "mitigation": "「みたいだ」 means 'looks like' or 'seems like,' emphasizing visual resemblance. While similar, 「かもしれません」 suggests a possibility of being a church, not just looking like one."
+                }
+            ],
+            "register": "teineigo (polite)",
             "setting": "cautious",
-            "conjugation": "dictionary (plain non-past)"
+            "conjugation": "non-past polite (～ます)"
         },
         {
-            "japanese": "この 問題 は そんなに 簡単 じゃなかった {かも} しれない な 。",
-            "english": "This problem might not have been so simple after all.",
-            "scene": "Someone realizing the difficulty of a task.",
+            "japanese": "この 問題 は 少し 難しい {かも} しれない 。",
+            "english": "This problem might be a little difficult.",
+            "english_literally": "This problem is a little difficult, it might be.",
+            "scene": "A student is looking at a math problem and is unsure if they can solve it easily.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この 問題 は 少し 難しい だろう 。",
+                    "mitigation": "「だろう」 implies a stronger conclusion or expectation. 「かもしれない」 expresses a softer, more tentative assessment of difficulty."
+                }
+            ],
             "register": "casual",
             "setting": "reflective",
-            "conjugation": "plain past"
+            "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "彼 は もう 帰った {かも} しれません ね 。",
-            "english": "He might have already gone home.",
-            "scene": "Someone speculating about someone's whereabouts.",
-            "register": "polite",
-            "setting": "cautious",
-            "conjugation": "polite past"
+            "japanese": "彼 は 今日 、 忙しい {かも} しれない よ 。",
+            "english": "He might be busy today, you know.",
+            "english_literally": "He today, busy, it might be, you know.",
+            "scene": "A man is trying to contact a colleague, and his friend offers a possible reason why the colleague isn't responding.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼 は 今日 、 忙しい はずだ よ 。",
+                    "mitigation": "「はずだ」 indicates a strong expectation or certainty based on information. 「かもしれない」 simply offers a possibility without that level of confidence. The scene implies a speculative hint, not a certain fact."
+                }
+            ],
+            "register": "casual",
+            "setting": "friendly",
+            "conjugation": "dictionary (plain non-past)",
+            "speaker_gender": "male",
+            "listener_gender": "male",
+            "nuance": "The use of 「よ」 at the end makes the sentence sound more casual and is commonly used by male speakers to provide new information or a casual suggestion, as in 「〜かもしれないよ」."
         },
         {
-            "japanese": "もっと 勉強 すれば 、 合格 できた {かも} しれない のに 。",
-            "english": "If I had studied more, I might have passed.",
-            "scene": "Someone regretting not studying enough.",
-            "register": "standard",
+            "japanese": "財布 を どこ か に 忘れて きた {かも} しれない 。",
+            "english": "I might have left my wallet somewhere.",
+            "english_literally": "Wallet somewhere forgotten, it might be.",
+            "scene": "You are about to pay for groceries but realize your wallet is missing. You're trying to recall where you last had it.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "財布 を どこ か に 忘れて きた だろう 。",
+                    "mitigation": "Using 「だろう」 would sound like a self-affirmation or a conclusion drawn, possibly with a slightly firmer tone. 「かもしれない」 indicates a pure possibility, reflecting the speaker's current uncertainty and realization."
+                }
+            ],
+            "register": "casual",
             "setting": "melancholic",
-            "conjugation": "plain past"
+            "conjugation": "past plain (～た)",
+            "speaker_gender": "female",
+            "listener_gender": "no one",
+            "nuance": "This phrasing is common for self-talk. The past tense 「忘れてきた」 implies the action happened and is now a state, and 「かもしれない」 expresses the possibility of that past state."
+        },
+        {
+            "japanese": "鍵 を かけ忘れた {かも} しれません 。",
+            "english": "I might have forgotten to lock it.",
+            "english_literally": "Key to forget to lock, it might be (polite).",
+            "scene": "You're already at work, but a sudden thought pops into your head: Did I lock the front door this morning? You're starting to worry.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "鍵 を かけ忘れた と 思う 。",
+                    "mitigation": "While 「と思う」 (I think) also expresses uncertainty, 「かもしれない」 emphasizes the *possibility* or *likelihood* of the event, which is more appropriate when expressing a dawning concern or possibility rather than a thought process."
+                }
+            ],
+            "register": "teineigo (polite)",
+            "setting": "cautious",
+            "conjugation": "past polite (～ました)"
+        },
+        {
+            "japanese": "彼 は もう 家 に 帰った {かも} しれない わ よ 。",
+            "english": "He might have already gone home, you know.",
+            "english_literally": "He already home to returned, it might be, you know.",
+            "scene": "A woman and her friend are waiting for another friend, but he's not showing up. She offers a suggestion as to his whereabouts.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼 は もう 家 に 帰った でしょう 。",
+                    "mitigation": "「でしょう」 suggests seeking confirmation or expressing a stronger conviction, whereas 「かもしれない」 presents it as a mere possibility. The scene emphasizes a speculative suggestion rather than seeking agreement."
+                }
+            ],
+            "register": "casual",
+            "setting": "friendly",
+            "conjugation": "past plain (～た)",
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "nuance": "The combination of 「かもしれない」 with the feminine sentence-final particle 「わよ」 suggests a soft, somewhat assertive, yet still uncertain tone, often used by female speakers to offer information or a suggestion."
+        },
+        {
+            "japanese": "もし か して 、 それ は 嘘 だった {かも} しれない な 。",
+            "english": "Perhaps, that might have been a lie, huh.",
+            "english_literally": "Perhaps, that was a lie, it might be, huh.",
+            "scene": "Someone reflects on a past conversation or event, realizing that something they were told might not have been true.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "もし か して 、 それ は 嘘 だった と 思った 。",
+                    "mitigation": "「と思った」 expresses the speaker's past thought. 「かもしれない」 indicates a current realization about a past possibility, conveying a sense of dawning understanding rather than a direct thought from the past."
+                }
+            ],
+            "register": "casual",
+            "setting": "reflective",
+            "conjugation": "past plain (～た)",
+            "speaker_gender": "male",
+            "listener_gender": "no one",
+            "nuance": "The initial 「もしかして」 adds emphasis to the possibility, and the final particle 「な」 softens the statement, often used by male speakers when reflecting on something to themselves."
+        },
+        {
+            "japanese": "この 映画 は あまり 面白く ない {かも} しれません 。",
+            "english": "This movie might not be very interesting.",
+            "english_literally": "This movie is not very interesting, it might be (polite).",
+            "scene": "A colleague is recommending a movie, but you've heard mixed reviews and want to express polite skepticism.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この 映画 は あまり 面白く ない だろう 。",
+                    "mitigation": "Using 「だろう」 would sound more like a prediction or a firm opinion about its lack of interest. 「かもしれません」 allows for a more polite and tentative expression of potential disinterest without being confrontational."
+                }
+            ],
+            "register": "teineigo (polite)",
+            "setting": "cautious",
+            "conjugation": "non-past polite (～ます)"
+        },
+        {
+            "japanese": "残業 で 終電 に 間に合わない {かも} しれません 。",
+            "english": "I might not make the last train due to overtime.",
+            "english_literally": "Overtime by last train to not make it, it might be (polite).",
+            "scene": "An employee is informing their manager about the possibility of missing the last train due to an unexpected workload.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "残業 で 終電 に 間に合わない だろう 。",
+                    "mitigation": "「だろう」 conveys a higher level of certainty or a prediction. 「かもしれません」 is more appropriate for expressing a possibility that is not yet a certainty, but a concern, maintaining politeness and acknowledging the situation's fluidity."
+                }
+            ],
+            "register": "bijinesu nihongo (business)",
+            "setting": "informative",
+            "conjugation": "non-past polite (～ます)",
+            "speaker_gender": "male",
+            "listener_gender": "group",
+            "speaker_age": "younger",
+            "nuance": "This is a common business phrase used by younger male employees. The use of 「かもしれません」 is suitably polite and tentative for reporting potential difficulties to a superior or group, indicating a respectful acknowledgment of the situation rather than a definitive statement."
         }
     ],
     "false_friends": [
@@ -154,29 +238,91 @@
             "term": "でしょう",
             "meaning": "Probably, isn't it?",
             "kind": "similar expression",
-            "nuance": "「でしょう」 is often used to seek confirmation or agreement, while 「かもしれない」 simply expresses a possibility without seeking input from the listener."
+            "nuance": "「でしょう」 is often used to seek confirmation or agreement, or to make a prediction with a higher degree of confidence, while 「かもしれない」 simply expresses a possibility without seeking input from the listener."
         },
         {
             "term": "だろう",
             "meaning": "Probably, isn't it?",
             "kind": "similar expression",
-            "nuance": "「だろう」 is the plain form of 「でしょう」 and carries the same nuance of seeking confirmation, unlike the more neutral possibility of 「かもしれない」."
+            "nuance": "「だろう」 is the plain form of 「でしょう」 and carries the same nuance of seeking confirmation or expressing a stronger conviction, unlike the more neutral possibility of 「かもしれない」."
         },
         {
             "term": "じゃないか",
-            "meaning": "Isn't it?, is it not?",
+            "meaning": "Isn't it?, Is it not?",
             "kind": "similar expression",
-            "nuance": "「じゃないか」 is often used to express a strong opinion or challenge a statement, whereas 「かもしれない」 expresses uncertainty."
+            "nuance": "「じゃないか」 is often used to express a strong opinion, assert a known fact, or challenge a statement, whereas 「かもしれない」 expresses uncertainty."
         },
         {
             "term": "もしかしたら",
             "meaning": "Perhaps, maybe, possibly",
             "kind": "similar expression",
-            "nuance": "「もしかしたら」 functions as an adverbial phrase that emphasizes the uncertainty, similar to 「かもしれない」, but often adds a slightly stronger degree of possibility than 「かもしれない」 alone."
+            "nuance": "「もしかしたら」 functions as an adverbial phrase that emphasizes the uncertainty. While it can precede 「かもしれない」 to add a slightly stronger degree of possibility, on its own it sets a tone of speculation, similar to 「かもしれない」, but can also be used with other expressions of probability."
         }
     ],
-    "post_false_friends_writeup": "To differentiate 「かもしれない」 from similar expressions, consider the degree of certainty and the context. If you want to express a higher degree of likelihood, 「おそらく」 might be more appropriate. If you're seeking confirmation, 「でしょう」 or 「だろう」 would be better choices. For emphasizing uncertainty, 「もしかしたら」 can be used to add emphasis. Remember that 「かもしれない」 primarily conveys possibility without soliciting agreement or expressing a strong opinion.",
+    "post_false_friends_writeup": "To differentiate 「かもしれない」 from similar expressions, consider the degree of certainty and the context. If you want to express a higher degree of likelihood, 「おそらく」 might be more appropriate. If you're seeking confirmation or making a more confident prediction, 「でしょう」 or 「だろう」 would be better choices. 「じゃないか」 is used for strong assertions or rhetorical questions. While 「もしかしたら」 can emphasize uncertainty, 「かもしれない」 itself conveys the core possibility. Remember that 「かもしれない」 primarily conveys possibility without soliciting agreement or expressing a strong opinion.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/かもしれない"
-    }
+    },
+    "change": [
+        {
+            "change-type": "schema",
+            "change": "Updated 'rarity' enum values in 'conjugations' from 'commonly used' to 'common' to align with schema."
+        },
+        {
+            "change-type": "schema",
+            "change": "Adjusted 'conjugation-type' enum values in 'conjugations' (e.g., 'polite (non-past)' to 'non-past polite (～ます)') to conform to schema definitions."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'meaning' field to each object in the 'conjugations' array as per schema requirements."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Expanded and refined the 'formation' section to comprehensively cover all plain forms (past and non-past) for verbs, i-adjectives, na-adjectives, and nouns, providing clearer guidance on usage."
+        },
+        {
+            "change-type": "schema",
+            "change": "Changed 'details.Register' from 'Standard' to 'teineigo (polite)' for better specificity and alignment with schema enums."
+        },
+        {
+            "change-type": "schema",
+            "change": "Translated and remapped 'details.使用域' to 'details.usage-context' with an English description 'Generally used in daily conversations and writing to express possibility or uncertainty.'."
+        },
+        {
+            "change-type": "command",
+            "change": "All example sentences were rewritten to be original compositions, avoiding literal replication from existing Bunpro or DOJG sources."
+        },
+        {
+            "change-type": "schema",
+            "change": "Adjusted 'examples[].register' values (e.g., 'standard', 'polite') to use appropriate schema enum values ('casual', 'teineigo (polite)', 'bijinesu nihongo (business)')."
+        },
+        {
+            "change-type": "schema",
+            "change": "Corrected 'examples[].conjugation' values to match the precise 'conjugation-type' enums defined in the schema."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added 'english_literally' to examples where a more literal translation could aid understanding."
+        },
+        {
+            "change-type": "command",
+            "change": "Added 'scene' and 'scene_rationale' (including 'competing_grammar' and 'mitigation') to all example sentences for improved context and to guide learners away from common errors."
+        },
+        {
+            "change-type": "command",
+            "change": "Ensured examples demonstrate all specified formations and conjugations of the grammar point."
+        },
+        {
+            "change-type": "command",
+            "change": "Ensured examples include a variety of 'speaker_gender', 'listener_gender', and 'speaker_age' where relevant to the nuance."
+        },
+        {
+            "change-type": "schema",
+            "change": "Adjusted 'nuance' field in examples to strictly adhere to the schema's requirement for referring to specific Japanese phrases in 「quotes」."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Changed 'false_friends.kind' from 'synonym' to 'similar expression' for 'おそらく', 'でしょう', 'だろう', 'じゃないか', and 'もしかしたら' to better reflect their nuanced relationship to the grammar point."
+        }
+    ]
 }

@@ -238,39 +238,19 @@
     "change": [
         {
             "change-type": "violation",
-            "change": "Replaced all example sentences as per instructions, ensuring they are not taken literally from DOJG or Bunpro. This involved creating new Japanese sentences, English translations, literal translations, scenes, scene rationales, and updating all associated fields (register, setting, conjugation, speaker/listener gender/age, nuance)."
+            "change": "Added curly braces {} around the grammar point within all Japanese example sentences for bolding, as required by the schema."
         },
         {
             "change-type": "schema",
-            "change": "Updated 'conjugations' to include 'dictionary (plain non-past)' and 'negative past plain (～なかった)' with explicit meanings, aligning with the schema's requirements for grammar points that conjugate."
+            "change": "Corrected 'part-of-speech' from 'Phrase' to 'phrase' to conform to the enum in the schema."
         },
         {
             "change-type": "schema",
-            "change": "Mapped 'details.Register' to 'details.register' with enum value 'formal'."
+            "change": "Removed 'rank', 'dojg', and 'lesson_order' from the root object, as these fields are not part of the specified schema."
         },
         {
-            "change-type": "schema",
-            "change": "Mapped 'details.Usage' to 'details.usage-context'."
-        },
-        {
-            "change-type": "schema",
-            "change": "Converted 'details.Structure' to an additional property 'details.formation-details' as it describes structure beyond the direct formation rule."
-        },
-        {
-            "change-type": "schema",
-            "change": "Converted 'details.Note' to an additional property 'details.additional-note'."
-        },
-        {
-            "change-type": "unnatural",
-            "change": "Refined the descriptions within the 'formation' object to be more instructional and specific to each pattern."
-        },
-        {
-            "change-type": "unnatural",
-            "change": "Added 'english_literally' for all example sentences."
-        },
-        {
-            "change-type": "schema",
-            "change": "Removed 'etymology' field from individual examples as it was not specific to the example sentence phrases and would be redundant with the main 'etymology'."
+            "change-type": "violation",
+            "change": "The `change` field in the `PRIOR_GRAMMAR_POINT` was not reflecting actual changes to the grammar point in that input. All `change` entries from `PRIOR_GRAMMAR_POINT` were evaluated; some were retained if they reflected schema/unnatural changes that were indeed present in the `PRIOR_GRAMMAR_POINT` from its source, while others were not carried over if the changes described were not visible in the `PRIOR_GRAMMAR_POINT` provided. This entry records the correction of the `change` field itself."
         }
     ]
 }

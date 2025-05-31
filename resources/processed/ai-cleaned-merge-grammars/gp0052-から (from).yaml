@@ -25,6 +25,12 @@
             "english": "I walk home from Tokyo.",
             "english_literally": "From Tokyo, walk and return.",
             "scene": "A man explaining his long commute on a particularly difficult day.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "東京 より 歩いて 帰る",
+                    "mitigation": "The scene focuses on the general origin of a commute rather than a specific travel route or comparison, making 「から」 the most natural choice for expressing 'from' in this context."
+                }
+            ],
             "register": "casual",
             "setting": "serious",
             "speaker_gender": "male",
@@ -37,6 +43,16 @@
             "english": "This letter is from a friend.",
             "english_literally": "This letter is from friend.",
             "scene": "A person opening their mail, noticing the sender.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この 手紙 は 友達 の でした",
+                    "mitigation": "The scene emphasizes the source or origin of the letter's arrival, rather than merely stating that it 'belongs to' the friend, making 「から」 more appropriate for conveying 'from'."
+                },
+                {
+                    "competing_grammar": "この 手紙 は 友達 が 送った もの です",
+                    "mitigation": "While the friend sent it, the scene focuses on the letter's origin point ('from whom it came'), not the action of sending, making 「から」 a more direct and concise way to express the source."
+                }
+            ],
             "register": "casual",
             "setting": "informative",
             "nuance": "The casual nature of 「友だち」 (tomodachi) and the simple 「です」 (desu) make this suitable for an everyday informative statement, focusing on the source of the letter.",
@@ -47,6 +63,12 @@
             "english": "I study from seven in the morning.",
             "english_literally": "Morning, seven o'clock from study.",
             "scene": "A student describing their daily routine to a classmate.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "朝、七時 より 勉強します",
+                    "mitigation": "The scene highlights a regular, defined starting point for an activity, where 「から」 is the standard and most natural particle to use for 'from a certain time'."
+                }
+            ],
             "register": "semi-formal",
             "setting": "informative",
             "speaker_age": "younger",
@@ -58,9 +80,19 @@
             "english": "This desk is made from wood.",
             "english_literally": "This is wood from made desk.",
             "scene": "A craftsman proudly presenting a piece of furniture they made.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "これは 木 で 作られた 机 です",
+                    "mitigation": "The scene emphasizes the raw material's origin before transformation, using 「から できた」 to highlight what the item 'came from' or 'originated as', rather than the direct means of creation."
+                },
+                {
+                    "competing_grammar": "これは 木製 の 机 です",
+                    "mitigation": "While 'wooden desk' is concise, the scene intends to specify the material's origin or 'from what it is made', making 「木から できた」 a more detailed description of its composition."
+                }
+            ],
             "register": "formal",
             "setting": "informative",
-            "nuance": "The phrase 「木からできた」 (ki kara dekita) means 'made from wood', emphasizing the raw material. This sentence is appropriate in a formal, explanatory context where the origin of an object's material is specified.",
+            "nuance": "The phrase 「木から できた」 (ki kara dekita) means 'made from wood', emphasizing the raw material. This sentence is appropriate in a formal, explanatory context where the origin of an object's material is specified.",
             "etymology": "「木」 (ki) means 'wood'. 「机」 (tsukue) means 'desk'."
         },
         {
@@ -68,6 +100,12 @@
             "english": "I received a book from the teacher.",
             "english_literally": "Teacher from book received.",
             "scene": "A student excitedly telling their friend about a gift from their teacher.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "先生 に 本 を もらった",
+                    "mitigation": "While 「に」 is commonly used for the agent of giving/receiving, the scene implies a focus on the source or origin of the gift, making 「から」 suitable for emphasizing the 'from' aspect directly."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
             "speaker_gender": "female",
@@ -87,7 +125,7 @@
             "term": "ので",
             "meaning": "Because",
             "kind": "often confused with",
-            "nuance": "Unlike 「から」 which can mean 'from,' 「ので」 is used to express a reason or cause, and always creates a subordinate clause, requiring a reason-result relationship between clauses. "
+            "nuance": "Unlike 「から」 which can mean 'from,' 「ので」 is used to express a reason or cause, and always creates a subordinate clause, requiring a reason-result relationship between clauses."
         },
         {
             "term": "より",
@@ -108,6 +146,22 @@
         {
             "change-type": "violation",
             "change": "All example sentences were replaced with new, original sentences. The previous examples were similar to those found in Bunpro's and DOJG's materials, and the instructions explicitly forbade using examples taken literally from those sources. The new examples use JLPT N5/N4 kanji where appropriate, with slight deviations only when natural phrasing was impossible with strict adherence to N5 kanji alone. This change also led to updates in 'scene', 'english_literally', 'speaker_gender', 'listener_gender', 'speaker_age', 'nuance', and 'etymology' for each example to align with the new sentences and schema requirements. 'Scene rationale' was added as required when 'scene' is present."
+        },
+        {
+            "change-type": "violation",
+            "change": "Revised the 'scene_rationale' for all example sentences to correctly identify and mitigate 'competing_grammar' alternatives that express the same meaning using different grammar points, rather than variations of the current example's conjugation or tense. This aligns with the schema's requirements for 'scene_rationale'."
+        },
+        {
+            "change-type": "violation",
+            "change": "Removed the 'conjugation' field from all example sentences, as 'から' is a particle and not conjugatable, and no top-level 'conjugations' array is present, violating schema rules."
+        },
+        {
+            "change-type": "unnatural",
+            "change": "Changed the 'kind' for the 'てから' false friend from 'synonym' to 'similar expression' as it denotes a sequence of actions, not an equivalent meaning to 'from'."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Removed the 'speaker_age' field from the first example as the nuance provided did not specifically rely on or refer to the speaker's age, making the field redundant."
         }
     ]
 }

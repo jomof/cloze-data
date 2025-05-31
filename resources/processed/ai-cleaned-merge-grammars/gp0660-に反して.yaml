@@ -1,10 +1,26 @@
 {
     "grammar_point": "に反して",
     "id": "gp0660",
-    "conjugations": [],
-    "jlpt": "N2",
-    "meaning": "Contrary to, against, in opposition to",
-    "meaning_warning": "Primarily used in formal writing and speech.",
+    "conjugations": [
+        {
+            "conjugation-type": "te-form (～て)",
+            "form": "に反して",
+            "rarity": "common",
+            "meaning": "contrary to, going against"
+        },
+        {
+            "conjugation-type": "dictionary (plain non-past)",
+            "form": "に反する",
+            "rarity": "common",
+            "meaning": "contrary to, going against (when modifying a noun)"
+        },
+        {
+            "conjugation-type": "past plain (～た)",
+            "form": "に反した",
+            "rarity": "common",
+            "meaning": "was contrary to, went against (when modifying a noun or ending a clause)"
+        }
+    ],
     "pronunciation": {
         "katakana": "ニハンシテ",
         "romaji": "ni hanshite"
@@ -13,128 +29,305 @@
         "Noun + に反して": "Indicates that something goes against or is contrary to the noun.",
         "Noun + に反する + Noun": "Used to modify a noun, indicating that it is contrary to the preceding noun."
     },
+    "jlpt": "N2",
+    "meaning": "Contrary to, against, in opposition to",
+    "meaning_warning": "Primarily used in formal writing and speech.",
     "details": {
-        "Register": "Formal",
-        "使用域": "硬い"
+        "part-of-speech": "phrase",
+        "register": "formal",
+        "usage-context": "硬い"
     },
-    "etymology": "「に反して」is derived from 「反する(hansuru)」, meaning \"to oppose\" or \"to go against\". The 「に」 particle indicates the target of the opposition. Therefore, 「に反して」literally means \"opposing to\" or \"going against\".",
-    "writeup": "「に反して」 is used to express that something is contrary to expectations, rules, or someone's will. It is often used in formal contexts, such as academic writing, news reports, and business presentations. It indicates a contrast or opposition to what was previously stated or expected. It is similar to \"contrary to\" or \"against\" in English. While 「に対して」 can also mean \"in contrast to\", 「に反して」 often implies a violation or deviation from a standard or expectation.",
+    "etymology": "「に反して」is derived from 「反する(hansuru)」, meaning \"to oppose\" or \"to go against\". The 「に」 particle indicates the target of the opposition. Therefore, 「に反して」literally means \"opposing to\" or \"going against\" the noun it follows.",
+    "writeup": "「に反して」 is used to express that something is contrary to expectations, rules, or someone's will. It is often used in formal contexts, such as academic writing, news reports, and business presentations. This grammar point indicates a contrast or opposition to what was previously stated or expected. It is similar to \"contrary to\" or \"against\" in English. While 「に対して」 can also mean \"in contrast to\", 「に反して」 often implies a violation or deviation from a standard or expectation, or a significant divergence from a prediction or desire. It can appear as 「に反して」 (te-form), 「に反する」 (dictionary form, typically modifying a noun), or 「に反した」 (past plain, modifying a noun).",
     "examples": [
         {
-            "japanese": "会社の規則に{反して}、アルバイトを始めた。",
-            "english": "Contrary to company rules, I started a part-time job.",
-            "scene": "A worker explaining why he was fired.",
-            "register": "semi-formal",
+            "japanese": "チーム の ルール に {反して} 、彼 は 個人 的 な 決定 を した 。",
+            "english": "Contrary to the team's rules, he made a personal decision.",
+            "english_literally": "To the team's rules opposing, he personal decision made.",
+            "scene": "A team coach discussing a player's unsportsmanlike behavior.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "チーム の ルール に 違反 して",
+                    "mitigation": "This alternative emphasizes breaking a rule. The scene is set to highlight an action that goes against the spirit or direct opposition to the rules, rather than merely a technical violation, guiding the user towards 「に反して」."
+                },
+                {
+                    "competing_grammar": "チーム の ルール に 従わ ず",
+                    "mitigation": "This alternative suggests a lack of obedience. The scene aims to convey a deeper sense of contradiction or opposition to the team's established principles, pushing for 「に反して」 over a simple lack of adherence."
+                }
+            ],
+            "register": "formal",
             "setting": "serious",
-            "nuance": "「規則」 is a noun, and 「に反して」 indicates that the action of starting a part-time job is against those rules.",
-            "etymology": "「規則」 (kisoku) means \"rules\" or \"regulations.\""
+            "nuance": "「チーム の ルール に 反して」 expresses that the action was in direct opposition to the established team rules, indicating a breach of principle or expectation. This phrase is used in a formal setting to convey a serious tone regarding the player's conduct.「ルール」 is a noun, and 「に反して」 indicates that the action of making a personal decision went against those rules."
         },
         {
-            "japanese": "彼女の予想に{反して}、試験に合格した。",
-            "english": "Contrary to her expectations, she passed the exam.",
-            "scene": "A student recounting her surprise at doing well on a test.",
+            "japanese": "先生 の 予想 に {反して} 、その クラス は 全員 合格 した 。",
+            "english": "Contrary to the teacher's expectations, everyone in that class passed.",
+            "english_literally": "To the teacher's expectations opposing, that class everyone passed.",
+            "scene": "A teacher excitedly sharing surprising exam results with a colleague.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "先生 が 予想 した の と 違って",
+                    "mitigation": "This alternative simply states a difference. The scene is crafted to imply a more significant, unexpected outcome that directly contradicts the teacher's prior belief, making 「に反して」 more appropriate for expressing a reversal of prediction."
+                },
+                {
+                    "competing_grammar": "先生 の 予想 に 反対 して",
+                    "mitigation": "This alternative suggests active opposition, which doesn't fit the context of results. The scene aims to convey that the results themselves were a contradiction to expectations, leading to 「に反して」 which is suitable for objective facts."
+                }
+            ],
             "register": "casual",
-            "setting": "storytelling",
-            "nuance": "「彼女の予想」 is a noun phrase, and 「に反して」 indicates that the result of passing the exam was not what she expected.",
-            "etymology": "「予想」 (yosou) means \"expectation\" or \"prediction.\""
+            "setting": "excited",
+            "nuance": "「先生 の 予想 に 反して」 highlights that the actual outcome (everyone passing) was a surprising contradiction to what the teacher had predicted. The casual register and excited setting reflect the unexpected and positive nature of the result.「予想」 is a noun, and 「に反して」 indicates that the result of passing the exam was not what was expected."
         },
         {
-            "japanese": "上司の命令に{反して}、自分の意見を言った。",
-            "english": "Against my boss's orders, I voiced my own opinion.",
-            "scene": "An employee explaining why he was fired.",
+            "japanese": "親 の 指示 に {反して} 、子供 は 自分 の 遊び を 続けた 。",
+            "english": "Contrary to their parents' instructions, the child continued to play.",
+            "english_literally": "To parents' instructions opposing, child self's playing continued.",
+            "scene": "A parent observing their child's disobedience.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "親 の 指示 に 従わ ず",
+                    "mitigation": "This alternative emphasizes simply not following. The scene is designed to convey a more direct act of going against a command, where the child actively chose to oppose, making 「に反して」 a stronger fit."
+                },
+                {
+                    "competing_grammar": "親 の 指示 を 無視 して",
+                    "mitigation": "This alternative suggests ignoring instructions. The scene implies a conscious decision to act contrary to instructions, suggesting a more deliberate opposition than mere neglect, fitting 「に反して」 more precisely."
+                }
+            ],
+            "register": "casual",
+            "setting": "serious",
+            "speaker_gender": "female",
+            "nuance": "「親 の 指示 に 反して」 conveys that the child's action was a direct contravention of the parents' explicit instructions. The casual register and serious setting underscore the parent's frustration with the child's wilful disobedience. The phrasing is gender-neutral and can be spoken by either parent.「指示」 is a noun, and 「に反して」 indicates that continuing to play went against the parents' orders."
+        },
+        {
+            "japanese": "みんな の 期待 に {反して} 、新しい プロジェクト は 失敗 に 終わった 。",
+            "english": "Contrary to everyone's expectations, the new project ended in failure.",
+            "english_literally": "To everyone's expectations opposing, new project failure in ended.",
+            "scene": "A project manager giving a disappointing report to their team.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "みんな の 期待 に 沿わ ず",
+                    "mitigation": "This alternative implies not meeting expectations. The scene emphasizes an outcome that was the opposite of what was hoped for, a direct contradiction rather than just a shortfall, fitting 「に反して」."
+                },
+                {
+                    "competing_grammar": "みんな の 期待 と 違って",
+                    "mitigation": "This alternative suggests merely being different. The scene aims to convey a sense of disappointment due to an outcome directly opposing optimistic predictions, making 「に反して」 more impactful."
+                }
+            ],
             "register": "semi-formal",
             "setting": "serious",
-            "nuance": "「上司の命令」 is a noun phrase, and 「に反して」 indicates that speaking one's opinion went against the boss's orders.",
-            "etymology": "「命令」 (meirei) means \"order\" or \"command.\""
+            "nuance": "「みんな の 期待 に 反して」 indicates that the project's failure was directly opposite to the optimistic hopes held by the team. The semi-formal register and serious setting are appropriate for a project manager delivering bad news.「期待」 is a noun, and 「に反して」 indicates that the project ending in failure was not what the team expected."
         },
         {
-            "japanese": "チームの期待に{反して}、試合に負けてしまった。",
-            "english": "Contrary to the team's expectations, we lost the game.",
-            "scene": "A team player apologizing to his team for a loss.",
+            "japanese": "彼女 の 哲学 は 世間 の 常識 に {反して} いる が 、多く の 人 に 支持 されている 。",
+            "english": "Her philosophy goes against common sense, but it is supported by many people.",
+            "english_literally": "Her philosophy world's common sense to opposing is, but many people by supported is.",
+            "scene": "A journalist describing a controversial but popular figure.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "世間 の 常識 と は 違う",
+                    "mitigation": "This alternative implies mere difference. The scene intends to highlight a more confrontational or contradictory stance of the philosophy against widely accepted norms, making 「に反して」 more precise for describing direct opposition."
+                },
+                {
+                    "competing_grammar": "世間 の 常識 に 反対 の",
+                    "mitigation": "This alternative implies a hostile opposing stance. The scene focuses on the philosophy itself being a contradiction to common sense, not an active fight against it, making 「に反して」 more suitable for describing an inherent opposition."
+                }
+            ],
+            "register": "formal",
+            "setting": "informative",
+            "nuance": "「世間 の 常識 に 反して いる」 expresses that the philosophy actively contradicts widely accepted beliefs. The formal register and informative setting are suitable for a journalistic description of an individual's unique perspective.「常識」 is a noun, and 「に反して いる」 indicates that her philosophy is not in line with what is considered normal in society."
+        },
+        {
+            "japanese": "調査 結果 は 発表 された 予測 に {反して} 、全く 異なる 傾向 を 示していた 。",
+            "english": "The survey results, contrary to the announced predictions, showed a completely different trend.",
+            "english_literally": "Survey results announced predictions to opposing, completely different trend showed.",
+            "scene": "Researchers discussing unexpected findings in a meeting.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "発表 された 予測 と は 異なり",
+                    "mitigation": "This alternative simply states a difference. The scene emphasizes that the results directly contradicted the predictions, indicating a stronger divergence that 「に反して」 captures more accurately."
+                },
+                {
+                    "competing_grammar": "発表 された 予測 に 対して",
+                    "mitigation": "This alternative means 'in contrast to'. The scene aims to convey a factual opposition in data, not just a general contrast, making 「に反して」 a better fit for a direct contradiction to a prediction."
+                }
+            ],
             "register": "semi-formal",
-            "setting": "apologetic",
-            "nuance": "「チームの期待」 is a noun phrase, and 「に反して」 indicates that losing the game was not what the team expected.",
-            "etymology": "「期待」 (kitai) means \"expectation\" or \"anticipation.\""
+            "setting": "academic",
+            "nuance": "「発表 された 予測 に 反して」 indicates that the survey results presented a trend that was in direct contradiction to what was previously predicted. The professional and academic setting are appropriate for discussing scientific findings.「予測」 is a noun, and 「に反して」 indicates that the actual results contradict the announced predictions."
         },
         {
-            "japanese": "世間の常識に{反して}、彼は独自の道を歩んでいる。",
-            "english": "Contrary to common sense, he is walking his own path.",
-            "scene": "Describing someone who does not follow the norm.",
-            "register": "formal",
-            "setting": "informative",
-            "nuance": "「世間の常識」 is a noun phrase, and 「に反して」 indicates that his actions are not in line with what is considered normal in society.",
-            "etymology": "「常識」 (joushiki) means \"common sense\" or \"common knowledge.\""
-        },
-        {
-            "japanese": "政府の発表に{反して}、失業率は増加している。",
-            "english": "Contrary to the government's announcement, the unemployment rate is increasing.",
-            "scene": "A news report highlighting a discrepancy.",
-            "register": "formal",
-            "setting": "informative",
-            "nuance": "「政府の発表」 is a noun phrase, and 「に反して」 indicates that the actual situation contradicts what the government announced.",
-            "etymology": "「発表」 (happyou) means \"announcement\" or \"statement.\""
-        },
-        {
-            "japanese": "私の希望に{反して}、彼は別の女性と結婚した。",
-            "english": "Against my wishes, he married another woman.",
-            "scene": "A woman recounting a past heartbreak.",
+            "japanese": "私 の 願い に {反して} 、この 都市 開発 計画 は 進め られた 。",
+            "english": "Contrary to my wishes, this urban development plan was proceeded with.",
+            "english_literally": "My wish to opposing, this urban development plan proceeded was.",
+            "scene": "A resident lamenting the destruction of a beloved neighborhood.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "私 の 願い と は 違って",
+                    "mitigation": "This alternative suggests a difference in preference. The scene conveys a strong personal desire being overridden by an external force, making 「に反して」 more suitable for expressing a direct violation of one's will."
+                },
+                {
+                    "competing_grammar": "私 が 望んで いなかった が",
+                    "mitigation": "This alternative states what wasn't wanted. The scene emphasizes that the action was taken in direct opposition to the speaker's personal hope or desire, which 「に反して」 conveys more strongly than a simple negative preference."
+                }
+            ],
             "register": "casual",
             "setting": "melancholic",
-            "speaker_gender": "female",
-            "nuance": "「私の希望」 is a noun phrase, and 「に反して」 indicates that his marriage went against her wishes; a 「女性」 is a woman.",
-            "etymology": "「希望」 (kibou) means \"wish\" or \"hope.\""
+            "speaker_gender": "male",
+            "nuance": "「私 の 願い に 反して」 expresses the speaker's disappointment and frustration that an outcome went against his personal wish. The casual register and melancholic setting are fitting for reflecting on an unfavorable development that was outside his control.「願い」 is a noun, and 「に反して」 indicates that the development plan proceeded against his personal wishes."
         },
         {
-            "japanese": "医者の診断に{反して}、彼は元気になった。",
-            "english": "Contrary to the doctor's diagnosis, he got better.",
-            "scene": "A family member expressing surprise and relief.",
-            "register": "casual",
-            "setting": "optimistic",
-            "nuance": "「医者の診断」 is a noun phrase, and 「に反して」 indicates that his recovery was unexpected based on the doctor's assessment.",
-            "etymology": "「診断」 (shindan) means \"diagnosis.\""
+            "japanese": "専門 家 の 助言 に {反して} 、彼 は 独自 の 方法 で 治療 を 試みた 。",
+            "english": "Contrary to the expert's advice, he attempted treatment using his own method.",
+            "english_literally": "Expert's advice to opposing, he own method by treatment attempted.",
+            "scene": "A doctor discussing a patient's unusual approach to recovery with a colleague.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "専門 家 の 助言 と は 違う",
+                    "mitigation": "This alternative suggests a different approach. The scene is set to emphasize an action taken in defiance or active disregard of professional counsel, which 「に反して」 conveys more strongly than mere difference."
+                },
+                {
+                    "competing_grammar": "専門 家 の 助言 を 聞か ず",
+                    "mitigation": "This alternative means not listening. The scene focuses on the patient's chosen method directly contradicting expert guidance, implying a deliberate act of going against advice, which 「に反して」 captures well."
+                }
+            ],
+            "register": "semi-formal",
+            "setting": "serious",
+            "nuance": "「専門 家 の 助言 に 反して」 indicates that the patient's action was taken in direct contradiction to professional medical advice. The semi-formal register and serious setting are appropriate for a medical discussion where professional opinion was disregarded.「助言」 is a noun, and 「に反して」 indicates that the attempt at treatment went against the expert's advice."
         },
         {
-            "japanese": "常識に{反して}いるかもしれないけど、君のことが好きだよ。",
-            "english": "It might go against common sense, but I like you.",
-            "scene": "Confessing to someone you are in love with.",
-            "register": "casual",
-            "setting": "flirty",
-            "nuance": "「常識」 is a noun phrase, and 「に反して」 acknowledges that expressing feelings may be unconventional. 「君のことが好きだよ」 is a very direct confession.",
-            "etymology": "「常識」 (joushiki) means \"common sense\" or \"common knowledge.\""
+            "japanese": "この プロジェクト は 一般 的 な 慣例 に {反する} アプローチ を 取る べき だ 。",
+            "english": "This project should take an approach that goes against common practice.",
+            "english_literally": "This project general practice to oppose approach should take.",
+            "scene": "A team leader proposing a radical idea during a brainstorming session.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "一般 的 な 慣例 と は 違う アプローチ",
+                    "mitigation": "This alternative suggests a different approach. The scene aims to convey that the approach is fundamentally contradictory or in opposition to common practice, not just distinct, thus favoring 「に反する」."
+                },
+                {
+                    "competing_grammar": "一般 的 な 慣例 に 逆らう アプローチ",
+                    "mitigation": "This alternative implies active rebellion. The scene is about proposing a strategy that inherently opposes traditional methods, making 「に反する」 appropriate for describing the nature of the approach itself."
+                }
+            ],
+            "register": "formal",
+            "setting": "persuasive",
+            "conjugation": "dictionary (plain non-past)",
+            "nuance": "「慣例 に 反する アプローチ」 uses the dictionary form 「反する」 to directly modify the noun 「アプローチ」, describing it as an approach that is inherently contrary to common practice. The formal register and persuasive setting are apt for a team leader proposing a bold, unconventional strategy.「慣例」 is a noun, and 「に反する」 indicates that the approach should be contrary to common practice."
         },
         {
-            "japanese": "親の期待に{反して}、私はお笑い芸人になったんだ。",
-            "english": "Contrary to my parents' expectations, I became a comedian.",
-            "scene": "A comedian explaining his career choice.",
+            "japanese": "彼 の 行動 は 私 たち の 予想 に {反した} 結果 を もたらした 。",
+            "english": "His actions brought about a result that was contrary to our expectations.",
+            "english_literally": "His actions our expectations to opposed result brought.",
+            "scene": "A group of friends discussing a surprising turn of events.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "私 たち の 予想 と は 違う 結果",
+                    "mitigation": "This alternative states a simple difference. The scene conveys that the outcome was a direct contradiction or opposition to what was expected, making 「に反した」 more suitable for expressing a surprising, contrary result."
+                },
+                {
+                    "competing_grammar": "私 たち が 予想 しなかった 結果",
+                    "mitigation": "This alternative simply states an unexpected result. The scene highlights that the result was specifically the opposite of what was predicted, making 「に反した」 a more precise choice for a contradictory outcome."
+                }
+            ],
             "register": "casual",
-            "setting": "humorous",
-            "nuance": "「親の期待」 is a noun phrase, and 「に反して」 indicates that his career choice was not what his parents wanted. 「～んだ」 adds emphasis and a personal touch.",
-            "etymology": "「期待」 (kitai) means \"expectation\" or \"anticipation.\""
+            "setting": "reflective",
+            "conjugation": "past plain (～た)",
+            "nuance": "「予想 に 反した 結果」 uses the past plain form 「反した」 to describe a result that turned out to be contrary to previous expectations. The casual register and reflective setting are natural for friends discussing an unexpected outcome.「予想」 is a noun, and 「に反した」 indicates that the result of his actions was contrary to expectations."
         }
     ],
     "post_example_writeup": "It is important to note that 「に反して」 is a formal expression and is more often found in writing and formal speech. In casual conversations, other expressions might be more appropriate.",
     "false_friends": [
         {
             "term": "逆に",
-            "meaning": "On the contrary",
-            "kind": "synonym",
-            "nuance": "「逆に」 is used to indicate a direct opposite or reversal, while 「に反して」 indicates something that goes against expectations or rules."
+            "meaning": "On the contrary, conversely",
+            "kind": "similar expression",
+            "nuance": "While 「逆に」 also expresses opposition, it typically implies a direct reversal or switch, often used to present an opposite situation or a counter-argument. 「に反して」 specifically highlights something going against a prior expectation, rule, or will."
         },
         {
             "term": "むしろ",
-            "meaning": "Rather, instead",
-            "kind": "synonym",
-            "nuance": "「むしろ」 is used to indicate a preference or alternative, while 「に反して」 indicates something that goes against a norm or expectation."
+            "meaning": "Rather, instead, more",
+            "kind": "similar expression",
+            "nuance": "「むしろ」 is used to indicate a preference or a more appropriate alternative when comparing two options. It does not carry the sense of going against an expectation or rule, unlike 「に反して」."
         },
         {
             "term": "却って",
-            "meaning": "On the contrary, conversely",
-            "kind": "synonym",
-            "nuance": "「却って」 indicates an unexpected or adverse result, while 「に反して」 indicates a deviation from expectations or rules."
+            "meaning": "On the contrary, all the more, conversely",
+            "kind": "similar expression",
+            "nuance": "「却って」 implies an unexpected or ironic result that is often the opposite of what was intended or expected, and often has a negative connotation. While related to unexpectedness, 「に反して」 specifically focuses on something being contrary to a set standard or prediction, not necessarily an ironic outcome."
+        },
+        {
+            "term": "に対して",
+            "meaning": "In contrast to, toward, regarding",
+            "kind": "similar expression",
+            "nuance": "「に対して」 is a broader term indicating contrast or opposition, but it can also simply mean 'toward' or 'regarding'. 「に反して」 is more specific, always denoting a direct contradiction or acting against something, implying a violation or divergence from a standard or expectation."
+        },
+        {
+            "term": "にひきかえ",
+            "meaning": "In contrast to, unlike",
+            "kind": "similar expression",
+            "nuance": "「にひきかえ」 is used to draw a strong contrast between two things, often emphasizing the difference. It highlights a comparison, whereas 「に反して」 specifically means to go against or be contrary to a single expectation, rule, or will, implying a deviation or violation."
         }
     ],
-    "post_false_friends_writeup": "While 「逆に」「むしろ」 and 「却って」 can sometimes be used similarly to 「に反して」, they have distinct nuances. 「逆に」 emphasizes a direct reversal, 「むしろ」 suggests a preference, and 「却って」 highlights an unexpected result. 「に反して」 specifically emphasizes the idea of going against or being contrary to something else. Choosing the right expression depends on the specific context and the nuance you want to convey.",
+    "post_false_friends_writeup": "While 「逆に」, 「むしろ」, 「却って」, 「に対して」, and 「にひきかえ」 can sometimes be used in contexts of contrast, they have distinct nuances. 「逆に」 emphasizes a direct reversal, 「むしろ」 suggests a preference or alternative, and 「却って」 highlights an unexpected, often negative, ironic result. 「に対して」 is a general contrasting particle. 「にひきかえ」 specifically draws a strong comparison between two things. In contrast, 「に反して」 specifically emphasizes the idea of going against or being contrary to something else, often implying a violation of a rule or a significant divergence from an expectation or will. Choosing the right expression depends on the specific context and the precise nuance you want to convey.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/に反して"
-    }
+    },
+    "change": [
+        {
+            "change-type": "violation",
+            "change": "Removed `conjugations: []` as it was an empty array, violating schema rules. Added applicable conjugations to the `conjugations` array."
+        },
+        {
+            "change-type": "schema",
+            "change": "Renamed `Register` key to `register` in `details` to comply with schema casing."
+        },
+        {
+            "change-type": "schema",
+            "change": "Renamed `使用域` key to `usage-context` in `details` to comply with schema and convert to English."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added `part-of-speech: phrase` to `details` as it's a required field for `details`."
+        },
+        {
+            "change-type": "violation",
+            "change": "Replaced all example sentences with new, unique ones to comply with the instruction not to use examples literally from DOJG or Bunpro."
+        },
+        {
+            "change-type": "violation",
+            "change": "Added spaces for MeCab parsing to all Japanese example sentences, addressing pre-lint warnings (rule-2)."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added `english_literally` to all example sentences."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added `scene_rationale` to all example sentences, providing a rationale for the `scene` setting."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added `nuance` to all example sentences, explaining speaker/listener/register/setting nuances."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Removed `etymology` from example sentences, as its previous content was a vocabulary definition rather than a linguistic etymology of the example itself."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added `conjugation` field to examples where `に反する` or `に反した` forms were used, specifying the conjugation type."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added `に対して` to `false_friends` as it is a common point of confusion mentioned in the writeup and DOJG."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added `にひきかえ` to `false_friends` as it is a similar expression mentioned in DOJG."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Changed the `kind` of existing false friends (`逆に`, `むしろ`, `却って`) from `synonym` to `similar expression` to more accurately reflect their relationship with the grammar point."
+        }
+    ]
 }

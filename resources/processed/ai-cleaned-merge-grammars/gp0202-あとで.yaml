@@ -1,7 +1,6 @@
 {
     "grammar_point": "あとで",
     "id": "gp0202",
-    "conjugations": [],
     "pronunciation": {
         "katakana": "アトデ",
         "romaji": "ato de"
@@ -14,11 +13,17 @@
     "jlpt": "N4",
     "meaning": "After, Later",
     "details": {
-        "Register": "Standard",
-        "Usage Area": "General"
+        "part-of-speech": "adverb",
+        "register": "teineigo (polite)",
+        "usage-context": "Used to describe an action or event that occurs subsequent to another action or event.",
+        "function": "Connects two events in a temporal sequence.",
+        "nuance": "Implies that the second event occurs sometime after the first, not necessarily immediately. Can also simply mean 'later' in a general sense.",
+        "source": "Bunpro",
+        "grammatical-role": "adverbial phrase",
+        "temporal-flow": "Indicates a sequence where one event precedes another, with a potential time gap."
     },
-    "etymology": "「あとで」 is composed of 「後 (ato)」 meaning \"behind\" or \"after,\" and the particle 「で (de)」, indicating means or location. It literally describes something happening \"with\" or \"in the state of\" being after something else.",
-    "writeup": "「あとで」 means \"after\" or \"later.\" It indicates that an action or event will occur following another action or event. It can be used after a verb in the past tense or a noun followed by 「の」. The nuance implies that the action will occur sometime after the preceding one, not necessarily immediately after. 「あとで」 can also be placed at the beginning of a sentence to indicate that something will happen sometime after the present moment. It is a versatile expression for sequencing events.",
+    "etymology": "「あとで」 is formed from the noun 「後 (ato)」, meaning 'behind' or 'after', and the particle 「で (de)」, which indicates a state or a point in time/space. Historically, 「後」 refers to the physical 'back' or 'rear' of something. Its temporal meaning of 'after' likely evolved from the idea of something following behind another in sequence. The particle 「で」 serves to specify the condition or time at which the action in the main clause takes place, effectively meaning 'at the point of being after' or 'in the state of what follows'.",
+    "writeup": "「あとで」 means \"after\" or \"later\" and is used to connect two events or actions, indicating that the second event occurs subsequent to the first. It can be attached to the plain past tense of a verb (e.g., 食べたあとで - *after eating*) or a noun followed by the particle 「の」 (e.g., 仕事のあとで - *after work*).\n\nA key nuance of 「あとで」 is that the second action doesn't necessarily happen immediately after the first. There can be a flexible time gap between the two events. This distinguishes it from expressions like 「～てから」, which often implies a more immediate or direct succession.\n\nAdditionally, 「あとで」 can be used adverbially at the beginning of a sentence (or standing alone) to mean \"later\" in a general sense, referring to an unspecified future time relative to the present moment. For example, 「あとで電話します」 means \"I'll call you later.\"",
     "examples": [
         {
             "japanese": "晩ご飯の {あとで} 、テレビを見ます。",
@@ -112,7 +117,7 @@
                 }
             ],
             "register": "formal",
-            "setting": "general"
+            "setting": "informative"
         },
         {
             "japanese": "勉強した {あとで} 、ゲームをしてもいい？",
@@ -140,11 +145,12 @@
                 }
             ],
             "register": "teineigo (polite)",
-            "setting": "polite"
+            "setting": "informative"
         },
         {
             "japanese": "ご飯を 食べた {あとで} 、少しだけ一緒にいようか？",
             "english": "After eating, shall we spend a little time together?",
+            "english_literally": "After having eaten meal, shall we be together just a little?",
             "scene": "A woman inviting her male partner to relax together after a meal.",
             "scene_rationale": [
                 {
@@ -183,13 +189,42 @@
             "meaning": "After, Upon",
             "kind": "similar expression",
             "nuance": "「上で」 often carries a nuance of preparation or making a decision after considering something, implying a deliberate step, whereas 「あとで」 is a more general statement about sequence without this implication."
+        },
+        {
+            "term": "後ほど",
+            "meaning": "Later (more formal)",
+            "kind": "similar expression",
+            "nuance": "「後ほど」 is a more formal and polite way to say \"later\" compared to 「あとで」. While both indicate a future time, 「後ほど」 is typically used in business or respectful contexts, suggesting a slightly less immediate but certain follow-up."
         }
     ],
-    "post_false_friends_writeup": "While 「あとで」, 「てから」, 「たら」, and 「上で」 all relate to events happening in sequence, it is crucial to distinguish their nuances. Use 「あとで」 for general \"after\" statements, indicating a subsequent event without necessarily implying immediate succession. Use 「てから」 for closer sequences or to emphasize the completion of a previous action as a prerequisite for the next. Use 「たら」 for hypothetical or conditional situations. Use 「上で」 when something is done or decided based on careful consideration or completion of a prior step.",
+    "post_false_friends_writeup": "While 「あとで」, 「てから」, 「たら」, 「上で」, and 「後ほど」 all relate to events happening in sequence or at a later time, it is crucial to distinguish their nuances. Use 「あとで」 for general \"after\" statements, indicating a subsequent event without necessarily implying immediate succession. Use 「てから」 for closer sequences or to emphasize the completion of a previous action as a prerequisite for the next. Use 「たら」 for hypothetical or conditional situations. Use 「上で」 when something is done or decided based on careful consideration or completion of a prior step. Use 「後ほど」 for a more formal or polite expression of \"later.\"",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/あとで"
     },
     "change": [
-        "schema: Changed '使用域' key to 'Usage Area' in 'details' for consistency with schema-implied English keys and to improve clarity and maintainability of the JSON structure."
+        {
+            "change-type": "schema",
+            "change": "Removed the 'conjugations' array as 'あとで' is not a conjugatable verb or adjective. Also removed 'rank' and 'lesson_order' properties as they are not part of the defined schema."
+        },
+        {
+            "change-type": "schema",
+            "change": "Removed the 'conjugation' field from all examples, as the grammar point 'あとで' is not conjugatable."
+        },
+        {
+            "change-type": "violation",
+            "change": "Changed 'setting' in example 6 from 'general' to 'informative' to comply with the allowed enum values."
+        },
+        {
+            "change-type": "violation",
+            "change": "Changed 'setting' in example 8 from 'polite' to 'informative' to comply with the allowed enum values."
+        },
+        {
+            "change-type": "command",
+            "change": "Added '後ほど' to 'false_friends' as it was mentioned as a 'competing_grammar' in example rationales."
+        },
+        {
+            "change-type": "unnatural",
+            "change": "Corrected the 'kind' for 'てから', 'たら', and '上で' in 'false_friends' from 'synonym' to 'similar expression' to accurately reflect their nuanced differences from 'あとで'."
+        }
     ]
 }

@@ -7,6 +7,140 @@ from python.ai import aigen
 from python.utils.build_cache.memoize.memoize import memoize_to_disk
 import os
 import textwrap
+import json5
+import copy
+from jsonschema import Draft7Validator
+
+def lint_schema_enums_with_jsonschema(instance, schema):
+    """
+    Validate `instance` against `schema` and return a list of all enum‐violation messages.
+    
+    Each message is formatted as:
+        "<path> had an invalid enum value: <value>"
+    where <path> is dotted/bracket notation into `instance`.
+    """
+    validator = Draft7Validator(schema)
+    errors = []
+    
+    for error in validator.iter_errors(instance):
+        # Only care about enum violations
+        if error.validator == "enum":
+            # Build a human‐readable path (e.g. "items[2].status")
+            path_parts = []
+            for part in error.absolute_path:
+                if isinstance(part, int):
+                    path_parts[-1] = f"{path_parts[-1]}[{part}]"
+                else:
+                    path_parts.append(str(part))
+            path = ".".join(path_parts) if path_parts else "<root>"
+            
+            # The invalid value lives in error.instance
+            invalid_value = error.instance
+            errors.append(f"{path} had an invalid enum value: {repr(invalid_value)}")
+    
+    return errors
+
+def type_replace(obj, schema, type_name, fn):
+    """
+    Traverse the given object `obj` according to the provided JSON `schema`,
+    find all instances where the schema references the definition named `type_name`,
+    and apply the function `fn` to the corresponding value in `obj`.
+
+    Args:
+        obj (dict or list or primitive): The JSON-like object to process.
+        schema (dict): The JSON schema describing the structure of `obj`.
+        type_name (str): The name of the definition in the schema (e.g., "japanese").
+        fn (callable): A function that takes (value) and returns a replacement value.
+
+    Returns:
+        A new object (deep copy of `obj`) with all matching values replaced.
+    """
+    new_obj = copy.deepcopy(obj)
+    ref_pointer = f"#/definitions/{type_name}"
+
+    def _traverse(current_obj, current_schema):
+        # If this schema node references our target type, apply fn
+        if isinstance(current_schema, dict) and current_schema.get("$ref") == ref_pointer:
+            return fn(current_obj)
+
+        schema_type = current_schema.get("type")
+        if schema_type == "object":
+            props = current_schema.get("properties", {})
+            for key, prop_schema in props.items():
+                if isinstance(current_obj, dict) and key in current_obj:
+                    current_obj[key] = _traverse(current_obj[key], prop_schema)
+            return current_obj
+
+        if schema_type == "array":
+            items_schema = current_schema.get("items")
+            if isinstance(current_obj, list) and items_schema:
+                return [_traverse(item, items_schema) for item in current_obj]
+            return current_obj
+
+        return current_obj
+
+    return _traverse(new_obj, schema)
+
+QUOTE_PAIRS = [
+        ('"', '"'),
+        ("'", "'"),
+        ('「', '」'),
+        ('『', '』'),
+        ('“', '”'),
+        ('‘', '’'),
+    ]
+
+def strip_matching_quotes(text):
+    """Remove matching quotes from the beginning and end of a string, including English and Japanese quotes."""
+    if not isinstance(text, str) or len(text) < 2:
+        return text
+
+    stripped = text
+    changed = True
+    while changed and len(stripped) >= 2:
+        changed = False
+        for left, right in QUOTE_PAIRS:
+            if stripped.startswith(left) and stripped.endswith(right):
+                stripped = stripped[1:-1]
+                changed = True
+                break
+    return stripped
+
+def lint_quotes(grammar_point):
+    """
+    Walks over the given data object and checks each example's English text for quotes.
+    Returns a list of lint-style messages indicating which examples contain quotes.
+    """
+    messages = []
+    examples = grammar_point.get("examples", [])
+    for idx, example in enumerate(examples):
+        english = example.get("english", "")
+        # Check for double or single quote characters
+        if '"' in english:
+            messages.append(f"[rule-1] warning examples[{idx}].english has quotes and probably should not: {english}")
+    return messages
+
+def lint_mecab_spaces(grammar_point):
+    messages = []
+    examples = grammar_point.get("examples", [])
+    for idx, example in enumerate(examples):
+        japanese = example.get("japanese", "")
+        if ' ' not in japanese:
+            messages.append(f"[rule-2] warning examples[{idx}].japanese does not have spaces to aid mecab parsing: {japanese}")
+    return messages
+
+
+def pre_clean(grammar_point, schema):
+    lint = []
+    grammar_point = type_replace(grammar_point, schema, "japanese", strip_matching_quotes)
+    grammar_point = type_replace(grammar_point, schema, "english", strip_matching_quotes)
+    lint.extend(lint_quotes(grammar_point))
+    lint.extend(lint_mecab_spaces(grammar_point))
+    lint.extend(lint_schema_enums_with_jsonschema(grammar_point, schema))
+    return grammar_point, lint
+
+def ws(s: str) -> str:
+    return "\n".join(line.strip() for line in s.splitlines())
 
 def ai_clean(data, bazel_target, grammar_schema, prior_grammar_point, output_file):
     data = yaml.safe_load(data)
@@ -15,12 +149,14 @@ def ai_clean(data, bazel_target, grammar_schema, prior_grammar_point, output_fil
     prior_input_replace = ""
     prior_input_rules = ""
     prior_input_obj = None
+    pre_lint = []
 
     if prior_grammar_point:
-      prior_input_obj = yaml.safe_load(prior_grammar_point)
+      grammar_schema_obj = json5.loads(grammar_schema)
+      prior_input_obj, lint = pre_clean(json5.loads(prior_grammar_point), grammar_schema_obj)
+      pre_lint.extend(lint)
       if 'changes' in prior_input_obj:
         del prior_input_obj['changes']
-      prior_grammar_point = json.dumps(prior_input_obj, ensure_ascii=False, indent=4)
       prior_input_prelog = textwrap.dedent("""
         Possibly, an additional grammar point will appear between:
         BEGIN_PRIOR_GRAMMAR_POINT
@@ -57,6 +193,17 @@ def ai_clean(data, bazel_target, grammar_schema, prior_grammar_point, output_fil
              b. Check that you actually made that change in the NEW_GRAMMAR_POINT and that there's a difference from PRIOR_GRAMMAR_POINT.
              c. Fix any descrepancies.
         A change to the changes field **DOES NOT** count as a change to the grammar point itself. And **MUST NOT** be added to the changes field.
+        """)
+      
+    pre_lint_stanza = ""
+    if len(pre_lint) > 0:
+        pre_lint_joined = '\n'.join(pre_lint)
+        pre_lint_stanza = ws(f"""
+            The pre-lint checker found the following issues with PRIOR_GRAMMAR:
+            BEGIN_PRE_LINT
+            {pre_lint_joined}
+            END_PRE_LINT
+            You **MUST** address these issues in the grammar point or explain in 'changes' why you didn't.
         """)
 
     prompt = textwrap.dedent(f"""
@@ -113,17 +260,19 @@ def ai_clean(data, bazel_target, grammar_schema, prior_grammar_point, output_fil
       4. Make sure there are no A/B dialog style example sentences. They should be full sentences.
       5. If the grammar_point is something conjugatable, like a verb, do the example sentences demonstrate the different conjugations?
       6. Did you change the grammar_point value? If so, chide yourself thoroughly, and set grammar_point to its original value.
+      
+    [pre_lint_stanza]  
 
     [prior_input_rules]
-
-    That is all.
     """)
 
+    prompt = prompt.replace("[pre_lint_stanza]", pre_lint_stanza)
     prompt = prompt.replace("[input_replace]", json.dumps(data, ensure_ascii=False, indent=4))
     prompt = prompt.replace("[prior_input_prelog]", prior_input_prelog)
     prompt = prompt.replace("[prior_input_replace]", prior_input_replace)
     prompt = prompt.replace("[prior_input_rules]", prior_input_rules)
     prompt = prompt.replace("[grammar_schema]", grammar_schema)
+
 
     grammar_point_name = data["grammar_point"]
     id = data["id"]
@@ -132,8 +281,6 @@ def ai_clean(data, bazel_target, grammar_schema, prior_grammar_point, output_fil
         if "url" in data["bunpro"]:
             sources["bunpro"] = data["bunpro"]["url"]
         
-    print(f"Processing grammar point: {grammar_point_name} ({id})")
-
     if prior_grammar_point:
         model = "gemini-2.5-flash-preview-05-20"
     else:

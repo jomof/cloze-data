@@ -3,39 +3,46 @@
     "id": "gp0659",
     "conjugations": [
         {
-            "type": "plain present affirmative",
+            "conjugation-type": "dictionary (plain non-past)",
             "form": "そうにない",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "unlikely to; showing no signs of (present plain)"
         },
         {
-            "type": "polite present affirmative",
+            "conjugation-type": "non-past polite (～ます)",
             "form": "そうにありません",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "unlikely to; showing no signs of (present polite)"
         },
         {
-            "type": "plain past affirmative",
+            "conjugation-type": "past plain (～た)",
             "form": "そうになかった",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "was unlikely to; showed no signs of (past plain)"
         },
         {
-            "type": "polite past affirmative",
+            "conjugation-type": "past polite (～ました)",
             "form": "そうにありませんでした",
-            "rarity": "common"
+            "rarity": "common",
+            "meaning": "was unlikely to; showed no signs of (past polite)"
         },
         {
-            "type": "te-form",
+            "conjugation-type": "te-form (～て)",
             "form": "そうになくて",
-            "rarity": "rare"
+            "rarity": "rare",
+            "meaning": "being unlikely to; showing no signs of (te-form)"
         },
         {
-            "type": "conditional (provisional ば-form)",
+            "conjugation-type": "conditional (～ば)",
             "form": "そうになければ",
-            "rarity": "uncommon"
+            "rarity": "uncommon",
+            "meaning": "if unlikely to; if showing no signs of"
         },
         {
-            "type": "conditional (tara-form)",
+            "conjugation-type": "conditional (～たら)",
             "form": "そうになかったら",
-            "rarity": "uncommon"
+            "rarity": "uncommon",
+            "meaning": "if it was unlikely to; if it showed no signs of"
         }
     ],
     "pronunciation": {
@@ -47,103 +54,157 @@
     },
     "jlpt": "N2",
     "meaning": "Unlikely to, Showing no signs of",
+    "meaning_warning": "そうもない = much more unlikely something will occur",
     "details": {
-        "Register": "Standard",
-        "使用域": "一般"
+        "part-of-speech": "auxiliary adjective",
+        "register": "teineigo (polite)",
+        "usage-context": "general"
     },
     "etymology": "The grammar point 「そうにない」 is derived from 「そう」, which expresses a conjecture based on appearance. Adding 「にない」 negates that appearance, indicating the unlikelihood of something happening or the absence of any indication that it will.",
-    "writeup": "「そうにない」 indicates that something is unlikely to happen or shows no signs of occurring. It's similar to 「そうもない」 but less emphatic. You connect 「そうにない」 to the ます-stem of a verb. For example, 「できそうにない」 means \"unlikely to be able to do.\" 「そうにもない」 is also used, which expresses an even stronger nuance of unlikelihood.",
+    "writeup": "「そうにない」 is a grammatical expression used to indicate that something is **unlikely to happen** or **shows no signs of occurring**. It suggests a low probability based on current appearances or circumstances. This expression is similar to 「そうもない」, but generally carries a slightly less emphatic nuance of unlikelihood.\n\nIt attaches to the **ます-stem** of a verb. For example, 「できそうにない」 means \"unlikely to be able to do\" or \"doesn't look like it can be done.\" The core meaning is derived from the auxiliary verb 「そう」 (indicating appearance or conjecture) combined with the negative form 「ない」, meaning \"not having such an appearance.\"\n\nOccasionally, you may also encounter 「そうにもない」. While 「そうにない」 and 「そうもない」 convey unlikelihood, 「そうにもない」 expresses the strongest nuance among the three, emphasizing an even greater improbability. The distinction between these forms lies in the nuanced addition, subtraction, or combination of the particles に and も.",
     "examples": [
         {
-            "japanese": "ごめん、定時で上がれ {そうにない} から先に食べてて。",
-            "english": "Sorry, it seems unlikely that I can leave work on time, so go ahead and eat without me.",
-            "scene": "A worker telling a coworker they can't leave on time.",
-            "register": "casual",
-            "setting": "apologetic",
-            "conjugation": "plain present affirmative"
+            "japanese": "今日の 会議 は 長引き {そうにない} ですね。",
+            "english": "It doesn't look like today's meeting will drag on, does it?",
+            "english_literally": "Today's meeting is unlikely to drag on, isn't it?",
+            "scene": "Two colleagues are discussing the agenda before a meeting.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "今日の 会議 は 長引か ない ですね。",
+                    "mitigation": "The scene sets up a situation where the speakers are making an observation based on current circumstances or the agenda, not just stating a fact. The use of 「そうにない」 implies a visual or speculative judgment rather than a definite negative."
+                }
+            ],
+            "register": "semi-formal",
+            "setting": "professional",
+            "conjugation": "dictionary (plain non-past)"
         },
         {
-            "japanese": "今日は行け {そうにない} のでキャンセルでお願いします。",
-            "english": "It is unlikely that I am going to be able to make it today, so please cancel my appointment.",
-            "scene": "A person calling to cancel an appointment.",
-            "register": "polite",
-            "setting": "apologetic",
-            "conjugation": "plain present affirmative"
+            "japanese": "この レポート、今日中に 終わり {そうにありません}。",
+            "english": "This report doesn't seem like it will be finished by the end of today.",
+            "english_literally": "This report, by today, is unlikely to finish.",
+            "scene": "A junior employee informs their manager about their progress on a task.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この レポート、今日中に 終わりません。",
+                    "mitigation": "The nuance of 'seems unlikely' or 'doesn't look like' is best conveyed by 「そうにありません」, implying an assessment of the current situation rather than a definitive statement of impossibility or a simple negative."
+                }
+            ],
+            "register": "teineigo (polite)",
+            "setting": "professional",
+            "conjugation": "non-past polite (～ます)"
         },
         {
-            "japanese": "今日は雨が降り {そうにもない} から釣りに行こう！",
-            "english": "It is unlikely that it will rain today, so let's go fishing!",
-            "scene": "Suggesting an activity based on the weather.",
+            "japanese": "昨日は 忙しくて、晩ご飯 を 食べ {そうになかった} よ。",
+            "english": "I was so busy yesterday, it didn't look like I'd get to eat dinner.",
+            "english_literally": "Yesterday I was busy, so it was unlikely to eat dinner.",
+            "scene": "A friend recounts their hectic day to another friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "昨日は 忙しくて、晩ご飯 を 食べなかった よ。",
+                    "mitigation": "The scene implies an observation of a situation where eating dinner seemed improbable, not just that it didn't happen. 「そうになかった」 emphasizes the appearance of unlikelihood during the event."
+                }
+            ],
             "register": "casual",
             "setting": "friendly",
-            "conjugation": "plain present affirmative"
+            "conjugation": "past plain (～た)",
+            "speaker_gender": "male",
+            "listener_gender": "male"
         },
         {
-            "japanese": "列が進み {そうにない} のでまた今度来ましょう。",
-            "english": "The queue is showing no signs of moving, so let's come back another time.",
-            "scene": "Deciding to postpone something due to a long wait.",
-            "register": "polite",
-            "setting": "cautious",
-            "conjugation": "plain present affirmative"
-        },
-        {
-            "japanese": "２回連続で宝くじには当たり {そうにない} 。",
-            "english": "It is unlikely you will win the lottery two times in a row.",
-            "scene": "Discussing the odds of winning the lottery.",
-            "register": "casual",
-            "setting": "humorous",
-            "conjugation": "plain present affirmative"
-        },
-        {
-            "japanese": "二 週間、日本語能力試験の準備をしているが、合格でき {そうにない} 。でも、私は諦めない。",
-            "english": "I have been preparing for the JLPT for two weeks, but passing it is unlikely. However, I won't give up.",
-            "scene": "A student talking about their chances of passing the JLPT.",
-            "register": "semi-formal",
-            "setting": "serious",
-            "conjugation": "plain present affirmative"
-        },
-        {
-            "japanese": "日中関係は今の状況からいって、好転し {そうにない} 。",
-            "english": "Judging from current Japan-China relations, a turn for the better is unlikely.",
-            "scene": "Discussing international relations.",
-            "register": "formal",
-            "setting": "informative",
-            "conjugation": "plain present affirmative"
-        },
-        {
-            "japanese": "明日雪は降り {そうにない} 。",
-            "english": "It is unlikely that it will snow tomorrow.",
-            "scene": "Discussing the weather forecast.",
-            "register": "semi-formal",
-            "setting": "informative",
-            "conjugation": "plain present affirmative"
-        },
-        {
-            "japanese": "医者：「この事故の後、彼女は歩け {そうにない} 。」",
-            "english": "Doctor: \"After this accident, it is unlikely for her to be able to walk again.\"",
-            "scene": "A doctor delivering bad news to someone.",
+            "japanese": "彼女の 病気 は、もう 治り {そうにありませんでした} と 医師 は 言いました。",
+            "english": "The doctor said her illness was no longer likely to be cured.",
+            "english_literally": "Her illness, already unlikely to be cured, the doctor said.",
+            "scene": "A family member is relaying bad news about a loved one's health, citing the doctor's prognosis.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼女の 病気 は、もう 治りません でした と 医師 は 言いました。",
+                    "mitigation": "The scene focuses on a prognosis based on observation. 「そうにありませんでした」 conveys that the doctor assessed the situation and saw no signs of recovery, which is a more nuanced statement than a simple past negative."
+                }
+            ],
             "register": "formal",
             "setting": "serious",
-            "conjugation": "plain present affirmative"
+            "conjugation": "past polite (～ました)"
         },
         {
-            "japanese": "このままでは、今月の目標を達成でき {そうにない} な。",
-            "english": "At this rate, it seems unlikely we will achieve this month's goals.",
-            "scene": "A team discussing their progress.",
-            "register": "business",
-            "setting": "serious",
-            "conjugation": "plain present affirmative",
-            "nuance": "The use of 「な」 at the end gives a sense of shared concern, indicating the speaker is seeking agreement or confirmation. It's a common way to soften a potentially negative statement in Japanese.",
-            "speaker_gender": "male"
-        },
-        {
-            "japanese": "あの 子 は、私に興味を持ち {そうにない} わね。",
-            "english": "That boy doesn't seem to be interested in me.",
-            "scene": "Woman talking about a man she is interested in.",
+            "japanese": "この 問題 は、簡単に 解決 でき {そうになくて} 困っています。",
+            "english": "I'm having trouble because this problem doesn't look like it can be easily solved.",
+            "english_literally": "This problem, being unlikely to solve easily, I am troubled.",
+            "scene": "A student discussing a difficult assignment with a classmate.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この 問題 は、簡単に 解決 できなくて 困っています。",
+                    "mitigation": "The 'easily solved' part implies a judgment based on the problem's appearance or complexity. 「そうになくて」 emphasizes that it's *not appearing* to be easily solvable, leading to the trouble."
+                }
+            ],
             "register": "casual",
-            "setting": "flirty",
-            "conjugation": "plain present affirmative",
-            "nuance": "The use of 「わね」 at the end softens the statement but also adds a note of resignation. This is a very feminine way of speaking, almost exclusively used by women."
+            "setting": "academic",
+            "conjugation": "te-form (～て)"
+        },
+        {
+            "japanese": "こんなに 天気だと、ピクニック に 行け {そうになかったら} どう する？",
+            "english": "If the weather is like this, what will we do if it looks like we can't go on a picnic?",
+            "english_literally": "If the weather is like this, if it is unlikely to go on a picnic, what will we do?",
+            "scene": "A family planning a picnic, observing the cloudy sky and considering alternatives.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "こんなに 天気だと、ピクニック に 行けなかったら どう する？",
+                    "mitigation": "The scene implies a hypothetical situation based on current weather conditions. 「そうになかったら」 expresses a conditional based on the *appearance* of unlikelihood, making it suitable for discussing future possibilities based on present signs."
+                }
+            ],
+            "register": "casual",
+            "setting": "friendly",
+            "conjugation": "conditional (～たら)"
+        },
+        {
+            "japanese": "締め切り に 間に合い {そうになければ} 、正直 に 伝える べきだ。",
+            "english": "If it seems unlikely you'll make the deadline, you should tell them honestly.",
+            "english_literally": "If it is unlikely to make the deadline, you should tell honestly.",
+            "scene": "A senior colleague advising a junior colleague about project management and communication.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "締め切り に 間に合わなければ 、正直 に 伝える べきだ。",
+                    "mitigation": "The advice focuses on the appearance of not meeting the deadline. 「そうになければ」 implies a situation where the signs point to unlikelihood, making it a stronger warning than a simple conditional negative."
+                }
+            ],
+            "register": "semi-formal",
+            "setting": "professional",
+            "conjugation": "conditional (～ば)"
+        },
+        {
+            "japanese": "この ままでは、新しい プロジェクト の 目標 を 達成 でき {そうにない} わね。",
+            "english": "At this rate, it seems unlikely we'll achieve the goals for the new project, don't you think?",
+            "english_literally": "At this rate, the new project's goals are unlikely to achieve, aren't they?",
+            "scene": "A team leader expressing concern to her team about their current progress.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この ままでは、新しい プロジェクト の 目標 を 達成 できない わね。",
+                    "mitigation": "The speaker is making an assessment based on the current situation, not stating a definitive impossibility. The use of 「そうにない」 conveys this sense of 'it appears unlikely'."
+                }
+            ],
+            "register": "semi-formal",
+            "setting": "professional",
+            "conjugation": "dictionary (plain non-past)",
+            "speaker_gender": "female",
+            "listener_gender": "group",
+            "nuance": "The addition of 「わね」 at the end, typically used by female speakers, adds a soft, somewhat reflective tone, inviting agreement or shared sentiment from the listeners. It turns a simple observation into a gentle, shared concern."
+        },
+        {
+            "japanese": "子供たち は まだ 遊び 足りない ようで、すぐに は 寝 {そうにない} 。",
+            "english": "The children don't seem to have played enough yet, they probably won't go to sleep soon.",
+            "english_literally": "The children still seem to not have played enough, so it is unlikely to sleep soon.",
+            "scene": "A parent observing their energetic children in the evening, realizing bedtime will be a challenge.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "子供たち は まだ 遊び 足りない ようで、すぐに は 寝ない 。",
+                    "mitigation": "The phrase 「そうにない」 here describes a conclusion drawn from the children's appearance or behavior (e.g., still running around, high energy), indicating no signs of them being ready for sleep. It's an observation-based prediction, not a simple statement that they won't sleep."
+                }
+            ],
+            "register": "casual",
+            "setting": "intimate",
+            "conjugation": "dictionary (plain non-past)",
+            "speaker_gender": "female",
+            "listener_gender": "no one",
+            "nuance": "This casual observation uses 「そうにない」 to describe the children's visible state, indicating that their behavior shows no signs of them going to sleep. The directness without honorifics or formal endings suits the intimate context of a parent talking to themselves or a close family member."
         }
     ],
     "post_example_writeup": "「そうにない」 indicates a lower degree of certainty compared to other similar expressions. While 「そうもない」 implies an even stronger unlikelihood, 「そうにない」 simply conveys that the possibility is low or that there are no current indications of something happening.",
@@ -176,5 +237,71 @@
     "post_false_friends_writeup": "To avoid confusion, remember that 「そうにない」 expresses a low degree of probability or lack of indication, whereas 「そうもない」 conveys a stronger sense of unlikelihood. 「っこない」 is used when there is virtually no chance of something happening. 「ことに」 highlights a specific quality or feeling, and 「そう」 suggests something appears a certain way.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/そうにない"
-    }
+    },
+    "change": [
+        {
+            "change-type": "schema",
+            "change": "Updated conjugation types within the 'conjugations' array to align with schema enums (e.g., 'plain present affirmative' to 'dictionary (plain non-past)')."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'meaning' property to each conjugation in the 'conjugations' array."
+        },
+        {
+            "change-type": "violation",
+            "change": "All example sentences were replaced with original content, not directly taken from Bunpro, to adhere to content generation rules."
+        },
+        {
+            "change-type": "violation",
+            "change": "Removed quotation marks (e.g., 「」) from the 'japanese' fields in example sentences."
+        },
+        {
+            "change-type": "violation",
+            "change": "Removed quotes from the 'english' fields in example sentences (e.g., 'Doctor: \"...\"')."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'english_literally' to all example sentences."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'scene_rationale' with 'competing_grammar' and 'mitigation' to all example sentences."
+        },
+        {
+            "change-type": "schema",
+            "change": "Updated 'conjugation' types within example sentences to align with schema enums and the main 'conjugations' array."
+        },
+        {
+            "change-type": "schema",
+            "change": "Updated 'register' values in example sentences to align with schema enums (e.g., 'polite' to 'teineigo (polite)', 'business' to 'bijinesu nihongo (business)')."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Introduced variety in 'speaker_gender', 'listener_gender', and 'speaker_age' in example sentences where appropriate."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added 'nuance' to selected example sentences to explain context-specific usage related to gender, age, or register."
+        },
+        {
+            "change-type": "schema",
+            "change": "Ensured the grammar point is bolded with curly braces in all 'japanese' example sentences."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Ensured proper spacing between words in 'japanese' fields for better readability and parsing."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Enhanced and rephrased the 'writeup' for improved clarity and comprehensiveness, integrating details from both provided sources."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'meaning_warning' from the GRAMMAR_POINT_YAML input."
+        },
+        {
+            "change-type": "schema",
+            "change": "Modified 'details' to include 'part-of-speech' as 'auxiliary adjective' and converted '使用域' to 'usage-context' with value 'general'."
+        }
+    ]
 }

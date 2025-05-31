@@ -28,7 +28,7 @@
         }
     ],
     "pronunciation": {
-        "katakana": "メッタニナイ",
+        "katakana": "メッタニ〜ナイ",
         "romaji": "metta ni ~ nai"
     },
     "formation": {
@@ -189,22 +189,38 @@
             "conjugation": "negative non-past polite (～ません)"
         },
         {
-            "japanese": "昔 は よく 飲み に 行った が 、 最近 は {めったに} 行かない ぞ 。",
-            "english": "I used to go drinking often, but lately I rarely go.",
-            "english_literally": "Used to go drinking often, but recently rarely go, you know!",
-            "scene": "A man talking to his male friend about his current, more settled lifestyle.",
+            "japanese": "昔 は よく 飲み に 行った が 、 最近 は {めったに} 行かなかった ぞ 。",
+            "english": "I used to go drinking often, but lately I rarely went.",
+            "english_literally": "Used to go drinking often, but recently rarely went, you know!",
+            "scene": "A man talking to his male friend about his current, more settled lifestyle, reflecting on past habits.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "昔はよく飲みに行ったが、最近は行かないぞ。",
-                    "mitigation": "Without 「めったに」, it suggests a complete stop to drinking out. The scene implies a significant reduction in frequency, which 「めったに」 accurately conveys, allowing for very rare occasions."
+                    "competing_grammar": "昔はよく飲みに行ったが、最近は行かなかったぞ。",
+                    "mitigation": "Without 「めったに」, it suggests a complete cessation of drinking out in the recent past. The scene implies that even in the past, occasions of going drinking were reduced, which 「めったに」 accurately conveys."
                 }
             ],
             "register": "casual",
             "setting": "reflective",
-            "conjugation": "negative plain (～ない)",
+            "conjugation": "negative past plain (～なかった)",
             "speaker_gender": "male",
             "listener_gender": "male",
-            "nuance": "The sentence ending 「〜ぞ」 adds a masculine, assertive, or emphatic tone, commonly used among male friends to convey a strong personal statement or observation."
+            "nuance": "The use of 「〜ぞ」 adds a masculine, emphatic tone, commonly used among male friends to convey a strong personal statement or observation. The past tense 「行かなかった」 indicates a rare occurrence in the recent past."
+        },
+        {
+            "japanese": "その 古い 本 は 市場 に {めったに} 出回りませんでした 。",
+            "english": "That old book rarely appeared on the market.",
+            "english_literally": "That old book rarely appeared on the market, it did not.",
+            "scene": "A bookseller explaining the rarity of a specific vintage book to a collector.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "その古い本は市場に出回りませんでした。",
+                    "mitigation": "Omitting 「めったに」 would suggest the book *never* appeared on the market, which might be an overstatement. The scene conveys that its appearance was highly infrequent, making it a rare find, which 「めったに」 conveys."
+                }
+            ],
+            "register": "semi-formal",
+            "setting": "informative",
+            "conjugation": "negative past polite (～ませんでした)",
+            "nuance": "The polite past negative 「出回りませんでした」 adds a respectful tone suitable for a professional setting. It implies the speaker has observed this rarity over a period of time."
         }
     ],
     "post_example_writeup": "\"めったに〜ない\" is used to emphasize that the occurrence of an event is extremely low. As seen in the examples, it conveys the nuance that a habit or event will not happen unless there is a special reason.",
@@ -240,24 +256,24 @@
     },
     "change": [
         {
-            "change-type": "command",
-            "change": "Rewrote all example sentences to be original and not taken literally from Dojg or Bunpro."
+            "change-type": "suggestion",
+            "change": "Added two new example sentences to cover the negative past plain (～なかった) and negative past polite (～ませんでした) conjugations, ensuring broader demonstration of the grammar point's usage across tenses."
         },
         {
             "change-type": "schema",
-            "change": "Ensured that all example sentences include a 'conjugation' field, correctly specifying the type of conjugation used."
+            "change": "Updated the 'katakana' field in 'pronunciation' to include the '〜' symbol, making it 'メッタニ〜ナイ' to accurately reflect the pattern in the grammar point's name 'めったに〜ない'."
         },
         {
             "change-type": "schema",
-            "change": "Adjusted the 'form' description for the 'めったに + は + [noun] + ない' formation for clarity."
+            "change": "Removed the 'rank' field, as it is not part of the defined schema."
         },
         {
             "change-type": "schema",
-            "change": "Refined the 'details' section values to better fit enum types and provide clearer English descriptions for 'part-of-speech', 'register', 'usage-context', 'function', and 'nuance'."
+            "change": "Removed the 'lesson_order' field, as it is not part of the defined schema."
         },
         {
-            "change-type": "violation",
-            "change": "Added or adjusted 'speaker_gender', 'listener_gender', and 'nuance' in examples where gendered speech or contextual relevance was significant, as per schema requirements."
+            "change-type": "schema",
+            "change": "Removed the top-level 'bunpro' object, retaining only the 'url' within the 'sources' field, as per the defined schema."
         }
     ]
 }

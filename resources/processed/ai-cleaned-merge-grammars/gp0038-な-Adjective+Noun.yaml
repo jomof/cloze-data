@@ -12,14 +12,12 @@
     "meaning": "Modifying a noun with a な-adjective.",
     "details": {
         "part-of-speech": "phrase",
-        "register": "teineigo (polite)",
-        "grammatical-role": "noun modifier",
-        "logical-flow": "attribute of noun",
-        "temporal-flow": "static description",
-        "spatial-flow": "describes characteristic of a location or object within a space"
+        "function": "Describes a noun's inherent quality or characteristic.",
+        "nuance": "Distinguishes from noun + の + noun structures by emphasizing intrinsic qualities over types/purposes.",
+        "grammatical-role": "noun modifier"
     },
     "etymology": "The particle 「な」 is required to connect な-adjectives (also known as adjectival nouns) to the nouns they modify. Without 「な」, the sentence would be grammatically incorrect. The 「な」 essentially acts as a copula in this construction, similar to how 「だ」 links nouns and な-adjectives at the end of a sentence.",
-    "writeup": "In Japanese, な-adjectives (also known as adjectival nouns) modify nouns by placing the particle 「な」 between the adjective and the noun. This construction is used to describe a **quality** or **characteristic** of the noun. It is crucial to include 「な」; omitting it would result in grammatically incorrect Japanese.\n\nWhile many types of words can modify nouns, な-adjectives specifically require 「な」 for this purpose. This sets them apart from い-adjectives, which connect directly to nouns, and from nouns modifying other nouns, which typically use 「の」.\n\nA key distinction to grasp is the nuance between な-adjective + 「な」 + Noun and Noun + 「の」 + Noun, especially when a word can function as both. For instance, (A)な(B) generally means (A) describes a quality or feature of (B), implying an inherent characteristic. Conversely, (A)の(B) usually indicates that (A) is the type, purpose, or possession related to (B). Consider: 「幸せな日」 (a happy day, describing the day's quality) versus 「幸せの日」 (a day *of* happiness, meaning a day designated for happiness or a day that exemplifies happiness). When in doubt, consider whether you are expressing a quality or a type/purpose.",
+    "writeup": "In Japanese, な-adjectives (also known as adjectival nouns) modify nouns by placing the particle 「な」 between the adjective and the noun. This construction is used to describe a **quality** or **characteristic** of the noun. It is crucial to include 「な」; omitting it would result in grammatically incorrect Japanese.While many types of words can modify nouns, な-adjectives specifically require 「な」 for this purpose. This sets them apart from い-adjectives, which connect directly to nouns, and from nouns modifying other nouns, which typically use 「の」.A key distinction to grasp is the nuance between な-adjective + 「な」 + Noun and Noun + 「の」 + Noun, especially when a word can function as both. For instance, (A)な(B) generally means (A) describes a quality or feature of (B), implying an inherent characteristic. Conversely, (A)の(B) usually indicates that (A) is the type, purpose, or possession related to (B). Consider: 「幸せな日」 (a happy day, describing the day's quality) versus 「幸せの日」 (a day *of* happiness, meaning a day designated for happiness or a day that exemplifies happiness). When in doubt, consider whether you are expressing a quality or a type/purpose.",
     "examples": [
         {
             "japanese": "彼女 は {静かな} 場所 を 探し て い ます。",
@@ -36,7 +34,7 @@
                     "mitigation": "This construction is grammatically incorrect for modifying a noun. The particle 「な」 is necessary for な-adjectives before nouns."
                 }
             ],
-            "register": "formal",
+            "register": "teineigo (polite)",
             "setting": "informative"
         },
         {
@@ -54,7 +52,7 @@
                     "mitigation": "While similar, 「評判」 focuses on reputation, whereas 「有名」 is about general recognition. The scene implies general recognition, making 「有名な」 a better fit."
                 }
             ],
-            "register": "formal",
+            "register": "teineigo (polite)",
             "setting": "informative"
         },
         {
@@ -72,7 +70,7 @@
                     "mitigation": "「丁寧」 implies politeness in speech, but 「親切」 refers to the underlying kindness and consideration in the action, which is what the speaker wants to convey about the doctor."
                 }
             ],
-            "register": "casual",
+            "register": "teineigo (polite)",
             "setting": "friendly",
             "speaker_gender": "female",
             "listener_gender": "female",
@@ -93,7 +91,7 @@
                     "mitigation": "「麗しい」 is a much more poetic and less common term, not suitable for a casual conversation about a garden."
                 }
             ],
-            "register": "casual",
+            "register": "teineigo (polite)",
             "setting": "friendly",
             "nuance": "「綺麗な」 is a common and versatile な-adjective for describing something visually pleasing, like flowers. 「咲い て い ます」 indicates a continuing state of blooming."
         },
@@ -112,7 +110,7 @@
                     "mitigation": "「明るい」 describes their disposition ('bright' or 'cheerful'), not their energy or physical state. The scene implies physical energy."
                 }
             ],
-            "register": "semi-formal",
+            "register": "teineigo (polite)",
             "setting": "informative",
             "nuance": "「元気な」 describes the vitality and health of the children. 「校庭 で 遊ん で い ます」 sets the scene of their energetic play."
         },
@@ -131,7 +129,7 @@
                     "mitigation": "「率直」 refers to directness in communication, not necessarily sincerity or trustworthiness in character. The scene focuses on trust and character."
                 }
             ],
-            "register": "semi-formal",
+            "register": "teineigo (polite)",
             "setting": "informative",
             "nuance": "The use of 「誠実な 人間」 establishes a positive character trait. 「な の で」 indicates the reason for being trusted, and 「誰 から も 信頼 さ れ て い ます」 expresses universal trust."
         },
@@ -146,7 +144,7 @@
                     "mitigation": "While 「いろいろな」 is also correct and more colloquial, 「様々な」 is slightly more formal and precise, emphasizing a *wide range* or *diversity*, which fits a photography enthusiast's thoughtful plan. The scene highlights a careful consideration of options."
                 }
             ],
-            "register": "casual",
+            "register": "teineigo (polite)",
             "setting": "reflective",
             "speaker_gender": "male",
             "listener_gender": "no one",
@@ -167,40 +165,12 @@
     },
     "change": [
         {
-            "change-type": "schema",
-            "change": "Changed `details.part-of-speech` from 'Noun' to 'phrase' to more accurately represent a grammatical construction rather than a single part of speech."
+            "change-type": "violation",
+            "change": "Removed `register`, `logical-flow`, `temporal-flow`, and `spatial-flow` fields from `details`. These were either inaccurate for the grammar point itself or overly granular for an N5 level grammar point. Added `function` and `nuance` to `details` to provide a more precise explanation of the grammar point's role and key distinction."
         },
         {
-            "change-type": "schema",
-            "change": "Changed `details.register` from 'Standard' (not in schema enum) to 'teineigo (polite)' as a default for general teaching."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Minor rephrasing of `meaning` from 'Describing a noun' to 'Modifying a noun with a な-adjective' for better precision."
-        },
-        {
-            "change-type": "unnatural",
-            "change": "Significantly expanded and rephrased the `writeup` to incorporate more details from the original Bunpro source, particularly the distinction between 'quality' vs 'purpose' and the comparison with の for noun modification. Also added detail about な as a copula."
-        },
-        {
-            "change-type": "command",
-            "change": "All example sentences were re-written to create original content, moving away from directly copied examples from Bunpro or other sources. This also involved adding `scene`, `english_literally`, `scene_rationale`, and ensuring correct `{bold}` formatting for the grammar point."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Removed the generic `post_example_writeup` as it was not specific to the grammar point."
-        },
-        {
-            "change-type": "command",
-            "change": "Added `Noun + の + Noun` as a false friend, as this distinction was highlighted in the `writeup` and example rationales as a common point of confusion."
-        },
-        {
-            "change-type": "command",
-            "change": "Added `post_false_friends_writeup` to explain the nuance between な-adjective + な + Noun and Noun + の + Noun."
-        },
-        {
-            "change-type": "schema",
-            "change": "Added `grammatical-role`, `logical-flow`, `temporal-flow`, and `spatial-flow` to `details` to provide more comprehensive grammatical context."
+            "change-type": "violation",
+            "change": "Corrected `register` in all example sentences from `casual` or `semi-formal` to `teineigo (polite)` to align with the polite sentence-ending forms used in the Japanese examples (`～ます`/`～です`)."
         }
     ]
 }

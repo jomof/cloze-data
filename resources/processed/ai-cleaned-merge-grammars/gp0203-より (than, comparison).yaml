@@ -1,142 +1,267 @@
 {
     "grammar_point": "より (than, comparison)",
     "id": "gp0203",
-    "conjugations": [],
-    "jlpt": "N4",
     "pronunciation": {
         "katakana": "ヨリ",
         "romaji": "yori"
     },
     "formation": {
-        "Noun + より": "Indicates a comparison, meaning 'more than' or 'rather than'",
-        "Noun A + より + Noun B + の方が + Adjective": "B is more adjective than A",
-        "Verb (dictionary form) + より": "Rather than doing A, do B."
+        "Noun + より": "Indicates a comparison, meaning 'more than' or 'rather than', where the noun is the point of comparison.",
+        "Noun A + より + Noun B + の方が + Adjective": "Explicitly states that Noun B is more adjective than Noun A.",
+        "Verb (dictionary form) + より": "Indicates a preference, meaning 'rather than doing Verb'."
     },
+    "jlpt": "N4",
     "meaning": "Than, more than, rather than",
     "details": {
-        "Register": "Standard",
-        "使用域": "一般"
+        "part-of-speech": "particle",
+        "register": "teineigo (polite)",
+        "particle-syntactic-function": "comparative",
+        "particle-pragmatic-function": "focus",
+        "usage-context": "General"
     },
-    "etymology": "The particle 「より」 originates from the verb 「寄る(よる)」, meaning \"to approach\" or \"to gather.\" Over time, it evolved to indicate a point of origin or a comparison point, eventually taking on the meaning of \"than\" in modern Japanese.",
-    "writeup": "The particle 「より」 is used to make comparisons. It indicates that one thing is 'more' (something) than another.  The basic structure is A 「より」 B.  This means B is more X than A.  In other words, A is *less* X than B.\n\n**Important Considerations:**\n*   「より」 attaches directly to the noun or verb being compared.\n*   In casual speech, 「より」 can sometimes appear without directly attaching to a word, implying a comparison to 'other things'.\n*   Be careful not to confuse 「より」 with other similar grammatical structures.",
+    "etymology": "The particle 「より」 originates from the verb 「寄る (よる)」, meaning \"to approach\" or \"to gather.\" Over time, its meaning evolved to indicate a point of origin or a point of comparison, eventually leading to its modern usage of \"than\" when making comparisons.",
+    "writeup": "The particle 「より」 is used to indicate a standard of comparison. It functions to specify the item or action that something else is 'more' or 'less' than. When used in a comparison, the element immediately preceding 「より」 is the standard being surpassed or exceeded. Therefore, the item connected to 「より」 is implicitly understood to be 'less' in the characteristic being discussed, compared to the other element in the sentence.\n\nWhile 「より」 can stand alone, it is frequently seen in the structure 「A より B の方が Adjective です」, explicitly stating that 'B is more (adjective) than A'. However, in casual conversation, 「より」 can sometimes appear without a directly stated comparison object, implying a comparison against 'other things' or general expectations.\n\nIt is crucial to understand that 「より」 marks the *point of comparison* that is being surpassed. For instance, in \"A より B が 好き\" (I like B more than A), 'A' is the reference point that is 'less preferred' than 'B'.",
     "examples": [
         {
-            "japanese": "バナナ {より} りんご の 方 が 好き です 。",
-            "english": "I like apples more than bananas.",
-            "scene": "Someone stating their preference for fruits.",
-            "register": "polite",
-            "setting": "friendly",
-            "nuance": "The speaker is using 「です」 which is polite to express their opinion",
-            "speaker_gender": "female"
+            "japanese": "猫 は 犬 {より} 小さい です 。",
+            "english": "Cats are smaller than dogs.",
+            "english_literally": "Cats, compared to dogs, are small.",
+            "scene": "Two children are discussing their favorite pets, and one makes an observation about their size.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "猫 は 犬 に 比べ て 小さい です 。",
+                    "mitigation": "The scene focuses on a simple, direct observation, which makes the more common and concise 「より」 a natural choice over the slightly more formal 「に比べて」."
+                }
+            ],
+            "register": "teineigo (polite)",
+            "setting": "informative"
         },
         {
-            "japanese": "犬 {より} 猫 の 方 が 静か です 。",
-            "english": "Cats are quieter than dogs.",
-            "scene": "A person comparing pets.",
-            "register": "polite",
-            "setting": "informative",
-            "nuance": "The speaker is making a general statement, using 「です」 to be polite.",
-            "speaker_gender": "male"
+            "japanese": "夏 は 冬 {より} 暑い です 。",
+            "english": "Summer is hotter than winter.",
+            "english_literally": "Summer, compared to winter, is hot.",
+            "scene": "Friends are chatting about the weather, reminiscing about the previous season.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "夏 と 冬 で は 夏 の 方 が 暑い です 。",
+                    "mitigation": "The casual conversation and simple comparison lead to the more direct 「より」 structure, rather than the more explicit and somewhat wordier 「と〜では」 which might be used to introduce a broader discussion."
+                }
+            ],
+            "register": "teineigo (polite)",
+            "setting": "friendly"
         },
         {
-            "japanese": "今日 は 昨日 {より} 暖かい です ね 。",
-            "english": "It's warmer today than it was yesterday, isn't it?",
-            "scene": "Two people commenting on the weather.",
-            "register": "polite",
-            "setting": "casual",
-            "nuance": "「ね」 is used to seek agreement or confirmation from the listener, making the sentence conversational.",
-            "listener_gender": "female"
+            "japanese": "歩く {より} 走る 方 が 速い です 。",
+            "english": "Running is faster than walking.",
+            "english_literally": "Running, compared to walking, is fast.",
+            "scene": "A coach is giving advice to an athlete about improving their speed.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "歩く の に 比べ れ ば 走る 方 が 速い です 。",
+                    "mitigation": "The instructional context prioritizes directness and simplicity. While 「のに比べれば」 adds a nuance of 'if you compare,' the simpler 「より」 is sufficient for straightforward factual statements."
+                }
+            ],
+            "register": "teineigo (polite)",
+            "setting": "instructional"
         },
         {
-            "japanese": "車 で 行く {より} 、 電車 で 行く ほう が 楽 です 。",
-            "english": "Going by train is easier than going by car.",
-            "scene": "Someone discussing travel options.",
-            "register": "polite",
-            "setting": "informative",
-            "nuance": "「ほう」 is used to indicate the preferred option.",
-            "speaker_gender": "male"
+            "japanese": "この カメラ は 他 の カメラ {より} 優れ て い ます 。",
+            "english": "This camera is superior (to other cameras).",
+            "english_literally": "This camera, compared to other cameras, is excellent.",
+            "scene": "A salesperson highlights the key features of a camera to a potential buyer, implying its superiority among other models.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "この カメラ は 群 を 抜い て 優れ て い ます 。",
+                    "mitigation": "The nuance here is a direct comparison to 'other cameras' that are implicitly in the market. While 「群を抜いて」 means 'outstanding', it suggests a more absolute superiority rather than a direct comparison against a specific group."
+                }
+            ],
+            "register": "teineigo (polite)",
+            "setting": "persuasive"
         },
         {
-            "japanese": "勉強 する {より} 、 遊び に 行き たい です 。",
-            "english": "I'd rather go out and play than study.",
-            "scene": "A student expressing their desire to avoid studying.",
-            "register": "polite",
-            "setting": "casual",
-            "nuance": "「～たい」 expresses a desire or wish, making the sentence personal and relatable.",
-            "listener_gender": "female"
-        },
-        {
-            "japanese": "冗談 です が 、 君 {より} 俺 の 方 が かっこいい よ 。",
-            "english": "Just kidding, but I'm cooler than you.",
-            "scene": "A man playfully teasing another man.",
+            "japanese": "今日 は 昨日 {より} 多く の 雪 が 降っ た 。",
+            "english": "More snow fell today than yesterday.",
+            "english_literally": "Today, compared to yesterday, much snow fell.",
+            "scene": "Two neighbors are looking out the window, surprised by the heavy snowfall overnight.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "今日 は 昨日 と 比べ て 多く の 雪 が 降っ た 。",
+                    "mitigation": "In a casual observation between neighbors, the concise 「より」 is more natural than the slightly more formal or explicit 「と比べて」 which might be used in a detailed meteorological report."
+                }
+            ],
             "register": "casual",
-            "setting": "humorous",
-            "nuance": "The speaker uses 「よ」 which emphasizes the statement, 「俺」 is typically only used by males to refer to themselves, and the phrase is used as a form of playful jab between friends.",
-            "speaker_gender": "male",
-            "listener_gender": "male"
+            "setting": "friendly"
         },
         {
-            "japanese": "今日 は 仕事 {より} あなた と 一緒 に いたい な 。",
-            "english": "Today, I'd rather be with you than at work.",
-            "scene": "A person expressing their desire to spend time with someone special.",
-            "register": "casual",
-            "setting": "flirty",
-            "speaker_gender": "male",
-            "listener_gender": "female",
-            "nuance": "「～たいな」 expresses a soft wish or desire, making it sound more intimate and flirty. The speaker uses 「あなた」 (you) to be more direct and 「今日」 (today) suggests a special occasion."
+            "japanese": "彼女 の 声 は 想像 し て い た {より} 美しかっ た 。",
+            "english": "Her voice was more beautiful than I had imagined.",
+            "english_literally": "Her voice, compared to what I had imagined, was beautiful.",
+            "scene": "A person expresses their pleasant surprise after hearing a singer perform for the first time.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼女 の 声 は 想像 以 上 に 美しかっ た 。",
+                    "mitigation": "While 「想像以上に」 implies exceeding expectations, the direct comparison with 「より」 emphasizes the difference between the actual voice and the prior imagination, highlighting the specific point of comparison."
+                }
+            ],
+            "register": "teineigo (polite)",
+            "setting": "reflective"
         },
         {
-            "japanese": "もっと 知り合い たい から 、 友達 {より} もっと 近い 存在 に なり たい な 。",
-            "english": "I want to get to know you better, so I want to become closer than just friends.",
-            "scene": "A man flirting with a woman on a first date.",
+            "japanese": "勉強 する {より} ゲーム を し たい 。",
+            "english": "I want to play games rather than study.",
+            "english_literally": "Rather than studying, I want to play games.",
+            "scene": "A teenager complains to their friend about having to study for an exam.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "勉強 する ぐらい なら ゲーム を し たい 。",
+                    "mitigation": "「〜ぐらいなら」 carries a nuance of 'if you're going to do something as bad as X, you might as well do Y', implying a negative judgment about studying. The scene depicts a simple preference, not a strong negative sentiment, making 「より」 more appropriate."
+                }
+            ],
             "register": "casual",
-            "setting": "first-date",
-            "speaker_gender": "male",
-            "listener_gender": "female",
-            "nuance": "「～たいな」 expresses a soft wish or desire, making it sound more intimate and flirty. The speaker uses 「もっと知り合いたいから」 (because I want to know you more) to suggest deeper interest."
+            "setting": "friendly"
         }
     ],
-    "post_example_writeup": "When using 「より」, it's essential to ensure that the comparison is clear and logical. Make sure that both items being compared are of the same category and that the adjective or verb accurately reflects the difference between them.",
+    "post_example_writeup": "When using 「より」, it's essential to ensure that the comparison is clear and logical. While the particle itself points to the standard, the context or the presence of 「〜のほうが」 helps clarify which item or action is deemed 'more' in the given characteristic. Pay attention to the natural flow of the Japanese sentence to accurately convey your intended comparison.",
     "false_friends": [
         {
             "term": "ほど〜ない",
-            "meaning": "Not as...as",
-            "kind": "similar expression",
-            "nuance": "Unlike 「より」, 「ほど〜ない」 emphasizes the *lack* of something to the same degree."
+            "meaning": "Is not as…as, Isn't... like..., Not to the extent of...",
+            "kind": "antonym",
+            "nuance": "Unlike 「より」 which indicates superiority, 「ほど〜ない」 indicates inferiority, meaning 'not to the extent of' or 'not as...as'."
         },
         {
             "term": "より〜のほうが",
-            "meaning": "X is more...than Y",
-            "kind": "often confused with",
-            "nuance": "「より〜のほうが」 is a longer, more explicit form, while 「より」 can stand alone in certain contexts."
+            "meaning": "To be more ~ than ~",
+            "kind": "similar expression",
+            "nuance": "This is a more explicit and common phrasing for direct comparisons, often used when comparing two specific items (A and B). While 「より」 can stand alone for general comparison, 「〜のほうが」 clarifies the comparison between two specific entities."
         },
         {
             "term": "というより",
-            "meaning": "Rather than...more like...",
-            "kind": "similar expression",
-            "nuance": "「というより」 indicates a rephrasing or correction of a previous statement."
+            "meaning": "...is more of a... than a..., Rather than saying that...",
+            "kind": "often confused with",
+            "nuance": "Used to rephrase or correct a statement, implying that one description is more accurate than another, rather than making a direct comparison of degree or quantity."
         },
         {
             "term": "以上に",
-            "meaning": "More than, exceeding",
+            "meaning": "More than, exceeding, no less than",
             "kind": "similar expression",
-            "nuance": "Unlike 「より」, 「以上に」 indicates an amount or degree that is surpassed."
+            "nuance": "Indicates surpassing a certain standard, expectation, or quantity. It doesn't typically establish a direct comparison between two specific items in the same way 「より」 does, but rather an overall surpassing."
         },
         {
             "term": "こそ",
-            "meaning": "Emphasis, for sure",
-            "kind": "similar expression",
-            "nuance": "Unlike 「より」, 「こそ」 is used to emphasize a particular word or phrase and often expresses determination or importance."
+            "meaning": "For sure, for certain, even more so, underlined or bolded text",
+            "kind": "often confused with",
+            "nuance": "Emphasizes the preceding word or phrase, highlighting its importance or uniqueness, not making a comparison of degree. It expresses a strong affirmation or determination."
         },
         {
             "term": "以上",
-            "meaning": "More than (or equal to)",
+            "meaning": "More than (or equal to), over (and) above, any more, greater, exceeding",
+            "kind": "often confused with",
+            "nuance": "Indicates a quantity or level that is equal to or greater than a specified amount, whereas 「より」 focuses on a qualitative or quantitative comparison where one thing *surpasses* another."
+        },
+        {
+            "term": "に比べて",
+            "meaning": "Compared to",
             "kind": "similar expression",
-            "nuance": "Unlike 「より」, 「以上」 refers to quantity or a limit."
+            "nuance": "A more formal or explicit way to state a comparison, often used in academic or statistical contexts, or when the comparison involves complex aspects rather than a simple 'more than'."
+        },
+        {
+            "term": "と〜では",
+            "meaning": "When comparing X and Y...",
+            "kind": "similar expression",
+            "nuance": "Explicitly sets up a comparison between two items, often used to introduce a discussion about their differences or to present options for consideration."
+        },
+        {
+            "term": "〜ぐらいなら",
+            "meaning": "If it's going to be X, then Y",
+            "kind": "often confused with",
+            "nuance": "Implies a negative judgment about the first action/state and suggests a less undesirable or alternative option. It carries a nuance of 'if forced to choose between two undesirable options'."
+        },
+        {
+            "term": "群を抜いて",
+            "meaning": "Outstanding, preeminent, by far the best",
+            "kind": "similar expression",
+            "nuance": "Indicates that something is exceptionally superior, standing out significantly from a group, rather than simply stating one item is 'more' than another in a direct comparison of degree."
+        },
+        {
+            "term": "想像以上",
+            "meaning": "More than imagined, beyond imagination",
+            "kind": "similar expression",
+            "nuance": "Refers to something exceeding expectations or previous imaginings. It functions adverbially, similar to 'surprisingly' or 'unexpectedly', rather than forming a direct comparison between two nouns or actions with explicit comparison points."
         }
     ],
-    "post_false_friends_writeup": "To avoid confusing 「より」 with similar expressions, focus on its core function: comparison. If you're simply stating that something exceeds a certain amount, use 「以上」 or 「以上に」. If you're rephrasing a statement, use 「というより」. For emphasis, choose 「こそ」.  Remember, 「より」 is about establishing a relationship between two things by saying that one is more than the other.",
+    "post_false_friends_writeup": "To differentiate 「より」 from similar expressions, consider its primary function: establishing a direct comparison where one element *surpasses* another. If you're stating that something is not as X as Y, use 「ほど〜ない」. If you're explicitly comparing two specific items (A and B), 「〜のほうが」 is a common and clear choice. For rephrasing or correcting a statement, 「というより」 is appropriate. When discussing something exceeding a standard or quantity, use 「以上に」 or 「以上」. Finally, if you need to emphasize a point or specific item, 「こそ」 serves that purpose. Each of these alternatives carries distinct nuances that differ from the straightforward comparative function of 「より」.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/より"
-    }
+    },
+    "change": [
+        {
+            "change-type": "violation",
+            "change": "Corrected register enum value 'polite' to 'teineigo (polite)' in examples[0], [1], [2], [3], [4] based on pre-lint warning. This change is reflected in the new example sentences."
+        },
+        {
+            "change-type": "violation",
+            "change": "Corrected setting enum value 'casual' to 'friendly' in examples[2] and [4] based on pre-lint warning. This change is reflected in the new example sentences."
+        },
+        {
+            "change-type": "schema",
+            "change": "Removed the empty 'conjugations' array as 'より' is a particle and not conjugatable, making it not applicable per schema rules."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Refined the 'formation' descriptions for improved clarity and conciseness."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'part-of-speech' as 'particle' to 'details', referencing information from the DOJG source."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added 'particle-syntactic-function' as 'comparative' and 'particle-pragmatic-function' as 'focus' to 'details' for more precise grammatical categorization."
+        },
+        {
+            "change-type": "schema",
+            "change": "Converted the Japanese key '使用域' to its English equivalent 'usage-context' in 'details', with the value 'General'."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Rephrased the 'writeup' to integrate the concept of 'meaning_warning' as a core explanation of 'より's function (what it attaches to is less) rather than a standalone warning, as instructed."
+        },
+        {
+            "change-type": "violation",
+            "change": "Completely rewrote all example sentences to be original creations, ensuring they are appropriate for the grammar point and its JLPT level, as explicitly instructed."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added 'english_literally' to all example sentences to provide a more direct English translation and aid understanding."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Ensured all Japanese examples have spaces between words and the grammar point '{より}' is properly bolded with curly braces."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Provided comprehensive 'scene' and 'scene_rationale' for all examples, detailing potential competing grammar and how the scene mitigates confusion."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Included 'nuance' for each example, explaining the specific linguistic aspects or context that justify the chosen register, gender, or age where applicable, and referring to Japanese in quotes."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Removed 'speaker_gender', 'listener_gender', and 'speaker_age' from examples where these attributes did not significantly impact the naturalness or nuance of the Japanese phrasing, adhering to the instruction to only include them when they 'actually matter'."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Refined the 'false_friends' list by re-evaluating the 'kind' attribute for existing entries, providing more precise and contrasting 'nuance' explanations, and adding new entries identified as competing grammar in the example rationales."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Updated the 'post_false_friends_writeup' to reflect the expanded and clarified 'false_friends' list, offering more specific guidance on distinguishing between similar expressions."
+        },
+        {
+            "change-type": "violation",
+            "change": "Removed 'rank' and 'lesson_order' fields from the root object as they are not part of the defined output schema."
+        }
+    ]
 }

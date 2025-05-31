@@ -23,7 +23,7 @@
         {
             "japanese": "宝くじを 買って、{あわよくば} 一億円 当たらないかな。",
             "english": "I bought a lottery ticket; I wonder if, with a bit of luck, I might win 100 million yen.",
-            "english_literally": "Lottery ticket bought, if luck is good 100 million yen won't hit, I wonder.",
+            "english_literally": "Lottery ticket bought, if luck is good I wonder if 100 million yen will hit.",
             "scene": "Someone hoping for a big lottery win.",
             "scene_rationale": [
                 {
@@ -49,12 +49,12 @@
             "setting": "professional",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "The ending particle 「な」 can soften the tone and is often used by female speakers to express a wish or desire, aligning with the nuance of 「あわよくば」."
+            "nuance": "The ending particle 「な」 can express a wish or desire, aligning with the nuance of 「あわよくば」. It softens the tone and can be used by both male and female speakers, though it is often associated with female speech in certain contexts."
         },
         {
             "japanese": "もし {あわよくば} 、彼女と 二人きりで 話せる チャンスが あれば いいな。",
             "english": "If I'm lucky, I'm hoping for a chance to talk to her alone.",
-            "english_literally": "If if luck is good, with her just two people talk chance if there is, it would be good.",
+            "english_literally": "If luck is good, if there is a chance to talk to her alone, it would be good.",
             "scene": "A man speaking to his friend, talking about the woman he likes.",
             "scene_rationale": [
                 {
@@ -87,8 +87,8 @@
         },
         {
             "japanese": "面接で うまく 行って、{あわよくば} すぐに 内定が 欲しいんだ。",
-            "english": "I hope the interview goes well, and if possible, I want to get a job offer right away.",
-            "english_literally": "Interview went well, if luck is good immediately job offer want.",
+            "english": "If the interview goes well, then if luck is on my side, I want to get a job offer right away.",
+            "english_literally": "If the interview goes well, then if luck is good, I want a job offer right away.",
             "scene": "A male student talks to his female friend after a job interview, expressing his immediate desire for an offer.",
             "scene_rationale": [
                 {
@@ -117,40 +117,20 @@
     },
     "change": [
         {
-            "change-type": "violation",
-            "change": "Changed 'jlpt' from 'N0' to 'N1' to comply with the schema's enum constraints. 'N0' is not a valid JLPT level in the schema."
-        },
-        {
-            "change-type": "violation",
-            "change": "Removed irrelevant Bunpro-specific detail 'Get more example sentences!' from 'details'."
-        },
-        {
-            "change-type": "violation",
-            "change": "Corrected the key 'Register' to 'register' to match schema casing and assigned an enum value 'casual'."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Added 'usage-context' to 'details' to elaborate on the register nuance."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Added 'part-of-speech: adverb' to 'details' based on the grammar point's function."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Added 'function' and 'nuance' fields to 'details' to provide more comprehensive information about the grammar point's usage and subtle implications."
+            "change-type": "unnatural",
+            "change": "Refined the 'english_literally' translation for Example 1's rhetorical question, '当たらないかな', to better reflect the hopeful meaning."
         },
         {
             "change-type": "unnatural",
-            "change": "Refined the 'etymology' and 'writeup' for clarity and better separation of historical information from modern usage explanation."
+            "change": "Adjusted the 'nuance' explanation for Example 2's 'な' particle to be less gender-restrictive, as it can be used by both male and female speakers."
         },
         {
-            "change-type": "violation",
-            "change": "Added 'english_literally' to all example sentences as required by the schema."
+            "change-type": "unnatural",
+            "change": "Corrected the redundant 'If if' in Example 3's 'english_literally' translation."
         },
         {
-            "change-type": "violation",
-            "change": "Removed the 'change' field inherited from the prior grammar point, as this field should only reflect changes made during the current processing step."
+            "change-type": "unnatural",
+            "change": "Improved the tense and phrasing of Example 5's 'english_literally' and 'english' translations to better convey the conditional flow of the Japanese sentence 'うまく 行って'."
         }
     ]
 }

@@ -44,10 +44,12 @@
         "romaji": "zu ni wa irarenai"
     },
     "formation": {
-        "Verb (ない form stem) + ずにはいられない": "Expresses that one cannot help but do something or cannot resist doing something, driven by an internal, often strong, compulsion."
+        "Verb (ない form stem) + ずにはいられない": "For most verbs, attach to the ない form stem (e.g., 食べる → 食べずにはいられない).",
+        "する Verb (せ form) + ずにはいられない": "For する verbs, attach to the irregular せ form (e.g., 勉強する → 勉強せずにはいられない)."
     },
     "jlpt": "N3",
     "meaning": "Cannot help doing something, cannot resist doing something",
+    "meaning_warning": "する → せず",
     "details": {
         "part-of-speech": "phrase",
         "register": "formal",
@@ -57,7 +59,7 @@
     "writeup": "The grammar point 「ずにはいられない」 conveys a strong, internal compulsion to do something or to feel a certain way, suggesting that the action or emotion is unavoidable for the speaker. It is typically used for involuntary actions or overwhelming feelings that are difficult to control.\n\n**Formation:** It attaches to the negative stem of verbs (the same stem used for the ない form). For most verbs, this is straightforward (e.g., 食べる → 食べずにはいられない). However, for the irregular verb する, it conjugates to せずにはいられない, not しずにはいられない.\n\n**Nuance:** While often translated as \"cannot help but do\" or \"cannot resist doing,\" the literal meaning is \"cannot be without doing.\" This highlights that the speaker's state or existence is intertwined with the action or feeling, making it impossible to omit. It emphasizes an internal, personal experience, rather than an external obligation or logical necessity.\n\n**Usage:** This expression tends to be more formal or literary compared to other similar phrases, and you will often encounter it in written Japanese or more deliberate speech. It describes a psychological state where one is powerless to prevent a certain action or emotion from occurring.",
     "examples": [
         {
-            "japanese": "彼の面白い話を聞くと、いつも笑わ{ずにはいられない}。",
+            "japanese": "彼 の 面白い 話 を 聞く と、いつも 笑わ { ずにはいられない }。",
             "english": "Whenever I hear his funny stories, I can't help but laugh.",
             "english_literally": "Whenever I hear his funny stories, I cannot exist without laughing.",
             "scene": "You're at a casual gathering, and a friend, known for their humor, starts telling a story that makes everyone burst into laughter. You're explaining how their jokes always have that effect on you, regardless of how much you try to control your laughter.",
@@ -79,7 +81,7 @@
             "nuance": "The phrase 「笑わずにはいられない」 implies an irresistible, almost involuntary reaction to something genuinely funny, emphasizing the internal nature of the compulsion. The casual setting and friendly conversation underscore the naturalness of this uncontrollable laughter."
         },
         {
-            "japanese": "感動的な映画を見た後、涙を流さ{ずにはいられなかった}。",
+            "japanese": "感動 的 な 映画 を 見た 後、涙 を 流さ { ずにはいられなかった }。",
             "english": "After watching that moving movie, I couldn't help but shed tears.",
             "english_literally": "After watching that moving movie, I could not exist without shedding tears.",
             "scene": "A woman is telling her friend about a profoundly emotional movie she watched recently. She wants to express how deeply it affected her, making her cry uncontrollably, despite perhaps trying to hold back.",
@@ -101,7 +103,7 @@
             "nuance": "The phrase 「涙を流さずにはいられなかった」 emphasizes that the emotional impact was so profound that crying was an unavoidable internal response, not merely an occurrence. The past tense indicates a completed, powerful emotional experience."
         },
         {
-            "japanese": "顧客の厳しい状況を聞いて、心配せ{ずにはいられません}でした。",
+            "japanese": "顧客 の 厳しい 状況 を 聞い て、心配 せ { ずにはいられません } でした。",
             "english": "Upon hearing about the client's difficult situation, I couldn't help but feel concerned.",
             "english_literally": "Upon hearing about the client's difficult situation, I could not exist without worrying.",
             "scene": "A business professional is debriefing their manager about a meeting with a client. The client's circumstances are severe, and the professional feels a genuine, unavoidable sense of concern.",
@@ -123,7 +125,7 @@
             "nuance": "Using 「心配せずにはいられませんでした」 in a professional setting emphasizes a genuine, uncontrollable empathy or concern, rather than a mere perfunctory worry. The polite past tense further elevates the formality and sincerity of the expression."
         },
         {
-            "japanese": "長時間、集中していると、眠くてあくびをせ{ずにはいられない}。",
+            "japanese": "長時間、集中 している と、眠く て あくび を せ { ずにはいられない }。",
             "english": "When I concentrate for a long time, I get so sleepy that I can't help but yawn.",
             "english_literally": "When I concentrate for a long time, being sleepy, I cannot exist without yawning.",
             "scene": "A student is explaining to a study partner why they keep yawning during a long study session. They are genuinely exhausted and find it impossible to suppress the yawns.",
@@ -145,7 +147,7 @@
             "nuance": "The phrase 「あくびをせずにはいられない」 highlights a physiological, uncontrollable response to an internal state (sleepiness). The casual register fits the context of a student speaking to a peer, making the admission of an involuntary action natural and relatable."
         },
         {
-            "japanese": "不公平な扱いを見たら、何も言わ{ずにはいられない}だろう。",
+            "japanese": "不公平 な 扱い を 見たら、何も 言わ { ずにはいられない } だろう。",
             "english": "If I saw unfair treatment, I probably couldn't help but say something.",
             "english_literally": "If I saw unfair treatment, I probably could not exist without saying anything.",
             "scene": "A person is discussing a hypothetical situation with a friend, asserting their strong moral stance. They believe that witnessing injustice would compel them to speak up, regardless of potential consequences.",
@@ -269,6 +271,18 @@
         {
             "change-type": "suggestion",
             "change": "Refined the 'kind' and 'nuance' fields for all 'false_friends' to provide clearer distinctions and better align with the schema's enum for 'kind'."
+        },
+        {
+            "change-type": "violation",
+            "change": "Added spaces between Japanese words in all example sentences to comply with rule-2."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added 'meaning_warning' to highlight the irregular conjugation of する verbs."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Refined 'formation' to explicitly detail the conjugation for する verbs."
         }
     ]
 }

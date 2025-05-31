@@ -12,7 +12,6 @@
     "meaning": "That (over there)",
     "details": {
         "part-of-speech": "adjective",
-        "register": "formal",
         "usage-context": "general"
     },
     "etymology": "「あの」 originates from the demonstrative series 「こ・そ・あ・ど」. 「あ」 indicates something distant from both the speaker and the listener. It is related to 「あれ」 and 「あそこ」, which also denote things or places 'over there.'",
@@ -72,8 +71,7 @@
             ],
             "register": "casual",
             "setting": "friendly",
-            "speaker_gender": "female",
-            "nuance": "The casual plain form 『です』 is appropriate for a casual introduction between friends. The phrase 『あの男の人』 clearly indicates a male person at a distance from both speakers."
+            "nuance": "The use of 『あの男の人』 clearly indicates a male person at a distance from both speakers, and the casual `です` is appropriate for an informal introduction between friends."
         },
         {
             "japanese": "{あの} 車 は あなた の です か？",
@@ -88,8 +86,6 @@
             ],
             "register": "semi-formal",
             "setting": "interrogative",
-            "speaker_gender": "male",
-            "listener_gender": "female",
             "nuance": "The polite form 『です か』 is suitable for a semi-formal interaction between colleagues. The question uses 『あの』 to refer to a car some distance from both speakers, implying a car that may not be immediately obvious."
         },
         {
@@ -105,8 +101,7 @@
             ],
             "register": "formal",
             "setting": "serious",
-            "speaker_gender": "male",
-            "nuance": "The formal tone is established by 『あの提案』 referring to a specific, perhaps formal, document, and the overall polite structure ending in 『ようです』, suggesting a careful observation in a business context. The speaker's gender doesn't inherently impact this specific phrasing, but the serious tone is typical of a professional environment."
+            "nuance": "The formal tone is established by 『あの提案』 referring to a specific, perhaps formal, document, and the overall polite structure ending in 『ようです』, suggesting a careful observation in a business context."
         },
         {
             "japanese": "{あの} 悲しい 歌 は いつも 私 を 泣か せ ます。",
@@ -119,32 +114,28 @@
                     "mitigation": "The scene implies a familiar song that is 'over there' in memory or on a distant playlist, not necessarily playing 'right now' near the speaker, distinguishing it from 『この』."
                 }
             ],
-            "register": "casual",
+            "register": "teineigo (polite)",
             "setting": "reflective",
-            "speaker_gender": "female",
-            "nuance": "The casual sentiment of 『泣かせます』 indicates a personal, emotional response. While the sentence structure itself is gender-neutral, the context of reflecting on a 'sad song' can often imply a more emotive or intimate expression often associated with female speakers in Japanese popular culture."
+            "nuance": "The use of `~ます` in `泣かせます` indicates a polite register. `あの悲しい歌` refers to a song that is emotionally distant or a memory, prompting a reflective and personal response."
         },
         {
-            "japanese": "{あの} 傘 を 取っ て ください。",
-            "english": "Please take that umbrella over there.",
-            "english_literally": "That umbrella (over there) please take.",
-            "scene": "A mother tells her child to grab an umbrella from a rack near the front door, which is a few steps away.",
+            "japanese": "{あの} カバン を 取っ て ください。",
+            "english": "Please take that bag over there.",
+            "english_literally": "That bag (over there) please take.",
+            "scene": "A mother tells her child to grab a bag from a rack near the front door, which is a few steps away.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "{その} 傘 を 取っ て ください。",
-                    "mitigation": "The scene specifies the umbrella is 'a few steps away' from both, implying it's not directly next to the listener, guiding towards 『あの』 rather than 『その』."
+                    "competing_grammar": "{その} カバン を 取っ て ください。",
+                    "mitigation": "The scene specifies the bag is 'a few steps away' from both, implying it's not directly next to the listener, guiding towards 『あの』 rather than 『その』."
                 },
                 {
                     "competing_grammar": "{あれ} を 取っ て ください。",
-                    "mitigation": "The instruction is to pick up a specific item, 'umbrella,' emphasizing the need for a noun modifier, thus favoring 『あの』 over the pronoun 『あれ』."
+                    "mitigation": "The instruction is to pick up a specific item, 'bag,' emphasizing the need for a noun modifier, thus favoring 『あの』 over the pronoun 『あれ』."
                 }
             ],
-            "register": "casual",
+            "register": "teineigo (polite)",
             "setting": "instructional",
-            "speaker_gender": "female",
-            "listener_gender": "male",
-            "speaker_age": "older",
-            "nuance": "The phrase 『取ってください』 is a standard polite request. The mother, being 『older』 and female, uses 『あの』 to direct her child to an item that is visually distinct and slightly distant from both of them. This is a common phrase used in a familial context."
+            "nuance": "The phrase 『取ってください』 is a standard polite request. 『あのカバン』 directs attention to an item that is visually distinct and slightly distant from both the speaker and listener, common in everyday instructions."
         }
     ],
     "false_friends": [
@@ -253,6 +244,26 @@
         {
             "change-type": "suggestion",
             "change": "Updated false_friends nuances to be more precise regarding あの's distinction as a pre-noun adjectival modifying distant nouns, compared to pronouns or adverbs."
+        },
+        {
+            "change-type": "violation",
+            "change": "Removed 'register' from 'details' as 'あの' is a register-neutral demonstrative and does not inherently possess a formal register."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Modified the seventh example sentence to use 'カバン' (bag) instead of '傘' (umbrella) to ensure vocabulary appropriateness for the N5 JLPT level."
+        },
+        {
+            "change-type": "violation",
+            "change": "Removed 'speaker_gender', 'listener_gender', and 'speaker_age' from examples 3, 4, 5, 6, and 7 because the Japanese phrases in those sentences did not inherently convey gender or age specificity from the speaker's side, adhering to the rule that these fields should only be present if the gender/age actually matters in the context of the spoken Japanese."
+        },
+        {
+            "change-type": "unnatural",
+            "change": "Corrected 'register' from 'casual' to 'teineigo (polite)' for examples 6 and 7 to accurately reflect the polite forms used (～ます, ～ください)."
+        },
+        {
+            "change-type": "unnatural",
+            "change": "Updated 'nuance' fields for examples 3, 4, 5, 6, and 7 to remove gender/age-specific interpretations after corresponding speaker/listener/age fields were removed, ensuring the nuance accurately reflects only the linguistic features of the sentence and its register."
         }
     ]
 }

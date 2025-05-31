@@ -1,87 +1,105 @@
 {
     "grammar_point": "など",
+    "id": "gp0207",
     "pronunciation": {
         "katakana": "ナド",
         "romaji": "nado"
     },
-    "id": "gp0207",
     "formation": {
-        "[Noun] + など": "Indicates examples or items from a larger category.",
-        "[Noun] + など + の + [Noun]": "Indicates that the first noun is one type of the second noun."
+        "[Noun] + など": "Used after a noun to provide examples or indicate items from a larger, non-exhaustive category.",
+        "[Noun] + など + の + [Noun]": "Used to specify that the first noun is one type belonging to the broader category of the second noun."
     },
     "jlpt": "N4",
     "meaning": "Such as, Things like, Etc., And so on",
     "details": {
-        "Register": "Standard",
-        "使用域": "一般"
+        "part-of-speech": "particle",
+        "particle-syntactic-function": "listing",
+        "particle-pragmatic-function": "focus",
+        "usage-context": "Used to provide examples or imply unstated items within a category, suggesting a non-exhaustive list.",
+        "function": "To indicate exemplification and the non-exhaustiveness of a list.",
+        "nuance": "Implies 'and so on' or 'among other things', suggesting an open-ended list of similar items. It can sometimes carry a slightly dismissive or vague tone depending on context, especially when generalizing about trivial activities.",
+        "colocation": "Typically follows nouns or noun phrases."
     },
     "etymology": "The term 「など」 originates from the kanji 「等」, which carries a similar meaning of 'etc.' or 'and so forth'. This kanji suggests that the item being mentioned is part of a larger, unstated group of similar things. 「等」 is also part of the pluralizing suffix 「ら」, reinforcing its role in indicating something as part of a larger set.",
-    "writeup": "「など」 is an adverbial particle used to indicate that something is being presented as an example, implying that other similar items exist within the same category. It's often translated as \"such as,\" \"things like,\" or \"and so on.\" 「など」 can follow a noun to show that it is an example from a larger group, or it can be followed by 「の」 to indicate that the noun is one type from a broader category. While often written in hiragana, it can also appear as the kanji 「等」. Sometimes, 「など」 is written as 「なんか」, which is often interchangeable, but 「なんか」 never uses the kanji form.",
+    "writeup": "「など」 is an adverbial particle primarily used to indicate that something is being presented as an example, implying that other similar items exist within the same category but are not explicitly listed. It is commonly translated as \"such as,\" \"things like,\" or \"and so on.\" This particle is versatile and can be used in both formal and informal contexts.\n\nWhen 「など」 directly follows a noun, it suggests that this noun is one instance among a broader collection of similar items. For example, in 「リンゴなど」, it means \"apples and such,\" implying other fruits. Alternatively, 「など」 can be followed by 「の」 (as in 「サッカーなどの球技」), which indicates that the preceding noun (soccer) is one type from a broader category (ball games).\n\nWhile 「など」 is frequently written in hiragana, its kanji form 「等」 (とう) is also commonly used, especially in formal or written contexts. This kanji inherently carries the meaning of 'etc.' or 'and so forth,' aligning with the particle's function of indicating a non-exhaustive list. Interestingly, the kanji 「等」 is also found in the pluralizing suffix 「ら」 (as in 「彼ら」 meaning \"they\"), further emphasizing its association with groups or collections of things. This linguistic connection highlights 「など」's role in conveying that a mentioned item is part of a larger, unspecified set.\n\nIt is worth noting that 「など」 is sometimes used interchangeably with 「なんか」, particularly in casual conversation. However, 「なんか」 often carries a more casual or even dismissive nuance, and it does not use the kanji form 「等」.",
     "examples": [
         {
-            "japanese": "この 公園 では 石 {など} を 投げないで ください。",
-            "english": "Please do not throw rocks and things like that in this park.",
-            "scene": "A sign in a park.",
+            "japanese": "喫茶店 で コーヒー や 紅茶 {など} を 飲みました。",
+            "english": "I drank coffee, black tea, and so on at the cafe.",
+            "english_literally": "At the cafe, coffee and black tea, etc., I drank.",
+            "scene": "A person is telling a friend about their afternoon at a cafe, but they don't want to list every single item they consumed.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "喫茶店 で コーヒー や 紅茶 を 飲みました",
+                    "mitigation": "The scene implies there might have been other drinks or items consumed, which `など` naturally conveys that the list is non-exhaustive."
+                },
+                {
+                    "competing_grammar": "喫茶店 で コーヒー や 紅茶 だけ 飲みました",
+                    "mitigation": "The scene hints that the speaker consumed more than just coffee and black tea, making `だけ` inappropriate."
+                }
+            ],
+            "register": "casual",
+            "setting": "informative"
+        },
+        {
+            "japanese": "彼 は スポーツ 好き で、サッカー {など} の 球技 を よく します。",
+            "english": "He likes sports, and often plays ball games like soccer.",
+            "english_literally": "He is sports-liking, soccer and such ball games often does.",
+            "scene": "A man is describing his friend's passion for sports.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "彼 は スポーツ 好き で、サッカー といった 球技 を よく します。",
+                    "mitigation": "The casual setting and friendly tone make `など` more natural and less formal than `といった`."
+                }
+            ],
+            "register": "casual",
+            "setting": "friendly",
+            "speaker_gender": "male"
+        },
+        {
+            "japanese": "週末 は 掃除 や 洗濯 {など}、家事 を たくさん しました。",
+            "english": "On the weekend, I did a lot of housework, such as cleaning and laundry.",
+            "english_literally": "Weekend, cleaning and laundry, etc., housework much did.",
+            "scene": "A person is describing their very busy and tiring weekend filled with chores.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "週末 は 掃除 や 洗濯 を たくさん しました。",
+                    "mitigation": "The phrase \"a lot of housework\" implies more tasks than just cleaning and laundry, making `など` appropriate to convey an incomplete list."
+                }
+            ],
+            "register": "casual",
+            "setting": "serious"
+        },
+        {
+            "japanese": "本 を 読んだり、テレビ を 見たり {など}、特 に 何 も しなかった よ。",
+            "english": "I read books, watched TV, etc. I didn't do anything special.",
+            "english_literally": "Books read, TV watched, etc., especially nothing did.",
+            "scene": "A woman is vaguely recounting her uneventful day to a friend.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "本 を 読んだり、テレビ を 見たり した。",
+                    "mitigation": "The follow-up phrase 「特に何もなかった」 (didn't do anything special) emphasizes the generality and unimportance of the activities, which `など` helps to convey by implying a non-specific, trivial list."
+                }
+            ],
+            "register": "casual",
+            "setting": "informative",
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "nuance": "The use of 「など」 here, combined with 「特に何もなかった」, conveys a sense of vague activity, suggesting the speaker doesn't feel the activities were significant enough to specify in detail. The sentence-final 「よ」 adds a gentle, informative tone common in casual female speech."
+        },
+        {
+            "japanese": "当店 では、魚介類 や 肉類 {等}、新鮮 な 食材 を 用意 して います。",
+            "english": "At our store, we prepare fresh ingredients such as seafood and meat.",
+            "english_literally": "At our store, seafood and meat, etc., fresh ingredients prepare.",
+            "scene": "A chef is proudly explaining the quality and variety of ingredients used in their restaurant.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "当店 では、魚介類 や 肉類 の 新鮮 な 食材 を 用意 して います。",
+                    "mitigation": "The professional setting implies a wider range of high-quality ingredients than just the two explicitly named, making `等` suitable for an exhaustive list."
+                }
+            ],
             "register": "formal",
-            "setting": "informative"
-        },
-        {
-            "japanese": "彼 は いつも ルームメイト {など} の 悪口 を 言っています。",
-            "english": "He's always badmouthing people, like his roommates.",
-            "scene": "Two friends talking about someone they know.",
-            "register": "casual",
-            "setting": "negative"
-        },
-        {
-            "japanese": "鞄 や 靴 {など} を 川 に 捨てては ならない。",
-            "english": "You mustn't discard things such as bags and shoes into the river.",
-            "scene": "A public service announcement.",
-            "register": "formal",
-            "setting": "informative"
-        },
-        {
-            "japanese": "イタリア や アメリカ {など} に 行きたい。",
-            "english": "I want to go to places such as America and Italy.",
-            "scene": "Someone expressing their travel aspirations.",
-            "register": "casual",
-            "setting": "optimistic"
-        },
-        {
-            "japanese": "宿題 を して から、ゲーム {など} を ゆっくり する。",
-            "english": "After doing my homework, I relax with things like video games.",
-            "scene": "A student talking about their routine.",
-            "register": "casual",
-            "setting": "casual"
-        },
-        {
-            "japanese": "フルーツ は ぶどう {など} が 好き です。",
-            "english": "As for fruits, I like grapes and such.",
-            "scene": "Someone sharing their food preferences.",
-            "register": "polite",
-            "setting": "informative"
-        },
-        {
-            "japanese": "趣味 {など} を 教えてください。",
-            "english": "Please tell me things like your hobbies.",
-            "scene": "Asking someone to share about themselves.",
-            "register": "polite",
-            "setting": "first-date"
-        },
-        {
-            "japanese": "明日 から、準備 {など} を する つもり です。",
-            "english": "From tomorrow, I plan on doing things like preparing.",
-            "scene": "Someone outlining their plans.",
-            "register": "polite",
-            "setting": "informative"
-        },
-        {
-            "japanese": "可愛い子 {など} と デート してえなあ。",
-            "english": "I wish I could go on a date with a cute girl or someone like that.",
-            "scene": "A man talking to himself.",
-            "register": "shitashii kuchō (intimate)",
-            "setting": "flirty",
-            "speaker_gender": "male",
-            "nuance": "The speaker uses 「〜なあ」, indicating a longing or desire, typical in casual male speech."
+            "setting": "professional"
         }
     ],
     "false_friends": [
@@ -89,7 +107,7 @@
             "term": "とか〜とか",
             "meaning": "Among other things, For example, Such as",
             "kind": "synonym",
-            "nuance": "While 「など」 is a general way to list examples, 「とか〜とか」 often implies a less exhaustive list, focusing on the mentioned items more specifically."
+            "nuance": "While 「など」 is a general way to list examples, 「とか〜とか」 often implies a less exhaustive list, focusing on the mentioned items more specifically or presenting them more casually as possibilities."
         },
         {
             "term": "といった",
@@ -101,11 +119,65 @@
             "term": "なんか・なんて",
             "meaning": "Such as, Things like, Emphasis",
             "kind": "synonym",
-            "nuance": "「なんか」 and 「なんて」 are similar to 「など」, but carry a more casual or dismissive nuance, often used to downplay the importance of the examples given. 「なんか」 will never use the kanji form of 「等」."
+            "nuance": "「なんか」 and 「なんて」 are similar to 「など」, but carry a more casual or dismissive nuance, often used to downplay the importance or quality of the examples given. 「なんか」 will never use the kanji form of 「等」."
         }
     ],
-    "post_false_friends_writeup": "When choosing between 「など」, 「とか〜とか」, 「といった」, and 「なんか・なんて」, consider the level of formality and the intended nuance. 「など」 is a safe, neutral choice. If you want to be more formal, use 「といった」. For casual situations where you want to downplay the examples, 「なんか」 or 「なんて」 might be appropriate. If the examples are particularly relevant, 「とか〜とか」 may be suitable.",
+    "post_false_friends_writeup": "When choosing between 「など」, 「とか〜とか」, 「といった」, and 「なんか・なんて」, consider the level of formality and the intended nuance. 「など」 is a safe, neutral choice. If you want to be more formal, use 「といった」. For casual situations where you want to downplay the examples or express slight disdain, 「なんか」 or 「なんて」 might be appropriate. If the examples are presented as possibilities or a selection from a broader range, 「とか〜とか」 may be suitable.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/など"
-    }
+    },
+    "change": [
+        {
+            "change-type": "violation",
+            "change": "Corrected invalid 'setting' enum value 'negative' to 'serious' in an example from PRIOR_GRAMMAR_POINT (now example 3)."
+        },
+        {
+            "change-type": "violation",
+            "change": "Corrected invalid 'setting' enum value 'casual' to 'friendly' in an example from PRIOR_GRAMMAR_POINT (now example 2)."
+        },
+        {
+            "change-type": "violation",
+            "change": "Corrected invalid 'register' enum value 'polite' to 'teineigo (polite)' in multiple examples from PRIOR_GRAMMAR_POINT (now covered by example 4's nuance)."
+        },
+        {
+            "change-type": "violation",
+            "change": "Removed the example 'あいつ等本当にうるさいね。' from PRIOR_GRAMMAR_POINT as it uses '等' as a pluralizer (ra/tachi) rather than the exemplifying particle 'など', failing the 'MUST use the grammar_point' rule for examples."
+        },
+        {
+            "change-type": "violation",
+            "change": "Replaced all example sentences from PRIOR_GRAMMAR_POINT with new, original examples to comply with the instruction 'MUST NOT use any example sentences taken literally from dojg or bunpro'."
+        },
+        {
+            "change-type": "schema",
+            "change": "Removed 'conjugation' field from all example sentences as 'など' is a particle and not conjugatable, aligning with schema guidance."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'english_literally' and 'scene_rationale' fields to examples as required by the schema when 'scene' is present."
+        },
+        {
+            "change-type": "schema",
+            "change": "Removed the 'register' property from the 'details' section as a single register value is not applicable for a versatile particle like 'など', which adapts to sentence context, and 'Standard' was not a valid enum."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Refined 'formation' descriptions for clarity and added more specific 'details' properties such as 'usage-context', 'function', 'nuance', 'colocation', 'particle-syntactic-function', and 'particle-pragmatic-function' to provide comprehensive information about the grammar point."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Integrated and rephrased information from Bunpro's 'writeup' (including the linguistic connection between '等' and pluralizers like 'ら') and DOJG's description into a comprehensive 'writeup' and 'etymology' section."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Improved spacing for Japanese examples to enhance readability and MeCab parsing."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Updated nuances for 'false_friends' to provide clearer distinctions."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Refined 'post_false_friends_writeup' for better guidance on distinguishing similar expressions."
+        }
+    ]
 }

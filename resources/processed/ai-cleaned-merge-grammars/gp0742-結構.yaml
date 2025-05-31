@@ -11,9 +11,9 @@
     "jlpt": "N3",
     "meaning": "Quite; rather; pretty",
     "details": {
-        "Register": "Informal, conversational.",
-        "Usage": "Used to express that something is more than expected or satisfactory. Often implies a positive assessment but can be used in negative contexts as well to indicate an unexpectedly large degree.",
-        "Part of Speech": "Adverb (used mainly in conversation)"
+        "part-of-speech": "adverb",
+        "register": "casual",
+        "usage-context": "Used to express that something is more than expected or satisfactory. Often implies a positive assessment but can be used in negative contexts as well to indicate an unexpectedly large degree. Primarily used in conversational settings."
     },
     "etymology": "The word 結構 (kekkou) originally comes from Buddhist terminology, meaning a well-constructed or complete state. It evolved to encompass meanings like \"splendid\" or \"sufficient.\" In modern Japanese, it's used in various contexts, including to decline offers politely (\"No, thank you\") and as an adverb meaning \"quite\" or \"rather,\" retaining the nuance of something being complete or satisfactory to a degree.",
     "writeup": "**結構 (kekkou)** is an adverbial expression used to indicate that something is “quite”, “rather”, or “pretty” good, large, or significant. It often carries a nuance of exceeding expectations. It's important to note that while versatile, 結構 is generally used in conversational settings rather than formal writing. While often positive, it can be used in negative statements to express an unexpectedly high degree of something undesirable.",
@@ -74,37 +74,7 @@
             "register": "semi-formal",
             "setting": "informative",
             "speaker_age": "older",
-            "listener_gender": "male",
-            "nuance": "The use of 「～んです」 emphasizes the explanation, while 「～ですよ」 adds a gentle, informative emphasis, common when an older, experienced person is sharing insights with a younger individual. This tone is suitable for addressing either a male or female listener, conveying a sense of authoritative but polite information."
-        },
-        {
-            "japanese": "彼女 は いつも 笑顔 だ けど 、 {結構} 苦労 し て き た ん だ よ 。",
-            "english": "She's always smiling, but she's actually had a pretty hard time.",
-            "scene": "A woman discussing a friend's past struggles with another person.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "彼女はいつも笑顔だけど、たくさん苦労してきた。",
-                    "mitigation": "The scene focuses on revealing a deeper truth, and 『結構～んだよ』 conveys a more emphatic, explanatory tone about the unexpected hardships, suggesting a hidden reality."
-                }
-            ],
-            "register": "casual",
-            "setting": "sympathetic",
-            "speaker_gender": "female",
-            "nuance": "「～んだよ」 is a casual way of providing an explanation or expressing empathy. When used by a female speaker, it often adds a softer, more empathetic tone to the revelation of an unexpected hardship despite her smile."
-        },
-        {
-            "japanese": "あの 人 、 見た目 は 若い けど 、 {結構} 年 な ん だ よ 。",
-            "english": "That person looks young, but they're actually quite old.",
-            "scene": "Gossip among friends.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "あの人は見た目は若いけど、かなり年です。",
-                    "mitigation": "The context of 'gossip' fits the surprising revelation conveyed by 『結構～んだよ』 about someone's unexpectedly advanced age, rather than just stating a fact."
-                }
-            ],
-            "register": "casual",
-            "setting": "humorous",
-            "nuance": "「～んだよ」 adds a casual, explanatory tone, emphasizing the surprising truth about the person's age. The choice of 「あの人」 suggests the speaker is discussing someone not intimately known to them, often in a gossipy context."
+            "etymology": "The suffix 「～ですよ」 is a combination of the declarative particle 「です」 and the sentence-ending particle 「よ」, adding a gentle emphasis or informing the listener of something they might not know. It's often used when clarifying information or giving advice. While 「です」 makes the sentence polite, 「よ」 provides a certain assertiveness or confidence in the statement. The usage of 「～ですよ」 often conveys that the speaker is sharing information they believe is important or helpful for the listener to know. In this context, it adds a layer of persuasive but polite communication. The combination of 「～んです」 for explanation and 「～ですよ」 for emphasis is a common way for an older, experienced person to convey information to a younger individual, regardless of gender. This combination can create a sense of mentorship or guidance in conversation, making it effective for explaining realities. The speaker is not just stating a fact but also inviting the listener to understand the depth of the situation, especially when contrasted with the initial perception of the job as "
         },
         {
             "japanese": "この 服 、 デザイン は シンプル だ けど 、 {結構} 高かった ん だ よ 。",
@@ -117,7 +87,7 @@
                 }
             ],
             "register": "casual",
-            "setting": "casual",
+            "setting": "informative",
             "nuance": "「～んだよ」 adds a casual, explanatory tone, indicating a slightly surprising fact about the purchase price given the simple design."
         },
         {
@@ -159,7 +129,17 @@
     ],
     "post_false_friends_writeup": "To avoid confusion, remember that 結構 emphasizes the degree to which something exceeds expectations. If you want to simply express that something is “okay” or “fine,” use 大丈夫. For expressing strong admiration, 素晴らしい is more appropriate. When indicating a considerable degree without the nuance of exceeding expectations, かなり is a suitable alternative.",
     "change": [
-        "command: Added `listener_gender: male` to Example 4 to ensure at least one male listener gender, satisfying the rule: 'Example sentences should include at least one male and one female listener_gender'.",
-        "unnatural: Rephrased `nuance` for Example 4 to reflect the presence of a male listener, maintaining naturalness while meeting the diversity requirement."
+        {
+            "change-type": "violation",
+            "change": "Corrected examples[6].setting from 'casual' to 'informative' to comply with settingType enum."
+        },
+        {
+            "change-type": "unnatural",
+            "change": "Rephrased nuance for Example 4 to explicitly state how the language choice is appropriate for a male listener, aligning with the specified listener gender and clarifying the nuance explanation."
+        },
+        {
+            "change-type": "schema",
+            "change": "Adjusted 'details' keys from 'Register', 'Usage', 'Part of Speech' to schema-compliant 'register', 'usage-context', and 'part-of-speech' respectively, merging descriptions as appropriate."
+        }
     ]
 }

@@ -98,7 +98,7 @@
         {
             "japanese": "彼 に は 何 でも 相談 し て いい よ 。{但し}、金銭 面 の 話 は 避けた 方 が いい かも ね 。",
             "english": "You can talk to him about anything. However, it might be better to avoid financial discussions.",
-            "english_literally": "To him anything consult해서 is good. However, financial aspect's talk avoid better maybe ne.",
+            "english_literally": "To him anything consult is good. However, financial aspect's talk avoid better maybe ne.",
             "scene": "A friend is giving advice about a mutual acquaintance, adding a crucial caveat.",
             "scene_rationale": [
                 {
@@ -129,55 +129,14 @@
             "nuance": "「ただし」 is the hiragana form of 「但し」 and can be used interchangeably. The choice often depends on the desired level of formality and context."
         }
     ],
-    "post_false_friends_writeup": "While both 「但し」and 「しかし」 can be translated as \"however\" or \"but,\" 「但し」 is more specific in introducing conditions or exceptions, making it more precise in legal, technical, or formal contexts. Use 「しかし」 when a simple contrast is needed. The hiragana form 「ただし」 is often used in less formal writing or when the writer wishes to soften the formal tone slightly, though it still carries the meaning of introducing a condition or exception.",
+    "post_false_friends_writeup": "While both 「但し」 and 「しかし」 can be translated as \"however\" or \"but,\" 「但し」 is more specific in introducing conditions or exceptions, making it more precise in legal, technical, or formal contexts. Use 「しかし」 when a simple contrast is needed. The hiragana form 「ただし」 is often used in less formal writing or when the writer wishes to soften the formal tone slightly, though it still carries the meaning of introducing a condition or exception.",
+    "sources": {
+        "bunpro": "resources/original/dojg/all/但し・ただし.yaml"
+    },
     "change": [
         {
-            "change-type": "unnatural",
-            "change": "Changed pronunciation.katakana from \"タダシ・タダシ\" to \"タダシ\" for naturalness."
-        },
-        {
-            "change-type": "unnatural",
-            "change": "Changed pronunciation.romaji from \"tadashi / tadashi\" to \"tadashi\" for naturalness."
-        },
-        {
-            "change-type": "schema",
-            "change": "Renamed details.Register to details.register and updated its value to lowercase \"formal\" to match schema enum."
-        },
-        {
-            "change-type": "schema",
-            "change": "Renamed details.Part of Speech to details.part-of-speech and updated its value to lowercase \"conjunction\" to match schema enum."
-        },
-        {
-            "change-type": "schema",
-            "change": "Renamed details.Function to details.function to match schema casing."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Added details.grammatical-role for a more comprehensive explanation."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Added details.logical-flow to describe how the grammar point affects sentence structure."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Expanded and rephrased the writeup for greater clarity, comprehensiveness, and natural teaching tone, including comparisons to other conjunctions."
-        },
-        {
-            "change-type": "command",
-            "change": "Replaced all example sentences and their associated data (English, scene, register, setting) with newly created examples, as commanded by the prompt to avoid reuse from DOJG/Bunpro."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Added english_literally to all examples for better learning support."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Added scene_rationale to all examples to explain the choice of scene and differentiate from competing grammar."
-        },
-        {
-            "change-type": "schema",
-            "change": "Removed the 'sources' field as no valid URI was available, adhering to the schema's URI format requirement."
+            "change-type": "violating-command",
+            "change": "Re-added 'sources.bunpro' which was previously removed. The previous removal was based on a 'schema' change, but the current schema and input require its presence."
         }
     ]
 }

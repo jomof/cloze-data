@@ -37,14 +37,15 @@
             "scene": "A project manager addressing a team member who is expressing reservations about joining a critical task.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "あなたが {行っても} {行かなくても}",
+                    "competing_grammar": "あなたが 行っても 行かなくても",
                     "mitigation": "The scene portrays a professional setting where the manager needs to convey a decisive and unwavering commitment to the plan, irrespective of individual participation. 「ようと・が」 emphasizes this categorical certainty more strongly than the simpler and less formal 「ても・なくても」 construction."
                 }
             ],
             "register": "formal",
             "setting": "professional",
             "speaker_gender": "male",
-            "listener_gender": "female"
+            "listener_gender": "female",
+            "nuance": "The formal tone of 「ようと・が」 combined with the direct statement 「実行されます」 emphasizes the manager's firm resolve and the non-negotiable nature of the plan, irrespective of the individual's participation."
         },
         {
             "japanese": "どんなに 忙しかろうと 、睡眠時間は 確保すべきだ。",
@@ -52,7 +53,7 @@
             "scene": "A medical professional advising a patient with a demanding schedule on the importance of self-care.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "どんなに {忙しくても}",
+                    "competing_grammar": "どんなに 忙しくても",
                     "mitigation": "The scene sets up a scenario where expert advice is being given. 「ようと・が」 conveys a stronger, more emphatic message about the absolute necessity of sleep, regardless of the degree of busyness, which aligns with the authority of medical advice better than the more general 「ても」."
                 }
             ],
@@ -65,7 +66,7 @@
             "scene": "A factory supervisor conducting a mandatory safety briefing for all personnel.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "社員{でも} パート{でも}",
+                    "competing_grammar": "社員でも パートでも",
                     "mitigation": "The instructional setting requires a clear, unambiguous statement that applies universally to all present. 「であろうと・が」 provides a more formal and categorical emphasis on the equality of rules for all employees, fitting the supervisor's role in enforcing regulations more effectively than the less formal 「でも」."
                 }
             ],
@@ -78,14 +79,15 @@
             "scene": "A coach giving a supportive speech to a sports team immediately after a challenging match.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "結果が どう{でも}",
+                    "competing_grammar": "結果が どうでも",
                     "mitigation": "The context calls for a supportive and reflective tone, reassuring the team that their effort was paramount regardless of the outcome. 「ようと・が」 emphasizes the irrelevance of the result in the face of their sustained effort more powerfully than the more casual 「でも」, which might sound too direct or dismissive."
                 }
             ],
             "register": "semi-formal",
             "setting": "supportive",
             "speaker_gender": "male",
-            "listener_gender": "group"
+            "listener_gender": "group",
+            "nuance": "The use of 「だろうと」 in this context, coupled with the coach's supportive role, highlights an acceptance of any outcome while emphasizing the value of their collective effort. This creates a reassuring tone for the group."
         },
         {
             "japanese": "プロの 作品であろうと 素人の 作品であろうと 、質の 高い ものを 評価します。",
@@ -93,7 +95,7 @@
             "scene": "A judge explaining the impartial criteria for evaluation at an art exhibition.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "プロの 作品{でも} 素人の 作品{でも}",
+                    "competing_grammar": "プロの 作品でも 素人の 作品でも",
                     "mitigation": "In an academic or judging context, it's crucial to convey strict impartiality and objective criteria. 「であろうと・が」 clearly communicates that the status of the artist is irrelevant to the evaluation, which is a more formal and precise statement than the simpler 「でも」."
                 }
             ],
@@ -114,6 +116,12 @@
             "meaning": "even if, no matter what",
             "kind": "similar expression",
             "nuance": "「ようとも」 is very similar in meaning to 「ようと・が」, but it can carry a stronger emphasis on resolution or determination in the face of the condition, whereas 「ようと・が」 often implies a more detached acceptance."
+        },
+        {
+            "term": "でも",
+            "meaning": "even, but, however",
+            "kind": "similar expression",
+            "nuance": "While 「でも」 can express \"even if\" in a simpler, more casual way, 「ようと・が」 conveys a stronger, more formal sense of indifference or irrelevance of the condition to the outcome. 「でも」 is more versatile and can also indicate \"but\" or \"however,\" which 「ようと・が」 cannot."
         }
     ],
     "post_false_friends_writeup": "While 「ても」, 「ようと」, and 「ようとも」 all express concession, 「ようと・が」 is typically reserved for more formal contexts and emphasizes the idea that the condition does not affect the outcome, often implying indifference or a categorical statement. 「ても」 is more general and widely applicable in various registers, and 「ようとも」 often carries a stronger nuance of resolve or determination despite the concession.",
@@ -156,6 +164,18 @@
         {
             "change-type": "schema",
             "change": "Removed 'conjugation' field from examples as the top-level 'conjugations' array was removed, making this field irrelevant for this grammar point."
+        },
+        {
+            "change-type": "violation",
+            "change": "Added 'nuance' field to example 2, as it was missing despite the presence of speaker and listener genders."
+        },
+        {
+            "change-type": "violation",
+            "change": "Added 'nuance' field to example 5, as it was missing despite the presence of speaker and listener genders."
+        },
+        {
+            "change-type": "violation",
+            "change": "Added 'でも' to the 'false_friends' array, as it appeared in the 'competing_grammar' of several examples' 'scene_rationale' but was not listed as a false friend."
         }
     ]
 }

@@ -7,164 +7,161 @@
     },
     "formation": {
         "[Amount] + 以上": "Indicates a minimum quantity or value.",
-        "これ + 以上": "Indicates 'more than this' or 'beyond this point'."
+        "これ + 以上": "Indicates 'more than this' or 'beyond this point'.",
+        "[Statement/List] + 以上です/以上になります": "Indicates the conclusion of a statement or list."
     },
     "jlpt": "N4",
     "meaning": "More than or equal to; That's all.",
-    "meaning_warning": "Actual Amount ≥ Amount + Counter",
     "details": {
-        "Register": "Standard",
-        "使用域": "一般"
+        "part-of-speech": "phrase",
+        "register": "teineigo (polite)",
+        "usage-context": "general"
     },
-    "etymology": "以上 is composed of the kanji 以 (i), meaning \"by means of,\" and 上 (jō), meaning \"above.\" Together, they literally signify \"by means of above,\" indicating a quantity that meets or exceeds a specified value. Its secondary meaning of \"that's all\" or \"the end\" derives from a similar literal interpretation, meaning \"the things mentioned above are all.\"",
-    "writeup": "以上 (ijō) is a crucial expression used to indicate that a quantity, value, or state is \"equal to or more than\" a specified point. It establishes a **minimum** threshold. When attached to an amount, it highlights this amount as the minimum requirement or quantity. For instance, 「100人以上」 means \"100 people or more.\" This usage combines the kanji 以 (i), meaning \"by means of,\" and 上 (jō), meaning \"above,\" literally conveying \"by means of being above.\" It can be broadly translated as \"more than,\" \"over,\" \"greater than,\" or \"exceeding,\" always with the understanding that the specified value itself is included.\n\nBeyond expressing minimum quantities, 以上 is also commonly used as a concluding statement, akin to \"that's all,\" \"the end,\" or \"nothing more.\" In this context, it literally means \"the above (list of things mentioned) is all.\" While saying \"the end\" might sound abrupt in English when concluding a list or an order, it is perfectly natural and polite in Japanese. This makes 以上 highly versatile, appearing in formal announcements, casual conversations, and transactional settings.",
+    "etymology": "以上 is composed of the kanji 以 (i), meaning \"by means of,\" and 上 (jō), meaning \"above.\" Together, they literally signify \"by means of above,\" indicating a quantity that meets or exceeds a specified value. Its secondary meaning of \"that's all\" or \"the end\" derives from a similar literal interpretation, meaning \"the above (list of things mentioned) is all.\"",
+    "writeup": "以上 (ijō) is a crucial and versatile Japanese expression. It primarily functions in two distinct ways:\n\n1.  **\"More than or equal to\" / \"At least\"**: When 以上 is attached to a quantity, value, or number, it sets a **minimum threshold**, including the specified amount itself. For example, 「100人以上」 (hyakunin ijō) means \"100 people or more.\" This usage combines the kanji 以 (i), meaning \"by means of,\" and 上 (jō), meaning \"above,\" literally conveying \"by means of being above or at this level.\" It can be translated as \"more than,\" \"over,\" \"greater than,\" or \"exceeding,\" always with the understanding that the specified value is included.\n\n2.  **\"That's all\" / \"The end\" / \"Nothing more\"**: In this context, 以上 is used as a concluding statement, signifying that a list, explanation, or request is complete. It often appears as 「以上です」 (ijō desu) or 「以上になります」 (ijō ni narimasu). This usage literally means \"the above (list of things mentioned) is all.\" While saying \"the end\" might sound abrupt or demanding in English when concluding a list or an order, it is perfectly natural, polite, and common in Japanese business settings, presentations, and transactional situations.",
     "examples": [
         {
-            "japanese": "六歳{以上}。",
-            "english": "Ages 6 and over.",
-            "scene": "You are reading an instruction manual or a sign at an amusement park about age restrictions for an attraction.",
+            "japanese": "この 箱 には リンゴ が ５つ{以上} 入 (はい) っています。",
+            "english": "This box contains at least five apples.",
+            "english_literally": "This box, as for apples, five or more, entered.",
+            "scene": "Someone is checking the contents of a box of fruit.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "6歳から。",
-                    "mitigation": "While 「6歳から」 can indicate 'from 6 years old onwards', it doesn't explicitly state '6 or older' as clearly as 「以上」, which includes the exact age. The instructional setting clarifies the precise meaning of the minimum age."
+                    "competing_grammar": "この 箱 には リンゴ が ５つ 入 っています。",
+                    "mitigation": "「5つ入っています」 would imply exactly five apples. The scene of checking contents requires the inclusivity of 「以上」 to account for a minimum count."
                 },
                 {
-                    "competing_grammar": "6歳より。",
-                    "mitigation": "「6歳より」 is grammatically less natural for age thresholds and more commonly implies 'more than 6', potentially excluding 6 itself. The formal instruction setting points to the inclusive nature of 「以上」."
+                    "competing_grammar": "この 箱 には リンゴ が ５つより 多く 入 っています。",
+                    "mitigation": "「5つより多く入っています」 means strictly more than five. The use of 「以上」 indicates that five is the minimum, which is more natural when verifying a lower bound for inventory."
+                }
+            ],
+            "register": "casual",
+            "setting": "informative"
+        },
+        {
+            "japanese": "その 仕事 には ３年{以上}の 経験 (けいけん) が 必要 (ひつよう) だ。",
+            "english": "That job requires at least three years of experience.",
+            "english_literally": "That job, as for experience, three years or more, is necessary.",
+            "scene": "A hiring manager is reviewing job requirements for a new position.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "その 仕事 には ３年間の 経験 が 必要 だ。",
+                    "mitigation": "「3年間の経験」 means three years of experience, but doesn't specify 'at least'. The context of job requirements implies a minimum, which 「以上」 clarifies."
+                },
+                {
+                    "competing_grammar": "その 仕事 には ３年を 超える 経験 が 必要 だ。",
+                    "mitigation": "「3年を超える経験」 implies strictly more than three years. Job requirements usually include the stated minimum, making 「以上」 more appropriate."
                 }
             ],
             "register": "formal",
-            "setting": "instructional"
-        },
-        {
-            "japanese": "70歳{以上}の人は運転をしない方がいい。",
-            "english": "It would be better if people over the age of 70 didn't drive.",
-            "scene": "A general discussion about road safety and age-related driving capabilities.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "70歳を超える人は運転をしない方がいい。",
-                    "mitigation": "「70歳を超える」 emphasizes strictly exceeding 70, potentially excluding those exactly 70 years old. The nuanced advisory context suggests that 70-year-olds are also part of the group for whom not driving is advisable, aligning with the inclusive nature of 「以上」."
-                },
-                {
-                    "competing_grammar": "70歳より上の人は運転をしない方がいい。",
-                    "mitigation": "「70歳より上」 is similar to 「70歳を超える」 in implying strict exclusion of 70. The general recommendation for safety includes individuals who are 70 years old, making 「以上」 the more appropriate and inclusive expression."
-                }
-            ],
-            "register": "semi-formal",
             "setting": "informative"
         },
         {
-            "japanese": "コンサートには500人{以上}のファンが集まった。",
-            "english": "More than 500 fans gathered at the concert.",
-            "scene": "A reporter is describing the attendance at a popular music event.",
+            "japanese": "彼女 (かのじょ) は 毎日 (まいにち) ２時間{以上} 勉強 (べんきょう) している。",
+            "english": "She studies for at least two hours every day.",
+            "english_literally": "She, every day, two hours or more, is studying.",
+            "scene": "A student is describing their study habits to a friend.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "コンサートには500人を超えるファンが集まった。",
-                    "mitigation": "「500人を超える」 would imply strictly more than 500, excluding the possibility of exactly 500. The general statement about attendance is best conveyed by 「以上」, which includes 500."
+                    "competing_grammar": "彼女 は 毎日 ２時間 勉強 している。",
+                    "mitigation": "「2時間勉強している」 implies exactly two hours. The nuance of 'at least' suggests going beyond the minimum, which 「以上」 conveys better."
                 },
                 {
-                    "competing_grammar": "コンサートには500人より多くのファンが集まった。",
-                    "mitigation": "「500人より多くのファン」 means strictly more than 500. The description of a crowd size generally uses 「以上」 to encompass the stated number as a minimum, allowing for precision in reporting attendance."
+                    "competing_grammar": "彼女 は 毎日 ２時間より 多く 勉強 している。",
+                    "mitigation": "「2時間より多く勉強している」 implies strictly more than two hours. 「以上」 includes the two-hour mark, which is a more common way to describe consistent study time."
                 }
             ],
-            "register": "semi-formal",
+            "register": "casual",
             "setting": "informative"
         },
         {
-            "japanese": "その時に100人{以上}も参加した。",
-            "english": "More than 100 people attended at that time.",
-            "scene": "Someone is recounting the successful turnout for a past event.",
+            "japanese": "その 山 (やま) は 標高 (ひょうこう) 3000メートル{以上}だ。",
+            "english": "That mountain is at least 3000 meters above sea level.",
+            "english_literally": "That mountain, as for elevation, 3000 meters or more, is.",
+            "scene": "A geographer is presenting facts about a mountain range.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "その時に100人を超える人が参加した。",
-                    "mitigation": "While 「100人を超える」 is grammatically correct for 'more than 100', 「以上」 naturally includes the 100 mark, making it a more inclusive and direct way to express the minimum number of participants in a narrative context."
+                    "competing_grammar": "その 山 は 標高 3000メートルある。",
+                    "mitigation": "「3000メートルある」 means it is 3000 meters, which doesn't specify it's a minimum. The precise factual context requires 「以上」 to convey the minimum elevation."
                 },
                 {
-                    "competing_grammar": "その時に100人より多くの人が参加した。",
-                    "mitigation": "「100人より多くの人」 emphasizes 'more than 100' by strict comparison. The use of 「以上」 effectively conveys '100 or more', which is a common and concise way to state minimum attendance figures when reflecting on an event's success."
+                    "competing_grammar": "その 山 は 標高 3000メートルを 超える。",
+                    "mitigation": "「3000メートルを超える」 means strictly more than 3000 meters. For a general statement of a mountain's elevation, 「以上」 is more encompassing."
                 }
             ],
-            "register": "semi-formal",
-            "setting": "storytelling"
+            "register": "formal",
+            "setting": "informative"
         },
         {
-            "japanese": "このアップルパイは、３日{以上}かけて作ったんだ。",
-            "english": "I spent more than three days making this apple pie.",
-            "scene": "A home baker is proudly presenting a freshly made apple pie to their family after much effort.",
+            "japanese": "もう これ{以上}は 待 (ま) てない。",
+            "english": "I can't wait any longer than this.",
+            "english_literally": "Already, more than this, cannot wait.",
+            "scene": "A young man is impatiently waiting for his friend at a meeting spot.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "このアップルパイは、３日より長くかけて作ったんだ。",
-                    "mitigation": "「３日より長く」 means strictly 'longer than three days'. 「以上」 includes exactly three days, which fits the nuance of expressing significant effort that took at least three days. The scene of proud presentation highlights the extent of the labor."
-                }
-            ],
-            "register": "casual",
-            "setting": "friendly"
-        },
-        {
-            "japanese": "カタカナを全部覚えたけど、２週間{以上}かかったわよ。",
-            "english": "I memorized all of the katakana, but it took over two weeks.",
-            "scene": "A woman is telling her male friend about the time and effort she put into studying.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "カタカナを全部覚えたけど、２週間より長くかかりました。",
-                    "mitigation": "「２週間より長く」 specifies 'longer than two weeks', but 「以上」 is inclusive of exactly two weeks, which is a common way to state a minimum duration. The scene highlights her personal experience and the extent of the time spent."
+                    "competing_grammar": "もう 待 てない。",
+                    "mitigation": "「もう待てない」 simply means 'I can't wait anymore'. 「これ以上」 specifically refers to 'beyond this current point/time', emphasizing the limit of one's patience."
                 },
                 {
-                    "competing_grammar": "カタカナを全部覚えたけど、２週間を超える時間かかりました。",
-                    "mitigation": "「２週間を超える時間」 means 'time exceeding two weeks', again excluding two weeks exactly. 「以上」 provides a more natural and inclusive way to state the minimum time investment. The context of personal achievement fits the inclusive nuance."
-                }
-            ],
-            "register": "casual",
-            "setting": "reflective",
-            "speaker_gender": "female",
-            "listener_gender": "male",
-            "nuance": "The speaker, a woman, uses the feminine sentence-ending particle 「わよ」 to convey a softer, more expressive tone. The scene implies she is talking to a male friend."
-        },
-        {
-            "japanese": "これ{以上}はもう聞きたくないんだよ。",
-            "english": "I don't want to listen to this any more.",
-            "scene": "A man, exasperated, is telling his girlfriend that he has had enough of a particular topic.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "これよりはもう聞きたくない。",
-                    "mitigation": "「これよりは」 implies 'more than what we've heard so far', but 「これ以上」 is the standard and more idiomatic expression for 'any more than this' or 'beyond this point' when expressing a limit or a strong refusal. The scene reinforces the depth of his frustration."
+                    "competing_grammar": "これよりは 待 てない。",
+                    "mitigation": "「これよりは待てない」 is grammatically less natural for expressing a limit of patience compared to the idiomatic 「これ以上」."
                 }
             ],
             "register": "casual",
             "setting": "serious",
             "speaker_gender": "male",
-            "listener_gender": "female",
-            "nuance": "The speaker, a man, uses the sentence-ending particle 「んだよ」 to express a strong, often exasperated or definitive tone. The scene implies he is talking to his girlfriend, to whom he can speak so directly."
+            "nuance": "The speaker, a man, uses 「待てない」 (cannot wait) in a direct, somewhat exasperated tone, emphasizing his impatience. The use of 「もうこれ以上」 highlights that he has reached his absolute limit."
         },
         {
-            "japanese": "明日までに漢字100個{以上}覚えなくてはならない。",
-            "english": "I have to memorize over 100 kanji by tomorrow.",
-            "scene": "A student is feeling overwhelmed by a challenging academic deadline.",
+            "japanese": "注文 (ちゅうもん) は これで {以上}です。",
+            "english": "My order is complete. / That's all for my order.",
+            "english_literally": "Order, with this, is the above.",
+            "scene": "A customer is concluding their order at a fast-food restaurant.",
             "scene_rationale": [
                 {
-                    "competing_grammar": "明日までに漢字100個を超える数を覚えなくてはならない。",
-                    "mitigation": "「100個を超える数」 would mean strictly 'more than 100', excluding exactly 100. 「以上」 includes 100, which is the most natural way to express a daunting minimum requirement. The academic setting emphasizes the precise minimum."
-                }
-            ],
-            "register": "casual",
-            "setting": "pessimistic"
-        },
-        {
-            "japanese": "え〜っと、ビッグマックのセットとクォーターパウンダーの単品とナゲットの30ピースを下さい。{以上}です。",
-            "english": "Uhh, can I have a Big Mac meal, a Quarter Pounder, and 30 nuggets? That's all.",
-            "scene": "A customer is finishing their order at a fast-food restaurant.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "これで終わりです。",
-                    "mitigation": "While 「これで終わりです」 (This is the end) is understandable, 「以上です」 is the polite and professional standard for concluding an order or statement of items, meaning 'what I have listed above is all I require'. The professional setting of ordering highlights this nuance."
+                    "competing_grammar": "注文 は これで 終わり です。",
+                    "mitigation": "While 「これで終わりです」 (This is the end) is understandable, 「以上です」 is the standard and more polite way to conclude an order or statement of items in a service context, meaning 'what I have listed above is all I require'."
                 },
                 {
-                    "competing_grammar": "これで全部です。",
-                    "mitigation": "「これで全部です」 (This is everything) is also a valid alternative. However, 「以上です」 specifically conveys 'the above is complete' in a formal or semi-formal context, which is common in service interactions like ordering."
+                    "competing_grammar": "注文 は これで 全部 です。",
+                    "mitigation": "「これで全部です」 (This is everything) is also valid. However, 「以上です」 specifically conveys 'the above is complete' in a formal or semi-formal interaction, which is common in professional settings like ordering."
                 }
             ],
-            "register": "semi-formal",
+            "register": "teineigo (polite)",
             "setting": "professional"
+        },
+        {
+            "japanese": "説明 (せつめい) は {以上}になります。ご 清聴 (せいちょう) ありがとう ございました。",
+            "english": "That concludes the explanation. Thank you for your attention.",
+            "english_literally": "Explanation, becomes the above. Thank you for your kind listening.",
+            "scene": "A speaker is ending a formal presentation to an audience.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "説明 は 終わり になります。",
+                    "mitigation": "「終わりになります」 indicates completion but lacks the formal, conclusive nuance of 「以上になります」, which explicitly signals the end of a detailed explanation or report. The setting of a formal presentation calls for the latter."
+                },
+                {
+                    "competing_grammar": "説明 は 終了 です。",
+                    "mitigation": "「終了です」 is a direct statement of termination. While correct, 「以上になります」 is a softer, more deferential way to conclude a presentation, showing politeness to the audience."
+                }
+            ],
+            "register": "formal",
+            "setting": "professional",
+            "listener_gender": "group"
+        },
+        {
+            "japanese": "私 (わたし) からの 報告 (ほうこく) は {以上}です。",
+            "english": "That concludes my report.",
+            "english_literally": "From me, report, is the above.",
+            "scene": "A project manager is finishing a status update meeting.",
+            "scene_rationale": [
+                {
+                    "competing_grammar": "私 からの 報告 は 終わり です。",
+                    "mitigation": "While 「終わりです」 expresses completion, 「以上です」 is the standard and more professional way to conclude a formal report or statement, conveying that all points have been covered."
+                }
+            ],
+            "register": "formal",
+            "setting": "informative"
         }
     ],
     "false_friends": [
@@ -198,6 +195,25 @@
         "bunpro": "https://bunpro.jp/grammar_points/以上1"
     },
     "change": [
-        "violation: Updated 'meaning' field to 'More than or equal to; That's all.' to fully reflect both primary uses of 以上, as the previous meaning was incomplete given the explanation in the writeup and examples."
+        {
+            "change-type": "violation",
+            "change": "Added spaces for MeCab parsing in all 'japanese' example sentences as indicated by pre-lint."
+        },
+        {
+            "change-type": "violation",
+            "change": "Replaced all example sentences as the prior version reused literal Bunpro examples, violating the 'MUST NOT use any example sentences taken literally from dojg or bunpro' rule."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Removed 'meaning_warning' as the general meaning and writeup clarify the nuances sufficiently."
+        },
+        {
+            "change-type": "schema",
+            "change": "Updated 'details.Register' from 'Standard' to 'details.register: teineigo (polite)' to conform to the schema's enum. 'Standard' is not a valid enum value."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Expanded the 'formation' section to include the common usage of 以上 as a concluding statement ([Statement/List] + 以上です/以上になります)."
+        }
     ]
 }

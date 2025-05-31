@@ -24,15 +24,15 @@
             "japanese": "彼は、コーヒーを {飲まずに} 仕事に 行った。",
             "english": "He went to work without drinking coffee.",
             "english_literally": "He, coffee drinking without, work went.",
-            "scene": "A woman is telling her friend about her husband's hectic morning.",
+            "scene": "A junior employee is explaining to their manager why they were late to work, highlighting an oversight that caused a problem.",
             "scene_rationale": [
                 {
                     "competing_grammar": "彼は、コーヒーを 飲ま ないで 仕事に 行った。",
-                    "mitigation": "The scene implies a slightly more formal or established habit, where 「ずに」 fits better than the more casual 「ないで」."
+                    "mitigation": "The professional setting and the need to explain a consequence of an omitted action make the slightly more formal 「飲まずに」 a more fitting choice than the more casual 「飲まないで」."
                 }
             ],
-            "register": "casual",
-            "setting": "informative"
+            "register": "semi-formal",
+            "setting": "apologetic"
         },
         {
             "japanese": "十分な準備を {せずに}、プレゼンに臨んだ。",
@@ -45,9 +45,10 @@
                     "mitigation": "The context of a formal academic setting like a presentation often uses 「せずに」 for a slightly more polished or self-critical reflection on the action, even in casual speech."
                 }
             ],
-            "register": "casual",
+            "register": "semi-formal",
             "setting": "academic",
-            "speaker_gender": "male"
+            "speaker_gender": "male",
+            "nuance": "While the overall sentence structure is neutral, the male speaker's self-reflection on a regretful academic situation (「プレゼンに臨んだ」) might lean slightly towards a more direct and concise expression like 「せずに」, which carries a touch more gravitas than 「しないで」."
         },
         {
             "japanese": "彼女は、誰にも {言わずに} 海外へ旅立った。",
@@ -77,7 +78,8 @@
             "register": "formal",
             "setting": "professional",
             "speaker_gender": "male",
-            "listener_gender": "group"
+            "listener_gender": "group",
+            "nuance": "In a formal, professional setting, a male manager addressing a group often opts for more objective and concise phrasing. 「感情的にならずに」 is a more direct and formal way to convey the absence of emotional response compared to the slightly softer 「感情的にならないで」, reinforcing the professionalism of the employee's conduct."
         },
         {
             "japanese": "事前の予約を {取らずに} 人気レストランへ 行ったので、長い 時間 待った。",
@@ -91,8 +93,9 @@
                 }
             ],
             "register": "casual",
-            "setting": "commanding",
-            "speaker_age": "younger"
+            "setting": "reflective",
+            "speaker_age": "younger",
+            "nuance": "While typically more formal, 「ずに」 can be used by younger speakers in casual settings to emphasize a regrettable oversight. Here, the slightly more emphatic 「取らずに」 conveys a clear cause-and-effect for the long wait, rather than simply stating 'didn't make a reservation and went'."
         },
         {
             "japanese": "その問題は、専門家の助けを {借りずに} 解決できた。",
@@ -107,7 +110,8 @@
             ],
             "register": "formal",
             "setting": "professional",
-            "speaker_gender": "male"
+            "speaker_gender": "male",
+            "nuance": "A male team leader in a professional setting might use 「借りずに」 to concisely express self-sufficiency and competence, emphasizing the independent resolution of the problem. This is a more formal and slightly stronger phrasing than 「借りないで」."
         }
     ],
     "post_example_writeup": "When using 「ずに」, remember that it is more formal than 「ないで」, and is often found in more written or formal spoken contexts. Also, be sure to remember the special form 「せずに」 for 「する」 verbs.",
@@ -143,32 +147,24 @@
     },
     "change": [
         {
-            "change-type": "violation",
-            "change": "The `formation` key was `Verb (plain form) + ずに` but should be `Verb (stem/ren'yōkei) + ずに` to accurately reflect the correct verb form for `ずに`."
-        },
-        {
-            "change-type": "schema",
-            "change": "The `details` key `使用域` was translated to `usage-context` to comply with the schema's requirement for English key names."
-        },
-        {
-            "change-type": "command",
-            "change": "All example sentences have been re-written to create original content, as per the explicit instruction to not use examples taken literally from Bunpro or DOJG."
-        },
-        {
-            "change-type": "schema",
-            "change": "Added `english_literally` to all example sentences as required by the schema."
-        },
-        {
-            "change-type": "schema",
-            "change": "Removed the `conjugation` field from example sentences because there is no top-level `conjugations` array for this grammar point, as per schema rules."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Enhanced the `speaker_gender`, `listener_gender`, `speaker_age`, and `nuance` fields in examples for improved completeness and clarity, ensuring they align with the new example contexts."
+            "change-type": "unnatural",
+            "change": "Adjusted the 'scene' for example 1 to better align with the usage nuance of 『ずに』 over 『ないで』."
         },
         {
             "change-type": "unnatural",
-            "change": "Corrected the `register` for some examples to ensure they naturally align with the contexts of the newly created example sentences."
+            "change": "Corrected the 'register' and 'setting' for example 1 to be more appropriate for the revised scene."
+        },
+        {
+            "change-type": "unnatural",
+            "change": "Adjusted the 'register' for example 2 to better fit the academic setting."
+        },
+        {
+            "change-type": "unnatural",
+            "change": "Adjusted the 'setting' for example 5 to more accurately reflect the speaker's sentiment."
+        },
+        {
+            "change-type": "violation",
+            "change": "Added 'nuance' fields to examples 2, 4, 5, and 6, as required when speaker gender, listener gender, or speaker age are specified."
         }
     ]
 }

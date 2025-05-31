@@ -142,7 +142,8 @@
             "setting": "intimate",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "The use of 「よ」 at the end of the sentence is a masculine way of asserting information, suggesting a close relationship with the listener."
+            "speaker_age": "younger",
+            "nuance": "The use of 「よ」 at the end of the sentence is a masculine way of asserting information, often used among younger speakers in close relationships, suggesting intimacy with the listener."
         },
         {
             "japanese": "この 町 {を} 出る こと が 、 私 の 夢 だった の 。",
@@ -159,7 +160,8 @@
             "setting": "reflective",
             "speaker_gender": "female",
             "listener_gender": "no one",
-            "nuance": "The use of 「の」 at the end of the sentence adds a soft, explanatory tone typical of female speech."
+            "speaker_age": "older",
+            "nuance": "The use of 「の」 at the end of the sentence adds a soft, explanatory tone typical of female speech, often used by older speakers when reflecting or explaining something to themselves or an intimate listener."
         }
     ],
     "false_friends": [
@@ -176,27 +178,5 @@
             "nuance": "While 「を」 indicates departure, 「に」 often indicates arrival or destination. 「東京に行きます」 (I go to Tokyo) implies arrival in Tokyo, contrasting with leaving from it."
         }
     ],
-    "post_false_friends_writeup": "While 「を」 and 「から」 can both indicate a starting point, remember that 「を」 emphasizes the **action** of departing from a place, whereas 「から」 simply indicates the location where something originates. When describing movement, consider whether you want to highlight the departure itself or simply state the origin.",
-    "change": [
-        {
-            "change-type": "schema",
-            "change": "Changed keys in the 'details' object from 'Function' to 'function' and 'Related Expression' to 'colocation' to match the schema."
-        },
-        {
-            "change-type": "schema",
-            "change": "Added 'part-of-speech' and 'particle-syntactic-function' to the 'details' object for increased specificity and schema compliance."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Consolidated the information from 'Contrast with から' into the 'nuance' field within the 'details' object for better organization and conciseness."
-        },
-        {
-            "change-type": "violation",
-            "change": "Removed the 'register' field from the 'details' object because a particle itself does not inherently possess a register; rather, the entire sentence does."
-        },
-        {
-            "change-type": "schema",
-            "change": "Added 'english_literally' to all example sentences as required by the schema for a more precise literal translation."
-        }
-    ]
+    "post_false_friends_writeup": "While 「を」 and 「から」 can both indicate a starting point, remember that 「を」 emphasizes the **action** of departing from a place, whereas 「から」 simply indicates the location where something originates. When describing movement, consider whether you want to highlight the departure itself or simply state the origin."
 }

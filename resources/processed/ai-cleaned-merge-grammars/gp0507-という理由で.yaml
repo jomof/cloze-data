@@ -26,6 +26,7 @@
         {
             "japanese": "日本 の 伝統 文化 を 守る {という 理由 で}、この 祭り は 多く の 人 に 愛され ています。",
             "english": "This festival is loved by many people for the reason of preserving traditional Japanese culture.",
+            "english_literally": "By the reason of 'it preserves Japan's traditional culture', this festival is loved by many people.",
             "scene": "You are explaining why a particular local festival is very popular.",
             "scene_rationale": [
                 {
@@ -189,15 +190,23 @@
         },
         {
             "change-type": "violation",
-            "change": "Removed all curly braces from within the Japanese sentences and replaced them with regular spaces around the bolded grammar point, as requested in schema for YAML conversion."
-        },
-        {
-            "change-type": "violation",
             "change": "Added 'から' and 'ので' to 'false_friends' with appropriate 'kind' and 'nuance' as they are often confused with this grammar point and should be covered in the 'scene_rationale'."
         },
         {
             "change-type": "suggestion",
             "change": "Expanded 'post_false_friends_writeup' to discuss the newly added false friends ('から' and 'ので')."
+        },
+        {
+            "change-type": "schema",
+            "change": "Added 'temporal-flow' to details, as it was present in the prior grammar point but not explicitly listed in its change log."
+        },
+        {
+            "change-type": "suggestion",
+            "change": "Added 'english_literally' to the first example to provide a more direct translation."
+        },
+        {
+            "change-type": "meta",
+            "change": "Removed a self-contradictory change log entry from the prior grammar point regarding curly braces in Japanese examples. The prior grammar point correctly kept them, which aligns with the output schema's requirement."
         }
     ]
 }
