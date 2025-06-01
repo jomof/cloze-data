@@ -8,6 +8,7 @@ py_library(
     ],
     visibility = ["//visibility:public"],
     deps = [
+        ":utils",
         "@pip//mecab_python3",
         "@pip//unidic",
     ],

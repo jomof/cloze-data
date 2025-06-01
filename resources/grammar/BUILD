@@ -207,11 +207,11 @@ py_binary(
 py_build_tool_stream(
     name = "ai-cleaned-merge-grammars",
     srcs = ["//resources/processed:ai-cleaned-merge-grammars"],
-    correlated = [],
     args = ["--no-query"],
+    correlated = [],
     extension = ".yaml",
     # filter = ["spatial"],
-    pass_target_name = True, 
+    pass_target_name = True,
     tool = ":ai-clean",
 )
 
@@ -248,6 +248,20 @@ py_binary(
     ],
 )
 
+py_binary(
+    name = "lint-grammar-points",
+    srcs = ["lint-grammar-points.py"],
+    data = [
+        "//resources/processed:ai-cleaned-merge-grammars",
+    ],
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//python/grammar",
+        "@pip//aiofiles",
+        "@pip//pyyaml",
+    ],
+)
+
 py_library(
     name = "grammar",
     srcs = [
@@ -258,6 +272,7 @@ py_library(
         "extract-grammar-point-names.py",
         "extract-yaml.py",
         "fixup-bunpro-grammar.py",
+        "lint-grammar-points.py",
         "merge-grammars.py",
         "post-ai-scrub-tool.py",
         "yaml-clean.py",
@@ -268,6 +283,7 @@ py_library(
         "//python/grammar",
         "//python/mecab:utils",
         "//python/utils/build_cache/memoize",
+        "@pip//aiofiles",
         "@pip//beautifulsoup4",
         "@pip//json5",
         "@pip//json_repair",
