@@ -4,12 +4,24 @@ from python.mecab.compact_sentence import (
     tokens_to_compact_sentence,
     mecab_raw_to_compact_sentence,
     Token,
-    parse_raw_mecab_output,
+    tokens_to_japanese,
+    compact_sentence_to_japanese,
+    japanese_to_japanese_with_spaces
 )
 from python.mecab.tagger import get_mecab_tagger
 
 class TestTokenParser(unittest.TestCase):
 
+    def test_mecab_raw_to_compact_sentence(self):
+        # Generate a compact sentence from MeCab
+        wakati = get_mecab_tagger()
+        term = "机の上に本はあります。"
+        raw = wakati.parse(term)
+        compact_sentence = mecab_raw_to_compact_sentence(raw)
+        self.assertEqual(
+            compact_sentence, 
+            "⌈ˢ机ᵖnʳツクエ⌉の⌈ˢ上ᵖnʳウエ⌉に⌈ˢ本ᵖnʳホン⌉は⌈ˢありᵖvᵇあるʳアル⌉⌈ˢますᵖauxvʳマス⌉。")
+        
     def test_mecab_compact_and_parse(self):
         # Generate a compact sentence from MeCab
         wakati = get_mecab_tagger()
@@ -53,6 +65,64 @@ class TestTokenParser(unittest.TestCase):
         reconstructed_string = tokens_to_compact_sentence(tokens)
         expected_string = "⌈ˢThisᵖNOUNᵇthis⌉⌈ˢisᵖVERB⌉⌈ˢaᵖDET⌉⌈ˢtestᵖNOUN⌉"
         self.assertEqual(reconstructed_string, expected_string)
+
+    def test_tokens_to_japanese(self):
+        tokens = [
+            Token(surface="あ"), Token(surface="い"), Token(surface="う")
+        ]
+        self.assertEqual(tokens_to_japanese(tokens), "あいう")
+        self.assertEqual(tokens_to_japanese(tokens, spaces=True), "あ い う")
+
+    def test_compact_sentence_to_japanese(self):
+        compact = "⌈ˢあᵖひらがな⌉い⌈ˢうᵖひらがな⌉"
+        # 'あ' and 'う' are bracketed, 'い' is single
+        self.assertEqual(compact_sentence_to_japanese(compact), "あいう")
+        self.assertEqual(compact_sentence_to_japanese(compact, spaces=True), "あ い う")
+
+    def test_roundtrip_compact_to_japanese_and_back(self):
+        original_japanese = "テストだよ。"
+        # Simulate compacting via MeCab
+        wakati = get_mecab_tagger()
+        raw = wakati.parse(original_japanese)
+        compact = mecab_raw_to_compact_sentence(raw)
+        # Convert compact back to Japanese surface
+        recovered = compact_sentence_to_japanese(compact)
+        self.assertEqual(recovered, original_japanese)
+
+        # Now tokenize surfaces and reconstruct compact
+        tokens = compact_sentence_to_tokens(compact)
+        reconstructed_compact = tokens_to_compact_sentence(tokens)
+        self.assertEqual(reconstructed_compact, compact)
+
+    def test_multiple_sentences_roundtrip(self):
+        sentences = [
+            "今日はいい天気ですね。",
+            "今日はいい{天気}ですね。",
+            "明日、東京に行きます。",
+            "猫が好きです。"
+        ]
+        wakati = get_mecab_tagger()
+        for orig in sentences:
+            raw = wakati.parse(orig)
+            compact = mecab_raw_to_compact_sentence(raw)
+            recovered = compact_sentence_to_japanese(compact)
+            self.assertEqual(recovered, orig)
+            tokens = compact_sentence_to_tokens(compact)
+            reconstructed_compact = tokens_to_compact_sentence(tokens)
+            self.assertEqual(reconstructed_compact, compact)
+            spaced = compact_sentence_to_japanese(compact, spaces=True)
+            joined = ' '.join([token.surface for token in tokens])
+            self.assertEqual(spaced, joined)
+
+    def test_normalize_spaces(self):
+        def check(japanese, expected):
+            spaced = japanese_to_japanese_with_spaces(japanese)
+            self.assertEqual(spaced, expected)
+            spaced2 = japanese_to_japanese_with_spaces(japanese)
+            self.assertEqual(spaced, expected)
+        check("今日はいい天気ですね。", "今日 は いい 天気 です ね 。")
+        check("今日はいい{天気}ですね。", "今日 は いい {天気} です ね 。")
+        check("{今日はいい天気ですね。}", "{今日 は いい 天気 です ね 。}")
 
 if __name__ == "__main__":
     unittest.main()

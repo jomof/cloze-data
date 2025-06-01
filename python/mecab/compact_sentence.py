@@ -1,4 +1,5 @@
 import re
+from python.mecab.tagger import get_mecab_tagger
 
 class Token:
     def __init__(self, surface='', pos='', base_form='', grammar=None, start_pos=0, end_pos=0):
@@ -15,13 +16,14 @@ class Token:
         if grammar_point not in self.grammar:
             self.grammar.append(grammar_point)
 
-# Regex pattern to match bracketed tokens: ⌈ˢsurfaceᵖposᵇbase(ᵍgrammar…)*⌉
+# Regex pattern to match bracketed tokens: ⌈ˢsurfaceᵖposᵇbase(ʳreading)?(ᵍgrammar…)*⌉
 _TOKEN_PATTERN = re.compile(
     r'⌈'
-    r'(?:ˢ(?P<surface>[^ˢᵖᵇᵍ⌉]+))?'
-    r'(?:ᵖ(?P<pos>[^ˢᵖᵇᵍ⌉]+))?'
-    r'(?:ᵇ(?P<base_form>[^ˢᵖᵇᵍ⌉]+))?'
-    r'(?P<grammars>(?:ᵍ[^ˢᵖᵇᵍ⌉]+)*)'
+    r'(?:ˢ(?P<surface>[^ˢᵖᵇʳᵍ⌉]+))?'
+    r'(?:ᵖ(?P<pos>[^ˢᵖᵇʳᵍ⌉]+))?'
+    r'(?:ᵇ(?P<base_form>[^ˢᵖᵇʳᵍ⌉]+))?'
+    r'(?:ʳ(?P<reading>[^ˢᵖᵇʳᵍ⌉]+))?'
+    r'(?P<grammars>(?:ᵍ[^ˢᵖᵇʳᵍ⌉]+)*)'
     r'⌉'
 )
 
@@ -29,7 +31,7 @@ def compact_sentence_to_tokens(input_string):
     """
     Parses a compact sentence (mix of bracketed and single-character tokens) into a list of Token objects.
 
-    Bracketed segments (⌈…⌉) are parsed for surface, pos, base_form, and grammars.
+    Bracketed segments (⌈…⌉) are parsed for surface, pos, base_form, reading, and grammars.
     Unbracketed characters (e.g., particles, punctuation) are each treated as a Token with only surface filled.
 
     Returns:
@@ -46,11 +48,15 @@ def compact_sentence_to_tokens(input_string):
         surface = match.group('surface') or ''
         pos = match.group('pos') or ''
         base_form = match.group('base_form') or ''
+        reading = match.group('reading') or ''
         grammars_raw = match.group('grammars') or ''
-        grammars = re.findall(r'ᵍ([^ˢᵖᵇᵍ⌉]+)', grammars_raw)
+        grammars = re.findall(r'ᵍ([^ˢᵖᵇʳᵍ⌉]+)', grammars_raw)
         start_pos = match.start()
         end_pos = match.end()
-        tokens.append(Token(surface=surface.strip(), pos=pos.strip(), base_form=base_form.strip(), grammar=[g.strip() for g in grammars], start_pos=start_pos, end_pos=end_pos))
+        token = Token(surface=surface.strip(), pos=pos.strip(), base_form=base_form.strip(), grammar=[g.strip() for g in grammars], start_pos=start_pos, end_pos=end_pos)
+        if reading:
+            token.add_grammar(f"reading={reading.strip()}")
+        tokens.append(token)
         last_end = match.end()
     # Handle any trailing single-character tokens
     if last_end < len(input_string):
@@ -63,13 +69,13 @@ def tokens_to_compact_sentence(tokens):
     """
     Converts a list of Token objects back into a compact sentence string.
 
-    - Tokens with only surface (no pos, no base_form, no grammar) are output as their surface character.
-    - Otherwise, tokens are bracketed with ⌈…⌉ including ˢ, ᵖ, ᵇ, ᵍ delimiters.
+    - Tokens with only surface (no pos, no base_form, no reading, no grammar) are output as their surface character.
+    - Otherwise, tokens are bracketed with ⌈…⌉ including ˢ, ᵖ, ᵇ, ʳ, ᵍ delimiters.
     """
     result = ''
     for token in tokens:
-        # If no pos, base_form, and no grammars, output surface directly
-        if not token.pos and not token.base_form and not token.grammar:
+        has_meta = token.pos or token.base_form or token.grammar
+        if not has_meta:
             result += token.surface
             continue
         result += '⌈'
@@ -79,10 +85,35 @@ def tokens_to_compact_sentence(tokens):
             result += 'ᵖ' + token.pos
         if token.base_form:
             result += 'ᵇ' + token.base_form
+        # Extract reading from grammar if present
+        reading_items = [g.split('=',1)[1] for g in token.grammar if g.startswith('reading=')]
+        if reading_items:
+            result += 'ʳ' + reading_items[0]
+        # Other grammar items (excluding reading)
         for grammar in token.grammar:
-            result += 'ᵍ' + grammar
+            if not grammar.startswith('reading='):
+                result += 'ᵍ' + grammar
         result += '⌉'
     return result
+
+
+def tokens_to_japanese(tokens, spaces=False):
+    """
+    Converts a list of Token objects into a pure Japanese string by concatenating their surfaces.
+    If spaces=True, inserts a space between each token surface.
+    """
+    if spaces:
+        return ' '.join(token.surface for token in tokens)
+    return ''.join(token.surface for token in tokens)
+
+
+def compact_sentence_to_japanese(input_string, spaces=False):
+    """
+    Converts a compact sentence string into a pure Japanese string by parsing tokens then concatenating surfaces.
+    If spaces=True, inserts spaces between token surfaces.
+    """
+    tokens = compact_sentence_to_tokens(input_string)
+    return tokens_to_japanese(tokens, spaces=spaces)
 
 
 def parse_raw_mecab_output(raw_output):
@@ -152,7 +183,7 @@ def mecab_raw_to_compact_sentence(raw: str) -> str:
         pos = token["pos"]
         pos_code = pos_map.get(pos, pos)
         # If particle or symbol (prt or sym) and single char, output directly
-        if pos_code in ['prt', 'sym'] and len(surface) == 1:
+        if pos_code in ['prt', 'sym', 'auxs'] and len(surface) == 1:
             recombined += surface
         else:
             recombined += f"⌈ˢ{surface}ᵖ{pos_code}"
@@ -189,6 +220,13 @@ def mecab_raw_to_compact_sentence_with_grammar(raw: str) -> str:
         recombined += "⌉"
     return recombined
 
+def japanese_to_japanese_with_spaces(japanese: str) -> str:
+    wakati = get_mecab_tagger()
+    raw = wakati.parse(japanese)
+    compact_sentence = mecab_raw_to_compact_sentence(raw)
+    spaced = compact_sentence_to_japanese(compact_sentence, spaces=True)
+    spaced = spaced.replace('{ ', '{').replace(' }', '}') 
+    return spaced
 
 def mecab_raw_to_tokens_with_grammar(raw):
     return compact_sentence_to_tokens(mecab_raw_to_compact_sentence_with_grammar(raw))
