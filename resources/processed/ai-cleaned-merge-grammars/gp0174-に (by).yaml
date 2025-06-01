@@ -1,6 +1,7 @@
 {
     "grammar_point": "に (by)",
     "id": "gp0174",
+    "meaning": "by; from",
     "pronunciation": {
         "katakana": "ニ",
         "romaji": "ni"
@@ -12,7 +13,6 @@
         "[Verbs like 習う, 教わる, 借りる, etc.] + に + [Source]": "Indicates the source of the action or object."
     },
     "jlpt": "N4",
-    "meaning": "by; from",
     "details": {
         "part-of-speech": "particle",
         "function": "Indicates the agent or source of an action in passive, causative, and receiving constructions.",
@@ -23,109 +23,224 @@
         "spatial-flow": "Can imply movement from a source (e.g., receiving from someone). This is more pronounced in other uses of に, but still present in its sense of source here."
     },
     "etymology": "The particle 「に」 originally indicated location or direction. Over time, it expanded to mark other relationships, including the agent or source in passive, causative, and receiving constructions. This usage highlights 「に」's function of indicating a connection or relationship between elements in a sentence.",
-    "writeup": "The particle 「に」 indicates the agent performing an action in passive sentences, the person being made to do something in causative sentences, or the source from which something is received. It's commonly used with passive verbs to specify who performed the action, with causative verbs to show who is being made to do something, and with verbs of receiving like 「もらう」 to specify the giver. Verbs such as 習う (narau - to learn), 教わる (osowaru - to be taught), and 借りる (kariru - to borrow) also often use 「に」 to indicate the source from which the action is received.",
+    "writeup": "The particle 「に」 indicates the agent performing an action in passive sentences, the person being made to do something in causative sentences, or the source from which something is received. It's commonly used with passive verbs to specify who performed the action, with causative verbs to show who is being made to do something, and with verbs of receiving like 「もらう」 to specify the giver. Verbs such as 習う (narau - to learn), 教わる (osawaru - to be taught), and 借りる (kariru - to borrow) also often use 「に」 to indicate the source from which the action is received.",
+    "false_friends": [
+        {
+            "term": "から (from)",
+            "meaning": "from",
+            "kind": "similar expression",
+            "nuance": "While 「に」 indicates the agent in passive/causative sentences or the source with verbs like もらう, 習う, and 借りる, 「から」 typically indicates the starting point of an action, a source of information, or the material something is made from. For example, 「先生から聞きました」 (I heard it from the teacher) uses 「から」 because it indicates the source of information, emphasizing the origin rather than the personal agent."
+        },
+        {
+            "term": "によって (ni yotte)",
+            "meaning": "by; due to",
+            "kind": "similar expression",
+            "nuance": "「によって」 is often interchangeable with 「に」 for marking the agent in passive sentences, but it carries a more formal or written nuance and can also emphasize the means or cause (e.g., 'by means of', 'due to'). 「に」 is generally more common and versatile for simple agent marking in spoken contexts."
+        },
+        {
+            "term": "が (ga)",
+            "meaning": "subject marker",
+            "kind": "often confused with",
+            "nuance": "「が」 marks the grammatical subject of a sentence, indicating who or what is performing the action in an active voice. In passive sentences, 「に」 marks the agent (the one performing the action), while 「が」 (or 「は」) marks the subject (the one receiving the action). For example, 「犬に噛まれた」 (was bitten by the dog) vs. 「犬が噛んだ」 (the dog bit)."
+        },
+        {
+            "term": "で (de)",
+            "meaning": "at; in; by means of; with",
+            "kind": "often confused with",
+            "nuance": "「で」 indicates the location where an action takes place, the instrument used, or the means by which something is done. It does not mark the agent of a passive or causative action. For example, 「電車で来る」 (come by train) vs. 「母に褒められた」 (was praised by mother)."
+        }
+    ],
+    "post_false_friends_writeup": "「に」 and 「から」 both can express 'from,' but their usage differs. Use 「に」 when indicating who performed an action passively, who is being made to do something, or the source of receiving. Use 「から」 for the starting point of an action, the source of information, or the material something is made of. Furthermore, 「によって」 often overlaps with 「に」 in passive constructions but is more formal and can imply 'by means of,' while 「が」 marks the subject of an active sentence, contrasting with 「に」 marking the agent in a passive sentence. 「で」 specifies means or location, not the agent or source.",
     "examples": [
         {
-            "japanese": "この 部屋 は 学生 たち {に} 掃除 さ れ ました 。",
             "english": "This room was cleaned by the students.",
+            "japanese": [
+                "この 部屋 は 学生 たち {に} 掃除 されました 。",
+                "この 部屋 は 学生 たち {に} 掃除 された 。"
+            ],
             "english_literally": "This room, by the students, was cleaned.",
-            "scene": "A teacher is inspecting a classroom after a school event.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "学生 たち が この 部屋 を 掃除 し ました 。",
-                    "mitigation": "The scene emphasizes the room as the subject of the action, naturally leading to a passive construction where the students are the agents marked by 「に」."
+                    "competing_japanese": "学生 たち が この 部屋 を 掃除 しました 。",
+                    "english": "The students cleaned this room.",
+                    "hint": "This is an active sentence where the students are the subject. We are looking for a sentence where the room is the subject and the students are the agent."
+                },
+                {
+                    "competing_japanese": "この 部屋 は 学生 たち で 掃除 されました 。",
+                    "english": "This room was cleaned at/with the students (incorrect).",
+                    "hint": "「で」 indicates means or location, not the agent performing the action in a passive sentence. We are looking for the particle that marks the agent."
                 }
             ],
+            "scene": "A teacher is inspecting a classroom after a school event.",
             "register": "teineigo (polite)",
             "setting": "informative",
             "nuance": "The passive form 「掃除されました」 puts the emphasis on the room and the action it received. The polite 「ました」 ending is appropriate for an informative, semi-formal context like a teacher's report, suitable for N4 JLPT level."
         },
         {
-            "japanese": "先日 、 友人 {に} 本 を もらい ました 。",
             "english": "The other day, I received a book from a friend.",
+            "japanese": [
+                "先日 、 友人 {に} 本 を もらいました 。",
+                "先日 、 友人 {に} 本 を もらった 。",
+                "友人 {に} 先日 本 を もらいました 。"
+            ],
             "english_literally": "Other day, by friend, book I received.",
-            "scene": "Someone is talking about a recent gift they got.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "先日 、 友人 が 本 を くれ ました 。",
-                    "mitigation": "The scene emphasizes the speaker as the recipient of the gift, making the 「もらう」 construction with 「に」 for the giver (friend) the natural choice."
+                    "competing_japanese": "先日 、 友人 が 本 を くれました 。",
+                    "english": "The other day, a friend gave me a book.",
+                    "hint": "「くれる」 means 'to give to me/us'. We are looking for the verb that means 'to receive from someone'."
+                },
+                {
+                    "competing_japanese": "先日 、 友人 から 本 を もらいました 。",
+                    "english": "The other day, I received a book from a friend (emphasizing origin).",
+                    "hint": "While 「から」 can mark a source, 「に」 is commonly used with 「もらう」 to specify the person from whom something is received. We are looking for the particle that emphasizes the giver in a receiving context."
+                },
+                {
+                    "competing_japanese": "先日 、 友人 で 本 を もらいました 。",
+                    "english": "The other day, I received a book at/with a friend (incorrect).",
+                    "hint": "「で」 does not mark the person from whom something is received. We are looking for the particle that indicates the source of a gift."
                 }
             ],
+            "scene": "Someone is talking about a recent gift they got.",
             "register": "teineigo (polite)",
             "setting": "friendly",
             "nuance": "「もらいました」 indicates receiving a gift or favor. The use of 「友人に」 specifies the giver. This polite expression is common when discussing personal events. The kanji 「先日」 (senjitsu) and 「友人」 (yuujin) are N3, which is appropriate for N4 JLPT examples."
         },
         {
-            "japanese": "難 しい 問題 は 先生 {に} 解説 し て もらい ました 。",
             "english": "I had the teacher explain the difficult problem to me.",
+            "japanese": [
+                "難しい 問題 は 先生 {に} 解説 してもらいました 。",
+                "難しい 問題 は 先生 {に} 解説 してもらった 。",
+                "先生 {に} 難しい 問題 を 解説 してもらいました 。"
+            ],
             "english_literally": "Difficult problem, by the teacher, had explanation done for me.",
-            "scene": "A student is describing how they finally understood a tough concept.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "先生 が 難 しい 問題 を 解説 し ました 。",
-                    "mitigation": "The scene emphasizes the speaker's benefit from the explanation, making the 「〜てもらう」 construction with 「に」 for the person who provided the benefit (teacher) the appropriate choice."
+                    "competing_japanese": "先生 が 難しい 問題 を 解説 しました 。",
+                    "english": "The teacher explained the difficult problem.",
+                    "hint": "This sentence implies the teacher explained the problem, but not necessarily that you benefited from it. We are looking for a way to express that you received the benefit of the explanation."
+                },
+                {
+                    "competing_japanese": "難しい 問題 は 先生 から 解説 してもらいました 。",
+                    "english": "I had the teacher explain the difficult problem to me (emphasizing origin).",
+                    "hint": "While 「から」 can indicate a source, 「に」 is more commonly used with 「〜てもらう」 to indicate the person from whom a favor or benefit is received. We are looking for the particle that directly marks the person who provided the benefit."
+                },
+                {
+                    "competing_japanese": "難しい 問題 は 先生 で 解説 してもらいました 。",
+                    "english": "I had the teacher explain the difficult problem at/with the teacher (incorrect).",
+                    "hint": "「で」 does not mark the person from whom a favor is received. We are looking for the particle that indicates the provider of the explanation."
                 }
             ],
+            "scene": "A student is describing how they finally understood a tough concept.",
             "register": "teineigo (polite)",
             "setting": "academic",
             "nuance": "「解説してもらいました」 signifies receiving the benefit of an explanation. This polite form is commonly used in academic settings to refer to help received from an instructor. The kanji 「難しい」 (N3), 「問題」 (N4), 「先生」 (N5), and 「解説」 (N3) are all appropriate for N4 JLPT examples."
         },
         {
-            "japanese": "上司 は 私 {に} プレゼン を 準備 さ せ ました 。",
             "english": "My boss made me prepare the presentation.",
+            "japanese": [
+                "上司 は 私 {に} プレゼン を 準備 させました 。",
+                "上司 は 私 {に} プレゼン を 準備 させた 。"
+            ],
             "english_literally": "Boss, by me, made presentation prepare.",
-            "scene": "A new employee is feeling overworked and is complaining to a colleague.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "上司 が 私 に プレゼン を 準備 する よう に 頼み ました 。",
-                    "mitigation": "The scene implies compulsion or instruction from a superior, which is best conveyed by the causative 「〜させる」 with 「に」 indicating the person who was made to do the action."
+                    "competing_japanese": "上司 が 私 に プレゼン を 準備 する よう に 頼みました 。",
+                    "english": "My boss asked me to prepare the presentation.",
+                    "hint": "This implies the boss asked you to prepare, not necessarily made you. We are looking for a verb form that expresses compulsion or making someone do something."
+                },
+                {
+                    "competing_japanese": "上司 は 私 を プレゼン を 準備 させました 。",
+                    "english": "My boss made *me* prepare the presentation (focus on who is made to do).",
+                    "hint": "While 「を」 can be used with causative verbs, 「に」 is used when the person being made to do something is the indirect object of the causative verb and the direct object is also present. We are looking for the typical way to mark the person compelled to act when they are not the direct object of the action they are performing."
+                },
+                {
+                    "competing_japanese": "上司 は 私 で プレゼン を 準備 させました 。",
+                    "english": "My boss made me prepare the presentation at/with me (incorrect).",
+                    "hint": "「で」 does not mark the person who is caused to do something. We are looking for the particle that marks the person compelled to act in a causative sentence."
                 }
             ],
+            "scene": "A new employee is feeling overworked and is complaining to a colleague.",
             "register": "semi-formal",
             "setting": "professional",
             "nuance": "The causative form 「準備させました」 expresses that the boss compelled the speaker to prepare the presentation. This implies a hierarchical relationship and the speaker's obligation to follow instructions. The kanji 「上司」 (N3) and 「準備」 (N3) are appropriate for N4 JLPT examples."
         },
         {
-            "japanese": "パーティー で 昔 の 友人 {に} 変 な 歌 を 歌わ れ ました 。",
             "english": "At the party, an old friend sang a strange song on me.",
+            "japanese": [
+                "パーティー で 昔 の 友人 {に} 変 な 歌 を 歌われました 。",
+                "パーティー で 昔 の 友人 {に} 変 な 歌 を 歌われた 。",
+                "パーティー で 昔 の 友人 {に} 変 な 歌 を 歌われちゃいました 。"
+            ],
             "english_literally": "At party, by old friend, strange song was sung to me.",
-            "scene": "Someone is recounting an embarrassing or annoying incident at a social gathering.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "昔 の 友人 が パーティー で 変 な 歌 を 歌い ました 。",
-                    "mitigation": "The passive voice with 「に」 for the agent here implies an unsolicited or annoying action affecting the speaker, suitable for recounting a slightly negative experience."
+                    "competing_japanese": "昔 の 友人 が パーティー で 変 な 歌 を 歌いました 。",
+                    "english": "An old friend sang a strange song at the party.",
+                    "hint": "This is an active sentence where the friend is the subject, but it doesn't convey that the action was done to you or had a negative impact on you. We are looking for a sentence that expresses you were affected by the action."
+                },
+                {
+                    "competing_japanese": "パーティー で 昔 の 友人 {によって} 変 な 歌 を 歌われました 。",
+                    "english": "At the party, a strange song was sung by an old friend (more formal).",
+                    "hint": "「によって」 can also mark the agent in passive sentences, but 「に」 is more common in spoken, casual contexts like this, especially when the action is an unwanted imposition. We are looking for the common spoken particle."
+                },
+                {
+                    "competing_japanese": "パーティー で 昔 の 友人 で 変 な 歌 を 歌われました 。",
+                    "english": "At the party, a strange song was sung at/with an old friend (incorrect).",
+                    "hint": "「で」 does not mark the agent of a passive action. We are looking for the particle that marks the person who performed the action that affected you."
                 }
             ],
+            "scene": "Someone is recounting an embarrassing or annoying incident at a social gathering.",
             "register": "casual",
             "setting": "humorous",
-            "nuance": "The passive 「歌われました」 implies that the action (singing a strange song) was done *to* the speaker, often with a nuance of annoyance or imposition, even if the speaker wasn't the direct object of the singing. This expressive use of the passive highlights the speaker's subjective experience. The kanji 「昔」 (N3), 「友人」 (N3), and 「歌」 (N4) are appropriate for N4 JLPT examples."
+            "nuance": "The passive 「歌われました」 implies that the action (singing a strange song) was done to the speaker, often with a nuance of annoyance or imposition, even if the speaker wasn't the direct object of the singing. This expressive use of the passive highlights the speaker's subjective experience. The kanji 「昔」 (N3), 「友人」 (N3), and 「歌」 (N4) are appropriate for N4 JLPT examples."
         },
         {
-            "japanese": "友人 {に} 先週 お 金 を 借り ました 。",
             "english": "I borrowed money from a friend last week.",
+            "japanese": [
+                "友人 {に} 先週 お 金 を 借りました 。",
+                "友人 {に} 先週 お 金 を 借りた 。",
+                "先週 、 友人 {に} お 金 を 借りました 。"
+            ],
             "english_literally": "By friend, last week money I borrowed.",
-            "scene": "Someone is explaining why they need to repay a debt.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "友人 から 先週 お 金 を 借り ました 。",
-                    "mitigation": "While 「から」 is possible, 「に」 is commonly used with 「借りる」 to specify the person from whom something is borrowed, emphasizing the direct personal source in the transaction."
+                    "competing_japanese": "友人 から 先週 お 金 を 借りました 。",
+                    "english": "I borrowed money from a friend last week (emphasizing origin).",
+                    "hint": "While 「から」 is also possible to indicate a source, 「に」 is more commonly used with 「借りる」 to specify the direct person from whom something is borrowed. We are looking for the particle that marks the direct personal lender."
+                },
+                {
+                    "competing_japanese": "友人 で 先週 お 金 を 借りました 。",
+                    "english": "I borrowed money at/with a friend last week (incorrect).",
+                    "hint": "「で」 does not mark the person from whom you borrowed. We are looking for the particle that specifies the lender in a borrowing transaction."
                 }
             ],
+            "scene": "Someone is explaining why they need to repay a debt.",
             "register": "teineigo (polite)",
             "setting": "informative",
             "nuance": "「借りました」 is the polite past tense of 「借りる」 (to borrow). 「友人に」 specifies the individual source of the borrowed money, a common usage for personal financial transactions. The kanji 「友人」 (N3), 「先週」 (N4), 「お金」 (N5), and 「借り」 (N4) are all appropriate for N4 JLPT examples."
         },
         {
-            "japanese": "その ニュース は 姉 {に} 聞き ました 。",
             "english": "I heard that news from my older sister.",
+            "japanese": [
+                "その ニュース は 姉 {に} 聞きました 。",
+                "その ニュース は 姉 {に} 聞いた 。",
+                "姉 {に} その ニュース を 聞きました 。"
+            ],
             "english_literally": "That news, by older sister, I heard.",
-            "scene": "Someone is sharing a piece of gossip or important information, and is asked about the source.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "その ニュース は 姉 から 聞き ました 。",
-                    "mitigation": "The scene implies a direct, personal transmission of information. While 「から」 is also common for sources, 「に」 with 「聞く」 can emphasize the specific person as the direct provider of the information in a more personal context."
+                    "competing_japanese": "その ニュース は 姉 から 聞きました 。",
+                    "english": "I heard that news from my older sister (emphasizing origin).",
+                    "hint": "While 「から」 is also possible to indicate a source, 「に」 is commonly used with 「聞く」 to specify the direct person from whom you heard something, often implying a personal interaction. We are looking for the particle that marks the direct individual source."
+                },
+                {
+                    "competing_japanese": "その ニュース は 姉 で 聞きました 。",
+                    "english": "I heard that news at/with my older sister (incorrect).",
+                    "hint": "「で」 indicates location or means, not the person you heard something from. We are looking for the particle that marks the direct personal source of information."
                 }
             ],
+            "scene": "Someone is sharing a piece of gossip or important information, and is asked about the source.",
             "register": "casual",
             "setting": "friendly",
             "speaker_gender": "female",
@@ -133,38 +248,37 @@
             "nuance": "「聞きました」 is the polite past tense of 「聞く」 (to hear/ask). 「姉に」 indicates the specific person from whom the news was heard. In casual conversation among friends, this usage of 「に」 highlights the direct personal source. The kanji 「姉」 (N4) and 「聞く」 (N5) are appropriate for N4 JLPT examples."
         },
         {
-            "japanese": "子供 の 時 、 母 {に} ピーマン を 食べ させ られ ました 。",
             "english": "When I was a child, my mother made me eat bell peppers.",
+            "japanese": [
+                "子供 の 時 、 母 {に} ピーマン を 食べさせられました 。",
+                "子供 の 時 、 母 {に} ピーマン を 食べさせられた 。",
+                "子供 の 時 、 母 {に} ピーマン 食べさせられた 。"
+            ],
             "english_literally": "Child's time, by mother, bell peppers was made to eat.",
-            "scene": "Someone is reminiscing about childhood memories, specifically disliked foods.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "母 が 私 に ピーマン を 食べ させ ました 。",
-                    "mitigation": "The causative-passive form 「食べさせられました」 specifically expresses that the speaker was forced to do something they didn't want to do, highlighting the negative experience, with 「に」 marking the agent of this imposition."
+                    "competing_japanese": "母 が 私 に ピーマン を 食べさせました 。",
+                    "english": "My mother made me eat bell peppers.",
+                    "hint": "This is a simple causative sentence, implying your mother made you eat, but not necessarily that you suffered from it. We are looking for the form that conveys being forced to do something against your will."
+                },
+                {
+                    "competing_japanese": "子供 の 時 、 母 {によって} ピーマン を 食べさせられました 。",
+                    "english": "When I was a child, I was made to eat bell peppers by my mother (more formal).",
+                    "hint": "「によって」 can mark the agent in causative-passive, but 「に」 is generally more common for personal agents in spoken language, especially when expressing an imposition. We are looking for the common spoken particle."
+                },
+                {
+                    "competing_japanese": "子供 の 時 、 母 で ピーマン を 食べさせられました 。",
+                    "english": "When I was a child, I was made to eat bell peppers at/with my mother (incorrect).",
+                    "hint": "「で」 does not mark the agent who forced you to do something. We are looking for the particle that marks the person who imposed the action in a causative-passive sentence."
                 }
             ],
+            "scene": "Someone is reminiscing about childhood memories, specifically disliked foods.",
             "register": "casual",
             "setting": "reflective",
             "nuance": "The causative-passive 「食べさせられました」 indicates that the speaker was forced to eat bell peppers by their mother, conveying a sense of being compelled or suffering from the action, typical when recalling unpleasant childhood tasks. The particle 「に」 clearly marks the mother as the agent of this unwanted action. All kanji used are N5, appropriate for N4 JLPT examples."
         }
     ],
-    "false_friends": [
-        {
-            "term": "から (from)",
-            "meaning": "from",
-            "kind": "similar expression",
-            "nuance": "While 「に」 indicates the agent in passive/causative sentences or the source with verbs like もらう, 習う, and 借りる, 「から」 typically indicates the starting point of an action, a source of information, or the material something is made from. For example, 「先生から聞きました」 (I heard it from the teacher) uses 「から」 because it indicates the source of information, emphasizing the origin rather than the personal agent."
-        }
-    ],
-    "post_false_friends_writeup": "「に」 and 「から」 both can express 'from,' but their usage differs. Use 「に」 when indicating who performed an action passively, who is being made to do something, or the source of receiving. Use 「から」 for the starting point of an action, the source of information, or the material something is made of.",
-    "change": [
-        {
-            "change-type": "violation",
-            "change": "Replaced all example sentences (Japanese, English, English literally, scene, scene rationale) with new, custom-created examples to ensure originality and adherence to the prompt's requirements, including JLPT appropriate kanji."
-        },
-        {
-            "change-type": "violation",
-            "change": "Rewrote all 'nuance' explanations to explicitly quote relevant Japanese phrases and explain social context for the new examples."
-        }
-    ]
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/に"
+    }
 }

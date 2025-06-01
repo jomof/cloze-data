@@ -1,6 +1,8 @@
 {
     "grammar_point": "い-adjective (past)",
     "id": "gp0035",
+    "meaning": "Was, Were (Past tense)",
+    "meaning_warning": "い-Adjectives, whether positive or negative, cannot be used with だ",
     "conjugations": [
         {
             "conjugation-type": "past plain (～た)",
@@ -15,7 +17,7 @@
             "meaning": "was/were (polite past of い-adjective)"
         },
         {
-            "conjugation-type": "negative past plain (～なかった)",
+            "conjugation-type": "negative plain (～ない)",
             "form": "くなかった",
             "rarity": "common",
             "meaning": "was not/were not (plain negative past of い-adjective)"
@@ -42,87 +44,189 @@
         "[い-adjective stem] + くなかった": "Forms the negative plain past tense of an い-adjective."
     },
     "jlpt": "N5",
-    "meaning": "Was, Were (Past tense)",
-    "meaning_warning": "い-Adjectives, whether positive or negative, cannot be used with だ",
     "details": {
         "part-of-speech": "adjective",
         "usage-context": "General"
     },
     "etymology": "The past tense form of い-adjectives is created by conjugating the adjective stem (removing the final い) and adding 「かった」. This 「かった」 is the past tense form of the auxiliary verb 「ある」, which used to be more directly involved in forming the past tense of adjectives. Over time, it became integrated into the adjective itself.",
-    "writeup": "To express the past tense of い-adjectives, you conjugate the adjective by removing the final 「い」 and adding 「かった」. This is equivalent to \"was\" or \"were\" in English. To form the polite past tense, add 「です」 after 「かった」. While this polite form is widely accepted and common in modern speech, some purists may consider it less \"academically correct\" than other forms of politeness. Nevertheless, its usage is very prevalent.\nThe negative past form is created by changing the い-adjective to its negative form (e.g., 「～くない」) and then conjugating the 「ない」 ending to its past form 「なかった」, resulting in 「～くなかった」. A more formal polite negative past can be formed using 「～くありませんでした」.",
+    "writeup": "To express the past tense of い-adjectives, you conjugate the adjective by removing the final 「い」 and adding 「かった」. This is equivalent to \"was\" or \"were\" in English. To form the polite past tense, add 「です」 after 「かった」. While this polite form is widely accepted and common in modern speech, some purists may consider it less \"academically correct\" than other forms of politeness. Nevertheless, its usage is very prevalent. The negative past form is created by changing the い-adjective to its negative form (e.g., 「～くない」) and then conjugating the 「ない」 ending to its past form 「なかった」, resulting in 「～くなかった」. A more formal polite negative past can be formed using 「～くありませんでした」.",
+    "false_friends": [
+        {
+            "term": "でした",
+            "meaning": "was/were (past tense of です)",
+            "kind": "often confused with",
+            "nuance": "Unlike い-adjectives, nouns and な-adjectives use 「でした」 to express past tense. For example, 「学生でした」 (was a student) or 「元気でした」 (was well)."
+        },
+        {
+            "term": "だ/だった",
+            "meaning": "was/were (plain past tense of です)",
+            "kind": "often confused with",
+            "nuance": "「だ/だった」 is used for nouns and な-adjectives in plain past tense, whereas い-adjectives use the 「かった」 form. For instance, 「学生だった」 (was a student) or 「元気だった」 (was well)."
+        }
+    ],
+    "post_false_friends_writeup": "Remember that 「でした」 and 「だ/だった」 are used for nouns and な-adjectives, while the 「かった」 form is specifically for い-adjectives. Using the correct form is essential for accurate and natural Japanese.",
     "examples": [
         {
-            "japanese": "昨日 の 試験 は とても 難し{かった}。",
             "english": "Yesterday's exam was very difficult.",
+            "japanese": [
+                "昨日 の 試験 は とても 難し{かった}。",
+                "昨日 の 試験 は めっちゃ 難し{かった}。",
+                "昨日 の 試験 は ひどく 難し{かった}。",
+                "昨日 の テスト は とても 難し{かった}。",
+                "昨日 の 試験 は かなり 難し{かった} よ。",
+                "昨日 の 試験 が とても 難し{かった}。"
+            ],
             "english_literally": "Yesterday's exam very difficult was.",
-            "scene": "A student tells their friend about a tough exam they had.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "昨日 の 試験 は とても 難し{かったです}。",
-                    "mitigation": "The casual context of two friends discussing an exam naturally leads to the plain form 「難しかった」, avoiding the more formal polite past."
+                    "competing_japanese": "昨日 の 試験 は とても 難し{かったです}。",
+                    "english": "Yesterday's exam was very difficult (polite).",
+                    "hint": "This form is more appropriate for formal situations or when speaking to someone of higher status. We're looking for a plain, casual tone."
                 },
                 {
-                    "competing_grammar": "昨日 の 試験 は とても 難し{い}。",
-                    "mitigation": "The scene specifies 'yesterday's exam', indicating a past event, thus necessitating the past tense 「難しかった」 over the present tense 「難しい」."
+                    "competing_japanese": "昨日 の 試験 は とても 難し{い}。",
+                    "english": "Yesterday's exam is very difficult.",
+                    "hint": "This is the present tense. We are describing an event that happened in the past."
+                },
+                {
+                    "competing_japanese": "昨日 の 試験 は 難し{かった} だろう。",
+                    "english": "Yesterday's exam was probably difficult.",
+                    "hint": "This adds a nuance of conjecture or assumption. We're stating a fact."
+                },
+                {
+                    "competing_japanese": "昨日 の 試験 は とても 難しい {でした}。",
+                    "english": "Yesterday's exam was very difficult (incorrect for い-adjective).",
+                    "hint": "「でした」 is the polite past form used with nouns and な-adjectives, not い-adjectives. We need the past tense of an い-adjective."
+                },
+                {
+                    "competing_japanese": "昨日 の 試験 は とても 難しい {だった}。",
+                    "english": "Yesterday's exam was very difficult (incorrect for い-adjective).",
+                    "hint": "「だった」 is the plain past form used with nouns and な-adjectives, not い-adjectives. We need the past tense of an い-adjective."
                 }
             ],
+            "scene": "A student tells their friend about a tough exam they had.",
             "register": "casual",
             "setting": "informative",
             "conjugation": "past plain (～た)"
         },
         {
-            "japanese": "この ケーキ は 甘{かったです}。",
             "english": "This cake was sweet.",
+            "japanese": [
+                "この ケーキ は 甘{かったです}。",
+                "この ケーキ は とても 甘{かったです}。",
+                "こちらの ケーキ は 甘{かったです}。",
+                "この ケーキ は 本当に 甘{かったです}。",
+                "この ケーキ は 甘{かったです} ね。",
+                "この ケーキ 、とても 甘{かったです}。"
+            ],
             "english_literally": "This cake sweet was (polite).",
-            "scene": "A customer politely tells the baker that the cake they just tried was sweet.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "この ケーキ は 甘{かった}。",
-                    "mitigation": "The polite interaction between a customer and a baker requires polite language, making 「甘かったです」 more appropriate than the plain form 「甘かった」."
+                    "competing_japanese": "この ケーキ は 甘{かった}。",
+                    "english": "This cake was sweet (plain).",
+                    "hint": "This is the plain past tense. The context suggests a polite exchange."
                 },
                 {
-                    "competing_grammar": "この ケーキ は 甘{いです}。",
-                    "mitigation": "The action of trying the cake is implied to be in the past, guiding the learner to use the past tense form 「甘かったです」."
+                    "competing_japanese": "この ケーキ は 甘{いです}。",
+                    "english": "This cake is sweet.",
+                    "hint": "This is the present polite tense. We're talking about something tasted in the past."
+                },
+                {
+                    "competing_japanese": "この ケーキ は 甘い でしょう。",
+                    "english": "This expresses a guess or probability about the cake's sweetness. We're stating a past observation.",
+                    "hint": "This expresses a guess or probability about the cake's sweetness. We're stating a past observation."
+                },
+                {
+                    "competing_japanese": "この ケーキ は 甘い {でした}。",
+                    "english": "This cake was sweet (incorrect for い-adjective).",
+                    "hint": "「でした」 is used as the polite past for nouns and な-adjectives. い-adjectives form their polite past differently, by adding 「です」 to their plain past form."
+                },
+                {
+                    "competing_japanese": "この ケーキ は 甘い {だった} です。",
+                    "english": "This cake was sweet (incorrect for い-adjective).",
+                    "hint": "「だった」 is the plain past form for nouns and な-adjectives. It cannot be directly appended to an い-adjective to form its past tense."
                 }
             ],
+            "scene": "A customer politely tells the baker that the cake they just tried was sweet.",
             "register": "teineigo (polite)",
             "setting": "professional",
             "conjugation": "past polite (～ました)"
         },
         {
-            "japanese": "週末 の 天気 は 良く{なかった} ね。",
             "english": "The weekend weather wasn't good, was it?",
+            "japanese": [
+                "週末 の 天気 は 良く{なかった} ね。",
+                "週末 の 天気 は 全然 良く{なかった}。",
+                "週末 の 天気 は 全く 良く{なかった} ね。",
+                "週末 の 天気 は 良く{なかった} よ。",
+                "週末 の 天気 、全然 良く{なかった}。"
+            ],
             "english_literally": "Weekend's weather good wasn't, right?",
-            "scene": "Two friends are chatting about the recent bad weather over the weekend.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "週末 の 天気 は 良く{なかった} です ね。",
-                    "mitigation": "The casual interaction between friends is best expressed with the plain negative past form 「良くなかった」, especially with the particle 「ね」, rather than the polite form."
+                    "competing_japanese": "週末 の 天気 は 良く{なかった} です ね。",
+                    "english": "The weekend weather wasn't good, was it? (polite)",
+                    "hint": "This form is more polite. The conversation between friends implies a casual tone."
                 },
                 {
-                    "competing_grammar": "週末 の 天気 は 良く{ない} ね。",
-                    "mitigation": "The phrase 'weekend' clearly indicates a past event, thus requiring the past tense 「良くなかった」 over the present negative 「良くない」."
+                    "competing_japanese": "週末 の 天気 は 良く{ない} ね。",
+                    "english": "The weekend weather isn't good, is it?",
+                    "hint": "This is the present negative tense. We're referring to the weather of the past weekend."
+                },
+                {
+                    "competing_japanese": "週末 の 天気 は 良くない {でした} ね。",
+                    "english": "The weekend weather wasn't good (incorrect for い-adjective).",
+                    "hint": "「でした」 is used as the polite past for nouns and な-adjectives. For い-adjectives, even in their negative form, the past tense is formed by replacing the final い with かった."
+                },
+                {
+                    "competing_japanese": "週末 の 天気 は 良くない {だった} ね。",
+                    "english": "The weekend weather wasn't good (incorrect for い-adjective).",
+                    "hint": "「だった」 is the plain past form for nouns and な-adjectives. For い-adjectives, even in their negative form, the past tense is formed by replacing the final い with かった."
                 }
             ],
+            "scene": "Two friends are chatting about the recent bad weather over the weekend.",
             "register": "casual",
             "setting": "friendly",
-            "conjugation": "negative past plain (～なかった)"
+            "conjugation": "negative plain (～ない)"
         },
         {
-            "japanese": "その ホテル は あまり 綺麗{くなかった} です。",
-            "english": "That hotel wasn't very clean.",
-            "english_literally": "That hotel not very clean was (polite).",
-            "scene": "A man explains to his travel agent why he wasn't satisfied with his last hotel.",
-            "scene_rationale": [
+            "english": "That dish wasn't very delicious.",
+            "japanese": [
+                "その 料理 は あまり 美味し{くなかった} です。",
+                "その 料理 は そんなに 美味し{くなかった} です。",
+                "あの 料理 は あまり 美味し{くなかった} です。",
+                "その 料理 は ちょっと 美味し{くなかった} です。",
+                "その 料理 は 美味し{くなかった} です ね。"
+            ],
+            "english_literally": "That dish not very delicious was (polite).",
+            "competing_grammar": [
                 {
-                    "competing_grammar": "その ホテル は あまり 綺麗{くなかった}。",
-                    "mitigation": "When speaking to a travel agent about service, a polite register is expected, making 「綺麗くなかったです」 more suitable than the plain form."
+                    "competing_japanese": "その 料理 は あまり 美味し{くなかった}。",
+                    "english": "That dish wasn't very delicious (plain).",
+                    "hint": "This is the plain negative past. The setting requires a polite register for the customer and waiter."
                 },
                 {
-                    "competing_grammar": "その ホテル は あまり 綺麗{くありませんでした}。",
-                    "mitigation": "While 「綺麗くありませんでした」 is slightly more formal, 「綺麗くなかったです」 is a common and polite way to express negative past experiences in professional settings."
+                    "competing_japanese": "その 料理 は あまり 美味し{くありませんでした}。",
+                    "english": "That dish wasn't very delicious (more formal polite).",
+                    "hint": "This is a very formal negative past polite form. We're looking for a polite but slightly less stiff expression for this context."
+                },
+                {
+                    "competing_japanese": "その 料理 は 美味しくない です。",
+                    "english": "That dish isn't delicious.",
+                    "hint": "This is the present tense. We are describing a past experience."
+                },
+                {
+                    "competing_japanese": "その 料理 は あまり 美味しくない {でした}。",
+                    "english": "That dish wasn't very delicious (incorrect for い-adjective).",
+                    "hint": "「でした」 is used as the polite past for nouns and な-adjectives. い-adjectives, even in their negative form, create their polite past by adding 「です」 to their plain past form."
+                },
+                {
+                    "competing_japanese": "その 料理 は あまり 美味しくない {だった} です。",
+                    "english": "That dish wasn't very delicious (incorrect for い-adjective).",
+                    "hint": "「だった」 is the plain past form for nouns and な-adjectives. It cannot be directly appended to the negative form of an い-adjective to create its past tense."
                 }
             ],
+            "scene": "A customer politely tells the waiter that the dish they just tried wasn't very delicious.",
             "register": "teineigo (polite)",
             "setting": "professional",
             "conjugation": "negative past polite (～ませんでした)",
@@ -130,20 +234,43 @@
             "listener_gender": "female"
         },
         {
-            "japanese": "会議 の 雰囲気 は 悪{くありませんでした}。",
             "english": "The atmosphere of the meeting wasn't bad.",
+            "japanese": [
+                "会議 の 雰囲気 は 悪{くありませんでした}。",
+                "会議 の 雰囲気 は 全く 悪{くありませんでした}。",
+                "会議 の 雰囲気 は 悪{くありませんでした} よ。",
+                "会議 の 雰囲気 、悪{くありませんでした}。",
+                "会議 の 雰囲気 は 決して 悪{くありませんでした}。"
+            ],
             "english_literally": "Meeting's atmosphere bad wasn't (polite).",
-            "scene": "A younger manager reports on the outcome of a difficult meeting to a superior.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "会議 の 雰囲気 は 悪{くなかった} です。",
-                    "mitigation": "In a formal business environment, especially when a subordinate is speaking to a superior, the more formal polite negative past 「悪くありませんでした」 is preferred for showing greater respect."
+                    "competing_japanese": "会議 の 雰囲気 は 悪{くなかった} です。",
+                    "english": "The atmosphere of the meeting wasn't bad (polite).",
+                    "hint": "This is a polite negative past form, but 「くありませんでした」 conveys a higher level of formality and respect, which is suitable for addressing a superior."
                 },
                 {
-                    "competing_grammar": "会議 の 雰囲気 は 悪{くなかった}。",
-                    "mitigation": "Referring to a past meeting, the past tense is necessary. The polite context with a superior requires the polite negative past form."
+                    "competing_japanese": "会議 の 雰囲気 は 悪{くなかった}。",
+                    "english": "The atmosphere of the meeting wasn't bad (plain).",
+                    "hint": "This is the plain negative past. This context requires a formal and respectful tone when speaking to a superior."
+                },
+                {
+                    "competing_japanese": "会議 の 雰囲気 は 悪くない です。",
+                    "english": "The atmosphere of the meeting isn't bad.",
+                    "hint": "This is the present tense. We are describing a past event."
+                },
+                {
+                    "competing_japanese": "会議 の 雰囲気 は 悪くない {でした}。",
+                    "english": "The atmosphere of the meeting wasn't bad (incorrect for い-adjective).",
+                    "hint": "「でした」 is used as the polite past for nouns and な-adjectives. While 「～くありませんでした」 is correct, directly adding 「でした」 to 「悪くない」 is not the proper conjugation for い-adjectives."
+                },
+                {
+                    "competing_japanese": "会議 の 雰囲気 は 悪くない {だった} です。",
+                    "english": "The atmosphere of the meeting wasn't bad (incorrect for い-adjective).",
+                    "hint": "「だった」 is the plain past form for nouns and な-adjectives. It cannot be used with the negative form of an い-adjective to create its past tense."
                 }
             ],
+            "scene": "A younger manager reports on the outcome of a difficult meeting to a superior.",
             "register": "teineigo (polite)",
             "setting": "professional",
             "conjugation": "negative past polite (～ませんでした)",
@@ -151,26 +278,7 @@
             "nuance": "The use of 「くありませんでした」 conveys a higher degree of politeness and formality, which is appropriate when a younger manager is addressing a superior, showing respect and professionalism."
         }
     ],
-    "false_friends": [
-        {
-            "term": "でした",
-            "meaning": "was/were (past tense of です)",
-            "kind": "often confused with",
-            "nuance": "Unlike い-adjectives, nouns and な-adjectives use 「でした」 to express past tense. For example, 「学生でした」 (was a student) or 「元気でした」 (was well)."
-        }
-    ],
-    "post_false_friends_writeup": "Remember that 「でした」 is used for nouns and な-adjectives, while the 「かった」 form is specifically for い-adjectives. Using the correct form is essential for accurate and natural Japanese.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/past-tense-い-adjectives"
-    },
-    "change": [
-        {
-            "change-type": "schema",
-            "change": "Removed 'register' from top-level 'details' as the grammar point encompasses both casual and polite forms, making a single top-level register misleading for the grammar point as a whole."
-        },
-        {
-            "change-type": "schema",
-            "change": "Added curly braces for bolding to the relevant alternative grammar elements within 'competing_grammar' in 'scene_rationale' for consistency with 'japanese' field formatting and to fully address a prior schema instruction."
-        }
-    ]
+    }
 }

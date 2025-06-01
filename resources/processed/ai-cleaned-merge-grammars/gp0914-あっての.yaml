@@ -1,6 +1,8 @@
 {
     "grammar_point": "あっての",
     "id": "gp0914",
+    "meaning": "Exist only because of or due to, owe everything to",
+    "meaning_warning": "が is usually omitted",
     "pronunciation": {
         "katakana": "アッテノ",
         "romaji": "atte no"
@@ -9,8 +11,6 @@
         "[Noun A が] + あっての + [Noun B]": "Noun B exists only because of Noun A. Noun B owes everything to Noun A."
     },
     "jlpt": "N1",
-    "meaning": "Exist only because of or due to, owe everything to",
-    "meaning_warning": "が is usually omitted",
     "details": {
         "part-of-speech": "phrase",
         "register": "formal",
@@ -18,62 +18,145 @@
     },
     "etymology": "あっての is derived from the verb ある (aru, to exist) in its te-form あって, followed by the particle の. This construction implies a state of being dependent on something else. Etymologically, it can be viewed as an evolution of the basic grammar structure 〜がある (to have/there is). The key distinction lies in の allowing the second noun (B) to be marked as possessing the first noun (A), while the te-form あって signals that further crucial information about this dependency will follow.",
     "writeup": "あっての is a grammar pattern emphasizing that something (B) exists **only because of** something else (A). It expresses that (B) owes everything to (A), or that (B)'s existence is solely due to (A). The structure is `[Noun A] あっての [Noun B]`. This expression combines the te-form of the verb ある (to exist), あって, and the particle の. It is typically used when [Noun B] positively benefits from [Noun A], implying gratitude or recognition. The particle が may appear between [Noun A] and あっての, but it is **usually omitted**. Furthermore, because the te-form indicates that more crucial information will follow, sentences using あっての are very often followed by structures like から or ので to explain the reason for the dependency.",
+    "false_friends": [
+        {
+            "term": "からこそ",
+            "meaning": "It is precisely because, (and therefore)",
+            "kind": "similar expression",
+            "nuance": "からこそ emphasizes the *reason* or *cause* for something, highlighting that it is *precisely* that reason which leads to the result. あっての emphasizes the *existence* or *being* of something *due to* something else, implying a foundational dependency or gratitude. While both involve causality, からこそ focuses on the *reason*, あっての on the *prerequisite existence*."
+        },
+        {
+            "term": "おかげで",
+            "meaning": "Thanks to, owing to",
+            "kind": "similar expression",
+            "nuance": "「おかげで」 attributes a positive outcome to a specific cause, often implying gratitude for a beneficial influence. 「あっての」, however, highlights a fundamental prerequisite or basis for existence, implying that the second noun literally exists or functions *because* of the first, often carrying a stronger sense of indispensability or profound gratitude."
+        },
+        {
+            "term": "なしでは",
+            "meaning": "Without, unless there is",
+            "kind": "similar expression",
+            "nuance": "「なしでは」 directly states a negative condition (if X is absent, Y cannot happen). 「あっての」 expresses a positive dependency (Y exists *because* X exists), often implying X is the foundational element or essential prerequisite for Y. While both concern dependency, 「あっての」 focuses on the enabling presence, whereas 「なしでは」 focuses on the disabling absence."
+        }
+    ],
+    "post_false_friends_writeup": "While both あっての and からこそ express a causal link, their focus differs. あっての highlights that something's very existence is contingent upon something else, often implying gratitude or a fundamental prerequisite. からこそ, on the other hand, puts emphasis on the *reason* itself, stating that it is *precisely because* of X that Y occurs. Consider whether the emphasis is on the *source of existence* (あっての) or the *specific, emphasized reason* (からこそ). Similarly, while 「おかげで」 and 「なしでは」 describe dependence, 「あっての」 specifically points to something as the *foundational prerequisite* for another's existence, often with a sense of indebtedness, which differs from simply attributing a positive outcome or stating a negative condition.",
     "examples": [
         {
-            "japanese": "私 の 商売 は お客様 {あっての} ものだと 思います が、理不尽 な 苦情 には 困惑 します。",
             "english": "I believe our business exists thanks to our customers, but unreasonable complaints do confuse me.",
-            "scene": "An experienced retail manager discussing customer service challenges with a new hire.",
-            "scene_rationale": [
+            "japanese": [
+                "私 の 商売 は お客様 {あっての} ものだと 思います が、理不尽 な 苦情 には 困惑 します。",
+                "私 の 商売 は お客様 {あっての} ものであると 思います が、理不尽 な 苦情 には 困惑 いたします。",
+                "うち の 商売 は お客さん {あっての} もん だ と 思う けど、理不尽 な クレーム には 困る よ。"
+            ],
+            "english_literally": "My business, as for customers, is something that exists because of them, but as for unreasonable complaints, I am confused by them.",
+            "competing_grammar": [
                 {
-                    "competing_grammar": "お客様がいるからこそ成り立つ商売",
-                    "mitigation": "The scene frames it as a manager explaining a fundamental business principle, which あっての emphasizes the foundational dependence rather than just the cause of establishment."
+                    "competing_japanese": "お客様 が いるからこそ 成り立つ 商売",
+                    "english": "A business that is established precisely because customers exist.",
+                    "hint": "「からこそ」 emphasizes the precise reason for something. We're looking for a phrase that implies the business's existence is fundamentally dependent on customers as a prerequisite."
+                },
+                {
+                    "competing_japanese": "私 の 商売 は お客様 の おかげで 成り立って いる と 思います が、理不尽 な 苦情 には 困惑 します。",
+                    "english": "I believe our business stands thanks to our customers, but unreasonable complaints do confuse me.",
+                    "hint": "「おかげで」 attributes a positive outcome due to a cause. We're looking for a phrase that implies the business's existence is fundamentally dependent on customers as a prerequisite."
+                },
+                {
+                    "competing_japanese": "私 の 商売 は お客様 なし では 成り立たない と 思います が、理不尽 な 苦情 には 困惑 します。",
+                    "english": "I believe our business cannot stand without customers, but unreasonable complaints do confuse me.",
+                    "hint": "「なしでは」 expresses what cannot happen without something. We're looking for a phrase that implies the business's existence is fundamentally dependent on customers as a prerequisite."
                 }
             ],
+            "scene": "An experienced retail manager discussing customer service challenges with a new hire.",
             "register": "formal",
             "setting": "serious",
             "speaker_gender": "male",
             "nuance": "The manager uses polite language 「〜と思います」 to express their opinion while maintaining a professional tone. The phrase 「困惑します」 conveys a sense of being troubled, fitting for a manager expressing mild frustration."
         },
         {
-            "japanese": "この 素晴らしい 成果 は、皆様 の 献身 的 な 努力 {あっての} ものです。心 から 感謝 申し上げます。",
             "english": "This wonderful achievement is entirely thanks to your devoted efforts. I offer my heartfelt gratitude.",
-            "scene": "A CEO addressing their team at a celebratory event after a successful project.",
-            "scene_rationale": [
+            "japanese": [
+                "この 素晴らしい 成果 は、皆様 の 献身 的 な 努力 {あっての} ものです。心 から 感謝 申し上げます。",
+                "この 素晴らしい 成果 は、皆 の 献身 的 な 努力 {あっての} ものです。心 から 感謝 します。"
+            ],
+            "english_literally": "This wonderful achievement, as for everyone's devoted efforts, is something that exists because of them. I offer my heartfelt gratitude from the bottom of my heart.",
+            "competing_grammar": [
                 {
-                    "competing_grammar": "皆様の努力があったからこその成果",
-                    "mitigation": "While からこそ emphasizes the precise reason, あっての highlights that the achievement itself is *made possible by* or *built upon* the efforts, aligning with a CEO's message of profound gratitude for foundational contributions."
+                    "competing_japanese": "皆様 の 努力 が あったからこそ の 素晴らしい 成果 です。",
+                    "english": "This wonderful achievement is precisely because of everyone's efforts.",
+                    "hint": "「からこそ」 emphasizes the precise reason. We're looking for a phrase that implies the achievement itself is fundamentally *made possible by* these efforts."
+                },
+                {
+                    "competing_japanese": "この 素晴らしい 成果 は、皆様 の 献身 的 な 努力 の おかげです。心 から 感謝 申し上げます。",
+                    "english": "This wonderful achievement is thanks to everyone's devoted efforts. I offer my heartfelt gratitude.",
+                    "hint": "「おかげで」 attributes a positive outcome to a cause. We're looking for a phrase that implies the achievement is *based on* or *exists due to* these efforts as a prerequisite."
+                },
+                {
+                    "competing_japanese": "皆様 の 献身 的 な 努力 なし では、この 素晴らしい 成果 は ありえませんでした。心 から 感謝 申し上げます。",
+                    "english": "Without everyone's devoted efforts, this wonderful achievement would not have been possible. I offer my heartfelt gratitude.",
+                    "hint": "「なしでは」 expresses what couldn't happen without something. We're looking for a phrase that implies the achievement is *based on* or *exists due to* these efforts as a prerequisite."
                 }
             ],
+            "scene": "A CEO addressing their team at a celebratory event after a successful project.",
             "register": "formal",
             "setting": "inspirational",
             "listener_gender": "group",
             "nuance": "The CEO's use of 「素晴らしい成果」 and 「献身的な努力」 combined with the humble 「心から感謝申し上げます」 demonstrates formal appreciation to a group, characteristic of a leader addressing their team."
         },
         {
-            "japanese": "私 は お金 が なければ 愛 など 存在 せず、真 の 幸福 は お金 {あっての} ものだと 考えています。",
             "english": "I believe that love cannot exist without money, and true happiness is something that exists only because of money.",
-            "scene": "A young woman expressing a cynical view on relationships during a casual conversation with friends.",
-            "scene_rationale": [
+            "japanese": [
+                "私 は お金 が なければ 愛 など 存在 せず、真 の 幸福 は お金 {あっての} ものだと 考えています。",
+                "私 は お金 が なきゃ 愛 なんて 存在 しないし、本当 の 幸せ は お金 {あっての} ものだ と 思ってる。"
+            ],
+            "english_literally": "As for me, if there is no money, love and so on does not exist, and true happiness is something that exists because of money, I am thinking.",
+            "competing_grammar": [
                 {
-                    "competing_grammar": "お金があるから幸せがある",
-                    "mitigation": "This is a simple statement of cause and effect. The speaker's cynical stance emphasizes that money is not just a cause, but an *absolute prerequisite* for happiness, which あっての captures more strongly as a fundamental dependency."
+                    "competing_japanese": "お金 が あるからこそ 真 の 幸福 が ある と 考えています。",
+                    "english": "I believe true happiness exists precisely because there is money.",
+                    "hint": "「からこそ」 emphasizes the precise reason. We're looking for a phrase that implies happiness fundamentally *exists due to* money as a prerequisite."
+                },
+                {
+                    "competing_japanese": "私 は お金 の おかげで 真 の 幸福 が ある と 考えています。",
+                    "english": "I believe true happiness exists thanks to money.",
+                    "hint": "「おかげで」 attributes a positive outcome. We're looking for a phrase that implies happiness fundamentally *exists due to* money as a prerequisite."
+                },
+                {
+                    "competing_japanese": "私 は お金 なし では 真 の 幸福 は ない と 考えています。",
+                    "english": "I believe true happiness cannot exist without money.",
+                    "hint": "「なしでは」 expresses what cannot happen without something. We're looking for a phrase that implies happiness fundamentally *exists due to* money as a prerequisite."
                 }
             ],
+            "scene": "A young woman expressing a cynical view on relationships during a casual conversation with friends.",
             "register": "casual",
             "setting": "serious",
             "speaker_gender": "female",
             "nuance": "The speaker's use of 「〜など」 (love and so on) expresses dismissal, while 「〜と考えています」 is a slightly more formal way to state an opinion, adding weight to her somewhat provocative statement in a casual setting."
         },
         {
-            "japanese": "私 の 存在 は あなた {あっての} ものです。あなた なし では、私 の 人生 に 意味 は ありません。",
             "english": "My existence is solely thanks to you. Without you, my life has no meaning.",
-            "scene": "A man confessing his deep feelings to his beloved partner on a quiet evening.",
-            "scene_rationale": [
+            "japanese": [
+                "私 の 存在 は あなた {あっての} ものです。あなた なし では、私 の 人生 に 意味 は ありません。",
+                "俺 の 存在 は お前 {あっての} もん だ よ。お前 が いなきゃ、俺 の 人生 に 意味 なんて ない。",
+                "私 の 存在 は あなた {あっての} もの よ。あなた なし では、私 の 人生 に 意味 は ない わ。"
+            ],
+            "english_literally": "My existence, as for you, is something that exists because of you. Without you, in my life, there is no meaning.",
+            "competing_grammar": [
                 {
-                    "competing_grammar": "あなたがいるから私がいる",
-                    "mitigation": "This is a simple causal statement of presence. The scene emphasizes an existential reliance where the speaker's entire being is *dependent on* the listener, a deeper connection that あっての conveys more profoundly."
+                    "competing_japanese": "あなた が いるからこそ 私 の 存在 が あります。",
+                    "english": "My existence is precisely because you are here.",
+                    "hint": "「からこそ」 emphasizes the precise reason. We're looking for a phrase that implies existence is fundamentally *owed to* or *dependent on* someone."
+                },
+                {
+                    "competing_japanese": "私 の 存在 は あなた の おかげです。あなた なし では、私 の 人生 に 意味 は ありません。",
+                    "english": "My existence is thanks to you. Without you, my life has no meaning.",
+                    "hint": "「おかげで」 attributes a positive outcome to a cause. We're looking for a phrase that implies existence is fundamentally *owed to* or *dependent on* someone."
+                },
+                {
+                    "competing_japanese": "あなた なし では 私 の 存在 は ありえません。",
+                    "english": "My existence cannot be without you.",
+                    "hint": "「なしでは」 expresses what cannot happen without something. We're looking for a phrase that implies existence is fundamentally *owed to* or *dependent on* someone."
                 }
             ],
+            "scene": "A man confessing his deep feelings to his beloved partner on a quiet evening.",
             "register": "shitashii kuchō (intimate)",
             "setting": "intimate",
             "speaker_gender": "male",
@@ -81,15 +164,20 @@
             "nuance": "The phrase 「私の存在はあなたあってのものです」 conveys a profound, almost existential dependence, common in deeply intimate confessions. The directness of 「あなたなしでは」 reinforces this heartfelt sentiment from a male speaker to his partner."
         },
         {
-            "japanese": "彼 が 大学 を 辞める と いう のは、きっと 何か 深刻 な 理由 {あっての} ことでしょう。",
             "english": "The fact that he's quitting university must be for some serious reason.",
-            "scene": "Two university students discussing a friend's sudden decision to drop out.",
-            "scene_rationale": [
+            "japanese": [
+                "彼 が 大学 を 辞める と いう のは、きっと 何か 深刻 な 理由 {あっての} ことでしょう。",
+                "彼 が 大学 を 辞める って いう のは、きっと 何か 深刻 な 理由 {あっての} ことだろう ね。"
+            ],
+            "english_literally": "The fact that he quits university, surely, is something that exists because of some serious reason.",
+            "competing_grammar": [
                 {
-                    "competing_grammar": "何か理由があるから辞めるのだろう",
-                    "mitigation": "This implies a simple causal relationship. The scene highlights the speaker's speculation that the friend's drastic action is *a direct consequence of* a profound, underlying reason, emphasizing the fundamental basis for the decision."
+                    "competing_japanese": "彼 が 大学 を 辞める のは、きっと 何か 深刻 な 理由 が あるからこそ でしょう。",
+                    "english": "He's probably quitting university precisely because there's some serious reason.",
+                    "hint": "「からこそ」 emphasizes the precise reason. We're looking for a phrase that implies his quitting is fundamentally *based on* a serious reason."
                 }
             ],
+            "scene": "Two university students discussing a friend's sudden decision to drop out.",
             "register": "casual",
             "setting": "reflective",
             "speaker_gender": "male",
@@ -97,15 +185,30 @@
             "nuance": "The speaker uses 「きっと〜でしょう」 to express a strong presumption, reflecting a male university student's casual yet thoughtful speculation about a friend's situation."
         },
         {
-            "japanese": "ゲスト {あっての} 遊園地 だ と いう こと を、決して 忘れては なりません。",
             "english": "You must never forget that the amusement park exists solely for our guests.",
-            "scene": "A theme park manager emphatically reminding staff during a morning briefing.",
-            "scene_rationale": [
+            "japanese": [
+                "ゲスト {あっての} 遊園地 だ と いう こと を、決して 忘れては なりません。",
+                "ゲスト {あっての} 遊園地 だって こと を、絶対 忘れちゃ いけない よ。"
+            ],
+            "english_literally": "That the amusement park, as for guests, is something that exists because of them, you must never forget.",
+            "competing_grammar": [
                 {
-                    "competing_grammar": "ゲストがいるから遊園地が成り立つ",
-                    "mitigation": "This implies a simple establishment. The manager's emphatic statement emphasizes that the amusement park's very existence and purpose are *rooted in* and *dependent on* the guests, a core principle for operations."
+                    "competing_japanese": "ゲスト が いるからこそ 遊園地 が 成り立つ のだ と いう こと を、決して 忘れては なりません。",
+                    "english": "You must never forget that the amusement park stands precisely because there are guests.",
+                    "hint": "「からこそ」 emphasizes the precise reason. We're looking for a phrase that implies the park's existence is fundamentally *for* and *dependent on* guests."
+                },
+                {
+                    "competing_japanese": "ゲスト の おかげで 遊園地 が ある のだ と いう こと を、決して 忘れては なりません。",
+                    "english": "You must never forget that the amusement park exists thanks to the guests.",
+                    "hint": "「おかげで」 attributes a positive outcome. We're looking for a phrase that implies the park's existence is fundamentally *for* and *dependent on* guests as a prerequisite."
+                },
+                {
+                    "competing_japanese": "ゲスト なし では 遊園地 は 成り立たない のだ と いう こと を、決して 忘れては なりません。",
+                    "english": "You must never forget that the amusement park cannot stand without guests.",
+                    "hint": "「なしでは」 expresses what cannot happen without something. We're looking for a phrase that implies the park's existence is fundamentally *for* and *dependent on* guests as a prerequisite."
                 }
             ],
+            "scene": "A theme park manager emphatically reminding staff during a morning briefing.",
             "register": "formal",
             "setting": "instructional",
             "speaker_gender": "male",
@@ -113,76 +216,61 @@
             "nuance": "The manager's use of 「決して〜してはなりません」 is a strong, authoritative command, common in formal instructions to a team, emphasizing the critical importance of guests for the theme park's operation."
         },
         {
-            "japanese": "私 の 作品 は、家族 の 温かい 支え {あっての} ものです。彼ら が いなければ、この 成功 は ありえませんでした。",
             "english": "My works are what they are only because of my family's warm support. Without them, this success would have been impossible.",
-            "scene": "A renowned female novelist acknowledging her family during an acceptance speech for an award.",
-            "scene_rationale": [
+            "japanese": [
+                "私 の 作品 は、家族 の 温かい 支え {あっての} ものです。彼ら が いなければ、この 成功 は ありえませんでした。",
+                "私 の 作品 は、家族 の 温かい 支え {あっての} もん だ よ。彼ら が いなきゃ、この 成功 は なかった と 思う。"
+            ],
+            "english_literally": "My works, as for my family's warm support, are something that exists because of it. If they were not here, this success would not have been possible.",
+            "competing_grammar": [
                 {
-                    "competing_grammar": "家族の支えがあったからこそ成功できた",
-                    "mitigation": "While からこそ emphasizes the precise reason for success, あっての highlights that the author's entire body of work *is owed to* or *exists due to* the family's continuous and foundational support."
+                    "competing_japanese": "家族 の 温かい 支え が あったからこそ、私 の 作品 は 今 の ような ものに なった のです。彼ら が いなければ、この 成功 は ありえませんでした。",
+                    "english": "My works became what they are precisely because of my family's warm support. Without them, this success would have been impossible.",
+                    "hint": "「からこそ」 emphasizes the precise reason. We're looking for a phrase that implies the works fundamentally *exist due to* or *are made possible by* the support."
+                },
+                {
+                    "competing_japanese": "私 の 作品 は、家族 の 温かい 支え の おかげです。彼ら が いなければ、この 成功 は ありえませんでした。",
+                    "english": "My works are thanks to my family's warm support. Without them, this success would have been impossible.",
+                    "hint": "「おかげで」 attributes a positive outcome to a cause. We're looking for a phrase that implies the works fundamentally *exist due to* or *are made possible by* the support as a prerequisite."
+                },
+                {
+                    "competing_japanese": "家族 の 温かい 支え なし では、私 の 作品 は 今 の ような ものに なりませんでした。彼ら が いなければ、この 成功 は ありえませんでした。",
+                    "english": "Without my family's warm support, my works would not have become what they are. Without them, this success would have been impossible.",
+                    "hint": "「なしでは」 expresses what cannot happen without something. We're looking for a phrase that implies the works fundamentally *exist due to* or *are made possible by* the support."
                 }
             ],
+            "scene": "A renowned female novelist acknowledging her family during an acceptance speech for an award.",
             "register": "formal",
             "setting": "inspirational",
             "speaker_gender": "female",
             "nuance": "The novelist's use of 「温かい支え」 conveys deep appreciation. The phrase 「彼らがいなければ、この成功はありえませんでした」 directly links her success to her family, conveying a profound sense of indebtedness from a female speaker in a public address."
         },
         {
-            "japanese": "コレクション が 焼失 して 悲しい のは 当然 だ けど、命 {あっての} 物種 と いう ように、無事 だった のが 何より だよ。",
-            "english": "I know you're sad your collection burned, but as the saying goes, \"while there is life, there is hope,\" being safe is what matters most.",
-            "scene": "A friend comforting another who lost prized possessions in a fire, using a common proverb.",
-            "scene_rationale": [
+            "english": "I know you're sad your collection burned, but as the saying goes, while there is life, there is hope; being safe is what matters most.",
+            "japanese": [
+                "コレクション が 焼失 して 悲しい のは 当然 だ けど、命 {あっての} 物種 と いう ように、無事 だった のが 何より だよ。"
+            ],
+            "english_literally": "That your collection burned and is sad is natural, but as the saying 'life is the basis of all things' goes, that you were safe is what matters most.",
+            "competing_grammar": [
                 {
-                    "competing_grammar": "命があるからこそ希望がある",
-                    "mitigation": "This phrase states a causal link for the proverb. The use of the fixed proverb 「命あっての物種」 directly employs the grammar point to convey that *everything* (hope, potential) is fundamentally *dependent on* life itself, offering comfort and perspective."
+                    "competing_japanese": "命 が あるからこそ 物種 が ある と いう ように、無事 だった のが 何より だよ。",
+                    "english": "As the saying goes, it is precisely because there is life that there are things; being safe is what matters most.",
+                    "hint": "「からこそ」 emphasizes the precise reason. We're looking for a fixed proverb that states life is the fundamental basis for all other things."
+                },
+                {
+                    "competing_japanese": "命 なし では 物種 も ない と いう ように、無事 だった のが 何より だよ。",
+                    "english": "As the saying goes, without life, there are no things; being safe is what matters most.",
+                    "hint": "「なしでは」 expresses what cannot happen without something. We're looking for a fixed proverb that states life is the fundamental basis for all other things."
                 }
             ],
+            "scene": "A friend comforting another who lost prized possessions in a fire, using a common proverb.",
             "register": "casual",
             "setting": "sympathetic",
             "nuance": "The use of 「当然だけど」 softens the statement, and 「〜だよ」 is a common casual ending. The proverb 「命あっての物種」 is a fixed expression emphasizing that everything else is secondary to life itself."
         }
     ],
     "post_example_writeup": "あっての is often used in situations where expressing gratitude or fundamental dependence is important. It carries a more formal and emphatic tone than simply stating a causal relationship.",
-    "false_friends": [
-        {
-            "term": "からこそ",
-            "meaning": "It is precisely because, (and therefore)",
-            "kind": "similar expression",
-            "nuance": "からこそ emphasizes the *reason* or *cause* for something, highlighting that it is *precisely* that reason which leads to the result. あっての emphasizes the *existence* or *being* of something *due to* something else, implying a foundational dependency or gratitude. While both involve causality, からこそ focuses on the *reason*, あっての on the *prerequisite existence*."
-        }
-    ],
-    "post_false_friends_writeup": "While both あっての and からこそ express a causal link, their focus differs. あっての highlights that something's very existence is contingent upon something else, often implying gratitude or a fundamental prerequisite. からこそ, on the other hand, puts emphasis on the *reason* itself, stating that it is *precisely because* of X that Y occurs. Consider whether the emphasis is on the *source of existence* (あっての) or the *specific, emphasized reason* (からこそ).",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/あっての"
-    },
-    "change": [
-        {
-            "change-type": "violation",
-            "change": "Removed empty 'conjugations' array as the grammar point is not conjugatable in the specified sense."
-        },
-        {
-            "change-type": "schema",
-            "change": "Changed 'details.使用域' to 'details.usage-context' and translated its value to 'general' to conform to schema's English property names."
-        },
-        {
-            "change-type": "violation",
-            "change": "Rewrote all example sentences to be original creations, not literally taken from Bunpro, while maintaining meaning and JLPT level appropriateness. This addresses the constraint 'MUST NOT use any example sentences taken literally from dojg or bunpro'."
-        },
-        {
-            "change-type": "violation",
-            "change": "Removed quoted text from 'english' fields in examples 5, 6, and 7, relocating contextual information to the 'scene' field or rephrasing for clarity. This addresses pre-lint warnings about quotes in 'english' fields."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Adjusted the 'register' for example 3 from 'intimate' to 'shitashii kuchō (intimate)' for better alignment with the schema's specific enum value, although 'intimate' alone is also present."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Updated the 'nuance' field for all examples to align with the newly generated Japanese sentences and provide specific references in Japanese, along with explanations for register, gender, and age where applicable."
-        },
-        {
-            "change-type": "violation",
-            "change": "Added 'からこそ' as a false friend based on its presence in 'scene_rationale's 'competing_grammar' for multiple examples, and provided 'term', 'meaning', 'kind', and 'nuance'."
-        }
-    ]
+    }
 }

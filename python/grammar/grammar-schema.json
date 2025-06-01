@@ -145,34 +145,18 @@
     "english": { "type": "string" },
     // Japanese **MUST** have a space between words to assist mecab in parsing. For example imamoto should be '今本' but 'ima hon' should be '今 本'.
     // Japanese **MUST** sound natural and fluent to a native speaker.
+    // Japanese **MUST NOT** contain furigana.
     "japanese": { "type": "string" },
-    // EtymologyType **MUST** be in English.
-    // If present, etymologyType **MUST** be a linguistically interesting discussion of the history of how the related element evolved.
-    "etymologyType": { "type": "string" },
-    "changeType": {
-      "type": "string",
-      "enum": [
-          // A minor change that does not affect the meaning of the grammar point and doesn't satisfy a **MUST** clause somewhere.
-          "suggestion", 
-          // A change that makes the grammar point sound more natural in Japanese or English.
-          "unnatural",  
-          // A change because some part of the original didn't comply with something in this prompt.
-          "violation",  
-          // A change was needed to comply with the JSON schema.
-          "schema", 
-          // A PRIOR_COMMAND in the PRIOR_GRAMMAR_POINT that you are now addressing.    
-          "command",  
-          // A VIOLATING_PRIOR_COMMANDS in the PRIOR_GRAMMAR_POINT that you are now addressing. 
-          "violating-command",  
-          // Not a change, but a note about something you noticed. Use this to point out:
-          // - contradictions in comment-commands.
-          // - suggestions for improving this schema. 
-          // - suggestions for improving comment commands in this schema. 
-          // - suggestions for new change types.
-          // - suggestions for new enum values in this schema.
-          "meta" 
-      ]
-    }
+    // If present, etymologyType **MUST** provide a discussion of the historical development and linguistic origins of the grammar point or related element.
+    // **MUST** focus on explaining the 'root cause' or underlying concepts that connect seemingly disparate uses or related terms.
+    // **MUST** aim to unify understanding by revealing how the element evolved to its current forms and meanings, helping students grasp the logic rather than relying on rote memorization.
+    // **MUST** be a linguistically insightful explanation.
+    //
+    // Example for 「から」 (from, because):
+    // "The particle 「から」 originates from the noun 「殻」 (kara), meaning 'shell' or 'husk,' and later evolved to signify 'from' or 'origin.'
+    // Its dual use for 'from (a starting point)' and 'because (a reason/origin)' can be understood through this core concept of emergence or derivation.
+    // Something comes 'from' a physical point, or a consequence arises 'from' a cause."
+    "etymologyType": { "$ref": "#/definitions/english" },
   },
   "type": "object",
   "properties": {
@@ -182,6 +166,8 @@
     // ID of the grammar point.
     // - **MUST NOT** change this value because it is a database key.
     "id": { "type": "string" },
+    "meaning": { "$ref": "#/definitions/english" },
+    "meaning_warning": { "$ref": "#/definitions/english" },
     // If the grammar point contains a verb in **dictionary form** (besides だ or です) or adjective in **dictionary form**, add a new array field at the top, called "conjugations". 
     // It should list all of the possible conjugations of grammar_point, including the grammar point itself. 
     // Only list conjugations that, when used, preserve the meaning of the grammar point. For example, if the grammar point is about the past, then don't list conjugations that aren't in the past.
@@ -231,8 +217,7 @@
       "additionalProperties": { "type": "string" }
     },
     "jlpt": { "$ref": "#/definitions/jlptLevel" },
-    "meaning": { "$ref": "#/definitions/english" },
-    "meaning_warning": { "$ref": "#/definitions/english" },
+
     // details key **MUST** be English.
     // **MUST NOT** delete japanese language keys, instead convert them to English.
     // **MUST** forward all details information from the source bunpro grammar point. If none of these detail properties fit perfectly, then create your own property in the form "custom-myproperty".
@@ -261,7 +246,6 @@
       }
     },
     // The "etymology" field will be display to the user in the grammar point's page.
-    // It should be a linguistically interesting discussion of the history of how the grammar point evolved.
     "etymology": { "$ref": "#/definitions/etymologyType" },
     // The "writeup" field will be display to the user in the grammar point's page.
     // It should be a comprehensive explanation of the grammar point, including:
@@ -277,127 +261,9 @@
     // - If the grammar point is primarily used by one age group, then mention that.
     // - If the grammar point is primarily used in one region, then mention that.
     "writeup": { "$ref": "#/definitions/english" },
-    // Examples that exercise the grammar point.
-    // - Each example **MUST** use the grammar_point, though it may be in conjugated form.
-    // - The first example **MUST** be the simplest and most common usage of the grammar point.
-    // - Examples **MUST** be ordered from simplest to most complex.
-    // - Examples **MUST** exhibit a wide variety of settings.
-    // - If there are conjugations, examples **MUST** exhibit a wide variety of conjugations.
-    // - Examples **MUST** exhibit a wide variety of registers.
-    // - Examples **should** include at least one male and one female speaker_gender.
-    // - Examples **MUST** include all formations.
-    "examples": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          // A natural-sounding Japanese sentence using this grammar point.
-          // - **MUST** have the grammar_point in {bold} (surrounded in curlies).
-          // - [rule-2] **MUST** have spaces between words, so that it is easy to read and to parse with mecab.
-          // - **MUST** be grammatically correct. We're teaching Japanese, not bad grammar.
-          // - **MUST NOT** use hiragana for words that are typically written in kanji.
-          // - **MUST** be just one sentence unless. Use "scene" if you need to set up context.
-          // - **MUST NOT** use parentheses to set context. If necessary, use a separate "scene" field.
-          // - **MUST NOT** use quotes including 「」, .
-          // - **MUST** be from the point of view of a single speaker. No back-and-forth dialogue. Though you may place setup dialog in "scene" (in English).
-          // - **MUST NOT** have furigana text embedded. 
-          "japanese": { "$ref": "#/definitions/japanese" },
-          // A natural-sounding English translation of the Japanese.
-          // - Will be display to the user when they are practicing. 
-          // - **MUST** be just one sentence unless. Use "scene" if you need to set up context.
-          // - **MUST NOT** use parentheses to set context. If necessary, use a separate "scene" field.
-          // - [rule-1] **MUST NOT** use quotes unless they are truly essential to the grammar point.
-          "english": { "$ref": "#/definitions/english" },
-          // If there is a less natural way to say the same thing in English that would still
-          // hint the user toward the correct japanese, then you **MUST** include it here.
-          "english_literally": { "$ref": "#/definitions/english" },
-          // Scene is english text that will be displayed to the user under the "english" example.
-          // It sets the scene for the example and gives the user a hint about how to translate the english to japanese. 
-          // "english" and "scene" will be displayed together, so "scene" **MUST NOT** repeat facts from "english". 
-          // They should sound natural and not redundant when read together.
-          // - First, mentally construct a set (let's call it COMPETING_GRAMMAR) of *every* other way to convert "english" 
-          //   to "japanese" that _don't_ use the grammar point or that do don't comply with "speaker_gender", "listener_gender", 
-          //   "speaker_age", or "register". 
-          //   - **MUST** consider "false_friends" when constructing COMPETING_GRAMMAR.
-          //   - **MUST** try to list all possible orthogonal ways to say the same thing in Japanese.
-          // - If COMPETING_GRAMMAR is empty, then you **MUST** omit "scene".
-          // - If COMPETING_GRAMMAR is not empty, then you **MUST** have a "scene" field.
-          //   - **MUST** set a scene that will hint the user toward the correct grammar point.
-          //   - **MUST NOT** actually name the grammar point.
-          //   - **MUST** be concise and non-repetitive.
-          //   - **MUST** be interesting and engaging to the learner.
-          //   - **MUST NOT** use 'male' or 'female'. Use a proper name that's clearly gendered or 'man', 'woman', 'boy', 'girl', etc.
-          //   - Good examples tell a little story: 
-          //      Tanaka is delivering bad news to his boss.
-          //      Narumi is confessing her feelings.
-          //      A waiter is taking an order from a customer.
-          "scene": { "$ref": "#/definitions/english" },
-          // Explanation of why "scene" was necessary.
-          // - **MUST** be present if "scene" is present.
-          // - **MUST** include wrong ways (for this grammar point and example) of translating "english" to "japanese" that "scene" text is trying to point the user away from.
-          // - **MUST** list the exact content of COMPETING_GRAMMAR from "scene".
-          "scene_rationale": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                // **MUST** be the alternate Japanese way of saying the same "english" from COMPETING_GRAMMAR.
-                // **MUST** use spaces to help mecab parse the competing grammar.
-                "competing_grammar": { "type": "string" },
-                // **MUST** explain how 'scene' mitigates the chance of the user choosing that other way.
-                "mitigation":       { "type": "string" }
-              },
-              "required": ["competing_grammar","mitigation"],
-              "additionalProperties": false
-            },
-            "minItems": 1
-          },
-          "register": { "$ref": "#/definitions/registerType" },
-          "setting": { "$ref": "#/definitions/settingType" },
-          // Conjugation **only** if the grammar point is conjugatable, then specify which conjugation is used in this example.
-          // **MUST** be present if there is a top-level "conjugations" array.
-          // **MUST NOT** be present if there is no top-level "conjugations" array.
-          // - The content of this "conjugation" field **MUST** be taken from the top-level list of conjugations you generated earlier. Use the 'type' field.
-          // **MUST** be about the main grammar point and not other parts of the sentence. 
-          "conjugation": { "$ref": "#/definitions/conjugationType" },
-          // Speaker gender **MUST** be specified if the gender actually matters in the context of the spoken Japanese.
-          // **MUST NOT** be specified if the spoken Japanese does not depend on the gender of the speaker.
-          // You **MUST NOT** embed hints about the speaker's gender in 'english' or 'japanese'. Put that here, in "speaker_gender".
-          "speaker_gender": { "$ref": "#/definitions/speakerGenderType" },
-          // Listener gender **MUST** be specified if the gender actually matters in the context of the spoken Japanese.
-          // **MUST NOT** be specified if the spoken Japanese does not depend on the gender of the listener.
-          // Use "group" if the listener is an audience or group of people.
-          // Use "no one" if the speaker is talking to themselves or no one in particular.
-          "listener_gender": { "$ref": "#/definitions/listenerGenderType" },
-          // speaker_age **MUST** be specified if (and only if) the gender actually matters in the context of the spoken Japanese.
-          "speaker_age": { "$ref": "#/definitions/ageType" },
-          // -----------------------------------------------------------------------------------------------------------------------
-          // "listener_age" is deprecated. You **MUST** remove it. Use "speaker_age" of "older" or "younger" to indicate a difference.
-          // "listener_age": { "$ref": "#/definitions/ageType" },
-          // -----------------------------------------------------------------------------------------------------------------------
-          // For nuance, explain in English with Japanese references to the sentence, how this sentence exhibits how and why
-          // "speaker_age", "speaker_gender", "listener_gender", and "register" applies and what it means.
-          // - If there is a "speaker_gender" or "listener_gender", then "nuance" **MUST** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender. 
-          // - If there is a "speaker_age", then "nuance" **MUST** mention the specific Japanese, in 「quotes」, that would only be spoken by someone of that age. 
-          // - **MUST** refer to parts of the japanese sentence in「quotes」.
-          // - **MUST NOT** refer to the JLPT level of the words in the japanese sentence
-          // - **MUST** be English.
-          // - **MUST NOT** be used to define vocabulary terms from the example sentence.
-          "nuance": { "$ref": "#/definitions/english" },
-          // Etymology of the example sentence or specific phrases in the japanese example sentence.
-          // - **MUST NOT** repeat the etymology of the grammar point.
-          "etymology": { "$ref": "#/definitions/etymologyType" }
-        },
-        "required": ["japanese","english","scene","register","setting"],
-        "additionalProperties": false
-      }
-    },
-    // You **MAY** include a "post_example_writeup" section after "examples" if more clarification is helpful, but don't reference examples by any numeric label.
-    "post_example_writeup": { "type": "string" },
     // False friends are words that are often confused with the grammar point.
     // - **MUST NOT** reference other conjugations of this grammar point.
     // - **MAY** reference other grammar points that share a similar japanese construction. For example, if this grammar point is "で (by)" then "で (at)" is allowed.
-    // - **MUST** include anything mentioned in COMPETING_GRAMMAR from "scene_rationale" in the examples.
     "false_friends": {
       "type": "array",
       "items": {
@@ -420,26 +286,158 @@
     // Post false friends writeup is a section that will be displayed to the user after the false friends.
     // **MAY** add a "post_false_friends_writeup" to clarify further differences between the grammar point and these similar expressions. Do not call them "false friends" in that section—just provide a short explanation of how to avoid mixing them up.
     "post_false_friends_writeup": { "$ref": "#/definitions/english" },
-    "sources": {
-      "type": "object",
-      "properties": { "bunpro": { "type": "string", "format": "uri" } },
-      "additionalProperties": false
-    },
-    // When provided a prior version of the grammar point, and you changed something in it:
-    // - **MUST** include a "change" field that lists all changes made to the grammar point.
-    // - **MUST NOT** mention changes to the 'change' field, since that would be circular.
-    // - **MUST** omit change field altogether if it is empty.
-    "change": {
+    // Examples that exercise the grammar point.
+    // - Each example **MUST** use the grammar_point, though it may be in conjugated form.
+    // - The first example **MUST** be the simplest and most common usage of the grammar point.
+    // - Examples **MUST** be ordered from simplest to most complex.
+    // - Examples **MUST** exhibit a wide variety of settings.
+    // - If there are conjugations, examples **MUST** exhibit a wide variety of conjugations.
+    // - Examples **MUST** exhibit a wide variety of registers.
+    // - Examples **should** include at least one male and one female speaker_gender.
+    // - Examples **MUST** include all formations.
+    "examples": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "change-type": { "$ref": "#/definitions/changeType" },
-          "change": { "$ref": "#/definitions/english" }
+          // Natural-sounding English sentence that exercises this grammar point when spoken in Japanese.
+          // - Will be display to the user when they are practicing. 
+          // - **MUST** be just one sentence unless. Use "scene" if you need to set up context.
+          // - **MUST NOT** use parentheses to set context. If necessary, use a separate "scene" field.
+          // - [rule-1] **MUST NOT** use quotes unless they are truly essential to the grammar point.
+          "english": { "$ref": "#/definitions/english" },
+          // **EVERY** way of saying "english" that adheres to the grammar point.
+          // This field used to be a single string and we're migrating it to an array of strings.
+          // - **MUST** be an array.
+          // - **MUST** have the grammar_point in {bold} (surrounded in curlies).
+          // - [rule-2] **MUST** have spaces between words, so that it is easy to read and to parse with mecab.
+          // - **MUST** be grammatically correct. We're teaching Japanese, not bad grammar.
+          // - **MUST NOT** use hiragana for words that are typically written in kanji.
+          // - **MUST** be just one sentence unless. Use "scene" if you need to set up context.
+          // - **MUST NOT** use parentheses to set context. If necessary, use a separate "scene" field.
+          // - **MUST NOT** use quotes including 「」.
+          // - **MUST** be from the point of view of a single speaker. No back-and-forth dialogue. Though you may place setup dialog in "scene" (in English).
+          // - **MUST NOT** have furigana text embedded. 
+          // For example, if the grammar point is "Past Verbs" and the example 
+          // english is "I had sushi with a friend yesterday.", then japanese should be:
+          // [
+          //    "昨日、友達と寿司を食べた。",
+          //    "昨日、友達と寿司を食べました。",
+          //    "昨日、友達と寿司食った。",
+          //    "昨日、友達と寿司くったぜ。",
+          //    "昨日、友達とお寿司をいただきました。",
+          //    "昨日、友達とお寿司を頂戴いたしました。",
+          //    "昨日、友人と寿司を食しました。",
+          //    "昨日、友達と寿司食べた。"
+          // ]
+          "japanese": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/japanese" }
+          },
+          // This translation provides a literal, often less natural, English rendering of the Japanese, serving as a hint for the user regarding Japanese word order and specific word choices during practice.
+          // Example:
+          // For Japanese: "私はリンゴを食べます。"
+          // english_literally: "As for me, I eat apples."
+          // Natural English: "I eat apples."
+          "english_literally": { "$ref": "#/definitions/english" },
+          // A comprehensive list of:
+          // 1) alternative ways to say the same thing in Japanese that do not use the grammar point
+          //    or do not match the speaker_gender, speaker_age, or other fields of the example. And;
+          //    For example, if the grammar point is "Past Verbs" and the example 
+          //    japanese is "昨日、友達と寿司を食べた。", then one possible competing grammar could be:
+          //    {
+          //      competing_japanese: "昨日、友達と寿司を食べたことがある。",
+          //      english: "Yesterday, I have had the experience of eating sushi with my friend.”
+          //      hint: "「たことがある」marks the experience of having done something at least once. We're looking for a simple past action here."
+          //    }
+          // 2) false_friend sentences. These are sentences are adapted from the false_friends fields.
+          //    The user might think of a false_friend (even an antonym) when trying to use the grammar 
+          //    point.
+          //    For example, if the grammar point is "借りる" and the example japanese is "私は本を借りる。",
+          //    then one possible competing_japanese could be:
+          //    {
+          //      competing_japanese: "明日、友達からカメラを貸す。",
+          //      english: "Tomorrow, I will lend a camera from my friend.”
+          //      hint: "「貸す」means to lend, not to borrow. We're looking for a verb that means to borrow something from someone."
+          //    }
+          // 3) It may also just be a common mistake people make when trying to use the grammar point.
+          //
+          // This will be used to help guide the user toward the correct Japanese.
+          // When they make this mistake, they will be shown the hint.
+          // List as many competing grammars as you can think of, but at least one.
+          // It's important that we have as many distinct competing grammars as possible,
+          // so that the user can learn to distinguish them. So:
+          // - **MUST** try to add a least one competing grammer.
+          // - **MUST** try not to remove existing competing grammars as long as they are correct and distinct.
+          "competing_grammar": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "competing_japanese": { "$ref": "#/definitions/japanese"},
+                // English translation of the competing_japanese 
+                // that distinguishes it from example.english to emphasize.
+                "english": { "$ref": "#/definitions/english" },
+                // Don't forget something like "We're looking for..." at the end of the hint.
+                // **MUST NOT** give away the answer!
+                // **MUST** be terse, avoid jargon, and avoid linguistic terms.
+                "hint": { "$ref": "#/definitions/english" }
+              },
+              "required": ["competing_japanese","english","hint"],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          // Scene is english text that will be displayed to the user under the "english" example.
+          // It sets the scene for the example and gives the user a hint about how to translate the english to japanese. 
+          // "english" and "scene" will be displayed together, so "scene" **MUST NOT** repeat facts from "english". 
+          // They should sound natural and not redundant when read together.
+          // Try to make the scene something that will guide the user away from competing_grammar.
+          // Scene should be a little story like, "Tanaka-sensei is teaching a class". This gives hints about his gender, his age relative to the listeners, and the language register. 
+          "scene": { "$ref": "#/definitions/english" },
+          "register": { "$ref": "#/definitions/registerType" },
+          "setting": { "$ref": "#/definitions/settingType" },
+          // Conjugation **only** if the grammar point is conjugatable, then specify which conjugation is used in this example.
+          // **MUST** be present if there is a top-level "conjugations" array.
+          // **MUST NOT** be present if there is no top-level "conjugations" array.
+          // - The content of this "conjugation" field **MUST** be taken from the top-level list of conjugations you generated earlier. Use the 'type' field.
+          // **MUST** be about the main grammar point and not other parts of the sentence. 
+          "conjugation": { "$ref": "#/definitions/conjugationType" },
+          // Speaker gender **MUST** be specified if the gender actually matters in the context of the spoken Japanese.
+          // **MUST NOT** be specified if the spoken Japanese does not depend on the gender of the speaker.
+          // You **MUST NOT** embed hints about the speaker's gender in 'english' or 'japanese'. Put that here, in "speaker_gender".
+          "speaker_gender": { "$ref": "#/definitions/speakerGenderType" },
+          // Listener gender **MUST** be specified if the gender actually matters in the context of the spoken Japanese.
+          // **MUST NOT** be specified if the spoken Japanese does not depend on the gender of the listener.
+          // Use "group" if the listener is an audience or group of people.
+          // Use "no one" if the speaker is talking to themselves or no one in particular.
+          "listener_gender": { "$ref": "#/definitions/listenerGenderType" },
+          // speaker_age **MUST** be specified if (and only if) the gender actually matters in the context of the spoken Japanese.
+          "speaker_age": { "$ref": "#/definitions/ageType" },
+          // For nuance, explain in English with Japanese references to the sentence, how this sentence exhibits how and why
+          // "speaker_age", "speaker_gender", "listener_gender", and "register" applies and what it means.
+          // - If there is a "speaker_gender" or "listener_gender", then "nuance" **MUST** mention the specific Japanese, in 「quotes」, that would only be spoken by that gender. 
+          // - If there is a "speaker_age", then "nuance" **MUST** mention the specific Japanese, in 「quotes」, that would only be spoken by someone of that age. 
+          // - **MUST** refer to parts of the japanese sentence in「quotes」.
+          // - **MUST NOT** refer to the JLPT level of the words in the japanese sentence
+          // - **MUST** be English.
+          // - **MUST NOT** be used to define vocabulary terms from the example sentence.
+          "nuance": { "$ref": "#/definitions/english" },
+          // Etymology of the example sentence or specific phrases in the japanese example sentence.
+          // - **MUST NOT** repeat the etymology of the grammar point.
+          "etymology": { "$ref": "#/definitions/etymologyType" }
         },
-        "required": ["change-type","change"],
+        "required": ["japanese","english","scene","register","setting"],
         "additionalProperties": false
       }
+    },
+    // You **MAY** include a "post_example_writeup" section after "examples" if more clarification is helpful, but don't reference examples by any numeric label.
+    "post_example_writeup": { "type": "string" },
+
+    "sources": {
+      "type": "object",
+      "properties": { "bunpro": { "type": "string", "format": "uri" } },
+      "additionalProperties": false
     }
   },
   "required": [

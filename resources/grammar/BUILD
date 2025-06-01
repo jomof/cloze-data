@@ -206,13 +206,11 @@ py_binary(
 # Run with bazel build //resources/grammar:ai-cleaned-merge-grammars
 py_build_tool_stream(
     name = "ai-cleaned-merge-grammars",
-    srcs = ["//resources/processed:merge-grammars"],
-    args = ["--grammar-schema=resources/grammar/grammar-schema.json"],
-    correlated = ["//resources/processed:ai-cleaned-merge-grammars"],
+    srcs = ["//resources/processed:ai-cleaned-merge-grammars"],
+    correlated = [],
     extension = ".yaml",
-    file_args = ["//python/grammar:grammar-schema.json"],
-    filter = ["0112"],
-    pass_target_name = True,
+    filter = ["spatial"],
+    pass_target_name = True, 
     tool = ":ai-clean",
 )
 

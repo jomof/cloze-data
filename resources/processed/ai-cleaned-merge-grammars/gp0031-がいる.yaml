@@ -1,6 +1,8 @@
 {
     "grammar_point": "がいる",
     "id": "gp0031",
+    "meaning": "To be, There is, To exist (for animate objects)",
+    "meaning_warning": "The kanji 居る is frequently seen.",
     "conjugations": [
         {
             "conjugation-type": "dictionary (plain non-past)",
@@ -78,8 +80,6 @@
         "Place に + Noun が + いる": "Indicates the location of an animate being."
     },
     "jlpt": "N5",
-    "meaning": "To be, There is, To exist (for animate objects)",
-    "meaning_warning": "The kanji 居る is frequently seen.",
     "details": {
         "part-of-speech": "verb",
         "register": "teineigo (polite)",
@@ -87,22 +87,66 @@
     },
     "etymology": "The grammar point がいる is a combination of the particle が, which marks the subject, and the verb いる, meaning \"to exist\" (for animate objects).",
     "writeup": "「がいる」 is a common Japanese construction that is a simple combination of the particle 「が」 and the verb 「いる」. This expression means \"to exist\" or \"there is,\" and is used exclusively in relation to living or animate things (people, animals, etc.). This contrasts with 「がある」, which is used for non-living or inanimate objects and abstract concepts.\n\nSince the things being described in these examples are considered to be alive (or operated by something that is alive), 「いる」 is the verb that must be used. For inanimate objects, 「ある」 is used instead.\n\nThe polite form of 「いる」 conjugates as 「います」. Due to the 「る」 being removed, 「いる」 is classified as a る-Verb (Ichidan verb).\n\nThe kanji form **居る** is quite common and should be learned early to avoid reading confusion. There is no nuance difference between this expression being used with or without kanji; it is merely a matter of writer preference.\n\n**Important Considerations:**\n\nWhile grammatically essential, the particle 「が」 in 「がいる」 is often omitted in casual speech or in writing that emulates casual speech, such as manga dialogue or instant messaging. This omission is a characteristic of natural, informal Japanese.",
+    "false_friends": [
+        {
+            "term": "がある",
+            "meaning": "To be, There is",
+            "kind": "synonym",
+            "nuance": "Unlike がいる, がある is used for inanimate objects or abstract concepts."
+        },
+        {
+            "term": "住む",
+            "meaning": "To live, to reside",
+            "kind": "similar expression",
+            "nuance": "While both がいる and 住む relate to presence, がいる means simply \"to be present\" or \"to exist\" for animate things. 住む specifically implies \"to live\" or \"to reside\" in a place over time, indicating a more permanent or established presence."
+        },
+        {
+            "term": "存在する",
+            "meaning": "To exist, to be",
+            "kind": "similar expression",
+            "nuance": "存在する is a more formal and academic way to express existence, applicable to both animate and inanimate objects, as well as abstract concepts. がいる is specifically for the physical presence or existence of animate beings in a more natural, everyday context."
+        }
+    ],
+    "post_false_friends_writeup": "To avoid confusion, remember that 「がいる」 is specifically for animate objects (people, animals), while 「がある」 is for inanimate objects and abstract concepts. For instance, one would say 「猫 が {いる}」 (a cat is here) but 「本 が {ある}」 (there is a book). Always consider the nature of the noun whose existence you are describing. Furthermore, while 住む (to live/reside) indicates presence, it implies a more permanent dwelling than simply being present, which is what がいる conveys. 存在する (to exist) is a very formal term for existence, applicable to a much broader range of things, unlike がいる which is limited to animate entities in conversational settings.",
     "examples": [
         {
-            "japanese": "教室 に 先生 が {います} か。",
             "english": "Is the teacher in the classroom?",
+            "japanese": [
+                "教室 に 先生 が {います} か 。",
+                "教室 に 先生 が {いる} ？",
+                "先生 は 教室 に {います} か 。",
+                "先生 は 教室 に {いる} ？",
+                "教室 に は 先生 が {います} か 。"
+            ],
             "english_literally": "Classroom in teacher exists question.",
-            "scene": "A student asks another student if their teacher is present before class begins.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "教室 に 先生 は います か。",
-                    "mitigation": "Using 「は」 here would imply a contrast or a known topic, like 'As for the teacher, is he/she there?' or 'Is the teacher here (unlike someone else)?' The scene implies a simple inquiry about existence, making 「が」 more natural for introducing new information."
+                    "competing_japanese": "教室 に 先生 は います か 。",
+                    "english": "As for the teacher, is he/she in the classroom?",
+                    "hint": "Using 「は」 here would imply a contrast or a known topic, like 'As for the teacher, is he/she there?' or 'Is the teacher here (unlike someone else)?' The scene implies a simple inquiry about existence, making 「が」 more natural for introducing new information. We're looking for a simple inquiry about existence."
                 },
                 {
-                    "competing_grammar": "教室 に 先生 が いる か。",
-                    "mitigation": "The academic setting and the question format to a peer or senior student usually call for polite language, guiding the use of 「います」 over the plain form 「いる」."
+                    "competing_japanese": "教室 に 先生 が いる か 。",
+                    "english": "Is the teacher in the classroom (plain form)?",
+                    "hint": "The academic setting and the question format to a peer or senior student usually call for polite language, guiding the use of 「います」 over the plain form 「いる」. We're looking for a polite inquiry."
+                },
+                {
+                    "competing_japanese": "教室 に 先生 が あります か 。",
+                    "english": "Is the teacher in the classroom (used for inanimate objects)?",
+                    "hint": "「あります」 is used for inanimate objects. We're looking for the existence of an animate being."
+                },
+                {
+                    "competing_japanese": "教室 に 先生 が 住んで います か 。",
+                    "english": "Does the teacher live in the classroom?",
+                    "hint": "住む means to live or reside, implying a more permanent dwelling, not just being present. We're looking for whether someone is currently present."
+                },
+                {
+                    "competing_japanese": "教室 に 先生 が 存在 します か 。",
+                    "english": "Does the teacher exist in the classroom?",
+                    "hint": "存在 する is more formal and used for abstract existence or general reality. いる is used for the physical presence of animate beings in everyday conversation. We're looking for the teacher's physical presence."
                 }
             ],
+            "scene": "A student asks another student if their teacher is present before class begins.",
             "register": "teineigo (polite)",
             "setting": "academic",
             "conjugation": "non-past polite (～ます)",
@@ -112,16 +156,37 @@
             "nuance": "The use of 「が」 emphasizes the existence of the subject, 「先生」 (teacher), in the specific location. The polite form 「います」 is standard for questions in an academic or formal context. The sentence-final 「か」 marks it as a question."
         },
         {
-            "japanese": "うち の 犬 は いつも 私 の そば に {いる}。",
             "english": "My dog is always by my side.",
+            "japanese": [
+                "うち の 犬 は いつも 私 の そば に {いる} 。",
+                "うち の 犬 は いつも 私 の そば に {います} 。",
+                "私 の 犬 は いつも 私 の そば に {いる} 。",
+                "うち の 犬 は いつも 私 の そば に {居る} 。"
+            ],
             "english_literally": "Our dog always my side by exists.",
-            "scene": "A person fondly describes their loyal pet to a friend.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "うち の 犬 は いつも 私 の そば に います。",
-                    "mitigation": "The informal, affectionate tone when talking about one's pet to a friend suggests the plain form 「いる」 is more appropriate than the polite 「います」."
+                    "competing_japanese": "うち の 犬 は いつも 私 の そば に います 。",
+                    "english": "My dog is always by my side (polite).",
+                    "hint": "The informal, affectionate tone when talking about one's pet to a friend suggests the plain form 「いる」 is more appropriate than the polite 「います」. We're looking for a casual description."
+                },
+                {
+                    "competing_japanese": "うち の 犬 は いつも 私 の そば に ある 。",
+                    "english": "My dog is always by my side (used for inanimate objects).",
+                    "hint": "「ある」 is used for inanimate objects. We're looking for the existence of an animate being."
+                },
+                {
+                    "competing_japanese": "うち の 犬 は いつも 私 の そば に 住んで いる 。",
+                    "english": "My dog lives by my side.",
+                    "hint": "住む means to live or reside. While dogs \"live,\" saying it \"lives by your side\" is unnatural when describing constant presence. We're looking for constant presence, not a place of residence."
+                },
+                {
+                    "competing_japanese": "うち の 犬 は いつも 私 の そば に 存在 する 。",
+                    "english": "My dog always exists by my side.",
+                    "hint": "存在 する is formal and abstract, not typically used for describing a dog's constant physical proximity. We're looking for a natural expression of physical presence."
                 }
             ],
+            "scene": "A person fondly describes their loyal pet to a friend.",
             "register": "casual",
             "setting": "friendly",
             "conjugation": "dictionary (plain non-past)",
@@ -130,20 +195,42 @@
             "nuance": "Here, 「は」 marks 「うち の 犬」 (my dog) as the topic, indicating that the statement is about the dog's general characteristic. 「いる」 is used in its plain form, fitting the casual and intimate context between friends."
         },
         {
-            "japanese": "田中 社長 は 現在 、 オフィス に {いません}。",
             "english": "President Tanaka is not in the office currently.",
+            "japanese": [
+                "田中 社長 は 現在 、 オフィス に {いません} 。",
+                "田中 社長 は 現在 、 オフィス に {いない} 。",
+                "田中 社長 は オフィス に は {いません} 。",
+                "田中 社長 は オフィス に は {いない} 。"
+            ],
             "english_literally": "Tanaka President currently office in not exists.",
-            "scene": "A secretary answers a phone call and informs the caller that the company president is not available.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "田中 社長 は 現在 、 オフィス に いない。",
-                    "mitigation": "In a professional context like answering a business call, using the polite negative form 「いません」 is crucial for showing respect to both the caller and President Tanaka. The plain form 「いない」 would be impolite."
+                    "competing_japanese": "田中 社長 は 現在 、 オフィス に いない 。",
+                    "english": "President Tanaka is not in the office currently (plain form).",
+                    "hint": "In a professional context like answering a business call, using the polite negative form 「いません」 is crucial for showing respect to both the caller and President Tanaka. The plain form 「いない」 would be impolite. We're looking for a polite, professional statement."
                 },
                 {
-                    "competing_grammar": "田中 社長 は 現在 、 オフィス に ありません。",
-                    "mitigation": "「ありません」 is for inanimate objects. Since President Tanaka is an animate being, 「いません」 is the correct negative form of 「います」. The example clarifies that we are talking about a person."
+                    "competing_japanese": "田中 社長 は 現在 、 オフィス に ありません 。",
+                    "english": "President Tanaka is currently not in the office (used for inanimate objects).",
+                    "hint": "「ありません」 is for inanimate objects. Since President Tanaka is an animate being, 「いません」 is the correct negative form of 「います」. The example clarifies that we are talking about a person. We're looking for the negative existence of an animate being."
+                },
+                {
+                    "competing_japanese": "田中 社長 は 現在 、 オフィス に ない 。",
+                    "english": "President Tanaka is currently not in the office (plain negative for inanimate objects).",
+                    "hint": "「ない」 is the plain negative form for inanimate objects. We're looking for the negative existence of an animate being."
+                },
+                {
+                    "competing_japanese": "田中 社長 は 現在 、 オフィス に 住んで いません 。",
+                    "english": "President Tanaka does not live in the office currently.",
+                    "hint": "住む means to live or reside. The context is about current presence, not whether someone lives at the office. We're looking for current absence, not residency."
+                },
+                {
+                    "competing_japanese": "田中 社長 は 現在 、 オフィス に 存在 しません 。",
+                    "english": "President Tanaka does not exist in the office currently.",
+                    "hint": "存在 する is too formal and strong for simply stating someone is not physically present. いません is the natural polite negative for animate physical presence. We're looking for current physical absence."
                 }
             ],
+            "scene": "A secretary answers a phone call and informs the caller that the company president is not available.",
             "register": "teineigo (polite)",
             "setting": "professional",
             "conjugation": "negative non-past polite (～ません)",
@@ -152,16 +239,37 @@
             "nuance": "The negative polite form 「いません」 is used to formally state the non-existence of an animate subject. 「は」 marks the topic, and 「現在」 emphasizes the current status, which is important in business communication. This shows respect to the '社長' (president)."
         },
         {
-            "japanese": "昨日の 公園 に は 子供 が たくさん {いた} よ。",
             "english": "There were many children in the park yesterday.",
+            "japanese": [
+                "昨日 の 公園 に は 子供 が たくさん {いた} よ 。",
+                "昨日 の 公園 に は 子供 が たくさん {いました} よ 。",
+                "昨日 、 公園 に 子供 が たくさん {いた} よ 。",
+                "昨日 、 公園 に 子供 が たくさん {いました} よ 。"
+            ],
             "english_literally": "Yesterday's park in children many existed, you know.",
-            "scene": "A mother tells her friend about her visit to the park with her child the previous day.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "昨日の 公園 に は 子供 が たくさん いました よ。",
-                    "mitigation": "When casually recounting an experience to a friend, the plain past form 「いた」 is more natural and less formal than the polite past 「いました」."
+                    "competing_japanese": "昨日 の 公園 に は 子供 が たくさん いました よ 。",
+                    "english": "There were many children in the park yesterday (polite).",
+                    "hint": "When casually recounting an experience to a friend, the plain past form 「いた」 is more natural and less formal than the polite past 「いました」. We're looking for a casual recount."
+                },
+                {
+                    "competing_japanese": "昨日 の 公園 に は 子供 が たくさん あった よ 。",
+                    "english": "There were many children in the park yesterday (used for inanimate objects).",
+                    "hint": "「あった」 is the past form of 「ある」, which is for inanimate objects. We're looking for the past existence of animate beings."
+                },
+                {
+                    "competing_japanese": "昨日 の 公園 に は 子供 が たくさん 住んで いた よ 。",
+                    "english": "Many children were living in the park yesterday.",
+                    "hint": "住む means to live or reside. This implies they were dwelling there, not just visiting or being present. We're looking for temporary presence."
+                },
+                {
+                    "competing_japanese": "昨日 の 公園 に は 子供 が たくさん 存在 していた よ 。",
+                    "english": "Many children were existing in the park yesterday.",
+                    "hint": "存在 する is overly formal and implies a philosophical or conceptual existence, not the casual observation of many children present. We're looking for the observation of physical presence."
                 }
             ],
+            "scene": "A mother tells her friend about her visit to the park with her child the previous day.",
             "register": "casual",
             "setting": "storytelling",
             "conjugation": "past plain (～た)",
@@ -170,20 +278,42 @@
             "nuance": "「いた」 is the plain past form of 「いる」, suitable for casual conversation. 「に は」 emphasizes the specific location of the children. The sentence-final particle 「よ」 adds a nuance of informing the listener about something new or confirming information."
         },
         {
-            "japanese": "もし 誰 か {いたら} 、 手伝って くれる かな。",
             "english": "If someone is there, I wonder if they'd help me.",
+            "japanese": [
+                "もし 誰 か {いたら} 、 手伝って くれる かな 。",
+                "もし 誰 か {いれば} 、 手伝って くれる かな 。",
+                "もし 誰 か {いる} なら 、 手伝って くれる かな 。",
+                "もし 誰 か {いた} なら 、 手伝って くれる かな 。"
+            ],
             "english_literally": "If someone exists, help give me perhaps.",
-            "scene": "A person is in a difficult situation, looking around for assistance and thinking aloud.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "もし 誰 か いれば 、 手伝って くれる かな。",
-                    "mitigation": "Both 「～たら」 and 「～ば」 can express conditions. However, 「～たら」 often implies a more direct or immediate consequence or discovery. In a 'what if' scenario where the speaker is hoping for help, 「～たら」 fits better for a potential outcome, while 「～ば」 can be more general or logical."
+                    "competing_japanese": "もし 誰 か いれば 、 手伝って くれる かな 。",
+                    "english": "If someone is there, I wonder if they'd help me (conditional 'ba').",
+                    "hint": "Both 「～たら」 and 「～ば」 can express conditions. However, 「～たら」 often implies a more direct or immediate consequence or discovery. In a 'what if' scenario where the speaker is hoping for help, 「～たら」 fits better for a potential outcome, while 「～ば」 can be more general or logical. We're looking for a conditional scenario with a direct potential outcome."
                 },
                 {
-                    "competing_grammar": "もし 誰 か あったら 、 手伝って くれる かな。",
-                    "mitigation": "「あったら」 is the conditional form of 「ある」, which is for inanimate objects. 「誰 か」 (someone) explicitly refers to an animate being, requiring the use of 「いる」's conditional form, 「いたら」."
+                    "competing_japanese": "もし 誰 か あったら 、 手伝って くれる かな 。",
+                    "english": "If someone exists (for inanimate objects), I wonder if they'd help me.",
+                    "hint": "「あったら」 is the conditional form of 「ある」, which is for inanimate objects. 「誰 か」 (someone) explicitly refers to an animate being, requiring the use of 「いる」's conditional form, 「いたら」. We're looking for the conditional existence of an animate being."
+                },
+                {
+                    "competing_japanese": "もし 誰 か ある なら 、 手伝って くれる かな 。",
+                    "english": "If someone exists (for inanimate objects), I wonder if they'd help me.",
+                    "hint": "「ある なら」 uses 「ある」 which is for inanimate objects. We're looking for the conditional existence of an animate being."
+                },
+                {
+                    "competing_japanese": "もし 誰 か 住んで いたら 、 手伝って くれる かな 。",
+                    "english": "If someone were living there, I wonder if they'd help me.",
+                    "hint": "住む means to live or reside. The speaker is looking for any present person for help, not someone who lives there. We're looking for the presence of just anyone."
+                },
+                {
+                    "competing_japanese": "もし 誰 か 存在 したら 、 手伝って くれる かな 。",
+                    "english": "If someone were to exist, I wonder if they'd help me.",
+                    "hint": "存在 する suggests a general existence, not a specific person being physically present in a location. The speaker needs a physically present person for help. We're looking for the presence of a specific person."
                 }
             ],
+            "scene": "A person is in a difficult situation, looking around for assistance and thinking aloud.",
             "register": "casual",
             "setting": "cautious",
             "conjugation": "conditional (～たら)",
@@ -192,20 +322,43 @@
             "nuance": "The conditional form 「いたら」 sets up a hypothetical situation: \"if someone happens to be there.\" 「誰 か」 means \"someone.\" The phrase 「～くれる かな」 expresses a hopeful wonder about receiving help, indicating a tentative and personal thought."
         },
         {
-            "japanese": "隣 の 部屋 に 猫 が {いて} 、 静かに 寝て いる。",
             "english": "There's a cat in the next room, sleeping quietly.",
+            "japanese": [
+                "隣 の 部屋 に 猫 が {いて} 、 静かに 寝て いる 。",
+                "隣 の 部屋 に 猫 が {いる} 。 そして 静かに 寝て いる 。",
+                "隣 の 部屋 に 猫 が {います} 。 そして 静かに 寝て います 。",
+                "隣 の 部屋 に 猫 が {居て} 、 静かに 寝て いる 。",
+                "隣 の 部屋 に 猫 が {いる} ん です 。 静かに 寝て いる ん です 。"
+            ],
             "english_literally": "Next room in cat exists, quietly sleeping.",
-            "scene": "A person observes a peaceful scene in their home and describes it.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "隣 の 部屋 に 猫 が いる。静かに 寝て いる。",
-                    "mitigation": "While grammatically correct, separating the sentences breaks the smooth flow of describing two connected, simultaneous states/actions. The te-form naturally links the cat's presence with its action of sleeping."
+                    "competing_japanese": "隣 の 部屋 に 猫 が いる 。 静かに 寝て いる 。",
+                    "english": "There's a cat in the next room. It's sleeping quietly.",
+                    "hint": "While grammatically correct, separating the sentences breaks the smooth flow of describing two connected, simultaneous states/actions. The te-form naturally links the cat's presence with its action of sleeping. We're looking for a smooth connection of two related facts."
                 },
                 {
-                    "competing_grammar": "隣 の 部屋 に 猫 が いる から 、 静かに 寝て いる。",
-                    "mitigation": "Using 「から」 implies a reason or cause (e.g., 'Because there's a cat, it's sleeping quietly'). The te-form simply connects the two observations, implying simultaneity or a continuous state without a direct causal link."
+                    "competing_japanese": "隣 の 部屋 に 猫 が いる から 、 静かに 寝て いる 。",
+                    "english": "Because there's a cat in the next room, it's sleeping quietly.",
+                    "hint": "Using 「から」 implies a reason or cause (e.g., 'Because there's a cat, it's sleeping quietly'). The te-form simply connects the two observations, implying simultaneity or a continuous state without a direct causal link. We're looking for a simple connection without implying causality."
+                },
+                {
+                    "competing_japanese": "隣 の 部屋 に 猫 が あって 、 静かに 寝て いる 。",
+                    "english": "There's a cat (for inanimate objects) in the next room, sleeping quietly.",
+                    "hint": "「あって」 is the te-form of 「ある」, which is for inanimate objects. We're looking for the existence of an animate being."
+                },
+                {
+                    "competing_japanese": "隣 の 部屋 に 猫 が 住んで いて 、 静かに 寝て いる 。",
+                    "english": "A cat lives in the next room, sleeping quietly.",
+                    "hint": "住む means to live or reside. The sentence describes a current observation of a cat's presence, not where it permanently dwells. We're looking for a description of current presence."
+                },
+                {
+                    "competing_japanese": "隣 の 部屋 に 猫 が 存在 していて 、 静かに 寝て いる 。",
+                    "english": "A cat is existing in the next room, sleeping quietly.",
+                    "hint": "存在 する is too formal and academic for a simple observation of a pet. いる is the natural verb for animate presence. We're looking for a simple description of a cat's presence."
                 }
             ],
+            "scene": "A person observes a peaceful scene in their home and describes it.",
             "register": "casual",
             "setting": "reflective",
             "conjugation": "te-form (～て)",
@@ -215,46 +368,7 @@
         }
     ],
     "post_example_writeup": "These examples demonstrate the versatile usage of 「がいる」 to express the existence or location of animate objects across different levels of politeness, tenses, and grammatical connections. Understanding the distinction between 「いる」 for animate objects and 「ある」 for inanimate objects is fundamental to using this grammar point correctly.",
-    "false_friends": [
-        {
-            "term": "がある",
-            "meaning": "To be, There is",
-            "kind": "synonym",
-            "nuance": "Unlike がいる, がある is used for inanimate objects or abstract concepts."
-        }
-    ],
-    "post_false_friends_writeup": "To avoid confusion, remember that 「がいる」 is specifically for animate objects (people, animals), while 「がある」 is for inanimate objects and abstract concepts. For instance, one would say 「猫 が {いる}」 (a cat is here) but 「本 が {ある}」 (there is a book). Always consider the nature of the noun whose existence you are describing.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/がいる"
-    },
-    "change": [
-        {
-            "change-type": "violation",
-            "change": "Removed 'pronunciation_warning' from 'pronunciation' field as it was not a pronunciation issue, but a usage note."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Moved information regarding the omission of particle が in casual speech from 'pronunciation_warning' to 'writeup' for better context."
-        },
-        {
-            "change-type": "violation",
-            "change": "Corrected 'details.register' from 'casual' to 'teineigo (polite)' to align with Bunpro's 'Standard' classification and typical N5 formal instruction."
-        },
-        {
-            "change-type": "command",
-            "change": "Re-generated all example sentences to be original and not taken literally from Bunpro or other sources, as explicitly commanded."
-        },
-        {
-            "change-type": "schema",
-            "change": "Added 'conjugation' field to each example, as required by the schema when a 'conjugations' array is present."
-        },
-        {
-            "change-type": "schema",
-            "change": "Added 'speaker_gender', 'listener_gender', 'speaker_age', and 'nuance' fields to examples where appropriate, as per schema requirements and to enhance contextual understanding."
-        },
-        {
-            "change-type": "schema",
-            "change": "Removed deprecated 'listener_age' field from examples."
-        }
-    ]
+    }
 }

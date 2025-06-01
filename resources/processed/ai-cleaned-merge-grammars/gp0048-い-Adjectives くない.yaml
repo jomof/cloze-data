@@ -1,6 +1,8 @@
 {
     "grammar_point": "い-Adjectives くない",
     "id": "gp0048",
+    "meaning": "Not (Adjective)",
+    "meaning_warning": "い-Adjectives, whether positive or negative, cannot be used with だ",
     "conjugations": [
         {
             "conjugation-type": "negative plain (～ない)",
@@ -41,135 +43,242 @@
         "[い-Adjective stem] + くない": "Forms the negative of an い-adjective."
     },
     "jlpt": "N5",
-    "meaning": "Not (Adjective)",
-    "meaning_warning": "い-Adjectives, whether positive or negative, cannot be used with だ",
     "details": {
         "part-of-speech": "auxiliary adjective",
         "register": "casual"
     },
     "etymology": "The 「くない」 form is derived from the い-adjective stem (e.g., 暑 -> 暑く) combined with 「ない」, which indicates negation. 「ない」 itself functions as an い-adjective here, allowing for further conjugations.",
     "writeup": "The negative form of い-adjectives in Japanese is created by replacing the final 「い」 with 「くない」. For instance, the い-adjective 「暑い」 (atsui, hot) transforms to 「暑くない」 (atsukunai, not hot). The 「ない」 used with い-adjectives acts as another い-adjective itself. This means it can be conjugated further. The polite negative form is 「くありません」. Remember that い-adjectives, whether positive or negative, cannot be used with 「だ」, although 「です」 is acceptable in spoken language.",
+    "false_friends": [
+        {
+            "term": "ではない",
+            "meaning": "is not (formal/standard negation)",
+            "kind": "similar expression",
+            "nuance": "While 「くない」 negates い-adjectives, 「ではない」 is the formal/standard negation for nouns and な-adjectives."
+        },
+        {
+            "term": "じゃない",
+            "meaning": "is not (casual negation)",
+            "kind": "similar expression",
+            "nuance": "While 「くない」 negates い-adjectives, 「じゃない」 is the casual negation for nouns and な-adjectives."
+        },
+        {
+            "term": "ない (verb negation)",
+            "meaning": "does not do / is not",
+            "kind": "often confused with",
+            "nuance": "The 「ない」 in 「くない」 is part of the い-adjective's negative form, functioning as an い-adjective itself. In contrast, 「ない」 used after a verb's negative stem (e.g., 食べない) directly negates the verb's action."
+        }
+    ],
+    "post_false_friends_writeup": "The key to distinguishing 「くない」 from 「ではない」 and 「じゃない」 is to remember that 「くない」 modifies い-adjectives, while 「ではない」 (formal) and 「じゃない」 (casual) negate nouns and な-adjectives. For example, to say something \"is not a book,\" you would use 「本 ではない」 or 「本 じゃない」, not 「本くない」. Additionally, understand that the 「ない」 in 「くない」 behaves as an い-adjective, allowing further conjugation, unlike the 「ない」 used for verb negation, which simply negates a verb's action.",
     "examples": [
         {
-            "japanese": "今日 は 暑{くない} です 。",
             "english": "It is not hot today.",
+            "japanese": [
+                "今日 は 暑{くない} です。",
+                "今日 は 暑{くない}。",
+                "今日 は 暑{くありません}。"
+            ],
             "english_literally": "Today not hot is.",
-            "scene": "A friend casually mentions the weather to another friend during a short break.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "今日 は 暑{くありません} 。",
-                    "mitigation": "While both are polite, 「くないです」 is often perceived as slightly softer and more conversational than the more formal 「くありません」, making it suitable for a casual comment on the weather between friends."
+                    "competing_japanese": "今日 は 暑{くありません}。",
+                    "english": "It is not hot today (formal).",
+                    "hint": "While both are polite, 「くない です」 is often perceived as slightly softer and more conversational than the more formal 「くありません」. We're looking for a slightly more conversational polite form."
+                },
+                {
+                    "competing_japanese": "今日 は 暑{じゃ ない} です。",
+                    "english": "Today is not hot (incorrect usage with い-adjective).",
+                    "hint": "「じゃない」 is used for negating nouns or な-adjectives, not い-adjectives. We're looking for the correct negative form of an い-adjective."
+                },
+                {
+                    "competing_japanese": "今日 は 暑{い ません}。",
+                    "english": "Today is not hot (incorrect conjugation).",
+                    "hint": "い-adjectives cannot directly conjugate with 「ません」. They need to change to the 「く」 form before adding 「ありません」. We're looking for the correct negative polite form of an い-adjective."
                 }
             ],
+            "scene": "A friend casually mentions the weather to another friend during a short break.",
             "register": "teineigo (polite)",
             "setting": "informative",
             "conjugation": "negative plain (～ない)"
         },
         {
-            "japanese": "この ケーキ は あまり 甘{くない} ね 。",
             "english": "This cake isn't very sweet, is it?",
+            "japanese": [
+                "この ケーキ は あまり 甘{くない} ね。",
+                "この ケーキ は あまり 甘{くない} です ね。",
+                "この ケーキ は あまり 甘{くありません} ね。"
+            ],
             "english_literally": "This cake not very sweet, right?",
-            "scene": "Two friends eating cake together.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "この ケーキ は あまり 甘{くない} です ね 。",
-                    "mitigation": "The casual setting between friends makes the plain form 「甘くない」 more natural and less stiff than the polite form 「甘くないです」."
+                    "competing_japanese": "この ケーキ は あまり 甘{くない} です ね。",
+                    "english": "This cake isn't very sweet, is it? (polite)",
+                    "hint": "The casual setting between friends makes the plain form 「甘くない」 more natural and less stiff than the polite form 「甘くない です」. We're looking for a casual expression."
+                },
+                {
+                    "competing_japanese": "この ケーキ は あまり 甘{じゃ ない} ね。",
+                    "english": "This cake isn't very sweet, is it? (incorrect usage with い-adjective).",
+                    "hint": "「じゃない」 is used for negating nouns or な-adjectives, not い-adjectives. We're looking for the correct negative form of an い-adjective."
                 }
             ],
+            "scene": "Two friends eating cake together.",
             "register": "casual",
             "setting": "friendly",
             "conjugation": "negative plain (～ない)",
             "nuance": "The 「ね」 at the end of the sentence indicates a seeking of agreement or confirmation from the listener, common in casual conversation."
         },
         {
-            "japanese": "この レストラン は 高{くない} から 、 よく 来 ます 。",
             "english": "Because this restaurant isn't expensive, I come here often.",
+            "japanese": [
+                "この レストラン は 高{くない} から、 よく 来 ます。",
+                "この レストラン は 高{くない} です から、 よく 来 ます。",
+                "この レストラン は 高{くない} から、 よく 来る。"
+            ],
             "english_literally": "This restaurant not expensive is, so often come.",
-            "scene": "A student recommending a restaurant to a classmate.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "この レストラン は 高{くない} です から 、 よく 来 ます 。",
-                    "mitigation": "In a casual conversation between peers, using the plain form 「高くない」 in the reason clause is more natural and less stiff than using the polite form 「高くないです」."
+                    "competing_japanese": "この レストラン は 高{くない} です から、 よく 来 ます。",
+                    "english": "Because this restaurant isn't expensive, I come here often (polite reason clause).",
+                    "hint": "In a casual conversation between peers, using the plain form 「高くない」 in the reason clause is more natural and less stiff than using the polite form 「高くない です」. We're looking for a more natural casual phrasing for the reason."
+                },
+                {
+                    "competing_japanese": "この レストラン は 高{じゃ ない} から、 よく 来 ます。",
+                    "english": "Because this restaurant isn't expensive, I come here often (incorrect usage with い-adjective).",
+                    "hint": "「じゃない」 is used for negating nouns or な-adjectives, not い-adjectives. We're looking for the correct negative form of an い-adjective."
                 }
             ],
+            "scene": "A student recommending a restaurant to a classmate.",
             "register": "casual",
             "setting": "informative",
             "conjugation": "negative plain (～ない)"
         },
         {
-            "japanese": "昨日 の 映画 は 全然 面白{くなかった} です 。",
             "english": "Yesterday's movie wasn't interesting at all.",
+            "japanese": [
+                "昨日 の 映画 は 全然 面白{くなかった} です。",
+                "昨日 の 映画 は 全然 面白{くなかった}。",
+                "昨日 の 映画 は 全然 面白{くありません} でした。"
+            ],
             "english_literally": "Yesterday's movie not at all interesting was.",
-            "scene": "A person sharing their opinion about a movie.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "昨日 の 映画 は 全然 面白{くありません} でした 。",
-                    "mitigation": "「くなかったです」 is a common and slightly more conversational polite past negative form compared to the more formal 「くありませんでした」, making it suitable for sharing a personal opinion."
+                    "competing_japanese": "昨日 の 映画 は 全然 面白{くありません} でした。",
+                    "english": "Yesterday's movie wasn't interesting at all (formal polite).",
+                    "hint": "「くなかった です」 is a common and slightly more conversational polite past negative form compared to the more formal 「くありません でした」. We're looking for a more conversational polite tone."
+                },
+                {
+                    "competing_japanese": "昨日 の 映画 は 全然 面白{じゃなかった} です。",
+                    "english": "Yesterday's movie wasn't interesting at all (incorrect usage with い-adjective).",
+                    "hint": "「じゃなかった」 is the casual past negative for nouns and な-adjectives, not for い-adjectives. We're looking for the correct past negative form of an い-adjective."
                 }
             ],
+            "scene": "A person sharing their opinion about a movie.",
             "register": "teineigo (polite)",
             "setting": "informative",
             "conjugation": "negative past plain (～なかった)"
         },
         {
-            "japanese": "この 服 は 可愛{くない} です か 。",
             "english": "Isn't this outfit cute?",
+            "japanese": [
+                "この 服 は 可愛{くない} です か。",
+                "この 服、 可愛{くない}？"
+            ],
             "english_literally": "This clothes not cute is?",
-            "scene": "A person seeking confirmation about the cuteness of an outfit.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "この 服 は 可愛{くありません} か 。",
-                    "mitigation": "The form 「くないですか」 is often used to ask for agreement or to elicit a soft confirmation, making it suitable for a nuanced, possibly flirty, inquiry about an outfit's cuteness rather than a direct, formal question like 「くありませんか」."
+                    "competing_japanese": "この 服 は 可愛{くありません} か。",
+                    "english": "Isn't this outfit cute? (formal polite)",
+                    "hint": "The form 「くない です か」 is often used to ask for agreement or to elicit a soft confirmation, making it suitable for a nuanced, possibly flirty, inquiry about an outfit's cuteness rather than a direct, formal question like 「くありません か」. We're looking for a softer, more nuanced inquiry."
+                },
+                {
+                    "competing_japanese": "この 服 は 可愛{じゃ ない} です か。",
+                    "english": "Isn't this outfit cute? (incorrect usage with い-adjective).",
+                    "hint": "「じゃない」 is used for negating nouns or な-adjectives, not い-adjectives. We're looking for the correct negative form of an い-adjective."
+                },
+                {
+                    "competing_japanese": "この 服 は 可愛{い ません} か。",
+                    "english": "Isn't this outfit cute? (incorrect conjugation).",
+                    "hint": "い-adjectives cannot directly conjugate with 「ません」. They need to change to the 「く」 form before adding 「ありません」. We're looking for the correct negative polite form of an い-adjective."
                 }
             ],
+            "scene": "A person seeking confirmation about the cuteness of an outfit.",
             "register": "teineigo (polite)",
             "setting": "flirty",
             "conjugation": "negative plain (～ない)"
         },
         {
-            "japanese": "髪 、 短{くなく} ても 、 綺麗 だ よ 。",
             "english": "Even if your hair isn't short, it's still beautiful.",
+            "japanese": [
+                "髪、 短{くなく} ても、 綺麗 だ よ。",
+                "髪 が 短{くなく} ても、 綺麗 です よ。"
+            ],
             "english_literally": "Hair, not short even if, beautiful is, you know.",
-            "scene": "A man flirting with a woman.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "髪 、 短{くない} です でも 、 綺麗 です よ 。",
-                    "mitigation": "The casual and intimate setting between a man and a woman makes the plain form 「くなくても」 and the male-specific ending 「だよ」 more natural and intimate than polite forms."
+                    "competing_japanese": "髪、 短{くなく} ても、 綺麗 です よ。",
+                    "english": "Even if your hair isn't short, it's still beautiful (polite).",
+                    "hint": "The casual and intimate setting between a man and a woman makes the plain form 「くなく ても」 more natural and intimate than polite forms. We're looking for a more intimate expression."
                 }
             ],
+            "scene": "A man flirting with a woman.",
             "register": "casual",
             "setting": "flirty",
             "conjugation": "te-form (～て)",
             "speaker_gender": "male",
             "listener_gender": "female",
-            "nuance": "The male speaker uses the 「～だよ」 construction, which conveys a sense of assurance and familiarity. The plain form 「くなくても」 is naturally used in this intimate context with a close female friend."
+            "nuance": "The male speaker uses the 「～だ よ」 construction, which conveys a sense of assurance and familiarity. The plain form 「くなく ても」 is naturally used in this intimate context with a close female friend."
         },
         {
-            "japanese": "あの 人 は 親切{くありません} でした 。",
             "english": "That person was not kind.",
+            "japanese": [
+                "あの 人 は 優し{くありません} でした。",
+                "あの 人 は 優し{くなかった} です。",
+                "あの 人 は 優し{くなかった}。"
+            ],
             "english_literally": "That person not kind was.",
-            "scene": "Someone talking about a negative experience with another person.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "あの 人 は 親切{くなかった} です 。",
-                    "mitigation": "In a serious context, 「くありませんでした」 conveys a more formal and definitive tone when expressing a past negative experience compared to the slightly softer 「くなかったです」."
+                    "competing_japanese": "あの 人 は 優し{くなかった} です。",
+                    "english": "That person was not kind (less formal polite).",
+                    "hint": "In a serious context, 「くありません でした」 conveys a more formal and definitive tone when expressing a past negative experience compared to the slightly softer 「くなかった です」. We're looking for a formal and definitive tone."
+                },
+                {
+                    "competing_japanese": "あの 人 は 親切{じゃなかった} です。",
+                    "english": "That person was not kind (using な-adjective).",
+                    "hint": "「優しい」 is an い-adjective, so it conjugates with 「くない」. 「親切」 is a な-adjective, which uses 「じゃない」 for negation. We're looking for the negative of an い-adjective."
                 }
             ],
+            "scene": "Someone talking about a negative experience with another person.",
             "register": "teineigo (polite)",
             "setting": "serious",
             "conjugation": "negative past polite (～ませんでした)"
         },
         {
-            "japanese": "この 問題 は そんなに 難{しくありません} 。",
             "english": "This problem isn't that difficult.",
+            "japanese": [
+                "この 問題 は そんなに 難{しくありません}。",
+                "この 問題 は そんなに 難{しくない} です。",
+                "この 問題 は そんなに 難{しくない}。"
+            ],
             "english_literally": "This problem not that difficult is.",
-            "scene": "A teacher trying to encourage a student.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "この 問題 は そんなに 難{しくない} です 。",
-                    "mitigation": "When a teacher encourages a student, the slightly more formal and reassuring tone of 「くありません」 is often preferred over the more conversational polite form 「くないです」."
+                    "competing_japanese": "この 問題 は そんなに 難{しくない} です。",
+                    "english": "This problem isn't that difficult (less formal polite).",
+                    "hint": "When a teacher encourages a student, the slightly more formal and reassuring tone of 「くありません」 is often preferred over the more conversational polite form 「くない です」. We're looking for a more reassuring tone."
+                },
+                {
+                    "competing_japanese": "この 問題 は そんなに 難{じゃありません}。",
+                    "english": "This problem isn't that difficult (incorrect usage with い-adjective).",
+                    "hint": "「じゃありません」 is the polite negative for nouns and な-adjectives, not for い-adjectives. We're looking for the correct polite negative form of an い-adjective."
+                },
+                {
+                    "competing_japanese": "この 問題 は そんなに 難{しい ません}。",
+                    "english": "This problem isn't that difficult (incorrect conjugation).",
+                    "hint": "い-adjectives cannot directly conjugate with 「ません」. They need to change to the 「く」 form before adding 「ありません」. We're looking for the correct negative polite form of an い-adjective."
                 }
             ],
+            "scene": "A teacher trying to encourage a student.",
             "register": "teineigo (polite)",
             "setting": "supportive",
             "conjugation": "negative non-past polite (～ません)",
@@ -178,16 +287,25 @@
             "nuance": "A male teacher might use this polite form to encourage a male student, maintaining a professional and supportive demeanor. The use of 「～ません」 is appropriate for this instructional setting."
         },
         {
-            "japanese": "この ドレス 、 本当 は もっと 長{くなかった} わ 。",
             "english": "This dress, it wasn't really this long, you know.",
+            "japanese": [
+                "この ドレス、 本当 は もっと 長{くなかった} わ。",
+                "この ドレス、 本当 は もっと 長{くなかった}。"
+            ],
             "english_literally": "This dress, really was more not long, you know.",
-            "scene": "A woman reminiscing about an old dress with a female friend, expressing a realization or slight lament about its past appearance.",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "この ドレス 、 本当 は もっと 長{くありません} でした 。",
-                    "mitigation": "The casual and reflective tone suitable for sharing a personal thought with a close friend makes the plain past negative 「くなかった」 followed by the feminine 「わ」 more natural than the more formal 「くありませんでした」."
+                    "competing_japanese": "この ドレス、 本当 は もっと 長{くありません} でした。",
+                    "english": "This dress, it wasn't really this long (formal polite).",
+                    "hint": "The casual and reflective tone suitable for sharing a personal thought with a close friend makes the plain past negative 「くなかった」 followed by the feminine 「わ」 more natural than the more formal 「くありません でした」. We're looking for a natural, casual, and reflective tone."
+                },
+                {
+                    "competing_japanese": "この ドレス、 本当 は もっと 長{じゃなかった} わ。",
+                    "english": "This dress, it wasn't really this long, you know (incorrect usage with い-adjective).",
+                    "hint": "「じゃなかった」 is the casual past negative for nouns and な-adjectives, not for い-adjectives. We're looking for the correct past negative form of an い-adjective."
                 }
             ],
+            "scene": "A woman reminiscing about an old dress with a female friend, expressing a realization or slight lament about its past appearance.",
             "register": "casual",
             "setting": "reflective",
             "conjugation": "negative past plain (～なかった)",
@@ -196,38 +314,7 @@
             "nuance": "「わ」 is a sentence-ending particle predominantly used by women, conveying a soft, often emotional, tone or a sense of personal conviction, making the sentence sound distinctly feminine. The plain form 「くなかった」 is natural in this intimate exchange between female friends."
         }
     ],
-    "false_friends": [
-        {
-            "term": "ではない",
-            "meaning": "is not",
-            "kind": "similar expression",
-            "nuance": "While 「くない」 negates い-adjectives, 「ではない」 negates nouns and な-adjectives."
-        }
-    ],
-    "post_false_friends_writeup": "The key to distinguishing 「くない」 and 「ではない」 is to remember that 「くない」 modifies い-adjectives, while 「ではない」 negates nouns and な-adjectives. For example, to say something \"is not a book,\" you would use 「本ではない」, not 「本くない」.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/negative-い-adjectives"
-    },
-    "change": [
-        {
-            "change-type": "schema",
-            "change": "Changed all instances of grammar point highlighting in Japanese examples and competing grammar from parentheses `()` to curly braces `{}` to conform to schema requirements."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Changed 'register' in 'details' from 'teineigo (polite)' to 'casual' to more accurately reflect the base form of 「くない」, which is plain and can be made polite with 「です」."
-        },
-        {
-            "change-type": "schema",
-            "change": "Added 'english_literally' field to all example sentences as required by the schema."
-        },
-        {
-            "change-type": "suggestion",
-            "change": "Rephrased a sentence in the writeup for clarity regarding example sentence placement."
-        },
-        {
-            "change-type": "meta",
-            "change": "Noted a contradiction between the instruction to include 'competing_grammar' terms in 'false_friends' and the 'false_friends' schema rule that 'MUST NOT reference other conjugations of this grammar point'. Adhered to the schema rule, as competing forms in 'scene_rationale' are conjugations of the main grammar point, not separate grammar points."
-        }
-    ]
+    }
 }
