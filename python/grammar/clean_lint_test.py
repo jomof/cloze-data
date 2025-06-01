@@ -3,6 +3,7 @@ import unittest
 from python.grammar.clean_lint import (
     strip_matching_quotes,
     lint_quotes,
+    lint_english_brackets,
     lint_mecab_spaces,
     lint_schema_enums_with_jsonschema,
     clean_lint,
@@ -39,6 +40,24 @@ class TestLintSchemaUtils(unittest.TestCase):
         warnings = lint_quotes(grammar_point)
         self.assertEqual(len(warnings), 1)
         self.assertIn('examples[0].english has quotes', warnings[0])
+
+    def test_lint_english_brackets_detects_brackets(self):
+        grammar_point = {
+            "examples": [
+                {"english": 'This has (parentheses) inside.'},
+                {"english": 'This has [brackets] inside.'},
+                {"english": 'This has {curly} inside.'},
+                {"english": 'This has <angle> inside.'},
+                {"english": 'No brackets here.'},
+            ]
+        }
+        warnings = lint_english_brackets(grammar_point)
+        # Four examples should trigger warnings
+        self.assertEqual(len(warnings), 4)
+        self.assertIn('examples[0].english has bracket characters ()', warnings[0])
+        self.assertIn('examples[1].english has bracket characters []', warnings[1])
+        self.assertIn('examples[2].english has bracket characters {}', warnings[2])
+        self.assertIn('examples[3].english has bracket characters <>', warnings[3])
 
     def test_lint_mecab_spaces_detects_missing_spaces(self):
         grammar_point = {
@@ -105,6 +124,16 @@ class TestLintSchemaUtils(unittest.TestCase):
         cleaned = clean_lint(grammar_point)
         example = cleaned['examples'][0]
         self.assertEqual(example['english'], 'Quoted')
+
+    def test_clean_lint_bracket_warning(self):
+        grammar_point = {
+            "examples": [
+                {"english": '(Bracketed)', "japanese": ['テスト  例']}
+            ],
+        }
+        cleaned = clean_lint(grammar_point)
+        errors = cleaned['lint-errors']
+        self.assertTrue(any('has bracket characters' in e for e in errors))
 
     def test_clean_lint_mecab_space_warning(self):
         grammar_point = {

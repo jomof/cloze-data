@@ -12,6 +12,13 @@ QUOTE_PAIRS = [
     ('‘', '’'),
 ]
 
+BRACKET_PATTERNS = [
+    ('(', ')'),
+    ('[', ']'),
+    ('{', '}'),
+    ('<', '>'),
+]
+
 def strip_matching_quotes(text):
     """Remove matching quotes from the beginning and end of a string, including English and Japanese quotes."""
     if not isinstance(text, str) or len(text) < 2:
@@ -44,6 +51,22 @@ def lint_quotes(grammar_point):
     return messages
 
 
+def lint_english_brackets(grammar_point):
+    """
+    Walks over the given data object and checks each example's English text for bracket characters: {}, (), [], or <>.
+    Returns a list of lint-style messages indicating which examples contain brackets.
+    """
+    messages = []
+    examples = grammar_point.get("examples", [])
+    for idx, example in enumerate(examples):
+        english = example.get("english", "")
+        for left, right in BRACKET_PATTERNS:
+            if left in english or right in english:
+                messages.append(f"[rule-4] warning examples[{idx}].english has bracket characters {left}{right}: {english}")
+                break
+    return messages
+
+
 def lint_mecab_spaces(grammar_point):
     messages = []
     examples = grammar_point.get("examples", [])
@@ -58,7 +81,7 @@ def lint_mecab_spaces(grammar_point):
 
 def lint_schema_enums_with_jsonschema(instance, schema):
     """
-    Validate `instance` against `schema` and return a list of all enum‐violation messages.
+    Validate `instance` against `schema` and return a list of all enum‑violation messages.
     Each message is formatted as:
         "<path> had an invalid enum value: <value>"
     where <path> is dotted/bracket notation into `instance`.
@@ -69,7 +92,7 @@ def lint_schema_enums_with_jsonschema(instance, schema):
     for error in validator.iter_errors(instance):
         # Only care about enum violations
         if error.validator == "enum":
-            # Build a human‐readable path (e.g. "items[2].status")
+            # Build a human‑readable path (e.g. "items[2].status")
             path_parts = []
             for part in error.absolute_path:
                 if isinstance(part, int):
@@ -204,6 +227,7 @@ def clean_lint(grammar_point):
     grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "japanese", strip_matching_quotes)
     grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "english", strip_matching_quotes)
     lint.extend(lint_quotes(grammar_point))
+    lint.extend(lint_english_brackets(grammar_point))
     lint.extend(lint_mecab_spaces(grammar_point))
     lint.extend(lint_schema_enums_with_jsonschema(grammar_point, GRAMMAR_SCHEMA))
     grammar_point['lint-errors'] = lint

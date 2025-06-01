@@ -208,8 +208,9 @@ py_build_tool_stream(
     name = "ai-cleaned-merge-grammars",
     srcs = ["//resources/processed:ai-cleaned-merge-grammars"],
     correlated = [],
+    args = ["--no-query"],
     extension = ".yaml",
-    filter = ["spatial"],
+    # filter = ["spatial"],
     pass_target_name = True, 
     tool = ":ai-clean",
 )

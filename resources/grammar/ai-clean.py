@@ -78,7 +78,8 @@ def PRIOR_GRAMMAR_POINT(prior_input_obj):
         END PRIOR_GRAMMAR_POINT
 
     """).replace("[prior_input_replace]", json.dumps(prior_input_obj, ensure_ascii=False, indent=4))
-def ai_clean(data, bazel_target, prior_grammar_point, output_file):
+
+def ai_clean(data, bazel_target, prior_grammar_point, output_file, no_query):
     data = yaml.safe_load(data)
 
     prior_input_obj = clean_lint(json5.loads(prior_grammar_point))
@@ -153,7 +154,12 @@ def ai_clean(data, bazel_target, prior_grammar_point, output_file):
     for i in range(6):
       try:
         log_file = f"{output_file}.log"
-        response = memoize_to_disk(bazel_target, aigen, prompt + str(i), model, GRAMMAR_SCHEMA_WITH_COMMENTS, log_file)
+        if no_query:
+            print(f"Skipping AI query for {grammar_point_name} (iteration {i})")
+            response = json.dumps(prior_input_obj, ensure_ascii=False, indent=4)
+        else:
+            print(f"Querying AI for {grammar_point_name} (iteration {i})")
+            response = memoize_to_disk(bazel_target, aigen, prompt + str(i), model, GRAMMAR_SCHEMA_WITH_COMMENTS, log_file)
         response = response.removeprefix("```json").removesuffix("\n").removesuffix("```")
         response = repair_json(response)
         json_response = json.loads(response)
@@ -181,21 +187,20 @@ def ai_clean(data, bazel_target, prior_grammar_point, output_file):
     #return prompt
     # return yaml.dump(json_response, ensure_ascii=False, indent=4)
 
-def main(input_file, output_file, bazel_target, prior_version=None):
+def main(input_file, output_file, bazel_target, prior_version, no_query):
     with open(input_file, 'r', encoding='utf-8') as file:
         data = file.read()
-    result = ai_clean(data, bazel_target, prior_version, output_file)
+    result = ai_clean(data, bazel_target, prior_version, output_file, no_query)
 
     with open(output_file, 'w', encoding='utf-8') as file:
         file.write(result)
-
-
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--source', required=True, help='Input file path')
     parser.add_argument('--destination', required=True, help='Output file path')
     parser.add_argument('--bazel-target', required=True, help='Name of the bazel target')
+    parser.add_argument('--no-query', action='store_true', help='If set, then no query will be made to the AI service')
     
     args = parser.parse_args()
     basename = os.path.basename(args.destination)
@@ -203,4 +208,5 @@ if __name__ == '__main__':
     prior_version_file = args.source
     with open(prior_version_file, 'r', encoding='utf-8') as file:
         prior_version = file.read()
-    main(args.source, args.destination, args.bazel_target, prior_version)
+    print(f"Processing {args}")
+    main(args.source, args.destination, args.bazel_target, prior_version, args.no_query)
