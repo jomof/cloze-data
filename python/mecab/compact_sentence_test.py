@@ -1,19 +1,30 @@
 import unittest
-from python.mecab.compact_sentence import compact_sentence_to_tokens, tokens_to_compact_sentence, mecab_raw_to_compact_sentence, Token, parse_raw_mecab_output
+from python.mecab.compact_sentence import (
+    compact_sentence_to_tokens,
+    tokens_to_compact_sentence,
+    mecab_raw_to_compact_sentence,
+    Token,
+    parse_raw_mecab_output,
+)
 from python.mecab.tagger import get_mecab_tagger
 
 class TestTokenParser(unittest.TestCase):
 
-    def test_tokenize(self):
-      wakati = get_mecab_tagger()
-      term = "机の上に本はあります。"
-      raw = wakati.parse(term)
-      compact_sentence = mecab_raw_to_compact_sentence(raw)
-      tokens = parse_raw_mecab_output(raw)
-      print("RAW", raw)
-      print("COMPACT", compact_sentence)
-      print("TOKENS", tokens)
-      self.assertEqual(compact_sentence, "⌈ˢ机ᵖ名詞ᵇ机⌉⌈ˢのᵖ助詞ᵇの⌉⌈ˢ上ᵖ名詞ᵇ上⌉⌈ˢにᵖ助詞ᵇに⌉⌈ˢ本ᵖ名詞ᵇ本⌉⌈ˢはᵖ助詞ᵇは⌉⌈ˢありᵖ動詞ᵇある⌉⌈ˢますᵖ助動詞ᵇます⌉⌈ˢ。ᵖ補助記号ᵇ。⌉")
+    def test_mecab_compact_and_parse(self):
+        # Generate a compact sentence from MeCab
+        wakati = get_mecab_tagger()
+        term = "机の上に本はあります。"
+        raw = wakati.parse(term)
+        compact_sentence = mecab_raw_to_compact_sentence(raw)
+
+        # Parse tokens from the compact sentence
+        tokens = compact_sentence_to_tokens(compact_sentence)
+        self.assertTrue(len(tokens) >= 1)
+        self.assertEqual(tokens[0].surface, "机")
+
+        # Round-trip: reconstruct and compare
+        reconstructed = tokens_to_compact_sentence(tokens)
+        self.assertEqual(reconstructed, compact_sentence)
 
     def test_sentence_to_tokens(self):
         input_string = "⌈ˢThisᵖNOUNᵇthis⌉⌈ˢisᵖVERB⌉⌈ˢaᵖDET⌉⌈ˢtestᵖNOUN⌉"

@@ -1,3 +1,5 @@
+import re
+
 class Token:
     def __init__(self, surface='', pos='', base_form='', grammar=None, start_pos=0, end_pos=0):
         self.surface = surface
@@ -13,91 +15,63 @@ class Token:
         if grammar_point not in self.grammar:
             self.grammar.append(grammar_point)
 
-def read_until_delimiter(input_string, i, delimiters):
-    result = ''
-    while i < len(input_string) and input_string[i] not in delimiters:
-        result += input_string[i]
-        i += 1
-    return result, i
+# Regex pattern to match bracketed tokens: ⌈ˢsurfaceᵖposᵇbase(ᵍgrammar…)*⌉
+_TOKEN_PATTERN = re.compile(
+    r'⌈'
+    r'(?:ˢ(?P<surface>[^ˢᵖᵇᵍ⌉]+))?'
+    r'(?:ᵖ(?P<pos>[^ˢᵖᵇᵍ⌉]+))?'
+    r'(?:ᵇ(?P<base_form>[^ˢᵖᵇᵍ⌉]+))?'
+    r'(?P<grammars>(?:ᵍ[^ˢᵖᵇᵍ⌉]+)*)'
+    r'⌉'
+)
 
 def compact_sentence_to_tokens(input_string):
     """
-    Parses a tokenized sentence string into a list of Token objects.
+    Parses a compact sentence (mix of bracketed and single-character tokens) into a list of Token objects.
 
-    Each token starts with "⌈" and ends with "⌉". Within each token:
-    - The text after "ˢ" is the surface form.
-    - The text after "ᵖ" is the part-of-speech (POS).
-    - The text after "ᵇ" is the base form.
-    - The text after "ᵍ" represents grammar attributes, and there can be zero or more grammar attributes.
-
-    The function also captures the starting and ending positions of each token within the original string.
-
-    Parameters:
-    input_string (str): The tokenized sentence string.
+    Bracketed segments (⌈…⌉) are parsed for surface, pos, base_form, and grammars.
+    Unbracketed characters (e.g., particles, punctuation) are each treated as a Token with only surface filled.
 
     Returns:
-    list: A list of Token objects.
+        list[Token]: All tokens in order.
     """
     tokens = []
-    i = 0
-    length = len(input_string)
-    delimiters = ('ˢ', 'ᵖ', 'ᵇ', 'ᵍ', '⌉')
-
-    while i < length:
-        if input_string[i] == '⌈':
-            # Start of a token
-            start_pos = i
-            i += 1
-            surface = ''
-            pos = ''
-            base_form = ''
-            grammars = []
-
-            while i < length and input_string[i] != '⌉':
-                if input_string[i] == 'ˢ':
-                    i += 1
-                    surface, i = read_until_delimiter(input_string, i, delimiters)
-                elif input_string[i] == 'ᵖ':
-                    i += 1
-                    pos, i = read_until_delimiter(input_string, i, delimiters)
-                elif input_string[i] == 'ᵇ':
-                    i += 1
-                    base_form, i = read_until_delimiter(input_string, i, delimiters)
-                elif input_string[i] == 'ᵍ':
-                    i += 1
-                    grammar, i = read_until_delimiter(input_string, i, delimiters)
-                    grammars.append(grammar.strip())
-                else:
-                    i += 1
-
-            if i < length and input_string[i] == '⌉':
-                end_pos = i + 1
-                tokens.append(Token(surface.strip(), pos.strip(), base_form.strip(), grammars, start_pos, end_pos))
-                i += 1  # Skip '⌉'
-        else:
-            i += 1  # Move to next character if not the start of a token
-
+    last_end = 0
+    for match in _TOKEN_PATTERN.finditer(input_string):
+        # Handle any single-character tokens between last_end and match.start()
+        if match.start() > last_end:
+            for i, ch in enumerate(input_string[last_end:match.start()]):
+                tokens.append(Token(surface=ch, start_pos=last_end + i, end_pos=last_end + i + 1))
+        # Extract bracketed token
+        surface = match.group('surface') or ''
+        pos = match.group('pos') or ''
+        base_form = match.group('base_form') or ''
+        grammars_raw = match.group('grammars') or ''
+        grammars = re.findall(r'ᵍ([^ˢᵖᵇᵍ⌉]+)', grammars_raw)
+        start_pos = match.start()
+        end_pos = match.end()
+        tokens.append(Token(surface=surface.strip(), pos=pos.strip(), base_form=base_form.strip(), grammar=[g.strip() for g in grammars], start_pos=start_pos, end_pos=end_pos))
+        last_end = match.end()
+    # Handle any trailing single-character tokens
+    if last_end < len(input_string):
+        for i, ch in enumerate(input_string[last_end:]):
+            tokens.append(Token(surface=ch, start_pos=last_end + i, end_pos=last_end + i + 1))
     return tokens
+
 
 def tokens_to_compact_sentence(tokens):
     """
-    Converts a list of Token objects back into the original tokenized string format.
+    Converts a list of Token objects back into a compact sentence string.
 
-    Each token is represented by a Token object.
-
-    The function reconstructs the string by concatenating each token's components
-    with the appropriate delimiters.
-
-    Parameters:
-    tokens (list): A list of Token objects.
-
-    Returns:
-    str: The reconstructed tokenized string.
+    - Tokens with only surface (no pos, no base_form, no grammar) are output as their surface character.
+    - Otherwise, tokens are bracketed with ⌈…⌉ including ˢ, ᵖ, ᵇ, ᵍ delimiters.
     """
     result = ''
-
     for token in tokens:
-        # Start the token with '⌈'
+        # If no pos, base_form, and no grammars, output surface directly
+        if not token.pos and not token.base_form and not token.grammar:
+            result += token.surface
+            continue
         result += '⌈'
         if token.surface:
             result += 'ˢ' + token.surface
@@ -108,8 +82,8 @@ def tokens_to_compact_sentence(tokens):
         for grammar in token.grammar:
             result += 'ᵍ' + grammar
         result += '⌉'
-
     return result
+
 
 def parse_raw_mecab_output(raw_output):
     tokens = []
@@ -122,7 +96,6 @@ def parse_raw_mecab_output(raw_output):
         surface = parts[0]
         features = parts[1].split(",")
         features += [""] * (20 - len(features) - 1)
-     
         token = {
             "surface": surface,
             "pos": features[0],
@@ -150,89 +123,72 @@ def mecab_raw_to_compact_sentence(raw: str) -> str:
     """
     Converts MeCab raw token output into a compact sentence format.
     
-    Parameters:
-    raw (str): Raw output from MeCab, with each token on a new line and fields separated by tabs and commas.
-    
-    Returns:
-    str: A compact sentence string with each token enclosed in brackets and annotated with part-of-speech (POS) and base form.
+    Each MeCab token is either output as a bracketed segment or as a single character:
+      - Content words (surface != base or reading present) become bracketed: ⌈ˢsurfaceᵖposᵇbaseʳreading⌉
+      - Particles/single-character symbols become unbracketed.
     """
-    # Define the fields present in the MeCab output details
-
     tokens = parse_raw_mecab_output(raw)
-
     pos_map = {
-        "名詞": "n", # Noun 
-        "動詞": "v", # Verb
-        "形容詞": "adj", # Adjective
-        "副詞": "adv", # Adverb
-        "助詞": "prt", # Particle
-        "接続詞": "conj", # Conjunction
-        "感動詞": "int", # Interjection
-        "記号": "sym", # Symbol
-        "助動詞": "auxv", # Auxiliary verb
-        "補助記号": "auxs", # Auxiliary symbol
-        "代名詞": "pron", # Pronoun
-        "接頭辞": "pref", # Prefix
-        "接尾辞": "suff", # Suffix
-        "形状詞": "shp", # Shape word
-        "連体詞": "at", # Attributive
-        "空白": "sp", # Space
+        "名詞": "n",  # Noun
+        "動詞": "v",  # Verb
+        "形容詞": "adj",  # Adjective
+        "副詞": "adv",  # Adverb
+        "助詞": "prt",  # Particle
+        "接続詞": "conj",  # Conjunction
+        "感動詞": "int",  # Interjection
+        "記号": "sym",  # Symbol
+        "助動詞": "auxv",  # Auxiliary verb
+        "補助記号": "auxs",  # Auxiliary symbol
+        "代名詞": "pron",  # Pronoun
+        "接頭辞": "pref",  # Prefix
+        "接尾辞": "suff",  # Suffix
+        "形状詞": "shp",  # Shape word
+        "連体詞": "at",  # Attributive
+        "空白": "sp",  # Space
     }
-
-    # Recombine the tokens into the desired compact format
     recombined = ""
     for token in tokens:
-        surface = token["surface"]  # Preceded by ˢ (Latin Subscript Small Letter 's')
-        pos = token["pos"]  # Preceded by ᵖ (Latin Subscript Small Letter 'p')
-        pos_code = pos_map[pos]
-        if pos_code in ['auxs', 'prt'] and len(surface) == 1:
-            # Shortened versions for symbols and other things that can be determined
-            # with a lookup table.
+        surface = token["surface"]
+        pos = token["pos"]
+        pos_code = pos_map.get(pos, pos)
+        # If particle or symbol (prt or sym) and single char, output directly
+        if pos_code in ['prt', 'sym'] and len(surface) == 1:
             recombined += surface
         else:
             recombined += f"⌈ˢ{surface}ᵖ{pos_code}"
-            base = token["basic_form"]  # Preceded by ᵇ (superscript 'b')
-            if base and base != surface:  # Only include base form if it's different from surface
+            base = token["basic_form"]
+            if base and base != surface:
                 recombined += f"ᵇ{base}"
-            reading = token["reading"]  # Preceded by ʳ (superscript 'r')
+            reading = token["reading"]
             if reading and reading != surface:
                 recombined += f"ʳ{reading}"
             recombined += "⌉"
-
     return recombined
+
 
 def mecab_raw_to_tokens(raw):
     return compact_sentence_to_tokens(mecab_raw_to_compact_sentence(raw))
 
+
 def mecab_raw_to_compact_sentence_with_grammar(raw: str) -> str:
     """
-    Converts MeCab raw token output into a compact sentence format, including grammar information.
-    
-    Parameters:
-    raw (str): Raw output from MeCab, with each token on a new line and fields separated by tabs and commas.
-    
-    Returns:
-    str: A compact sentence string with each token enclosed in brackets and annotated with 
-         part-of-speech (POS), base form, and grammar information.
+    Converts MeCab raw token output into a compact sentence format with grammar attributes.
     """
     tokens = parse_raw_mecab_output(raw)
-
     recombined = ""
     for token in tokens:
-        surface = token["surface"]  # Preceded by ˢ (Latin Subscript Small Letter 's')
-        pos = token["pos"]  # Preceded by ᵖ (Latin Subscript Small Letter 'p')
+        surface = token["surface"]
+        pos = token["pos"]
         recombined += f"⌈ˢ{surface}ᵖ{pos}"
-        base = token["basic_form"]  # Preceded by ᵇ (superscript 'b')
+        base = token["basic_form"]
         if base:
             recombined += f"ᵇ{base}"
-        # Add grammar features (using fields 1-4, 6, and 7)
-        for feature in [token["pos_detail_1"], token["pos_detail_2"], token["pos_detail_3"], 
-                         token["conjugated_type"], token["conjugated_form"]]:
+        for feature in [token["pos_detail_1"], token["pos_detail_2"], token["pos_detail_3"], token["conjugated_type"], token["conjugated_form"]]:
             if feature:
                 recombined += f"ᵍ{feature}"
         recombined += "⌉"
-
     return recombined
+
 
 def mecab_raw_to_tokens_with_grammar(raw):
     return compact_sentence_to_tokens(mecab_raw_to_compact_sentence_with_grammar(raw))
