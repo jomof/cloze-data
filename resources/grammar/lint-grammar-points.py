@@ -10,6 +10,7 @@ from concurrent.futures import ThreadPoolExecutor
 import threading
 import sys
 from threading import Lock
+import json 
 
 # Adjust concurrent I/O and CPU-bound tasks separately
 MAX_CONCURRENT_READS = 200
@@ -120,12 +121,12 @@ async def read_yaml(file_path, sem_read):
         return data, elapsed
 
 async def write_yaml(file_path, data):
-    # unchanged from previous
     event_queue.put(f"BEGIN_WRITE")
     event_queue.put(f"LOG: 🔄 writing {os.path.basename(file_path)}")
     async with aiofiles.open(file_path, 'w', encoding='utf-8') as f:
         try:
-            dump = yaml.dump(data, allow_unicode=True, sort_keys=False)
+            # dump = yaml.dump(data, allow_unicode=True, sort_keys=False)
+            dump = json.dumps(data, ensure_ascii=False, indent=4)
             await f.write(dump)
         finally:
             event_queue.put(f"END_WRITE")
@@ -148,12 +149,12 @@ async def process_one(grammar_file, sem_read, sem_lint, executor, stats):
         # 1. Read file
         grammar, read_time = await read_yaml(grammar_file, sem_read)
         stats['total_read_time'] += read_time
-        # 2. Lint in separate process
+        # 2. Lint
         cleaned, lint_time = await lint_task(grammar_file, grammar, sem_lint, executor)
         stats['total_lint_time'] += lint_time
         stats['count'] += 1
-        # Optionally write back or drop
-        # await write_yaml(grammar_file, cleaned)
+        # 3. Write back
+        await write_yaml(grammar_file, cleaned)
         event_queue.put(f"LOG: ✅ finished {os.path.basename(grammar_file)} {read_time:.2f}s, lint {lint_time:.2f}s")
     except Exception as e:
         event_queue.put(f"LOG: ❌ error {os.path.basename(grammar_file)}: {str(e)}")
@@ -198,7 +199,6 @@ async def main():
             count = stats['count']
             avg_read = stats['total_read_time'] / count if count else 0
             avg_lint = stats['total_lint_time'] / count if count else 0
-            print("\n=== Final Timing Statistics ===")
             print(f"Files total: {total_files}")
             print(f"Processed: {count}")
             print(f"Total elapsed: {total_elapsed:.2f}s")
@@ -207,7 +207,6 @@ async def main():
             sys.stdout.write(SHOW_CURSOR)
             sys.stdout.flush()
             executor.shutdown(wait=True, cancel_futures=True)
-            print(f"Shutdown complete, all tasks finished.")
     finally:
         sys.stdout.write(SHOW_CURSOR)
         sys.stdout.flush()
