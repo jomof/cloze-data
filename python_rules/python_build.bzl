@@ -112,8 +112,8 @@ py_build_tool_stream = rule(
         "args": attr.string_list(),
         "correlated": attr.label_list(allow_files = True, default = []),
         "data": attr.label_list(allow_files = True, default = []),
-        "file_args": attr.label_list(allow_files = True, default = []),
         "extension": attr.string(default = ""),
+        "file_args": attr.label_list(allow_files = True, default = []),
         "filter": attr.string_list(
             # TODO: implement filtering by basename
             default = [],

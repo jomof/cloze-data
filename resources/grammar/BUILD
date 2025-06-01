@@ -129,7 +129,9 @@ py_binary(
     visibility = ["//visibility:public"],
     deps = [
         "//python/ai:aigen",
+        "//python/grammar",
         "//python/utils/build_cache/memoize",
+        "@pip//json5",
         "@pip//json_repair",
         "@pip//pyyaml",
     ],
@@ -208,10 +210,10 @@ py_build_tool_stream(
     args = ["--grammar-schema=resources/grammar/grammar-schema.json"],
     correlated = ["//resources/processed:ai-cleaned-merge-grammars"],
     extension = ".yaml",
-    # filter = ["0176"],
+    file_args = ["//python/grammar:grammar-schema.json"],
+    filter = ["0112"],
     pass_target_name = True,
     tool = ":ai-clean",
-    file_args = [":grammar-schema.json"],
 )
 
 # bazel run //resources/grammar:publish-ai-cleaned-merge-grammars --jobs=5
@@ -264,9 +266,11 @@ py_library(
     visibility = ["//:__subpackages__"],
     deps = [
         "//python/ai:aigen",
+        "//python/grammar",
         "//python/mecab:utils",
         "//python/utils/build_cache/memoize",
         "@pip//beautifulsoup4",
+        "@pip//json5",
         "@pip//json_repair",
         "@pip//pyyaml",
     ],
