@@ -14,6 +14,7 @@ py_library(
     ],
 )
 
+# bazel test //python/mecab:compact_sentence_test
 py_test(
     name = "compact_sentence_test",
     srcs = ["compact_sentence_test.py"],

@@ -82,7 +82,7 @@ def PRIOR_GRAMMAR_POINT(prior_input_obj):
 def ai_clean(data, bazel_target, prior_grammar_point, output_file, no_query):
     data = yaml.safe_load(data)
 
-    prior_input_obj = clean_lint(json5.loads(prior_grammar_point))
+    prior_input_obj = clean_lint(json5.loads(prior_grammar_point), output_file)
 
     prompt = '\n'.join([
         PERSONA, 
@@ -170,7 +170,7 @@ def ai_clean(data, bazel_target, prior_grammar_point, output_file, no_query):
         if grammar_point_name != json_response["grammar_point"]:
             raise Exception(f"Grammar point mismatch: {data['grammar_point']} != {json_response['grammar_point']}")
 
-        linted = clean_lint(json_response)
+        linted = clean_lint(json_response, output_file)
         return json.dumps(linted, ensure_ascii=False, indent=4)
       except Exception as e:
         if i == 2:

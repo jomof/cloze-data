@@ -111,20 +111,28 @@ def lint_schema_enums_with_jsonschema(instance, schema):
 
 
 def type_replace(obj, schema, type_name, fn):
-    """
-    Traverse the given object `obj` according to the provided JSON `schema`,
-    find all instances where the schema references the definition named `type_name`,
-    and apply the function `fn` to the corresponding value in `obj`.
-    """
     new_obj = copy.deepcopy(obj)
     ref_pointer = f"#/definitions/{type_name}"
 
+    def resolve_ref(ref):
+        if not ref.startswith("#/definitions/"):
+            return None
+        key = ref.split("/")[-1]
+        return schema["definitions"].get(key)
+
     def _traverse(current_obj, current_schema):
-        # If this schema node references our target type, apply fn
-        if isinstance(current_schema, dict) and current_schema.get("$ref") == ref_pointer:
-            return fn(current_obj)
+        if not isinstance(current_schema, dict):
+            return current_obj
+
+        if "$ref" in current_schema:
+            if current_schema["$ref"] == ref_pointer:
+                return fn(current_obj)
+            resolved = resolve_ref(current_schema["$ref"])
+            if resolved:
+                return _traverse(current_obj, resolved)
 
         schema_type = current_schema.get("type")
+
         if schema_type == "object":
             props = current_schema.get("properties", {})
             for key, prop_schema in props.items():
@@ -141,6 +149,7 @@ def type_replace(obj, schema, type_name, fn):
         return current_obj
 
     return _traverse(new_obj, schema)
+
 
 
 def prune_empty(obj):
@@ -213,8 +222,6 @@ def reorder_keys(obj, schema):
     return new_obj
 
 def japanese_with_space(japanese):
-    if ' ' in japanese:
-        return japanese
     return japanese_to_japanese_with_spaces(japanese)
 
 def replace_japanese_characters(japanese):

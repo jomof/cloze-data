@@ -173,5 +173,31 @@ class TestLintSchemaUtils(unittest.TestCase):
         # Keys a, b, c first in schema order, then extras in original order: x, y
         self.assertEqual(list(ordered.keys()), ['a', 'b', 'c', 'x', 'y'])
 
+    def test_clean_lint_array_input_preserves_array(self):
+        grammar_point = {
+            "grammar_point": "テスト",
+            "id": "gp0000",
+            "pronunciation": {"katakana": "テスト", "romaji": "tesuto"},
+            "formation": {"X は Y": "test"},
+            "jlpt": "N5",
+            "meaning": "test",
+            "details": {},
+            "etymology": "test origin",
+            "writeup": "test writeup",
+            "examples": [
+                {
+                    "english": 'Hello',
+                    "japanese": ['テスト例'],
+                    "scene": "scene", "register": "casual", "setting": "informative"
+                }
+            ],
+            "false_friends": [],
+            "post_false_friends_writeup": "",
+        }
+        cleaned = clean_lint(grammar_point)
+        example = cleaned['examples'][0]
+        self.assertIsInstance(example['japanese'], list)
+        self.assertEqual(example['japanese'], ['テスト 例'])
+
 if __name__ == '__main__':
     unittest.main()
