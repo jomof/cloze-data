@@ -248,6 +248,7 @@ py_binary(
     ],
 )
 
+# bazel run //resources/grammar:lint-grammar-points
 py_binary(
     name = "lint-grammar-points",
     srcs = ["lint-grammar-points.py"],
