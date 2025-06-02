@@ -10,6 +10,16 @@
     }
   ],
 
+  "python.analysis.exclude": [
+    "../**",            // anything above the workspace
+    "**/.git/**",       // optional: skip Git internals
+    "**/__pycache__/**", // optional: skip caches
+    "bazel-out/**",
+    "bazel-bin/**",
+    "bazel-cloze-data/**",
+    "bazel-test-logs/**",
+  ],
+
   "files.watcherExclude": {
     "bazel-out/**": true,
     "bazel-bin/**": true,

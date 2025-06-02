@@ -243,7 +243,7 @@ py_binary(
     srcs = ["post-ai-scrub-tool.py"],
     visibility = ["//:__subpackages__"],
     deps = [
-        "//python/mecab:utils",
+        "//python/mecab",
         "@pip//pyyaml",
     ],
 )
@@ -282,7 +282,7 @@ py_library(
     deps = [
         "//python/ai:aigen",
         "//python/grammar",
-        "//python/mecab:utils",
+        "//python/mecab",
         "//python/utils/build_cache/memoize",
         "@pip//aiofiles",
         "@pip//beautifulsoup4",

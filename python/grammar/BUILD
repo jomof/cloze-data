@@ -17,7 +17,7 @@ py_library(
     data = [":grammar-schema.json"],
     visibility = ["//:__subpackages__"],
     deps = [
-        "//python/mecab:utils",
+        "//python/mecab",
         "@pip//json5",
         "@pip//jsonschema",
     ],
