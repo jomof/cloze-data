@@ -158,7 +158,6 @@ def ai_clean(data, bazel_target, prior_grammar_point, output_file, no_query):
             print(f"Skipping AI query for {grammar_point_name} (iteration {i})")
             response = json.dumps(prior_input_obj, ensure_ascii=False, indent=4)
         else:
-            print(f"Querying AI for {grammar_point_name} (iteration {i})")
             response = memoize_to_disk(bazel_target, aigen, prompt + str(i), model, GRAMMAR_SCHEMA_WITH_COMMENTS, log_file)
         response = response.removeprefix("```json").removesuffix("\n").removesuffix("```")
         response = repair_json(response)

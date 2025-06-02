@@ -26,7 +26,7 @@
     },
     "jlpt": "N5",
     "details": {
-        "part-of-speech": "auxiliary verb",
+        "part-of-speech": "verb",
         "usage-context": "general",
         "function": "Indicates completion, past action, or resulting state.",
         "nuance": "The auxiliary 'た' has nuanced meanings beyond simple past, including completion and a continuing state.",
@@ -40,9 +40,21 @@
             "meaning": "is ~ing",
             "kind": "similar expression",
             "nuance": "Unlike 「る-verb (past)」, 「ている」 indicates an ongoing action or a state resulting from an action."
+        },
+        {
+            "term": "～てしまう",
+            "meaning": "to do completely; to do accidentally/regrettably",
+            "kind": "similar expression",
+            "nuance": "While 「る-verb (past)」 simply states a past action, 「～てしまう」 adds nuance of completion, decisiveness, or regrettability."
+        },
+        {
+            "term": "～たばかり",
+            "meaning": "just did (something)",
+            "kind": "similar expression",
+            "nuance": "「る-verb (past)」 refers to any past action, whereas 「～たばかり」 specifically indicates an action that was completed very recently."
         }
     ],
-    "post_false_friends_writeup": "Be mindful to distinguish between the past tense 「た / ました」, which indicates a completed action, and the progressive form 「ている / ています」, which indicates an ongoing action or a state resulting from an action. The former describes what *did* happen, and the latter describes what *is* happening or the state that exists now.",
+    "post_false_friends_writeup": "Be mindful to distinguish between the past tense 「た / ました」, which indicates a completed action, and the progressive form 「ている / ています」, which indicates an ongoing action or a state resulting from an action. The former describes what *did* happen, and the latter describes what *is* happening or the state that exists now. Also, be aware of expressions that add further nuance to completed actions, such as 「～てしまう」 for completion or regret, and 「～たばかり」 for actions that have just occurred.",
     "examples": [
         {
             "english": "I ate rice today.",
@@ -54,7 +66,9 @@
                 "今日、 ご飯 {食べ た}。",
                 "ご飯 を {食べ まし た}。",
                 "もう {食べ た} よ。",
-                "もう {食べ まし た}。"
+                "もう {食べ まし た}。",
+                "ご飯、 {食べた}。",
+                "ご飯、 {食べました}。"
             ],
             "english_literally": "I today, rice ate.",
             "competing_grammar": [
@@ -72,6 +86,16 @@
                     "competing_japanese": "私 は 今日、 ご飯 を {食べる}。",
                     "english": "I eat rice today.",
                     "hint": "This form indicates habitual action or future intent. We're looking for a completed past action."
+                },
+                {
+                    "competing_japanese": "私 は 今日、 ご飯 を {食べて しまった}。",
+                    "english": "I finished eating rice today.",
+                    "hint": "「～てしまう」 adds nuance of completion or regrettable completion. We're looking for a simple past action."
+                },
+                {
+                    "competing_japanese": "私 は 今日、 ご飯 を {食べた ばかり} だ。",
+                    "english": "I just ate rice today.",
+                    "hint": "「～たばかり」 specifies that an action was completed very recently. We're looking for a general past action."
                 }
             ],
             "scene": "A man tells his family he finished dinner, using a casual tone.",
@@ -83,144 +107,164 @@
             "nuance": "The use of 「食べた」 in this domestic context highlights the directness typical among family members. While 「食べました」 is also valid, 「食べた」 is more common in this casual setting."
         },
         {
-            "english": "Yesterday, I studied Japanese at school.",
+            "english": "Yesterday, I watched TV.",
             "japanese": [
-                "昨日、 学校 で 日本 語 を {勉強 し まし た}。",
-                "昨日、 学校 で 日本 語 を {勉強 し た}。",
-                "昨日、 学校 で 日本 語 {勉強 し た}。",
-                "昨日、 学校 で 日本 語 を {勉強 し た} よ。",
-                "学校 で 日本 語、 昨日 {勉強 し まし た}。"
+                "昨日、テレビ を {見た}。",
+                "昨日、テレビ を {見 まし た}。",
+                "テレビ、 昨日 {見た}。",
+                "昨日、テレビ を {見た} よ。",
+                "テレビ を {見 まし た} よ。"
             ],
-            "english_literally": "Yesterday, school at Japanese studied.",
+            "english_literally": "Yesterday, TV watched.",
             "competing_grammar": [
                 {
-                    "competing_japanese": "昨日、 学校 で 日本 語 を {勉強 し て いる}。",
-                    "english": "Yesterday, I was studying Japanese at school.",
-                    "hint": "「～ている」 can indicate an ongoing action in the past. We're looking for a completed past action."
+                    "competing_japanese": "昨日、テレビ を {見て いた}。",
+                    "english": "Yesterday, I was watching TV.",
+                    "hint": "「～ている」 indicates an ongoing action in the past. We're looking for a completed past action."
                 },
                 {
-                    "competing_japanese": "明日、 学校 で 日本 語 を {勉強 する}。",
-                    "english": "Tomorrow, I will study Japanese at school.",
+                    "competing_japanese": "明日、テレビ を {見る}。",
+                    "english": "Tomorrow, I will watch TV.",
                     "hint": "This expresses a future or habitual action. We're looking for a completed past action."
                 },
                 {
-                    "competing_japanese": "昨日、 学校 で 日本 語 を {勉強 し た こと が ある}。",
-                    "english": "Yesterday, I have had the experience of studying Japanese at school.",
-                    "hint": "「～たこと がある」 indicates having the experience of doing something. We're looking for a simple past action."
+                    "competing_japanese": "昨日、テレビ を {見て しまった}。",
+                    "english": "Yesterday, I finished watching TV.",
+                    "hint": "「～てしまう」 adds nuance of completion or regrettable completion. We're looking for a simple past action."
+                },
+                {
+                    "competing_japanese": "昨日、テレビ を {見た ばかり} だ。",
+                    "english": "Yesterday, I had just watched TV.",
+                    "hint": "「～たばかり」 specifies that an action was completed very recently. We're looking for a general past action."
                 }
             ],
-            "scene": "A female student is speaking to her teacher about her studies.",
+            "scene": "A female student is speaking to her teacher about her day.",
             "register": "formal",
             "setting": "academic",
             "conjugation": "past polite (～ました)",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "The polite form 「勉強しました」 demonstrates respect towards the teacher, suitable for an academic environment. While 「勉強した」 is grammatically correct, it would be considered impolite in this context."
+            "nuance": "The polite form 「見ました」 demonstrates respect towards the teacher, suitable for an academic environment. While 「見た」 is grammatically correct, it would be considered impolite in this context."
         },
         {
-            "english": "I played with the child in the park.",
+            "english": "I took the exam.",
             "japanese": [
-                "公園 で 子ども と {遊ん だ}。",
-                "公園 で 子ども と {遊び まし た}。",
-                "公園 で 子ども と {遊ん だ} の。",
-                "公園 で 子ども と {遊ん だ} よ。",
-                "公園 で 子ども と {遊び まし た} よ。"
+                "試験 を {受け た}。",
+                "試験 を {受け まし た}。",
+                "試験、 {受け た} よ。",
+                "試験、 {受け まし た} よ。",
+                "無事 に 試験 を {受け まし た}。"
             ],
-            "english_literally": "Park at child with played.",
+            "english_literally": "Exam took.",
             "competing_grammar": [
                 {
-                    "competing_japanese": "公園 で 子ども と {遊ん で いる}。",
-                    "english": "I am playing with the child in the park.",
+                    "competing_japanese": "試験 を {受けて いる}。",
+                    "english": "I am taking the exam.",
                     "hint": "「～ている」 indicates an action currently in progress. We're looking for a completed past action."
                 },
                 {
-                    "competing_japanese": "公園 で 子ども と {遊ぼう}。",
-                    "english": "Let's play with the child in the park.",
-                    "hint": "This expresses an invitation or intention. We're looking for a completed past action."
+                    "competing_japanese": "試験 を {受ける} こと が できる。",
+                    "english": "I can take the exam.",
+                    "hint": "This form indicates ability. We're looking for a completed past action."
                 },
                 {
-                    "competing_japanese": "公園 で 子ども と {遊び ながら} 歩い た。",
-                    "english": "I walked while playing with the child in the park.",
-                    "hint": "「～ながら」 indicates two actions performed simultaneously. We're looking for a single completed past action."
+                    "competing_japanese": "試験 を {受けて しまった}。",
+                    "english": "I ended up taking the exam.",
+                    "hint": "「～てしまう」 adds nuance of completion or regrettable completion. We're looking for a simple past action."
+                },
+                {
+                    "competing_japanese": "試験 を {受け た ばかり} だ。",
+                    "english": "I just took the exam.",
+                    "hint": "「～たばかり」 specifies that an action was completed very recently. We're looking for a general past action."
                 }
             ],
-            "scene": "A young mother is explaining to her friend what she did in the park with her child.",
+            "scene": "A young mother is explaining to her friend that she successfully completed a test.",
             "register": "casual",
             "setting": "friendly",
             "conjugation": "past plain (～た)",
             "speaker_gender": "female",
             "listener_gender": "female",
-            "nuance": "The casual 「遊んだ」 is indicative of an informal conversation between friends, prioritizing directness over politeness. The use of 「遊んだ の」 adds a softer, more feminine nuance to the plain form."
+            "nuance": "The casual 「受けた」 is indicative of an informal conversation between friends, prioritizing directness over politeness. The use of 「受けた よ」 adds a softer, more explanatory nuance to the plain form."
         },
         {
-            "english": "I listened to the teacher's talk.",
+            "english": "I continued working.",
             "japanese": [
-                "先生 の 話 を {聞き まし た}。",
-                "先生 の 話 を {聞い た}。",
-                "先生 の 話、 {聞き まし た}。",
-                "先生 の 話、 {聞い た} よ。",
-                "先生 の 話、 ちゃんと {聞き まし た}。"
+                "仕事 を {続け た}。",
+                "仕事 を {続け まし た}。",
+                "仕事、 {続け た} よ。",
+                "仕事、 {続け まし た} よ。",
+                "なんとか 仕事 を {続け まし た}。"
             ],
-            "english_literally": "Teacher's talk listened.",
+            "english_literally": "Work continued.",
             "competing_grammar": [
                 {
-                    "competing_japanese": "先生 の 話 を {聞い て いる}。",
-                    "english": "I am listening to the teacher's talk.",
+                    "competing_japanese": "仕事 を {続けて いる}。",
+                    "english": "I am continuing working.",
                     "hint": "「～ている」 indicates an action currently in progress. We're looking for a completed past action."
                 },
                 {
-                    "competing_japanese": "先生 の 話 を {聞こう}。",
-                    "english": "Let's listen to the teacher's talk.",
+                    "competing_japanese": "仕事 を {続けよう}。",
+                    "english": "Let's continue working.",
                     "hint": "This expresses an invitation or intention. We're looking for a completed past action."
                 },
                 {
-                    "competing_japanese": "先生 の 話 を {聞か なかっ た}。",
-                    "english": "I did not listen to the teacher's talk.",
-                    "hint": "This is the negative past form. We're looking for a positive completed past action."
+                    "competing_japanese": "仕事 を {続けて しまった}。",
+                    "english": "I ended up continuing working.",
+                    "hint": "「～てしまう」 adds nuance of completion or regrettable completion. We're looking for a simple past action."
+                },
+                {
+                    "competing_japanese": "仕事 を {続け た ばかり} だ。",
+                    "english": "I just continued working.",
+                    "hint": "「～たばかり」 specifies that an action was completed very recently. We're looking for a general past action."
                 }
             ],
-            "scene": "A male student is reporting to his school principal about attending a lecture.",
+            "scene": "A male student is reporting to his school principal about a long-term project.",
             "register": "formal",
             "setting": "academic",
             "conjugation": "past polite (～ました)",
             "speaker_gender": "male",
             "listener_gender": "male",
-            "nuance": "The polite 「聞きました」 demonstrates proper respect and formal communication in a hierarchical school setting. Using the plain form 「聞いた」 would be inappropriate when speaking to a principal."
+            "nuance": "The polite 「続けました」 demonstrates proper respect and formal communication in a hierarchical school setting. Using the plain form 「続けた」 would be inappropriate when speaking to a principal."
         },
         {
-            "english": "I read a book with my friend.",
+            "english": "I got tired from walking.",
             "japanese": [
-                "友達 と 本 を {読ん だ}。",
-                "友達 と 本 を {読み まし た}。",
-                "友達 と 本 {読ん だ}。",
-                "友達 と 本 を {読ん だ} よ。",
-                "友達 と 本 を {読み まし た} よ。"
+                "歩いて {疲れ た}。",
+                "歩いて {疲れ まし た}。",
+                "歩いて {疲れ た} よ。",
+                "歩いて {疲れ まし た} よ。",
+                "今日は 歩いて {疲れ まし た}。"
             ],
-            "english_literally": "Friend with book read.",
+            "english_literally": "Walking got tired.",
             "competing_grammar": [
                 {
-                    "competing_japanese": "友達 と 本 を {読ん で いる}。",
-                    "english": "I am reading a book with my friend.",
-                    "hint": "「～ている」 indicates an action currently in progress. We're looking for a completed past action."
+                    "competing_japanese": "歩いて {疲れて いる}。",
+                    "english": "I am tired from walking.",
+                    "hint": "「～ている」 indicates an ongoing state or action. We're looking for a completed past action."
                 },
                 {
-                    "competing_japanese": "友達 と 本 を {読む} はず だっ た。",
-                    "english": "I was supposed to read a book with my friend.",
-                    "hint": "「～はずだった」 indicates an unfulfilled expectation. We're looking for a completed past action."
+                    "competing_japanese": "歩いて {疲れ なかった}。",
+                    "english": "I did not get tired from walking.",
+                    "hint": "This is the negative past form. We're looking for a positive completed past action."
                 },
                 {
-                    "competing_japanese": "友達 と 本 を {読む こと が できる}。",
-                    "english": "I can read a book with my friend.",
-                    "hint": "This form indicates ability. We're looking for a completed past action."
+                    "competing_japanese": "歩いて {疲れて しまった}。",
+                    "english": "I completely got tired from walking.",
+                    "hint": "「～てしまう」 adds nuance of completion or regrettable completion. We're looking for a simple past action."
+                },
+                {
+                    "competing_japanese": "歩いて {疲れ た ばかり} だ。",
+                    "english": "I just got tired from walking.",
+                    "hint": "「～たばかり」 specifies that an action was completed very recently. We're looking for a general past action."
                 }
             ],
-            "scene": "Two students discussing their weekend reading habits in a casual chat.",
+            "scene": "Two students discussing their weekend activities in a casual chat.",
             "register": "casual",
             "setting": "friendly",
             "conjugation": "past plain (～た)",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "The directness of 「読んだ」 is suitable for casual conversation between friends, indicating a relaxed social context. While 「読みました」 is polite, 「読んだ」 is more natural for peer interaction."
+            "nuance": "The directness of 「疲れた」 is suitable for casual conversation between friends, indicating a relaxed social context. While 「疲れました」 is polite, 「疲れた」 is more natural for peer interaction."
         }
     ],
     "post_example_writeup": "As you can see from the examples, the choice between the plain form (～た) and the polite form (～ました) depends heavily on the social context and your relationship with the listener. The meaning of the past action remains the same, but the level of politeness changes. Always consider your audience when choosing which form to use.",

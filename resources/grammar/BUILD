@@ -207,7 +207,7 @@ py_binary(
 py_build_tool_stream(
     name = "ai-cleaned-merge-grammars",
     srcs = ["//resources/processed:ai-cleaned-merge-grammars"],
-    args = ["--no-query"],
+    # args = ["--no-query"],
     correlated = [],
     extension = ".yaml",
     # filter = ["spatial"],

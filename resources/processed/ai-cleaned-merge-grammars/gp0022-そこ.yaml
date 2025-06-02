@@ -84,7 +84,9 @@
                 "先生 は、 {そこ} の 本 を 読め と 言い まし た。",
                 "先生 は、 {そこ} に ある 本 を 読み なさい と 言い まし た。",
                 "先生 は、 {そこ} の 本 を 読ん で と 言い まし た。",
-                "先生 は、 {そこ} に 置い て ある 本 を 読む よう に 言い まし た。"
+                "先生 は、 {そこ} に 置い て ある 本 を 読む よう に 言い まし た。",
+                "先生 は、 「{そこ} の 本 を 読み なさい」 と おっしゃい まし た。",
+                "{そこ} の 本 を 読む よう に、 先生 が おっしゃっ た よ。"
             ],
             "english_literally": "Teacher, there's a book, read it, said.",
             "competing_grammar": [
@@ -144,7 +146,8 @@
                 "君 の 物 は、 たぶん {そこ} に ある よ。",
                 "お前 の 物 は、 きっと {そこ} だろ。",
                 "お 宅 の 物 は、 {そこ} に ござい ましょう。",
-                "それ、 {そこ} に ある ん じゃ ない？"
+                "それ、 {そこ} に ある ん じゃ ない？",
+                "たぶん、 {そこ} に 君 の が ある よ。"
             ],
             "english_literally": "Your thing, probably there, exists.",
             "competing_grammar": [
@@ -179,6 +182,16 @@
                     "hint": "「その」 modifies a noun like 「辺」 (area) to indicate proximity to the listener, while 「そこ」 refers to the precise spot directly. We're looking for a direct place reference."
                 },
                 {
+                    "competing_japanese": "あなた の 物 は、 たぶん この 辺 に あり ます。",
+                    "english": "Your thing is probably around this area (near speaker).",
+                    "hint": "「この」 modifies a noun like 「辺」 (area) to indicate proximity to the speaker. We're looking for a place near the listener."
+                },
+                {
+                    "competing_japanese": "あなた の 物 は、 たぶん あの 辺 に あり ます。",
+                    "english": "Your thing is probably around that area (far from both).",
+                    "hint": "「あの」 modifies a noun like 「辺」 (area) to indicate proximity to something far from both. We're looking for a place near the listener."
+                },
+                {
                     "competing_japanese": "あなた の 物 は、 どこ に あり ます か？",
                     "english": "Where is your thing?",
                     "hint": "The original sentence makes a suggestion about where the item *is*, whereas 「どこ」 asks *where* it is. We're looking for a statement about a location, not a question."
@@ -197,7 +210,9 @@
                 "{そこ} へ お 座り ください。",
                 "よろしけれ ば、 {そこ} に お 座り ください ませ。",
                 "{そこ} に 座っ て。",
-                "じゃあ、 {そこ} に 座ろう か。"
+                "じゃあ、 {そこ} に 座ろう か。",
+                "{そこ} に どうぞ お かけ ください。",
+                "{そこ} に ちょこんと 座っ て ね。"
             ],
             "english_literally": "There, sit, please.",
             "competing_grammar": [
@@ -232,6 +247,16 @@
                     "hint": "「その」 modifies a noun. 「そこ」 refers to the place directly. We're looking for a direct place reference."
                 },
                 {
+                    "competing_japanese": "この 椅子 に 座っ て ください。",
+                    "english": "Please sit on this chair (near speaker).",
+                    "hint": "「この」 modifies a noun and refers to something near the speaker. We're looking for a place near the listener."
+                },
+                {
+                    "competing_japanese": "あの 椅子 に 座っ て ください。",
+                    "english": "Please sit on that chair (over there).",
+                    "hint": "「あの」 modifies a noun and refers to something far from both. We're looking for a place near the listener."
+                },
+                {
                     "competing_japanese": "どこ に 座り ます か？",
                     "english": "Where do you want to sit?",
                     "hint": "The original sentence gives an instruction about *where* to sit, whereas 「どこ」 asks *where* one should sit. We're looking for a statement about a location, not a question."
@@ -250,7 +275,9 @@
                 "ええ、 {そこ} が 一番 いい です ね。",
                 "うん、 {そこ} が 一番 だ よ ね。",
                 "そう です ね、 {そこ} が ベスト で ござい ます。",
-                "うん、 {そこ} が 一番 いい と 思う よ。"
+                "うん、 {そこ} が 一番 いい と 思う よ。",
+                "やっぱ、 {そこ} が 落ち着く ね。",
+                "ね、 {そこ} が ちょうど いい 場所 だ よ ね。"
             ],
             "english_literally": "Yeah, there, the best, good, right?",
             "competing_grammar": [
@@ -281,8 +308,18 @@
                 },
                 {
                     "competing_japanese": "うん、 その 場所 が 一番 いい ね。",
-                    "english": "Yeah, that place (near listener) is the best, isn't it?",
+                    "english": "Yeah, that place (near listener) is the best, isn",
                     "hint": "「その」 modifies a noun like 「場所」 (place), while 「そこ」 refers to the place directly as a noun. We're looking for a direct place reference."
+                },
+                {
+                    "competing_japanese": "うん、 この 場所 が 一番 いい ね。",
+                    "english": "Yeah, this place (near speaker) is the best, isn't it?",
+                    "hint": "「この」 modifies a noun and refers to something near the speaker. We're looking for a place near the listener."
+                },
+                {
+                    "competing_japanese": "うん、 あの 場所 が 一番 いい ね。",
+                    "english": "Yeah, that place (far from both) is the best, isn't it?",
+                    "hint": "「あの」 modifies a noun and refers to something far from both. We're looking for a place near the listener."
                 },
                 {
                     "competing_japanese": "どこ が 一番 いい です か？",
@@ -305,7 +342,9 @@
                 "あの 子 は、 {そこ} に いらっしゃい ます。",
                 "あの 子 は、 {そこ} に 隠れ てる よ。",
                 "あの 子 は、 {そこ} に おり ます。",
-                "あの 子 なら、 {そこ} に い ます よ。"
+                "あの 子 なら、 {そこ} に い ます よ。",
+                "あの子、 {そこ} に ちょこんと 座っ て いる よ。",
+                "そうそう、 あそこ の 子 は {そこ} に いる よ。"
             ],
             "english_literally": "That child, there, exists.",
             "competing_grammar": [
@@ -335,6 +374,21 @@
                     "hint": "「あれ」 refers to a person or object at a distance, not their specific location. We're looking for a place reference."
                 },
                 {
+                    "competing_japanese": "あの 子 は その 場所 に い ます。",
+                    "english": "That child is in that place (near listener).",
+                    "hint": "「その」 modifies 「場所」 (place). We're looking for a direct place reference."
+                },
+                {
+                    "competing_japanese": "あの 子 は この 場所 に い ます。",
+                    "english": "That child is in this place (near speaker).",
+                    "hint": "「この」 modifies 「場所」 (place) and refers to a location near the speaker. We're looking for a location near the listener."
+                },
+                {
+                    "competing_japanese": "あの 子 は あの 場所 に い ます。",
+                    "english": "That child is in that place (far from both).",
+                    "hint": "「あの」 modifies 「場所」 (place) and refers to a location far from both. We're looking for a location near the listener."
+                },
+                {
                     "competing_japanese": "あの 子 は どこ に い ます か？",
                     "english": "Where is that child?",
                     "hint": "The original sentence states *where* the child is, whereas 「どこ」 asks *where* it is. We're looking for a statement about a location, not a question."
@@ -355,8 +409,10 @@
                 "{そこ} の お 店 は、 ほんと に いい です よ。",
                 "{そこ} の 店 は、 マジ で いい よ。",
                 "{そこ} に ある 店 は すごく いい よ。",
-                "{そこ} に ござい ます お 店 は、 誠 に 結構 で ござい ます よ。",
-                "{そこ} の お 店、 結構 いい ん です よ ね。"
+                "{そこ} に ござい ます お 店 は、 誠 に 結構 で ござい ます。",
+                "{そこ} の お 店、 結構 いい ん です よ ね。",
+                "あの ね、 {そこ} の 店、 超 おすすめ だ よ。",
+                "駅 の {そこ} の お 店、 美味しい よ。"
             ],
             "english_literally": "There's a shop, very good, is, you know.",
             "competing_grammar": [
@@ -410,7 +466,9 @@
                 "ここ も {そこ} も 綺麗 だ ね。",
                 "ここ も {そこ} も 清潔 です。",
                 "ここ も {そこ} も 汚れ が 無く て 良い です ね。",
-                "ここ も {そこ} も 掃除 が 行き届い て い ます。"
+                "ここ も {そこ} も 掃除 が 行き届い て い ます。",
+                "ほら、 ここ も {そこ} も ピカピカ だ よ。",
+                "ここ も {そこ} も 拭い た から 大丈夫 だ ね。"
             ],
             "english_literally": "Here also, there also, clean, is.",
             "competing_grammar": [
@@ -428,6 +486,31 @@
                     "competing_japanese": "ここ も どこ も きれい です か？",
                     "english": "Is everywhere clean, including here?",
                     "hint": "The original sentence states that both specific areas are clean, while 「どこ」 here implies asking if *all* places are clean. We're looking for a statement about specific locations, not a general inquiry."
+                },
+                {
+                    "competing_japanese": "ここ も それ も きれい です。",
+                    "english": "Both here and that (object/idea) are clean.",
+                    "hint": "「それ」 refers to an object or idea, not a place. We're looking for a place reference."
+                },
+                {
+                    "competing_japanese": "ここ も あれ も きれい です。",
+                    "english": "Both here and that (object over there) are clean.",
+                    "hint": "「あれ」 refers to an object or idea far away, not a place. We're looking for a place reference."
+                },
+                {
+                    "competing_japanese": "ここ も その 場所 も きれい です。",
+                    "english": "Both here and that place (near listener) are clean.",
+                    "hint": "「その」 modifies 「場所」 (place). We're looking for a direct place reference."
+                },
+                {
+                    "competing_japanese": "ここ も この 場所 も きれい です。",
+                    "english": "Both here and this place (near speaker) are clean.",
+                    "hint": "「この」 modifies 「場所」 (place) and refers to a location near the speaker. We're looking for a location near the listener."
+                },
+                {
+                    "competing_japanese": "ここ も あの 場所 も きれい です。",
+                    "english": "Both here and that place (far from both) are clean.",
+                    "hint": "「あの」 modifies 「場所」 (place) and refers to a location far from both. We're looking for a location near the listener."
                 }
             ],
             "scene": "Two roommates are cleaning their apartment. One is in a clean area, and the other is near another clean area, and they are discussing the state of the apartment.",
@@ -443,7 +526,9 @@
                 "危ない から、 {そこ} へ 行っ ちゃ ダメ だ よ。",
                 "危険 です の で、 {そこ} へ は 行か ない で ください。",
                 "危ない から、 {そこ} に 近づく な。",
-                "{そこ} は 危ない から、 行か ない 方 が いい。"
+                "{そこ} は 危ない から、 行か ない 方 が いい。",
+                "{そこ} は 危険 だ から、 絶対 に 行か ない で ね。",
+                "これ 以上 {そこ} へ は 進ま ない で ください。"
             ],
             "english_literally": "Dangerous, is, so, there, don't go, please.",
             "competing_grammar": [
@@ -473,6 +558,21 @@
                     "hint": "「あれ」 refers to an action or concept at a distance, not a physical location. We're looking for a place reference."
                 },
                 {
+                    "competing_japanese": "危ない です から、 その 場所 に 行か ない で ください。",
+                    "english": "It's dangerous, so please don't go to that place (near listener).",
+                    "hint": "「その」 modifies 「場所」 (place). We're looking for a direct place reference."
+                },
+                {
+                    "competing_japanese": "危ない です から、 この 場所 に 行か ない で ください。",
+                    "english": "It's dangerous, so please don't go to this place (near speaker).",
+                    "hint": "「この」 modifies 「場所」 (place) and refers to a location near the speaker. We're looking for a location near the listener."
+                },
+                {
+                    "competing_japanese": "危ない です から、 あの 場所 に 行か ない で ください。",
+                    "english": "It's dangerous, so please don't go to that place (far from both).",
+                    "hint": "「あの」 modifies 「場所」 (place) and refers to a location far from both. We're looking for a location near the listener."
+                },
+                {
                     "competing_japanese": "危ない ところ は どこ です か？",
                     "english": "Where is the dangerous place?",
                     "hint": "The original sentence warns about a specific dangerous spot, while this asks *where* such a spot is. We're looking for a warning about a known location, not a question."
@@ -490,7 +590,9 @@
                 "{そこ} に キス し て も いい？",
                 "{そこ} に 軽く キス し て も よろしい でしょう か？",
                 "{そこ} に ちゅー し て も いい？",
-                "{そこ} に、 触れ て も いい です か？"
+                "{そこ} に、 触れ て も いい です か？",
+                "この {そこ} に キス、 大丈夫？",
+                "ねえ、 {そこ} に そっと キス し て も いい か な？"
             ],
             "english_literally": "There, kiss, even if do, good, is, question?",
             "competing_grammar": [
@@ -523,6 +625,21 @@
                     "competing_japanese": "あれ に キス し て も いい です か？",
                     "english": "Is it okay if I kiss that (object over there)?",
                     "hint": "「あれ」 refers to an object or concept at a distance, not a specific spot on a person's body. We're looking for a precise location."
+                },
+                {
+                    "competing_japanese": "その 場所 に キス し て も いい です か？",
+                    "english": "Is it okay if I kiss that place (near listener)?",
+                    "hint": "「その」 modifies 「場所」 (place). We're looking for a direct place reference that implies vagueness."
+                },
+                {
+                    "competing_japanese": "この 場所 に キス し て も いい です か？",
+                    "english": "Is it okay if I kiss this place (near speaker)?",
+                    "hint": "「この」 modifies 「場所」 (place) and refers to a location near the speaker. We're looking for a location on the listener."
+                },
+                {
+                    "competing_japanese": "あの 場所 に キス し て も いい です か？",
+                    "english": "Is it okay if I kiss that place (far from both)?",
+                    "hint": "「あの」 modifies 「場所」 (place) and refers to a location far from both. We're looking for a location on the listener."
                 },
                 {
                     "competing_japanese": "どこ に キス し て ほしい です か？",
