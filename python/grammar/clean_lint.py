@@ -2,6 +2,8 @@ import copy
 from collections import OrderedDict
 from jsonschema import Draft7Validator
 from .grammar_schema import GRAMMAR_SCHEMA
+import os
+from python.mecab.compact_sentence import japanese_to_japanese_with_spaces
 
 QUOTE_PAIRS = [
     ('"', '"'),
@@ -210,14 +212,26 @@ def reorder_keys(obj, schema):
 
     return new_obj
 
+def japanese_with_space(japanese):
+    if ' ' in japanese:
+        return japanese
+    return japanese_to_japanese_with_spaces(japanese)
 
-def clean_lint(grammar_point):
+def clean_lint(grammar_point, path: str = None):
     lint = []
     grammar_point = copy.deepcopy(grammar_point)
+    if path is not None:
+        filename = os.path.basename(path)
+        basename = os.path.splitext(filename)[0]
+        id, name = basename.split("-", 1)
+        grammar_point['id'] = id
+        grammar_point['grammar_point'] = name
+
     if 'lint-errors' in grammar_point:
         del grammar_point['lint-errors']
     if 'change' in grammar_point:
         del grammar_point['change']
+
     # Ensure japanese fields are lists
     for example in grammar_point.get('examples', []):
         japanese_val = example.get('japanese')
@@ -225,6 +239,7 @@ def clean_lint(grammar_point):
             example['japanese'] = [japanese_val]
 
     grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "japanese", strip_matching_quotes)
+    grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "japanese", japanese_with_space)
     grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "english", strip_matching_quotes)
     lint.extend(lint_quotes(grammar_point))
     lint.extend(lint_english_brackets(grammar_point))

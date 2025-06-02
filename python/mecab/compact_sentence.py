@@ -1,5 +1,39 @@
 import re
+import unicodedata
 from python.mecab.tagger import get_mecab_tagger
+
+
+pos_map = {
+    "名詞": "n",  # Noun
+    "動詞": "v",  # Verb
+    "形容詞": "adj",  # Adjective
+    "副詞": "adv",  # Adverb
+    "助詞": "prt",  # Particle
+    "接続詞": "conj",  # Conjunction
+    "感動詞": "int",  # Interjection
+    "記号": "sym",  # Symbol
+    "助動詞": "auxv",  # Auxiliary verb
+    "補助記号": "auxs",  # Auxiliary symbol
+    "代名詞": "pron",  # Pronoun
+    "接頭辞": "pref",  # Prefix
+    "接尾辞": "suff",  # Suffix
+    "形状詞": "shp",  # Shape word
+    "連体詞": "at",  # Attributive
+    "空白": "sp",  # Space
+}
+
+pos_to_chars = {
+    # Single char particles.
+    "prt": ['は', 'が', 'を', 'に', 'へ', 'と', 'で', 'か', 'の', 'ね', 'よ', 'て', 'わ', 'も', 'ぜ', 'ん', 'な', 'ば', 'ぞ', 'し', 'さ', 'や', 'ら', 'ど', 'い', 'つ', 'べ', 'け', 'ょ'],
+    "sym": [], 
+    "auxs": ['。', '、', '・', '：', '；', '？', '！', '…', '「', '」', '『', '』', '{', '}', '.', 'ー', ':', '?', 'っ', '-', '々', '(', ')', '[', ']', '<', '>', '／', '＼', '＊', '＋', '＝', '＠', '＃', '％', '＆', '＊', 'ぇ', '〇', '（', '）', '* ', '*', '～', '”', '◯'],
+}
+
+char_to_pos = {
+    ch: pos
+    for pos, chars in pos_to_chars.items()
+    for ch in chars
+}
 
 class Token:
     def __init__(self, surface='', pos='', base_form='', grammar=None, start_pos=0, end_pos=0):
@@ -43,7 +77,8 @@ def compact_sentence_to_tokens(input_string):
         # Handle any single-character tokens between last_end and match.start()
         if match.start() > last_end:
             for i, ch in enumerate(input_string[last_end:match.start()]):
-                tokens.append(Token(surface=ch, start_pos=last_end + i, end_pos=last_end + i + 1))
+                pos = char_to_pos[ch]
+                tokens.append(Token(surface=ch, pos=pos, start_pos=last_end + i, end_pos=last_end + i + 1))
         # Extract bracketed token
         surface = match.group('surface') or ''
         pos = match.group('pos') or ''
@@ -53,7 +88,9 @@ def compact_sentence_to_tokens(input_string):
         grammars = re.findall(r'ᵍ([^ˢᵖᵇʳᵍ⌉]+)', grammars_raw)
         start_pos = match.start()
         end_pos = match.end()
-        token = Token(surface=surface.strip(), pos=pos.strip(), base_form=base_form.strip(), grammar=[g.strip() for g in grammars], start_pos=start_pos, end_pos=end_pos)
+        surface = surface.strip()
+        pos = pos.strip()
+        token = Token(surface=surface, pos=pos, base_form=base_form.strip(), grammar=[g.strip() for g in grammars], start_pos=start_pos, end_pos=end_pos)
         if reading:
             token.add_grammar(f"reading={reading.strip()}")
         tokens.append(token)
@@ -61,7 +98,8 @@ def compact_sentence_to_tokens(input_string):
     # Handle any trailing single-character tokens
     if last_end < len(input_string):
         for i, ch in enumerate(input_string[last_end:]):
-            tokens.append(Token(surface=ch, start_pos=last_end + i, end_pos=last_end + i + 1))
+            pos = char_to_pos[ch]
+            tokens.append(Token(surface=ch, pos=pos, start_pos=last_end + i, end_pos=last_end + i + 1))
     return tokens
 
 
@@ -103,7 +141,13 @@ def tokens_to_japanese(tokens, spaces=False):
     If spaces=True, inserts a space between each token surface.
     """
     if spaces:
-        return ' '.join(token.surface for token in tokens)
+        result = ''
+        for token in tokens:
+            if len(result) > 0 and (token.pos not in ['sym', 'auxs'] or token.surface == '{'):
+                result += ' '
+            
+            result += token.surface
+        return result
     return ''.join(token.surface for token in tokens)
 
 
@@ -159,24 +203,7 @@ def mecab_raw_to_compact_sentence(raw: str) -> str:
       - Particles/single-character symbols become unbracketed.
     """
     tokens = parse_raw_mecab_output(raw)
-    pos_map = {
-        "名詞": "n",  # Noun
-        "動詞": "v",  # Verb
-        "形容詞": "adj",  # Adjective
-        "副詞": "adv",  # Adverb
-        "助詞": "prt",  # Particle
-        "接続詞": "conj",  # Conjunction
-        "感動詞": "int",  # Interjection
-        "記号": "sym",  # Symbol
-        "助動詞": "auxv",  # Auxiliary verb
-        "補助記号": "auxs",  # Auxiliary symbol
-        "代名詞": "pron",  # Pronoun
-        "接頭辞": "pref",  # Prefix
-        "接尾辞": "suff",  # Suffix
-        "形状詞": "shp",  # Shape word
-        "連体詞": "at",  # Attributive
-        "空白": "sp",  # Space
-    }
+
     recombined = ""
     for token in tokens:
         surface = token["surface"]
@@ -184,6 +211,10 @@ def mecab_raw_to_compact_sentence(raw: str) -> str:
         pos_code = pos_map.get(pos, pos)
         # If particle or symbol (prt or sym) and single char, output directly
         if pos_code in ['prt', 'sym', 'auxs'] and len(surface) == 1:
+            table = pos_to_chars[pos_code]
+            if surface[0] not in table:
+                raise ValueError(f"Expected to be able to look up pos for {surface} in pos_to_chars[{pos_code}]")
+
             recombined += surface
         else:
             recombined += f"⌈ˢ{surface}ᵖ{pos_code}"

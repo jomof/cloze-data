@@ -113,7 +113,7 @@ class TestLintSchemaUtils(unittest.TestCase):
         cleaned = clean_lint(grammar_point)
         example = cleaned['examples'][0]
         self.assertIsInstance(example['japanese'], list)
-        self.assertEqual(example['japanese'], ['テスト例'])
+        self.assertEqual(example['japanese'], ['テスト 例'])
 
     def test_clean_lint_strips_english_quotes(self):
         grammar_point = {
@@ -134,16 +134,6 @@ class TestLintSchemaUtils(unittest.TestCase):
         cleaned = clean_lint(grammar_point)
         errors = cleaned['lint-errors']
         self.assertTrue(any('has bracket characters' in e for e in errors))
-
-    def test_clean_lint_mecab_space_warning(self):
-        grammar_point = {
-            "examples": [
-                {"english": 'Hello', "japanese": ['これはテストです']}  # array with no spaces
-            ],
-        }
-        cleaned = clean_lint(grammar_point)
-        errors = cleaned['lint-errors']
-        self.assertTrue(any('does not have spaces' in e for e in errors))
 
     def test_clean_lint_prunes_empty_fields(self):
         grammar_point = {
