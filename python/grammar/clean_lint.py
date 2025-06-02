@@ -237,7 +237,11 @@ def clean_lint(grammar_point, path: str = None):
         japanese_val = example.get('japanese')
         if isinstance(japanese_val, str):
             example['japanese'] = [japanese_val]
-
+        for c in example.get('competing_grammar', []):
+            comp_j = c.get('competing_japanese')
+            if isinstance(comp_j, str):
+                c['competing_japanese'] = [comp_j]
+            
     grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "japanese", strip_matching_quotes)
     grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "japanese", japanese_with_space)
     grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "english", strip_matching_quotes)

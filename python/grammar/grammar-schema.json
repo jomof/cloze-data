@@ -157,6 +157,28 @@
     // Its dual use for 'from (a starting point)' and 'because (a reason/origin)' can be understood through this core concept of emergence or derivation.
     // Something comes 'from' a physical point, or a consequence arises 'from' a cause."
     "etymologyType": { "$ref": "#/definitions/english" },
+    // **EVERY** way of saying the related "english" that adheres to the grammar point.
+    // - [rule-2] **MUST** have spaces between words, so that it is easy to read and to parse with mecab.
+    // - **MUST** be grammatically correct. We're teaching Japanese, not bad grammar.
+    // - **MUST NOT** use hiragana for words that are typically written in kanji.
+    // - **MUST NOT** use quotes including 「」.
+    // - **MUST NOT** have furigana text embedded. 
+    // For example, if the grammar point is "Past Verbs" and the example 
+    // english is "I had sushi with a friend yesterday.", then japanese should be:
+    // [
+    //    "昨日、友達 と 寿司 を {食べた}。",
+    //    "昨日、友達 と 寿司 を {食べました}。",
+    //    "昨日、友達 と 寿司 {食った}。",
+    //    "昨日、友達 と 寿司 {くった} ぜ。",
+    //    "昨日、友達 と お寿司 を {いただきました}。",
+    //    "昨日、友達 と お寿司 を {頂戴いたしました}。",
+    //    "昨日、友人 と 寿司 を {食しました}。",
+    //    "昨日、友達 と 寿司 {食べた}。"
+    // ]
+    "japaneseVariationsType": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/japanese" }
+    },
   },
   "type": "object",
   "properties": {
@@ -307,34 +329,11 @@
           // - [rule-1] **MUST NOT** use quotes unless they are truly essential to the grammar point.
           // - [rule-3] **MUST NOT** use special characters like {}, (), [], or <>.
           "english": { "$ref": "#/definitions/english" },
-          // **EVERY** way of saying "english" that adheres to the grammar point.
-          // This field used to be a single string and we're migrating it to an array of strings.
-          // - **MUST** be an array.
           // - **MUST** have the grammar_point in {bold} (surrounded in curlies).
-          // - [rule-2] **MUST** have spaces between words, so that it is easy to read and to parse with mecab.
-          // - **MUST** be grammatically correct. We're teaching Japanese, not bad grammar.
-          // - **MUST NOT** use hiragana for words that are typically written in kanji.
-          // - **MUST** be just one sentence unless. Use "scene" if you need to set up context.
+          // - **MUST** be just one sentence. Use "scene" if you need to set up context.
           // - **MUST NOT** use parentheses to set context. If necessary, use a separate "scene" field.
-          // - **MUST NOT** use quotes including 「」.
           // - **MUST** be from the point of view of a single speaker. No back-and-forth dialogue. Though you may place setup dialog in "scene" (in English).
-          // - **MUST NOT** have furigana text embedded. 
-          // For example, if the grammar point is "Past Verbs" and the example 
-          // english is "I had sushi with a friend yesterday.", then japanese should be:
-          // [
-          //    "昨日、友達と寿司を食べた。",
-          //    "昨日、友達と寿司を食べました。",
-          //    "昨日、友達と寿司食った。",
-          //    "昨日、友達と寿司くったぜ。",
-          //    "昨日、友達とお寿司をいただきました。",
-          //    "昨日、友達とお寿司を頂戴いたしました。",
-          //    "昨日、友人と寿司を食しました。",
-          //    "昨日、友達と寿司食べた。"
-          // ]
-          "japanese": {
-            "type": "array",
-            "items": { "$ref": "#/definitions/japanese" }
-          },
+          "japanese": { "$ref": "#/definitions/japaneseVariationsType" },
           // This translation provides a literal, often less natural, English rendering of the Japanese, serving as a hint for the user regarding Japanese word order and specific word choices during practice.
           // Example:
           // For Japanese: "私はリンゴを食べます。"
@@ -375,7 +374,8 @@
             "items": {
               "type": "object",
               "properties": {
-                "competing_japanese": { "$ref": "#/definitions/japanese"},
+                // **EVERY** way of saying 'english' for the this competing grammar point.
+                "competing_japanese": { "$ref": "#/definitions/japaneseVariationsType" },
                 // English translation of the competing_japanese 
                 // that distinguishes it from example.english to emphasize.
                 "english": { "$ref": "#/definitions/english" },
