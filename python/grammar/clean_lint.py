@@ -74,10 +74,10 @@ def lint_mecab_spaces(grammar_point):
     examples = grammar_point.get("examples", [])
     for idx, example in enumerate(examples):
         japaneses = example.get("japanese", [])
-        if isinstance(japaneses, list):
-            for jidx, japanese in enumerate(japaneses):
-                if ' ' not in japanese:
-                    messages.append(f"[rule-2] warning examples[{idx}].japanese[{jidx}] does not have spaces to aid mecab parsing: {japanese}")
+        # if isinstance(japaneses, list):
+        for jidx, japanese in enumerate(japaneses):
+            if ' ' not in japanese and '、' not in japanese:
+                messages.append(f"[rule-2] warning examples[{idx}].japanese[{jidx}] does not have spaces to aid mecab parsing: {japanese}")
     return messages
 
 
@@ -217,6 +217,19 @@ def japanese_with_space(japanese):
         return japanese
     return japanese_to_japanese_with_spaces(japanese)
 
+def replace_japanese_characters(japanese):
+
+    replacements = {
+        '：': [':'], 
+        '「': ['『'],
+        '」': ['』'],
+    }
+    for invalids, valids in replacements.items():
+        for invalid in invalids:
+            for valid in valids:
+                japanese = japanese.replace(invalid, valid)
+    return japanese
+
 def clean_lint(grammar_point, path: str = None):
     lint = []
     grammar_point = copy.deepcopy(grammar_point)
@@ -243,6 +256,7 @@ def clean_lint(grammar_point, path: str = None):
                 c['competing_japanese'] = [comp_j]
             
     grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "japanese", strip_matching_quotes)
+    grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "japanese", replace_japanese_characters)
     grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "japanese", japanese_with_space)
     grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "english", strip_matching_quotes)
     lint.extend(lint_quotes(grammar_point))

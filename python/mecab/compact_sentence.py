@@ -143,7 +143,7 @@ def tokens_to_japanese(tokens, spaces=False):
     if spaces:
         result = ''
         for token in tokens:
-            if len(result) > 0 and (token.pos not in ['sym', 'auxs'] or token.surface == '{'):
+            if len(result) > 0 and (token.pos not in ['sym', 'auxs'] or token.surface in ['{', '、']):
                 result += ' '
             
             result += token.surface

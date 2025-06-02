@@ -121,16 +121,8 @@ def ai_clean(data, bazel_target, prior_grammar_point, output_file, no_query):
             ** BEGIN PRIORITY INSTRUCTIONS ALGORITHM **
             Follow these steps:
                 ------------------------------------------------------------------------------------------
-                EXECUTE: add false_friends.
-            
-                for each false_friend:
-                    for each example:
-                        EXECUTE: add a competing_grammar corresponding to the false_friend.
-                
-                EXECUTE add other competing_grammars.
-           
-                for each example:
-                    EXECUTE: add new values to the 'japanese' array.
+                for each lint-error in the input:
+                    EXECUTE: Fix the lint-error.
                 ------------------------------------------------------------------------------------------
             ** END PRIORITY INSTRUCTIONS ALGORITHM **
            """)
@@ -154,11 +146,11 @@ def ai_clean(data, bazel_target, prior_grammar_point, output_file, no_query):
     for i in range(6):
       try:
         log_file = f"{output_file}.log"
-        if no_query:
+        if len(prior_input_obj.get('lint-errors', [])) > 0:
+            response = memoize_to_disk(bazel_target, aigen, prompt + str(i), model, GRAMMAR_SCHEMA_WITH_COMMENTS, log_file)
+        else:
             print(f"Skipping AI query for {grammar_point_name} (iteration {i})")
             response = json.dumps(prior_input_obj, ensure_ascii=False, indent=4)
-        else:
-            response = memoize_to_disk(bazel_target, aigen, prompt + str(i), model, GRAMMAR_SCHEMA_WITH_COMMENTS, log_file)
         response = response.removeprefix("```json").removesuffix("\n").removesuffix("```")
         response = repair_json(response)
         json_response = json.loads(response)
