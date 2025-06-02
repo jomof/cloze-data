@@ -1,233 +1,236 @@
-# async_lint_optimized.py
 import os
-import yaml
 import asyncio
 import aiofiles
-from python.grammar import clean_lint
 import queue
 import time
-from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 import threading
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from threading import Lock
-import json 
+from python.grammar import clean_lint
+import yaml
+import json
 
-MAX_CONCURRENT_READS = 5 # os.cpu_count() or 1
-
-CLEAR_TO_EOL = "\u001b[K"
-MOVE_UP = lambda n: f"\u001b[{n}A"
-MOVE_DOWN = lambda n: f"\u001b[{n}B"
-HIDE_CURSOR = "\u001b[?25l"
-SHOW_CURSOR = "\u001b[?25h"
-SAVE_CURSOR = "\u001b[s"
-RESTORE_CURSOR = "\u001b[u"
-CLEAR_DOWN = "\u001b[J" 
-
-temp_dir = '/workspaces/cloze-data/.temp'
-os.mkdir(temp_dir) if not os.path.exists(temp_dir) else None
-
-event_queue = queue.Queue()
-current_reads = 0
-current_processes = 0
-current_writes = 0
-log_message = ""
-mru_size = 5  # Maximum size of the MRU list
-mru = []
-watcher_done_event = threading.Event()
-counter_lock = Lock()
-countdown = 0
-
-def mru_push(mru_list: list, item) -> None:
+class MapReduce:
     """
-    Insert `item` at the front of `mru_list`, removing any existing occurrence.
-    If len(mru_list) > max_size afterward, pop the last element.
-    This mutates mru_list in place.
+    Generic MapReduce framework for:
+    - Reading files (raw content)
+    - Delegating to a user-provided `process_func` (taking raw content)
+    - Writing files (raw content)
+    - Concurrency management
+    - Statistics tracking
+    - Console output (progress)
     """
-    # Remove existing (if present)
-    try:
-        mru_list.remove(item)
-    except ValueError:
-        pass
+    CLEAR_TO_EOL = "\u001b[K"
+    MOVE_UP = staticmethod(lambda n: f"\u001b[{n}A")
+    MOVE_DOWN = staticmethod(lambda n: f"\u001b[{n}B")
+    HIDE_CURSOR = "\u001b[?25l"
+    SHOW_CURSOR = "\u001b[?25h"
+    SAVE_CURSOR = "\u001b[s"
+    RESTORE_CURSOR = "\u001b[u"
+    CLEAR_DOWN = "\u001b[J"
 
-    # Insert as most-recent at index 0
-    mru_list.insert(0, item)
+    def __init__(self, input_dir, output_dir, process_func, temp_dir=None, max_concurrent_reads=5, mru_size=5):
+        self.input_dir = input_dir
+        self.output_dir = output_dir
+        self.process_func = process_func  # callable: (raw_content: str, file_path: str) -> processed_content: str
+        self.temp_dir = temp_dir or os.path.join(input_dir, '.temp')
+        os.makedirs(self.temp_dir, exist_ok=True)
+        self.max_concurrent_reads = max_concurrent_reads
 
-    # Trim the tail if we’ve exceeded max_size
-    if len(mru_list) > mru_size:
-        mru_list.pop()
+        # Event queue and watcher state
+        self.event_queue = queue.Queue()
+        self.current_reads = 0
+        self.current_processes = 0
+        self.current_writes = 0
+        self.log_message = ""
+        self.mru_size = mru_size
+        self.mru = []
+        self.counter_lock = Lock()
+        self.watch_done_event = threading.Event()
+        self.countdown = 0
 
-def watcher_loop():
-    """Runs in its own thread, redrawing all slots whenever an update is received."""
-    global current_reads, current_processes, current_writes, log_message, mru_list
-    while True:
+        # Stats
+        self.stats = {'count': 0, 'total_read_time': 0.0, 'total_process_time': 0.0}
+
+    def mru_push(self, item):
+        """Update MRU with new log message."""
         try:
-            update = event_queue.get(timeout=0.1)
+            self.mru.remove(item)
+        except ValueError:
+            pass
+        self.mru.insert(0, item)
+        if len(self.mru) > self.mru_size:
+            self.mru.pop()
 
-            if update == 'DONE':
-                sys.stdout.write(CLEAR_DOWN)
-                watcher_done_event.set()
-                break
-            if update == 'BEGIN_READ':
-                current_reads += 1
-            elif update == 'END_READ':
-                current_reads -= 1
-            elif update == 'BEGIN_PROCESS':
-                current_processes += 1
-            elif update == 'END_PROCESS':
-                current_processes -= 1
-            elif update == 'BEGIN_WRITE':
-                current_writes += 1
-            elif update == 'END_WRITE':
-                current_writes -= 1
-            elif update.startswith("LOG: "):
-                if '❌' in update:  
-                    sys.stdout.write(f"{update[5:]}{CLEAR_TO_EOL}\n")  
-                else:
-                    log_message = update[5:]  # Strip "log: " prefix
-                mru_push(mru, log_message)
-                if len(mru) < mru_size:
-                    continue
-        except queue.Empty:
-            continue
-        # Redraw all slots
-        sys.stdout.write(SAVE_CURSOR)
-        copy = mru.copy()
-        sorted(copy, key=lambda s: s[2:])
-        for message in copy:
-            sys.stdout.write(f"  {message}{CLEAR_TO_EOL}\n")
-        sys.stdout.write(f"Reading {current_reads} files{CLEAR_TO_EOL}\n")
-        sys.stdout.write(f"Processing {current_processes} files{CLEAR_TO_EOL}\n")
-        sys.stdout.write(f"Writing {current_writes} file{CLEAR_TO_EOL}s\n")
-        sys.stdout.write(f"{countdown} work items remaining{CLEAR_TO_EOL}\n")
-        sys.stdout.write(RESTORE_CURSOR)
-
-
-async def read_yaml(file_path, sem_read):
-    async with sem_read:
-        event_queue.put(f"BEGIN_READ")
-        event_queue.put(f"LOG: 🔄 reading {os.path.basename(file_path)}")
-        try:
-            start = time.perf_counter()
-            async with aiofiles.open(file_path, 'r', encoding='utf-8') as f:
-                content = await f.read()
-            data = yaml.load(content, Loader=yaml.CSafeLoader)
-            elapsed = time.perf_counter() - start
-        finally:
-            event_queue.put(f"END_READ")
-        return data, elapsed
-
-async def write_yaml(file_path, data):
-    """
-    Write `data` (as JSON/YAML) to a temp‐file and then atomically replace `file_path`.
-    """
-    event_queue.put("BEGIN_WRITE")
-    event_queue.put(f"LOG: 🔄 writing {os.path.basename(file_path)}")
-
-    # 1) Decide on a temp path in the same directory, so that os.replace() will be atomic.
-    basename = os.path.basename(file_path)
-      # Use a specific temp directory
-    tmp_path = os.path.join(temp_dir, f".{basename}.tmp")
-
-    try:
-        # 2) Open temp file for writing
-        async with aiofiles.open(tmp_path, "w", encoding="utf-8") as tmp_f:
-            dump = json.dumps(data, ensure_ascii=False, indent=4)
-            if "grammar_point" not in dump:
-                raise ValueError("Dumped content looks wrong, missing 'grammar_point' key")
-
-            # (Optional) log for debugging
-            await tmp_f.write(dump)
-
-        # 3) Once the write is fully closed, atomically replace the old file.
-        #    os.replace() will overwrite the destination if it exists.
-        #    If you’re on Windows, os.replace works like a “force”‐rename.
-        await asyncio.to_thread(os.replace, tmp_path, file_path)
-
-    finally:
-        # If something went wrong *before* the replace, you might want to clean up
-        # the leftover tmp file. If the replace already succeeded, tmp_path no longer exists.
-        if os.path.exists(tmp_path):
+    def watcher_loop(self):
+        """Runs on a separate thread, updating console on events."""
+        while True:
             try:
-                await asyncio.to_thread(os.remove, tmp_path)
-            except Exception:
-                pass
+                update = self.event_queue.get(timeout=0.1)
 
-        event_queue.put("END_WRITE")
+                if update == 'DONE':
+                    sys.stdout.write(self.CLEAR_DOWN)
+                    self.watch_done_event.set()
+                    break
+                if update == 'BEGIN_READ':
+                    self.current_reads += 1
+                elif update == 'END_READ':
+                    self.current_reads -= 1
+                elif update == 'BEGIN_PROCESS':
+                    self.current_processes += 1
+                elif update == 'END_PROCESS':
+                    self.current_processes -= 1
+                elif update == 'BEGIN_WRITE':
+                    self.current_writes += 1
+                elif update == 'END_WRITE':
+                    self.current_writes -= 1
+                elif update.startswith("LOG: "):
+                    message = update[5:]
+                    if '❌' in update:
+                        sys.stdout.write(f"{message}{self.CLEAR_TO_EOL}\n")
+                    else:
+                        self.log_message = message
+                        self.mru_push(message)
+                        if len(self.mru) < self.mru_size:
+                            continue
+            except queue.Empty:
+                continue
 
-async def lint_task(grammar_file, grammar, executor):
-    event_queue.put("BEGIN_PROCESS")
-    try:
-        base_name = os.path.basename(grammar_file)
-        event_queue.put(f"LOG: 🔄 linting {base_name}")
-        loop = asyncio.get_event_loop()
-        start = time.perf_counter()
-        cleaned = await loop.run_in_executor(executor, clean_lint, grammar, grammar_file)
-        elapsed = time.perf_counter() - start
-        return cleaned, elapsed
-    finally:
-        event_queue.put("END_PROCESS")
+            # Redraw status lines
+            sys.stdout.write(self.SAVE_CURSOR)
+            copy = self.mru.copy()
+            for msg in copy:
+                sys.stdout.write(f"  {msg}{self.CLEAR_TO_EOL}\n")
+            sys.stdout.write(f"Reading {self.current_reads} files{self.CLEAR_TO_EOL}\n")
+            sys.stdout.write(f"Processing {self.current_processes} files{self.CLEAR_TO_EOL}\n")
+            sys.stdout.write(f"Writing {self.current_writes} file{self.CLEAR_TO_EOL}s\n")
+            sys.stdout.write(f"{self.countdown} work items remaining{self.CLEAR_TO_EOL}\n")
+            sys.stdout.write(self.RESTORE_CURSOR)
 
-async def process_one(grammar_file, sem_read, executor, stats):
-    try:
-        # 1. Read file
-        grammar, read_time = await read_yaml(grammar_file, sem_read)
-        stats['total_read_time'] += read_time
-        # 2. Lint
-        cleaned, lint_time = await lint_task(grammar_file, grammar, executor)
-        stats['total_lint_time'] += lint_time
-        stats['count'] += 1
-        # 3. Write back
-        await write_yaml(grammar_file, cleaned)
-        event_queue.put(f"LOG: ✅ finished {os.path.basename(grammar_file)} {read_time:.2f}s, lint {lint_time:.2f}s")
-    except Exception as e:
-        event_queue.put(f"LOG: ❌ error {os.path.basename(grammar_file)}: {str(e)}")
-        raise e
-    finally:
-        with counter_lock:
-            global countdown
-            countdown -= 1
+    async def read_file(self, file_path, sem_read):
+        """Read a file's raw text asynchronously with a semaphore."""
+        async with sem_read:
+            self.event_queue.put('BEGIN_READ')
+            self.event_queue.put(f"LOG: 🔄 reading {os.path.basename(file_path)}")
+            try:
+                start = time.perf_counter()
+                async with aiofiles.open(file_path, 'r', encoding='utf-8') as f:
+                    raw_content = await f.read()
+                elapsed = time.perf_counter() - start
+            finally:
+                self.event_queue.put('END_READ')
+            return raw_content, elapsed
 
-async def main():
-    global countdown
-    sys.stdout.write(HIDE_CURSOR)
-    try:
-        workspace_root = os.environ.get("BUILD_WORKSPACE_DIRECTORY")
-        grammar_root = f"{workspace_root}/resources/processed/ai-cleaned-merge-grammars"
+    async def write_file(self, file_path, raw_content):
+        """Write raw text via a temp file and atomic replace."""
+        self.event_queue.put('BEGIN_WRITE')
+        self.event_queue.put(f"LOG: 🔄 writing {os.path.basename(file_path)}")
+        basename = os.path.basename(file_path)
+        tmp_path = os.path.join(self.temp_dir, f".{basename}.tmp")
+        try:
+            async with aiofiles.open(tmp_path, 'w', encoding='utf-8') as tmp_f:
+                await tmp_f.write(raw_content)
+            await asyncio.to_thread(os.replace, tmp_path, file_path)
+        finally:
+            if os.path.exists(tmp_path):
+                try:
+                    await asyncio.to_thread(os.remove, tmp_path)
+                except Exception:
+                    pass
+            self.event_queue.put('END_WRITE')
 
-        all_files = [
-            os.path.join(grammar_root, fname)
-            for fname in os.listdir(grammar_root)
-            if os.path.isfile(os.path.join(grammar_root, fname))
-        ]
-        total_files = len(all_files)
-        countdown = total_files
+    async def process_task(self, file_path, raw_content, executor):
+        """Invoke the user-provided process_func in an executor."""
+        self.event_queue.put('BEGIN_PROCESS')
+        try:
+            base_name = os.path.basename(file_path)
+            self.event_queue.put(f"LOG: 🔄 processing {base_name}")
+            loop = asyncio.get_event_loop()
+            start = time.perf_counter()
+            result = await loop.run_in_executor(executor, self.process_func, raw_content, file_path)
+            elapsed = time.perf_counter() - start
+            return result, elapsed
+        finally:
+            self.event_queue.put('END_PROCESS')
 
-        t = threading.Thread(target=watcher_loop, daemon=True)
-        t.start()
+    async def process_one(self, input_file_path, output_file_path, sem_read, executor):
+        """Read -> process -> write for a single file, updating stats."""
+        try:
+            raw_content, read_time = await self.read_file(input_file_path, sem_read)
+            self.stats['total_read_time'] += read_time
 
-        sem_read = asyncio.Semaphore(MAX_CONCURRENT_READS)
-        stats = {'count': 0, 'total_read_time': 0.0, 'total_lint_time': 0.0}
+            processed_content, proc_time = await self.process_task(input_file_path, raw_content, executor)
+            self.stats['total_process_time'] += proc_time
+            self.stats['count'] += 1
 
-        start_all = time.perf_counter()
-        with ThreadPoolExecutor() as executor:
-            tasks = [asyncio.create_task(process_one(f, sem_read, executor, stats)) for f in all_files]
-            for t in asyncio.as_completed(tasks):
-                await t
-            event_queue.put('DONE')
-            watcher_done_event.wait()
-        total_elapsed = time.perf_counter() - start_all
+            await self.write_file(output_file_path, processed_content)
+            self.event_queue.put(f"LOG: ✅ finished {os.path.basename(input_file_path)} read {read_time:.2f}s, proc {proc_time:.2f}s")
+        except Exception as e:
+            self.event_queue.put(f"LOG: ❌ error {os.path.basename(input_file_path)}: {str(e)}")
+            raise
+        finally:
+            with self.counter_lock:
+                self.countdown -= 1
 
-        count = stats['count']
-        avg_read = stats['total_read_time'] / count if count else 0
-        avg_lint = stats['total_lint_time'] / count if count else 0
-        sys.stdout.write(f"Files total: {total_files}\n")
-        sys.stdout.write(f"Processed: {count}\n")
-        sys.stdout.write(f"Total elapsed: {total_elapsed:.2f}s\n")
-        sys.stdout.write(f"Total read time: {stats['total_read_time']:.2f}s (avg {avg_read:.2f}s)\n")
-        sys.stdout.write(f"Total lint time: {stats['total_lint_time']:.2f}s (avg {avg_lint:.2f}s)\n")
-    finally:
-        sys.stdout.write(SHOW_CURSOR)
+    async def run(self):
+        """Execute the full workflow: spawn watcher, dispatch tasks, report stats."""
+        sys.stdout.write(self.HIDE_CURSOR)
+        try:
+            all_files = [
+                os.path.join(self.input_dir, fname)
+                for fname in os.listdir(self.input_dir)
+                if os.path.isfile(os.path.join(self.input_dir, fname))
+            ]
+            total_files = len(all_files)
+            self.countdown = total_files
 
+            watcher_thread = threading.Thread(target=self.watcher_loop, daemon=True)
+            watcher_thread.start()
+
+            sem_read = asyncio.Semaphore(self.max_concurrent_reads)
+            start_all = time.perf_counter()
+
+            with ThreadPoolExecutor() as executor:
+                tasks = [asyncio.create_task(
+                    self.process_one(
+                        f, 
+                        os.path.join(self.output_dir, os.path.basename(f)), 
+                        sem_read, 
+                        executor)) for f in all_files]
+                for t in asyncio.as_completed(tasks):
+                    await t
+                self.event_queue.put('DONE')
+                self.watch_done_event.wait()
+
+            total_elapsed = time.perf_counter() - start_all
+            count = self.stats['count']
+            avg_read = self.stats['total_read_time'] / count if count else 0
+            avg_proc = self.stats['total_process_time'] / count if count else 0
+
+            sys.stdout.write(f"Files total: {total_files}\n")
+            sys.stdout.write(f"Processed: {count}\n")
+            sys.stdout.write(f"Total elapsed: {total_elapsed:.2f}s\n")
+            sys.stdout.write(f"Total read time: {self.stats['total_read_time']:.2f}s (avg {avg_read:.2f}s)\n")
+            sys.stdout.write(f"Total process time: {self.stats['total_process_time']:.2f}s (avg {avg_proc:.2f}s)\n")
+        finally:
+            sys.stdout.write(self.SHOW_CURSOR)
+
+
+
+def my_business_logic(raw_content, file_path):
+    parsed = yaml.load(raw_content, Loader=yaml.CSafeLoader)
+    cleaned = clean_lint(parsed, file_path)
+    return json.dumps(cleaned, ensure_ascii=False, indent=4)
 
 if __name__ == '__main__':
-    asyncio.run(main())
+    workspace_root = os.environ.get('BUILD_WORKSPACE_DIRECTORY', '')
+    grammar_root = os.path.join(workspace_root, 'resources', 'processed', 'ai-cleaned-merge-grammars')
+    mr = MapReduce(
+        input_dir=grammar_root,
+        output_dir=grammar_root,
+        process_func=my_business_logic,
+        temp_dir=os.path.join(workspace_root, '.temp'),
+        max_concurrent_reads=5
+    )
+    asyncio.run(mr.run())
