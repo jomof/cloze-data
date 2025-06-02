@@ -6,15 +6,13 @@ import aiofiles
 from python.grammar import clean_lint
 import queue
 import time
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 import threading
 import sys
 from threading import Lock
 import json 
 
-# Adjust concurrent I/O and CPU-bound tasks separately
-MAX_CONCURRENT_READS = 200
-MAX_CONCURRENT_LINT = 3  # tune to number of CPU cores
+MAX_CONCURRENT_READS = os.cpu_count() or 1
 
 CLEAR_TO_EOL = "\u001b[K"
 MOVE_UP = lambda n: f"\u001b[{n}A"
@@ -64,7 +62,6 @@ def watcher_loop():
 
             if update == 'DONE':
                 sys.stdout.write(CLEAR_DOWN)
-                sys.stdout.flush()
                 watcher_done_event.set()
                 break
             if update == 'BEGIN_READ':
@@ -81,11 +78,7 @@ def watcher_loop():
                 current_writes -= 1
             elif update.startswith("LOG: "):
                 if '❌' in update:  
-                    sys.stdout.write(RESTORE_CURSOR)
-                    sys.stdout.write(CLEAR_DOWN)
-                    sys.stdout.write(update + "\n")  
-                    sys.stdout.write(SAVE_CURSOR)
-                    continue
+                    sys.stdout.write(f"{update}{CLEAR_TO_EOL}\n")  
                 else:
                     log_message = update[5:]  # Strip "log: " prefix
                 mru_push(mru, log_message)
@@ -98,13 +91,13 @@ def watcher_loop():
         copy = mru.copy()
         sorted(copy, key=lambda s: s[2:])
         for message in copy:
-            sys.stdout.write(f"{message}{CLEAR_TO_EOL}\n")
-        sys.stdout.write(f"Reading {current_reads} files" + CLEAR_TO_EOL + "\n")
-        sys.stdout.write(f"Processing {current_processes} files" + CLEAR_TO_EOL + "\n")
-        sys.stdout.write(f"Writing {current_writes} files" + CLEAR_TO_EOL + "\n")
-        sys.stdout.write(f"{countdown} work items remaining" + CLEAR_TO_EOL + "\n")
+            sys.stdout.write(f"  {message}{CLEAR_TO_EOL}\n")
+        sys.stdout.write(f"Reading {current_reads} files{CLEAR_TO_EOL}\n")
+        sys.stdout.write(f"Processing {current_processes} files{CLEAR_TO_EOL}\n")
+        sys.stdout.write(f"Writing {current_writes} file{CLEAR_TO_EOL}s\n")
+        sys.stdout.write(f"{countdown} work items remaining{CLEAR_TO_EOL}\n")
         sys.stdout.write(RESTORE_CURSOR)
-        sys.stdout.flush()
+
 
 async def read_yaml(file_path, sem_read):
     async with sem_read:
@@ -131,26 +124,25 @@ async def write_yaml(file_path, data):
         finally:
             event_queue.put(f"END_WRITE")
 
-async def lint_task(grammar_file, grammar, sem_lint, executor):
-    async with sem_lint:
-        event_queue.put("BEGIN_PROCESS")
-        try:
-            event_queue.put(f"LOG: 🔄 linting {os.path.basename(grammar_file)}")
-            loop = asyncio.get_event_loop()
-            start = time.perf_counter()
-            cleaned = await loop.run_in_executor(executor, clean_lint, grammar)
-            elapsed = time.perf_counter() - start
-            return cleaned, elapsed
-        finally:
-            event_queue.put("END_PROCESS")
+async def lint_task(grammar_file, grammar, executor):
+    event_queue.put("BEGIN_PROCESS")
+    try:
+        event_queue.put(f"LOG: 🔄 linting {os.path.basename(grammar_file)}")
+        loop = asyncio.get_event_loop()
+        start = time.perf_counter()
+        cleaned = await loop.run_in_executor(executor, clean_lint, grammar)
+        elapsed = time.perf_counter() - start
+        return cleaned, elapsed
+    finally:
+        event_queue.put("END_PROCESS")
 
-async def process_one(grammar_file, sem_read, sem_lint, executor, stats):
+async def process_one(grammar_file, sem_read, executor, stats):
     try:
         # 1. Read file
         grammar, read_time = await read_yaml(grammar_file, sem_read)
         stats['total_read_time'] += read_time
         # 2. Lint
-        cleaned, lint_time = await lint_task(grammar_file, grammar, sem_lint, executor)
+        cleaned, lint_time = await lint_task(grammar_file, grammar, executor)
         stats['total_lint_time'] += lint_time
         stats['count'] += 1
         # 3. Write back
@@ -162,54 +154,46 @@ async def process_one(grammar_file, sem_read, sem_lint, executor, stats):
         with counter_lock:
             global countdown
             countdown -= 1
-            if countdown <= 0:
-                event_queue.put('DONE')
-
 
 async def main():
     global countdown
-    sys.stdout.write(HIDE_CURSOR)
-    try:
-        workspace_root = os.environ.get("BUILD_WORKSPACE_DIRECTORY")
-        grammar_root = f"{workspace_root}/resources/processed/ai-cleaned-merge-grammars"
+    # sys.stdout.write(HIDE_CURSOR)
+    workspace_root = os.environ.get("BUILD_WORKSPACE_DIRECTORY")
+    grammar_root = f"{workspace_root}/resources/processed/ai-cleaned-merge-grammars"
 
-        all_files = [
-            os.path.join(grammar_root, fname)
-            for fname in os.listdir(grammar_root)
-            if os.path.isfile(os.path.join(grammar_root, fname))
-        ]
-        total_files = len(all_files)
-        countdown = total_files
+    all_files = [
+        os.path.join(grammar_root, fname)
+        for fname in os.listdir(grammar_root)
+        if os.path.isfile(os.path.join(grammar_root, fname))
+    ]
+    total_files = len(all_files)
+    countdown = total_files
 
-        t = threading.Thread(target=watcher_loop, daemon=True)
-        t.start()
+    t = threading.Thread(target=watcher_loop, daemon=True)
+    t.start()
 
-        sem_read = asyncio.Semaphore(MAX_CONCURRENT_READS)
-        sem_lint = asyncio.Semaphore(MAX_CONCURRENT_LINT)
-        stats = {'count': 0, 'total_read_time': 0.0, 'total_lint_time': 0.0}
+    sem_read = asyncio.Semaphore(MAX_CONCURRENT_READS)
+    stats = {'count': 0, 'total_read_time': 0.0, 'total_lint_time': 0.0}
 
-        start_all = time.perf_counter()
-        with ThreadPoolExecutor() as executor:
-            tasks = [asyncio.create_task(process_one(f, sem_read, sem_lint, executor, stats)) for f in all_files]
-            for t in asyncio.as_completed(tasks):
-                await t
-            watcher_done_event.wait(timeout=2)
-            total_elapsed = time.perf_counter() - start_all
+    start_all = time.perf_counter()
+    with ThreadPoolExecutor() as executor:
+        tasks = [asyncio.create_task(process_one(f, sem_read, executor, stats)) for f in all_files]
+        for t in asyncio.as_completed(tasks):
+            await t
+        event_queue.put('DONE')
+        watcher_done_event.wait()
+    total_elapsed = time.perf_counter() - start_all
 
-            count = stats['count']
-            avg_read = stats['total_read_time'] / count if count else 0
-            avg_lint = stats['total_lint_time'] / count if count else 0
-            print(f"Files total: {total_files}")
-            print(f"Processed: {count}")
-            print(f"Total elapsed: {total_elapsed:.2f}s")
-            print(f"Total read time: {stats['total_read_time']:.2f}s (avg {avg_read:.2f}s)")
-            print(f"Total lint time: {stats['total_lint_time']:.2f}s (avg {avg_lint:.2f}s)")
-            sys.stdout.write(SHOW_CURSOR)
-            sys.stdout.flush()
-            executor.shutdown(wait=True, cancel_futures=True)
-    finally:
-        sys.stdout.write(SHOW_CURSOR)
-        sys.stdout.flush()
+    count = stats['count']
+    avg_read = stats['total_read_time'] / count if count else 0
+    avg_lint = stats['total_lint_time'] / count if count else 0
+    sys.stdout.write(f"Files total: {total_files}\n")
+    sys.stdout.write(f"Processed: {count}\n")
+    sys.stdout.write(f"Total elapsed: {total_elapsed:.2f}s\n")
+    sys.stdout.write(f"Total read time: {stats['total_read_time']:.2f}s (avg {avg_read:.2f}s)\n")
+    sys.stdout.write(f"Total lint time: {stats['total_lint_time']:.2f}s (avg {avg_lint:.2f}s)\n")
+    sys.stdout.flush()
+
 
 if __name__ == '__main__':
     asyncio.run(main())
