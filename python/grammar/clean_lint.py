@@ -68,19 +68,6 @@ def lint_english_brackets(grammar_point):
                 break
     return messages
 
-
-def lint_mecab_spaces(grammar_point):
-    messages = []
-    examples = grammar_point.get("examples", [])
-    for idx, example in enumerate(examples):
-        japaneses = example.get("japanese", [])
-        # if isinstance(japaneses, list):
-        for jidx, japanese in enumerate(japaneses):
-            if ' ' not in japanese and '、' not in japanese:
-                messages.append(f"[rule-2] warning examples[{idx}].japanese[{jidx}] does not have spaces to aid mecab parsing: {japanese}")
-    return messages
-
-
 def lint_schema_enums_with_jsonschema(instance, schema):
     """
     Validate `instance` against `schema` and return a list of all enum‑violation messages.
@@ -265,10 +252,9 @@ def clean_lint(grammar_point, path: str = None):
     grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "japanese", strip_matching_quotes)
     grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "japanese", replace_japanese_characters)
     grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "japanese", japanese_with_space)
-    grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "english", strip_matching_quotes)
+    grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "exampleEnglish", strip_matching_quotes)
     lint.extend(lint_quotes(grammar_point))
     lint.extend(lint_english_brackets(grammar_point))
-    lint.extend(lint_mecab_spaces(grammar_point))
     lint.extend(lint_schema_enums_with_jsonschema(grammar_point, GRAMMAR_SCHEMA))
     grammar_point['lint-errors'] = lint
     # Prune empty fields and items

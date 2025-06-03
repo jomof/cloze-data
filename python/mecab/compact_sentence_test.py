@@ -1,12 +1,16 @@
 import unittest
+import json
 from python.mecab.compact_sentence import (
     compact_sentence_to_tokens,
+    parse_raw_mecab_output,
     tokens_to_compact_sentence,
     mecab_raw_to_compact_sentence,
     Token,
     tokens_to_japanese,
     compact_sentence_to_japanese,
-    japanese_to_japanese_with_spaces
+    japanese_to_japanese_with_spaces,
+    japanese_to_tokens,
+    raw_tokens_to_compact_sentence
 )
 from python.mecab.tagger import get_mecab_tagger
 
@@ -96,12 +100,96 @@ class TestTokenParser(unittest.TestCase):
         reconstructed_compact = tokens_to_compact_sentence(tokens)
         self.assertEqual(reconstructed_compact, compact)
 
+
+    def test_japanese_to_japanese_with_spaces_impl_1(self):
+        japanese = "{これ}、京都 の お 土産 な ん だ よ。"
+        wakati = get_mecab_tagger()
+        raw = wakati.parse(japanese)
+        raw_tokens = parse_raw_mecab_output(raw)
+        print(f"RAW TOKENS: {json.dumps(raw_tokens, ensure_ascii=False, indent=2)}")
+        compact_sentence = raw_tokens_to_compact_sentence(raw_tokens)
+        print(f"COMPACT: {compact_sentence}")
+        tokens = compact_sentence_to_tokens(compact_sentence)
+        print(f"TOKENS: {json.dumps(tokens, ensure_ascii=False, indent=2, default=self.default)}")
+        result = tokens_to_japanese(tokens, spaces=True)
+        print(f"RESULT: {result}")
+        self.assertEqual(result, "{これ}、京都 の お 土産 な ん だ よ。")
+
+    def test_japanese_to_japanese_with_spaces_impl_2(self):
+        japanese = "今日はいい{天気}ですね。"
+        wakati = get_mecab_tagger()
+        raw = wakati.parse(japanese)
+        raw_tokens = parse_raw_mecab_output(raw)
+        compact_sentence = raw_tokens_to_compact_sentence(raw_tokens)
+        tokens = compact_sentence_to_tokens(compact_sentence)
+        result = tokens_to_japanese(tokens, spaces=True)
+        print(f"COMPACT: {compact_sentence}")
+        print(f"TOKENS: {json.dumps(tokens, ensure_ascii=False, indent=2, default=self.default)}")
+        print(f"RESULT: {result}")
+        self.assertEqual(result, "今日 は いい {天気} です ね。")
+
+    def test_japanese_to_japanese_with_spaces_impl_3(self):
+        japanese = "{ですね。}"
+        wakati = get_mecab_tagger()
+        raw = wakati.parse(japanese)
+        raw_tokens = parse_raw_mecab_output(raw)
+        compact_sentence = raw_tokens_to_compact_sentence(raw_tokens)
+        tokens = compact_sentence_to_tokens(compact_sentence)
+        result = tokens_to_japanese(tokens, spaces=True)
+        print(f"COMPACT: {compact_sentence}")
+        print(f"TOKENS: {json.dumps(tokens, ensure_ascii=False, indent=2, default=self.default)}")
+        print(f"RESULT: {result}")
+        self.assertEqual(result, "{です ね。}")
+
+    def test_japanese_to_japanese_with_spaces_impl_4(self):
+        japanese = "A:この レポート は 正しい です か。B:ええ、確認 し た ところ、その {よう です} ね。"
+        wakati = get_mecab_tagger()
+        raw = wakati.parse(japanese)
+        raw_tokens = parse_raw_mecab_output(raw)
+        print(f"RAW TOKENS: {json.dumps(raw_tokens, ensure_ascii=False, indent=2)}")
+        compact_sentence = raw_tokens_to_compact_sentence(raw_tokens)
+        print(f"COMPACT: {compact_sentence}")
+        tokens = compact_sentence_to_tokens(compact_sentence)
+        print(f"TOKENS: {json.dumps(tokens, ensure_ascii=False, indent=2, default=self.default)}")
+        result = tokens_to_japanese(tokens, spaces=True)
+        print(f"RESULT: {result}")
+        self.assertEqual(result, "A:この レポート は 正しい です か。B:ええ、確認 し た ところ、その {よう です} ね。")
+
+    def test_japanese_to_japanese_with_spaces_impl_5(self):
+        japanese = "彼女 は {寂し そう} で、{話しかけ} づらかった。"
+        wakati = get_mecab_tagger()
+        raw = wakati.parse(japanese)
+        raw_tokens = parse_raw_mecab_output(raw)
+        print(f"RAW TOKENS: {json.dumps(raw_tokens, ensure_ascii=False, indent=2)}")
+        compact_sentence = raw_tokens_to_compact_sentence(raw_tokens)
+        print(f"COMPACT: {compact_sentence}")
+        tokens = compact_sentence_to_tokens(compact_sentence)
+        print(f"TOKENS: {json.dumps(tokens, ensure_ascii=False, indent=2, default=self.default)}")
+        result = tokens_to_japanese(tokens, spaces=True)
+        print(f"RESULT: {result}")
+        self.assertEqual(result, "彼女 は {寂し そう} で、{話しかけ} づらかっ た。")
+
+    def test_japanese_to_japanese_with_spaces_impl_6(self):
+        japanese = "彼女 は {寂し そう} で、{話しかけ} づらかった。"
+        wakati = get_mecab_tagger()
+        raw = wakati.parse(japanese)
+        raw_tokens = parse_raw_mecab_output(raw)
+        print(f"RAW TOKENS: {json.dumps(raw_tokens, ensure_ascii=False, indent=2)}")
+        compact_sentence = raw_tokens_to_compact_sentence(raw_tokens)
+        print(f"COMPACT: {compact_sentence}")
+        tokens = compact_sentence_to_tokens(compact_sentence)
+        print(f"TOKENS: {json.dumps(tokens, ensure_ascii=False, indent=2, default=self.default)}")
+        result = tokens_to_japanese(tokens, spaces=True)
+        print(f"RESULT: {result}")
+        self.assertEqual(result, "彼女 は {寂し そう} で、{話しかけ} づらかっ た。")
+
     def test_normalize_spaces(self):
         def check(japanese, expected):
             spaced = japanese_to_japanese_with_spaces(japanese)
             self.assertEqual(spaced, expected)
             spaced2 = japanese_to_japanese_with_spaces(japanese)
             self.assertEqual(spaced2, expected)
+        check("A:この レポート は 正しい です か。B:ええ、確認 し た ところ、その {よう です} ね。", "A:この レポート は 正しい です か。B:ええ、確認 し た ところ、その {よう です} ね。")
         check("{これ}、 京都 の お 土産 な ん だ よ。", "{これ}、京都 の お 土産 な ん だ よ。")
         check("今日はいい天気ですね。", "今日 は いい 天気 です ね。")
         check("今日はいい{天気}ですね。", "今日 は いい {天気} です ね。")
@@ -112,6 +200,12 @@ class TestTokenParser(unittest.TestCase):
         check("{}","{}")
         check("{","{")
         check("}","}")
+
+    @staticmethod
+    def default(obj):
+        if hasattr(obj, 'to_dict'):
+            return obj.to_dict()
+        raise TypeError(f"{type(obj)} not serializable")
 
 
 if __name__ == "__main__":

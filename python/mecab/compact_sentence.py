@@ -1,9 +1,10 @@
-import re
-import unicodedata
+import json
 from python.mecab.tagger import get_mecab_tagger
+from dataclasses import dataclass
 
 pos_map = {
     "名詞": "n",  # Noun
+    "普通名詞": "cn",  # Common noun
     "動詞": "v",  # Verb
     "形容詞": "adj",  # Adjective
     "副詞": "adv",  # Adverb
@@ -18,7 +19,32 @@ pos_map = {
     "接尾辞": "suff",  # Suffix
     "形状詞": "shp",  # Shape word
     "連体詞": "at",  # Attributive
-    "空白": "sp",  # Space
+}
+
+pos1_map = {
+    "括弧開": 'bracket_open',  # Opening bracket
+    "括弧閉": 'bracket_close',  # Closing bracket
+    "読点": 'comma',  # Comma
+    "固有名詞": 'proper_noun',  # Proper noun
+    "格助詞": 'case_particle',  # Case particle
+    "普通名詞": 'common_noun',  # Common noun
+    "準体助詞": 'pre_noun_particle',  # Pre-noun particle
+    "終助詞": 'sentence_final_particle',  # Sentence-final particle
+    "句点": 'period',  # Period
+    "係助詞": 'binding_particle',  # Binding particle
+    "非自立可能": 'non_self_reliant',  # Non-self-reliant
+    "一般": 'general',  # General
+    "助動詞語幹": 'auxiliary_verb_stem',  # Auxiliary verb stem
+    "形容詞的": 'adjectival',  # Adjectival
+    "副助詞": 'adverbial_particle',  # Adverbial particle
+    "接続助詞": 'conjunctive_particle',  # Conjunctive particle
+    "数詞": 'numeral',  # Numeral
+    "名詞的": 'noun_like',  # Noun-like
+    "フィラー": 'filler',  # Filler
+    "形状詞的": 'shape_word_like',  # Shape word-like
+    "タリ": 'tari',  # tari (a form of auxiliary verb)
+    "動詞的": 'verb_like',  # Verb-like
+    "": ''
 }
 
 pos_to_chars = {
@@ -33,59 +59,90 @@ char_to_pos = {
     for ch in chars
 }
 
+@dataclass
 class Token:
-    def __init__(self, surface='', pos='', base_form='', grammar=None, start_pos=0, end_pos=0):
-        self.surface = surface
-        self.pos = pos
-        self.base_form = base_form
-        self.grammar = grammar if grammar is not None else []
-        self.start_pos = start_pos
-        self.end_pos = end_pos
+    surface: str
+    pos: str = ''  # Part of speech, e.g., "n" for noun, "v" for verb
+    base_form: str = ''
+    reading: str = ''
 
-    def add_grammar(self, grammar_point):
-        if not isinstance(grammar_point, str):
-            raise TypeError(f"grammar_point must be a string, but was {grammar_point}")
-        if grammar_point not in self.grammar:
-            self.grammar.append(grammar_point)
+    def to_dict(self):
+        return {
+            'surface': self.surface, 
+            'pos': self.pos, 
+            'base_form': self.base_form, 
+            'reading': self.reading, 
+            }
 
-# Regex pattern to match bracketed tokens: ⌈ˢsurfaceᵖposᵇbase(ʳreading)?(ᵍgrammar…)*⌉
-_TOKEN_PATTERN = re.compile(
-    r'⌈'
-    r'(?:ˢ(?P<surface>[^ˢᵖᵇʳᵍ⌉]+))?'
-    r'(?:ᵖ(?P<pos>[^ˢᵖᵇʳᵍ⌉]+))?'
-    r'(?:ᵇ(?P<base_form>[^ˢᵖᵇʳᵍ⌉]+))?'
-    r'(?:ʳ(?P<reading>[^ˢᵖᵇʳᵍ⌉]+))?'
-    r'(?P<grammars>(?:ᵍ[^ˢᵖᵇʳᵍ⌉]+)*)'
-    r'⌉'
-)
-
-def compact_sentence_to_tokens(input_string):
+# Example input: ⌈ˢ今日ᵖnʳキョウ⌉は⌈ˢいいᵖadjʳヨイ⌉⌈ˢ天気ᵖnʳテンキ⌉⌈ˢですᵖauxvʳデス⌉ね。
+def compact_sentence_to_tokens(compact_sentence: str) -> list[Token]:
+    i = 0
     tokens = []
-    last_end = 0
-    for match in _TOKEN_PATTERN.finditer(input_string):
-        if match.start() > last_end:
-            for i, ch in enumerate(input_string[last_end:match.start()]):
-                pos = char_to_pos.get(ch, '')
-                tokens.append(Token(surface=ch, pos=pos, start_pos=last_end + i, end_pos=last_end + i + 1))
-        surface = match.group('surface') or ''
-        pos = match.group('pos') or ''
-        base_form = match.group('base_form') or ''
-        reading = match.group('reading') or ''
-        grammars_raw = match.group('grammars') or ''
-        grammars = re.findall(r'ᵍ([^ˢᵖᵇʳᵍ⌉]+)', grammars_raw)
-        start_pos = match.start()
-        end_pos = match.end()
-        surface = surface.strip()
-        pos = pos.strip()
-        token = Token(surface=surface, pos=pos, base_form=base_form.strip(), grammar=[g.strip() for g in grammars], start_pos=start_pos, end_pos=end_pos)
-        if reading:
-            token.add_grammar(f"reading={reading.strip()}")
+    state = 'normal'
+    field_type = ''
+    field_types_map = {
+        'ˢ' : 'surface',
+        'ᵖ' : 'pos',
+        'ᵇ' : 'base_form',
+        'ʳ' : 'reading'
+    }
+    field_types = field_types_map.keys()
+    field_value = ''
+    token_fields = {}
+
+    def add_field():
+        nonlocal field_value, field_type
+        token_fields[field_type] = field_value
+        field_type = ''
+        field_value = ''
+    
+    def add_token():
+        nonlocal token_fields, tokens, state
+        if 'surface' not in token_fields:
+            raise ValueError("Token must have a surface field")
+        token = Token(
+            surface=token_fields.get('surface', ''),
+            pos=token_fields.get('pos', ''),
+            base_form=token_fields.get('base_form', ''),
+            reading=token_fields.get('reading', ''),
+        )
         tokens.append(token)
-        last_end = match.end()
-    if last_end < len(input_string):
-        for i, ch in enumerate(input_string[last_end:]):
-            pos = char_to_pos.get(ch, '')
-            tokens.append(Token(surface=ch, pos=pos, start_pos=last_end + i, end_pos=last_end + i + 1))
+        token_fields = {}
+        state = 'normal'
+
+    while i < len(compact_sentence):
+        ch = compact_sentence[i]
+    
+        if state == 'normal':
+            if ch == '⌈':
+                state = 'in_token'
+                token_fields = {}
+            else:
+                tokens.append(Token(surface=ch, pos=char_to_pos.get(ch, ''), base_form=ch, reading=ch))
+            i += 1
+        elif state == 'in_token':
+            if ch in field_types:
+                state = 'in_field'
+                field_type = field_types_map[ch]
+                field_value = ''
+                i += 1
+            else:
+                raise ValueError(f"Expected field type but found '{ch}' at position {i}")
+        elif state == 'in_field':
+            if ch in field_types :
+                add_field()
+                state = 'in_token'
+            elif ch == '⌉':
+                add_field()
+                add_token()
+                state = 'normal'
+                i += 1
+            else:
+                field_value += ch
+                i += 1
+                
+        else:
+            raise ValueError(f"Unexpected state '{state}'")
     return tokens
 
 
@@ -96,7 +153,7 @@ def tokens_to_compact_sentence(tokens):
         if token.pos in ['prt', 'sym', 'auxs'] and len(token.surface) == 1:
             result += token.surface
             continue
-        if not (token.pos or token.base_form or token.grammar):
+        if not (token.pos or token.base_form):
             result += token.surface
             continue
         result += '⌈'
@@ -106,31 +163,24 @@ def tokens_to_compact_sentence(tokens):
             result += 'ᵖ' + token.pos
         if token.base_form and token.base_form != token.surface:
             result += 'ᵇ' + token.base_form
-        reading_items = [g.split('=',1)[1] for g in token.grammar if g.startswith('reading=')]
-        if reading_items:
-            result += 'ʳ' + reading_items[0]
-        for grammar in token.grammar:
-            if not grammar.startswith('reading='):
-                result += 'ᵍ' + grammar
+        if token.reading and token.reading != token.surface:
+            result += 'ʳ' + token.reading
         result += '⌉'
     return result
 
-
-def tokens_to_japanese(tokens, spaces=False):
+def tokens_to_japanese(tokens: list[Token], spaces=False) -> str:
     if spaces:
         result = ''
         for token in tokens:
-            if len(result) > 0:
-                if token.surface not in pos_to_chars['auxs'] or token.surface == '{':
-                    prior = result[-1]
-                    if prior == '}':
-                        result += ' '
-                    elif prior not in pos_to_chars['auxs']:
-                        result += ' '
+            if (len(result) > 0 
+                and last_token.surface != '{' 
+                and (token.pos != 'auxs' or token.surface == '{') 
+                and (last_token.pos != 'auxs' or last_token.surface == '}')):
+                result += ' '
             result += token.surface
+            last_token = token
         return result
     return ''.join(token.surface for token in tokens)
-
 
 def compact_sentence_to_japanese(input_string, spaces=False):
     tokens = compact_sentence_to_tokens(input_string)
@@ -150,29 +200,33 @@ def parse_raw_mecab_output(raw_output):
         features += [""] * (20 - len(features) - 1)
         token = {
             "surface": surface,
-            "pos": features[0],
-            "pos_detail_1": features[1],
-            "pos_detail_2": features[2],
-            "pos_detail_3": features[3],
-            "conjugated_type": features[4],
-            "conjugated_form": features[5],
-            "reading": features[6],
-            "unknown_7": features[7],
-            "unknown_8": features[8],
-            "pronunciation": features[9],
-            "basic_form": features[10],
-            "unknown_11": features[11],
-            "unknown_12": features[12],
-            "unknown_13": features[13],
-            "unknown_14": features[14],
-            "unknown_15": features[15],
         }
+        def add(field, value):
+            if value == '""':
+                return
+            if value == "":
+                return
+            token[field] = value
+        add("pos", pos_map[features[0]])
+        add("pos_detail_1", pos1_map[features[1]])
+        add("pos_detail_2", features[2])
+        add("pos_detail_3", features[3])
+        add("conjugated_type", features[4])
+        add("conjugated_form", features[5])
+        add("reading", features[6])
+        add("unknown_7", features[7])
+        add("unknown_8", features[8])
+        add("pronunciation", features[9])
+        add("basic_form", features[10])
+        add("unknown_11", features[11])
+        add("unknown_12", features[12])
+        add("unknown_13", features[13])
+        add("unknown_14", features[14])
+        add("unknown_15", features[15])
         tokens.append(token)
     return tokens
 
-
-def mecab_raw_to_compact_sentence(raw: str) -> str:
-    tokens = parse_raw_mecab_output(raw)
+def raw_tokens_to_compact_sentence(tokens: list[dict]) -> str:
     recombined = ""
     for token in tokens:
         surface = token["surface"]
@@ -182,43 +236,41 @@ def mecab_raw_to_compact_sentence(raw: str) -> str:
             recombined += surface
         else:
             recombined += f"⌈ˢ{surface}ᵖ{pos_code}"
-            base = token["basic_form"]
+            base = token.get("basic_form", None)
             if base and base != surface:
                 recombined += f"ᵇ{base}"
-            reading = token["reading"]
+            reading = token.get("reading", None)
             if reading and reading != surface:
                 recombined += f"ʳ{reading}"
             recombined += "⌉"
     return recombined
 
+def mecab_raw_to_compact_sentence(raw: str) -> str:
+    tokens = parse_raw_mecab_output(raw)
+    return raw_tokens_to_compact_sentence(tokens)
 
 def mecab_raw_to_tokens(raw):
     return compact_sentence_to_tokens(mecab_raw_to_compact_sentence(raw))
 
-
-def mecab_raw_to_compact_sentence_with_grammar(raw: str) -> str:
-    tokens = parse_raw_mecab_output(raw)
-    recombined = ""
-    for token in tokens:
-        surface = token["surface"]
-        pos = token["pos"]
-        recombined += f"⌈ˢ{surface}ᵖ{pos}"
-        base = token["basic_form"]
-        if base and base != surface:
-            recombined += f"ᵇ{base}"
-        for feature in [token["pos_detail_1"], token["pos_detail_2"], token["pos_detail_3"], token["conjugated_type"], token["conjugated_form"]]:
-            if feature:
-                recombined += f"ᵍ{feature}"
-        recombined += "⌉"
-    return recombined
-
-
 def japanese_to_japanese_with_spaces(japanese: str) -> str:
     wakati = get_mecab_tagger()
+    try:
+        raw = wakati.parse(japanese)
+        compact_sentence = mecab_raw_to_compact_sentence(raw)
+        result = compact_sentence_to_japanese(compact_sentence, spaces=True)
+
+        # Round trip check
+        reconstructed = wakati.parse(result)
+        reconstructed_compact_sentence = mecab_raw_to_compact_sentence(reconstructed)
+        if compact_sentence != reconstructed_compact_sentence:
+            raise ValueError("Reconstructed compact sentence does not match original\n{compact_sentence}\n{reconstructed_compact_sentence}")
+
+        return result
+    except Exception as e:
+        raise Exception(f"Failed to convert Japanese '{japanese}' to spaced Japanese: {e}")
+
+def japanese_to_tokens(japanese: str) -> list[Token]:
+    wakati = get_mecab_tagger()
     raw = wakati.parse(japanese)
-    compact_sentence = mecab_raw_to_compact_sentence(raw)
-    return compact_sentence_to_japanese(compact_sentence, spaces=True)
+    return parse_raw_mecab_output(raw)
 
-
-def mecab_raw_to_tokens_with_grammar(raw):
-    return compact_sentence_to_tokens(mecab_raw_to_compact_sentence_with_grammar(raw))

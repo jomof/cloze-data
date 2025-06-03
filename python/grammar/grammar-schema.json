@@ -143,6 +143,8 @@
     // English **MUST** use a single apostrophe (') for contractions (e.g., don't).
     // If quotes are allowed in the context, then **MUST** use double-quotes (") for quotes.
     "english": { "type": "string" },
+    // Same as "english", but **MUST NOT** use quotes.
+    "exampleEnglish": { "type": "string" },
     // Japanese **MUST** have a space between words to assist mecab in parsing. For example imamoto should be '今本' but 'ima hon' should be '今 本'.
     // Japanese **MUST** sound natural and fluent to a native speaker.
     // Japanese **MUST NOT** contain furigana.
@@ -328,7 +330,7 @@
           // - **MUST NOT** use parentheses to set context. If necessary, use a separate "scene" field.
           // - [rule-1] **MUST NOT** use quotes unless they are truly essential to the grammar point.
           // - [rule-3] **MUST NOT** use special characters like {}, (), [], or <>.
-          "english": { "$ref": "#/definitions/english" },
+          "english": { "$ref": "#/definitions/exampleEnglish" },
           // - **MUST** have the grammar_point in {bold} (surrounded in curlies).
           // - **MUST** be just one sentence. Use "scene" if you need to set up context.
           // - **MUST NOT** use parentheses to set context. If necessary, use a separate "scene" field.
