@@ -2,6 +2,7 @@ from python.mapreduce import MapReduce
 import os
 import asyncio
 import sys
+import time
 
 if __name__ == '__main__':
     import yaml
@@ -25,7 +26,7 @@ if __name__ == '__main__':
     def serialize_json(obj):
         return json.dumps(obj, ensure_ascii=False, indent=4)
 
-    async def lint_logic(parsed_obj, file_path):
+    def lint_logic(parsed_obj, file_path):
         # return parsed_obj
         return clean_lint(parsed_obj, file_path)
 
@@ -36,9 +37,7 @@ if __name__ == '__main__':
         deserialize_func     = deserialize_yaml,
         serialize_func       = serialize_json,
         temp_dir             = os.path.join(workspace_root, '.temp'),
-        max_concurrent_reads = 3,
-        max_concurrent_cpu   = 2,
-        max_concurrent_map   = 2
+        max_threads          = 3,
     )
 
     asyncio.run(mr.run())

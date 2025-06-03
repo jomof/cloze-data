@@ -198,9 +198,7 @@ if __name__ == '__main__':
         deserialize_func     = deserialize_yaml,
         serialize_func       = serialize_json,
         temp_dir             = temp_dir,
-        max_concurrent_reads = 2,
-        max_concurrent_cpu   = 2,
-        max_concurrent_map   = 2
+        max_threads          = 3,
     )
 
     asyncio.run(mr.run())
