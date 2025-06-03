@@ -1,6 +1,7 @@
 from python.mapreduce import MapReduce
 import os
 import asyncio
+import sys
 
 if __name__ == '__main__':
     import yaml
