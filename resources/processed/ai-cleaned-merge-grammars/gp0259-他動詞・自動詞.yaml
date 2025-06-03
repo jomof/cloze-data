@@ -18,7 +18,7 @@
         "usage-context": "General"
     },
     "etymology": "他動詞 (tadoushi) consists of 他 (ta, \"other\"), 動 (dou, \"move\"), and 詞 (shi, \"word\"), indicating a verb that affects something else. 自動詞 (jidoushi) consists of 自 (ji, \"self\"), 動 (dou, \"move\"), and 詞 (shi, \"word\"), signifying a verb describing self-initiated action.",
-    "writeup": "Japanese verbs are fundamentally categorized into two types: **他動詞** (tadoushi), or transitive verbs, and **自動詞** (jidoushi), or intransitive verbs.\n\n**他動詞** describe actions performed by a subject *upon* an object. The subject actively causes something to happen to another entity. These verbs typically take a direct object marked with the particle **を**.\n\n**自動詞** describe actions or states where the subject itself is undergoing a change or performing an action without directly affecting an external object. The action or change occurs *within* or *of* the subject. These verbs typically feature the subject marked with the particle **が**.\n\nA simplified way to consider this distinction is to think of transitive verbs as \"other-moving\" verbs (acting upon something else) and intransitive verbs as \"self-moving\" verbs (the subject moves or acts on its own). Many Japanese verbs exist in transitive/intransitive pairs, and recognizing these pairs is crucial for accurate expression.\n\nConsider the concepts of **動作** (dousa, action/motion initiated by an an agent) and **作用** (sayou, an effect or occurrence). While not traditional grammar terms for this distinction, **他動詞** often represent **動作** directed outward, and **自動詞** represent **作用** that manifests inherently.\n\nThough not conventionally grouped this way, **する** (suru, to do) and **なる** (naru, to become) can also be seen as a conceptual transitive/intransitive pair. **する** implies conscious control and agency, where the subject *does* something. Conversely, **なる** implies that something *becomes* or *occurs* on its own, often due to external factors or natural progression, lacking the subject's direct, controlling intent.",
+    "writeup": "Japanese verbs are fundamentally categorized into two types: **他動詞** (tadoushi), or transitive verbs, and **自動詞** (jidoushi), or intransitive verbs.\n\n**他動詞** describe actions performed by a subject *upon* an object. The subject actively causes something to happen to another entity. These verbs typically take a direct object marked with the particle **を**.\n\n**自動詞** describe actions or states where the subject itself is undergoing a change or performing an action without directly affecting an external object. The action or change occurs *within* or *of* the subject. These verbs typically feature the subject marked with the particle **が**.\n\nA simplified way to consider this distinction is to think of transitive verbs as \"other-moving\" verbs (acting upon something else) and intransitive verbs as \"self-moving\" verbs (the subject moves or acts on its own). Many Japanese verbs exist in transitive/intransitive pairs, and recognizing these pairs is crucial for accurate expression.\n\nConsider the concepts of **動作** (dousa, action/motion initiated by the an agent) and **作用** (sayou, an effect or occurrence). While not traditional grammar terms for this distinction, **他動詞** often represent **動作** directed outward, and **自動詞** represent **作用** that manifests inherently.\n\nThough not conventionally grouped this way, **する** (suru, to do) and **なる** (naru, to become) can also be seen as a conceptual transitive/intransitive pair. **する** implies conscious control and agency, where the subject *does* something. Conversely, **なる** implies that something *becomes* or *occurs* on its own, often due to external factors or natural progression, lacking the subject's direct, controlling intent.",
     "false_friends": [
         {
             "term": "開ける (akeru) / 開く (aku)",
@@ -39,143 +39,175 @@
             "nuance": "「始める」 emphasizes an agent initiating an action or event (e.g., \"We start the meeting\"). 「始まる」 focuses on the event itself beginning, often without specifying who or what caused it (e.g., \"The movie begins\")."
         }
     ],
-    "post_false_friends_writeup": "Understanding the agentive nature of transitive verbs versus the non-agentive nature of intransitive verbs is key to distinguishing these pairs. Transitive verbs use particles like を to mark the object of an action, while intransitive verbs typically use が to mark the subject that undergoes a change or action inherently.",
+    "post_false_friends_writeup": "Understanding the agentive nature of transitive verbs versus the non-agentive nature of intransitive verbs is key to distinguishing these pairs. Transitive verbs use particles like を to mark the object of an action, while intransitive verbs typically use がを mark the subject that undergoes a change or action inherently.",
     "examples": [
         {
             "english": "I will turn off the television.",
             "japanese": [
                 "私 は テレビ を {消し} ます。"
             ],
+            "english_literally": "As for me, television (object) turn off (polite present).",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "テレビ が 消え ます。"
+                    ],
+                    "english": "The television turns off.",
+                    "hint": "The original sentence implies an action performed by an agent. 「消える」 describes something turning off on its own. We're looking for an action that someone performs."
+                }
+            ],
             "scene": "A person preparing to leave the room.",
             "register": "teineigo (polite)",
             "setting": "informative",
             "conjugation": "non-past polite (～ます)",
-            "nuance": "This sentence uses the transitive verb 「消す」 (kesu), indicating that the speaker performs the action of turning off the television. The object, television, is marked by 「を」.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "テレビ が 消え ます",
-                    "mitigation": "The scene implies an active agent ('A person preparing to leave'), prompting the use of a transitive verb for turning off the television, where the person performs the action."
-                }
-            ]
+            "nuance": "This sentence uses the transitive verb 「消す」 (kesu), indicating that the speaker performs the action of turning off the television. The object, television, is marked by 「を」."
         },
         {
             "english": "The television suddenly turned off.",
             "japanese": [
                 "急 に テレビ が {消え} まし た。"
             ],
+            "english_literally": "Suddenly, television (subject) turned off (polite past).",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "誰 か が テレビ を 消し まし た。"
+                    ],
+                    "english": "Someone turned off the television.",
+                    "hint": "The original sentence describes an event that happened without an agent. 「消す」 indicates an action performed by someone. We're looking for something that turned off on its own."
+                }
+            ],
             "scene": "A person observing a sudden malfunction in an appliance.",
             "register": "casual",
             "setting": "serious",
             "conjugation": "past polite (～ました)",
-            "nuance": "This sentence uses the intransitive verb 「消える」 (kieru), indicating that the television turned off on its own, without an agent. The subject, television, is marked by 「が」.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "誰か が テレビ を 消し ました",
-                    "mitigation": "The scene describes something happening due to 'a sudden malfunction,' which points to the television acting on its own, thus requiring the intransitive verb."
-                }
-            ]
+            "nuance": "This sentence uses the intransitive verb 「消える」 (kieru), indicating that the television turned off on its own, without an agent. The subject, television, is marked by 「が」."
         },
         {
             "english": "Please open the window.",
             "japanese": [
                 "窓 を {開け} て ください。"
             ],
+            "english_literally": "Window (object) open (te-form) please give.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "窓 が 開き ます。"
+                    ],
+                    "english": "The window opens.",
+                    "hint": "The original sentence is a request for an action performed by an agent. 「開く」 describes something opening on its own. We're looking for a command to open something."
+                }
+            ],
             "scene": "A teacher instructing a student to open a window to let in fresh air.",
             "register": "teineigo (polite)",
             "setting": "instructional",
             "conjugation": "te-form (～て)",
-            "nuance": "The transitive verb 「開ける」 (akeru) is used here in the te-form followed by 「ください」 to form a polite request, indicating that the listener should perform the action of opening the window. The object, window, is marked by 「を」.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "窓 が 開き ます",
-                    "mitigation": "The scene highlights a 'teacher instructing a student,' which necessitates a transitive verb to convey the instruction to an agent to perform the action."
-                }
-            ]
+            "nuance": "The transitive verb 「開ける」 (akeru) is used here in the te-form followed by 「ください」 to form a polite request, indicating that the listener should perform the action of opening the window. The object, window, is marked by 「を」."
         },
         {
             "english": "The door opened naturally.",
             "japanese": [
                 "ドア が しぜん に {開き} まし た。"
             ],
+            "english_literally": "Door (subject) naturally open (polite past).",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "誰 か が ドア を 開け まし た。"
+                    ],
+                    "english": "Someone opened the door.",
+                    "hint": "The original sentence describes something opening without an agent. 「開ける」 indicates an action performed by someone. We're looking for something that opened by itself."
+                }
+            ],
             "scene": "Someone describing how a door opened on its own, perhaps due to wind or an automatic mechanism.",
             "register": "casual",
             "setting": "informative",
             "conjugation": "past polite (～ました)",
-            "nuance": "The intransitive verb 「開く」 (aku) indicates that the door opened by itself, without a specific agent. The subject, door, is marked by 「が」.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "誰か が ドア を 開け ました",
-                    "mitigation": "The scene describes the door opening 'on its own, perhaps due to wind or an automatic mechanism,' indicating that no external agent is responsible, thus requiring the intransitive verb."
-                }
-            ]
+            "nuance": "The intransitive verb 「開く」 (aku) indicates that the door opened by itself, without a specific agent. The subject, door, is marked by 「が」."
         },
         {
             "english": "Let's start the meeting.",
             "japanese": [
                 "かいぎ を {始め} ましょう。"
             ],
+            "english_literally": "Meeting (object) start (volitional polite).",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "かいぎ が 始まり ます。"
+                    ],
+                    "english": "The meeting will start.",
+                    "hint": "The original sentence is a suggestion to initiate an action. 「始まる」 describes something starting on its own. We're looking for a joint action to begin something."
+                }
+            ],
             "scene": "A team leader encouraging colleagues to begin their discussion.",
             "register": "teineigo (polite)",
             "setting": "professional",
             "conjugation": "volitional polite (～ましょう)",
-            "nuance": "The transitive verb 「始める」 (hajimeru) is used here in the volitional polite form, indicating an action the speaker and listeners will jointly perform to initiate the meeting. The object, meeting, is marked by 「を」.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "かいぎ が 始まり ます",
-                    "mitigation": "The scene implies an active decision by a 'team leader encouraging colleagues' to initiate the meeting, which uses a transitive verb to show agency."
-                }
-            ]
+            "nuance": "The transitive verb 「始める」 (hajimeru) is used here in the volitional polite form, indicating an action the speaker and listeners will jointly perform to initiate the meeting. The object, meeting, is marked by 「を」."
         },
         {
             "english": "The movie will begin.",
             "japanese": [
                 "映画 が {始まり} ます。"
             ],
+            "english_literally": "Movie (subject) begin (polite present).",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "誰 か が 映画 を 始め ます。"
+                    ],
+                    "english": "Someone will start the movie.",
+                    "hint": "The original sentence describes an event that will begin on its own. 「始める」 indicates an action performed by someone. We're looking for something that begins by itself."
+                }
+            ],
             "scene": "A person checking the time before a movie screening.",
             "register": "teineigo (polite)",
             "setting": "informative",
             "conjugation": "non-past polite (～ます)",
-            "nuance": "The intransitive verb 「始まる」 (hajimaru) indicates that the movie will begin on its own accord, without a specific agent initiating it. The subject, movie, is marked by 「が」.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "誰か が 映画 を 始め ます",
-                    "mitigation": "The scene focuses on the natural progression of an event ('movie screening'), implying the movie starts on its own schedule rather than being initiated by a specific agent, thus requiring the intransitive verb."
-                }
-            ]
+            "nuance": "The intransitive verb 「始まる」 (hajimaru) indicates that the movie will begin on its own accord, without a specific agent initiating it. The subject, movie, is marked by 「が」."
         },
         {
             "english": "I decided to go to university.",
             "japanese": [
                 "大学 に 行く こと に {し た}。"
             ],
+            "english_literally": "University to go fact to did.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "大学 に 行く こと に なっ た。"
+                    ],
+                    "english": "It was decided that I would go to university.",
+                    "hint": "The original sentence emphasizes the speaker's own decision. 「～ことになる」 implies a decision made by external circumstances or without personal agency. We're looking for a personal decision."
+                }
+            ],
             "scene": "A high school student shares their future plans with a friend.",
             "register": "casual",
             "setting": "friendly",
             "conjugation": "past plain (～た)",
-            "nuance": "The phrase 「～することにした」 indicates a personal decision made by the speaker, highlighting their agency in the choice to go to university.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "大学 に 行く こと に なった",
-                    "mitigation": "The scene emphasizes a 'personal decision' made by the speaker, highlighting their direct agency in the choice, which aligns with '～することにした'."
-                }
-            ]
+            "nuance": "The phrase 「～することにした」 indicates a personal decision made by the speaker, highlighting their agency in the choice to go to university."
         },
         {
             "english": "Due to a job transfer, I ended up living in Osaka.",
             "japanese": [
                 "てん きん で おおさか に 住む こと に {なっ} た。"
             ],
+            "english_literally": "Job transfer by Osaka in live fact to became.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "おお さ か に 住む こと に し まし た。"
+                    ],
+                    "english": "I decided to live in Osaka.",
+                    "hint": "The original sentence indicates an outcome due to external circumstances. 「～ことにする」 emphasizes a conscious personal decision. We're looking for something that happened due to external factors."
+                }
+            ],
             "scene": "A person explaining their relocation to a new acquaintance.",
             "register": "casual",
             "setting": "informative",
             "conjugation": "past plain (～た)",
-            "nuance": "The phrase 「～ことになる」 implies that the situation (living in Osaka) occurred due to external circumstances (job transfer) rather than the speaker's direct choice, emphasizing a lack of personal agency.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "おおさか に 住む こと に しました",
-                    "mitigation": "The scene specifies 'due to a job transfer,' emphasizing external circumstances rather than personal choice, which is conveyed by '～ことになる'."
-                }
-            ]
+            "nuance": "The phrase 「～ことになる」 implies that the situation (living in Osaka) occurred due to external circumstances (job transfer) rather than the speaker's direct choice, emphasizing a lack of personal agency."
         }
     ],
     "post_example_writeup": "Transitive and intransitive verbs often come in pairs, where one indicates an action performed *by* an agent and the other describes a state or change *occurring* without a direct agent. Understanding these pairs is essential for correct particle usage and conveying nuance in Japanese.",

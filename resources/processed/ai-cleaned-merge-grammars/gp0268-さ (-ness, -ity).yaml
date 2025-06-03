@@ -7,9 +7,9 @@
         "romaji": "sa"
     },
     "formation": {
-        "[い-adjective stem] + さ": "Transforms an い-adjective into a noun indicating the degree or extent of that quality.",
-        "[な-adjective stem] + さ": "Transforms a な-adjective into a noun indicating the degree or extent of that quality.",
-        "[Verb (dictionary form)] + さ": "(Poetic usage) Highlights a specific point in time when something happens."
+        "い-adjective stem + さ": "Transforms an い-adjective into a noun indicating the degree or extent of that quality.",
+        "な-adjective stem + さ": "Transforms a な-adjective into a noun indicating the degree or extent of that quality.",
+        "Verb (dictionary form) + さ": "(Poetic usage) Highlights a specific point in time when something happens."
     },
     "jlpt": "N4",
     "details": {
@@ -39,12 +39,8 @@
             "register": "casual",
             "setting": "reflective",
             "speaker_gender": "male",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "あの山が高いこと",
-                    "mitigation": "The scene implies a measurable attribute that evokes surprise, where 「高さ」 (height) precisely captures the quality being observed as a noun, unlike the descriptive 「高いこと」 (the fact of being tall)."
-                }
-            ]
+            "nuance": "The use of 「高さ」 (takasa) here specifically refers to the measurable attribute of the mountain's height, emphasizing its degree. This is a common and natural way to express a quantifiable quality.",
+            "etymology": "「高」 (taka) means 'high' or 'tall', combined with the suffix 「さ」 to form a noun meaning 'height' or 'tallness'."
         },
         {
             "english": "I was impressed by the cleanliness of this room.",
@@ -56,12 +52,8 @@
             "register": "formal",
             "setting": "friendly",
             "speaker_gender": "female",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "この部屋がきれいなこと",
-                    "mitigation": "「きれいさ」 (cleanliness) refers to the specific quality that caused the impression, presenting it as a distinct characteristic rather than merely stating that the room is clean 「きれいなこと」."
-                }
-            ]
+            "nuance": "「きれいさ」 (kirei-sa) expresses the quality of 'cleanliness' as a specific characteristic that evoked an impression. The use of 「～ました」 indicates politeness suitable for a formal setting.",
+            "etymology": "「きれい」 (kirei) is a な-adjective meaning 'clean' or 'beautiful', and 「さ」 converts it into a noun meaning 'cleanliness' or 'beauty'."
         },
         {
             "english": "The difficulty of Japanese drives me to study.",
@@ -74,12 +66,8 @@
             "setting": "informative",
             "speaker_gender": "male",
             "speaker_age": "younger",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "日本語が難しいこと",
-                    "mitigation": "The phrase 「難しさ」 (difficulty) frames the quality itself as the active agent or driving force, unlike the neutral statement 「難しいこと」 (the fact that it's difficult)."
-                }
-            ]
+            "nuance": "「難しさ」 (muzukashisa) frames 'difficulty' as the driving force behind the action, treating it as a concrete quality rather than a mere observation. This usage is common among students discussing academic challenges.",
+            "etymology": "「難しい」 (muzukashii) is an い-adjective meaning 'difficult', which combines with 「さ」 to create a noun meaning 'difficulty'."
         },
         {
             "english": "The quietness of the forest at night calms the mind.",
@@ -91,12 +79,8 @@
             "register": "casual",
             "setting": "reflective",
             "listener_gender": "no one",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "夜の森が静かなこと",
-                    "mitigation": "「静かさ」 (quietness) specifically highlights the characteristic of silence as a calming attribute, emphasizing its quality rather than simply stating that the forest is quiet 「静かなこと」."
-                }
-            ]
+            "nuance": "「静かさ」 (shizuka-sa) highlights the characteristic of 'quietness' itself as a calming attribute, emphasizing its quality. This reflective statement might be made to oneself or in a general observation.",
+            "etymology": "「静か」 (shizuka) is a な-adjective meaning 'quiet' or 'calm', and 「さ」 turns it into a noun meaning 'quietness' or 'stillness'."
         },
         {
             "english": "At the moment of leaving my hometown, tears overflowed.",
@@ -110,16 +94,18 @@
             "speaker_gender": "female",
             "speaker_age": "older",
             "nuance": "The use of 「去るさ」 (saru sa) here is an archaic and literary expression, typical of older texts or very formal/poetic speech, emphasizing the precise, emotional moment of departure. It is not common in modern everyday Japanese.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "故郷を去る時",
-                    "mitigation": "「去るさ」 (saru sa) implies a specific, significant, and almost literary *point in time* of departure, often used with emotional weight or in poetic contexts, distinguishing it from the more neutral 「去る時」 (when leaving)."
-                }
-            ]
+            "etymology": "This usage of 「さ」 after a verb is a remnant of classical Japanese, where 「さ」 could function as a nominalizing suffix, often indicating a point or instance, similar to 「ところ」 or 「とき」 but with a more emphatic or emotional tone."
         }
     ],
     "post_example_writeup": "When using 「さ」, remember that you are creating a noun that refers to a quality or state. This noun can then be used like any other noun in a sentence, often as the subject or object, or with particles to describe its role.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/さ"
-    }
+    },
+    "lint-errors": [
+        "[rule-4] warning examples[0] has no competing_grammar",
+        "[rule-4] warning examples[1] has no competing_grammar",
+        "[rule-4] warning examples[2] has no competing_grammar",
+        "[rule-4] warning examples[3] has no competing_grammar",
+        "[rule-4] warning examples[4] has no competing_grammar"
+    ]
 }

@@ -224,6 +224,24 @@ def replace_japanese_characters(japanese):
                 japanese = japanese.replace(invalid, valid)
     return japanese
 
+def lint_missing_competing_grammar(grammar_point):
+    """
+    For every example in grammar_point["examples"], warn if competing_grammar is
+    missing or empty. Returns a list of lint‐style messages:
+        "[rule-X] warning examples[i] has no competing_grammar"
+    """
+    messages = []
+    examples = grammar_point.get("examples", [])
+    for idx, example in enumerate(examples):
+        # If there's no competing_grammar key, or it's an empty list, warn.
+        cg = example.get("competing_grammar")
+        if cg is None or (isinstance(cg, list) and len(cg) == 0):
+            messages.append(
+                f"[rule-4] warning examples[{idx}] has no competing_grammar"
+            )
+    return messages
+
+
 def clean_lint(grammar_point, path: str = None):
     lint = []
     grammar_point = copy.deepcopy(grammar_point)
@@ -256,6 +274,7 @@ def clean_lint(grammar_point, path: str = None):
     lint.extend(lint_quotes(grammar_point))
     lint.extend(lint_english_brackets(grammar_point))
     lint.extend(lint_schema_enums_with_jsonschema(grammar_point, GRAMMAR_SCHEMA))
+    lint.extend(lint_missing_competing_grammar(grammar_point))
     grammar_point['lint-errors'] = lint
     # Prune empty fields and items
     grammar_point = prune_empty(grammar_point)
