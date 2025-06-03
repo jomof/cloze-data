@@ -227,6 +227,24 @@ sh_binary(
     visibility = ["//visibility:public"],
 )
 
+# bazel run //resources/grammar:ai-pass
+py_binary(
+    name = "ai-pass",
+    srcs = ["ai-pass.py"],
+    data = [
+        "//resources/processed:ai-cleaned-merge-grammars",
+    ],
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//python/ai:aigen",
+        "//python/grammar",
+        "//python/mapreduce",
+        "//python/utils/build_cache/memoize",
+        "@pip//json_repair",
+        "@pip//pyyaml",
+    ],
+)
+
 # bazel build //resources/grammar:post-ai-scrub
 py_build_tool(
     name = "post-ai-scrub",
@@ -267,6 +285,7 @@ py_library(
     name = "grammar",
     srcs = [
         "ai-clean.py",
+        "ai-pass.py",
         "bs4-strip.py",
         "bunpro-lint.py",
         "dumpyaml.py",

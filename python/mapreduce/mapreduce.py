@@ -215,7 +215,7 @@ class MapReduce:
         """Read a file's raw text asynchronously under sem_read."""
         async with self.sem_read:
             self.event_queue.put('BEGIN_READ')
-            self.event_queue.put(f"LOG: 🔄 reading {os.path.basename(file_path)}")
+            # self.event_queue.put(f"LOG: 🔄 reading {os.path.basename(file_path)}")
             try:
                 start = time.perf_counter()
                 async with aiofiles.open(file_path, 'r', encoding='utf-8') as f:
@@ -281,10 +281,12 @@ class MapReduce:
             if inspect.iscoroutinefunction(self.map_func):
                 # Async map_func: limit concurrency via self.sem_map
                 async with self.sem_map:
+                    self.event_queue.put(f"LOG: 🔄 async {os.path.basename(output_file_path)}")
                     processed_obj = await self.map_func(deserialized, input_file_path)
             else:
                 # Sync map_func: run in executor under sem_map
                 async with self.sem_map:
+                    self.event_queue.put(f"LOG: 🔄 sync {os.path.basename(output_file_path)}")
                     processed_obj = await asyncio.get_event_loop().run_in_executor(
                         executor,
                         lambda: self.map_func(deserialized, input_file_path)

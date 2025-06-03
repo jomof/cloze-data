@@ -12,7 +12,7 @@
         "Godan Verb (ending in む, ぶ, ぬ) + んで": "For verbs like 飲む (nomu) → 飲んで (nonde), 遊ぶ (asobu) → 遊んで (asonde), 死ぬ (shinu) → 死んで (shinde).",
         "Godan Verb (ending in く) + いて": "For verbs like 書く (kaku) → 書いて (kaite).",
         "Godan Verb (ending in ぐ) + いで": "For verbs like 泳ぐ (oyogu) → 泳いで (oyoide).",
-        "Godan Verb (ending in す) + して": "For verbs like 話す (hanasu) → 話して (hanashite).",
+        "Godan Verb (ending in す) + して": "For verbs like 話す (hanashite) → 話して (hanashite).",
         "Ichidan Verb + て": "For verbs like 食べる (taberu) → 食べて (tabete), 見る (miru) → 見て (mite).",
         "Irregular Verb する + して": "For する (suru) → して (shite).",
         "Irregular Verb くる + きて": "For くる (kuru) → きて (kite).",
@@ -49,109 +49,139 @@
         {
             "english": "Every morning, I drink coffee and then read the newspaper.",
             "japanese": [
-                "毎朝、コーヒー を {飲ん で}、新聞 を 読み ます。"
+                "毎朝、コーヒー を 飲ん で、新聞 を 読み ます。"
             ],
             "english_literally": "Every morning, coffee drink, then newspaper read.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "毎朝、コーヒー を 飲ん で から、新聞 を 読み ます。"
+                    ],
+                    "english": "Every morning, after drinking coffee, I read the newspaper.",
+                    "hint": "「てから」 emphasizes the completion of the first action before the second one begins. We're looking for a simple sequential connection without strong emphasis on completion."
+                },
+                {
+                    "competing_japanese": [
+                        "毎朝、コーヒー を 飲み ます。そして、新聞 を 読み ます。"
+                    ],
+                    "english": "Every morning, I drink coffee. And then, I read the newspaper.",
+                    "hint": "「そして」 makes the two actions more distinct and less smoothly connected than the て-form. We're looking for a natural, flowing sequence."
+                }
+            ],
             "scene": "A man describes his regular morning routine to a new colleague.",
             "register": "teineigo (polite)",
             "setting": "informative",
-            "speaker_gender": "male",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "毎朝、コーヒーを飲んでから、新聞を読みます。",
-                    "mitigation": "The scene implies a fluid, habitual sequence of actions rather than a strict emphasis on the completion of drinking coffee before reading, which 「てから」 would imply. It's just a normal flow of events."
-                },
-                {
-                    "competing_grammar": "毎朝、コーヒーを飲みます。そして、新聞を読みます。",
-                    "mitigation": "While grammatically correct, using 「そして」 separates the actions more distinctly. The scene suggests a seamless combination of activities, which the {て} form naturally conveys, making the flow smoother and more integrated."
-                }
-            ]
+            "speaker_gender": "male"
         },
         {
             "english": "I went to the park and played with my friend.",
             "japanese": [
-                "公園 へ {行っ て}、友達 と 遊び まし た。"
+                "公園 へ 行っ て、友達 と 遊び まし た。"
             ],
             "english_literally": "Park to go, friend with played.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "公園 へ 行っ て から、友達 と 遊び まし た。"
+                    ],
+                    "english": "After going to the park, I played with my friend.",
+                    "hint": "「てから」 emphasizes the completion of the first action as a prerequisite for the second. We're looking for a simple chronological order of events."
+                },
+                {
+                    "competing_japanese": [
+                        "公園 へ 行き まし た。そして、友達 と 遊び まし た。"
+                    ],
+                    "english": "I went to the park. And then, I played with my friend.",
+                    "hint": "Using 「そして」 separates the two actions into distinct sentences, making the connection less fluid than the て-form. We're looking for actions that are naturally linked as part of a single activity."
+                }
+            ],
             "scene": "A young girl tells her mother about her afternoon.",
             "register": "casual",
             "setting": "friendly",
             "speaker_gender": "female",
-            "speaker_age": "younger",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "公園へ行ってから、友達と遊びました。",
-                    "mitigation": "The scene describes a straightforward, natural sequence of events, not one where going to the park must be strictly completed before playing. The {て} form connects them as a continuous activity rather than two separate, strictly ordered steps."
-                },
-                {
-                    "competing_grammar": "公園へ行きました。そして、友達と遊びました。",
-                    "mitigation": "Using 「そして」 would break the sentence into two distinct statements. The scene implies a single narrative flow of events, which the {て} form effectively maintains by linking the actions directly."
-                }
-            ]
+            "speaker_age": "younger"
         },
         {
             "english": "He wants to learn Japanese and then work in Japan.",
             "japanese": [
-                "彼 は 日本 語 を {学ん で}、日本 で 働き たい と 思っ て い ます。"
+                "彼 は 日本 語 を 学ん で、日本 で 働き たい と 思っ て い ます。"
             ],
             "english_literally": "He Japanese learn, Japan in want to work is thinking.",
-            "scene": "A university student discusses his future career aspirations with a career counselor.",
-            "register": "formal",
-            "setting": "academic",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "彼は日本語を学んでから、日本で働きたいと思っています。",
-                    "mitigation": "The scene implies a planned sequence where learning Japanese is a necessary step before working in Japan, but the {て} form is suitable for this natural progression. 「てから」 would overemphasize the strict completion of learning as a prerequisite, which isn't always the nuance desired for future aspirations."
+                    "competing_japanese": [
+                        "彼 は 日本 語 を 学ん で から、日本 で 働き たい と 思っ て い ます。"
+                    ],
+                    "english": "He wants to work in Japan after learning Japanese.",
+                    "hint": "「てから」 emphasizes that learning Japanese is a necessary prerequisite to working in Japan. We're looking for a natural progression of aspirations, not a strict condition."
                 },
                 {
-                    "competing_grammar": "彼は日本語を学びます。そして、日本で働きたいと思っています。",
-                    "mitigation": "Separating the actions with a full stop or 「そして」 would make the connection sound less direct and natural for a single aspiration. The {て} form smoothly links the two ambitions as part of one continuous plan."
+                    "competing_japanese": [
+                        "彼 は 日本 語 を 学び ます。そして、日本 で 働き たい と 思っ て い ます。"
+                    ],
+                    "english": "He learns Japanese. And then, he wants to work in Japan.",
+                    "hint": "Using 「そして」 breaks the overall aspiration into two separate statements, making the connection feel less integrated than the て-form. We're looking for a single, combined future plan."
                 }
-            ]
+            ],
+            "scene": "A university student discusses his future career aspirations with a career counselor.",
+            "register": "formal",
+            "setting": "academic"
         },
         {
             "english": "I didn't do my homework, and my teacher got angry at me.",
             "japanese": [
-                "宿題 を {し なく て}、先生 に 怒ら れ まし た。"
+                "宿題 を し なく て、先生 に 怒ら れ まし た。"
             ],
             "english_literally": "Homework did not, teacher by got angry.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "宿題 を し なかっ た の で、先生 に 怒ら れ まし た。"
+                    ],
+                    "english": "Because I didn't do my homework, my teacher got angry at me.",
+                    "hint": "While 「ので」 also expresses cause, 「～なくて」 directly links the non-action to the consequence. We're looking for a direct causal connection focusing on the absence of the first action."
+                },
+                {
+                    "competing_japanese": [
+                        "宿題 を し ない で、先生 に 怒ら れ まし た。"
+                    ],
+                    "english": "Without doing my homework, my teacher got angry at me.",
+                    "hint": "「～ないで」 often implies doing something without performing the first action, or a means/manner. Here, the nuance is that the lack of homework caused the anger. We're looking for a clear cause-and-effect relationship based on omission."
+                }
+            ],
             "scene": "A boy sheepishly confesses to his parent about his school troubles.",
             "register": "casual",
             "setting": "apologetic",
             "speaker_gender": "male",
             "speaker_age": "younger",
-            "nuance": "The use of 「しなくて」 (the negative て-form of する) directly links the non-completion of homework to the teacher's anger, implying a causal relationship. This is a common way for a younger male speaker to express a regrettable consequence to an adult.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "宿題をしなかったので、先生に怒られました。",
-                    "mitigation": "While 「ので」 also expresses cause, the negative {しなくて} form specifically links the non-performance of homework directly to the consequence, emphasizing the lack of action as the preceding event, which fits the direct cause-and-effect confession implied by the scene."
-                },
-                {
-                    "competing_grammar": "宿題をしないと、先生に怒られました。",
-                    "mitigation": "「～ないと」 implies a general conditional or a warning about what *will* happen. The scene describes a past, factual event where the action *did not* happen and a consequence *did* occur, making the {しなくて} form more appropriate for connecting the two past events directly."
-                }
-            ]
+            "nuance": "The use of 「しなくて」 (the negative て-form of する) directly links the non-completion of homework to the teacher's anger, implying a causal relationship. This is a common way for a younger male speaker to express a regrettable consequence to an adult."
         },
         {
             "english": "I hurried and headed to the office.",
             "japanese": [
-                "急い {で} 会社 へ 向かい まし た。"
+                "急い で 会社 へ 向かい まし た。"
             ],
             "english_literally": "Hurried, company to headed.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "急い で から、会社 へ 向かい まし た。"
+                    ],
+                    "english": "After hurrying, I headed to the office.",
+                    "hint": "「てから」 would imply that hurrying was a distinct action completed before heading to the office. The て-form here shows that hurrying was the manner of heading. We're looking for the way an action was performed."
+                },
+                {
+                    "competing_japanese": [
+                        "急ぎ ながら、会社 へ 向かい まし た。"
+                    ],
+                    "english": "While hurrying, I headed to the office.",
+                    "hint": "「ながら」 indicates two distinct actions happening simultaneously. Here, hurrying is more integrated into the act of heading to the office, showing the manner rather than a separate simultaneous action. We're looking for the state or manner in which the main action occurred."
+                }
+            ],
             "scene": "A businessperson explains why they were slightly late to a meeting.",
             "register": "teineigo (polite)",
             "setting": "serious",
-            "nuance": "The use of 「急い{で}」 (the て-form of 急ぐ, `isogu`) here shows a cause-and-effect or manner. The verb ends in `ぐ`, thus it becomes `いで`. This is a common phrase to explain why someone might be moving quickly, often heard in professional settings.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "急いでから、会社へ向かいました。",
-                    "mitigation": "The scene implies that hurrying was the *manner* of heading to the office, not a distinct action completed before heading. The {て} form (here, で) connects the two actions as being simultaneous or one being the way the other was done, rather than emphasizing a strict sequence like 「てから」."
-                },
-                {
-                    "competing_grammar": "急ぎながら、会社へ向かいました。",
-                    "mitigation": "While 「～ながら」 indicates simultaneous actions, it often implies two distinct actions happening at the same time. The scene suggests that hurrying *is* the act of heading to the office, a single integrated action, which the {て} form captures more naturally."
-                }
-            ]
+            "nuance": "The use of 「急い{で}」 (the て-form of 急ぐ, `isogu`) here shows a cause-and-effect or manner. The verb ends in `ぐ`, thus it becomes `いで`. This is a common phrase to explain why someone might be moving quickly, often heard in professional settings."
         }
     ],
     "post_example_writeup": "The 「て」 form is a fundamental building block in Japanese grammar, enabling the creation of complex sentences that describe sequences of actions, reasons, or states. Its flexibility makes it indispensable for natural and fluent communication.",
@@ -159,10 +189,10 @@
         "bunpro": "https://bunpro.jp/grammar_points/verb-て"
     },
     "lint-errors": [
-        "[rule-4] warning examples[0] has no competing_grammar",
-        "[rule-4] warning examples[1] has no competing_grammar",
-        "[rule-4] warning examples[2] has no competing_grammar",
-        "[rule-4] warning examples[3] has no competing_grammar",
-        "[rule-4] warning examples[4] has no competing_grammar"
+        "[rule-5] warning examples[0].japanese[0] missing {bold} grammar point': 毎朝、コーヒー を 飲ん で、新聞 を 読み ます。",
+        "[rule-5] warning examples[1].japanese[0] missing {bold} grammar point': 公園 へ 行っ て、友達 と 遊び まし た。",
+        "[rule-5] warning examples[2].japanese[0] missing {bold} grammar point': 彼 は 日本 語 を 学ん で、日本 で 働き たい と 思っ て い ます。",
+        "[rule-5] warning examples[3].japanese[0] missing {bold} grammar point': 宿題 を し なく て、先生 に 怒ら れ まし た。",
+        "[rule-5] warning examples[4].japanese[0] missing {bold} grammar point': 急い で 会社 へ 向かい まし た。"
     ]
 }

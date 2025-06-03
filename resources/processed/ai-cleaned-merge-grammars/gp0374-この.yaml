@@ -22,7 +22,7 @@
         "grammatical-role": "Acts as a demonstrative adjective/determiner.",
         "logical-flow": "Introduces a specific item into the discourse.",
         "temporal-flow": "Can modify nouns indicating current time periods (e.g., この頃 - this time, この前 - recently).",
-        "spatial-flow": "Specifies items within the speaker's immediate vicinity or scope of attention (e.g., この場所 - this place). As a 連体詞, it does not itself indicate a place, but modifies nouns that do, like '場所'. However, a place noun like 'ここ' acts as a noun directly, rather than a determiner, and so does not take 'この'. This 'この' implies spatial proximity to the speaker of the noun it modifies. The 'この' in 'この場所' means 'this place here' (referring to a specific place noun '場所'), not 'this here place'. The 'この' adds specificity to the physical location of the noun it modifies relative to the speaker, for example 'このテーブル' means 'this table (here)'. The 'この' is a spatial determiner to the noun. It's a spatial flow, meaning that the noun modified by 'この' is physically proximate to the speaker. It applies to objects or locations. A better way to describe it is: identifies or refers to something in the immediate proximity of the speaker, or immediately relevant to the speaker's current situation or thoughts. However, 'この' isn't necessarily just spatial, it can also be temporal as in 'この間' (the other day). But 'temporal-flow' is already stated and the primary use is spatial. So it's best to specify 'spatial flow' for its primary usage of objects, while noting the temporal use in the writeup for a comprehensive explanation. The `spatial-flow` field should concisely describe its application to spatial elements. So I'll just refine the original `spatial-flow`. Also, my examples mostly use spatial nouns, one temporal. So `spatial-flow` is more relevant to the majority. I will re-add this as a custom field for this one. The bunpro details were general. I will add this as a custom field. I will omit for now since `usage-context` covers it. I'll omit `spatial-flow` if `usage-context` covers it. My initial thought for `spatial-flow` is that it was not a bunpro field so I can choose to omit it. I will omit `spatial-flow` since `usage-context` can encompass this. I will follow the advice of the ENTJ persona for terseness. Thus, I won't create additional fields to clarify every single aspect if existing fields (like `usage-context`) can sufficiently cover it. I will keep `spatial-flow` as it is distinct from `usage-context` in defining how the grammar point contributes to describing spatial relationships within a sentence. This is an important nuance. So it should be included. So adding it back in for correctness. It is also different from `temporal-flow`. Thus, the fields `usage-context`, `temporal-flow`, and `spatial-flow` each have distinct meanings and should be retained if they describe different aspects of the grammar point. The prompt says I *MUST* forward all details information from the source bunpro grammar point. If none of these detail properties fit perfectly, then create your own property in the form "
+        "spatial-flow": "Identifies or refers to something in the immediate proximity of the speaker, or immediately relevant to the speaker's current situation or thoughts."
     },
     "etymology": "この belongs to the 'ko-so-a-do' system (こそあど体系) in Japanese, which is used to indicate the proximity of objects or places to the speaker and listener. この is related to the demonstrative pronoun これ (this) and the place word ここ (here). It signifies something closer to the speaker.",
     "writeup": "「この」 (kono) is classified as a **連体詞 (rentaishi)** in Japanese, often translated as a 'pre-noun adjectival' or 'demonstrative adjective'. Unlike typical adjectives that conjugate, 連体詞 are uninflected words that *always* precede and modify a noun. They do not change their form, regardless of the noun's grammatical function or number.\n\nAs part of the fundamental **こそあど体系 (ko-so-a-do taikei)**, 「この」 indicates something that is physically close to the speaker. It serves to identify a specific item or person among others, highlighting its proximity to the speaker. For instance, if you point to a book right next to you, you would refer to it as 「この本」 (kono hon - this book).\n\nWhile related to the pronoun 「これ」 (kore - this thing) and the place word 「ここ」 (koko - here), 「この」 cannot stand alone. It *must* be followed by a noun, functioning solely as a modifier. Its role is to specify *which* noun is being discussed, always with the implication of 'this one, here, near me'. This is a core concept for N5 learners, establishing how objects are identified in relation to the speaker.",
@@ -90,19 +90,22 @@
                 "{この} 本 は 新しい です。"
             ],
             "english_literally": "This book is new.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "これ は 新しい です。"
+                    ],
+                    "english": "This is new.",
+                    "hint": "「これ」 is a pronoun and stands alone. 「この」 modifies a noun. We're looking for an expression that modifies \"本\"."
+                }
+            ],
             "scene": "A librarian is showing a newly acquired book to a student, highlighting its fresh condition.",
             "register": "teineigo (polite)",
             "setting": "informative",
             "speaker_gender": "female",
             "listener_gender": "male",
             "speaker_age": "older",
-            "nuance": "The phrase 「新しい です」 is a standard polite way to describe something as new. This example shows the straightforward use of 「この」 to modify a noun in a polite, informative setting. The librarian (older female) uses polite Japanese with a student (male).",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "これ は 新しい です。",
-                    "mitigation": "The scene specifies that a 'book' is being shown, directing the user to use {この} to modify the noun '本' rather than the generic pronoun 'これ'."
-                }
-            ]
+            "nuance": "The phrase 「新しい です」 is a standard polite way to describe something as new. This example shows the straightforward use of 「この」 to modify a noun in a polite, informative setting. The librarian (older female) uses polite Japanese with a student (male)."
         },
         {
             "english": "This computer is very convenient.",
@@ -110,19 +113,22 @@
                 "{この} パソコン は とても 便利 です。"
             ],
             "english_literally": "This personal computer is very convenient.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "これ は とても 便利 です。"
+                    ],
+                    "english": "This is very convenient.",
+                    "hint": "「これ」 is a pronoun and stands alone. 「この」 modifies a noun. We're looking for an expression that modifies \"パソコン\"."
+                }
+            ],
             "scene": "A busy professional is praising their laptop's functionality to a colleague during a work discussion.",
             "register": "teineigo (polite)",
             "setting": "professional",
             "speaker_gender": "male",
             "listener_gender": "female",
             "speaker_age": "older",
-            "nuance": "The phrase 「とても 便利 です」 conveys strong approval of the computer's usefulness, suitable for a professional context. This sentence demonstrates 「この」 modifying a loanword (パソコン) in a polite manner. An older male professional would typically use polite language in this setting.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "これ は とても 便利 です。",
-                    "mitigation": "The scene focuses on the specific item 'computer' as the subject of the praise, prompting the use of {この} to modify it, rather than {これ} as a generic reference."
-                }
-            ]
+            "nuance": "The phrase 「とても 便利 です」 conveys strong approval of the computer's usefulness, suitable for a professional context. This sentence demonstrates 「この」 modifying a loanword (パソコン) in a polite manner. An older male professional would typically use polite language in this setting."
         },
         {
             "english": "This road continues to the station.",
@@ -130,19 +136,22 @@
                 "{この} 道 は 駅 まで 続き ます。"
             ],
             "english_literally": "This road continues until the station.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "ここ は 駅 まで 続き ます。"
+                    ],
+                    "english": "This place continues to the station.",
+                    "hint": "「ここ」 refers to \"here\" or \"this place\" as a noun itself. 「この」 modifies a noun like \"道\" (road). We're looking for an expression that modifies \"道\"."
+                }
+            ],
             "scene": "A local resident is pointing out the path to the nearest train station for a lost tourist.",
             "register": "teineigo (polite)",
             "setting": "instructional",
             "speaker_gender": "female",
             "listener_gender": "group",
             "speaker_age": "older",
-            "nuance": "「続きます」 is the polite form of 続く, meaning 'to continue'. This example illustrates how 「この」 can specify a physical path or route, which is common when giving directions. An older female local resident would use polite Japanese when instructing a group of tourists.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "ここ は 駅 まで 続きます。",
-                    "mitigation": "The scene implies identifying a specific physical 'road' (道), not just a general location (ここ), prompting the use of {この} to qualify the noun."
-                }
-            ]
+            "nuance": "「続きます」 is the polite form of 続く, meaning 'to continue'. This example illustrates how 「この」 can specify a physical path or route, which is common when giving directions. An older female local resident would use polite Japanese when instructing a group of tourists."
         },
         {
             "english": "This bag is my favorite.",
@@ -150,19 +159,22 @@
                 "{この} カバン は 私 の お 気 に 入り です。"
             ],
             "english_literally": "This bag is my favorite item.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "これ は 私 の お 気 に 入り です。"
+                    ],
+                    "english": "This is my favorite.",
+                    "hint": "「これ」 is a pronoun and stands alone. 「この」 modifies a noun. We're looking for an expression that modifies \"カバン\"."
+                }
+            ],
             "scene": "A young woman is excitedly showing off her newly purchased bag to her close friend.",
             "register": "teineigo (polite)",
             "setting": "friendly",
             "speaker_gender": "female",
             "listener_gender": "female",
             "speaker_age": "younger",
-            "nuance": "「お気に入り」 is a common and gender-neutral expression for something one likes very much. The sentence uses 「です」 to maintain politeness in a friendly interaction. The younger female speaker and listener illustrate a casual yet polite conversation between friends.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "これ は 私 の お気に入り です。",
-                    "mitigation": "The focus is explicitly on the specific item 'bag' as a cherished possession, reinforcing the use of {この} to modify the noun rather than a general reference with {これ}."
-                }
-            ]
+            "nuance": "「お気に入り」 is a common and gender-neutral expression for something one likes very much. The sentence uses 「です」 to maintain politeness in a friendly interaction. The younger female speaker and listener illustrate a casual yet polite conversation between friends."
         },
         {
             "english": "This past week was very busy.",
@@ -170,50 +182,49 @@
                 "{この} 一 週間 は とても 忙しかっ た です。"
             ],
             "english_literally": "This one week was very busy.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "先週 は とても 忙しかっ た です。"
+                    ],
+                    "english": "Last week was very busy.",
+                    "hint": "「先週」 refers to the previous week, while 「この一週間」 refers to the period from a week ago until now. We're looking for an expression that specifically means \"this (recent) week.\""
+                }
+            ],
             "scene": "A male university student is apologizing to his friend for not being able to meet up due to a hectic schedule.",
             "register": "teineigo (polite)",
             "setting": "apologetic",
             "speaker_gender": "male",
             "listener_gender": "male",
             "speaker_age": "younger",
-            "nuance": "「忙しかった です」 is the polite past form of busy. 「この 一週間」 (kono isshuukan - this one week) demonstrates 「この」's ability to modify temporal nouns, referring to the immediate past. The younger male speaker and listener illustrate a common exchange between friends.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "先週 は とても 忙しかった です。",
-                    "mitigation": "The nuance of 'this past week' specifically refers to the immediate period up to the present moment, which {この} captures more precisely than the generic 'last week' (先週)."
-                }
-            ]
+            "nuance": "「忙しかった です」 is the polite past form of busy. 「この 一週間」 (kono isshuukan - this one week) demonstrates 「この」's ability to modify temporal nouns, referring to the immediate past. The younger male speaker and listener illustrate a common exchange between friends."
         },
         {
-            "english": "This pen writes well, doesn",
+            "english": "This pen writes well, doesn't it?",
             "japanese": [
                 "{この} ペン は よく 書け ます ね。"
             ],
-            "english_literally": "This pen can write well, isn",
+            "english_literally": "This pen can write well, isn't it?",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "これ は よく 書け ます ね。"
+                    ],
+                    "english": "This writes well, doesn't it?",
+                    "hint": "「これ」 is a pronoun and stands alone. 「この」 modifies a noun. We're looking for an expression that modifies \"ペン\"."
+                }
+            ],
             "scene": "A customer is testing a pen in a stationery store and expresses satisfaction to the shop assistant.",
             "register": "teineigo (polite)",
             "setting": "informative",
             "speaker_gender": "male",
             "listener_gender": "female",
             "speaker_age": "older",
-            "nuance": "「よく 書けます」 means 'writes well' or 'is able to write well'. The sentence-final particle 「ね」 is used to seek agreement or confirmation, making the statement more conversational and polite. The older male customer uses polite language when addressing the female shop assistant.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "これ は よく 書けます ね。",
-                    "mitigation": "The scene implies the customer is physically holding and trying out a specific 'pen', making {この} the natural choice to modify the noun."
-                }
-            ]
+            "nuance": "「よく 書けます」 means 'writes well' or 'is able to write well'. The sentence-final particle 「ね」 is used to seek agreement or confirmation, making the statement more conversational and polite. The older male customer uses polite language when addressing the female shop assistant."
         }
     ],
+    "post_example_writeup": "As these examples demonstrate, 「この」 consistently functions as a pre-noun adjectival, specifying the noun that immediately follows it. Its utility spans various contexts, from identifying physical objects to indicating time periods, always with the implication of proximity or immediate relevance to the speaker. Paying close attention to whether the English meaning points to a specific noun or a standalone concept will help you choose between 「この」 and related demonstratives.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/この"
-    },
-    "lint-errors": [
-        "[rule-4] warning examples[0] has no competing_grammar",
-        "[rule-4] warning examples[1] has no competing_grammar",
-        "[rule-4] warning examples[2] has no competing_grammar",
-        "[rule-4] warning examples[3] has no competing_grammar",
-        "[rule-4] warning examples[4] has no competing_grammar",
-        "[rule-4] warning examples[5] has no competing_grammar"
-    ]
+    }
 }
