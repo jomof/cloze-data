@@ -258,7 +258,7 @@ py_binary(
     visibility = ["//:__subpackages__"],
     deps = [
         "//python/grammar",
-        "@pip//aiofiles",
+        "//python/mapreduce",
         "@pip//pyyaml",
     ],
 )
@@ -282,9 +282,9 @@ py_library(
     deps = [
         "//python/ai:aigen",
         "//python/grammar",
+        "//python/mapreduce",
         "//python/mecab",
         "//python/utils/build_cache/memoize",
-        "@pip//aiofiles",
         "@pip//beautifulsoup4",
         "@pip//json5",
         "@pip//json_repair",

@@ -4,7 +4,6 @@ from python.grammar.clean_lint import (
     strip_matching_quotes,
     lint_quotes,
     lint_english_brackets,
-    lint_mecab_spaces,
     lint_schema_enums_with_jsonschema,
     clean_lint,
     reorder_keys
@@ -58,17 +57,6 @@ class TestLintSchemaUtils(unittest.TestCase):
         self.assertIn('examples[1].english has bracket characters []', warnings[1])
         self.assertIn('examples[2].english has bracket characters {}', warnings[2])
         self.assertIn('examples[3].english has bracket characters <>', warnings[3])
-
-    def test_lint_mecab_spaces_detects_missing_spaces(self):
-        grammar_point = {
-            "examples": [
-                {"japanese": ['これはテストです']},  # no spaces
-                {"japanese": ['これ は テスト です']},    # has spaces
-            ]
-        }
-        warnings = lint_mecab_spaces(grammar_point)
-        self.assertEqual(len(warnings), 1)
-        self.assertIn('examples[0].japanese[0] does not have spaces', warnings[0])
 
     def test_lint_schema_enums_valid(self):
         schema = {
