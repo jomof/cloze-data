@@ -68,6 +68,26 @@ def lint_english_brackets(grammar_point):
                 break
     return messages
 
+
+def lint_japanese_braces(grammar_point):
+    """
+    Walks over the given data object and checks that each Japanese example string contains both '{' and '}'.
+    Returns a list of lint-style messages indicating missing braces for bolding the grammar point.
+    """
+    messages = []
+    examples = grammar_point.get("examples", [])
+    for idx, example in enumerate(examples):
+        jap_list = example.get("japanese", [])
+        # Only proceed if japanese field is a list
+        if isinstance(jap_list, list):
+            for j_idx, jap in enumerate(jap_list):
+                if not isinstance(jap, str):
+                    continue
+                if '{' not in jap or '}' not in jap:
+                    messages.append(f"[rule-5] warning examples[{idx}].japanese[{j_idx}] missing {{bold}} grammar point': {jap}")
+    return messages
+
+
 def lint_schema_enums_with_jsonschema(instance, schema):
     """
     Validate `instance` against `schema` and return a list of all enum‑violation messages.
@@ -136,7 +156,6 @@ def type_replace(obj, schema, type_name, fn):
         return current_obj
 
     return _traverse(new_obj, schema)
-
 
 
 def prune_empty(obj):
@@ -208,8 +227,10 @@ def reorder_keys(obj, schema):
 
     return new_obj
 
+
 def japanese_with_space(japanese):
     return japanese_to_japanese_with_spaces(japanese)
+
 
 def replace_japanese_characters(japanese):
 
@@ -223,6 +244,7 @@ def replace_japanese_characters(japanese):
             for valid in valids:
                 japanese = japanese.replace(invalid, valid)
     return japanese
+
 
 def lint_missing_competing_grammar(grammar_point):
     """
@@ -275,6 +297,7 @@ def clean_lint(grammar_point, path: str = None):
     lint.extend(lint_english_brackets(grammar_point))
     lint.extend(lint_schema_enums_with_jsonschema(grammar_point, GRAMMAR_SCHEMA))
     lint.extend(lint_missing_competing_grammar(grammar_point))
+    lint.extend(lint_japanese_braces(grammar_point))
     grammar_point['lint-errors'] = lint
     # Prune empty fields and items
     grammar_point = prune_empty(grammar_point)
