@@ -81,7 +81,7 @@ def PRIOR_GRAMMAR_POINT(prior_input_obj):
     """).replace("[prior_input_replace]", json.dumps(prior_input_obj, ensure_ascii=False, indent=4))
 
 def ai_pass(prior_grammar_point, output_file, temp_dir):
-    prior_input_obj = clean_lint(prior_grammar_point, output_file)
+    prior_input_obj = prior_grammar_point
     if len(prior_input_obj.get('lint-errors', [])) == 0:
         return prior_input_obj
 
@@ -176,11 +176,18 @@ if __name__ == '__main__':
         workspace_root,
         'resources', 'processed', 'ai-cleaned-merge-grammars'
     )
+
     temp_dir = os.path.join(workspace_root, '.temp')
 
     if not os.path.isdir(grammar_root):
         print(f"ERROR: “{grammar_root}” is not a directory.")
         sys.exit(1)
+
+    # read the prior grammar summary file
+    grammar_summary_file = os.path.join(grammar_root, 'summary/summary.json')
+    with open(grammar_summary_file, 'r', encoding='utf-8') as f:
+        grammar_summary_content = f.read()
+    grammar_summary_obj = json.loads(grammar_summary_content)
 
     def deserialize_yaml(raw: str):
         return yaml.load(raw, Loader=yaml.CSafeLoader)

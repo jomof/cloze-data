@@ -407,7 +407,10 @@ class ConsoleDisplay:
 
 class MapReduce:
     """
-    Generic MapReduce framework.
+    Generic MapReduce framework with optional reduce (fold) functionality.
+    As each result from map_func (or original object if skipped) is ready, it is passed to fold_func
+    along with the current accumulator. Folding is guaranteed sequential and single-threaded by using
+    an asyncio.Lock to serialize access.
     """
     def __init__(
         self,
@@ -417,7 +420,9 @@ class MapReduce:
         deserialize_func,
         serialize_func,
         preprocess_func=None,
-        map_func_name = 'mapping',
+        fold_func=None,
+        initial_accumulator=None,
+        map_func_name: str = 'mapping',
         temp_dir: str = None,
         max_threads: int = 4,
         window_size: int = None,  # Passed to ConsoleDisplay
@@ -430,8 +435,10 @@ class MapReduce:
         self.map_func_name = map_func_name
         self.map_func = map_func
         self.serialize_func = serialize_func
+        self.fold_func = fold_func
+        self.accumulator = initial_accumulator
 
-        # Initialize ConsoleDisplay
+        # Initialize ConsoleDisplay (assumed available)
         self.display = ConsoleDisplay(window_size=window_size or max_threads, refresh_interval=refresh_interval)
 
         self.temp_dir = temp_dir or os.path.join(input_dir, '.temp')
@@ -447,7 +454,10 @@ class MapReduce:
 
         self.counter_lock = Lock()
         self.countdown = 0
-        self.run_state = 'running' 
+        self.run_state = 'running'
+
+        # Lock to ensure fold is single-threaded
+        self.fold_lock = None  # will be initialized in run()
 
         def sigint_handler(signum, frame):
             if self.run_state == 'running':
@@ -469,50 +479,70 @@ class MapReduce:
         signal.signal(signal.SIGINT, sigint_handler)
 
     async def process_one(self, input_file_path: str, output_file_path: str):
-
         basename = os.path.basename(input_file_path)
+        original_obj = None
+        result_item = None
 
         try:
             # Read the input file
             async with self.read_semaphore:
                 if self.run_state != 'running':
-                    return
+                    return None
                 async with aiofiles.open(input_file_path, "r", encoding="utf-8") as f:
                     raw = await f.read()
 
                 # Deserialize the raw data
                 deserialized = self.deserialize_func(raw)
+                original_obj = deserialized  # Keep original for fold if preprocess returns None
 
+            # Preprocess if applicable
             if self.preprocess_func:
                 async with self.preprocess_semaphore:
                     self.display.begin(f"PREPROCESS:{basename}", f'preprocessing {basename}', 'preprocessing')
                     deserialized = self.preprocess_func(deserialized, input_file_path)
                     self.display.finish(f"PREPROCESS:{basename}", f'finished preprocessing {basename}')
-                    if not deserialized:
-                        return
+                    if deserialized is None:
+                        result_item = original_obj
+                        # Skip map/write, but proceed to fold
+                    
+            # If preprocess did not skip, do map and write
+            if result_item is None:
+                # Process the data (map)
+                async with self.map_semaphore:
+                    if self.run_state != 'running':
+                        return None
+                    self.display.begin(f"MAP:{basename}", f'{self.map_func_name} {basename}', self.map_func_name)
+                    processed = await asyncio.get_running_loop().run_in_executor(
+                        self.process_executor,
+                        self.map_func,
+                        deserialized,
+                        input_file_path)
+                    self.display.finish(f"MAP:{basename}", f'finished {self.map_func_name} {basename}')
 
-            # Process the data
-            async with self.map_semaphore:
-                if self.run_state != 'running':
-                    return
-                self.display.begin(f"MAP:{basename}", f'{self.map_func_name} {basename}', self.map_func_name)
-                processed = await asyncio.get_running_loop().run_in_executor(
-                    self.process_executor, 
-                    self.map_func, 
-                    deserialized, 
-                    input_file_path)
-                self.display.finish(f"MAP:{basename}", f'finished {self.map_func_name} {basename}')
+                # Serialize the processed data and write to temp file
+                final_str = self.serialize_func(processed)
+                os.makedirs(self.temp_dir, exist_ok=True)
+                tmp_path = os.path.join(self.temp_dir, f".{basename}.tmp")
+                async with aiofiles.open(tmp_path, "w", encoding="utf-8") as f:
+                    await f.write(final_str)
+                # Replace output file
+                try:
+                    os.remove(output_file_path)
+                except FileNotFoundError:
+                    pass
+                os.replace(tmp_path, output_file_path)
+                result_item = processed
 
-            # Serialize the processed data
-            final_str = self.serialize_func(processed)
+            # If fold_func is defined, do fold immediately, serialized by fold_lock
+            if self.fold_func and result_item is not None:
+                # Ensure only one fold at a time
+                async with self.fold_lock:
+                    self.display.begin(f"FOLD:{basename}", f'reducing {basename}', 'reducing')
+                    self.accumulator = self.fold_func(self.accumulator, result_item)
+                    self.display.finish(f"FOLD:{basename}", f'finished reducing {basename}')
 
-            # Write to a temporary file first, then move to final destination
-            os.makedirs(self.temp_dir, exist_ok=True)
-            tmp_path = os.path.join(self.temp_dir, f".{basename}.tmp")
-            async with aiofiles.open(tmp_path, "w", encoding="utf-8") as f:
-                await f.write(final_str)
-            os.remove(output_file_path)
-            os.replace(tmp_path, output_file_path)
+            return result_item
+
         finally:
             # Update the countdown
             with self.counter_lock:
@@ -523,6 +553,7 @@ class MapReduce:
         self.read_semaphore = asyncio.Semaphore(self.max_threads)
         self.preprocess_semaphore = asyncio.Semaphore(self.max_threads)
         self.map_semaphore = asyncio.Semaphore(self.max_threads)
+        self.fold_lock = asyncio.Lock()
         ex = None
 
         def my_exception_handler(loop, context):
@@ -533,6 +564,7 @@ class MapReduce:
 
         self.display.start()
 
+        # Gather input files
         if not os.path.isdir(self.input_dir):
             self.display.error('INIT_ERROR', f"Input directory not found: {self.input_dir}")
             all_input_files = []
@@ -556,14 +588,25 @@ class MapReduce:
                 os.makedirs(os.path.dirname(out_path), exist_ok=True)
                 tasks.append(asyncio.create_task(self.process_one(fpath, out_path)))
 
+            # Wait for all tasks to complete; folding happens inside process_one
             for fut in asyncio.as_completed(tasks):
                 try:
                     await fut
-                except Exception as e:
+                except Exception:
                     if ex:
                         raise ex
+                    
+            # Write the accumulator
+            if self.fold_func and self.accumulator is not None:
+                serialized_accumulator = self.serialize_func(self.accumulator)
+                accumulator_output_dir = os.path.join(self.output_dir, 'summary')
+                os.makedirs(accumulator_output_dir, exist_ok=True)
+                accumulator_output_path = os.path.join(accumulator_output_dir, 'summary.json')
+                async with aiofiles.open(accumulator_output_path, "w", encoding="utf-8") as f:
+                    await f.write(serialized_accumulator)
 
         finally:
             self.process_executor.shutdown(wait=False, cancel_futures=True)
             self.thread_executor.shutdown(wait=False, cancel_futures=True)
             self.display.stop()
+
