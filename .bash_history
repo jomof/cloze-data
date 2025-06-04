@@ -853,3 +853,62 @@ clear
 bazel run //resources/grammar:lint-grammar-points
 clear
 exit
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:ai-pass
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:ai-pass
+bazel run //resources/grammar:lint-grammar-points
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+bazel run //resources/grammar:ai-pass
+bazel run //resources/grammar:lint-grammar-points
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:lint-grammar-points
+exit

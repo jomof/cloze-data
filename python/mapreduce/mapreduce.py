@@ -9,16 +9,7 @@ import inspect
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 from threading import Lock
 import aiofiles  
-
-import os
-import sys
-import asyncio
-import aiofiles
-import queue
-import time
-import threading
-import traceback
-import inspect
+import signal
 
 class ConsoleDisplay:
     """
@@ -71,7 +62,7 @@ class ConsoleDisplay:
         self.watch_done_event    = threading.Event()
         self.last_scavenge_time  = time.monotonic()
         self.final_summary_lines = []
-        self.show_output = True  # Whether to show output in the console
+        self.final_message = None
         
     def _scavenge_items(self):
         """Remove finished/error items older than SCAVENGING_AGE_LIMIT."""
@@ -159,8 +150,6 @@ class ConsoleDisplay:
         - Then show per-type counts of currently active items.
         - Finally show countdown if set.
         """
-        if not self.show_output: 
-            return
         lines       = [self.SAVE_CURSOR]
         clear_to_eol = self.CLEAR_TO_EOL
         now         = time.monotonic()
@@ -221,8 +210,15 @@ class ConsoleDisplay:
 
         # Display countdown if set
         lines.append(f"{self.countdown} work items remaining{clear_to_eol}\n")
-        lines.append(self.RESTORE_CURSOR)
 
+        # Final message if set
+        if self.final_message:
+            lines.append(f"{self.final_message}{clear_to_eol}\n")
+
+        lines.append(self.CLEAR_DOWN)  # Clear below cursor
+
+        lines.append(self.RESTORE_CURSOR)
+        sys.stdout.write('\r')
         sys.stdout.write(''.join(lines))
         sys.stdout.flush()
 
@@ -313,7 +309,6 @@ class ConsoleDisplay:
             self.watch_done_event.wait(timeout=max(self.refresh_interval * 2, 1.0))
         sys.stdout.write(self.SHOW_CURSOR)
         sys.stdout.flush()
-        self.show_output = False
 
     def _caller_file_line(self, n):
         stack = inspect.stack()
@@ -450,44 +445,67 @@ class MapReduce:
 
         self.counter_lock = Lock()
         self.countdown = 0
+        self.run_state = 'running' 
+
+        def sigint_handler(signum, frame):
+            if self.run_state == 'running':
+                self.run_state = 'cancelling'
+                SAVE_CURSOR     = "\u001b[s"
+                RESTORE_CURSOR  = "\u001b[u"
+                CLEAR_DOWN      = "\u001b[J"
+                sys.stdout.write("\r")
+                sys.stdout.write(SAVE_CURSOR)
+                sys.stdout.write(CLEAR_DOWN)
+                sys.stdout.write(RESTORE_CURSOR)
+                sys.stdout.flush()
+                self.display.final_message = f"⚠️ cancelling remaining tasks. Press ctrl-c again to exit."
+                self.process_executor.shutdown(wait=False, cancel_futures=True)
+                self.thread_executor.shutdown(wait=False, cancel_futures=True)
+                self.process_executor.shutdown(wait=True, cancel_futures=True)
+                self.thread_executor.shutdown(wait=True, cancel_futures=True)
+            sys.exit(1)
+        signal.signal(signal.SIGINT, sigint_handler)
 
     async def process_one(self, input_file_path: str, output_file_path: str):
+
         basename = os.path.basename(input_file_path)
 
-        # Read the input file
-        async with self.read_semaphore:
-            
-            async with aiofiles.open(input_file_path, "r", encoding="utf-8") as f:
-                raw = await f.read()
+        try:
+            # Read the input file
+            async with self.read_semaphore:
+                async with aiofiles.open(input_file_path, "r", encoding="utf-8") as f:
+                    raw = await f.read()
 
-            # Deserialize the raw data
-            deserialized = self.deserialize_func(raw)
+                # Deserialize the raw data
+                deserialized = self.deserialize_func(raw)
 
-        # Process the data
-        async with self.map_semaphore:
-            self.display.begin(f"MAP:{basename}", f'{self.map_func_name} {basename}', self.map_func_name)
-            processed = await asyncio.get_running_loop().run_in_executor(
-                self.process_executor, 
-                self.map_func, 
-                deserialized, 
-                input_file_path)
-            self.display.finish(f"MAP:{basename}", f'finished {self.map_func_name} {basename}')
+            # Process the data
+            async with self.map_semaphore:
+                if self.run_state != 'running':
+                    return
+                self.display.begin(f"MAP:{basename}", f'{self.map_func_name} {basename}', self.map_func_name)
+                processed = await asyncio.get_running_loop().run_in_executor(
+                    self.process_executor, 
+                    self.map_func, 
+                    deserialized, 
+                    input_file_path)
+                self.display.finish(f"MAP:{basename}", f'finished {self.map_func_name} {basename}')
 
-        # Serialize the processed data
-        final_str = self.serialize_func(processed)
+            # Serialize the processed data
+            final_str = self.serialize_func(processed)
 
-        # Write to a temporary file first, then move to final destination
-        os.makedirs(self.temp_dir, exist_ok=True)
-        tmp_path = os.path.join(self.temp_dir, f".{basename}.tmp")
-        async with aiofiles.open(tmp_path, "w", encoding="utf-8") as f:
-            await f.write(final_str)
-        os.remove(output_file_path)
-        os.replace(tmp_path, output_file_path)
-
-        # Update the countdown
-        with self.counter_lock:
-            self.countdown -= 1
-            self.display.update_countdown(self.countdown)
+            # Write to a temporary file first, then move to final destination
+            os.makedirs(self.temp_dir, exist_ok=True)
+            tmp_path = os.path.join(self.temp_dir, f".{basename}.tmp")
+            async with aiofiles.open(tmp_path, "w", encoding="utf-8") as f:
+                await f.write(final_str)
+            os.remove(output_file_path)
+            os.replace(tmp_path, output_file_path)
+        finally:
+            # Update the countdown
+            with self.counter_lock:
+                self.countdown -= 1
+                self.display.update_countdown(self.countdown)
 
     async def run(self):
         self.read_semaphore = asyncio.Semaphore(self.max_threads)
@@ -496,7 +514,6 @@ class MapReduce:
 
         def my_exception_handler(loop, context):
             nonlocal ex
-
             ex = context.get("exception")
 
         asyncio.get_event_loop().set_exception_handler(my_exception_handler)
@@ -530,7 +547,8 @@ class MapReduce:
                 try:
                     await fut
                 except Exception as e:
-                    raise ex
+                    if ex:
+                        raise ex
 
         finally:
             self.process_executor.shutdown(wait=False, cancel_futures=True)

@@ -65,6 +65,25 @@
             "setting": "friendly"
         },
         {
+            "english": "The door was open. So, I went inside.",
+            "japanese": [
+                "ドア が 開い て い た。{そこ で} 中 に 入っ た。"
+            ],
+            "english_literally": "The door was open. At that point, I went inside.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "ドア が 開い て い た。だ から 中 に 入っ た。"
+                    ],
+                    "english": "The door was open, therefore I went inside.",
+                    "hint": "「だから」 emphasizes a general cause and effect. We're looking for an immediate action taken in response to an observation."
+                }
+            ],
+            "scene": "You're walking past a room and notice the door is ajar, leading you to enter.",
+            "register": "casual",
+            "setting": "informative"
+        },
+        {
             "english": "The assignment wasn't finished. So, I studied late into the night.",
             "japanese": [
                 "課題 が 終わら なかっ た。{そこ で} 夜 遅く まで 勉強 し た。"
@@ -82,44 +101,6 @@
             "scene": "A student is explaining to a friend why they look tired.",
             "register": "casual",
             "setting": "storytelling"
-        },
-        {
-            "english": "When you're in trouble, please stop once and try to think.",
-            "japanese": [
-                "困っ た 時 に は、{そこ で} 一 度 立ち止まっ て 考え て み て ください。"
-            ],
-            "english_literally": "When you are troubled, then please stop once and try to think.",
-            "competing_grammar": [
-                {
-                    "competing_japanese": [
-                        "困っ た 時 に は、一 度 立ち止まっ て 考え て み て ください。"
-                    ],
-                    "english": "When you're in trouble, please stop once and try to think.",
-                    "hint": "This version gives general advice. We're looking for emphasis on taking action at a specific critical moment."
-                }
-            ],
-            "scene": "A senior colleague is offering advice to a junior one on how to approach problems.",
-            "register": "semi-formal",
-            "setting": "instructional"
-        },
-        {
-            "english": "The proposal has been approved. Therefore, please immediately create an implementation plan.",
-            "japanese": [
-                "提案 が 承認 さ れ まし た。{そこ で} 早急 に 実行 計画 を 作成 し て ください。"
-            ],
-            "english_literally": "The proposal was approved. Therefore, please create an implementation plan urgently.",
-            "competing_grammar": [
-                {
-                    "competing_japanese": [
-                        "提案 が 承認 さ れ まし た。だ から 早急 に 実行 計画 を 作成 し て ください。"
-                    ],
-                    "english": "The proposal has been approved, therefore please immediately create an implementation plan.",
-                    "hint": "「だから」 states a logical result. We're looking for a necessary action that directly follows a specific event or decision."
-                }
-            ],
-            "scene": "A project manager is giving instructions to a team member after a successful meeting.",
-            "register": "formal",
-            "setting": "professional"
         },
         {
             "english": "It suddenly started raining. So, I took shelter in a nearby cafe.",
@@ -141,6 +122,25 @@
             "setting": "storytelling"
         },
         {
+            "english": "My train was delayed. So, I contacted my family.",
+            "japanese": [
+                "電車 が 遅れ た。{そこ で} 家族 に 連絡 し た。"
+            ],
+            "english_literally": "The train was delayed. At that point, I contacted my family.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "電車 が 遅れ た。だ から 家族 に 連絡 し た。"
+                    ],
+                    "english": "My train was delayed, therefore I contacted my family.",
+                    "hint": "「だから」 emphasizes a general cause-and-effect. We're looking for a direct and timely action taken as a necessary response to the situation."
+                }
+            ],
+            "scene": "You are explaining to a friend why you were late or couldn't make it on time.",
+            "register": "casual",
+            "setting": "storytelling"
+        },
+        {
             "english": "I realized his story was a lie. At that point, I stopped trusting him.",
             "japanese": [
                 "彼 の 話 は 嘘 だ と 分かっ た。{そこ で} 彼 を 信頼 する こと を やめ た。"
@@ -158,8 +158,85 @@
             "scene": "Someone is reflecting on a personal realization that led to a change in their relationship with another person.",
             "register": "casual",
             "setting": "reflective"
+        },
+        {
+            "english": "When you're in trouble, please stop once and try to think.",
+            "japanese": [
+                "困っ た 時 に は、{そこ で} 一 度 立ち止まっ て 考え て み て ください。"
+            ],
+            "english_literally": "When you are troubled, then please stop once and try to think.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "困っ た 時 に は、一 度 立ち止まっ て 考え て み て ください。"
+                    ],
+                    "english": "When you're in trouble, please stop once and try to think.",
+                    "hint": "This version gives general advice. We're looking for emphasis on taking action at a specific critical moment."
+                }
+            ],
+            "scene": "A senior colleague is offering advice to a junior one on how to approach problems.",
+            "register": "semi-formal",
+            "setting": "instructional"
+        },
+        {
+            "english": "We have some time until the next train. So, let's grab a coffee.",
+            "japanese": [
+                "次 の 電車 まで 時間 が ある。{そこ で} コーヒー で も 飲もう か。"
+            ],
+            "english_literally": "Until the next train there is time. At that point, shall we drink coffee or something?",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "次 の 電車 まで 時間 が ある。だ から コーヒー で も 飲もう か。"
+                    ],
+                    "english": "We have some time until the next train, therefore, shall we grab a coffee?",
+                    "hint": "「だから」 sounds like a logical conclusion from a premise, which can be a bit blunt for a casual suggestion. 「そこで」 makes it a natural proposal given the current situation."
+                }
+            ],
+            "scene": "You are waiting at the train station with a friend and realize you have a little extra time.",
+            "register": "casual",
+            "setting": "friendly"
+        },
+        {
+            "english": "The meeting went longer than expected. So, we decided to postpone the next agenda item.",
+            "japanese": [
+                "会議 は 予定 より 長引い た。{そこ で} 次 の 議題 は 後回し に する こと に し た。"
+            ],
+            "english_literally": "The meeting extended longer than planned. At that point, we decided to postpone the next agenda item.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "会議 は 予定 より 長引い た。だ から 次 の 議題 は 後回し に する こと に し た。"
+                    ],
+                    "english": "The meeting went longer than expected, therefore we decided to postpone the next agenda item.",
+                    "hint": "「だから」 implies a general cause-and-effect for the decision. 「そこで」 specifically highlights the action taken at that precise point due to the situation, often implying a deliberate decision."
+                }
+            ],
+            "scene": "Two colleagues are discussing the results of a prolonged meeting and the immediate decisions made.",
+            "register": "semi-formal",
+            "setting": "professional"
+        },
+        {
+            "english": "The proposal has been approved. Therefore, please immediately create an implementation plan.",
+            "japanese": [
+                "提案 が 承認 さ れ まし た。{そこ で} 早急 に 実行 計画 を 作成 し て ください。"
+            ],
+            "english_literally": "The proposal was approved. Therefore, please create an implementation plan urgently.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "提案 が 承認 さ れ まし た。だ から 早急 に 実行 計画 を 作成 し て ください。"
+                    ],
+                    "english": "The proposal has been approved, therefore please immediately create an implementation plan.",
+                    "hint": "「だから」 states a logical result. We're looking for a necessary action that directly follows a specific event or decision."
+                }
+            ],
+            "scene": "A project manager is giving instructions to a team member after a successful meeting.",
+            "register": "formal",
+            "setting": "professional"
         }
     ],
+    "post_example_writeup": "As you can see from the examples, 「そこで」 is highly versatile. It often implies a sense of immediate or decisive action taken in response to a preceding situation. Whether it's a simple observation leading to an action, a critical moment requiring a decision, or a formal instruction based on new information, 「そこで」 clearly marks the point at which the subsequent action naturally and logically unfolds.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/そこで"
     }

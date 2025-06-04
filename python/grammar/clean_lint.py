@@ -263,6 +263,18 @@ def lint_missing_competing_grammar(grammar_point):
             )
     return messages
 
+def lint_example_count(grammar_point):
+    """
+    Warn if there are fewer than 10 examples.
+    Returns a list containing one warning string when len(examples) < 10.
+    """
+    messages = []
+    examples = grammar_point.get("examples", [])
+    count = len(examples)
+    if count < 10:
+        messages.append(f"[rule-6] only {count} example(s); should have at least 10")
+    return messages
+
 
 def clean_lint(grammar_point, path: str = None):
     lint = []
@@ -298,6 +310,7 @@ def clean_lint(grammar_point, path: str = None):
     lint.extend(lint_schema_enums_with_jsonschema(grammar_point, GRAMMAR_SCHEMA))
     lint.extend(lint_missing_competing_grammar(grammar_point))
     lint.extend(lint_japanese_braces(grammar_point))
+    lint.extend(lint_example_count(grammar_point))
     grammar_point['lint-errors'] = lint
     # Prune empty fields and items
     grammar_point = prune_empty(grammar_point)

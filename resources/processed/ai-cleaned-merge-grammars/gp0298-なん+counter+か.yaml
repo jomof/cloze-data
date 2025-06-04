@@ -16,7 +16,16 @@
         "usage-context": "Used in general conversations to express an indefinite small quantity."
     },
     "etymology": "「何 (nan)」 means \"what\" or \"how many\". 「か (ka)」 is a particle often used at the end of questions, but it can also express uncertainty or doubt. Together, they create a sense of \"some unknown quantity\" or \"what quantity, I wonder?\" when used with a counter.",
-    "writeup": "The expression 「なん+counter+か」 in Japanese indicates an uncertain number of something, similar to \"some,\" \"several,\" or \"a few\" in English. It conveys the speaker's uncertainty about the precise quantity. It is important to note the distinction between 「なん」 and 「なに」; 「なん」 is almost always used when counting things, while 「なに」 is used to identify things.\n\nIn addition to 「なん」, 「いく」 (from the kanji 「幾」 meaning \"how many/much\") can also be used in this construction. While both are common, 「幾」 is more frequently found in set expressions like 「いくら」 (how much) and 「いくつ」 (how many/old), whereas 「なん」 is generally used for counting specific items, such as people.",
+    "writeup": "The expression 「なん+counter+か」 in Japanese indicates an uncertain number of something, similar to \"some,\" \"several,\" or \"a few\" in English. It conveys the speaker's uncertainty about the precise quantity. It is important to note the distinction between 「なん」 and 「なに」; 「なん」 is almost always used when counting things, while 「なに」 is used to identify things.\n\nIn addition to 「なん」, 「いく」 (from the kanji 「幾」 meaning \"how many/much\") can also be used in this construction. While both are common, 「幾」 is more frequently found in set expressions like 「いくら」 (how much) and 「いくつ」 (how many/old), whereas 「なん」 is generally used for counting specific items, such as people. The expression 「何者だ！」 (nani mono da!), meaning \"What kind of person are you!\", is a fixed phrase that, despite containing 「何」, does not follow the 「なん + counter + か」 structure. It is unrelated to this grammar point's function of indicating an indefinite quantity and should not be confused with it.",
+    "false_friends": [
+        {
+            "term": "数 + counter",
+            "meaning": "Several, a few (definite but small number)",
+            "kind": "often confused with",
+            "nuance": "「数+counter」 implies a definite, countable, albeit small, number that the speaker knows or can easily ascertain. 「なん+counter+か」 implies uncertainty or an unwillingness to state a precise count, focusing on the indefiniteness."
+        }
+    ],
+    "post_false_friends_writeup": "While both 「なん+counter+か」 and 「数+counter」 (e.g., 「数人」 for several people, 「数回」 for several times) can be translated as 'a few' or 'several' in English, their nuances differ significantly. 「数+counter」 is used when the speaker knows the approximate number and wishes to convey it, even if it's not exact. It suggests a quantified, albeit small, amount. In contrast, 「なん+counter+か」 is used when the speaker genuinely does not know the precise number, or when they want to convey that the exact number is unimportant. It emphasizes the *indefiniteness* of the quantity, implying 'some unknown number' rather than 'a small, known number'.",
     "examples": [
         {
             "english": "I think I have been there several times.",
@@ -158,9 +167,74 @@
             "speaker_gender": "female",
             "listener_gender": "male",
             "nuance": "The formal tone with 「～だ と 思い ます」 and the use of 「～が 必要 だ」 (necessary) indicate a professional and serious discussion about the project. The female speaker uses this phrasing to convey the need for multiple, unspecified discussions to her male colleague."
+        },
+        {
+            "english": "I studied for a few hours yesterday.",
+            "japanese": [
+                "昨日、{何 時間 か} 勉強 し まし た。"
+            ],
+            "english_literally": "Yesterday, I studied for {what hours, I wonder}.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "昨日、数 時間 勉強 し まし た。"
+                    ],
+                    "english": "I studied for several hours yesterday.",
+                    "hint": "`数時間` indicates a specific, known number of hours, while `何 時間 か` implies an approximate or uncounted duration. We're looking for an indefinite amount of study time."
+                }
+            ],
+            "scene": "A university student casually tells her friend about her study habits from the previous day, not specifying the exact duration.",
+            "register": "casual",
+            "setting": "informative",
+            "speaker_gender": "female",
+            "listener_gender": "female",
+            "nuance": "The polite form `しました` maintains a respectful but casual tone between friends. The use of `何 時間 か` suggests the speaker didn't precisely time her study, or it's not relevant to state the exact number."
+        },
+        {
+            "english": "I bought a few books at the bookstore today.",
+            "japanese": [
+                "今日、本屋 で {何 冊 か} 本 を 買い まし た。"
+            ],
+            "english_literally": "Today, at the bookstore, I bought {what books, I wonder}.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "今日、本屋 で 数 冊 本 を 買い まし た。"
+                    ],
+                    "english": "I bought several books at the bookstore today.",
+                    "hint": "`数冊` implies a definite count of books, whereas `何 冊 か` suggests the exact number is either unknown or not important to the speaker. We're looking for an unspecified small quantity of books."
+                }
+            ],
+            "scene": "A person shares their recent purchases with a friend, implying they bought more than one book but without needing to state the precise quantity.",
+            "register": "casual",
+            "setting": "friendly",
+            "speaker_gender": "male",
+            "listener_gender": "male",
+            "nuance": "The use of `何 冊 か` here is typical for casual conversation where the precise number of items isn't crucial. The `ました` ending makes it polite enough for a friendly interaction."
+        },
+        {
+            "english": "I waited for a few minutes, but the bus didn't come.",
+            "japanese": [
+                "{何 分 か} 待っ た けど、バス が 来 なかっ た。"
+            ],
+            "english_literally": "{What minutes, I wonder} I waited, but the bus did not come.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "数 分 待っ た けど、バス が 来 なかっ た。"
+                    ],
+                    "english": "I waited for several minutes, but the bus didn't come.",
+                    "hint": "`数分` implies a measured, definite short period, while `何 分 か` highlights the uncertainty of the duration or the frustration of an unfulfilled wait. We're looking for an indefinite waiting period."
+                }
+            ],
+            "scene": "Someone recounting their frustrating experience waiting for a bus that never arrived.",
+            "register": "casual",
+            "setting": "pessimistic",
+            "speaker_gender": "female",
+            "listener_gender": "group",
+            "nuance": "The casual `待った けど` (waited but) and `来 なかった` (didn't come) reflect the speaker's frustration. `何 分 か` emphasizes the perceived length and futility of the wait, rather than a precise time measurement."
         }
     ],
-    "post_example_writeup": "The expression 「何者だ！」 literally translates to \"What kind of person are you!\", but it does not use the 「なん + counter + か」 structure. It is unrelated to this grammar point and thus not included in the examples.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/なん-counter-か"
     }
