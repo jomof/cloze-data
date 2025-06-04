@@ -416,6 +416,7 @@ class MapReduce:
         map_func,
         deserialize_func,
         serialize_func,
+        preprocess_func=None,
         map_func_name = 'mapping',
         temp_dir: str = None,
         max_threads: int = 4,
@@ -425,6 +426,7 @@ class MapReduce:
         self.input_dir = input_dir
         self.output_dir = output_dir
         self.deserialize_func = deserialize_func
+        self.preprocess_func = preprocess_func
         self.map_func_name = map_func_name
         self.map_func = map_func
         self.serialize_func = serialize_func
@@ -473,11 +475,21 @@ class MapReduce:
         try:
             # Read the input file
             async with self.read_semaphore:
+                if self.run_state != 'running':
+                    return
                 async with aiofiles.open(input_file_path, "r", encoding="utf-8") as f:
                     raw = await f.read()
 
                 # Deserialize the raw data
                 deserialized = self.deserialize_func(raw)
+
+            if self.preprocess_func:
+                async with self.preprocess_semaphore:
+                    self.display.begin(f"PREPROCESS:{basename}", f'preprocessing {basename}', 'preprocessing')
+                    deserialized = self.preprocess_func(deserialized, input_file_path)
+                    self.display.finish(f"PREPROCESS:{basename}", f'finished preprocessing {basename}')
+                    if not deserialized:
+                        return
 
             # Process the data
             async with self.map_semaphore:
@@ -509,6 +521,7 @@ class MapReduce:
 
     async def run(self):
         self.read_semaphore = asyncio.Semaphore(self.max_threads)
+        self.preprocess_semaphore = asyncio.Semaphore(self.max_threads)
         self.map_semaphore = asyncio.Semaphore(self.max_threads)
         ex = None
 

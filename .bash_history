@@ -912,3 +912,8 @@ bazel run //resources/grammar:ai-pass
 clear
 bazel run //resources/grammar:lint-grammar-points
 exit
+bazel run //resources/grammar:lint-grammar-points
+bazel run //resources/grammar:ai-pass
+exit
+bazel run //resources/grammar:lint-grammar-points
+exit

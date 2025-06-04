@@ -185,18 +185,28 @@ if __name__ == '__main__':
     def deserialize_yaml(raw: str):
         return yaml.load(raw, Loader=yaml.CSafeLoader)
 
-    def serialize_json(obj):
-        return json.dumps(obj, ensure_ascii=False, indent=4)
+    def preprocess(parsed_obj, file_path):
+        result = clean_lint(parsed_obj, file_path)
+        if len(prior_input_obj.get('lint-errors', [])) == 0:
+            return None # Skip this one
+        return result
 
     def logic(parsed_obj, file_path):
         return ai_pass(parsed_obj, file_path, temp_dir)
 
+    def serialize_json(obj):
+        return json.dumps(obj, ensure_ascii=False, indent=4)
+
+
+
     mr = MapReduce(
         input_dir            = grammar_root,
         output_dir           = grammar_root,
+        deserialize_func     = deserialize_yaml,
+        preprocess_func      = preprocess,
         map_func_name        = "ai generating",
         map_func             = logic,
-        deserialize_func     = deserialize_yaml,
+        
         serialize_func       = serialize_json,
         temp_dir             = temp_dir,
         max_threads          = 15,
