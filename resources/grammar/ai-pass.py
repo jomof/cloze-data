@@ -187,7 +187,7 @@ if __name__ == '__main__':
 
     def preprocess(parsed_obj, file_path):
         result = clean_lint(parsed_obj, file_path)
-        if len(prior_input_obj.get('lint-errors', [])) == 0:
+        if len(result.get('lint-errors', [])) == 0:
             return None # Skip this one
         return result
 

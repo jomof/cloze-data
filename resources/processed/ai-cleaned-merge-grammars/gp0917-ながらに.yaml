@@ -198,6 +198,33 @@
             "nuance": "「いつもながらに」 highlights the consistent excellence of her presentations, conveying a sense of admiration for her unchanging high quality. While 「ながらに」 is often formal, its combination with 「いつも」 (always) allows for a more casual, yet still appreciative, tone in this context, implying a deep-seated characteristic."
         },
         {
+            "english": "This shop continues to make traditional Japanese sweets using traditional methods.",
+            "japanese": [
+                "この 店 は 昔 {ながら の} 製法 で、伝統 的 な 和 菓子 を 作り 続け て いる。"
+            ],
+            "english_literally": "This shop, old as it is, methods by, traditional Japanese sweets continues to make.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "この 店 は 伝統 的 な 製法 で 伝統 的 な 和 菓子 を 作り 続け て いる。"
+                    ],
+                    "english": "This shop continues to make traditional Japanese sweets using traditional methods.",
+                    "hint": "「伝統的な」 simply means 'traditional'. We're looking to evoke a sense of authenticity and methods preserved from 'old times' with a specific nuance of being unchanged."
+                },
+                {
+                    "competing_japanese": [
+                        "この 店 は 古く から の 製法 で 伝統 的 な 和 菓子 を 作り 続け て いる。"
+                    ],
+                    "english": "This shop continues to make traditional Japanese sweets using methods from long ago.",
+                    "hint": "「古くからの」 describes methods from a long time ago. We're looking for a phrase that specifically means 'as it was long ago' or 'traditional' in the sense of being unchanged."
+                }
+            ],
+            "scene": "Describing an old, well-established Japanese confectionery shop known for its authenticity.",
+            "register": "formal",
+            "setting": "informative",
+            "nuance": "「昔ながらの」 evokes a sense of nostalgia and authenticity, suggesting that the method has been preserved unchanged from the old days, emphasizing the tradition and quality. This phrasing is common and idiomatic for expressing 'traditional' in a way that emphasizes longevity and adherence to original forms."
+        },
+        {
             "english": "His family believed he was trapped alive under the earthquake rubble.",
             "japanese": [
                 "彼 の 家族 は、彼 が 生き {ながら に} 地震 の 瓦礫 の 下 に 閉じ込め られ て いる と 信じ て い た。",
@@ -224,33 +251,6 @@
             "register": "semi-formal",
             "setting": "melancholic",
             "nuance": "「生きながらに」 emphasizes the persistent state of being alive even in a dire and dangerous condition, highlighting the profound hope and concern of the family. The use of 「に」 makes it sound more determined or fateful than simply 「生きながら」."
-        },
-        {
-            "english": "This shop continues to make traditional Japanese sweets using traditional methods.",
-            "japanese": [
-                "この 店 は 昔 {ながら の} 製法 で、伝統 的 な 和 菓子 を 作り 続け て いる。"
-            ],
-            "english_literally": "This shop, old as it is, methods by, traditional Japanese sweets continues to make.",
-            "competing_grammar": [
-                {
-                    "competing_japanese": [
-                        "この 店 は 伝統 的 な 製法 で 伝統 的 な 和 菓子 を 作り 続け て いる。"
-                    ],
-                    "english": "This shop continues to make traditional Japanese sweets using traditional methods.",
-                    "hint": "「伝統的な」 simply means 'traditional'. We're looking to evoke a sense of authenticity and methods preserved from 'old times' with a specific nuance of being unchanged."
-                },
-                {
-                    "competing_japanese": [
-                        "この 店 は 古く から の 製法 で 伝統 的 な 和 菓子 を 作り 続け て いる。"
-                    ],
-                    "english": "This shop continues to make traditional Japanese sweets using methods from long ago.",
-                    "hint": "「古くからの」 describes methods from a long time ago. We're looking for a phrase that specifically means 'as it was long ago' or 'traditional' in the sense of being unchanged."
-                }
-            ],
-            "scene": "Describing an old, well-established Japanese confectionery shop known for its authenticity.",
-            "register": "formal",
-            "setting": "informative",
-            "nuance": "「昔ながらの」 evokes a sense of nostalgia and authenticity, suggesting that the method has been preserved unchanged from the old days, emphasizing the tradition and quality. This phrasing is common and idiomatic for expressing 'traditional' in a way that emphasizes longevity and adherence to original forms."
         },
         {
             "english": "Recently, more and more people are completing their work from home via remote work.",
@@ -283,7 +283,8 @@
         {
             "english": "In a long-distance relationship, feeling the loneliness of not being able to meet daily, the two nurtured their love.",
             "japanese": [
-                "遠 距離 恋愛 で、毎日 会え ない 寂し さ を 感じ {ながら に}、二人 は 愛 を 育ん だ。"
+                "遠 距離 恋愛 で、毎日 会え ない 寂し さ を 感じ {ながら に}、二人 は 愛 を 育ん だ。",
+                "遠 距離 恋愛 で、毎日 会え ない 寂し さ を 感じ {ながら に} し て、二人 は 愛 を 育ん だ。"
             ],
             "english_literally": "Long-distance relationship, daily can't meet loneliness feeling while, two love nurtured.",
             "competing_grammar": [
@@ -339,5 +340,8 @@
     "post_example_writeup": "The examples demonstrate that 「ながらに」 often appears in more formal or literary contexts, emphasizing a continuous, inherent state. It's particularly effective for highlighting qualities present since birth or conditions that persist without change despite surrounding circumstances. While it leans formal, its usage can extend to more casual settings when emphasizing a strong, unchanging quality or state.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ながらに"
-    }
+    },
+    "lint-errors": [
+        "[rule-7] warning examples[5].japanese only has 1 element(s); should should be every way of saying 'english' that adheres to the grammar point"
+    ]
 }

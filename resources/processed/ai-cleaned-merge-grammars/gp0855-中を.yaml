@@ -85,7 +85,7 @@
                     "competing_japanese": [
                         "ランドセル に ちゃんと 片付け なさい"
                     ],
-                    "english": "Clean up properly into the backpack.",
+                    "english": "This would mean putting something *into* the backpack, or cleaning something *at* the backpack's location. We're looking for cleaning the internal space *of* the backpack.",
                     "hint": "This would mean putting something *into* the backpack, or cleaning something *at* the backpack's location. We're looking for cleaning the internal space *of* the backpack."
                 },
                 {
@@ -230,7 +230,7 @@
                         "洞窟 で 覗い て み たら"
                     ],
                     "english": "If I peeked at the cave while at the cave.",
-                    "hint": "This suggests peeking while *at* the cave, perhaps at its entrance. We're looking for peeking *into* the dark interior of the cave."
+                    "hint": "This suggests peeking *at* the cave while standing *in* the cave, not peeking *into* its interior from outside. We're looking for peeking *into* the depth of the room."
                 },
                 {
                     "competing_japanese": [
@@ -517,7 +517,7 @@
                         "厚い 霧 の 中 は 見え にくい"
                     ],
                     "english": "Inside the thick fog, it is hard to see.",
-                    "hint": "This describes the *state* of the fog's interior (hard to see). We're looking for the action of landing *through* the fog."
+                    "hint": "This describes the *state* of the fog's interior. We're looking for the action of landing *through* the fog."
                 }
             ],
             "scene": "A news reporter describing an airplane's landing in challenging weather.",
@@ -571,5 +571,8 @@
     "post_example_writeup": "When using 「中を」, remember that the particle 「を」 indicates the space or situation through which the action is taking place. The action does not necessarily need to be fully contained within the noun marked by 「中」; it often implies movement or progression through that space or state. It is crucial to distinguish it from static location markers as 「中を」 emphasizes dynamic movement or traversal within a boundary.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/中を"
-    }
+    },
+    "lint-errors": [
+        "[rule-7] warning examples[10].japanese only has 1 element(s); should should be every way of saying 'english' that adheres to the grammar point"
+    ]
 }

@@ -275,6 +275,21 @@ def lint_example_count(grammar_point):
         messages.append(f"[rule-6] only {count} example(s); should have at least 10")
     return messages
 
+def lint_japanese_count(grammar_point):
+    """
+    Walks over each example and warns if there are fewer than 2 'japanese' entries.
+    """
+    messages = []
+    examples = grammar_point.get("examples", [])
+    for idx, example in enumerate(examples):
+        jap_list = example.get("japanese", [])
+        # If it's not a list or has fewer than 2 items, warn
+        if not isinstance(jap_list, list) or len(jap_list) < 2:
+            count = len(jap_list) if isinstance(jap_list, list) else 0
+            messages.append(
+                f"[rule-7] warning examples[{idx}].japanese only has {count} element(s); should should be every way of saying 'english' that adheres to the grammar point"
+            )
+    return messages
 
 def clean_lint(grammar_point, path: str = None):
     lint = []
@@ -311,6 +326,7 @@ def clean_lint(grammar_point, path: str = None):
     lint.extend(lint_missing_competing_grammar(grammar_point))
     lint.extend(lint_japanese_braces(grammar_point))
     lint.extend(lint_example_count(grammar_point))
+    lint.extend(lint_japanese_count(grammar_point))
     grammar_point['lint-errors'] = lint
     # Prune empty fields and items
     grammar_point = prune_empty(grammar_point)

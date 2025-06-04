@@ -420,7 +420,7 @@
                     "competing_japanese": [
                         "テレビ の 向かい側 に 窓 が ある。"
                     ],
-                    "english": "There's a window on the opposite side of the TV.",
+                    "english": "This indicates the window is *across* from the TV, not to its side. We're looking for a position specifically to the side.",
                     "hint": "This indicates the window is *across* from the TV, not to its side. We're looking for a position specifically to the side."
                 },
                 {
@@ -499,6 +499,47 @@
             "speaker_gender": "female",
             "speaker_age": "younger",
             "nuance": "When two people are lying down, 「横」 (yoko) is often used to convey 'side by side' or 'horizontally beside', especially in the context of sleeping in the same bed or on adjacent futons. It emphasizes the side-to-side orientation. 「隣」 could imply separate sleeping surfaces that are immediately adjacent. The use of 「お父さん」 and the contracted verb form 「寝てる」 indicate a casual and intimate relationship, typical of a younger female speaker."
+        },
+        {
+            "english": "The dog is sleeping by the side of the sofa.",
+            "japanese": [
+                "ソファ の {横} で 犬 が 寝 て いる。",
+                "ソファ の {横} で 犬 が 寝 て い ます。",
+                "ソファ の {横} で 犬 が 寝 てる よ。",
+                "ソファ の {横} で ワン ちゃん が 寝 て ます。",
+                "ソファ の {横} で 犬 が ぐっすり 寝 て いる。",
+                "うち の 犬 が ソファ の {横} で 寝 てる ん だ。",
+                "ソファ の {横} で ワンコ が スヤスヤ 寝 て ます よ。",
+                "ソファ の {横} で イヌ が 寝 とる。"
+            ],
+            "english_literally": "Sofa's side at dog sleeping.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "ソファ の 隣 で 犬 が 寝 て いる。"
+                    ],
+                    "english": "The dog is sleeping immediately next to the sofa.",
+                    "hint": "While 「隣」 (tonari) can mean 'next to', 「横」 (yoko) is more appropriate when describing something like a pet lying generally 'by the side' of an object, not necessarily sharing a direct boundary or being in a strictly aligned position. We're looking for the general 'beside'."
+                },
+                {
+                    "competing_japanese": [
+                        "ソファ の そば で 犬 が 寝 て いる。"
+                    ],
+                    "english": "The dog is sleeping near the sofa.",
+                    "hint": "「そば」 indicates general closeness, not specifically 'by the side' in a horizontal sense. We're describing its position directly to the side."
+                },
+                {
+                    "competing_japanese": [
+                        "ソファ の 近く で 犬 が 寝 て いる。"
+                    ],
+                    "english": "The dog is sleeping close to the sofa.",
+                    "hint": "「近く」 implies a broader area, not a specific position directly to the side. We're describing its position directly to the side."
+                }
+            ],
+            "scene": "You come home and see your pet dog napping in the living room.",
+            "register": "casual",
+            "setting": "intimate",
+            "nuance": "「横」 (yoko) is fitting here as it describes the dog's position generally 'by the side' of the sofa, rather than strictly 'next to' it as if sharing a defined space (like two people on a couch). The casual tone and use of 「寝てる」 are natural for talking about a pet in an intimate home setting. The variant using 「ワンちゃん」 or 「ワンコ」 is a common affectionate term for dogs."
         },
         {
             "english": "The seat next to me on the train became free.",
@@ -628,8 +669,5 @@
     "post_example_writeup": "As these examples demonstrate, the distinction between 「横」 and 「隣」 is often subtle but important for natural Japanese. While 「横」 covers a broader sense of 'beside' or 'to the side', 「隣」 specifies immediate, direct adjacency, particularly for items of the same kind or those sharing a clear boundary. Pay attention to the specific context and the nature of the relationship between the two entities to choose the appropriate word.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/横-隣-adjacency-spatial"
-    },
-    "lint-errors": [
-        "[rule-6] only 9 example(s); should have at least 10"
-    ]
+    }
 }
