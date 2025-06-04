@@ -27,17 +27,18 @@ if __name__ == '__main__':
         return json.dumps(obj, ensure_ascii=False, indent=4)
 
     def lint_logic(parsed_obj, file_path):
-        # return parsed_obj
-        return clean_lint(parsed_obj, file_path)
+        result = clean_lint(parsed_obj, file_path)
+        return result
 
     mr = MapReduce(
         input_dir            = grammar_root,
         output_dir           = grammar_root,
+        map_func_name        = 'linting',
         map_func             = lint_logic,        # or a sync function
         deserialize_func     = deserialize_yaml,
         serialize_func       = serialize_json,
         temp_dir             = os.path.join(workspace_root, '.temp'),
-        max_threads          = 3,
+        max_threads          = 20,
     )
 
     asyncio.run(mr.run())

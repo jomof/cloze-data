@@ -50,174 +50,210 @@
         {
             "english": "This box contains at least five apples.",
             "japanese": [
-                "この 箱 に は リンゴ が ５ つ {以上} 入(はい)って い ます。"
+                "この 箱 に は リンゴ が ５ つ {以上} 入っ て い ます。"
             ],
             "english_literally": "This box, as for apples, five or more, entered.",
-            "scene": "Someone is checking the contents of a box of fruit.",
-            "register": "casual",
-            "setting": "informative",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "この 箱 には リンゴ が ５つ 入 っています。",
-                    "mitigation": "「5つ入っています」 would imply exactly five apples. The scene of checking contents requires the inclusivity of 「以上」 to account for a minimum count."
+                    "competing_japanese": [
+                        "この 箱 に は リンゴ が ５ つ 入っ て い ます。"
+                    ],
+                    "english": "This box contains five apples.",
+                    "hint": "「5つ入っています」 would imply exactly five apples. We're looking for a minimum count."
                 },
                 {
-                    "competing_grammar": "この 箱 には リンゴ が ５つより 多く 入 っています。",
-                    "mitigation": "「5つより多く入っています」 means strictly more than five. The use of 「以上」 indicates that five is the minimum, which is more natural when verifying a lower bound for inventory."
+                    "competing_japanese": [
+                        "この 箱 に は リンゴ が ５ つ より 多く 入っ て い ます。"
+                    ],
+                    "english": "This box contains more than five apples.",
+                    "hint": "「5つより多く入っています」 means strictly more than five. We're looking for a count that includes five as the minimum."
                 }
-            ]
+            ],
+            "scene": "Someone is checking the contents of a box of fruit.",
+            "register": "casual",
+            "setting": "informative"
         },
         {
             "english": "That job requires at least three years of experience.",
             "japanese": [
-                "その 仕事 に は ３ 年 {以上} の 経験(けいけん)が 必要(ひつよう)だ。"
+                "その 仕事 に は ３ 年 {以上} の 経験 が 必要 だ。"
             ],
             "english_literally": "That job, as for experience, three years or more, is necessary.",
-            "scene": "A hiring manager is reviewing job requirements for a new position.",
-            "register": "formal",
-            "setting": "informative",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "その 仕事 には ３年間の 経験 が 必要 だ。",
-                    "mitigation": "「3年間の経験」 means three years of experience, but doesn't specify 'at least'. The context of job requirements implies a minimum, which 「以上」 clarifies."
+                    "competing_japanese": [
+                        "その 仕事 に は ３ 年間 の 経験 が 必要 だ。"
+                    ],
+                    "english": "That job requires three years of experience.",
+                    "hint": "「3年間の経験」 means three years of experience, but doesn't specify 'at least'. We're looking for a minimum experience requirement."
                 },
                 {
-                    "competing_grammar": "その 仕事 には ３年を 超える 経験 が 必要 だ。",
-                    "mitigation": "「3年を超える経験」 implies strictly more than three years. Job requirements usually include the stated minimum, making 「以上」 more appropriate."
+                    "competing_japanese": [
+                        "その 仕事 に は ３ 年 を 超える 経験 が 必要 だ。"
+                    ],
+                    "english": "That job requires experience exceeding three years.",
+                    "hint": "「3年を超える経験」 implies strictly more than three years. We're looking for a requirement that includes the stated minimum."
                 }
-            ]
+            ],
+            "scene": "A hiring manager is reviewing job requirements for a new position.",
+            "register": "formal",
+            "setting": "informative"
         },
         {
             "english": "She studies for at least two hours every day.",
             "japanese": [
-                "彼女(かのじょ)は 毎日(まいにち)２ 時間 {以上} 勉強(べんきょう)し て いる。"
+                "彼女 は 毎日 ２ 時間 {以上} 勉強 し て いる。"
             ],
             "english_literally": "She, every day, two hours or more, is studying.",
-            "scene": "A student is describing their study habits to a friend.",
-            "register": "casual",
-            "setting": "informative",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "彼女 は 毎日 ２時間 勉強 している。",
-                    "mitigation": "「2時間勉強している」 implies exactly two hours. The nuance of 'at least' suggests going beyond the minimum, which 「以上」 conveys better."
+                    "competing_japanese": [
+                        "彼女 は 毎日 ２ 時間 勉強 し て いる。"
+                    ],
+                    "english": "She studies for two hours every day.",
+                    "hint": "「2時間勉強している」 implies exactly two hours. We're looking for a statement that means 'at least' two hours."
                 },
                 {
-                    "competing_grammar": "彼女 は 毎日 ２時間より 多く 勉強 している。",
-                    "mitigation": "「2時間より多く勉強している」 implies strictly more than two hours. 「以上」 includes the two-hour mark, which is a more common way to describe consistent study time."
+                    "competing_japanese": [
+                        "彼女 は 毎日 ２ 時間 より 多く 勉強 し て いる。"
+                    ],
+                    "english": "She studies for more than two hours every day.",
+                    "hint": "「2時間より多く勉強している」 implies strictly more than two hours. We're looking for an expression that includes the two-hour mark."
                 }
-            ]
+            ],
+            "scene": "A student is describing their study habits to a friend.",
+            "register": "casual",
+            "setting": "informative"
         },
         {
             "english": "That mountain is at least 3000 meters above sea level.",
             "japanese": [
-                "その 山(やま)は 標高(ひょう こう)3000 メートル {以上} だ。"
+                "その 山 は 標高 3000 メートル {以上} だ。"
             ],
             "english_literally": "That mountain, as for elevation, 3000 meters or more, is.",
-            "scene": "A geographer is presenting facts about a mountain range.",
-            "register": "formal",
-            "setting": "informative",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "その 山 は 標高 3000メートルある。",
-                    "mitigation": "「3000メートルある」 means it is 3000 meters, which doesn't specify it's a minimum. The precise factual context requires 「以上」 to convey the minimum elevation."
+                    "competing_japanese": [
+                        "その 山 は 標高 3000 メートル ある。"
+                    ],
+                    "english": "That mountain is 3000 meters above sea level.",
+                    "hint": "「3000メートルある」 means it is 3000 meters, which doesn't specify it's a minimum. We're looking for a precise factual statement conveying a minimum elevation."
                 },
                 {
-                    "competing_grammar": "その 山 は 標高 3000メートルを 超える。",
-                    "mitigation": "「3000メートルを超える」 means strictly more than 3000 meters. For a general statement of a mountain's elevation, 「以上」 is more encompassing."
+                    "competing_japanese": [
+                        "その 山 は 標高 3000 メートル を 超える。"
+                    ],
+                    "english": "That mountain exceeds 3000 meters above sea level.",
+                    "hint": "「3000メートルを超える」 means strictly more than 3000 meters. We're looking for a statement that includes 3000 meters as a minimum."
                 }
-            ]
+            ],
+            "scene": "A geographer is presenting facts about a mountain range.",
+            "register": "formal",
+            "setting": "informative"
         },
         {
             "english": "I can't wait any longer than this.",
             "japanese": [
-                "もう これ {以上} は 待(ま)て ない。"
+                "もう これ {以上} は 待て ない。"
             ],
             "english_literally": "Already, more than this, cannot wait.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "もう 待て ない。"
+                    ],
+                    "english": "I can't wait anymore.",
+                    "hint": "「もう待てない」 simply means 'I can't wait anymore'. We're looking for an expression that specifically refers to 'beyond this current point/time'."
+                },
+                {
+                    "competing_japanese": [
+                        "これ より は 待て ない。"
+                    ],
+                    "english": "I can't wait more than this.",
+                    "hint": "「これよりは待てない」 is grammatically less natural for expressing a limit of patience compared to the idiomatic expression needed here."
+                }
+            ],
             "scene": "A young man is impatiently waiting for his friend at a meeting spot.",
             "register": "casual",
             "setting": "serious",
             "speaker_gender": "male",
-            "nuance": "The speaker, a man, uses 「待てない」 (cannot wait) in a direct, somewhat exasperated tone, emphasizing his impatience. The use of 「もうこれ以上」 highlights that he has reached his absolute limit.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "もう 待 てない。",
-                    "mitigation": "「もう待てない」 simply means 'I can't wait anymore'. 「これ以上」 specifically refers to 'beyond this current point/time', emphasizing the limit of one's patience."
-                },
-                {
-                    "competing_grammar": "これよりは 待 てない。",
-                    "mitigation": "「これよりは待てない」 is grammatically less natural for expressing a limit of patience compared to the idiomatic 「これ以上」."
-                }
-            ]
+            "nuance": "The speaker, a man, uses 「待てない」 (cannot wait) in a direct, somewhat exasperated tone, emphasizing his impatience. The use of 「もうこれ以上」 highlights that he has reached his absolute limit."
         },
         {
             "english": "My order is complete. / That's all for my order.",
             "japanese": [
-                "注文(ちゅう もん)は これ で {以上} です。"
+                "注文 は これ で {以上} です。"
             ],
             "english_literally": "Order, with this, is the above.",
-            "scene": "A customer is concluding their order at a fast-food restaurant.",
-            "register": "teineigo (polite)",
-            "setting": "professional",
-            "scene_rationale": [
+            "competing_grammar": [
                 {
-                    "competing_grammar": "注文 は これで 終わり です。",
-                    "mitigation": "While 「これで終わりです」 (This is the end) is understandable, 「以上です」 is the standard and more polite way to conclude an order or statement of items in a service context, meaning 'what I have listed above is all I require'."
+                    "competing_japanese": [
+                        "注文 は これ で 終わり です。"
+                    ],
+                    "english": "My order is finished with this.",
+                    "hint": "While 「これで終わりです」 (This is the end) is understandable, we're looking for the standard and more polite way to conclude an order or statement in a service context."
                 },
                 {
-                    "competing_grammar": "注文 は これで 全部 です。",
-                    "mitigation": "「これで全部です」 (This is everything) is also valid. However, 「以上です」 specifically conveys 'the above is complete' in a formal or semi-formal interaction, which is common in professional settings like ordering."
+                    "competing_japanese": [
+                        "注文 は これ で 全部 です。"
+                    ],
+                    "english": "My order is all with this.",
+                    "hint": "「これで全部です」 (This is everything) is also valid. However, we're looking for an expression that specifically conveys 'the above is complete' in a formal or semi-formal interaction."
                 }
-            ]
+            ],
+            "scene": "A customer is concluding their order at a fast-food restaurant.",
+            "register": "teineigo (polite)",
+            "setting": "professional"
         },
         {
             "english": "That concludes the explanation. Thank you for your attention.",
             "japanese": [
-                "説明(せつめい)は {以上} に なり ます。ご 清聴(せいちょう)ありがとう ござい まし た。"
+                "説明 は {以上} に なり ます。ご 清聴 ありがとう ござい まし た。"
             ],
             "english_literally": "Explanation, becomes the above. Thank you for your kind listening.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "説明 は 終わり に なり ます。"
+                    ],
+                    "english": "The explanation will end.",
+                    "hint": "「終わりになります」 indicates completion but lacks the formal, conclusive nuance of the expression needed when signaling the end of a detailed explanation or report in a formal presentation."
+                },
+                {
+                    "competing_japanese": [
+                        "説明 は 終了 です。"
+                    ],
+                    "english": "The explanation is finished.",
+                    "hint": "「終了です」 is a direct statement of termination. We're looking for a softer, more deferential way to conclude a presentation, showing politeness to the audience."
+                }
+            ],
             "scene": "A speaker is ending a formal presentation to an audience.",
             "register": "formal",
             "setting": "professional",
-            "listener_gender": "group",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "説明 は 終わり になります。",
-                    "mitigation": "「終わりになります」 indicates completion but lacks the formal, conclusive nuance of 「以上になります」, which explicitly signals the end of a detailed explanation or report. The setting of a formal presentation calls for the latter."
-                },
-                {
-                    "competing_grammar": "説明 は 終了 です。",
-                    "mitigation": "「終了です」 is a direct statement of termination. While correct, 「以上になります」 is a softer, more deferential way to conclude a presentation, showing politeness to the audience."
-                }
-            ]
+            "listener_gender": "group"
         },
         {
             "english": "That concludes my report.",
             "japanese": [
-                "私(わたし)から の 報告(ほうこく)は {以上} です。"
+                "私 から の 報告 は {以上} です。"
             ],
             "english_literally": "From me, report, is the above.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "私 から の 報告 は 終わり です。"
+                    ],
+                    "english": "My report is finished.",
+                    "hint": "While 「終わりです」 expresses completion, we're looking for the standard and more professional way to conclude a formal report or statement, conveying that all points have been covered."
+                }
+            ],
             "scene": "A project manager is finishing a status update meeting.",
             "register": "formal",
-            "setting": "informative",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "私 からの 報告 は 終わり です。",
-                    "mitigation": "While 「終わりです」 expresses completion, 「以上です」 is the standard and more professional way to conclude a formal report or statement, conveying that all points have been covered."
-                }
-            ]
+            "setting": "informative"
         }
     ],
+    "post_example_writeup": "Understanding the precise nuance of 「以上」 in various contexts is key. When used with quantities, remember it always includes the specified number as a minimum. When used as a concluding statement, it acts as a formal and polite way to signal completeness, often preferred in business and formal communications over simpler expressions like 「終わりです」.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/以上1"
-    },
-    "lint-errors": [
-        "[rule-4] warning examples[0] has no competing_grammar",
-        "[rule-4] warning examples[1] has no competing_grammar",
-        "[rule-4] warning examples[2] has no competing_grammar",
-        "[rule-4] warning examples[3] has no competing_grammar",
-        "[rule-4] warning examples[4] has no competing_grammar",
-        "[rule-4] warning examples[5] has no competing_grammar",
-        "[rule-4] warning examples[6] has no competing_grammar",
-        "[rule-4] warning examples[7] has no competing_grammar"
-    ]
+    }
 }

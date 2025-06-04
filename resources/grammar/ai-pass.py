@@ -188,17 +188,18 @@ if __name__ == '__main__':
     def serialize_json(obj):
         return json.dumps(obj, ensure_ascii=False, indent=4)
 
-    async def logic(parsed_obj, file_path):
+    def logic(parsed_obj, file_path):
         return ai_pass(parsed_obj, file_path, temp_dir)
 
     mr = MapReduce(
         input_dir            = grammar_root,
         output_dir           = grammar_root,
+        map_func_name        = "ai generating",
         map_func             = logic,
         deserialize_func     = deserialize_yaml,
         serialize_func       = serialize_json,
         temp_dir             = temp_dir,
-        max_threads          = 3,
+        max_threads          = 5,
     )
 
     asyncio.run(mr.run())

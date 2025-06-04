@@ -778,3 +778,78 @@ find . -name "merged-grammars"
 bazel clean
 bazel build //resources/grammar:merge-bunpro-dojg
 bazel run //python/utils/build_cache/service:cache-service
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clearr
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+import os
+import sys
+import asyncio
+import aiofiles
+import queue
+import time
+import threading
+import traceback
+import inspect
+from concurrent.futures import ThreadPoolExecutor
+from threading import Lock
+from collections import OrderedDict
+class MapReduce:
+clear
+exit
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+class ConsoleDisplay:
+exit
+# bazel run //resources/grammar:lint-grammar-points
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+exit

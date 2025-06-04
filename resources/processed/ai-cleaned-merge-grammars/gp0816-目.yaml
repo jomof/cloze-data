@@ -7,7 +7,7 @@
         "romaji": "me"
     },
     "formation": {
-        "[Number] + [Counter] + 目": "Forms an ordinal number indicating the -th item in a sequence."
+        "[Number] + [Counter] + 目": "Indicates the ordinal position of an item, person, or occurrence in a sequence."
     },
     "jlpt": "N3",
     "details": {
@@ -36,21 +36,27 @@
                 "列 の 一番 {目} に 彼女 が いる。"
             ],
             "english_literally": "At the line's first {eye}, she is.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "列 の 先頭 に 彼女 が いる。"
+                    ],
+                    "english": "She is at the head of the line.",
+                    "hint": "「先頭」 means 'head' or 'front' of a line, but doesn't imply counting in a sequence. We're looking for an expression that indicates an ordinal position."
+                },
+                {
+                    "competing_japanese": [
+                        "一番 前 に 彼女 が いる。"
+                    ],
+                    "english": "She is at the very front.",
+                    "hint": "「一番 前」 means 'very front' or 'first in front', but it's a general position, not specifying a numbered item in a sequence. We're looking for an ordinal counting suffix."
+                }
+            ],
             "scene": "You are trying to find your friend in a queue.",
             "register": "casual",
             "setting": "informative",
             "nuance": "This casual statement uses 「列 の 一番 目」 to specify her position, emphasizing the ordinal sequence within the line rather than just her being 'at the front'.",
-            "etymology": "The word 「列」 (retsu) means 'line' or 'queue'.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "列 の 先頭 に 彼女 が いる",
-                    "mitigation": "The scene prompts for locating a specific person in a numbered sequence, making 「一番目」 more suitable than simply 'at the front of the line'."
-                },
-                {
-                    "competing_grammar": "一番 前 に 彼女 が いる",
-                    "mitigation": "The nuance of counting individuals in a line or order is better conveyed by 「一番目」, which the scene helps to elicit."
-                }
-            ]
+            "etymology": "The word 「列」 (retsu) means 'line' or 'queue'."
         },
         {
             "english": "This book is the second novel I've read.",
@@ -58,17 +64,20 @@
                 "この 本 は 私 が 読ん だ 二 冊 {目} の 小説 です。"
             ],
             "english_literally": "This book is the second volume's {eye} novel that I read.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "この 本 は 私 が 読ん だ 二 番 目 の 小説 です。"
+                    ],
+                    "english": "This book is the second novel I've read (general order).",
+                    "hint": "While 「番目」 indicates general order, 「冊目」 is specifically used for counting books or volumes, making it more precise for the context of reading. We're looking for an exact count of items."
+                }
+            ],
             "scene": "You are talking to a friend about your reading progress for a particular genre.",
             "register": "formal",
             "setting": "friendly",
             "nuance": "Using 「二 冊 目」 with the polite form 「です」, the speaker emphasizes that this is the second book *in a series* of books they have read, specifically novels. This nuance is highlighted by referring to 'reading progress for a particular genre'.",
-            "etymology": "「小説」 (shousetsu) means 'novel'.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "この 本 は 私 が 読ん だ 二 番 目 の 小説 です",
-                    "mitigation": "The scene focuses on counting specific items (books), for which 「冊目」 is a more precise counter than the general ordinal 「番目」."
-                }
-            ]
+            "etymology": "「小説」 (shousetsu) means 'novel'."
         },
         {
             "english": "Today marks the third meeting.",
@@ -76,17 +85,20 @@
                 "今日 の 会議 は 三 回 {目} を 迎え ます。"
             ],
             "english_literally": "Today's meeting welcomes its third time's {eye}.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "今日 の 会議 は 三 度 目 です。"
+                    ],
+                    "english": "Today's meeting is the third time.",
+                    "hint": "The phrase 「回目 を 迎え ます」 (kaime o mukaemasu) implies a formal welcoming of an event's iteration, making it more suitable for announcing a milestone than the simpler 「三 度 目 です」 (san do me desu). We're looking for a formal way to state this."
+                }
+            ],
             "scene": "You are announcing a significant milestone in a series of ongoing meetings.",
             "register": "formal",
             "setting": "informative",
             "nuance": "The formal phrase 「を 迎え ます」 (o mukaemasu) combined with 「三 回 目」 (san kaime) gives a sense of reaching or celebrating a specific iteration of the meeting, suitable for a formal announcement.",
-            "etymology": "The verb 「迎える」 (mukaeru) means 'to welcome' or 'to meet'.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "今日 の 会議 は 三 度 目 です",
-                    "mitigation": "The phrase 「回目 を 迎え ます」 implies a formal welcoming of an event's iteration, making it more suitable for announcing a milestone than the simpler 「三 度 目 です」."
-                }
-            ]
+            "etymology": "The verb 「迎える」 (mukaeru) means 'to welcome' or 'to meet'."
         },
         {
             "english": "The first phase of the project is scheduled to enter its fourth week next month.",
@@ -94,17 +106,20 @@
                 "プロジェクト の 第 一 段階 は 来月 で 四 週 {目} に 入る 予定 です。"
             ],
             "english_literally": "The project's first stage next month is planned to enter its fourth week's {eye}.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "プロジェクト の 第 一 段階 は 来月 で 四 番 目 の 週 に 入る 予定 です。"
+                    ],
+                    "english": "The first phase of the project is scheduled to enter the fourth week next month (general order).",
+                    "hint": "The term 「週目」 (shuu me) is specifically used for counting weeks within a continuous period, especially in project management or scheduling contexts, making it more natural than 「四 番 目 の 週」 (yon banme no shuu). We're looking for a precise way to count weeks."
+                }
+            ],
             "scene": "A team leader is providing an update to stakeholders about the progress of a large project.",
             "register": "formal",
             "setting": "informative",
             "nuance": "In a professional setting, 「四 週 目」 (yon shuu me) clearly indicates the progressive count of weeks for the project phase. The use of 「～予定 です」 (yotei desu) maintains a formal and planned tone.",
-            "etymology": "「段階」 (dankai) means 'stage' or 'phase'.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "プロジェクト の 第一 段階 は 来月 で 四 番 目 の 週 に 入る 予定 です",
-                    "mitigation": "The term 「週目」 is specifically used for counting weeks within a continuous period, especially in project management or scheduling contexts, making it more natural than 「四 番 目 の 週」."
-                }
-            ]
+            "etymology": "「段階」 (dankai) means 'stage' or 'phase'."
         },
         {
             "english": "This is his tenth goal of the season.",
@@ -112,19 +127,22 @@
                 "これ が 今 シーズン の 彼 の 十 ゴール {目} だ。"
             ],
             "english_literally": "This is his current season's tenth goal's {eye}.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "これ が 今 シーズン の 彼 の 十 番 目 の ゴール だ。"
+                    ],
+                    "english": "This is his tenth goal of the season (general order).",
+                    "hint": "Using 「十 ゴール 目」 (juu gooru me) specifically emphasizes the count of goals accumulated, a common way to express a player's statistics in sports commentary, more so than a generic ordinal. We're looking for an expression that counts a specific type of item."
+                }
+            ],
             "scene": "A sports commentator is excitedly describing a significant achievement by a player during a live game.",
             "register": "casual",
             "setting": "excited",
             "speaker_gender": "male",
             "listener_gender": "group",
             "nuance": "The enthusiastic tone of a male sports commentator is conveyed by the casual 「だ」 and the direct statement of the goal count. 「十 ゴール 目」 (juu gooru me) is a concise and common way to track a player's scoring progression.",
-            "etymology": "「シーズン」 (shiizun) is a loanword from English 'season'.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "これ が 今 シーズン の 彼 の 十 番 目 の ゴール だ",
-                    "mitigation": "Using 「十 ゴール 目」 specifically emphasizes the count of goals accumulated, a common way to express a player's statistics in sports commentary, more so than a generic ordinal."
-                }
-            ]
+            "etymology": "「シーズン」 (shiizun) is a loanword from English 'season'."
         },
         {
             "english": "It's been two years today since we first met, hasn't it?",
@@ -132,23 +150,29 @@
                 "私 たち が 初めて 会っ て から、今日 で 二 年 {目} だ ね。"
             ],
             "english_literally": "From us first meeting, today is the second year's {eye}, right?",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "私 たち の 二 周年 の 日 だ ね。"
+                    ],
+                    "english": "It's our second anniversary today, right?",
+                    "hint": "The sentence focuses on the passage of time since an event (`会ってから`), rather than just marking an anniversary date, making 「二 年 目」 (ni nen me) more appropriate than a general anniversary term. We're looking for a phrase that indicates being in a continuous period of time."
+                },
+                {
+                    "competing_japanese": [
+                        "私 たち の 二 回 目 の 記念 日 だ ね。"
+                    ],
+                    "english": "It's our second anniversary (second occurrence) today, right?",
+                    "hint": "Similar to the above, 「二 年 目」 implies being *in* the second year of a continuous period, rather than simply marking a second specific anniversary event. We're looking for a phrase that expresses the current year in a sequence."
+                }
+            ],
             "scene": "A couple reflecting on their relationship anniversary.",
             "register": "shitashii kuchō (intimate)",
             "setting": "intimate",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "The use of 「だ ね」 (da ne) softens the statement and seeks agreement, which is typical in intimate female speech. The phrase 「私 たち が 初めて 会って から」 (watashitachi ga hajimete atte kara) sets a personal, reflective tone suitable for an intimate conversation about shared history.",
-            "etymology": "The word 「記念 日」 (kinenbi) means 'anniversary day'.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "私 たち の 二 周年 の 日 だ ね",
-                    "mitigation": "The sentence focuses on the passage of time since an event (`会ってから`), rather than just marking an anniversary date, making 「二 年 目」 more appropriate than a general anniversary term."
-                },
-                {
-                    "competing_grammar": "私 たち の 二 回 目 の 記念 日 だ ね",
-                    "mitigation": "Similar to the above, 「二 年 目」 implies being *in* the second year of a continuous period, rather than simply marking a second specific anniversary event."
-                }
-            ]
+            "nuance": "The use of 「だ ね」 (da ne) softens the statement and seeks agreement, which is typical in intimate female speech. The phrase 「私 たち が 初めて 会っ て から」 (watashitachi ga hajimete atte kara) sets a personal, reflective tone suitable for an intimate conversation about shared history.",
+            "etymology": "The word 「記念 日」 (kinenbi) means 'anniversary day'."
         },
         {
             "english": "This is the third game console in my life, dude.",
@@ -156,28 +180,25 @@
                 "これ が 俺 の 人生 で 三 台 {目} の ゲーム 機 だ ぜ。"
             ],
             "english_literally": "This is my life's third unit's {eye} of game machine, you know.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "これ が 俺 の 人生 で 三 番 目 の ゲーム 機 だ ぜ。"
+                    ],
+                    "english": "This is the third game console in my life (general order), dude.",
+                    "hint": "The counter 「台」 (dai) is specifically used for machines, making 「三 台 目」 (san dai me) a more natural and precise way to count game consoles in a sequence than the generic ordinal 「三 番 目」 (san banme). We're looking for a specific counter for machines."
+                }
+            ],
             "scene": "A teenager showing off his new game console to his friends.",
             "register": "casual",
             "setting": "friendly",
             "speaker_gender": "male",
             "speaker_age": "younger",
             "nuance": "The use of 「俺」 (ore) by the speaker, a common informal male pronoun, combined with the sentence-final particle 「だ ぜ」 (da ze), often used by younger males to express assertion or excitement, emphasizes a youthful, casual, and masculine tone. 「三 台 目」 (san daime) highlights the personal chronology of acquiring game consoles.",
-            "etymology": "「ゲーム 機」 (geemu ki) is a compound word meaning 'game machine' or 'game console'.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "これ が 俺 の 人生 で 三 番 目 の ゲーム 機 だ ぜ",
-                    "mitigation": "The counter 「台」 (dai) is specifically used for machines, making 「三 台 目」 a more natural and precise way to count game consoles in a sequence than the generic ordinal 「三 番 目」."
-                }
-            ]
+            "etymology": "「ゲーム 機」 (geemu ki) is a compound word meaning 'game machine' or 'game console'."
         }
     ],
-    "lint-errors": [
-        "[rule-4] warning examples[0] has no competing_grammar",
-        "[rule-4] warning examples[1] has no competing_grammar",
-        "[rule-4] warning examples[2] has no competing_grammar",
-        "[rule-4] warning examples[3] has no competing_grammar",
-        "[rule-4] warning examples[4] has no competing_grammar",
-        "[rule-4] warning examples[5] has no competing_grammar",
-        "[rule-4] warning examples[6] has no competing_grammar"
-    ]
+    "sources": {
+        "bunpro": "https://bunpro.jp/grammar_points/%E7%9B%AE"
+    }
 }

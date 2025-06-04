@@ -1,44 +1,419 @@
 import os
 import sys
 import asyncio
+import queue
+import time
+import threading
+import traceback  # Keep for now, though error messages are also event-driven
+import inspect
+from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
+from threading import Lock
+import aiofiles  
+
+import os
+import sys
+import asyncio
 import aiofiles
 import queue
 import time
 import threading
-import traceback # Keep for now, though error messages are also event-driven
+import traceback
 import inspect
-from concurrent.futures import ThreadPoolExecutor
-from threading import Lock
-from collections import OrderedDict # Ensure this import is present
+
+class ConsoleDisplay:
+    """
+    Handles interactive console display for operations, progress, and statistics.
+
+    The caller should use begin(), finish(), and error() to report work items with a type tag.
+    ConsoleDisplay maintains a list of items and shows active or recently finished ones,
+    and summarizes how many of each type are active, as well as total accumulated time per type.
+    """
+    CLEAR_TO_EOL    = "\u001b[K"
+    MOVE_UP         = staticmethod(lambda n: f"\u001b[{n}A")
+    MOVE_DOWN       = staticmethod(lambda n: f"\u001b[{n}B")
+    HIDE_CURSOR     = "\u001b[?25l"
+    SHOW_CURSOR     = "\u001b[?25h"
+    SAVE_CURSOR     = "\u001b[s"
+    RESTORE_CURSOR  = "\u001b[u"
+    CLEAR_DOWN      = "\u001b[J"
+
+    DEFAULT_REFRESH_INTERVAL = 0.2
+    SCAVENGING_INTERVAL      = 5.0   # seconds, how often to remove old items
+    SCAVENGING_AGE_LIMIT     = 15.0  # seconds, remove finished/error items older than this
+
+    def __init__(self, window_size: int = 5, refresh_interval: float = None):
+        self.window_size     = window_size
+        self.refresh_interval = refresh_interval or self.DEFAULT_REFRESH_INTERVAL
+
+        # Track global start time for total wall clock
+        self.start_time = None
+
+        # event_queue holds dicts: {'type': 'BEGIN'|'FINISH'|'ERROR'|'COUNTDOWN_UPDATE',
+        #                          'slot_key': str, 'text': str, 'item_type': str, 'time': float,
+        #                          'value': int (for COUNTDOWN_UPDATE)}
+        self.event_queue = queue.Queue()
+        # items maps slot_key to { 'text': str, 'time': float (start or finish), 'status': 'active'|'complete'|'error', 'item_type': str }
+        self.items = {}
+        # Track the order in which item_types first appear
+        self.type_order = []
+        # Track all slot_keys seen in BEGIN
+        self.known_keys = set()
+        # Track all slot_keys that have been closed (FINISH/ERROR)
+        self.closed_keys = {}
+        # Countdown if needed by caller
+        self.countdown = 0
+
+        # Summary counts and times of completed/error items by type
+        self.summary_counts = {}  # e.g. { 'Reading': 3, 'Mapping': 5, … }
+        self.summary_times  = {}  # e.g. { 'Reading': 12.7, 'Mapping': 5.3, … }
+
+        self.watcher_thread      = None
+        self.watch_done_event    = threading.Event()
+        self.last_scavenge_time  = time.monotonic()
+        self.final_summary_lines = []
+        self.show_output = True  # Whether to show output in the console
+        
+    def _scavenge_items(self):
+        """Remove finished/error items older than SCAVENGING_AGE_LIMIT."""
+        now = time.monotonic()
+        to_remove = [
+            key for key, v in self.items.items()
+            if v['status'] in ['complete', 'error'] and (now - v['time']) > self.SCAVENGING_AGE_LIMIT
+        ]
+        for key in to_remove:
+            del self.items[key]
+
+    def _apply_event(self, event: dict):
+        ev_type   = event.get('type')
+        slot_key  = event.get('slot_key')
+        text      = event.get('text', '')
+        ts        = event.get('time', time.monotonic())
+        item_type = event.get('item_type', 'Unknown')
+
+        # Handle countdown updates separately
+        if ev_type == 'COUNTDOWN_UPDATE':
+            self.countdown = event.get('value', self.countdown)
+            return
+
+        # Only process BEGIN, FINISH, ERROR
+        if ev_type not in ['BEGIN', 'FINISH', 'ERROR']:
+            return
+
+        # BEGIN event: record a new active item
+        if ev_type == 'BEGIN':
+            # Track new types in order
+            if item_type not in self.type_order:
+                self.type_order.append(item_type)
+            # Record known key
+            self.known_keys.add(slot_key)
+            # Create or update item as active, store start time
+            self.items[slot_key] = {
+                'text': text,
+                'time': ts,
+                'status': 'active',
+                'item_type': item_type
+            }
+            return
+
+        # FINISH or ERROR: update existing or create
+        # Determine the previous entry for this slot_key
+        prev_entry = self.items.get(slot_key, {})
+        prev_type  = prev_entry.get('item_type', item_type)
+        start_ts   = prev_entry.get('time', ts)   # fallback to ts if missing
+        elapsed    = ts - start_ts
+
+        # Accumulate elapsed time for that type
+        self.summary_times[prev_type] = self.summary_times.get(prev_type, 0.0) + elapsed
+
+        # Update summary counts
+        status = 'complete' if ev_type == 'FINISH' else 'error'
+        self.summary_counts[prev_type] = self.summary_counts.get(prev_type, 0) + 1
+
+        # Overwrite or update the item so the display can show final text
+        self.items[slot_key] = {
+            'text': text,
+            'time': ts,
+            'status': status,
+            'item_type': prev_type
+        }
+
+    def _drain_all_events(self):
+        """Drain all queued events except 'DONE'."""
+        while True:
+            try:
+                extra = self.event_queue.get_nowait()
+            except queue.Empty:
+                break
+
+            if isinstance(extra, dict):
+                self._apply_event(extra)
+            elif isinstance(extra, str) and extra == 'DONE':
+                # Put 'DONE' back and stop draining
+                self.event_queue.put('DONE')
+                return
+
+    def _do_redraw(self):
+        """
+        Redraw the console window: 
+        - Show up to `window_size` lines of active/finished items (newest first).
+        - Then show per-type counts of currently active items.
+        - Finally show countdown if set.
+        """
+        if not self.show_output: 
+            return
+        lines       = [self.SAVE_CURSOR]
+        clear_to_eol = self.CLEAR_TO_EOL
+        now         = time.monotonic()
+
+        # Build lists: active items (newest first), finished items (newest first)
+        active_items   = []
+        finished_items = []
+        type_counts    = {t: 0 for t in self.type_order}
+
+        for v in self.items.values():
+            display_text = v['text']
+            status       = v['status']
+            msg_time     = v['time']
+            item_type    = v.get('item_type', 'Unknown')
+
+            if status == 'active':
+                # count active types
+                type_counts[item_type] = type_counts.get(item_type, 0) + 1
+                elapsed = now - msg_time
+                line = f"  {display_text}"
+                if elapsed > 1.0:
+                    line += f" ({elapsed:.1f}s)"
+                line += clear_to_eol + "\n"
+                active_items.append((msg_time, line))
+            else:
+                line = f"  {display_text}"
+                line += clear_to_eol + "\n"
+                finished_items.append((msg_time, line))
+
+        # Sort by time descending (newest first)
+        active_items.sort(key=lambda x: x[0], reverse=True)
+        finished_items.sort(key=lambda x: x[0], reverse=True)
+
+        # Select up to window_size: prioritize active, then finished
+        final_lines = []
+        slots = self.window_size
+
+        for _, line in active_items[:slots]:
+            final_lines.append(line)
+        slots -= len(final_lines)
+
+        if slots > 0:
+            for _, line in finished_items[:slots]:
+                final_lines.append(line)
+            slots -= len(finished_items[:slots])
+
+        # If fewer than window_size, pad with blank lines
+        for _ in range(max(0, self.window_size - len(final_lines))):
+            final_lines.append(f"  {clear_to_eol}\n")
+
+        # Display items first
+        lines.extend(final_lines)
+
+        # Display summary of active counts by type, in order of first arrival
+        for t in self.type_order:
+            count = type_counts.get(t, 0)
+            lines.append(f"{t}: {count} active{clear_to_eol}\n")
+
+        # Display countdown if set
+        lines.append(f"{self.countdown} work items remaining{clear_to_eol}\n")
+        lines.append(self.RESTORE_CURSOR)
+
+        sys.stdout.write(''.join(lines))
+        sys.stdout.flush()
+
+    def _watcher_loop(self):
+        """
+        Thread loop that:
+        - Periodically scavenges old items.
+        - Processes incoming events (BEGIN, FINISH, ERROR, COUNTDOWN_UPDATE).
+        - Redraws at least every refresh_interval seconds.
+        - When receiving 'DONE', drains remaining events, does a final redraw, and prints summary.
+        """
+        refresh_interval = self.refresh_interval
+        half_interval    = refresh_interval / 2.0
+        last_redraw      = time.monotonic() - refresh_interval
+
+        while True:
+            now = time.monotonic()
+
+            # Periodically scavenge old finished/error items
+            if now - self.last_scavenge_time >= self.SCAVENGING_INTERVAL:
+                self._scavenge_items()
+                self.last_scavenge_time = now
+
+            try:
+                event = self.event_queue.get(timeout=half_interval)
+            except queue.Empty:
+                # If no event, maybe redraw if it's time
+                if now - last_redraw >= refresh_interval:
+                    self._do_redraw()
+                    last_redraw = now
+                continue
+
+            # If 'DONE' sentinel, break out after final summary
+            if isinstance(event, str) and event == 'DONE':
+                # Drain remaining events (except DONE)
+                self._drain_all_events()
+                # Final redraw of active/finished window
+                self._do_redraw()
+                # Clear below cursor for summary
+                sys.stdout.write(self.CLEAR_DOWN)
+
+                # Print formatted per-type summary
+                for t in self.type_order:
+                    count = self.summary_counts.get(t, 0)
+                    total = self.summary_times.get(t, 0.0)
+                    type_label = f'{t}:'
+                    sys.stdout.write(f"{type_label:<20} {count} items, {total:.1f}s\n")
+
+                # Print total wall clock time
+                total_wall_time = now - self.start_time if self.start_time is not None else 0.0
+                sys.stdout.write(f"{'Total time:':<20} {total_wall_time:.1f}s\n")
+
+                # Any additional final_summary_lines
+                for line in self.final_summary_lines:
+                    sys.stdout.write(line)
+                sys.stdout.flush()
+                self.watch_done_event.set()
+                break
+
+            # Otherwise, it's a dict event: apply it and drain any others
+            if isinstance(event, dict):
+                self._apply_event(event)
+                self._drain_all_events()
+
+            # Possibly redraw if enough time has elapsed
+            if now - last_redraw >= refresh_interval:
+                self._do_redraw()
+                last_redraw = now
+
+    def start(self):
+        """Begin the watcher thread and hide the cursor."""
+        # Record the start time when watcher begins
+        self.start_time = time.monotonic()
+        sys.stdout.write(self.HIDE_CURSOR)
+        sys.stdout.flush()
+        self.watch_done_event.clear()
+        self.watcher_thread = threading.Thread(target=self._watcher_loop, daemon=True)
+        self.watcher_thread.start()
+
+    def stop(self):
+        """
+        Signal the watcher thread to finish by enqueuing 'DONE', then wait for it.
+        Finally, restore the cursor.
+        """
+        if self.watcher_thread and self.watcher_thread.is_alive():
+            self.event_queue.put('DONE')
+            # Wait up to a short timeout for the watcher to clean up
+            self.watch_done_event.wait(timeout=max(self.refresh_interval * 2, 1.0))
+        sys.stdout.write(self.SHOW_CURSOR)
+        sys.stdout.flush()
+        self.show_output = False
+
+    def _caller_file_line(self, n):
+        stack = inspect.stack()
+        # [0] is this frame, [1] is _debug_print_caller_message caller, [2] is the original caller
+        caller_frame_info = stack[n+1]
+        filename = os.path.basename(caller_frame_info.filename)
+        lineno   = caller_frame_info.lineno
+        return f"{filename}:{lineno}"
+
+    def _debug_print_caller_message(self, message: str):
+        """
+        Print a debug message including the filename and line number of the caller.
+        """
+        caller = self._caller_file_line(2)
+        print(f"\n❌ {caller}: {message}")
+        traceback.print_stack()
+        sys.exit(1)
+
+
+    def begin(self, slot_key: str, message: str, item_type: str):
+        """Mark a work item as started with a given type."""
+        if slot_key in self.known_keys:
+            self._debug_print_caller_message(
+                f"BEGIN called for slot_key '{slot_key}' which is already begun."
+            )
+            return
+        if slot_key in self.closed_keys:
+            self._debug_print_caller_message(
+                f"BEGIN called for closed slot_key '{slot_key}' (original class at {self.closed_keys[slot_key]})."
+            )
+            return
+        # Record the event
+        self.known_keys.add(slot_key)
+        self.event_queue.put({
+            'type': 'BEGIN',
+            'slot_key': slot_key,
+            'text': f'🔄 {message}',
+            'item_type': item_type,
+            'time': time.monotonic()
+        })
+
+    def finish(self, slot_key: str, message: str):
+        """Mark a work item as completed."""
+        if slot_key not in self.known_keys:
+            self._debug_print_caller_message(
+                f"FINISH called for unknown slot_key '{slot_key}'."
+            )
+            return
+        if slot_key in self.closed_keys.keys():
+            self._debug_print_caller_message(
+                f"FINISH called for closed slot_key '{slot_key}' (original class at {self.closed_keys[slot_key]})."
+            )
+            return
+        self.closed_keys[slot_key] = self._caller_file_line(1)
+        self.event_queue.put({
+            'type': 'FINISH',
+            'slot_key': slot_key,
+            'text': f'✅ {message}',
+            # No need to pass item_type here; _apply_event will read existing type
+            'time': time.monotonic()
+        })
+
+    def error(self, slot_key: str, message: str):
+        """Mark a work item as errored."""        
+        if slot_key not in self.known_keys:
+            # Unknown key: just write the error immediately to stdout
+            sys.stdout.write(f'❌ {message}\n')
+            return        
+        if slot_key in self.closed_keys.keys():
+            self._debug_print_caller_message(
+                f"ERROR called for closed slot_key '{slot_key}'."
+            )
+            return
+        self._debug_print_caller_message(f"\n❌ {message}")
+        self.closed_keys[slot_key] = self._caller_file_line(1)
+        self.event_queue.put({
+            'type': 'ERROR',
+            'slot_key': slot_key,
+            'text': f'❌ {message}',
+            'time': time.monotonic()
+        })
+
+    def warn(self, message: str):
+        """Print a warning immediately (not tied to any slot)."""
+        sys.stdout.write(f'⚠️ {message}\n')
+
+    def update_countdown(self, count: int):
+        """Update the countdown of remaining work items."""
+        self.event_queue.put({
+            'type': 'COUNTDOWN_UPDATE',
+            'value': count,
+            'time': time.monotonic()
+        })
+
+        
 
 class MapReduce:
     """
-    Generic MapReduce framework for:
-    - Reading files (raw content)
-    - Deserializing (e.g. yaml.load)
-    - Delegating to a user-provided `map_func` (may be CPU or I/O bound, sync or async)
-    - Serializing (e.g. json.dumps)
-    - Writing files (raw content)
-    - Concurrency management:
-        • Main ThreadPoolExecutor for synchronous CPU-bound tasks (deserialize, serialize, sync map)
-        • Separate IO ThreadPoolExecutor for blocking file system operations in write_file
-        • Asyncio for asynchronous tasks (read, async map)
-    - Statistics tracking
-    - Console output (progress)
+    Generic MapReduce framework.
     """
-    CLEAR_TO_EOL   = "\u001b[K"
-    MOVE_UP        = staticmethod(lambda n: f"\u001b[{n}A")
-    MOVE_DOWN      = staticmethod(lambda n: f"\u001b[{n}B")
-    HIDE_CURSOR    = "\u001b[?25l"
-    SHOW_CURSOR    = "\u001b[?25h"
-    SAVE_CURSOR    = "\u001b[s"
-    RESTORE_CURSOR = "\u001b[u"
-    CLEAR_DOWN     = "\u001b[J"
-
-    DEFAULT_REFRESH_INTERVAL = 0.2
-    SCAVENGING_INTERVAL = 5.0  # seconds, how often to check for old messages
-    SCAVENGING_AGE_LIMIT = 15.0 # seconds, remove completed/error messages older than this
-
     def __init__(
         self,
         input_dir: str,
@@ -46,382 +421,118 @@ class MapReduce:
         map_func,
         deserialize_func,
         serialize_func,
+        map_func_name = 'mapping',
         temp_dir: str = None,
-        max_threads: int = 4, # For CPU-bound tasks and sync map
-        max_io_threads: int = 2, # For blocking I/O in write_file
-        window_size: int = 5 
+        max_threads: int = 4,
+        window_size: int = 5,  # Passed to ConsoleDisplay
+        refresh_interval: float = None  # Passed to ConsoleDisplay
     ):
-        self.input_dir        = input_dir
-        self.output_dir       = output_dir
-        
-        self.original_map_func = map_func
-        _original_deserialize_func = deserialize_func 
-        _original_serialize_func = serialize_func   
+        self.input_dir = input_dir
+        self.output_dir = output_dir
+        self.deserialize_func = deserialize_func
+        self.map_func_name = map_func_name
+        self.map_func = map_func
+        self.serialize_func = serialize_func
 
-        self.map_func = self._wrap_user_func(
-            self.original_map_func, 
-            op_name_for_key='MAP', 
-            op_type_for_event='MAP', 
-            action_verb='mapping'
-        )
-        self.deserialize_func = self._wrap_user_func(
-            _original_deserialize_func, 
-            op_name_for_key='CPU_DESERIALIZE', 
-            op_type_for_event='CPU', 
-            action_verb='deserializing'
-        )
-        self.serialize_func = self._wrap_user_func(
-            _original_serialize_func, 
-            op_name_for_key='CPU_SERIALIZE', 
-            op_type_for_event='CPU', 
-            action_verb='serializing'
-        )
+        # Initialize ConsoleDisplay
+        self.display = ConsoleDisplay(window_size=window_size, refresh_interval=refresh_interval)
 
         self.temp_dir = temp_dir or os.path.join(input_dir, '.temp')
-        os.makedirs(self.temp_dir, exist_ok=True)
+        try:
+            os.makedirs(self.temp_dir, exist_ok=True)
+        except FileNotFoundError:
+            pass
 
-        self.max_threads = max_threads 
-        self.max_io_threads = max_io_threads
-        # Create a separate executor for I/O bound sync operations in write_file
-        self.io_executor = ThreadPoolExecutor(max_workers=self.max_io_threads, thread_name_prefix='MapReduceIOThread')
-        
-        self.event_queue = queue.Queue()
-        
-        self.active_events_count = {
-            'READ': 0, 'CPU': 0, 'MAP': 0, 'WRITE': 0
-        }
-        self.tracked_operations = OrderedDict() 
-        self.window_size = window_size 
+        self.max_threads = max_threads
+        self.max_io_threads = self.max_threads
+        self.thread_executor = ThreadPoolExecutor(max_workers=self.max_io_threads, thread_name_prefix='MapReduceIOThread')
+        self.process_executor = ProcessPoolExecutor(max_workers=self.max_threads)
 
         self.counter_lock = Lock()
-        self.watch_done_event = threading.Event()
         self.countdown = 0
 
-        self.stats = {
-            'count': 0, 'total_read_time': 0.0, 'total_deserialize_time': 0.0,
-            'total_map_time': 0.0, 'total_serialize_time': 0.0, 'total_write_time': 0.0
-        }
+    async def process_one(self, input_file_path: str, output_file_path: str):
+        basename = os.path.basename(input_file_path)
 
-        self.refresh_interval = self.DEFAULT_REFRESH_INTERVAL
-        self.last_scavenge_time = time.monotonic()
-
-    def _wrap_user_func(self, original_func_to_wrap, op_name_for_key: str, op_type_for_event: str, action_verb: str):
-        is_original_async = inspect.iscoroutinefunction(original_func_to_wrap)
-
-        if is_original_async:
-            async def async_wrapped_func(identifier, *args, **kwargs):
-                message_key = f"{op_name_for_key}:{identifier}"
-                self.event_queue.put(self._create_event(
-                    message_key=message_key, text=f'🔄 {action_verb} {identifier}', status='active',
-                    op_type=op_type_for_event, scope='BEGIN'
-                ))
-                start_time = time.perf_counter()
-                result, elapsed_time = None, 0
-                try:
-                    result = await original_func_to_wrap(*args, **kwargs)
-                    elapsed_time = time.perf_counter() - start_time
-                    self.event_queue.put(self._create_event(
-                        message_key=message_key, text=f'✅ {action_verb} finished for {identifier}', status='complete',
-                        op_type=op_type_for_event, scope='END'
-                    ))
-                except Exception as e:
-                    elapsed_time = time.perf_counter() - start_time
-                    self.event_queue.put(self._create_event(
-                        message_key=message_key, text=f'❌ error {action_verb} {identifier}: {type(e).__name__}', status='error',
-                        op_type=op_type_for_event, scope='END'
-                    ))
-                    raise
-                return result, elapsed_time
-            return async_wrapped_func
-        else: 
-            def sync_wrapped_func(identifier, *args, **kwargs):
-                message_key = f"{op_name_for_key}:{identifier}"
-                self.event_queue.put(self._create_event(
-                    message_key=message_key, text=f'🔄 {action_verb} {identifier}', status='active',
-                    op_type=op_type_for_event, scope='BEGIN'
-                ))
-                start_time = time.perf_counter()
-                result, elapsed_time = None, 0
-                try:
-                    result = original_func_to_wrap(*args, **kwargs)
-                    elapsed_time = time.perf_counter() - start_time
-                    self.event_queue.put(self._create_event(
-                        message_key=message_key, text=f'✅ {action_verb} finished for {identifier}', status='complete',
-                        op_type=op_type_for_event, scope='END'
-                    ))
-                except Exception as e:
-                    elapsed_time = time.perf_counter() - start_time
-                    self.event_queue.put(self._create_event(
-                        message_key=message_key, text=f'❌ error {action_verb} {identifier}: {type(e).__name__}', status='error',
-                        op_type=op_type_for_event, scope='END'
-                    ))
-                    raise
-                return result, elapsed_time
-            return sync_wrapped_func
-
-    def _create_event(self, message_key: str, text: str, status: str, 
-                      op_type: str = None, scope: str = None, is_error: bool = None) -> dict:
-        if is_error is None: is_error = (status == 'error')
-        event = {'time': time.monotonic(), 'message_key': message_key, 'text': text, 'status': status, 'is_error': is_error}
-        if op_type: event['op_type'] = op_type
-        if scope: event['scope'] = scope
-        return event
-
-    def _scavenge_tracked_operations(self): 
-        now = time.monotonic()
-        keys_to_remove = [
-            k for k, v in list(self.tracked_operations.items()) 
-            if v.get('status') in ['complete', 'error'] and (now - v.get('time', now)) > self.SCAVENGING_AGE_LIMIT]
-        for key in keys_to_remove:
-            if key in self.tracked_operations: del self.tracked_operations[key] 
-
-    def _apply_event(self, event: dict):
-        current_time = event.get('time', time.monotonic()) 
-        op_type, scope = event.get('op_type'), event.get('scope')
-        message_key, text, status = event.get('message_key'), event.get('text'), event.get('status')
-        is_error = event.get('is_error', False)
-
-        if op_type and scope and op_type in self.active_events_count:
-            self.active_events_count[op_type] += 1 if scope == 'BEGIN' else -1
-            if self.active_events_count[op_type] < 0: self.active_events_count[op_type] = 0
-
-        if message_key and text:
-            if is_error:
-                sys.stdout.write(f"{text}{self.CLEAR_TO_EOL}\n")
-                status = 'error' 
-            self.tracked_operations[message_key] = {'text': text, 'time': current_time, 'status': status} 
-            self.tracked_operations.move_to_end(message_key, last=False) 
+        # Read the input file
+        async with self.read_semaphore:
             
-            while len(self.tracked_operations) > self.window_size: 
-                key_of_lru_finished_or_error = None
-                for k, v_info in reversed(list(self.tracked_operations.items())): 
-                    if v_info['status'] in ['complete', 'error']:
-                        key_of_lru_finished_or_error = k
-                        break 
-                
-                if key_of_lru_finished_or_error:
-                    del self.tracked_operations[key_of_lru_finished_or_error] 
-                else:
-                    self.tracked_operations.popitem(last=True) 
+            async with aiofiles.open(input_file_path, "r", encoding="utf-8") as f:
+                raw = await f.read()
 
-    def _do_redraw(self):
-        lines = [self.SAVE_CURSOR]
-        clear_to_eol, now = self.CLEAR_TO_EOL, time.monotonic()
-        
-        all_items_oldest_updated_first = list(reversed(list(self.tracked_operations.values())))
+            # Deserialize the raw data
+            deserialized = self.deserialize_func(raw)
 
-        candidate_finished_lines = []
-        candidate_active_lines = []
+        # Process the data
+        async with self.map_semaphore:
+            self.display.begin(f"MAP:{basename}", f'{self.map_func_name} {basename}', self.map_func_name)
+            processed = await asyncio.get_running_loop().run_in_executor(
+                self.process_executor, 
+                self.map_func, 
+                deserialized, 
+                input_file_path)
+            self.display.finish(f"MAP:{basename}", f'finished {self.map_func_name} {basename}')
 
-        for item_info in all_items_oldest_updated_first: 
-            display_text = item_info['text']
-            msg_time = item_info['time']
-            status = item_info.get('status')
-            line_to_add = f"  {display_text}" 
+        # Serialize the processed data
+        final_str = self.serialize_func(processed)
 
-            if status == 'active':
-                elapsed = now - msg_time
-                if elapsed > 1.0: line_to_add += f" ({elapsed:.1f}s)"
-                line_to_add += clear_to_eol + "\n"
-                candidate_active_lines.append(line_to_add) 
-            elif status in ['complete', 'error']:
-                line_to_add += clear_to_eol + "\n"
-                candidate_finished_lines.append(line_to_add) 
-
-        final_display_lines_for_area = []
-        slots_available = self.window_size
-
-        active_lines_to_show = candidate_active_lines[:slots_available]
-        
-        slots_for_finished_at_top = slots_available - len(active_lines_to_show)
-        
-        finished_lines_to_display_at_top = []
-        if slots_for_finished_at_top > 0:
-            finished_lines_to_display_at_top = candidate_finished_lines[:slots_for_finished_at_top]
-        
-        final_display_lines_for_area.extend(finished_lines_to_display_at_top)
-        final_display_lines_for_area.extend(active_lines_to_show)
-        
-        lines.extend(final_display_lines_for_area)
-        
-        num_messages_actually_shown = len(final_display_lines_for_area)
-        for _ in range(max(0, self.window_size - num_messages_actually_shown)):
-            lines.append(f"  {clear_to_eol}\n")
-
-        lines.extend([
-            f"Reading   {self.active_events_count['READ']} files{clear_to_eol}\n",
-            f"CPU tasks {self.active_events_count['CPU']} active{clear_to_eol}\n",
-            f"Map calls {self.active_events_count['MAP']} active{clear_to_eol}\n",
-            f"Writing   {self.active_events_count['WRITE']} files{clear_to_eol}\n",
-            f"{self.countdown} work items remaining{clear_to_eol}\n",
-            self.RESTORE_CURSOR])
-        sys.stdout.write(''.join(lines))
-
-    def watcher_loop(self):
-        refresh_interval, half_interval = self.refresh_interval, self.refresh_interval / 2.0
-        last_redraw = time.monotonic() - refresh_interval
-        while True:
-            now = time.monotonic()
-            if now - self.last_scavenge_time >= self.SCAVENGING_INTERVAL:
-                self._scavenge_tracked_operations(); self.last_scavenge_time = now 
-            try: event = self.event_queue.get(timeout=half_interval)
-            except queue.Empty:
-                if now - last_redraw >= refresh_interval: self._do_redraw(); last_redraw = now
-                continue
-            if isinstance(event, str) and event == 'DONE':
-                self._do_redraw(); sys.stdout.write(self.CLEAR_DOWN); self.watch_done_event.set(); break
-            if isinstance(event, dict): self._apply_event(event)
-            while True: 
-                try: extra_event = self.event_queue.get_nowait()
-                except queue.Empty: break
-                if isinstance(extra_event, str) and extra_event == 'DONE':
-                    self._do_redraw(); sys.stdout.write(self.CLEAR_DOWN); self.watch_done_event.set(); return
-                if isinstance(extra_event, dict): self._apply_event(extra_event)
-            if now - last_redraw >= refresh_interval: self._do_redraw(); last_redraw = now
-        
-    async def read_file(self, file_path: str): 
-        basename = os.path.basename(file_path)
-        message_key = f'READ:{basename}'
-        raw_content, elapsed = None, 0
-        self.event_queue.put(self._create_event(message_key, f'🔄 reading {basename}', 'active', 'READ', 'BEGIN'))
-        try:
-            start = time.perf_counter()
-            async with aiofiles.open(file_path, 'r', encoding='utf-8') as f: raw_content = await f.read()
-            elapsed = time.perf_counter() - start
-            self.event_queue.put(self._create_event(message_key, f'✅ read {basename}', 'complete', 'READ', 'END'))
-        except Exception as e:
-            elapsed = time.perf_counter() - start if 'start' in locals() else 0
-            self.event_queue.put(self._create_event(message_key, f'❌ error reading {basename}: {type(e).__name__}', 'error', 'READ', 'END'))
-            raise 
-        return raw_content, elapsed
-
-    async def write_file(self, file_path: str, raw_content: str): 
-        basename = os.path.basename(file_path)
-        message_key = f'WRITE:{basename}'
+        # Write to a temporary file first, then move to final destination
+        os.makedirs(self.temp_dir, exist_ok=True)
         tmp_path = os.path.join(self.temp_dir, f".{basename}.tmp")
-        elapsed = 0
-        self.event_queue.put(self._create_event(message_key, f'🔄 writing {basename}', 'active', 'WRITE', 'BEGIN'))
-        try:
-            start = time.perf_counter()
-            async with aiofiles.open(tmp_path, 'w', encoding='utf-8') as tmp_f: await tmp_f.write(raw_content)
-            # Use the dedicated IO executor for os.replace
-            await asyncio.get_event_loop().run_in_executor(self.io_executor, os.replace, tmp_path, file_path)
-            elapsed = time.perf_counter() - start
-            self.event_queue.put(self._create_event(message_key, f'✅ wrote {basename}', 'complete', 'WRITE', 'END'))
-        except Exception as e:
-            elapsed = time.perf_counter() - start if 'start' in locals() else 0
-            self.event_queue.put(self._create_event(message_key, f'❌ error writing {basename}: {type(e).__name__}', 'error', 'WRITE', 'END'))
-            raise
-        finally:
-            if os.path.exists(tmp_path):
-                try: 
-                    # Use the dedicated IO executor for os.remove
-                    await asyncio.get_event_loop().run_in_executor(self.io_executor, os.remove, tmp_path)
-                except Exception: pass 
-        return elapsed 
+        async with aiofiles.open(tmp_path, "w", encoding="utf-8") as f:
+            await f.write(final_str)
+        os.remove(output_file_path)
+        os.replace(tmp_path, output_file_path)
 
-    async def _execute_map_operation(self, deserialized, input_file_path: str, output_basename: str, executor: ThreadPoolExecutor):
-        # executor here is the main ThreadPoolExecutor for CPU/sync map tasks
-        processed_obj, mpt = None, 0
-        if inspect.iscoroutinefunction(self.original_map_func): 
-            processed_obj, mpt = await self.map_func(output_basename, deserialized, input_file_path)
-        else:
-            processed_obj, mpt = await asyncio.get_event_loop().run_in_executor(
-                executor, self.map_func, output_basename, deserialized, input_file_path)
-        return processed_obj, mpt
-
-    async def process_one(self, input_file_path: str, output_file_path: str, executor: ThreadPoolExecutor):
-        input_basename = os.path.basename(input_file_path)
-        output_basename = os.path.basename(output_file_path) 
-        try:
-            raw_content, read_time = await self.read_file(input_file_path)
-            self.stats['total_read_time'] += read_time
-
-            deserialized_obj, dt = await asyncio.get_event_loop().run_in_executor(
-                executor, self.deserialize_func, input_basename, raw_content)
-            self.stats['total_deserialize_time'] += dt
-            
-            processed_obj, mpt = await self._execute_map_operation(
-                deserialized_obj, input_file_path, output_basename, executor)
-            self.stats['total_map_time'] += mpt
-            
-            final_str, st = await asyncio.get_event_loop().run_in_executor(
-                executor, self.serialize_func, output_basename, processed_obj)
-            self.stats['total_serialize_time'] += st
-
-            write_time = await self.write_file(output_file_path, final_str)
-            self.stats['total_write_time'] += write_time
-
-            self.stats['count'] += 1
-            self.event_queue.put(self._create_event(
-                f'FINISH:{input_basename}', f'✅ processed {input_basename}', 'complete'))
-        except Exception as e:
-            self.event_queue.put(self._create_event(
-                f'ERROR_PROCESS:{input_basename}', f'❌ error processing {input_basename}: {type(e).__name__}','error', is_error=True))
-        finally:
-            with self.counter_lock: self.countdown -= 1
+        # Update the countdown
+        with self.counter_lock:
+            self.countdown -= 1
+            self.display.update_countdown(self.countdown)
 
     async def run(self):
-        sys.stdout.write(self.HIDE_CURSOR)
-        # Main executor for CPU-bound tasks and sync map
-        # IO executor is created in __init__ and shut down in finally
-        main_executor = ThreadPoolExecutor(max_workers=self.max_threads, thread_name_prefix='MapReduceMainThread')
+        self.read_semaphore = asyncio.Semaphore(self.max_threads)
+        self.map_semaphore = asyncio.Semaphore(self.max_threads)
+        ex = None
+
+        def my_exception_handler(loop, context):
+            nonlocal ex
+
+            ex = context.get("exception")
+
+        asyncio.get_event_loop().set_exception_handler(my_exception_handler)
+
+        self.display.start()
+
+        if not os.path.isdir(self.input_dir):
+            self.display.error('INIT_ERROR', f"Input directory not found: {self.input_dir}")
+            all_input_files = []
+            total = 0
+        else:
+            all_input_files = [os.path.join(self.input_dir, f) for f in os.listdir(self.input_dir)
+                                if os.path.isfile(os.path.join(self.input_dir, f))]
+            total = len(all_input_files)
+
+        with self.counter_lock:
+            self.countdown = total
+        self.display.update_countdown(self.countdown)
+
+        if total == 0 and os.path.isdir(self.input_dir):
+            self.display.warn('No files found to process')
+
         try:
-            all_input_files = [
-                os.path.join(self.input_dir, f) for f in os.listdir(self.input_dir)
-                if os.path.isfile(os.path.join(self.input_dir, f))
-            ] if os.path.isdir(self.input_dir) else []
-
-            if not os.path.isdir(self.input_dir):
-                self.event_queue.put(self._create_event('INIT_ERROR', f'❌ Input directory not found: {self.input_dir}', 'error'))
-            
-            total_files = len(all_input_files)
-            self.countdown = total_files
-
-            if total_files == 0 and os.path.isdir(self.input_dir):
-                 self.event_queue.put(self._create_event('NO_FILES', 'ℹ️ No files found to process.', 'log'))
-
-            watcher_thread = threading.Thread(target=self.watcher_loop, daemon=True); watcher_thread.start()
-            
-            if not all_input_files : 
-                self.event_queue.put('DONE'); self.watch_done_event.wait()
-                sys.stdout.write(f"Files total:               {total_files}\n")
-                sys.stdout.write(f"Processed (successfully):  {self.stats['count']}\n")
-                sys.stdout.write(f"Attempted to process:      0\n")
-                sys.stdout.write(f"Total elapsed:             0.00s\n")
-                return
-
-            start_all = time.perf_counter()
-            
             tasks = []
-            for fpath in all_input_files: 
+            for fpath in all_input_files:
                 out_path = os.path.join(self.output_dir, os.path.basename(fpath))
-                os.makedirs(os.path.dirname(out_path), exist_ok=True) 
-                # Pass the main_executor to process_one
-                tasks.append(asyncio.create_task(self.process_one(fpath, out_path, main_executor)))
-            
-            processed_tasks_count = 0
-            for task_future in asyncio.as_completed(tasks):
-                try: await task_future 
-                except Exception: pass 
-                finally: processed_tasks_count +=1
+                os.makedirs(os.path.dirname(out_path), exist_ok=True)
+                tasks.append(asyncio.create_task(self.process_one(fpath, out_path)))
 
-            self.event_queue.put('DONE'); self.watch_done_event.wait()
-            total_elapsed = time.perf_counter() - start_all
-            count = self.stats['count']
-            sys.stdout.write(f"Files total:               {total_files}\n")
-            sys.stdout.write(f"Processed (successfully):  {count}\n")
-            sys.stdout.write(f"Attempted to process:      {processed_tasks_count}\n")
-            sys.stdout.write(f"Total elapsed:             {total_elapsed:.2f}s\n")
-            if count > 0:
-                for op_name_stat in ['read', 'deserialize', 'map', 'serialize', 'write']:
-                    total_time_stat = self.stats[f'total_{op_name_stat}_time']
-                    avg_time_stat = (total_time_stat / count) if count else 0
-                    sys.stdout.write(f"{op_name_stat.capitalize():<12} total: {total_time_stat:>10.2f}s  (avg {avg_time_stat:.2f}s)\n")
+            for fut in asyncio.as_completed(tasks):
+                try:
+                    await fut
+                except Exception as e:
+                    raise ex
+
         finally:
-            # Shut down both executors
-            if 'main_executor' in locals() and main_executor: # Check if it was created
-                main_executor.shutdown(wait=True)
-            if hasattr(self, 'io_executor') and self.io_executor: # Check if it was created
-                self.io_executor.shutdown(wait=True)
-            sys.stdout.write(self.SHOW_CURSOR)
+            self.process_executor.shutdown(wait=False, cancel_futures=True)
+            self.thread_executor.shutdown(wait=False, cancel_futures=True)
+            self.display.stop()

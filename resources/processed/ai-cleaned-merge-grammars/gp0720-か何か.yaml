@@ -40,20 +40,26 @@
                 "すみ ませ ん、お 茶 {か 何 か} あり ませ ん か？"
             ],
             "english_literally": "Excuse me, tea or something is there?",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "すみ ませ ん、お 茶 は あり ませ ん か？"
+                    ],
+                    "english": "Excuse me, don't you have tea?",
+                    "hint": "This only asks about tea specifically. We're looking for a way to ask about tea or other similar options."
+                },
+                {
+                    "competing_japanese": [
+                        "すみ ませ ん、何 か 飲み物 は あり ませ ん か？"
+                    ],
+                    "english": "Excuse me, don't you have something to drink?",
+                    "hint": "This is general and doesn't offer a specific suggestion. We're looking for an example suggestion like 'tea'."
+                }
+            ],
             "scene": "A customer politely inquiring at a shop, hoping for a general beverage but mentioning tea as an example.",
             "register": "teineigo (polite)",
             "setting": "friendly",
-            "nuance": "「すみません」 is a common polite phrase to initiate a request or get attention. 「ありませんか」 (the negative interrogative form of the polite verb `あります`) softens the request, making it a polite inquiry rather than a direct demand.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "お茶 はありますか？",
-                    "mitigation": "This only asks about tea specifically and does not allow for other suggestions, making it too direct if the speaker is open to other drinks."
-                },
-                {
-                    "competing_grammar": "何か 飲み物 ありますか？",
-                    "mitigation": "While general, it doesn't offer a specific suggestion, which might be helpful in some contexts. 「お茶か何か」 guides the listener by giving an example of what the speaker is looking for."
-                }
-            ]
+            "nuance": "「すみません」 is a common polite phrase to initiate a request or get attention. 「ありませんか」 (the negative interrogative form of the polite verb `あります`) softens the request, making it a polite inquiry rather than a direct demand."
         },
         {
             "english": "Officer! There was a suspicious person over there holding a knife or something.",
@@ -61,22 +67,28 @@
                 "警察 官！あそこ に ナイフ {か 何 か} を 持っ た 怪しい 人 が い まし た。"
             ],
             "english_literally": "Officer! There, a knife or something holding suspicious person was.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "警察 官！あそこ に ナイフ を 持っ た 怪しい 人 が い まし た。"
+                    ],
+                    "english": "Officer! There was a suspicious person over there holding a knife.",
+                    "hint": "This states with certainty that a knife was held. We're looking for an expression that indicates uncertainty about the exact item."
+                },
+                {
+                    "competing_japanese": [
+                        "警察 官！あそこ に 何 か 危ない もの を 持っ た 怪しい 人 が い まし た。"
+                    ],
+                    "english": "Officer! There was a suspicious person over there holding something dangerous.",
+                    "hint": "This is too vague about the object. We're looking for a specific example like 'knife' followed by uncertainty."
+                }
+            ],
             "scene": "A woman reporting a potential crime to a male police officer, unsure about the exact weapon used.",
             "register": "formal",
             "setting": "serious",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "「警察官」 (けいさつかん) is a direct address to a police officer. The past tense 「いました」 (いました) is used to report a past observation. This setting often implies a female reporting to a male officer for a sense of urgency.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "ナイフ を 持った 人 が いました。",
-                    "mitigation": "This states with certainty that a knife was held, but the speaker is unsure and includes the possibility of other similar items."
-                },
-                {
-                    "competing_grammar": "何か 危ない もの を 持った 人 が いました。",
-                    "mitigation": "This is too vague about the object, whereas 「ナイフか何か」 gives a specific example of what was seen."
-                }
-            ]
+            "nuance": "「警察官」 (けいさつかん) is a direct address to a police officer. The past tense 「いました」 (いました) is used to report a past observation. This setting often implies a female reporting to a male officer for a sense of urgency."
         },
         {
             "english": "Please give me water or something. Anything would be fine.",
@@ -84,21 +96,27 @@
                 "何 で も いい ん で、水 {か 何 か} を ください。"
             ],
             "english_literally": "Anything is fine because, water or something please give.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "何 で も いい ん で、水 を ください。"
+                    ],
+                    "english": "Anything is fine, so please give me water.",
+                    "hint": "This only requests water. We're looking for an expression that indicates any similar liquid would be acceptable."
+                },
+                {
+                    "competing_japanese": [
+                        "何 で も いい ん で、飲み物 を ください。"
+                    ],
+                    "english": "Anything is fine, so please give me a drink.",
+                    "hint": "This is too general and doesn't convey the speaker's desperation or lack of pickiness as effectively. We're looking for a specific example followed by a more general request."
+                }
+            ],
             "scene": "A man desperately asking for a drink, indicating he's not particular about what he receives.",
             "register": "casual",
             "setting": "serious",
             "speaker_gender": "male",
-            "nuance": "「何でもいいんで」 emphasizes the speaker's lack of preference and urgency, common in casual, direct male speech when in distress. 「ください」 is a direct request.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "水 を ください。",
-                    "mitigation": "This only requests water, but the speaker is indicating that any similar liquid would be acceptable due to thirst or need."
-                },
-                {
-                    "competing_grammar": "飲み物 を ください。",
-                    "mitigation": "While general, it doesn't convey the speaker's desperation or lack of pickiness as effectively as 「何でもいいんで」 paired with 「水か何か」."
-                }
-            ]
+            "nuance": "「何でもいいんで」 emphasizes the speaker's lack of preference and urgency, common in casual, direct male speech when in distress. 「ください」 is a direct request."
         },
         {
             "english": "Would you like tea or something?",
@@ -106,22 +124,28 @@
                 "紅茶 {か 何 か} 飲み ませ ん か？"
             ],
             "english_literally": "Black tea or something, won't you drink?",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "紅茶 を 飲み ませ ん か？"
+                    ],
+                    "english": "Would you like to drink black tea?",
+                    "hint": "This only offers tea. We're looking for an expression that implies other options are also available."
+                },
+                {
+                    "competing_japanese": [
+                        "何 か 飲み ませ ん か？"
+                    ],
+                    "english": "Would you like to drink something?",
+                    "hint": "This is quite vague and doesn't offer a specific suggestion. We're looking for a specific example like 'tea' to guide the listener."
+                }
+            ],
             "scene": "A female host offering a male guest a beverage, suggesting tea but open to other options.",
             "register": "semi-formal",
             "setting": "friendly",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "Using 「ませんか」 makes it a polite invitation. The female speaker offering a specific item like 「紅茶」 (こうちゃ) first, followed by 「か何か」, is a common hospitable gesture.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "紅茶 を 飲みませんか？",
-                    "mitigation": "This offers only tea, but a polite host would often imply other options are available without listing them all."
-                },
-                {
-                    "competing_grammar": "何か 飲みませんか？",
-                    "mitigation": "This is quite vague and doesn't offer a specific suggestion, which can sometimes make it harder for the guest to choose or indicate what's available."
-                }
-            ]
+            "nuance": "Using 「ませんか」 makes it a polite invitation. The female speaker offering a specific item like 「紅茶」 (こうちゃ) first, followed by 「か何か」, is a common hospitable gesture."
         },
         {
             "english": "I'd like a beer or something.",
@@ -129,21 +153,27 @@
                 "ビール {か 何 か} が ほしい な。"
             ],
             "english_literally": "Beer or something is wanted, huh.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "ビール が ほしい な。"
+                    ],
+                    "english": "I'd like a beer.",
+                    "hint": "This only specifies beer. We're looking for an expression that indicates the customer is open to other similar alcoholic beverages."
+                },
+                {
+                    "competing_japanese": [
+                        "何 か お 酒 が ほしい な。"
+                    ],
+                    "english": "I'd like some alcohol.",
+                    "hint": "This is general and lacks a specific example like 'beer'. We're looking for an expression that provides a specific example for context."
+                }
+            ],
             "scene": "A male customer at a bar, considering his order. He wants a beer but is open to other alcoholic beverages.",
             "register": "casual",
             "setting": "casual slang",
             "speaker_gender": "male",
-            "nuance": "「ほしいな」 (ほしいな) is a casual way for men to express desire or a wish. The ending particle 「な」 adds a sense of personal feeling or reflection, common in casual male speech.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "ビール が ほしいな。",
-                    "mitigation": "This only specifies beer, but the customer is open to alternatives, indicating a broader category of drinks."
-                },
-                {
-                    "competing_grammar": "何か お酒 が ほしいな。",
-                    "mitigation": "While general, it lacks the specific example of \"beer\" that 「か何か」 provides, which can be helpful for the listener or for the speaker's own thought process."
-                }
-            ]
+            "nuance": "「ほしいな」 (ほしいな) is a casual way for men to express desire or a wish. The ending particle 「な」 adds a sense of personal feeling or reflection, common in casual male speech."
         },
         {
             "english": "I think the culprit opened the window using a crowbar or something.",
@@ -151,21 +181,27 @@
                 "犯人 は バール {か 何 か} を 使っ て、窓 を 開け た と 思い ます。"
             ],
             "english_literally": "Culprit crowbar or something used, window opened, I think.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "犯人 は バール を 使っ て、窓 を 開け た と 思い ます。"
+                    ],
+                    "english": "I think the culprit opened the window using a crowbar.",
+                    "hint": "This states with certainty that a crowbar was used. We're looking for an expression that indicates the speaker is unsure and considers other similar tools."
+                },
+                {
+                    "competing_japanese": [
+                        "犯人 は 何 か 道具 を 使っ て、窓 を 開け た と 思い ます。"
+                    ],
+                    "english": "I think the culprit opened the window using some tool.",
+                    "hint": "This is too vague and does not provide an example of the likely tool. We're looking for an expression that gives a specific example to narrow down the possibilities."
+                }
+            ],
             "scene": "A male police officer is giving a preliminary assessment of a crime scene, speculating on the tools used.",
             "register": "formal",
             "setting": "informative",
             "speaker_gender": "male",
-            "nuance": "The use of 「と思います」 (とおもいます) indicates an opinion or speculation rather than a confirmed fact, suitable for a preliminary report. The formal register and specific vocabulary like 「犯人」 (はんにん) are typical of professional speech.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "犯人 は バール を 使って 窓 を 開けた と 思います。",
-                    "mitigation": "This states with certainty that a crowbar was used, whereas the speaker is actually unsure and considers other similar tools."
-                },
-                {
-                    "competing_grammar": "犯人 は 何か 道具 を 使って 窓 を 開けた と 思います。",
-                    "mitigation": "This is too vague and does not provide an example of the likely tool, which 「か何か」 does to give a more informed guess."
-                }
-            ]
+            "nuance": "The use of 「と思います」 (とおもいます) indicates an opinion or speculation rather than a confirmed fact, suitable for a preliminary report. The formal register and specific vocabulary like 「犯人」 (はんにん) are typical of professional speech."
         },
         {
             "english": "Since he should be coming by bus, I have a feeling he is stuck in traffic or something.",
@@ -173,21 +209,27 @@
                 "バス で 来る はず だ から、道 が 混ん で いる {か 何 か} の よう な 気 が する。"
             ],
             "english_literally": "By bus come should because, road is crowded or something like feel.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "バス で 来る はず だ から、交通 渋滞 だ と 思い ます。"
+                    ],
+                    "english": "Since he should be coming by bus, I think it's traffic congestion.",
+                    "hint": "This expresses certainty about traffic being the cause. We're looking for an expression that indicates the speaker is less certain and considers other possibilities."
+                },
+                {
+                    "competing_japanese": [
+                        "バス で 来る はず だ から、何 か あっ た よう な 気 が する。"
+                    ],
+                    "english": "Since he should be coming by bus, I feel like something happened.",
+                    "hint": "This is too vague about the cause of the delay. We're looking for an expression that suggests a specific type of problem, like traffic."
+                }
+            ],
             "scene": "A woman is speculating to a friend about why another person is late, considering potential issues with public transport.",
             "register": "casual",
             "setting": "reflective",
             "speaker_gender": "female",
-            "nuance": "「のような気がする」 (のようなきがする) expresses a feeling or hunch, softening the speculation. 「はずだから」 implies a strong expectation, common in casual conversation among friends. The use of 「のような気がする」 suggests a softer, more intuitive speculation often heard from female speakers.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "バスで来るはずだから、交通渋滞 だ と 思います。",
-                    "mitigation": "This expresses certainty about traffic being the cause, but the speaker is actually less certain and considers other possibilities."
-                },
-                {
-                    "competing_grammar": "バスで来るはずだから、何か あった ような 気が する。",
-                    "mitigation": "This is too vague about the cause of the delay, whereas 「か何か」 suggests a specific type of problem, like traffic."
-                }
-            ]
+            "nuance": "「のような気がする」 (のようなきがする) expresses a feeling or hunch, softening the speculation. 「はずだから」 implies a strong expectation, common in casual conversation among friends. The use of 「のような気がする」 suggests a softer, more intuitive speculation often heard from female speakers."
         },
         {
             "english": "You probably can explain this with science or something.",
@@ -195,21 +237,27 @@
                 "本当 に 科学 {か 何 か} で この こと は 説明 できる でしょう。"
             ],
             "english_literally": "Really science or something by this thing can explain, probably.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "本当 に 科学 で この こと は 説明 できる でしょう。"
+                    ],
+                    "english": "You probably can explain this with science.",
+                    "hint": "This implies only science as the explanation. We're looking for an expression that is open to other rational, non-supernatural explanations."
+                },
+                {
+                    "competing_japanese": [
+                        "本当 に 何 か で この こと は 説明 できる でしょう。"
+                    ],
+                    "english": "You probably can explain this with something.",
+                    "hint": "This is too vague about the type of explanation. We're looking for an expression that provides a specific example like 'science'."
+                }
+            ],
             "scene": "A male skeptic is questioning something seemingly supernatural, suggesting a rational explanation.",
             "register": "semi-formal",
             "setting": "academic",
             "speaker_gender": "male",
-            "nuance": "「でしょう」 is a polite way of expressing conjecture or inviting agreement, here used to suggest a rational explanation is readily available. The overall tone is slightly dismissive of the supernatural, common in skeptical male discourse.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "本当に科学 で この こと は 説明できる でしょう。",
-                    "mitigation": "This implies only science as the explanation, whereas the speaker is open to other rational, non-supernatural explanations."
-                },
-                {
-                    "competing_grammar": "本当に 何か で この こと は 説明できる でしょう。",
-                    "mitigation": "This is too vague about the type of explanation, lacking the specific example of \"science\" that 「か何か」 provides."
-                }
-            ]
+            "nuance": "「でしょう」 is a polite way of expressing conjecture or inviting agreement, here used to suggest a rational explanation is readily available. The overall tone is slightly dismissive of the supernatural, common in skeptical male discourse."
         },
         {
             "english": "Would you like coffee or something to drink?",
@@ -217,37 +265,32 @@
                 "コーヒー {か 何 か} 飲み ませ ん か？"
             ],
             "english_literally": "Coffee or something, won't you drink?",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "コーヒー を 飲み ませ ん か？"
+                    ],
+                    "english": "Would you like to drink coffee?",
+                    "hint": "This only offers coffee. We're looking for an expression that implies other options are available without listing them all."
+                },
+                {
+                    "competing_japanese": [
+                        "何 か 飲み ませ ん か？"
+                    ],
+                    "english": "Would you like to drink something?",
+                    "hint": "This is quite vague and doesn't offer a specific suggestion. We're looking for an expression that provides a specific example like 'coffee'."
+                }
+            ],
             "scene": "A woman, as a host, is politely offering beverages to a male guest, specifically suggesting coffee while being open to other choices.",
             "register": "teineigo (polite)",
             "setting": "friendly",
             "speaker_gender": "female",
             "listener_gender": "male",
-            "nuance": "「飲みませんか」 is a polite invitation. The inclusion of 「か何か」 allows the host to suggest coffee as a primary option while subtly conveying that other drinks are also available, making the offer more flexible and hospitable. This is a common phrase used by female hosts.",
-            "scene_rationale": [
-                {
-                    "competing_grammar": "コーヒー を 飲みませんか？",
-                    "mitigation": "This only offers coffee, but a polite host would often imply other options are available without listing them all."
-                },
-                {
-                    "competing_grammar": "何か 飲みませんか？",
-                    "mitigation": "This is quite vague and doesn't offer a specific suggestion, which can sometimes make it harder for the guest to choose or indicate what's available."
-                }
-            ]
+            "nuance": "「飲みませんか」 is a polite invitation. The inclusion of 「か何か」 allows the host to suggest coffee as a primary option while subtly conveying that other drinks are also available, making the offer more flexible and hospitable. This is a common phrase used by female hosts."
         }
     ],
     "post_example_writeup": "While 「か何か」 is generally used in standard or formal settings, in very casual situations, especially among close friends, it is common to hear it pronounced as 「なんか」. This informal usage maintains the meaning of 'or something' but adds a more relaxed and familiar tone.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/か何か"
-    },
-    "lint-errors": [
-        "[rule-4] warning examples[0] has no competing_grammar",
-        "[rule-4] warning examples[1] has no competing_grammar",
-        "[rule-4] warning examples[2] has no competing_grammar",
-        "[rule-4] warning examples[3] has no competing_grammar",
-        "[rule-4] warning examples[4] has no competing_grammar",
-        "[rule-4] warning examples[5] has no competing_grammar",
-        "[rule-4] warning examples[6] has no competing_grammar",
-        "[rule-4] warning examples[7] has no competing_grammar",
-        "[rule-4] warning examples[8] has no competing_grammar"
-    ]
+    }
 }
