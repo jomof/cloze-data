@@ -38,7 +38,7 @@ if __name__ == '__main__':
         deserialize_func     = deserialize_yaml,
         serialize_func       = serialize_json,
         temp_dir             = os.path.join(workspace_root, '.temp'),
-        max_threads          = 20,
+        max_threads          = 3,
     )
 
     asyncio.run(mr.run())

@@ -424,7 +424,7 @@ class MapReduce:
         map_func_name = 'mapping',
         temp_dir: str = None,
         max_threads: int = 4,
-        window_size: int = 5,  # Passed to ConsoleDisplay
+        window_size: int = None,  # Passed to ConsoleDisplay
         refresh_interval: float = None  # Passed to ConsoleDisplay
     ):
         self.input_dir = input_dir
@@ -435,7 +435,7 @@ class MapReduce:
         self.serialize_func = serialize_func
 
         # Initialize ConsoleDisplay
-        self.display = ConsoleDisplay(window_size=window_size, refresh_interval=refresh_interval)
+        self.display = ConsoleDisplay(window_size=window_size or max_threads, refresh_interval=refresh_interval)
 
         self.temp_dir = temp_dir or os.path.join(input_dir, '.temp')
         try:
