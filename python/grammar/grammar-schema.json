@@ -187,6 +187,36 @@
     // The name of the grammar point.
     // - **MUST NOT** change this value because it is a database key.
     "grammar_point": { "$ref": "#/definitions/grammarType" },
+    // A possibly better name for the grammar point that would make it fit in better
+    // with the other grammar points in the database (ALL_GRAMMARS_SUMMARY).
+    // Often, a good name has the form "something (short meaning)".
+    // If the current grammar point name is ideal, there's no need to change it.
+    // If it would be better to split this grammar point into multiple grammar points, 
+    // then you **MAY** suggest a new name for each of those grammar points.
+    // **MUST NOT** be the same as grammar_point, **MUST NOT** be the empty string, and **MUST NOT** be null.
+    // In those cases, just omit this field.
+    // **STRONGLY PREFER** names with a short (meaning) field in parentheses.
+    // Short (meaning) part **MUST** be lower case.
+    "better_grammar_point_name": {
+      "type": "array",
+      "items": { "$ref":  "#/definitions/grammarType" }
+    },
+    // **MUST** be a grammar point from ALL_GRAMMARS_SUMMARY that should be learned **BEFORE** grammar_point.
+    // Pick the closest, in ideal learning order, that you're 95% sure should be learned **BEFORE** grammar_point.
+    // **MUST** ensure that learn_before is more more commonly used than grammar_point.
+    // **MUST** have at least two items.
+    "learn_before": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/grammarType" }
+    },
+    // **MUST** be grammar points from ALL_GRAMMARS_SUMMARY that should be learned **AFTER** grammar_point.
+    // Pick the closest points, in ideal learning order, that you're 95% sure should be learned **AFTER** grammar_point.
+    // **MUST** ensure that learn_after items is **LESS COMMONLY** used than grammar_point.
+    // **MUST** have at least two items.
+    "learn_after": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/grammarType" }
+    },
     // ID of the grammar point.
     // - **MUST NOT** change this value because it is a database key.
     "id": { "type": "string" },
@@ -257,7 +287,6 @@
         "usage-context": { "type": "string" },
         "function": { "type": "string" },
         "nuance": { "type": "string" },
-        "source": { "type": "string" },
         "counterpoint": { "type": "string" },
         "colocation": { "type": "string" },
         "grammatical-role": { "type": "string" },

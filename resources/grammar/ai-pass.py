@@ -146,9 +146,10 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
             ** BEGIN PRIORITY INSTRUCTIONS ALGORITHM **
             Follow these steps:
                 ------------------------------------------------------------------------------------------
-                for each false_friend in the false_friends[] array:
-                    if there is no false_friend.grammar_point:
-                        EXECUTE: Assign a grammar point from ALL_GRAMMARS_SUMMARY or suggest a new one.
+                if there is a better, more consistently named grammar point name:
+                    EXECUTE: suggest a better grammar point name in better_grammar_point_name.
+                EXECUTE: fill in, or improve, the learn_after field.
+                EXECUTE: fill in, or improve, the learn_before field.
                 ------------------------------------------------------------------------------------------
             ** END PRIORITY INSTRUCTIONS ALGORITHM **
            """)
@@ -238,7 +239,7 @@ if __name__ == '__main__':
         map_func             = logic,
         serialize_func       = serialize_json,
         temp_dir             = temp_dir,
-        max_threads          = 15,
+        max_threads          = 20,
     )
 
     asyncio.run(mr.run())
