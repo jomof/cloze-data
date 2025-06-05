@@ -4,6 +4,8 @@ from jsonschema import Draft7Validator
 from .grammar_schema import GRAMMAR_SCHEMA
 import os
 from python.mecab.compact_sentence import japanese_to_japanese_with_spaces
+import re
+from typing import Optional
 
 QUOTE_PAIRS = [
     ('"', '"'),
@@ -291,6 +293,142 @@ def lint_japanese_count(grammar_point):
             )
     return messages
 
+_japanese_pattern = re.compile(r'[\u3040-\u30FF\u4E00-\u9FFF]')
+
+def get_meaning(name: str) -> Optional[str]:
+    """
+    Extracts the first “meaning” section from any parentheses in `name`.
+    A valid meaning is text inside parentheses that contains no Japanese characters.
+    Returns that substring, or None if no valid meaning is found.
+    """
+    for match in re.finditer(r'\(([^)]*)\)', name):
+        inside = match.group(1)
+        if not _japanese_pattern.search(inside):
+            return inside.strip()
+    return None
+
+
+def lint_better_grammar_name(grammar_point):
+    """
+    [rule-8] Warn if:
+      - grammar_point has no “(meaning)” section, or
+      - better_grammar_point_name is missing or none of its entries have a “(meaning)” section.
+    Uses get_meaning() to identify valid meaning sections.
+    """
+    messages = []
+    gp_name = grammar_point.get("grammar_point", "")
+    gp_meaning = get_meaning(gp_name)
+
+    if not gp_meaning:
+        # Check every candidate in better_grammar_point_name
+        bnames = grammar_point.get("better_grammar_point_name", [])
+        found_valid = False
+        if isinstance(bnames, list):
+            for b in bnames:
+                if get_meaning(b):
+                    found_valid = True
+                    break
+        if not found_valid:
+            messages.append(
+                f"[rule-8] warning grammar_point '{gp_name}' lacks a “(meaning)” section; "
+                f"better_grammar_point_name should include a name with parentheses"
+            )
+    return messages
+
+
+def _check_paren_lowercase(name: str, field_label: str):
+    """
+    Helper that inspects a single string (e.g., grammar_point or one better_grammar_point_name entry).
+    Only runs if get_meaning(name) is non-empty. Within that “meaning” section,
+    any uppercase alphabetic character (except 'I' followed by space) triggers a warning.
+    """
+    messages = []
+    meaning = get_meaning(name)
+    if not meaning:
+        return messages
+
+    uppercase_chars = []
+    for i, c in enumerate(meaning):
+        if c.isalpha() and c == c.upper():
+            # Allow 'I' only if followed by a space
+            if c == "I" and i + 1 < len(meaning) and meaning[i + 1] == " ":
+                continue
+            uppercase_chars.append(c)
+
+    if uppercase_chars:
+        unique = sorted(set(uppercase_chars))
+        chars_str = ", ".join(unique)
+        messages.append(
+            f"[rule-9] warning {field_label} '{name}' has uppercase letters inside parentheses ({chars_str}); "
+            f"text inside parentheses must be all lowercase (except 'I ')"
+        )
+    return messages
+
+
+def lint_parentheses_lowercase(grammar_point):
+    """
+    [rule-9] Apply the “all lowercase inside (meaning)” check on:
+      1. grammar_point
+      2. each entry in better_grammar_point_name (if present)
+
+    Skips any parentheses blocks that contain Japanese text.
+    """
+    messages = []
+    gp_name = grammar_point.get("grammar_point", "")
+    messages.extend(_check_paren_lowercase(gp_name, "grammar_point"))
+
+    for bn in grammar_point.get("better_grammar_point_name", []):
+        messages.extend(_check_paren_lowercase(bn, "better_grammar_point_name"))
+
+    return messages
+
+def lint_learn_before(grammar_point):
+    """
+    [rule-10] Warn if:
+      - learn_before is missing, or
+      - learn_before is not a list with at least two items.
+    """
+    messages = []
+    lb = grammar_point.get("learn_before")
+    if not isinstance(lb, list) or len(lb) < 2:
+        count = len(lb) if isinstance(lb, list) else 0
+        messages.append(
+            f"[rule-10] warning learn_before has {count} item(s); must have at least 2"
+        )
+    return messages
+
+
+def lint_learn_after(grammar_point):
+    """
+    [rule-11] Warn if:
+      - learn_after is missing, or
+      - learn_after is not a list with at least two items.
+    """
+    messages = []
+    la = grammar_point.get("learn_after")
+    if not isinstance(la, list) or len(la) < 2:
+        count = len(la) if isinstance(la, list) else 0
+        messages.append(
+            f"[rule-11] warning learn_after has {count} item(s); must have at least 2"
+        )
+    return messages
+
+def lint_false_friends_grammar_point(grammar_point):
+    """
+    [rule-12] Warn if any entry in false_friends is missing the 'grammar_point' field
+    or if it’s not a non-empty string.
+    """
+    messages = []
+    ff_list = grammar_point.get("false_friends", [])
+    if isinstance(ff_list, list):
+        for idx, ff in enumerate(ff_list):
+            gp = ff.get("grammar_point")
+            if not isinstance(gp, str) or not gp.strip():
+                messages.append(
+                    f"[rule-12] warning false_friends[{idx}].grammar_point is missing or empty"
+                )
+    return messages
+
 def clean_lint(grammar_point, path: str = None):
     lint = []
     grammar_point = copy.deepcopy(grammar_point)
@@ -327,6 +465,11 @@ def clean_lint(grammar_point, path: str = None):
     lint.extend(lint_japanese_braces(grammar_point))
     lint.extend(lint_example_count(grammar_point))
     lint.extend(lint_japanese_count(grammar_point))
+    lint.extend(lint_better_grammar_name(grammar_point))
+    lint.extend(lint_parentheses_lowercase(grammar_point))
+    lint.extend(lint_learn_before(grammar_point))
+    lint.extend(lint_learn_after(grammar_point))
+    lint.extend(lint_false_friends_grammar_point(grammar_point))
     grammar_point['lint-errors'] = lint
     # Prune empty fields and items
     grammar_point = prune_empty(grammar_point)

@@ -195,8 +195,8 @@
     // then you **MAY** suggest a new name for each of those grammar points.
     // **MUST NOT** be the same as grammar_point, **MUST NOT** be the empty string, and **MUST NOT** be null.
     // In those cases, just omit this field.
-    // **STRONGLY PREFER** names with a short (meaning) field in parentheses.
-    // Short (meaning) part **MUST** be lower case.
+    // [rule-8] **STRONGLY PREFER** names with a short (meaning) field in parentheses.
+    // [rule-9] Short (meaning) part **MUST** be lower case.
     "better_grammar_point_name": {
       "type": "array",
       "items": { "$ref":  "#/definitions/grammarType" }
@@ -204,7 +204,7 @@
     // **MUST** be a grammar point from ALL_GRAMMARS_SUMMARY that should be learned **BEFORE** grammar_point.
     // Pick the closest, in ideal learning order, that you're 95% sure should be learned **BEFORE** grammar_point.
     // **MUST** ensure that learn_before is more more commonly used than grammar_point.
-    // **MUST** have at least two items.
+    // [rule-10] **MUST** have at least two items.
     "learn_before": {
       "type": "array",
       "items": { "$ref": "#/definitions/grammarType" }
@@ -212,7 +212,7 @@
     // **MUST** be grammar points from ALL_GRAMMARS_SUMMARY that should be learned **AFTER** grammar_point.
     // Pick the closest points, in ideal learning order, that you're 95% sure should be learned **AFTER** grammar_point.
     // **MUST** ensure that learn_after items is **LESS COMMONLY** used than grammar_point.
-    // **MUST** have at least two items.
+    // [rule-11] **MUST** have at least two items.
     "learn_after": {
       "type": "array",
       "items": { "$ref": "#/definitions/grammarType" }
@@ -331,7 +331,7 @@
           "kind": { "$ref": "#/definitions/falseFriendKindType" },
           // Nuance is a concise contrast to the main grammar point (e.g., "Unlike [grammar_point], [false_friend]...").
           "nuance": { "$ref": "#/definitions/english" },
-          // **MUST** have a grammar point from ALL_GRAMMARS_SUMMARY 
+          // [rule-12] **MUST** have a grammar point from ALL_GRAMMARS_SUMMARY 
           // --or-- **MUST** suggest a grammar point name that should be added to ALL_GRAMMARS_SUMMARY. In this case, prepend "<suggest>:" to this grammar point name.
           "grammar_point": { "$ref": "#/definitions/grammarType" }
         },
