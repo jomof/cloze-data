@@ -1,5 +1,22 @@
 {
     "grammar_point": "る-verb (dictionary)",
+    "better_grammar_point_name": [
+        "る-verbs (Ichidan verbs)"
+    ],
+    "learn_before": [
+        "Verb[て] (and then another event)",
+        "てほしい",
+        "なさい",
+        "う-verb (dictionary)"
+    ],
+    "learn_after": [
+        "ている (habitual action)",
+        "やすい",
+        "にくい",
+        "Verb[volitional-よう]+とする",
+        "ようにする",
+        "ことができる"
+    ],
     "id": "gp0015",
     "meaning": "Dictionary form (present/future tense) of a る-verb (Ichidan verb)",
     "meaning_warning": "The dictionary form is also often called \"plain form\" (because it is used in plain language), or \"short form\".",
@@ -117,6 +134,12 @@
             "form": "れば",
             "rarity": "common",
             "meaning": "Conditional form (if)"
+        },
+        {
+            "conjugation-type": "concessive (～ても)",
+            "form": "ても",
+            "rarity": "common",
+            "meaning": "Concessive form (even if)"
         }
     ],
     "pronunciation": {
@@ -596,6 +619,40 @@
             "conjugation": "causative (～させる)",
             "speaker_gender": "female",
             "nuance": "The polite causative form 「食べさせます」 is used by a female speaker in an informative context, describing her actions as a parent in a respectful manner, typical for a conversation with another adult."
+        },
+        {
+            "english": "Even if it rains, I'll go to the concert.",
+            "japanese": [
+                "雨 が 降っ て も、コンサート に {行く}。",
+                "雨 が 降っ て も、コンサート に {行く} よ。",
+                "雨 が 降っ て も、コンサート に {行く} ぞ。",
+                "雨 が 降っ て も、コンサート に {行く} さ。",
+                "雨 が 降っ て も、コンサート に {行く} ん だ。",
+                "雨 が 降っ て も、コンサート に {行く} わ。"
+            ],
+            "english_literally": "Rain, even if falls, to concert, will go.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "雨 が 降っ たら、コンサート に {行く}。"
+                    ],
+                    "english": "If it rains, I'll go to the concert (implies it might not rain).",
+                    "hint": "「～ても」 expresses that an action will happen *regardless* of the condition, while 「～たら」 implies the action *depends* on the condition occurring. We are looking for an action that will happen regardless of a condition."
+                },
+                {
+                    "competing_japanese": [
+                        "雨 が 降る の に、コンサート に {行く}。"
+                    ],
+                    "english": "Despite the rain, I'm going to the concert (implies something is unexpected).",
+                    "hint": "「～のに」 implies a sense of unexpectedness or contradiction, whereas 「～ても」 simply states the action will occur regardless of the condition."
+                }
+            ],
+            "scene": "A young woman is determined to attend a concert despite unfavorable weather forecasts.",
+            "register": "casual",
+            "setting": "serious",
+            "conjugation": "concessive (～ても)",
+            "speaker_gender": "female",
+            "nuance": "The use of 「～ても」 with the plain form 「行く」 conveys a strong determination in a casual setting. The speaker's gender does not inherently alter the form, but this directness is common across genders in casual speech when expressing resolve."
         }
     ],
     "post_example_writeup": "Remember that not all verbs ending in 「る」 are る-verbs (Ichidan verbs). Always check the conjugation pattern to be sure.",
@@ -603,7 +660,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/る-Verbs"
     },
     "lint-errors": [
-        "[rule-10] warning learn_before has 0 item(s); must have at least 2",
-        "[rule-11] warning learn_after has 0 item(s); must have at least 2"
+        "[rule-9] warning better_grammar_point_name 'る-verbs (Ichidan verbs)' has uppercase letters inside parentheses (I); text inside parentheses must be all lowercase (except 'I ')"
     ]
 }
