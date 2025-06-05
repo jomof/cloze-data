@@ -1,5 +1,18 @@
 {
     "grammar_point": "Verb[volitional-よう]+と思う",
+    "better_grammar_point_name": [
+        "Verb[volitional-よう]+と思う (intend to/think I will)"
+    ],
+    "learn_before": [
+        "Verb[volitional-よう]",
+        "とおもう",
+        "つもりだ"
+    ],
+    "learn_after": [
+        "Verb[volitional-よう]+に〜ない",
+        "ことにする",
+        "べき"
+    ],
     "id": "gp0278",
     "meaning": "I think I will, I think I shall, Going to, Gonna (Volitional + と思う)",
     "conjugations": [
@@ -113,7 +126,7 @@
             "grammar_point": "Verb[volitional-よう]"
         },
         {
-            "term": "と思う",
+            "term": "とおもう",
             "meaning": "I think",
             "kind": "often confused with",
             "nuance": "Unlike Verb[volitional-form] + と思う, this simply expresses an opinion or belief, not an intention to do something.",
@@ -385,14 +398,54 @@
             "register": "casual",
             "setting": "storytelling",
             "conjugation": "conditional (～たら)"
+        },
+        {
+            "english": "I will make sure to finish this project by the end of the month.",
+            "japanese": [
+                "今月 中 に この プロジェクト を 終えよう と {思う}。",
+                "今月 中 に この プロジェクト を 終えよう と {思い ます}。"
+            ],
+            "english_literally": "Within this month, I think I will finish this project.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "今月 中 に この プロジェクト を 終える つもり だ。"
+                    ],
+                    "english": "I plan to finish this project by the end of the month.",
+                    "hint": "This emphasizes a definite, pre-set plan. We're looking for the speaker's internal decision or resolve."
+                }
+            ],
+            "scene": "A person expressing commitment to a deadline in a work setting.",
+            "register": "formal",
+            "setting": "professional",
+            "conjugation": "dictionary (plain non-past)",
+            "nuance": "Using 「思う」 here conveys a strong personal commitment and resolve to complete the task, reflecting a proactive professional stance."
+        },
+        {
+            "english": "I didn't think I would stay this long, but I ended up talking for hours.",
+            "japanese": [
+                "こんな に 長く いる と は {思わ なかっ た} けど、結局 何 時間 も 話し て しまっ た。",
+                "こんな に 長く いる と は {思い ませ ん でし た} けど、結局 何 時間 も 話し て しまい まし た。"
+            ],
+            "english_literally": "I didn't think I would stay this long, but in the end, I talked for hours.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "こんな に 長く いる つもり は なかっ た けど、結局 何 時間 も 話し て しまっ た。"
+                    ],
+                    "english": "I had no intention of staying this long, but I ended up talking for hours.",
+                    "hint": "This emphasizes a prior fixed intention. We're looking for a statement about a realization that occurred after the fact, regarding what one had expected to do or not do."
+                }
+            ],
+            "scene": "Someone reflecting on an unexpected long conversation.",
+            "register": "casual",
+            "setting": "reflective",
+            "conjugation": "negative past plain (～なかった)",
+            "nuance": "The phrase 「思わなかった」 highlights a past expectation or prediction that turned out to be incorrect, suggesting a more nuanced reflection on an unplanned outcome."
         }
     ],
+    "post_example_writeup": "The core of 「〜よう と 思う」 lies in expressing the speaker's personal intention or decision. When considering which verb form to use, pay attention to the level of politeness required by the context (plain forms for casual settings, ます-forms for polite) and whether the intention is a fresh decision (simple plain/polite forms) or an ongoing thought/plan (〜ている form). The conditional forms 「思えば」 and 「思ったら」 are particularly useful for discussing hypothetical scenarios based on an intention or the outcome of a decision-making moment, respectively.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/ようと思う-おうと思う"
-    },
-    "lint-errors": [
-        "[rule-8] warning grammar_point 'Verb[volitional-よう]+と思う' lacks a “(meaning)” section; better_grammar_point_name should include a name with parentheses",
-        "[rule-10] warning learn_before has 0 item(s); must have at least 2",
-        "[rule-11] warning learn_after has 0 item(s); must have at least 2"
-    ]
+    }
 }

@@ -1,5 +1,16 @@
 {
     "grammar_point": "まえに",
+    "better_grammar_point_name": [
+        "まえに (before, in front)"
+    ],
+    "learn_before": [
+        "に (location, direction)",
+        "てから"
+    ],
+    "learn_after": [
+        "に先駆けて",
+        "を皮切りに"
+    ],
     "id": "gp0087",
     "meaning": "Before, In front of",
     "pronunciation": {
@@ -17,7 +28,8 @@
         "usage-context": "Used to denote temporal precedence or spatial position.",
         "function": "Indicates time before an event or location in front of something.",
         "nuance": "Can be used for both temporal (before) and spatial (in front of) meanings, depending on the context of the preceding word.",
-        "source": "Bunpro, DOJG"
+        "colocation": "Often used with verbs in dictionary form, or nouns followed by の.",
+        "grammatical-role": "Functions as a temporal or spatial adverbial phrase, modifying the main verb of the sentence."
     },
     "etymology": "「前 (mae)」 means \"front\" or \"before.\" に (ni) is a particle indicating location or time. Thus, 「まえに」 literally combines these meanings to indicate a position in front of something or a point in time before something else.",
     "writeup": "「まえに」 is a versatile phrase that indicates either **temporal precedence** (before an action or event) or **spatial position** (in front of something). Its meaning depends entirely on the context and the type of word it follows. For example, it does not mean \"the past\" or \"previously.\"\n\nWhen used with **verbs**, the verb must be in its plain, non-past (dictionary) form. This construction signifies that the action described by 「まえに」 occurs prior to the action of the main verb in the sentence. For example, 「食べる前に」 means \"before eating,\" indicating that a certain action will be performed before the act of eating.\n\nWhen used with **nouns**, the particle 「の」 is required between the noun and 「まえに」. If the noun refers to an an event or a point in time (e.g., 「会議」 'meeting', 「試験」 'exam'), 「まえに」 denotes temporal precedence, meaning \"before the meeting\" or \"before the exam.\" If the noun refers to a physical object or location (e.g., 「駅」 'station', 「家」 'house'), 「まえに」 denotes spatial position, meaning \"in front of the station\" or \"in front of the house.\" \n\nThis grammar point is fundamental for describing order in both time and space in Japanese.",
@@ -433,15 +445,66 @@
             "register": "formal",
             "setting": "storytelling",
             "nuance": "「短い 休憩」 (mijikai kyuukei) means \"short break.\" The use of 「まえに」 with the noun 「プレゼンテーション」 (presentation) clearly sets the temporal order of events. The polite past tense 「あり まし た」 (arimashita) fits a formal summary."
+        },
+        {
+            "english": "He bowed politely before giving his speech.",
+            "japanese": [
+                "彼 は スピーチ する {まえ に}、丁寧 に お 辞儀 し まし た。",
+                "彼 は スピーチ する {まえ に}、お 辞儀 し て から 話し まし た。"
+            ],
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "彼 は スピーチ し た あと で、丁寧 に お 辞儀 し まし た。"
+                    ],
+                    "english": "He bowed politely after giving his speech.",
+                    "hint": "「あとで」 indicates an action happening *after* another. We need an action that happened *before* the speech."
+                },
+                {
+                    "competing_japanese": [
+                        "彼 は スピーチ する 時 に、丁寧 に お 辞儀 し まし た。"
+                    ],
+                    "english": "He bowed politely when giving his speech.",
+                    "hint": "「時 に」 suggests a simultaneous action. We are looking for an action that precedes the speech."
+                }
+            ],
+            "scene": "A reporter describes a politician's behavior at a press conference.",
+            "register": "formal",
+            "setting": "informative",
+            "speaker_gender": "male",
+            "nuance": "The phrase 「丁寧 に お辞儀 し まし た」 (teinei ni ojigi shimashita) emphasizes the politeness and formality of the action, common in public speaking. This example uses the verb + 「まえに」 formation, showing a customary action before a main event."
+        },
+        {
+            "english": "Please wash your hands before eating.",
+            "japanese": [
+                "食べる {まえ に}、手 を 洗っ て ください。",
+                "食べる {まえ に}、手 洗っ て ね。"
+            ],
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "食べ た あと で、手 を 洗っ て ください。"
+                    ],
+                    "english": "Please wash your hands after eating.",
+                    "hint": "「あとで」 implies an action occurring *after* the main event. We need hands washed *before* eating."
+                },
+                {
+                    "competing_japanese": [
+                        "食 事 中 に、手 を 洗っ て ください。"
+                    ],
+                    "english": "Please wash your hands during the meal.",
+                    "hint": "「中 に」 indicates something happening *during* an event. We are looking for a preparatory action *before* the meal."
+                }
+            ],
+            "scene": "A parent instructs a child during mealtime preparations.",
+            "register": "teineigo (polite)",
+            "setting": "instructional",
+            "listener_gender": "group",
+            "nuance": "「手 を 洗っ て ください」 (te o aratte kudasai) is a common, polite instruction. This simple, everyday example effectively demonstrates the use of 「まえに」 with a verb in its dictionary form to indicate a necessary preceding action."
         }
     ],
     "post_example_writeup": "When using 「まえに」 in a temporal sense, it focuses on the period leading up to an event or action. This contrasts with other expressions that might describe actions happening during or after an event.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/まえに"
-    },
-    "lint-errors": [
-        "[rule-8] warning grammar_point 'まえに' lacks a “(meaning)” section; better_grammar_point_name should include a name with parentheses",
-        "[rule-10] warning learn_before has 0 item(s); must have at least 2",
-        "[rule-11] warning learn_after has 0 item(s); must have at least 2"
-    ]
+    }
 }

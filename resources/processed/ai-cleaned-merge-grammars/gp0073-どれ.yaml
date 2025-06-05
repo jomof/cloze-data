@@ -1,5 +1,16 @@
 {
     "grammar_point": "どれ",
+    "better_grammar_point_name": [
+        "どれ (which one, of 3+)"
+    ],
+    "learn_before": [
+        "これ",
+        "あれ"
+    ],
+    "learn_after": [
+        "どちら",
+        "どっち"
+    ],
     "id": "gp0073",
     "meaning": "Which (of three or more)",
     "meaning_warning": "「どれ」 is used alone as a pronoun, while 「どの」 is an attributive adjective that must always precede a noun.",
@@ -438,15 +449,65 @@
             "speaker_gender": "male",
             "listener_gender": "male",
             "nuance": "The casual sentence-final particle 「ね」 (ne) indicates agreement or seeking confirmation, common in friendly conversation. 「たくさん ある ね」 (takusan aru ne) emphasizes the large number of choices. 「どれ が おすすめ？」 (dore ga osusume?) is a very common and natural way to ask for a recommendation when faced with many options."
+        },
+        {
+            "english": "Among the different types of coffee, which one is the strongest?",
+            "japanese": [
+                "コーヒー の 種類 の 中 で、一番 強い の は {どれ} です か？",
+                "コーヒー の 種類 の 中 で、{どれ} が 一番 強い です か？"
+            ],
+            "english_literally": "Among the types of coffee, the strongest is {which one}?",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "どの コーヒー が 一番 強い です か？"
+                    ],
+                    "english": "Which coffee is the strongest?",
+                    "hint": "The phrase 「コーヒー の 種類 の 中 で」 already indicates a selection from a group, making 「どれ」 a more direct pronoun to use."
+                },
+                {
+                    "competing_japanese": [
+                        "どちら が 一番 強い です か？"
+                    ],
+                    "english": "Which of the two is the strongest?",
+                    "hint": "The context implies more than two types of coffee, so 「どちら」, which is for two options, is not suitable."
+                }
+            ],
+            "scene": "A customer at a cafe asks the barista for a recommendation on the strongest coffee from the menu.",
+            "register": "formal",
+            "setting": "professional",
+            "listener_gender": "male"
+        },
+        {
+            "english": "Out of all the songs on this album, which one is your favorite?",
+            "japanese": [
+                "この アルバム の 中 で、お 気 に 入り の 曲 は {どれ} です か？",
+                "この アルバム の 中 で、一番 好き な 曲 は {どれ} です か？"
+            ],
+            "english_literally": "Among this album, your favorite song is {which one}?",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "どの 曲 が お 気 に 入り です か？"
+                    ],
+                    "english": "Which song is your favorite?",
+                    "hint": "The phrase 「この アルバム の 中 で」 already specifies the group of songs. We are looking for a pronoun that refers to a specific item within that defined set."
+                },
+                {
+                    "competing_japanese": [
+                        "この アルバム の 中 で、どちら の 曲 が お 気 に 入り です か？"
+                    ],
+                    "english": "Among this album, which of the two songs is your favorite?",
+                    "hint": "Albums typically have more than two songs, so 「どちら」, which is for two options, is not appropriate here."
+                }
+            ],
+            "scene": "Two friends are discussing music, and one asks the other to pick their favorite track from a recently released album.",
+            "register": "casual",
+            "setting": "friendly"
         }
     ],
     "post_example_writeup": "When using 「どれ」, always remember that it functions as a pronoun, meaning it stands in place of the noun you are asking about. This is why it works well with phrases like 「～の 中 で」 (amongst ~) to specify the group from which you are choosing. While 「どれ」 usually refers to physical objects, it can also refer to concepts or abstract choices when the context makes the options clear, as seen in the example about presentation materials or choosing a dress color. Its versatility as a pronoun is one of its strengths, allowing for concise questions about selection from a diverse set of options.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/どれ"
-    },
-    "lint-errors": [
-        "[rule-8] warning grammar_point 'どれ' lacks a “(meaning)” section; better_grammar_point_name should include a name with parentheses",
-        "[rule-10] warning learn_before has 0 item(s); must have at least 2",
-        "[rule-11] warning learn_after has 0 item(s); must have at least 2"
-    ]
+    }
 }

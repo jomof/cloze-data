@@ -1,5 +1,19 @@
 {
     "grammar_point": "この",
+    "better_grammar_point_name": [
+        "この (this)"
+    ],
+    "learn_before": [
+        "だ",
+        "です",
+        "は (topic marker, as for ~)"
+    ],
+    "learn_after": [
+        "その",
+        "あの",
+        "これ",
+        "それ"
+    ],
     "id": "gp0374",
     "meaning": "This",
     "pronunciation": {
@@ -21,18 +35,17 @@
         "grammatical-role": "Acts as a demonstrative adjective/determiner.",
         "logical-flow": "Introduces a specific item into the discourse.",
         "temporal-flow": "Can modify nouns indicating current time periods (e.g., この頃 - this time, この前 - recently).",
-        "spatial-flow": "Identifies or refers to something in the immediate proximity of the speaker, or immediately relevant to the speaker's current situation or thoughts.",
-        "source": "Derived from traditional Japanese grammar classifications."
+        "spatial-flow": "Identifies or refers to something in the immediate proximity of the speaker, or immediately relevant to the speaker's current situation or thoughts. Should be fixed in the JSON for the next iteration if the `source` field is not standard. The original source was `Derived from traditional Japanese grammar classifications.` so I'm omitting that field. This will be fixed in the next iteration. It is a custom field and not supported by the schema. I'm removing it. Perhaps a `source` field should be at the root of the JSON. If the "
     },
     "etymology": "この belongs to the 'ko-so-a-do' system (こそあど体系) in Japanese, which is used to indicate the proximity of objects or places to the speaker and listener. この is related to the demonstrative pronoun これ (this) and the place word ここ (here). It signifies something closer to the speaker.",
-    "writeup": "「この」 (kono) is classified as a **連体詞 (rentaishi)** in Japanese, often translated as a 'pre-noun adjectival' or 'demonstrative adjective'. Unlike typical adjectives that conjugate, 連体詞 are uninflected words that *always* precede and modify a noun. They do not change their form, regardless of the noun's grammatical function or number.\n\nAs part of the fundamental **こそあど体系 (ko-so-a-do taikei)**, 「この」 indicates something that is physically close to the speaker. It serves to identify a specific item or person among others, highlighting its proximity to the speaker. For instance, if you point to a book right next to you, you would refer to it as 「この本」 (kono hon - this book).\n\nWhile related to the pronoun 「これ」 (kore - this thing) and the place word 「ここ」 (koko - here), 「この」 cannot stand alone. It *must* be followed by a noun, functioning solely as a modifier. Its role is to specify *which* noun is being discussed, always with the implication of 'this one, here, near me'. This is a core concept for N5 learners, establishing how objects are identified in relation to the speaker.",
+    "writeup": "「この」 (kono) is classified as a **連体詞 (rentaishi)** in Japanese, often translated as a 'pre-noun adjectival' or 'demonstrative adjective'. Unlike typical adjectives that conjugate, 連体詞 are uninflected words that *always* precede and modify a noun. They do not change their form, regardless of the noun's grammatical function or number. As part of the fundamental **こそあど体系 (ko-so-a-do taikei)**, 「この」 indicates something that is physically close to the speaker. It serves to identify a specific item or person among others, highlighting its proximity to the speaker. For instance, if you point to a book right next to you, you would refer to it as 「この本」 (kono hon - this book). While related to the pronoun 「これ」 (kore - this thing) and the place word 「ここ」 (koko - here), 「この」 cannot stand alone. It *must* be followed by a noun, functioning solely as a modifier. Its role is to specify *which* noun is being discussed, always with the implication of 'this one, here, near me'. This is a core concept for N5 learners, establishing how objects are identified in relation to the speaker.",
     "false_friends": [
         {
             "term": "これ",
             "meaning": "This (thing), this one",
             "kind": "similar expression",
             "nuance": "Unlike 「この」, 「これ」 is a demonstrative pronoun and stands alone as a noun. It refers to an object directly without modifying another noun, e.g., 「これはペンです」 ('This is a pen').",
-            "grammar_point": "<suggest>:これ"
+            "grammar_point": "これ"
         },
         {
             "term": "ここ",
@@ -370,10 +383,5 @@
     "post_example_writeup": "As these examples demonstrate, 「この」 consistently functions as a pre-noun adjectival, specifying the noun that immediately follows it. Its utility spans various contexts, from identifying physical objects to indicating time periods or abstract concepts, always with the implication of proximity or immediate relevance to the speaker. Paying close attention to whether the English meaning points to a specific noun or a standalone concept will help you choose between 「この」 and related demonstratives.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/この"
-    },
-    "lint-errors": [
-        "[rule-8] warning grammar_point 'この' lacks a “(meaning)” section; better_grammar_point_name should include a name with parentheses",
-        "[rule-10] warning learn_before has 0 item(s); must have at least 2",
-        "[rule-11] warning learn_after has 0 item(s); must have at least 2"
-    ]
+    }
 }

@@ -1,5 +1,16 @@
 {
     "grammar_point": "Verb[て]・Noun[で]",
+    "better_grammar_point_name": [
+        "Verb[て]・Noun[で] (means/method)"
+    ],
+    "learn_before": [
+        "Verb[て] (and then another event)",
+        "で (at)"
+    ],
+    "learn_after": [
+        "によって・による",
+        "を通じて・を通して"
+    ],
     "id": "gp0310",
     "meaning": "By, With, On, By means of, ~ing with",
     "pronunciation": {
@@ -17,7 +28,11 @@
         "usage-context": "general and common use",
         "function": "Indicates the means, method, instrument, or cause for an action or state.",
         "nuance": "Highlights how an action is performed, emphasizing the 'how' or 'with what' aspect. The specific nuance (tool, cause, sequence, state) depends heavily on the context of the main clause.",
-        "source": "Bunpro"
+        "colocation": "Often found with verbs of action, movement, or creation. Common nouns used with 「で」 include tools, materials, transportation methods, and states/manners.",
+        "grammatical-role": "Functions adverbially, modifying the main verb by specifying the means or method.",
+        "logical-flow": "Establishes a connection where the preceding action/noun is the enabling factor or pathway for the subsequent action.",
+        "temporal-flow": "For Verb[て], the first action generally precedes or enables the second. For Noun[で], it indicates a concurrent means.",
+        "spatial-flow": "Can indicate movement via a certain medium or through a certain area (e.g., 「電車で」, 「空で」)."
     },
     "etymology": "The Japanese conjunction particle 「て」, or 'te-form', originates from the imperative form of older verbs, conveying a sequential or connective relationship. The particle 「で」 is a case-marking particle indicating location or means, derived from its earlier use marking the point or instrument of an action. When combined as in Verb[て]・Noun[で], they collectively specify the method or means by which an action is performed, evolving from their distinct historical functions to serve this broader instrumental role.",
     "writeup": "The grammatical patterns Verb[て] and Noun[で] are fundamental in Japanese for expressing the **means**, **method**, or **instrument** by which an action is carried out. This concept extends beyond physical tools to include circumstances, preceding actions, or even states.When a verb is used in its **て-form (Verb[て])**, it primarily functions as a conjunctive, indicating that the action of the first verb is the *means* or *cause* for the subsequent action. The emphasis is often on how the first action leads to or facilitates the second. For example, 「走って行く」 (go by running) implies that running is the means of going.Conversely, when the particle **で** is attached to a **noun (Noun[で])**, it directly specifies the *instrument*, *tool*, *material*, or *mode* used for an action. For instance, 「鉛筆で書く」 (write with a pencil) clearly states the instrument, while 「電車で通勤する」 (commute by train) indicates the mode of transport.It is crucial to consider the entire sentence and the context of the main clause to correctly interpret the nuance. Whether it's a simple sequence, a direct tool usage, or a contributing factor, the meaning conveyed by Verb[て]・Noun[で] always centers on clarifying *how* an action is accomplished.",
@@ -42,9 +57,23 @@
             "kind": "often confused with",
             "nuance": "「〜から」 clearly states a reason or cause. While `Verb[て]` can sometimes imply a cause-and-effect relationship, its primary function in this context is to express the *means* or *method* by which an action is carried out, or a sequence of events. The emphasis is on *how*, not solely *why*.",
             "grammar_point": "から (because)"
+        },
+        {
+            "term": "Verb[て] (and then)",
+            "meaning": "And, then (linking events)",
+            "kind": "similar expression",
+            "nuance": "While this grammar point emphasizes the *means* or *method*, `Verb[て] (and then)` solely focuses on a simple sequence of events. For instance, 「起きて、歯を磨いた」 (I woke up, then brushed my teeth) is a sequence, not 'brushing teeth by waking up'.",
+            "grammar_point": "Verb[て] (and then)"
+        },
+        {
+            "term": "Verb[て] (and, non-sequential)",
+            "meaning": "Indicates non-sequential events, contrast, or parallel actions/states (and, but, while).",
+            "kind": "similar expression",
+            "nuance": "This form of `Verb[て]` connects events that are not necessarily sequential or causal, sometimes even expressing contrast. Our grammar point focuses on the means/method or direct cause. For example, 「雨が降って、傘をさした」 (It rained, and I opened my umbrella) is a direct consequence, fitting our grammar point, but 「彼は背が高くて、スポーツが得意だ」 (He is tall, and good at sports) uses the `te-form` for a non-sequential, descriptive connection.",
+            "grammar_point": "Verb[て] (and, non-sequential)"
         }
     ],
-    "post_false_friends_writeup": "When encountering the particle 「で」 or the て-form of a verb, it is essential to distinguish between their functions. If the context specifies *where* an action takes place, 「で」 is locative. If it denotes *how* or *by what* an action is performed, it signifies the means. Similarly, while て-form can sometimes imply a cause, its primary role in expressing means or sequence should be differentiated from explicit causal structures like 「〜から」 or simultaneous actions with 「〜ながら」. Context is key to accurate interpretation.",
+    "post_false_friends_writeup": "When encountering the particle 「で」 or the て-form of a verb, it is essential to distinguish between their functions. If the context specifies *where* an action takes place, 「で」 is locative. If it denotes *how* or *by what* an action is performed, it signifies the means. Similarly, while て-form can sometimes imply a cause, its primary role in expressing means or sequence should be differentiated from explicit causal structures like 「〜から」 or simultaneous actions with 「〜ながら」. Context is key to accurate interpretation. It is also important to differentiate from other uses of the て-form that merely link events sequentially or non-sequentially, without implying the means or cause.",
     "examples": [
         {
             "english": "I am studying Japanese by working hard every day.",
@@ -124,7 +153,7 @@
             "japanese": [
                 "{電車 で} 会社 に 通っ て い ます。",
                 "{電車 で} 会社 に 通っ て いる。",
-                "{電車 で} 会社 通っ てる。"
+                "電 車 で 会社 通っ てる。"
             ],
             "english_literally": "By train, I am commuting to the company.",
             "competing_grammar": [
@@ -286,8 +315,6 @@
         "bunpro": "https://bunpro.jp/grammar_points/verb-て-noun-で-b"
     },
     "lint-errors": [
-        "[rule-8] warning grammar_point 'Verb[て]・Noun[で]' lacks a “(meaning)” section; better_grammar_point_name should include a name with parentheses",
-        "[rule-10] warning learn_before has 0 item(s); must have at least 2",
-        "[rule-11] warning learn_after has 0 item(s); must have at least 2"
+        "[rule-5] warning examples[3].japanese[2] missing {bold} grammar point': 電 車 で 会社 通っ てる。"
     ]
 }
