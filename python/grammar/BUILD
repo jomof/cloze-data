@@ -4,7 +4,10 @@ load("@rules_python//python:defs.bzl", "py_library", "py_test")
 py_test(
     name = "clean_lint_test",
     srcs = ["clean_lint_test.py"],
-    deps = [":grammar"],
+    deps = [
+        ":grammar",
+        "//python/utils/visit_json",
+    ],
 )
 
 py_library(
@@ -18,6 +21,7 @@ py_library(
     visibility = ["//:__subpackages__"],
     deps = [
         "//python/mecab",
+        "//python/utils/visit_json",
         "@pip//json5",
         "@pip//jsonschema",
     ],

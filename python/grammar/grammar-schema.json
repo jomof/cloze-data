@@ -141,12 +141,15 @@
     "grammarType": { "type": "string" },
     // [rule-13] **MUST** be known to exist ALL_GRAMMARS_SUMMARY.
     "knownGrammarType": { "$ref": "#/definitions/grammarType" },
+    // [rule-8] **STRONGLY PREFER** names with a short (meaning) field in parentheses.
+    // [rule-9] Short (meaning) part **MUST** be lower case and be in english.
+    "wellFormedGrammarType": { "$ref": "#/definitions/grammarType" },
     // English **MUST** be a natural-sounding and grammatically correct.
     // English **MUST** use a single apostrophe (') for contractions (e.g., don't).
     // If quotes are allowed in the context, then **MUST** use double-quotes (") for quotes.
     "english": { "type": "string" },
     // Same as "english", but **MUST NOT** use quotes.
-    "exampleEnglish": { "type": "string" },
+    "exampleEnglish": { "$ref": "#/definitions/english" },
     // Japanese **MUST** have a space between words to assist mecab in parsing. For example imamoto should be '今本' but 'ima hon' should be '今 本'.
     // Japanese **MUST** sound natural and fluent to a native speaker.
     // Japanese **MUST NOT** contain furigana.
@@ -161,6 +164,7 @@
     // Its dual use for 'from (a starting point)' and 'because (a reason/origin)' can be understood through this core concept of emergence or derivation.
     // Something comes 'from' a physical point, or a consequence arises 'from' a cause."
     "etymologyType": { "$ref": "#/definitions/english" },
+    "japaneseVariationType": { "$ref": "#/definitions/japanese" },
     // [rule-7] **EVERY** way of saying the related "english" that adheres to the grammar point.
     // - [rule-2] **MUST** have spaces between words, so that it is easy to read and to parse with mecab.
     // - **MUST** be grammatically correct. We're teaching Japanese, not bad grammar.
@@ -181,7 +185,7 @@
     // ]
     "japaneseVariationsType": {
       "type": "array",
-      "items": { "$ref": "#/definitions/japanese" }
+      "items": { "$ref": "#/definitions/japaneseVariationType" }
     },
   },
   "type": "object",
@@ -195,13 +199,11 @@
     // If the current grammar point name is ideal, there's no need to change it.
     // If it would be better to split this grammar point into multiple grammar points, 
     // then you **MAY** suggest a new name for each of those grammar points.
-    // **MUST NOT** be the same as grammar_point, **MUST NOT** be the empty string, and **MUST NOT** be null.
+    // [rule-14] **MUST NOT** be the same as grammar_point, **MUST NOT** be the empty string, and **MUST NOT** be null.
     // In those cases, just omit this field.
-    // [rule-8] **STRONGLY PREFER** names with a short (meaning) field in parentheses.
-    // [rule-9] Short (meaning) part **MUST** be lower case.
     "better_grammar_point_name": {
       "type": "array",
-      "items": { "$ref":  "#/definitions/grammarType" }
+      "items": { "$ref":  "#/definitions/wellFormedGrammarType" }
     },
     // **MUST** be a grammar point from ALL_GRAMMARS_SUMMARY that should be learned **BEFORE** grammar_point.
     // Pick the closest, in ideal learning order, that you're 95% sure should be learned **BEFORE** grammar_point.

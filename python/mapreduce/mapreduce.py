@@ -362,7 +362,7 @@ class ConsoleDisplay:
                 f"FINISH called for closed slot_key '{slot_key}' (original class at {self.closed_keys[slot_key]})."
             )
             return
-        self.closed_keys[slot_key] = self._caller_file_line(1)
+        self.closed_keys[slot_key] = "1" # self._caller_file_line(1)
         self.event_queue.put({
             'type': 'FINISH',
             'slot_key': slot_key,
@@ -424,6 +424,7 @@ class MapReduce:
         initial_accumulator=None,
         map_func_name: str = 'mapping',
         temp_dir: str = None,
+        map_inproc: bool = False,  
         max_threads: int = 4,
         window_size: int = None,  # Passed to ConsoleDisplay
         refresh_interval: float = None  # Passed to ConsoleDisplay
@@ -433,6 +434,7 @@ class MapReduce:
         self.deserialize_func = deserialize_func
         self.preprocess_func = preprocess_func
         self.map_func_name = map_func_name
+        self.map_inproc = map_inproc  
         self.map_func = map_func
         self.serialize_func = serialize_func
         self.fold_func = fold_func
@@ -512,11 +514,14 @@ class MapReduce:
                     if self.run_state != 'running':
                         return None
                     self.display.begin(f"MAP:{basename}", f'{self.map_func_name} {basename}', self.map_func_name)
-                    processed = await asyncio.get_running_loop().run_in_executor(
-                        self.process_executor,
-                        self.map_func,
-                        deserialized,
-                        input_file_path)
+                    if self.map_inproc:
+                        processed = self.map_func(deserialized, input_file_path)
+                    else:
+                        processed = await asyncio.get_running_loop().run_in_executor(
+                            self.process_executor,
+                            self.map_func,
+                            deserialized,
+                            input_file_path)
                     self.display.finish(f"MAP:{basename}", f'finished {self.map_func_name} {basename}')
 
                 # Serialize the processed data and write to temp file

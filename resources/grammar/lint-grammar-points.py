@@ -3,12 +3,14 @@ import os
 import asyncio
 import sys
 from collections import OrderedDict
+import cProfile
+import yaml
+import json
+from python.grammar import clean_lint
+import pstats
+import tracemalloc
 
 if __name__ == '__main__':
-    import yaml
-    import json
-    from python.grammar import clean_lint
-
     # Determine workspace root: Bazel sets BUILD_WORKSPACE_DIRECTORY, otherwise use cwd
     workspace_root = os.environ.get('BUILD_WORKSPACE_DIRECTORY') or os.getcwd()
     grammar_root   = os.path.join(
@@ -38,10 +40,17 @@ if __name__ == '__main__':
             accumulated = OrderedDict()
         if 'all-grammar-points' not in accumulated:
             accumulated['all-grammar-points'] = {}
-        accumulated['all-grammar-points'][current['grammar_point']] = {
+        subset = {
             'grammar_point': current['grammar_point'],
             'meaning': current['meaning'],
         }
+        better_grammar_point_name = current.get('better_grammar_point_name', [])
+        if len(better_grammar_point_name) == 1:
+            id = current['id']
+            fr = current['grammar_point']
+            to = better_grammar_point_name[0]
+            # print(f"\n  - {grammar_root}/{id}-{fr}.yaml -> {grammar_root}/{id}-{to}.yaml")
+        accumulated['all-grammar-points'][current['grammar_point']] = subset
         return accumulated
     
     def serialize_json(obj):
@@ -56,7 +65,7 @@ if __name__ == '__main__':
         deserialize_func     = deserialize_yaml,
         serialize_func       = serialize_json,
         temp_dir             = os.path.join(workspace_root, '.temp'),
-        max_threads          = 3,
+        max_threads          = 4,
     )
 
     asyncio.run(mr.run())

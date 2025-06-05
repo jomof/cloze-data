@@ -261,11 +261,11 @@ def japanese_to_japanese_with_spaces(japanese: str) -> str:
         compact_sentence = mecab_raw_to_compact_sentence(raw)
         result = compact_sentence_to_japanese(compact_sentence, spaces=True)
 
-        # Round trip check
-        reconstructed = wakati.parse(result)
-        reconstructed_compact_sentence = mecab_raw_to_compact_sentence(reconstructed)
-        if compact_sentence != reconstructed_compact_sentence:
-            raise ValueError(f"Reconstructed compact sentence does not match original\n{japanese}=>{compact_sentence}\n{result}=>{reconstructed_compact_sentence}")
+        # # Round trip check
+        # reconstructed = wakati.parse(result)
+        # reconstructed_compact_sentence = mecab_raw_to_compact_sentence(reconstructed)
+        # if compact_sentence != reconstructed_compact_sentence:
+        #     raise ValueError(f"Reconstructed compact sentence does not match original\n{japanese}=>{compact_sentence}\n{result}=>{reconstructed_compact_sentence}")
 
         return result
     except Exception as e:

@@ -6,6 +6,7 @@ import os
 from python.mecab.compact_sentence import japanese_to_japanese_with_spaces
 import re
 from typing import Optional
+from python.utils.visit_json.visit_json import visit_json
 
 QUOTE_PAIRS = [
     ('"', '"'),
@@ -23,7 +24,7 @@ BRACKET_PATTERNS = [
     ('<', '>'),
 ]
 
-def strip_matching_quotes(text, _):
+def strip_matching_quotes(text, _ = None):
     """Remove matching quotes from the beginning and end of a string, including English and Japanese quotes."""
     if not isinstance(text, str) or len(text) < 2:
         return text
@@ -40,54 +41,170 @@ def strip_matching_quotes(text, _):
     return stripped
 
 
-def lint_quotes(grammar_point):
+def lv_quotes(val, type, path, messages):
     """
     Walks over the given data object and checks each example's English text for quotes.
     Returns a list of lint-style messages indicating which examples contain quotes.
     """
-    messages = []
-    examples = grammar_point.get("examples", [])
-    for idx, example in enumerate(examples):
-        english = example.get("english", "")
-        # Don't check for single quotes, because they are common in English contractions
-        if '"' in english:
-            messages.append(f"[rule-1] warning examples[{idx}].english has quotes and probably should not: {english}")
-    return messages
+    if type != "exampleEnglish":
+        return
+    # Don't check for single quotes, because they are common in English contractions
+    if '"' in val:
+        messages.append(f"[rule-1] warning {path} has quotes and probably should not: {val}")
 
 
-def lint_english_brackets(grammar_point):
+def lv_english_brackets(val, type, path, messages):
     """
     Walks over the given data object and checks each example's English text for bracket characters: {}, (), [], or <>.
     Returns a list of lint-style messages indicating which examples contain brackets.
     """
-    messages = []
-    examples = grammar_point.get("examples", [])
-    for idx, example in enumerate(examples):
-        english = example.get("english", "")
-        for left, right in BRACKET_PATTERNS:
-            if left in english or right in english:
-                messages.append(f"[rule-4] warning examples[{idx}].english has bracket characters {left}{right}: {english}")
-                break
-    return messages
+    if type != "exampleEnglish":
+        return
+    for left, right in BRACKET_PATTERNS:
+        if left in val or right in val:
+            messages.append(f"[rule-4] warning {path} has bracket characters {left}{right}: {val}")
+            break
 
-
-def lint_japanese_braces(grammar_point):
+def lv_japanese_braces(val, type, path, messages):
     """
     Walks over the given data object and checks that each Japanese example string contains both '{' and '}'.
     Returns a list of lint-style messages indicating missing braces for bolding the grammar point.
     """
-    messages = []
-    examples = grammar_point.get("examples", [])
-    for idx, example in enumerate(examples):
-        jap_list = example.get("japanese", [])
-        # Only proceed if japanese field is a list
-        if isinstance(jap_list, list):
-            for j_idx, jap in enumerate(jap_list):
-                if not isinstance(jap, str):
-                    continue
-                if '{' not in jap or '}' not in jap:
-                    messages.append(f"[rule-5] warning examples[{idx}].japanese[{j_idx}] missing {{bold}} grammar point': {jap}")
-    return messages
+    if type != "japaneseVariationType":
+        return
+
+    if '{' not in val or '}' not in val:
+        messages.append(f"[rule-5] warning {path} missing {{bold}} grammar point: {val}")
+
+def lv_missing_competing_grammar(val, type, path, messages):
+    """
+    For every example in grammar_point["examples"], warn if competing_grammar is
+    missing or empty. Returns a list of lint‐style messages:
+        "[rule-4] warning examples[i] has no competing_grammar"
+    """
+    if type != "examples/object":
+        return
+
+    cg = val.get("competing_grammar")
+    if cg is None or (isinstance(cg, list) and len(cg) == 0):
+        messages.append(
+            f"[rule-4] warning {path} has no competing_grammar"
+        )
+
+def lv_example_count(val, type, path, messages):
+    """
+    Warn if there are fewer than 10 examples.
+    Returns a list containing one warning string when len(examples) < 10.
+    """
+    if type != "examples/array":
+        return
+    count = len(val)
+    if count < 10:
+        messages.append(f"[rule-6] at {path} there are only {count} example(s); should have at least 10")
+
+def lv_japanese_count(val, type, path, messages):
+    """
+    Walks over each example and warns if there are fewer than 2 'japanese' entries.
+    """
+    if type != "examples/object":
+        return
+    jap_list = val.get("japanese", [])
+    # If it's not a list or has fewer than 2 items, warn
+    if not isinstance(jap_list, list) or len(jap_list) < 2:
+        count = len(jap_list) if isinstance(jap_list, list) else 0
+        messages.append(
+            f"[rule-7] warning {path} only has {count} element(s); should should be every way of saying 'english' that adheres to the grammar point"
+        )
+
+def lv_better_grammar_name(val, type, path, messages):
+    """
+    [rule-8] Warn if:
+      - grammar_point has no valid “(meaning)” section according to get_meaning(...), or
+      - better_grammar_point_name is missing or none of its entries yield a non-None from get_meaning(...).
+    """
+    if type:
+        # None for the root object
+        return
+    gp_name = val.get("grammar_point", "")
+    better_grammar_point_name = val.get("better_grammar_point_name", [])
+    if len(better_grammar_point_name) == 1:
+        if better_grammar_point_name[0] == gp_name:
+            messages.append(f"[rule-14] warning better_grammar_point_name[0] should not be the same as grammar_point: {gp_name}")
+
+    if get_meaning(gp_name) is None:
+        found_valid = False
+        
+        for b in better_grammar_point_name:
+            if get_meaning(b) is not None:
+                found_valid = found_valid or True
+
+        if not found_valid:
+            messages.append(
+                f"[rule-8] warning grammar_point '{gp_name}' lacks a valid “(meaning)” section; "
+                f"better_grammar_point_name should include a name with parentheses starting with a lowercase English letter or ~"
+            )
+
+def lv_validate_parenthetical_meaning(val, type, path, messages):
+    if type != "wellFormedGrammarType":
+        return
+    if '(' not in val:
+        messages.append(f"[rule-8] warning {path} '{val}' lacks a '(meaning)' section")
+    invalid_chars = _validate_grammar_point_meaning(val)
+    if invalid_chars:
+        messages.append(f"[rule-9] warning {path} (meaning) starts with invalid char: {', '.join(invalid_chars)}")
+
+def lv_learn_before(val, type, path, messages):
+    """
+    [rule-10] Warn if:
+      - learn_before is missing, or
+      - learn_before is not a list with at least two items.
+    """
+    if type is not None:
+        return
+    lb = val.get("learn_before")
+    count = len(lb) if isinstance(lb, list) else 0
+    if count < 2:
+        messages.append(f"[rule-10] warning learn_before has {count} item(s); must have at least 2")
+
+def lv_learn_after(val, type, path, messages):
+    if type is not None:
+        return
+    lb = val.get("learn_before")
+    count = len(lb) if isinstance(lb, list) else 0
+    if count < 2:
+        messages.append(f"[rule-11] warning learn_after has {count} item(s); must have at least 2")
+
+def lv_false_friends_grammar_point(val, type, path, messages):
+    if type != "false_friends/object":
+        return
+    gp = val.get("grammar_point")
+    if not isinstance(gp, str) or not gp.strip():
+        messages.append(f"[rule-12] warning {path}.grammar_point is missing or empty")
+
+def lv_known_grammar(val, type, path, messages, all_grammars_summary):
+    if type != "knownGrammarType":
+        return
+
+    if not val in all_grammars_summary['all-grammar-points'].keys():
+        # raise ValueError(' '.join(all_grammars_summary['all-grammar-points'].keys()))
+        messages.append(f"[rule-13] unknown grammar at '{path}': '{val}'. You may suggest new grammar points by adding a false_friend.")
+
+def _validate_grammar_point_meaning(name: str):
+    meaning = get_meaning(name)
+    if not meaning:
+        return []
+
+    if meaning.startswith("I "):
+        return []
+    
+    if meaning.startswith("~"):
+        return []
+    
+    if meaning[0].islower():
+        return []
+
+    return [meaning[0]] if meaning else []
+
 
 
 def lint_schema_enums_with_jsonschema(instance, schema):
@@ -118,62 +235,6 @@ def lint_schema_enums_with_jsonschema(instance, schema):
 
     return errors
 
-
-def type_replace(obj, schema, type_name, fn):
-    new_obj = copy.deepcopy(obj)
-    ref_pointer = f"#/definitions/{type_name}"
-
-    def resolve_ref(ref):
-        if not ref.startswith("#/definitions/"):
-            return None
-        key = ref.split("/")[-1]
-        return schema["definitions"].get(key)
-
-    def _traverse(current_obj, current_schema, path):
-        # If schema is not a dict, nothing to do
-        if not isinstance(current_schema, dict):
-            return current_obj
-
-        # Handle $ref nodes
-        if "$ref" in current_schema:
-            if current_schema["$ref"] == ref_pointer:
-                # Found a match—call fn with (value, path)
-                return fn(current_obj, path)
-            resolved = resolve_ref(current_schema["$ref"])
-            if resolved:
-                return _traverse(current_obj, resolved, path)
-
-        schema_type = current_schema.get("type")
-
-        # Object: recurse into each property
-        if schema_type == "object":
-            props = current_schema.get("properties", {})
-            if isinstance(current_obj, dict):
-                for key, prop_schema in props.items():
-                    if key in current_obj:
-                        # Build new path: "parent.child" or just "child" at root
-                        new_path = f"{path}.{key}" if path else key
-                        current_obj[key] = _traverse(current_obj[key], prop_schema, new_path)
-            return current_obj
-
-        # Array: recurse into each element
-        if schema_type == "array":
-            items_schema = current_schema.get("items")
-            if isinstance(current_obj, list) and items_schema:
-                new_list = []
-                for i, item in enumerate(current_obj):
-                    # Build new path: "parent[index]" or "[index]" at root
-                    new_path = f"{path}[{i}]" if path else f"[{i}]"
-                    new_list.append(_traverse(item, items_schema, new_path))
-                return new_list
-            return current_obj
-
-        # Anything else: leave as-is
-        return current_obj
-
-    return _traverse(new_obj, schema, "")
-
-
 def prune_empty(obj):
     """
     Recursively remove any fields (in dicts) or items (in lists) where the value is:
@@ -182,27 +243,39 @@ def prune_empty(obj):
         - empty dict {}
         - None
         - string "null"
-    Returns a new structure with those fields/items removed.
+    This version mutates `obj` in place and returns it.
     """
     if isinstance(obj, dict):
-        new_dict = {}
-        for k, v in obj.items():
-            pruned_v = prune_empty(v)
-            if pruned_v in ("", [], {}, None, "null"):
-                continue
-            new_dict[k] = pruned_v
-        return new_dict
+        # First, recurse into each value
+        for key, val in list(obj.items()):
+            if isinstance(val, (dict, list)):
+                prune_empty(val)
+            # Re-fetch the (possibly pruned) value
+            new_val = obj.get(key)
+            # If it’s now an empty container, or matches one of the "empty" primitives, delete it
+            if new_val in ("", None, "null") or (isinstance(new_val, (dict, list)) and not new_val):
+                del obj[key]
+        return obj
 
-    if isinstance(obj, list):
-        pruned_list = []
-        for item in obj:
-            pruned_item = prune_empty(item)
-            if pruned_item in ("", [], {}, None, "null"):
-                continue
-            pruned_list.append(pruned_item)
-        return pruned_list
+    elif isinstance(obj, list):
+        # Iterate backwards so that removing by index doesn’t shift unprocessed items
+        for i in range(len(obj) - 1, -1, -1):
+            item = obj[i]
+            if isinstance(item, (dict, list)):
+                prune_empty(item)
+                # After recursion, check if the container is now empty
+                if not item:
+                    del obj[i]
+                    continue
+            # If it’s a “scalar” empty value, remove it
+            if item in ("", None, "null"):
+                del obj[i]
+        return obj
 
-    return obj
+    else:
+        # Non-container primitives are returned unchanged
+        return obj
+
 
 
 def reorder_keys(obj, schema):
@@ -244,11 +317,11 @@ def reorder_keys(obj, schema):
     return new_obj
 
 
-def japanese_with_space(japanese, _):
+def japanese_with_space(japanese):
     return japanese_to_japanese_with_spaces(japanese)
 
 
-def replace_japanese_characters(japanese, _):
+def replace_japanese_characters(japanese):
 
     replacements = {
         '：': [':'], 
@@ -261,51 +334,6 @@ def replace_japanese_characters(japanese, _):
                 japanese = japanese.replace(invalid, valid)
     return japanese
 
-
-def lint_missing_competing_grammar(grammar_point):
-    """
-    For every example in grammar_point["examples"], warn if competing_grammar is
-    missing or empty. Returns a list of lint‐style messages:
-        "[rule-X] warning examples[i] has no competing_grammar"
-    """
-    messages = []
-    examples = grammar_point.get("examples", [])
-    for idx, example in enumerate(examples):
-        # If there's no competing_grammar key, or it's an empty list, warn.
-        cg = example.get("competing_grammar")
-        if cg is None or (isinstance(cg, list) and len(cg) == 0):
-            messages.append(
-                f"[rule-4] warning examples[{idx}] has no competing_grammar"
-            )
-    return messages
-
-def lint_example_count(grammar_point):
-    """
-    Warn if there are fewer than 10 examples.
-    Returns a list containing one warning string when len(examples) < 10.
-    """
-    messages = []
-    examples = grammar_point.get("examples", [])
-    count = len(examples)
-    if count < 10:
-        messages.append(f"[rule-6] only {count} example(s); should have at least 10")
-    return messages
-
-def lint_japanese_count(grammar_point):
-    """
-    Walks over each example and warns if there are fewer than 2 'japanese' entries.
-    """
-    messages = []
-    examples = grammar_point.get("examples", [])
-    for idx, example in enumerate(examples):
-        jap_list = example.get("japanese", [])
-        # If it's not a list or has fewer than 2 items, warn
-        if not isinstance(jap_list, list) or len(jap_list) < 2:
-            count = len(jap_list) if isinstance(jap_list, list) else 0
-            messages.append(
-                f"[rule-7] warning examples[{idx}].japanese only has {count} element(s); should should be every way of saying 'english' that adheres to the grammar point"
-            )
-    return messages
 
 def get_meaning(name: str) -> Optional[str]:
     """
@@ -324,147 +352,13 @@ def get_meaning(name: str) -> Optional[str]:
     if not inside:
         return None
 
-    first_char = inside[0]
-    if first_char == "I" or first_char == '~' or ('a' <= first_char <= 'z'):
-        return inside
-
-    return None
+    return inside
 
 
-def lint_better_grammar_name(grammar_point):
-    """
-    [rule-8] Warn if:
-      - grammar_point has no valid “(meaning)” section according to get_meaning(...), or
-      - better_grammar_point_name is missing or none of its entries yield a non-None from get_meaning(...).
-    """
-    messages = []
-    gp_name = grammar_point.get("grammar_point", "")
-    if get_meaning(gp_name) is None:
-        found_valid = False
-        for b in grammar_point.get("better_grammar_point_name", []):
-            if get_meaning(b) is not None:
-                found_valid = True
-                break
-        if not found_valid:
-            messages.append(
-                f"[rule-8] warning grammar_point '{gp_name}' lacks a valid “(meaning)” section; "
-                f"better_grammar_point_name should include a name with parentheses starting with a lowercase English letter or ~"
-            )
-    return messages
 
 
-def _check_paren_lowercase(name: str, field_label: str):
-    """
-    [rule-9] If get_meaning(name) returns a non-None string,
-    ensure that inside that meaning, all ASCII letters remain lowercase,
-    except 'I ' where applicable. Returns a warning listing uppercase letters found.
-    """
-    messages = []
-    meaning = get_meaning(name)
-    if not meaning:
-        return messages
 
-    uppercase_chars = []
-    for i, c in enumerate(meaning):
-        if c.isascii() and c.isalpha() and c == c.upper():
-            # Allow 'I' only if followed by a space
-            if c == "I" and i + 1 < len(meaning) and meaning[i + 1] == " ":
-                continue
-            uppercase_chars.append(c)
-
-    if uppercase_chars:
-        unique = sorted(set(uppercase_chars))
-        chars_str = ", ".join(unique)
-        messages.append(
-            f"[rule-9] warning {field_label} '{name}' has uppercase letters inside parentheses ({chars_str}); "
-            f"text inside parentheses must be all lowercase (except 'I ')"
-        )
-    return messages
-
-
-def lint_parentheses_lowercase(grammar_point):
-    """
-    Apply the “all lowercase inside (meaning)” check on:
-      1. grammar_point
-      2. each entry in better_grammar_point_name (if present)
-    Only runs when get_meaning(...) is non-None.
-    """
-    messages = []
-    gp_name = grammar_point.get("grammar_point", "")
-    messages.extend(_check_paren_lowercase(gp_name, "grammar_point"))
-
-    for bn in grammar_point.get("better_grammar_point_name", []):
-        messages.extend(_check_paren_lowercase(bn, "better_grammar_point_name"))
-
-    return messages
-
-def lint_learn_before(grammar_point):
-    """
-    [rule-10] Warn if:
-      - learn_before is missing, or
-      - learn_before is not a list with at least two items.
-    """
-    messages = []
-    lb = grammar_point.get("learn_before")
-    if not isinstance(lb, list) or len(lb) < 2:
-        count = len(lb) if isinstance(lb, list) else 0
-        messages.append(
-            f"[rule-10] warning learn_before has {count} item(s); must have at least 2"
-        )
-    return messages
-
-
-def lint_learn_after(grammar_point):
-    """
-    [rule-11] Warn if:
-      - learn_after is missing, or
-      - learn_after is not a list with at least two items.
-    """
-    messages = []
-    la = grammar_point.get("learn_after")
-    if not isinstance(la, list) or len(la) < 2:
-        count = len(la) if isinstance(la, list) else 0
-        messages.append(
-            f"[rule-11] warning learn_after has {count} item(s); must have at least 2"
-        )
-    return messages
-
-def lint_false_friends_grammar_point(grammar_point):
-    """
-    [rule-12] Warn if any entry in false_friends is missing the 'grammar_point' field
-    or if it’s not a non-empty string.
-    """
-    messages = []
-    ff_list = grammar_point.get("false_friends", [])
-    if isinstance(ff_list, list):
-        for idx, ff in enumerate(ff_list):
-            gp = ff.get("grammar_point")
-            if not isinstance(gp, str) or not gp.strip():
-                messages.append(
-                    f"[rule-12] warning false_friends[{idx}].grammar_point is missing or empty"
-                )
-    return messages
-
-def lint_known_grammar(grammar_point, all_grammars_summary):
-    """
-    [rule-13] For every field whose schema type is '#/definitions/knownGrammarType',
-    call is_known_grammar(value). If False, append a warning.
-    Uses type_replace(...) to traverse all such fields.
-    """
-    messages = []
-
-    def _check(val, path):
-        # `val` is the value of a knownGrammarType field
-        if not val in all_grammars_summary['all-grammar-points'].keys():
-            # raise ValueError(' '.join(all_grammars_summary['all-grammar-points'].keys()))
-            messages.append(f"[rule-13] unknown grammar at '{path}': '{val}'. You may suggest new grammar points by adding a false_friend.")
-        return val
-
-    # Traverse grammar_point with type_replace targeting "knownGrammarType"
-    type_replace(grammar_point, GRAMMAR_SCHEMA, "knownGrammarType", _check)
-
-    return messages
-def clean_lint(grammar_point, path: str, all_grammars_summary: dict):
+def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = None):
     lint = []
     grammar_point = copy.deepcopy(grammar_point)
     if path is not None:
@@ -489,26 +383,43 @@ def clean_lint(grammar_point, path: str, all_grammars_summary: dict):
             if isinstance(comp_j, str):
                 c['competing_japanese'] = [comp_j]
             
-    grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "japanese", strip_matching_quotes)
-    grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "japanese", replace_japanese_characters)
-    grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "japanese", japanese_with_space)
-    grammar_point = type_replace(grammar_point, GRAMMAR_SCHEMA, "exampleEnglish", strip_matching_quotes)
-    lint.extend(lint_quotes(grammar_point))
-    lint.extend(lint_english_brackets(grammar_point))
+    def fn(value, type_name, path):
+        # print(f"fn: {type_name=}, {path=}")
+        result = value
+        try:
+            if type_name == "japanese":
+                result = strip_matching_quotes(value)
+                result = replace_japanese_characters(result)
+                result = japanese_with_space(result)
+                return result
+            if type_name == "exampleEnglish":
+                result = strip_matching_quotes(value)
+                return result
+
+            if result == value:
+                return None
+            else:
+                return result
+        finally:
+            lv_quotes(result, type_name, path, lint)
+            lv_english_brackets(result, type_name, path, lint)
+            lv_japanese_braces(result, type_name, path, lint)
+            lv_missing_competing_grammar(result, type_name, path, lint)
+            lv_example_count(result, type_name, path, lint)
+            lv_japanese_count(result, type_name, path, lint)
+            lv_better_grammar_name(result, type_name, path, lint)
+            lv_validate_parenthetical_meaning(result, type_name, path, lint)
+            lv_learn_after(result, type_name, path, lint)
+            lv_learn_before(result, type_name, path, lint)
+            lv_false_friends_grammar_point(result, type_name, path, lint)
+            lv_known_grammar(result, type_name, path, lint, all_grammars_summary)
+    visit_json(grammar_point, GRAMMAR_SCHEMA, fn)
+
     lint.extend(lint_schema_enums_with_jsonschema(grammar_point, GRAMMAR_SCHEMA))
-    lint.extend(lint_missing_competing_grammar(grammar_point))
-    lint.extend(lint_japanese_braces(grammar_point))
-    lint.extend(lint_example_count(grammar_point))
-    lint.extend(lint_japanese_count(grammar_point))
-    lint.extend(lint_better_grammar_name(grammar_point))
-    lint.extend(lint_parentheses_lowercase(grammar_point))
-    lint.extend(lint_learn_before(grammar_point))
-    lint.extend(lint_learn_after(grammar_point))
-    lint.extend(lint_false_friends_grammar_point(grammar_point))
-    lint.extend(lint_known_grammar(grammar_point, all_grammars_summary))
+    
     grammar_point['lint-errors'] = lint
     # Prune empty fields and items
-    grammar_point = prune_empty(grammar_point)
+    prune_empty(grammar_point)
     # Reorder fields to match schema
     grammar_point = reorder_keys(grammar_point, GRAMMAR_SCHEMA)
     return grammar_point

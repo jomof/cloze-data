@@ -955,3 +955,19 @@ bazel run //resources/grammar:lint-grammar-points
 bazel run //resources/grammar:ai-pass
 clear
 bazel run //resources/grammar:ai-pass
+bazel run //python/utils/build_cache/service:cache-service
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel run //resources/grammar:ai-pass
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel run //resources/grammar:ai-pass
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel run //resources/grammar:ai-pass
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel run //resources/grammar:ai-pass
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
