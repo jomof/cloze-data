@@ -1,5 +1,18 @@
 {
     "grammar_point": "Verbs (non-past)",
+    "better_grammar_point_name": [
+        "Verbs (non-past plain)",
+        "Verbs (non-past polite)"
+    ],
+    "learn_before": [
+        "だ",
+        "です"
+    ],
+    "learn_after": [
+        "ている (~ing)",
+        "つもりだ",
+        "はずだ"
+    ],
     "id": "gp0069",
     "meaning": "(Non-past) Indicates actions that occur regularly, general truths, or future events.",
     "conjugations": [
@@ -475,14 +488,99 @@
             "conjugation": "non-past polite (～ます)",
             "listener_gender": "group",
             "nuance": "The polite form 「到着します」 is standard for public announcements, conveying information clearly and formally to a general audience. The time expression 「午後７時」 firmly places the action in the future, making the non-past tense appropriate for a scheduled event."
+        },
+        {
+            "english": "My grandfather drinks sake every evening.",
+            "japanese": [
+                "祖父 は 毎晩、日本 酒 を {飲む}。",
+                "祖父 は 毎晩、日本 酒 を {飲み ます}。"
+            ],
+            "english_literally": "Grandfather every evening sake drinks.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "祖父 は 毎晩、日本 酒 を {飲ん で いる}。"
+                    ],
+                    "english": "My grandfather is drinking sake every evening (ongoing).",
+                    "hint": "This implies an action that is currently ongoing. We're looking for a habitual action."
+                },
+                {
+                    "competing_japanese": [
+                        "祖父 は 毎晩、日本 酒 を {飲ん だ}。"
+                    ],
+                    "english": "My grandfather drank sake every evening (past).",
+                    "hint": "This indicates a past action. We're looking for a present habit."
+                }
+            ],
+            "scene": "A grandson casually mentions his grandfather's routine to a friend.",
+            "register": "casual",
+            "setting": "friendly",
+            "conjugation": "dictionary (plain non-past)",
+            "speaker_gender": "male",
+            "speaker_age": "younger",
+            "nuance": "The plain form 「飲む」 is appropriate for a casual conversation about a habitual action, especially when speaking about an in-group member like a grandfather. 「毎晩」 clearly indicates this is a daily habit, reinforcing the use of the non-past form."
+        },
+        {
+            "english": "I usually don't go out on weekends.",
+            "japanese": [
+                "週末 は あまり {出かけ ない}。",
+                "週末 は あまり {出かけ ませ ん}。"
+            ],
+            "english_literally": "Weekend, not much go out.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "週末 は あまり {出かけ ませ ん} でし た。"
+                    ],
+                    "english": "I didn't go out much on weekends (past negative).",
+                    "hint": "This refers to a past action. We're looking for a general non-habit."
+                },
+                {
+                    "competing_japanese": [
+                        "週末 は あまり {出かけ たく ない}。"
+                    ],
+                    "english": "I don't want to go out much on weekends.",
+                    "hint": "This expresses a desire, not a general habit. We're looking for a simple statement about non-participation."
+                }
+            ],
+            "scene": "A colleague asking about weekend plans, and the other person states a general preference.",
+            "register": "teineigo (polite)",
+            "setting": "friendly",
+            "conjugation": "negative non-past polite (～ません)",
+            "nuance": "The polite negative 「出かけません」 is a respectful way to express a general non-habit. The adverb 「あまり」 ('not much') combined with the non-past negative clarifies that this is a typical pattern rather than a one-time event or a strong prohibition."
+        },
+        {
+            "english": "That restaurant closes at 9 PM.",
+            "japanese": [
+                "あの レストラン は 午後 ９ 時 に {閉まり ます}。",
+                "あの レストラン は 午後 ９ 時 に {閉まる}。"
+            ],
+            "english_literally": "That restaurant afternoon 9 o'clock at closes.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "あの レストラン は 午後 ９ 時 に {閉まっ た}。"
+                    ],
+                    "english": "That restaurant closed at 9 PM (past).",
+                    "hint": "This refers to a past event. We're looking for a general fact or scheduled occurrence."
+                },
+                {
+                    "competing_japanese": [
+                        "あの レストラン は 午後 ９ 時 に {閉まる はず だ}。"
+                    ],
+                    "english": "That restaurant should close at 9 PM (expectation).",
+                    "hint": "This implies an expectation. We're looking for a simple factual statement about its regular closing time."
+                }
+            ],
+            "scene": "A concierge informs a hotel guest about restaurant hours.",
+            "register": "formal",
+            "setting": "informative",
+            "conjugation": "non-past polite (～ます)",
+            "nuance": "The polite form 「閉まります」 is suitable for conveying factual information in a formal service context. It states a regular, scheduled closing time as a general truth about the restaurant's operation. The use of 「に」 marks the specific time of the action."
         }
     ],
     "post_example_writeup": "When using non-past verbs, remember that context, especially time expressions, is key to distinguishing between general truths, habitual actions, and future events. Pay attention to the formality of the situation to choose between plain and polite forms, and be mindful of other grammatical constructions like the -ている form or ～つもり when expressing ongoing actions or intentions.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/verb-non-past"
-    },
-    "lint-errors": [
-        "[rule-10] warning learn_before has 0 item(s); must have at least 2",
-        "[rule-11] warning learn_after has 0 item(s); must have at least 2"
-    ]
+    }
 }
