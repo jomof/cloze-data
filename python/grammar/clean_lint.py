@@ -457,7 +457,7 @@ def lint_known_grammar(grammar_point, all_grammars_summary):
         # `val` is the value of a knownGrammarType field
         if not val in all_grammars_summary['all-grammar-points'].keys():
             # raise ValueError(' '.join(all_grammars_summary['all-grammar-points'].keys()))
-            messages.append(f"[rule-13] unknown grammar at '{path}': '{val}'")
+            messages.append(f"[rule-13] unknown grammar at '{path}': '{val}'. You may suggest new grammar points by adding a false_friend.")
         return val
 
     # Traverse grammar_point with type_replace targeting "knownGrammarType"
