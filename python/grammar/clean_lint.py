@@ -293,54 +293,57 @@ def lint_japanese_count(grammar_point):
             )
     return messages
 
-_japanese_pattern = re.compile(r'[\u3040-\u30FF\u4E00-\u9FFF]')
-
 def get_meaning(name: str) -> Optional[str]:
     """
-    Extracts the first “meaning” section from any parentheses in `name`.
-    A valid meaning is text inside parentheses that contains no Japanese characters.
-    Returns that substring, or None if no valid meaning is found.
+    Extract the content of the last parenthesized group in `name`, 
+    but only if it is preceded by a space. Return that content 
+    if its first character is '~' or a lowercase English letter [a-z]; 
+    otherwise return None.
     """
-    for match in re.finditer(r'\(([^)]*)\)', name):
-        inside = match.group(1)
-        if not _japanese_pattern.search(inside):
-            return inside.strip()
+    # Find all occurrences of " (…)" (i.e., space before the paren)
+    matches = re.findall(r' \(([^)]*)\)', name)
+    if not matches:
+        return None
+
+    # Take the last parenthesized group
+    inside = matches[-1].strip()
+    if not inside:
+        return None
+
+    first_char = inside[0]
+    if first_char == "I" or first_char == '~' or ('a' <= first_char <= 'z'):
+        return inside
+
     return None
 
 
 def lint_better_grammar_name(grammar_point):
     """
     [rule-8] Warn if:
-      - grammar_point has no “(meaning)” section, or
-      - better_grammar_point_name is missing or none of its entries have a “(meaning)” section.
-    Uses get_meaning() to identify valid meaning sections.
+      - grammar_point has no valid “(meaning)” section according to get_meaning(...), or
+      - better_grammar_point_name is missing or none of its entries yield a non-None from get_meaning(...).
     """
     messages = []
     gp_name = grammar_point.get("grammar_point", "")
-    gp_meaning = get_meaning(gp_name)
-
-    if not gp_meaning:
-        # Check every candidate in better_grammar_point_name
-        bnames = grammar_point.get("better_grammar_point_name", [])
+    if get_meaning(gp_name) is None:
         found_valid = False
-        if isinstance(bnames, list):
-            for b in bnames:
-                if get_meaning(b):
-                    found_valid = True
-                    break
+        for b in grammar_point.get("better_grammar_point_name", []):
+            if get_meaning(b) is not None:
+                found_valid = True
+                break
         if not found_valid:
             messages.append(
-                f"[rule-8] warning grammar_point '{gp_name}' lacks a “(meaning)” section; "
-                f"better_grammar_point_name should include a name with parentheses"
+                f"[rule-8] warning grammar_point '{gp_name}' lacks a valid “(meaning)” section; "
+                f"better_grammar_point_name should include a name with parentheses starting with a lowercase English letter or ~"
             )
     return messages
 
 
 def _check_paren_lowercase(name: str, field_label: str):
     """
-    Helper that inspects a single string (e.g., grammar_point or one better_grammar_point_name entry).
-    Only runs if get_meaning(name) is non-empty. Within that “meaning” section,
-    any uppercase alphabetic character (except 'I' followed by space) triggers a warning.
+    [rule-9] If get_meaning(name) returns a non-None string,
+    ensure that inside that meaning, all ASCII letters remain lowercase,
+    except 'I ' where applicable. Returns a warning listing uppercase letters found.
     """
     messages = []
     meaning = get_meaning(name)
@@ -349,7 +352,7 @@ def _check_paren_lowercase(name: str, field_label: str):
 
     uppercase_chars = []
     for i, c in enumerate(meaning):
-        if c.isalpha() and c == c.upper():
+        if c.isascii() and c.isalpha() and c == c.upper():
             # Allow 'I' only if followed by a space
             if c == "I" and i + 1 < len(meaning) and meaning[i + 1] == " ":
                 continue
@@ -367,11 +370,10 @@ def _check_paren_lowercase(name: str, field_label: str):
 
 def lint_parentheses_lowercase(grammar_point):
     """
-    [rule-9] Apply the “all lowercase inside (meaning)” check on:
+    Apply the “all lowercase inside (meaning)” check on:
       1. grammar_point
       2. each entry in better_grammar_point_name (if present)
-
-    Skips any parentheses blocks that contain Japanese text.
+    Only runs when get_meaning(...) is non-None.
     """
     messages = []
     gp_name = grammar_point.get("grammar_point", "")
