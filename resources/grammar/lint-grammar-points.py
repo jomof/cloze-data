@@ -2,7 +2,7 @@ from python.mapreduce import MapReduce
 import os
 import asyncio
 import sys
-import time
+from collections import OrderedDict
 
 if __name__ == '__main__':
     import yaml
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     
     def fold(accumulated, current):
         if accumulated is None:
-            accumulated = {}
+            accumulated = OrderedDict()
         if 'all-grammar-points' not in accumulated:
             accumulated['all-grammar-points'] = {}
         accumulated['all-grammar-points'][current['grammar_point']] = {

@@ -255,6 +255,8 @@ def mecab_raw_to_tokens(raw):
 def japanese_to_japanese_with_spaces(japanese: str) -> str:
     wakati = get_mecab_tagger()
     try:
+        # Fix for special case seen
+        japanese = japanese.replace(' っ', 'っ').replace('っ ', 'っ')
         raw = wakati.parse(japanese)
         compact_sentence = mecab_raw_to_compact_sentence(raw)
         result = compact_sentence_to_japanese(compact_sentence, spaces=True)
@@ -263,7 +265,7 @@ def japanese_to_japanese_with_spaces(japanese: str) -> str:
         reconstructed = wakati.parse(result)
         reconstructed_compact_sentence = mecab_raw_to_compact_sentence(reconstructed)
         if compact_sentence != reconstructed_compact_sentence:
-            raise ValueError("Reconstructed compact sentence does not match original\n{compact_sentence}\n{reconstructed_compact_sentence}")
+            raise ValueError(f"Reconstructed compact sentence does not match original\n{japanese}=>{compact_sentence}\n{result}=>{reconstructed_compact_sentence}")
 
         return result
     except Exception as e:

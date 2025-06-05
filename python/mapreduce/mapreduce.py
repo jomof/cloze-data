@@ -554,13 +554,13 @@ class MapReduce:
         self.preprocess_semaphore = asyncio.Semaphore(self.max_threads)
         self.map_semaphore = asyncio.Semaphore(self.max_threads)
         self.fold_lock = asyncio.Lock()
-        ex = None
+        # ex = None
 
-        def my_exception_handler(loop, context):
-            nonlocal ex
-            ex = context.get("exception")
+        # def my_exception_handler(loop, context):
+        #     nonlocal ex
+        #     ex = context.get("exception")
 
-        asyncio.get_event_loop().set_exception_handler(my_exception_handler)
+        # asyncio.get_event_loop().set_exception_handler(my_exception_handler)
 
         self.display.start()
 
@@ -592,7 +592,7 @@ class MapReduce:
             for fut in asyncio.as_completed(tasks):
                 try:
                     await fut
-                except Exception:
+                except Exception as ex:
                     if ex:
                         raise ex
                     

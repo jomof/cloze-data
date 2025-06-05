@@ -80,10 +80,19 @@ def PRIOR_GRAMMAR_POINT(prior_input_obj):
 
     """).replace("[prior_input_replace]", json.dumps(prior_input_obj, ensure_ascii=False, indent=4))
 
-def ai_pass(prior_grammar_point, output_file, temp_dir):
+def ALL_GRAMMARS_SUMMARY(all_grammars_summary):
+    return ws("""
+        ** -Summary of all grammar points- **
+        This is a list of all grammar points with truncated information to manage the size of the prompt.
+
+        BEGIN ALL_GRAMMARS_SUMMARY
+        [prior_input_replace]
+        END ALL_GRAMMARS_SUMMARY
+
+    """).replace("[prior_input_replace]", json.dumps(all_grammars_summary, ensure_ascii=False, indent=4))
+
+def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
     prior_input_obj = prior_grammar_point
-    if len(prior_input_obj.get('lint-errors', [])) == 0:
-        return prior_input_obj
 
     prompt = '\n'.join([
         PERSONA, 
@@ -91,6 +100,7 @@ def ai_pass(prior_grammar_point, output_file, temp_dir):
         OUTPUT_SCHEMA,
         # KANJI_BY_LEVEL,
         # INSPIRATION_GRAMMAR_POINTS(data), 
+        ALL_GRAMMARS_SUMMARY(all_grammars_summary),
         PRIOR_GRAMMAR_POINT(prior_input_obj),
         #         ws("""
         #     ** OPERATING INSTRUCTIONS **
@@ -112,24 +122,39 @@ def ai_pass(prior_grammar_point, output_file, temp_dir):
         #     You're free to make other improvements along the way but the steps above are the main goal.
               
         #    """)
+        # ws("""
+        #     ** OVERRIDE OPERATING INSTRUCTIONS **
+        #     ** PRIORITY INSTRUCTIONS **
+        #     We're incrementally improving this grammar point and we're focusing on examples[]
+        #     right now. 
+        #     Output **MUST** be in JSON format following OUTPUT_SCHEMA.
+           
+        #     ** BEGIN PRIORITY INSTRUCTIONS ALGORITHM **
+        #     Follow these steps:
+        #         ------------------------------------------------------------------------------------------
+        #         for each lint-error in the input:
+        #             EXECUTE: Fix the lint-error.
+        #         ------------------------------------------------------------------------------------------
+        #     ** END PRIORITY INSTRUCTIONS ALGORITHM **
+        #    """)
         ws("""
             ** OVERRIDE OPERATING INSTRUCTIONS **
             ** PRIORITY INSTRUCTIONS **
-            We're incrementally improving this grammar point and we're focusing on examples[]
+            We're incrementally improving this grammar point and we're focusing on false_friends[]
             right now. 
-            Output **MUST** be in JSON format following OUTPUT_SCHEMA.
            
             ** BEGIN PRIORITY INSTRUCTIONS ALGORITHM **
             Follow these steps:
                 ------------------------------------------------------------------------------------------
-                for each lint-error in the input:
-                    EXECUTE: Fix the lint-error.
+                for each false_friend in the false_friends[] array:
+                    if there is no false_friend.grammar_point:
+                        EXECUTE: Assign a grammar point from ALL_GRAMMARS_SUMMARY or suggest a new one.
                 ------------------------------------------------------------------------------------------
             ** END PRIORITY INSTRUCTIONS ALGORITHM **
            """)
         ])
 
-    with open(temp_dir + "/" + os.path.basename(output_file), 'w', encoding='utf-8') as file:
+    with open(temp_dir + "/" + os.path.basename(output_file)+".prompt", 'w', encoding='utf-8') as file:
         file.write(prompt)
 
     grammar_point_name = prior_input_obj["grammar_point"]
@@ -194,17 +219,15 @@ if __name__ == '__main__':
 
     def preprocess(parsed_obj, file_path):
         result = clean_lint(parsed_obj, file_path)
-        if len(result.get('lint-errors', [])) == 0:
-            return None # Skip this one
+        # if len(result.get('lint-errors', [])) == 0:
+        #     return None # Skip this one
         return result
 
     def logic(parsed_obj, file_path):
-        return ai_pass(parsed_obj, file_path, temp_dir)
+        return ai_pass(parsed_obj, grammar_summary_obj, file_path, temp_dir)
 
     def serialize_json(obj):
         return json.dumps(obj, ensure_ascii=False, indent=4)
-
-
 
     mr = MapReduce(
         input_dir            = grammar_root,
@@ -213,7 +236,6 @@ if __name__ == '__main__':
         preprocess_func      = preprocess,
         map_func_name        = "ai generating",
         map_func             = logic,
-        
         serialize_func       = serialize_json,
         temp_dir             = temp_dir,
         max_threads          = 15,

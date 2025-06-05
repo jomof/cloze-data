@@ -201,6 +201,13 @@ class TestTokenParser(unittest.TestCase):
         check("{","{")
         check("}","}")
 
+    def test_japanese_to_japanese_with_spaces_roundtrip(self):
+        # This sentence didn't round-trip through MeCab correctly because of space before っ
+        # added by genai.
+        japanese_to_japanese_with_spaces("入 っ て い ま す。")
+        japanese_to_japanese_with_spaces("明日 {の} 天気、晴れっ て さ。")
+
+
     @staticmethod
     def default(obj):
         if hasattr(obj, 'to_dict'):

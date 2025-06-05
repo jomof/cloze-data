@@ -301,7 +301,10 @@
           // Kind is the relationship to the main grammar point 
           "kind": { "$ref": "#/definitions/falseFriendKindType" },
           // Nuance is a concise contrast to the main grammar point (e.g., "Unlike [grammar_point], [false_friend]...").
-          "nuance": { "$ref": "#/definitions/english" }
+          "nuance": { "$ref": "#/definitions/english" },
+          // **MUST** have a grammar point from ALL_GRAMMARS_SUMMARY 
+          // --or-- **MUST** suggest a grammar point name that should be added to ALL_GRAMMARS_SUMMARY. In this case, prepend "<suggest>:" to this grammar point name.
+          "grammar_point": { "$ref": "#/definitions/grammarType" }
         },
         "required": ["term","meaning","kind","nuance"],
         "additionalProperties": false
