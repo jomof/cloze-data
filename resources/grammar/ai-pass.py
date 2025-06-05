@@ -219,7 +219,7 @@ if __name__ == '__main__':
         return yaml.load(raw, Loader=yaml.CSafeLoader)
 
     def preprocess(parsed_obj, file_path):
-        result = clean_lint(parsed_obj, file_path)
+        result = clean_lint(parsed_obj, file_path, grammar_summary_obj)
         if len(result.get('lint-errors', [])) == 0:
             return None # Skip this one
         return result

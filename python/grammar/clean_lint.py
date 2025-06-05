@@ -23,7 +23,7 @@ BRACKET_PATTERNS = [
     ('<', '>'),
 ]
 
-def strip_matching_quotes(text):
+def strip_matching_quotes(text, _):
     """Remove matching quotes from the beginning and end of a string, including English and Japanese quotes."""
     if not isinstance(text, str) or len(text) < 2:
         return text
@@ -129,35 +129,49 @@ def type_replace(obj, schema, type_name, fn):
         key = ref.split("/")[-1]
         return schema["definitions"].get(key)
 
-    def _traverse(current_obj, current_schema):
+    def _traverse(current_obj, current_schema, path):
+        # If schema is not a dict, nothing to do
         if not isinstance(current_schema, dict):
             return current_obj
 
+        # Handle $ref nodes
         if "$ref" in current_schema:
             if current_schema["$ref"] == ref_pointer:
-                return fn(current_obj)
+                # Found a match—call fn with (value, path)
+                return fn(current_obj, path)
             resolved = resolve_ref(current_schema["$ref"])
             if resolved:
-                return _traverse(current_obj, resolved)
+                return _traverse(current_obj, resolved, path)
 
         schema_type = current_schema.get("type")
 
+        # Object: recurse into each property
         if schema_type == "object":
             props = current_schema.get("properties", {})
-            for key, prop_schema in props.items():
-                if isinstance(current_obj, dict) and key in current_obj:
-                    current_obj[key] = _traverse(current_obj[key], prop_schema)
+            if isinstance(current_obj, dict):
+                for key, prop_schema in props.items():
+                    if key in current_obj:
+                        # Build new path: "parent.child" or just "child" at root
+                        new_path = f"{path}.{key}" if path else key
+                        current_obj[key] = _traverse(current_obj[key], prop_schema, new_path)
             return current_obj
 
+        # Array: recurse into each element
         if schema_type == "array":
             items_schema = current_schema.get("items")
             if isinstance(current_obj, list) and items_schema:
-                return [_traverse(item, items_schema) for item in current_obj]
+                new_list = []
+                for i, item in enumerate(current_obj):
+                    # Build new path: "parent[index]" or "[index]" at root
+                    new_path = f"{path}[{i}]" if path else f"[{i}]"
+                    new_list.append(_traverse(item, items_schema, new_path))
+                return new_list
             return current_obj
 
+        # Anything else: leave as-is
         return current_obj
 
-    return _traverse(new_obj, schema)
+    return _traverse(new_obj, schema, "")
 
 
 def prune_empty(obj):
@@ -230,11 +244,11 @@ def reorder_keys(obj, schema):
     return new_obj
 
 
-def japanese_with_space(japanese):
+def japanese_with_space(japanese, _):
     return japanese_to_japanese_with_spaces(japanese)
 
 
-def replace_japanese_characters(japanese):
+def replace_japanese_characters(japanese, _):
 
     replacements = {
         '：': [':'], 
@@ -431,7 +445,26 @@ def lint_false_friends_grammar_point(grammar_point):
                 )
     return messages
 
-def clean_lint(grammar_point, path: str = None):
+def lint_known_grammar(grammar_point, all_grammars_summary):
+    """
+    [rule-13] For every field whose schema type is '#/definitions/knownGrammarType',
+    call is_known_grammar(value). If False, append a warning.
+    Uses type_replace(...) to traverse all such fields.
+    """
+    messages = []
+
+    def _check(val, path):
+        # `val` is the value of a knownGrammarType field
+        if not val in all_grammars_summary['all-grammar-points'].keys():
+            # raise ValueError(' '.join(all_grammars_summary['all-grammar-points'].keys()))
+            messages.append(f"[rule-13] unknown grammar at '{path}': '{val}'")
+        return val
+
+    # Traverse grammar_point with type_replace targeting "knownGrammarType"
+    type_replace(grammar_point, GRAMMAR_SCHEMA, "knownGrammarType", _check)
+
+    return messages
+def clean_lint(grammar_point, path: str, all_grammars_summary: dict):
     lint = []
     grammar_point = copy.deepcopy(grammar_point)
     if path is not None:
@@ -472,6 +505,7 @@ def clean_lint(grammar_point, path: str = None):
     lint.extend(lint_learn_before(grammar_point))
     lint.extend(lint_learn_after(grammar_point))
     lint.extend(lint_false_friends_grammar_point(grammar_point))
+    lint.extend(lint_known_grammar(grammar_point, all_grammars_summary))
     grammar_point['lint-errors'] = lint
     # Prune empty fields and items
     grammar_point = prune_empty(grammar_point)

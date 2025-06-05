@@ -139,6 +139,8 @@
     },
     // May be a mix of japanese and english.
     "grammarType": { "type": "string" },
+    // [rule-13] **MUST** be known to exist ALL_GRAMMARS_SUMMARY.
+    "knownGrammarType": { "$ref": "#/definitions/grammarType" },
     // English **MUST** be a natural-sounding and grammatically correct.
     // English **MUST** use a single apostrophe (') for contractions (e.g., don't).
     // If quotes are allowed in the context, then **MUST** use double-quotes (") for quotes.
@@ -207,7 +209,7 @@
     // [rule-10] **MUST** have at least two items.
     "learn_before": {
       "type": "array",
-      "items": { "$ref": "#/definitions/grammarType" }
+      "items": { "$ref": "#/definitions/knownGrammarType" }
     },
     // **MUST** be grammar points from ALL_GRAMMARS_SUMMARY that should be learned **AFTER** grammar_point.
     // Pick the closest points, in ideal learning order, that you're 95% sure should be learned **AFTER** grammar_point.
@@ -215,7 +217,7 @@
     // [rule-11] **MUST** have at least two items.
     "learn_after": {
       "type": "array",
-      "items": { "$ref": "#/definitions/grammarType" }
+      "items": { "$ref": "#/definitions/knownGrammarType" }
     },
     // ID of the grammar point.
     // - **MUST NOT** change this value because it is a database key.

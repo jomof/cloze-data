@@ -16,6 +16,12 @@ if __name__ == '__main__':
         'resources', 'processed', 'ai-cleaned-merge-grammars'
     )
 
+    # read the prior grammar summary file
+    grammar_summary_file = os.path.join(grammar_root, 'summary/summary.json')
+    with open(grammar_summary_file, 'r', encoding='utf-8') as f:
+        grammar_summary_content = f.read()
+    grammar_summary_obj = json.loads(grammar_summary_content)
+
     if not os.path.isdir(grammar_root):
         print(f"ERROR: “{grammar_root}” is not a directory.")
         sys.exit(1)
@@ -24,7 +30,7 @@ if __name__ == '__main__':
         return yaml.load(raw, Loader=yaml.CSafeLoader)
 
     def logic(parsed_obj, file_path):
-        result = clean_lint(parsed_obj, file_path)
+        result = clean_lint(parsed_obj, file_path, grammar_summary_obj)
         return result
     
     def fold(accumulated, current):
