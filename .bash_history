@@ -917,3 +917,41 @@ bazel run //resources/grammar:ai-pass
 exit
 bazel run //resources/grammar:lint-grammar-points
 exit
+bazel run //python/utils/build_cache/service:cache-service
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+bazel run //resources/grammar:ai-pass
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+bazel run //resources/grammar:ai-pass
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel run //resources/grammar:ai-pass
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel run //resources/grammar:ai-pass
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel run //resources/grammar:ai-pass
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel run //resources/grammar:ai-pass
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel run //resources/grammar:ai-pass
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:ai-pass
+clear
+rm -rf /workspaces/cloze-data/cache_data/*
+bazel run //resources/grammar:ai-pass
+bazel run //resources/grammar:lint-grammar-points
+bazel run //resources/grammar:lint-grammar-pointsclear
+clear
+bazel run //resources/grammar:lint-grammar-pointsclear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:ai-pass

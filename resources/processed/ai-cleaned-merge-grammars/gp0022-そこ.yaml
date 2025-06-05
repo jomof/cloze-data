@@ -8,8 +8,8 @@
         "あそこ"
     ],
     "learn_after": [
-        "<suggest>:そっち",
-        "そこで (then)"
+        "そこで (then)",
+        "そういう"
     ],
     "id": "gp0022",
     "meaning": "There, That place",
@@ -156,8 +156,15 @@
                     "competing_japanese": [
                         "先生 は、この 本 を 読み なさい と 言い まし た。"
                     ],
-                    "english": "The teacher said to read this book (near speaker).",
+                    "english": "Teacher said to read this book (near speaker).",
                     "hint": "「この」 refers to something near the speaker. We're looking for something near the listener."
+                },
+                {
+                    "competing_japanese": [
+                        "先生 は、あの 本 を 読み なさい と 言い まし た。"
+                    ],
+                    "english": "Teacher said to read that book (far from both).",
+                    "hint": "「あの」 refers to something far from both speaker and listener. We're looking for something near the listener."
                 },
                 {
                     "competing_japanese": [
@@ -443,7 +450,7 @@
                         "あの 子 は ここ に い ます。"
                     ],
                     "english": "That child is here.",
-                    "hint": "The child is near the listener (husband), making 「そこ」 appropriate, as opposed to a location near the speaker (mother). We're looking for a location near the listener."
+                    "hint": "The child is near the listener (husband), making 「そこ」 appropriate, as opposed to a dangerous spot near the speaker. We're looking for a location near the listener."
                 },
                 {
                     "competing_japanese": [
@@ -640,14 +647,14 @@
                     "competing_japanese": [
                         "ここ も この 場所 も きれい です。"
                     ],
-                    "english": "Both here and this place (near speaker) are clean.",
+                    "english": "Both here and this place (near speaker).",
                     "hint": "「この」 modifies 「場所」 (place) and refers to a location near the speaker. We're looking for a location near the listener."
                 },
                 {
                     "competing_japanese": [
                         "ここ も あの 場所 も きれい です。"
                     ],
-                    "english": "Both here and that place (far from both) are clean.",
+                    "english": "Both here and that place (far from both).",
                     "hint": "「あの」 modifies 「場所」 (place) and refers to a location far from both. We're looking for a location near the listener."
                 }
             ],
@@ -876,13 +883,50 @@
             "listener_gender": "male",
             "speaker_age": "older",
             "nuance": "The use of 「そこ」 in this context refers to an abstract 'point' or 'area' within the discussion, specifically the core of the problem that the listener has just identified. It confirms understanding and agreement on the critical issue. The semi-formal register and 'older male' speaker contribute to a professional, affirming tone."
+        },
+        {
+            "english": "I went to that coffee shop yesterday. The atmosphere there was really nice.",
+            "japanese": [
+                "昨日、あの コーヒー ショップ に 行き まし た。{そこ} の 雰囲気 が とても 良かっ た です。",
+                "昨日、あの カフェ に 行っ た ん だ けど、{そこ} が すごく 良かっ た よ。",
+                "昨日 行っ た コーヒー ショップ、{そこ} の 雰囲気 が 最高 だっ た な。",
+                "その コーヒー ショップ、{そこ} の 居心地 が いい ん だ よ ね。",
+                "先日 の カフェ、{そこ} の 雰囲気 が 忘れ られ ない よ。",
+                "昨日、例 の コーヒー ショップ に 伺い まし た。{そこ} の 雰囲気 は 格別 で ござい まし た。",
+                "そう いえ ば、この 前 の コーヒー ショップ、{そこ} の 雰囲気、すごく 落ち着く よ ね。",
+                "昨日、気 に なっ て た コーヒー ショップ に 行っ て み た ん だ けど、{そこ} の 雰囲気 が めっちゃ いい 感じ だっ た！"
+            ],
+            "english_literally": "Yesterday, that coffee shop to went. There's atmosphere, very good was.",
+            "competing_grammar": [
+                {
+                    "competing_japanese": [
+                        "昨日、あの コーヒー ショップ に 行き まし た。あそこ の 雰囲気 が とても 良かっ た です。"
+                    ],
+                    "english": "Yesterday, I went to that coffee shop over there. The atmosphere there was very nice.",
+                    "hint": "「あそこ」 would refer to a place far away from both speaker and listener, but the focus here is on a place previously mentioned in the conversation, not its physical distance. We're looking for a reference to a previously mentioned place."
+                },
+                {
+                    "competing_japanese": [
+                        "昨日、あの コーヒー ショップ に 行き まし た。その 雰囲気 が とても 良かっ た です。"
+                    ],
+                    "english": "Yesterday, I went to that coffee shop. That atmosphere was very nice.",
+                    "hint": "「その」 modifies a noun to refer to something already mentioned or near the listener, but 「そこ」 refers to the *place* itself as a noun. We're looking for the place, not an attribute of it."
+                },
+                {
+                    "competing_japanese": [
+                        "昨日、あの コーヒー ショップ に 行き まし た。コーヒー ショップ の 雰囲気 が とても 良かっ た です。"
+                    ],
+                    "english": "Yesterday, I went to that coffee shop. The coffee shop's atmosphere was very nice.",
+                    "hint": "Repeating the noun 「コーヒー ショップ」 is grammatically correct but less natural than using a demonstrative like 「そこ」 to refer back to it. We're looking for a natural reference to a previously mentioned place."
+                }
+            ],
+            "scene": "Two friends are casually discussing their recent experiences. One friend mentions visiting a coffee shop and wants to talk about its ambiance.",
+            "register": "teineigo (polite)",
+            "setting": "friendly"
         }
     ],
     "post_example_writeup": "As you can see, “そこ” is quite versatile and can be used in both concrete and abstract senses. Pay close attention to the context and the relative positions of the speaker and listener to understand its precise meaning.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/そこ"
-    },
-    "lint-errors": [
-        "[rule-13] unknown grammar at 'learn_after[0]': '<suggest>:そっち'. You may suggest new grammar points by adding a false_friend."
-    ]
+    }
 }

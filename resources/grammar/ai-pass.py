@@ -187,10 +187,7 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
         if len(sources) > 0:
             json_response['sources'] = sources
 
-        if grammar_point_name != json_response["grammar_point"]:
-            raise Exception(f"Grammar point mismatch: {data['grammar_point']} != {json_response['grammar_point']}")
-
-        return clean_lint(json_response, output_file)
+        return clean_lint(json_response, output_file, all_grammars_summary)
       except Exception as e:
         if i == 2:
             raise e
