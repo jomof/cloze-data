@@ -1,12 +1,17 @@
 {
     "grammar_point": "とうとう (finally, eventually)",
+    "better_grammar_point_name": [
+        "とうとう (finally・eventually)"
+    ],
     "learn_before": [
         "てから (after and since)",
         "ずっと (continuous state or action)"
     ],
     "learn_after": [
         "遂に (finally, at last)",
-        "いよいよ (finally, increasingly)"
+        "いよいよ (finally, increasingly)",
+        "結局 (after all・in the end)",
+        "やっと (finally, barely)"
     ],
     "id": "gp0383",
     "meaning": "Finally, after all",
@@ -25,7 +30,7 @@
         "usage-context": "general"
     },
     "etymology": "とうとう comes from the kanji 到頭 (とうとう), which literally means 到 (to arrive at) 頭 (the head of/crux of) something. This origin highlights the nuance of reaching an ultimate point after a process or period of time.",
-    "writeup": "とうとう is an adverb used to express that something 'finally' happens after a process, effort, or period of waiting. While Japanese has a few ways to express this, とうとう is common. It signifies reaching a culminating point, whether the outcome is positive or negative.\n\nThough usually written in hiragana, understanding its kanji origin (到頭) helps grasp its core nuance: the arrival at the 'head' or 'conclusion' of a matter. This implies a journey or a period of time has elapsed before the final event.\n\nとうとう can be used for both positive and negative outcomes, as its primary focus is on the completion of a sequence or the attainment of a result after a certain duration, rather than the desirability of the result itself.\n\n**Important Considerations:**\nIt is crucial to note that とうとう is typically used when there has been a preceding process, effort, or a discernible period of waiting. It is **not** used for events that occur naturally without human effort or a specific lead-up. For instance, you would not use とうとう to say, \"Finally, summer has come!\" (いよいよ夏が来た！) because the change of seasons is a natural phenomenon that does not involve human effort or a specific period of effortful anticipation in the same way. For such natural occurrences or anticipated beginnings, いよいよ is the more appropriate adverb.",
+    "writeup": "とうとう is an adverb used to express that something \"finally\" happens after a process, effort, or period of waiting. While Japanese has a few ways to express this, とうとう is common. It signifies reaching a culminating point, whether the outcome is positive or negative.Though usually written in hiragana, understanding its kanji origin (到頭) helps grasp its core nuance: the arrival at the \"head\" or \"conclusion\" of a matter. This implies a journey or a period of time has elapsed before the final event.とうとう can be used for both positive and negative outcomes, as its primary focus is on the completion of a sequence or the attainment of a result after a certain duration, rather than the desirability of the result itself.Important Considerations:It is crucial to note that とうとう is typically used when there has been a preceding process, effort, or a discernible period of waiting. It is **not** used for events that occur naturally without human effort or a specific lead-up. For instance, you would not use とうとう to say, \"Finally, summer has come!\" (いよいよ夏が来た！) because the change of seasons is a natural phenomenon that does not involve human effort or a specific period of effortful anticipation in the same way. For such natural occurrences or anticipated beginnings, いよいよ is the more appropriate adverb.",
     "false_friends": [
         {
             "term": "いよいよ",
@@ -40,9 +45,23 @@
             "kind": "synonym",
             "nuance": "遂に (ついに) is very similar to とうとう. While both mean 'finally,' 遂に often carries a stronger nuance of overcoming difficulties, achieving a goal after significant struggle, or reaching an ultimate, decisive point. とうとう is generally more neutral, simply indicating an outcome after a long period or process, whether positive or negative, and without necessarily implying overcoming great obstacles.",
             "grammar_point": "遂に (finally, at last)"
+        },
+        {
+            "term": "やっと",
+            "meaning": "Finally, at last",
+            "kind": "similar expression",
+            "nuance": "Unlike とうとう, やっと implies a sense of relief or overcoming a difficulty/long wait. とうとう is more neutral about the speaker's feeling, simply marking the culmination of a period.",
+            "grammar_point": "やっと (finally, barely)"
+        },
+        {
+            "term": "結局",
+            "meaning": "After all, in the end",
+            "kind": "similar expression",
+            "nuance": "While とうとう focuses on an event finally occurring after a process, 結局 emphasizes the ultimate outcome or summary of events, often with a sense of finality or an unexpected result, but less about the duration of the process itself.",
+            "grammar_point": "結局 (after all・in the end)"
         }
     ],
-    "post_false_friends_writeup": "To differentiate these adverbs, consider the context of the 'final' event. いよいよ emphasizes the imminence or progression towards a significant beginning or climax. 遂に (ついに) often highlights a sense of accomplishment or completion after overcoming challenges, indicating that something decisive has been achieved or concluded. とうとう is more broadly used to denote the eventual arrival of a situation or the conclusion of a process, focusing on the passage of time or effort leading to that outcome, without as strong an emphasis on the 'struggle' or 'victory' aspect as 遂に, nor the 'beginning' aspect of いよいよ.",
+    "post_false_friends_writeup": "To differentiate these adverbs, consider the context of the 'final' event. いよいよ emphasizes the imminence or progression towards a significant beginning or climax. 遂に (ついに) often highlights a sense of accomplishment or completion after overcoming challenges, indicating that something decisive has been achieved or concluded. やっと conveys a sense of relief or successful completion after a long period of effort or waiting. とうとう is more broadly used to denote the eventual arrival of a situation or the conclusion of a process, focusing on the passage of time or effort leading to that outcome, without as strong an emphasis on the 'struggle' or 'victory' aspect as 遂に, nor the 'beginning' aspect of いよいよ, or the 'relief' of やっと. 結局, on the other hand, refers to the final result or conclusion of a series of events, often implying an unexpected or summary outcome, rather than the process leading up to it.",
     "examples": [
         {
             "english": "After long effort, he finally realized his dream.",
@@ -281,5 +300,9 @@
     "post_example_writeup": "As these examples demonstrate, とうとう effectively conveys the sense of 'finally' occurring after a prolonged process, effort, or period of waiting, regardless of whether the outcome is positive or negative. It simply marks the culmination point of a series of events or a passage of time.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/とうとう"
-    }
+    },
+    "lint-errors": [
+        "[rule-13] unknown grammar at 'learn_after[2]': '結局 (after all・in the end)'. You may suggest new grammar points by adding a false_friend.",
+        "[rule-13] warning unknown grammar at 'false_friends[3]': '結局 (after all・in the end)'. It **MUST** be from ALL_GRAMMARS_SUMMARY or you can prepend '<suggest>:' to the grammar point to suggest a new grammar point."
+    ]
 }

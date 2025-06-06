@@ -237,8 +237,7 @@ class TestLintSchemaUtils(unittest.TestCase):
         }
         warnings = []
         def fn(value, type_name, path):
-
-            lv_false_friends_grammar_point(value, type_name, path, warnings)
+            lv_false_friends_grammar_point(value, type_name, path, warnings, {})
         visit_json(grammar_point, GRAMMAR_SCHEMA, fn)
 
         self.assertIn("[rule-12] warning false_friends[0].grammar_point is missing or empty", warnings)

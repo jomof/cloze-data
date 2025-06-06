@@ -1,9 +1,12 @@
 {
     "grammar_point": "のうち(で) (within, among)",
+    "better_grammar_point_name": [
+        "のうち(で) (within・among)"
+    ],
     "learn_before": [
         "のなかで (in, among)",
-        "に (static location)",
-        "の (possessive)"
+        "XはYの一つだ (one of)",
+        "Relative Clause (modifying nouns)"
     ],
     "learn_after": [
         "にすぎない (no more than)",
@@ -17,9 +20,9 @@
         "romaji": "no uchi (de)"
     },
     "formation": {
-        "[Noun/Number] + の + うち + で": "Used to select, compare, or indicate a specific item/person within a defined group or category.",
-        "[Noun/Number] + の + うち + の + [Noun/Number]": "Used to specify a subset or quantity taken from a larger group (e.g., 'X of Y').",
-        "[Noun/Number] + の + うち + から": "Emphasizes selection 'from' or 'out of' a group, often when making a choice or drawing from a set."
+        "Noun/Number + の + うち + で": "Used to select, compare, or indicate a specific item/person within a defined group or category.",
+        "Noun/Number + の + うち + の + Noun/Number": "Used to specify a subset or quantity taken from a larger group (e.g., 'X of Y').",
+        "Noun/Number + の + うち + から": "Emphasizes selection 'from' or 'out of' a group, often when making a choice or drawing from a set."
     },
     "jlpt": "N2",
     "details": {
@@ -61,13 +64,20 @@
         },
         {
             "term": "そのうち",
-            "meaning": "Eventually, before long; of those/them",
+            "meaning": "Eventually; before long; of those/them",
             "kind": "often confused with",
-            "nuance": "「そのうち」 can mean 'eventually' (temporal) or 'of those/them' when referring to a previously mentioned group. The 'of those/them' usage is similar to 「のうち」 but is a standalone phrase, whereas 「のうち」 directly modifies a preceding noun or number.",
-            "grammar_point": "<suggest>:そのうち (eventually, before long)"
+            "nuance": "「そのうち」 has a temporal meaning ('eventually') and can also refer to 'of those/them' from a previously mentioned group. While the 'of those/them' usage shares some concept with 「のうち」, 「のうち」 always precedes a group from which a selection is made, whereas 「そのうち」 often acts as a standalone referential pronoun.",
+            "grammar_point": "そのうち (eventually, before long)"
+        },
+        {
+            "term": "うち",
+            "meaning": "Inside; within; while",
+            "kind": "similar expression",
+            "nuance": "The bare noun 「うち」 refers to physical or conceptual 'inside' or 'while' a state exists, but it lacks the explicit 'of/among' selection mechanism provided by the particle 「の」 in 「のうち」.",
+            "grammar_point": "うち (within or while)"
         }
     ],
-    "post_false_friends_writeup": "While 「のうち」, 「のなかで」, 「〜は〜の一つだ」, 「同士」, and 「そのうち」 can all express concepts related to \"among\" or \"within,\" it's important to consider the nuance each conveys. Use 「のうち」 when specifically selecting from a limited group or making a precise comparison within it. Use 「のなかで」 for more general situations meaning \"in\" or \"among.\" Use 「〜は〜の一つだ」 to state that something is simply a member of a larger category. Avoid using 「同士」 unless you want to emphasize a mutual action or shared relationship between members of the group. Finally, be mindful that 「そのうち」 has both a temporal meaning ('eventually') and a referential meaning ('of those'), which can be confused with the selection function of 「のうち」. Choosing the correct expression depends on the specific context and the intended emphasis.",
+    "post_false_friends_writeup": "While 「のうち」, 「のなかで」, 「〜は〜の一つだ」, 「同士」, 「そのうち」, and the base noun 「うち」 can all express concepts related to \"among\" or \"within,\" it's important to consider the nuance each conveys. Use 「のうち」 when specifically selecting from a limited group or making a precise comparison within it. Use 「のなかで」 for more general situations meaning \"in\" or \"among.\" Use 「〜は〜の一つだ」 to state that something is simply a member of a larger category. Avoid using 「同士」 unless you want to emphasize a mutual action or shared relationship between members of the group. 「そのうち」 has both a temporal meaning ('eventually') and a referential meaning ('of those/them'); confusion arises from the latter, as 「のうち」 always specifies the group being selected from, unlike the standalone 「そのうち」. Finally, the simple noun 「うち」 refers to the general 'inside' or 'while' something is happening, without the specific 'amongst' or 'from' nuance of selection that 「のうち」 provides. Choosing the correct expression depends on the specific context and the intended emphasis.",
     "examples": [
         {
             "english": "Among the chapters in this book, I think the last chapter is the most interesting.",
@@ -378,5 +388,8 @@
     "post_example_writeup": "The examples illustrate how 「のうち(で/の/から)」 is used to specify a subset or selection from a larger group, often emphasizing precision or a defined collection. While it can often be interchangeable with 「のなか(で)」, 「のうち」 tends to be used when the boundaries of the group are clearly established, or when a more formal or deliberate selection process is implied. Pay attention to the particles 「で」、「の」、and 「から」 as they slightly alter the nuance of the selection, indicating the context of selection, a part-to-whole relationship, or the origin of a choice, respectively. Remember, for general expressions of 'among' or 'within', 「のなか(で)」 is often the more common and natural choice in everyday conversation.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/のうち(で) (within, among)"
-    }
+    },
+    "lint-errors": [
+        "[rule-13] warning unknown grammar at 'false_friends[4]': 'そのうち (eventually, before long)'. It **MUST** be from ALL_GRAMMARS_SUMMARY or you can prepend '<suggest>:' to the grammar point to suggest a new grammar point."
+    ]
 }

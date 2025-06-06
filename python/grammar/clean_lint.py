@@ -131,7 +131,8 @@ def lv_better_grammar_name(val, type, path, messages):
         if better_grammar_point_name[0] == gp_name:
             messages.append(f"[rule-14] warning better_grammar_point_name[0] should not be the same as grammar_point: {gp_name}")
 
-    if get_meaning(gp_name) is None:
+    meaning = get_meaning(gp_name)
+    if meaning is None:
         found_valid = False
         
         for b in better_grammar_point_name:
@@ -143,6 +144,11 @@ def lv_better_grammar_name(val, type, path, messages):
                 f"[rule-8] warning grammar_point '{gp_name}' lacks a valid “(meaning)” section; "
                 f"better_grammar_point_name should include a name with parentheses starting with a lowercase English letter or ~"
             )
+        
+    if meaning is not None:
+        if ',' in meaning and not better_grammar_point_name:
+            messages.append(f"[rule-16] warning 'grammar_point' meaning '({meaning})' contains a comma (,). It should use dot (・) instead. Suggest a new name in better_grammar_point_name.")
+
 
 def lv_validate_parenthetical_meaning(val, type, path, messages):
     if type != "wellFormedGrammarType":
@@ -169,7 +175,7 @@ def lv_learn_before(val, type, path, messages):
 def lv_learn_after(val, type, path, messages):
     if type is not None:
         return
-    lb = val.get("learn_before")
+    lb = val.get("learn_after")
     count = len(lb) if isinstance(lb, list) else 0
     if count < 2:
         messages.append(f"[rule-11] warning learn_after has {count} item(s); must have at least 2")
@@ -203,6 +209,7 @@ def lv_grammar_point_special_characters(val, type, path, messages):
 
     if special:
         messages.append(f"[rule-14] warning '{path}': '{trimmed}' contain illegal characters: {', '.join(special)}.")
+
 
 
 def _validate_grammar_point_meaning(name: str):

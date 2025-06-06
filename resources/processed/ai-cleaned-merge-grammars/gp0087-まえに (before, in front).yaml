@@ -1,12 +1,17 @@
 {
     "grammar_point": "まえに (before, in front)",
+    "better_grammar_point_name": [
+        "まえに (before・in front)"
+    ],
     "learn_before": [
         "に (location, time, recipient, purpose)",
-        "てから (after and since)"
+        "てから (after and since)",
+        "とき (when)"
     ],
     "learn_after": [
-        "に先駆けて (pioneering)",
-        "を皮切りに (starting with)"
+        "うちに (while, before a change)",
+        "最中に (in the middle of)",
+        "に際して (on the occasion of)"
     ],
     "id": "gp0087",
     "meaning": "Before, In front of",
@@ -15,9 +20,9 @@
         "romaji": "maeni"
     },
     "formation": {
-        "[Verb (dictionary form)] + 前に": "Indicates an action happening prior to another action.",
-        "[Noun] + の + 前に": "Indicates a time or event before which something occurs.",
-        "[Location Noun] + の + 前に": "Indicates a position in front of a location or object."
+        "Verb (dictionary form) + 前に": "Indicates an action happening prior to another action.",
+        "Noun + の + 前に": "Indicates a time or event before which something occurs.",
+        "Location Noun + の + 前に": "Indicates a position in front of a location or object."
     },
     "jlpt": "N5",
     "details": {
@@ -53,14 +58,28 @@
             "grammar_point": "ないうちに (before something undesirable happens)"
         },
         {
-            "term": "前者は・後者は",
-            "meaning": "The former ~ the latter, The first ~ the second",
+            "term": "時",
+            "meaning": "When",
             "kind": "often confused with",
-            "nuance": "「前者は・後者は」 is used to distinguish between two previously mentioned items, with the first being 「前者は」 and the second being 「後者は」. This is a comparative usage, distinct from 「まえに」 which refers to timing or location.",
-            "grammar_point": "前者は・後者は (the former - the latter)"
+            "nuance": "While 「まえに」 indicates an action or event that occurs *before* another, 「時」 refers to an action or state that occurs *at the same time as* or *during* another event.",
+            "grammar_point": "とき (when)"
+        },
+        {
+            "term": "以前",
+            "meaning": "Before, Previously, Former times",
+            "kind": "similar expression",
+            "nuance": "「以前」 refers to a general time period in the past, or 'prior to now', without necessarily implying a specific action happening *before* another action, unlike 「まえに」 which connects to an action or specific noun phrase.",
+            "grammar_point": "以前 (before)"
+        },
+        {
+            "term": "までに",
+            "meaning": "By the time, Before a deadline",
+            "kind": "similar expression",
+            "nuance": "While 「まえに」 simply indicates an action or event occurs before another, 「までに」 specifies a deadline, meaning an action *must be completed by* a certain time or event.",
+            "grammar_point": "までに (by the time)"
         }
     ],
-    "post_false_friends_writeup": "It's important to distinguish 「まえに」 from 「手前」. While both can mean \"in front of,\" 「手前」 specifically refers to the area directly in front of the speaker or a designated point, often with a sense of one's immediate sphere or responsibility. 「まえに」 is a more general term for \"in front of\" any object or location. Furthermore, 「まえに」 indicates simple temporal precedence, while 「ないうちに」 implies an action taken to prevent a state or event from occurring.",
+    "post_false_friends_writeup": "It's important to distinguish 「まえに」 from similar temporal expressions. While 「まえに」 indicates a simple order of events (something happens before something else), 「時」 refers to an action occurring *at the same time*. 「ないうちに」 implies taking action to prevent a state or event from occurring, suggesting a more proactive purpose. 「以前」 refers to a general time in the past, rather than a specific action preceding another. Finally, 「までに」 indicates an action that must be completed *by* a specific deadline, adding a sense of completion by a certain point.",
     "examples": [
         {
             "english": "A large tree stands in front of the company.",
@@ -193,6 +212,13 @@
                     ],
                     "english": "The day before meeting my friend, I changed my clothes.",
                     "hint": "「前日」 means 'the day before'. We're looking for an action that happened at some point 'before' the meeting, not necessarily the day before."
+                },
+                {
+                    "competing_japanese": [
+                        "以前、服 を 着替え まし た。"
+                    ],
+                    "english": "I changed my clothes previously.",
+                    "hint": "「以前」 refers to a general time in the past. We're looking for an action that happened specifically before meeting a friend."
                 }
             ],
             "scene": "A woman explains why she was running late for a casual outing.",
@@ -370,7 +396,7 @@
                         "部屋 を 出 た あと で、電気 を 消し て ください。"
                     ],
                     "english": "Please turn off the lights after leaving the room.",
-                    "hint": "「あとで」 indicates an action that happens *after* the main event. We need the action to happen *before* leaving."
+                    "hint": "「あとで」 implies an action occurring *after* the main event. We need the action to happen *before* leaving."
                 },
                 {
                     "competing_japanese": [
@@ -503,5 +529,8 @@
     "post_example_writeup": "When using 「まえに」 in a temporal sense, it focuses on the period leading up to an event or action. This contrasts with other expressions that might describe actions happening during or after an event.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/まえに"
-    }
+    },
+    "lint-errors": [
+        "[rule-13] warning unknown grammar at 'false_friends[4]': '以前 (before)'. It **MUST** be from ALL_GRAMMARS_SUMMARY or you can prepend '<suggest>:' to the grammar point to suggest a new grammar point."
+    ]
 }
