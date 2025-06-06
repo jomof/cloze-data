@@ -174,19 +174,21 @@ def lv_learn_after(val, type, path, messages):
     if count < 2:
         messages.append(f"[rule-11] warning learn_after has {count} item(s); must have at least 2")
 
-def lv_false_friends_grammar_point(val, type, path, messages):
+def lv_false_friends_grammar_point(val, type, path, messages, all_grammars_summary):
     if type != "false_friends/object":
         return
     gp = val.get("grammar_point")
     if not isinstance(gp, str) or not gp.strip():
         messages.append(f"[rule-12] warning {path}.grammar_point is missing or empty")
+    elif not gp.startswith("<suggest>:"):
+        if gp not in all_grammars_summary['all-grammar-points'].keys():
+            messages.append(f"[rule-13] warning unknown grammar at '{path}': '{gp}'. It **MUST** be from ALL_GRAMMARS_SUMMARY or you can prepend '<suggest>:' to the grammar point to suggest a new grammar point.")
 
 def lv_known_grammar(val, type, path, messages, all_grammars_summary):
     if type != "knownGrammarType":
         return
 
     if not val in all_grammars_summary['all-grammar-points'].keys():
-        # raise ValueError(' '.join(all_grammars_summary['all-grammar-points'].keys()))
         messages.append(f"[rule-13] unknown grammar at '{path}': '{val}'. You may suggest new grammar points by adding a false_friend.")
 
 def lv_grammar_point_special_characters(val, type, path, messages):
@@ -423,7 +425,7 @@ def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = Non
             lv_validate_parenthetical_meaning(result, type_name, path, lint)
             lv_learn_after(result, type_name, path, lint)
             lv_learn_before(result, type_name, path, lint)
-            lv_false_friends_grammar_point(result, type_name, path, lint)
+            lv_false_friends_grammar_point(result, type_name, path, lint, all_grammars_summary)
             lv_known_grammar(result, type_name, path, lint, all_grammars_summary)
             lv_grammar_point_special_characters(result, type_name, path, lint)
     visit_json(grammar_point, GRAMMAR_SCHEMA, fn)

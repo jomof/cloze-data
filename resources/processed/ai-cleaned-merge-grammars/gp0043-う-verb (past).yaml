@@ -63,7 +63,7 @@
             "meaning": "ru-verb (Ichidan Verbs)",
             "kind": "similar expression",
             "nuance": "Unlike う-verbs, る-verbs conjugate differently in the past tense",
-            "grammar_point": "る-verb (dictionary)"
+            "grammar_point": "<suggest>:る-verb (ichidan verbs)"
         },
         {
             "term": "う-Verb (Dictionary)",
@@ -77,13 +77,13 @@
             "meaning": "Will/Does/Do (not)",
             "kind": "often confused with",
             "nuance": "The negative form describes what will not be done, while the past tense describes what was done",
-            "grammar_point": "る-verb (negative)"
+            "grammar_point": "る-verbs (negative forms)"
         },
         {
             "term": "Verb[て]",
             "meaning": "And, Then (Linking events)",
             "kind": "often confused with",
-            "nuance": "Verb+て connects actions in a sequence but doesn't indicate past tense on its own",
+            "nuance": "Verb+て connects actions but doesn't explicitly state the past tense on its own",
             "grammar_point": "Verb[て] (and then)"
         },
         {
@@ -91,14 +91,14 @@
             "meaning": "Was, Were (Past tense)",
             "kind": "often confused with",
             "nuance": "Used for nouns and な-adjectives, not う-verbs",
-            "grammar_point": "だった・でした"
+            "grammar_point": "だった・でした (past copula)"
         },
         {
             "term": "ていた",
             "meaning": "Was doing ~",
             "kind": "often confused with",
             "nuance": "Indicates a continuous action in the past, not a simple past action",
-            "grammar_point": "ていた"
+            "grammar_point": "ていた (past continuous or state)"
         }
     ],
     "post_false_friends_writeup": "It's crucial to distinguish between the dictionary form, the negative form, the て form, だった/でした, and ていた when constructing sentences. The dictionary form is the base, while the others serve different grammatical functions such as negation, sequencing, or indicating continuous action. Mistaking these can lead to sentences with unintended meanings.",
@@ -190,7 +190,7 @@
                         "会社 で コーヒー を 飲ん だ。"
                     ],
                     "english": "I drank coffee at the office (casual).",
-                    "hint": "This expression is informal. We're looking for a polite way to state a past action, appropriate for a professional setting."
+                    "hint": "This expression is more formal. We're looking for a polite way to state a past action, appropriate for a professional setting."
                 },
                 {
                     "competing_japanese": [
@@ -627,16 +627,16 @@
         {
             "english": "My grandfather lived in the countryside for a long time.",
             "japanese": [
-                "祖父 は 長い 間 田舎 に {住ん で い まし た}。",
-                "お じい ちゃん は ずっと 田舎 に {住ん で い まし た}。",
-                "祖父 は 昔 から 田舎 に {住ん で い まし た} よ。",
-                "祖父 は 生涯 田舎 に {住ん で い た}。"
+                "祖父 は 長い 間 田舎 に {住み まし た}。",
+                "お じい ちゃん は ずっと 田舎 に {住み まし た}。",
+                "祖父 は 昔 から 田舎 に {住み まし た} よ。",
+                "祖父 は 生涯 田舎 に {住み まし た}。"
             ],
             "english_literally": "Grandfather for a long time in countryside lived.",
             "competing_grammar": [
                 {
                     "competing_japanese": [
-                        "祖父 は 長い 間 田舎 に 住ん で い た。"
+                        "祖父 は 長い 間 田舎 に 住ん だ。"
                     ],
                     "english": "My grandfather lived in the countryside for a long time (casual).",
                     "hint": "This is the plain form. We are looking for a polite expression, showing respect when talking about family members."
@@ -654,14 +654,21 @@
                     ],
                     "english": "My grandfather didn't live in the countryside for a long time.",
                     "hint": "This is the negative polite past. We are looking for a positive completed state."
+                },
+                {
+                    "competing_japanese": [
+                        "祖父 は 長い 間 田舎 に 住ん で い まし た。"
+                    ],
+                    "english": "My grandfather was living in the countryside for a long time (continuous).",
+                    "hint": "This expresses a continuous action or state in the past. We are looking for a simple polite past action or state."
                 }
             ],
             "scene": "A woman sharing family history with a new acquaintance.",
             "register": "teineigo (polite)",
             "setting": "informative",
-            "conjugation": "progressive (～ている)",
+            "conjugation": "past polite (～ました)",
             "speaker_gender": "female",
-            "nuance": "While 「住ん で い まし た」 is the polite progressive past, it functions here to describe a continuous state of living that concluded in the past. 「祖父」 is a formal term for 'grandfather', suitable for polite conversation. Using 「お じいちゃん」 makes it slightly more affectionate. 「長い 間」 means 'for a long time'. The 「よ」 at the end can add a gentle emphasis."
+            "nuance": "Using 「住み まし た」 is appropriate for a polite setting. 「祖父」 is a formal term for 'grandfather', suitable for polite conversation. 「お じいちゃん」 makes it slightly more affectionate. 「長い 間」 means 'for a long time'. The 「よ」 at the end can add a gentle emphasis."
         },
         {
             "english": "The child cried when he got lost.",
@@ -717,7 +724,7 @@
                         "昨日 は 友達 と 外 で 一 日 中 遊び まし た。"
                     ],
                     "english": "I played outside with my friends all day yesterday (polite).",
-                    "hint": "This is the polite form. We are looking for a plain, casual statement about a past activity."
+                    "hint": "This is the plain form. We are looking for a plain, casual statement about a past activity."
                 },
                 {
                     "competing_japanese": [
@@ -786,9 +793,5 @@
     "post_example_writeup": "Remember that the specific ending change (e.g., った, いた, いだ, んだ, した) depends on the last sound of the verb in its dictionary form. Be mindful of these variations to conjugate う-verbs correctly in the past tense. Note that some verbs ending in う will conjugate with a small っ。",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/う-verb-past"
-    },
-    "lint-errors": [
-        "[rule-8] warning false_friends[4].grammar_point 'だった・でした' lacks a '(meaning)' section",
-        "[rule-8] warning false_friends[5].grammar_point 'ていた' lacks a '(meaning)' section"
-    ]
+    }
 }

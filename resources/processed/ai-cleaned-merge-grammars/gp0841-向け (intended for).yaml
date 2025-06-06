@@ -2,7 +2,8 @@
     "grammar_point": "向け (intended for)",
     "learn_before": [
         "に (to)",
-        "ため (purpose, reason)"
+        "ため (purpose, reason)",
+        "Verb[て] (and then another event)"
     ],
     "learn_after": [
         "に応じて (depending on)",
@@ -43,14 +44,14 @@
             "meaning": "Suitable for, facing",
             "kind": "similar expression",
             "nuance": "「向き」 describes something suitable or facing a certain direction. 「向け」, on the other hand, signifies something *specifically designed* or intended for a particular audience.",
-            "grammar_point": "向き"
+            "grammar_point": "向き (suitability and direction)"
         },
         {
             "term": "に合わせて・に合った",
             "meaning": "In accordance with, matching, fitting, suitable for, adjust or tune to",
             "kind": "similar expression",
             "nuance": "「に合わせて/に合った」 means something is adjusted or suitable for a purpose. 「向け」 implies something is *specifically created* or tailored for a particular target.",
-            "grammar_point": "に合わせて・に合った"
+            "grammar_point": "に合わせる・に合う"
         }
     ],
     "post_false_friends_writeup": "To avoid confusion, remember that 「向け」 emphasizes the *intention* behind something being created for a specific audience. 「に向かって/に向けて」 indicates direction, 「向き」 describes suitability or orientation, and 「に合わせて/に合った」 describes adjustment or matching.",
@@ -133,7 +134,7 @@
                         "この レシピ は 忙しい 人 用 に 簡単 に アレンジ さ れ て い ます。"
                     ],
                     "english": "This recipe has been simply arranged for busy people's use.",
-                    "hint": "「用」 indicates something is 'for use by' a group. While similar, 「向け」 adds a stronger emphasis on the intentional design and tailoring for that specific target. We're looking for a word that implies the recipe was intentionally modified for busy people."
+                    "hint": "「用」 means 'for use by' or 'for a specific purpose'. While similar, 「向け」 adds a stronger emphasis on the intentional design and tailoring for that specific target. We're looking for a word that implies the recipe was intentionally modified for busy people."
                 }
             ],
             "scene": "A chef is explaining how a particular dish was adapted for a specific demographic in a cooking show.",
@@ -196,7 +197,7 @@
                     "competing_japanese": [
                         "彼 が 書い た 恋愛 小説 は、完全 に 女性 の ため の 物 だ ね。"
                     ],
-                    "english": "The romance novel he wrote is completely for women, isn't it?",
+                    "english": "The romance novel he wrote is completely for women, isn",
                     "hint": "「のため」 emphasizes benefit or purpose. 「向け」 specifically highlights the intentional design and targeting towards a female readership. We're looking for an expression that suggests the novel was designed for women."
                 }
             ],
@@ -259,7 +260,7 @@
                         "新しい スマート フォン は 海外 市場 用 に も 開発 さ れ て い ます。"
                     ],
                     "english": "The new smartphone is also being developed for overseas market use.",
-                    "hint": "「用」 means 'for use by' or 'for a specific purpose'. While close, 「向け」 more strongly conveys that the entire development process is being tailored for overseas markets. We're looking for a word that implies intentional design for a specific market."
+                    "hint": "「用」 means 'for use by'. While close, 「向け」 more strongly conveys that the entire development process is being tailored for overseas markets. We're looking for a word that implies intentional design for a specific market."
                 }
             ],
             "scene": "A tech company's press conference announcing a new product.",
@@ -267,7 +268,7 @@
             "setting": "informative",
             "conjugation": "non-past polite (～ます)",
             "nuance": "「向け」 emphasizes that the company is intentionally designing the phone to meet the needs and regulations of international markets. The particle 「も」 (mo) indicates \"also\" or \"as well,\" highlighting that this development is in addition to domestic markets.",
-            "etymology": "「スマートフォン」 is a loanword from English \"smartphone\". 「海外」 (kaigai) means \"overseas\". 「開発される」 (kaihatsu sareru) is the passive form of 「開発する」 (kaihatsu suru, to develop). The phrase 「て います」 (te imasu) indicates a continuous or ongoing state of development."
+            "etymology": "「スマートフォン」 is a loanword from English \"smartphone\". 「海外」 (kaigai) means \"unseen\". 「開発される」 (kaihatsu sareru) is the passive form of 「開発する」 (kaihatsu suru, to develop). The phrase 「て います」 (te imasu) indicates a continuous or ongoing state of development."
         },
         {
             "english": "This software was developed specifically for small and medium-sized businesses.",
@@ -425,7 +426,7 @@
     },
     "lint-errors": [
         "[rule-8] warning false_friends[0].grammar_point 'に向かって・に向けて' lacks a '(meaning)' section",
-        "[rule-8] warning false_friends[1].grammar_point '向き' lacks a '(meaning)' section",
-        "[rule-8] warning false_friends[2].grammar_point 'に合わせて・に合った' lacks a '(meaning)' section"
+        "[rule-13] warning unknown grammar at 'false_friends[2]': 'に合わせる・に合う'. It **MUST** be from ALL_GRAMMARS_SUMMARY or you can prepend '<suggest>:' to the grammar point to suggest a new grammar point.",
+        "[rule-8] warning false_friends[2].grammar_point 'に合わせる・に合う' lacks a '(meaning)' section"
     ]
 }

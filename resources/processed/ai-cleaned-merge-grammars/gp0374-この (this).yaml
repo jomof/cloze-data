@@ -32,7 +32,7 @@
         "grammatical-role": "Acts as a demonstrative adjective/determiner.",
         "logical-flow": "Introduces a specific item into the discourse.",
         "temporal-flow": "Can modify nouns indicating current time periods (e.g., この頃 - this time, この前 - recently).",
-        "spatial-flow": "Identifies or refers to something in the immediate proximity of the speaker, or immediately relevant to the speaker's current situation or thoughts. Should be fixed in the JSON for the next iteration if the `source` field is not standard. The original source was `Derived from traditional Japanese grammar classifications.` so I'm omitting that field. This will be fixed in the next iteration. It is a custom field and not supported by the schema. I'm removing it. Perhaps a `source` field should be at the root of the JSON. If the "
+        "spatial-flow": "Identifies or refers to something in the immediate proximity of the speaker, or immediately relevant to the speaker's current situation or thoughts."
     },
     "etymology": "この belongs to the 'ko-so-a-do' system (こそあど体系) in Japanese, which is used to indicate the proximity of objects or places to the speaker and listener. この is related to the demonstrative pronoun これ (this) and the place word ここ (here). It signifies something closer to the speaker.",
     "writeup": "「この」 (kono) is classified as a **連体詞 (rentaishi)** in Japanese, often translated as a 'pre-noun adjectival' or 'demonstrative adjective'. Unlike typical adjectives that conjugate, 連体詞 are uninflected words that *always* precede and modify a noun. They do not change their form, regardless of the noun's grammatical function or number. As part of the fundamental **こそあど体系 (ko-so-a-do taikei)**, 「この」 indicates something that is physically close to the speaker. It serves to identify a specific item or person among others, highlighting its proximity to the speaker. For instance, if you point to a book right next to you, you would refer to it as 「この本」 (kono hon - this book). While related to the pronoun 「これ」 (kore - this thing) and the place word 「ここ」 (koko - here), 「この」 cannot stand alone. It *must* be followed by a noun, functioning solely as a modifier. Its role is to specify *which* noun is being discussed, always with the implication of 'this one, here, near me'. This is a core concept for N5 learners, establishing how objects are identified in relation to the speaker.",
@@ -42,63 +42,63 @@
             "meaning": "This (thing), this one",
             "kind": "similar expression",
             "nuance": "Unlike 「この」, 「これ」 is a demonstrative pronoun and stands alone as a noun. It refers to an object directly without modifying another noun, e.g., 「これはペンです」 ('This is a pen').",
-            "grammar_point": "これ"
+            "grammar_point": "これ (this)"
         },
         {
             "term": "ここ",
             "meaning": "Here, this place",
             "kind": "similar expression",
             "nuance": "Unlike 「この」, 「ここ」 is a demonstrative noun referring to a specific location near the speaker. It cannot modify a noun, e.g., 「ここは駅です」 ('This is the station').",
-            "grammar_point": "ここ"
+            "grammar_point": "ここ (here)"
         },
         {
             "term": "それ",
             "meaning": "That (thing), that one",
             "kind": "similar expression",
             "nuance": "Unlike 「この」, 「それ」 refers to something near the listener or something previously mentioned in the conversation. It is a pronoun and does not modify a noun, e.g., 「それはあなたの本ですか」 ('Is that your book?').",
-            "grammar_point": "それ"
+            "grammar_point": "それ (that, it)"
         },
         {
             "term": "そこ",
             "meaning": "There, that place",
             "kind": "similar expression",
             "nuance": "Unlike 「この」, 「そこ」 refers to a location near the listener or a previously mentioned place. It is a noun and does not modify a noun, e.g., 「そこは危ないです」 ('That place is dangerous.').",
-            "grammar_point": "そこ"
+            "grammar_point": "そこ (there, that place)"
         },
         {
             "term": "あの",
             "meaning": "That (over there)",
             "kind": "similar expression",
             "nuance": "Similar to 「この」, 「あの」 is also a pre-noun adjectival, but it refers to something distant from *both* the speaker and the listener, e.g., 「あの山は高いです」 ('That mountain over there is tall').",
-            "grammar_point": "あの"
+            "grammar_point": "あの (that over there)"
         },
         {
             "term": "あれ",
             "meaning": "That (thing over there), that one",
             "kind": "similar expression",
             "nuance": "Unlike 「この」, 「あれ」 is a demonstrative pronoun referring to an object distant from both the speaker and the listener. It stands alone, e.g., 「あれは何ですか」 ('What is that over there?').",
-            "grammar_point": "あれ"
+            "grammar_point": "あれ (that over there)"
         },
         {
             "term": "あそこ",
             "meaning": "Over there",
             "kind": "similar expression",
             "nuance": "Unlike 「この」, 「あそこ」 is a demonstrative noun referring to a place distant from both the speaker and the listener. It cannot modify a noun, e.g., 「あそこに病院があります」 ('There is a hospital over there.').",
-            "grammar_point": "あそこ"
+            "grammar_point": "あそこ (over there)"
         },
         {
             "term": "その",
             "meaning": "That",
             "kind": "similar expression",
             "nuance": "Similar to 「この」, 「その」 is a pre-noun adjectival and modifies a noun. However, it typically refers to something already mentioned or known to both the speaker and listener, or something near the listener, e.g., 「その話は聞きました」 ('I heard that story').",
-            "grammar_point": "その"
+            "grammar_point": "その (that, near listener)"
         },
         {
             "term": "どの",
             "meaning": "Which (of three or more), What (kind)",
             "kind": "similar expression",
             "nuance": "Similar to 「この」, 「どの」 is a pre-noun adjectival and modifies a noun. However, 「どの」 is used in questions to ask which item is being referred to from a group, e.g., 「どの本が好きですか」 ('Which book do you like?').",
-            "grammar_point": "どの"
+            "grammar_point": "どの (which or what kind)"
         }
     ],
     "post_false_friends_writeup": "The key distinction among these demonstratives lies in their grammatical function and the relative distance they indicate. 「この」, 「その」, 「あの」, and 「どの」 are all pre-noun adjectivals (連体詞), meaning they must precede and modify a noun. Their core difference is proximity to the speaker and listener, and whether they are interrogative. In contrast, 「これ」, 「それ」, 「あれ」 are pronouns, while 「ここ」, 「そこ」, 「あそこ」 are nouns indicating location. These latter six can stand alone without modifying a noun, which 「この」 cannot. Understanding this fundamental difference between modifiers and standalone words is crucial.",
@@ -233,7 +233,7 @@
                 "{この} ペン は よく 書ける ね。",
                 "{この} ペン は よく 書け ます よ ね。"
             ],
-            "english_literally": "This pen can write well, isn'=",
+            "english_literally": "This pen can write well, doesn't it?",
             "competing_grammar": [
                 {
                     "competing_japanese": [
@@ -380,16 +380,5 @@
     "post_example_writeup": "As these examples demonstrate, 「この」 consistently functions as a pre-noun adjectival, specifying the noun that immediately follows it. Its utility spans various contexts, from identifying physical objects to indicating time periods or abstract concepts, always with the implication of proximity or immediate relevance to the speaker. Paying close attention to whether the English meaning points to a specific noun or a standalone concept will help you choose between 「この」 and related demonstratives.",
     "sources": {
         "bunpro": "https://bunpro.jp/grammar_points/この"
-    },
-    "lint-errors": [
-        "[rule-8] warning false_friends[0].grammar_point 'これ' lacks a '(meaning)' section",
-        "[rule-8] warning false_friends[1].grammar_point 'ここ' lacks a '(meaning)' section",
-        "[rule-8] warning false_friends[2].grammar_point 'それ' lacks a '(meaning)' section",
-        "[rule-8] warning false_friends[3].grammar_point 'そこ' lacks a '(meaning)' section",
-        "[rule-8] warning false_friends[4].grammar_point 'あの' lacks a '(meaning)' section",
-        "[rule-8] warning false_friends[5].grammar_point 'あれ' lacks a '(meaning)' section",
-        "[rule-8] warning false_friends[6].grammar_point 'あそこ' lacks a '(meaning)' section",
-        "[rule-8] warning false_friends[7].grammar_point 'その' lacks a '(meaning)' section",
-        "[rule-8] warning false_friends[8].grammar_point 'どの' lacks a '(meaning)' section"
-    ]
+    }
 }

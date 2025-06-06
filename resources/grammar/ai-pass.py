@@ -125,15 +125,16 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
         ws("""
             ** OVERRIDE OPERATING INSTRUCTIONS **
             ** PRIORITY INSTRUCTIONS **
-            We're incrementally improving this grammar point and we're focusing on examples[]
-            right now. 
+            We're incrementally improving this grammar point and we're focusing on cleaning up lint errors. 
             Output **MUST** be in JSON format following OUTPUT_SCHEMA.
            
             ** BEGIN PRIORITY INSTRUCTIONS ALGORITHM **
             Follow these steps:
                 ------------------------------------------------------------------------------------------
                 for each lint-error in the input:
-                    EXECUTE: Fix the lint-error.
+                    **EXECUTE**: Fix the lint-error.
+                    **EXECUTE**: Fix the lint-error.
+                    **EXECUTE**: Fix the lint-error.
                 ------------------------------------------------------------------------------------------
             ** END PRIORITY INSTRUCTIONS ALGORITHM **
            """)
