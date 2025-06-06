@@ -370,6 +370,8 @@ def get_meaning(name: str) -> Optional[str]:
 
 def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = None):
     lint = []
+    if not grammar_point:
+        grammar_point = {}
     grammar_point = copy.deepcopy(grammar_point)
     if path is not None:
         filename = os.path.basename(path)

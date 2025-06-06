@@ -479,7 +479,11 @@
       "type": "object",
       "properties": { "bunpro": { "type": "string", "format": "uri" } },
       "additionalProperties": false
-    }
+    },
+    // If split_predecessor exists, then this grammar point was split from an earlier grammar point.
+    // Use information from the split predecessor to help populate this new grammar point keeping
+    // only the relevant information for the new grammar point.
+    "split_predecessor": { "type": "string" }
   },
   "required": [
     "grammar_point","id","pronunciation","formation","jlpt",
