@@ -47,7 +47,7 @@ if __name__ == '__main__':
             'meaning': current['meaning'],
         }
         better_grammar_point_name = current.get('better_grammar_point_name', [])
-        if len(better_grammar_point_name) == 1 and '/' not in better_grammar_point_name[0] and ':' not in better_grammar_point_name[0]and '-' not in better_grammar_point_name[0]:
+        if len(better_grammar_point_name) == 1 and '/' not in better_grammar_point_name[0] and ':' not in better_grammar_point_name[0]:
             file_renames.append({
                 'old-id': current['id'],
                 'old-grammar-point': current['grammar_point'],
@@ -114,7 +114,7 @@ if __name__ == '__main__':
     for non_rename in non_renames:
         grammar_point = non_rename['grammar_point']
         if grammar_point in old_to_new:
-            raise KeyError(f"Grammar point '{grammar_point}' already exists in old_to_new mapping.")
+            raise KeyError(f"Grammar point '{grammar_point}' already exists in old_to_new mapping. Should they be merged?")
         old_to_new[grammar_point] = grammar_point
 
     # Rename the grammar points in summary
