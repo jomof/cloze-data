@@ -10,6 +10,9 @@ from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 from threading import Lock
 import aiofiles  
 import signal
+import yaml
+import json
+
 
 class ConsoleDisplay:
     """
@@ -415,7 +418,8 @@ class MapReduce:
     def __init__(
         self,
         input_dir: str,
-        deserialize_func,
+
+        deserialize_func=lambda raw: yaml.load(raw, Loader=yaml.CSafeLoader),
 
         preprocess_func=None,
 
@@ -426,7 +430,7 @@ class MapReduce:
         fold_func_name: str = 'folding',
         fold_func=None,
 
-        serialize_func=None,
+        serialize_func=lambda raw: json.dumps(raw, ensure_ascii=False, indent=4),
 
         output_dir: str = None,
         initial_accumulator=None,

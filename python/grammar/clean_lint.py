@@ -145,9 +145,9 @@ def lv_better_grammar_name(val, type, path, messages):
                 f"better_grammar_point_name should include a name with parentheses starting with a lowercase English letter or ~"
             )
         
-    if meaning is not None:
-        if ',' in meaning and not better_grammar_point_name:
-            messages.append(f"[rule-16] warning 'grammar_point' meaning '({meaning})' contains a comma (,). It should use dot (・) instead. Suggest a new name in better_grammar_point_name.")
+    # if meaning is not None:
+    #     if ',' in meaning and not better_grammar_point_name:
+    #         messages.append(f"[rule-16] warning 'grammar_point' meaning '({meaning})' contains a comma (,). It should use dot (・) instead. Suggest a new name in better_grammar_point_name.")
 
 
 def lv_validate_parenthetical_meaning(val, type, path, messages):

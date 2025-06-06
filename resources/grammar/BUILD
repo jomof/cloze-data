@@ -282,6 +282,22 @@ py_binary(
     ],
 )
 
+# bazel run //resources/grammar:split-join-rename
+py_binary(
+    name = "split-join-rename",
+    srcs = ["split-join-rename.py"],
+    data = [
+        "//resources/processed:ai-cleaned-merge-grammars",
+    ],
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//python/grammar",
+        "//python/mapreduce",
+        "//python/utils/visit_json",
+        "@pip//pyyaml",
+    ],
+)
+
 py_library(
     name = "grammar",
     srcs = [
@@ -293,9 +309,11 @@ py_library(
         "extract-grammar-point-names.py",
         "extract-yaml.py",
         "fixup-bunpro-grammar.py",
+        "grammar_summary.py",
         "lint-grammar-points.py",
         "merge-grammars.py",
         "post-ai-scrub-tool.py",
+        "split-join-rename.py",
         "yaml-clean.py",
     ],
     visibility = ["//:__subpackages__"],
