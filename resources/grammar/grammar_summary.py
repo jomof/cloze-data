@@ -25,7 +25,7 @@ def save_summary(summary, grammar_root):
     with open(file_path, 'w', encoding='utf-8') as f:
         json.dump(sort_summary(summary), f, ensure_ascii=False, indent=4)
     
-def generate_summary(grammar_root, fields = ['meaning']):
+def generate_summary(grammar_root, fields = ['id', 'meaning']):
     """
     Generates a summary of all grammar points in the specified directory.
     """
