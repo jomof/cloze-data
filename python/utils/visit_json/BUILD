@@ -3,6 +3,7 @@ load("@rules_python//python:defs.bzl", "py_library", "py_test")
 py_library(
     name = "visit_json",
     srcs = [
+        "__init__.py",
         "visit_json.py",
     ],
     visibility = ["//visibility:public"],

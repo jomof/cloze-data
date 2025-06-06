@@ -277,6 +277,7 @@ py_binary(
     deps = [
         "//python/grammar",
         "//python/mapreduce",
+        "//python/utils/visit_json",
         "@pip//pyyaml",
     ],
 )
@@ -304,6 +305,7 @@ py_library(
         "//python/mapreduce",
         "//python/mecab",
         "//python/utils/build_cache/memoize",
+        "//python/utils/visit_json",
         "@pip//beautifulsoup4",
         "@pip//json5",
         "@pip//json_repair",

@@ -158,7 +158,6 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
     with open(temp_dir + "/" + os.path.basename(output_file)+".prompt", 'w', encoding='utf-8') as file:
         file.write(prompt)
 
-    grammar_point_name = prior_input_obj["grammar_point"]
     id = prior_input_obj["id"]
     sources = { }
         

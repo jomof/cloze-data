@@ -189,6 +189,20 @@ def lv_known_grammar(val, type, path, messages, all_grammars_summary):
         # raise ValueError(' '.join(all_grammars_summary['all-grammar-points'].keys()))
         messages.append(f"[rule-13] unknown grammar at '{path}': '{val}'. You may suggest new grammar points by adding a false_friend.")
 
+def lv_grammar_point_special_characters(val, type, path, messages):
+    if type != "grammarType":
+        return
+
+    special = []
+    trimmed = val.removeprefix("<suggest>:")
+    for c in '/:':
+        if c in trimmed:
+            special.append(c)
+
+    if special:
+        messages.append(f"[rule-14] warning '{path}': '{trimmed}' contain illegal characters: {', '.join(special)}.")
+
+
 def _validate_grammar_point_meaning(name: str):
     meaning = get_meaning(name)
     if not meaning:
@@ -204,8 +218,6 @@ def _validate_grammar_point_meaning(name: str):
         return []
 
     return [meaning[0]] if meaning else []
-
-
 
 def lint_schema_enums_with_jsonschema(instance, schema):
     """
@@ -354,17 +366,17 @@ def get_meaning(name: str) -> Optional[str]:
 
     return inside
 
-
-
-
-
 def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = None):
     lint = []
     grammar_point = copy.deepcopy(grammar_point)
     if path is not None:
         filename = os.path.basename(path)
         basename = os.path.splitext(filename)[0]
-        id, name = basename.split("-", 1)
+        try:
+            id, name = basename.split("-", 1)
+        except Exception:
+            print(f"Error splitting {basename} into id and name")
+            raise
         grammar_point['id'] = id
         grammar_point['grammar_point'] = name
 
@@ -413,6 +425,7 @@ def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = Non
             lv_learn_before(result, type_name, path, lint)
             lv_false_friends_grammar_point(result, type_name, path, lint)
             lv_known_grammar(result, type_name, path, lint, all_grammars_summary)
+            lv_grammar_point_special_characters(result, type_name, path, lint)
     visit_json(grammar_point, GRAMMAR_SCHEMA, fn)
 
     lint.extend(lint_schema_enums_with_jsonschema(grammar_point, GRAMMAR_SCHEMA))
