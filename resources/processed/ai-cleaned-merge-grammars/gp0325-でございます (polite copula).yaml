@@ -2,6 +2,10 @@ grammar_point: でございます (polite copula)
 learn_before:
   - です (polite copula)
   - だ (casual copula)
+learn_after:
+  - いたす (humble verb)
+  - お・ご～する (humble action)
+  - である (formal copula)
 id: gp0325
 meaning: To be (polite copula)
 conjugations:
@@ -44,7 +48,7 @@ writeup: |-
   **Important Considerations:**
 
   *   Using 「でございます」 to introduce oneself or refer to inanimate objects or concepts is considered very polite and appropriate. For example, 「私 が 担当 の 〇〇 でございます。」 ("I am 〇〇, in charge.")
-  *   However, when referring to *other* people, it is generally more appropriate to use honorific language (尊称語, *sonkeigo*) such as 「いらっしゃる」. For instance, instead of saying 「田中 さん は 先生 でございます。」, it would be more respectful to say 「田中 先生 で いらっしゃいます。」 or 「田中 先生 が お 見え に なり まし た。」.
+  *   However, when referring to *other* people, it is generally more appropriate to use honorific language (尊称語, sonkeigo) such as 「いらっしゃる」. For instance, instead of saying 「田中 さん は 先生 でございます。」, it would be more respectful to say 「田中 先生 で いらっしゃいます。」 or 「田中 先生 が お 見え に なり まし た。」.
 false_friends:
   - term: だ
     meaning: To be, is (plain form)
@@ -65,12 +69,21 @@ false_friends:
       when respectfully referring to the existence, presence, coming, or going of a *person*, 「いらっしゃいます」
       (the honorific form of いる/来る/行く) is the appropriate choice, not 「でございます」.
     grammar_point: いらっしゃる (honorific forms)
+  - term: である
+    meaning: to be (formal/literary)
+    kind: similar expression
+    nuance: While both 「でございます」 and 「である」 are formal, 「でございます」 primarily conveys politeness and humility
+      in spoken or customer service contexts. 「である」 is typically used in academic writing, reports, or
+      very formal, objective statements, and it doesn't carry the same sense of humble deference.
+    grammar_point: である (formal copula)
 post_false_friends_writeup: To ensure proper usage, remember that 「でございます」 sits at the pinnacle of everyday
   politeness, reserved for business, formal settings, or situations demanding utmost respect when referring
   to yourself or things. 「です」 is your versatile, standard polite form suitable for most general interactions.
   Conversely, 「だ」 is strictly for intimate or very casual contexts. Most importantly, when the subject
   is a respected person, always prioritize using honorific verbs like 「いらっしゃいます」 to convey their presence
-  or actions, as it specifically elevates the subject of the sentence, which 「でございます」 does not.
+  or actions, as it specifically elevates the subject of the sentence, which 「でございます」 does not. Lastly,
+  while 「である」 is also formal, it carries a more objective and declarative tone, primarily found in written
+  contexts, differentiating it from the deferential spoken politeness of 「でございます」.
 examples:
   - english: This drink is complimentary.
     japanese:
@@ -348,7 +361,3 @@ post_example_writeup: As you can see from the examples, 「でございます」
   applied to nouns, and い-adjectives (by changing to their -く form before 「ございます」), and な-adjectives (by
   keeping their stem before 「でございます」). Pay attention to the register and setting of each example to understand
   when this highly polite expression is most appropriate.
-sources:
-  bunpro: https://bunpro.jp/grammar_points/でございます
-lint-errors:
-  - '[rule-11] warning learn_after has 0 item(s); must have at least 2'

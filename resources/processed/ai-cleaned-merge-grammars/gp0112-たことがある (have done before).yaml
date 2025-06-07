@@ -1,11 +1,17 @@
 grammar_point: たことがある (have done before)
 learn_before:
+  - Verbs (non-past plain)
+  - ある (to exist or have)
   - る-verb (past)
   - う-verb (past)
   - こと (making a verb a noun)
 learn_after:
   - たものだ (nostalgic recollection)
   - たり〜たりする (do things like x and y)
+  - Vて + くる (gradual change or continuation)
+  - ている (resultant and ongoing state)
+  - ことがある (occassionally)
+  - たばかり (just did)
 id: gp0112
 meaning: Have done before; there was an experience of doing
 conjugations:
@@ -87,9 +93,17 @@ false_friends:
       that there are times when something happens (a recurring event), whereas 「たことがある」 indicates a past
       experience (a one-time or accumulated event).
     grammar_point: ことがある (occassionally)
-post_false_friends_writeup: Be careful not to confuse 「たことがある」 with 「たものだ」 or 「ことがある」. 「たものだ」 is used
-  to talk about past habits, while 「ことがある」 (without a verb in the past tense) is used to say that something
-  happens occasionally. 「たことがある」 is specifically for talking about experiences.
+  - term: たばかり
+    meaning: Just did
+    kind: often confused with
+    nuance: 「たばかり」 indicates that an action occurred very recently, emphasizing the immediacy of the past
+      event. 「たことがある」, in contrast, focuses solely on whether the experience has occurred at any point
+      in the past, without implying recency.
+    grammar_point: たばかり (just did)
+post_false_friends_writeup: Be careful not to confuse 「たことがある」 with 「たものだ」, 「ことがある」, or 「たばかり」. While
+  「たものだ」 describes past habits and 「ことがある」 (without a preceding past tense verb) indicates occasional
+  occurrences, 「たばかり」 highlights a recent past action. 「たことがある」 is specifically used to talk about the
+  experience of having done something at some point in time, regardless of when it happened.
 examples:
   - english: Have you ever read this book?
     japanese:
@@ -101,12 +115,12 @@ examples:
           - この 本 を 読ん だ？
         english: Did you read this book?
         hint: This asks if you simply performed the action in the past. We're looking for whether you
-          have *had the experience*.
+          have had the experience.
       - competing_japanese:
           - この 本 を 読む こと が ある？
         english: Do you sometimes read this book?
-        hint: This asks if you *sometimes* read the book. We're looking for whether you have *ever had
-          the experience* of reading it.
+        hint: This asks if you sometimes read the book. We're looking for whether you have ever had the
+          experience of reading it.
     scene: A librarian asks a patron if they have previously encountered a particular title.
     register: casual
     setting: informative
@@ -120,12 +134,12 @@ examples:
       - competing_japanese:
           - 京都 へ 行き まし た。
         english: I went to Kyoto.
-        hint: This simply states a past action. We're looking for the *experience* of having been there.
+        hint: This simply states a past action. We're looking for the experience of having been there.
       - competing_japanese:
           - 京都 へ 行く こと が あり ます。
         english: I sometimes go to Kyoto.
-        hint: This expresses that you *sometimes* go to Kyoto, not that you have *had the experience*
-          of going there.
+        hint: This expresses that you sometimes go to Kyoto, not that you have had the experience of going
+          there.
     scene: A tourist politely shares their past travels in Japan with a local.
     register: teineigo (polite)
     setting: friendly
@@ -140,12 +154,12 @@ examples:
           - 怖い 夢 を 見 なかっ た。
         english: I didn't see a scary dream.
         hint: This simply states you didn't see a dream on a particular occasion. We're looking for the
-          complete lack of past *experience* of seeing such a dream.
+          complete lack of past experience of seeing such a dream.
       - competing_japanese:
           - 怖い 夢 を 見る こと が ない。
         english: I don't usually see scary dreams.
-        hint: This implies you don't *usually* see scary dreams, but doesn't necessarily mean you've *never*
-          had one. We're looking for the complete lack of past *experience*.
+        hint: This implies you don't usually see scary dreams, but doesn't necessarily mean you've never
+          had one. We're looking for the complete lack of past experience.
     scene: A young girl casually tells her older sister about her typical sleep experiences.
     register: casual
     setting: intimate
@@ -160,21 +174,21 @@ examples:
           - 山 に 登り ませ ん でし た。
         english: I didn't climb a mountain.
         hint: This refers to a specific instance of not climbing. We're looking for the complete lack
-          of past *experience* of climbing a mountain.
+          of past experience of climbing a mountain.
       - competing_japanese:
           - 山 に 登る こと が あり ませ ん。
         english: I don't usually climb mountains.
-        hint: This expresses that you don't *usually* climb mountains, not that you have *never* had the
-          experience. We're looking for a complete lack of past *experience*.
+        hint: This expresses that you don't usually climb mountains, not that you have never had the experience.
+          We're looking for a complete lack of past experience.
     scene: A colleague politely declines an invitation to a hiking trip, citing lack of experience.
     register: teineigo (polite)
     setting: apologetic
     conjugation: negative non-past polite (～ません)
-    nuance: This sentence emphasizes a lack of *experience* with mountain climbing, politely explaining
+    nuance: This sentence emphasizes a lack of experience with mountain climbing, politely explaining
       why one might not accept a hiking invitation. The use of 「登ったことがありません」 highlights the speaker's
       general lack of this specific life experience, making it a suitable and respectful response in a
-      professional or social context. It avoids implying a specific past event where they *could* have
-      climbed but chose not to.
+      professional or social context. It avoids implying a specific past event where they could have climbed
+      but chose not to.
   - english: When I was a student, there were times when I pulled all-nighters before exams.
     japanese:
       - 学生 の 時、試験 前 は 徹夜 {し た こと が あっ た}。
@@ -184,23 +198,23 @@ examples:
       - competing_japanese:
           - 学生 の 時、試験 前 は 徹夜 し た。
         english: When I was a student, I pulled all-nighters before exams.
-        hint: This simply states a past action. We're looking for emphasis on the *experience* of it happening
+        hint: This simply states a past action. We're looking for emphasis on the experience of it happening
           occasionally.
       - competing_japanese:
           - 学生 の 時、試験 前 は 徹夜 {し た もの だ}。
         english: When I was a student, I used to pull all-nighters before exams.
-        hint: This emphasizes a regular past habit. 「したことがあった」 highlights occasional *experiences* rather
+        hint: This emphasizes a regular past habit. 「したことがあった」 highlights occasional experiences rather
           than a steady habit.
       - competing_japanese:
           - 学生 の 時、試験 前 は 徹夜 する こと が あっ た。
         english: When I was a student, there were times when I pulled all-nighters before exams.
         hint: This implies a general tendency or occasional occurrence without specifically emphasizing
-          the accumulated *experience* of having done it. We are looking for the 'experience' aspect.
+          the accumulated experience of having done it. We are looking for the 'experience' aspect.
     scene: A university alumni casually discusses their past study habits with an old friend.
     register: casual
     setting: reflective
     conjugation: past plain (～た)
-    nuance: The speaker recalls an occasional past habit using 「徹夜したことがあった」. This highlights the *experience*
+    nuance: The speaker recalls an occasional past habit using 「徹夜したことがあった」. This highlights the experience
       of having done all-nighters, implying a strenuous but often memorable part of student life. The
       use of 「～たことがあった」 emphasizes that this was not a constant state but something that happened from
       time to time, suitable for a reflective tone among peers.
@@ -213,42 +227,42 @@ examples:
       - competing_japanese:
           - 子供 の 頃 は、まだ 海外 旅行 に 行か なかっ た。
         english: When I was a child, I didn't go on an overseas trip.
-        hint: This refers to a specific instance of not going. We're looking for the absence of *prior
-          experience* up to a certain point in the past.
+        hint: This refers to a specific instance of not going. We're looking for the absence of prior
+          experience up to a certain point in the past.
       - competing_japanese:
           - 子供 の 頃 は、まだ 海外 旅行 に 行く こと が なかっ た。
         english: When I was a child, I didn't usually go on overseas trips.
         hint: This implies a general lack of habit or opportunity. We're looking for a complete absence
-          of *ever* having the experience up to that point.
+          of ever having the experience up to that point.
     scene: A person explains their limited worldview from childhood to a younger friend.
     register: casual
     setting: informative
     conjugation: negative past plain (～なかった)
-    nuance: The phrase 「行ったことがなかった」 emphasizes that the *experience* of traveling overseas was absent
-      *up to that point in the past*. This is useful for explaining a past state of being inexperienced
-      or unfamiliar with something, especially when reflecting on a phase of one's life. It contrasts
-      with simply stating "I didn't go" which might imply a specific missed opportunity.
+    nuance: The phrase 「行ったことがなかった」 emphasizes that the experience of traveling overseas was absent up
+      to that point in the past. This is useful for explaining a past state of being inexperienced or
+      unfamiliar with something, especially when reflecting on a phase of one's life. It contrasts with
+      simply stating "I didn't go" which might imply a specific missed opportunity.
   - english: Before, I had an experience of going on a business trip overseas for work.
     japanese:
-      - 以前、仕事 で 海外 に {出張 し た こと が あり まし た}。
+      - 以前、仕事 で 海外 に {出張 し た こと が あり ませ ん でし た}。
       - 以前、仕事 で 海外 に {出張 し た こと が ある}。
     english_literally: Before, there was an experience of going on a business trip overseas for work.
     competing_grammar:
       - competing_japanese:
           - 以前、仕事 で 海外 に 出張 し まし た。
         english: Before, I went on a business trip overseas for work.
-        hint: This simply states a past action. We're looking for emphasis on the personal *experience*
+        hint: This simply states a past action. We're looking for emphasis on the personal experience
           gained from it.
       - competing_japanese:
           - 以前、仕事 で 海外 に 出張 {し た もの だ}。
         english: Before, I used to go on business trips overseas for work.
         hint: This implies a regular past habit. 「したことがありました」 highlights a specific, possibly single,
-          past *experience*.
+          past experience.
       - competing_japanese:
-          - 以前、仕事 で 海外 に 出張 する こと が あり まし た。
+          - 以前、仕事 で 海外 に 出張 する こと が あり ませ ん でし た。
         english: Before, there were times when I went on business trips overseas for work.
-        hint: This implies occasional occurrence. 「したことがありました」 emphasizes the accumulated *experience*
-          of having done it.
+        hint: This implies occasional occurrence. 「したことがありました」 emphasizes the accumulated experience of
+          having done it.
     scene: A senior employee politely recounts their past experiences in a professional meeting.
     register: semi-formal
     setting: professional
@@ -263,12 +277,12 @@ examples:
           - あの 時 まで は、まだ 彼 と 話し ませ ん でし た。
         english: Until that time, I didn't speak with him.
         hint: This refers to a specific instance of not speaking. We're looking for the complete absence
-          of *prior experience* of speaking with someone up to a certain point in the past.
+          of prior experience of speaking with someone up to a certain point in the past.
       - competing_japanese:
           - あの 時 まで は、まだ 彼 と 話す こと が あり ませ ん でし た。
         english: Until that time, I didn't usually speak with him.
         hint: This implies a general lack of habit or opportunity. We're looking for a complete absence
-          of *ever* having the experience of speaking with him up to that point.
+          of ever having the experience of speaking with him up to that point.
     scene: A new employee explains to their manager why they were unfamiliar with a certain colleague's
       past work, indicating no prior interaction.
     register: semi-formal
@@ -276,7 +290,7 @@ examples:
     conjugation: negative past polite (～ませんでした)
     listener_gender: male
     nuance: This formal negative past form 「話したことがありませんでした」 conveys a past state of never having had the
-      *experience* of speaking with someone up to a specific point in the past. This is useful for explaining
+      experience of speaking with someone up to a specific point in the past. This is useful for explaining
       a lack of prior interaction or familiarity in a formal context, such as explaining a situation to
       a manager, particularly when addressing a male superior to clarify a situation or misunderstanding.
   - english: I have tried sushi before.
@@ -288,12 +302,12 @@ examples:
       - competing_japanese:
           - 寿司 を 食べ た。
         english: I ate sushi.
-        hint: This is just a past action. We're looking for the *experience* of eating it.
+        hint: This is just a past action. We're looking for the experience of eating it.
       - competing_japanese:
           - 寿司 を 食べる こと が ある。
         english: I sometimes eat sushi.
-        hint: This implies occasional eating. We're looking for the *experience* of having eaten it at
-          least once.
+        hint: This implies occasional eating. We're looking for the experience of having eaten it at least
+          once.
     scene: Someone asks you about your dining preferences or experiences with Japanese food.
     register: casual
     setting: friendly
@@ -308,11 +322,11 @@ examples:
           - 祖母 は スマート フォン を 使わ なかっ た。
         english: My grandmother didn't use a smartphone.
         hint: This states a specific instance of not using it. We're looking for the complete lack of
-          *experience* of using it.
+          experience of using it.
       - competing_japanese:
           - 祖母 は スマート フォン を 使う こと が ない。
         english: My grandmother doesn't usually use a smartphone.
-        hint: This implies a general tendency. We're looking for the complete lack of *experience* ever.
+        hint: This implies a general tendency. We're looking for the complete lack of experience ever.
     scene: Explaining a generational gap in technology use to a younger relative.
     register: casual
     setting: informative
@@ -320,10 +334,35 @@ examples:
     speaker_gender: male
     listener_gender: female
     speaker_age: younger
-    nuance: The phrase 「使ったことがない」 highlights the grandmother's complete lack of *experience* with smartphones,
+    nuance: The phrase 「使ったことがない」 highlights the grandmother's complete lack of experience with smartphones,
       which is common for older generations. The speaker, likely younger, conveys this understanding of
       the generational difference by using 「使ったことがない」 to explain her unfamiliarity, making the conversation
       relatable and informative to a younger female listener.
+  - english: I have had the experience of meeting a celebrity.
+    japanese:
+      - 有名 人 に {会っ た こと が ある}。
+      - 有名 人 に {会っ た こと が あり ます}。
+    english_literally: There is the experience of meeting a famous person.
+    competing_grammar:
+      - competing_japanese:
+          - 有名 人 に 会っ た。
+        english: I met a celebrity.
+        hint: This simply states a past action. We're looking for the personal experience of having met
+          them.
+      - competing_japanese:
+          - 有名 人 に 会う こと が ある。
+        english: I sometimes meet celebrities.
+        hint: This implies occasional encounters. We're looking for the experience of having met one at
+          least once.
+      - competing_japanese:
+          - つい さっき 有名 人 に 会っ た ばかり だ。
+        english: I just met a celebrity a moment ago.
+        hint: This emphasizes the recentness of the encounter. We're looking for the experience of meeting
+          them at any point in the past.
+    scene: Someone is sharing interesting past experiences.
+    register: casual
+    setting: storytelling
+    conjugation: dictionary (plain non-past)
 post_example_writeup: Remember that 「たことがある」 always describes an experience. It does not indicate a habitual
   action or a state.
 sources:

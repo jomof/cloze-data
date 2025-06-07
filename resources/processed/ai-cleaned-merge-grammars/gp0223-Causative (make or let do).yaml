@@ -1,10 +1,14 @@
 grammar_point: Causative (make or let do)
 learn_before:
-  - Verb[て] (and then)
+  - Verbs (non-past plain)
+  - う-verb (dictionary)
+  - る-verbs (ichidan verbs)
   - を (object marker)
-  - に (to)
+  - に (fixed point・target・time)
+  - Verb[て] (and then)
 learn_after:
   - させられる (causative-passive)
+  - てあげる (to do for someone)
 id: gp0223
 meaning: To make/let/have (somebody do something)
 meaning_warning: Either に or を can mark the doer.
@@ -77,8 +81,9 @@ details:
   function: To indicate that one person or entity causes or allows another person or entity to perform
     an action.
   nuance: The choice of particle (に vs. を) distinguishes between 'letting' (allowing) with に and 'making'
-    (forcing) with を when the verb is intransitive. With transitive verbs, the doer is typically marked
-    with に, and the object with を.
+    (forcing) with を when the original verb is intransitive. When the original verb is transitive, the
+    doer is typically marked with に, and the object with を. However, in certain contexts, を can still
+    be used for the doer even with transitive verbs, especially to emphasize a stronger sense of forcing.
   grammatical-role: Forms the causative stem of a verb, allowing it to take direct objects for the caused
     action.
 etymology: The auxiliary verbs 「せる」 and 「させる」 are derived from older forms of causative verbs in classical
@@ -91,13 +96,15 @@ writeup: 'To express that someone was "made to do" or "let do" something, the au
   add 「させる」. (e.g., 食べる → 食べさせる) う-Verbs: Change the final kana to the corresponding あ-sound kana (except
   「う」 becomes 「わ」), and then add 「せる」. (e.g., 読む → 読ませる, 買う → 買わせる) する: Becomes 「させる」. 来る: Becomes 「来させる」
   (こさせる). Particle Usage Nuance: When using causative verbs, either 「に」 or 「を」 can mark the doer of the
-  action (the person who is made or let do something). 「に」: Typically implies allowing or letting someone
-  do something. This is often used with intransitive verbs. For example, 「先生が学生に本を読ませる」 (The teacher lets
-  the students read books) suggests permission. 「を」: Typically implies making or forcing someone to do
-  something. This particle is used when the verb is intransitive and a stronger compulsion is implied.
-  For example, 「母が子供を早く寝させる」 (My mother makes her child go to bed early) suggests a firm instruction.
-  When the verb is transitive, the doer is usually marked by 「に」, and the object of the action is marked
-  by 「を」.'
+  action (the person who is made or let do something). The choice of particle depends on the nuance and
+  the transitivity of the original verb. 「に」: Typically implies allowing or letting someone do something.
+  This is often used when the original verb is intransitive (e.g., 「子供に遊ばせる」 - to let a child play). When
+  the original verb is transitive, the doer is almost always marked with 「に」 (e.g., 「先生が学生に本を読ませる」 - The
+  teacher lets the students read books). 「を」: Typically implies making or forcing someone to do something.
+  This particle is used when the original verb is intransitive and a stronger compulsion is implied (e.g.,
+  「母が子供を早く寝させる」 - My mother makes her child go to bed early). While less common, 「を」 can also be used
+  for the doer of transitive verbs, especially in more direct or forceful contexts, although 「に」 is generally
+  preferred. When the original verb is transitive, the object of that action is always marked with 「を」.'
 false_friends:
   - term: れる られる (passive・potential・spontaneous・respectful)
     meaning: To be done to ~ by ~, Done without consent, Done to one's dismay
@@ -114,10 +121,25 @@ false_friends:
       often against their will. This is a distinct grammatical structure from the causative, which can
       imply both 'making' and 'letting', and where the causer is the subject.
     grammar_point: させられる (causative-passive)
+  - term: になる・くなる (to become)
+    meaning: To become (a noun or adjective)
+    kind: similar expression
+    nuance: While causative describes an agent causing a change in another (e.g., 「笑顔にさせる」 - to make someone
+      smile), 「なる・くなる」 describes a subject undergoing a change independently or as a natural progression,
+      without an explicit external agent making the change happen (e.g., 「笑顔になる」 - to become a smile).
+    grammar_point: になる・くなる (to become)
+  - term: Verb[て]+もいい (permission)
+    meaning: It's okay to; it's alright to; can/may
+    kind: similar expression
+    nuance: While both express permission, 「Verb[て]+もいい」 indicates that an action is permissible from
+      the speaker's perspective. The causative 「～させる」 implies the speaker is actively granting or enabling
+      the permission for the other person to do something, focusing on the agent's role.
+    grammar_point: Verb[て]+もいい (permission)
 post_false_friends_writeup: When distinguishing between these forms, consider the active intent and whether
-  the action is imposed or permitted. 「れる・られる」 is about being affected. The causative-passive is about
-  being forced. The causative 「せる・させる」, however, focuses on the agent's role in causing or allowing another's
-  action.
+  the action is imposed, permitted, or happens naturally. 「れる・られる」 is about being affected. The causative-passive
+  is about being forced. The causative 「せる・させる」, however, focuses on the agent's role in causing or allowing
+  another's action. 「なる・くなる」 describes a natural or uncaused change of state. 「～てもいい」 expresses permission
+  as a simple statement, whereas causative implies granting that permission.
 examples:
   - english: The teacher lets the students read books.
     japanese:
@@ -138,6 +160,7 @@ examples:
     listener_gender: group
     nuance: The use of 「読ませる」 emphasizes the teacher's active role in *allowing* or *assigning* the reading.
       This structure highlights the teacher's authority and permission in a formal educational setting.
+      The particle 「に」 marks the students as the doers of the action, which is a transitive verb (本を読む).
     etymology: The concept of "allowing" or "permitting" in Japanese often implies a hierarchical relationship
       or a granting of permission, reflecting traditional social structures where authority figures enable
       actions.
@@ -160,7 +183,7 @@ examples:
     speaker_gender: female
     nuance: 「寝させる」 here highlights the mother's direct action in *making* her child go to bed. The particle
       「を」 instead of 「に」 emphasizes a stronger compulsion, typical for parental guidance, especially in
-      a casual family setting.
+      a casual family setting. Since 「寝る」 is an intransitive verb, 「を」 marks the forced doer.
     etymology: The use of the causative form for parental control is common, reflecting the role of parents
       in guiding and instructing their children's actions.
   - english: The manager let me freely state my opinion.
@@ -181,7 +204,8 @@ examples:
     speaker_gender: male
     nuance: 「言わせた」 implies the manager *allowed* or *gave permission* for the speaker to state their opinion,
       suggesting a supportive and open environment. The use of 「に」 marks the person being allowed to do
-      the action. This phrasing is common in semi-formal business interactions.
+      the action, as 「意見を言う」 is a transitive verb phrase. This phrasing is common in semi-formal business
+      interactions.
     etymology: The concept of "allowing" or "permitting" is central to this usage, reflecting the dynamic
       between a superior and a subordinate where the superior enables the subordinate's action.
   - english: The doctor is making the patient take medicine every day.
@@ -203,7 +227,9 @@ examples:
     speaker_gender: female
     nuance: 「飲ませている」 indicates the doctor's continuous action of *making* the patient take medicine, implying
       ongoing instruction or enforcement. The particle 「を」 highlights the direct effect of the doctor's
-      action on the patient, common in technical and professional medical contexts.
+      action on the patient. Although 「薬を飲む」 is a transitive verb phrase, 「を」 is used here for the doer
+      (患者) to emphasize the doctor's strong, direct compulsion over the patient, which is common in technical
+      medical contexts.
     etymology: In medical contexts, the causative is often used to describe professional directives where
       one party is responsible for ensuring another performs a specific action.
   - english: She doesn't let her boyfriend lie.
@@ -224,7 +250,8 @@ examples:
     speaker_gender: female
     nuance: The use of 「つかせない」 emphasizes the girlfriend's active role in preventing her boyfriend from
       lying, rather than just stating that he doesn't lie. This expresses her influence and control in
-      the relationship, which is a common dynamic in casual conversations about personal relationships.
+      the relationship. Since 「嘘をつく」 is a transitive verb phrase, 「に」 marks the doer (彼氏) when the action
+      is not allowed.
     etymology: The negative causative form often conveys a sense of active prohibition or restraint, highlighting
       the agent's intention to prevent an action.
   - english: I let the customer come to my office.
@@ -246,8 +273,8 @@ examples:
     speaker_gender: male
     nuance: The use of 「来させました」 with 「お客さん」 implies a respectful granting of permission or arrangement
       for the client to visit, maintaining polite business etiquette. This politeness is characteristic
-      of business Japanese speakers, often male, when addressing clients or superiors. The 「に」 marks the
-      person being allowed to come, conveying deference.
+      of business Japanese speakers when addressing clients or superiors. The 「に」 marks the person being
+      allowed to come, as 「来る」 is an intransitive verb, conveying deference.
     etymology: The polite causative form is frequently used in business settings to express facilitative
       actions with respect toward clients or superiors, reflecting the importance of hospitality and service
       in Japanese business culture.
@@ -267,9 +294,10 @@ examples:
     setting: professional
     conjugation: dictionary (plain non-past)
     speaker_gender: male
-    nuance: While 「に」 is also possible here, 「を」 emphasizes the project's direct influence in *compelling*
-      him to work overtime, highlighting a stronger causative effect. The casual register is common among
-      coworkers discussing work-related pressures, especially between male colleagues.
+    nuance: Here, 「を」 emphasizes the project's direct influence in *compelling* him to work overtime,
+      highlighting a stronger causative effect. Since 「残業する」 is an intransitive verb, 「を」 is correctly
+      used to mark the forced doer (彼). The casual register is common among coworkers discussing work-related
+      pressures, especially between male colleagues.
     etymology: This example shows the causative form being applied to inanimate objects or abstract concepts
       (like 'project') as the agent of causation, which is a natural extension of the verb's meaning.
   - english: That happy news made everyone smile.
@@ -292,7 +320,8 @@ examples:
     nuance: 「笑顔にさせました」 is the causative of "to become a smile" (笑顔になる). It shows the news *caused* the
       smiles. The intimate register, reflected by the general and inclusive 「皆 (みんな)」 (everyone), suggests
       a close bond with the listeners, suitable for a female speaker sharing heartwarming news. The use
-      of 「を」 emphasizes the direct effect of the news on turning everyone into smiles.
+      of 「を」 emphasizes the direct effect of the news on turning everyone into smiles, as 「笑顔になる」 is an
+      intransitive-like change of state.
     etymology: The causative form can also be used with nouns and adjectives followed by 「にする」 to indicate
       a change of state brought about by an external cause, as seen in 「笑顔にする」 (to make someone smile).
   - english: My younger sister always makes me carry her bag.
@@ -314,7 +343,8 @@ examples:
     speaker_age: younger
     nuance: The use of 「持たせる」 here implies a recurring, somewhat habitual action where the younger sister
       *causes* or *expects* the speaker to carry her bag. The particle 「に」 indicates the person being
-      made to do the action. This casual and slightly complaining tone is typical of sibling interactions.
+      made to do the action. As 「荷物を持つ」 is a transitive verb phrase, 「に」 is used for the doer (私). This
+      casual and slightly complaining tone is typical of sibling interactions.
   - english: The company allowed him to study abroad for a year.
     japanese:
       - 会社 は 彼 に 一 年間 海外 へ 留学 {さ せ た}。
@@ -339,9 +369,9 @@ examples:
       This is a typical phrasing in professional environments when discussing corporate policies or employee
       benefits.
 post_example_writeup: Understanding the nuances of particle usage (に vs. を) with the causative form is
-  crucial. While 「に」 often implies permission or indirect causation, 「を」 typically suggests direct compulsion,
-  especially with intransitive verbs. With transitive verbs, 「に」 marks the doer and 「を」 marks the object.
+  crucial. When the original verb is intransitive, 「に」 implies allowing and 「を」 implies forcing. When
+  the original verb is transitive, 「に」 is generally used for the doer (the one performing the action),
+  while the original direct object retains 「を」. However, 「を」 can sometimes be used for the doer of a transitive
+  verb if the speaker wants to emphasize strong compulsion.
 sources:
   bunpro: https://bunpro.jp/grammar_points/causative
-lint-errors:
-  - '[rule-11] warning learn_after has 1 item(s); must have at least 2'

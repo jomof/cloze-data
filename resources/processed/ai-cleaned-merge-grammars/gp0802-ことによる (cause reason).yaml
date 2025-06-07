@@ -2,9 +2,12 @@ grammar_point: ことによる (cause reason)
 learn_before:
   - から (reason cause)
   - ので (reason)
+  - ため (purpose・reason)
+  - ために (due to)
 learn_after:
   - ことから (from the fact that)
   - ゆえに (because・therefore)
+  - によって・による・により (means・cause・dependency)
 id: gp0802
 meaning: to be due to; to be caused by; to be brought about by; to be the result of
 conjugations:
@@ -89,10 +92,34 @@ false_friends:
     nuance: 「おかげで」 is used to express gratitude for a positive result due to someone or something, whereas
       「ことによる」 simply states the cause, regardless of whether the result is positive or negative.
     grammar_point: おかげで (thanks to)
-post_false_friends_writeup: When using 「ことによる」, remember that it is a formal expression that simply states
+  - term: ため・ために
+    meaning: because of; for the purpose of
+    kind: similar expression
+    nuance: 「ため・ために」 are general causal expressions. 「ことによる」 is more formal and emphasizes the source
+      or origin of the cause, framing it as the direct underlying reason for a state or outcome. 「ことによる」
+      often appears as a definitive statement of causality, whereas 「ため」 can also express purpose or a
+      more general "because."
+    grammar_point: ため (purpose・reason)
+  - term: によって・による・により
+    meaning: by means of; due to; depending on
+    kind: often confused with
+    nuance: 「によって・による・により」 has a broader range of meanings, including "by means of" or "depending on,"
+      in addition to "due to." 「ことによる」 exclusively focuses on identifying the cause or reason for a state
+      or outcome. The key difference is the scope of causality and other functions.
+    grammar_point: によって・による・により (means・cause・dependency)
+  - term: ことから
+    meaning: from the fact that; because; due to; given that
+    kind: similar expression
+    nuance: 「ことから」 often implies that an action or fact leads to a logical consequence or inference. 「ことによる」
+      directly attributes the state or outcome to the cause, defining the origin of the situation itself.
+      「ことから」 can suggest "based on the fact that..." while 「ことによる」 means "it is because of...".
+    grammar_point: ことから (from the fact that)
+post_false_friends_writeup: 'When using 「ことによる」, remember that it is a formal expression that simply states
   the cause of a situation. Avoid using it when you intend to assign blame (use 「せいにする」 instead) or express
-  gratitude (use 「おかげで」 instead). The key is to consider the context and whether you're merely indicating
-  a cause or expressing a sentiment related to the outcome.
+  gratitude (use 「おかげで」 instead). Pay close attention to the nuance: while 「ため」 and 「から」 provide general
+  reasons, 「ことによる」 points to the specific underlying cause of a result. Also, differentiate it from 「によって」,
+  which has broader meanings beyond just cause, and 「ことから」, which often implies a cause that leads to
+  an inference.'
 examples:
   - english: The delay in this project is due to the budget being insufficient.
     japanese:
@@ -110,7 +137,7 @@ examples:
         english: Due to the budget being insufficient, this project was delayed.
         hint: While 「ため」 also indicates cause, 「ことによる」 makes the cause the defining characteristic of
           the delay, suitable for a formal explanation where the cause is directly identified as the defining
-          characteristic of the delay. We're looking for an expression that states the delay *is* because
+          characteristic of the delay. We're looking for an expression that states the delay is because
           of the budget.
     scene: A project manager explaining why a project is behind schedule.
     register: formal
@@ -127,7 +154,7 @@ examples:
       - competing_japanese:
           - 運転 手 が 不 注意 だっ た ため、その 事故 が 起き た と 言わ れ て い ます。
         english: It is said that the accident happened because the driver was careless.
-        hint: 「ため」 indicates a cause, but 「ことによる」 is used to state that the accident *is* the result of
+        hint: 「ため」 indicates a cause, but 「ことによる」 is used to state that the accident is the result of
           the driver's carelessness, often in formal or declarative contexts. We're looking for a formal
           attribution of cause.
     scene: A news reporter delivering a factual update.
@@ -147,8 +174,8 @@ examples:
           - 事実 が 不 正確 で あっ た ため、彼 の 報告 書 は 誤解 を 招い た。
         english: Because the facts were inaccurate, his report caused misunderstanding.
         hint: While 「ため」 can express cause, 「ことによる」 makes the inaccuracy itself the direct cause of the
-          misunderstanding, suitable for a formal assessment of causation. We're looking for an expression
-          that directly links the inaccuracy to the misunderstanding.
+          misunderstanding, suitable for a formal assessment of causation. We're looking for an T that
+          directly links the inaccuracy to the misunderstanding.
     scene: A colleague discussing a problematic report.
     register: formal
     setting: serious
@@ -165,9 +192,9 @@ examples:
       - competing_japanese:
           - 外国 投資 が 活発 で ある ため、この 地域 の 経済 は 成長 し た。
         english: Due to foreign investment being active, this region's economy grew.
-        hint: 「ことによる」 frames the active foreign investment as the fundamental reason *for* the growth
-          itself, providing a more definitive causal explanation fitting for an analytical report. We're
-          looking for an expression that states the growth is *because* of the investment.
+        hint: 「ことによる」 frames the active foreign investment as the fundamental reason for the growth itself,
+          providing a more definitive causal explanation fitting for an analytical report. We're looking
+          for an expression that states the growth is because of the investment.
     scene: An analyst explaining regional economic trends.
     register: formal
     setting: informative
@@ -184,9 +211,9 @@ examples:
       - competing_japanese:
           - 世界 経済 が 不 安定 で あっ た ため、最近 の 株価 は 下落 し た と 考え られ ます。
         english: It is thought that the recent stock prices declined because the world economy was unstable.
-        hint: 「ことによる」 explicitly attributes the *cause* of the market decline to the *fact* of global
-          economic instability, providing a more definitive and analytical tone than a simple 「ため」. We're
-          looking for a formal explanation of the cause.
+        hint: 「ことによる」 explicitly attributes the cause of the market decline to the fact of global economic
+          instability, providing a more definitive and analytical tone than a simple 「ため」. We're looking
+          for a formal explanation of the cause.
     scene: An economist presenting an analysis.
     register: formal
     setting: academic
@@ -203,7 +230,7 @@ examples:
       - competing_japanese:
           - 彼 が 不断 の 努力 を 続け た から、成功 し た の だ。
         english: He succeeded because he continuously made constant effort.
-        hint: While 「から」 expresses a cause, 「ことによる」 emphasizes that the success *is literally* the result
+        hint: While 「から」 expresses a cause, 「ことによる」 emphasizes that the success is literally the result
           of his effort, giving it a more objective, undeniable quality. We're looking for an expression
           that formally attributes success to effort.
       - competing_japanese:
@@ -241,7 +268,7 @@ examples:
     nuance: Despite the formality of 「ことによる」, the use of 「私たち」 (watashitachi) and the softener 「のだね」 (no
       dane) makes this feel intimate and reflective. The speaker uses a formal grammatical structure to
       clearly state the cause of a shared, personal problem, highlighting a desire for mutual understanding.
-    etymology: 喧嘩 (kenka) meaning 'argument' is formed from 喧 (ken) 'noisy' and 嘩 (ka) 'brawl'.
+    etymology: 喧嘩 (kenka) meaning 'argument' is formed from 喧 (ken) 'noisy' and 嘩 (ka) 'brawl.'
   - english: That painter's works attract people, which is probably due to his rich experiences.
     japanese:
       - あの 画家 の 作品 が 人々 を 惹きつける の は、彼 の 経験 が 豊富 だっ た {こと に よる} の だろう。
@@ -252,9 +279,9 @@ examples:
       - competing_japanese:
           - 彼 が 経験 豊富 だっ た ため、作品 が 人々 を 惹きつける の だろう。
         english: Probably because his experiences were rich, his works attract people.
-        hint: 「ことによる」 asserts that the artist's appeal *is intrinsically due to* his rich experiences,
-          aligning with an expert's interpretive analysis, more so than a simple 「ため」. We're looking for
-          an analytical explanation of the cause.
+        hint: 「ことによる」 asserts that the artist's appeal is intrinsically due to his rich experiences, aligning
+          with an expert's interpretive analysis, more so than a simple 「ため」. We're looking for an analytical
+          explanation of the cause.
     scene: An art critic discussing an artist's unique appeal.
     register: formal
     setting: creative
@@ -297,7 +324,7 @@ examples:
       - competing_japanese:
           - 新 製品 が 市場 に 受け入れ られ なかっ た ため、売上 が 減少 し た。
         english: Because the new product wasn't accepted by the market, sales declined.
-        hint: While 「ため」 states a reason, 「ことによる」 emphasizes that the sales decline *is directly a consequence*
+        hint: While 「ため」 states a reason, 「ことによる」 emphasizes that the sales decline is directly a consequence
           of the product's market rejection. We're looking for an expression that attributes the decline
           directly to the product's acceptance.
     scene: A marketing team analyzing quarterly sales figures.
@@ -318,7 +345,7 @@ examples:
           - 失敗 が 準備 不足 だっ た なら ば、その 点 を 反省 す べき です。
         english: If the failure was due to a lack of preparation, then we must reflect on that point.
         hint: While 「ならば」 expresses a conditional, 「ことによれば」 specifically frames the condition as being
-          *caused by* the lack of preparation, providing a more formal and analytical attribution.
+          caused by the lack of preparation, providing a more formal and analytical attribution.
     scene: A team leader addressing their team after a project setback.
     register: formal
     setting: professional

@@ -1,10 +1,15 @@
 grammar_point: ある (to exist or have)
+better_grammar_point_name:
+  - ある (inanimate existence)
 learn_before:
   - だ (casual copula)
   - が (subject marker)
+  - Verbs (non-past plain)
+  - る-verbs (ichidan verbs)
 learn_after:
   - てある (resultant state)
   - ている (resultant and ongoing state)
+  - なくなる (to cease to be)
 id: gp0030
 meaning: To be, There is
 meaning_warning: 有る kanji use can be seen
@@ -70,8 +75,8 @@ conjugations:
     rarity: common
     meaning: Even if there is
 pronunciation:
-  katakana: ガ アル
-  romaji: ga aru
+  katakana: アル
+  romaji: aru
 formation:
   '[Noun] + が + ある': Indicates the existence of an inanimate object or thing, or abstract concept. Equivalent
     to "there is/are" or "to have."
@@ -117,14 +122,6 @@ false_friends:
       nouns or adjectives, not indicating existence. For example, 「それは私の傘です」 (That is my umbrella), not
       「ここに傘があります」 (There is an umbrella here).
     grammar_point: です (polite copula)
-  - term: がある+Noun
-    meaning: Noun (B) that has Noun (A), Noun (B) with Noun (A)
-    kind: often confused with
-    nuance: Unlike the existential 「がある」, this structure describes possession or attributes of a noun
-      (e.g., 「目がある」 - 'having eyes'). It functions as a modifying clause rather than an independent statement
-      of existence. This is often confused with 「～を持っている」 when describing abstract possessions like 「時間を持っている」
-      (to have time), which is less natural than 「時間がある」 for abstract possession/availability of resources.
-    grammar_point: がある (possessed feature)
   - term: である
     meaning: Formal or literary だ, Authoritative, Copula
     kind: often confused with
@@ -495,6 +492,27 @@ examples:
     nuance: 「必ず理由がある」 is a strong, definitive statement often used in philosophical or academic contexts.
       The plain form 「ある」 when used in a formal setting like a lecture can convey authority and generality,
       appropriate for a male speaker delivering a universal truth.
+  - english: There are many things I want to do.
+    japanese:
+      - やり たい こと が {たくさん ある}。
+      - 私 に は やり たい こと が {たくさん ある}。
+      - やり たい こと が {たくさん あり ます}。
+    english_literally: Things I want to do, many exist.
+    competing_grammar:
+      - competing_japanese:
+          - やり たい こと が {たくさん できる}。
+        english: There are many things I can do.
+        hint: This phrase expresses what one *wants* to do, not necessarily what one *can* do. Consider
+          the nuance of desire versus capability.
+      - competing_japanese:
+          - やり たい こと が {多く い ます}。
+        english: There are many things (living beings) I want to do.
+        hint: The verb 「いる」 is used for the existence of living things, not for abstract concepts or inanimate
+          objects like 'things I want to do'.
+    scene: A student reflecting on their future aspirations during a quiet moment.
+    register: casual
+    setting: reflective
+    conjugation: dictionary (plain non-past)
 post_example_writeup: As you can see from the examples, 「がある」 is highly versatile. It's used for stating
   simple existence, expressing possession of inanimate things or abstract concepts, and forming various
   tenses and conditional statements. Pay close attention to context to choose the most natural and appropriate

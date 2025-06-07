@@ -1,20 +1,19 @@
 grammar_point: つ〜つ (alternating actions)
 learn_before:
-  - Verb[て] (and then another event)
   - たり〜たりする (do things like x and y)
+  - Verb[masu-stem] (conjunction)
 learn_after:
-  - を禁じ得ない (cannot help feeling)
-  - だに~しない (not even)
+  - つつ (while; and)
+  - ながらも (even though)
 id: gp0922
 meaning: two contrasting actions
 pronunciation:
   katakana: ツーツー
   romaji: tsu tsu
 formation:
-  '[Verb-conjunctive form] + つ + [Verb-conjunctive form]': Indicates the repetition of two contrasting
-    actions.
-  '[Verb-dictionary form] + つ + [Verb-passive form]': Indicates doing something and having it done to
-    oneself (give and take).
+  Verb[masu-stem] + つ + Verb[masu-stem]: Connects two verbs (often contrasting or indicating a reciprocal
+    relationship) to describe continuous, alternating actions or states. The second verb may be in passive
+    form to indicate an action being done to oneself.
 jlpt: N1
 details:
   part-of-speech: phrase
@@ -24,7 +23,7 @@ etymology: The particle 「つ」 originates from the classical Japanese particl
   or a possessive particle. In this grammar point, it connects verbs to indicate repeated, alternating
   actions.
 writeup: |-
-  The 「つ〜つ」 structure highlights **contrasting verbs**, often translated as "to be doing (A) and (B) over and over," where actions happen repeatedly in sequence. 「つ」 connects to the conjunctive form of verbs, with (A) and (B) usually in direct order. It is also common to see the same verb repeated, with the (A) verb in standard form and the (B) verb in passive form, translating as "to do (A) and to have (A) done to oneself." This grammar pattern is used with a limited set of words. Some standard combinations include:
+  The 「つ〜つ」 structure highlights **contrasting verbs**, often translated as "to be doing (A) and (B) over and over," where actions happen repeatedly in sequence. 「つ」 connects to the masu-stem of verbs, with (A) and (B) usually in direct order. It is also common to see the same verb repeated, with the (A) verb in active form and the (B) verb in passive form, translating as "to do (A) and to have (A) done to oneself." This grammar pattern is used with a limited set of words. Some standard combinations include:
 
   *   行きつ戻りつ - To go back and forth.
   *   浮きつ沈みつ - To surface and submerge (to bob).
@@ -52,10 +51,26 @@ false_friends:
       emphasizes a give-and-take relationship where there is shared support and reliance, often implying
       shared burdens or benefits beyond simple assistance.
     grammar_point: 合う (mutual action)
-post_false_friends_writeup: While 「～たり～たりする」 can express alternating actions, 「つ〜つ」 is a more traditional
-  and idiomatic expression often used for specific contrasting pairs of verbs, conveying a sense of continuous
-  or repetitive movement. 「助け合う」 broadly means to help each other, but 「持ちつ持たれつ」 carries the specific
-  nuance of a reciprocal, interdependent relationship.
+  - term: 交互に〜する
+    meaning: to do something alternately
+    kind: similar expression
+    nuance: 「交互に〜する」 is a general adverbial phrase to describe actions performed in turn or alternately.
+      「つ〜つ」 is a more traditional and idiomatic expression, usually used for a continuous, integrated,
+      and often contrasting sequence of two actions, frequently implying a natural or unavoidable dynamic.
+    grammar_point: <suggest>:交互に〜する (do alternately)
+  - term: つつある
+    meaning: to be in the process of; to be gradually changing
+    kind: often confused with
+    nuance: While both use `つつ`, `つつある` describes a gradual, ongoing change or process that is happening
+      over time, typically with a single action. In contrast, `つ〜つ` describes two distinct actions or
+      states that alternate continuously, often implying a back-and-forth motion or a reciprocal relationship.
+    grammar_point: つつある (gradual process)
+post_false_friends_writeup: While 「～たり～たりする」 and 「交互に〜する」 can express alternating actions, 「つ〜つ」 is a
+  more traditional and idiomatic expression often used for specific contrasting pairs of verbs, conveying
+  a sense of continuous or repetitive movement. 「助け合う」 broadly means to help each other, but 「持ちつ持たれつ」
+  carries the specific nuance of a reciprocal, interdependent relationship. Lastly, do not confuse 「つ〜つ」
+  with 「つつある」; the former describes alternating actions, while the latter indicates a single, gradual
+  ongoing process.
 examples:
   - english: He was pacing anxiously back and forth in the hallway before the presentation.
     japanese:
@@ -103,7 +118,7 @@ examples:
       - competing_japanese:
           - 霧 の 中 で、遠く の 山 が 見え たり 隠れ たり し て い た。
         english: In the fog, the distant mountain was appearing and disappearing sometimes.
-        hint: 「見えたり隠れたりする」 describes actions that happen intermittently. We're looking for a more continuous
+        hint: 「見えたり隠れたりする」 describes intermittent floating and sinking. We're looking for a more continuous
           and integrated description of something repeatedly coming into and out of view.
     scene: Observing a landscape obscured by fog.
     register: semi-formal

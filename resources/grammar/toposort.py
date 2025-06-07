@@ -5,6 +5,18 @@ from collections import defaultdict, deque
 import asyncio
 from python.mapreduce import MapReduce
 
+import logging
+
+# Configure logging to file
+tlog_filename = os.getenv('TOPOSORT_LOG', 'toposort.log')
+tlogging = logging.getLogger(__name__)
+tlogging.setLevel(logging.DEBUG)
+file_handler = logging.FileHandler(tlog_filename)
+formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s')
+file_handler.setFormatter(formatter)
+tlogging.addHandler(file_handler)
+
+
 def best_effort_toposort(data):
     """
     Perform a best-effort topological sort, breaking cycles by pruning edges
@@ -17,6 +29,7 @@ def best_effort_toposort(data):
                - 'target': the node to which the edge pointed
                - 'dep_type': either 'learn_before' or 'learn_after'
     """
+    tlogging.debug("Starting best-effort topological sort on %d nodes", len(data))
     # 0) Compute priority ranking based on sorted 'id's
     all_ids = sorted({deps.get('id', '') for deps in data.values() if deps.get('id', '') is not None})
     id_to_rank = {id_str: idx for idx, id_str in enumerate(all_ids)}
@@ -44,48 +57,43 @@ def best_effort_toposort(data):
             indegree.setdefault(a, 0)
             edge_types[(node, a)] = 'learn_after'
 
+    # Ensure priority for all dependency-only nodes
+    for n in list(graph):
+        if n not in priority:
+            priority[n] = len(all_ids)
+            tlogging.warning("Node '%s' appeared only in dependencies; assigning default lowest priority", n)
+
     # 2) Standard Kahn initialization
     queue = deque(n for n, deg in indegree.items() if deg == 0)
     ordered = []
-    removed_edges = defaultdict(list)  # dict: source -> list of edits
+    removed_edges = defaultdict(list)
 
     def tarjan_scc(nodes, graph):
         """Tarjan's algorithm to find SCCs in subgraph induced by nodes"""
-        index = {}
-        lowlink = {}
-        onstack = set()
-        stack = []
-        sccs = []
+        index, lowlink = {}, {}
+        onstack, stack, sccs = set(), [], []
         idx = 0
 
         def dfs(u):
             nonlocal idx
-            index[u] = idx
-            lowlink[u] = idx
-            idx += 1
-            stack.append(u)
-            onstack.add(u)
+            index[u] = lowlink[u] = idx; idx += 1
+            stack.append(u); onstack.add(u)
             for v in graph[u]:
-                if v not in nodes:
-                    continue
+                if v not in nodes: continue
                 if v not in index:
-                    dfs(v)
-                    lowlink[u] = min(lowlink[u], lowlink[v])
+                    dfs(v); lowlink[u] = min(lowlink[u], lowlink[v])
                 elif v in onstack:
                     lowlink[u] = min(lowlink[u], index[v])
             if lowlink[u] == index[u]:
                 comp = []
                 while True:
-                    w = stack.pop()
-                    onstack.remove(w)
+                    w = stack.pop(); onstack.remove(w)
                     comp.append(w)
-                    if w == u:
-                        break
+                    if w == u: break
                 sccs.append(comp)
 
         for u in nodes:
-            if u not in index:
-                dfs(u)
+            if u not in index: dfs(u)
         return sccs
 
     def count_back_edges(scc_nodes, graph):
@@ -96,73 +104,68 @@ def best_effort_toposort(data):
         def dfs(u):
             color[u] = 'gray'
             for v in graph[u]:
-                if v not in scc_nodes:
-                    continue
-                if color[v] == 'white':
-                    dfs(v)
-                elif color[v] == 'gray':
-                    back_count[(u, v)] += 1
+                if v not in scc_nodes: continue
+                if color[v] == 'white': dfs(v)
+                elif color[v] == 'gray': back_count[(u, v)] += 1
             color[u] = 'black'
 
         for u in scc_nodes:
-            if color[u] == 'white':
-                dfs(u)
+            if color[u] == 'white': dfs(u)
         return back_count
 
-    # 3) Drain all zero-indegree nodes
+    # 3) Drain zero-indegree nodes
     while queue:
-        n = queue.popleft()
-        ordered.append(n)
+        n = queue.popleft(); ordered.append(n)
         for succ in list(graph[n]):
             graph[n].remove(succ)
             indegree[succ] -= 1
-            if indegree[succ] == 0:
-                queue.append(succ)
+            if indegree[succ] == 0: queue.append(succ)
         graph.pop(n, None)
 
-    # 4) While cycles remain, break them
+    # 4) Break cycles
     while graph:
         nodes = list(graph.keys())
+        tlogging.debug("Remaining with cycles: %s", nodes)
         sccs = tarjan_scc(nodes, graph)
         comp = next((c for c in sccs if len(c) > 1), None)
-        if comp is None:
-            rem = sorted(nodes, key=lambda x: (indegree[x], priority[x], x))
+        if not comp:
+            try:
+                rem = sorted(nodes, key=lambda x: (indegree[x], priority[x], x))
+            except KeyError as e:
+                missing = [n for n in nodes if n not in priority]
+                raise KeyError(
+                    f"Missing priority for {e.args[0]}. Nodes: {nodes}. Missing: {missing}"
+                ) from e
+            tlogging.debug("Appending sorted: %s", rem)
             ordered.extend(rem)
             break
 
+        tlogging.debug("Breaking SCC: %s", comp)
         back_count = count_back_edges(comp, graph)
-        eps = 1e-6
-        best_edge, best_score = None, -1
+        eps = 1e-6; best_edge = None; best_score = -1
         for u in comp:
             for v in graph[u]:
-                if v not in comp:
-                    continue
+                if v not in comp: continue
                 bc = back_count.get((u, v), 0)
-                score = (bc + 1) / (priority.get(u, 0) + eps)
+                score = (bc + 1) / (priority[u] + eps)
                 if score > best_score:
-                    best_score = score
-                    best_edge = (u, v)
-        if best_edge:
-            u, v = best_edge
-        else:
-            u = comp[0]
-            v = next(iter(graph[u]))
-        graph[u].remove(v)
-        indegree[v] -= 1
+                    best_score, best_edge = score, (u, v)
+        u, v = best_edge if best_edge else (comp[0], next(iter(graph[comp[0]])))
+        graph[u].remove(v); indegree[v] -= 1
         dep_type = edge_types.get((u, v), 'unknown')
         removed_edges[u].append({'target': v, 'dep_type': dep_type})
+        tlogging.info("Pruned edge %s -> %s (type=%s)", u, v, dep_type)
 
         queue = deque(n for n, deg in indegree.items() if deg == 0 and n in graph)
         while queue:
-            n2 = queue.popleft()
-            ordered.append(n2)
+            n2 = queue.popleft(); ordered.append(n2)
             for succ in list(graph[n2]):
                 graph[n2].remove(succ)
                 indegree[succ] -= 1
-                if indegree[succ] == 0:
-                    queue.append(succ)
+                if indegree[succ] == 0: queue.append(succ)
             graph.pop(n2, None)
 
+    tlogging.debug("Complete. Ordered %d, cut %d.", len(ordered), sum(len(v) for v in removed_edges.values()))
     return ordered, dict(removed_edges)
 
 
@@ -178,6 +181,7 @@ if __name__ == '__main__':
     ordered_file = os.path.join(grammar_root, 'summary/toposort-order.yaml')
     disruptions_file = os.path.join(grammar_root, 'summary/toposort-disruptions.yaml')
     suggested_cuts = os.path.join(grammar_root, 'summary/toposort-suggested-cuts.yaml')
+    tlog_filename = os.path.join(grammar_root, 'summary/toposort.log')
 
     # Generate a grammar summary object with only learn_before and learn_after fields
     grammar_summary = generate_summary(grammar_root, ['id', 'learn_before', 'learn_after'])
@@ -224,6 +228,6 @@ if __name__ == '__main__':
         max_threads          = 4,
     )
 
-    asyncio.run(mr.run())
+    # asyncio.run(mr.run())
     
     

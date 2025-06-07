@@ -2,9 +2,10 @@ grammar_point: に則る (to conform to rule)
 learn_before:
   - によって・による・により (means・cause・dependency)
   - にしたがって (as・following)
+  - にもとづいて (based on)
 learn_after:
-  - をもって (as of・by means of)
-  - を前提に (on the premise of)
+  - に至っては (when it comes to a surprising extreme)
+  - たるや (when it comes to)
 id: gp0967
 meaning: According to, In accordance with, Based on, In line with
 conjugations:
@@ -32,11 +33,11 @@ pronunciation:
   katakana: ニノットテ・ニノットリ
   romaji: ni nottotte, ni nottori
 formation:
-  '[Noun] + に則って': Indicates that an action is carried out strictly in accordance with a specified rule,
-    law, or tradition.
-  '[Noun] + に則り': A more formal and often conjunctive or noun-modifying form, similar to に則って, used to
-    indicate compliance with a standard.
-  '[Noun] + に則った + [Noun]': Describes a noun as something that conforms to or is based on a specific standard,
+  Noun + に則って: Indicates that an action is carried out strictly in accordance with a specified rule, law,
+    or tradition.
+  Noun + に則り: A more formal and often conjunctive or noun-modifying form, similar to に則って, used to indicate
+    compliance with a standard.
+  Noun + に則った + Noun: Describes a noun as something that conforms to or is based on a specific standard,
     rule, or tradition.
 jlpt: N1
 details:
@@ -99,14 +100,40 @@ false_friends:
       strict conformity to a *rule* or *protocol* in the same way 「に則って」 does. It's more about the source
       of information or justification, rather than strict procedural adherence.
     grammar_point: にもとづいて (based on)
-post_false_friends_writeup: When choosing between 「に則って・に則り」, 「に沿って」, 「にしたがって」, and 「に基づいて」, consider
-  the nature of the "rule" and the degree of adherence implied. 「に則って・に則り」 should be used for strict,
-  unyielding compliance with established, authoritative, often formal or historical rules, laws, or traditions.
-  Think of it as following a blueprint precisely. 「に沿って」 suggests aligning with a plan, a path, or a general
-  guideline; it's about staying "in line" rather than rigid enforcement. 「にしたがって」 is the most general,
-  simply meaning "following" or "obeying," often for a sequence or a straightforward instruction. Finally,
-  「に基づいて」 means "based on" or "derived from," indicating the foundation or source of an action or decision,
-  but not necessarily a strict procedural adherence.
+  - term: に即して
+    meaning: In accordance with, based on, in line with
+    kind: similar expression
+    nuance: While 「に則る」 implies strict, often unyielding adherence to a foundational rule or principle,
+      「に即して」 suggests conforming to practical circumstances, facts, or established norms. It can imply
+      adapting to a situation or treating something in accordance with existing realities rather than
+      rigidly following a set law.
+    grammar_point: に即して (in accordance with)
+  - term: に照らして
+    meaning: In light of, based on, according to, referencing, comparing against, in view of
+    kind: similar expression
+    nuance: 「に照らして」 is used when evaluating or judging something *against* a standard or fact, like holding
+      it up to a light to examine it. It implies comparing or checking for consistency, rather than the
+      action itself *conforming* to a rule during its execution, as with 「に則る」.
+    grammar_point: に照らして・に照らすと (in light of)
+  - term: に準じて
+    meaning: In conformity with, according to, based on (often by analogy or for non-specific rules)
+    kind: similar expression
+    nuance: 「に準じて」 means to act or process something in a manner similar to or in accordance with a standard,
+      even if the specific rules don't directly apply or are less formal. It implies following a pattern
+      or treating things *as if* certain rules apply, which is less rigid and absolute than 「に則る」's strict
+      adherence to established, formal laws or traditions.
+    grammar_point: <suggest>:に準じて (in conformity with)
+post_false_friends_writeup: When choosing among these expressions, consider the nature of the standard
+  and the degree of adherence implied. 「に則って・に則り」 signifies strict, unyielding compliance with established,
+  authoritative, often formal or historical rules, laws, or traditions—think of it as following a blueprint
+  precisely. 「に沿って」 suggests aligning with a general direction, plan, or policy, implying a less rigid
+  adherence with some flexibility. 「にしたがって」 is a broader term for "following" or "obeying," used for sequences,
+  natural progressions, or simple instructions without emphasizing strictness. 「に基づいて」 means "based on"
+  or "derived from," indicating the foundation or source of information, rather than a procedural adherence.
+  「に即して」 implies conforming to practical circumstances or existing realities, often with a sense of adaptation.
+  「に照らして」 is used for evaluating or judging something *against* a standard or fact, like comparison. Lastly,
+  「に準じて」 implies following a standard by analogy or for less formal rules, suggesting a less absolute
+  conformity.
 examples:
   - english: In accordance with the new law, the sale of this product has been prohibited.
     japanese:
@@ -333,6 +360,13 @@ examples:
         hint: 「に基づいて」 means 'based on' or 'derived from,' implying the precedent serves as a foundation
           or source. However, 「に則って」 specifically conveys that the judge strictly *conformed* to the precedent's
           details and principles in making the decision. We're looking for precise adherence to the precedent.
+      - competing_japanese:
+          - 裁判 官 は 確立 さ れ た 判例 {に 即し て} 判決 を 下し た。
+        english: The judge made a ruling in line with the established legal precedents.
+        hint: 「に即して」 suggests acting in conformity with practical facts or circumstances. While a ruling
+          is practical, 「に則って」 emphasizes a more unyielding, strict adherence to the *rules* and *principles*
+          within those precedents, rather than just aligning with them. We're looking for precise adherence
+          to the precedent.
     scene: A legal expert is giving an interview on a television news program about a recent court decision.
     register: formal
     setting: informative
@@ -354,6 +388,12 @@ examples:
         hint: 「に沿って」 suggests aligning with or generally following a standard, which might allow for some
           flexibility. 「に則って」 implies a much stricter and unyielding adherence to the details and requirements
           of the standards. We're looking for exact conformity to standards.
+      - competing_japanese:
+          - 全て の 製品 は 厳格 な 品質 基準 {に 即し て} 製造 さ れ て い ます。
+        english: All products are manufactured in accordance with strict quality standards.
+        hint: 「に即して」 means conforming to practical facts or situations. While quality standards are practical,
+          「に則って」 emphasizes a more rigorous, unyielding adherence to the precise *rules* and *principles*
+          of those standards. We're looking for exact conformity to standards.
     scene: A factory tour guide is explaining the manufacturing process to a group of visitors.
     register: formal
     setting: informative
@@ -362,6 +402,33 @@ examples:
     nuance: The phrase 「品質 基準 に則って」 emphasizes that the manufacturing process rigorously follows the established
       and often legally mandated quality standards, ensuring consistency, reliability, and safety of the
       products. This conveys a strong commitment to compliance.
+  - english: A master craftsman creates his works in strict accordance with traditional techniques.
+    japanese:
+      - 熟練 の 職人 は、伝統 的 な 技法 {に 則っ て} 作品 を 制作 する。
+      - 熟練 の 職人 は、伝統 的 な 技法 {に 則り} 作品 を 制作 する。
+      - 熟練 の 職人 は、伝統 的 な 技法 {に 則っ た} 方法 で 作品 を 制作 する。
+    english_literally: Skilled craftsman traditional techniques according to works creates.
+    competing_grammar:
+      - competing_japanese:
+          - 熟練 の 職人 は、伝統 的 な 技法 {に 基づい て} 作品 を 制作 する。
+        english: A master craftsman creates his works based on traditional techniques.
+        hint: 「に基づいて」 indicates the foundation or source. 「に則って」 emphasizes precise and strict adherence
+          to the methods and rules of the traditional techniques. We're looking for rigid conformity to
+          established techniques.
+      - competing_japanese:
+          - 熟練 の 職人 は、伝統 的 な 技法 {に 沿っ て} 作品 を 制作 する。
+        english: A master craftsman creates his works along traditional techniques.
+        hint: 「に沿って」 implies general alignment or following a path, which can allow for flexibility. 「に則って」
+          specifies strict, unyielding adherence to every detail of the traditional techniques. We're
+          looking for strict adherence.
+    scene: A documentary narrator describes a master craftsman's work.
+    register: formal
+    setting: informative
+    conjugation: te-form (～て)
+    speaker_gender: male
+    nuance: 「伝統 的 な 技法 に則って」 emphasizes that the craftsman's work is not just *based on* or *aligned with*
+      tradition, but rigidly adheres to its specific, established methods, often passed down through generations.
+      This highlights precision and reverence for the craft's authentic principles.
 post_example_writeup: The various forms of 「に則る」—namely 「に則って」, 「に則り」, and 「に則った」—all function to express
   strict conformity. 「に則って」 and 「に則り」 are adverbial phrases that modify the verb or clause that follows,
   indicating that an action is carried out in precise accordance with the preceding noun (a rule, law,

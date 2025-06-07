@@ -2,6 +2,9 @@ grammar_point: を問わず (regardless of)
 learn_before:
   - かどうか (whether or not)
   - ても (even if・even though)
+learn_after:
+  - 〜たりとも〜ない (not even a single)
+  - を置いて他に〜ない (nothing else compares)
 id: gp0862
 meaning: Regardless of; irrespective of; without reference to; whether or not; no matter
 pronunciation:
@@ -26,8 +29,8 @@ details:
   nuance: Implies a universal applicability, emphasizing that a certain condition is irrelevant. It conveys
     a strong sense of impartiality or comprehensiveness. Compared to simpler 'regardless of' expressions,
     it carries a more official or declarative tone.
-etymology: The grammar point 『を問わず』 originates from the verb 『問う (とう)』, meaning 'to inquire' or 'to question',
-  combined with 『ず』, an archaic negative auxiliary verb that functions similarly to 『ない』 (not). Therefore,
+etymology: The grammar point 「を問わず」 originates from the verb 「問う (とう)」, meaning 'to inquire' or 'to question',
+  combined with 「ず」, an archaic negative auxiliary verb that functions similarly to 「ない」 (not). Therefore,
   its literal meaning is 'without questioning' or 'without asking'. Over time, this evolved into its current
   usage to express 'regardless of' or 'without distinction', reflecting the idea that the given factor
   is not even considered or questioned.
@@ -40,12 +43,12 @@ writeup: 'The grammar point 「{を問わず}」 is a formal and often used expr
   in formal settings, such as public announcements, official documents, regulations, advertisements, and
   business contexts. It conveys a strong sense of universality, impartiality, or comprehensive applicability.
   While typically found after nouns or noun phrases, it can also follow clauses ending with 「か」 or 「かどうか」,
-  forming phrases like 「〜かどう{かを問わず}」 (regardless of whether ~ or not). **Usage Notes:** *   **Particle
-  「を」**: The particle 「を」 indicates the object of the verb 「問う」, which is the condition or factor being
-  disregarded. *   **「は」 vs. 「を」**: Occasionally, 「は」 may replace 「を」 (e.g., 「〜は問わず」). This subtle shift
-  can add a nuance of contrast or stronger emphasis on the disregarded element. *   **Scope vs. Concession**:
-  While often translated as "regardless of," it can sometimes carry a nuance closer to "in any case for
-  (A), (B)," especially when (A) defines a scope. This distinguishes it from other "regardless" expressions
+  forming phrases like 「〜かどう{かを問わず}」 (regardless of whether ~ or not). Usage Notes: *   **Particle 「を」**:
+  The particle 「を」 indicates the object of the verb 「問う」, which is the condition or factor being disregarded.
+  *   **「は」 vs. 「を」**: Occasionally, 「は」 may replace 「を」 (e.g., 「〜は問わず」). This subtle shift can add a
+  nuance of contrast or stronger emphasis on the disregarded element. *   **Scope vs. Concession**: While
+  often translated as "regardless of," it can sometimes carry a nuance closer to "in any case for (A),
+  (B)," especially when (A) defines a scope. This distinguishes it from other "regardless" expressions
   that might imply a concession despite an obstacle. For example, 「昼夜{を問わず}」 means "whether it''s day
   or night, [activity continues]," emphasizing continuous activity across that scope, rather than overcoming
   a difficulty of it being night or day.'
@@ -84,11 +87,29 @@ false_friends:
       true regardless of which alternative is chosen. While similar, 「{を問わず}」 specifically states that
       a factor is not considered, often in a more definitive or official tone.
     grammar_point: にせよ・にしろ (even if or no matter)
+  - term: ようが〜まいが
+    meaning: Even if; no matter what; whether or not (emphatic)
+    kind: similar expression
+    nuance: 「ようが〜まいが」 emphasizes that something holds true irrespective of two contrasting possibilities
+      (doing or not doing something, or two opposite states). While similar to 「{を問わず}」 in conveying irrelevance,
+      「ようが〜まいが」 often implies a more deliberate choice or action on the part of the subject, whereas 「{を問わず}」
+      is broader and can apply to inherent qualities or conditions.
+    grammar_point: ようが〜まいが (regardless of whether)
+  - term: をよそに
+    meaning: Ignoring, disregarding, despite
+    kind: similar expression
+    nuance: 「をよそに」 implies that someone is intentionally ignoring or disregarding a situation, warning,
+      or expectation, often with a subtle negative connotation of self-centeredness or defiance. In contrast,
+      「{を問わず}」 simply states that a condition is irrelevant for universal applicability, without implying
+      intent or disregard.
+    grammar_point: をよそに (ignoring)
 post_false_friends_writeup: While 「{を問わず}」 and 「にかかわらず」 are often interchangeable, remember that 「{を問わず}」
   leans towards a more formal and official tone, making it suitable for announcements, policies, and formal
   writing. On the other hand, 「に関係なく」 is generally more casual and commonly used in everyday conversation.
-  When choosing between these, consider the formality of the context and the desired nuance of universality
-  or irrelevance.
+  「にせよ・にしろ」 and 「ようが〜まいが」 focus on alternatives and hypothetical conditions, while 「{を問わず}」 simply disregards
+  the condition. Lastly, 「をよそに」 implies an intentional disregard, which is different from the simple irrelevance
+  conveyed by 「{を問わず}」. When choosing between these, consider the formality of the context, the nuance
+  of intent, and the desired emphasis on universality or irrelevance.
 examples:
   - english: Anyone can participate in the event, regardless of nationality or age.
     japanese:
@@ -282,8 +303,7 @@ examples:
           expression that clearly states the inclusivity of the hiring process.
       - competing_japanese:
           - 経験 の 有無 に かかわら ず、どなた から で も ご 応募 を 受け付け て おり ます。
-        english: We accept applications from anyone, regardless of whether they have prior experience
-          or not.
+        english: Regardless of whether they have prior experience or not.
         hint: While very similar, を問わず is often preferred in official recruitment notices for its stronger
           and more declarative tone. We're looking for the most official phrasing for a job advertisement.
     scene: A human resources department is advertising job openings.
@@ -315,5 +335,26 @@ examples:
     nuance: 「雨が降るかどうか」 explicitly states the conditional element. 「予定通り開催されます」 (will be held as planned)
       firmly communicates that the event is not subject to cancellation or change based on this condition,
       reinforcing the formal and definite nature of the statement.
-lint-errors:
-  - '[rule-11] warning learn_after has 0 item(s); must have at least 2'
+  - english: Financial assistance is available to all students, regardless of family income.
+    japanese:
+      - 経済 的 援助 は、家庭 の 収入 {を 問わ ず}、全て の 学生 に 提供 さ れ ます。
+      - 経済 的 援助 は、世帯 収入 {を 問わ ず}、全て の 学生 が 対象 と なり ます。
+      - 経済 的 支援 は、ご 家庭 の 収入 {を 問わ ず}、広く 学生 全員 に 適用 さ れ ます。
+    english_literally: Financial assistance, family income without questioning, to all students is provided.
+    competing_grammar:
+      - competing_japanese:
+          - 経済 的 援助 は、家庭 の 収入 に 関係 なく、全て の 学生 に 提供 さ れ ます。
+        english: Financial assistance is provided to all students, without regard to family income.
+        hint: This phrase is too casual for an official university announcement about financial aid. We're
+          looking for a formal and definitive expression.
+      - competing_japanese:
+          - 経済 的 援助 は、家庭 の 収入 に かかわら ず、全て の 学生 に 提供 さ れ ます。
+        english: Financial assistance is provided to all students, regardless of family income.
+        hint: While similar, を問わず conveys a more declarative and official tone suitable for a university
+          policy. We're looking for the most authoritative phrasing for an announcement.
+    scene: A university is announcing its financial aid policy to prospective and current students.
+    register: formal
+    setting: academic
+    nuance: The phrase 「経済的援助」 (financial assistance) emphasizes the support available. The core message
+      「全ての学生に提供されます」 (is provided to all students) underscores the universal access, making family income
+      irrelevant for eligibility. This language is typical of formal announcements from educational institutions.

@@ -2,9 +2,13 @@ grammar_point: その結果 (as a result)
 learn_before:
   - から (reason cause)
   - ので (reason)
+  - そして (and・and then)
+  - それで (so・and then)
 learn_after:
   - あげく (culmination of effort)
   - を余儀なくされる (to be forced or compelled)
+  - ゆえに (because・therefore)
+  - したがって (therefore)
 id: gp0423
 meaning: As a result
 pronunciation:
@@ -12,6 +16,7 @@ pronunciation:
   romaji: sono kekka
 formation:
   '[Sentence A]. その結果, [Sentence B].': Indicates that Sentence B is the direct result of Sentence A.
+  Noun + の 結果, [Sentence B].: Indicates that Sentence B is the direct result of the Noun.
 jlpt: N3
 details:
   part-of-speech: conjunction
@@ -42,12 +47,12 @@ false_friends:
     nuance: Similar to **その結果** in expressing results, **したがって** tends to imply a more logical or formal
       deduction rather than a direct, immediate outcome.
     grammar_point: したがって (therefore)
-  - term: 結果・の結果
+  - term: 結果 (result)
     meaning: As a result of
     kind: similar expression
     nuance: '**結果** or **の結果** are used to explain the result of something within a single sentence, whereas
       **その結果** is used to begin a new sentence, making it the initial word of that sentence.'
-    grammar_point: 結果 (as a result of)
+    grammar_point: 結果 (result)
   - term: そのため(に)
     meaning: For that reason, Because of that
     kind: similar expression
@@ -189,11 +194,6 @@ examples:
         english: He spoke carelessly. So, he hurt her feelings.
         hint: 「だから」 expresses a more direct, casual reason. We are looking for a term that emphasizes
           the consequence as a result of an action, applicable in various contexts.
-      - competing_japanese:
-          - 彼 は 軽率 な 発言 を し た。その ため に、彼女 を 傷つけ て しまっ た。
-        english: He spoke carelessly. For that reason, he hurt her feelings.
-        hint: 「そのため に」 emphasizes the reason or cause, often with a nuance of purpose or background. We're
-          looking for a direct outcome.
     scene: A friend recounting an unfortunate social interaction to another friend.
     register: casual
     setting: serious
@@ -215,11 +215,6 @@ examples:
         english: They collaborated efficiently. And so, they achieved great success.
         hint: 「それで」 indicates a sequential flow of events. We are looking for a phrase that specifically
           highlights the achievement as a direct result or consequence of their collaboration.
-      - competing_japanese:
-          - 彼 ら は 効率 的 に 協力 し た。ゆえ に、大きな 成功 を 収め た。
-        english: They collaborated efficiently. Thus, they achieved great success.
-        hint: 「ゆえ に」 is a more literary or formal term for 'thus' or 'for this reason,' implying a logical
-          deduction. We need a more straightforward expression for a direct outcome.
     scene: A team leader praising their team during a performance review.
     register: formal
     setting: informative
@@ -239,11 +234,6 @@ examples:
         english: The weather suddenly changed. So, the hiking plan was canceled.
         hint: 「だから」 provides a reason or cause in a more conversational manner. We are looking for a term
           that clearly states a direct, impactful consequence.
-      - competing_japanese:
-          - 天候 が 急変 し た。これ に より、ハイキング の 計画 は 中止 に なっ た。
-        english: The weather suddenly changed. Due to this, the hiking plan was canceled.
-        hint: 「これ に より」 formally indicates a cause or means, but 「その結果」 specifically points to the direct
-          outcome or consequence.
     scene: Friends discussing why their weekend hiking plans were unexpectedly altered.
     register: casual
     setting: melancholic
@@ -262,63 +252,11 @@ examples:
         english: The new policy was implemented. For that reason, crime rates significantly decreased.
         hint: 「その ため」 indicates the reason or cause for something. We need a phrase that focuses on the
           direct outcome or consequence of an action.
-      - competing_japanese:
-          - 新しい 政策 が 施行 さ れ た。したがっ て、犯罪 率 は 大幅 に 減少 し た。
-        english: The new policy was implemented. Consequently, crime rates significantly decreased.
-        hint: 「したがって」 implies a logical deduction or conclusion, often in a formal context. We are looking
-          for a term emphasizing a direct and observed result.
     scene: A journalist reporting on the effects of recent government legislation.
     register: formal
     setting: informative
     nuance: The passive voice 「施行 された」 and formal vocabulary like 「大幅 に 減少 し た」 are appropriate for discussing
       policy outcomes and statistical results in a formal context, such as a news report.
-  - english: I neglected my studies. As a result, I failed the exam.
-    japanese:
-      - 勉強 を 怠っ た。{その 結果}、試験 に 落ち て しまっ た。
-      - 勉強 を さぼっ て しまっ た。{その 結果}、試験 に 不 合格 と なっ て しまっ た。
-      - 学業 を 疎か に し た。{その 結果}、試験 に 落第 し た。
-    english_literally: Study neglected. That result, exam failed.
-    competing_grammar:
-      - competing_japanese:
-          - 勉強 を 怠っ た。だ から、試験 に 落ち て しまっ た。
-        english: I neglected my studies. So, I failed the exam.
-        hint: 「だから」 expresses a reason or cause in a casual tone. We are looking for a term that clearly
-          states the direct outcome or consequence of an action.
-      - competing_japanese:
-          - 勉強 を 怠っ た。それ で、試験 に 落ち て しまっ た。
-        english: I neglected my studies. And so, I failed the exam.
-        hint: 「それ で」 connects events sequentially or introduces a consequence in a more general way. We
-          need a stronger expression for a direct result.
-    scene: A student expressing regret to a friend after receiving exam results.
-    register: casual
-    setting: pessimistic
-    nuance: 「怠った」 and 「落ち て しまった」 are common phrases for academic failure and express a direct, negative
-      consequence. The inclusion of `しまう` emphasizes the speaker's regret over their actions.
-  - english: The software was optimized. As a result, processing speed greatly improved.
-    japanese:
-      - ソフトウェア が 最適 化 さ れ た。{その 結果}、処理 速度 が 大幅 に 向上 し た。
-      - プログラム が 最適 化 さ れ た。{その 結果}、処理 スピード が 飛躍 的 に 上がっ た。
-      - システム が 最適 化 を 施さ れ た。{その 結果}、処理 性能 が 格段 に 向上 し た。
-    english_literally: Software optimized. That result, processing speed greatly improved.
-    competing_grammar:
-      - competing_japanese:
-          - ソフトウェア が 最適 化 さ れ た。したがっ て、処理 速度 が 大幅 に 向上 し た。
-        english: The software was optimized. Consequently, processing speed greatly improved.
-        hint: 「したがって」 indicates a logical conclusion or deduction. We are seeking a term that specifies
-          the direct outcome or consequence resulting from the optimization.
-      - competing_japanese:
-          - ソフトウェア が 最適 化 さ れ た。その ため に、処理 速度 が 大幅 に 向上 し た。
-        english: The software was optimized. For that reason, processing speed greatly improved.
-        hint: 「その ため に」 emphasizes the reason or purpose behind an action. We need a phrase that stresses
-          the direct result achieved.
-    scene: A software developer presenting performance improvements to their team.
-    register: formal
-    setting: technical
-    speaker_gender: male
-    listener_gender: group
-    nuance: The use of technical terms like 「最適化」 and 「処理 速度」, along with formal expressions like 「大幅
-      に 向上 し た」, makes this example suitable for a technical or professional setting, demonstrating objective
-      improvements.
 post_example_writeup: '**その結果** is used to introduce the direct outcome of a preceding action or situation.
   It''s helpful to think of it as establishing a clear cause-and-effect relationship between two independent
   sentences. This distinguishes it subtly from other similar expressions.'

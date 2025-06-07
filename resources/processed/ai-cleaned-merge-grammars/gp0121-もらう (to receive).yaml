@@ -1,7 +1,10 @@
 grammar_point: もらう (to receive)
 learn_before:
-  - に (to)
   - から (from)
+  - Verb[て] (and then another event)
+learn_after:
+  - てもらう (to get someone to do)
+  - てあげる (to do for someone)
 id: gp0121
 meaning: To receive, to get, to obtain
 meaning_warning: Unlike あげる and くれる, に (or から) marks the giver, not the recipient
@@ -128,12 +131,22 @@ false_friends:
       giver is of higher status or when speaking in a formal context. While both mean 'to receive', 「いただく」
       adds a layer of humility and respect from the recipient's side.
     grammar_point: <suggest>:いただく (humbly receive)
+  - term: 手に入れる
+    meaning: to obtain
+    kind: similar expression
+    nuance: While 「もらう」 specifically implies receiving something that is given to you, often with an underlying
+      sense of benefit or obligation, 「手に入れる」 is a more general verb for acquiring something through one's
+      own efforts or means. 「もらう」 focuses on the transaction of giving, 「手に入れる」 focuses on the act of
+      getting.
+    grammar_point: <suggest>:手に入れる (to obtain)
 post_false_friends_writeup: 'To differentiate between these related verbs: 「もらう」 is about you or someone
-  in your group *receiving* something. 「くれる」 is about someone *giving* something *to you or your group*.
-  「あげる」 is about someone *giving* something *to someone else*. When an action is involved, 「てもらう」 means
-  receiving a favor or having someone do something for you, emphasizing the benefit you gained from their
-  action. Additionally, 「いただく」 is the humble equivalent of 「もらう」, used to express politeness and respect
-  towards the giver.'
+  in your group *receiving* something, often implying it was given. 「くれる」 is about someone *giving* something
+  *to you or your group*. 「あげる」 is about someone *giving* something *to someone else*. When an action
+  is involved, 「てもらう」 means receiving a favor or having someone do something for you, emphasizing the
+  benefit you gained from their action. Additionally, 「いただく」 is the humble equivalent of 「もらう」, used to
+  express politeness and respect towards the giver. In contrast, 「手に入れる」 is a broader term meaning to
+  *obtain* or *acquire* something, often through one''s own efforts, and does not necessarily imply it
+  was given by someone.'
 examples:
   - english: I receive a book from the teacher.
     japanese:
@@ -364,5 +377,3 @@ post_example_writeup: 'The example 「友達 に 引っ越し を 手伝って {
   another. It highlights that the action was performed for your benefit or at your request.'
 sources:
   bunpro: https://bunpro.jp/grammar_points/もらう
-lint-errors:
-  - '[rule-11] warning learn_after has 0 item(s); must have at least 2'

@@ -2,6 +2,11 @@ grammar_point: とみえる (seems from observation)
 learn_before:
   - 見える (to be visible・to seem)
   - ようだ (it seems)
+  - らしい (hearsay or conjecture)
+  - にみえる (to look like)
+learn_after:
+  - に相違ない (without a doubt)
+  - と考えられる (can be considered)
 id: gp0351
 meaning: It seems that, it appears that, one can conclude that
 conjugations:
@@ -108,12 +113,20 @@ false_friends:
       or a subjective impression. In contrast, 「とみえる」 is used for a reasoned conclusion or deduction based
       on observable facts or available information.
     grammar_point: にみえる (to look like)
+  - term: そう
+    meaning: looks like, appears, seems
+    kind: similar expression
+    nuance: 「そう」 indicates an immediate impression or appearance based on sensory perception, often directly
+      attached to a verb or adjective stem. Unlike 「とみえる」, it doesn't necessarily imply a reasoned deduction
+      from evidence, but rather how something outwardly presents itself.
+    grammar_point: そう (looks like)
 post_false_friends_writeup: The key to differentiating 「とみえる」 from similar expressions lies in its implication
   of a reasoned deduction. Unlike 「ようだ」 or 「らしい」, which can convey a sense of uncertainty, indirect information,
   or characteristic behavior, 「とみえる」 suggests that the speaker has considered available information and
   arrived at a relatively confident conclusion based on observable evidence. 「に見える」, on the other hand,
   focuses on visual appearance, describing how something looks rather than a logical inference about its
-  state or cause.
+  state or cause. Lastly, 「そう」 expresses an an immediate sensory impression, lacking the deeper deductive
+  process of 「とみえる」.
 examples:
   - english: She is always smiling, so it seems she has no worries.
     japanese:
@@ -237,6 +250,12 @@ examples:
         hint: 「に見える」 describes how something visually appears or strikes one's eye. 「とみえる」 is used for
           a reasoned conclusion or deduction based on observable facts. We're looking for a deduction
           about what something *is*.
+      - competing_japanese:
+          - 空 に 巨大 な 影 が 見える。あれ は UFO そう だ。
+        english: A huge shadow is visible in the sky. That looks like a UFO (immediate impression).
+        hint: 「そう」 describes an immediate appearance based on sensory perception. 「とみえる」 implies a more
+          reasoned deduction from observable facts. We're looking for a conclusion drawn from the visual
+          evidence.
     scene: Someone spotting an unusual object in the sky and making an immediate deduction.
     register: casual
     setting: excited
@@ -288,6 +307,12 @@ examples:
         english: He hasn't been eating much lately. It seems he's not feeling well (general impression).
         hint: 「ようだ」 implies a more general impression or conjecture. 「とみえる」 indicates a more direct deduction
           based on observable behavior. We're looking for a clear deduction from observation.
+      - competing_japanese:
+          - 彼 は 最近 あまり 食べ て い ない。体調 が 良く ない そう だ。
+        english: He hasn't been eating much lately. He looks unwell (immediate visual impression).
+        hint: 「そう」 describes an immediate appearance based on sensory perception. 「とみえる」 implies a more
+          reasoned deduction from observable facts. We're looking for a conclusion drawn from the change
+          in eating habits.
     scene: A colleague observing another colleague's change in eating habits.
     register: casual
     setting: reflective
@@ -319,7 +344,7 @@ examples:
     setting: reflective
     conjugation: past plain (～た)
     nuance: This deduction, 「どこかで事故があったとみえた」, is made based on the concrete, observable fact of the train's
-      extensive delay 「電車が1時間以上遅れた」. It highlights how とみえる is used to infer a cause from an observed
+      extensive delay 「電車が1時間以上遅れた」. It highlights how とみえる is used to infer a cause from an an observed
       effect.
     etymology: The past tense とみえた is used to express a deduction about a past event, directly linking
       the observable effect (delay) to the inferred cause (accident). This demonstrates the logical inferential
@@ -337,6 +362,11 @@ examples:
         hint: 「ようだ」 implies a more general impression or conjecture, often with less direct evidence or
           a lower degree of certainty than とみえる. We're looking for a reasoned conclusion based on direct
           observation.
+      - competing_japanese:
+          - 彼 は あくび ばかり し て いる。昨日 は あまり 眠れ なかっ た そう だ。
+        english: He's yawning a lot. He looks like he didn't get enough sleep last night (immediate impression).
+        hint: 「そう」 describes an immediate appearance based on sensory perception. 「とみえる」 implies a more
+          reasoned deduction from observable facts. We're looking for a conclusion drawn from his yawning.
     scene: Two friends are observing another friend during a casual gathering.
     register: casual
     setting: friendly
@@ -346,13 +376,11 @@ examples:
     nuance: The female speaker observes her male friend's repeated yawning 「あくびばかりしている」 and deduces that
       he didn't sleep much, expressing a common empathetic observation in a casual setting.
     etymology: This example highlights how とみえる is used to infer an internal state (lack of sleep) from
-      an external, observable behavior (yawning). The casual context and direct observation make it a
-      clear application of the grammar point's deductive function.
+      an external, observable behavior (yawning). It's a simple, direct application of the grammar point's
+      deductive function.
 post_example_writeup: As these examples demonstrate, 「とみえる」 is highly versatile. It consistently implies
   a conclusion drawn from observable evidence, distinguishing it from expressions that convey more general
   impressions or hearsay. Pay attention to the preceding clause, as it always provides the factual basis
   for the deduction, whether it's a state, an action, or a past event.
 sources:
   bunpro: https://bunpro.jp/grammar_points/とみえる
-lint-errors:
-  - '[rule-11] warning learn_after has 0 item(s); must have at least 2'

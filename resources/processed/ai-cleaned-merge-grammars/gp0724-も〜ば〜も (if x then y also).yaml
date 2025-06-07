@@ -2,6 +2,7 @@ grammar_point: も〜ば〜も (if x then y also)
 learn_before:
   - ば (conditional)
   - も (addition or emphasis particle)
+  - し〜し (and; listing reasons)
 learn_after:
   - もさることながら (not only・but more so)
   - にとどまらず (not limited to)
@@ -11,8 +12,18 @@ pronunciation:
   katakana: モ～バ～モ
   romaji: mo ~ ba ~ mo
 formation:
-  Noun + も + Verb/い-Adjective/な-Adjective/Noun + ば + も + Similar Predicate: Expresses that if one condition
-    is true, a related condition is also true; 'both...and...'
+  Noun A + も + Verb (ば form) + Noun B + も + Verb: 'Expresses that if one condition involving a verb is
+    true, a related condition also involving a verb is also true. For example: 本 も 読め れば、映画 も 見る (If one
+    reads books, one also watches movies).'
+  Noun A + も + い-Adjective (ければ form) + Noun B + も + い-Adjective: 'Expresses that if one condition involving
+    an い-adjective is true, a related condition also involving an い-adjective is also true. For example:
+    寒けれ ば、湿気 も 多い (If it''s cold, it''s also humid).'
+  Noun A + も + な-Adjective (なら/ならば form) + Noun B + も + な-Adjective: 'Expresses that if one condition
+    involving a な-adjective is true, a related condition also involving a な-adjective is also true. For
+    example: 静か なら、快適 も です (If it''s quiet, it''s also comfortable).'
+  Noun A + も + Noun (なら/ならば form) + Noun B + も + Noun: 'Expresses that if one condition involving a noun
+    is true, a related condition also involving a noun is also true. For example: 学生 なら、若者 も です (If they
+    are a student, they are also a young person).'
 jlpt: N2
 details:
   part-of-speech: phrase
@@ -29,7 +40,11 @@ writeup: |-
   Here's the breakdown:
 
   *   「も」 connects to a noun.
-  *   「ば」 follows a verb, い-adjective, な-adjective, or noun. For nouns and な-adjectives, use 「なら」 or 「ならば」.
+  *   The first predicate uses the 「ば」 conditional form. This varies depending on the part of speech:
+      *   **Verbs:** Change to their ば-form (e.g., 食べる → 食べれば).
+      *   **い-Adjectives:** Change to their ければ-form (e.g., 寒い → 寒ければ).
+      *   **な-Adjectives/Nouns:** Use 「なら」 or 「ならば」 after them (e.g., 静か → 静かなら, 学生 → 学生なら).
+  *   The second 「も」 follows a noun and is typically followed by a predicate similar to the first one, but not necessarily in the conditional form.
 
   **Important Considerations:**
 
@@ -40,16 +55,44 @@ false_friends:
   - term: 〜し
     meaning: And, moreover, in addition to
     kind: similar expression
-    nuance: While 「〜し」 can list multiple reasons or facts, it simply enumerates them without necessarily
-      implying a strong inherent correlation between the listed items. 「も〜ば〜も」, on the other hand, strongly
-      emphasizes that two things exist in conjunction, often implying that if one is true, the other also
-      tends to be true, highlighting a deeper, inherent correlation rather than just a simple list.
+    nuance: While 「〜し」 simply lists reasons or facts without necessarily implying an inherent, conditional
+      correlation between them, 「も〜ば〜も」 emphasizes that if one condition (A) holds true, then a related
+      condition (B) also tends to hold true, highlighting a deeper, often inherent, pairing or consistency.
+      It's about 'both X and Y' as a cohesive, interrelated set.
     grammar_point: し〜し (and; listing reasons)
-post_false_friends_writeup: When distinguishing between 「も〜ば〜も」 and 「〜し」, consider the emphasis. 「〜し」
-  is primarily for listing reasons or adding supplementary information, functioning as a conjunctive particle.
-  「も〜ば〜も」 conveys a stronger sense of parallelism and inherent connection, suggesting that two elements
-  consistently appear together or share a strong mutual relationship. It's about 'both X and Y' as a cohesive
-  pair, rather than just 'X and also Y'.
+  - term: も〜も
+    meaning: Both ~ and ~; neither ~ nor ~; also; (not) either
+    kind: similar expression
+    nuance: 「も〜も」 simply states that two items (X and Y) possess a certain quality or undergo a certain
+      action without implying a conditional relationship between them. For example, 'XもYも〜だ' means 'Both
+      X and Y are 〜'. In contrast, 「も〜ば〜も」 explicitly uses the conditional 'ば' form, emphasizing that
+      if the first condition is met, the second, related condition is also met, thereby highlighting an
+      inherent or expected co-occurrence.
+    grammar_point: も~も (both neither ~ nor)
+  - term: ばかりか〜（さえ）
+    meaning: Not only...but also; much more than; in addition to.
+    kind: similar expression
+    nuance: 「ばかりか〜（さえ）」 expresses 'not only X, but also (even) Y,' implying that Y is an additional and
+      often more surprising element. It conveys an additive and often escalating relationship. 「も〜ば〜も」
+      focuses on the parallel existence or inherent pairing of two elements without necessarily implying
+      an escalation or surprising addition; it emphasizes that 'both X and Y' are consistently present
+      together.
+    grammar_point: Noun・Verb・Adjective+ばかりか~(さえ) (not only ~ but also)
+  - term: のみならず
+    meaning: Not only...but also, Not just...but also, What is more
+    kind: similar expression
+    nuance: 「のみならず」 is a formal 'not only X, but also Y' construction, often used to extend a statement
+      to a broader scope or additional case. It's about inclusiveness. 「も〜ば〜も」, however, specifically
+      frames the relationship between two elements as a conditional pairing, suggesting that if one quality
+      or state is present, the other related quality or state is typically present as well. It underscores
+      a consistent, inherent connection rather than simply adding to a list.
+    grammar_point: のみならず (not only... but also)
+post_false_friends_writeup: When comparing 「も〜ば〜も」 with these similar expressions, the key distinction
+  lies in the nuance of connection. While 「〜し」 and 「も〜も」 primarily list or state coexistence, and 「ばかりか〜（さえ）」
+  and 「のみならず」 emphasize addition or escalation, 「も〜ば〜も」 specifically highlights an *inherent correlation*
+  or *conditional pairing*. It implies that if one characteristic or condition exists, the other *naturally
+  and consistently* follows or is present alongside it, framing them as an inseparable pair rather than
+  just a simple collection of facts.
 examples:
   - english: My father can speak both Italian and Spanish.
     japanese:
@@ -254,9 +297,9 @@ examples:
         english: The Prime Minister can also review the economy, and it seems they can resolve human rights
           issues too.
         hint: Using 〜し for listing abilities or possibilities implies 'and' or 'in addition', but it doesn't
-          emphasize the strong parallelism and shared capacity that も〜ば〜も conveys, suggesting that these
-          two abilities go hand-in-hand. We're looking for a structure that highlights both capabilities
-          as equally present.
+          emphasize the strong parallelism and shared capacity that も〜ば〜も conveys, where both abilities
+          contribute equally. We're looking for a structure that highlights both capabilities as equally
+          present.
     scene: A political analyst discusses the promising capabilities of the Prime Minister, anticipating
       positive outcomes in multiple policy areas.
     register: formal

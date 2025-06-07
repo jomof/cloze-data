@@ -1,14 +1,20 @@
 grammar_point: Particle + の (noun modification)
 learn_before:
-  - に (to)
+  - に (fixed point・target・time)
   - から (from)
   - で (at)
+  - へ (directional particle)
+  - と (accompaniment・comparison・exhaustive listing)
+  - まで (limit extent)
 learn_after:
   - に関する・に関して (related to regarding)
   - において・における (formal context)
   - を 通じて・を通して (medium・means)
+  - によって・による・により (means・cause・dependency)
+  - について (about)
+  - に際して (on the occasion of)
 id: gp0401
-meaning: Combined particles
+meaning: Modifying a noun using a preceding particle-marked phrase
 pronunciation:
   katakana: ノ
   romaji: 'no'
@@ -21,7 +27,6 @@ formation:
 jlpt: N3
 details:
   part-of-speech: particle
-  register: teineigo (polite)
   particle-syntactic-function: attributive
   usage-context: Commonly used in various situations to link nouns. The specific register depends on the
     context of the larger sentence.
@@ -66,11 +71,19 @@ false_friends:
       nominalizes an adjective to refer to a specific item or concept possessing that quality, effectively
       replacing a noun.
     grammar_point: Adjective+の(は) (the one that is)
+  - term: んです・のです (explanatory emphatic)
+    meaning: Used at the end of a sentence to provide explanation, emphasize, or seek confirmation.
+    kind: often confused with
+    nuance: While both involve the particle の, 'Particle+の' functions within a phrase to modify a noun,
+      whereas 'んです・のです' is a sentence-ending pattern that adds an explanatory or emphatic nuance to the
+      entire statement. It is not used to link nouns for modification.
+    grammar_point: んです・のです (explanatory emphatic)
 post_false_friends_writeup: It is crucial to distinguish this usage from other functions of の. When 'Particle+の'
   is used, の always follows another particle (like から, と, へ, で, or まで), serving to modify the subsequent
   noun based on the relationship established by that preceding particle. In contrast, の used for possession
   directly links two nouns, indicating ownership or association (e.g., 「私の本」, 'my book'), while の used
-  for nominalization replaces a noun following an adjective (e.g., 「大きいのは」, 'the big one'). The key differentiator
+  for nominalization replaces a noun following an adjective (e.g., 「大きいのは」, 'the big one'). The 'んです・のです'
+  construction provides explanation or emphasis for an entire sentence. The key differentiator for 'Particle+の'
   is the presence of another particle immediately preceding の in this specific grammatical pattern.
 examples:
   - english: Imports from America are very popular.
@@ -99,9 +112,9 @@ examples:
       - competing_japanese:
           - 友達 と の 約束 は 忘れ ない で ください。
         english: Please don't forget your promise with your friend (casual).
-        hint: 「友人」 is a slightly more formal term for 'friend' than 「友達」. While both are grammatically
-          correct, the example uses 「友人」 to convey a slightly more serious or formal tone for the promise.
-          We are looking for a slightly more formal expression.
+        hint: While both 「友人」 and 「友達」 translate to 'friend', 「友人」 is a slightly more formal term. The
+          example uses 「友人」 to convey a slightly more serious or formal tone for the promise. We are looking
+          for a slightly more formal expression.
     scene: A father gently reminding his son about an important commitment before he leaves the house.
     register: casual
     setting: instructional
@@ -110,7 +123,8 @@ examples:
     speaker_age: older
     nuance: The imperative 「忘れ ない で ください」(wasurenai de kudasai) is a firm but polite instruction. This
       tone is appropriate for an older male (father) instructing a younger male (son) on the importance
-      of keeping promises.
+      of keeping promises. The use of 「友人」(yūjin) also adds a slightly more formal tone than 「友達」(tomodachi),
+      fitting the seriousness of a promise.
   - english: Is the present for him ready yet?
     japanese:
       - 彼 {へ} {の} プレゼント は もう 準備 でき まし た か。
@@ -131,7 +145,7 @@ examples:
     speaker_age: younger
     nuance: The casual 「もう 準備 でき まし た か」(mō junbi dekimashita ka) is typical for friends, implying a shared
       task or knowledge. The context of young women discussing a gift highlights the common usage in such
-      social situations.
+      social situations. The use of 「彼 へ の プレゼント」(kare e no purezento) is natural here.
   - english: Life at school is enjoyable.
     japanese:
       - 学校 {で} {の} 生活 は 楽しい です。
@@ -152,7 +166,8 @@ examples:
     listener_gender: female
     speaker_age: younger
     nuance: The use of 「です」(desu) keeps the sentence polite but still casual enough for young female friends
-      sharing experiences. The straightforward expression of enjoyment is characteristic of general conversation.
+      sharing experiences. The straightforward expression of enjoyment 「学校 で の 生活 は 楽しい です」(gakkou de
+      no seikatsu wa tanoshii desu) is characteristic of general conversation.
   - english: The countdown until the holiday has begun.
     japanese:
       - 休み {まで} {の} カウントダウン が 始まっ た。
@@ -172,8 +187,8 @@ examples:
     listener_gender: group
     speaker_age: younger
     nuance: The plain form past tense 「始まっ た」(hajimatta) is casual and direct. The enthusiasm suggested
-      by the scene and the phrase 'countdown' is common among young people, especially when addressing
-      a group of peers about an exciting event.
+      by the scene and the phrase 「休み まで の カウントダウン」(yasumi made no kauntodaun) is common among young people,
+      especially when addressing a group of peers about an exciting event.
   - english: The report from the research team is due tomorrow.
     japanese:
       - 研究 チーム {から} {の} 報告 書 は 明日 まで です。
@@ -212,7 +227,8 @@ examples:
     speaker_age: older
     nuance: Using 「顧客」(kokyaku) instead of 「お客さん」(okyaku-san) elevates the register to a professional
       business setting. The phrase 「とても 重要 です」(totemo jūyō desu) emphasizes the gravity of the topic,
-      typical for a director addressing subordinates on a key business principle.
+      typical for a director addressing subordinates on a key business principle. 「顧客 と の 関係」(kokyaku
+      to no kankei) directly connects the client and the relationship.
   - english: I have a request for the manager.
     japanese:
       - 部 長 {へ} {の} お 願い が あり ます。
@@ -252,8 +268,8 @@ examples:
     listener_gender: female
     speaker_age: younger
     nuance: The use of 「素晴らしかっ た です」(subarashikatta desu) is polite but conveys genuine enthusiasm common
-      in casual conversations among friends discussing shared experiences. 「で の」 succinctly links the
-      performance to its location.
+      in casual conversations among friends discussing shared experiences. 「劇場 で の パフォーマンス」(gekijō de
+      no pafōmansu) succinctly links the performance to its location.
   - english: The journey to the station takes about 10 minutes.
     japanese:
       - 駅 {まで} {の} 道のり は 10 分 くらい です。

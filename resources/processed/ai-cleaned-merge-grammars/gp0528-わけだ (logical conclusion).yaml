@@ -2,9 +2,13 @@ grammar_point: わけだ (logical conclusion)
 learn_before:
   - から (reason cause)
   - ので (reason)
+  - んです・のです (explanatory emphatic)
+  - はずだ (expected to be)
+  - ということだ (it means that)
   - ことになる (to end up being)
 learn_after:
-  - に違いない (no doubt)
+  - ものだ (general truth expectation)
+  - はずがない (logical impossibility)
   - にほかならない (nothing but)
 id: gp0528
 meaning: For that reason, no wonder, as you'd expect, naturally, thus, this why
@@ -84,7 +88,7 @@ false_friends:
     grammar_point: だけに (as expected)
   - term: ため(に)
     meaning: For, for the sake of, in order to
-    kind: synonym
+    kind: similar expression
     nuance: 「ため(に) (tame(ni))」 primarily expresses purpose ('in order to') or cause/reason ('because of'),
       often indicating a clear objective or direct causation. 「わけだ (wake da)」, however, often signifies
       a logical outcome or realization that explains a situation, rather than a direct purpose.
@@ -96,13 +100,21 @@ false_friends:
       In contrast, 「わけだ (wake da)」 explains a reason or result, conveying a sense of understanding or
       conclusion about a current state or event.
     grammar_point: ことだ (should・ought to)
+  - term: ということだ
+    meaning: It means that, It is said that, I heard that
+    kind: similar expression
+    nuance: 「ということだ」 is used to convey information or clarify the meaning of something based on what has
+      been heard or learned. In contrast, 「わけだ」 specifically highlights a logical conclusion or a natural
+      consequence derived from known facts.
+    grammar_point: ということだ (it means that)
 post_false_friends_writeup: 'When differentiating between these expressions, consider the core meaning
   of 「わけだ」: presenting a logical conclusion, a natural consequence, or a realization based on known facts.
   Other expressions might imply expectation, purpose, or general advice. For instance, while 「はずだ」 suggests
   an expectation or certainty, 「わけだ」 states a fact or conclusion that *follows* from existing information.
   Similarly, 「ため(に)」 indicates a direct purpose or cause, whereas 「わけだ」 highlights the inherent reason
-  for a state of affairs. Focus on whether the statement is explaining *why* something is the way it is
-  as a natural outcome, rather than simply stating a purpose, an expectation, or an obligation.'
+  for a state of affairs. 「ということだ」 conveys information or clarifies meaning, but 「わけだ」 emphasizes a logical
+  deduction. Focus on whether the statement is explaining *why* something is the way it is as a natural
+  outcome, rather than simply stating a purpose, an expectation, or an obligation.'
 examples:
   - english: I run every day, so that's why I've gained this much stamina.
     japanese:
@@ -159,7 +171,32 @@ examples:
     register: teineigo (polite)
     setting: informative
     conjugation: non-past polite (～ます)
-  - english: This is a very quiet place, so that's why my studies are progressing well.
+  - english: This movie is really long, so that's why it took us five hours to watch it.
+    japanese:
+      - この 映画 は 長い から、五 時間 も かかっ た {わけ だ}。
+      - この 映画 は 長い の で、五 時間 も かかっ た {わけ です}。
+    english_literally: This movie is long, so five hours it took, that is the reason.
+    competing_grammar:
+      - competing_japanese:
+          - この 映画 は 長い から、五 時間 も かかっ た はず だ。
+        english: This movie is long, so it should have taken five hours to watch it.
+        hint: 「はずだ」 suggests an expectation or probability. 「わけだ」 states a logical conclusion or understanding
+          based on the movie's length.
+      - competing_japanese:
+          - この 映画 は 長い だけ に、五 時間 も かかっ た。
+        english: Precisely because this movie is long, it took five hours to watch.
+        hint: 「だけに」 emphasizes that the movie's length is the direct reason for the duration. 「わけだ」 frames
+          the duration as a natural, understandable outcome of its length.
+      - competing_japanese:
+          - この 映画 は 長い から、五 時間 も かかっ た ため に。
+        english: This movie is long, so due to that, it took five hours to watch.
+        hint: 「ために」 states a direct cause or reason. 「わけだ」 explains a logical outcome or understanding
+          of why it took so long.
+    scene: Two friends discussing a very long movie they just finished.
+    register: casual
+    setting: friendly
+    conjugation: dictionary (plain non-past)
+  - english: Here is a very quiet place, so that's why my studies are progressing well.
     japanese:
       - ここ は とても 静か な 場所 だ から、勉強 が はかどる {わけ だ}。
       - ここ は とても 静か な 場所 な の で、勉強 が はかどる {わけ です}。
@@ -351,7 +388,7 @@ examples:
           the norm.
         hint: 「ために」 states a direct cause or reason. 「わけだ」 explains a logical outcome or understanding
           of why something was the norm in the past.
-    scene: An elderly man explaining past everyday challenges to his grandchild.
+    scene: An older man explaining past everyday challenges to his grandchild.
     register: casual
     setting: storytelling
     conjugation: dictionary (plain non-past)

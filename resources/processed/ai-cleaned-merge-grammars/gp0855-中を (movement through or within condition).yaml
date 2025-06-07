@@ -1,10 +1,16 @@
 grammar_point: 中を (movement through or within condition)
 learn_before:
-  - を (movement through space)
+  - を (object marker)
+  - で (at)
+  - に (fixed point・target・time)
   - の (possession)
+  - Verbs (non-past plain)
+  - い-Adjectives (adjectives ending in い)
 learn_after:
-  - を介して・介した (through an intermediary)
-  - をものともせず (making nothing of)
+  - を 通じて・を通して (medium・means)
+  - にわたって (throughout a range)
+  - において・における (formal context)
+  - をめぐって めぐる (concerning revolving around)
 id: gp0855
 meaning: In, on, into, inside of, through, amidst
 pronunciation:
@@ -83,6 +89,20 @@ false_friends:
       or traversal. 「の中」 simply describes the location of something *inside* another thing without necessarily
       implying movement or action within it. It acts as a static locator.
     grammar_point: '<suggest>: の中 (inside of)'
+  - term: を 通じて・を通して
+    meaning: through, via, by means of
+    kind: similar expression
+    nuance: 「中を」 emphasizes physical or abstract *movement or traversal within* an area or state. 「を 通じて・を通して」
+      refers to moving *through* a medium or using something *as a channel/means*. The focus is on the
+      medium or method rather than the act of traversing.
+    grammar_point: を 通じて・を通して (medium・means)
+  - term: うちに
+    meaning: while, during, before (a change occurs)
+    kind: often confused with
+    nuance: 「中を」 describes an action *amidst* a state or condition, often implying movement or engagement
+      within it. 「うちに」 means "while" or "before something undesirable happens," focusing on a time frame
+      where an action should occur, especially implying a time limit or a change that will occur.
+    grammar_point: うちに (while・before change)
 post_false_friends_writeup: Both 「中を」 and 「ところを」 can denote conditions or situations. However, 「中を」 describes
   an action occurring *throughout* or *amidst* a duration or space, suggesting continuity or an encompassing
   environment. In contrast, 「ところを」 points to an action happening *at a specific point* or *critical juncture*
@@ -92,7 +112,11 @@ post_false_friends_writeup: Both 「中を」 and 「ところを」 can denote 
   where an action occurs, while 「に」 indicates a destination or location of existence. Neither conveys
   the sense of traversal or being encompassed *through* something like 「中を」. Similarly, 「の中」 describes
   the *static* internal location, whereas 「中を」 implies an action that interacts with or moves through
-  that internal space.
+  that internal space. Additionally, 「を 通じて・を通して」 describes passage *via* a medium or *by means of* something,
+  focusing on the channel or method, which differs from 「中を」's focus on traversing *within* a space or
+  condition. Finally, 「うちに」 refers to a time frame during which an action is performed, often with an
+  implicit time limit or impending change, rather than the action being performed *amidst* a state as
+  emphasized by 「中を」.
 examples:
   - english: The mother told her son that every day when he comes home from school, he should properly
       clean out the inside of his backpack.
@@ -179,8 +203,8 @@ examples:
       - competing_japanese:
           - 部屋 の 中 に ペット が い た
         english: There was a pet inside the room.
-        hint: This simply states the pet was *inside* the room. We're looking for the action of peeking
-          *into* the room's interior.
+        hint: This simply states being *inside* the room. We're looking for the action of peeking *into*
+          the room's interior.
     scene: Someone checking on their pet due to unusual quietness.
     register: casual
     setting: reflective
@@ -357,7 +381,8 @@ examples:
           the interior of the stronghold.
       - competing_japanese:
           - 敵 の 本拠 地 に 潜り抜け た
-        english: I emerged into the enemy's stronghold.
+        english: This would imply sneaking *into* the stronghold, or perhaps towards a specific point
+          within it. We're looking for moving *through* its interior.
         hint: This would imply sneaking *into* the stronghold, or perhaps towards a specific point within
           it. We're looking for moving *through* its interior.
       - competing_japanese:
@@ -397,7 +422,7 @@ examples:
     register: casual
     setting: sympathetic
     nuance: 「無理しないで」 is a common phrase to advise someone not to overdo it or strain themselves. 「本当に危険だから」
-      adds strong emphasis to the warning, highlighting the speaker's concern.
+      adds strong emphasis to the speaker's concern, highlighting the danger.
   - english: Even through any difficult circumstances in life, one should move forward with hope.
     japanese:
       - 人生 の どんな 困難 な {中 を} も、希望 を 持っ て 進む べき だ。

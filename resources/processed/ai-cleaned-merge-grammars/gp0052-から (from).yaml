@@ -1,9 +1,11 @@
 grammar_point: から (from)
 learn_before:
-  - に (temporal particle)
-  - へ (directional particle)
+  - は (topic and contrast)
+  - が (subject marker)
+  - を (object marker)
+  - に (fixed point・target・time)
   - で (at)
-  - Verb[て] (and then)
+  - です (polite copula)
 learn_after:
   - からには (since; obligation)
   - からして (judging from)
@@ -38,6 +40,12 @@ writeup: |-
   **Important Considerations**
   It's important to differentiate 「から」 in its 'from' meaning from its use as 'because.' When 「から」 follows a noun or な-adjective *and* is preceded by a copula like 「だ」 (da) or 「です」 (desu), it usually functions to express a reason or cause, meaning 'because.' However, in its role indicating 'from,' the copula is typically omitted (e.g., 東京から, not 東京だ から). This distinction is key to avoiding misinterpretation.
 false_friends:
+  - term: から
+    meaning: Because, since
+    kind: often confused with
+    nuance: While this 「から」 indicates a reason or cause, the main grammar point 「から」 indicates a starting
+      point or origin. They share the same spelling but function differently based on context.
+    grammar_point: から (reason cause)
   - term: てから
     meaning: After doing
     kind: similar expression
@@ -57,9 +65,13 @@ false_friends:
       is more versatile for general origins, sources, and time. 「より」 is less common for non-physical origins
       or abstract sources.
     grammar_point: より (from・extent・range)
-post_false_friends_writeup: Be careful not to confuse 「から」, indicating origin, with 「てから」, indicating
-  sequence, or 「ので」, indicating reason. 「から」 always indicates a starting point, while 「てから」 specifies
-  an action that follows another, and 「ので」 provides a justification.
+post_false_friends_writeup: It is crucial to distinguish between the various functions of 「から」. While
+  the core grammar point specifies an origin or starting point ('from'), the homophonous particle 「から」
+  can also serve to express a reason or cause ('because'). Additionally, do not confuse it with compounds
+  like 「てから」, which indicates a sequence of actions ('after doing something'), or with 「ので」, another particle
+  used to express reasons. Lastly, 「より」 can also denote a starting point but often carries nuances of
+  comparison or more specific directional routes, whereas 「から」 is more broadly used for general origins,
+  sources, and time.
 examples:
   - english: I walk home from Tokyo.
     japanese:
@@ -224,7 +236,7 @@ examples:
           that indicates the origin of the object's material.
       - competing_japanese:
           - 木 な の で、丈夫 な 机 です。
-        english: Because it's wood, it's a sturdy desk.
+        english: Because it's a historical fact, its credibility is high.
         hint: 「ので」 expresses a reason. We're looking for a particle that indicates the material origin
           of the desk, not a reason about its properties.
     scene: A craftsman proudly presenting a piece of furniture they made.

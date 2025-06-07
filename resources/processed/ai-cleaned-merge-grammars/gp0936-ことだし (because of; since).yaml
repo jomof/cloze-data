@@ -2,9 +2,11 @@ grammar_point: ことだし (because of; since)
 learn_before:
   - から (reason cause)
   - し〜し (and; listing reasons)
+  - ので (reason)
 learn_after:
   - からには (since; obligation)
   - だからと言って (even so)
+  - ものだから (reason・excuse)
 id: gp0936
 meaning: (And) so, Because, Since (implying other unstated reasons)
 pronunciation:
@@ -61,9 +63,31 @@ false_friends:
       known characteristic and the outcome. In contrast, 「ことだし」 suggests X's characteristic is one of
       many reasons leading to the outcome, feeling less definitive about the causal chain.
     grammar_point: ことだから (given the nature of)
+  - term: ものだから
+    meaning: Because, the reason is...
+    kind: similar expression
+    nuance: 「ものだから」 is typically used when providing an excuse or a strong reason, often implying a personal
+      or unavoidable circumstance. Unlike 「ことだし」, it doesn't necessarily imply other unstated reasons,
+      but rather that the stated reason is the definitive one for the speaker's action or situation.
+    grammar_point: ものだから (reason・excuse)
+  - term: ことから
+    meaning: From the fact that; because; due to; given that.
+    kind: similar expression
+    nuance: 「ことから」 focuses on deriving a conclusion or understanding from a specific fact or observation.
+      While it indicates a reason, it emphasizes the factual basis rather than implying other contributing
+      factors as 「ことだし」 does. It often explains why something is understood in a certain way.
+    grammar_point: ことから (from the fact that)
+  - term: それに
+    meaning: And, Besides, Moreover, In addition
+    kind: similar expression
+    nuance: 「それに」 explicitly adds another reason or piece of information to what has already been stated.
+      While 「ことだし」 implies additional unstated reasons, 「それに」 requires them to be stated sequentially.
+      「ことだし」 allows for a single stated reason to be sufficient while hinting at more; 「それに」 requires
+      listing each reason.
+    grammar_point: それに (in addition)
 post_false_friends_writeup: While 「ことだし」 shares meaning with other causal conjunctions like 「から」 and 「ので」,
-  its core nuance lies in implying that the stated reason is **one among several unmentioned reasons**.
-  「から」 and 「ので」 typically present a single, direct cause for an action or conclusion. Similarly, 「～のことだから」,
+  its core nuance lies in implying that the stated reason is one among several unmentioned reasons. 「から」
+  and 「ので」 typically present a single, direct cause for an action or conclusion. Similarly, 「～のことだから」,
   while indicating an expectation based on someone's known character, focuses on that specific characteristic
   as the direct cause. In contrast, 「ことだし」 subtly suggests a broader context of motivations or factors
   contributing to the situation, making it suitable for gentle suggestions or when providing a sufficient,
@@ -243,6 +267,22 @@ examples:
       setting when discussing official matters. 「確認 し て ください」 is a polite request, emphasizing the gravity
       of the instruction. This construction implies that the official nature of the request, along with
       perhaps unstated considerations like legal implications or company policy, necessitates extra caution.
+  - english: Since this book is very interesting, I think I'll buy it.
+    japanese:
+      - この 本 は とても 面白い {こと だ し}、買おう と 思う。
+      - この 本 は とても 面白い {こと だ し}、買い ます。
+    english_literally: This book is very interesting, therefore, buy I think.
+    competing_grammar:
+      - competing_japanese:
+          - この 本 は とても 面白い から、買おう と 思う。
+        english: Because this book is very interesting, I think I'll buy it.
+        hint: 「ことだし」 implies that its interesting nature is one of several reasons to buy it, perhaps
+          including its author, a sale, or recommendations. 「から」 would state the interesting nature as
+          the sole reason. We are looking for a decision influenced by broader, potentially unstated,
+          factors.
+    scene: A person browsing in a bookstore finds a captivating book.
+    register: casual
+    setting: reflective
 post_example_writeup: As demonstrated by these examples, 「ことだし」 is a versatile expression that allows
   for a nuanced explanation of reasons. It subtly communicates that while the stated reason is sufficient,
   there are other contributing factors at play, making it a natural choice for polite suggestions, considerate

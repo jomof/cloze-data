@@ -2,10 +2,16 @@ grammar_point: へ (directional particle)
 learn_before:
   - です (polite copula)
   - に (fixed point・target・time)
+  - で (at)
+  - から (from)
+  - を (object marker)
 learn_after:
   - に向かって (physical direction)
   - に向けて (aim and purpose)
-  - を 通じて・を通して (medium・means)
+  - Verb+にいく (go to do)
+  - ていく (to continue or move away)
+  - Vて + くる (gradual change or continuation)
+  - を (movement through space)
 id: gp0058
 meaning: To, toward
 pronunciation:
@@ -72,14 +78,27 @@ false_friends:
       future event. It carries a nuance of planning or preparation, rather than just physical movement
       like 「へ」.
     grammar_point: に向けて (aim and purpose)
+  - term: を
+    meaning: Movement through space
+    kind: similar expression
+    nuance: While 「へ」 indicates movement *towards* a destination, 「を」 indicates movement *through*, *across*,
+      or *along* a path or space. 「へ」 is about the end goal, 「を」 is about the traversal.
+    grammar_point: を (movement through space)
+  - term: から
+    meaning: From (starting point)
+    kind: similar expression
+    nuance: 「から」 specifies the starting point or origin of movement, contrasting directly with 「へ」 which
+      specifies the destination or direction *to*.
+    grammar_point: から (from)
 post_false_friends_writeup: To differentiate between 「へ」 and 「に」, remember that 「へ」 focuses on the act
   of moving towards something, while 「に」 emphasizes the arrival or existence at a particular location.
   For instance, you might say 「学校へ行く」 (go towards school), but 「学校にいる」 (be at school). While both can
   be used for destination, 「へ」 highlights the process or journey, while 「に」 highlights the result or static
   location. Furthermore, while 「まで」 indicates a clear endpoint or limit of movement, 「へ」 denotes an ongoing
-  trajectory. Lastly, 「に向かって」 adds a stronger sense of physical orientation or movement directly *towards*
-  something, and 「に向けて」 implies an aim or purpose *towards* a goal, both being more deliberate than the
-  general direction indicated by 「へ」.
+  trajectory. 「に向かって」 adds a stronger sense of physical orientation or movement directly *towards* something,
+  and 「に向けて」 implies an aim or purpose *towards* a goal, both being more deliberate than the general direction
+  indicated by 「へ」. In contrast, 「を」 marks movement *through* or *across* a space, and 「から」 indicates
+  the *origin* or starting point of movement, directly opposing the directional meaning of 「へ」.
 examples:
   - english: Every Sunday, I go to the station.
     japanese:
@@ -231,6 +250,11 @@ examples:
         english: The airplane took off facing the Pacific Ocean.
         hint: This phrase emphasizes the orientation of the aircraft. While relevant, the original particle
           highlights the general direction of movement over a vast area, not just the initial facing.
+      - competing_japanese:
+          - 飛行 機 は 太平 洋 を 飛び まし た。
+        english: The airplane flew across the Pacific Ocean.
+        hint: This particle indicates movement *through* or *across* a space, focusing on the traversal
+          rather than the direction *to* a destination. We're talking about the direction of takeoff.
     scene: A news reporter describes an aircraft's departure, highlighting its trajectory over a vast
       expanse of water.
     register: formal
@@ -327,6 +351,11 @@ examples:
         english: The river flows up to the sea.
         hint: This phrase implies a limit or endpoint where the flow might stop. The river, however, flows
           *into* or *towards* the sea continuously, not just up to its boundary.
+      - competing_japanese:
+          - 川 は 海 を 流れ て い ます。
+        english: The river flows through the sea (e.g., as a current).
+        hint: This particle indicates movement *through* or *across* a space. We are describing the river's
+          movement *towards* the sea, not its flow *within* or *across* the sea itself.
     scene: A nature documentary narrator describes the natural course of a river.
     register: formal
     setting: informative
@@ -351,6 +380,11 @@ examples:
         english: Let's go as far as the summit.
         hint: This phrase implies reaching a boundary or limit. While the summit is a destination, the
           nuance here is about the active process of moving *towards* it, not just reaching its edge.
+      - competing_japanese:
+          - 頂上 を 目指し ましょ う。
+        english: Let's aim for the summit.
+        hint: This expression means to *aim for* or *set one's sights on* something, rather than describing
+          the physical movement *towards* it. We're discussing the act of heading there.
     scene: A hiking guide encourages their group to continue climbing towards the top of the mountain.
     register: semi-formal
     setting: inspirational

@@ -1,11 +1,16 @@
 grammar_point: Verb[た・ている]+Noun (verb-modified noun)
 learn_before:
-  - ている (~ing)
+  - Verbs (non-past plain)
   - る-verb (past)
+  - ている (~ing)
   - い-Adjective + Noun (describing nouns)
+  - Verb[て] (and then)
 learn_after:
   - Relative Clause (modifying nouns)
   - こと (making a verb a noun)
+  - Verb[た]までだ (just・merely・simply)
+  - ているところ (in the process of)
+  - たばかり (just did)
 id: gp0070
 meaning: Noun modified by a verb in the past or continuous form (relative clause).
 conjugations:
@@ -52,19 +57,28 @@ false_friends:
   - term: Verb[る]+Noun
     meaning: Noun modified by a verb in the non-past/dictionary form (relative clause).
     kind: similar expression
-    nuance: Unlike `Verb[た・ている]+Noun`, `Verb[る]+Noun` describes a noun related to a future or habitual
-      action, or a general characteristic, not a completed or ongoing one.
+    nuance: Unlike Verb[た・ている]+Noun, Verb[る]+Noun describes a noun related to a future or habitual action,
+      or a general characteristic, not a completed or ongoing one.
     grammar_point: <suggest>:Verb[dictionary]+Noun (noun modified by a non-past verb)
   - term: Verb[ていた]+Noun
     meaning: Noun modified by a verb in the past progressive form.
     kind: similar expression
-    nuance: While `Verb[ている]+Noun` indicates an action currently in progress or a present state, `Verb[ていた]+Noun`
+    nuance: While Verb[ている]+Noun indicates an action currently in progress or a present state, Verb[ていた]+Noun
       describes a past action that was ongoing or a state that existed in the past.
     grammar_point: ていた (past continuous or state)
+  - term: Verb[plain form] + こと
+    meaning: Nominalizes a verb, turning it into a noun-like phrase (the act of verbing).
+    kind: often confused with
+    nuance: While Verb[た・ている]+Noun modifies a noun by describing what kind of noun it is based on an action,
+      Verb[plain form] + こと turns the entire verb phrase into a noun, referring to the act or concept
+      of doing the verb itself, not describing an existing noun.
+    grammar_point: こと (making a verb a noun)
 post_false_friends_writeup: Be careful not to confuse verb-modified nouns with constructions that use
-  the dictionary form or past progressive form, as they convey different temporal nuances. Also, constructions
-  like 「時」 introduce clauses that specify timing, rather than directly modifying nouns. With verb-modified
-  nouns, the focus is on describing the noun itself based on a completed or ongoing action.
+  the dictionary form or past progressive form, as they convey different temporal nuances. Constructions
+  like 「時」 introduce clauses that specify timing, rather than directly modifying nouns. Additionally,
+  nominalizations with 「こと」 refer to the action or concept itself, rather than modifying a specific noun.
+  With verb-modified nouns, the focus is on describing the noun itself based on a completed or ongoing
+  action.
 examples:
   - english: My friend showed me the picture they took.
     japanese:
@@ -489,5 +503,68 @@ examples:
       requires attention. The formal register and informative setting, along with the instruction 「直す
       必要 が あり ます」, suggest a practical, direct conversation between, for example, an older male homeowner
       and a male repair person.
+  - english: The mistake I made yesterday caused a big problem.
+    japanese:
+      - 昨日 {し た 間違い} が 大きな 問題 を 引き起こし た。
+      - 昨日 {し た 間違い} が 大きな 問題 を 引き起こし まし た。
+      - 先日 {犯し た 間違い} が 大きな トラブル を 招い た。
+      - 私 が 昨日 {犯し た 誤ち} が 大 問題 に なっ た。
+    english_literally: Yesterday, did mistake, big problem caused.
+    competing_grammar:
+      - competing_japanese:
+          - 昨日 間違い を し まし た。それ が 大きな 問題 を 引き起こし まし た。
+        english: I made a mistake yesterday. That caused a big problem.
+        hint: This separates the two actions. We are looking for a direct modification of the noun 'mistake'
+          by the verb 'made'.
+      - competing_japanese:
+          - 昨日 {する 間違い} は いつ も 問題 に なる。
+        english: Mistakes I make yesterday always become a problem. (General statement about future/habitual)
+        hint: This refers to mistakes that are habitually made, or will be made. We are talking about
+          a specific mistake that *was* made.
+      - competing_japanese:
+          - 昨日 {し て いる 間違い} が 大きな 問題 を 引き起こし て いる。
+        english: The mistake I am currently making is causing a big problem.
+        hint: This refers to a mistake that is ongoing. We are talking about a mistake that was completed
+          in the past.
+    scene: A manager discussing a recent project setback with a team member.
+    register: formal
+    setting: professional
+    conjugation: past plain (～た)
+    nuance: 「した」 is the past form of 「する」, modifying 「間違い」 to specify which particular mistake is being
+      referred to. The formal register is indicated by polite endings like 「引き起こし ました」, appropriate for
+      a professional setting discussing serious matters.
+  - english: The flowers blooming in the garden are beautiful.
+    japanese:
+      - 庭 に {咲い て いる 花} は 綺麗 です。
+      - 庭 に {咲い て いる 花} は 綺麗 だ ね。
+      - 庭 に {咲い て いる 花} は とても 美しい。
+      - この 庭 に {咲い て いる 花}、本当 に 素敵 ね。
+      - うち の 庭 に {咲い て いる 花}、めっちゃ 綺麗 や で。
+    english_literally: Garden, blooming flowers, are beautiful.
+    competing_grammar:
+      - competing_japanese:
+          - 庭 で 花 が 咲い て い ます。その 花 は 綺麗 です。
+        english: Flowers are blooming in the garden. Those flowers are beautiful.
+        hint: This separates the two pieces of information. We are looking for a direct modification of
+          the noun 'flowers' by the verb 'blooming'.
+      - competing_japanese:
+          - 庭 に {咲く 花} は 季節 を 感じ させ ます。
+        english: Flowers that bloom in the garden make us feel the season. (General statement about habitual
+          action)
+        hint: This refers to flowers that bloom generally or habitually. We are talking about specific
+          flowers that are *currently* in bloom.
+      - competing_japanese:
+          - 庭 に {咲い て い た 花} は とても 綺麗 だっ た です。
+        english: The flowers that were blooming in the garden were very beautiful.
+        hint: This refers to flowers that were blooming in the past. We are talking about flowers that
+          are *currently* in bloom.
+    scene: Two neighbors admiring a garden.
+    register: casual
+    setting: friendly
+    conjugation: progressive (～ている)
+    nuance: 「咲い て いる」 describes the ongoing state of the flowers being in bloom. 「咲い て いる 花」 specifies
+      which flowers are being referred to. The casual register is natural for friendly conversation between
+      neighbors. The use of 「～綺麗 だ ね」 and 「めっちゃ 綺麗 や で」 (Kansai dialect) contributes to the friendly and
+      informal tone.
 post_example_writeup: Remember that the verb always comes before the noun it modifies. This is a fundamental
   aspect of Japanese sentence structure.

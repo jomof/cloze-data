@@ -2,9 +2,11 @@ grammar_point: になる・くなる (to become)
 learn_before:
   - だ (casual copula)
   - い-Adjectives (adjectives ending in い)
+  - な-Adjectives (adjectival nouns)
 learn_after:
   - てくる (movement towards or gradual change)
   - ようになる (to come to be)
+  - 化する (to make become ~ize)
 id: gp0093
 meaning: To become (a noun or adjective)
 conjugations:
@@ -16,6 +18,14 @@ conjugations:
     form: くなる
     rarity: common
     meaning: to become (i-adjective)
+  - conjugation-type: non-past polite (～ます)
+    form: になります
+    rarity: common
+    meaning: to become (noun/na-adjective, polite)
+  - conjugation-type: non-past polite (～ます)
+    form: くなります
+    rarity: common
+    meaning: to become (i-adjective, polite)
   - conjugation-type: past plain (～た)
     form: になった
     rarity: common
@@ -24,6 +34,14 @@ conjugations:
     form: くなった
     rarity: common
     meaning: became (i-adjective)
+  - conjugation-type: past polite (～ました)
+    form: になりました
+    rarity: common
+    meaning: became (noun/na-adjective, polite)
+  - conjugation-type: past polite (～ました)
+    form: くなりました
+    rarity: common
+    meaning: became (i-adjective, polite)
   - conjugation-type: negative plain (～ない)
     form: にならない
     rarity: common
@@ -64,6 +82,22 @@ conjugations:
     form: くなれば
     rarity: common
     meaning: if it becomes (i-adjective)
+  - conjugation-type: desiderative (～たい)
+    form: になりたい
+    rarity: common
+    meaning: want to become (noun/na-adjective)
+  - conjugation-type: desiderative (～たい)
+    form: くなりたい
+    rarity: common
+    meaning: want to become (i-adjective)
+  - conjugation-type: potential (～られる/～える)
+    form: になれる
+    rarity: common
+    meaning: can become (noun/na-adjective)
+  - conjugation-type: potential (～られる/～える)
+    form: くなれる
+    rarity: common
+    meaning: can become (i-adjective)
 pronunciation:
   katakana: ニナル・クナル
   romaji: ninaru / kunaru
@@ -410,7 +444,7 @@ examples:
     scene: A parent noticing their baby's increasing volume of crying.
     register: casual
     setting: reflective
-    conjugation: progressive (～ている)
+    conjugation: te-form (～て)
     speaker_gender: female
     listener_gender: no one
     nuance: 「だんだん」 (gradually) paired with 「なっ て き た」 (has been becoming/came to be) emphasizes the continuous

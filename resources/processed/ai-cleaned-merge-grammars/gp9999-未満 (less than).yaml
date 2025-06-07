@@ -1,13 +1,12 @@
 grammar_point: 未満 (less than)
+better_grammar_point_name:
+  - 未満 (strictly less than)
 learn_before:
   - より (comparative)
-  - 少ない (few・little)
-  - たくさん (many・a lot)
-  - になる・くなる (to become)
+  - Number+も (emphatic quantity)
 learn_after:
-  - には及ばない (cannot compare)
-  - だに (even a minimal action or inaction)
   - 〜たりとも〜ない (not even a single)
+  - を限りに (as of)
 id: gp9999
 meaning: Less than; under; below
 pronunciation:
@@ -53,9 +52,32 @@ false_friends:
     kind: antonym
     nuance: '{超える} expresses a value being greater than a certain limit, effectively the opposite of {未満}.'
     grammar_point: <suggest>:超える (to exceed)
-post_false_friends_writeup: When distinguishing between 未満 and 以下, remember that 未満 means 'strictly less
-  than,' always excluding the number, while 以下 means 'less than or equal to,' always including the number.
-  Think of 未満 as 'not having reached that point yet' and 以下 as 'that point or lower.'
+  - term: 以上 (more than or equal)
+    meaning: More than or equal to; That's all.
+    kind: antonym
+    nuance: While {未満} defines a strict upper boundary (exclusive), {以上} defines an inclusive lower boundary,
+      meaning the value can be equal to or more than the given number.
+    grammar_point: 以上 (more than or equal)
+  - term: 以内 (within)
+    meaning: Within; Less than or equal to; Not exceeding
+    kind: similar expression
+    nuance: '{以内} specifies a range from zero up to and including the stated number, whereas {未満} strictly
+      excludes the number. For example, 5メートル以内 (within 5 meters) includes 5 meters, but 5メートル未満 (less
+      than 5 meters) does not.'
+    grammar_point: 以内 (within)
+  - term: に満たない (not reaching)
+    meaning: Not reaching; falling short of; less than
+    kind: similar expression
+    nuance: '{に満たない} directly expresses ''not reaching'' a certain amount and implies ''less than''. It
+      is often used to convey inadequacy or insufficiency, whereas {未満} is primarily a precise mathematical
+      boundary.'
+    grammar_point: <suggest>:に満たない (not reaching)
+post_false_friends_writeup: When working with numerical boundaries in Japanese, it is vital to distinguish
+  between exclusive and inclusive limits. {未満} strictly means 'less than,' always excluding the number.
+  Conversely, {以下} means 'less than or equal to,' including the number. Similarly, {以上} means 'greater
+  than or equal to,' while expressions like {超える} indicate 'exceeding' a value. {以内} implies 'within'
+  a range, including the upper limit. Use {未満} for strict exclusion, and be mindful of context and formality
+  when choosing between precise terms like {未満} and more general expressions such as 「より少ない」 or 「に満たない」.
 examples:
   - english: Children under 6 years old do not need a ticket.
     japanese:
@@ -183,7 +205,7 @@ examples:
     nuance: 'In formal application requirements, 「30歳未満」 ensures clarity: applicants who are exactly 30
       years old are not eligible, only those who are 29 or younger.'
     etymology: 「応募者」 (ouboshya) means 'applicant,' combining 「応」 (ou - respond, comply) and 「募」 (bo -
-      recruit, raise). This reflects the act of responding to a recruitment call.
+      recruit, raise). This reflects the act of responding to a recruitment call.'
   - english: The success rate for this difficult procedure is less than 5%.
     japanese:
       - この 難しい 手術 の 成功 率 は 5 % {未満} です。

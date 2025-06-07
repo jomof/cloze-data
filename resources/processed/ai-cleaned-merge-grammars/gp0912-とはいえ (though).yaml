@@ -1,9 +1,13 @@
 grammar_point: とはいえ (though)
 learn_before:
   - が (but)
+  - ても (even if・even though)
+  - のに (unexpected result)
   - ものの (although・but)
-  - たかが (only just)
   - だからと言って (even so)
+learn_after:
+  - (っ)たって (even if)
+  - (っ)たって (hypothetical・futile)
 id: gp0912
 meaning: Though, although (I admit that), be that as it may, nonetheless
 pronunciation:
@@ -24,12 +28,18 @@ etymology: The grammar point 「とはいえ」 comes from 「とは言う」 (t
   'though' or 'although'). The 「は」 here is a topic marker, emphasizing the preceding statement, while
   「いえ」 indicates a concession or contrast. Thus, the phrase acknowledges a statement but introduces a
   contrasting idea. It literally means something like 'even if one were to say that...'.
-writeup: |-
-  「とはいえ」 is a sophisticated Japanese grammar pattern employed to acknowledge a previous statement or fact, while simultaneously introducing a contrasting or qualifying point. It serves to convey a sense of 'although (A) is true, (B) is also true' or 'be that as it may.' Think of it as saying, 'I concede that point, but...' or 'Having said that, consider this...'.
-
-  This structure frequently appears in formal settings, such as academic papers, official speeches, or serious discussions. It's often used when the speaker or writer wishes to present a balanced view, or to gently counter a previously stated fact without directly refuting it. The first clause (A) typically presents a fact or commonly held belief, while the second clause (B) introduces a counterpoint, a limitation, or a different perspective that doesn't negate A but adds important context.
-
-  The phrase technically derives from `〜と` (quotative particle) + `は` (topic/contrastive particle) + `言え` (imperative of 言う 'to say'). This literal breakdown emphasizes the acknowledgment of the preceding statement. As such, it can attach to the plain form of verbs, adjectives, and even nouns (with or without `だ`), making it highly versatile for connecting clauses.
+writeup: 「とはいえ」 is a sophisticated Japanese grammar pattern employed to acknowledge a previous statement
+  or fact, while simultaneously introducing a contrasting or qualifying point. It serves to convey a sense
+  of 'although (A) is true, (B) is also true' or 'be that as it may.' Think of it as saying, 'I concede
+  that point, but...' or 'Having said that, consider this...'. This structure frequently appears in formal
+  settings, such as academic papers, official speeches, or serious discussions. It's often used when the
+  speaker or writer wishes to present a balanced view, or to gently counter a previously stated fact without
+  directly refuting it. The first clause (A) typically presents a fact or commonly held belief, while
+  the second clause (B) introduces a counterpoint, a limitation, or a different perspective that doesn't
+  negate A but adds important context. The phrase technically derives from 〜と (quotative particle) + は
+  (topic/contrastive particle) + 言え (imperative of 言う 'to say'). This literal breakdown emphasizes the
+  acknowledgment of the preceding statement. As such, it can attach to the plain form of verbs, adjectives,
+  and even nouns (with or without だ), making it highly versatile for connecting clauses.
 false_friends:
   - term: にせよ・にしろ
     meaning: Even if, even though, no matter, whether… or
@@ -44,10 +54,34 @@ false_friends:
       contrast, 「とはいえ」 introduces a contrasting thought despite an acknowledged fact, not an unconditional
       statement.
     grammar_point: であれ (even if)
-post_false_friends_writeup: To avoid confusion, remember that 「とはいえ」 is used when you want to acknowledge
-  a point that is largely accepted as true, and then immediately introduce a strong contrasting or qualifying
-  thought. It's about balancing two ideas that might seem contradictory, not just presenting alternatives
-  or covering all possibilities like the other expressions.
+  - term: ものの
+    meaning: Although, but, even though
+    kind: similar expression
+    nuance: While 「ものの」 simply indicates a contrast or a slight disappointment after a fact, 「とはいえ」 acknowledges
+      a fact or statement and then introduces a more significant or often surprising counterpoint. 「ものの」
+      is generally milder and can sometimes imply the speaker's own slight disappointment or resignation.
+    grammar_point: ものの (although・but)
+  - term: どころか
+    meaning: Far from, anything but, let alone
+    kind: similar expression
+    nuance: 「どころか」 strongly implies that a situation is the opposite of what one might expect or is far
+      from a certain state, often escalating to an extreme. In contrast, 「とはいえ」 acknowledges a point as
+      true but then presents a contrasting aspect that coexists, without necessarily negating the first
+      point entirely.
+    grammar_point: どころか (far from)
+  - term: にもかかわらず
+    meaning: Despite, in spite of, regardless, nevertheless
+    kind: similar expression
+    nuance: 「にもかかわらず」 emphasizes that an action or state occurred *despite* a challenging or hindering
+      condition, focusing on the lack of influence the condition had. 「とはいえ」, on the other hand, acknowledges
+      a fact as true and then introduces a contrasting aspect that exists *alongside* it, often providing
+      a more balanced view rather than overcoming a hindrance.
+    grammar_point: にもかかわらず (despite)
+post_false_friends_writeup: To avoid confusion with similar expressions, remember that 「とはいえ」 is used
+  when you want to acknowledge a point that is largely accepted as true, and then immediately introduce
+  a strong contrasting or qualifying thought. It's about balancing two ideas that might seem contradictory,
+  not just presenting alternatives or suggesting overcoming an obstacle. Pay close attention to whether
+  the first part is a factual statement being acknowledged or a hypothetical/contrary condition.
 examples:
   - english: Although he is a student, his specialized knowledge is comparable to that of a teacher.
     japanese:
@@ -139,7 +173,7 @@ examples:
     nuance: The manager's use of 「とはいえ」 in a professional setting conveys a respectful acknowledgment
       of the new employee's status as 「新入社員」 (new employee) while emphasizing her exceptional capability
       (「驚く ほど 仕事 が できる」). This phrasing maintains professionalism even when expressing surprise, as opposed
-      to a more casual connector like `〜だけど`.
+      to a more casual connector like 「だけど」.
   - english: Though that person is wealthy, they certainly don't live a luxurious life.
     japanese:
       - あの 人 は お 金持ち {と は いえ}、決して 贅沢 な 暮らし は し ない。
@@ -268,5 +302,3 @@ post_example_writeup: Each example demonstrates how 「とはいえ」 functions
   counterpoint rather than a direct contradiction.
 sources:
   bunpro: https://bunpro.jp/grammar_points/とはいえ
-lint-errors:
-  - '[rule-11] warning learn_after has 0 item(s); must have at least 2'

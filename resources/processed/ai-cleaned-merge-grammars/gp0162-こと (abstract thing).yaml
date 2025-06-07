@@ -2,26 +2,29 @@ grammar_point: こと (abstract thing)
 learn_before:
   - Verbs (non-past plain)
   - い-Adjectives (adjectives ending in い)
-  - Verb[て] (and then another event)
-  - Verb[masu-stem] (conjunction)
+  - な-Adjectives (adjectival nouns)
+  - の (explanatory softening particle)
+  - Relative Clause (modifying nouns)
 learn_after:
   - することができる (can・be able to)
   - ことにする (to decide to)
   - ようになる (to come to be)
   - ものだ (general truth expectation)
+  - ことはない (no need to or never happens)
+  - ことだ (should・ought to)
 id: gp0162
 meaning: Thing; matter; event; fact; abstract thing
 pronunciation:
   katakana: コト
   romaji: koto
 formation:
-  '[Verb (plain form)] + こと': Used to nominalize verbs, turning them into abstract nouns. For example,
-    話す こと (the act of speaking), 勉強 する こと (the act of studying).
-  '[Adjective (i-form)] + こと': Used to nominalize i-adjectives, turning them into abstract nouns. For
-    example, 面白い こと (a thing that is interesting), 難しい こと (a thing that is difficult).
-  '[Adjective (na-form)] + な + こと': Used to nominalize na-adjectives, turning them into abstract nouns.
-    For example, 大事 な こと (a thing that is important), 好き な こと (a thing that is liked).
-  '[Noun] + の + こと': Used to talk about things related to the noun, not the noun itself. The noun is what
+  Verb (plain form) + こと: Used to nominalize verbs, turning them into abstract nouns. For example, 話す
+    こと (the act of speaking), 勉強 する こと (the act of studying).
+  Adjective (i-form) + こと: Used to nominalize i-adjectives, turning them into abstract nouns. For example,
+    面白い こと (a thing that is interesting), 難しい こと (a thing that is difficult).
+  Adjective (na-form) + な + こと: Used to nominalize na-adjectives, turning them into abstract nouns. For
+    example, 大事 な こと (a thing that is important), 好き な こと (a thing that is liked).
+  Noun + の + こと: Used to talk about things related to the noun, not the noun itself. The noun is what
     is being discussed or considered. For example, 先生 の こと (things about the teacher), 試験 の こと (things
     about the exam).
 jlpt: N5
@@ -35,31 +38,42 @@ details:
 etymology: The word 「こと」 originally comes from the verb 「言 (こと)」, meaning "to say" or "to speak". Over
   time, it evolved to refer to the content of what is said, and eventually to abstract things, matters,
   or events in general.
-writeup: The noun 「こと」 is used to refer to abstract things, matters, or events. It is often used to nominalize
-  verbs and adjectives, turning them into nouns. It is important to remember that 「こと」 refers to intangible
-  concepts, unlike 「もの」, which refers to tangible objects.When used with verbs and i-adadjectives, 「こと」
-  directly follows the plain form. For example, 「食べる」 (taberu) becomes 「食べること」 (taberu koto), meaning
-  "eating (the act of)". Likewise, 「面白い」 (omoshiroi) becomes 「面白いこと」 (omoshiroi koto), meaning "(the thing
-  that is) interesting".When used with na-adjectives, 「な」 is inserted between the adjective stem and 「こと」.
-  For example, 「大事」 (daiji) becomes 「大事なこと」 (daiji na koto), meaning "(the thing that is) important".When
-  used with nouns, 「の」 is inserted between the noun and 「こと」. For example, 「先生」 (sensei) becomes 「先生のこと」
-  (sensei no koto), meaning "(the thing about) the teacher".
+writeup: |-
+  The noun 「こと」 is used to refer to abstract things, matters, or events. It is often used to nominalize verbs and adjectives, turning them into nouns. It is important to remember that 「こと」 refers to intangible concepts, processes, or general ideas, distinct from tangible objects. It also contrasts with another nominalizer, 「の」, in its nuance and typical usage.
+
+  When used with verbs and i-adjectives, 「こと」 directly follows the plain form. For example, 「食べる」 (taberu) becomes 「食べること」 (taberu koto), meaning "eating (the act of)". Likewise, 「面白い」 (omoshiroi) becomes 「面白いこと」 (omoshiroi koto), meaning "(the thing that is) interesting".
+
+  When used with na-adjectives, 「な」 is inserted between the adjective stem and 「こと」. For example, 「大事」 (daiji) becomes 「大事なこと」 (daiji na koto), meaning "(the thing that is) important".
+
+  When used with nouns, 「の」 is inserted between the noun and 「こと」. For example, 「先生」 (sensei) becomes 「先生のこと」 (sensei no koto), meaning "(the thing about) the teacher".
 false_friends:
   - term: もの
     meaning: thing (tangible)
     kind: similar expression
-    nuance: Unlike 「こと」, 「もの」 refers to concrete, tangible objects or things.
-    grammar_point: <suggest>:もの (tangible thing)
+    nuance: Unlike 「こと」, 「もの」 refers to concrete, tangible objects or things. While 「こと」 nominalizes actions
+      or states as abstract concepts, 「もの」 is used when the result or entity itself is a concrete, perceivable
+      item.
+    grammar_point: <suggest>:もの (tangible)
   - term: という
-    meaning: the thing called
+    meaning: to be called; to mean
     kind: often confused with
-    nuance: While 「こと」 nominalizes, 「という」 is used to define or specify something. For example, 「猫という動物」
-      means "the animal called cat".
-    grammar_point: <suggest>:という (called)
-post_false_friends_writeup: To avoid mixing up 「こと」 with 「もの」, remember that 「こと」 is used for abstract
-  ideas, while 「もの」 is for physical objects. As for 「という」, it is used to define or describe a specific
-  item, concept, or event, rather than nominalizing a verb or adjective. For example, 「東京という街」 (the city
-  called Tokyo) to specify Tokyo.
+    nuance: While 「こと」 nominalizes verbs/adjectives into abstract ideas, 「という」 introduces definitions,
+      explanations, or quotes. It specifies what something is called or what is meant, rather than turning
+      an action into an abstract noun.
+    grammar_point: という (naming and definition)
+  - term: の (explanatory softening particle)
+    meaning: nominalizer (specific action/explanation)
+    kind: similar expression
+    nuance: Both 「こと」 and 「の」 can nominalize verbs/clauses. However, 「こと」 tends to refer to a general
+      act, abstract concept, or formal statement (e.g., 'the act of doing X'). 「の」 often refers to a specific,
+      concrete action or an action that serves as an explanation for a situation, and it can also soften
+      a statement or seek agreement. For example, 「本を読むのが好き」 (I like reading books - specific habit) vs.
+      「本を読むことは大切だ」 (Reading books is important - general concept).
+    grammar_point: の (explanatory softening particle)
+post_false_friends_writeup: |-
+  To avoid mixing up 「こと」 with 「もの」, remember that 「こと」 is used for abstract ideas, while 「もの」 is for physical objects. For example, 「大切なこと」 (an important matter) vs. 「大切なもの」 (an important item/possession).
+
+  When distinguishing 「こと」 from 「の」, consider the nuance: 「こと」 is for general, abstract concepts, rules, or formal statements (e.g., 「運動することは健康に良い」 - Exercising is good for health, a general truth). 「の」 is often used for more specific actions, habits, or as part of an explanation or informal nuance (e.g., 「料理するのが好きです」 - I like cooking, referring to the act as a hobby). While 「という」 can also refer to concepts, it typically defines or clarifies, like 「愛という感情」 (the emotion called love), rather than abstracting an action or state as 「こと」 does.
 examples:
   - english: Learning new words every day is fun.
     japanese:
@@ -71,8 +85,13 @@ examples:
       - competing_japanese:
           - 毎日 新しい 言葉 を 覚える もの は 楽しい です。
         english: The thing (physical object) for learning new words every day is fun.
-        hint: 「もの」 refers to tangible things, not the abstract act of learning. We're looking for the
+        hint: 「もの」 implies a physical object, not the abstract act of learning. We're looking for the
           abstract act of learning.
+      - competing_japanese:
+          - 毎日 新しい 言葉 を 覚える の は 楽しい です。
+        english: The act of learning new words every day is fun.
+        hint: While 「の」 can nominalize, 「こと」 emphasizes the general, conceptual nature of the act, suitable
+          for a universal statement. We're looking for the abstract concept.
     scene: A language student is sharing their enjoyment of the learning process.
     register: formal
     setting: informative
@@ -95,6 +114,11 @@ examples:
         english: What I like most (as a tangible thing) is watching the stars.
         hint: 「もの」 implies a physical object, while 「こと」 is used for abstract concepts or actions. We're
           looking for an abstract preference.
+      - competing_japanese:
+          - 私 が 一番 好き な の は、星 を 見る こと です。
+        english: What I like most is watching the stars.
+        hint: 「の」 can also nominalize, but 「こと」 is generally preferred for expressing abstract preferences
+          or general concepts like hobbies. We're looking for the general concept of a favorite activity.
     scene: A quiet person is revealing their favorite peaceful activity to a friend.
     register: semi-formal
     setting: intimate
@@ -125,7 +149,7 @@ examples:
     scene: A friend is describing someone's character, highlighting their family-oriented nature.
     register: casual
     setting: friendly
-    nuance: Here, 「家族 の こと」 refers to matters or abstract aspects related to the family, such as their
+    nuance: Here, 「家族 の こと」 refers to the abstract matters or aspects related to the family, such as their
       well-being, future, or feelings, rather than the family members as concrete individuals. The original
       sentence with 「し て い ます」 maintains a slight politeness even in a casual context, common in friendly
       conversation. Variations like 「し て いる よ」 and 「し て いる ね」 are more explicitly casual and friendly.
@@ -219,6 +243,11 @@ examples:
         english: Being honest is the most important thing (physical object).
         hint: 「もの」 refers to a tangible object, not an abstract concept like "honesty" or "the act of
           being honest." We're looking for the abstract principle.
+      - competing_japanese:
+          - 正直 で ある の は、一番 大切 な こと です。
+        english: Being honest is the most important thing.
+        hint: While 「の」 can also nominalize, 「こと」 is more suitable for stating general truths, principles,
+          or rules. We're looking for an abstract principle.
     scene: A parent is imparting a core moral lesson to their child.
     register: semi-formal
     setting: serious
@@ -268,6 +297,11 @@ examples:
         english: You must keep promises.
         hint: 「守ら なければ なり ませ ん」 expresses obligation, while this structure states that the action itself
           is important. We're looking for a statement about the importance of the abstract action.
+      - competing_japanese:
+          - 約束 を 守る の が 大切 です。
+        english: It's important to keep promises.
+        hint: While 「の」 can nominalize, 「こと」 is more suitable for stating general principles or rules.
+          We're looking for an abstract principle.
     scene: A parent teaches their child about honesty and responsibility.
     register: formal
     setting: instructional

@@ -1,14 +1,14 @@
 grammar_point: ている (~ing)
 learn_before:
   - Verb[て] (and then)
-  - いる (be)
+  - いる (existence of animate objects)
 learn_after:
   - ているあいだに (while something is happening)
   - ているところ (in the process of)
+  - ている (resultant and ongoing state)
+  - ている (habitual action)
 id: gp0057
 meaning: Is, Am, Are (~ing)
-meaning_warning: ている is often shortened to てる. This applies to all tenses, including てる, てて, てた, and even
-  てます
 conjugations:
   - conjugation-type: dictionary (plain non-past)
     form: ている
@@ -77,6 +77,8 @@ conjugations:
 pronunciation:
   katakana: テイル
   romaji: teiru
+  pronunciation_warning: The 「いる」 part of 「ている」 is often contracted to 「る」 in casual speech. This applies
+    to all conjugations, e.g., 「います」 to 「ます」, 「いて」 to 「って」, 「いた」 to 「た」.
 formation:
   Verb (て-form) + いる: Expresses an ongoing action or a state of being resulting from an action.
 jlpt: N5
@@ -95,7 +97,7 @@ writeup: |-
   *   **Resultant States:** This describes a state that continues to exist as a result of a previous action. For example, 「知っている」 means "knows" (literally, "is in the state of knowing"). This applies to verbs that describe a momentary action, where the focus is on the state after the action's completion. For instance, 「結婚する」 (to marry) becomes 「結婚している」 (is married).
   *   **Habitual Actions:** When combined with words like `いつも` (always), `毎日` (every day), or `よく` (often), 「ている」 can also indicate a continuous or habitual action, rather than an specific action happening at a specific moment.
 
-  This form is created by attaching 「いる」 to the *te-* form of a verb. While the base form of `いる` is plain, its use in `ている` is adaptable to various registers depending on the ending (e.g., `います` for polite). In casual speech, 「いる」 is often contracted to 「る」, resulting in forms like 「てる」, 「てた」, and 「てます」. Be aware that some verbs, like 「死ぬ」 (to die) and 「知る」 (to get to know), appear in the 「ている」 form to describe a state, which might be translated into the past tense in English. For example, 「死んでいる」 means "is dead" (the state of having died) and 「知っている」 means "knows" (the state of having come to know).
+  This form is created by attaching 「いる」 to the *te-* form of a verb. While the base form of `いる` is plain, its use in `ている` is adaptable to various registers depending on the ending (e.g., `います` for polite). In casual speech, 「いる」 is often contracted to 「る」, resulting in forms like 「てる」, 「てて」, 「てた」, and 「てます」. Be aware that some verbs, like 「死ぬ」 (to die) and 「知る」 (to get to know), appear in the 「ている」 form to describe a state, which might be translated into the past tense in English. For example, 「死んでいる」 means "is dead" (the state of having died) and 「知っている」 means "knows" (the state of having come to know).
 false_friends:
   - term: Verb+て
     meaning: And, Then (Linking events)
@@ -127,6 +129,7 @@ examples:
       - 子供 たち が 公園 で 遊ん で {る}。
       - 子供 たち が 公園 で 遊ん で {い ます}。
       - 子供 たち が 公園 で 遊ん で {ます}。
+    english_literally: Children are playing in the park.
     competing_grammar:
       - competing_japanese:
           - 子供 が 公園 で 遊ぶ。
@@ -173,6 +176,7 @@ examples:
       - 今、先生 が 話し て {いる}。
       - 今、先生 が 話し て {る}。
       - 今、先生 が 話し て {いらっしゃる}。
+    english_literally: Now, the teacher is speaking.
     competing_grammar:
       - competing_japanese:
           - 先生 が 話す。
@@ -250,6 +254,7 @@ examples:
       - 毎日、日本 語 を 勉強 し て {いる}。
       - 毎日、日本 語 を 勉強 し て {る}。
       - 毎日、日本 語 の 勉強 を し て {い ます}。
+    english_literally: Every day, I am doing Japanese study.
     competing_grammar:
       - competing_japanese:
           - 毎日、日本 語 を 勉強 し ます。
@@ -285,6 +290,7 @@ examples:
       - 昨日 は、雨 が 降っ て {い た}。
       - 昨日 は、雨 が 降っ て {い まし た}。
       - 昨日 は、雨 が 降っ て {た}。
+    english_literally: Yesterday, rain was falling.
     competing_grammar:
       - competing_japanese:
           - 昨日 は 雨 が 降っ た。
@@ -393,8 +399,8 @@ examples:
     nuance: The sentence-final particle 「な」 (pronounced with a rising intonation) is a common male speech
       marker used to express a mild exclamation or observation, often seeking implicit agreement. The
       additional 「はる」 is a regional dialect (Kansai-ben) often used by older male speakers to express
-      respect, but here it's used colloquially among familiar peers. 「スマホ見 て はる わ」 adds a touch of Kansai
-      casualness and observation.
+      respect, but here it's used colloquially among familiar peers, making the phrase 「スマホ見 て はる」 add
+      a touch of Kansai casualness and observation.
   - english: You're happily talking with your friend, aren't you?
     japanese:
       - 友達 と 楽しく 話し て {いる} よ ね。
@@ -485,7 +491,7 @@ examples:
           - 彼女 は 赤い ドレス を 着 た。
         english: She put on a red dress / She wore a red dress.
         hint: This describes the action of putting on the dress, or having worn it in the past, not her
-          current state of wearing it. We're looking for the current state of wearing.
+          current state of wearing it. We're looking for her current state of wearing.
       - competing_japanese:
           - 彼女 は 赤い ドレス を 着 て、パーティー に 行っ た。
         english: She wore a red dress and went to the party.
@@ -495,6 +501,27 @@ examples:
     register: casual
     setting: informative
     conjugation: dictionary (plain non-past)
+  - english: They were no longer living here.
+    japanese:
+      - 彼 ら は もう ここ に 住ん で {い ませ ん でし た}。
+      - 彼 ら は もう ここ に 住ん で {い ませ ん でし た}。
+    english_literally: As for them, they were no longer in the state of living here.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 ら は もう ここ に 住ま なかっ た。
+        english: They did not live here (at a specific point).
+        hint: This focuses on a singular event of not living, rather than a continuous state of not living.
+          We're looking for a continuous state in the negative past.
+      - competing_japanese:
+          - 彼 ら は もう ここ に い ませ ん でし た。
+        english: They were no longer here.
+        hint: This phrase indicates their absence or non-existence, not specifically the cessation of
+          the action of 'living'. We're looking for the state of 'not living' which implies a continuous
+          action.
+    scene: A neighbor updates someone about former residents who have moved away.
+    register: formal
+    setting: informative
+    conjugation: negative past polite (～ませんでした)
 post_example_writeup: The versatility of 「ている」 allows it to express both ongoing actions and the continuous
   state resulting from a past action. Understanding the context and the nature of the verb is key to discerning
   its precise meaning.

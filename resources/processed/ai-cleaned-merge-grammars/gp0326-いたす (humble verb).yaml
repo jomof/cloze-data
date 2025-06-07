@@ -1,12 +1,16 @@
 grammar_point: いたす (humble verb)
 learn_before:
+  - です (polite copula)
+  - ございます (polite 'to be or exist')
+  - お〜になる (honorific form)
   - する (to do・make)
   - お・ご～する (humble action)
 learn_after:
+  - なさる (honorific verb)
   - お〜願う (polite request)
 id: gp0326
 meaning: To do (Humble)
-meaning_warning: It is more humble thanお〜する
+meaning_warning: It is more humble than お〜する
 conjugations:
   - conjugation-type: dictionary (plain non-past)
     form: いたす
@@ -128,10 +132,17 @@ false_friends:
     nuance: 「する」 is the plain form of "to do". 「いたす」 is its humble equivalent, used to show respect to
       the listener by lowering the speaker's status.
     grammar_point: する (to do・make)
-post_false_friends_writeup: When choosing between 「いたす」, 「なさる」, and 「する」, consider the context and who
-  you are talking to. Use 「いたす」 when you want to humbly describe your own actions. Use 「なさる」 when you
-  want to respectfully describe the actions of someone else. Use 「する」 in plain speech or when you don't
-  need to show special respect.
+  - term: いただく
+    meaning: To receive (humbly); To eat/drink (humbly)
+    kind: similar expression
+    nuance: While 「いたす」 is the humble form of 「する」 (to do), 「いただく」 is the humble form of 「もらう」 (to receive)
+      and 「食べる/飲む」 (to eat/drink). Both are used to show humility, but for different types of actions.
+    grammar_point: <suggest>:いただく (to receive humbly)
+post_false_friends_writeup: When choosing between 「いたす」, 「なさる」, 「いただく」, and 「する」, consider the context
+  and who you are talking to. Use 「いたす」 when you want to humbly describe your own actions of 'doing'.
+  Use 「なさる」 when you want to respectfully describe the actions of someone else. Use 「いただく」 when humbly
+  describing receiving something or eating/drinking. Use 「する」 in plain speech or when you don't need to
+  show special respect.
 examples:
   - english: I will prepare the presentation.
     japanese:
@@ -367,5 +378,3 @@ post_example_writeup: As you can see from these examples, 「いたす」 is qui
   group.
 sources:
   bunpro: https://bunpro.jp/grammar_points/いたす
-lint-errors:
-  - '[rule-11] warning learn_after has 1 item(s); must have at least 2'

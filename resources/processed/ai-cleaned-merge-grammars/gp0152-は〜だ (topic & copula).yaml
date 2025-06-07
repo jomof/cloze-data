@@ -1,11 +1,15 @@
 grammar_point: は〜だ (topic & copula)
 learn_before:
   - が (subject marker)
-  - に (to)
+  - です (polite copula)
+  - だ (casual copula)
+  - に (fixed point・target・time)
   - を (object marker)
 learn_after:
   - だろう (conjecture)
   - でしょう (conjecture and confirmation)
+  - である (formal copula)
+  - となる (to become・result in)
   - ということだ (it means that)
 id: gp0152
 meaning: Indicates the topic of the sentence and provides information about it.
@@ -101,9 +105,35 @@ false_friends:
       does not introduce a topic. For example, 「そうです」 means 'that's right' and doesn't use 「は」 because
       it's a statement about something previously mentioned, not a new topic introduction.
     grammar_point: です (polite copula)
+  - term: が
+    meaning: Subject marker
+    kind: often confused with
+    nuance: While 「は」 introduces the general topic of the sentence, 「が」 marks the grammatical subject,
+      often highlighting new information or emphasizing the subject in contrast to other elements. For
+      example, 「私 は 学生です」 (I am a student - general statement) versus 「私 が 学生です」 (It is I who is the student
+      - emphasis on 'I').
+    grammar_point: が (subject marker)
+  - term: らしい
+    meaning: Appears to be; seems; I hear that
+    kind: similar expression
+    nuance: Unlike the definitive statement of 「は〜だ」, 「らしい」 indicates that something appears to be true
+      based on external information, observation, or hearsay, rather than a direct assertion by the speaker.
+      For instance, 「彼は日本人だ」 (He is Japanese) is a direct statement, while 「彼は日本人らしい」 (He seems to be
+      Japanese/I hear he is Japanese) is an inference.
+    grammar_point: らしい (appears to be)
+  - term: そうだ
+    meaning: Looks like; seems like
+    kind: similar expression
+    nuance: 「そうだ」 (looks like) expresses an appearance or impression based on direct observation, while
+      「は〜だ」 states a fact. For example, 「雨だ」 means 'It is rain' (a fact), while 「雨そうだ」 means 'It looks
+      like rain' (an observation based on appearance).
+    grammar_point: そう (looks or seems like)
 post_false_friends_writeup: When constructing sentences, carefully consider whether you're introducing
   a topic requiring the 「は〜だ」 structure, or simply stating the existence of something or offering a polite
-  assertion. Misusing these can lead to unnatural-sounding Japanese.
+  assertion. The choice between 「は」 and 「が」 is crucial for conveying emphasis. Furthermore, distinguish
+  between direct statements of fact using 「は〜だ」 and expressions of appearance or inference like 「らしい」
+  or 「そうだ」, as they convey different levels of certainty and source of information. Misusing these can
+  lead to unnatural-sounding Japanese.
 examples:
   - english: This is my book.
     japanese:

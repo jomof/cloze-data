@@ -1,16 +1,24 @@
 grammar_point: Adjective[て] (and・because)
+better_grammar_point_name:
+  - Adjective[て]・Noun[で] (and・because)
 learn_before:
   - い-Adjectives (adjectives ending in い)
   - な-Adjectives (adjectival nouns)
   - Verb[て] (and then)
   - だ (casual copula)
   - です (polite copula)
+  - Verb[て] (and then another event)
+  - Verbs (non-past plain)
+  - Verbs (non-past polite)
 learn_after:
   - すぎる (too much・excessive)
   - て仕方がない (uncontrollable feeling)
   - てたまらない (unbearably extremely)
   - ても (even if・even though)
   - たり〜たりする (do things like x and y)
+  - てしまう・ちゃう (completion・regret・accident)
+  - ておく (to do in advance)
+  - てくる (movement towards or gradual change)
 id: gp0115
 meaning: Connecting adjectives or clauses (and, because)
 conjugations:
@@ -63,14 +71,6 @@ writeup: |-
   *   **Context is Key:** The precise meaning (linking vs. reason) is heavily dependent on the context and the logical relationship between the two clauses.
   *   **Implied "Manner":** While not a direct primary meaning for adjectives like it is for verbs, the te-form can sometimes indirectly suggest the manner in which an action occurs if the adjective describes a state influencing that action. However, for adjectives, this is less explicit than with verbal te-forms.
 false_friends:
-  - term: Adjective+て・Noun+で
-    meaning: And... (Conjunctive)
-    kind: similar expression
-    nuance: This term often refers to the basic introduction of the te-form for adjectives and nouns,
-      primarily focusing on simply listing attributes. This grammar point, 'Adjective[て] (and, because)',
-      expands on this to include more complex linking, especially for reasons or cause-and-effect relationships
-      between clauses.
-    grammar_point: <suggest>:Adjective[て]・Noun[で] (simple linking)
   - term: し〜し
     meaning: And, Giving reasons
     kind: similar expression
@@ -173,7 +173,7 @@ examples:
           - 道 が 狭い です。危ない です。だ から、注意 し て ください。
         english: The road is narrow. It is dangerous. Therefore, please be careful.
         hint: Listing separate reasons with 「からです」 or 「だから」 makes the warning less immediate and cohesive.
-          We're looking to express a combined reason for caution.
+          We're looking for a combined reason for caution.
       - competing_japanese:
           - 道 が 狭い し、危ない し、注意 し て ください。
         english: The road is narrow, and it's dangerous, so please be careful.
@@ -325,8 +325,8 @@ examples:
       while 「着た」 offers a casual alternative.
   - english: That hotel is convenient and clean, so it's popular.
     japanese:
-      - あの ホテル は {便利 で} 綺麗 な の で、人気 が あり ます。
-      - あの ホテル は {便利 で} 綺麗 だ から、人気 が ある よ。
+      - あの ホテル は {便利 で} 綺麗 な の で、いつ も 混ん で い ます。
+      - あの ホテル は {便利 で} 綺麗 だ から、いつ も 混ん でる よ。
     english_literally: That hotel, convenient and clean being, so popularity exists.
     competing_grammar:
       - competing_japanese:
@@ -440,8 +440,8 @@ examples:
     english_literally: That restaurant, famous and delicious, so always crowded is.
     competing_grammar:
       - competing_japanese:
-          - あの レストラン は 有名 です。美味しい です。だ から、いつ も 混ん で い ます。
-        english: That restaurant is famous. It is delicious. Therefore, it's always crowded.
+          - あの レストラン は 便利 です。綺麗 です。だ から、人気 が あり ます。
+        english: That restaurant is convenient. It is clean. Therefore, it's popular.
         hint: Separating the attributes into multiple sentences makes the description less cohesive and
           the causal link less immediate. We're looking for a smooth connection of attributes that lead
           to a consequence.

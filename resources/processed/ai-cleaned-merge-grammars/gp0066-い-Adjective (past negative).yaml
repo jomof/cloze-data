@@ -2,9 +2,12 @@ grammar_point: い-Adjective (past negative)
 learn_before:
   - い-Adjectives (adjectives ending in い)
   - い-Adjectives (negative form)
+  - い-adjective (past)
 learn_after:
   - ものの (although・but)
   - のに (unexpected result)
+  - いくら〜でも (no matter how much)
+  - ても (even if・even though)
 id: gp0066
 meaning: Was not, Wasn't (Adjective)
 conjugations:
@@ -25,9 +28,11 @@ pronunciation:
   romaji: i keiyooshi kunakatta
 formation:
   い-Adjective (stem) + くなかった: Indicates that something 'was not' a certain quality or state.
+  い-Adjective (stem) + くありませんでした: More formal way to indicate that something 'was not' a certain quality
+    or state. Used in polite contexts for higher formality and respect.
 jlpt: N5
 details:
-  part-of-speech: auxiliary verb
+  part-of-speech: phrase
   usage-context: General situations and discourse.
   grammatical-role: conjugation
 etymology: This grammar point is derived from the い-adjective conjugation where the final 「い」 is dropped
@@ -50,6 +55,21 @@ false_friends:
       lies in its direct attachment to the 「く」 form of い-adjectives versus its independent use or combination
       with other particles for verbs and な-adjectives.
     grammar_point: '<suggest>: なかった (plain negative past)'
+  - term: い-adjective (past)
+    meaning: was (adjective)
+    kind: similar expression
+    nuance: While 「い-Adjective くなかった」 indicates a past negative state, 「い-adjective (past)」 (e.g., 高かった
+      - was expensive) expresses a past positive state. They are opposite in meaning but share the base
+      い-adjective and past tense conjugation.
+    grammar_point: い-adjective (past)
+  - term: じゃなかった
+    meaning: was not (for な-adjectives and nouns)
+    kind: often confused with
+    nuance: 「い-Adjective くなかった」 is specifically for い-adjectives. In contrast, 「じゃなかった」 (e.g., 静かじゃなかった
+      - wasn't quiet, 学生じゃなかった - wasn't a student) is the past negative form used for な-adjectives and
+      nouns. The distinction lies in the particle 「じゃ」 preceding the negative past for な-adjectives/nouns,
+      while い-adjectives use their stem + 「くなかった」.
+    grammar_point: じゃなかった (was not)
 post_false_friends_writeup: To avoid confusion, remember that the standalone 「なかった」 is used for verbs
   and な-adjectives, usually following 「じゃ」 or 「では」 for the latter. The form 「くなかった」, however, is exclusively
   for い-adjectives, resulting from dropping the final 「い」 and adding 「くなかった」.
@@ -67,11 +87,6 @@ examples:
         english: Yesterday's movie wasn't interesting at all (polite).
         hint: The casual context of talking to a friend about a movie makes the plain form more natural
           and expected. We're looking for a casual past negative here.
-      - competing_japanese:
-          - 昨日 の 映画 は 良い 映画 じゃ {なかっ た}。
-        english: Yesterday's movie wasn't a good movie.
-        hint: The grammar point is for い-adjectives. 「じゃなかった」 is used for nouns or な-adjectives. We're
-          looking for the negative past of an い-adjective.
     scene: You're chatting casually with a friend about a movie you both watched.
     register: casual
     setting: friendly
@@ -111,20 +126,16 @@ examples:
         hint: In a professional and formal setting when reporting to a superior, the most polite form
           「～ありませんでした」 is preferred over the semi-polite 「～なかった です」 to maintain appropriate deference.
           We're looking for a formal past negative here.
-      - competing_japanese:
-          - 会議 の 内容 は 予想 より 難しく {なかっ た}。
-        english: The content of the meeting was not as difficult as expected (plain).
-        hint: This sentence requires a polite register for a professional context. We're looking for a
-          formal past negative here.
     scene: A subordinate reporting to their superior about a recent meeting.
     register: bijinesu nihongo (business)
     setting: professional
     conjugation: negative past polite (～ませんでした)
     speaker_gender: male
     listener_gender: male
-    nuance: The phrase 「予想 より」 (than expected) is commonly used to express a comparison. The use of 「～ありませんでした」
+    nuance: 'The phrase 「予想 より」 (than expected) is commonly used to express a comparison. The use of 「～ありませんでした」
       emphasizes formality, which is typical in business Japanese, especially when addressing a superior.
-      This speaker, being male, would naturally opt for this polite phrasing in such a context.
+      This speaker, being male, would naturally opt for this polite phrasing in such a context, showing
+      appropriate deference to his superior. '
   - english: This road wasn't so dangerous back then, you know.
     japanese:
       - 昔 は この 道 も こんな に 危なく {なかっ た} の に なぁ。
@@ -141,22 +152,19 @@ examples:
           contemplative tone common in informal speech, especially when reminiscing. This leads to the
           plain negative past form being more appropriate than the polite form. We're looking for a casual
           past negative here.
-      - competing_japanese:
-          - 昔 は この 道 も こんな に 危なく なかっ た。
-        english: This road wasn't so dangerous back then.
-        hint: The nuance of nostalgia and wistfulness is better conveyed with the particle 「なぁ」. We're
-          looking for a casual past negative with reflection here.
     scene: An elderly woman is walking with her grandchild and reminiscing about the past condition of
       a road.
     register: casual
     setting: reflective
     conjugation: negative past plain (～なかった)
     speaker_gender: female
+    listener_gender: group
     speaker_age: older
-    nuance: The particle 「なぁ」 (or 「なあ」) is commonly used by both genders, but when combined with a nostalgic
+    nuance: 'The particle 「なぁ」 (or 「なあ」) is commonly used by both genders, but when combined with a nostalgic
       context like 「昔 は」 (in the past) by an older female speaker, it adds a touch of wistfulness and
       personal reflection. The phrasing 「こんなに 危なくなかった」 implies a change from a past state, emphasizing
-      'not this dangerous.' The informal tone is reinforced by the particle.
+      ''not this dangerous.'' The informal tone is reinforced by the particle. The female speaker''s choice
+      of 「わ よ」 in one variation further emphasizes her personal feeling and is typical for older women. '
   - english: Last week's weather wasn't that bad, you know.
     japanese:
       - 先週 の 天気 は そこ まで 悪く {なかっ た} です よ。
@@ -172,11 +180,6 @@ examples:
         english: Last week's weather wasn't that bad (plain).
         hint: The addition of 「です」 and 「よ」 adds a polite and reassuring tone appropriate for addressing
           a colleague. We're looking for a semi-polite past negative here.
-      - competing_japanese:
-          - 先週 の 天気 は 大丈夫 でし た よ。
-        english: Last week's weather was fine, you know.
-        hint: This sentence indicates that the weather was 'fine' rather than 'not bad', which subtly
-          changes the nuance. We're looking for a specific 'not bad' expression here.
     scene: A young man is reassuring his female colleague who was worried about the weather conditions
       last week.
     register: teineigo (polite)
@@ -184,10 +187,11 @@ examples:
     conjugation: negative past plain (～なかった)
     speaker_gender: male
     listener_gender: female
-    nuance: The expression 「そこまで～なかった」 (not that bad/much) is a common colloquialism to moderate a negative
+    nuance: 'The expression 「そこまで～なかった」 (not that bad/much) is a common colloquialism to moderate a negative
       statement. The final particle 「よ」 adds emphasis and confirms information to the listener, signaling
       reassurance or clarification. This polite but less formal tone is very common in everyday interactions
-      between colleagues, regardless of gender.
+      between colleagues, regardless of gender. The male speaker''s use of 「よ」 is natural here to reassure
+      his colleague. '
   - english: Excuse me, actually, I wasn't very busy yesterday.
     japanese:
       - すみ ませ ん、実 は 昨日 は あまり 忙しく {あり ませ ん でし た}。
@@ -208,10 +212,10 @@ examples:
     conjugation: negative past polite (～ませんでした)
     speaker_gender: male
     listener_gender: female
-    nuance: The use of 「すみません」 (excuse me/I'm sorry) and the polite form 「ありませんでした」 indicates deference
-      in a professional setting. The male speaker's use of 「実は」 (actually) adds a nuanced layer of honesty,
+    nuance: 'The use of 「すみません」 (excuse me/I''m sorry) and the polite form 「ありませんでした」 indicates deference
+      in a professional setting. The male speaker''s use of 「実は」 (actually) adds a nuanced layer of honesty,
       often used to reveal information that might be slightly contrary to expectation but is truthful.
-      This is a common strategy to mitigate a potentially negative admission.
+      This is a common strategy to mitigate a potentially negative admission in a polite manner. '
   - english: Huh? But you weren't sleepy at all during yesterday's live show, were you?
     japanese:
       - え、で も 昨日 の ライブ、全然 眠く {なかっ た} よ ね？
@@ -234,11 +238,11 @@ examples:
     conjugation: negative past plain (～なかった)
     speaker_gender: female
     listener_gender: male
-    nuance: The sentence starts with 「え、でも」 (Huh? But) which conveys surprise and a slight challenge.
+    nuance: 'The sentence starts with 「え、でも」 (Huh? But) which conveys surprise and a slight challenge.
       The plain form 「眠くなかった」 is typical for casual conversation between friends. The ending particle
-      「よ ね？」 seeks confirmation while also asserting the speaker's own belief, common in female speech
+      「よ ね？」 seeks confirmation while also asserting the speaker''s own belief, common in female speech
       to soften the assertion or ensure understanding, especially when expressing mild disbelief or a
-      differing opinion.
+      differing opinion. '
   - english: The summer in Hokkaido wasn't that hot, was it?
     japanese:
       - 北海道 の 夏 は そんな に 暑く {なかっ た} です ね。
@@ -260,10 +264,10 @@ examples:
     conjugation: negative past plain (～なかった)
     speaker_gender: female
     listener_gender: group
-    nuance: The use of 「そんな に～なかったです」 (wasn't that ~) is a common way to express a mild negative observation.
+    nuance: 'The use of 「そんな に～なかったです」 (wasn''t that ~) is a common way to express a mild negative observation.
       The final particle 「ね」 invites agreement from the group, a common conversational softener, especially
-      when sharing observations in polite company. The female speaker's choice of this semi-polite form
-      is natural when addressing a general group, making the statement sound friendly and collaborative.
+      when sharing observations in polite company. The female speaker''s choice of this semi-polite form
+      is natural when addressing a general group, making the statement sound friendly and collaborative. '
   - english: This time's exam questions were not as difficult as I had expected.
     japanese:
       - 今回 の 試験 問題 は、私 が 予想 し た より 難しく {あり ませ ん でし た}。
@@ -285,10 +289,11 @@ examples:
     conjugation: negative past polite (～ませんでした)
     speaker_gender: male
     listener_gender: group
-    nuance: The formal phrasing 「今回の 試験 問題 は」 (regarding this time's exam questions) and the polite negative
-      「難しくありませんでした」 are appropriate for an academic setting. The male professor uses this polite and slightly
-      indirect phrasing to reassure students or manage expectations about the exam's difficulty. The phrase
-      「私が 予想 した より」 (than I had expected) adds a personal but professional touch, indicating his perspective.
+    nuance: 'The formal phrasing 「今回の 試験 問題 は」 (regarding this time''s exam questions) and the polite
+      negative 「難しくありませんでした」 are appropriate for an academic setting. The male professor uses this polite
+      and slightly indirect phrasing to reassure students or manage expectations about the exam''s difficulty.
+      The phrase 「私が 予想 した より」 (than I had expected) adds a personal but professional touch, indicating
+      his perspective. '
   - english: Honestly, that party wasn't fun at all.
     japanese:
       - 正直、あの パーティー は 全然 楽しく {なかっ た} よ。
@@ -309,10 +314,10 @@ examples:
     conjugation: negative past plain (～なかった)
     speaker_gender: male
     listener_gender: male
-    nuance: The opening adverb 「正直」 (honestly) sets a direct, candid tone, typical between close male
-      friends. The plain negative 「楽しくなかった」 (wasn't fun) is direct and expressive. The final particle
+    nuance: 'The opening adverb 「正直」 (honestly) sets a direct, candid tone, typical between close male
+      friends. The plain negative 「楽しくなかった」 (wasn''t fun) is direct and expressive. The final particle
       「よ」 adds a sense of conviction or mild emphasis to the statement, confirming a shared feeling and
-      implying a common understanding between the friends. This directness is common in male speech.
+      implying a common understanding between the friends. This directness is common in male speech. '
   - english: When I was a child, toys weren't this expensive.
     japanese:
       - 子供 の 頃 は、おもちゃ が こんな に 高く {なかっ た} なあ。
@@ -333,10 +338,10 @@ examples:
     speaker_gender: female
     listener_gender: group
     speaker_age: older
-    nuance: The phrase 「子供 の 頃 は」 (when I was a child) immediately establishes a nostalgic tone. The use
-      of 「こんな に 高くなかった」 emphasizes the contrast with the present. The particle 「なあ」 at the end adds a
-      sense of wistfulness and shared sentiment, inviting the listener to consider the observation. This
-      is a common way for older speakers to share past experiences in an informal, engaging manner.
+    nuance: 'The phrase 「子供 の 頃 は」 (when I was a child) immediately establishes a nostalgic tone. The
+      use of 「こんな に 高くなかった」 emphasizes the contrast with the present. The particle 「なあ」 at the end adds
+      a sense of wistfulness and shared sentiment, inviting the listener to consider the observation.
+      This is a common way for older speakers to share past experiences in an informal, engaging manner. '
 post_example_writeup: The choice between 「～くなかった」 (plain), 「～くなかったです」 (semi-polite), and 「～くありませんでした」
   (polite) depends heavily on the context, your relationship with the listener, and the desired level
   of formality. While all convey the past negative for い-adjectives, mastering their nuances allows for

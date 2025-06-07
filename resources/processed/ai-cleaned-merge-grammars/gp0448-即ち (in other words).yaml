@@ -2,9 +2,13 @@ grammar_point: 即ち (in other words)
 learn_before:
   - つまり (in short)
   - というのは (definition or reason)
+  - だが・ですが (but・however)
+  - そして (and・and then)
 learn_after:
-  - とみえる (seems from observation)
-  - といったところだ (i'd say)
+  - にほかならない (nothing but)
+  - 言うまでもない (needless to say)
+  - ひいては (eventually leading to)
+  - を置いて他に〜ない (nothing else compares)
 id: gp0448
 meaning: In other words, that is, namely
 pronunciation:
@@ -51,12 +55,19 @@ false_friends:
     nuance: 「要するに」 is for summarization, often to get to the main point quickly, whereas 「即ち」 clarifies
       or restates a specific point with an emphasis on equivalence or direct correspondence.
     grammar_point: 要するに (to sum up)
-post_false_friends_writeup: While 「つまり」、「ということは」、 and 「要するに」 can sometimes be used interchangeably with
-  「即ち」, it's important to consider the specific nuance each conveys. 「つまり」 is best for summarizing a point,
-  「ということは」 for drawing a conclusion, and 「要するに」 for providing a brief overview or getting to the essence
-  of a matter. 「即ち」 is most suitable when you want to offer a precise restatement or clarification of
-  something you've just said, emphasizing that the second statement is essentially the same as, or a more
-  specific form of, the first.
+  - term: したがって
+    meaning: Therefore, Thus, As a result
+    kind: similar expression
+    nuance: 「したがって」 indicates a logical consequence or conclusion drawn from the preceding statement,
+      while 「即ち」 provides a rephrasing or clarification that is equivalent to or more specific than the
+      initial statement.
+    grammar_point: したがって (therefore)
+post_false_friends_writeup: While 「つまり」、「ということは」、「要するに」、 and 「したがって」 can sometimes be used in similar
+  contexts, it's important to consider the specific nuance each conveys. 「つまり」 is best for summarizing
+  a point, 「ということは」 for drawing a conclusion, and 「要するに」 for providing a brief overview or getting to
+  the essence of a matter. 「したがって」 indicates a logical consequence or result. In contrast, 「即ち」 is most
+  suitable when you want to offer a precise restatement or clarification of something you've just said,
+  emphasizing that the second statement is essentially the same as, or a more specific form of, the first.
 examples:
   - english: This book is a grammar reference book. In other words, it will be useful for learning.
     japanese:
@@ -75,6 +86,11 @@ examples:
         english: This book is a grammar reference book. That means, it will be useful for learning.
         hint: 「ということは」 implies deduction or inference, while 「即ち」 is a direct restatement or clarification.
           We're looking for a direct explanation of the book's utility.
+      - competing_japanese:
+          - この 本 は 文法 の 参考 書 です。したがっ て、学習 に 役立ち ます。
+        english: This book is a grammar reference book. Therefore, it will be useful for learning.
+        hint: 「したがって」 indicates a logical consequence. 「即ち」 clarifies or restates, implying equivalence
+          or more specific information, not a direct result. We're looking for a rephrasing of its usefulness.
     scene: A student recommends a book to a classmate, explaining its utility.
     register: teineigo (polite)
     setting: informative
@@ -99,10 +115,17 @@ examples:
           the future of the company.
         hint: 「要するに」 is for quickly getting to the main point, while 「即ち」 clarifies with emphasis on equivalence
           and significance in a formal context. We're looking for a formal clarification of his role.
+      - competing_japanese:
+          - 彼 は 次期 社長 こう ほ です。したがっ て、会社 の 未来 を になう 人 です。
+        english: He is the candidate for the next president. Therefore, he is the person who will bear
+          the future of the company.
+        hint: 「したがって」 implies a direct consequence or logical deduction. 「即ち」 emphasizes that the second
+          statement is a more precise or equivalent explanation of the first. We're looking for a clarification
+          of identity.
     scene: A senior manager introduces a promising employee to a group of new hires at a corporate orientation.
     register: teineigo (polite)
     setting: professional
-    nuance: The formal language, including the use of 『です』 and 『即ち』, is standard in a business setting.
+    nuance: The formal language, including the use of 「です」 and 「即ち」, is standard in a business setting.
       The overall tone is objective and professional.
   - english: Global warming is an urgent issue. In other words, it is a problem that all of us should
       seriously consider.
@@ -120,6 +143,13 @@ examples:
         hint: In an academic or formal context, 「即ち」 provides a clear, precise clarification of implications,
           making the statement more compelling than a simple summary with 「つまり」. We're looking for a precise
           and impactful explanation.
+      - competing_japanese:
+          - 地球 おんだん か は 緊急 の 課題 です。したがっ て、われわれ 全員 が しんけん に 考える べき 問題 です。
+        english: Global warming is an urgent issue. Therefore, it is a problem that all of us should seriously
+          consider.
+        hint: 「したがって」 emphasizes a cause-and-effect relationship, indicating that the problem *is* one
+          we should consider. 「即ち」 rephrases 'urgent issue' as 'a problem we should consider,' emphasizing
+          equivalence rather than direct causation. We're looking for a precise definition of the issue.
     scene: A scientist presents research findings on climate change at a public forum, emphasizing the
       collective responsibility.
     register: formal
@@ -127,8 +157,8 @@ examples:
   - english: This tool is multi-functional. In other words, with just one, several tasks are possible.
     japanese:
       - この 道具 は 多 機能 です。{即ち}、一 つ で いく つ か の 作業 が 可能 です。
-      - この 道具 は 多 機能 です。{即ち}、一 つ で 複数 の 作業 が {実行 可能 です}。
       - この 道具 は 多 機能 {で あり ます}。{即ち}、一 つ で いく つ か の 作業 が 可能 です。
+      - この 道具 は 多 機能 です。{即ち}、水 中 で も {動作 し ます}。
     english_literally: This tool, multi-functional is. That is, one with, several tasks possible is.
     competing_grammar:
       - competing_japanese:
@@ -137,12 +167,18 @@ examples:
         hint: When elaborating on a key feature for an informed audience, 「即ち」 serves to precisely explain
           the meaning and consequences, making the explanation clearer than a general summary with 「つまり」.
           We're looking for a precise elaboration.
+      - competing_japanese:
+          - この 道具 は 多 機能 です。したがっ て、一 つ で いく つ か の 作業 が 可能 です。
+        english: This tool is multi-functional. Therefore, with just one, several tasks are possible.
+        hint: 「したがって」 shows a logical outcome. 「即ち」 clarifies what 'multi-functional' means by providing
+          an equivalent, more detailed description of its capabilities. We're looking for a rephrasing
+          of its functionality.
     scene: A product developer explains the features of a new gadget to potential investors, highlighting
       its versatility.
     register: teineigo (polite)
     setting: informative
-    nuance: The professional tone and use of 『です』 are fitting for a product presentation. The explanation
-      is direct and clear, aiming to inform and persuade.
+    nuance: The clear, concise language using 「です」 and 「動作します」 is characteristic of technical communication.
+      The use of 「即ち」 ensures that the definition is precise and leaves no room for misinterpretation.
   - english: Freedom means being without restraint. In other words, it refers to a state where one can
       act according to one's own will.
     japanese:
@@ -159,6 +195,13 @@ examples:
         hint: In an academic context, precision in definition is paramount. 「即ち」 provides a more comprehensive
           and precise definition, making the abstract concept clearer than a simple summary with 「つまり」.
           We're looking for a precise definition.
+      - competing_japanese:
+          - 自由 と は、束縛 の 無い こと です。したがっ て、自分 の 意志 で 行動 できる 状態 を 言い ます。
+        english: Freedom means being without restraint. Therefore, it refers to a state where one can
+          act according to one's own will.
+        hint: 「したがって」 would imply that the state of acting by one's will is a consequence of being without
+          restraint. 「即ち」 defines 'freedom' as being *equivalent* to that state. We're looking for a redefinition
+          or clarification of 'freedom'.
     scene: A philosophy professor defines an abstract term for students during a lecture.
     register: formal
     setting: academic
@@ -175,11 +218,17 @@ examples:
         hint: 「即ち」 connects the effort to the likely consequence (no regret) as a logical clarification,
           which is more effective than a mere summary with 「つまり」 in this supportive context. We're looking
           for a logical clarification.
+      - competing_japanese:
+          - 彼女 は 試験 に 全力 を 尽くし まし た。したがっ て、後悔 は 無い でしょう。
+        english: She gave her all for the exam. Therefore, she probably has no regrets.
+        hint: 「したがって」 indicates a conclusion or consequence derived from the previous statement. 「即ち」
+          explains *what* 'giving her all' *means* in terms of her potential feelings, emphasizing equivalence
+          in outlook. We're looking for a rephrasing of the outcome.
     scene: A friend comments on another friend's diligent effort before exam results are out, expressing
       support.
     register: teineigo (polite)
     setting: friendly
-    nuance: The use of 『〜でしょう』 adds a touch of speculation or natural assumption, fitting for a supportive
+    nuance: The use of 「〜でしょう」 adds a touch of speculation or natural assumption, fitting for a supportive
       comment between friends. The phrase '彼女は試験に全力 を 尽くしました' is gender-neutral.
   - english: This part is waterproof. In other words, it functions even in water.
     japanese:
@@ -194,11 +243,17 @@ examples:
         hint: In a technical context, precision is key. 「即ち」 provides a precise explanation of what 'waterproof'
           implies in terms of functionality, which is more suitable than a general summary with 「つまり」.
           We're looking for a precise explanation.
+      - competing_japanese:
+          - この 部品 は ぼう すい です。したがっ て、水 の 中 で も 機能 し ます。
+        english: This part is waterproof. Therefore, it functions even in water.
+        hint: 「したがって」 implies that function in water is a *consequence* of being waterproof. 「即ち」 clarifies
+          what 'waterproof' *means* by stating an equivalent functional characteristic. We're looking
+          for a definitional clarification.
     scene: An engineer explains the features of a new component to a technical team during a design review.
     register: teineigo (polite)
     setting: technical
-    nuance: The clear, concise language using 『です』 and 『します』 is characteristic of technical communication.
-      The use of 『即ち』 ensures that the definition is precise and leaves no room for misinterpretation.
+    nuance: The clear, concise language using 「です」 and 「動作します」 is characteristic of technical communication.
+      The use of 「即ち」 ensures that the definition is precise and leaves no room for misinterpretation.
   - english: The final day of the contract is the end of this week. In other words, Friday is the deadline.
     japanese:
       - 契約 の 最終 日 は 今週 末 です。{即ち}、金曜 日 が 期限 です。
@@ -212,6 +267,12 @@ examples:
         hint: In a legal context, absolute clarity and precision are crucial. 「即ち」 precisely states the
           deadline, ensuring no ambiguity, making it far superior to 「つまり」 which could imply a mere simplification
           rather than an exact clarification. We're looking for an exact and unambiguous clarification.
+      - competing_japanese:
+          - 契約 の 最終 日 は 今週 末 です。したがっ て、金曜 日 が 期限 です。
+        english: The final day of the contract is the end of this week. Therefore, Friday is the deadline.
+        hint: 「したがって」 would be used if Friday *became* the deadline *because* the final day is the end
+          of the week (e.g., specific rules apply). 「即ち」 clarifies that 'the end of this week' *is* 'Friday'
+          in this context. We're looking for a precise definition of the deadline.
     scene: A lawyer clarifies a specific deadline for a client, ensuring no ambiguity regarding their
       contract.
     register: formal
@@ -229,6 +290,12 @@ examples:
         hint: 「即ち」 explains an abstract proverb by stating its direct implication in simpler, more concrete
           terms, making the advice clear and impactful, rather than just a summary with 「つまり」. We're looking
           for a clear and impactful explanation of the proverb.
+      - competing_japanese:
+          - 健康 は 富 に 勝る。したがっ て、お 金 より も 大切 な の は 健康 です。
+        english: Health is better than wealth. Therefore, what is more important than money is health.
+        hint: 「したがって」 indicates a conclusion derived from the previous statement. 「即ち」 rephrases the proverb
+          to emphasize the identity of 'what is better' as 'health.' We're looking for a rephrasing of
+          the proverb's core message.
     scene: A doctor advises a patient on lifestyle choices, emphasizing the priority of well-being over
       material possessions.
     register: formal
@@ -249,6 +316,13 @@ examples:
         hint: In historical explanations, 「即ち」 offers a precise rephrasing or clarification of an event's
           significance, which is more suitable than a mere summary with 「つまり」. We're looking for a precise
           explanation of what the event signified.
+      - competing_japanese:
+          - 明治 維新 は じん 大 な へん か の 時代 でし た。したがっ て、武士 時代 の 終わり と 日本 の 近代 化 の 始まり でし た。
+        english: The Meiji Restoration was a period of significant change. Therefore, it marked the end
+          of the samurai era and the beginning of Japan's modernization.
+        hint: 「したがって」 implies that the end of the samurai era was a *consequence* of the Meiji Restoration
+          being a period of significant change. 「即ち」 identifies these outcomes as *constituting* the significant
+          change. We're looking for a clarification of the nature of the change.
     scene: A history teacher explains a pivotal moment in Japanese history to students.
     register: teineigo (polite)
     setting: academic

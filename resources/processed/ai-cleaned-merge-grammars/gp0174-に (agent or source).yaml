@@ -20,6 +20,7 @@ formation:
 jlpt: N4
 details:
   part-of-speech: particle
+  particle-syntactic-function: passive-agent
   function: Indicates the agent or source of an action in passive, causative, and receiving constructions.
   colocation: Used with passive verbs, causative verbs, and verbs of receiving or acquisition (e.g., もらう,
     習う, 教わる, 借りる, 聞く).
@@ -69,12 +70,22 @@ false_friends:
       by which something is done. It does not mark the agent of a passive or causative action. For example,
       「電車で来る」 (come by train) vs. 「母に褒められた」 (was praised by mother).
     grammar_point: で (by)
+  - term: を (object marker)
+    meaning: direct object marker
+    kind: often confused with
+    nuance: When using causative verbs, 「を」 marks the person who is made to do something if the verb itself
+      is intransitive (e.g., 歩く を 歩かせる), emphasizing the forced movement. In contrast, 「に」 marks the person
+      who is made to do something if the verb is transitive and already takes a direct object (e.g., 本
+      を 読む -> 学生 に 本 を 読ませる). 「に」 here identifies the person as the indirect agent of the coerced action.
+    grammar_point: を (object marker)
 post_false_friends_writeup: 「に」 and 「から」 both can express 'from,' but their usage differs. Use 「に」 when
   indicating who performed an action passively, who is being made to do something, or the source of receiving.
   Use 「から」 for the starting point of an action, the source of information, or the material something is
   made of. Furthermore, 「によって」 often overlaps with 「に」 in passive constructions but is more formal and
   can imply 'by means of,' while 「が」 marks the subject of an active sentence, contrasting with 「に」 marking
-  the agent in a passive sentence. 「で」 specifies means or location, not the agent or source.
+  the agent in a passive sentence. 「で」 specifies means or location, not the agent or source. Finally,
+  when using causative verbs, carefully distinguish between 「を」 for intransitive verbs (e.g., 学生 を 走らせる)
+  and 「に」 for transitive verbs (e.g., 学生 に 宿題 を させる).
 examples:
   - english: This room was cleaned by the students.
     japanese:
@@ -95,10 +106,6 @@ examples:
     scene: A teacher is inspecting a classroom after a school event.
     register: teineigo (polite)
     setting: informative
-    conjugation: past polite (～ました)
-    nuance: The passive form 「掃除されました」 puts the emphasis on the room and the action it received. The polite
-      「ました」 ending is appropriate for an informative, semi-formal context like a teacher's report, suitable
-      for N4 JLPT level.
   - english: The other day, I received a book from a friend.
     japanese:
       - 先日、友人 {に} 本 を もらい まし た。
@@ -125,10 +132,6 @@ examples:
     scene: Someone is talking about a recent gift they got.
     register: teineigo (polite)
     setting: friendly
-    conjugation: past polite (～ました)
-    nuance: 「もらいました」 indicates receiving a gift or favor. The use of 「友人に」 specifies the giver. This polite
-      expression is common when discussing personal events. The kanji 「先日」 (senjitsu) and 「友人」 (yuujin)
-      are N3, which is appropriate for N4 JLPT examples.
   - english: I had the teacher explain the difficult problem to me.
     japanese:
       - 難しい 問題 は 先生 {に} 解説 し て もらい まし た。
@@ -155,10 +158,6 @@ examples:
     scene: A student is describing how they finally understood a tough concept.
     register: teineigo (polite)
     setting: academic
-    conjugation: past polite (～ました)
-    nuance: 「解説してもらいました」 signifies receiving the benefit of an explanation. This polite form is commonly
-      used in academic settings to refer to help received from an instructor. The kanji 「難しい」 (N3), 「問題」
-      (N4), 「先生」 (N5), and 「解説」 (N3) are all appropriate for N4 JLPT examples.
   - english: My boss made me prepare the presentation.
     japanese:
       - 上司 は 私 {に} プレゼン を 準備 さ せ まし た。
@@ -185,10 +184,6 @@ examples:
     scene: A new employee is feeling overworked and is complaining to a colleague.
     register: semi-formal
     setting: professional
-    conjugation: causative (～させる)
-    nuance: The causative form 「準備させました」 expresses that the boss compelled the speaker to prepare the
-      presentation. This implies a hierarchical relationship and the speaker's obligation to follow instructions.
-      The kanji 「上司」 (N3) and 「準備」 (N3) are appropriate for N4 JLPT examples.
   - english: At the party, an old friend sang a strange song on me.
     japanese:
       - パーティー で 昔 の 友人 {に} 変 な 歌 を 歌わ れ まし た。
@@ -216,11 +211,6 @@ examples:
     scene: Someone is recounting an embarrassing or annoying incident at a social gathering.
     register: casual
     setting: humorous
-    conjugation: passive (～られる/～かれる)
-    nuance: The passive 「歌われました」 implies that the action (singing a strange song) was done to the speaker,
-      often with a nuance of annoyance or imposition, even if the speaker wasn't the direct object of
-      the singing. This expressive use of the passive highlights the speaker's subjective experience.
-      The kanji 「昔」 (N3), 「友人」 (N3), and 「歌」 (N4) are appropriate for N4 JLPT examples.
   - english: I borrowed money from a friend last week.
     japanese:
       - 友人 {に} 先週 お 金 を 借り まし た。
@@ -242,10 +232,6 @@ examples:
     scene: Someone is explaining why they need to repay a debt.
     register: teineigo (polite)
     setting: informative
-    conjugation: past polite (～ました)
-    nuance: 「借りました」 is the polite past tense of 「借りる」 (to borrow). 「友人に」 specifies the individual source
-      of the borrowed money, a common usage for personal financial transactions. The kanji 「友人」 (N3),
-      「先週」 (N4), 「お金」 (N5), and 「借り」 (N4) are all appropriate for N4 JLPT examples.
   - english: I heard that news from my older sister.
     japanese:
       - その ニュース は 姉 {に} 聞き まし た。
@@ -267,12 +253,6 @@ examples:
     scene: Someone is sharing a piece of gossip or important information, and is asked about the source.
     register: casual
     setting: friendly
-    conjugation: past polite (～ました)
-    speaker_gender: female
-    listener_gender: female
-    nuance: 「聞きました」 is the polite past tense of 「聞く」 (to hear/ask). 「姉に」 indicates the specific person
-      from whom the news was heard. In casual conversation among friends, this usage of 「に」 highlights
-      the direct personal source. The kanji 「姉」 (N4) and 「聞く」 (N5) are appropriate for N4 JLPT examples.
   - english: When I was a child, my mother made me eat bell peppers.
     japanese:
       - 子供 の 時、母 {に} ピーマン を 食べ さ せ られ まし た。
@@ -300,11 +280,6 @@ examples:
     scene: Someone is reminiscing about childhood memories, specifically disliked foods.
     register: casual
     setting: reflective
-    conjugation: causative-passive (～させられる)
-    nuance: The causative-passive 「食べさせられました」 indicates that the speaker was forced to eat bell peppers
-      by their mother, conveying a sense of being compelled or suffering from the action, typical when
-      recalling unpleasant childhood tasks. The particle 「に」 clearly marks the mother as the agent of
-      this unwanted action. All kanji used are N5, appropriate for N4 JLPT examples.
   - english: I learned Japanese from my teacher.
     japanese:
       - 先生 {に} 日本 語 を 習い まし た。
@@ -328,8 +303,6 @@ examples:
       their skills.
     register: teineigo (polite)
     setting: informative
-    conjugation: past polite (～ました)
-    speaker_gender: male
     nuance: 「習う」 typically takes 「に」 to mark the direct person from whom one learns, highlighting the
       personal relationship with the teacher. The use of 「習いました」 is polite and common in such informative
       contexts.
@@ -354,7 +327,6 @@ examples:
     scene: A young man is boasting about his cooking skills, attributing them to his grandmother's lessons.
     register: teineigo (polite)
     setting: friendly
-    conjugation: past polite (～ました)
     speaker_gender: male
     listener_gender: group
     nuance: 「教わる」 is intrinsically passive, meaning 'to be taught'. The particle 「に」 here clearly identifies
@@ -379,10 +351,6 @@ examples:
     scene: Two people are discussing an artwork in a museum.
     register: formal
     setting: informative
-    conjugation: passive (～られる/～かれる)
-    nuance: This passive construction 「描かれました」 emphasizes the painting itself and the fact that it was
-      created by someone, rather than focusing on the artist's action. The use of 「に」 efficiently identifies
-      the agent. This is common in formal descriptions of art or history.
 post_example_writeup: As these examples demonstrate, 「に」 is highly versatile in marking the agent or source
   in passive, causative, and receiving constructions. Pay close attention to the verb used in conjunction
   with 「に」, as this will often clarify its specific role in the sentence. Understanding these distinct

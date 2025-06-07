@@ -1,6 +1,8 @@
 grammar_point: です (polite copula)
 learn_before:
   - だ (casual copula)
+  - い-Adjectives (adjectives ending in い)
+  - な-Adjectives (adjectival nouns)
 learn_after:
   - でしょう (conjecture and confirmation)
   - でございます (polite copula)
@@ -122,8 +124,6 @@ examples:
       - これ は ペン {です} よ。
       - これ は ペン {です} ね。
       - これ が ペン {です}。
-      - これ は ペン {です} か。
-      - これ が ペン {です} よ。
       - これ が ペン {です} か？
       - これ は 私 の ペン {です}。
     english_literally: This is a pen.
@@ -457,7 +457,7 @@ examples:
       - これ が 新しい 本 {です} よ。
       - 新しい 本 {です} よ、これ が。
       - あなた の 新しい 本 {です} よ、これ が。
-      - はい、これ が あなた の 新しい 本 {です} よ。
+      - はい、どうぞ、あなた の 新しい 本 {です} よ。
       - それ が あなた の 新しい 本 {です} よ。
       - はい、どうぞ、あなた の 新しい 本 {です} よ。
       - こちら が ご 新しい 本 {です} よ。
@@ -485,5 +485,3 @@ post_example_writeup: Remember that while it's increasingly common to attach 「
   it's still considered less formal and should be used with care in professional contexts.
 sources:
   bunpro: https://bunpro.jp/grammar_points/です
-lint-errors:
-  - '[rule-10] warning learn_before has 1 item(s); must have at least 2'

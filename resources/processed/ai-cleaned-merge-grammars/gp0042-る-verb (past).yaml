@@ -2,10 +2,12 @@ grammar_point: る-verb (past)
 learn_before:
   - Verbs (non-past plain)
   - Verbs (non-past polite)
-  - Verb[て] (and then another event)
+  - Verb[て] (and then)
 learn_after:
   - てしまう・ちゃう (completion・regret・accident)
   - たばかり (just did)
+  - たことがある (have done before)
+  - ておく (to do in advance)
 id: gp0042
 meaning: Past tense form of る-verbs
 conjugations:
@@ -18,8 +20,8 @@ conjugations:
     rarity: common
     meaning: polite past
 pronunciation:
-  katakana: ル-バーブ (パスト)
-  romaji: ru-bābu (pasuto)
+  katakana: タ・マシタ
+  romaji: ta・mashita
 formation:
   る-verb (dictionary form) - る + た: casual past tense
   る-verb (dictionary form) - る + ました: polite past tense
@@ -61,11 +63,25 @@ false_friends:
     nuance: 「る-verb (past)」 refers to any past action, whereas 「～たばかり」 specifically indicates an action
       that was completed very recently.
     grammar_point: たばかり (just did)
+  - term: い-adjective (past)
+    meaning: was (i-adjective)
+    kind: similar expression
+    nuance: While 「る-verb (past)」 describes completed actions of verbs, 「い-adjective (past)」 describes
+      past states or qualities of i-adjectives.
+    grammar_point: い-adjective (past)
+  - term: だった・でした (past copula)
+    meaning: was (noun/na-adjective)
+    kind: similar expression
+    nuance: 「る-verb (past)」 expresses a past action or state of a verb, whereas 「だった・でした」 indicates a
+      past state or identity for nouns and na-adjectives.
+    grammar_point: だった・でした (past copula)
 post_false_friends_writeup: Be mindful to distinguish between the past tense 「た / ました」, which indicates
   a completed action, and the progressive form 「ている / ています」, which indicates an ongoing action or a state
   resulting from an action. The former describes what *did* happen, and the latter describes what *is*
   happening or the state that exists now. Also, be aware of expressions that add further nuance to completed
   actions, such as 「～てしまう」 for completion or regret, and 「～たばかり」 for actions that have just occurred.
+  Furthermore, remember that the past forms of i-adjectives (e.g., 「暑かった」 for 'was hot') and nouns/na-adjectives
+  (e.g., 「学生だった」 for 'was a student') follow different conjugation patterns than verbs.
 examples:
   - english: I ate rice today.
     japanese:
@@ -85,29 +101,28 @@ examples:
           - 私 は 今日、ご飯 を {食べ て いる}。
         english: I am eating rice today.
         hint: 「～ている」 indicates an action currently in progress or a state resulting from a past action.
-          We're looking for a simple past action.─ We're looking for a completed past action here, not
-          an ongoing one or state of being finished eating.
+          We're looking for a completed past action here, not an ongoing one or state of being finished
+          eating.
       - competing_japanese:
           - 私 は 今日、ご飯 を {食べる} つもり だ。
         english: I intend to eat rice today.
-        hint: 「～つもり」 expresses intention or expectation. We're looking for a completed past action.─ This
-          implies future intention, not a completed action in the past.
+        hint: 「～つもり」 expresses intention or expectation. This implies future intention, not a completed
+          action in the past.
       - competing_japanese:
           - 私 は 今日、ご飯 を {食べる}。
         english: I eat rice today.
-        hint: This form indicates habitual action or future intent. We're looking for a completed past
-          action.─ This expresses a general habit or future action, not a completed past event.
+        hint: This form indicates habitual action or future intent. This expresses a general habit or
+          future action, not a completed past event.
       - competing_japanese:
           - 私 は 今日、ご飯 を {食べ て しまっ た}。
         english: I finished eating rice today.
-        hint: 「～てしまう」 adds nuance of completion or regrettable completion. We're looking for a simple
-          past action.─ While a past action, 「～てしまう」 emphasizes completion or regret, which isn't specified
-          in the original English.
+        hint: While a past action, 「～てしまう」 emphasizes completion or regret, which isn't specified in the
+          original English.
       - competing_japanese:
           - 私 は 今日、ご飯 を {食べ た ばかり} だ。
         english: I just ate rice today.
-        hint: 「～たばかり」 specifies that an action was completed very recently. We're looking for a general
-          past action.─ This emphasizes recency, but the original sentence is a general past statement.
+        hint: 「～たばかり」 specifies that an action was completed very recently. This emphasizes recency, but
+          the original sentence is a general past statement.
     scene: A man tells his family he finished dinner, using a casual tone.
     register: casual
     setting: friendly
@@ -391,6 +406,35 @@ examples:
     listener_gender: male
     nuance: The directness of 「閉めた」 is simple and common for a child speaking to a parent, reflecting
       the close relationship. The plain form emphasizes the completion of the action without added formality.
+  - english: The meeting began at 9 AM.
+    japanese:
+      - 会議 は 午前 9 時 に {始まっ た}。
+      - 会議 は 午前 9 時 に {始まり まし た}。
+    english_literally: Meeting at morning 9 o'clock began.
+    competing_grammar:
+      - competing_japanese:
+          - 会議 は 午前 9 時 に {始まる}。
+        english: The meeting starts at 9 AM.
+        hint: This expresses a future or habitual action, not a completed past event. We're looking for
+          a completed past action.
+      - competing_japanese:
+          - 会議 は 午前 9 時 に {始まっ て いる}。
+        english: The meeting has started and is ongoing.
+        hint: This describes an ongoing state resulting from a past action. We're looking for a completed
+          past action that simply states the start time.
+      - competing_japanese:
+          - 会議 は 午前 9 時 に {始まり そう だ}。
+        english: The meeting looks like it will start at 9 AM.
+        hint: This expresses an appearance or prediction, not a definite completed past action. We're
+          looking for a completed past action.
+    scene: A secretary is summarizing the day's schedule to their supervisor.
+    register: formal
+    setting: professional
+    conjugation: past polite (～ました)
+    speaker_gender: female
+    listener_gender: male
+    nuance: The use of 「始まりました」 is standard and expected in a professional setting like a meeting summary,
+      showing respect to a supervisor. The female speaker uses polite language to maintain formality.
 post_example_writeup: As you can see from the examples, the choice between the plain form (～た) and the
   polite form (～ました) depends heavily on the social context and your relationship with the listener. The
   meaning of the past action remains the same, but the level of politeness changes. Always consider your

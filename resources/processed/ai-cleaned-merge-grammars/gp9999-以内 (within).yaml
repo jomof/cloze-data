@@ -2,9 +2,11 @@ grammar_point: 以内 (within)
 learn_before:
   - まで (limit extent)
   - 以上 (more than or equal)
+  - 以下 (less than or equal to; the following)
 learn_after:
   - にとどまらず (not limited to)
   - にすぎない (no more than)
+  - 〜たりとも〜ない (not even a single)
 id: gp9999
 meaning: Within; Less than or equal to; Not exceeding
 pronunciation:
@@ -27,12 +29,12 @@ details:
     (e.g., 予算, 規定, 範囲).
   grammatical-role: Functions adverbially, modifying verbs or adjectives to specify limits.
   temporal-flow: Defines a period of time that must not be exceeded, including the end point.
-etymology: The term 以内 combines 以 (i), meaning 'by means of' or 'from', and 内 (nai), meaning 'inside'
-  or 'within'. Historically, 以 could denote a starting point or a boundary, while 内 clearly indicates
-  being contained. Together, they convey the sense of 'within the bounds of' or 'not going beyond' a specified
+etymology: The term 以内 combines 以 (i), meaning "by means of" or "from", and 内 (nai), meaning "inside"
+  or "within". Historically, 以 could denote a starting point or a boundary, while 内 clearly indicates
+  being contained. Together, they convey the sense of "within the bounds of" or "not going beyond" a specified
   limit, with the stated value being explicitly included.
 writeup: |-
-  以内 is a grammar point used to express that something must be 'within' a specified limit. This limit can be related to time, quantity, distance, or even abstract concepts like budget or regulations. The key characteristic of 以内 is its **inclusivity**: the stated number or value is always part of the permissible range. For example, 「10分以内」 means 'within 10 minutes, including the 10th minute'. This contrasts with expressions that strictly exclude the boundary.
+  以内 is a grammar point used to express that something must be "within" a specified limit. This limit can be related to time, quantity, distance, or even abstract concepts like budget or regulations. The key characteristic of 以内 is its **inclusivity**: the stated number or value is always part of the permissible range. For example, 「10分以内」 means 'within 10 minutes, including the 10th minute'. This contrasts with expressions that strictly exclude the boundary.
 
   This expression is generally used in more formal or precise contexts, such as official documents, instructions, rules, and technical specifications. It's less common in casual conversation where more approximate expressions like 「ぐらい」 or 「まで」 might be preferred, unless a strict limit needs to be clearly communicated.
 
@@ -57,10 +59,19 @@ false_friends:
       以内 for strict numerical limits. While まで can imply inclusion of the endpoint, 以内 explicitly denotes
       'inside' that boundary.
     grammar_point: まで (limit extent)
-post_false_friends_writeup: Understanding the precise boundaries set by expressions like 以内, 未満, and 以上
-  is crucial in Japanese, especially in formal or legal contexts. While they might seem similar, the difference
-  in whether the boundary value is included or excluded can significantly change the meaning. Always pay
-  attention to whether the context demands strict inclusivity (以内, 以上) or strict exclusivity (未満).
+  - term: 中 (duration・entirety)
+    meaning: Within, during, all throughout
+    kind: similar expression
+    nuance: While 以内 focuses on a precise, inclusive numerical boundary, 中 (chuu) refers to 'within' a
+      duration or space, emphasizing an ongoing state or being contained. It doesn't typically imply the
+      same strict, inclusive numerical upper limit as 以内.
+    grammar_point: 中 (duration・entirety)
+post_false_friends_writeup: Understanding the precise boundaries set by expressions like 以内, 未満, 以上, and
+  中 is crucial in Japanese, especially in formal or legal contexts. While they might seem similar, the
+  difference in whether the boundary value is included or excluded, or the nature of the "within" (precise
+  limit vs. general duration/containment), can significantly change the meaning. Always pay attention
+  to whether the context demands strict inclusivity (以内, 以上) or strict exclusivity (未満), or simply being
+  contained within a period/space (中).
 examples:
   - english: Please submit the report within three days.
     japanese:
@@ -152,9 +163,9 @@ examples:
     competing_grammar:
       - competing_japanese:
           - 本日 中 に ご 購入 いただけれ ば、この オファー は 有効 です。
-        english: If you purchase today, this offer is valid.
-        hint: 本日中 (honjitsu-chuu) means 'during today,' which is similar, but 以内 emphasizes the exact
-          boundary of the day ending.
+        english: If you purchase within today, this offer is valid.
+        hint: 「本日中」 (honjitsu-chuu) emphasizes 'sometime during today' or 'throughout today', whereas
+          「以内」 specifies a precise and inclusive deadline, 'by the end of today'.
     scene: An advertisement for a limited-time sale.
     register: formal
     setting: informative

@@ -1,14 +1,15 @@
 grammar_point: まだ～ていません (still haven't done)
+better_grammar_point_name:
+  - まだ～ていない (still uncompleted)
 learn_before:
-  - ている (~ing)
-  - ないで (without doing or don't)
   - まだ (still・not yet)
-  - に (static location)
-learn_after:
-  - ずじまい (ended up not doing)
-  - てからでないと (not until)
-  - まだ～ていません (still haven't done)
+  - ている (~ing)
   - てしまう・ちゃう (completion・regret・accident)
+  - ないで (without doing or don't)
+  - Verbs (non-past plain)
+learn_after:
+  - てしまう・ちゃう (completion・regret・accident)
+  - たばかり (just did)
 id: gp0081
 meaning: Still haven't done (something)
 conjugations:
@@ -65,33 +66,34 @@ false_friends:
     meaning: Still, Not yet
     kind: similar expression
     nuance: 「まだ」 is an adverb that can mean 'still' or 'yet' depending on the context, conveying continuation
-      or incompletion. However, 「まだ〜ていません」 combines 「まだ」 with 「〜ていません」 to specifically indicate that a
-      certain action has not yet been completed, making its meaning more precise within the context of
-      an uncompleted action.
+      or incompletion. When combined with 「〜ていません」, it specifically indicates that a certain action has
+      not yet been completed, making its meaning more precise within the context of an uncompleted action.
     grammar_point: まだ (still・not yet)
-  - term: Verb[volitional-よう]+とする (try about to)
+  - term: Verb[volitional]+とする (try about to)
     meaning: To be about to, To try to
     kind: often confused with
-    nuance: 「Verb[volitional-よう]+とする」 expresses that one is just about to start an action or is attempting
+    nuance: 「Verb[volitional]+とする」 expresses that one is just about to start an action or is attempting
       to do so. In contrast, 「まだ〜ていません」 refers to a state where the action has not been performed at all,
       meaning it is uncompleted. While both involve a temporal aspect, 「まだ〜ていません」 focuses on the *absence
-      of completion*, whereas 「Verb[volitional-よう]+とする」 focuses on the *imminence of initiation* or *effort
+      of completion*, whereas 「Verb[volitional]+とする」 focuses on the *imminence of initiation* or *effort
       towards an action*.
-    grammar_point: <suggest>:Verb[volitional-よう]+とする (try about to)
-  - term: 〜ていない
-    meaning: Haven't done / Isn't doing
-    kind: similar expression
-    nuance: 「〜ていない」 simply states that an action has not been done or is not currently happening. In contrast,
-      「まだ〜ていません」 specifically emphasizes that the action has *still* not been completed, often implying
-      an expectation that it *should* have been done by now, or that the speaker is waiting for it.
-    grammar_point: <suggest>:Verb[て]いない (haven't done)
-post_false_friends_writeup: To avoid confusing these similar expressions, it is crucial to understand
-  the 'tense' and 'state' that each represents. 「まだ〜ていません」 expresses 'incompletion up to the present'.
-  While the standalone 「まだ」 depends on context, when combined with a negative verb form like 「まだ〜ていません」,
-  it emphasizes incompletion. 「Verb[volitional-よう]+とする」 indicates 'imminent start' or 'an attempt'. 「〜ていない」
-  merely states a negative past or present state, whereas 「まだ〜ていない」 adds the nuance of 'still' or 'yet'
-  being uncompleted. Therefore, it is essential to clearly distinguish between these differences when
-  using them.
+    grammar_point: Verb[volitional]+とする (try about to)
+  - term: もう (already・anymore)
+    meaning: Already; anymore
+    kind: antonym
+    nuance: 「もう」 signifies that an action has *already* happened or, with a negative verb (e.g., 「もう〜ていません」),
+      that it is *no longer* happening. This is directly opposite to 「まだ〜ていません」, which means an action
+      has *not yet* happened or is *still* uncompleted.
+    grammar_point: もう (already・anymore)
+post_false_friends_writeup: To avoid confusing these expressions, it is crucial to understand the temporal
+  focus and state each implies. 「まだ〜ていません」 clearly indicates an **uncompleted state that persists up to
+  the present moment**, often with an expectation for completion. In contrast, the adverb 「まだ」 by itself
+  is broader, indicating continuation or anticipation, but its meaning becomes precise when paired with
+  「〜ていません」. 「Verb[volitional]+とする」 refers to an **action that is on the verge of starting or an active
+  attempt** to initiate something. On the other hand, 「もう」, especially when paired with a negative form
+  like 「もう〜ていません」, means the action has **ceased or is no longer occurring**, providing a direct temporal
+  opposite to 「まだ〜ていません」. Understanding these distinctions—uncompleted, imminent, and ceased—is key to
+  accurate usage.
 examples:
   - english: I still haven't received that email.
     japanese:
@@ -161,9 +163,9 @@ examples:
       - competing_japanese:
           - 旅行 の 計画 は 決まっ て い ない よ。
         english: Our travel plans haven't been decided yet.
-        hint: This states that the plans haven't been decided. However, the original English includes
-          'still,' emphasizing that the situation is ongoing and possibly frustrating or unexpected. We're
-          looking for the nuance of 'still haven't done'.
+        hint: This states that the plans haven't been decided. The original English includes 'still,'
+          emphasizing that the situation is ongoing and possibly frustrating or unexpected. We're looking
+          for the nuance of 'still haven't done'.
       - competing_japanese:
           - 旅行 の 計画 を 決めよう と し て いる よ。
         english: We're about to decide on our travel plans.
@@ -289,7 +291,7 @@ examples:
           implying that the announcement is still pending. The grammar point conveys this ongoing uncompleted
           state. We're looking for the nuance of 'still haven't done'.
       - competing_japanese:
-          - 新しい 製品 は 発表 さ れよう と し て い ます。
+          - 新しい 製品 は 発表 さ れよう と し て い ませ ん。
         english: The new product is about to be announced.
         hint: 「〜よう と する」 indicates appearance or likelihood of an action happening soon. We're looking
           for the state of the product *not yet having been announced*.
@@ -380,9 +382,9 @@ examples:
       - competing_japanese:
           - 電車 が 着き ませ ん。
         english: The train won't arrive.
-        hint: 「着きません」 indicates a simple negative future or general non-arrival. The original sentence
-          expresses that the train was expected to arrive but has not yet. We're looking for a state of
-          incompletion.
+        hint: 「見つかりません」 implies that the keys will not be found in the future or are generally not findable.
+          The original sentence expresses that the keys *have not yet been found* up to the current moment.
+          We're looking for a state of incompletion.
       - competing_japanese:
           - 電車 が 着い て い ませ ん。
         english: The train hasn't arrived.
@@ -552,7 +554,7 @@ examples:
           We're looking for a state of incompletion.
       - competing_japanese:
           - なく し た 鍵 が 見つかっ て い ませ ん。
-        english: My lost keys haven't been found.
+        english: My lost keys hasn't been found.
         hint: This states that the keys haven't been found. The original English includes 'still,' emphasizing
           an ongoing search or an extended period of them being lost. We're looking for the nuance of
           'still haven't done'.

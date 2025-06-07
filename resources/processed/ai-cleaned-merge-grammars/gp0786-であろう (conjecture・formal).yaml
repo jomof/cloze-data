@@ -1,12 +1,15 @@
 grammar_point: であろう (conjecture・formal)
+better_grammar_point_name:
+  - よう (conjecture・formal)
 learn_before:
   - だろう (conjecture)
   - でしょう (conjecture and confirmation)
   - Volitional Form (casual suggestion or intention)
-  - ある (to exist or have)
+  - である (formal copula)
 learn_after:
+  - はずだ (expected to be)
   - に違いない (no doubt)
-  - ようが〜まいが (regardless of whether)
+  - ものだ (general truth expectation)
   - まい (won't・probably not)
 id: gp0786
 meaning: Probably; likely; must be; should be; naturally.
@@ -19,6 +22,9 @@ formation:
   I-adjective (plain form) + であろう: A formal way to express conjecture for i-adjectives.
   Noun + であろう: Indicates a strong probability or logical conclusion for nouns.
   な-Adjective (stem) + であろう: Indicates a strong probability or logical conclusion for な-adjectives.
+  Past Copula (であった) + であろう: Used to express conjecture about a past state or event in a formal or literary
+    style. This is a common way to form the past tense of a noun or na-adjective with であろう, as であろう typically
+    follows plain forms, and であった is the plain past of である.
 jlpt: N2
 details:
   part-of-speech: auxiliary verb
@@ -44,6 +50,8 @@ writeup: |-
   *   **I-Adjective (plain form) + であろう**: A more regular formal expression is to attach 「であろう」 to the plain form of the i-adjective, like 「苦しいであろう」.
 
   *   **Noun / な-Adjective (stem) + であろう**: This form is used with nouns and な-adjectives to express a likely or certain state of being. For instance, 「便利であろう」 (benri de arou) suggests that something is probably or must be convenient, often presented as an objective assessment.
+
+  *   **Past Copula (であった) + であろう**: When conjecturing about a past state involving a noun or な-adjective, 「であったであろう」 (de atta de arou) is used. This combines the past form of the formal copula 「である」 (de aru) with 「であろう」, allowing for formal, reasoned conjectures about past conditions.
 
   **Important Considerations**:
 
@@ -77,14 +85,31 @@ false_friends:
     nuance: 「はずだ」 indicates an expectation or strong probability based on known facts, reasons, or common
       knowledge. While 「であろう」 expresses general conjecture, 「はずだ」 implies a more grounded expectation.
     grammar_point: はずだ (expected to be)
-post_false_friends_writeup: While 「であろう」, 「だろう」, 「でしょう」, 「に違いない」, and 「はずだ」 all express some form of likelihood
-  or conjecture, they differ significantly in their nuance, formality, and the degree of certainty they
-  convey. 「であろう」 is the most formal and literary, primarily found in written or highly formal spoken contexts,
-  conveying a logical or objective conclusion. 「だろう」 is its casual counterpart, frequently used in everyday
-  conversation. 「でしょう」 is the polite form of 「だろう」, suitable for polite conversation and writing. 「に違いない」
-  expresses a much stronger certainty, implying little to no doubt. Finally, 「はずだ」 denotes an. expectation
-  based on known information or reasons. Choosing the correct expression depends heavily on the context,
-  desired level of formality, and the speaker's confidence in the conjecture.
+  - term: かもしれない
+    meaning: might, maybe, probably
+    kind: similar expression
+    nuance: While 「であろう」 conveys a strong likelihood based on logic or objective assessment, 「かもしれない」
+      expresses a weaker possibility or uncertainty. It's more about "it might be the case" rather than
+      "it should logically be the case."
+    grammar_point: かもしれない (might)
+  - term: らしい
+    meaning: appears to be, seems (based on hearsay or evidence)
+    kind: similar expression
+    nuance: 「らしい」 indicates that the speaker's conjecture is based on external information, hearsay, or
+      visible evidence, giving it a sense of "it seems like" or "I hear that." 「であろう」, in contrast, often
+      implies a more internal, logical deduction or an objective statement of probability, regardless
+      of direct external evidence.
+    grammar_point: らしい (hearsay or conjecture)
+post_false_friends_writeup: While 「であろう」, 「だろう」, 「でしょう」, 「に違いない」, 「はずだ」, 「かもしれない」, and 「らしい」 all express
+  some form of likelihood or conjecture, they differ significantly in their nuance, formality, and the
+  degree of certainty they convey. Choosing the correct expression depends heavily on the context, desired
+  level of formality, and the speaker's confidence in the conjecture. 「であろう」 is the most formal and literary,
+  primarily found in written or highly formal spoken contexts, conveying a logical or objective conclusion.
+  「だろう」 is its casual counterpart, frequently used in everyday conversation. 「でしょう」 is the polite form
+  of 「だろう」, suitable for polite conversation and writing. 「に違いない」 expresses a much stronger certainty,
+  implying little to no doubt. 「はずだ」 denotes an expectation based on known information or reasons. In
+  contrast, 「かもしれない」 expresses a weaker, more speculative possibility, and 「らしい」 indicates conjecture
+  based on external information or observation.
 examples:
   - english: If it's this machine, even a child should be able to use it.
     japanese:
@@ -100,12 +125,6 @@ examples:
           for a formal expression of likelihood, not a casual one like 「だろう」, which would be too informal
           for this setting and speaker role. 「であろう」 conveys a more objective and certain deduction about
           the machine's inherent user-friendliness, whereas 「だろう」 implies a personal guess.
-      - competing_japanese:
-          - この 機械 なら、子供 で も 使える はず だ。
-        english: If it's this machine, even a child is expected to be able to use it.
-        hint: This emphasizes expectation based on known facts, not a general natural capability. We're
-          looking for a sense of inherent possibility, where 「はずだ」 would focus on a logical deduction
-          rather than the natural characteristic that allows for a broader, objective assertion with 「であろう」.
     scene: An engineer demonstrating a newly designed, user-friendly device to a colleague, expressing
       confidence in its simplicity.
     register: formal
@@ -128,13 +147,6 @@ examples:
           looking for a formal expression of probability; 「だろう」 would sound too informal and lack the
           professional gravitas needed for a legal context. 「であろう」 reflects a more reasoned and objective
           outlook on the case's strength.
-      - competing_japanese:
-          - これ だけ の 証拠 が あれ ば、裁判 で 勝てる に 違い ない。
-        english: With this much evidence, we must win in court.
-        hint: This expresses near certainty. We're looking for a strong, confident prediction that allows
-          for inherent uncertainty, as 「に違い ない」 would imply an absolute certainty that might be imprudent
-          in a legal setting, where outcomes are never 100% guaranteed. 「であろう」 allows for a high degree
-          of confidence without being overly absolute.
     scene: A lawyer reviewing case documents with a client, expressing a strong conviction about the outcome.
     register: formal
     setting: professional
@@ -155,12 +167,6 @@ examples:
           an authoritative statement about a natural outcome, and 「だろう」 would make the tutor's advice
           seem less formal and less grounded in experience. 「であろう」 emphasizes the logical consequence
           of the student's consistent effort.
-      - competing_japanese:
-          - この 調子 で 練習 すれ ば、試験 に 合格 できる はず だ。
-        english: If you practice at this pace, you are expected to be able to pass the exam.
-        hint: This implies an expectation based on reason. We're looking for a natural and logical outcome
-          of continued effort, where 「はずだ」 places more emphasis on a logical deduction, while 「であろう」 frames
-          it as a natural, almost inevitable, progression if the current conditions persist.
     scene: A tutor giving encouragement to a student, basing their confidence on the student's current
       progress.
     register: formal
@@ -182,13 +188,6 @@ examples:
           conjecture. We're looking for a formal and literary tone; 「だろう」 would be too conversational
           for the reflective, informative style of a wildlife documentary. 「であろう」 evokes a more formal
           feel.
-      - competing_japanese:
-          - 厳しい 冬 に なれ ば、山 の 動物 たち も 苦しむ に 違い ない。
-        english: When winter becomes harsh, mountain animals must suffer.
-        hint: This expresses strong certainty, which might be too definitive for a narrative about natural
-          hardships. We're looking for a sense of natural inevitability, as 「に違い ない」 asserts a certainty
-          that may sound too clinical for a narrative that aims to evoke empathy for the animals. 「であろう」
-          softens the certainty while retaining conviction.
     scene: A wildlife documentarian narrating the challenges faced by animals in their natural habitat.
     register: formal
     setting: informative
@@ -208,16 +207,6 @@ examples:
         hint: The reflection on a historical past requires a contemplative and literary tone, not a casual
           speculation. We're looking for a more formal expression, as 「だろう」 would trivialize the counterfactual
           nature of historical analysis. 「であろう」 maintains the formal, academic distance.
-      - competing_japanese:
-          - あの 失敗 が なけれ ば、彼 の 人生 は 違っ て い た に 違い ない。
-        english: This expresses strong certainty. We're looking for a nuanced conjecture, reflecting the
-          speculative nature of counterfactuals; 「に違い ない」 would imply an absolute, unchangeable truth,
-          which contradicts the 'what if' nature of the statement. 「であろう」 acknowledges the speculative
-          aspect.
-        hint: This expresses strong certainty. We're looking for a nuanced conjecture, reflecting the
-          speculative nature of counterfactuals; 「に違い ない」 would imply an absolute, unchangeable truth,
-          which contradicts the 'what if' nature of the statement. 「であろう」 acknowledges the speculative
-          aspect.
     scene: A historian reflecting on a pivotal moment in a historical figure's past, speculating on alternative
       outcomes.
     register: formal
@@ -239,13 +228,6 @@ examples:
           absolute certainty. We're looking for a strong likelihood, not a certainty, as 「に違い ない」 could
           be misleading in its definitiveness for a public weather forecast, where probabilities are key.
           「であろう」 presents a clear, strong prediction while acknowledging natural variability.
-      - competing_japanese:
-          - これ ほど の 大雨 で は、川 の 水量 は 増える と 思う。
-        english: With such heavy rain, I think the river's water level will rise.
-        hint: A professional report requires an objective and widely accepted likelihood, not a personal
-          opinion. We're looking for an objective conjecture, as 「と思う」 implies a personal belief, which
-          is inappropriate for the objective, authoritative tone of a professional meteorologist's report.
-          「であろう」 maintains the objectivity.
     scene: A meteorologist reporting on severe weather conditions and their probable impact.
     register: formal
     setting: informative
@@ -265,13 +247,6 @@ examples:
         hint: An academic or scientific description requires a formal and objective inference, not a common
           conjecture. We're looking for a formal expression of probability; 「だろう」 would be far too informal
           and personal for a geographer's objective assessment. 「であろう」 lends a scientific, deductive tone.
-      - competing_japanese:
-          - この 地域 に は、豊か な 自然 が ある はず だ。
-        english: There should be abundant nature in this region.
-        hint: This implies an expectation based on reason. We're looking for a logical conclusion derived
-          from analysis, providing an authoritative tone; 「はずだ」 focuses on an expectation based on known
-          principles, while 「であろう」 is more about a logical deduction or strong inference drawn from available
-          (though indirect) evidence.
     scene: A geographer describing a remote area based on satellite imagery, inferring its natural characteristics.
     register: formal
     setting: informative
@@ -292,13 +267,6 @@ examples:
           not a casual conjecture. We're looking for a formal expression of feasibility, as 「だろう」 lacks
           the professional weight and objectivity required in a business evaluation. 「であろう」 signals a
           reasoned, formal judgment.
-      - competing_japanese:
-          - 彼 の 計画 は、実行 可能 だ と 思い ます。
-        english: I think his plan is feasible.
-        hint: This expresses a personal opinion. We're looking for an objective and reasoned judgment
-          suitable for a professional environment, as 「と思います」 is a personal opinion, which is too subjective
-          for a project manager's formal assessment. 「であろう」 presents the feasibility as a collective or
-          objective conclusion.
     scene: A project manager evaluating a colleague's proposal, expressing a confident assessment of its
       viability.
     register: formal
@@ -319,47 +287,32 @@ examples:
         hint: An academic assessment requires a formal tone for scholarly discourse, not a casual observation.
           We're looking for a formal expression of importance, as 「だろう」 is too casual for a professor
           providing scholarly feedback. 「であろう」 elevates the statement to a formal, academic conclusion.
-      - competing_japanese:
-          - この 論文 の 内容 は、非常 に 重要 だ と 思い ます。
-          - この 論文 の 内容 は、非常 に 重要 だ と 思う。
-        english: I think the content of this paper is very important.
-        hint: This expresses a personal opinion. We're looking for an authoritative tone that presents
-          importance as an established fact or logical conclusion, as 「と思います」 is a personal opinion, while
-          「であろう」 implies a more generally accepted or objective assessment in an academic context.
     scene: A professor giving feedback on a student's research paper, highlighting its significance.
     register: formal
     setting: informative
     nuance: A professor's statement using 「重要 であろう」 formally asserts the significance of the paper. This
       aligns with academic discourse, where conclusions are often presented as reasoned judgments, contributing
       to an objective and authoritative tone.
-  - english: Looking at these ruins, it must have been a prosperous city.
+  - english: He must have been a man of great ambition.
     japanese:
-      - これ ら の 遺跡 を 見る に、かつて 栄え た 都 で あっ た {で あろう}。
-      - これ ら の 遺跡 を 見る に、かつて 繁栄 し た 都 {で あろう}。
-      - これ ら の 遺跡 を 見る に、かつて 豊か な 文明 が あっ た {で あろう}。
-    english_literally: These ruins looking at, once prosperous capital was, probably.
+      - 彼 は 大いなる 野心 家 {で あろう}。
+      - 彼 は 偉大 な 野心 家 {で あろう}。
+      - 彼 は 相当 な 野心 家 {で あろう}。
+    english_literally: He, great ambition man, probably.
     competing_grammar:
       - competing_japanese:
-          - これ ら の 遺跡 を 見る に、かつて 栄え た 都 で あっ た だろう。
-        english: Looking at these ruins, it probably was a prosperous city (casual).
-        hint: An archaeologist's formal deduction requires a more elevated and objective expression of
-          probability than casual conjecture. We're looking for a formal and literary tone; 「だろう」 would
-          be too informal for an archaeological deduction, which demands a more academic and authoritative
-          tone. 「であろう」 conveys a sense of reasoned inference.
-      - competing_japanese:
-          - これ ら の 遺跡 を 見る に、かつて 栄え た 都 で あっ た に 違い ない。
-        english: Looking at these ruins, it must have been a prosperous city (absolute certainty).
-        hint: This implies absolute certainty, which might be too definitive for an interpretation of
-          historical evidence. We're looking for a strong, formal conjecture that still acknowledges the
-          interpretive nature, as 「に違い ない」 suggests an undeniable fact, which can be too strong for an
-          archaeological interpretation that often relies on inference from partial evidence. 「であろう」 allows
-          for strong conviction within the realm of probability.
-    scene: An archaeologist examining ancient ruins and drawing a conclusion about their past.
+          - 彼 は 大いなる 野心 家 だろう。
+        english: He probably was a man of great ambition (casual).
+        hint: The biographer's assessment is a formal conclusion drawn from historical analysis, not a
+          casual guess. We're looking for a formal expression of conjecture; 「だろう」 would be too informal
+          for this academic setting.
+    scene: A biographer presenting a scholarly analysis of a historical figure's character based on their
+      actions and writings.
     register: formal
-    setting: informative
-    nuance: An archaeologist's use of 「であったであろう」 conveys a formal, reasoned conclusion based on evidence.
-      It suggests a strong likelihood derived from careful study, fitting the analytical and interpretive
-      nature of historical and archaeological research.
+    setting: academic
+    nuance: The use of 「野心家であろう」 by a biographer indicates a formal and reasoned conclusion about the
+      historical figure's inner character. It presents this interpretation as a strong likelihood derived
+      from evidence, fitting the analytical and objective tone of academic discourse.
 post_example_writeup: The examples illustrate how 「であろう」 is employed across different word types (verbs,
   i-adjectives, nouns, and na-adjectives) to convey a sense of formal or literary conjecture. It is a
   powerful tool for expressing objective probability in academic, professional, and literary contexts.

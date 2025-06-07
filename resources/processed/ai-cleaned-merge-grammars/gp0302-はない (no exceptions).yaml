@@ -1,10 +1,14 @@
 grammar_point: はない (no exceptions)
 learn_before:
-  - い-Adjectives (negative form)
-  - う-verb (negative)
   - ある (to exist or have)
   - は (topic and contrast)
+  - Verbs (non-past plain)
+  - い-Adjectives (negative form)
+  - な-Adjective (predicate form)
+  - じゃない (negation noun and na-adj)
+  - Relative Clause (modifying nouns)
 learn_after:
+  - ないことには〜ない (unless ~ will not)
   - ないわけにはいかない (inevitable necessity)
 id: gp0302
 meaning: There is not ~ that is not/does not
@@ -47,6 +51,9 @@ formation:
 jlpt: N4
 details:
   usage-context: general
+  grammatical-role: affirmation of universality by denying absence
+  logical-flow: A implies B, where B is universally true without exception
+  temporal-flow: Can apply to past, present, or future contexts
 etymology: This grammar point is derived from the combination of 「ない」 (nai), the negative form of ある (aru,
   to exist), and the topic marker 「は」 (wa), creating a double negative structure that affirms the presence
   of something by denying its absence. It emphasizes the universality or complete absence of exceptions
@@ -56,8 +63,7 @@ writeup: 「Noun[negative-modifier]・Verb[ない]・Adjective[negative] + は�
   that doesn't..." in English, implying "everything does..." or "everyone is...". This pattern is used
   to express that something is universally true or that there are no exceptions. Pay close attention to
   what type of word is being negated (a noun modified by a negative clause, a verb in its negative form,
-  or an adjective in its negative form) to properly use and interpret the phrase. This term is not to
-  be confused with 「なくはない」, a more advanced grammar pattern which means "It's not that it isn't (A)."
+  or an adjective in its negative form) to properly use and interpret the phrase.
 false_friends:
   - term: ないことには〜ない
     meaning: Unless you do something
@@ -290,5 +296,3 @@ post_example_writeup: The usage of this double negative pattern strongly asserts
   as it will define the nuance of the universal affirmation.
 sources:
   bunpro: https://bunpro.jp/grammar_points/ない-はない
-lint-errors:
-  - '[rule-11] warning learn_after has 1 item(s); must have at least 2'
