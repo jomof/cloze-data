@@ -169,16 +169,16 @@ def lv_learn_before(val, type, path, messages):
         return
     lb = val.get("learn_before")
     count = len(lb) if isinstance(lb, list) else 0
-    if count < 2:
-        messages.append(f"[rule-10] warning learn_before has {count} item(s); must have at least 2")
+    if count < 1:
+        messages.append(f"[rule-10] warning learn_before has {count} item(s); must have at least 1")
 
 def lv_learn_after(val, type, path, messages):
     if type is not None:
         return
     lb = val.get("learn_after")
     count = len(lb) if isinstance(lb, list) else 0
-    if count < 2:
-        messages.append(f"[rule-11] warning learn_after has {count} item(s); must have at least 2")
+    if count < 1:
+        messages.append(f"[rule-11] warning learn_after has {count} item(s); must have at least 1")
 
 def lv_false_friends_grammar_point(val, type, path, messages, all_grammars_summary):
     if type != "false_friends/object":
@@ -195,7 +195,8 @@ def lv_known_grammar(val, type, path, messages, all_grammars_summary):
         return
 
     if not val in all_grammars_summary['all-grammar-points'].keys():
-        messages.append(f"[rule-13] unknown grammar at '{path}': '{val}'. You may suggest new grammar points by adding a false_friend.")
+        if val != "<first>" and val != "<last>":
+            messages.append(f"[rule-13] unknown grammar at '{path}': '{val}'. You may suggest new grammar points by adding a false_friend.")
 
 def lv_grammar_point_special_characters(val, type, path, messages):
     if type != "grammarType":

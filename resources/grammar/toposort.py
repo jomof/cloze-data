@@ -6,16 +6,113 @@ import asyncio
 from python.mapreduce import MapReduce
 
 import logging
+import copy
 
-# Configure logging to file
-tlog_filename = os.getenv('TOPOSORT_LOG', 'toposort.log')
 tlogging = logging.getLogger(__name__)
-tlogging.setLevel(logging.DEBUG)
-file_handler = logging.FileHandler(tlog_filename)
-formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s')
-file_handler.setFormatter(formatter)
-tlogging.addHandler(file_handler)
 
+def find_transitive_edges(graph, ordered, edge_types):
+    """
+    Find edges that can be removed without changing topological order.
+    Returns dict mapping source -> list of redundant edges, where each edge is:
+    {'target': target_node, 'dep_type': 'learn_before'/'learn_after'}
+    """
+    transitive_edges = defaultdict(list)
+    
+    # Build position mapping for efficient ordering checks
+    position = {node: i for i, node in enumerate(ordered)}
+    
+    for u in graph:
+        direct_successors = set(graph[u])
+        redundant_targets = set()  # Track which targets we've already identified as redundant
+        
+        # For each direct successor, find all its reachable nodes
+        for v in list(direct_successors):
+            if v not in graph:
+                continue
+                
+            # DFS to find all nodes reachable from v
+            reachable_from_v = set()
+            stack = [v]
+            visited = set()
+            
+            while stack:
+                current = stack.pop()
+                if current in visited:
+                    continue
+                visited.add(current)
+                
+                for neighbor in graph.get(current, []):
+                    if neighbor not in visited:
+                        stack.append(neighbor)
+                        reachable_from_v.add(neighbor)
+            
+            # Check if u has direct edges to any node reachable from v
+            for w in reachable_from_v:
+                if (w in direct_successors and 
+                    position[v] < position[w] and 
+                    w not in redundant_targets):  # Only add if not already found
+                    
+                    dep_type = edge_types.get((u, w), 'unknown')
+                    transitive_edges[u].append({
+                        'target': w,
+                        'dep_type': dep_type
+                    })
+                    redundant_targets.add(w)  # Mark as already found
+    
+    return dict(transitive_edges)
+
+def add_stability_edges(ordered, original_graph, edge_types, removed_edges):
+    """
+    Add minimal edges to make the topological ordering stable.
+    Returns dict mapping source -> list of added edges in same format as removed_edges.
+    """
+    added_edges = defaultdict(list)
+    current_graph = copy.deepcopy(original_graph)
+    
+    # Remove the edges that were cut during cycle breaking
+    for source, cuts in removed_edges.items():
+        for cut in cuts:
+            current_graph[source].discard(cut['target'])
+    
+    # For each adjacent pair in the ordering, check if their order is constrained
+    for i in range(len(ordered) - 1):
+        u, v = ordered[i], ordered[i + 1]
+        
+        # Check if u must come before v due to existing constraints
+        if not has_ordering_constraint(u, v, current_graph):
+            # Add edge u -> v to enforce this ordering
+            current_graph[u].add(v)
+            added_edges[u].append({
+                'target': v,
+                'dep_type': 'stability'  # Mark as stability edge
+            })
+    
+    return dict(added_edges)
+
+def has_ordering_constraint(u, v, graph):
+    """
+    Check if u is constrained to come before v by existing edges.
+    Returns True if there's a path from u to v.
+    """
+    if u == v:
+        return False
+    
+    visited = set()
+    stack = [u]
+    
+    while stack:
+        current = stack.pop()
+        if current in visited:
+            continue
+        visited.add(current)
+        
+        for neighbor in graph.get(current, []):
+            if neighbor == v:
+                return True  # Found path u -> ... -> v
+            if neighbor not in visited:
+                stack.append(neighbor)
+    
+    return False
 
 def best_effort_toposort(data):
     """
@@ -29,7 +126,7 @@ def best_effort_toposort(data):
                - 'target': the node to which the edge pointed
                - 'dep_type': either 'learn_before' or 'learn_after'
     """
-    tlogging.debug("Starting best-effort topological sort on %d nodes", len(data))
+    print(f"Toposort {tlog_filename}.")
     # 0) Compute priority ranking based on sorted 'id's
     all_ids = sorted({deps.get('id', '') for deps in data.values() if deps.get('id', '') is not None})
     id_to_rank = {id_str: idx for idx, id_str in enumerate(all_ids)}
@@ -125,7 +222,7 @@ def best_effort_toposort(data):
     # 4) Break cycles
     while graph:
         nodes = list(graph.keys())
-        tlogging.debug("Remaining with cycles: %s", nodes)
+        # tlogging.debug("Remaining with cycles: %s", nodes)
         sccs = tarjan_scc(nodes, graph)
         comp = next((c for c in sccs if len(c) > 1), None)
         if not comp:
@@ -136,16 +233,18 @@ def best_effort_toposort(data):
                 raise KeyError(
                     f"Missing priority for {e.args[0]}. Nodes: {nodes}. Missing: {missing}"
                 ) from e
-            tlogging.debug("Appending sorted: %s", rem)
+            # tlogging.debug("Appending sorted: %s", rem)
             ordered.extend(rem)
             break
 
-        tlogging.debug("Breaking SCC: %s", comp)
+        # tlogging.debug("Breaking SCC: %s", comp)
         back_count = count_back_edges(comp, graph)
         eps = 1e-6; best_edge = None; best_score = -1
         for u in comp:
             for v in graph[u]:
                 if v not in comp: continue
+                if (u, v) not in edge_types:
+                    continue  # Skip edges that weren't in original data
                 bc = back_count.get((u, v), 0)
                 score = (bc + 1) / (priority[u] + eps)
                 if score > best_score:
@@ -166,7 +265,38 @@ def best_effort_toposort(data):
             graph.pop(n2, None)
 
     tlogging.debug("Complete. Ordered %d, cut %d.", len(ordered), sum(len(v) for v in removed_edges.values()))
-    return ordered, dict(removed_edges)
+    
+    # Find transitive edges in the final DAG
+    # Rebuild clean graph without the removed edges
+    clean_graph = defaultdict(set)
+    clean_edge_types = {}
+    
+    for node, deps in data.items():
+        for b in deps.get('learn_before', []):
+            clean_graph[b].add(node)
+            clean_edge_types[(b, node)] = 'learn_before'
+        for a in deps.get('learn_after', []):
+            clean_graph[node].add(a)
+            clean_edge_types[(node, a)] = 'learn_after'
+    
+    # Remove the edges we cut during cycle breaking
+    for source, cuts in removed_edges.items():
+        for cut in cuts:
+            clean_graph[source].discard(cut['target'])
+            clean_edge_types.pop((source, cut['target']), None)
+    
+    transitive_edges = find_transitive_edges(clean_graph, ordered, clean_edge_types)
+    
+    if transitive_edges:
+        total_redundant = sum(len(targets) for targets in transitive_edges.values())
+        tlogging.info("Found %d transitive edges that could be removed", total_redundant)
+        for source, targets in transitive_edges.items():
+            for target_info in targets:
+                tlogging.debug("Transitive edge: %s -> %s (type=%s)", 
+                             source, target_info['target'], target_info['dep_type'])
+
+    
+    return ordered, dict(removed_edges), dict(transitive_edges)
 
 
 if __name__ == '__main__':
@@ -177,11 +307,19 @@ if __name__ == '__main__':
         'resources', 'processed', 'ai-cleaned-merge-grammars'
     )
 
+    #Set up logging
+    tlog_filename = os.path.join(grammar_root, 'summary/toposort.log')
+    tlogging.setLevel(logging.DEBUG)
+    file_handler = logging.FileHandler(tlog_filename)
+    formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s')
+    file_handler.setFormatter(formatter)
+    tlogging.addHandler(file_handler)
+
     # The name of the renames file
     ordered_file = os.path.join(grammar_root, 'summary/toposort-order.yaml')
     disruptions_file = os.path.join(grammar_root, 'summary/toposort-disruptions.yaml')
     suggested_cuts = os.path.join(grammar_root, 'summary/toposort-suggested-cuts.yaml')
-    tlog_filename = os.path.join(grammar_root, 'summary/toposort.log')
+    transitive_cuts_file = os.path.join(grammar_root, 'summary/toposort-transitive-cuts.yaml')
 
     # Generate a grammar summary object with only learn_before and learn_after fields
     grammar_summary = generate_summary(grammar_root, ['id', 'learn_before', 'learn_after'])
@@ -193,30 +331,57 @@ if __name__ == '__main__':
 
     # Perform best-effort topological sort
     print("Performing best-effort topological sort...")
-    ordered,cuts = best_effort_toposort(grammar_summary['all-grammar-points'])
+    ordered,cuts,transitive_cuts = best_effort_toposort(grammar_summary['all-grammar-points'])
+
+    # Compute forward and backward edges
+    forward_edges = { }
+    backward_edges = { }
+    for i, value in enumerate(ordered):
+        if i > 0:
+            backward_edges[value] = ordered[i-1]
+        if i < len(ordered) - 1:
+            forward_edges[value] = ordered[i+1]
+
+
     with open(ordered_file, 'w', encoding='utf-8') as f:
         yaml.dump(ordered, f, allow_unicode=True)
 
     with open(suggested_cuts, 'w', encoding='utf-8') as f:
         yaml.dump(cuts, f, allow_unicode=True)
 
+    with open(transitive_cuts_file, 'w', encoding='utf-8') as f: 
+        yaml.dump(transitive_cuts, f, allow_unicode=True)
+
     def preprocess(parsed_obj, file_path):
-        grammar_point = parsed_obj['grammar_point']
-        if grammar_point in cuts:
-            return parsed_obj
+        # grammar_point = parsed_obj['grammar_point']
+        # if grammar_point in cuts or grammar_point in transitive_cuts:
+        return parsed_obj
         
-    def logic(parsed_obj, file_path):
-        grammar_point = parsed_obj['grammar_point']
+    def cut_edges(grammar_point, parsed_obj, cuts):
         if grammar_point in cuts:
             for edit in cuts[grammar_point]:
                 dep_type = edit['dep_type']
                 target = edit['target']
                 if dep_type not in parsed_obj:
                     raise ValueError(f"Unexpected dependency type: {dep_type}")
-                if target not in parsed_obj[dep_type]:
-                    raise ValueError(f"Target {target} not found in {dep_type} of {grammar_point}")
-                if target in parsed_obj[dep_type] and len(parsed_obj[dep_type])>1:
+                # if target not in parsed_obj[dep_type]:
+                #     raise ValueError(f"Target {target} not found in {dep_type} of {grammar_point}")
+                if target in parsed_obj[dep_type]:
                     parsed_obj[dep_type].remove(target)
+            if len(parsed_obj['learn_before']) == 0:
+                if grammar_point in backward_edges:
+                    parsed_obj['learn_before'] = [backward_edges[grammar_point]]
+                    print(f"Added learn_before edge for {grammar_point} to {backward_edges[grammar_point]}")
+            if len(parsed_obj['learn_after']) == 0:
+                if grammar_point in forward_edges:
+                    parsed_obj['learn_after'] = [forward_edges[grammar_point]]
+        
+    def logic(parsed_obj, file_path):
+        grammar_point = parsed_obj['grammar_point']
+        parsed_obj['learn_before'] = [ backward_edges.get(grammar_point, '<first>') ]
+        parsed_obj['learn_after'] = [ forward_edges.get(grammar_point, '<last>') ]
+        # cut_edges(grammar_point, parsed_obj, cuts)
+        # cut_edges(grammar_point, parsed_obj, transitive_cuts)
         return parsed_obj
 
     mr = MapReduce(
