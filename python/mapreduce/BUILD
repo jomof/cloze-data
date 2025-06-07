@@ -7,5 +7,8 @@ py_library(
         "mapreduce.py",
     ],
     visibility = ["//visibility:public"],
-    deps = ["@pip//aiofiles"],
+    deps = [
+        "@pip//aiofiles",
+        "@pip//pyyaml",
+    ],
 )

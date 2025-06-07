@@ -275,10 +275,9 @@ py_binary(
     ],
     visibility = ["//:__subpackages__"],
     deps = [
+        ":grammar",
         "//python/grammar",
         "//python/mapreduce",
-        "//python/utils/visit_json",
-        "@pip//pyyaml",
     ],
 )
 
@@ -291,6 +290,24 @@ py_binary(
     ],
     visibility = ["//:__subpackages__"],
     deps = [
+        ":grammar",
+        "//python/grammar",
+        "//python/mapreduce",
+        "//python/utils/visit_json",
+        "@pip//pyyaml",
+    ],
+)
+
+# bazel run //resources/grammar:toposort
+py_binary(
+    name = "toposort",
+    srcs = ["toposort.py"],
+    data = [
+        "//resources/processed:ai-cleaned-merge-grammars",
+    ],
+    visibility = ["//:__subpackages__"],
+    deps = [
+        ":grammar",
         "//python/grammar",
         "//python/mapreduce",
         "//python/utils/visit_json",
@@ -314,6 +331,7 @@ py_library(
         "merge-grammars.py",
         "post-ai-scrub-tool.py",
         "split-join-rename.py",
+        "toposort.py",
         "yaml-clean.py",
     ],
     visibility = ["//:__subpackages__"],

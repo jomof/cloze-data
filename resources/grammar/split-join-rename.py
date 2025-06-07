@@ -21,7 +21,7 @@ if __name__ == '__main__':
 
     # Generate the grammary summary object
     grammar_summary = generate_summary(grammar_root, ['id', 'better_grammar_point_name'])
-    save_summary(grammar_summary, grammar_root)
+    save_summary(grammar_summary, grammar_root, 'split-join-rename-summary.json')
     print(f"Generated grammar summary with {len(grammar_summary['all-grammar-points'])} grammar points.")
 
     if os.path.exists(renames_allowed):

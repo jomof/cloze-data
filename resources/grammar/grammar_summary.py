@@ -14,14 +14,14 @@ def sort_summary(summary):
         summary['all-grammar-points'] = sorted_points
     return summary
 
-def save_summary(summary, grammar_root):
+def save_summary(summary, grammar_root, name='summary.json'):
     """
     Saves the summary to a file.
     """
     summary_root = os.path.join(grammar_root, 'summary')
     if not os.path.isdir(summary_root):
         os.makedirs(summary_root)
-    file_path = os.path.join(summary_root, 'summary.json')
+    file_path = os.path.join(summary_root, name)
     with open(file_path, 'w', encoding='utf-8') as f:
         json.dump(sort_summary(summary), f, ensure_ascii=False, indent=4)
     
