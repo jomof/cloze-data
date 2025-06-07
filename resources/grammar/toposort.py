@@ -213,9 +213,9 @@ if __name__ == '__main__':
                 target = edit['target']
                 if dep_type not in parsed_obj:
                     raise ValueError(f"Unexpected dependency type: {dep_type}")
-                # if target not in parsed_obj[dep_type]:
-                #     raise ValueError(f"Target {target} not found in {dep_type} of {grammar_point}")
-                if target in parsed_obj[dep_type]:
+                if target not in parsed_obj[dep_type]:
+                    raise ValueError(f"Target {target} not found in {dep_type} of {grammar_point}")
+                if target in parsed_obj[dep_type] and len(parsed_obj[dep_type])>1:
                     parsed_obj[dep_type].remove(target)
         return parsed_obj
 
@@ -228,6 +228,6 @@ if __name__ == '__main__':
         max_threads          = 4,
     )
 
-    # asyncio.run(mr.run())
+    asyncio.run(mr.run())
     
     
