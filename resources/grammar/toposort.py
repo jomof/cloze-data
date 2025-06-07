@@ -365,9 +365,11 @@ if __name__ == '__main__':
         
     def logic(parsed_obj, file_path):
         grammar_point = parsed_obj['grammar_point']
-        parsed_obj['learn_before'] = [ backward_edges.get(grammar_point, '<first>') ]
-        parsed_obj['learn_after'] = [ forward_edges.get(grammar_point, '<last>') ]
-        # cut_edges(grammar_point, parsed_obj, cuts)
+        # if grammar_point in backward_edges:
+        #     parsed_obj['learn_before'] = list(set(parsed_obj['learn_before'] + [ backward_edges[grammar_point] ]))
+        # if grammar_point in forward_edges:
+        #     parsed_obj['learn_after'] = list(set(parsed_obj['learn_after'] + [ forward_edges[grammar_point] ]))
+        cut_edges(grammar_point, parsed_obj, cuts)
         # cut_edges(grammar_point, parsed_obj, transitive_cuts)
         return parsed_obj
 

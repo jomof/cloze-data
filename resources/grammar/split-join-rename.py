@@ -56,6 +56,19 @@ if __name__ == '__main__':
 
         # Replace references to old names with new names in all grammar files
         def fn(value, type_name, path):
+            if type_name == None: 
+                for act in ['before', 'after']:
+                    learn = value.get(f'learn_{act}', [])
+                    result = []
+                    for grammar_point in learn:
+                        stripped = grammar_point.removeprefix('<suggest>:').strip()
+                        if stripped in old_to_new:
+                            result.extend(old_to_new[stripped])
+                        else:
+                            result.append(grammar_point)
+                    value[f'learn_{act}'] = result
+                
+                return value
             if type_name != 'grammarType': return
             # Strip: <suggest>: prefix from value
             stripped = value.removeprefix('<suggest>:').strip()
@@ -63,6 +76,7 @@ if __name__ == '__main__':
                 if '<suggest>:' in value:
                     print(f"Renaming {value} to {old_to_new[stripped][0]} at {path}")
                 return old_to_new[stripped][0]
+            return value
   
         def logic(parsed_obj, file_path):
             better_names = parsed_obj.get('better_grammar_point_name', [])
