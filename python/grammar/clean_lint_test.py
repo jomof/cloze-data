@@ -211,7 +211,7 @@ class TestLintSchemaUtils(unittest.TestCase):
             lv_learn_before(value, type_name, path, warnings)
         visit_json(grammar_point, GRAMMAR_SCHEMA, fn)
 
-        self.assertIn("[rule-10] warning learn_before has 0 item(s); must have at least 2", warnings)
+        self.assertIn("[rule-10] warning learn_before has 0 item(s); must have at least 1", warnings)
         self.assertEqual(len(warnings), 1)
 
     def test_lv_learn_after(self):
@@ -223,7 +223,7 @@ class TestLintSchemaUtils(unittest.TestCase):
             lv_learn_after(value, type_name, path, warnings)
         visit_json(grammar_point, GRAMMAR_SCHEMA, fn)
 
-        self.assertIn("[rule-11] warning learn_after has 0 item(s); must have at least 2", warnings)
+        self.assertIn("[rule-11] warning learn_after has 0 item(s); must have at least 1", warnings)
         self.assertEqual(len(warnings), 1)
       
     def test_lv_false_friends_grammar_point(self):
@@ -372,6 +372,21 @@ class TestLintSchemaUtils(unittest.TestCase):
         example = cleaned['examples'][0]
         self.assertIsInstance(example['japanese'], list)
         self.assertEqual(example['japanese'], ['テスト 例'])
+
+    def test_clean_lint_removes_known_better_grammar_point_name1(self):
+        grammar_point = {
+            "better_grammar_point_name": ["known", "unknown"],
+        }
+        cleaned = clean_lint(grammar_point, all_grammars_summary = ["known"])
+        self.assertIn("unknown", cleaned['better_grammar_point_name'])
+        self.assertNotIn("known", cleaned['better_grammar_point_name'])
+
+    def test_clean_lint_removes_known_better_grammar_point_name2(self):
+        grammar_point = {
+            "better_grammar_point_name": ["known"],
+        }
+        cleaned = clean_lint(grammar_point, all_grammars_summary = ["known"])
+        self.assertTrue("better_grammar_point_name" not in cleaned)
 
 if __name__ == '__main__':
     unittest.main()

@@ -7,6 +7,7 @@ from python.mapreduce import MapReduce
 import asyncio
 from python.grammar import GRAMMAR_SCHEMA
 import time
+import json
 
 if __name__ == '__main__':
     # Determine workspace root: Bazel sets BUILD_WORKSPACE_DIRECTORY, otherwise use cwd
@@ -36,13 +37,6 @@ if __name__ == '__main__':
                 all_old_names.add(old_name)
         # Make a set of all new names
         all_new_names = set(renames.keys())
-
-        # Check whether any new names are also old names
-        intersection = all_old_names.intersection(all_new_names)
-
-        # TODO: Handle case where an old name is also a new name
-        if intersection:
-            raise Exception(f"Renames file {renames_allowed} has a new name that is also an old name: {intersection}")
         
         # Build a map of old name to new names
         old_to_new = {}
@@ -53,10 +47,12 @@ if __name__ == '__main__':
                 else:
                     old_to_new[old_name] = [new_name]
 
-        # Error if any old name maps to more than one new name
+        # Check for cases where items are split into multiple new names
+        split_new_names = set()
         for old_name in old_to_new:
             if len(old_to_new[old_name]) > 1:
-                raise Exception(f"Renames file {renames_allowed} has an old name that maps to more than one new name: {old_name} -> {old_to_new[old_name]}")
+                split_new_names.add(new_name)
+                print(f"Splitting {old_name} -> {old_to_new[old_name]}")
 
         # Replace references to old names with new names in all grammar files
         def fn(value, type_name, path):
@@ -64,11 +60,9 @@ if __name__ == '__main__':
             # Strip: <suggest>: prefix from value
             stripped = value.removeprefix('<suggest>:').strip()
             if stripped in old_to_new:
-                if len(old_to_new[stripped]) > 1:
-                    raise Exception(f"Renames file {renames_allowed} has an old name that maps to more than one new name: {stripped} -> {old_to_new[stripped]}")
                 if '<suggest>:' in value:
                     print(f"Renaming {value} to {old_to_new[stripped][0]} at {path}")
-                return old_to_new[stripped][0]
+                # return old_to_new[stripped][0]
   
         def logic(parsed_obj, file_path):
             better_names = parsed_obj.get('better_grammar_point_name', [])
@@ -87,20 +81,49 @@ if __name__ == '__main__':
 
         asyncio.run(mr.run())
 
-        # Rename the grammar points themselves
-        for rename in renames:
-            old_names = renames[rename]['old-names']
-            grammar_id = renames[rename]['id']
+        # Copy old name to new name files
+        old_name_paths = set()
+        new_name_paths = set()
+        for new_name in renames:
+            old_names = renames[new_name]['old-names']
+            grammar_id = renames[new_name]['id']
+            new_id_name = f"{grammar_id}-{new_name}"
             for old_name in old_names:
-                old_name = f"{grammar_id}-{old_name}.yaml"
-                new_name = f"{grammar_id}-{rename}.yaml"
-                old_path = os.path.join(grammar_root, old_name)
-                new_path = os.path.join(grammar_root, new_name)
-                if os.path.exists(old_path):
-                    print(f"Renaming {old_name} to {new_name}")
-                    os.rename(old_path, new_path)
-                else:
-                    print(f"Old path {old_path} does not exist, skipping rename to {new_path}")
+                old_id_name = f"{grammar_id}-{old_name}"
+                old_path = os.path.join(grammar_root, old_id_name + '.yaml')
+                new_path = os.path.join(grammar_root, new_id_name + '.yaml')
+                old_name_paths.add(old_path)
+                new_name_paths.add(new_path)
+                if old_path != new_path and not os.path.exists(new_path):
+                    # Read the old content
+                    with open(old_path, 'r', encoding='utf-8') as f:
+                        content = f.read() 
+                    if old_name in old_to_new and len(old_to_new[old_name]) > 1:
+                        all_new_names = old_to_new[old_name]
+                        new_names_list = ', '.join(f"'{item}'" for item in all_new_names)
+                        header = f"An old grammar point, '{old_name}', has been split into multiple new names: {new_names_list}. You are working on '{new_name}', please be sure to call out the distinction between this new point and the other new points. "
+                    else:
+                        header = f"An old grammar point has had its name changed from '{old_name}' to '{new_name}'. "
+                    new_content = {
+                        'grammar_point': new_name,
+                        'id': grammar_id,
+                        'split_predecessor': 
+                            f"{header}"
+                            f"Please recreate this grammar point with this information in mind. All fields **MUST** be suitable for the new name. "
+                            f"For your reference, here is the old content:\n\n{content}",
+                        'lint-errors': [f"You **MUST** repopulate this grammar point with the new name '{new_name}' in mind. All fields **MUST** be suitable for the new name."],
+                    }
+                
+                    with open(new_path, 'w', encoding='utf-8') as f:
+                        f.write(json.dumps(new_content, ensure_ascii=False, indent=2))
+      
+   
+    
+        # Remove old name files that are not in the new name paths
+        for old_path in old_name_paths:
+            if old_path not in new_name_paths:
+                print(f"Removing old name file {old_path}")
+                os.remove(old_path)
 
         # Rename the renames-allowed.yaml file to renames-allowed.yaml.bak
         os.rename(renames_allowed, renames_allowed + f'-{int(time.time())}.bak')
@@ -125,9 +148,10 @@ if __name__ == '__main__':
             continue
 
         for better_name in better_names:
-            node = renames.get(better_name, { 'id': summary_point['id'], 'old-names': [] })
-            node['old-names'].append(grammar_point_name)
-            renames[better_name] = node
+            if better_name not in summary_point:
+                node = renames.get(better_name, { 'id': summary_point['id'], 'old-names': [] })
+                node['old-names'].append(grammar_point_name)
+                renames[better_name] = node
 
     # Save the renames-allowed.yaml file
     if len(renames) > 0:

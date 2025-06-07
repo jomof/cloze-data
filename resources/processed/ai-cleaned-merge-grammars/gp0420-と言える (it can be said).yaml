@@ -1,8 +1,10 @@
 grammar_point: と言える (it can be said)
 learn_before:
   - 姿 (figure・appearance)
+  - ' Verb[masu-stem]+Noun (nominalization)'
 learn_after:
   - ちゃんと・きちんと (properly・neatly)
+  - と言える (it can be said)だろう
 id: gp0420
 meaning: Would or could say that...・Can probably say that...・Fair to say that...
 meaning_warning: と言える by itself makes the statement much more frank
@@ -94,7 +96,7 @@ false_friends:
     kind: similar expression
     nuance: 「といってもいい」 is similar but often implies slightly less confidence or a greater degree of subjectivity
       than 「と言える」.
-    grammar_point: といってもいい (you could say)
+    grammar_point: と言ってもいい (you could say)
   - term: 思われる
     meaning: to seem; to appear; to be thought; to be considered
     kind: similar expression
@@ -108,7 +110,7 @@ false_friends:
     nuance: 「と考えられる」 explicitly means 'it is considered that' or 'it is thought that', emphasizing analysis
       and reasoning leading to a conclusion. While similar to 「と言える」, the latter focuses more on the justifiable
       ability to state something, often from the speaker's perspective or a generally accepted viewpoint.
-    grammar_point: 考えられる (can be considered)
+    grammar_point: と考えられる (can be considered)
 post_false_friends_writeup: While 「と言える」, 「といってもいい」, 「と思われる」, and 「と考えられる」 can all be used to express
   a certain conclusion or observation, they carry distinct nuances. 「と言える」 often implies a justifiable
   statement or a conclusion that is fair to make. 「といってもいい」 suggests a more subjective or softer assertion,
@@ -298,6 +300,10 @@ post_example_writeup: The examples illustrate how 「と言える」, often pair
 sources:
   bunpro: https://bunpro.jp/grammar_points/と言える
 lint-errors:
-  - '[rule-13] warning unknown grammar at ''false_friends[2]'': ''考えられる (can be considered)''. It **MUST**
+  - '[rule-13] unknown grammar at ''learn_before[1]'': '' Verb[masu-stem]+Noun (nominalization)''. You
+    may suggest new grammar points by adding a false_friend.'
+  - '[rule-13] unknown grammar at ''learn_after[1]'': ''と言える (it can be said)だろう''. You may suggest new
+    grammar points by adding a false_friend.'
+  - '[rule-13] warning unknown grammar at ''false_friends[0]'': ''と言ってもいい (you could say)''. It **MUST**
     be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
     grammar point.'

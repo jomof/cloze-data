@@ -411,6 +411,19 @@ def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = Non
         # print(f"fn: {type_name=}, {path=}")
         result = value
         try:
+            if type_name == None:
+                grammar_point = value
+                if 'better_grammar_point_name' in grammar_point:
+                    better_grammar_point_names = value['better_grammar_point_name']
+                    new_better_names = []
+                    for better_name in better_grammar_point_names:
+                        if better_name not in all_grammars_summary['all-grammar-points'].keys():
+                            new_better_names.append(better_name)
+                    if new_better_names:
+                        grammar_point['better_grammar_point_name'] = new_better_names
+                    else: 
+                        del grammar_point['better_grammar_point_name']
+
             if type_name == "japanese":
                 result = strip_matching_quotes(value)
                 result = replace_japanese_characters(result)
