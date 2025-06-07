@@ -62,7 +62,7 @@ if __name__ == '__main__':
             if stripped in old_to_new:
                 if '<suggest>:' in value:
                     print(f"Renaming {value} to {old_to_new[stripped][0]} at {path}")
-                # return old_to_new[stripped][0]
+                return old_to_new[stripped][0]
   
         def logic(parsed_obj, file_path):
             better_names = parsed_obj.get('better_grammar_point_name', [])
@@ -109,8 +109,8 @@ if __name__ == '__main__':
                     new_content = {
                         'grammar_point': new_name,
                         'id': grammar_id,
-                        'learn_before': old_grammar_obj.get('learn_before', []),
-                        'learn_before': old_grammar_obj.get('learn_after', []),
+                        'learn_before': old_grammar_obj['learn_before'],
+                        'learn_after': old_grammar_obj['learn_after'],
                         'split_predecessor': 
                             f"{header}"
                             f"Please recreate this grammar point with this information in mind. All fields **MUST** be suitable for the new name. "
