@@ -4,9 +4,8 @@ import yaml
 from collections import defaultdict, deque
 import asyncio
 from python.mapreduce import MapReduce
-
+import sys
 import logging
-import copy
 
 tlogging = logging.getLogger(__name__)
 
@@ -60,59 +59,6 @@ def find_transitive_edges(graph, ordered, edge_types):
                     redundant_targets.add(w)  # Mark as already found
     
     return dict(transitive_edges)
-
-def add_stability_edges(ordered, original_graph, edge_types, removed_edges):
-    """
-    Add minimal edges to make the topological ordering stable.
-    Returns dict mapping source -> list of added edges in same format as removed_edges.
-    """
-    added_edges = defaultdict(list)
-    current_graph = copy.deepcopy(original_graph)
-    
-    # Remove the edges that were cut during cycle breaking
-    for source, cuts in removed_edges.items():
-        for cut in cuts:
-            current_graph[source].discard(cut['target'])
-    
-    # For each adjacent pair in the ordering, check if their order is constrained
-    for i in range(len(ordered) - 1):
-        u, v = ordered[i], ordered[i + 1]
-        
-        # Check if u must come before v due to existing constraints
-        if not has_ordering_constraint(u, v, current_graph):
-            # Add edge u -> v to enforce this ordering
-            current_graph[u].add(v)
-            added_edges[u].append({
-                'target': v,
-                'dep_type': 'stability'  # Mark as stability edge
-            })
-    
-    return dict(added_edges)
-
-def has_ordering_constraint(u, v, graph):
-    """
-    Check if u is constrained to come before v by existing edges.
-    Returns True if there's a path from u to v.
-    """
-    if u == v:
-        return False
-    
-    visited = set()
-    stack = [u]
-    
-    while stack:
-        current = stack.pop()
-        if current in visited:
-            continue
-        visited.add(current)
-        
-        for neighbor in graph.get(current, []):
-            if neighbor == v:
-                return True  # Found path u -> ... -> v
-            if neighbor not in visited:
-                stack.append(neighbor)
-    
-    return False
 
 def best_effort_toposort(data):
     """
@@ -320,6 +266,47 @@ if __name__ == '__main__':
     disruptions_file = os.path.join(grammar_root, 'summary/toposort-disruptions.yaml')
     suggested_cuts = os.path.join(grammar_root, 'summary/toposort-suggested-cuts.yaml')
     transitive_cuts_file = os.path.join(grammar_root, 'summary/toposort-transitive-cuts.yaml')
+
+    # # Check if the disruptions file exists
+    # with open(ordered_file, 'r', encoding='utf-8') as f:
+    #     ordered = yaml.safe_load(f)  # Just to check if the file exists and is valid
+        
+    # forward_edges = { }
+    # backward_edges = { }
+    # for i, value in enumerate(ordered):
+    #     if i > 0:
+    #         backward_edges[value] = ordered[i-1].strip()
+    #     else:
+    #         backward_edges[value] = '<first>'
+    #     if i < len(ordered) - 1:
+    #         forward_edges[value] = ordered[i+1].strip()
+    #     else:
+    #         forward_edges[value] = '<last>'
+            
+    # def ordering_logic(parsed_obj, file_path):
+    #     grammar_point = parsed_obj['grammar_point']
+    #     if grammar_point not in forward_edges:
+    #         raise ValueError(f"Grammar point {grammar_point} not found in forward edges")
+    #     if grammar_point not in backward_edges:
+    #         raise ValueError(f"Grammar point {grammar_point} not found in backward edges")
+    #     parsed_obj['learn_before'] = [ backward_edges.get(grammar_point, '<first>') ]
+    #     parsed_obj['learn_after'] = [ forward_edges.get(grammar_point, '<last>') ]
+    #     # cut_edges(grammar_point, parsed_obj, cuts)
+    #     # cut_edges(grammar_point, parsed_obj, transitive_cuts)
+    #     return parsed_obj
+
+    # mr = MapReduce(
+    #     input_dir            = grammar_root,
+    #     output_dir           = grammar_root,
+    #     map_func_name        = 'ordering',
+    #     map_func             = ordering_logic,        # or a sync function
+    #     max_threads          = 4,
+    # )
+
+    # asyncio.run(mr.run())
+    # sys.exit(0)
+
+
 
     # Generate a grammar summary object with only learn_before and learn_after fields
     grammar_summary = generate_summary(grammar_root, ['id', 'learn_before', 'learn_after'])

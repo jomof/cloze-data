@@ -104,9 +104,13 @@ if __name__ == '__main__':
                         header = f"An old grammar point, '{old_name}', has been split into multiple new names: {new_names_list}. You are working on '{new_name}', please be sure to call out the distinction between this new point and the other new points. "
                     else:
                         header = f"An old grammar point has had its name changed from '{old_name}' to '{new_name}'. "
+
+                    old_grammar_obj = yaml.safe_load(content)
                     new_content = {
                         'grammar_point': new_name,
                         'id': grammar_id,
+                        'learn_before': old_grammar_obj.get('learn_before', []),
+                        'learn_before': old_grammar_obj.get('learn_after', []),
                         'split_predecessor': 
                             f"{header}"
                             f"Please recreate this grammar point with this information in mind. All fields **MUST** be suitable for the new name. "
