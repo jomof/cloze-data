@@ -376,7 +376,7 @@ def get_meaning(name: str) -> Optional[str]:
 
     return inside
 
-def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = None):
+def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = { "all-grammar-points": {"known":{}} }):
     lint = []
     if not grammar_point:
         grammar_point = {}
@@ -411,6 +411,8 @@ def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = Non
         # print(f"fn: {type_name=}, {path=}")
         result = value
         try:
+            if type_name == "grammarType":
+                return value.strip()
             if type_name == None:
                 grammar_point = value
                 if 'better_grammar_point_name' in grammar_point:

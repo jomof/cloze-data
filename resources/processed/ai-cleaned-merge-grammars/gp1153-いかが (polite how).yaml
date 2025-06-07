@@ -1,8 +1,12 @@
 grammar_point: いかが (polite how)
 learn_before:
-  - Noun が Noun なら (if it were a proper x)
+  - です (polite copula)
+  - でしょう (conjecture and confirmation)
+  - ませんか (invitation or suggestion)
 learn_after:
-  - いかん (dependency)
+  - お〜になる (honorific form)
+  - ございます (polite 'to be or exist')
+  - かねる (unable to)
 id: gp1153
 meaning: Polite how; polite inquiry about state or condition; polite offer or suggestion.
 pronunciation:
@@ -10,7 +14,7 @@ pronunciation:
   romaji: ikaga
 formation:
   いかが (as an adverb): Used as an adverb to ask 'how' or 'what' in a highly polite context.
-  '[Noun/Phrase] + はいかがですか': To politely offer or suggest something, or inquire about someone's opinion
+  '[Noun/Phrase] + は {いかが} ですか': To politely offer or suggest something, or inquire about someone's opinion
     or preference.
 jlpt: N4
 details:
@@ -73,7 +77,7 @@ false_friends:
       on the dependency of a situation or outcome on a certain factor, often used in formal or literary
       contexts to mean 'depending on' or 'the state of'. It does not carry the interrogative or offering
       sense of 「いかが」.
-    grammar_point: <suggest>:いかん (dependency)
+    grammar_point: いかん (dependency)
 post_false_friends_writeup: While 「いかが」 shares some superficial similarities with expressions like 「次第」,
   「によって・による」, 「如何して」, 「いかにも」, 「如何な」, and 「いかん」, it is vital to recognize their distinct functions. 「いかが」
   specifically focuses on politely inquiring about 'how' or making a polite offer. In contrast, 「次第」 and
@@ -85,6 +89,7 @@ examples:
   - english: How are you doing?
     japanese:
       - お 元気 {いかが} です か。
+      - お 元気 {いかが} でしょう か。
     english_literally: Your health how is it?
     competing_grammar:
       - competing_japanese:
@@ -99,6 +104,9 @@ examples:
   - english: How about some coffee?
     japanese:
       - コーヒー は {いかが} です か。
+      - コーヒー は {いかが} でしょう か。
+      - コーヒー {いかが} です か。
+      - コーヒー {いかが} でしょう か。
     english_literally: Coffee is how is it?
     competing_grammar:
       - competing_japanese:
@@ -113,6 +121,9 @@ examples:
   - english: How about going to see a movie this weekend?
     japanese:
       - 今週 末、映画 は {いかが} です か。
+      - 今週 末、映画 は {いかが} でしょう か。
+      - 今週 末、映画 {いかが} です か。
+      - 今週 末、映画 {いかが} でしょう か。
     english_literally: This weekend, movie is how is it?
     competing_grammar:
       - competing_japanese:
@@ -127,6 +138,9 @@ examples:
   - english: How was the new movie?
     japanese:
       - 新しい 映画 は {いかが} でし た か。
+      - 新しい 映画 は {いかが} でしょう か。
+      - 新しい 映画 {いかが} でし た か。
+      - 新しい 映画 {いかが} でしょう か。
     english_literally: New movie is how was it?
     competing_grammar:
       - competing_japanese:
@@ -141,6 +155,9 @@ examples:
   - english: How is the preparation for the presentation going?
     japanese:
       - プレゼンテーション の 準備 は {いかが} です か。
+      - プレゼンテーション の 準備 は {いかが} でしょう か。
+      - プレゼンテーション の 準備 {いかが} です か。
+      - プレゼンテーション の 準備 {いかが} でしょう か。
     english_literally: Presentation's preparation is how is it?
     competing_grammar:
       - competing_japanese:
@@ -155,6 +172,9 @@ examples:
   - english: How about this option?
     japanese:
       - こちら の オプション は {いかが} でしょう か。
+      - こちら の オプション は {いかが} です か。
+      - こちら の オプション {いかが} でしょう か。
+      - こちら の オプション {いかが} です か。
     english_literally: This option is how would it be?
     competing_grammar:
       - competing_japanese:
@@ -169,6 +189,9 @@ examples:
   - english: How are things in Tokyo?
     japanese:
       - 東京 の 方 は {いかが} です か。
+      - 東京 の 方 は {いかが} でしょう か。
+      - 東京 の 方 {いかが} です か。
+      - 東京 の 方 {いかが} でしょう か。
     english_literally: Tokyo's direction is how is it?
     competing_grammar:
       - competing_japanese:
@@ -187,6 +210,9 @@ examples:
   - english: How about we take a break here?
     japanese:
       - ここ で 少し 休憩 は {いかが} です か。
+      - ここ で 少し 休憩 は {いかが} でしょう か。
+      - ここ で 少し 休憩 {いかが} です か。
+      - ここ で 少し 休憩 {いかが} でしょう か。
     english_literally: Here at little break is how is it?
     competing_grammar:
       - competing_japanese:
@@ -200,6 +226,8 @@ examples:
   - english: How about this solution?
     japanese:
       - この 解決 策 は {いかが} で ござい ます か。
+      - この 解決 策 は {いかが} でしょう か。
+      - この 解決 策 は {いかが} です か。
     english_literally: This solution is how is it?
     competing_grammar:
       - competing_japanese:
@@ -214,6 +242,9 @@ examples:
   - english: How about thinking of it this way?
     japanese:
       - この よう に 考える の は {いかが} でしょう か。
+      - この よう に 考える の は {いかが} です か。
+      - この よう に 考える の {いかが} でしょう か。
+      - この よう に 考える の {いかが} です か。
     english_literally: This way think is how would it be?
     competing_grammar:
       - competing_japanese:
@@ -304,8 +335,9 @@ split_predecessor: |
       meaning: depending on; as soon as; upon (doing)
       kind: similar expression
       nuance: Unlike 如何, which broadly means 'how' or 'what' in terms of conditionality, 次第 often implies
-        a more immediate or direct consequence, or 'as soon as' an action is completed. It can also be formal
-        but is more common than 如何 in expressions of direct consequence.
+        a more immediate or direct consequence, or 'as soon as' an action is completed. We're looking for an expression that broadly refers
+        to 'how' something is or 'depending on' a condition, with a highly formal nuance, focusing on
+        the nature or manner rather than immediate consequence.
       grammar_point: 次第 (as soon as・depending on)
     - term: によって・による・により (means・cause・dependency)
       meaning: depending on; due to; by means of
@@ -494,7 +526,7 @@ split_predecessor: |
           hint: 「どう に も なら ない」 is a common, slightly less formal expression for something being unmanageable.
             「如何 と も し がたい」 carries a stronger, more resigned tone, often used in reflective or philosophical
             contexts about insurmountable challenges. We're looking for a formal, somber phrase about inherent
-            limitations.
+            limitation.
       scene: Colleagues engage in a philosophical discussion about life's challenges.
       register: formal
       setting: reflective
@@ -536,24 +568,3 @@ split_predecessor: |
       scene: A wise mentor advises a young person on significant life decisions.
       register: semi-formal
       setting: serious
-lint-errors:
-  - '[rule-7] warning examples[0] only has 1 element(s); should should be every way of saying ''english''
-    that adheres to the grammar point'
-  - '[rule-7] warning examples[1] only has 1 element(s); should should be every way of saying ''english''
-    that adheres to the grammar point'
-  - '[rule-7] warning examples[2] only has 1 element(s); should should be every way of saying ''english''
-    that adheres to the grammar point'
-  - '[rule-7] warning examples[3] only has 1 element(s); should should be every way of saying ''english''
-    that adheres to the grammar point'
-  - '[rule-7] warning examples[4] only has 1 element(s); should should be every way of saying ''english''
-    that adheres to the grammar point'
-  - '[rule-7] warning examples[5] only has 1 element(s); should should be every way of saying ''english''
-    that adheres to the grammar point'
-  - '[rule-7] warning examples[6] only has 1 element(s); should should be every way of saying ''english''
-    that adheres to the grammar point'
-  - '[rule-7] warning examples[7] only has 1 element(s); should should be every way of saying ''english''
-    that adheres to the grammar point'
-  - '[rule-7] warning examples[8] only has 1 element(s); should should be every way of saying ''english''
-    that adheres to the grammar point'
-  - '[rule-7] warning examples[9] only has 1 element(s); should should be every way of saying ''english''
-    that adheres to the grammar point'

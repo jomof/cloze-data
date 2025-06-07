@@ -377,7 +377,7 @@ class TestLintSchemaUtils(unittest.TestCase):
         grammar_point = {
             "better_grammar_point_name": ["known", "unknown"],
         }
-        cleaned = clean_lint(grammar_point, all_grammars_summary = ["known"])
+        cleaned = clean_lint(grammar_point, all_grammars_summary = { "all-grammar-points": {"known":{}} })
         self.assertIn("unknown", cleaned['better_grammar_point_name'])
         self.assertNotIn("known", cleaned['better_grammar_point_name'])
 
@@ -385,8 +385,18 @@ class TestLintSchemaUtils(unittest.TestCase):
         grammar_point = {
             "better_grammar_point_name": ["known"],
         }
-        cleaned = clean_lint(grammar_point, all_grammars_summary = ["known"])
+        cleaned = clean_lint(grammar_point, all_grammars_summary = { "all-grammar-points": {"known":{}} })
         self.assertTrue("better_grammar_point_name" not in cleaned)
+
+    def test_strings_trimmed(self):
+        grammar_point = {
+            "learn_before": [" leading space", "trailing space "],
+            "learn_after": [" leading space", "trailing space "],
+        }
+        cleaned = clean_lint(grammar_point)
+        self.assertEqual(cleaned['learn_before'], ["leading space", "trailing space"])
+        self.assertEqual(cleaned['learn_after'], ["leading space", "trailing space"])
+        print(f"Cleaned: {cleaned}")
 
 if __name__ == '__main__':
     unittest.main()
