@@ -151,6 +151,14 @@ def lv_better_grammar_name(val, type, path, messages):
     #     if ',' in meaning and not better_grammar_point_name:
     #         messages.append(f"[rule-16] warning 'grammar_point' meaning '({meaning})' contains a comma (,). It should use dot (・) instead. Suggest a new name in better_grammar_point_name.")
 
+def lv_required_fields(val, type, path, messages):
+    if type:
+        # None for the root object
+        return
+    if "meaning" not in val:
+        messages.append(f"error grammar point is missing required field 'meaning'")
+    if "split_predecessor" in val:
+        messages.append(f"[rule-18] warning grammar point has split_predecessor field. Use the information in it to help compose this new grammar point, then remove the field.")
 
 def lv_validate_parenthetical_meaning(val, type, path, messages):
     if type != "wellFormedGrammarType":
@@ -437,6 +445,7 @@ def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = { "
             else:
                 return result
         finally:
+            lv_required_fields(result, type_name, path, lint)
             lv_quotes(result, type_name, path, lint)
             lv_english_brackets(result, type_name, path, lint)
             lv_japanese_braces(result, type_name, path, lint)

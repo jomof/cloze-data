@@ -494,7 +494,7 @@
     // If split_predecessor exists, then this grammar point was split from an earlier grammar point.
     // Use information from the split predecessor to help populate this new grammar point keeping
     // only the relevant information for the new grammar point.
-    // **MUST** remove split_predecessor or use it to capture you thinking when you created this grammar point.
+    // [rule-18] **MUST** use the information from split_predecessor to compose this grammar point, then discard.
     "split_predecessor": { "type": "string" }
   },
   "required": [
