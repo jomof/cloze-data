@@ -46,10 +46,6 @@ class ConsoleDisplay:
         self.items = {}
         # Track the order in which item_types first appear
         self.type_order = []
-        # Track all slot_keys seen in BEGIN
-        self.known_keys = set()
-        # Track all slot_keys that have been closed (FINISH/ERROR)
-        self.closed_keys = {}
         # Countdown if needed by caller
         self.countdown = 0
 
@@ -105,8 +101,6 @@ class ConsoleDisplay:
             # Track new types in order
             if item_type not in self.type_order:
                 self.type_order.append(item_type)
-            # Record known key
-            self.known_keys.add(slot_key)
             # Create or update item as active, store start time
             self.items[slot_key] = {
                 'text': text,
@@ -410,19 +404,6 @@ class ConsoleDisplay:
         """Mark a work item as started with a given type."""
         if self._is_stopping:
             return
-            
-        if slot_key in self.known_keys:
-            self._debug_print_caller_message(
-                f"BEGIN called for slot_key '{slot_key}' which is already begun."
-            )
-            return
-        if slot_key in self.closed_keys:
-            self._debug_print_caller_message(
-                f"BEGIN called for closed slot_key '{slot_key}' (original class at {self.closed_keys[slot_key]})."
-            )
-            return
-        # Record the event
-        self.known_keys.add(slot_key)
         self.event_queue.put({
             'type': 'BEGIN',
             'slot_key': slot_key,
@@ -435,18 +416,6 @@ class ConsoleDisplay:
         """Mark a work item as completed."""
         if self._is_stopping:
             return
-            
-        if slot_key not in self.known_keys:
-            self._debug_print_caller_message(
-                f"FINISH called for unknown slot_key '{slot_key}'."
-            )
-            return
-        if slot_key in self.closed_keys.keys():
-            self._debug_print_caller_message(
-                f"FINISH called for closed slot_key '{slot_key}' (original class at {self.closed_keys[slot_key]})."
-            )
-            return
-        self.closed_keys[slot_key] = "1" # self._caller_file_line(1)
         self.event_queue.put({
             'type': 'FINISH',
             'slot_key': slot_key,
@@ -466,22 +435,8 @@ class ConsoleDisplay:
             return
             
         self._in_error_handling = True
-        try:
-            if slot_key not in self.known_keys:
-                # Unknown key: just write the error immediately to stdout
-                try:
-                    sys.stdout.write(f'❌ {message}\n')
-                    sys.stdout.flush()
-                except (ValueError, OSError):
-                    pass
-                return        
-            if slot_key in self.closed_keys.keys():
-                self._debug_print_caller_message(
-                    f"ERROR called for closed slot_key '{slot_key}'."
-                )
-                return
+        try:     
             self._debug_print_caller_message(f"\n❌ {message}")
-            self.closed_keys[slot_key] = self._caller_file_line(caller_level)
             self.event_queue.put({
                 'type': 'ERROR',
                 'slot_key': slot_key,
