@@ -3,6 +3,8 @@ import json
 from python.mapreduce import MapReduce
 import asyncio
 import os
+import yaml
+from dumpyaml import dump_yaml_file
 
 def sort_summary(summary):
     """
@@ -14,7 +16,7 @@ def sort_summary(summary):
         summary['all-grammar-points'] = sorted_points
     return summary
 
-def save_summary(summary, grammar_root, name='summary.json'):
+def save_summary(summary, grammar_root, name='summary.yaml'):
     """
     Saves the summary to a file.
     """
@@ -23,7 +25,7 @@ def save_summary(summary, grammar_root, name='summary.json'):
         os.makedirs(summary_root)
     file_path = os.path.join(summary_root, name)
     with open(file_path, 'w', encoding='utf-8') as f:
-        json.dump(sort_summary(summary), f, ensure_ascii=False, indent=4)
+        dump_yaml_file(summary, f)
     
 def generate_summary(grammar_root, fields = ['id', 'meaning']):
     """
