@@ -2,6 +2,12 @@ grammar_point: かと思ったら・かと思うと (unexpected succession)
 learn_before:
   - と思う (I think or thought)
   - たら (if・when・after)
+  - だろう (conjecture)
+  - らしい (hearsay or conjecture)
+learn_after:
+  - たら〜で (inherent consequence)
+  - と思いきや (unexpectedly opposite result)
+  - ずにはいられない (cannot help but do)
 id: gp0874
 meaning: Just when I thought, No sooner than, Then again
 conjugations:
@@ -84,7 +90,7 @@ false_friends:
     nuance: 「と思いきや」 is very similar in conveying surprise or a contrary outcome, but it often implies
       a more deliberate thought process or expectation that is then overturned, whereas 「かと思ったら・かと思うと」
       can refer to a more immediate perception or event.
-    grammar_point: 思いきや (unexpectedly opposite result)
+    grammar_point: と思いきや (unexpectedly opposite result)
 post_false_friends_writeup: 「かと思ったら・かと思うと」 is often confused with other expressions that indicate the
   immediacy of events. However, the key difference lies in the nuance of surprise or unexpectedness. While
   expressions like 「なり」, 「たとたんに」, 「か〜ないかのうちに」, and 「直ちに」 simply indicate that one event followed another
@@ -292,7 +298,3 @@ examples:
     nuance: 'This demonstrates a surprising reversal of initial perception: from apparent disinterest
       (`全然興味がない`) to enthusiastic engagement (`目を輝かせて質問し始めた`), highlighting the unexpected nature of his
       sudden curiosity.'
-lint-errors:
-  - '[rule-13] warning unknown grammar at ''false_friends[4]'': ''思いきや (unexpectedly opposite result)''.
-    It **MUST** be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to
-    suggest a new grammar point.'

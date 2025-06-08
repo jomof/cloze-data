@@ -122,34 +122,36 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
         #     You're free to make other improvements along the way but the steps above are the main goal.
               
         #    """)
+        # ws("""
+        #     ** OVERRIDE OPERATING INSTRUCTIONS **
+        #     ** PRIORITY INSTRUCTIONS **
+        #     We're incrementally improving this grammar point and we're focusing on cleaning up lint errors. 
+        #     Output **MUST** be in JSON format following OUTPUT_SCHEMA.
+           
+        #     ** BEGIN PRIORITY INSTRUCTIONS ALGORITHM **
+        #     Follow these steps:
+        #         ------------------------------------------------------------------------------------------
+        #         for each lint-error in the input:
+        #             **EXECUTE**: Fix the lint-error.
+        #         ------------------------------------------------------------------------------------------
+        #     ** END PRIORITY INSTRUCTIONS ALGORITHM **
+        #    """)
         ws("""
             ** OVERRIDE OPERATING INSTRUCTIONS **
             ** PRIORITY INSTRUCTIONS **
-            We're incrementally improving this grammar point and we're focusing on cleaning up lint errors. 
-            Output **MUST** be in JSON format following OUTPUT_SCHEMA.
+            We're incrementally improving this grammar point and we're focusing on false_friends[]
+            right now. 
            
             ** BEGIN PRIORITY INSTRUCTIONS ALGORITHM **
             Follow these steps:
                 ------------------------------------------------------------------------------------------
+                EXECUTE: Improve the learn_after field.
+                EXECUTE: Improve the learn_before field.
                 for each lint-error in the input:
                     **EXECUTE**: Fix the lint-error.
                 ------------------------------------------------------------------------------------------
             ** END PRIORITY INSTRUCTIONS ALGORITHM **
            """)
-        # ws("""
-        #     ** OVERRIDE OPERATING INSTRUCTIONS **
-        #     ** PRIORITY INSTRUCTIONS **
-        #     We're incrementally improving this grammar point and we're focusing on false_friends[]
-        #     right now. 
-           
-        #     ** BEGIN PRIORITY INSTRUCTIONS ALGORITHM **
-        #     Follow these steps:
-        #         ------------------------------------------------------------------------------------------
-        #         EXECUTE: Improve the learn_after field.
-        #         EXECUTE: Improve the learn_before field.
-        #         ------------------------------------------------------------------------------------------
-        #     ** END PRIORITY INSTRUCTIONS ALGORITHM **
-        #    """)
         ])
 
     with open(temp_dir + "/" + os.path.basename(output_file)+".prompt", 'w', encoding='utf-8') as file:
@@ -210,6 +212,8 @@ if __name__ == '__main__':
 
     def preprocess(parsed_obj, file_path):
         result = clean_lint(parsed_obj, file_path, grammar_summary_obj)
+        if 'learn_before' not in result and 'learn_after' not in result:
+            return result
         if len(result.get('lint-errors', [])) == 0:
             return None # Skip this one
         return result

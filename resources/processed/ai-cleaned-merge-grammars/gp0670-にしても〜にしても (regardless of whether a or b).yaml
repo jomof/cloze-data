@@ -1,11 +1,13 @@
 grammar_point: にしても〜にしても (regardless of whether a or b)
 learn_before:
-  - 〜ても〜なくても (whether or not)
   - 〜ても (even if)
-  - 〜でも〜でも (whether x or y)
+  - でも〜でも (whether x or y)
+  - 〜ても〜なくても (whether or not)
+  - かどうか (whether or not)
 learn_after:
   - ようと・が (no matter・even if)
   - いかなる (no matter what kind of)
+  - であれ〜であれ (regardless of)
 id: gp0670
 meaning: Regardless of whether... or...
 pronunciation:
@@ -71,12 +73,12 @@ false_friends:
       rather than exhaustive contrasting conditions.
     grammar_point: でも〜でも (whether x or y)
   - term: 〜ても〜なくても
-    meaning: Whether ~ or not
+    meaning: Whether or not, Whether ~ or not
     kind: similar expression
     nuance: 〜ても〜なくても specifically refers to the presence or absence of an action or state (e.g., 'even
       if you do it, even if you don't do it'). In contrast, にしても〜にしても can refer to any contrasting qualities,
       actions, or states, not just an action and its negation.
-    grammar_point: 〜ても〜なくても (whether or not)
+    grammar_point: <suggest>:〜ても〜なくても (whether・or not)
   - term: どうしても
     meaning: Regardless of; no matter what; absolutely; inevitably
     kind: similar expression
@@ -156,7 +158,8 @@ examples:
     competing_grammar:
       - competing_japanese:
           - 値段 が 安かろう が 高かろう が、真剣 に 向き合う べき だ。
-        english: Whether the price is cheap or expensive, we should face it seriously.
+        english: This sounds more assertive or conclusive. We're looking for a slightly more conversational
+          tone for expressing a general truth.
         hint: This sounds more assertive or conclusive. We're looking for a slightly more conversational
           tone for expressing a general truth.
       - competing_japanese:
@@ -370,7 +373,3 @@ post_example_writeup: When using にしても〜にしても, remember that it's
   useful in a variety of conversational and instructional contexts.
 sources:
   bunpro: https://bunpro.jp/grammar_points/にしても-にしても
-lint-errors:
-  - '[rule-13] warning unknown grammar at ''false_friends[4]'': ''〜ても〜なくても (whether or not)''. It **MUST**
-    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
-    grammar point.'
