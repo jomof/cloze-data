@@ -149,6 +149,7 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
                 EXECUTE: Improve the learn_before field.
                 for each lint-error in the input:
                     **EXECUTE**: Fix the lint-error.
+                EXECUTE: Double-check. Did you really add a learn_after and/or learn_before field?
                 ------------------------------------------------------------------------------------------
             ** END PRIORITY INSTRUCTIONS ALGORITHM **
            """)
