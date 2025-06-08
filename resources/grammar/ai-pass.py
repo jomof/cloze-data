@@ -1,6 +1,6 @@
 import json
 from python.ai import aigen
-from python.utils.build_cache.memoize.memoize import memoize_to_disk
+from python.grammar import clean_lint_memoize
 import os
 import textwrap
 from python.grammar import clean_lint, GRAMMAR_SCHEMA_WITH_COMMENTS
@@ -155,6 +155,7 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
            """)
         ])
 
+    os.makedirs(temp_dir, exist_ok=True)
     with open(temp_dir + "/" + os.path.basename(output_file)+".prompt", 'w', encoding='utf-8') as file:
         file.write(prompt)
 
@@ -207,7 +208,7 @@ if __name__ == '__main__':
         display.check(f"Generated grammar summary with {len(grammar_summary['all-grammar-points'])} grammar points.")
 
         def lint(parsed_obj, file_path):
-            result = clean_lint(parsed_obj, file_path, grammar_summary)
+            result = clean_lint_memoize(parsed_obj, file_path, grammar_summary)
             if len(result.get('lint-errors', [])) == 0:
                 return None
             return result

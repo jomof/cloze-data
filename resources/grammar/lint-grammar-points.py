@@ -2,7 +2,7 @@ from python.mapreduce import MapReduce
 import os
 import asyncio
 
-from python.grammar import clean_lint
+from python.grammar import clean_lint_memoize
 from grammar_summary import generate_summary, save_summary
 from python.console import display
 
@@ -21,7 +21,7 @@ if __name__ == '__main__':
         display.check(f"Generated grammar summary with {len(grammar_summary['all-grammar-points'])} grammar points.")
 
         def logic(parsed_obj, file_path):
-            result = clean_lint(parsed_obj, file_path, grammar_summary)
+            result = clean_lint_memoize(parsed_obj, file_path, grammar_summary)
             return result
 
         mr = MapReduce(
@@ -29,7 +29,7 @@ if __name__ == '__main__':
             output_dir           = grammar_root,
             map_func_name        = 'linting',
             map_func             = logic,        # or a sync function
-            max_threads          = 4,
+            max_threads          = 10,
         )
 
         result = asyncio.run(mr.run())

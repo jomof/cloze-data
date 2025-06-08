@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
 import hashlib
-import time
+import os
 import socket
 import struct
 import base64
 import logging
+import pickle
 
 SOCKET_PATH = '/dev/shm/cloze.sock'
 DEBUG_LOGGING = True  # Control flag for logging
@@ -21,12 +22,40 @@ def setup_logging():
             level=logging.DEBUG,
             format='%(asctime)s - %(message)s'
         )
-
-def get_hash(func_name, *args):
+def get_hash_seeded(func_name, hash_seed, *args):
     combined_args = ":".join(map(str, args))
+    if hash_seed:
+        combined_args = combined_args + f":{hash_seed}"
     return hashlib.md5(f"{func_name}:{combined_args}".encode()).hexdigest()
 
+def get_hash(func_name, *args):
+    return get_hash_seeded(func_name, None, *args)
+
+workspace_root = os.environ.get('BUILD_WORKSPACE_DIRECTORY') or os.getcwd()
+cache_dir = os.path.join(workspace_root, 'cache_data')
+os.makedirs(cache_dir, exist_ok=True)
+
+def memoize_to_disk_seeded(caller_id, hash_seed, func, *args):
+
+    hash_value = get_hash_seeded(func.__name__, hash_seed, *args)
+    hash_value_file = os.path.join(cache_dir, f"{hash_value}-value.txt")
+    if os.path.isfile(hash_value_file):
+        with open(hash_value_file, 'rb') as f:
+            cached_value = pickle.load(f)
+            return cached_value
+
+    computed = func(*args)
+    with open(hash_value_file, 'wb') as f:
+        pickle.dump(computed, f)
+    hash_access_file = os.path.join(cache_dir, f"{hash_value}-access.txt")
+    with open(hash_access_file, 'w', encoding='utf-8') as f:
+        f.write(caller_id)
+    return computed
+
 def memoize_to_disk(caller_id, func, *args):
+    return memoize_to_disk_seeded(caller_id, None, func, *args)
+
+def memoize_to_service(caller_id, func, *args):
     setup_logging()
     hash_key = get_hash(func.__name__, *args)
     

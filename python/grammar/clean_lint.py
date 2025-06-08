@@ -7,6 +7,8 @@ from python.mecab.compact_sentence import japanese_to_japanese_with_spaces
 import re
 from typing import Optional
 from python.utils.visit_json.visit_json import visit_json
+import hashlib
+from python.utils.build_cache.memoize.memoize import memoize_to_disk_seeded
 
 QUOTE_PAIRS = [
     ('"', '"'),
@@ -364,6 +366,13 @@ def get_meaning(name: str) -> Optional[str]:
 
     return inside
 
+path = os.path.abspath(__file__)
+with open(path, "rb") as f:
+    seed = hashlib.sha256(f.read()).hexdigest()
+
+def clean_lint_memoize(grammar_point, path: str = None, all_grammars_summary: dict = { "all-grammar-points": {"known":{}} }):
+    return memoize_to_disk_seeded("clean_lint", seed, clean_lint, grammar_point, path, all_grammars_summary)
+    
 def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = { "all-grammar-points": {"known":{}} }):
     lint = []
     if not grammar_point:
