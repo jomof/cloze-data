@@ -113,7 +113,7 @@ def lv_japanese_count(val, type, path, messages):
     if not isinstance(jap_list, list) or len(jap_list) < 2:
         count = len(jap_list) if isinstance(jap_list, list) else 0
         messages.append(
-            f"[rule-7] warning {path} only has {count} element(s); should should be every way of saying 'english' that adheres to the grammar point"
+            f"[rule-7] warning {path} only has {count} element(s); should be every way of saying 'english' that adheres to the grammar point"
         )
 
 def lv_better_grammar_name(val, type, path, messages):

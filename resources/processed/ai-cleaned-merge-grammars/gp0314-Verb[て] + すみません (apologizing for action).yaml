@@ -1,19 +1,15 @@
 grammar_point: Verb[て] + すみません (apologizing for action)
 learn_before:
-  - なくてもいい (no need to)
+  - Verb[て] (and then another event)
+  - てください (polite request)
+  - ないでください (please don't)
+  - Verbて (uncontrollable consequence)
 learn_after:
+  - てしまう・ちゃう (completion・regret・accident)
   - てくれる (receiving benefaction)
+  - べきではない (should not)
 id: gp0314
 meaning: I'm sorry for
-conjugations:
-  - conjugation-type: negative non-past polite (～ません)
-    form: てすみません
-    rarity: common
-    meaning: I'm sorry for
-  - conjugation-type: negative past polite (～ませんでした)
-    form: てすみませんでした
-    rarity: common
-    meaning: I was sorry for
 pronunciation:
   katakana: テスミマセン
   romaji: te sumimasen
@@ -84,7 +80,6 @@ examples:
     scene: You are explaining the specific reason for your apology to someone you're meeting.
     register: teineigo (polite)
     setting: apologetic
-    conjugation: negative non-past polite (～ません)
   - english: I am sorry for dyeing your son's hair pink.
     japanese:
       - 息子 さん の 髪 を ピンク に 染め て {すみ ませ ん}。
@@ -105,7 +100,6 @@ examples:
       appearance.
     register: teineigo (polite)
     setting: apologetic
-    conjugation: negative non-past polite (～ません)
   - english: I'm sorry that I didn't finish the food.
     japanese:
       - ご飯 を 残し て {すみ ませ ん}。
@@ -126,7 +120,6 @@ examples:
       in Japan.
     register: teineigo (polite)
     setting: apologetic
-    conjugation: negative non-past polite (～ません)
   - english: I'm sorry for eating your cake.
     japanese:
       - あなた の ケーキ を 食べ て {すみ ませ ん}。
@@ -146,7 +139,6 @@ examples:
     scene: You are admitting to eating someone's dessert without permission.
     register: teineigo (polite)
     setting: apologetic
-    conjugation: negative non-past polite (～ません)
   - english: I am sorry for being late.
     japanese:
       - 遅く なっ て {すみ ませ ん}。
@@ -166,7 +158,6 @@ examples:
     scene: You are apologizing to someone for your tardiness.
     register: teineigo (polite)
     setting: apologetic
-    conjugation: negative non-past polite (～ません)
   - english: I am sorry that I gave your money to someone else.
     japanese:
       - あなた の お 金 を 別 の 人 に 渡し て {すみ ませ ん}。
@@ -188,7 +179,6 @@ examples:
     scene: You are explaining a significant mistake to the owner of the money.
     register: teineigo (polite)
     setting: apologetic
-    conjugation: negative non-past polite (～ません)
   - english: I'm sorry for breaking my promise.
     japanese:
       - 約束 を 破っ て {すみ ませ ん}。
@@ -208,7 +198,6 @@ examples:
     scene: You are apologizing for not keeping a commitment that was important to someone.
     register: teineigo (polite)
     setting: apologetic
-    conjugation: negative non-past polite (～ません)
   - english: I'm sorry for not being able to explain well.
     japanese:
       - うまく 話せ なく て {すみ ませ ん でし た}。
@@ -228,7 +217,6 @@ examples:
     scene: You are apologizing after realizing your explanation was confusing or ineffective to your audience.
     register: teineigo (polite)
     setting: apologetic
-    conjugation: negative past polite (～ませんでした)
   - english: I'm sorry for drinking too much and saying strange things yesterday.
     japanese:
       - 昨日 は 飲み すぎ て 変 な こと 言っ て {すみ ませ ん}。
@@ -248,7 +236,6 @@ examples:
     scene: You are apologizing to a friend or colleague for your drunken behavior the previous night.
     register: casual
     setting: apologetic
-    conjugation: negative non-past polite (～ません)
     speaker_gender: male
     nuance: The casual tone of this apology, despite using 「すみません」, is indicated by the general context
       of friends discussing past drunken behavior. The male speaker directly addresses the actions 「飲みすぎて
@@ -273,7 +260,6 @@ examples:
       her attention.
     register: casual
     setting: flirty
-    conjugation: negative non-past polite (～ません)
     speaker_gender: male
     listener_gender: female
     nuance: The speaker's polite but playful apology for talking so much, implying they are enjoying the
@@ -301,7 +287,6 @@ examples:
       for his time.
     register: teineigo (polite)
     setting: academic
-    conjugation: negative non-past polite (～ません)
     speaker_gender: female
     listener_gender: male
     nuance: The phrase 「たくさん 聞いて すみません」 (asking many questions, I'm sorry) is common when a female student
@@ -328,7 +313,6 @@ examples:
       of lead time.
     register: teineigo (polite)
     setting: professional
-    conjugation: negative non-past polite (～ません)
     speaker_gender: female
     listener_gender: group
     nuance: The phrase 「急 な お 知ら せ で すみません」 is a common polite apology for giving short notice. It conveys

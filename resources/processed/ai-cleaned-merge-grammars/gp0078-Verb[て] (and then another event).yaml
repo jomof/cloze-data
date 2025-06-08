@@ -1,8 +1,10 @@
 grammar_point: Verb[て] (and then another event)
 learn_before:
   - てから (after and since)
+  - Adjective[て]・Noun[で] (and・because)
 learn_after:
-  - もう (already・anymore)
+  - てしまう・ちゃう (completion・regret・accident)
+  - ていく (to continue or move away)
 id: gp0078
 meaning: And, and then, after that (sequence)
 conjugations:
@@ -39,8 +41,9 @@ false_friends:
     kind: similar expression
     nuance: While the 「て」 form is used, this refers to various other functions of the 「て」 form that do
       not strictly denote a temporal sequence of actions, such as indicating a reason, a manner, or a
-      state. It can also link simultaneous actions or actions in contrast. In contrast, this grammar point
-      specifically focuses on sequential actions.
+      state. It can also link simultaneous actions or actions in contrast. It's often used when the actions
+      are not strictly sequential, or when the second action happens because of the first. In contrast,
+      this grammar point specifically focuses on actions that happen one after another.
     grammar_point: te-form (non-sequential events)
   - term: Adjective[て]・Noun[で] (and・because)
     meaning: Connecting adjectives or nouns (e.g., reason, state, listing attributes)
@@ -148,8 +151,8 @@ examples:
       - competing_japanese:
           - 毎朝 顔 を 洗い ながら 朝ご飯 を 食べ ます。
         english: Every morning, I eat breakfast while washing my face.
-        hint: This implies doing both actions simultaneously. We're looking for actions performed one
-          after the other in a routine.
+        hint: This implies both actions should happen simultaneously. We're looking for actions performed
+          one after the other in a routine.
       - competing_japanese:
           - 毎日 忙しく て 朝ご飯 を 食べ られ ませ ん。
         english: Because I'm busy every day, I can't eat breakfast.
@@ -313,8 +316,9 @@ examples:
     speaker_gender: male
     listener_gender: female
     nuance: When recounting past events, using the te-form 「かけ て」 naturally connects sequential actions,
-      creating a smooth narrative flow. The polite ending 「行き まし た」 maintains a respectful tone, suitable
-      for general conversation.
+      creating a smooth narrative flow. The use of the sentence-final particle 「ぜ」 (as in 「行こ う ぜ」) is
+      typically used by male speakers to express a strong suggestion or invitation. The polite ending
+      「行き まし た」 maintains a respectful tone, suitable for general conversation.
   - english: Read the book and tell me your thoughts.
     japanese:
       - その 本 を {読ん で} 感想 を 聞か せ て ください。
@@ -324,7 +328,7 @@ examples:
       - その 本 を {読ん で} 意見 聞か せ て くれ。
       - その 本 を {読ん で}、ご 感想 を お 聞か せ ください。
       - その 本 を {読ん で}、感想 聞か せ て。
-    english_literally: Reading that book, tell me your thoughts.
+    english_literally: Thinking carefully, then please tell me the answer.
     competing_grammar:
       - competing_japanese:
           - その 本 を 読ん で から 感想 を 聞か せ て ください。
@@ -363,11 +367,8 @@ examples:
     register: semi-formal
     setting: academic
     conjugation: te-form (～て)
-    speaker_gender: male
-    listener_gender: female
-    speaker_age: older
-    nuance: When an older male teacher speaks to a female student, using 「読んで」 smoothly connects the action
-      of reading with the request for thoughts. This is a polite request suitable for an academic setting.
+    nuance: Using 「読んで」 smoothly connects the action of reading with the request for thoughts. This is
+      a polite request suitable for an academic setting.
   - english: First, chop the vegetables, then fry them in a pan.
     japanese:
       - まず 野菜 を {切っ て}、フライパン で 炒め て ください。
@@ -440,8 +441,9 @@ examples:
     speaker_gender: female
     listener_gender: male
     nuance: The use of 「行って」 and 「して」 links the actions smoothly, describing a typical sequence of errands
-      in a continuous flow. The polite ending 「～ました」 is appropriate for a polite conversation between
-      family members, showing consideration.
+      in a continuous flow. The sentence-final particle 「わ」 in 「家 戻っ た わ」 is commonly used by female speakers,
+      adding a softer, more reflective tone. The polite ending 「～ました」 is appropriate for a polite conversation
+      between family members, showing consideration.
   - english: We'll go to the airport, check in, and then fly to Okinawa.
     japanese:
       - 空港 に {行っ て}、チェック イン {し て}、それ から 沖縄 に 飛び ます。
@@ -477,8 +479,6 @@ examples:
     register: casual
     setting: friendly
     conjugation: te-form (～て)
-    speaker_gender: male
-    listener_gender: group
     nuance: 「行って」 and 「して」 seamlessly describe the sequence of actions for travel plans, conveying a sense
       of anticipation and flow. The casual tone is maintained by the choice of sentence-ending (e.g.,
       「飛ぶ よ」), typical among friends discussing future events.
@@ -514,13 +514,9 @@ examples:
     register: semi-formal
     setting: professional
     conjugation: te-form (～て)
-    speaker_gender: male
-    listener_gender: female
-    speaker_age: older
     nuance: The te-form 「考えて」 connects the prerequisite thinking action with the subsequent request for
       an answer, implying a natural flow of a task. The phrase 「よく」 (carefully/well) emphasizes the thoroughness
-      expected. The use of 「～てください」 is a standard polite command, suitable for a superior to a subordinate,
-      and an older male might use this tone to convey clear expectations.
+      expected. The use of 「～てください」 is a standard polite command, suitable for a superior to a subordinate.
   - english: I researched the topic, wrote the report, and submitted it.
     japanese:
       - テーマ を {調べ て}、レポート を {書い て}、提出 し まし た。
@@ -551,8 +547,6 @@ examples:
     register: teineigo (polite)
     setting: academic
     conjugation: te-form (～て)
-    speaker_gender: female
-    listener_gender: male
     nuance: The te-forms 「調べて」 and 「書いて」 efficiently connect the steps of the academic process in a clear,
       logical sequence. The polite 「～ました」 ending is common among university students when describing their
       work to peers in a general setting, maintaining a respectful but not overly formal tone.

@@ -145,6 +145,14 @@
     "knownGrammarType": { "$ref": "#/definitions/grammarType" },
     // [rule-8] **STRONGLY PREFER** names with a short (meaning) field in parentheses.
     // [rule-9] Short (meaning) part **MUST** be lower case and be in english.
+    // Short (meaning) part **MUST NOT** use linguistic terms like "adjective", "noun", "verb", etc.
+    // Examples of (meaning) parts:
+    // - **GOOD** いよいよ (finally・increasingly). Provides a concise meaning.
+    // - **BAD** いよいよ (culmination or increasing intensity). Unnecesarily long.
+    // - **GOOD** その (that・near listener). Provides a concise meaning.
+    // - **BAD** その (pre-nominal demonstrative for listener's context). Too long and uses linguistic terms.
+    // - **GOOD** Verbs (non-past polite). Doesn't expand the scope of the grammar point.
+    // - **BAD** Non-past Verbs (plain and polite). Expands the scope of the grammar point to include 'plain'.
     "wellFormedGrammarType": { "$ref": "#/definitions/grammarType" },
     // English **MUST** be a natural-sounding and grammatically correct.
     // English **MUST** use a single apostrophe (') for contractions (e.g., don't).
@@ -203,6 +211,8 @@
     // then you **MAY** suggest a new name for each of those grammar points.
     // [rule-14] **MUST NOT** be the same as grammar_point, **MUST NOT** be the empty string, and **MUST NOT** be null.
     // In those cases, just omit this field.
+    // **MUST NOT** generalize the grammar point name, in a way that would make it conflict with other existing grammar points.
+    // **MAY** split the grammar point into multiple grammar points, each with a better name.
     "better_grammar_point_name": {
       "type": "array",
       "items": { "$ref":  "#/definitions/wellFormedGrammarType" }
@@ -484,6 +494,7 @@
     // If split_predecessor exists, then this grammar point was split from an earlier grammar point.
     // Use information from the split predecessor to help populate this new grammar point keeping
     // only the relevant information for the new grammar point.
+    // **MUST** remove split_predecessor or use it to capture you thinking when you created this grammar point.
     "split_predecessor": { "type": "string" }
   },
   "required": [

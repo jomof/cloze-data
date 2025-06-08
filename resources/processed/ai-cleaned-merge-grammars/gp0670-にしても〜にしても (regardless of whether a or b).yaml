@@ -1,10 +1,13 @@
 grammar_point: にしても〜にしても (regardless of whether a or b)
 learn_before:
-  - にしたら (from one's perspective)
+  - 〜ても (even if)
+  - 〜でも〜でも (whether x or y)
+  - 〜ても〜なくても (whether or not)
   - にせよ・にしろ (even if or no matter)
 learn_after:
   - としても (even if assumed)
-  - にしても (even if)
+  - ようと・が (no matter・even if)
+  - いかなる (no matter what kind of)
 id: gp0670
 meaning: Regardless of whether... or...
 pronunciation:
@@ -75,7 +78,7 @@ false_friends:
     nuance: 〜ても〜なくても specifically refers to the presence or absence of an action or state (e.g., 'even
       if you do it, even if you don't do it'). In contrast, にしても〜にしても can refer to any contrasting qualities,
       actions, or states, not just an action and its negation.
-    grammar_point: <suggest>:〜ても〜なくても (whether or not)
+    grammar_point: 〜ても〜なくても (whether or not)
   - term: どうしても
     meaning: Regardless of; no matter what; absolutely; inevitably
     kind: similar expression
@@ -99,7 +102,8 @@ examples:
     competing_grammar:
       - competing_japanese:
           - 会議 は 行く 行か ない に かかわら ず、定刻 に 始まる。
-        english: Regardless of whether you go or don't go, the meeting will start on time.
+        english: This also means 'regardless of', but is often used for circumstances, not contrasting
+          actions. We're looking for a pattern that explicitly presents two contrasting possibilities.
         hint: This also means 'regardless of', but is often used for circumstances, not contrasting actions.
           We're looking for a pattern that explicitly presents two contrasting possibilities.
       - competing_japanese:
@@ -362,64 +366,13 @@ examples:
       your choice) conveys parental allowance for self-determination.
     etymology: 「自由 (jiyuu)」 means 'freedom' or 'liberty', a common concept in discussions of personal
       autonomy.
-  - english: Regardless of whether he is a friend or an enemy, I will not tolerate betrayal.
-    japanese:
-      - 彼 が 味方 {に し て も}、敵 {に し て も}、裏切り は 許さ ない。
-      - 彼 が 味方 {に し て も}、敵 {に し て も}、裏切り は 許し ませ ん。
-      - 彼 が 味方 {に し て も}、敵 {に し て も}、裏切り は 許さ ない ん だ。
-    english_literally: He, ally even if, enemy even if, betrayal not tolerate.
-    competing_grammar:
-      - competing_japanese:
-          - 彼 が 味方 で あろう と 敵 で あろう と、裏切り は 許さ ない。
-        english: Whether he is an ally or an enemy, I will not tolerate betrayal.
-        hint: This form has a more assertive and often confrontational nuance. We're looking for a phrase
-          that calmly but firmly states a principle.
-      - competing_japanese:
-          - 彼 が 味方 か 敵 か に かかわら ず、裏切り は 許さ ない。
-        english: Regardless of whether he is an ally or an an enemy, I will not tolerate betrayal.
-        hint: While correct, this phrase might emphasize uncertainty rather than contrasting categories.
-          We're looking for a pattern that presents two clear, distinct states.
-    scene: A leader is laying down a firm rule to their team, emphasizing that certain actions are unacceptable
-      regardless of personal affiliations.
-    register: formal
-    setting: serious
-    speaker_gender: male
-    listener_gender: group
-    nuance: The use of 「許さない」 (will not tolerate.forgive) indicates a strong, unyielding stance. 「味方」
-      (ally) and 「敵」 (enemy) clearly define the contrasting categories.
-    etymology: 「裏切り (uragiri)」 means 'betrayal', a significant concept in loyalty and trust. 「許す (yurusu)」
-      means 'to permit, to forgive', or 'to tolerate'.
-  - english: Regardless of whether the problem is big or small, we must face it seriously.
-    japanese:
-      - 問題 が 大きい {に し て も}、小さい {に し て も}、真剣 に 向き合う べき です。
-      - 問題 が 大きい {に し て も}、小さい {に し て も}、真剣 に 向き合う べき だ。
-      - 問題 が 大きい {に し て も}、小さい {に し て も}、真剣 に 向き合う べき な ん だ。
-    english_literally: Problem, big even if, small even if, seriously face should.
-    competing_grammar:
-      - competing_japanese:
-          - 問題 が 大きかろう が 小さかろう が、真剣 に 向き合う べき だ。
-        english: Whether the problem is big or small, we should face it seriously.
-        hint: This form carries a stronger, more emphatic tone that might be too direct for a general
-          recommendation. We're looking for a softer expression of a general principle.
-      - competing_japanese:
-          - 問題 の 大小 に かかわら ず、真剣 に 向き合う べき だ。
-        english: Regardless of the size of the problem, we should face it seriously.
-        hint: This phrasing is grammatically correct but sounds more like a general statement about 'scale'
-          rather than presenting two explicit contrasting conditions (big vs. small). We're looking for
-          a phrase that explicitly names the two contrasting states.
-    scene: A team meeting where a leader is fostering a proactive approach, emphasizing that all issues,
-      regardless of apparent magnitude, require due attention.
-    register: semi-formal
-    setting: professional
-    speaker_gender: female
-    listener_gender: group
-    nuance: 「真剣に (shinken.ni)」 (seriously) emphasizes the attitude required. 「向き合う (mukiau)」 (to face)
-      implies confronting the problem directly. The polite 「べきです」 (should) softens the instruction.
-    etymology: 「問題 (mondai)」 means 'problem' or 'issue'. 「向き合う (mukiau)」 means 'to face' or 'to confront',
-      often used in the context of tackling challenges.
 post_example_writeup: When using にしても〜にしても, remember that it's ideal for situations where you want to
   clearly state that a consequence or truth holds true no matter which of two contrasting conditions is
   present. This structure is versatile and emphasizes the inevitable nature of the outcome, making it
   useful in a variety of conversational and instructional contexts.
 sources:
   bunpro: https://bunpro.jp/grammar_points/にしても-にしても
+lint-errors:
+  - '[rule-13] warning unknown grammar at ''false_friends[4]'': ''〜ても〜なくても (whether or not)''. It **MUST**
+    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
+    grammar point.'

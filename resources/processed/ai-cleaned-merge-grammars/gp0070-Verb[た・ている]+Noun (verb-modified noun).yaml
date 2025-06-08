@@ -1,8 +1,15 @@
 grammar_point: Verb[た・ている]+Noun (verb-modified noun)
 learn_before:
-  - Verbs (non-past polite)
+  - Verbs (non-past plain)
+  - い-Adjective + Noun (describing nouns)
+  - な-Adjective (modifying nouns)
+  - ている (~ing)
+  - う-verb (past)
+  - る-verb (past)
 learn_after:
-  - の (noun omission)
+  - Relative Clause (modifying nouns)
+  - Particle + の (noun modification)
+  - Verb[masu-stem]+Noun (nominalization)
 id: gp0070
 meaning: Noun modified by a verb in the past or continuous form (relative clause).
 conjugations:
@@ -506,8 +513,8 @@ examples:
       - competing_japanese:
           - 昨日 間違い を し まし た。それ が 大きな 問題 を 引き起こし まし た。
         english: I made a mistake yesterday. That caused a big problem.
-        hint: This separates the two actions. We are looking for a direct modification of the noun 'mistake'
-          by the verb 'made'.
+        hint: I made a mistake yesterday. That caused a big problem. We are looking for a direct modification
+          of the noun 'mistake' by the verb 'made'.
       - competing_japanese:
           - 昨日 {する 間違い} は いつ も 問題 に なる。
         english: Mistakes I make yesterday always become a problem. (General statement about future/habitual)

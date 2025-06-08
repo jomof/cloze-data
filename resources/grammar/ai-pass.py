@@ -145,10 +145,8 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
         #     ** BEGIN PRIORITY INSTRUCTIONS ALGORITHM **
         #     Follow these steps:
         #         ------------------------------------------------------------------------------------------
-        #         if there is a better, more consistently named grammar point name:
-        #             EXECUTE: suggest a better grammar point name in better_grammar_point_name.
-        #         EXECUTE: fill in, or improve, the learn_after field.
-        #         EXECUTE: fill in, or improve, the learn_before field.
+        #         EXECUTE: Improve the learn_after field.
+        #         EXECUTE: Improve the learn_before field.
         #         ------------------------------------------------------------------------------------------
         #     ** END PRIORITY INSTRUCTIONS ALGORITHM **
         #    """)

@@ -1,405 +1,423 @@
 grammar_point: 形 (shape form)
 learn_before:
-  - 〜のは〜の方だ (it is X that)
+  - い-Adjective + Noun (describing nouns)
+  - な-Adjective (modifying nouns)
 learn_after:
-  - Verb[て] + ごらん (gentle suggestion)
+  - 姿 (figure・appearance)
+  - めく (to show signs of)
 id: gp0399
-split_predecessor: |
-  An old grammar point, '型・形 (type・form・model・shape)', has been split into multiple new names: '型 (type model)', '形 (shape form)'. You are working on '形 (shape form)', please be sure to call out the distinction between this new point and the other new points. Please recreate this grammar point with this information in mind. All fields **MUST** be suitable for the new name. For your reference, here is the old content:
+meaning: Physical shape, form, or outline of something.
+pronunciation:
+  katakana: カタ
+  romaji: kata
+formation:
+  Noun + 形 (かたち/がた/けい): Indicates a physical shape or form.
+  'Compound Noun (音読み: けい)': Used in specific compound words where 形 is read as 'kei' to mean form or
+    style. This usage often refers to a structured form or system rather than a physical shape per se.
+jlpt: N3
+details:
+  part-of-speech: suffix
+  register: semi-formal
+  usage-context: Primarily used for describing concrete, physical shapes or forms. When read as けい, it
+    is typically found in compound words referring to structured forms or systems rather than simple suffixes.
+    The reading かたち/がた is for suffixal use or standalone noun use to indicate physical shape.
+  nuance: 「形」 emphasizes visual characteristics or a physical outline. When read as 「けい」, often in compound
+    words, it signifies a structured 'form' or 'style' within a system. The rendaku phenomenon (かた to
+    がた) can occur when 「形」 is directly attached to a preceding noun, but it can also be read as かたち as
+    a standalone noun or in compounds.
+  grammatical-role: Nominal suffix or component of compound nouns.
+  logical-flow: Used to describe a physical outline. The usage often depends on whether one is referring
+    to a concrete visual form or a systematic structure. The 'kei' reading often implies a more systematic
+    or formal 'form'.
+  temporal-flow: Used to describe existing physical forms. Can describe the resulting form after an action.
+etymology: The kanji 「形」 (かたち/がた/けい) primarily denotes physical "shape" or "form." Its origin is linked
+  to the idea of a visible, tangible form that something takes. The common pronunciation shift from 「かた」
+  to 「がた」 (rendaku) occurs when 「形」 is directly attached to a preceding noun. In some established compound
+  words, 「形」 can also take its on'yomi (Chinese reading) as 「けい」. This distinction in readings often indicates
+  a shift from describing a simple physical contour to a more abstract or structured 'form' or 'system'.
+writeup: |-
+  The kanji 「形」 (かたち/がた/けい) is specifically used for concrete, physical shapes or forms. It describes the physical outline or configuration of an object, emphasizing its visual characteristics. For instance, 「星形」 (ほしがた - star shape) refers to the physical outline. If you are describing a geometric or physical contour, 「形」 is the appropriate choice. As a standalone noun, it is typically read as 「かたち」 (katachi).
 
-  grammar_point: 型・形 (type・form・model・shape)
-  better_grammar_point_name:
-    - 型 (type model)
-    - 形 (shape form)
-  learn_before:
-    - のはXの方だ (emphasis clarification)
-  learn_after:
-    - Verb[て] + ごらん (gentle suggestion)
-  id: gp0399
-  meaning: Model, type, pattern, kind, or shape of something.
-  pronunciation:
-    katakana: カタ
-    romaji: kata
-  formation:
-    Noun + 型 (がた): Indicates a type, model, pattern, or design of something.
-    Noun + の + 型 (かた): Indicates a mold, template, or specific design used for creation.
-    Noun + 形 (かたち/がた/けい): Indicates a physical shape or form.
-    'Compound Noun (音読み: けい)': Used in specific compound words where 型 is read as 'kei' to mean type, form,
-      or style. This usage often refers to a structured form or system rather than a physical shape or model
-      per se. For example, 形式 (けいしき) means 'format' or 'formality'.
-  jlpt: N3
-  details:
-    part-of-speech: suffix
+  When 「形」 is used as a suffix and attached directly to a preceding noun, its pronunciation can sometimes change from 「かた」 to 「がた」 due to rendaku (連濁), a sequential voicing phenomenon in Japanese. For example, 「丸型」 (まるがた - round shape). However, it often retains 「かた」 when the preceding element already has a voicing or certain phonological characteristics.
+
+  Occasionally, 「形」 can also be read as 「けい」 (its on'yomi or Chinese reading) when it is part of specific compound words, especially in more formal or technical contexts, such as 「形式」 (けいしき - format) or 「図形」 (ずけい - figure/diagram). This usage refers to a structured form, system, or figure rather than just a simple physical shape.
+false_friends:
+  - term: 種類 (しゅるい)
+    meaning: kind, sort, type
+    kind: similar expression
+    nuance: 「種類」 is a broader term for 'kind' or 'sort' and refers to general categories. Unlike 「形」,
+      it does not refer to a physical outline or form but rather a classification.
+    grammar_point: <suggest>:種類 (kind sort type)
+  - term: パターン (ぱたーん)
+    meaning: pattern
+    kind: similar expression
+    nuance: 「パターン」 is a loanword for 'pattern' and can be used for abstract or less structured patterns.
+      While a physical shape can be a pattern, 「パターン」 emphasizes repetition or a sequence, not the outline
+      itself.
+    grammar_point: <suggest>:パターン (pattern)
+  - term: タイプ (たいぷ)
+    meaning: type
+    kind: similar expression
+    nuance: 「タイプ」 is a loanword that generally means 'type'. It is more general and colloquial than 「形」,
+      which specifically refers to a physical shape or a structured form.
+    grammar_point: <suggest>:タイプ (type)
+  - term: 姿 (すがた)
+    meaning: figure, appearance
+    kind: similar expression
+    nuance: 「姿」 refers more to the overall figure, appearance, or posture of a person or object, emphasizing
+      the visual impression. Unlike 「形」, it doesn't necessarily refer to the precise outline or geometric
+      form, but rather the way something looks or presents itself.
+    grammar_point: 姿 (figure・appearance)
+  - term: 型 (タイプ・モデル)
+    meaning: type, model, pattern
+    kind: often confused with
+    nuance: While both 「型」 and 「形」 relate to form, 「型」 often implies an established model, mold, or category
+      (e.g., product model), whereas 「形」 usually refers to the physical appearance or outline (e.g., geometric
+      shape).
+    grammar_point: <suggest>:型 (type model)
+post_false_friends_writeup: To differentiate these terms, consider the level of specificity and concreteness.
+  If referring to a general category or variety, 「種類」 or 「タイプ」 might be suitable. If describing a recurring
+  sequence or design, 「パターン」 might fit. However, if you are talking about the physical outline or contour
+  of an object (e.g., 'star-shaped'), then 「形」 is the correct choice. When 「形」 appears in compounds with
+  its on'yomi (e.g., 形式 - format), it often signifies a specific structured form or style within a defined
+  system. The key is that 「形」 refers to the observable physical aspect, while 「型」 often refers to a template
+  or a category.
+examples:
+  - english: Let's try making a heart shape with this clay.
+    japanese:
+      - この ねんど で ハート の {形} を 作っ て みよう。
+      - この 粘土 で ハート の {形} を 作っ て み ませ ん か。
+      - この 粘土 で ハート の {形} を 作り なさい。
+      - さあ、この 粘土 を 使っ て ハート {形} に し て みよう。
+    english_literally: This clay, with, heart's shape, let's try making.
+    competing_grammar:
+      - competing_japanese:
+          - この ねんど で ハート を 作っ て みよう。
+        english: Let's try making a heart with this clay.
+        hint: This sentence just says 'make a heart,' but we want to emphasize creating the *shape* of
+          a heart. We're looking for the physical contour.
+    scene: A mother is suggesting a craft activity to her young child.
+    register: casual
+    setting: instructional
+    speaker_gender: female
+    listener_gender: male
+    speaker_age: older
+    nuance: 「ハートの形」 (はーとのかたち) refers to a distinct physical outline. The volitional form 「作ってみよう」 (tsukutte
+      miyō) is a casual and encouraging suggestion, suitable for a parent speaking to a child. The use
+      of 「形」 here specifically highlights the visual form, emphasizing the artistic or creative aspect
+      of shaping the clay.
+    etymology: The word 「形」 (katachi) literally means 'shape' or 'form' and directly refers to the physical
+      outline or configuration of an object. Its origin is linked to the idea of a visible, tangible form
+      that something takes. When combined with 「ハート」 (heart), 「ハートの形」 specifically refers to the visual
+      contour of a heart, highlighting the physical aspect of creation with the clay.
+  - english: The new building has a unique triangular shape.
+    japanese:
+      - 新しい ビル は ユニーク な 三角 {形} を し て い ます。
+      - 新しい ビル、ユニーク な 三角 {形} し てる ね。
+      - 新築 の ビル は 独特 の 三角 {形} を 呈し て おり ます。
+      - 新しい ビル は 珍しい 三角 {形} を 呈し て いる。
+    english_literally: New building, as for, unique triangular shape is doing.
+    competing_grammar:
+      - competing_japanese:
+          - 新しい ビル は ユニーク な 三角 の デザイン を し て い ます。
+        english: The new building has a unique triangular design.
+        hint: 「デザイン」 (dezain) refers to the overall artistic or functional plan, but '形' (katachi/gata/kei)
+          specifically refers to the physical outline or contour. We're describing the actual physical
+          form.
+    scene: An architect is presenting plans for a new building to potential investors.
     register: semi-formal
-    usage-context: General use for describing types, models, patterns, forms, or shapes, often attached
-      to nouns. While 型 focuses on archetypes or molds, 形 emphasizes physical shape. Reading as けい is usually
-      found in compound words referring to structured forms or systems rather than simple suffixes. The
-      reading かた/がた is for suffixal use to indicate type, model, or mold.
-    nuance: The core distinction lies between 「型」 as a model/type/mold (often for production or classification)
-      and 「形」 as a physical shape/form/appearance. 「型」 emphasizes a standard or archetype, while 「形」 emphasizes
-      visual characteristics. When read as 「けい」, often in compound words, it signifies a structured 'form'
-      or 'style' within a system. The rendaku phenomenon (かた to がた) is common when 「型」 is directly attached
-      to a preceding noun, but it typically remains 「かた」 when the noun is connected by 「の」.
-    grammatical-role: Nominal suffix or component of compound nouns.
-    logical-flow: Used to categorize, specify a design, or describe a physical outline. The usage often
-      depends on whether one is referring to an abstract category/model or a concrete visual form. The 'kei'
-      reading often implies a more systematic or formal 'form'.
-  etymology: The kanji 「型」 means "mold," "type," or "model." It comes from the idea of something being formed
-    or shaped according to a particular standard or pattern. Therefore, when attached as a suffix, it indicates
-    that something is of a certain type or follows a certain pattern. The alternate kanji 「形」 (かたち/がた/けい)
-    primarily denotes physical "shape" or "form." The common pronunciation shift from 「かた」 to 「がた」 (rendaku)
-    occurs when 「型」 is directly attached to a preceding noun, but it reverts to 「かた」 when preceded by the
-    particle 「の」. In some established compound words, 「型」 can also take its on'yomi (Chinese reading) as
-    「けい」.
-  writeup: |-
-    The suffix 「型」 (かた/がた) is primarily used to indicate the type, model, pattern, or design of something. It is commonly attached directly to nouns, and its pronunciation typically changes from 「かた」 to 「がた」 due to rendaku (連濁), a sequential voicing phenomenon in Japanese. For example, 「新型」 (しんがた - new model) or 「人間型」 (にんげんがた - human type).
-
-    However, when 「型」 is preceded by the particle 「の」, it often refers to a specific mold, template, or design used for creation, and its pronunciation remains 「かた」。 For example, 「ケーキの型」 (ケーキのかた - cake mold).
-
-    While 「型」 is used for abstract or general types and models, the kanji 「形」 (かたち/がた/けい) is specifically used for concrete, physical shapes or forms. For instance, 「星形」 (ほしがた - star shape) refers to the physical outline. If you are describing a geometric or physical contour, 「形」 is the appropriate choice. Though both kanji can be read as かた or がた, 「型」 is more common for abstract types, while 「形」 for visual shapes.
-
-    Occasionally, 「型」 can also be read as 「けい」 (its on'yomi or Chinese reading) when it is part of specific compound words, especially in more formal or technical contexts, such as 「形式」 (けいしき - format) or 「典型」 (てんけい - typical form). This usage is less about a direct suffixation and more about being a component of a fixed term.
-  false_friends:
-    - term: 種類 (しゅるい)
-      meaning: kind, sort, type
-      kind: similar expression
-      nuance: 「種類」 is a broader term for 'kind' or 'sort' and refers to general categories, without the
-        nuance of a specific model, pattern, or mold that 「型」 often carries. While sometimes interchangeable
-        for 'type', 「型」 implies a more defined, structured form.
-      grammar_point: <suggest>:種類 (kind sort type)
-    - term: パターン (ぱたーん)
-      meaning: pattern
-      kind: similar expression
-      nuance: 「パターン」 is a loanword for 'pattern' and can be used for abstract or less structured patterns.
-        While 「型」 can also mean pattern, it often refers to a more established, formal, or template-like
-        pattern, or a specific design model.
-      grammar_point: <suggest>:パターン (pattern)
-    - term: タイプ (たいぷ)
-      meaning: type
-      kind: similar expression
-      nuance: 「タイプ」 is a loanword that generally means 'type' and can sometimes be used interchangeably
-        with 「型」. However, 「型」 often conveys a more specific, established 'model' or 'design' (e.g., in
-        industrial design or martial arts), whereas 「タイプ」 is more general and colloquial.
-      grammar_point: <suggest>:タイプ (type)
-    - term: 姿 (すがた)
-      meaning: figure, appearance
-      kind: similar expression
-      nuance: 「姿」 refers more to the overall figure, appearance, or posture of a person or object, emphasizing
-        the visual impression. Unlike 「形」, it doesn't necessarily refer to the precise outline or geometric
-        form, but rather the way something looks or presents itself.
-      grammar_point: 姿 (figure・appearance)
-  post_false_friends_writeup: To differentiate these terms, consider the level of specificity and concreteness.
-    If referring to a general category or variety, 「種類」 or 「タイプ」 might be suitable. If describing a recurring
-    sequence or design, 「パターン」 might fit. However, if you are talking about a specific model, design, or
-    an archetypal form (like a 'new model' car or a 'humanoid' robot), 「型」 is generally preferred. If you
-    are describing the physical outline or contour of an object (e.g., 'star-shaped'), then 「形」 is the correct
-    choice. When 「型」 or 「形」 appear in compounds with their on'yomi (e.g., 形式 - format), they often signify
-    a specific structured form or style within a defined system.
-  examples:
-    - english: This new smartphone has the latest model camera.
-      japanese:
-        - この 新しい スマート フォン は 最新 {型} の カメラ が 付い て い ます。
-        - この 新しい スマホ は 最新 {型} の カメラ が 付い てる よ。
-        - この 新しい スマート フォン に は 最新 {型} の カメラ が 搭載 さ れ て い ます。
-        - この 新型 スマホ は 最新 {型} カメラ を 搭載 し てる。
-      english_literally: This new smartphone, as for, the latest model's camera is attached.
-      competing_grammar:
-        - competing_japanese:
-            - この 新しい スマート フォン は 最新 の カメラ が 付い て い ます。
-          english: This new smartphone has the latest camera.
-          hint: The nuance of 'model' or 'type' for the camera is missing here. We're looking for a specific
-            model of camera, not just the newest one.
-      scene: A tech reviewer is explaining the features of a new smartphone to an online audience.
-      register: formal
-      setting: informative
-      speaker_gender: male
-      listener_gender: group
-      nuance: 「最新型」 (さいしんがた) specifically refers to the newest *model* or *type* of something. The formal
-        register is appropriate for a technical review delivered to a broad audience.
-      etymology: The term 「新型」 (しんがた) literally combines 「新」 (shin, new) and 「型」 (gata, model/type), denoting
-        a new model or version, commonly used in product descriptions and technological advancements. Its
-        use emphasizes the innovation and specific design of the camera, not just its newness in general
-        terms. This compound became especially prevalent in the industrial era as products began to have
-        distinct models and versions, rather than just evolving forms over time.
-    - english: I want to live in a house type with a traditional, large garden.
-      japanese:
-        - 昔 ながら の 大きな 庭 付き の 家 {型} に 住み たい。
-        - 昔 ながら の 大きな 庭 付き の 家 {型} に 住み たい です。
-        - 昔 から の 広々 と し た 庭 が ある 家 {型} に 住み たく 存じ ます。
-        - 広い 庭 が ある 昔 ながら の 家 {型} に 住む の が 夢 です。
-      english_literally: Old-fashioned, large garden attached, house type, in, want to live.
-      competing_grammar:
-        - competing_japanese:
-            - 昔 ながら の 大きな 庭 付き の 家 に 住み たい。
-          english: This version only specifies 'a house with a large garden,' not a specific *type* or *archetype*
-            of house that the speaker desires. We're looking for a specific type of house.
-          hint: This version only specifies 'a house with a large garden,' not a specific *type* or *archetype*
-            of house that the speaker desires. We're looking for a specific type of house.
-      scene: A young woman is discussing her dream home with a friend over coffee.
-      register: casual
-      setting: friendly
-      speaker_gender: female
-      listener_gender: female
-      nuance: 「家型」 (いえがた) here refers to a specific *type* or *design* of house. The casual 「住みたい」 (sumitai)
-        expresses a personal desire in informal conversation.
-      etymology: The combination of 「家」 (ie, house) and 「型」 (gata, type/model) forms 「家型」 (ie-gata), which
-        refers to an architectural style, characteristic design, or archetype of a house. This reflects
-        how 「型」 can categorize not just manufactured goods but also broader concepts that adhere to a specific
-        structural or aesthetic standard. This term would be used when discussing residential designs or
-        housing trends that fall into recognized categories, such as 'traditional Japanese house type' or
-        'Western-style house type'.
-    - english: My father still remembers the models of old cars.
-      japanese:
-        - お 父 さん は 昔 の 車 の {型} を 未だ に 覚え て い ます。
-        - 親父 は 昔 の 車 の {型} を 未だ に 覚え てる よ。
-        - 父 は 古い 車 の {型} を まだ 覚え て いる。
-        - 父 は 昔 の 車 の モデル {型} を 今 で も 詳細 に 記憶 し て いる。
-      english_literally: Father, as for, old cars' models, still remembers.
-      competing_grammar:
-        - competing_japanese:
-            - お 父 さん は 昔 の 車 の 種類 を 未だ に 覚え て い ます。
-          english: My father still remembers the kinds of old cars.
-          hint: While '種類' (shurui) means 'kind' or 'type', '型' (kata) here specifically emphasizes individual
-            'models' or 'designs' within car manufacturing, not just general categories.
-      scene: A son is talking about his father's hobby of collecting classic car magazines to his friends.
-      register: semi-formal
-      setting: informative
-      speaker_gender: male
-      listener_gender: group
-      speaker_age: younger
-      nuance: 「車の型」 (くるまのかた) indicates specific models or designs of cars. The use of 「お父さん」 (otōsan) and
-        the polite 「覚えています」 (oboeteimasu) maintains a respectful, semi-formal tone appropriate for discussing
-        a family member's passion.
-      etymology: When used for vehicles, 「型」 (kata) specifically denotes a 'model' or 'version' (e.g., '2000年型'
-        for the 2000 model year). This reflects the concept of standardized production where each new iteration
-        is a distinct 'mold' or 'type'. The choice of 「型」 over more general terms like 「種類」 (shurui, kind)
-        highlights the specificity of mechanical and industrial design, where each model is a precise variation
-        with particular specifications. The use of 「車の型」 (kuruma no kata) here is precise for distinguishing
-        specific models rather than just general categories of cars, emphasizing a collector's nuanced knowledge.
-    - english: Let's try making a heart shape with this clay.
-      japanese:
-        - この ねんど で ハート の {形} を 作っ て みよう。
-        - この 粘土 で ハート の {形} を 作っ て み ませ ん か。
-        - この 粘土 で ハート の {形} を 作り なさい。
-        - さあ、この 粘土 を 使っ て ハート {形} に し て みよう。
-      english_literally: This clay, with, heart's shape, let's try making.
-      competing_grammar:
-        - competing_japanese:
-            - この ねんど で ハート を 作っ て みよう。
-          english: Let's try making a heart with this clay.
-          hint: This sentence just says 'make a heart,' but we want to emphasize creating the *shape* of
-            a heart. We're looking for the physical contour.
-      scene: A mother is suggesting a craft activity to her young child.
-      register: casual
-      setting: instructional
-      speaker_gender: female
-      listener_gender: male
-      speaker_age: older
-      nuance: 「ハートの形」 (はーとのかたち) refers to a distinct physical outline. The volitional form 「作ってみよう」 (tsukutte
-        miyō) is a casual and encouraging suggestion, suitable for a parent speaking to a child.
-      etymology: The word 「形」 (katachi) literally means 'shape' or 'form' and directly refers to the physical
-        outline or configuration of an object. Its origin is linked to the idea of a visible, tangible form
-        that something takes. When combined with 「ハート」 (heart), 「ハートの形」 specifically refers to the visual
-        contour of a heart, highlighting the physical aspect of creation with the clay. This differs from
-        「型」, which would imply a pre-existing mold for a heart.
-    - english: The new product has various types of designs to meet customer needs.
-      japanese:
-        - 新 製品 は お 客 さん の 必要 に 合わせ て 色々 な {型} の デザイン が あり ます。
-        - 新 製品 は 顧客 の ニーズ に 応じ て 多様 な {型} の デザイン を 展開 し て おり ます。
-        - 新しい 製品 は お 客 様 の ニーズ に 合わせ て 様々 な {型} の デザイン を ご 用意 し て い ます。
-        - 新 製品 は 顧客 ニーズ に 適合 する 多彩 な {型} の デザイン を 有し ます。
-      english_literally: New product, as for, customers' needs to match, various types of designs exist.
-      competing_grammar:
-        - competing_japanese:
-            - 新 製品 は お 客 さん の 必要 に 合わせ て 色々 な デザイン が あり ます。
-          english: This version only states 'various designs.' The original sentence specifies 'various
-            *types* of designs,' implying different categories or models of design, not just a multitude
-            of designs.
-          hint: This version only states 'various designs.' The original sentence specifies 'various *types*
-            of designs,' implying different categories or models of design, not just a multitude of designs.
-      scene: A marketing manager is presenting a new product strategy to their team during a business meeting.
-      register: bijinesu nihongo (business)
-      setting: professional
-      speaker_gender: male
-      listener_gender: group
-      nuance: 「色々な型」 (いろいろながた) indicates diverse *types* or *models* of designs, suitable for a business
-        context discussing product diversification and customer segmentation. The phrasing is polite and
-        informative.
-      etymology: In this context, 「型」 (gata) is used to denote different 'types' or 'models' of designs,
-        implying a classification or categorization based on certain standards or characteristics. This
-        is a common usage in marketing and product development, where distinct design 'types' are created
-        to appeal to different segments of customers. The underlying idea of 「型」 as a template or standard
-        extends to conceptual designs, not just physical molds. The choice of 「型」 emphasizes that these
-        are not just random variations but distinct, categorized approaches to design, reflecting careful
-        planning and market analysis typical of business contexts.
-    - english: He looks just like a typical villain.
-      japanese:
-        - 彼 は まるで 典型 {型} の 悪役 の よう に 見える。
-        - あいつ は まさに 典型 {型} の 悪役 だ ね。
-        - 彼 は 典型 {型} の 悪役 と しか 思え ませ ん。
-        - 彼 は 典型 {型} の 悪役 そっくり だ。
-      english_literally: He, as for, just like a typical type of villain appears.
-      competing_grammar:
-        - competing_japanese:
-            - 彼 は まるで 典型 的 な 悪役 の よう に 見える。
-          english: He looks just like a typical villain.
-          hint: While '典型的な' (tenkeitekina) means 'typical,' the addition of '型' emphasizes that the person
-            fits a specific *mold* or *archetype* of a villain. We're looking for someone who embodies the
-            very type of a villain.
-      scene: Two friends are casually discussing a character they saw in a newly released movie.
-      register: casual
-      setting: friendly
-      speaker_gender: female
-      listener_gender: female
-      nuance: 「典型型」 (てんけいがた) highlights that the person fits a classic *type* or *pattern* (in this case,
-        of a villain). The casual comparison 「まるで～のようだ」 (marude ~ no yō da) is common in informal conversation
-        among friends.
-      etymology: 「典型型」 (tenkeigata) combines 「典型」 (tenkei, archetype/model) and 「型」 (gata, type). This emphasizes
-        that the person or thing perfectly fits a pre-established mold or stereotype. It's often used when
-        describing characters in fiction or real people whose behavior aligns exactly with a common perception.
-        The term gained traction in discussions of character tropes and archetypes in literature and media,
-        highlighting how someone embodies a universally recognized 'type'.
-    - english: This software can load data of different file formats.
-      japanese:
-        - この ソフトウェア に は 違う ファイル {形式} の データ が 読み込め ます。
-        - 本 ソフトウェア は 複数 の ファイル {形式} の データ を 読み込み 可能 です。
-        - この ソフト は いろんな ファイル {形式} の データ を 読み込める よ。
-        - この ソフトウェア は 様々 な ファイル {形式} の データ を サポート し て い ます。
-      english_literally: This software, as for, different file formats' data can be loaded.
-      competing_grammar:
-        - competing_japanese:
-            - この ソフトウェア に は 違う ファイル の タイプ が 読み込め ます。
-          english: This software can load data of different file types.
-          hint: 「タイプ」 (taipu) is a general loanword for 'type'. 「形式」 (keishiki) specifically refers to a
-            structured 'format' or 'system' of files, which is more precise in a technical context. We're
-            looking for a specific technical format.
-      scene: A technical support agent is explaining software capabilities to a user over the phone.
-      register: bijinesu nihongo (business)
-      setting: technical
-      speaker_gender: male
-      listener_gender: male
-      nuance: 「ファイル形式」 (ファイルけいしき) is a standard technical term for "file format," illustrating the use of
-        「型」 (as 「形」) with its 「おんよみ」 「けい」 in a compound. The potential form 「読み込めます」 (yomikome masū) indicates
-        the software's ability.
-      etymology: 「形式」 (keishiki) is a compound noun where 「形」 (kei) refers to 'form' and 「式」 (shiki) refers
-        to 'style' or 'method'. Together, it denotes a 'format' or 'formality'. In computing, 「ファイル形式」 (fairu
-        keishiki) is the precise term for 'file format', emphasizing the structured and standardized way
-        data is organized. This use of 「形」 in its on'yomi (Chinese reading) 「けい」 often appears in technical
-        or abstract terms that describe established systems, structures, or conventions, rather than physical
-        shapes.
-    - english: This is a special mold for making traditional Japanese sweets.
-      japanese:
-        - これ は 和 菓子 を 作る ため の 特別 な {型} です。
-        - これ、和 菓子 作る ため の 特別 な {型} だ よ。
-        - こちら は 和 菓子 作成 用 の 特殊 な {型} で ござい ます。
-        - 和 菓子 用 の 特注 {型} と なり ます。
-      english_literally: This, as for, Japanese sweets to make for, special mold is.
-      competing_grammar:
-        - competing_japanese:
-            - これ は 和 菓子 を 作る ため の 特別 な 道具 です。
-          english: This is a special tool for making traditional Japanese sweets.
-          hint: While '道具' (dōgu) means 'tool,' it doesn't specify that it's a mold used to *shape* the
-            sweets. We're looking for a specific template or mold.
-      scene: A professional chef is demonstrating how to make a traditional Japanese sweet to a group of
-        culinary students.
-      register: formal
-      setting: instructional
-      speaker_gender: female
-      listener_gender: group
-      nuance: 「和菓子の型」 (わがしのかた) specifies a concrete mold used for shaping. The use of 「です」 maintains a formal
-        and informative tone, appropriate for an instructor.
-      etymology: '「型」 (kata) in this context refers to a physical ''mold'' or ''template'' used to give
-        a specific shape to something. Its root meaning of a ''pattern'' or ''standard'' is directly applied
-        here: the mold is the standard by which the confection is shaped. This direct, tangible usage of
-        「型」 is one of its most fundamental applications, especially in crafts and manufacturing. The compound
-        「和菓子の型」 specifically refers to the specialized molds used to create the intricate and beautiful
-        shapes of traditional Japanese sweets, highlighting the precision and artistry involved in their
-        production.'
-    - english: The new building has a unique triangular shape.
-      japanese:
-        - 新しい ビル は ユニーク な 三角 {形} を し て い ます。
-        - 新しい ビル、ユニーク な 三角 {形} し てる ね。
-        - 新築 の ビル は 独特 の 三角 {形} を 呈し て おり ます。
-        - 新しい ビル は 珍しい 三角 {形} を 呈し て いる。
-      english_literally: New building, as for, unique triangular shape is doing.
-      competing_grammar:
-        - competing_japanese:
-            - 新しい ビル は ユニーク な 三角 の デザイン を し て い ます。
-          english: The new building has a unique triangular design.
-          hint: 「デザイン」 (dezain) refers to the overall artistic or functional plan, but '形' (katachi/gata/kei)
-            specifically refers to the physical outline or contour. We're describing the actual physical
-            form.
-      scene: An architect is presenting plans for a new building to potential investors.
-      register: semi-formal
-      setting: informative
-      speaker_gender: male
-      listener_gender: group
-      nuance: 「三角形」 (さんかっけい) emphasizes the concrete, physical shape of the building. The polite 「しています」
-        is suitable for a professional explanation.
-      etymology: 「三角形」 (sankakkei) is a compound combining 「三」 (san, three), 「角」 (kaku, corner/angle), and
-        「形」 (kei, form/shape). Here, 「形」 is used in its on'yomi (Chinese reading) 「けい」 to form a geometric
-        term, meaning 'triangular shape'. This demonstrates how 「形」 is often used in formal or technical
-        terms, particularly for geometric figures, where it refers precisely to the outline and dimensions
-        rather than a general 'type' or 'mold'. It highlights the precise, objective description of physical
-        appearance.
-    - english: He performs the same movements with perfect form every morning.
-      japanese:
-        - 彼 は 毎朝、同じ 動作 を 完璧 な {型} で 行う。
-        - 彼 は 毎朝、同じ 動作 を 完璧 な {型} で 行っ て い ます。
-        - 彼 は 毎朝、同じ 動作 を 完璧 な {型} で 行う 習慣 が ある。
-        - 毎朝、彼 は 決まっ た 動作 を 見事 な {型} で こなす。
-      english_literally: He, every morning, same movements, perfect form, performs.
-      competing_grammar:
-        - competing_japanese:
-            - 彼 は 毎朝、同じ 動作 を 完璧 に 行う。
-          english: He performs the same movements perfectly every morning.
-          hint: While '完璧に' (kanpeki ni) means 'perfectly,' using '型' emphasizes adherence to an ideal,
-            established physical form or pattern of movements, typical in martial arts or dance. We're looking
-            for execution according to a precise form.
-      scene: A martial arts instructor is describing one of his dedicated students to a new trainee.
-      register: formal
-      setting: instructional
-      speaker_gender: male
-      listener_gender: male
-      nuance: 「完璧な型」 (kanpeki na kata) specifically refers to performing movements with precise, ideal form,
-        as in martial arts or dance. It implies adherence to a standard pattern or archetype. The formal
-        register is appropriate for an instructor.
-      etymology: In contexts like martial arts (武道 - budō), 「型」 (kata) refers to a sequence of choreographed
-        movements practiced individually or in pairs. It represents the foundational 'form' or 'pattern'
-        of a technique. The term's etymology emphasizes a 'mold' or 'template' that trainees are expected
-        to precisely replicate, making 「型」 central to the disciplined learning process and the preservation
-        of traditional techniques. This usage connects directly to the kanji's meaning of a standard or
-        archetype that is to be followed.
-    - english: The sculpture had a strange, animal-like form.
-      japanese:
-        - その 彫刻 は 奇妙 な 動物 の {形} を し て い た。
-        - その 彫刻 は 奇妙 な 動物 の {形} を し て い まし た。
-        - 件 の 彫刻 は 不思議 な 動物 の {形} を 呈し て いる。
-        - その 彫刻 は 見 た 目 が 動物 {形} で 不思議 だっ た。
-      english_literally: That sculpture, strange animal's form, was doing.
-      competing_grammar:
-        - competing_japanese:
-            - その 彫刻 は 奇妙 な 動物 の よう に 見え た。
-          english: The sculpture looked strangely like an animal.
-          hint: While '〜のように見えた' (〜 no yō ni mieta) suggests a resemblance, using '形' (katachi) directly
-            states that the sculpture possessed the physical outline or figure of an animal. We are describing
-            its actual physical appearance, not just a resemblance.
-      scene: Two art enthusiasts are discussing a modern art piece they saw at a gallery.
-      register: casual
-      setting: reflective
-      speaker_gender: female
-      listener_gender: female
-      nuance: 「動物の形」 (dōbutsu no katachi) refers to the visible, physical shape or figure of an animal.
-        This reinforces `形` for physical appearance. The casual `〜ていた` (〜te ita) is common for describing
-        a past observation in conversation between friends.
-      etymology: 「形」 (katachi) directly signifies the physical shape, outline, or contour of an object.
-        In the context of sculpture, it refers to the three-dimensional form that the artist has given to
-        the material. The combination 「動物の形」 (dōbutsu no katachi) precisely describes the visual configuration
-        of the sculpture as resembling an animal. This usage highlights the core meaning of 「形」 as the tangible
-        manifestation of an object's external appearance.
-  post_example_writeup: Understanding the subtle differences in nuance and application between 「型」 (gata/kata)
-    and 「形」 (katachi/gata/kei) is crucial. While both relate to form, 「型」 often implies an an established
-    model, mold, or category, whereas 「形」 usually refers to the physical appearance or outline. Pay attention
-    to context to select the appropriate kanji and pronunciation.
-  sources:
-    bunpro: https://bunpro.jp/grammar_points/noun-型
+    setting: informative
+    speaker_gender: male
+    listener_gender: group
+    nuance: 「三角形」 (さんかっけい) emphasizes the concrete, physical shape of the building. The polite 「しています」
+      (shite imasu) is suitable for a professional explanation. The use of 「形」 in its on'yomi (Chinese
+      reading) 「けい」 to form a geometric term highlights the precise, objective description of physical
+      appearance.
+    etymology: 「三角形」 (sankakkei) is a compound combining 「三」 (san, three), 「角」 (kaku, corner/angle), and
+      「形」 (kei, form/shape). Here, 「形」 is used in its on'yomi (Chinese reading) 「けい」 to form a geometric
+      term, meaning 'triangular shape'. This demonstrates how 「形」 is often used in formal or technical
+      terms, particularly for geometric figures, where it refers precisely to the outline and dimensions
+      rather than a general 'type' or 'mold'.
+  - english: The sculpture had a strange, animal-like form.
+    japanese:
+      - その 彫刻 は 奇妙 な 動物 の {形} を し て い た。
+      - その 彫刻 は 奇妙 な 動物 の {形} を し て い まし た。
+      - 件 の 彫刻 は 不思議 な 動物 の {形} を 呈し て いる。
+      - その 彫刻 は 見 た 目 が 動物 {形} で 不思議 だっ た。
+    english_literally: That sculpture, strange animal's form, was doing.
+    competing_grammar:
+      - competing_japanese:
+          - その 彫刻 は 奇妙 な 動物 の よう に 見え た。
+        english: The sculpture looked strangely like an animal.
+        hint: While '〜のように見えた' (〜 no yō ni mieta) suggests a resemblance, using '形' (katachi) directly
+          states that the sculpture possessed the physical outline or figure of an animal. We are describing
+          its actual physical appearance, not just a resemblance.
+    scene: Two art enthusiasts are discussing a modern art piece they saw at a gallery.
+    register: casual
+    setting: reflective
+    speaker_gender: female
+    listener_gender: female
+    nuance: 「動物の形」 (dōbutsu no katachi) refers to the visible, physical shape or figure of an animal.
+      This reinforces `形` for physical appearance. The casual `〜ていた` (〜te ita) is common for describing
+      a past observation in conversation between friends.
+    etymology: 「形」 (katachi) directly signifies the physical shape, outline, or contour of an object.
+      In the context of sculpture, it refers to the three-dimensional form that the artist has given to
+      the material. The combination 「動物の形」 (dōbutsu no katachi) precisely describes the visual configuration
+      of the sculpture as resembling an animal. This usage highlights the core meaning of 「形」 as the tangible
+      manifestation of an object's external appearance.
+  - english: This software can load data of different file formats.
+    japanese:
+      - この ソフトウェア に は 違う ファイル {形式} の データ が 読み込め ます。
+      - 本 ソフトウェア は 複数 の ファイル {形式} の データ を 読み込み 可能 です。
+      - この ソフト は いろんな ファイル {形式} の データ を 読み込める よ。
+      - この ソフトウェア は 様々 な ファイル {形式} の データ を サポート し て い ます。
+    english_literally: This software, as for, different file formats' data can be loaded.
+    competing_grammar:
+      - competing_japanese:
+          - この ソフトウェア に は 違う ファイル の タイプ が 読み込め ます。
+        english: This software can load data of different file types.
+        hint: 「タイプ」 (taipu) is a general loanword for 'type'. 「形式」 (keishiki) specifically refers to a
+          structured 'format' or 'system' of files, which is more precise in a technical context. We're
+          looking for a specific technical format.
+    scene: A technical support agent is explaining software capabilities to a user over the phone.
+    register: bijinesu nihongo (business)
+    setting: technical
+    speaker_gender: male
+    listener_gender: male
+    nuance: 「ファイル形式」 (ファイルけいしき) is a standard technical term for "file format," illustrating the use of
+      「形」 (as part of 「形式」) with its on'yomi 「けい」 in a compound. The potential form 「読み込めます」 (yomikome
+      masū) indicates the software's ability.
+    etymology: 「形式」 (keishiki) is a compound noun where 「形」 (kei) refers to 'form' and 「式」 (shiki) refers
+      to 'style' or 'method'. Together, it denotes a 'format' or 'formality'. In computing, 「ファイル形式」 (fairu
+      keishiki) is the precise term for 'file format', emphasizing the structured and standardized way
+      data is organized. This use of 「形」 in its on'yomi (Chinese reading) 「けい」 often appears in technical
+      or abstract terms that describe established systems, structures, or conventions, rather than physical
+      shapes.
+  - english: When I received the package, the box was already out of shape.
+    japanese:
+      - 荷物 を 受け取っ た 時、箱 は すでに {形} が 崩れ て い た。
+      - 荷物 を 受け取っ た 時、箱 の {形} が 崩れ て い まし た。
+      - 届け られ た 荷物 の 箱 は、すでに その {形} を 留め て い なかっ た。
+      - 箱 は 配送 時 に すでに {形} が 歪ん で い た よう だ。
+    english_literally: Package, received when, box, already shape, had collapsed.
+    competing_grammar:
+      - competing_japanese:
+          - 荷物 を 受け取っ た 時、箱 は すでに 壊れ て い た。
+        english: When I received the package, the box was already broken.
+        hint: 「壊れる」 (kowareru) means 'to be broken' in a general sense. We want to specifically describe
+          that the *shape* was distorted or collapsed, not necessarily that the box was completely in
+          pieces.
+    scene: A person is explaining to a delivery service representative why they need to return a damaged
+      item.
+    register: formal
+    setting: apologetic
+    nuance: 「形が崩れていた」 (katachi ga kuzurete ita) precisely describes that the physical form of the box
+      was distorted or lost its original shape, often implying damage. The use of past tense with `ていた`
+      indicates a continuous state of being out of shape upon receipt. The formal register is appropriate
+      for a complaint to a service representative.
+    etymology: The phrase 「形が崩れる」 (katachi ga kuzureru) literally means 'the shape collapses/breaks down'.
+      This directly uses 「形」 to denote the physical integrity and outline of an object. It highlights
+      how the physical form, whether intended or not, has undergone an undesirable change, moving away
+      from its original state. This usage emphasizes the observable change in the object's external configuration.
+  - english: The clouds in the sky were changing shapes constantly.
+    japanese:
+      - 空 の 雲 は 絶え ず {形} を 変え て い た。
+      - 空 の 雲 は 絶え ず {形} を 変え て い まし た。
+      - 大空 の 雲 は、ひっきり なし に その {形} を 変貌 さ せ て い た。
+      - 空 の 雲 が めまぐるしく {形} を 変える 様子 は 美しかっ た。
+    english_literally: Sky's clouds, constantly shape, were changing.
+    competing_grammar:
+      - competing_japanese:
+          - 空 の 雲 は 絶え ず 姿 を 変え て い た。
+        english: The clouds in the sky were changing their appearance constantly.
+        hint: While 「姿」 (sugata) refers to overall appearance, 「形」 (katachi) specifically focuses on the
+          physical outline and form. Here, the emphasis is on how the visible contours of the clouds were
+          morphing.
+    scene: A nature enthusiast is journaling about their observations during a peaceful afternoon.
+    register: casual
+    setting: reflective
+    nuance: 「形を変える」 (katachi o kaeru) focuses on the transformation of the physical contours of the clouds.
+      The adverb 「絶えず」 (taezu, constantly) emphasizes the continuous nature of this change. The casual
+      form `〜ていた` is common in personal reflections.
+    etymology: 「形」 (katachi) here refers to the transient, observable physical outline of the clouds.
+      The verb 「変える」 (kaeru, to change) implies a dynamic transformation of this outline. This usage draws
+      on the core meaning of 「形」 as a visible boundary or configuration. The continuous change of cloud
+      shapes is a classic example of how 「形」 can describe fluid, non-static forms.
+  - english: Please fill out the form completely and return it by tomorrow.
+    japanese:
+      - 明日 まで に この {書式} を 全て 記入 し て 返却 し て ください。
+      - 明日 まで に この {書式} に 全て ご 記入 の 上、ご 返送 ください。
+      - この {書式} に 明日 まで に 必要 事項 を 全て 記載 し、ご 提出 願い ます。
+      - 期日 まで に {書式} へ の 記入 と 提出 を お 願い し ます。
+    english_literally: Tomorrow by, this format, all fill in and return please.
+    competing_grammar:
+      - competing_japanese:
+          - 明日 まで に この 紙 を 全て 記入 し て 返却 し て ください。
+        english: Please fill out this paper completely and return it by tomorrow.
+        hint: 「紙」 (kami) means 'paper' in general. 「書式」 (shoshiki) specifically refers to a 'form' or
+          'document' with a structured layout for information, emphasizing its formal structure rather
+          than just being a piece of paper.
+    scene: An administrative assistant is giving instructions to a new employee.
+    register: formal
+    setting: instructional
+    nuance: 「書式」 (しょしき) uses 「形」 (kei) in its on'yomi to refer to a structured 'form' or 'document layout'.
+      This term is common in formal and business contexts to refer to templates for information. The request
+      「〜してください」 is polite and instructional.
+    etymology: 「書式」 (shoshiki) is a compound noun where 「書」 (sho) means 'writing' and 「式」 (shiki) means
+      'style' or 'method'. Together with 「形」 (kei, form), the implied 「形式」 (keishiki) means 'format' or
+      'formality' for written documents. This term emphasizes the organized and standardized way information
+      is presented or recorded, reflecting the bureaucratic or systematic 'form' rather than a physical
+      shape.
+  - english: The children's drawing depicted a strange, unidentifiable shape.
+    japanese:
+      - 子供 の 絵 に は 奇妙 な、名前 の ない {形} が 描か れ て い た。
+      - 子供 の 絵 に は 不思議 な、何 か わから ない {形} が 描か れ て い まし た。
+      - その 児童 画 に は、得体 の 知れ ない 奇妙 な {形} が 描写 さ れ て い た。
+      - 子供 の 描い た 絵 に は、不可解 な {形} が 印象 的 に 残っ て いる。
+    english_literally: Child's drawing, in, strange, name's not, shape was drawn.
+    competing_grammar:
+      - competing_japanese:
+          - 子供 の 絵 に は 奇妙 な、名前 の ない もの が 描か れ て い た。
+        english: The children's drawing depicted a strange, unidentifiable thing.
+        hint: 「もの」 (mono) means 'thing' in a very general sense. We want to emphasize that it was a distinct,
+          albeit strange, *shape* or outline that was depicted.
+    scene: An art critic is discussing a child's abstract painting at a gallery.
+    register: semi-formal
+    setting: academic
+    nuance: 「名前のない形」 (namae no nai katachi) describes a shape that defies conventional categorization,
+      highlighting its distinct but unidentifiable physical form. The passive voice 「描かれていた」 (egakarete
+      ita, was drawn) focuses on the object of art. This usage emphasizes the visual characteristic of
+      something whose form is not immediately recognizable.
+    etymology: In this context, 「形」 (katachi) refers to the visual contour or configuration of the drawing,
+      even if it is abstract or undefined. It highlights the direct perception of an outline. The description
+      of it as 'unidentifiable' further emphasizes that while a physical form exists, its meaning or referent
+      is unclear, yet its 'shape' is still present.
+  - english: The mountain range has a beautiful, undulating shape.
+    japanese:
+      - その 山脈 は 美しい、うねる よう な {形} を し て い た。
+      - その 山脈 は 美しい、波打つ よう な {形} を し て い まし た。
+      - 当該 山脈 は、なだらか に 連なる 美麗 な {形} を 呈し て いる。
+      - なだらか な 起伏 が 続く、その 山並み は 見事 な {形} を 描い て い た。
+    english_literally: That mountain range, beautiful, undulating like, shape was doing.
+    competing_grammar:
+      - competing_japanese:
+          - その 山脈 は 美しい、うねる よう な 景色 だっ た。
+        english: The mountain range was a beautiful, undulating landscape.
+        hint: 「景色」 (keshiki) means 'landscape' or 'scenery,' focusing on the overall view. 「形」 (katachi)
+          specifically describes the physical contour or outline of the mountains, emphasizing their specific
+          external form.
+    scene: A tour guide is describing the scenery during a nature hike.
+    register: formal
+    setting: informative
+    nuance: 「うねるような形」 (uneru yō na katachi) vividly describes the curvilinear, flowing contours of the
+      mountain range. The formal 「していました」 (shite imashita) is appropriate for a tour guide. This usage
+      underscores `形` as the specific physical appearance.
+    etymology: Here, 「形」 (katachi) is used to describe the large-scale physical configuration of the mountain
+      range, emphasizing its distinct outline against the sky. The descriptive phrase 「うねるような」 (uneru
+      yō na, undulating) directly modifies this 'shape', highlighting its visual characteristic. This
+      demonstrates how 「形」 can be applied to natural formations to describe their observable contours
+      and structures.
+  - english: She always makes her rice balls into cute animal shapes.
+    japanese:
+      - 彼女 は いつ も おにぎり を 可愛い 動物 の {形} に する。
+      - 彼女 は いつ も おにぎり を 可愛い 動物 の {形} に し ます。
+      - 彼女 は 常 に おにぎり を 愛らしい 動物 {形} に 整える。
+      - おにぎり は いつ も 彼女 が 作る 動物 {形} で 供 さ れる。
+    english_literally: She always rice balls, cute animal shapes, makes into.
+    competing_grammar:
+      - competing_japanese:
+          - 彼女 は いつ も おにぎり を 可愛い 動物 みたい に する。
+        english: She always makes her rice balls like cute animals.
+        hint: 「〜みたいに」 (mitai ni) means 'like' or 'similar to.' Here, we are stating that the rice balls
+          are *actually made into* those shapes, not just that they resemble them.
+    scene: A coworker is talking about another colleague who brings homemade lunches.
+    register: casual
+    setting: friendly
+    nuance: 「動物の形にする」 (dōbutsu no katachi ni suru) explicitly states that the rice balls are transformed
+      into distinct animal shapes. The verb 「する」 (suru) here means 'to make into' or 'to turn into', directly
+      manipulating the `形` (shape). This casual conversation reflects a common, everyday application of
+      the term.
+    etymology: The use of 「形」 (katachi) in this context refers to the deliberate creation of a specific
+      physical form. The phrase 「〜にする」 (ni suru) indicates transformation or decision-making, in this
+      case, forming the rice balls into a particular outline. This demonstrates a very practical and common
+      application of 「形」 in daily life, especially in cooking or crafts, where materials are shaped into
+      desired forms.
+  - english: The abstract painting consisted of various geometric shapes.
+    japanese:
+      - その 抽象 画 は 様々 な 幾何 学 {形} で 構成 さ れ て い た。
+      - その 抽象 画 は 様々 な 幾何 学 {形} で 構成 さ れ て い まし た。
+      - 当該 抽象 画 は 多様 な 幾何 学 {形} にて 構成 さ れ て いる。
+      - 抽象 画 は、多彩 な 幾何 学 {形} にて 描か れ て い た。
+    english_literally: That abstract painting, various geometric shapes, by, was composed.
+    competing_grammar:
+      - competing_japanese:
+          - その 抽象 画 は 様々 な 幾何 学 模様 で 構成 さ れ て い た。
+        english: The abstract painting consisted of various geometric patterns.
+        hint: 「模様」 (moyō) means 'pattern' or 'design,' which refers to recurring decorative elements.
+          「形」 (kei) here specifically refers to distinct geometric 'figures' or 'forms' with precise outlines,
+          which is more accurate for abstract art composed of shapes.
+    scene: A museum curator is describing an artwork to visitors during a guided tour.
+    register: formal
+    setting: informative
+    nuance: 「幾何学形」 (きかがくけい) uses 「形」 in its on'yomi 「けい」 to mean 'geometric figures' or 'shapes'. This
+      is common in academic and formal descriptions, especially when discussing art or mathematics. The
+      phrase 「構成されていた」 (kōsei sarete ita, was composed of) indicates the elements forming the artwork.
+    etymology: 「幾何学形」 (kikagakkei) is a technical term combining 「幾何学」 (kikagaku, geometry) and 「形」 (kei,
+      form/figure). This is a precise application of 「形」 in its on'yomi, referring to the defined outlines
+      and structures studied in geometry. It directly describes the components of the painting as distinct,
+      measurable forms, highlighting the analytical aspect of its composition.
+  - english: I cut the cookie dough into star shapes.
+    japanese:
+      - クッキー 生地 を 星 {形} に 切っ た。
+      - クッキー 生地 を 星 {形} に 切り まし た。
+      - クッキー 生地 を 星 {形} に 切り分け た。
+      - 星 {形} に なる よう に クッキー 生地 を 裁断 し た。
+    english_literally: Cookie dough, star shape, cut.
+    competing_grammar:
+      - competing_japanese:
+          - クッキー 生地 を 星 の 絵 に 切っ た。
+        english: I cut the cookie dough into star pictures.
+        hint: 「絵」 (e) means 'picture' or 'drawing'. While a star picture has a star shape, the action
+          is specifically about cutting the dough into the *physical outline* of a star, not a representation
+          of a picture.
+    scene: A parent is telling their child about making cookies for a birthday party.
+    register: casual
+    setting: friendly
+    nuance: 「星形に切る」 (hoshi-gata ni kiru) directly refers to cutting the dough into the physical outline
+      of a star. The use of 「星形」 (hoshi-gata) with rendaku emphasizes the specific physical shape. This
+      casual context is typical for describing everyday activities like baking.
+    etymology: 「星形」 (hoshi-gata) combines 「星」 (hoshi, star) and 「形」 (gata, shape), with the rendaku phenomenon
+      causing the pronunciation shift. This term directly denotes the physical contour of a star. The
+      action 「切る」 (kiru, to cut) refers to the physical act of creating this specific shape, emphasizing
+      the manipulation of material to achieve a desired form.
+  - english: His dance movements had a unique, fluid form.
+    japanese:
+      - 彼 の ダンス の 動き に は 独特 の 流れる よう な {形} が あっ た。
+      - 彼 の ダンス の 動き に は 独特 の 流れる よう な {形} が あり まし た。
+      - 彼 の ダンス は、その 動き に 独特 の 優美 な {形} を 帯び て い た。
+      - 独特 の しなやか な {形} が、彼 の ダンス を 際立た せ て い た。
+    english_literally: His dance movements, unique, flowing like, form, had.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 の ダンス の 動き に は 独特 の 流れる よう な 表現 が あっ た。
+        english: His dance movements had a unique, flowing expression.
+        hint: 「表現」 (hyōgen) means 'expression,' which is about the emotional or artistic message. 「形」
+          (katachi) here refers to the physical contour and posture of the body during the dance, emphasizing
+          the visual aesthetic of the movements themselves.
+    scene: A dance instructor is giving feedback to a student after a performance.
+    register: semi-formal
+    setting: instructional
+    nuance: 「流れるような形」 (nagareru yō na katachi) describes the graceful, continuous physical outlines created
+      by the dancer's movements. This use of 「形」 refers to the aesthetic and visual quality of the body's
+      posture and movement. The semi-formal register is appropriate for instructor feedback.
+    etymology: In the context of dance, 「形」 (katachi) refers to the physical postures, poses, and lines
+      created by the body. It signifies the visual aesthetic and structural aspects of movement. The phrase
+      「流れるような」 (nagareru yō na, flowing like) modifies this 'form', emphasizing its fluidity and grace.
+      This usage extends 「形」 beyond static objects to describe dynamic, transient physical configurations,
+      highlighting the artistry in shaping the body's presence in space.
+post_example_writeup: Understanding the subtle differences in nuance and application between 「型」 and 「形」
+  is crucial. While both relate to form, 「型」 often implies an established model, mold, or category, whereas
+  「形」 usually refers to the physical appearance or outline. Pay attention to context to select the appropriate
+  kanji and pronunciation.
+sources:
+  bunpro: https://bunpro.jp/grammar_points/noun-型

@@ -1,8 +1,14 @@
 grammar_point: を (object marker)
 learn_before:
   - う-verb (dictionary)
+  - る-verbs (ichidan verbs)
+  - が (subject marker)
+  - は (topic and contrast)
 learn_after:
-  - る-verbs (negative forms)
+  - Verb+にいく (go to do)
+  - Verb[た・ている]+Noun (verb-modified noun)
+  - を 通じて・を通して (medium・means)
+  - を 中心に (focused on)
 id: gp0017
 meaning: Particle marking the direct object of a transitive verb.
 pronunciation:
@@ -18,12 +24,13 @@ details:
   particle-syntactic-function: case-marking
   usage-context: Used with transitive verbs to mark their direct object, and with verbs of motion to indicate
     the path traversed. It is a fundamental particle in Japanese sentence structure.
-etymology: The particle を originates from the verb 乎 (o) meaning "to call, to hail." Over time, it transitioned
-  from indicating direction or destination to marking direct objects.
-writeup: |-
-  The particle を marks the direct object of a transitive verb. In simpler terms, it identifies **what** or **whom** the subject is acting upon. Think of it as connecting the verb to the thing receiving the action. For example, in the sentence "I read a book," を would mark "book" because the action of reading is being done to the book.
-
-  While primarily used to mark direct objects, を can also indicate the place **through** which an action occurs, particularly with verbs of motion like 歩く (aruku - to walk) or 走る (hashiru - to run). In such cases, it emphasizes the interaction with the place itself.
+etymology: 'The particle を originates from the verb 乎 (o) meaning '
+writeup: The particle を marks the direct object of a transitive verb. In simpler terms, it identifies
+  **what** or **whom** the subject is acting upon. Think of it as connecting the verb to the thing receiving
+  the action. For example, in the sentence "I read a book," を would mark "book" because the action of
+  reading is being done to the book.When primarily used to mark direct objects, を can also indicate the
+  place **through** which an action occurs, particularly with verbs of motion like 歩く (aruku - to walk)
+  or 走る (hashiru - to run). In such cases, it emphasizes the interaction with the place itself.
 false_friends:
   - term: が (subject marker)
     meaning: Subject marking particle, identification particle
@@ -31,13 +38,13 @@ false_friends:
     nuance: Unlike を, が marks the subject of a sentence or identifies a specific element. が emphasizes
       "who" or "what" is performing the action, while を emphasizes "what" is being acted upon.
     grammar_point: が (subject marker)
-  - term: は (topic marker, as for ~)
+  - term: は (topic and contrast)
     meaning: Topic marking particle, contrast
     kind: often confused with
     nuance: は indicates the topic of the sentence or provides contrast, not the direct object. は sets
       the context, while を pinpoints the receiver of the action.
     grammar_point: は (topic and contrast)
-  - term: に (location, direction)
+  - term: に (fixed point・target・time)
     meaning: Particle marking indirect object, location, direction, or time.
     kind: often confused with
     nuance: Unlike を, which marks the path traversed by motion, に indicates the destination or specific
@@ -109,7 +116,7 @@ examples:
           - 友達 が 手紙 が 書き まし た。
         english: My friend wrote a letter (wrong particle).
         hint: The scene indicates '手紙' (letter) is the item created by the writing action, not the entity
-          performing the action. 'を' clearly marks '手紙' as the direct object.
+          performing the action. 'を' clearly marks '手紙' as the direct object of '書きました'.
       - competing_japanese:
           - 友達 が 手紙 は 書き まし た。
         english: My friend wrote a letter (but perhaps not other things).

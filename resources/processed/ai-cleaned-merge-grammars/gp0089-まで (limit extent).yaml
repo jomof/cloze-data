@@ -1,8 +1,12 @@
 grammar_point: まで (limit extent)
 learn_before:
   - くらい (approximate quantity or degree)
+  - から (from)
+  - に (fixed point・target・time)
 learn_after:
   - Verb+まで (until an action or state)
+  - までに (by the time)
+  - までもない (needless to say)
 id: gp0089
 meaning: Until, Till, To (but no further than)
 pronunciation:
@@ -64,12 +68,27 @@ false_friends:
       it does not necessarily imply a duration or a continuous action up to a boundary, nor does it emphasize
       the endpoint of a continuous action.
     grammar_point: に (fixed point・target・time)
+  - term: だけ
+    meaning: Only, Just
+    kind: similar expression
+    nuance: While 「まで」 marks a boundary (up to X) and can imply 'fewer than X' is also acceptable, 「だけ」
+      implies an exclusive quantity or limitation (exactly X and nothing more). For example, 「3つまで」 (up
+      to 3) allows fewer, but 「3つだけ」 (only 3) means exactly 3.
+    grammar_point: だけ (only・just)
+  - term: から (from)
+    meaning: From (a starting point)
+    kind: similar expression
+    nuance: 「まで」 marks the endpoint or limit, while 「から」 marks the starting point. They are often used
+      together to define a range or duration.
+    grammar_point: から (from)
 post_false_friends_writeup: When distinguishing between Noun+「まで」 and 「までに」, remember that 「まで」 expresses
   continuation *up to* a limit (e.g., "until tomorrow"), while 「までに」 emphasizes completion *by* a deadline
   (e.g., "by tomorrow"). The other uses of 「まで」, such as "even" or "to the extent of," attach to different
   parts of the sentence and carry a nuance of surprise or emphasis rather than a simple boundary. Furthermore,
   while 「に」 can mark a destination or time point, it lacks the emphasis on duration or the 'up to' boundary
-  that 「まで」 carries.
+  that 「まで」 carries. Pay attention also to 「だけ」 and 「から」; while 「だけ」 sets an exact quantity or limit,
+  「まで」 indicates a maximum limit that can also include less, and 「から」 sets the beginning of a range, directly
+  complementing 「まで」.
 examples:
   - english: I walked to school.
     japanese:
@@ -100,7 +119,7 @@ examples:
     nuance: The use of 「まで」 here emphasizes the destination as the endpoint of the continuous action.
       The casual register fits a conversation between friends, and the phrasing is neutral regarding gender,
       suitable for male speakers. The phrase 「歩いて行く」 literally means "to go by walking," combining the
-      te-form of 歩く (to walk) with 行く (to go), emphasizing the mode of travel.
+      te-form of 「歩く」 (to walk) with 「行く」 (to go), emphasizing the mode of travel.
     etymology: The phrase 「歩いて行く」 literally means "to go by walking," combining the te-form of 歩く (to
       walk) with 行く (to go), emphasizing the mode of travel.
   - english: The store is open until 9 PM.
@@ -136,7 +155,7 @@ examples:
     nuance: Here, 「まで」 marks the temporal limit of the store's operation, indicating a continuous state
       of being open up to 9 PM. The formal register is appropriate for an informative exchange between
       a shop assistant and a customer. The phrase 「開いています」 indicates a state of being open, and the variation
-      「開いており ます」 is even more polite, common in customer service. 「開いてるよ」 is a common casual expression
+      「開いており ます」 is even more polite, common in customer service. 「開い てる よ」 is a common casual expression
       used by females.
     etymology: 「開いています」 uses the te-form of 開く (to open) plus いる (to be), which in this context forms
       a stative verb meaning "is open." This construction is common for describing ongoing states or conditions.
@@ -167,8 +186,9 @@ examples:
     listener_gender: female
     nuance: The use of 「まで」 emphasizes the continuous duration of English study, spanning until the point
       of entering university. This implies that either the study stopped or significantly changed at that
-      educational milestone. The phrase 「勉強してました」 is a polite past continuous form. The variation 「勉強してたわ」
-      (casual, female speech, often implying a personal reflection) is a natural way to convey this.
+      educational milestone. The phrase 「勉強 し て まし た」 is a polite past continuous form. The variation
+      「勉強 し て た わ」 (casual, female speech, often implying a personal reflection) is a natural way to convey
+      this.
     etymology: The verb 「勉強する」 (to study) is formed by combining the noun 勉強 (study) with the verb する
       (to do). This pattern of creating verbs from nouns with する is very common in Japanese.
   - english: Go straight down this road and proceed to that point.
@@ -229,10 +249,10 @@ examples:
     speaker_gender: male
     listener_gender: no one
     nuance: This sentence uses 「まで」 to indicate the duration of reading, continuing up to tomorrow. It
-      reflects a casual plan, spoken by a male student to himself or generally. The variation using 「明日中」
-      emphasizes doing something *within* or *throughout* tomorrow, still setting tomorrow as the boundary.
-      「本読むわ」 (casual, often female or very casual male) and 「本読んでるよ」 (casual, male or general) are common
-      casual speech patterns conveying this ongoing action.
+      reflects a casual plan, spoken by a male student to himself or generally. The variation using 「明日
+      中」 emphasizes doing something *within* or *throughout* tomorrow, still setting tomorrow as the boundary.
+      「本 読む わ」 (casual, often female or very casual male) and 「本 読ん でる よ」 (casual, male or general) are
+      common casual speech patterns conveying this ongoing action.
     etymology: The word 「本」 (book) is a commonly used noun in Japanese. 「読む」 (to read) is a basic verb
       for consuming written material. The combination is straightforward for describing the action.
   - english: The bus runs until midnight.
@@ -248,7 +268,7 @@ examples:
         hint: 「に」 marks a specific time, not a duration up to that time. We're looking for continuous
           operation until midnight.
       - competing_japanese:
-          - バス は 深夜 まで に 運行 を 終え ます。
+          - バス は 深夜 まで に 運行 を 終え まし た。
         english: The bus finishes operation by midnight.
         hint: 「までに」 indicates a deadline for an action's completion, not continuous operation until that
           time. We're looking for service that continues up to midnight.
@@ -258,8 +278,9 @@ examples:
     speaker_gender: female
     listener_gender: male
     nuance: 「まで」 clearly defines the operating hours, stating that the bus service continues up to, but
-      not past, midnight. The use of 「運行しています」 is formal for operation, while 「走ってるよ」 is a casual way
-      a female might explain it to someone. 「出ているわね」 (casual, female) also implies the bus is available.
+      not past, midnight. The use of 「運行 し て い ます」 is formal for operation, while 「走っ て いる よ」 is a casual
+      way a female might explain it to someone. 「出 て いる わ ね」 (casual, female) also implies the bus is
+      available.
     etymology: 「運行」 (unkō) refers to the operation or running of transportation. 「深夜」 (shin'ya) means
       late at night or midnight.
   - english: I can eat up to three pieces of cake.
@@ -280,8 +301,8 @@ examples:
     speaker_gender: male
     listener_gender: female
     nuance: 「まで」 here indicates a quantity limit, meaning "up to" or "a maximum of" three pieces. This
-      is a common way to express one's capacity. The phrasing 「食べられるよ」 (potential form) is typical for
-      casual male speech. 「大丈夫だよ」 is a very common way to express one's limit or preference casually.
+      is a common way to express one's capacity. The phrasing 「食べ られ る よ」 (potential form) is typical
+      for casual male speech. 「大丈夫 だ よ」 is a very common way to express one's limit or preference casually.
     etymology: 「ケーキ」 is a loanword from English "cake." 「三つ」 is a general counter for three items. 「食べられる」
       is the potential form of 「食べる」 (to eat), meaning 'can eat'.
   - english: Please wait here until tomorrow morning.
@@ -305,11 +326,11 @@ examples:
     setting: instructional
     speaker_gender: male
     listener_gender: group
-    nuance: The use of 「まで」 clearly delineates the duration of the waiting period. The polite 「待っていてください」
-      is appropriate for instructions from a superior. 「待ってて」 is its casual equivalent. 「待機してください」 is
-      a more formal term for 'please stand by' or 'wait on standby'.
-    etymology: 「明日 (asu/ashita)」 means "tomorrow." 「朝 (asa)」 means "morning." The combination 「明日の朝」 is
-      a common temporal expression. 「待つ」 (matsu) is the verb "to wait."
+    nuance: The use of 「まで」 clearly delineates the duration of the waiting period. The polite 「待っ て い
+      て ください」 is appropriate for instructions from a superior. 「待っ て て」 is its casual equivalent. 「待機
+      し て ください」 is a more formal term for 'please stand by' or 'wait on standby'.
+    etymology: 「明日 (asu/ashita)」 means "tomorrow." 「朝 (asa)」 means "morning." The combination 「明日 の 朝」
+      is a common temporal expression. 「待つ」 (matsu) is the verb "to wait."
   - english: I'll be busy until next week.
     japanese:
       - 来週 {まで} 忙しい です。
@@ -334,8 +355,8 @@ examples:
     speaker_gender: female
     listener_gender: male
     nuance: 「まで」 marks the temporal boundary for the state of being busy, indicating that the business
-      continues up to and potentially including some part of next week. The variation 「手が離せ ない の」 is a
-      common female casual expression meaning "I can't free my hands" (i.e., I'm busy), adding a personal
+      continues up to and potentially including some part of next week. The variation 「手 が 離せ ない の」 is
+      a common female casual expression meaning "I can't free my hands" (i.e., I'm busy), adding a personal
       touch.
     etymology: 「来週 (raishū)」 means "next week." 「忙しい (isogashii)」 is an i-adjective meaning "busy." The
       phrase describes a continuous state until a future point.
@@ -364,14 +385,37 @@ examples:
     listener_gender: male
     speaker_age: older
     nuance: 「まで」 clearly sets a physical boundary for the action of going, indicating that the child can
-      reach the river but not cross it. The potential form 「行けるよ」 is a common casual way to express permission
+      reach the river but not cross it. The potential form 「行ける よ」 is a common casual way to express permission
       or capability, often used by an older female to a younger person. 「川岸」 (kawagishi) refers specifically
       to the river bank.
     etymology: 「川 (kawa)」 means "river." 「行く」 (iku) means "to go." 「こと が できる」 is a common way to express
       possibility or ability.
+  - english: He has mastered martial arts to the highest level.
+    japanese:
+      - 彼 は 武道 の 奥義 {まで} 極め た。
+      - 彼 は 武道 の 奥義 {まで} 極め て いる。
+      - その 男 は 武術 の 究極 {まで} 達し た。
+    english_literally: He has mastered even the deepest secrets of martial arts.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 武道 の 奥義 だけ 極め た。
+        english: He has only mastered the deepest secrets of martial arts.
+        hint: 「だけ」 implies an exclusivity, meaning *only* the deepest secrets. 「まで」 suggests reaching
+          the *extent* of mastery, including even the deepest secrets as part of a comprehensive understanding.
+          We are emphasizing reaching the ultimate extent, not just a limited scope.
+    scene: A martial arts master is being praised for his lifelong dedication and skill.
+    register: formal
+    setting: informative
+    speaker_gender: male
+    listener_gender: group
+    nuance: In this context, 「まで」 is used to emphasize the *extent* of mastery, meaning "up to and including"
+      the most profound aspects. It signifies comprehensive achievement. The formal tone using 「極め た」
+      (mastered) is suitable for praising a revered figure.
+    etymology: 「奥義」 (ōgi) refers to the inner, profound, or ultimate secrets of an art or discipline.
+      「極める」 (kiwameru) means to master, to carry to extremes, or to reach the ultimate limit.
 post_example_writeup: Understanding the subtle differences in nuance and usage contexts among similar
   particles and expressions is crucial for mastering Japanese. By examining how まで functions compared
-  to other particles like に, へ, or even different usages of まで itself, you can gain a deeper appreciation
+  to other particles like に, へ, から or even different usages of まで itself, you can gain a deeper appreciation
   for the precision of the language. Pay close attention to whether the context implies a strict deadline,
   a duration, or merely a direction, as these distinctions will guide your choice of particle.
 sources:

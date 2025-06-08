@@ -1,8 +1,10 @@
 grammar_point: のも当然だ (it is only natural)
 learn_before:
   - て当然だ (natural obvious)
+  - はずだ (expected to be)
 learn_after:
-  - たった (only・just)
+  - べくして (as destined)
+  - にほかならない (nothing but)
 id: gp0694
 meaning: It is only natural that; It is no wonder
 pronunciation:
@@ -23,10 +25,16 @@ etymology: The grammar point 「のも当然だ」 combines the explanatory 「�
   translates to "it is natural, also." The inclusion of 「も」 emphasizes the naturalness, suggesting that
   the outcome is so obvious it's not even surprising, or that it's natural in addition to other natural
   outcomes.
-writeup: |-
-  The grammar point 「のも当然だ」 expresses that a certain event is an extremely natural result or an obvious consequence. While similar to 「て当然だ」, 「のも当然だ」 is more emphatic, conveying the firm sense that 'it is no wonder' (不思議ではない) or 'it is only natural' (当然のことだ). By using 「も」 instead of 「は」, the speaker can further emphasize the obviousness of the remark from their perspective, indicating that this outcome is naturally expected, perhaps among other things. This construction follows verbs and い-adjectives in their dictionary form, or な-adjectives and nouns followed by な.
-
-  While 「て当然だ」 is a relatively milder expression, such as 「幸せなのは当然だ」 ("being happy is natural"), 「のも当然だ」 carries a stronger, more assertive nuance, like 「幸せであるのも当然だ」 ("it's natural that one would be happy"). It more clearly separates and emphasizes the inevitability of the matter. It implies a sense of a universally accepted truth or a clear cause-and-effect relationship.
+writeup: The grammar point 「のも当然だ」 expresses that a certain event is an extremely natural result or an
+  obvious consequence. While similar to 「て当然だ」, 「のも当然だ」 is more emphatic, conveying the firm sense that
+  'it is no wonder' (不思議ではない) or 'it is only natural' (当然のことだ). By using 「も」 instead of 「は」, the speaker
+  can further emphasize the obviousness of the remark from their perspective, indicating that this outcome
+  is naturally expected, perhaps among other things. This construction follows verbs and い-adjectives
+  in their dictionary form, or な-adjectives and nouns followed by な. While 「て当然だ」 is a relatively milder
+  expression, such as 「幸せなのは当然だ」 ("being happy is natural"), 「のも当然だ」 carries a stronger, more assertive
+  nuance, like 「幸せであるのも当然だ」 ("it's natural that one would be happy"). It more clearly separates and emphasizes
+  the inevitability of the matter. It implies a sense of a universally accepted truth or a clear cause-and-effect
+  relationship.
 false_friends:
   - term: のもっともだ
     meaning: May well, Have good reason for, No wonder, … Is only natural
@@ -34,7 +42,7 @@ false_friends:
     nuance: 「のもっともだ」 emphasizes the justification for something; it's reasonable. It implies that there
       is a valid reason or strong rationale for the outcome. 「のも当然だ」 focuses on the expectedness or inevitability
       of the outcome, suggesting it's an obvious conclusion.
-    grammar_point: <suggest>:のもっともだ (it's only natural)
+    grammar_point: のもっともだ (it's only natural)
   - term: て当然だ
     meaning: Natural, As a matter of course
     kind: synonym
@@ -156,7 +164,7 @@ examples:
         english: They devoted themselves to research, even sacrificing sleep, so their paper should be
           accepted.
         hint: 「はずだ」 indicates a strong expectation or logical conclusion, often based on available information,
-          but it can still be an inference. We're looking for a statement about an outcome being entirely
+          but it can still be an inference. We're looking for a statement that an outcome being entirely
           natural and unsurprising.
     scene: Colleagues are discussing a successful research paper.
     register: semi-formal
@@ -226,7 +234,7 @@ examples:
       「倒壊」 (tōkai, collapse) during an earthquake. The addition of the sentence-final particle 「よ」 (yo)
       is often used to convey new information, confirm something, or to add a casual, friendly tone, here
       used to share a natural conclusion with a neighbor. The shift to 「誰 も 無事 で よかっ た」 (dare mo buji
-      de yokatta, I'm glad everyone is safe) highlights the human aspect beyond the natural event.
+      de yokatta, I am glad everyone is safe) highlights the human aspect beyond the natural event.
   - english: Since years of effort bore fruit, it's only natural that he's moved.
     japanese:
       - 長年 の 努力 が 実っ た の だ から、彼 が 感動 し て いる の は 当然 だ。
@@ -323,7 +331,7 @@ examples:
       - competing_japanese:
           - 徹夜 で 働い たら、眠く なる はず だ。
         english: If you work all night, you should be sleepy.
-        hint: 「はずだ」 indicates a strong expectation or logical conclusion based on information. We're looking
+        hint: 「はずだ」 indicates an expectation or logical conclusion, but it's an inference. We're looking
           for a statement that tiredness is a natural and unsurprising consequence of working all night,
           not just an expectation.
       - competing_japanese:
@@ -352,3 +360,7 @@ post_example_writeup: The examples illustrate how 「のも当然だ」 is used 
   the result as self-evident.
 sources:
   bunpro: https://bunpro.jp/grammar_points/のも当然だ
+lint-errors:
+  - '[rule-13] warning unknown grammar at ''false_friends[0]'': ''のもっともだ (it''s only natural)''. It **MUST**
+    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
+    grammar point.'

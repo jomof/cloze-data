@@ -1,8 +1,14 @@
 grammar_point: の (possession)
 learn_before:
-  - あれ (that over there)
+  - です (polite copula)
+  - が (subject marker)
+  - を (object marker)
+  - い-Adjective + Noun (describing nouns)
+  - な-Adjective (modifying nouns)
 learn_after:
-  - いい (good)
+  - の (abstract thing)
+  - の (one)
+  - んです・のです (explanatory emphatic)
 id: gp0007
 meaning: Indicates possession or relationship.
 pronunciation:
@@ -12,7 +18,7 @@ formation:
   Noun A + の + Noun B: Indicates that Noun B belongs to, is an attribute of, or is related to Noun A.
   Noun + の + Noun: Links two nouns, showing relationship, material, origin, or attribute.
   Noun + の + Adjective/Noun: Modifies a subsequent adjective or noun by providing more information about
-    it. (e.g., 日本 の 車)
+    it.
 jlpt: N5
 details:
   part-of-speech: particle
@@ -34,14 +40,14 @@ writeup: |-
 
   While 「の」 is predominantly used after nouns, it can also appear after other parts of speech when they are nominalized (transformed into a noun-like phrase). This advanced usage is covered in the grammar point for 「の」 - Nominalization. The specific register of a sentence containing 「の」 is determined by the surrounding particles and verb conjugations, as 「の」 itself is register-neutral.
 false_friends:
-  - term: <suggest>:の (nominalization)
+  - term: の (making a verb a noun)
     meaning: Verb nominalizer, The one who..., That which...
     kind: similar expression
     nuance: Unlike the possessive 「の」, this usage transforms a verb or an adjective into a noun-like phrase,
       often referring to an action or a concept related to the action. For example, 「走る の」 (hashiru no)
       means "the act of running" or "the one who runs." Also, this nominalizing 「の」 is often used with
       phrases that would use the particle 「が」 to mark the subject in a regular sentence.
-    grammar_point: <suggest>:の (nominalization)
+    grammar_point: こと (making a verb a noun)
   - term: な-Adjective (modifying nouns)
     meaning: Connects an adjectival noun (na-adjective) to a noun.
     kind: similar expression
@@ -82,7 +88,8 @@ examples:
     competing_grammar:
       - competing_japanese:
           - この 本 は 私 の です。
-        english: This book is mine.
+        english: This states the book as belonging to you, but the target grammar forms a combined noun
+          phrase 'my book'. We're looking for a simple possessive noun phrase.
         hint: This states the book as belonging to you, but the target grammar forms a combined noun phrase
           'my book'. We're looking for a simple possessive noun phrase.
       - competing_japanese:
@@ -153,7 +160,8 @@ examples:
           for 「の」 that shows possession or direct association ('teacher's book').
       - competing_japanese:
           - あれ は 先生 の 教育 的 な 本 です。
-        english: That is the teacher's educational book.
+        english: This 「的」 describes the purpose or nature of the book as 'educational'. We're looking
+          for 「の」 that shows direct association ('teacher's book').
         hint: This 「的」 describes the purpose or nature of the book as 'educational'. We're looking for
           「の」 that shows direct association ('teacher's book').
     scene: You are pointing out the teacher's book on the desk in a classroom.
@@ -504,5 +512,3 @@ post_example_writeup: The examples showcase the versatility of 「の」 in indi
   contractions like 「って」, along with sentence-final particles such as 「よ」, 「ね」, 「だ ぜ」, and 「よ な」, significantly
   alters the register and nuance, reflecting various speech styles from polite formal to casual male or
   female speech.
-sources:
-  bunpro: https://bunpro.jp/grammar_points/の

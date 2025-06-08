@@ -1,10 +1,11 @@
 grammar_point: う-verb (didn't do)
 learn_before:
+  - う-verb (negative)
+  - う-verb (past)
   - る-verb (negative-past)
-  - Verb[て] (and then another event)
 learn_after:
-  - ている (~ing)
-  - てしまう・ちゃう (completion・regret・accident)
+  - まだ～ていない (still uncompleted)
+  - ことはない (no need to or never happens)
 id: gp0056
 meaning: Indicates that an action or state did not occur in the past.
 meaning_warning: When a past negative sentence has a connection with the present, for example, something
@@ -24,7 +25,7 @@ conjugations:
     rarity: common
     meaning: did not [verb] (polite)
 pronunciation:
-  katakana: ウー verb (ネガティブ-パスト)
+  katakana: ウー verb (ネガティブ・パスト)
   romaji: u-verb (negatibu-pasuto)
 formation:
   Godan verb (あ/わ form) + なかった: Casual negative past tense for Godan verbs. (う changes to わ)
@@ -46,7 +47,7 @@ writeup: |-
 
   *   **Semi-polite (～なかった です)**: This form builds upon the casual negative past by simply adding です. For instance, 飲まなかった です (nomanakatta desu). While not strictly grammatically standard in classical Japanese, it is widely used and accepted in modern colloquial Japanese, especially when speaking to someone you respect but with whom you have a somewhat close relationship.
 
-  *   **Polite (～ませんでした)**: For the polite form, change the final kana of the Godan verb to its corresponding い-sound kana (e.g., 飲む (nomu) becomes 飲み (nomi), 立つ (tatsu) becomes 立ち (tachi)). Then, attach ませんでした. For example, 飲む (nomu) becomes 飲みませんでした (nomimasendeshita - didn't drink).
+  *   **Polite (～ませんでした)**: For the polite form, change the final kana of the Godan verb to its corresponding い-sound kana (e.g., 飲む (nomu) becomes 飲み (nomi), 立つ (tachi) becomes 立ち (tachi)). Then, attach ませんでした. For example, 飲む (nomu) becomes 飲みませんでした (nomimasendeshita - didn't drink).
 
   An important exception to note is the verb ある (aru), which means "to exist" or "to be" for inanimate objects. Its casual past-negative form is simply なかった (nakatta), not あらなかった (aranakatta). However, its polite past-negative form follows the regular pattern: ありませんでした (arimasendeshita).
 false_friends:
@@ -254,7 +255,7 @@ examples:
         hint: This casual form is too informal for a formal setting. We're looking for a polite expression.
       - competing_japanese:
           - 時間 の 関係 で、必要 な 点 を 全て 書い て い ませ ん でし た。
-        english: Due to time constraints, I hadn't been writing down all the necessary points.
+        english: 時間 の 関係 で、必要 な 点 を 全て 書い て い ませ ん でし た。
         hint: 「〜ていませんでした」 implies a continuous state of not doing something up to a point in the past.
           We're looking for a simple statement that the action didn't occur in the past.
       - competing_japanese:

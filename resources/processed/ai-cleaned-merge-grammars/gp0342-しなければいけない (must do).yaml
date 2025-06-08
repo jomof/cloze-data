@@ -1,30 +1,39 @@
 grammar_point: しなければいけない (must do)
 learn_before:
-  - と〜と・どちらが (between A and B)
+  - Verbs (non-past plain)
+  - う-verb (negative)
+  - 〜ば (conditional)
+  - たい (want to do)
+  - てはいけない (must not・cannot)
+  - ないと (must do)
 learn_after:
-  - つづける (to continue)
+  - ねばならない (must・have to)
+  - べき (should)
+  - ざるを得ない (have no choice but to)
+  - わけにはいかない (cannot afford to)
+  - ないではいられない (cannot help but do)
 id: gp0342
 meaning: must do, have to do
 meaning_warning: Verb[ない]+と+いけない/ならない is also used to express duty or necessity.
 conjugations:
   - conjugation-type: dictionary (plain non-past)
-    form: なければいけない
+    form: しなければいけない
     rarity: common
     meaning: must do, have to do
   - conjugation-type: non-past polite (～ます)
-    form: なければいけません
+    form: しなければいけません
     rarity: common
     meaning: must do, have to do (polite)
   - conjugation-type: dictionary (plain non-past)
-    form: なきゃいけない
+    form: しなきゃいけない
     rarity: common
     meaning: must do, have to do (casual)
   - conjugation-type: dictionary (plain non-past)
-    form: なきゃ
+    form: しなきゃ
     rarity: common
     meaning: must do, have to do (very casual)
   - conjugation-type: dictionary (plain non-past)
-    form: なければならない
+    form: しなければならない
     rarity: common
     meaning: must do, have to do (formal)
 pronunciation:
@@ -45,7 +54,7 @@ etymology: This grammar point is derived from the conditional form of the negati
   (nakereba) meaning 'if not', combined with 「いけない」 (ikenai) meaning 'cannot go' or 'is not good'. The
   literal meaning is 'if (something) is not done, it cannot go/it's no good', which is equivalent to 'it
   must be done'.
-writeup: 「なければいけない」 is a grammatical structure used to express a sense of obligation or necessity. It
+writeup: 「しなければいけない」 is a grammatical structure used to express a sense of obligation or necessity. It
   translates to "must do" or "have to do" in English. It's essentially a double negative construction,
   implying that if you don't do something, it won't work out. The structure is formed by taking the negative
   form of a verb (ない form), changing it to its conditional form (ば form), and then adding 「いけない」. For
@@ -56,26 +65,26 @@ false_friends:
   - term: てはいけない
     meaning: must not, may not
     kind: antonym
-    nuance: 「てはいけない」 indicates prohibition, meaning something is not allowed, whereas 「なければいけない」 expresses
+    nuance: 「てはいけない」 indicates prohibition, meaning something is not allowed, whereas 「しなければいけない」 expresses
       obligation or necessity.
     grammar_point: てはいけない (must not・cannot)
   - term: べきではない
     meaning: should not, must not, ought not to
     kind: antonym
-    nuance: 「べきではない」 implies a moral or logical reason why something should not be done, while 「なければいけない」
+    nuance: 「べきではない」 implies a moral or logical reason why something should not be done, while 「しなければいけない」
       emphasizes the necessity of doing something.
     grammar_point: べきではない (should not)
   - term: てはならない
     meaning: must not, cannot, should not
     kind: antonym
-    nuance: 「てはならない」 is a stronger and more formal prohibition than 「てはいけない」, whereas 「なければいけない」 expresses
+    nuance: 「てはならない」 is a stronger and more formal prohibition than 「てはいけない」, whereas 「しなければいけない」 expresses
       a requirement.
-    grammar_point: <suggest>:てはならない (must not, cannot)
+    grammar_point: てはならない (must not)
   - term: なくてはいけない
     meaning: must do, have to do
     kind: synonym
-    nuance: 「なくてはいけない」 has almost the same meaning as 「なければいけない」, but it is derived from the te-form of
-      「ない」 (なくて) instead of the conditional form (なければ).
+    nuance: 「なくてはいけない」 has almost the same meaning as 「しなければいけない」, but it is derived from the te-form
+      of 「ない」 (なくて) instead of the conditional form (なければ).
     grammar_point: なくてはいけない (must do)
   - term: ないと
     meaning: must, have to
@@ -89,7 +98,7 @@ false_friends:
     nuance: 「ねばならない」 is a more formal and somewhat literary way of saying "must do", derived from the
       archaic 未然形 form of verbs.
     grammar_point: ねばならない (must・have to)
-post_false_friends_writeup: While 「なければいけない」 conveys necessity, pay close attention to similar-sounding
+post_false_friends_writeup: While 「しなければいけない」 conveys necessity, pay close attention to similar-sounding
   forms like 「なくてはいけない」 or 「ないといけない」, as they use slightly different grammatical structures to express
   the same core meaning of obligation. Distinguish them from prohibitory expressions such as 「てはいけない」,
   which indicate something must not be done. The nuances of formality and directness can vary between
@@ -206,10 +215,10 @@ examples:
     setting: informative
     conjugation: dictionary (plain non-past)
     nuance: The casual but slightly more emphatic 「なきゃいけない」 implies a deadline-driven necessity, not just
-      a planned action. The final 「ん だ」 adds an explanatory or emphatic nuance, highlighting the reason
+      a planned action. The final 「んだ」 adds an explanatory or emphatic nuance, highlighting the reason
       for the obligation.
-    etymology: The use of 「ん だ」 (a contraction of のだ) adds explanatory force, indicating that the obligation
-      is a consequence of a specific situation (the deadline). This emphasizes the reason *why* the action
+    etymology: The use of 「んだ」 (a contraction of のだ) adds explanatory force, indicating that the obligation
+      is a consequence of a specific situation (the deadline). This emphasizes the reason why the action
       is necessary.
   - english: Citizens must obey the law.
     japanese:
@@ -253,12 +262,12 @@ examples:
           - ちゃんと 準備 し た 方 が いい よ。さも ない と、失敗 する。
         english: You'd better prepare properly. Otherwise, you'll fail.
         hint: 「～方がいい」 offers advice or a suggestion, which is softer than the strong necessity conveyed
-          by 「なければいけない」. We're looking for a firm 'must' combined with a warning.
+          by 「しなければいけない」. We're looking for a firm 'must' combined with a warning.
       - competing_japanese:
           - ちゃんと 準備 す べき だ よ。さも ない と、失敗 する。
         english: You should prepare properly. Otherwise, you'll fail.
         hint: 「べきだ」 expresses what one ought to do or what is logical, but it doesn't carry the same sense
-          of immediate, unavoidable necessity as 「なければいけない」 when a negative consequence is explicitly
+          of immediate, unavoidable necessity as 「しなければいけない」 when a negative consequence is explicitly
           stated. We're looking for an imperative tone linked to a direct consequence.
     scene: A mentor giving serious advice to their mentee.
     register: semi-formal
@@ -271,7 +280,7 @@ examples:
       of 「しなければいけない」 with 「さもないと、失敗する」 highlights the serious consequence of not fulfilling the obligation.
     etymology: The phrase 「さもないと」 (samo nai to) literally means "if it is not so" and functions to introduce
       a negative consequence, similar to "otherwise." It reinforces the critical nature of the preceding
-      obligation established by 「なければいけない」.
+      obligation established by 「しなければいけない」.
   - english: I wonder if I have to answer the teacher's question.
     japanese:
       - 先生 の 質問 に 答え {なけれ ば いけ ない} の か な。
@@ -329,7 +338,7 @@ examples:
     nuance: The addition of the particle 「よ」 at the end makes the statement sound more like a gentle but
       firm instruction from the doctor. This is a common way to give advice that is also an imperative
       for the patient's health.
-    etymology: The use of 「なけれ ば いけ ない」 in a medical context emphasizes the consequence of not performing
+    etymology: The use of 「しなければいけない」 in a medical context emphasizes the consequence of not performing
       the action; not taking the medicine will lead to negative health outcomes. This reinforces the inherent
       necessity of the instruction.
   - english: I really have to finish this report by tonight.
@@ -375,7 +384,7 @@ examples:
       - competing_japanese:
           - 環境 を 守る ため に、プラスチック ゴミ を 減らす べき だ。
         english: To protect the environment, we should reduce plastic waste.
-        hint: 「べきだ」 is a strong recommendation, but 「なければならない」 conveys a more absolute and objective necessity
+        hint: 「べきだ」 is a strong recommendation, but 「なければならない」 conveys an absolute and objective necessity
           or imperative, often used for rules or principles. We're looking for a non-negotiable obligation
           for societal good.
       - competing_japanese:
@@ -407,13 +416,13 @@ examples:
       - competing_japanese:
           - 休暇 中 で も、毎日 仕事 の メール を 確認 する 義務 が ある。
         english: Even on vacation, I have a duty to check my work emails every day.
-        hint: 「義務がある」 refers to a formal duty or obligation, often in a more detached sense, while 「なければいけない」
+        hint: 「義務がある」 refers to a formal duty or obligation, often in a more detached sense, while 「しなければいけない」
           conveys a personal, almost burdensome, necessity. We're looking for that personal sense of 'have
           to' even if it's unpleasant.
       - competing_japanese:
           - 休暇 中 で も、毎日 仕事 の メール を 確認 する べき だ。
         english: Even on vacation, I should check my work emails every day.
-        hint: 「べきだ」 suggests what is advisable or proper, but 「なければいけない」 implies a stronger, unavoidable
+        hint: 「べきだ」 suggests what is advisable or proper, but 「しなければいけない」 implies a stronger, unavoidable
           necessity, often due to perceived consequences if not done. We're looking for a statement of
           firm personal necessity despite the circumstances.
     scene: An overworked employee lamenting their situation to a colleague during a break.
@@ -424,7 +433,7 @@ examples:
       The casual forms 「なきゃいけない」 or 「なきゃ」 highlight the speaker's personal feeling of being forced to
       do something undesirable, often due to corporate culture or personal responsibility.
     etymology: The use of 「～でも」 (even if/though) emphasizes the contrast between the expected state (vacation)
-      and the reality (still having obligations). This contrast is heightened by 「なければいけない」, stressing
+      and the reality (still having obligations). This contrast is heightened by 「しなければいけない」, stressing
       the unavoidable nature of the task.
   - english: I have to wake up early tomorrow for my part-time job.
     japanese:
@@ -467,7 +476,7 @@ examples:
       - competing_japanese:
           - 先生 の 言う こと は よく 聞く べき だ。
         english: You should listen carefully to what the teacher says.
-        hint: 「べきだ」 suggests a moral or logical 'should'. 「なければいけない」 here emphasizes a rule or instruction
+        hint: 「べきだ」 suggests a moral or logical 'should'. 「しなければいけない」 here emphasizes a rule or instruction
           that must be followed for effective learning. We're looking for a clear instruction rather than
           a recommendation.
       - competing_japanese:
@@ -488,8 +497,8 @@ examples:
   - english: To achieve our goals, we must continue making efforts.
     japanese:
       - 目標 達成 の ため に は、努力 し 続け {なけれ ば なら ない}。
-      - 目標 達成 の ため に は、努力 し 続け {なけれ ば いけ ない}。
-      - 目標 達成 の ため に は、努力 し 続け {なけれ ば いけ ませ ん}。
+      - 目標 達成 の ため に は、努力 し 続け {し なけれ ば いけ ない}。
+      - 目標 達成 の ため に は、努力 し 続け {し なけれ ば いけ ませ ん}。
       - 目標 達成 の ため に は、努力 し 続け {なきゃ いけ ない}。
     english_literally: For goal achievement, if we don't continue efforts, it will not become right.
     competing_grammar:
@@ -501,9 +510,9 @@ examples:
       - competing_japanese:
           - 目標 達成 の ため に は、努力 し 続ける 必要 が ある。
         english: To achieve our goals, it is necessary to continue making efforts.
-        hint: 「必要がある」 states a necessity. 「なければならない」 emphasizes that the absence of effort would make
-          goal achievement impossible, implying a stronger, non-negotiable condition. We're looking for
-          an unequivocal statement of obligation.
+        hint: 「必要がある」 states a necessity. 「なければならない」 goes a step further by implying that failure to act
+          would make goal achievement impossible, implying a stronger, non-negotiable condition. We're
+          looking for an unequivocal statement of obligation.
     scene: A coach motivating their team before a big game or competition.
     register: formal
     setting: inspirational
@@ -516,9 +525,9 @@ examples:
       of 「ならない」 implies that the desired outcome (目標達成 - goal achievement) simply 'will not come to be'
       if the necessary action (努力し続ける - continuing effort) is absent. It's an objective truth presented
       as a guiding rule.
-post_example_writeup: The examples illustrate how 「なければいけない」 conveys a strong sense of obligation or necessity.
-  Notice its plain form 「なければいけない」 is common in both casual and semi-formal contexts, while the polite
-  form 「なければいけません」 is used in more formal or polite settings. The contracted form 「なきゃ」 or 「なきゃいけない」 further
-  emphasizes the casualness and directness of the necessity.
+post_example_writeup: The examples illustrate how 「しなければいけない」 conveys a strong sense of obligation or
+  necessity. Notice its plain form 「しなければいけない」 is common in both casual and semi-formal contexts, while
+  the polite form 「しなければいけません」 is used in more formal or polite settings. The contracted form 「なきゃ」 or
+  「なきゃいけない」 further emphasizes the casualness and directness of the necessity.
 sources:
   bunpro: https://bunpro.jp/grammar_points/なければいけない

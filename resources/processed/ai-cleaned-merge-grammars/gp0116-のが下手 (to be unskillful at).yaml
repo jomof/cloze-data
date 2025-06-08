@@ -1,8 +1,14 @@
 grammar_point: のが下手 (to be unskillful at)
 learn_before:
-  - 間 (between・middle spatial)
-learn_after:
+  - の (that ~)
+  - が (subject marker)
+  - な-Adjectives (adjectival nouns)
+  - の が 好き (like doing)
   - のがじょうず (good at doing)
+learn_after:
+  - がたい (hard to do)
+  - ようがない・ようもない (no way to)
+  - かねる (unable to)
 id: gp0116
 meaning: To be bad at, poor at, unskillful at
 conjugations:
@@ -242,8 +248,8 @@ examples:
           - 昔 は 運動 を する こと が でき ませ ん でし た。
         english: In the past, I couldn't exercise.
         hint: 「～こと が できませんでした」 expresses a complete inability to do something, not just a lack of skill.
-          The example implies one *could* exercise, just not well. We're looking for a lack of skill rather
-          than total impossibility.
+          The example implies one *could* exercise, just not well, indicating a lack of skill rather than
+          total impossibility.
       - competing_japanese:
           - 昔 は 運動 に 疎かっ た。
         english: In the past, I was unfamiliar with or lacked knowledge about exercise.
@@ -434,9 +440,9 @@ examples:
       - competing_japanese:
           - 前 は 料理 が 下手 じゃ なかっ た。
         english: Before, I wasn't bad at cooking (as a general skill).
-        hint: '「料理 が 下手 じゃなかった」 refers to general cooking ability. This scene''s focus on the *act* of
-          ''cooking'' in the past guides the user to 「料理 を する のが 下手」 to describe the specific activity.
-          We''re looking for an cohesion_score: 0.9999999999999999action.'
+        hint: 「料理 が 下手 じゃなかった」 refers to general cooking ability. This scene's focus on the *act* of 'cooking'
+          in the past guides the user to 「料理 を する のが 下手」 to describe the specific activity. We're looking
+          for an action.
       - competing_japanese:
           - 前 は 料理 を する こと が 苦手 じゃ なかっ た。
         english: Before, I didn't find cooking difficult or unpleasant.
@@ -564,7 +570,7 @@ examples:
           - 当時、彼 は ストレス を 処理 する {の が 好き} で は なかっ た よう だ。
         english: At that time, it seems he didn't like handling stress.
         hint: 「好き」 expresses preference. This statement is about a lack of skill in handling stress, not
-          about a lack of enjoyment in doing so. We're looking for a statement about a lack of skill.
+          about a lack of enjoyment in doing so. We're talking about a lack of skill.
       - competing_japanese:
           - 当時、彼 は ストレス が 苦手 だっ た よう だ。
         english: At that time, it seems he found stress difficult or was bad at dealing with it.
@@ -588,6 +594,57 @@ examples:
       or inference, rather than stating a direct fact. This often conveys a slightly more detached or
       formal tone suitable for recounting past events. 「ストレス を 処理 する のが」 specifies the complex action
       of stress management.
+  - english: I used to be bad at singing, but now I'm not so much.
+    japanese:
+      - 昔 は 歌う {の が 下手} だっ た けど、今 は そう で も ない。
+      - 昔 は 歌う {の が 下手} だっ た けど、今 は 大丈夫。
+      - 昔 は 歌う {の が 下手} だっ た けど、今 は マシ に なっ た。
+    english_literally: In the past, singing, the act of, was unskillful, but now not so much.
+    competing_grammar:
+      - competing_japanese:
+          - 昔 は 歌う {の が 好き} じゃ なかっ た けど、今 は 好き に なっ た。
+        english: I used to not like singing, but now I like it.
+        hint: This is about preference, not skill. We're talking about skill improvement.
+      - competing_japanese:
+          - 昔 は 歌う こと が でき なかっ た けど、今 は できる。
+        english: I couldn't sing before, but now I can.
+        hint: This implies total inability, not just poor skill. We're looking for an improvement from
+          poor skill.
+    scene: A man, who used to avoid karaoke, surprises his friends with his improved singing.
+    register: casual
+    setting: reflective
+    conjugation: past plain (～た)
+    speaker_gender: male
+    listener_gender: group
+    speaker_age: younger
+    nuance: The use of 「だったけど」 suggests a past state that has changed. 「今はそうでもない」 implies a modest improvement.
+      This casual tone is suitable for a younger male among friends.
+  - english: I am not bad at cooking, but I'm not particularly good at it either.
+    japanese:
+      - 料理 を する {の が 下手} で は あり ませ ん が、あまり 得意 で は あり ませ ん。
+      - 料理 を する {の が 下手} じゃ ない です が、得意 で は ない です ね。
+      - 料理 を する {の が 下手} じゃ あり ませ ん けれど、別 に 得意 で は ない ん です。
+    english_literally: Cooking, the act of, is not unskillful, but not particularly skillful.
+    competing_grammar:
+      - competing_japanese:
+          - 料理 を する {の が 嫌い} で は あり ませ ん が、好き で は あり ませ ん。
+        english: I don't dislike cooking, but I don't like it.
+        hint: This is about preference, not skill. We're discussing skill level, specifically a moderate
+          one.
+      - competing_japanese:
+          - 料理 を する こと が でき ませ ん が、頑張っ て い ます。
+        english: I can't cook, but I'm trying hard.
+        hint: This suggests complete inability, whereas the original implies moderate skill.
+    scene: A woman, asked about her cooking skills, gives a humble and nuanced response.
+    register: teineigo (polite)
+    setting: informative
+    conjugation: negative non-past polite (～ません)
+    speaker_gender: female
+    listener_gender: male
+    speaker_age: younger
+    nuance: The polite negative 「で は あり ませ ん」 is used, followed by 「あまり 得意 で は あり ませ ん」 to convey a nuanced,
+      humble assessment of skill. This is common among polite speakers to avoid sounding boastful or overly
+      self-deprecating.
 post_example_writeup: While both 「[Verb] のが 下手」 and 「[Noun] が 下手」 can express a lack of skill, the former
   explicitly refers to the *action* of doing something, emphasizing the process or activity. The latter,
   「[Noun] が 下手」, tends to refer to a general skill or quality associated with the noun itself, like a
