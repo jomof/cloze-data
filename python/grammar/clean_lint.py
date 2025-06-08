@@ -159,26 +159,14 @@ def lv_validate_parenthetical_meaning(val, type, path, messages):
     if invalid_chars:
         messages.append(f"[rule-9] warning {path} (meaning) starts with invalid char: {', '.join(invalid_chars)}")
 
-def lv_learn_before(val, type, path, messages):
-    """
-    [rule-10] Warn if:
-      - learn_before is missing, or
-      - learn_before is not a list with at least two items.
-    """
+def lv_learn(val, type, path, messages):
     if type is not None:
         return
-    lb = val.get("learn_before")
+    la = val.get("learn_after", [])
+    lb = val.get("learn_before", [])
     count = len(lb) if isinstance(lb, list) else 0
-    if count < 1:
-        messages.append(f"[rule-10] warning learn_before has {count} item(s); must have at least 1")
-
-def lv_learn_after(val, type, path, messages):
-    if type is not None:
-        return
-    lb = val.get("learn_after")
-    count = len(lb) if isinstance(lb, list) else 0
-    if count < 1:
-        messages.append(f"[rule-11] warning learn_after has {count} item(s); must have at least 1")
+    if not la and not lb:
+        messages.append(f"[rule-10][rule-11] warning learn_before and learn_after don't exist; must have at least 1")
 
 def lv_false_friends_grammar_point(val, type, path, messages, all_grammars_summary):
     if type != "false_friends/object":
@@ -448,8 +436,7 @@ def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = { "
             lv_japanese_count(result, type_name, path, lint)
             lv_better_grammar_name(result, type_name, path, lint)
             lv_validate_parenthetical_meaning(result, type_name, path, lint)
-            # lv_learn_after(result, type_name, path, lint)
-            # lv_learn_before(result, type_name, path, lint)
+            lv_learn(result, type_name, path, lint)
             lv_false_friends_grammar_point(result, type_name, path, lint, all_grammars_summary)
             lv_known_grammar(result, type_name, path, lint, all_grammars_summary)
             lv_grammar_point_special_characters(result, type_name, path, lint)

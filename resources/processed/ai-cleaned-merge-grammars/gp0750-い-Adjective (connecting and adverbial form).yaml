@@ -1,7 +1,11 @@
 grammar_point: い-Adjective (connecting and adverbial form)
 learn_before:
+  - い-adjective (past)
+  - い-Adjective (negative form)
   - い-Adjective[て] (and・because)
   - い-Adjectives (adjectives ending in い)
+learn_after:
+  - Adjective + 限りだ (utmost degree)
 id: gp0750
 meaning: And; so; used to connect い-adjectives or to connect an い-adjective to a verb.
 pronunciation:
@@ -10,6 +14,8 @@ pronunciation:
 formation:
   い-adjective stem + く: Connects two or more い-adjectives, or an い-adjective and a verb, indicating a
     sequential, causal, or adverbial relationship.
+  い-adjective stem + く + なる: Indicates a change in state, meaning 'to become (adjective)'.
+  い-adjective stem + く + 動詞: Modifies a verb adverbially, meaning 'to (verb) in an (adjective) way'.
 jlpt: N3
 details:
   part-of-speech: auxiliary adjective
@@ -19,6 +25,7 @@ details:
     or adverbial relationship.
   nuance: Implies a closer relationship between the connected elements and often conveys a more cohesive
     or literary tone than the 「て」 form.
+  grammatical-role: adverbializer and conjunctive
 etymology: The 「く」 form is the 連用形 (ren'yōkei), or continuative form, of い-adjectives. Historically, it
   developed from the classical Japanese ending 「し」, which itself originated from the verb 「す」 (to do).
   This form represents a foundational grammatical link within the Japanese adjectival system, allowing
@@ -139,11 +146,6 @@ examples:
         english: That dog grew into a large dog.
         hint: This emphasizes the *result* as a type of dog, rather than the *manner* in which it grew
           to be large. We're looking for an adverbial description of the action.
-      - competing_japanese:
-          - その 犬 は 大きく なっ た。
-        english: That dog became large.
-        hint: While similar in meaning, 「大きくなった」 simply states the resultant state. The example uses 「大きく育った」
-          to emphasize the *process* of growing into a large size.
     scene: Two neighbors admiring a puppy that has grown significantly since they last saw it.
     register: casual
     setting: friendly
@@ -160,11 +162,6 @@ examples:
         english: Her shirt is white and his is blue (using 'te' form).
         hint: While 「て」 is also possible, 「く」 here creates a smoother, more concise parallel structure
           for comparison, especially when connecting descriptive clauses.
-      - competing_japanese:
-          - 彼女 の シャツ は 白い です。彼 の は 青い です。
-        english: Her shirt is white. His is blue.
-        hint: This breaks the direct comparison and makes it sound less naturally connected. We're looking
-          for a single, connected thought.
     scene: Someone pointing out the colors of two people's shirts to a friend, making a direct comparison.
     register: casual
     setting: informative
@@ -181,11 +178,6 @@ examples:
         english: This box is heavy, and cannot be moved by one person (conversational).
         hint: In this professional, serious context, 「く」 provides a more concise and direct statement
           of fact and consequence than the slightly more conversational 「て」.
-      - competing_japanese:
-          - この 箱 は 重い の で、一人 で は 動か せ ない。
-        english: Because this box is heavy, it cannot be moved by one person.
-        hint: While 「ので」 clearly states the reason, 「く」 integrates the adjectival state more tightly with
-          the consequence, often preferred in formal, objective descriptions.
     scene: A moving crew member assessing the difficulty of an item, speaking to their colleague.
     register: formal
     setting: serious
@@ -202,18 +194,14 @@ examples:
         english: Hearing that news, my heart is sad.
         hint: This states the current condition, but 「悲しくなった」 specifically emphasizes the *change* to
           a sad state, which is what the example implies. We're looking for the sense of becoming sad.
-      - competing_japanese:
-          - その 知らせ を 聞い て、心 が 悲しく なり まし た。
-        english: Hearing that news, my heart became sad (polite).
-        hint: 「悲しくなりました」 is the polite form. In this reflective, casual context, the plain form 「悲しくなった」
-          feels more natural and intimate, indicating a personal internal change.
     scene: A person reflecting on unfortunate news they just received, expressing their emotional reaction.
     register: casual
     setting: melancholic
     speaker_gender: female
     listener_gender: no one
     nuance: The use of 「悲しくなった」 instead of 「悲しくなりました」 makes the statement more intimate and reflective,
-      suitable for someone speaking to themselves or expressing deep emotion casually.
+      suitable for someone speaking to themselves or expressing deep emotion casually. The 「く」 here is
+      the adverbial form modifying 「なる」 (to become).
   - english: The wind is blowing strongly.
     japanese:
       - 風 が {強く} 吹い て いる。
@@ -227,11 +215,6 @@ examples:
         english: The wind is strong.
         hint: This simply states the wind's characteristic. The example uses 「強く吹いている」 to describe *how*
           the wind is blowing (strongly), acting as an adverbial modifier to the verb.
-      - competing_japanese:
-          - 強い 風 が 吹い て いる。
-        english: A strong wind is blowing.
-        hint: This places the adjective before the noun. The original example uses 「強く」 to modify the
-          verb 「吹く」, indicating the *manner* of blowing, not just describing the wind itself.
     scene: A meteorologist reporting on current weather conditions during a broadcast.
     register: formal
     setting: technical
@@ -249,11 +232,6 @@ examples:
         hint: Using 「て」 repeatedly can sometimes sound repetitive when connecting multiple adjectives.
           「く」 offers a smoother, more sophisticated conjunction for い-adjectives, especially when followed
           by 「が」.
-      - competing_japanese:
-          - 彼 の 家 は 古い です。小さい です。しかし 居心地 が 良い です。
-        english: His house is old. It is small. However, it is comfortable.
-        hint: This breaks the flow and loses the concise, descriptive connection of the adjectives to
-          the house's comfort within a single thought.
     scene: A friend describing their acquaintance's charming but modest home.
     register: casual
     setting: reflective
@@ -272,11 +250,6 @@ examples:
         english: After a long hike, the water was cold and refreshing (using 'te' form).
         hint: While 「て」 is grammatically correct here, 「く」 provides a more concise and literary connection
           between the two descriptive adjectives, often preferred in descriptive writing.
-      - competing_japanese:
-          - 長 い ハイキング の 後、水 は 冷たかっ た。そして 心地 よかっ た。
-        english: After a long hike, the water was cold. And it was refreshing.
-        hint: Separating the sentences breaks the smooth flow and connection between the two qualities
-          of the water. We're looking for a single, integrated description.
     scene: A hiker describing the relief of drinking cool water after a strenuous journey.
     register: casual
     setting: reflective

@@ -1,14 +1,14 @@
 grammar_point: だけで (just by)
 learn_before:
+  - Verb[て] (and then)
   - だけ (only・just)
   - で (by)
   - Verbs (non-past plain)
-  - Verb[て] (and then)
 learn_after:
-  - だに (even just or merely)
-  - すら (even)
-  - 〜たりとも〜ない (not even a single)
-  - ずとも (even if not)
+  - こそ (emphasis)
+  - しかない (have no choice but)
+  - のみ (only・just)
+  - にすぎない (no more than)
 id: gp0382
 meaning: Just by; Just with; Only by
 pronunciation:
@@ -82,21 +82,37 @@ false_friends:
       this' (minimal effort, but still something positive/useful), often implying that more would be better
       but this is acceptable.
     grammar_point: <suggest>:だけでも (at least)
+  - term: すら
+    meaning: Even
+    kind: similar expression
+    nuance: While だけで emphasizes sufficiency ('just by X, Y happens'), すら highlights an unexpected or
+      minimal element ('even X'). Sometimes, 'just X' and 'even X' can overlap in implying a low threshold,
+      but すら often carries a sense of surprise or emphasis on the unlikelihood of that minimal element.
+    grammar_point: すら (even)
+  - term: だに
+    meaning: Even just or merely
+    kind: similar expression
+    nuance: Both だけで and だに imply 'just' or 'only.' However, だに is more formal, literary, or archaic,
+      often used with mental actions (e.g., 'even to think/hear'). だけで is more common and versatile for
+      physical actions and conditions.
+    grammar_point: だに (even just or merely)
 post_false_friends_writeup: 'To avoid confusion, remember that **だけで** emphasizes the *sufficiency* of
   a single action or condition: ''only by doing X, Y happens''. **だけ** simply limits to one thing: ''only
-  X exists/is relevant''. **だけあって** indicates a *predictable outcome* based on a preceding quality or
-  situation: ''because X, as expected Y''. **しか〜ない** denotes a *limitation* often with a negative implication
-  (''nothing but X''), while **ばかり** suggests exclusivity or ''always doing X'' (often with a nuance of
-  excess). **にすぎない** means ''merely'' or ''no more than'', downplaying significance. Finally, **だけでも**
-  implies ''at least this much'', suggesting a minimum acceptable amount rather than sole sufficiency.
-  Pay attention to the context to distinguish between these similar expressions.'
+  X exists or is relevant''. **だけあって** indicates a *predictable outcome* based on a preceding quality
+  or situation: ''because X, as expected Y''. **しか〜ない** denotes a *limitation* often with a negative implication
+  (''nothing but X, and that''s all''), while **ばかり** suggests exclusivity or ''always doing X'' (often
+  with a nuance of excess). **にすぎない** means ''merely'' or ''no more than'', downplaying significance.
+  **だけでも** implies ''at least this much'', suggesting a minimum acceptable amount rather than sole sufficiency.
+  **すら** highlights an unexpected or minimal element (''even X''). **だに** is a more formal or literary
+  way of saying ''even just'' or ''only,'' often for mental actions. Pay attention to the context and
+  formality to distinguish between these similar expressions.'
 examples:
   - english: Just listening to music every day is fun.
     japanese:
       - 毎日、音楽 を 聞く だけ で 楽しい。
       - 毎日、音楽 を 聞く だけ で 楽しい です。
       - 毎日、音楽 を 聞く だけ で 楽しく なる。
-      - 毎日、音楽 を 聞く だけ で 楽しく なり ます.
+      - 毎日、音楽 を 聞く だけ で 楽しく なり ます。
     english_literally: Every day, just by listening to music, it is fun.
     competing_grammar:
       - competing_japanese:
@@ -156,8 +172,8 @@ examples:
       - competing_japanese:
           - あの シーン を 見 た から、深く 感動 し まし た。
         english: Because I saw that scene, I was deeply moved.
-        hint: This sentence uses 「から」 which simply states a cause. We're looking for an expression that
-          emphasizes the minimal input (just seeing) led to the strong feeling.
+        hint: This uses 「から」 which simply states a cause. We're looking for an expression that emphasizes
+          the minimal input (just seeing) led to the strong feeling.
     scene: A film critic sharing their thoughts on a powerful movie.
     register: semi-formal
     setting: reflective
@@ -230,6 +246,12 @@ examples:
         english: Even if there's money, all problems cannot be solved.
         hint: This uses 「ても」 to mean 'even if'. We're looking for an expression that highlights money
           *alone* is not a sufficient solution.
+      - competing_japanese:
+          - お 金 しか ない と、全て の 問題 を 解決 でき ませ ん。
+        english: If you only have money (and nothing else), all problems cannot be solved.
+        hint: 「しか〜ない」 emphasizes that there is 'nothing but' money as a resource, which is seen as a limitation.
+          We are looking for an expression that states money *alone* is not a sufficient means to solve
+          problems, rather than stating that *only having* money is the issue.
     scene: A social worker discussing systemic issues.
     register: semi-formal
     setting: serious

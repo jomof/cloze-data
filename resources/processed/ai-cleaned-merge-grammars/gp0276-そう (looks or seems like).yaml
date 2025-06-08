@@ -1,12 +1,18 @@
 grammar_point: そう (looks or seems like)
 learn_before:
+  - な-Adjectives (adjectival nouns)
+  - Verbs (non-past plain)
+  - かもしれない (might)
   - そう (looks like)
-  - みたい (similar to)
   - ようだ (it seems)
+  - い-Adjectives (adjectives ending in い)
+  - 見える (to be visible・to seem)
+  - みたい (similar to)
 learn_after:
   - げ (seeming・appearance)
+  - ものがある (subjective feeling)
+  - とみえる (seems from observation)
   - っぽい (ish; characteristic of)
-  - きらいがある (undesirable tendency)
 id: gp0276
 meaning: Seems, Looks like, Sounds like
 conjugations:
@@ -51,17 +57,19 @@ formation:
   い-adjective (remove い) + そうに / そうな: Indicates something 'seems' or 'looks like' it is in a certain state.
     The い is dropped from い-adjective before adding そうに/そうな.
   な-adjective + そうに / そうな: Indicates something 'seems' or 'looks like' it is in a certain state.
-  Negative verb/い-adjective ない(remove い) + さ + そうに / そうな: Indicates something 'doesn't seem' or 'doesn't
-    look like' it is going to happen or is in a certain state.
+  Verb plain negative (～ない, remove い) + そうに / そうな: Indicates something 'doesn't seem' or 'doesn't look
+    like' it will happen (e.g., 行かなさそう).
+  い-adjective (remove い) + く + なさそうに / なさそうな: Indicates something 'doesn't seem' or 'doesn't look like'
+    it is a certain state (e.g., 楽しくなさそう).
 jlpt: N4
 details:
   part-of-speech: auxiliary adjective
   register: teineigo (polite)
-  usage-context: General
-etymology: The grammar point 「そう」 originates from the verb 「添う (そう)」, meaning "to accompany" or "to be
-  close to." Over time, it evolved to express a sense of approximation or resemblance, indicating that
-  something 'seems' or 'looks like' something else. The 「に」 and 「な」 are grammatical particles that allow
-  「そう」 to function as an adverb or adjectival noun, respectively.
+  usage-context: Used to convey impressions based on direct sensory information or immediate observation.
+etymology: The grammar point 「そう」 originates from a contraction of 「様 (さま)」 (form, appearance) and the
+  classical auxiliary verb 「なり」 (meaning 'to be' or 'to become'). Thus, 「様なり」 evolved into 「そう」, signifying
+  something "is like an appearance" or "takes on a certain form/look." This root explains its function
+  in describing impressions based on direct observation.
 writeup: |-
   The grammar point 「そうに・そうな」 expresses that something "seems like" or "looks like" something else. It is used to convey impressions based on direct sensory information, such as visual observation or auditory perception. It implies a judgment or inference based on outward appearance.
 
@@ -70,55 +78,59 @@ writeup: |-
 
   **Important Considerations**
 
-  *   When using 「そう」 with negative い-adjectives (like 「ない」), you must remove the 「い」 from 「ない」 and add 「さ」 before attaching 「そう」, resulting in 「なさそう」. For example, 「おいしい」 (delicious) becomes 「おいしくなさそう」 (doesn't look delicious).
-  *   When attached to verbs, the 「い」 from the negative auxiliary verb 「ない」 is dropped, and 「そう」 is attached directly to the stem. For example, 「する」 (to do) becomes 「しなさそう」 (doesn't look like it will do), not 「しなそう」. Note that 「～なさそう」 in this context refers to the apparent unlikelihood of a verb's action.
+  *   When using 「そう」 with negative verb forms, remove the 「い」 from the plain negative 「ない」 and attach 「そう」. For example, 「する」 (to do) becomes 「しなさそう」 (doesn't look like it will do), not 「しなそう」.
+  *   Similarly, for negative い-adjectives, the 「い」 from 「ない」 is removed and 「さ」 is added before attaching 「そう」, resulting in 「なさそう」. For example, 「おいしい」 (delicious) becomes 「おいしくなさそう」 (doesn't look delicious).
   *   Be mindful of the context to differentiate 「そう」 meaning "it seems" from other uses of 「そう」, such as the 「伝聞・様態のそう」 which indicates hearsay (e.g., 「～だそうだ」 meaning "I hear that...") or describes the manner of an action (e.g., 「～ように」 meaning "as if..."). This specific 「そう」 focuses purely on direct observation and impression.
 false_friends:
   - term: げ
     meaning: Seemingly, Giving appearance of, [Expresses emotions or feelings]
-    kind: synonym
+    kind: similar expression
     nuance: 「げ」 directly expresses a person's internal feelings that are evident externally, like 'sad-looking'
       (悲しげ), while 「そうに/そうな」 describes a general appearance or impression of a state or action, not limited
       to emotions (e.g., 'looks tasty' (美味しそう)).
     grammar_point: げ (seeming・appearance)
   - term: ように・ような
     meaning: As・like, Just like
-    kind: synonym
+    kind: similar expression
     nuance: 「ように/ような」 indicates a direct comparison or resemblance (e.g., 'like a dream' (夢のように)), while
       「そうに/そうな」 suggests an indirect impression or appearance based on observation (e.g., 'looks like
       it's going to rain' (雨が降りそう)).
     grammar_point: ように・ような (like・as・similar to)
   - term: ようだ
     meaning: It seems that, It appears that, It looks like
-    kind: synonym
+    kind: similar expression
     nuance: 「ようだ」 expresses a judgment or conclusion based on indirect evidence or inference (e.g., 'It
       seems he's tired' (疲れているようだ)), while 「そうに/そうな」 is based on a more direct sensory impression, often
       visual (e.g., 'He looks tired' (疲れてそう)).
     grammar_point: ようだ (it seems)
-  - term: みたいに・みたいな
-    meaning: Like, Similar to, Resembling
-    kind: synonym
-    nuance: 「みたいに/みたいな」 is a more casual way of expressing similarity or resemblance (e.g., 'like a child'
-      (子供みたい)), while 「そうに/そうな」 conveys a more subtle or nuanced impression of an observed state or likelihood.
-    grammar_point: <suggest>:みたいに・みたいな (like, similar to)
   - term: みたい
     meaning: Like, similar to, resembling; seems like
-    kind: synonym
-    nuance: 「みたい」 implies a casual comparison based on shared characteristics (e.g., 'It's like a movie'
-      (映画みたい)), while 「そうに/そうな」 describes a perceived appearance or impression based on direct observation.
+    kind: similar expression
+    nuance: 「みたい」 implies a casual comparison based on shared characteristics (e.g., 'like a child' (子供みたい)),
+      while 「そうに/そうな」 conveys a more subtle or nuanced impression of an observed state or likelihood.
     grammar_point: みたい (appears・resembles)
   - term: 見える
     meaning: To be visible, to seem, to be in sight.
-    kind: synonym
+    kind: similar expression
     nuance: 「見える」 is a potential verb indicating what is visually perceptible (e.g., 'Mount Fuji is visible'
       (富士山が見える)), while 「そうに/そうな」 describes the manner or quality of that appearance, or what is likely
       to happen based on appearance (e.g., 'It looks good' (美味しそうに見える)).
     grammar_point: 見える (to be visible・to seem)
+  - term: らしい
+    meaning: Indicates hearsay, conjecture, or something that seems to be the case based on available
+      information.
+    kind: often confused with
+    nuance: 「らしい」 suggests an impression or conclusion based on indirect evidence or hearsay (e.g., 'I
+      heard it's good' (良いらしい)), whereas 「そうに/そうな」 expresses an impression derived from direct sensory
+      observation (e.g., 'It looks good' (良さそう)).
+    grammar_point: らしい (hearsay or conjecture)
 post_false_friends_writeup: While these expressions share similarities with 「そうに・そうな」, they each carry
   unique nuances. 「ように」 and 「みたい」 imply a more direct comparison or resemblance, whereas 「そうに・そうな」 suggests
   a subjective impression based on immediate sensory input. 「見える」 focuses on visual perception, while
-  「そうに・そうな」 describes the quality or manner of that appearance, or a prediction based on appearance. Using
-  these expressions correctly requires careful attention to the specific context and desired nuance.
+  「そうに・そうな」 describes the quality or manner of that appearance, or a prediction based on appearance. 「らしい」
+  conveys information based on hearsay or indirect evidence, unlike 「そうに・そうな」 which stems from direct
+  observation. Using these expressions correctly requires careful attention to the specific context and
+  desired nuance.
 examples:
   - english: He looked like he was about to cry at any moment.
     japanese:
@@ -394,8 +406,7 @@ examples:
           - この ワイン に 合う か も しれ ない チーズ は どれ です か？
         english: Which cheese might suit this wine?
         hint: The question implies a more confident expectation or informed guess ('合いそうな'), rather than
-          a simple possibility ('かもしれない'). We're looking for an expression of a more confident visual
-          assessment.
+          a simple possibility ('かもしれない'). We're looking for a more confident visual assessment.
     scene: A customer asking a sommelier for a recommendation based on perceived compatibility.
     register: teineigo (polite)
     setting: informative

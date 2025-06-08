@@ -1,13 +1,16 @@
 grammar_point: ようが〜まいが (regardless of whether)
 learn_before:
-  - ても (even if・even though)
-  - 〜にしろ〜にしろ (whether... or...)
   - Volitional Form (casual suggestion or intention)
-  - <suggest>:〜ても〜なくても (whether・or・not)
+  - ても (even if・even though)
+  - 〜ても〜なくても (whether or not)
+  - にしろ〜にしろ (whether... or...)
+  - とも (even if・no matter)
+  - どんなに〜ても (no matter how)
 learn_after:
   - といえども (even if)
-  - ども (even though)
   - たところで (even if futile)
+  - ども (even though)
+  - 〜たら最後 (inevitable negative outcome)
 id: gp0909
 meaning: Even if; no matter what; whether or not (emphatic)
 pronunciation:
@@ -43,49 +46,54 @@ etymology: This grammar point is formed by combining the volitional form of a ve
   or presumptive. The particle が, functioning concessively, links these two opposing possibilities. Historically,
   the structure reflects a robust expression of indifference to outcomes, implying 'whether it is to be
   so or not to be so, still X.'
-writeup: |-
-  The structure 「ようが〜まいが」 combines the positive and negative volitional forms of a verb to express that, **regardless of whether something happens or not**, the result will be the same. It is an emphatic way of stating "whether or not (A), (B) will happen.". The particle が is used after both the positive and negative forms.
-
-  While this pattern is most commonly used with verbs (e.g., 行こうが 行くまいが), it can also be applied to い-adjectives and な-adjectives/nouns. For い-adjectives, the hypothetical volitional form (かろう) is used, and for な-adjectives and nouns, the auxiliary verb だ conjugates to であろう or だろう. In cases where まい cannot be used (i.e., with adjectives and nouns), an antonym or a contrasting concept is typically paired with the positive volitional form (e.g., 難しかろうが 易しかろうが, 社長であろうが 平社員であろうが). This creates a similar 'whether or not' meaning.
-
-  This grammar pattern often reflects the speaker's strong will, determination, or unwavering opinion that will not change, irrespective of the conditions described. It conveys a sense of certainty about the inevitable outcome or the speaker's resolve.
+writeup: The structure 「ようが〜まいが」 combines the positive and negative volitional forms of a verb to express
+  that, **regardless of whether something happens or not**, the result will be the same. It is an emphatic
+  way of stating "whether or not (A), (B) will happen.". The particle が is used after both the positive
+  and negative forms. While this pattern is most commonly used with verbs (e.g., 行こうが 行くまいが), it can also
+  be applied to い-adjectives and な-adjectives/nouns. For い-adjectives, the hypothetical volitional form
+  (かろう) is used, and for な-adjectives and nouns, the auxiliary verb だ conjugates to であろう or だろう. In cases
+  where まい cannot be used (i.e., with adjectives and nouns), an antonym or a contrasting concept is typically
+  paired with the positive volitional form (e.g., 難しかろうが 易しかろうが, 社長であろうが 平社員であろうが). This creates a similar
+  'whether or not' meaning. This grammar pattern often reflects the speaker's strong will, determination,
+  or unwavering opinion that will not change, irrespective of the conditions described. It conveys a sense
+  of certainty about the inevitable outcome or the speaker's resolve.
 false_friends:
-  - term: 〜ても〜なくても
+  - term: 〜ても〜なくても (whether or not)
     meaning: Whether ~ or not
     kind: synonym
     nuance: While similar in meaning, 「〜ても〜なくても」 focuses more on the condition as a general concession,
       whereas 「ようが〜まいが」 emphasizes that the outcome remains the same regardless of a strong, often volitional,
-      contrasting condition. 「ようが〜まいが」 carries a more emphatic and determined nuance.
-    grammar_point: <suggest>:〜ても〜なくても (whether・or・not)
-  - term: てでも
+      contrasting condition. It conveys a more emphatic and determined nuance.
+    grammar_point: 〜ても〜なくても (whether or not)
+  - term: てでも (even if I have to)
     meaning: Even if I have to, by any or all means, no matter what
     kind: synonym
     nuance: 「てでも」 emphasizes the *effort* one is willing to expend or the extreme measure one might take
       to achieve something. In contrast, 「ようが〜まいが」 focuses on the *result* being unchanged regardless
       of opposing conditions, rather than the effort involved in causing that result.
     grammar_point: てでも (even if I have to)
-  - term: とも
+  - term: とも (even if・no matter)
     meaning: Even if, no matter
     kind: synonym
     nuance: 「とも」 is a broader, more general concessive expression that doesn't inherently require the
       volitional form. 「ようが〜まいが」 specifically highlights two opposing volitional possibilities, making
       it more specific and emphatic about a binary choice or condition.
     grammar_point: とも (even if・no matter)
-  - term: ても
+  - term: ても (even if・even though)
     meaning: Even if, even though
     kind: synonym
     nuance: 「ても」 is a more general expression of concession. 「ようが〜まいが」 is significantly more emphatic
       and specifically contrasts two opposing volitional possibilities, suggesting an unshakeable outcome
       or stance despite either possibility.
     grammar_point: ても (even if・even though)
-  - term: たって
+  - term: (っ)たって (even if)
     meaning: Even if, even though, no matter how
     kind: synonym
     nuance: 「たって」 is a more colloquial and emphatic version of 「ても」, often emphasizing the degree or extent
       of something. While it conveys concession, 「ようが〜まいが」 specifically contrasts two opposing possibilities
       (often volitional) and asserts that the outcome is unchanged regardless of which of the two occurs.
     grammar_point: (っ)たって (even if)
-  - term: 〜にしろ〜にしろ
+  - term: にしろ〜にしろ (whether... or...)
     meaning: Whether A or B; Regardless of A or B
     kind: similar expression
     nuance: 「〜にしろ〜にしろ」 functions similarly to 「ようが〜まいが」 in presenting two contrasting possibilities with
@@ -122,8 +130,8 @@ examples:
       - competing_japanese:
           - 私 が 行く に しろ 行か ない に しろ、彼 の 態度 は 変わら ない だろう。
         english: Whether I go or don't go, his attitude probably won't change.
-        hint: 「〜にしろ〜にしろ」 states that two conditions are equally irrelevant to the outcome. 「ようが〜まいが」 here
-          conveys a stronger, more assertive commitment that won't be swayed by the job's difficulty.
+        hint: 「〜にしろ〜にしろ」 states that both conditions are equally irrelevant to the outcome. 「ようが〜まいが」
+          here conveys a stronger, more assertive commitment that won't be swayed by the job's difficulty.
           We're aiming for a slightly more determined nuance.
     scene: A friend is debating attending an event where someone they dislike will be present, expressing
       resignation about the situation.
@@ -132,7 +140,7 @@ examples:
     speaker_gender: female
     listener_gender: male
     speaker_age: younger
-    nuance: The use of 「行こう が 行くまい が」 expresses the speaker's strong conviction that their action (going
+    nuance: The use of 「行こう が 行く まい が」 expresses the speaker's strong conviction that their action (going
       or not going) will have no bearing on the other person's behavior, conveying a sense of resignation
       or indifference. The casual register and the use of plain form ending 「変わらないだろう」 are suitable for
       a younger female speaker talking to a male friend.
@@ -157,7 +165,7 @@ examples:
       - competing_japanese:
           - その 仕事 が 難しい に しろ 易しい に しろ、最善 を 尽くし ます。
         english: Whether that job is difficult or easy, I will do my best.
-        hint: 「〜にしろ〜にしろ」 emphasizes that both conditions are equally irrelevant to the outcome. 「ようが〜まいが」
+        hint: 「〜にしろ〜にしろ」 states that both conditions are equally irrelevant to the outcome. 「ようが〜まいが」
           here conveys a stronger, more assertive commitment that won't be swayed by the job's difficulty.
           We're aiming for a slightly more determined nuance.
     scene: A new employee is assuring their boss during a performance review that they are committed to
@@ -336,7 +344,7 @@ examples:
     nuance: The use of 「謝ろう が 謝る まい が」 conveys a strong, unyielding stance of unforgiveness, indicating
       that the speaker's decision is fixed. The casual register and direct language (`許さない`) are typical
       for a younger female speaker expressing firm resolve to a male friend after a betrayal.
-  - english: Whether the road is long or short, I will walk it to the end.
+  - english: The road is long or short, I will walk it to the end.
     japanese:
       - 道 が {長かろう が 短かろう が}、私 は 最後 まで 歩き 抜く。
       - 道 が {長かろう が 短かろう が}、私 は 最後 まで 歩き 抜き ます。
@@ -365,7 +373,7 @@ examples:
       regardless of its duration or perceived difficulty. It expresses strong personal resolve. The reflective
       setting and casual tone (`歩き抜く`) suggest a personal resolution common for older individuals reflecting
       on their life path.
-  - english: Whether the product is expensive or cheap, quality is the most important.
+  - english: The product is expensive or cheap, quality is the most important.
     japanese:
       - その 製品 が {高かろう が 安かろう が}、品質 が 最も 重要 だ。
       - その 製品 が {高かろう が 安かろう が}、品質 が 最も 重要 です。
@@ -426,4 +434,4 @@ post_example_writeup: 'This grammar pattern effectively conveys a sense of inevi
   While the examples above showcase its use with verbs, adjectives, and nouns, the core meaning remains
   consistent: despite any contrasting conditions, the outcome or the speaker''s stance will not change.'
 sources:
-  bunpro: https://bunpro.jp/grammar_points/-よう--う-まい - が-と
+  bunpro: https://bunpro.jp/grammar_points/-よう-う-まい - が-と

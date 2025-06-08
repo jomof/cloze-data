@@ -214,6 +214,9 @@ if __name__ == '__main__':
         result = clean_lint(parsed_obj, file_path, grammar_summary_obj)
         if 'learn_before' not in result and 'learn_after' not in result:
             return result
+        # content = json.dumps(result, ensure_ascii=False, indent=4)
+        # if '<suggest>:' in content:
+        #     return result
         if len(result.get('lint-errors', [])) == 0:
             return None # Skip this one
         return result

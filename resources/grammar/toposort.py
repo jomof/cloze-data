@@ -640,7 +640,7 @@ if __name__ == '__main__':
         nodes_dict=grammar_summary['all-grammar-points'],
         before_field='learn_before',
         after_field='learn_after',
-        max_edits=5
+        max_edits=10
     )
 
     analysis = analyze_dag_with_cuts(

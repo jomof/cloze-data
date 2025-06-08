@@ -2,13 +2,13 @@ grammar_point: のは (emphasis and identification)
 learn_before:
   - の (possession)
   - は (topic and contrast)
+  - んです・のです (explanatory emphatic)
 learn_after:
-  - のです・んです (explanatory emphatic)
-  - ばかりだ (only continues to)
-  - はずだ (expected to be)
+  - 〜のは〜の方だ (it is X that)
+  - ことは〜が (concession with nuance)
 id: gp0036
-meaning: It is ~ that ~; The one who ~ is ~; That which is ~; The time when ~ is ~; The reason why ~ is
-  ~
+meaning: It is ~ that ~; The one who ~ is ~; That which ~ is ~; The time when ~ is ~; The reason why ~
+  is ~
 pronunciation:
   katakana: ノワ
   romaji: no wa
@@ -65,23 +65,24 @@ false_friends:
     meaning: Indicates possession
     kind: often confused with
     nuance: The particle 「の」 indicates possession or attribution (e.g., 「私 の 本」, 'my book'), while 「のは」
-      nominalizes a phrase, turning it into a subject for identification (e.g., 「読む の は 私」, 'I am the
-      one who reads').
+      nominalizes a phrase, turning it into a topic for identification (e.g., 「読む の は 私」, 'I am the one
+      who reads').
     grammar_point: の (possession)
   - term: は (topic and contrast)
     meaning: As for... (Highlights sentence topic)
     kind: often confused with
     nuance: 「は」 marks the topic of a sentence (e.g., 「日本 は」, 'As for Japan'), whereas 「のは」 transforms
-      a verb or adjective phrase into a noun phrase that *is* the subject, emphasizing what is being identified
+      a verb or adjective phrase into a noun phrase that *is* the topic, emphasizing what is being identified
       or defined (e.g., 「行く の は 日本 だ」, 'It is Japan that one goes to').
     grammar_point: は (topic and contrast)
   - term: こと (making a verb a noun)
     meaning: Converting a verb into a noun
     kind: similar expression
-    nuance: Both 「こと」 and 「の」 can nominalize verbs, but 「こと」 is generally more abstract and broadly nominalizes
-      the action itself (e.g., 「本 を 読む こと」, 'reading books'). 「のは」, however, specifically highlights or
-      identifies the nominalized action/state as the topic, often followed by a definition or identification
-      (e.g., 「読む の は 私」 emphasizes that 'I am the one who reads').
+    nuance: Both 「こと」 and 「の」 can nominalize verbs. 「こと」 tends to refer to the action or concept in a
+      more general or abstract sense (e.g., 「本 を 読む こと」, 'the act of reading books'). In contrast, 「の
+      は」 focuses on identifying *which* specific instance, person, time, or reason relates to the nominalized
+      clause, making it the topic for further clarification (e.g., 「読む の は 私」 emphasizes that 'I am the
+      one who reads', identifying the actor).
     grammar_point: こと (making a verb a noun)
   - term: Adjective+の(は) (the one that is)
     meaning: The 'one' that... (Indefinite pronoun, Adjective nominalization)
@@ -99,18 +100,43 @@ false_friends:
       where 「の」 nominalizes the clause, and 「は」 marks the entire nominalized phrase as the topic (e.g.,
       「東京 に 行く の は 明日 です」, 'It is tomorrow that I go to Tokyo').
     grammar_point: Particle + の (noun modification)
-  - term: の が (subject nominalization)
-    meaning: Nominalizes a clause to function as the subject.
+  - term: の が
+    meaning: That which is described
     kind: similar expression
-    nuance: While both 「の は」 and 「の が」 involve nominalization, 「の は」 is used to mark the *topic* of the
-      sentence for emphasis or identification, often leading to a further explanation or a statement of
-      what something *is*. 「の が」 simply marks the nominalized clause as the grammatical *subject* of the
-      verb or adjective, without the same explicit identification or contrasting nuance.
-    grammar_point: '<suggest>: の が (subject nominalization)'
-post_false_friends_writeup: To avoid mixing up 「のは」 with similar expressions, focus on its role in transforming
-  verb or adjective phrases into noun phrases that act as the subject. Remember that 「のは」 often emphasizes
-  or identifies something specific, serving to define or explain the nominalized clause, while other particles
-  like 「は」 and 「の」 have different, primary functions.
+    nuance: While 「の が」 nominalizes a clause to function as a grammatical subject or object, often describing
+      or evaluating the action or state (e.g., 「日本語 を 勉強 する の が 楽しい」, 'studying Japanese is fun'), 「の
+      は」 specifically takes that nominalized clause and marks it as the *topic* of the sentence, foregrounding
+      it to emphasize the identifying information that comes after it.
+    grammar_point: '<suggest>: の が (that which is described)'
+  - term: んです・のです
+    meaning: Explanatory emphatic
+    kind: similar expression
+    nuance: While 「んです・のです」 explains *why* something is the case or provides context for a statement,
+      「の は」 identifies *what* specifically the sentence is about, often followed by a definition or identification.
+      「の は」 highlights *which* thing, time, or reason is being specified, while 「んです・のです」 explains *why*
+      or *how* the entire statement is true.
+    grammar_point: んです・のです (explanatory emphatic)
+  - term: わけだ (logical conclusion)
+    meaning: Logical conclusion, no wonder
+    kind: often confused with
+    nuance: 「わけだ」 explains a logical consequence or a reasonable conclusion derived from previous information.
+      In contrast, 「の は」 focuses on identifying *which* element (person, time, reason) is the topic and
+      what specific information is being provided about it. 「の は」 clarifies *what* is being discussed,
+      while 「わけだ」 clarifies *why* something is understood or naturally follows.
+    grammar_point: わけだ (logical conclusion)
+  - term: わけではない (not necessarily)
+    meaning: Not necessarily, not the case that
+    kind: often confused with
+    nuance: 「わけではない」 is used to deny that something is necessarily true or to express that it's not entirely
+      the case. It negates a prior assumption or implication. 「の は」 serves to identify and emphasize a
+      particular piece of information, not to negate an implication.
+    grammar_point: わけではない (not necessarily)
+post_false_friends_writeup: 'To avoid mixing up 「のは」 with other similar expressions, focus on its core
+  function: transforming a clause into a noun phrase that then becomes the *topic* of the sentence, specifically
+  to **emphasize or identify** a particular piece of information (who, what, when, why) about that topic.
+  While other nominalizers like 「こと」 and 「わけ」 also turn clauses into noun-like entities, and particles
+  like 「が」 can mark them as subjects, 「のは」 uniquely sets up the nominalized clause as the central point
+  for clarification or definition, often highlighting a specific aspect that follows.'
 examples:
   - english: Studying Japanese every day is tough.
     japanese:
@@ -183,7 +209,8 @@ examples:
     competing_grammar:
       - competing_japanese:
           - あの 人 の 家 から まだ 電話 が ない。
-        english: There is still no call from that person's home.
+        english: This states the fact directly. 「の は」 highlights the *source* of the missing call as the
+          key piece of information being explained. We're looking to identify *why* there is no call.
         hint: This states the fact directly. 「の は」 highlights the *source* of the missing call as the
           key piece of information being explained. We're looking to identify *why* there is no call.
       - competing_japanese:
@@ -243,7 +270,7 @@ examples:
       - ここ で ボス な {の は}、この 私 よ。
       - この 組織 で 責任 者 な {の は}、私 で ござい ます。
       - ここ で ボス な {の は}、俺 しか い ない。
-      - ここ で ボス な {の は}、私 です わ。
+      - ここ で ボス な {の は}、私 です わ.
     english_literally: The one who is boss here is I.
     competing_grammar:
       - competing_japanese:
@@ -281,7 +308,9 @@ examples:
     competing_grammar:
       - competing_japanese:
           - あの 人 は 日本 に 一 つ 前 の 日 に 来 た。
-        english: That person came to Japan the day before.
+        english: This sentence directly states the time of arrival. 「の は」 highlights the *time* as the
+          piece of information being identified or explained. We're looking to identify *when* the person
+          arrived.
         hint: This sentence directly states the time of arrival. 「の は」 highlights the *time* as the piece
           of information being identified or explained. We're looking to identify *when* the person arrived.
       - competing_japanese:
