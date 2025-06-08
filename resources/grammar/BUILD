@@ -308,9 +308,7 @@ py_binary(
     visibility = ["//:__subpackages__"],
     deps = [
         ":grammar",
-        "//python/grammar",
         "//python/mapreduce",
-        "//python/utils/visit_json",
         "@pip//pyyaml",
     ],
 )

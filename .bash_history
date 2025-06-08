@@ -1016,3 +1016,114 @@ bazel run //resources/grammar:lint-grammar-points
 clear
 bazel run //resources/grammar:lint-grammar-points
 bazel run //resources/grammar:ai-pass
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+exit
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+bazel run //:gazelle_python_manifest.update && bazel run //:gazelle update
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+bazel run //:gazelle_python_manifest.update && bazel run //:gazelle update
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+cle
+exit
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+exit
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:lint-grammar-points
+clear
+bazel run //resources/grammar:ai-pass
+bazel run //resources/grammar:toposort
+clearclear
+clear
+bazel run //resources/grammar:toposort
+clear
+bazel run //resources/grammar:toposort
+clear
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:ai-pass &> scratch.log
+clear
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:ai-pass &> scratch.log
+exit
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:ai-pass
+exit
+clear
+bazel run //resources/grammar:ai-pass
+bazel run //resources/grammar:ai-pass &> scratch.log
+clear
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:ai-pass &> scratch.log
+clear
+bazel run //resources/grammar:ai-pass
+bazel run //resources/grammar:ai-pass &> scratch.log
+clear
+bazel run //resources/grammar:ai-pass &> scratch.log
+clear
+bazel run //resources/grammar:ai-pass
+exit
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:ai-pass
+cleaexit
+exit
+bazel run //python/utils/build_cache/service:cache-service
+clear
+bazel run //resources/grammar:ai-pass
+bazel run //resources/grammar:ai-pass &> scratch.log
+bazel run //resources/grammar:ai-pass
+clear
+bazel run //resources/grammar:lint-grammar-points

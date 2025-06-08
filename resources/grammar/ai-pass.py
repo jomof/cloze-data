@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-import yaml
 import json
 from python.ai import aigen
 from python.utils.build_cache.memoize.memoize import memoize_to_disk
@@ -11,6 +9,8 @@ import asyncio
 import sys
 import json
 from json_repair import repair_json
+from grammar_summary import generate_summary, save_summary
+from python.console import display
 
 def ws(s: str) -> str:
     return "\n".join(line.strip() for line in s.splitlines())
@@ -192,48 +192,47 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
             raise e
 
 if __name__ == '__main__':
-    # Determine workspace root: Bazel sets BUILD_WORKSPACE_DIRECTORY, otherwise use cwd
-    workspace_root = os.environ.get('BUILD_WORKSPACE_DIRECTORY') or os.getcwd()
-    grammar_root   = os.path.join(
-        workspace_root,
-        'resources', 'processed', 'ai-cleaned-merge-grammars'
-    )
+    try:
+        # Determine workspace root: Bazel sets BUILD_WORKSPACE_DIRECTORY, otherwise use cwd
+        workspace_root = os.environ.get('BUILD_WORKSPACE_DIRECTORY') or os.getcwd()
+        grammar_root   = os.path.join(
+            workspace_root,
+            'resources', 'processed', 'ai-cleaned-merge-grammars'
+        )
+        temp_dir = os.path.join(workspace_root, '.temp')
 
-    temp_dir = os.path.join(workspace_root, '.temp')
+        # Generate the grammary summary object
+        grammar_summary = generate_summary(grammar_root)
+        save_summary(grammar_summary, grammar_root)
+        display.check(f"Generated grammar summary with {len(grammar_summary['all-grammar-points'])} grammar points.")
 
-    if not os.path.isdir(grammar_root):
-        print(f"ERROR: “{grammar_root}” is not a directory.")
-        sys.exit(1)
-
-    # read the prior grammar summary file
-    grammar_summary_file = os.path.join(grammar_root, 'summary/summary.json')
-    with open(grammar_summary_file, 'r', encoding='utf-8') as f:
-        grammar_summary_content = f.read()
-    grammar_summary_obj = json.loads(grammar_summary_content)
-
-    def preprocess(parsed_obj, file_path):
-        result = clean_lint(parsed_obj, file_path, grammar_summary_obj)
-        if 'learn_before' not in result and 'learn_after' not in result:
+        def lint(parsed_obj, file_path):
+            result = clean_lint(parsed_obj, file_path, grammar_summary)
+            if len(result.get('lint-errors', [])) == 0:
+                return None
             return result
-        # content = json.dumps(result, ensure_ascii=False, indent=4)
-        # if '<suggest>:' in content:
-        #     return result
-        if len(result.get('lint-errors', [])) == 0:
-            return None # Skip this one
-        return result
+        
+        def logic(parsed_obj, file_path):
+            if len(parsed_obj.get('lint-errors', [])) == 0:
+                return parsed_obj
+            return ai_pass(parsed_obj, grammar_summary, file_path, temp_dir)
 
-    def logic(parsed_obj, file_path):
-        return ai_pass(parsed_obj, grammar_summary_obj, file_path, temp_dir)
+        mr = MapReduce(
+            input_dir            = grammar_root,
+            output_dir           = grammar_root,
+            map_func             = {
+                "linting": {
+                    "func": lint,
+                },
+                "ai-generating": {
+                    "func": logic,
+                }
+            },
+            max_threads          = 5,
+        )
 
-    mr = MapReduce(
-        input_dir            = grammar_root,
-        output_dir           = grammar_root,
-        preprocess_func      = preprocess,
-        map_func_name        = "ai generating",
-        map_func             = logic,
-        temp_dir             = temp_dir,
-        max_threads          = 20,
-    )
-
-    asyncio.run(mr.run())
+        result = asyncio.run(mr.run())
+        display.check(f"Replaced {result['files-written']} grammar files.")
+    finally:
+        display.stop()
 

@@ -4,7 +4,7 @@ import yaml
 from collections import defaultdict, deque
 import asyncio
 from python.mapreduce import MapReduce
-import sys
+from python.console import display
 import logging
 import json
 
@@ -635,27 +635,28 @@ if __name__ == '__main__':
     # for key in grammar_summary['all-grammar-points']:
     save_summary(grammar_summary, grammar_root, 'toposort-summary.json')
 
-    new_ordered, changes_made = update_priority_list_minimal(
-        current_list=existing_ordered,
-        nodes_dict=grammar_summary['all-grammar-points'],
-        before_field='learn_before',
-        after_field='learn_after',
-        max_edits=10
-    )
+    with display.work("toposort", "updating list"):
+        new_ordered, changes_made = update_priority_list_minimal(
+            current_list=existing_ordered,
+            nodes_dict=grammar_summary['all-grammar-points'],
+            before_field='learn_before',
+            after_field='learn_after',
+            max_edits=10
+        )
 
-    analysis = analyze_dag_with_cuts(
-        new_ordered, 
-        grammar_summary['all-grammar-points'], 
-        before_field='learn_before', 
-        after_field='learn_after'
-    )
+        analysis = analyze_dag_with_cuts(
+            new_ordered, 
+            grammar_summary['all-grammar-points'], 
+            before_field='learn_before', 
+            after_field='learn_after'
+        )
 
-    updated_constraints = save_updated_constraints(
-        analysis, 
-        output_format='cuts_only', 
-        before_field='learn_before', 
-        after_field='learn_after'
-    )
+        updated_constraints = save_updated_constraints(
+            analysis, 
+            output_format='cuts_only', 
+            before_field='learn_before', 
+            after_field='learn_after'
+        )
 
     cuts = json.loads(updated_constraints)
 
@@ -685,12 +686,7 @@ if __name__ == '__main__':
         
     def logic(parsed_obj, file_path):
         grammar_point = parsed_obj['grammar_point']
-        # if grammar_point in backward_edges:
-        #     parsed_obj['learn_before'] = list(set(parsed_obj['learn_before'] + [ backward_edges[grammar_point] ]))
-        # if grammar_point in forward_edges:
-        #     parsed_obj['learn_after'] = list(set(parsed_obj['learn_after'] + [ forward_edges[grammar_point] ]))
         cut_edges(grammar_point, parsed_obj, cuts)
-        # cut_edges(grammar_point, parsed_obj, transitive_cuts)
         return parsed_obj
 
     mr = MapReduce(
@@ -703,6 +699,8 @@ if __name__ == '__main__':
     )
 
     asyncio.run(mr.run())
+
+    display.stop()
 
     
     

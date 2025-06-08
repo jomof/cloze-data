@@ -8,6 +8,7 @@ py_library(
     ],
     visibility = ["//visibility:public"],
     deps = [
+        "//python/console:display",
         "@pip//aiofiles",
         "@pip//pyyaml",
     ],
