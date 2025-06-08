@@ -7,6 +7,7 @@ from python.mapreduce import MapReduce
 from python.console import display
 import logging
 import json
+from python.grammar import clean_lint_memoize
 
 from collections import defaultdict, deque
 from typing import List, Dict, Set, Tuple, Any, Optional
@@ -687,6 +688,7 @@ if __name__ == '__main__':
     def logic(parsed_obj, file_path):
         grammar_point = parsed_obj['grammar_point']
         cut_edges(grammar_point, parsed_obj, cuts)
+        parsed_obj = clean_lint_memoize(parsed_obj, file_path, grammar_summary)
         return parsed_obj
 
     mr = MapReduce(
