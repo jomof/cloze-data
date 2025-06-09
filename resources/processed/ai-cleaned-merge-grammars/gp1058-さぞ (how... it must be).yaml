@@ -2,11 +2,13 @@ grammar_point: さぞ (how... it must be)
 learn_before:
   - だろう (conjecture)
   - に違いない (no doubt)
+  - きっと (surely・certainly)
+  - でしょう (conjecture and confirmation)
 learn_after:
-  - <suggest>:さぞや (emphatic conjecture)
-  - <suggest>:さぞかし (colloquial emphatic conjecture)
   - この上ない (unbeatable)
   - といったらない (indescribable・extreme)
+  - 極まりない・極まる (extreme degree)
+  - てたまらない (unbearably extremely)
 id: gp1058
 meaning: You must be very, How you must be, I dare to say, I am sure or certain that you must be very
 meaning_warning: Often used with expressions of conjecture or assertion like ことと思う, ことと存じる, or に違いない.
@@ -46,7 +48,7 @@ false_friends:
     nuance: While さぞ implies empathy and conjecture regarding another's situation, きっと simply expresses
       a high degree of certainty about a fact. さぞ has a deeper emotional nuance and often carries a sense
       of empathy or understanding of someone else's feelings or circumstances.
-    grammar_point: <suggest>:きっと (surely)
+    grammar_point: きっと (surely・certainly)
   - term: さぞや
     meaning: You must be very (emphatic), How you must be (emphatic)
     kind: similar expression
@@ -64,7 +66,7 @@ post_false_friends_writeup: さぞ is used when the speaker deeply infers and em
   or situation. In contrast, きっと expresses a high degree of certainty about a fact, without the nuance
   of empathy. Therefore, さぞ is appropriate when discerning someone's feelings, while きっと is suitable for
   merely stating a factual certainty. さぞかしは generally more commonly heard in conversational Japanese than
-  さぞや and さぞ。
+  さぞやとさぞ。
 examples:
   - english: He passed N1 on his first try. He must have worked very hard.
     japanese:
@@ -77,7 +79,7 @@ examples:
           - 彼 は N 1 に 一 発 で 合格 し た ん だ って。きっと 努力 し た こと だろう。
           - 彼 は N 1 に 一 発 で 合格 し た ん だ って。きっと 努力 し た だろう な。
         english: He passed N1 on his first try. He must surely have worked very hard.
-        hint: きっと expresses certainty about effort, but さぞ conveys a deeper, empathetic conjecture about
+        hint: きっと implies certainty about effort, but さぞ conveys a deeper, empathetic conjecture about
           the profound effort involved. We're looking for an expression that conveys empathetic conjecture.
     scene: Two students are discussing a mutual friend's recent success in a difficult exam.
     register: casual
@@ -365,3 +367,57 @@ post_example_writeup: The examples illustrate how さぞ is consistently paired 
   can greatly influence the nuance, ranging from sympathetic understanding to sarcastic irony.
 sources:
   bunpro: https://bunpro.jp/grammar_points/さぞ
+lint-errors:
+  - '[rule-13] unknown grammar at ''learn_before[2]'': ''きっと (surely・certainly)''. You may suggest new
+    grammar points by adding a false_friend.'
+  - '[rule-13] warning unknown grammar at ''false_friends[0]'': ''きっと (surely・certainly)''. It **MUST**
+    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
+    grammar point.'
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 は N 1 に 一 発 で 合格 し た ん だ って。きっと 努力 し た こと だろう。'
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    彼 は N 1 に 一 発 で 合格 し た ん だ って。きっと 努力 し た だろう な。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あなた の 愛犬 が 入院 し た と 聞い て、きっと ご 心配 でしょう。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    あなた の 愛犬 が 入院 し た と 聞い て、心配 でしょう。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 は 海外 出張 から 戻っ た ばかり で、きっと お 疲れ でしょう ね。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    彼 は 海外 出張 から 戻っ た ばかり で、疲れ て いる でしょう ね。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    大切 な コレクション を 失っ た と 聞い て、きっと 残念 だっ た でしょう。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    大切 な コレクション を 失っ た と 聞い て、残念 だっ た でしょう。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼女 が あの 有名 な 歌手 の 娘 だ なんて、みんな きっと 驚い た こと だろう。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    彼女 が あの 有名 な 歌手 の 娘 だ なんて、みんな 当然 驚い た こと だろう。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    赤ちゃん の 夜泣き で 眠れ ない 日々、きっと 大変 だろう ね。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    赤ちゃん の 夜泣き で 眠れ ない 日々、大変 だろう ね。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    決勝 で 負け て しまっ た ん だ から、きっと 悔しかっ た に 違い ない。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    決勝 で 負け て しまっ た ん だ から、当然 悔しかっ た に 違い ない。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    長年 の 研究 が 実 を 結び、ノーベル 賞 受賞 の 知らせ に きっと お 喜び の こと でしょう。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    長年 の 研究 が 実 を 結び、ノーベル 賞 受賞 の 知らせ に お 喜び の こと でしょう。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    ご 家族 の ご 病気 の 件、きっと ご 心痛 の こと と 存じ ます。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    ご 家族 の ご 病気 の 件、ご 心痛 の こと と 存じ ます。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    みんな が 大変 な 中、あなた だけ 毎日 遊ん で い て、きっと 楽しい でしょう ね。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    みんな が 大変 な 中、あなた だけ 毎日 遊ん で い て、楽しい でしょう ね。'
+  - '[rule-5] warning examples[10].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    毎日、その よう な プレッシャー の 中 で 働い て い て、きっと お 疲れ でしょう ね。'
+  - '[rule-5] warning examples[10].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    毎日、その よう な プレッシャー の 中 で 働い て い て、疲れ て いる でしょう ね。'
+  - '[rule-5] warning examples[11].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あんな に 長く 勉強 し て い た の だ から、試験 が 終わっ て きっと ほっと し た こと でしょう。'
+  - '[rule-5] warning examples[11].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    あんな に 長く 勉強 し て い た の だ から、試験 が 終わっ て 安心 し た こと でしょう。'

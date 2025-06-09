@@ -2,11 +2,15 @@ grammar_point: ではない・じゃなくて (not A but B)
 learn_before:
   - です (polite copula)
   - だ (casual copula)
-  - なくて (negative te-form)
+  - ないで (without doing or don't)
   - じゃない (negation noun and na-adj)
+  - も (addition or emphasis particle)
+  - る-verbs (negative forms)
 learn_after:
   - というわけではない (not necessarily)
   - のみならず (not only... but also)
+  - にとどまらず (not limited to)
+  - に限らず (not limited to)
 id: gp0454
 meaning: Not A but B
 meaning_warning: The nuance of 'not A but B' can sometimes be subtle, especially when expressing a correction
@@ -61,6 +65,20 @@ false_friends:
       auxiliary ない. For example, 「お金がなくて買えなかった」 (I couldn't buy it because I didn't have money) expresses
       a reason, not a contrast between two items.
     grammar_point: なくて (conjunction)
+  - term: わけではない
+    meaning: It's not that; it doesn't mean that; not necessarily
+    kind: similar expression
+    nuance: 「わけではない」 negates an assumption or expectation, stating that something is not entirely true
+      or the only reason. In contrast, 「ではない・じゃなくて」 directly asserts that 'A' is false and 'B' is true,
+      providing a correction or clarification.
+    grammar_point: わけではない (not necessarily)
+  - term: だけではなく
+    meaning: Not only... but also; in addition to
+    kind: similar expression
+    nuance: 「だけではなく」 adds information, indicating that something is true beyond a single point. It expands
+      on a statement. 「ではない・じゃなくて」, however, corrects a misconception by negating one possibility and
+      affirming another.
+    grammar_point: だけでなく (not only... but also)
 post_false_friends_writeup: The key to differentiating ではないくて from similar expressions is to remember
   that it's used to explicitly state that something is *not* one thing, but *is* another. Other forms
   like なくて might simply describe a negative state or connect clauses without this direct contrast.
@@ -72,7 +90,7 @@ examples:
     english_literally: Important documents, not by email, by post please.
     competing_grammar:
       - competing_japanese:
-          - 重要 な 書類 は メール は 要り ませ ん。郵送 で お 願い し ます。
+          - 重要 な 書類 は メール {は 要り ませ ん}。郵送 で お 願い し ます。
         english: For important documents, email is not needed. Please send them by post.
         hint: This phrasing simply states that email is not needed, without directly contrasting it with
           the preferred method. We're looking for an expression that explicitly contrasts 'not A, but
@@ -100,7 +118,7 @@ examples:
     english_literally: This is not a physics problem, but a chemistry problem.
     competing_grammar:
       - competing_japanese:
-          - これ は 物理 学 で は あり ませ ん。化学 の 問題 です。
+          - これ は 物理 学 {で は あり ませ ん}。化学 の 問題 です。
         english: This is not a physics problem. It is a chemistry problem.
         hint: This uses two separate sentences. We're looking for a single expression that contrasts one
           thing with another.
@@ -124,7 +142,7 @@ examples:
     english_literally: The meeting, not Tuesday, was changed to Wednesday.
     competing_grammar:
       - competing_japanese:
-          - 会議 は 火曜 日 で は あり ませ ん。水曜 日 に 変更 さ れ まし た。
+          - 会議 は 火曜 日 {で は あり ませ ん}。水曜 日 に 変更 さ れ まし た。
         english: The meeting is not on Tuesday. It was changed to Wednesday.
         hint: This uses two separate sentences. We're looking for a single expression that contrasts one
           thing with another.
@@ -148,7 +166,7 @@ examples:
     english_literally: That large building, not a hospital, is the new library.
     competing_grammar:
       - competing_japanese:
-          - あちら の 大きな 建物 は 病院 で は あり ませ ん。新しい 図書 館 です。
+          - あちら の 大きな 建物 は 病院 {で は あり ませ ん}。新しい 図書 館 です。
         english: That large building over there is not a hospital. It is the new library.
         hint: This uses two separate sentences. We're looking for a single expression that contrasts one
           thing with another.
@@ -170,7 +188,7 @@ examples:
     english_literally: She, not a full-time employee, is a part-timer who works three days a week.
     competing_grammar:
       - competing_japanese:
-          - 彼女 は 正 社員 で は あり ませ ん。週 に 3 日 働く パート タイマー です。
+          - 彼女 は 正 社員 {で は あり ませ ん}。週 に 3 日 働く パート タイマー です。
         english: She is not a full-time employee. She is a part-timer who works three days a week.
         hint: This uses two separate sentences. We're looking for a single expression that contrasts one
           thing with another.
@@ -192,7 +210,7 @@ examples:
     english_literally: He, not my older brother, is my childhood friend.
     competing_grammar:
       - competing_japanese:
-          - 彼 は 私 の 兄 で は あり ませ ん。幼なじみ です。
+          - 彼 は 私 の 兄 {で は あり ませ ん}。幼なじみ です。
         english: He is not my elder brother. He is my childhood friend.
         hint: This uses two separate sentences. We're looking for a single expression that contrasts one
           thing with another.
@@ -214,7 +232,7 @@ examples:
     english_literally: Not the big one, but the small one please.
     competing_grammar:
       - competing_japanese:
-          - 大きい の は 要り ませ ん。小さい の を お 願い し ます。
+          - 大きい の {は 要り ませ ん}。小さい の を お 願い し ます。
         english: I don't need the big one. Please give me the small one.
         hint: This expresses that the big one is not wanted, but not that it is explicitly 'not this,
           but that'. We're looking for a phrase that expresses a direct contrast between two options.
@@ -237,12 +255,12 @@ examples:
     english_literally: Excuse me, today, not that my schedule is free, but urgent work has come in.
     competing_grammar:
       - competing_japanese:
-          - すみ ませ ん、今日 は 予定 が 空い て い ませ ん。急 な 仕事 が 入っ て しまい まし た。
+          - すみ ませ ん、今日 は 予定 が 空い て い {ませ ん}。急 な 仕事 が 入っ て しまい まし た。
         english: I'm sorry, my schedule isn't free today. Urgent work came up.
         hint: This simply states two facts. We're looking for a phrase that negates one assumption before
           stating the truth.
       - competing_japanese:
-          - すみ ませ ん、今日 は 予定 が 空い て いる わけ {じゃ ない} ん だ。急 な 仕事 が 入っ ちゃっ て。
+          - すみ ませ ん、今日 は 予定 が 空い て いる {わけ じゃ ない} ん だ。急 な 仕事 が 入っ ちゃっ て。
         english: I'm sorry, it's not that my schedule is free today. Urgent work came up.
         hint: This expression uses the casual 'わけじゃない' and other casual forms. We're looking for a polite
           way to explain a nuanced reason for unavailability.
@@ -263,12 +281,12 @@ examples:
     english_literally: This dish, not that it failed, is deliberately made lightly seasoned.
     competing_grammar:
       - competing_japanese:
-          - この 料理 は 失敗 で は あり ませ ん。あえて 薄味 に し て あり ます。
+          - この 料理 は 失敗 {で は あり ませ ん}。あえて 薄味 に し て あり ます。
         english: This dish is not a failure. It is deliberately made lightly seasoned.
         hint: This uses two separate sentences. We're looking for a single expression that contrasts one
           thing with another, especially when clarifying a nuance.
       - competing_japanese:
-          - この 料理 は 失敗 し た わけ {じゃ ない}。あえて 薄味 に し て ある ん だ。
+          - この 料理 は 失敗 し た {わけ じゃ ない}。あえて 薄味 に し て ある ん だ。
         english: It's not that this dish was a failure. I deliberately made it lightly seasoned.
         hint: This expression uses casual forms. We're looking for a formal and polite way for a chef
           to explain a culinary choice.
@@ -286,12 +304,12 @@ examples:
     english_literally: Not running away from problems, you should properly face them.
     competing_grammar:
       - competing_japanese:
-          - 問題 から 逃げ ない で ください。きちんと 向き合う べき です。
+          - 問題 から 逃げ {ない で ください}。きちんと 向き合う べき です。
         english: Please don't run away from problems. You should face them properly.
         hint: This uses a negative command. We're looking for a phrase that explicitly contrasts an undesirable
           action with a desirable one.
       - competing_japanese:
-          - 問題 から 逃げ ない で、きちんと 向き合う べき だ よ。
+          - 問題 から 逃げ {ない で}、きちんと 向き合う べき だ よ。
         english: Don't run away from problems; you should face them properly, you know.
         hint: The formal and didactic tone requires a more formal expression. We're looking for a formal
           alternative to this casual phrasing.
@@ -312,13 +330,13 @@ examples:
     english_literally: He, not that he bought a new car, rented it.
     competing_grammar:
       - competing_japanese:
-          - 彼 は 新しい 車 は 買わ なかっ た。借り た ん だ よ。
+          - 彼 は 新しい 車 {は 買わ なかっ た}。借り た ん だ よ。
         english: This uses two separate sentences. We're looking for a single expression that contrasts
           one thing with another, maintaining a conversational flow.
         hint: This uses two separate sentences. We're looking for a single expression that contrasts one
           thing with another, maintaining a conversational flow.
       - competing_japanese:
-          - 彼 は 新しい 車 を 買っ た わけ {じゃ ない}。借り た ん だ よ。
+          - 彼 は 新しい 車 を 買っ た {わけ じゃ ない}。借り た ん だ よ。
         english: It's not that he bought a new car. He just rented it.
         hint: While 'わけじゃない' can convey a similar nuance, 'のではなくて' more directly sets up a contrast between
           two distinct situations.
@@ -341,7 +359,7 @@ examples:
     english_literally: Today, not ramen, but sushi is the feeling I want to eat.
     competing_grammar:
       - competing_japanese:
-          - 今日 は ラーメン は 食べ たく ない。お 寿司 が 食べ たい 気分 だ な。
+          - 今日 は ラーメン {は 食べ たく ない}。お 寿司 が 食べ たい 気分 だ な。
         english: Today, I don't want to eat ramen. I'm in the mood for sushi.
         hint: This uses a simple negative statement. We're looking for a phrase that explicitly contrasts
           'not A, but B'.
@@ -372,7 +390,7 @@ examples:
         hint: While 'じゃない' is also a negative, 'ではなくて' sounds slightly more refined for a thoughtful,
           philosophical discussion, even casually.
       - competing_japanese:
-          - 成功 は 才能 で は あり ませ ん。日々 の 努力 の 積み重ね です。
+          - 成功 は 才能 {で は あり ませ ん}。日々 の 努力 の 積み重ね です。
         english: Success is not talent. It is the accumulation of daily effort.
         hint: The casual register and final 'だ' ending make a formal expression sound too stiff for this
           reflective conversation between friends. We're looking for a casual alternative.
@@ -399,7 +417,7 @@ examples:
         hint: This uses a simple negative. We're looking for an expression that smoothly contrasts one
           thing with another in an intimate context.
       - competing_japanese:
-          - この プレゼント は 義務 で は あり ませ ん。心 から の 気持ち です。
+          - この プレゼント は 義務 {で は あり ませ ん}。心 から の 気持ち です。
         english: This present is not out of obligation. It is from my heart.
         hint: The intimate and flirty setting is incompatible with formal Japanese. We're looking for
           a casual and heartfelt expression.
@@ -412,7 +430,7 @@ examples:
     listener_gender: male
     nuance: The phrase 「心 から の 気持ち」 conveys deep sincerity. The contrast between 「義務」 (obligation) and
       「心 から の 気持ち」 (from the heart) highlights the speaker's true intention, reinforced by the casual
-      and intimate 「じゃ なく て」 and the 「だ よ」 ending, which adds a personal touch.
+      「じゃ なく て」 and the 「だ よ」 ending, which adds a personal touch.
   - english: On holidays, instead of staying home, I'd like to go out somewhere with you.
     japanese:
       - 休日 は 家 で 過ごす {の じゃ なく て}、一緒 に どこ か へ 出かけ たい な。
@@ -422,12 +440,12 @@ examples:
     english_literally: Holidays, not spending at home, but with you, I want to go out somewhere.
     competing_grammar:
       - competing_japanese:
-          - 休日 は 家 で 過ごし たく ない。一緒 に どこ か へ 出かけ たい な。
+          - 休日 は 家 で 過ごし {たく ない}。一緒 に どこ か へ 出かけ たい な。
         english: On holidays, I don't want to stay home. I'd like to go out somewhere with you.
         hint: This simply states a preference. We're looking for an expression that explicitly contrasts
           'not A, but B' to propose a shared activity.
       - competing_japanese:
-          - 休日 は 家 で 過ごす こと を やめ て、一緒 に どこ か へ 出かけ たい な。
+          - 休日 は 家 で 過ごす {こと を やめ て}、一緒 に どこ か へ 出かけ たい な。
         english: On holidays, stopping staying at home, I'd like to go out somewhere with you.
         hint: This implies stopping one action to do another, rather than choosing between two presented
           options. We're looking for a direct contrast.
@@ -446,4 +464,4 @@ post_example_writeup: These examples demonstrate the usage of ではないくて
   by contrasting one thing with another. Remember to use じゃなくて in casual conversation and ではないくて in more
   formal situations.
 sources:
-  bunpro: https://bunpro.jp/grammar_points/ではなくて-じゃなくて
+  bunpro: https://bunpro.jp/grammar_points/ではないくて-じゃなくて

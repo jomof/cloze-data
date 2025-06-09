@@ -1,6 +1,10 @@
 grammar_point: なにか・なにも (something or nothing)
 learn_before:
-  - ある (to exist or have)
+  - ある (inanimate existence)
+  - いる (animate existence)
+  - に (fixed point・target・time)
+  - を (object marker)
+  - です (polite copula)
   - か (question)
   - も (addition or emphasis particle)
   - う-verb (negative)
@@ -8,6 +12,9 @@ learn_after:
   - 誰か・どこか・誰も・どこも (indefinite person or place)
   - しか〜ない (only・nothing but)
   - 全く〜ない (not at all)
+  - 全然 (not at all; totally)
+  - 少しも〜ない (not even a little)
+  - 何より (more than anything)
 id: gp0097
 meaning: Something, Nothing, Anything, Not anything, Some kind of, Not any kind of
 meaning_warning: The meaning of these words will change, based on whether the sentence is positive or
@@ -117,12 +124,12 @@ examples:
         hint: This omits the indefinite pronoun, making the question less open-ended. We're looking for
           an inquiry about 'any' possible food item.
       - competing_japanese:
-          - お腹 が 空い た ね。何 か を 食べ たい もの ある？
+          - お腹 が 空い た ね。何 か {を} 食べ たい もの ある？
         english: My stomach is empty, isn't it? Is there something that you want to eat?
         hint: This includes the object particle を. We're looking for a casual expression where を is often
           omitted with indefinite pronouns.
       - competing_japanese:
-          - お腹 が 空い た ね。何 が 食べ たい の？
+          - お腹 が 空い た ね。{何} が 食べ たい の？
         english: My stomach is empty, isn't it? What do you want to eat?
         hint: 「何」 asks for a specific item. We're looking for an indefinite question about 'something'
           in general.
@@ -144,21 +151,21 @@ examples:
     english_literally: Today is free. Nothing to do exists not.
     competing_grammar:
       - competing_japanese:
-          - 今日 は 暇 だ。全然 する こと が ない。
+          - 今日 は 暇 だ。{全然} する こと が ない。
         english: Today is free. There's nothing to do at all.
         hint: 「全然」 emphasizes the degree of absence. We're focusing on the complete absence of 'anything'
           specific to do.
       - competing_japanese:
-          - 今日 は 暇 だ。少し も する こと が ない。
+          - 今日 は 暇 だ。{少し も} する こと が ない。
         english: Today is free. There's not even a little thing to do.
         hint: 「少しも」 emphasizes the absence of even a small amount. We're focusing on the complete absence
           of 'anything' specific to do.
       - competing_japanese:
-          - 今日 は 暇 だ。どこ も 行く ところ が ない。
+          - 今日 は 暇 だ。{どこ も} 行く ところ が ない。
         english: Today is free. There's nowhere to go.
         hint: 「どこも」 indicates the absence of places. We're focusing on the absence of 'anything' to do.
       - competing_japanese:
-          - 今日 は 暇 だ。誰 も い ない。
+          - 今日 は 暇 だ。{誰 も} い ない。
         english: Today is free. There's no one here.
         hint: 「誰も」 indicates the absence of people. We're focusing on the absence of 'anything' to do.
     scene: A young man is talking to himself on a quiet afternoon, bored.
@@ -182,7 +189,7 @@ examples:
         english: If you have unclear points, please ask.
         hint: This omits the indefinite pronoun. We're looking for an invitation for 'any' possible question.
       - competing_japanese:
-          - 何 か ご 不明 な 点 が ござい まし たら、お 尋ね ください。
+          - '{何 か} ご 不明 な 点 が ござい まし たら、お 尋ね ください。'
         english: If there's something unclear, please ask.
         hint: 「何」 here functions as a direct interrogative. We're looking for an indefinite 'something'
           rather than a direct inquiry.
@@ -204,22 +211,22 @@ examples:
     english_literally: In the end, at meeting nothing decided not.
     competing_grammar:
       - competing_japanese:
-          - 結局、会議 で は 全然 決まら なかっ た。
+          - 結局、会議 で は {全然} 決まら なかっ た。
         english: In the end, nothing at all was decided at the meeting.
         hint: 「全然」 emphasizes the degree of non-decision. We're focusing on the complete absence of 'any'
           specific decision.
       - competing_japanese:
-          - 結局、会議 で は 少し も 決まら なかっ た。
+          - 結局、会議 で は {少し も} 決まら なかっ た。
         english: In the end, not even a little bit was decided at the meeting.
         hint: 「少しも」 emphasizes the absence of even a small amount. We're focusing on the complete absence
           of 'anything' specific being decided.
       - competing_japanese:
-          - 結局、会議 で は どこ も 意見 が 合わ なかっ た。
+          - 結局、会議 で は {どこ も} 意見 が 合わ なかっ た。
         english: In the end, opinions didn't align anywhere at the meeting.
         hint: 「どこも」 refers to locations or aspects. We're focusing on the absence of 'anything' being
           decided.
       - competing_japanese:
-          - 結局、会議 で は 誰 も い ない。
+          - 結局、会議 で は {誰 も} い ない。
         english: In the end, there's no one at the meeting.
         hint: 「誰も」 indicates the absence of people. We're focusing on the absence of 'anything' to do.
     scene: A project manager is reporting the outcome of a prolonged and unproductive meeting to their
@@ -245,12 +252,12 @@ examples:
         hint: This omits the indefinite pronoun. We're looking for an expression indicating an unspecified
           'some kind of' problem.
       - competing_japanese:
-          - 彼 の 様子 が おかしい。ある もの が 原因 な の か も しれ ない。
+          - 彼 の 様子 が おかしい。{ある もの} が 原因 な の か も しれ ない。
         english: His state is strange. Something that exists might be the cause.
         hint: 「あるもの」 refers to something that actually exists and is present. We're looking for an expression
           that speculates about an unspecified, possible problem.
       - competing_japanese:
-          - 彼 の 様子 が おかしい。何 が あっ た の か な。
+          - 彼 の 様子 が おかしい。{何} が あっ た の か な。
         english: His state is strange. What happened?
         hint: 「何」 asks for a specific cause. We're speculating about 'something' unspecified, not directly
           asking 'what'.
@@ -273,22 +280,22 @@ examples:
     english_literally: That incident about, I nothing know not.
     competing_grammar:
       - competing_japanese:
-          - あの 事件 に つい て は、私 は 全然 知り ませ ん。
+          - あの 事件 に つい て は、私 は {全然} 知り ませ ん。
         english: Regarding that incident, I don't know anything at all.
         hint: 「全然」 emphasizes the degree of ignorance. We're focusing on the complete absence of 'any'
           information.
       - competing_japanese:
-          - あの 事件 に つい て は、私 は 少し も 知り ませ ん。
+          - あの 事件 に つい て は、私 は {少し も} 知り ませ ん。
         english: Regarding that incident, I don't know even a little bit.
         hint: 「少しも」 emphasizes the absence of even a small amount of memory. We're focusing on the complete
           absence of 'any' information.
       - competing_japanese:
-          - あの 事件 に つい て は、私 は どこ も 知り ませ ん。
+          - あの 事件 に つい て は、私 は {どこ も} 知り ませ ん。
         english: Regarding that incident, I don't know any part of it.
         hint: 「どこも」 refers to parts or locations. We're focusing on the absence of 'any' information about
           the incident.
       - competing_japanese:
-          - あの 事件 に つい て は、私 は 誰 も 知り ませ ん。
+          - あの 事件 に つい て は、私 は {誰 も} い ませ ん。
         english: Regarding that incident, I don't know anyone involved.
         hint: 「誰も」 refers to people. We're focusing on the absence of 'any' information about the incident
           itself.
@@ -314,12 +321,12 @@ examples:
         english: You seem to be in trouble. Is there a thing I can help you with?
         hint: This omits the indefinite pronoun. We're looking for an offer of 'any' unspecified help.
       - competing_japanese:
-          - お 困り の よう です ね。ある もの で お 手伝い できる こと は あり ます か。
+          - お 困り の よう です ね。{ある もの} で お 手伝い できる こと は あり ます か。
         english: You seem to be in trouble. Is there something that exists that I can help you with?
         hint: 「あるもの」 suggests something concrete and existing. We're offering help for any unspecified
           difficulty, not just something already identifiable.
       - competing_japanese:
-          - お 困り の よう です ね。何 を お 手伝い し ましょう か。
+          - お 困り の よう です ね。{何} を お 手伝い し ましょう か。
         english: You seem to be in trouble. What should I help you with?
         hint: 「何」 asks for a specific task. We're offering general assistance for 'something' that might
           be wrong, not asking for a particular job.
@@ -345,7 +352,7 @@ examples:
         hint: This omits the indefinite pronoun, making the question less open-ended and more about a
           specific, implied sound. We're looking for an inquiry about 'any' possible sound.
       - competing_japanese:
-          - 今、何 が 聞こえ た の？
+          - 今、{何} が 聞こえ た の？
         english: What did you hear just now?
         hint: 「何」 asks for a specific item or detail. We're asking if 'something' vague or indistinct
           was heard, not specifying 'what'.
@@ -365,17 +372,17 @@ examples:
     english_literally: He next meeting about, nothing said not.
     competing_grammar:
       - competing_japanese:
-          - 彼 は 次 の 会議 に つい て、全然 言わ なかっ た。
+          - 彼 は 次 の 会議 に つい て、{全然} 言わ なかっ た。
         english: He didn't say anything useful at all.
         hint: 「全然」 emphasizes the degree of non-action. We're focusing on the complete absence of 'any'
           specific information being given.
       - competing_japanese:
-          - 彼 は 次 の 会議 に つい て、何 を 言う の です か。
+          - 彼 は 次 の 会議 に つい て、{何} を 言う の です か。
         english: What will he say about the next meeting?
         hint: 「何」 asks for a specific piece of information. We're stating that 'nothing' was said, not
           asking 'what'.
       - competing_japanese:
-          - 彼 は 次 の 会議 に つい て、少し も 言い ませ ん でし た。
+          - 彼 は 次 の 会議 に つい て、{少し も} 言い ませ ん でし た。
         english: He didn't say even a little bit about the next meeting.
         hint: 「少しも」 emphasizes the absence of even a small amount of information. We're focusing on the
           complete absence of 'any' information.
@@ -401,7 +408,7 @@ examples:
         hint: This omits the indefinite pronoun. We're trying to convey that the flavor is 'some kind
           of' unique, implying an unknown component or characteristic.
       - competing_japanese:
-          - この スープ、何 の 味 が する の？
+          - この スープ、{何} の 味 が する の？
         english: What flavor does this soup have?
         hint: 「何」 asks for a specific identification of the flavor. We're describing an unknown, distinctive
           quality, not asking for an explanation of 'what' the flavor is.
@@ -422,12 +429,12 @@ examples:
     english_literally: He useful thing nothing said not.
     competing_grammar:
       - competing_japanese:
-          - 彼 は 役 に 立つ こと を 全然 言わ なかっ た。
+          - 彼 は 役 に 立つ こと を {全然} 言わ なかっ た。
         english: He didn't say anything useful at all.
         hint: 「全然」 emphasizes the degree of utility. We're focusing on the complete absence of 'any' useful
           statements.
       - competing_japanese:
-          - 彼 は 役 に 立つ こと を 何 と も 言わ なかっ た。
+          - 彼 は 役 に 立つ こと を {何 と も} 言わ なかっ た。
         english: He didn't say anything in particular that was useful.
         hint: 「何とも」 often implies a lack of specific comment or an indifferent response. We're emphasizing
           the total lack of useful information.
@@ -452,7 +459,7 @@ examples:
         hint: This omits the indefinite pronoun. We're looking for an explicit inquiry about 'any other'
           possible questions.
       - competing_japanese:
-          - ほか に 何 の 質問 が あり ます か？
+          - ほか に {何} の 質問 が あり ます か？
         english: What other questions do you have?
         hint: 「何」 asks for specific content. We're asking if 'anything else' generally exists.
     scene: A teacher concludes a lesson and asks students if they have further questions.
@@ -472,12 +479,12 @@ examples:
     english_literally: That day's matter, nothing remember not.
     competing_grammar:
       - competing_japanese:
-          - あの 日 の こと は、全然 覚え て い ない。
+          - あの 日 の こと は、{全然} 覚え て い ない。
         english: I don't remember anything at all about that day.
         hint: 「全然」 emphasizes the degree of not remembering. We're focusing on the complete absence of
           'any' memory.
       - competing_japanese:
-          - あの 日 の こと は、少し も 覚え て い ない。
+          - あの 日 の こと は、{少し も} 覚え て い ない。
         english: I don't remember even a little bit about that day.
         hint: 「少しも」 emphasizes the absence of even a small amount of memory. We're focusing on the complete
           absence of 'any' memory.
@@ -497,3 +504,20 @@ post_example_writeup: 'The examples illustrate how 「なにか」 and 「なに
   roles in Japanese expression.'
 sources:
   bunpro: https://bunpro.jp/grammar_points/なにか・なにも
+lint-errors:
+  - '[rule-13] unknown grammar at ''learn_after[4]'': ''少しも〜ない (not even a little)''. You may suggest
+    new grammar points by adding a false_friend.'
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    お腹 が 空い た ね。食べ たい もの ある？'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    ご 不明 な 点 が ござい まし たら、お 尋ね ください。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 の 様子 が おかしい。問題 が あっ た の か も しれ ない。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    お 困り の よう です ね。お 手伝い できる こと は あり ます か。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    今、聞こえ た？'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この スープ、独特 の 味 が する ね。'
+  - '[rule-5] warning examples[11].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    ほか に 質問 は あり ます か？'

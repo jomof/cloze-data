@@ -1,12 +1,11 @@
 grammar_point: 何しろ (anyway・after all)
 learn_before:
-  - やはり (as expected・after all・still)
   - から (reason cause)
   - ので (reason)
+  - どうせ (anyway・inevitably)
 learn_after:
-  - に決まっている (surely is)
   - とあれば (if emphatic)
-  - べくして (as destined)
+  - ゆえに (because・therefore)
 id: gp0727
 meaning: Anyway, after all, in any case; used to emphasize the reason or inevitability of a situation.
 pronunciation:
@@ -75,7 +74,7 @@ false_friends:
       whereas 何しろ gives a specific, often conclusive, reason for something being the way it is.
     grammar_point: であれ (even if)
   - term: であれ〜であれ
-    meaning: Whether or, Or, No matter which, In either case
+    meaning: Whether X or Y; be it X or Y; or
     kind: similar expression
     nuance: であれ〜であれ presents options and states that something applies to all of them. 何しろ explains why
       something is happening, pinpointing a specific, undeniable cause.
@@ -122,7 +121,7 @@ examples:
     english_literally: After all, she is a genius, so any problem she can quickly solve.
     competing_grammar:
       - competing_japanese:
-          - やはり 彼女 は 天才 だ から、どんな 問題 で も すぐ に 解決 できる ん だ。
+          - '{やはり} 彼女 は 天才 だ から、どんな 問題 で も すぐ に 解決 できる ん だ。'
         english: As expected, she's a genius, so she can solve any problem quickly.
         hint: 「何しろ」 highlights the fundamental, undeniable reason, like 'it's because she's a genius,
           after all'. 「やはり」 means 'as expected' or 'as I thought', confirming a prior belief.
@@ -193,8 +192,7 @@ examples:
       - この 道 は いつ も 渋滞 が ひどい。{何しろ} 朝 の ラッシュ アワー だ から ね。
       - この 道 は いつ も 渋滞 が ひどい です。{何しろ} 朝 の ラッシュ アワー です から ね。
       - この 道 は いつ も 渋滞 が ひどい。{何しろ} 朝 の ラッシュ アワー だ から。
-    english_literally: This road always has terrible traffic. After all, it is morning rush hour, you
-      know.
+    english_literally: This area is quiet, isn't it. After all, there are few shops and such.
     competing_grammar:
       - competing_japanese:
           - この 道 は いつ も 渋滞 が ひどい。そりゃあ 朝 の ラッシュ アワー だ から ね。
@@ -245,7 +243,7 @@ examples:
     japanese:
       - '{何しろ} 今 の 仕事 で 手 が いっぱい だ から、これ 以上 プロジェクト は 受け られ ない よ。'
       - '{何しろ} 今 の 仕事 で 手 が いっぱい です から、これ 以上 プロジェクト は 受け られ ませ ん。'
-      - '{何しろ} 現状 の 業務 で 手 一杯 で ござい ます の で、これ 以上 の プロジェクト を お 受け する こと は 困難 で ござい ます。'
+      - '{何しろ} 現状 の 予算 で 手 一杯 で ござい ます の で、これ 以上 の プロジェクト を お 受け する こと は 困難 で ござい ます。'
     english_literally: After all, our hands are full with current work, so we cannot take on any more
       projects.
     competing_grammar:
@@ -327,13 +325,32 @@ examples:
     speaker_gender: female
     listener_gender: male
     speaker_age: older
-    nuance: The sentence ends with 「だ ね」 (da ne), which is casual and seeks agreement, fitting for a relaxed
-      conversation. The speaker's observation about the quietness is directly attributed to the lack of
-      commercial establishments, a reason emphasized by 「何しろ」 as an undeniable characteristic of the area.
-      This conversational style is common among older women.
+    nuance: The sentence ends with 「だ ね」 (da kara ne), which is casual and seeks agreement, fitting for
+      a relaxed conversation. The speaker's observation about the quietness is directly attributed to
+      the lack of commercial establishments, a reason emphasized by 「何しろ」 as an undeniable characteristic
+      of the area. This conversational style is common among older women.
 post_example_writeup: 「何しろ」 serves to introduce a reason or circumstance that is considered to be a strong,
   undeniable, or fundamental truth, which directly explains the preceding or succeeding statement. It
   effectively signals that the information provided is the definitive justification for the situation
   at hand, leaving little room for doubt or further questioning.
 sources:
   bunpro: https://bunpro.jp/grammar_points/何しろ
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    忙しい から、週末 は 家 で ゆっくり する よ。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    なんせ 予算 が 限ら れ て おり ます の で、費用 対 効果 を 最 優先 さ せ て いただき ます。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    とにかく 大雨 だっ た の で、試合 は 中止 に なっ た。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 道 は いつ も 渋滞 が ひどい。そりゃあ 朝 の ラッシュ アワー だ から ね。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼女 が 怒る の も 無理 は ない。だ って 約束 を 破っ た ん だ から。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    現状 の 業務 で 手 一杯 な の で、これ 以上 の プロジェクト は 受け られ ませ ん。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    すぐ に 寝 ちゃっ た よ。だ って 今日 は たくさん 遊ん だ から。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    遅れ て すみ ませ ん。電車 が 遅れ た ん です。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 辺 は 静か だ ね。なぜ なら 店 と か 少ない から だ。'

@@ -1,11 +1,14 @@
 grammar_point: に至って・に至り (finally reached)
 learn_before:
-  - まで (limit extent)
   - になる・くなる (to become)
-  - につれて (as・in proportion to)
+  - ようになる (to come to be)
+  - まで (limit extent)
+  - 結果 (result)
 learn_after:
-  - に至っては (when it comes to a surprising extreme)
+  - を余儀なくさせる (compel or force)
   - を余儀なくされる (to be forced or compelled)
+  - 始末だ (unfortunate culmination)
+  - といったらない (indescribable・extreme)
 id: gp0947
 meaning: When it came to, Only when, Only after, Go as far as
 meaning_warning: When following time expressions or location it often simply means “at”
@@ -30,21 +33,22 @@ details:
 etymology: The grammar point derives from the verb 至る (itaru), meaning "to arrive," "to reach," or "to
   lead to." The に particle indicates the point or situation that is reached, emphasizing that a certain
   outcome or realization occurs only upon reaching that specific stage.
-writeup: |-
-  The grammar point **に至って** (ni itatte) and its more formal counterpart **に至り** (ni itari) signify that a situation has progressed to an **extreme or critical point**, which then leads to a subsequent event or realization. It often implies that something has been allowed to reach an undesirable state, and action or understanding only occurs at this extreme juncture.
-
-  This structure strongly conveys a sense of **belatedness or a critical turning point**. Consequently, it is frequently employed when criticizing a lack of timely action, suggesting that necessary steps were taken *only after* a situation had become severe.
-
-  Common translations include 'only when (A), did (B) occur,' 'only after (A), (B) occurred,' or 'going as far as to (A), (B).'
-
-  **に至り** is the conjunctive (masu-stem) form of the verb **至る** (itaru), and it serves as a more formal or literary alternative to the standard te-form **に至って**. You will typically encounter **に至り** in written contexts, news reports, or formal speeches.
-
-  **Important Distinction: に至って vs. に至っても**
-
-  While grammatically similar, **に至って** and **に至っても** carry opposite meanings. Understanding this difference is crucial:
-
-  *   **(A)に至って(B)**: This means 'Only when/after reaching the extreme of (A), did (B) occur.' It implies a consequence or realization *because* (A) reached a critical point.
-  *   **(A)に至っても(B)**: This means 'Even if reaching the extreme of (A), (B) won't occur.' It implies a lack of consequence or realization *despite* (A) reaching a critical point. This grammar point is covered separately.
+writeup: 'The grammar point **に至って** (ni itatte) and its more formal counterpart **に至り** (ni itari) signify
+  that a situation has progressed to an **extreme or critical point**, which then leads to a subsequent
+  event or realization. It often implies that something has been allowed to reach an undesirable state,
+  and action or understanding only occurs at this extreme juncture. This structure strongly conveys a
+  sense of **belatedness or a critical turning point**. Consequently, it is frequently employed when criticizing
+  a lack of timely action, suggesting that necessary steps were taken *only after* a situation had become
+  severe. Common translations include ''only when (A), did (B) occur,'' ''only after (A), (B) occurred,''
+  or ''going as far as to (A), (B).'' **に至り** is the conjunctive (masu-stem) form of the verb **至る** (itaru),
+  and it serves as a more formal or literary alternative to the standard te-form **に至って**. You will typically
+  encounter **に至り** in written contexts, news reports, or formal speeches. **Important Distinction: に至って
+  vs. に至っても** While grammatically similar, **に至って** and **に至っても** carry opposite meanings. Understanding
+  this difference is crucial: *   **(A)に至って(B)**: This means ''Only when/after reaching the extreme of
+  (A), did (B) occur.'' It implies a consequence or realization *because* (A) reached a critical point.
+  *   **(A)に至っても(B)**: This means ''Even if reaching the extreme of (A), (B) won''t occur.'' It implies
+  a lack of consequence or realization *despite* (A) reaching a critical point. This grammar point is
+  covered separately.'
 false_friends:
   - term: に至っても
     meaning: Even if it comes to, Even after
@@ -358,3 +362,44 @@ post_example_writeup: Remember that に至って often carries a sense of belate
   event prompted action or awareness.
 sources:
   bunpro: https://bunpro.jp/grammar_points/に至って-に至り
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    問題 が 深刻 化 する に 至っ て も、対策 が 講じ られ なかっ た。'
+  - '[rule-5] warning examples[0].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    問題 が 深刻 化 し て から、ようやく 対策 が 講じ られ 始め た。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    医者 に 入院 を 勧め られる に 至っ て も、自分 の 健康 を 真剣 に 考え なかっ た。'
+  - '[rule-5] warning examples[1].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    医者 に 入院 を 勧め られ た とき、初めて 自分 の 健康 を 真剣 に 考え た。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    予算 が 枯渇 する 事態 に 至っ て も、政府 は 緊急 援助 を 発表 し なかっ た。'
+  - '[rule-5] warning examples[2].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    予算 が 枯渇 し た 後 で、政府 は やっと 緊急 援助 を 発表 し た。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 は 家族 を 守る ため、家 を 捨て て 逃亡 する に 至っ て も、家族 を 守れ なかっ た。'
+  - '[rule-5] warning examples[3].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    彼 は 家族 を 守る ため、家 を 捨て て 逃亡 する こと に なっ た。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    長年 の 無視 に 至っ て も、この 建物 は 倒壊 し なかっ た。'
+  - '[rule-5] warning examples[4].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    長年 の 無視 で、この 建物 は 倒壊 し た。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    数え 切れ ない 失敗 を 経験 する に 至っ て も、彼 は 研究 で 成功 を 収め なかっ た。'
+  - '[rule-5] warning examples[5].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    数え 切れ ない 失敗 を 経験 し て から、彼 は ようやく 研究 で 成功 を 収め た。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    最高 裁 の 最終 判決 が 下さ れる に 至っ て も、裁判 は 決着 し なかっ た。'
+  - '[rule-5] warning examples[6].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    最高 裁 の 最終 判決 が 下さ れ た 時 に、裁判 は ようやく 決着 し た。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    社会 が 完全 に 停滞 する に 至っ て も、改革 の 動き は 生まれ なかっ た。'
+  - '[rule-5] warning examples[7].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    社会 が 完全 に 停滞 し た の で、ようやく 改革 の 動き が 生まれ た。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    患者 の 容体 は、緊急 手術 が 必要 と なる に 至っ て も、改善 し なかっ た。'
+  - '[rule-5] warning examples[8].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    患者 の 容体 が 悪化 し た 結果、緊急 手術 が 必要 と なっ た。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    莫大 な 借金 を 抱える に 至っ て も、その 会社 は 倒産 を 検討 し なかっ た。'
+  - '[rule-5] warning examples[9].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    莫大 な 借金 を 抱え た 後 で、その 会社 は ようやく 倒産 を 検討 し 始め た。'

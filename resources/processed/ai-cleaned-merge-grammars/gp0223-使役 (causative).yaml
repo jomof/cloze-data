@@ -2,11 +2,16 @@ grammar_point: 使役 (causative)
 better_grammar_point_name:
   - 使役 (make or let do)
 learn_before:
-  - Verb[て] (and then)
   - れる られる (passive・potential・spontaneous・respectful)
+  - Verb[て] (and then)
+  - う-verb (dictionary)
+  - る-verbs (ichidan verbs)
+  - う-verb (negative)
+  - Verbs (non-past polite)
 learn_after:
   - させられる (causative-passive)
   - を余儀なくさせる (compel or force)
+  - 〜ていく (to continue doing)
 id: gp0223
 meaning: To make/let/have (somebody do something)
 meaning_warning: Either に or を can mark the doer.
@@ -133,11 +138,21 @@ false_friends:
       the speaker's perspective. The causative 「～させる」 implies the speaker is actively granting or enabling
       the permission for the other person to do something, focusing on the agent's role.
     grammar_point: Verb[て]+もいい (permission)
+  - term: てもらう (to get someone to do)
+    meaning: To get someone to do, To have someone do
+    kind: similar expression
+    nuance: 'While 「～てもらう」 expresses receiving a favor or benefit from someone''s action, 「～させる」 focuses
+      on the subject *causing* or *allowing* the action, whether for benefit or compulsion. The nuance
+      of initiative differs: with 「～てもらう」, the other person''s action is performed for the speaker''s
+      benefit; with 「～させる」, the subject is the agent of causation.'
+    grammar_point: てもらう (to get someone to do)
 post_false_friends_writeup: When distinguishing between these forms, consider the active intent and whether
   the action is imposed, permitted, or happens naturally. 「れる・られる」 is about being affected. The causative-passive
   is about being forced. The causative 「せる・させる」, however, focuses on the agent's role in causing or allowing
   another's action. 「なる・くなる」 describes a natural or uncaused change of state. 「～てもいい」 expresses permission
-  as a simple statement, whereas causative implies granting that permission.
+  as a simple statement, whereas causative implies granting that permission. Lastly, while 「～てもらう」 indicates
+  receiving a beneficial action, the causative emphasizes the speaker's active role in making or letting
+  that action occur.
 examples:
   - english: The teacher lets the students read books.
     japanese:
@@ -146,7 +161,7 @@ examples:
     english_literally: The teacher causes students to read books.
     competing_grammar:
       - competing_japanese:
-          - 先生 は 生徒 に 本 を 読む よう に 言う。
+          - 先生 は 生徒 に 本 を {読む よう に 言う}。
         english: The teacher tells the students to read books.
         hint: 「～ように言う」 implies giving instructions or advice, not necessarily granting permission. We're
           looking for the sense of allowing or enabling an action.
@@ -169,7 +184,7 @@ examples:
     english_literally: My mother causes her child to sleep early.
     competing_grammar:
       - competing_japanese:
-          - 母 は 子供 に 早く 寝る こと を 強制 する。
+          - 母 は 子供 に 早く 寝る こと を {強制 する}。
         english: My mother forces her child to go to bed early.
         hint: 「強制する」 means to explicitly force or compel, which is a stronger and more direct expression
           of coercion than the general causative. We're looking for a verb that allows for both 'making'
@@ -191,7 +206,7 @@ examples:
     english_literally: The manager caused me to freely state my opinion.
     competing_grammar:
       - competing_japanese:
-          - 部 長 は 私 に 自由 に 意見 を 言う よう に 言っ た。
+          - 部 長 は 私 に 自由 に 意見 を {言う よう に 言っ た}。
         english: The manager told me to state my opinion freely.
         hint: 「～ように言った」 means to tell or instruct someone to do something. The causative here implies
           the manager actively enabled or allowed the action, rather than simply giving an order.
@@ -213,7 +228,7 @@ examples:
     english_literally: The doctor is causing the patient to drink medicine every day.
     competing_grammar:
       - competing_japanese:
-          - 医者 は 患者 に 毎日 薬 を 飲む よう に 指示 し て いる。
+          - 医者 は 患者 に 毎日 薬 を 飲む よう に {指示 し て いる}。
         english: The doctor is instructing the patient to take medicine every day.
         hint: 「指示している」 means to give instructions. While similar, the causative 「飲ませている」 emphasizes the
           doctor's active role in ensuring the patient takes the medicine, implying an ongoing instruction
@@ -237,7 +252,7 @@ examples:
     english_literally: She doesn't cause her boyfriend to lie.
     competing_grammar:
       - competing_japanese:
-          - 彼女 は 彼氏 に 嘘 を つく こと を 禁じる。
+          - 彼女 は 彼氏 に 嘘 を つく こと を {禁じる}。
         english: She forbids her boyfriend from lying.
         hint: 「禁じる」 explicitly means to forbid or prohibit. While both imply prevention, the causative
           「つかせない」 emphasizes her active influence or non-permission, rather than a formal prohibition.
@@ -259,7 +274,7 @@ examples:
     english_literally: I caused the customer to come to my office (polite past).
     competing_grammar:
       - competing_japanese:
-          - お 客 さん を 私 の オフィス に 招待 し まし た。
+          - お 客 さん を 私 の オフィス に {招待 し まし た}。
         english: I invited the customer to my office.
         hint: 「招待しました」 implies an invitation. While the result might be the same, the causative 「来させました」
           specifically means you enabled or allowed their arrival, focusing on your role in their coming,
@@ -283,7 +298,7 @@ examples:
     english_literally: The new project will probably cause him to do overtime.
     competing_grammar:
       - competing_japanese:
-          - 新しい プロジェクト は 彼 に 残業 を 要求 する だろう。
+          - 新しい プロジェクト は 彼 に 残業 を {要求 する} だろう。
         english: The new project will probably demand him to work overtime.
         hint: 「要求する」 means to demand. While it implies a similar outcome, the causative 「残業させる」 emphasizes
           the project as the *agent* causing the overtime, rather than simply stating a requirement.
@@ -305,7 +320,7 @@ examples:
     english_literally: That happy news caused everyone to smile.
     competing_grammar:
       - competing_japanese:
-          - その 嬉しい ニュース で 皆 は 笑顔 に なり まし た。
+          - その 嬉しい ニュース で 皆 は 笑顔 に {なり まし た}。
         english: Everyone became smiling because of that happy news.
         hint: 「～で～になりました」 expresses a cause-and-effect relationship, where the news is the reason for
           becoming happy. The causative 「笑顔にさせました」 directly states that the news *caused* the smiles,
@@ -329,7 +344,7 @@ examples:
     english_literally: Younger sister always causes me to carry her bag.
     competing_grammar:
       - competing_japanese:
-          - 妹 は いつ も 私 に 荷物 を 持っ て と 頼む。
+          - 妹 は いつ も 私 に 荷物 を {持っ て と 頼む}。
         english: My younger sister always asks me to carry her bag.
         hint: 「～と頼む」 means to ask or request. The causative implies a stronger influence or expectation
           that the action will be done, rather than a mere request.
@@ -350,7 +365,7 @@ examples:
     english_literally: The company caused him to study abroad for one year.
     competing_grammar:
       - competing_japanese:
-          - 会社 は 彼 が 一 年間 海外 で 留学 する こと を 許可 し た。
+          - 会社 は 彼 が 一 年間 海外 で 留学 する こと を {許可 し た}。
         english: The company permitted him to study abroad for a year.
         hint: 「許可した」 means to explicitly permit. The causative 「留学させた」 implies that the company facilitated
           or enabled the study abroad, focusing on their active role in making it happen, rather than
@@ -373,3 +388,6 @@ post_example_writeup: Understanding the nuances of particle usage (に vs. を) 
   verb if the speaker wants to emphasize strong compulsion.
 sources:
   bunpro: https://bunpro.jp/grammar_points/causative
+lint-errors:
+  - '[rule-13] unknown grammar at ''learn_after[2]'': ''〜ていく (to continue doing)''. You may suggest new
+    grammar points by adding a false_friend.'

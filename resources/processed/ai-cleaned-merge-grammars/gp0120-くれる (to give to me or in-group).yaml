@@ -1,9 +1,12 @@
 grammar_point: くれる (to give to me or in-group)
 learn_before:
   - あげる (give away)
+  - Verb[て] (and then)
 learn_after:
   - てくれる (receiving benefaction)
   - てあげる (to do for someone)
+  - てもらう (to get someone to do)
+  - お〜ください (polite request)
 id: gp0120
 meaning: To give (to me/us), To be given (to me/us)
 meaning_warning: Both くれる and あげる use に to mark the recipient. The key difference lies in the direction
@@ -125,12 +128,12 @@ examples:
     english_literally: Friend gave to me present.
     competing_grammar:
       - competing_japanese:
-          - 友達 に プレゼント を もらっ た。
+          - 友達 に プレゼント を {もらっ た}。
         english: I received a present from my friend.
         hint: This phrasing focuses on the speaker's action of receiving, not the friend's action of giving.
           We're looking for the giver's action.
       - competing_japanese:
-          - 私 が 友達 に プレゼント を あげ た。
+          - 私 が 友達 に プレゼント を {あげ た}。
         english: I gave a present to my friend.
         hint: This sentence means 'I gave it to my friend,' which reverses the action. We're looking for
           the friend giving to me.
@@ -146,12 +149,12 @@ examples:
     english_literally: Teacher always to us kind words gives.
     competing_grammar:
       - competing_japanese:
-          - 先生 は いつ も 私 たち に 優しい 言葉 を かけ ます。
+          - 先生 は いつ も 私 たち に 優しい 言葉 を {かけ ます}。
         english: Our teacher always speaks kind words to us.
         hint: This describes the action of speaking. We're looking for a verb that emphasizes the teacher's
           action as a benefit or favor to the students.
       - competing_japanese:
-          - 私 たち は いつ も 先生 から 優しい 言葉 を もらい ます。
+          - 私 たち は いつ も 先生 から 優しい 言葉 を {もらい ます}。
         english: We always receive kind words from our teacher.
         hint: This sentence focuses on the students' act of receiving, not the teacher's act of giving.
           We're looking for the teacher's action.
@@ -166,12 +169,12 @@ examples:
     english_literally: Older brother to me money doesn't give, so I'm troubled.
     competing_grammar:
       - competing_japanese:
-          - 私 は 兄 から お 金 を もらえ ない から、困っ て い ます。
+          - 私 は 兄 から お 金 を {もらえ ない} から、困っ て い ます。
         english: I cannot receive money from my older brother, so I'm in trouble.
         hint: While this emphasizes the speaker's inability to receive, 「くれない」 highlights the brother's
           failure or inaction in giving. We're focusing on the brother's lack of action.
       - competing_japanese:
-          - 兄 は 私 に お 金 を あげ ませ ん。
+          - 兄 は 私 に お 金 を {あげ ませ ん}。
         english: My older brother does not give money to me (to someone else).
         hint: This would imply the brother is giving to someone outside the in-group. We're looking for
           the brother not giving to the speaker directly.
@@ -192,12 +195,12 @@ examples:
     english_literally: Grandma handmade sweets gave, very happy was.
     competing_grammar:
       - competing_japanese:
-          - お ばあ ちゃん から 手作り の お 菓子 を もらっ て、とても 嬉しかっ た。
+          - お ばあ ちゃん から 手作り の お 菓子 を {もらっ て}、とても 嬉しかっ た。
         english: I received handmade sweets from my grandmother, and I was very happy.
         hint: While grammatically correct, this focuses on the speaker's reception. We're looking for
           the grandmother's kind act of giving and the benefit derived from it.
       - competing_japanese:
-          - お ばあ ちゃん に 手作り の お 菓子 を あげ た。
+          - お ばあ ちゃん に 手作り の お 菓子 を {あげ た}。
         english: I gave handmade sweets to my grandmother.
         hint: This reverses the direction of the action. We're looking for the grandmother giving to the
           speaker.
@@ -212,13 +215,13 @@ examples:
     english_literally: If mother new bag gives, trip let's go.
     competing_grammar:
       - competing_japanese:
-          - もし 母 から 新しい カバン を もらっ たら、旅行 に 行こう。
+          - もし 母 から 新しい カバン を {もらっ たら}、旅行 に 行こう。
         english: If I receive a new bag from my mother, let's go on a trip.
         hint: While grammatically correct for receiving, 「くれたら」 emphasizes the mother's action of giving
           as the condition. We're highlighting the mother's generosity.
       - competing_japanese:
-          - もし 私 が 母 に 新しい カバン を あげ たら、旅行 に 行こう。
-        english: If I give a new bag to my mother, let's go on a trip.
+          - もし 私 が 母 に 新しい カバン を {あげ たら}、旅行 に 行こう。
+        english: I gave a new bag to my mother.
         hint: This reverses the direction of the action. We're looking for the mother giving to the speaker.
     scene: A child excitedly planning a trip with a friend, contingent on receiving a specific gift from
       their mother.
@@ -232,16 +235,16 @@ examples:
     english_literally: Hey, that ball to here give!
     competing_grammar:
       - competing_japanese:
-          - その ボール を こっち に ください！
+          - その ボール を こっち に {ください}！
         english: Please give me that ball!
         hint: 「ください」 is a polite request. We're looking for a direct, informal command.
       - competing_japanese:
-          - その ボール を こっち に ちょうだい！
+          - その ボール を こっち に {ちょうだい}！
         english: Please give me that ball! (softer/more childlike)
         hint: 「ちょうだい」 is often used by younger children or has a softer, more feminine tone. We're looking
           for a demanding, more masculine imperative.
       - competing_japanese:
-          - その ボール を あげる よ！
+          - その ボール を {あげる} よ！
         english: I'll give you that ball!
         hint: This reverses the action. We're looking for a command to give the ball to the speaker.
     scene: A group of boys playing a rough game, one demanding the ball from another in an urgent, direct
@@ -252,7 +255,7 @@ examples:
     speaker_gender: male
     nuance: The plain imperative 「くれ」 is very direct and can sound harsh or demanding. It is often used
       by male speakers or in casual, sometimes rough, situations, conveying immediate need without formality.
-      The exclamation 「おい」 further emphasizes the masculine and direct tone.
+      The exclamation 「おい」further emphasizes the masculine and direct tone.
   - english: The company president didn't give me any feedback about last week's report.
     japanese:
       - 社長 は 先週 の 報告 書 に つい て、何 の フィードバック も {くれ ませ ん でし た}。
@@ -260,12 +263,12 @@ examples:
     english_literally: Company president last week's report about, any feedback didn't give.
     competing_grammar:
       - competing_japanese:
-          - 社長 から 先週 の 報告 書 に つい て、何 の フィードバック も もらえ ませ ん でし た。
+          - 社長 から 先週 の 報告 書 に つい て、何 の フィードバック も {もらえ ませ ん} でし た。
         english: I couldn't receive any feedback about last week's report from the company president.
         hint: While this focuses on the employee's inability to receive, 「くれませんでした」 directly highlights
           the boss's failure or inaction in providing it. We're emphasizing the boss's responsibility.
       - competing_japanese:
-          - 社長 に 先週 の 報告 書 に つい て、フィードバック を あげ ませ ん でし た。
+          - 社長 に 先週 の 報告 書 に つい て、フィードバック を {あげ ませ ん} でし た。
         english: I didn't give feedback about last week's report to the company president.
         hint: This reverses the direction of the action, implying the speaker didn't give feedback to
           the president. We're looking for the president not giving feedback to the speaker.
@@ -281,12 +284,12 @@ examples:
     english_literally: If a little more time gives, I think I can finish it.
     competing_grammar:
       - competing_japanese:
-          - もし もう 少し 時間 を もらえ たら、終え られる と 思い ます。
+          - もし もう 少し 時間 を {もらえ たら}、終え られる と 思い ます。
         english: If I can receive a little more time, I think I can finish it.
         hint: This phrasing emphasizes the speaker's act of receiving time. We're looking for the implication
           that the other person is giving the time as a favor.
       - competing_japanese:
-          - もう 少し 時間 を かし て くれ ます か。
+          - もう 少し 時間 を {か し て くれ ます} か。
         english: Could you lend me a little more time?
         hint: This is a direct question asking for a loan of time. We're looking for a conditional statement
           about being given time.
@@ -305,12 +308,12 @@ examples:
     english_literally: Salt please give.
     competing_grammar:
       - competing_japanese:
-          - 塩 を あげ ます か。
+          - 塩 を {あげ ます} か。
         english: Will you give me salt?
         hint: This sounds like an offer to give salt, not a request to receive it. We're looking for a
           polite request to be given something.
       - competing_japanese:
-          - 塩 を 取っ て ください。
+          - 塩 を {取っ て} ください。
         english: Please take the salt.
         hint: This is a request for the listener to take the salt, which is the opposite of asking to
           be given it. We're looking for a request to receive.
@@ -328,12 +331,12 @@ examples:
     english_literally: Neighbor freshly picked vegetables gave.
     competing_grammar:
       - competing_japanese:
-          - 隣 の 人 から 採れ た て の 野菜 を もらい まし た。
+          - 隣 の 人 から 採れ た て の 野菜 を {もらい まし た}。
         english: I received freshly picked vegetables from my neighbor.
         hint: While grammatically correct, this sentence focuses on the speaker's act of receiving. We're
           looking for an emphasis on the neighbor's kind act of giving.
       - competing_japanese:
-          - 私 は 隣 の 人 に 採れ た て の 野菜 を あげ まし た。
+          - 私 は 隣 の 人 に 採れ た て の 野菜 を {あげ まし た}。
         english: I gave freshly picked vegetables to my neighbor.
         hint: This sentence reverses the direction of the action, stating that the speaker gave something
           to the neighbor. We're looking for the neighbor giving to the speaker.

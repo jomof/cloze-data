@@ -1,14 +1,15 @@
 grammar_point: 奥,手前 (depth・foreground spatial)
 learn_before:
-  - 前・後ろ (front and back spatial orientation)
-  - 中・外 (spatial and temporal reference)
   - に (static location)
   - で (at)
+  - 前・後ろ (front and back spatial orientation)
+  - 中・外 (spatial and temporal reference)
+  - ここ (here)
+  - 近く,遠く (proximity・distance spatial)
 learn_after:
-  - にわたって (throughout a range)
-  - を中心に (focused on)
-  - に至るまで (up to; including everything)
-  - に先立ち (prior to)
+  - であろう (conjecture・formal)
+  - ものがある (subjective feeling)
+  - といったところだ (i'd say)
 id: gp0215
 meaning: depth; innermost part; just before; in front of
 pronunciation:
@@ -79,7 +80,7 @@ false_friends:
     grammar_point: <suggest>:寸前 (just before)
 post_false_friends_writeup: To avoid confusion, remember that 「前」 is broad, while 「手前」 is precise about
   immediate proximity. Similarly, 「後ろ」 indicates a general rearward direction, whereas 「奥」 points to the
-  deepest interior. 「中」 refers to any point within an enclosed space, while 「奥」 specifically pinpoints
+  deepest interior. 「中」 refers to any point within an enclosed space, while 「奥」 specifically pinpoint
   the furthest reaches of that interior. Furthermore, 「近く」 describes a general vicinity, unlike the precise
   'just before' of 「手前」. Finally, while 「手前」 indicates spatial proximity, 「寸前」 specifically refers to
   a critical temporal moment just before an event.
@@ -93,12 +94,12 @@ examples:
     english_literally: Storage room, as for, house's deep inside, is.
     competing_grammar:
       - competing_japanese:
-          - 物置 は 家 の 後ろ に あり ます。
+          - 物置 は 家 の {後ろ} に あり ます。
         english: The storage room is behind the house.
         hint: 「後ろ」(ushiro) means 'behind' in a general external sense. We're looking for a word that describes
           the innermost or deepest part of the house's interior.
       - competing_japanese:
-          - 物置 は 家 の 中 に あり ます。
+          - 物置 は 家 の {中} に あり ます。
         english: The storage room is inside the house.
         hint: 「中」(naka) means 'inside' generally. We're looking for a word that specifies the *deepest*
           or *furthest* part of the interior.
@@ -120,12 +121,12 @@ examples:
     english_literally: Door's immediate front, please line up.
     competing_grammar:
       - competing_japanese:
-          - ドア の 前 に 並ん で ください。
+          - ドア の {前} に 並ん で ください。
         english: Please line up in front of the door.
         hint: 「前」(mae) means 'in front' generally. We're looking for a word that specifies 'just before'
           or 'on the immediate near side' of the door, implying a specific boundary.
       - competing_japanese:
-          - ドア の 近く に 並ん で ください。
+          - ドア の {近く} に 並ん で ください。
         english: Please line up near the door.
         hint: 「近く」(chikaku) means 'near' generally. We're looking for a word that specifies 'just before'
           or 'on the immediate near side' of the door, implying a specific boundary that you shouldn't
@@ -149,7 +150,7 @@ examples:
     english_literally: This soup's deep inside, from, delicate taste is felt.
     competing_grammar:
       - competing_japanese:
-          - この スープ の 中 から 繊細 な 味 が し ます。
+          - この スープ の {中} から 繊細 な 味 が し ます。
         english: There's a delicate taste from inside this soup.
         hint: 「中」(naka) means 'inside' generally. We're looking for a word that suggests the *profound*
           or *hidden* depths from which the taste originates.
@@ -161,11 +162,11 @@ examples:
       - 電車 は 駅 の {手前} で 止まり まし た。
       - 電車 は 駅 の {手前} で 止まっ た。
       - 電車 は 駅 の {手前} で 停車 し まし た。
-      - 電車 は 駅 の {手前} で 停車 し た。
+      - 電車 は 駅 の {手前} で 停車 し た.
     english_literally: Train, as for, station's immediate front, at, stopped.
     competing_grammar:
       - competing_japanese:
-          - 電車 は 駅 の 前 で 止まり まし た。
+          - 電車 は 駅 の {前} で 止まり まし た。
         english: The train stopped in front of the station.
         hint: 「前」(mae) is less precise. We're looking for a term that emphasizes the train stopping *just
           before* the platform, implying a specific, slightly offset position.
@@ -181,7 +182,7 @@ examples:
     english_literally: That artist's work, as for, deep inside, is deep.
     competing_grammar:
       - competing_japanese:
-          - あの 芸術 家 の 作品 は 深い です。
+          - あの 芸術 家 の 作品 は {深い} です。
         english: That artist's work is deep.
         hint: While 「深い」 (fukai) means deep, 「奥が深い」 implies a hidden, complex, or profound quality that
           is not immediately apparent, rather than just a general depth.
@@ -197,17 +198,17 @@ examples:
     english_literally: Package, as for, entrance's immediate front, at, was placed.
     competing_grammar:
       - competing_japanese:
-          - 荷物 は 玄関 の 前 に 置い て あり まし た。
+          - 荷物 は 玄関 の {前} に 置い て あり まし た。
         english: The package was left in front of the entrance.
         hint: 「前」(mae) is more ambiguous. We're looking for a term that specifies the package was placed
           *just before* the entrance, not necessarily directly in front or obstructing it.
       - competing_japanese:
-          - 荷物 は 玄関 の 後ろ に 置い て あり まし た。
+          - 荷物 は 玄関 の {後ろ} に 置い て あり まし た。
         english: The package was left behind the entrance.
         hint: 「後ろ」(ushiro) means 'behind'. We're looking for a word that specifies the package was placed
           *just before* the entrance, not behind it.
       - competing_japanese:
-          - 荷物 は 玄関 の 中 に 置い て あり まし た。
+          - 荷物 は 玄関 の {中} に 置い て あり まし た。
         english: The package was left inside the entrance.
         hint: 「中」(naka) means 'inside'. We're looking for a word that specifies the package was placed
           *just before* the entrance, not within it.
@@ -221,7 +222,7 @@ examples:
     english_literally: He, as for, Japanese culture, to, depth is deep.
     competing_grammar:
       - competing_japanese:
-          - 彼 は 日本 文化 を よく 理解 し て い ます。
+          - 彼 は 日本 文化 を {よく 理解 し て い ます}。
         english: He understands Japanese culture well.
         hint: 「よく 理解 する」 means to understand well generally. We're looking for an idiom that emphasizes
           a profound, nuanced understanding, beyond simple comprehension.
@@ -241,7 +242,7 @@ examples:
     english_literally: Cat, as for, door's immediate front, at, sitting and, nuisance is.
     competing_grammar:
       - competing_japanese:
-          - 猫 が ドア の 前 に 座っ て い て、邪魔 です。
+          - 猫 が ドア の {前} に 座っ て い て、邪魔 です。
         english: The cat is sitting in front of the door, blocking the way.
         hint: 「前」(mae) is a general 'in front'. We're looking for a term that emphasizes the cat is precisely
           in the immediate path, causing an obstruction.
@@ -263,7 +264,7 @@ examples:
     english_literally: We, as for, forest's deep interior, to, advanced.
     competing_grammar:
       - competing_japanese:
-          - 私 たち は 森 の 中 へ 進ん で いき まし た。
+          - 私 たち は 森 の {中} へ 進ん で いき まし た。
         english: We ventured into the forest.
         hint: 「中」(naka) implies merely entering the forest. We're looking for a word that suggests going
           into the furthest, most secluded part of the forest.
@@ -283,7 +284,7 @@ examples:
     english_literally: He, as for, cliff's immediate front, at, turned back.
     competing_grammar:
       - competing_japanese:
-          - 彼 は 崖 の 近く で 引き返し まし た。
+          - 彼 は 崖 の {近く} で 引き返し まし た。
         english: He turned back near the cliff edge.
         hint: 「近く」(chikaku) means 'near', which is less precise. We're looking for a word that emphasizes
           the critical point *just* before the danger, implying a narrow escape.
@@ -301,3 +302,5 @@ post_example_writeup: As seen in the examples, 「奥」 and 「手前」 are pr
   concepts like profoundness. 「手前」 refines 'front' to mean 'just before' or 'on the immediate near side',
   often implying a slight offset from a main point or a critical proximity. Understanding these nuances
   helps in conveying exact locations and even abstract concepts of depth and closeness.
+sources:
+  bunpro: https://bunpro.jp/grammar_points/%E5%A5%A5-%E6%89%8B%E5%89%8D

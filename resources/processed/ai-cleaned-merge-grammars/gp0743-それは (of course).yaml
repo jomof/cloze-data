@@ -1,10 +1,14 @@
 grammar_point: それは (of course)
 learn_before:
+  - だろう (conjecture)
+  - んです・のです (explanatory emphatic)
   - て当然だ (natural obvious)
   - やはり (as expected・after all・still)
 learn_after:
   - に決まっている (surely is)
   - に相違ない (without a doubt)
+  - 言うまでもない (needless to say)
+  - にほかならない (nothing but)
 id: gp0743
 meaning: Of course; naturally; surely; that's obvious
 pronunciation:
@@ -126,14 +130,14 @@ examples:
     competing_grammar:
       - competing_japanese:
           - ストレス が 多い 時 は、美味しい もの が 食べ たく なる よ ね。
-        english: When you're under a lot of stress, you want to eat something delicious, don't you?
+        english: When you're under a lot of stress, you want to eat something delicious, donh't you?
         hint: 「それは」 implies 'of course' or 'naturally,' indicating an obvious truth. We're looking for
           a statement emphasizing a natural human tendency.
     scene: Two colleagues discussing their coping mechanisms during a busy work period.
     register: casual
     setting: friendly
-    nuance: 「それは」 here expresses a universal, understandable desire. The speaker implies that wanting
-      delicious food when stressed is a perfectly natural and expected response.
+    nuance: The speaker implies that wanting delicious food when stressed is a perfectly natural and expected
+      response, using 「それは」 to convey this obviousness.
   - english: If you say something like that, she's naturally going to get angry.
     japanese:
       - そんな こと を 言っ たら、{それ は} 彼女 も 怒る だろう。
@@ -253,3 +257,24 @@ post_example_writeup: As you can see from the examples, 「それは」 often ap
   and confirming a shared understanding.
 sources:
   bunpro: https://bunpro.jp/grammar_points/それは
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    勉強 する なら、成績 が 上がる でしょう。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    こんな に 難しい 問題 だ から、時間 が かかる よ。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    A:この プレゼント、喜ん で くれる か な？B:喜び ます よ。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    ストレス が 多い 時 は、美味しい もの が 食べ たく なる よ ね。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    そんな こと を 言っ たら、彼女 も 怒る だろう。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    お 客 様 に 良い サービス を 提供 すれ ば、評判 も 上がり ます。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    こんな に 頑張っ た ん だ から、合格 できる に 決まっ てる よ！'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    A:本当 に 全部 食べる の？B:お腹 ペコペコ だ から ね！'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    貯金 し なけれ ば、困る 時 に お 金 が ない よ。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    A:この ゲーム 難し すぎる！B:上級 者 向け の ゲーム だ から、難しい よ。'

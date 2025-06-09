@@ -2,9 +2,13 @@ grammar_point: そうすると (and then・if so)
 learn_before:
   - と (inevitable consequence)
   - すると (and then・as a result)
+  - ば (conditional)
+  - たら (if・when・after)
 learn_after:
   - ということは (that means)
   - となると (when it comes to)
+  - したがって (therefore)
+  - その結果 (as a result)
 id: gp0397
 meaning: Having done that, If that is done, And then, Thereupon, If so
 pronunciation:
@@ -70,13 +74,29 @@ false_friends:
       more generally signifies a cause-and-effect relationship where the preceding event leads to the
       subsequent one, often expressing a progression in a narrative or a reason for an action.
     grammar_point: それで (so・and then)
+  - term: そうすれば
+    meaning: If you do that; if that is done
+    kind: similar expression
+    nuance: 「そうすれば」 is a general conditional meaning 'if you do that,' which can be followed by any logical
+      outcome. 「そうすると」 specifically highlights an *inevitable* or *automatic* result of the preceding
+      action, rather than just a possible one. The nuance of inevitability is stronger with 「そうすると」.
+    grammar_point: <suggest>:そうすれば (if doing so)
+  - term: たら
+    meaning: If; when; after (conditional)
+    kind: similar expression
+    nuance: 「たら」 is a versatile conditional that can imply sequence or consequence. However, 「そうすると」 focuses
+      on a direct, often automatic or logically certain, consequence of a previously stated action or
+      situation, emphasizing the 'doing of that' specifically.
+    grammar_point: たら (if・when・after)
 post_false_friends_writeup: When differentiating between these similar expressions, remember that 「そうすると」
   specifically implies a direct consequence stemming from a previously mentioned action or state. 「すると」
   can denote a more general sequential relationship or a result that isn't necessarily a direct or inevitable
-  outcome of a specific preceding action. The conditional particle 「と」 describes a general, consistent
-  cause-and-effect, whereas 「そうすると」 anchors that cause-and-effect to the immediately preceding context.
-  「ということは」 and 「それで」 also express logical conclusions or consequences, but 「そうすると」 carries a stronger
-  sense of direct, often automatic, linkage to the precise action or state being referred to by 「そう」.
+  outcome of a specific preceding action. The conditional particles 「と」 and 「たら」 describe general cause-and-effect
+  or sequential relationships, whereas 「そうすると」 anchors that cause-and-effect to the immediately preceding
+  context with a stronger sense of inevitability. 「そうすれば」 also uses 「そうする」 but with the conditional 「ば」,
+  making it a general 'if you do that' rather than an 'inevitable consequence of doing that'. 「ということは」
+  and 「それで」 also express logical conclusions or consequences, but 「そうすると」 carries a stronger sense of
+  direct, often automatic, linkage to the precise action or state being referred to by 「そう」.
 examples:
   - english: Please try pressing this button. If you do that, the door will open automatically.
     japanese:
@@ -91,6 +111,12 @@ examples:
         hint: 「すると」 simply indicates a temporal sequence, whereas 「そうすると」 specifically emphasizes that
           the action of 'doing that' leads directly to the result. We're looking for the explicit link
           to the prior action.
+      - competing_japanese:
+          - この ボタン を 押し たら、ドア が 自動 的 に 開き ます。
+        english: If you press this button, the door will open automatically.
+        hint: 「たら」 indicates a conditional relationship. 「そうすると」 emphasizes the *inevitable* and *direct*
+          outcome of 'doing that' particular action. We're looking for a phrase that highlights an automatic
+          result.
     scene: A museum docent is explaining an interactive exhibit to a group of visitors.
     register: teineigo (polite)
     setting: instructional
@@ -118,6 +144,13 @@ examples:
         hint: 「～と」 expresses a general, consistent cause-and-effect. 「そうすると」 specifically links the outcome
           to the action of 'doing that,' emphasizing the particular instance. We're looking for a phrase
           that highlights the direct result of the specific action.
+      - competing_japanese:
+          - 毎日 漢字 を 練習 すれ ば、そう すれ ば 自然 に 覚え られる でしょう。
+        english: If you practice kanji every day, then if you do that, you'll naturally be able to remember
+          them.
+        hint: 「そうすれば」 implies a more general conditional outcome. 「そうすると」 emphasizes a direct and *inevitable*
+          consequence of the action described by 「そうする」. We're looking for a phrase indicating a natural,
+          expected result.
     scene: A veteran Japanese teacher is giving advice to a struggling student.
     register: teineigo (polite)
     setting: supportive
@@ -164,6 +197,12 @@ examples:
         hint: 「そうしたら」 also implies 'if you do that,' but 「そうすると」 emphasizes a more direct and inevitable
           consequence, often almost mechanical. We're looking for a phrase that highlights the automatic
           result of the action.
+      - competing_japanese:
+          - この アプリ を ダウンロード すれ ば、新しい 割引 クーポン が もらえる から。
+        english: If you download this app, you'll get a new discount coupon.
+        hint: Using 「そうすると」 emphasizes that getting the coupon is a direct and guaranteed result of *that
+          specific action* (downloading the app), more so than a general conditional 「～ば」. We're looking
+          for a phrase that highlights the direct and certain outcome.
     scene: A friend is eagerly showing another friend a new app on their phone, suggesting they try it.
     register: casual
     setting: friendly
@@ -185,9 +224,8 @@ examples:
           - 新しい プロジェクト、私 が 担当 する ん です ね。と いう こと は、残業 が 増える と いう こと でしょう か。
         english: I'll be in charge of the new project, correct? Does that mean overtime will increase?
         hint: Similar to how 「ということは」 draws a conclusion, 「そうすると」 specifically ties that conclusion to
-          the fact of 'doing that' or 'that being the case' from the preceding statement, often implying
-          an immediate logical consequence. We're looking for a phrase that directly connects the implication
-          to the confirmed fact.
+          the fact of 'doing that' or 'that being the case,' implying an immediate logical consequence.
+          We're looking for a phrase that directly connects the implication to the confirmed fact.
     scene: An employee is discussing their new responsibilities with their manager during a review.
     register: formal
     setting: serious
@@ -206,10 +244,16 @@ examples:
     competing_grammar:
       - competing_japanese:
           - 夜 遅く まで コーヒー を 飲み 続ける と、よく 眠れ なく なり ます よ。
-        english: If you keep drinking coffee late at night, you won't be able to sleep well.
+        english: If you keep drinking coffee late at night, you'll get to sleep well.
         hint: The simple conditional 「～と」 expresses a general cause-and-effect. 「そうすると」 specifically highlights
           the natural, inevitable consequence stemming directly from the act of 'doing that.' We're looking
           for an emphasis on the direct outcome of the specific action.
+      - competing_japanese:
+          - 夜 遅く まで コーヒー を 飲み 続け たら、よく 眠れ なく なり ます よ。
+        english: If you keep drinking coffee late at night, you won't be able to sleep well.
+        hint: While 「たら」 can express a consequence, 「そうすると」 places stronger emphasis on the direct and
+          unavoidable nature of the result following the action of 'doing that'. We're looking for a phrase
+          that stresses the natural progression of cause and effect.
     scene: A concerned friend gives advice to another friend who often complains about insomnia.
     register: teineigo (polite)
     setting: friendly
@@ -227,7 +271,7 @@ examples:
     english_literally: Report is tomorrow submission so, that doing so, all night becomes doesn't it.
     competing_grammar:
       - competing_japanese:
-          - レポート は 明日 提出 です から、と いう こと は 徹夜 に なり ます ね。
+          - レポート は 明日 提出 です から、と いう こと は、徹夜 に なり ます ね。
         english: The report is due tomorrow, so that means we'll have to work through the night, won't
           we?
         hint: 「ということは」 draws a common conclusion. 「そうすると」 specifically links the conclusion to the circumstance
@@ -274,6 +318,12 @@ examples:
         hint: The simple conditional 「～と」 describes a general truth or inevitable outcome. 「そうすると」 emphasizes
           that the loss of work is a direct, unavoidable consequence of 'doing that'—forgetting to save.
           We're looking for a phrase that highlights the immediate and direct impact of the specific action.
+      - competing_japanese:
+          - ファイル の 保存 を 忘れ たら、すべて の 作業 が 無駄 に なり ます。
+        english: If you forget to save the file, all your work will be lost.
+        hint: 「たら」 indicates a conditional. 「そうすると」 implies a more direct and often inevitable negative
+          consequence of the action described by 「そうする」, emphasizing the logical flow from the specific
+          oversight. We're looking for a phrase that highlights an unavoidable outcome.
     scene: A senior colleague is warning a junior employee about data loss best practices.
     register: formal
     setting: informative
@@ -317,6 +367,13 @@ examples:
         hint: The simple conditional 「～と」 expresses a general cause-and-effect. 「そうすると」 emphasizes that
           getting wet is a direct, almost automatic consequence of 'doing that'—not taking the umbrella.
           We're looking for a phrase that highlights the direct outcome of the specific situation.
+      - competing_japanese:
+          - 傘 を 持っ て 行か なけれ ば、この 天気 で は 濡れ ます よ。
+        english: If you don't take your umbrella, you'll get wet in this weather.
+        hint: The 「～ば」 conditional is a general 'if...then' statement. 「そうすると」 specifically points to
+          the consequence that directly follows from the action of 'doing that' (not bringing an umbrella),
+          implying a more immediate and direct link. We're looking for a phrase that stresses the direct
+          result.
     scene: A person advises their friend who is about to leave on a rainy day.
     register: teineigo (polite)
     setting: friendly
@@ -352,3 +409,42 @@ post_example_writeup: 「そうすると」 is particularly effective in situati
   first. This automaticity is a key characteristic of its usage.
 sources:
   bunpro: https://bunpro.jp/grammar_points/そうすると
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この ボタン を 押し て み て ください。する と、ドア が 自動 的 に 開き ます。'
+  - '[rule-5] warning examples[0].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    この ボタン を 押し たら、ドア が 自動 的 に 開き ます。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    毎日 漢字 を 練習 すれ ば、自然 に 覚え られる でしょう。'
+  - '[rule-5] warning examples[1].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    毎日 漢字 を 練習 する と、自然 に 覚え られる でしょう。'
+  - '[rule-5] warning examples[1].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    毎日 漢字 を 練習 すれ ば、そう すれ ば 自然 に 覚え られる でしょう。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    来月 日本 へ 引っ越す ん です ね。と いう こと は、今 の お 仕事 は 辞める と いう こと です か？'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この アプリ を ダウンロード し て み て。そう し たら、新しい 割引 クーポン が もらえる から。'
+  - '[rule-5] warning examples[3].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    この アプリ を ダウンロード すれ ば、新しい 割引 クーポン が もらえる から。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    新しい プロジェクト、私 が 担当 する ん です ね。と いう こと は、残業 が 増える と いう こと でしょう か。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    夜 遅く まで コーヒー を 飲み 続ける と、よく 眠れ なく なり ます よ。'
+  - '[rule-5] warning examples[5].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    夜 遅く まで コーヒー を 飲み 続け たら、よく 眠れ なく なり ます よ。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    レポート は 明日 提出 です から、と いう こと は、徹夜 に なり ます ね。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    まず 具材 を 鍋 に 入れ ます。する と、すぐ に 沸騰 し 始め ます よ。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    ファイル の 保存 を 忘れる と、すべて の 作業 が 無駄 に なり ます。'
+  - '[rule-5] warning examples[8].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    ファイル の 保存 を 忘れ たら、すべて の 作業 が 無駄 に なり ます。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    予算 を 増やす と、と いう こと は、もっと スタッフ を 雇える と いう こと です ね？'
+  - '[rule-5] warning examples[10].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    傘 を 持っ て 行か ない と、この 天気 で は 濡れ ます よ。'
+  - '[rule-5] warning examples[10].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    傘 を 持っ て 行か なけれ ば、この 天気 で は 濡れ ます よ。'
+  - '[rule-5] warning examples[11].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    まず この 作業 を 終え ます。する と、早く 帰れる よう に なり ます。'

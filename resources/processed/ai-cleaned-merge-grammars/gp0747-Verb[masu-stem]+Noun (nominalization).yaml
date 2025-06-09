@@ -1,12 +1,18 @@
 grammar_point: Verb[masu-stem]+Noun (nominalization)
 learn_before:
-  - やすい (easy to do・likely to)
-  - すぎる (too much・excessive)
+  - Verbs (non-past polite)
+  - ている (~ing)
+  - たい (want to do)
   - こと (nominalizer)
+  - の (that ~)
+  - かた (way of doing)
+  - Verb[masu-stem] (conjunction)
+  - Verb+にいく (go to do)
 learn_after:
-  - かねる (unable to)
-  - がたい (hard to do)
-  - つつある (gradual process)
+  - きらいがある (undesirable tendency)
+  - にすぎない (no more than)
+  - ずにはいられない (cannot help but do)
+  - 方をする (to do in a way)
 id: gp0747
 meaning: Turns a verb's masu-stem into a noun, often describing an action or state as a concept.
 pronunciation:
@@ -20,8 +26,8 @@ details:
   function: Nominalization
   nuance: This pattern provides a way to talk about activities or states in a more abstract, conceptual
     way.
-  colocation: Often used with words like 不足 (fusoku - lack), 過ぎ (sugi - excessive), 応え (kotae - worth,
-    response), 合わせ (awase - together, combine), やすい (yasui - easy to), にくい (nikui - difficult to).
+  colocation: Often used with nouns like 不足 (fusoku - lack), 過ぎ (sugi - excessive), 応え (kotae - worth,
+    response), 合わせ (awase - together, combine), 相手 (aite - partner), 道 (michi - way/path).
   grammatical-role: The nominalized verb acts as a noun and can serve as a subject, object, or part of
     a compound noun.
   temporal-flow: Refers to the state or action of the verb in a general sense, not bound to a specific
@@ -47,8 +53,8 @@ false_friends:
   - term: こと
     meaning: thing, matter, fact
     kind: similar expression
-    nuance: 'Unlike Verb[masu-stem]+Noun, 「こと」 nominalizes entire clauses or general concepts, often referring
-      to an abstract ''matter'' or ''fact'', rather '
+    nuance: Unlike Verb[masu-stem]+Noun, 「こと」 nominalizes entire clauses or general concepts, often referring
+      to an abstract 'matter' or 'fact'.
     grammar_point: こと (nominalizer)
   - term: の
     meaning: nominalizer
@@ -74,31 +80,24 @@ post_false_friends_writeup: While 「こと」 and 「の」 both function as no
   characteristic action, while the masu-stem + noun combination creates a new noun or compound term referring
   to the action or its associated concept.
 examples:
-  - english: My hobby is going to listen to music.
+  - english: That's a made-up story.
     japanese:
-      - 私 の 趣味 は、音楽 を {聴き} に 行く こと です。
-      - 俺 の 趣味 は 音楽 を {聴き} に 行く こと だ よ。
-      - 私 の 趣味 は 音楽 を {聴き} に 行く こと だ わ。
-    english_literally: As for my hobby, it is the thing of going to listen to music.
+      - あれ は {作り} 話 だ。
+      - あれ は {作り} 話 です。
+      - あれ は {作り} 話 だ よ。
+    english_literally: That is a made-up story.
     competing_grammar:
       - competing_japanese:
-          - 私 の 趣味 は、音楽 を 聴く こと です。
-        english: My hobby is listening to music.
-        hint: 「聴くこと」 is a general nominalization of the action. We're looking for a specific purpose of
-          going somewhere to perform the action.
-      - competing_japanese:
-          - 私 の 趣味 は、音楽 鑑賞 です。
-        english: My hobby is music appreciation.
-        hint: While 「音楽鑑賞」 means 'music appreciation', we're looking for an expression that specifically
-          focuses on the physical act of 'going to listen'.
-    scene: A young woman is asked about her hobbies and shares her passion for music.
-    register: teineigo (polite)
-    setting: informative
-    speaker_gender: female
-    nuance: 「聴き」 is the masu-stem of 「聴く」 (kiku), used here to nominalize the action of listening. When
-      combined with 「行く」 as 「聴きに行く」, it expresses the purpose of going somewhere to perform the action
-      of listening. This sentence implies a specific, active pursuit of the hobby, emphasizing the physical
-      act of going.
+          - あれ は 嘘 の 話 だ。
+        english: That's a lie.
+        hint: 「嘘の話」 is a general term for a false story. We're looking for a specific compound noun that
+          means 'fabricated story' or 'fiction'.
+    scene: A parent dismisses their child's wild tale with a shake of their head.
+    register: casual
+    setting: serious
+    nuance: 「作り話」 combines the masu-stem of 「作る」 (tsukuru - to make) with 「話」 (hanashi - story) to form
+      a compound noun meaning 'fabricated story'. This is a direct and common way to state that something
+      is not true, often used in casual contexts to dismiss something as fiction.
   - english: This book is worth reading.
     japanese:
       - この 本 は {読み} 応え が ある。
@@ -143,7 +142,7 @@ examples:
       - '{話し} 相手 が い ない と 寂しい。'
       - '{話し} 相手 が い ない と 寂しい です。'
       - '{話し} 相手 い ない と 寂しい な。'
-      - 話し 相手 い ない と 寂しい わ。
+      - '{話し} 相手 い ない と 寂しい わ。'
     english_literally: When there is no talking partner, it is lonely.
     competing_grammar:
       - competing_japanese:
@@ -158,28 +157,25 @@ examples:
     nuance: 「話し」 is the masu-stem of 「話す」 (hanasu). When combined with 「相手」 (aite - partner), it forms
       「話し相手」, a compound noun meaning 'conversation partner'. This expresses the lack of someone with
       whom to engage in the activity of talking, emphasizing the specific role rather than just a person.
-  - english: Is this town easy to live in?
+  - english: This tool has various uses.
     japanese:
-      - この 町 は {住み} やすい です か？
-      - この 町 {住み} やすい？
-      - こちら の 町 は {住み} やすい です か？
-    english_literally: As for this town, is it easy to live?
+      - この 道具 は 様々 な {使い} 道 が ある。
+      - この 道具 は 様々 な {使い} 道 が あり ます。
+      - この 道具 は 色々 な {使い} 道 が ある よ。
+    english_literally: As for this tool, various uses exist.
     competing_grammar:
       - competing_japanese:
-          - この 町 は 住む の に 快適 です か？
-        english: Is this town comfortable for living in?
-        hint: 「住むのに快適」 is a more verbose and formal expression. We're looking for a standard, concise
-          adjective for 'easy to live in'.
-    scene: A woman asks a man, who has lived in the area for a long time, about the livability of the
-      town.
+          - この 道具 は 様々 な 目的 で 使える。
+        english: This tool can be used for various purposes.
+        hint: 「様々な目的で使える」 is a more descriptive phrase. We're looking for a specific compound noun that
+          means 'how to use' or 'utility'.
+    scene: A shop assistant explains the versatility of a new product to a customer, demonstrating its
+      multiple functionalities.
     register: teineigo (polite)
-    setting: interrogative
-    speaker_gender: female
-    listener_gender: male
-    nuance: 「住み」 is the masu-stem of 「住む」 (sumu), which combines with the suffix 「やすい」 (yasui - easy to)
-      to form 「住みやすい」, meaning 'easy to live in'. This shows the masu-stem's function in forming compound
-      adjectives that describe the ease or difficulty of an action. This is a direct and common way to
-      ask about a town's livability.
+    setting: informative
+    nuance: 「使い道」 combines the masu-stem of 「使う」 (tsukau - to use) with 「道」 (michi - way/path) to form
+      a compound noun referring to the 'method of use' or 'utility'. This emphasizes the practical applications
+      of the tool's function.
   - english: When shall we meet?
     japanese:
       - '{待ち} 合わせ は いつ に し ます か？'
@@ -219,52 +215,44 @@ examples:
       'watching', which then combines with 「応え」 (kotae - response/worth), resulting in the common expression
       「見応えがある」 meaning 'worth watching' or 'substantive viewing'. The use of 「よ」 (yo) adds a sense of
       assertion and conviction to the recommendation.
-  - english: I haven't been getting enough exercise lately, so I think I'll go for a run.
+  - english: The sales of the new product are good.
     japanese:
-      - 最近、{運動} 不足 だ から、少し {走り} に 行こう か な。
-      - 最近、{運動} 不足 です から、少し {走り} に 行き ましょう か。
-      - 最近、{運動} 不足 だ から、ちょっと {走り} に 行こう か な。
-      - 最近、{運動} 不足 だ から、ちょいと {走り} に 行く か。
-    english_literally: Lately, because of lack of exercise, maybe I will go to run a little.
+      - 新 製品 の {売れ} 行き が 好調 だ。
+      - 新 製品 の {売れ} 行き が 好調 です。
+      - 新 製品 の {売れ} 行き が いい ね。
+    english_literally: As for the new product, sales progress is favorable.
     competing_grammar:
       - competing_japanese:
-          - 最近、運動 不足 だ から、少し 走り に で も 行こう か な。
-        english: Lately, I'm out of shape, so maybe I'll go for a run or something.
-        hint: 「走りにでも」 implies a casual, less committed intention or suggesting an option. We're looking
-          for a more direct expression of the intention to go for a run.
-    scene: A person considers their health and decides to start exercising.
-    register: casual
-    setting: reflective
-    listener_gender: no one
-    nuance: 「運動不足」 is a compound noun where 「運動」 (undō - exercise) is paired with 「不足」 (fusoku - lack).
-      「走り」 is the masu-stem of 「走る」 (hashiru), which nominalizes the action of 'running'. When used with
-      「に行く」, it specifies the purpose of going somewhere is 'to run'. The phrase 「行こうかな」 conveys a reflective,
-      somewhat tentative decision.
-  - english: Shall we dance?
+          - 新 製品 の 売上 が 好調 だ。
+        english: The sales (revenue) of the new product are good.
+        hint: 「売上」 refers to the *amount* of sales (revenue). We're looking for an expression that specifically
+          means the *pace* or *trend* of sales.
+    scene: Business partners discuss the market performance of their latest product launch, noting its
+      strong reception.
+    register: formal
+    setting: professional
+    nuance: 「売れ行き」 combines the masu-stem of 「売れる」 (ureru - to be sold, intransitive) with 「行き」 (yuki
+      - going/progress) to denote the progress or trend of sales. This compound noun succinctly expresses
+      the market's reception to the product's performance over time.
+  - english: The way she writes is beautiful.
     japanese:
-      - '{踊り} ませ ん か？'
-      - '{踊り} ましょう か？'
-    english_literally: Won't you dance?
+      - 彼女 の {書き} 方 は 美しい。
+      - 彼女 の {書き} 方 は 美しい です。
+      - あの 人 の {書き} 方、綺麗 だ よ ね。
+    english_literally: As for her writing method, it is beautiful.
     competing_grammar:
       - competing_japanese:
-          - 一緒 に 踊り ませ ん か？
-        english: Shall we dance together?
-        hint: Adding 「一緒に」 (together) is optional here. We're looking for a concise and direct invitation
-          in this social context.
-      - competing_japanese:
-          - 踊り ましょう か？
-        english: Shall we dance? (proposing)
-        hint: While 「踊りましょうか」 is also an invitation, 「踊りませんか」 explicitly seeks agreement or suggests an
-          action, fitting a slightly more engaging and suggestive tone.
-    scene: A man at a dance club approaches a woman he is interested in.
-    register: teineigo (polite)
-    setting: flirty
-    speaker_gender: male
-    listener_gender: female
-    nuance: 「踊り」 is the masu-stem of 「踊る」 (odoru - to dance). The phrase 「踊りませんか」 is a polite and common
-      way to invite someone to dance. It effectively nominalizes the action of dancing to propose it as
-      a shared activity. This showcases the masu-stem's use in forming invitations, and when spoken by
-      a male to a female in this context, it can carry a flirty nuance.
+          - 彼女 の 字 は 美しい。
+        english: Her handwriting is beautiful.
+        hint: 「字」 refers to the appearance of individual characters (handwriting). We're looking for an
+          expression that refers to the *style* or *method* of writing, including composition and expression.
+    scene: Two colleagues admire a report written by a new team member, commenting on her clear and elegant
+      prose.
+    register: formal
+    setting: professional
+    nuance: 「書き方」 combines the masu-stem of 「書く」 (kaku - to write) with 「方」 (kata - way/method) to describe
+      the *style* or *manner* of writing. This is distinct from merely complimenting handwriting, as it
+      refers to the composition and expression, implying skill and artistry.
   - english: I ate too much yesterday, so my stomach hurts today.
     japanese:
       - 昨日、{食べ} 過ぎ て、今日 お腹 が 痛い。
@@ -297,3 +285,26 @@ post_example_writeup: As you can see from these examples, the Verb[masu-stem]+No
   concisely in Japanese.
 sources:
   bunpro: https://bunpro.jp/grammar_points/747
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あれ は 嘘 の 話 だ。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 本 は 読む 価値 が ある。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    最近、睡眠 不足 で 頭 が 痛い。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    話す 人 が い ない と 寂しい。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 道具 は 様々 な 目的 で 使える。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    会う 約束 は いつ に し ます か？'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    その 映画 は 見る 価値 が あり ます よ。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    新 製品 の 売上 が 好調 だ。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼女 の 字 は 美しい。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    昨日、たくさん 食べ た から、今日 お腹 が 痛い。'
+  - '[rule-5] warning examples[9].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    昨日、過食 し て、今日 お腹 が 痛い。'

@@ -1,10 +1,16 @@
 grammar_point: どっち (which of two)
 learn_before:
+  - これ (this)
+  - どこ (where)
+  - ある (inanimate existence)
+  - いる (existence of animate objects)
   - です (polite copula)
   - だ (casual copula)
   - たい (want to do)
 learn_after:
-  - 〜か〜か (whether... or)
+  - しか〜ない (only・nothing but)
+  - '<suggest>: どちら (which of two - polite)'
+  - か〜か (whether... or)
   - に比べて (compared to)
   - どちらかと言うと・どちらかと言えば (if I had to say, rather)
 id: gp9999
@@ -65,7 +71,7 @@ examples:
     english_literally: Coffee and black tea, which one is liked?
     competing_grammar:
       - competing_japanese:
-          - コーヒー と 紅茶、どちら が お 好き です か？
+          - コーヒー と 紅茶、{どちら} が お 好き {です} か？
         english: Which one do you prefer, coffee or tea? (Polite)
         hint: We're looking for the casual form of 'which of two.' 「どちら」 and 「〜ですか」 are polite. Use 「どっち」
           for casual settings.
@@ -85,7 +91,7 @@ examples:
     english_literally: Left and right, which way if I go good?
     competing_grammar:
       - competing_japanese:
-          - どこ に 行け ば いい？
+          - '{どこ} に 行け ば いい？'
         english: Where should I go?
         hint: We're asking for a choice between two specific directions (left/right). 「どこ」 is for general
           'where', not for choosing between two given paths.
@@ -105,7 +111,7 @@ examples:
     english_literally: Which one is wanted?
     competing_grammar:
       - competing_japanese:
-          - どれ が 欲しい？
+          - '{どれ} が 欲しい？'
         english: Which one do you want? (among three or more)
         hint: 「どっち」 is for choosing between exactly two options. If there are three or more choices, you
           should use 「どれ」.
@@ -124,7 +130,7 @@ examples:
     english_literally: Which car is fast?
     competing_grammar:
       - competing_japanese:
-          - どちら の 車 の 方 が 速い です か？
+          - '{どちら} の 車 の 方 が 速い {です} か？'
         english: Which car is faster? (Polite)
         hint: The nuance of 'faster' implies a comparison between two. For a casual context, 「どっち」 is
           suitable. For politeness, 「どちら」 would be used.
@@ -143,7 +149,7 @@ examples:
     english_literally: Money and health, which one is important?
     competing_grammar:
       - competing_japanese:
-          - お 金 と 健康、どちら が より 重要 です か？
+          - お 金 と 健康、{どちら} が より 重要 {です} か？
         english: Which is more important, money or health? (Formal)
         hint: The original sentence uses casual language. 「重要」 and 「〜ですか」 make the sentence more formal.
     scene: A philosophical discussion with a friend.
@@ -161,7 +167,7 @@ examples:
     english_literally: Which team is supported?
     competing_grammar:
       - competing_japanese:
-          - どの チーム を 応援 し てる？
+          - '{どの} チーム を 応援 し てる？'
         english: Which team do you support? (Among many)
         hint: While technically correct if there are only two teams, 「どの」 implies a choice from three
           or more. If there are exactly two, 「どっち」 is more specific.
@@ -180,7 +186,7 @@ examples:
     english_literally: As for those two people, which one is good, I wonder?
     competing_grammar:
       - competing_japanese:
-          - あの 二人 は、どちら の 方 が いい か と 思い ます か？
+          - あの 二人 は、{どちら} の 方 が いい か と 思い {ます} か？
         english: As for those two, which one do you think is better? (More formal/polite)
         hint: The original sentence uses casual 「どっち」 and 「かな」. This option is more formal with 「どちら」
           and a more complex phrasing.
@@ -199,7 +205,7 @@ examples:
     english_literally: As for dinner, which one is wanted to eat?
     competing_grammar:
       - competing_japanese:
-          - 晩ご飯 は 何 が 食べ たい？
+          - 晩ご飯 は {何} が 食べ たい？
         english: What do you want to eat for dinner?
         hint: While 「何」 asks for an open-ended choice, 「どっち」 implies a selection from two known options
           (e.g., 'Japanese or Italian?').
@@ -218,7 +224,7 @@ examples:
     english_literally: Geez, which one to make, I cannot decide!
     competing_grammar:
       - competing_japanese:
-          - もう、どれ に する か、決め られ ない よ！
+          - もう、{どれ} に する か、決め られ ない よ！
         english: Geez, which one should I choose? (Among many)
         hint: This uses 「どれ」, which implies a choice from three or more options. The original sentence
           with 「どっち」 strictly implies two options being considered.
@@ -237,7 +243,7 @@ examples:
     english_literally: Which train arrives first, I wonder.
     competing_grammar:
       - competing_japanese:
-          - どちら の 電車 が 先 に 着く か と 思い ます か？
+          - '{どちら} の 電車 が 先 に 着く か と 思い {ます} か？'
         english: Which train do you think will arrive first? (Polite)
         hint: This version is more formal using 「どちら」 and polite verb endings. The original 「どっち」 and
           「かな」 create a casual, pondering tone.
@@ -257,7 +263,7 @@ examples:
     english_literally: This one is sweet but that one is sour. Which one is liked?
     competing_grammar:
       - competing_japanese:
-          - こちら は 甘い です が、そちら は 酸っぱい です。どちら が お 好き です か？
+          - '{こちら} は 甘い {です} が、{そちら} は 酸っぱい {です}。{どちら} が お 好き {です} か？'
         english: This one is sweet, but that one is sour. Which one do you prefer? (Polite)
         hint: The original is casual. This uses polite equivalents like 「こちら」, 「そちら」, 「どちら」, and 「お好き
           です か」.
@@ -276,7 +282,7 @@ examples:
     english_literally: The liked direction one, you can choose. Which one will you take?
     competing_grammar:
       - competing_japanese:
-          - 好き な 方 を お 選び ください。どちら を お 取り に なり ます か？
+          - 好き な 方 を {お 選び ください}。{どちら} を {お 取り に なり ます} か？
         english: Please choose whichever you like. Which one will you take? (Very polite)
         hint: This competing sentence uses highly respectful and polite language, whereas the original
           is casual. 「どっち」 is not appropriate for such formal contexts.
@@ -287,3 +293,10 @@ examples:
     listener_gender: male
     nuance: Here, 「どっち」 is followed by the direct object particle 「を」, indicating the choice of which
       of the two items. 「好きな 方 を 選んで いいよ」 is a common casual way to grant permission to choose.
+post_example_writeup: The examples illustrate that 「どっち」 is versatile and can be used with both concrete
+  nouns (e.g., 「電車」, 「車」) and abstract concepts (e.g., 「お金 と 健康」). It naturally pairs with particles like
+  「が」 and 「を」 to function as the subject or object of a sentence. Remember its inherent casualness and
+  the strict limitation to two choices for appropriate usage.
+lint-errors:
+  - '[rule-13] unknown grammar at ''learn_after[1]'': ''<suggest>: どちら (which of two - polite)''. You
+    may suggest new grammar points by adding a false_friend.'

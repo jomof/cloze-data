@@ -1,11 +1,16 @@
 grammar_point: ないで (without doing or don't)
 learn_before:
   - Verb[て] (and then)
+  - う-verb (dictionary)
+  - る-verbs (negative forms)
   - ないでください (please don't)
 learn_after:
   - ずに (without doing)
+  - なくしては (indispensable condition)
   - ことなく (without doing)
   - ないことには〜ない (unless ~ will not)
+  - ずに済む (get by without)
+  - まい (won't・probably not)
 id: gp0195
 meaning: Without doing; Don't do (a request)
 pronunciation:
@@ -38,7 +43,7 @@ false_friends:
     kind: similar expression
     nuance: While 「ないで」 can be used in general statements of not doing something, 「ないでください」 is specifically
       a polite request to *refrain* from an action.
-    grammar_point: <suggest>:Verb[ない形] + で + ください (please don't)
+    grammar_point: ないでください (please don't)
   - term: ずに
     meaning: Without doing
     kind: similar expression
@@ -69,6 +74,13 @@ false_friends:
     nuance: Unlike the broader uses of 「ないで」, 「～な」 is a very strong, casual, and direct prohibitive command
       to *not* do something.
     grammar_point: な (prohibitive particle)
+  - term: Verb[ない] + まま
+    meaning: While remaining in a state of not doing; without having done
+    kind: similar expression
+    nuance: While 「ないで」 indicates an action performed without another action, 「ないまま」 specifically emphasizes
+      that the state of 'not having done' something persists during the subsequent action. It literally
+      means 'as if not having done'.
+    grammar_point: まま (as is)
 post_false_friends_writeup: To avoid confusion between 「ないで」, 「ずに」, and 「なくて」, remember that 「ないで」 is
   a general way to express doing something without something else. 「ずに」 is its more formal counterpart,
   and 「なくて」 implies a reason or cause for something not being done.
@@ -82,32 +94,32 @@ examples:
     english_literally: He umbrella not-having went out.
     competing_grammar:
       - competing_japanese:
-          - 彼 は 傘 を 持た ず に 出かけ た。
+          - 彼 は 傘 を {持た ず に} 出かけ た。
         english: He went out without taking an umbrella (more formal).
         hint: 「ずに」 is another way to say 'without doing something', but it often carries a more formal
           or literary nuance than 「ないで」. We're looking for a common, versatile expression.
       - competing_japanese:
-          - 傘 が なく て 彼 は 出かけ た。
+          - 傘 が {なく て} 彼 は 出かけ た。
         english: Because he didn't have an umbrella, he went out.
         hint: 「なくて」 indicates a reason or cause. Here, we're talking about performing an action while
           omitting another, not a reason for the action. We're looking for 'without doing'.
       - competing_japanese:
-          - 傘 を 持っ て 出かけ て ください。
+          - 傘 を 持っ {て 出かけ て ください}。
         english: Please take an umbrella and go out.
         hint: The sentence indicates an action performed without another. This is a request to do something.
           We're looking for the original meaning of 'without'.
       - competing_japanese:
-          - 傘 を 持っ て 出かけ なさい。
+          - 傘 を 持っ {て 出かけ なさい}。
         english: Take an umbrella and go out!
         hint: This is a direct command. We're looking for the original meaning of 'without doing'.
       - competing_japanese:
-          - 傘 を 持つ な。
+          - 傘 を {持つ な}。
         english: Don't take an umbrella.
         hint: 「～な」 is a very strong, direct prohibitive command, often used in casual or angry contexts,
           and usually applies to a single action. Here, we're describing an action taken *without* another
           action. We're looking for the sense of 'without doing'.
       - competing_japanese:
-          - 彼 は 傘 を 持た ない まま 出かけ た。
+          - 彼 は 傘 を {持た ない まま} 出かけ た。
         english: He went out without having an umbrella (the state of not having continued).
         hint: 「～ないまま」 indicates that an action was performed while a certain state (of not doing something)
           continued. While very similar, 「ないで」 is more general for describing an action done *without*
@@ -131,27 +143,27 @@ examples:
     english_literally: She anyone to not-saying company quit.
     competing_grammar:
       - competing_japanese:
-          - 彼女 は 誰 に も 言わ ず に 会社 を 辞め た。
+          - 彼女 は 誰 に も {言わ ず に} 会社 を 辞め た。
         english: She quit the company without telling anyone (more formal).
         hint: 「ずに」 is a more formal alternative for 'without doing something'. We're looking for a more
           common, everyday expression.
       - competing_japanese:
-          - 誰 に も 言わ なく て 彼女 は 会社 を 辞め た。
+          - 誰 に も {言わ なく て} 彼女 は 会社 を 辞め た。
         english: Because she didn't tell anyone, she quit the company.
         hint: 「なくて」 indicates a reason or cause. The original sentence describes the *manner* in which
           she quit. We're looking for 'without doing'.
       - competing_japanese:
-          - 誰 に も 言い なさい。
+          - 誰 に も {言い なさい}。
         english: Tell everyone!
         hint: This is a direct command. The original sentence describes an action taken without another
           action. We're looking for 'without doing'.
       - competing_japanese:
-          - 誰 に も 言う な。
+          - 誰 に も {言う な}。
         english: Don't tell anyone.
         hint: 「～な」 is a strong, direct prohibitive command. The original sentence describes an action
           taken without another action. We're looking for the sense of 'without doing'.
       - competing_japanese:
-          - 彼女 は 誰 に も 言わ ない まま 会社 を 辞め た。
+          - 彼女 は 誰 に も {言わ ない まま} 会社 を 辞め た。
         english: She quit the company without having told anyone (the state of not telling continued).
         hint: 「～ないまま」 indicates that an action was performed while a certain state (of not doing something)
           continued. While very similar, 「ないで」 is more general for describing an action done *without*
@@ -175,33 +187,33 @@ examples:
     english_literally: Recipe not-seeing cooking if-I-made failed.
     competing_grammar:
       - competing_japanese:
-          - レシピ を 見 ず に 料理 を 作っ たら 失敗 し た。
+          - レシピ を {見 ず に} 料理 を 作っ たら 失敗 し た。
         english: I failed when I tried cooking without looking at the recipe (more formal).
         hint: 「ずに」 is a more formal alternative for 'without doing something'. We're looking for a more
           common, everyday expression.
       - competing_japanese:
-          - レシピ を 見 なく て 料理 を 作っ たら 失敗 し た。
+          - レシピ を {見 なく て} 料理 を 作っ たら 失敗 し た。
         english: Because I didn't look at the recipe, I failed when I tried cooking.
         hint: 「なくて」 indicates a reason or cause. The original sentence describes the *manner* in which
           the cooking was done. We're looking for 'without doing'.
       - competing_japanese:
-          - レシピ を 見 て 料理 を 作っ て ください。
+          - レシピ を 見 て 料理 を {作っ て ください}。
         english: Please look at the recipe and cook.
         hint: The sentence describes an action taken without another. This is a request to do something.
           We're looking for the original meaning of 'without doing'.
       - competing_japanese:
-          - レシピ を 見 て 料理 を 作り なさい。
+          - レシピ を 見 て 料理 を {作り なさい}。
         english: Look at the recipe and cook!
         hint: This is a direct command. The original sentence describes an action taken without another
           action. We're looking for 'without doing'.
       - competing_japanese:
-          - レシピ を 見る な。
+          - レシピ を {見る な}。
         english: Don't look at the recipe.
-        hint: 「～な」 is a strong, direct prohibitive command, often used in casual or angry contexts. Here,
-          we're describing an action taken *without* another action. We're looking for the sense of 'without
-          doing'.
+        hint: 「～な」 is a very strong, direct prohibitive command, often used in casual or angry contexts.
+          Here, we're describing an action taken *without* another action. We're looking for the sense
+          of 'without doing'.
       - competing_japanese:
-          - レシピ を 見 ない まま 料理 を 作っ たら 失敗 し た。
+          - レシピ を {見 ない まま} 料理 を 作っ たら 失敗 し た。
         english: I failed when I tried cooking without having looked at the recipe (the state of not looking
           continued).
         hint: 「～ないまま」 indicates that an action was performed while a certain state (of not doing something)
@@ -226,23 +238,23 @@ examples:
     english_literally: Worry not-doing please. I am here because.
     competing_grammar:
       - competing_japanese:
-          - 心配 し て ください。私 が い ます から。
+          - 心配 {し て ください}。私 が い ます から。
         english: Please worry. I'm here.
         hint: This is a polite request to *do* something, the opposite of the original sentence. We're
           looking for a polite request to *not* do something.
       - competing_japanese:
-          - 心配 し なさい。
+          - 心配 {し なさい}。
         english: Worry!
         hint: This is a direct command to *do* something. We're looking for a polite request to *not*
           do something.
       - competing_japanese:
-          - 心配 する な。
+          - 心配 {する な}。
         english: Don't worry.
         hint: 「～な」 is a very direct and strong prohibitive command, often considered harsh depending on
           context. While it means 'don't do', it lacks the politeness of the original request. We're looking
           for a polite negative request.
       - competing_japanese:
-          - 心配 し て は いけ ませ ん。
+          - 心配 {し て は いけ ませ ん}。
         english: You must not worry.
         hint: 「～てはいけません」 is a strong prohibition, indicating something is forbidden or not allowed. The
           original sentence is a softer, reassuring request. We're looking for a gentle negative request.
@@ -266,22 +278,22 @@ examples:
     english_literally: Already here not-making-noise particle.
     competing_grammar:
       - competing_japanese:
-          - もう ここ で 騒い で ください。
+          - もう ここ で {騒い で ください}。
         english: Please make noise here anymore.
         hint: This is a polite request to *do* something, the opposite of the original sentence. We're
           looking for a negative request.
       - competing_japanese:
-          - もう ここ で 騒ぎ なさい。
+          - もう ここ で {騒ぎ なさい}。
         english: Make noise here anymore!
         hint: This is a direct command to *do* something. We're looking for a negative request.
       - competing_japanese:
-          - もう ここ で 騒ぐ な。
+          - もう ここ で {騒ぐ な}。
         english: Don't make noise here anymore.
         hint: 「～な」 is a very direct and strong prohibitive command, often considered harsh. While it means
           'don't do', it's much harsher than the original request using 「ないで」. We're looking for a slightly
           softer prohibitive.
       - competing_japanese:
-          - もう ここ で 騒い で は いけ ませ ん。
+          - もう ここ で {騒い で は いけ ませ ん}。
         english: You must not make noise here anymore.
         hint: 「～てはいけません」 is a strong prohibition, indicating something is forbidden. The original sentence
           is a direct request or command, but often less formal or strict than 「～てはいけません」. We're looking
@@ -306,17 +318,17 @@ examples:
     english_literally: She break not-taking afternoon also continuously worked.
     competing_grammar:
       - competing_japanese:
-          - 彼女 は 休憩 を 取ら ず に 午後 も ずっと 働い た。
+          - 彼女 は 休憩 を {取ら ず に} 午後 も ずっと 働い た。
         english: She worked straight through the afternoon without taking a break (more formal).
         hint: 「ずに」 is a more formal alternative for 'without doing something'. We're looking for a more
           common, everyday expression.
       - competing_japanese:
-          - 彼女 は 休憩 が なく て 午後 も ずっと 働い た。
+          - 彼女 は 休憩 が {なく て} 午後 も ずっと 働い た。
         english: Because she didn't have a break, she worked straight through the afternoon.
         hint: 「なくて」 indicates a reason or cause. The original sentence describes the *manner* in which
           she worked. We're looking for 'without doing'.
       - competing_japanese:
-          - 彼女 は 休憩 を 取ら ない まま 午後 も ずっと 働い た。
+          - 彼女 は 休憩 を {取ら ない まま} 午後 も ずっと 働い た。
         english: She worked straight through the afternoon without having taken a break (the state of
           not taking continued).
         hint: 「～ないまま」 indicates that an action was performed while a certain state (of not doing something)
@@ -339,24 +351,24 @@ examples:
     english_literally: Contact not-doing late being is not-good.
     competing_grammar:
       - competing_japanese:
-          - 連絡 を せ ず に 遅刻 する の は 難しい。
-          - 連絡 も せ ず に 遅刻 する の は 良く ない。
+          - 連絡 を {せ ず に} 遅刻 する の は 難しい。
+          - 連絡 も {せ ず に} 遅刻 する の は 良く ない。
         english: It's not good to be late without contacting (more formal).
         hint: 「ずに」 is a more formal alternative for 'without doing something'. We're looking for a more
           common, everyday expression.
       - competing_japanese:
-          - 連絡 が なく て 遅刻 する の は よく ない。
+          - 連絡 が {なく て} 遅刻 する の は よく ない。
         english: Because there's no daily study, it's difficult to pass a test.
         hint: 「なくて」 indicates a reason or cause. The original sentence describes the *manner* of being
           late. We're looking for 'without doing'.
       - competing_japanese:
-          - 連絡 なし で 遅刻 する の は よく ない。
+          - 連絡 {なし で} 遅刻 する の は よく ない。
         english: It's not good to be late without contact.
         hint: 「～なしで」 uses the noun 「なし」 (absence) with 「で」 to mean 'without'. While similar, it can feel
           slightly more formal or direct compared to the verb conjugation of 「ないで」. We're looking for
           a verbal construction of 'without doing'.
       - competing_japanese:
-          - 連絡 を し ない まま 遅刻 する の は よく ない。
+          - 連絡 を {し ない まま} 遅刻 する の は よく ない。
         english: It's not good to be late without having contacted (the state of not contacting continued).
         hint: 「～ないまま」 indicates that an action was performed while a certain state (of not doing something)
           continued. While very similar, 「ないで」 is more general for describing an action done *without*
@@ -381,17 +393,17 @@ examples:
     english_literally: Him to that thing not-saying I-want-it.
     competing_grammar:
       - competing_japanese:
-          - 彼 に その こと を 伝え て 欲しい ん だ。
+          - 彼 に その こと を {伝え て 欲しい} ん だ。
         english: I want you to tell him about that.
         hint: This is a request to *do* something, the opposite of the original sentence. We're looking
           for a request to *not* do something.
       - competing_japanese:
-          - 彼 に その こと を 伝える な。
+          - 彼 に その こと を {伝える な}。
         english: Don't tell him about that.
         hint: 「～な」 is a very direct and strong prohibitive command. While it means 'don't do', it lacks
           the nuance of a personal desire expressed by 「～て欲しい」. We're looking for an expression of desire.
       - competing_japanese:
-          - 彼 に その こと を 言っ て は いけ ない。
+          - 彼 に その こと を {言っ て は いけ ない}。
         english: You must not tell him about that.
         hint: 「～てはいけない」 is a strong prohibition, indicating something is forbidden. The original sentence
           expresses a personal desire for someone not to do something, which is softer than a general
@@ -414,23 +426,23 @@ examples:
     english_literally: Everyday study not-doing test to pass is difficult.
     competing_grammar:
       - competing_japanese:
-          - 毎日 勉強 を せ ず に テスト に 合格 する の は 難しい。
+          - 毎日 勉強 を {せ ず に} テスト に 合格 する の は 難しい。
         english: It's difficult to pass a test without studying every day (more formal).
         hint: 「ずに」 is a more formal alternative for 'without doing something'. We're looking for a more
           common, everyday expression.
       - competing_japanese:
-          - 毎日 勉強 が なく て テスト に 合格 する の は 難しい。
+          - 毎日 勉強 が {なく て} テスト に 合格 する の は 難しい。
         english: Because there is no daily study, it's difficult to pass a test.
         hint: 「なくて」 indicates a reason or cause. The original sentence describes the *condition* for passing.
           We're looking for 'without doing'.
       - competing_japanese:
-          - 毎日 勉強 なし で テスト に 合格 する の は 難しい。
+          - 毎日 勉強 {なし で} テスト に 合格 する の は 難しい。
         english: It's not good to pass a test without daily study.
         hint: 「～なしで」 uses the noun 「なし」 (absence) with 「で」 to mean 'without'. While similar, it can feel
           slightly more formal or direct compared to the verb conjugation of 「ないで」. We're looking for
           a verbal construction of 'without doing'.
       - competing_japanese:
-          - 毎日 勉強 を し ない まま テスト に 受かる の は 難しい よ。
+          - 毎日 勉強 を {し ない まま} テスト に 受かる の は 難しい よ。
         english: It's difficult to pass a test without having studied every day (the state of not studying
           continued).
         hint: 「～ないまま」 indicates that an action was performed while a certain state (of not doing something)
@@ -455,23 +467,23 @@ examples:
     english_literally: Homework not-forgetting particle.
     competing_grammar:
       - competing_japanese:
-          - 宿題 を 忘れ て ください。
+          - 宿題 を {忘れ て ください}。
         english: Please forget your homework.
         hint: This is a polite request to *do* something, the opposite of the original sentence. We're
           looking for a polite request to *not* do something.
       - competing_japanese:
-          - 宿題 を 忘れ なさい。
+          - 宿題 を {忘れ なさい}。
         english: Forget your homework!
         hint: This is a direct command to *do* something. We're looking for a polite request to *not*
           do something.
       - competing_japanese:
-          - 宿題 を 忘れる な。
+          - 宿題 を {忘れる な}。
         english: Don't forget your homework!
         hint: 「～な」 is a very direct and strong prohibitive command, often considered harsh depending on
           context. While it means 'don't do', it lacks the gentleness and nuance of a reminder. We're
           looking for a softer, cautionary request.
       - competing_japanese:
-          - 宿題 を 忘れ て は いけ ませ ん。
+          - 宿題 を {忘れ て は いけ ませ ん}。
         english: You must not forget your homework.
         hint: 「～てはいけません」 is a strong prohibition, indicating something is forbidden. The original sentence
           is a softer, more personal reminder. We're looking for a gentle negative request.
@@ -494,22 +506,22 @@ examples:
     english_literally: That box not-opening please.
     competing_grammar:
       - competing_japanese:
-          - その 箱 を 開け て ください。
+          - その 箱 を {開け て ください}。
         english: Please open that box.
         hint: This is a polite request to *do* something, the opposite of the original sentence. We're
           looking for a polite request to *not* do something.
       - competing_japanese:
-          - その 箱 を 開け なさい。
+          - その 箱 を {開け なさい}。
         english: Open that box!
         hint: This is a direct command to *do* something. We're looking for a polite request to *not*
           do something.
       - competing_japanese:
-          - その 箱 を 開ける な。
+          - その 箱 を {開ける な}。
         english: Don't open that box!
         hint: 「～な」 is a very direct and strong prohibitive command. While it means 'don't do', it is much
           harsher than a polite request. We're looking for a polite negative request.
       - competing_japanese:
-          - その 箱 を 開け て は いけ ませ ん。
+          - その 箱 を {開け て は いけ ませ ん}。
         english: You must not open that box.
         hint: 「～てはいけません」 is a strong prohibition, indicating something is forbidden. The original sentence
           is a softer, more direct request. We're looking for a polite negative request.

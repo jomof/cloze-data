@@ -2,14 +2,19 @@ grammar_point: では・それでは・じゃあ (transitional phrases)
 learn_before:
   - Verb[て] (and then)
   - から (reason cause)
-  - けれど (but・although)
   - たら (if・when・after)
   - それで (so・and then)
+  - そして (and・and then)
+  - けれども (but・although)
 learn_after:
   - したがって (therefore)
   - 要するに (to sum up)
   - そこで (at that point)
   - ついては (in light of this・therefore)
+  - それにしても (nevertheless)
+  - とは言え (that being said)
+  - ゆえに (because・therefore)
+  - もっとも (qualification・however)
 id: gp0404
 meaning: If so, Well (then), In that case
 pronunciation:
@@ -64,7 +69,7 @@ false_friends:
       a conditional statement, meaning "if X (which is already known or stated), then Y." It implies a
       condition rather than a direct consequence.
     grammar_point: なら (conditional)
-  - term: <suggest>:だとすれば (if that is the case)
+  - term: だとすれば (if that is the case)
     meaning: If that is the case, then...
     kind: often confused with
     nuance: A more formal and explicit conditional phrase than 「なら」, 「だとすれば」 strongly emphasizes the premise
@@ -97,7 +102,7 @@ examples:
         hint: This sentence lacks the smooth transition from the observation (rain stopping) to the suggestion.
           We're looking for a natural connector for the logical next step.
       - competing_japanese:
-          - 雨 が 止ん だ よう です ね。さて、公園 へ 散歩 に 行き ませ ん か。
+          - 雨 が 止ん だ よう です ね。{さて}、公園 へ 散歩 に 行き ませ ん か。
         english: It seems the rain has stopped. Now, shall we go for a walk in the park?
         hint: While 「さて」 can introduce a new idea, it implies a more general change of subject. We're
           looking for a phrase that implies a direct consequence or logical next step based on the observed
@@ -235,7 +240,7 @@ examples:
           based on the preceding information. We're looking for a word that clearly indicates a logical
           inference from what was just said.
       - competing_japanese:
-          - ご 報告 ありがとう ござい ます。この 件 が 承認 さ れ た なら 解釈 し て よろしい でしょう か。
+          - ご 報告 ありがとう ござい ます。この 件 が 承認 さ れ た {なら} 解釈 し て よろしい でしょう か。
         english: Thank you for the report. If this matter is approved, may I interpret it as such?
         hint: 「なら」 introduces a conditional statement, implying 'if X is true.' Here, the manager is drawing
           a conclusion based on an existing report, not setting up a hypothetical condition. We're looking
@@ -369,3 +374,28 @@ post_example_writeup: As these examples demonstrate, 「では・それでは・
   range of situations.
 sources:
   bunpro: https://bunpro.jp/grammar_points/では-それでは-じゃあ
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    雨 が 止ん だ よう です ね。公園 へ 散歩 に 行き ませ ん か。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    荷物 まとめ 終わっ た？そろそろ 出発 しよう か。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    ご 意見 ありがとう ござい ます。次 の 議題 に 移り ましょう。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    時間 も 遅い し、そろそろ 帰る ね。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    本日 は ありがとう ござい まし た。これ で 失礼 いたし ます。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    以上 で 前半 の 説明 を 終わり ます。後半 へ 進み ましょう。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    ご 報告 ありがとう ござい ます。この 件 は 承認 さ れ た と 解釈 し て よろしい でしょう か。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あなた の 話 を 聞く 限り、あの ミス は 君 の 責任 と いう 事 です ね？'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    本日 の 打ち合わせ は これ で 終了 です。また 来週、同じ 時間 に。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    現状 を 踏まえる と、新た な 計画 を 立てる 必要 が あり ます。'
+  - '[rule-5] warning examples[10].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    ご 連絡 ありがとう ござい ます。詳細 を 確認 の 上、改めて ご 連絡 いたし ます。'
+  - '[rule-5] warning examples[11].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    そう です ね、今度 一緒 に 美味しい お 酒 を 飲み に 行き ませ ん か？'

@@ -1,13 +1,14 @@
 grammar_point: 様・さま (honorific suffix)
 learn_before:
+  - です (polite copula)
   - Verbs (non-past polite)
   - 君・くん (honorific suffix)
   - お (honorific prefix)
-  - です (polite copula)
+  - てください (polite request)
 learn_after:
   - お〜になる (honorific form)
   - お・ご～する (humble action)
-  - であろう (conjecture・formal)
+  - Verb[て]+いただけませんか (humble request)
 id: gp0187
 meaning: Mr; Miss; Ms; Mrs (honorific suffix)
 pronunciation:
@@ -79,34 +80,34 @@ post_false_friends_writeup: The key distinction among these honorifics lies in t
 examples:
   - english: Esteemed guest, please come this way.
     japanese:
-      - お 客 様 {様}、こちら へ どうぞ。
-      - お 客 様 {様}、どうぞ こちら へ。
-      - お 客 様 {様}、こちら へ いらっしゃい ませ。
+      - お 客 {様}、こちら へ どうぞ。
+      - お 客 {様}、どうぞ こちら へ。
+      - お 客 {様}、こちら へ いらっしゃい ませ。
     english_literally: Esteemed guest, this way please.
     competing_grammar:
       - competing_japanese:
-          - お 客 様、こちら へ どうぞ。
+          - お 客 さん、こちら へ どうぞ。
         english: Customer, please come this way.
         hint: 「さん」 is a general honorific. 「様」 is used for higher respect, especially for customers in
           business settings. We're looking for an deeper expression of respect.
       - competing_japanese:
-          - お 客 様 殿、こちら へ どうぞ。
+          - お 客 殿、こちら へ どうぞ。
         english: Esteemed customer, please come this way.
         hint: 「殿」 is an older, more formal honorific, often used in official documents or for superiors
           to subordinates. It can sound stiff or inappropriate for direct address to a customer in modern
           contexts. We're looking for a polite and natural way to address a customer.
       - competing_japanese:
-          - お 客 様 君、こちら へ どうぞ。
+          - お 客 君、こちら へ どうぞ。
         english: Customer (male), please come this way.
         hint: 「君」 is used for younger males or subordinates. It is highly inappropriate for customers.
           We're looking for an expression that shows respect to a customer.
       - competing_japanese:
-          - お 客 様、どうぞ
+          - お 客 {様}、どうぞ
         english: Customer, please.
         hint: The scene emphasizes the welcoming action. This omits the specific direction of 'this way.'
           We're looking for a complete, polite welcome.
       - competing_japanese:
-          - お 客 様、来 て ください。
+          - お 客 {様}、来 て ください。
         english: Customer, please come.
         hint: The professional setting and register suggest a more formal and indirect invitation like
           「こちらへどうぞ」, rather than a direct command. We're looking for a polite and indirect invitation.
@@ -143,7 +144,7 @@ examples:
         hint: 「君」 is used for younger males or subordinates. It is inappropriate when addressing a client.
           We're looking for an expression that shows respect to a client.
       - competing_japanese:
-          - 田中 様、ありがとう。
+          - 田中 {様}、ありがとう。
         english: Mr. Tanaka, thank you.
         hint: The business setting requires a more formal expression of gratitude for ongoing support,
           like 「いつもお世話になっております」, over a simple 「ありがとう」. We're looking for a formal business expression.
@@ -263,7 +264,7 @@ examples:
         hint: 「神殿」 refers to a building, not the deity itself. 「殿」 is not used as an honorific for God
           in this context. We're looking for a way to address God directly.
       - competing_japanese:
-          - 神君、私 を お 助け ください。
+          - 神 君、私 を お 助け ください。
         english: Divine ruler, please help me.
         hint: 「神君」 is an archaic term for a divine ruler, not a general honorific for God. 「君」 is inappropriate
           for a deity. We're looking for the common, respectful term for God.
@@ -274,7 +275,7 @@ examples:
           address for God, which is 「神様」, rather than the more archaic or literary 「神よ」. We're looking
           for the most common and appropriate way to address God in prayer.
       - competing_japanese:
-          - 神 様、助け て。
+          - 神 {様}、助け て。
         english: God, help me.
         hint: The solemnity of praying for divine intervention leans towards the more formal and complete
           「お助けください」 rather than the informal 「助けて」. We're looking for a formal plea for divine intervention.
@@ -490,3 +491,86 @@ post_example_writeup: As you can see, 「様」 is a versatile honorific that go
   also its subtle role in conveying irony or deep admiration.
 sources:
   bunpro: https://bunpro.jp/grammar_points/様・さま
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    お 客 さん、こちら へ どうぞ。'
+  - '[rule-5] warning examples[0].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    お 客 殿、こちら へ どうぞ。'
+  - '[rule-5] warning examples[0].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    お 客 君、こちら へ どうぞ。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    田中 さん、いつ も お 世話 に なっ て おり ます。'
+  - '[rule-5] warning examples[1].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    田中 殿、いつ も お 世話 に なっ て おり ます。'
+  - '[rule-5] warning examples[1].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    田中 君、いつ も お 世話 に なっ て おり ます。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    山田 さん で よろしかっ た でしょう か？'
+  - '[rule-5] warning examples[2].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    山田 殿 で よろしかっ た でしょう か？'
+  - '[rule-5] warning examples[2].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    山田 君 で よろしかっ た でしょう か？'
+  - '[rule-5] warning examples[2].competing_grammar[3].competing_japanese[0] missing {bold} grammar point:
+    山田 さん です か？'
+  - '[rule-5] warning examples[2].competing_grammar[4].competing_japanese[0] missing {bold} grammar point:
+    山田 で 合っ て い ます か？'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    社長 さん の ご 指示 に 従い ます。'
+  - '[rule-5] warning examples[3].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    社長 殿 の ご 指示 に 従い ます。'
+  - '[rule-5] warning examples[3].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    社長 君 の ご 指示 に 従い ます。'
+  - '[rule-5] warning examples[3].competing_grammar[3].competing_japanese[0] missing {bold} grammar point:
+    社長 の 指示 に 従い ます。'
+  - '[rule-5] warning examples[3].competing_grammar[4].competing_japanese[0] missing {bold} grammar point:
+    社長 の 言う 通り に し ます。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    神 さん、私 を お 助け ください。'
+  - '[rule-5] warning examples[4].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    神殿、私 を お 助け ください。'
+  - '[rule-5] warning examples[4].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    神 君、私 を お 助け ください。'
+  - '[rule-5] warning examples[4].competing_grammar[3].competing_japanese[0] missing {bold} grammar point:
+    神 よ、私 を 助け て ください。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    お 母 さん、お 元気 です か？'
+  - '[rule-5] warning examples[5].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    お 母 殿、お 元気 です か？'
+  - '[rule-5] warning examples[5].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    お 母 君、お 元気 です か？'
+  - '[rule-5] warning examples[5].competing_grammar[3].competing_japanese[0] missing {bold} grammar point:
+    お 母 さん、元気？'
+  - '[rule-5] warning examples[5].competing_grammar[4].competing_japanese[0] missing {bold} grammar point:
+    母 さん、お 元気 です か？'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この ハンサム な 人 は 誰 さん です か？'
+  - '[rule-5] warning examples[6].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    この ハンサム な 人 は 誰 殿 です か？'
+  - '[rule-5] warning examples[6].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    この ハンサム な 人 は 誰 君 です か？'
+  - '[rule-5] warning examples[6].competing_grammar[3].competing_japanese[0] missing {bold} grammar point:
+    この ハンサム な 人 は 誰 です か？'
+  - '[rule-5] warning examples[6].competing_grammar[4].competing_japanese[0] missing {bold} grammar point:
+    この ハンサム な 人 は 誰？'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あなた の 目 は まるで 星 さん の よう です ね。'
+  - '[rule-5] warning examples[7].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    あなた の 目 は まるで 星 殿 の よう です ね。'
+  - '[rule-5] warning examples[7].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    あなた の 目 は まるで 星 君 の よう です ね。'
+  - '[rule-5] warning examples[7].competing_grammar[3].competing_japanese[0] missing {bold} grammar point:
+    あなた の 目 は まるで 星 の よう です ね。'
+  - '[rule-5] warning examples[7].competing_grammar[4].competing_japanese[0] missing {bold} grammar point:
+    あなた の 目 は 星 みたい です ね。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    〇〇株式 会社 営業 部 山田 太郎 さん'
+  - '[rule-5] warning examples[8].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    〇〇株式 会社 営業 部 山田 太郎 殿'
+  - '[rule-5] warning examples[8].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    〇〇株式 会社 営業 部 山田 太郎'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    やっと 雨 が 降り 始め まし た か。'
+  - '[rule-5] warning examples[9].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    雨 さん が 出 て き まし た よ。'
+  - '[rule-5] warning examples[9].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    雨 殿、お出まし です か。'

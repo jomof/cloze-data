@@ -3,8 +3,13 @@ learn_before:
   - から (reason cause)
   - ので (reason)
   - そして (and・and then)
+  - てから (after and since)
+  - そのため (for that reason)
+  - その結果 (as a result)
 learn_after:
   - かと言うと (contrary to expectation)
+  - に至って・に至り (finally reached)
+  - に至っても (even when reaching)
 id: gp0754
 meaning: Then, therefore, and so; at that point
 pronunciation:
@@ -53,14 +58,14 @@ false_friends:
       point, indicating a 'then and there' response to the preceding information rather than just a continuation
       of events.
     grammar_point: そして (and・and then)
-  - term: だから
+  - term: だから (reason cause)
     meaning: Therefore, so
     kind: similar expression
     nuance: 「だから」 is used to introduce a logical conclusion based on a premise, indicating a general causal
       relationship. 「そこで」 highlights an action or event that occurs immediately after a preceding situation
       as a direct, often necessary, response to that situation, focusing on the moment of action rather
       than broad causality.
-    grammar_point: <suggest>:だから (therefore, so)
+    grammar_point: だから (reason cause)
   - term: すぐに
     meaning: Immediately; soon
     kind: often confused with
@@ -243,3 +248,27 @@ post_example_writeup: As you can see from the examples, 「そこで」 is highl
   observation leading to an action, a critical moment requiring a decision, or a formal instruction based
   on new information, 「そこで」 clearly marks the point at which the subsequent action naturally and logically
   unfolds.
+lint-errors:
+  - '[rule-13] warning unknown grammar at ''false_friends[1]'': ''だから (reason cause)''. It **MUST** be
+    from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
+    grammar point.'
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    信号 が 青 に なっ たら、渡り ましょう。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    ドア が 開い て い た。だ から 中 に 入っ た。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    課題 が 終わら なかっ た。だ から 夜 遅く まで 勉強 し た。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    突然 雨 が 降り 出し た。だ から 近く の カフェ に 避難 し た。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    電車 が 遅れ た。だ から 家族 に 連絡 し た。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 の 話 は 嘘 だ と 分かっ た。だ から 彼 を 信頼 する こと を やめ た。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    困っ た 時 に は、一 度 立ち止まっ て 考え て み て ください。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    次 の 電車 まで 時間 が ある。だ から コーヒー で も 飲もう か。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    会議 は 予定 より 長引い た。だ から 次 の 議題 は 後回し に する こと に し た。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    提案 が 承認 さ れ まし た。だ から 早急 に 実行 計画 を 作成 し て ください。'

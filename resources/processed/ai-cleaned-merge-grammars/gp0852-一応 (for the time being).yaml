@@ -1,11 +1,12 @@
 grammar_point: 一応 (for the time being)
 learn_before:
-  - まだ (still・not yet)
+  - とりあえず (for now・first of all)
   - だいたい (approximation)
-  - ておく (to do in advance)
+  - まず (priority・initial action)
 learn_after:
+  - 済む (to be sufficient・to get by)
+  - なんとか (somehow manage)
   - あくまでも (persistently・stubbornly)
-  - を余儀なくされる (to be forced or compelled)
 id: gp0852
 meaning: more or less, for the time being, tentatively, roughly
 pronunciation:
@@ -300,3 +301,30 @@ post_example_writeup: When 「一応」 is used, consider the context to discern
   action or a minimum requirement. It's a nuanced term that adds a layer of qualification to the statement.
 sources:
   bunpro: https://bunpro.jp/grammar_points/一応2
+lint-errors:
+  - '[rule-13] unknown grammar at ''learn_before[0]'': ''とりあえず (for now・first of all)''. You may suggest
+    new grammar points by adding a false_friend.'
+  - '[rule-13] unknown grammar at ''learn_after[1]'': ''なんとか (somehow manage)''. You may suggest new grammar
+    points by adding a false_friend.'
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    私 が 店長 です が、何 か 御 用 でしょう か。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    今日 は ここ まで 作業 を 進め ましょう。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    周り の 人 たち が 立ち 始め た の で、私 も 立ち上がっ た。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    怪我 し た 友達 に『大丈夫？』と 聞か れ て、私 は『大丈夫』と だけ 答え た。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 企画 は まだ 改善 の 余地 が ある が、これ で 提出 しよう。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    面接 官 に 英語 の 能力 に つい て 尋ね られ、私 は 日常 的 な 英 会話 なら でき ます が、ビジネス レベル は 自信 が ない と 答え た。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    警察 官 が オーナー と の 面会 を 求め、私 は『私 が オーナー の エリアス です』と 名乗っ た。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    医者 は 患者 の 容態 に つい て、ため息 を つき ながら『安定 化 でき まし た』と 報告 し た。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    田中 くん は 勉強 嫌い だ けど、漢字 が 思っ て い た より 書ける と 友人 が 驚い た。日本 人 なら どんな に 嫌い で も、書ける もの だ よ と 私 は 言っ た。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    今日 の 仕事 は 終わり まし た。'
+  - '[rule-5] warning examples[10].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    宿題 は やっ た から、成績 が 悪く て も 文句 は 言え ない よ ね。'

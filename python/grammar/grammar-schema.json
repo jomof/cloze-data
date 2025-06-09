@@ -220,7 +220,7 @@
     // **MUST** be a grammar point from ALL_GRAMMARS_SUMMARY that should be learned **BEFORE** grammar_point.
     // Pick the closest, in ideal learning order, that you're 95% sure should be learned **BEFORE** grammar_point.
     // **MUST** ensure that learn_before is more more commonly used than grammar_point.
-    // [rule-10] **MUST** have at least two items.
+    // [rule-10] **MUST** be at least one item in 'learn_before' or one in 'learn_after'. Don't add too many.
     "learn_before": {
       "type": "array",
       "items": { "$ref": "#/definitions/knownGrammarType" }
@@ -228,7 +228,7 @@
     // **MUST** be grammar points from ALL_GRAMMARS_SUMMARY that should be learned **AFTER** grammar_point.
     // Pick the closest points, in ideal learning order, that you're 95% sure should be learned **AFTER** grammar_point.
     // **MUST** ensure that learn_after items is **LESS COMMONLY** used than grammar_point.
-    // [rule-11] **MUST** have at least two items.
+    // [rule-11] **MUST** be at least one item in 'learn_before' or one in 'learn_after'. Don't add too many.
     "learn_after": {
       "type": "array",
       "items": { "$ref": "#/definitions/knownGrammarType" }

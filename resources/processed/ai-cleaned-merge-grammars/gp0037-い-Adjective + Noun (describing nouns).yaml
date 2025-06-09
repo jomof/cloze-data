@@ -51,13 +51,22 @@ false_friends:
     nuance: This structure shows possession or modifies a noun by describing its origin, type, or affiliation
       (e.g., 「日本 の 本」), whereas い-adjectives describe inherent qualities.
     grammar_point: <suggest>:Noun+の+Noun (possession or type)
+  - term: 大きな・小さな
+    meaning: pre-nominal adjective (big, small)
+    kind: often confused with
+    nuance: Unlike い-adjectives like 「大きい」 or 「小さい」, these are considered pre-nominal adjectives and do
+      not conjugate like regular い-adjectives. They directly precede the noun without 「な」, but their usage
+      and origin are distinct.
+    grammar_point: <suggest>:大きな・小さな (pre-nominal adjective)
 post_false_friends_writeup: It is essential to differentiate between true い-adjectives and な-adjectives.
   While both modify nouns, their grammatical structure differs. い-adjectives directly precede the noun,
   whereas な-adjectives require 「な」 between the adjective and the noun. For instance, you would say 「面白い
   本」 (omoshiroi hon, interesting book) with an い-adjective, but 「静かな 場所」 (shizuka na basho, quiet place)
   with a な-adjective. Also, a noun followed by 「の」 can modify another noun, indicating possession, origin,
   or type, like 「日本 の 本」 (a Japanese book or a book about Japan), which describes the noun differently
-  than an inherent quality.
+  than an inherent quality. Furthermore, special cases like 「大きな」 and 「小さな」 exist, which are pre-nominal
+  adjectives that function similarly to い-adjectives by directly modifying nouns but are not grammatically
+  い-adjectives themselves.
 examples:
   - english: This big dog is gentle.
     japanese:
@@ -74,21 +83,21 @@ examples:
     english_literally: This big dog is gentle.
     competing_grammar:
       - competing_japanese:
-          - この 犬 は 大きく て 優しい です。
+          - この 犬 は {大きく て} 優しい です。
         english: This dog is big and gentle.
         hint: This uses the te-form to connect adjectives, but we're looking for a direct い-adjective
-          modification of the noun.
+          modification of the noun. We need to describe the dog's size *before* the noun.
       - competing_japanese:
-          - この 大きな 犬 は 優しい です。
+          - この {大きな} 犬 は 優しい です。
         english: This big dog is gentle.
         hint: 「大きな」 is a pre-nominal adjective, not an い-adjective. While it means 'big', its grammatical
           usage is different. We're looking for a direct い-adjective modification.
       - competing_japanese:
-          - この きれい な 犬 は 優しい です。
+          - この {きれい な} 犬 は 優しい です。
         english: This beautiful dog is gentle.
         hint: 「きれい」 is a な-adjective and requires 「な」 to modify a noun. We're looking for an い-adjective.
       - competing_japanese:
-          - この ペット の 犬 は 優しい です。
+          - この {ペット の} 犬 は 優しい です。
         english: This structure uses 「の」 to indicate type or affiliation, not an inherent quality. We're
           looking for an い-adjective directly modifying the noun.
         hint: This structure uses 「の」 to indicate type or affiliation, not an inherent quality. We're
@@ -119,27 +128,27 @@ examples:
     english_literally: New car is wanted.
     competing_grammar:
       - competing_japanese:
-          - 車 が 欲しい です。
+          - 車 が {欲しい} です。
         english: I want a car.
         hint: This sentence expresses a desire for a car, but it doesn't specify that the car should be
           new. We need a phrase that includes the 'new' characteristic.
       - competing_japanese:
-          - 新しい 車 が 欲しい と 思う。
+          - 新しい 車 が {欲しい と 思う}。
         english: I think I want a new car.
         hint: While similar in meaning, this sentence includes 「と 思う」, which expresses a thought or opinion.
           We're looking for a direct statement of desire.
       - competing_japanese:
-          - きれい な 車 が 欲しい です。
+          - '{きれい な} 車 が 欲しい です。'
         english: I want a beautiful car.
         hint: 「新しい」 is an い-adjective and directly modifies 「車」. 「きれい」 is a な-adjective and requires 「な」
           to modify a noun. We're looking for an い-adjective.
       - competing_japanese:
-          - スポーツ の 車 が 欲しい です。
+          - '{スポーツ の} 車 が 欲しい です。'
         english: I want a sports car.
         hint: 「新しい」 describes a quality of the car. 「スポーツ」 describes the car's type, requiring 「の」 to
           connect to 「車」. We're looking for an い-adjective directly modifying the noun.
       - competing_japanese:
-          - 車 を 新しく し たい です。
+          - 車 を 新しく {し たい} です。
         english: I want to make the car new.
         hint: This expresses the desire to *make* something new, not simply to *want* a new item. We're
           looking for a direct desire for a new car.
@@ -169,22 +178,22 @@ examples:
     english_literally: Cold night, ramen is wanted, isn't it?
     competing_grammar:
       - competing_japanese:
-          - 夜 は ラーメン が 食べ たい ね。
+          - '{夜 は} ラーメン が 食べ たい ね。'
         english: At night, I want to eat ramen, don't you?
         hint: This sentence specifies the time as 'night' but omits the 'cold' condition, which is a key
           part of the scene's context for wanting ramen.
       - competing_japanese:
-          - 夜 が 寒い です から、ラーメン が 食べ たい ね。
+          - 夜 が 寒い です {から}、ラーメン が 食べ たい ね。
         english: Because the night is cold, I want to eat ramen, don't you?
         hint: This uses a causal connection with 「から」. We're focusing on directly describing the night
           as 'cold' before mentioning the desire for ramen.
       - competing_japanese:
-          - 賑やか な 夜 は ラーメン が 食べ たい ね。
+          - '{賑やか な} 夜 は ラーメン が 食べ たい ね。'
         english: On a lively night, I want to eat ramen, don't you?
         hint: 「寒い」 is an い-adjective and directly modifies 「夜」. 「賑やか」 is a な-adjective and requires 「な」
           to modify a noun. We're looking for an い-adjective.
       - competing_japanese:
-          - 冬 の 夜 は ラーメン が 食べ たい ね。
+          - '{冬 の} 夜 は ラーメン が 食べ たい ね。'
         english: On a winter night, I want to eat ramen, don't you?
         hint: 「寒い」 describes a quality of the night. 「冬」 describes the night's season, requiring 「の」 to
           connect to 「夜」. We're looking for an い-adjective directly modifying the noun.
@@ -196,7 +205,7 @@ examples:
     nuance: The male speaker uses 「寒い 夜」 (samui yoru) to set the context for the desire for ramen. The
       casual 「ね」 (ne) at the end seeks agreement, common in friendly male conversation. The second example,
       「こんな 寒い 夜 に は」, adds a feeling of 'on a night like this cold one', emphasizing the specific situation.
-      The third example, 「本当に 寒い 夜 です ね」, is a simple agreement to the cold, often leading into a discussion
+      The third example, 「本当 に 寒い 夜 です ね」, is a simple agreement to the cold, often leading into a discussion
       of warm food. The fourth suggests an action using 「だ し」 (because) and 「行こう か」 (shall we go?). The
       fifth uses 「最高 だ よ な」 for strong, masculine agreement. The sixth uses 「恋しい な」 (I miss/long for)
       to express a deeper longing.
@@ -217,22 +226,22 @@ examples:
     english_literally: That kind person is a teacher.
     competing_grammar:
       - competing_japanese:
-          - あの 人 は 先生 です。
+          - あの {人 は} 先生 です。
         english: That person is a teacher.
         hint: This sentence identifies the person as a teacher but doesn't include the descriptive quality
           of 'kind'. We need to modify 'person' with an adjective.
       - competing_japanese:
-          - あの 人 は 優しい です。先生 です。
+          - あの 人 は {優しい です}。先生 です。
         english: That person is kind. They are a teacher.
         hint: This uses two separate sentences. We're looking for a single phrase where the adjective
           directly modifies the noun.
       - competing_japanese:
-          - 親切 な 人 は 先生 です。
+          - '{親切 な} 人 は 先生 です。'
         english: That kind person is a teacher.
         hint: 「優しい」 is an い-adjective and directly modifies 「人」. 「親切」 is a な-adjective and requires 「な」
           to modify a noun. We're looking for an い-adjective.
       - competing_japanese:
-          - あの 学校 の 人 は 先生 です。
+          - あの {学校 の} 人 は 先生 です。
         english: That person from school is a teacher.
         hint: 「優しい」 describes a quality of the person. 「学校」 describes the person's affiliation, requiring
           「の」 to connect to 「人」. We're looking for an い-adjective directly modifying the noun.
@@ -261,22 +270,22 @@ examples:
     english_literally: Fun time soon ends.
     competing_grammar:
       - competing_japanese:
-          - 時間 は すぐ 終わる。
+          - '{時間 は} すぐ 終わる。'
         english: Time ends quickly.
         hint: This sentence states that 'time' ends quickly, but it doesn't specify that the time was
           'fun'. We need to include the descriptive adjective.
       - competing_japanese:
-          - 時間 は 楽しい です。そして、すぐ 終わる。
+          - 時間 は {楽しい です}。そして、すぐ 終わる。
         english: Time is fun. And it ends quickly.
         hint: This uses two separate sentences. We're looking for a single phrase where the adjective
           directly modifies the noun.
       - competing_japanese:
-          - 大変 な 時間 は すぐ 終わる。
+          - '{大変 な} 時間 は すぐ 終わる。'
         english: Difficult times end quickly.
         hint: 「楽しい」 is an い-adjective and directly modifies 「時間」. 「大変」 is a な-adjective and requires 「な」
           to modify a noun. We're looking for an い-adjective.
       - competing_japanese:
-          - 休み の 時間 は すぐ 終わる。
+          - '{休み の} 時間 は すぐ 終わる。'
         english: Break time ends quickly.
         hint: 「楽しい」 describes a quality of the time. 「休み」 describes the time's type, requiring 「の」 to
           connect to 「時間」. We're looking for an い-adjective directly modifying the noun.
@@ -304,22 +313,22 @@ examples:
     english_literally: Is this an old book?
     competing_grammar:
       - competing_japanese:
-          - これ は 本 です か。
+          - これ は {本 です} か。
         english: Is this a book?
         hint: This question asks if it's a book, but it doesn't inquire about its age or condition. We
           need to include the 'old' descriptor.
       - competing_japanese:
-          - この 本 は 古い です か。
+          - この 本 は {古い です} か。
         english: Is this book old?
         hint: This uses the adjective as a predicate rather than a direct modifier before the noun. We
           are focusing on modifying the noun directly.
       - competing_japanese:
-          - 有名 な 本 です か。
+          - '{有名 な} 本 です か。'
         english: Is this a famous book?
         hint: 「古い」 is an い-adjective and directly modifies 「本」. 「有名」 is a な-adjective and requires 「な」
           to modify a noun. We're looking for an い-adjective.
       - competing_japanese:
-          - これ は 図書 館 の 本 です か。
+          - これ は {図書 館 の} 本 です か。
         english: Is this a library book?
         hint: 「古い」 describes a quality of the book. 「図書館」 describes the book's origin/affiliation, requiring
           「の」 to connect to 「本」. We're looking for an い-adjective directly modifying the noun.
@@ -349,22 +358,22 @@ examples:
     english_literally: That tall mountain to climb is wanted.
     competing_grammar:
       - competing_japanese:
-          - あの 山 に 登り たい です。
+          - あの {山 に} 登り たい です。
         english: I want to climb that mountain.
         hint: This sentence expresses the desire to climb the mountain but doesn't mention its height,
           which is an important characteristic in the scene.
       - competing_japanese:
-          - あの 山 は 高い です。そして、登り たい です。
+          - あの 山 は {高い です}。そして、登り たい です。
         english: That mountain is tall. And I want to climb it.
         hint: This uses two separate sentences. We're looking for a single phrase where the adjective
           directly modifies the noun.
       - competing_japanese:
-          - 雄大 な 山 に 登り たい です。
+          - '{雄大 な} 山 に 登り たい です。'
         english: I want to climb that magnificent mountain.
         hint: 「高い」 is an い-adjective and directly modifies 「山」. 「雄大」 is a な-adjective and requires 「な」
           to modify a noun. We're looking for an い-adjective.
       - competing_japanese:
-          - あの 日本 の 山 に 登り たい です。
+          - あの {日本 の} 山 に 登り たい です。
         english: I want to climb that Japanese mountain.
         hint: 「高い」 describes a quality of the mountain. 「日本」 describes the mountain's origin, requiring
           「の」 to connect to 「山」. We're looking for an い-adjective directly modifying the noun.
@@ -398,22 +407,22 @@ examples:
     english_literally: This delicious food is popular.
     competing_grammar:
       - competing_japanese:
-          - この 料理 は 人気 です。
+          - この {料理 は} 人気 です。
         english: This food is popular.
         hint: This sentence expresses the food's popularity but omits the descriptive quality of 'delicious'.
           We need to modify 'food' with an adjective.
       - competing_japanese:
-          - この 料理 は 美味しい です。そして、人気 です。
+          - この 料理 は {美味しい です}。そして、人気 です。
         english: This food is delicious. And it's popular.
         hint: This uses two separate sentences. We're looking for a single phrase where the adjective
           directly modifies the noun.
       - competing_japanese:
-          - この 美味し そう な 料理 は 人気 です。
+          - この 美味し {そう な} 料理 は 人気 です。
         english: This delicious-looking food is popular.
         hint: This uses the 「～そう」 form to indicate appearance, not a direct quality. We're looking for
           a direct い-adjective modification.
       - competing_japanese:
-          - この 和食 の 料理 は 人気 です。
+          - この {和食 の} 料理 は 人気 です。
         english: This Japanese food is popular.
         hint: 「美味しい」 describes a quality of the food. 「和食」 describes the food's type, requiring 「の」 to
           connect to 「料理」. We're looking for an い-adjective directly modifying the noun.
@@ -440,25 +449,25 @@ examples:
     english_literally: That small cat is very cute.
     competing_grammar:
       - competing_japanese:
-          - あの 猫 は とても かわいい です。
+          - あの {猫 は} とても かわいい です。
         english: That cat is very cute.
         hint: This sentence expresses the cat's cuteness but omits the descriptive quality of 'small'.
           We need to modify 'cat' with an adjective.
       - competing_japanese:
-          - あの 猫 は 小さい です。そして、とても かわいい です。
+          - あの 猫 は {小さい です}。そして、とても かわいい です。
         english: That cat is small. And it's very cute.
         hint: This uses two separate sentences. We're looking for a single phrase where the adjective
           directly modifies the noun.
       - competing_japanese:
-          - あの 小さな 猫 は とても かわいい です。
+          - あの {小さな} 猫 は とても かわいい です。
         english: That small cat is very cute.
         hint: 「小さな」 is a pre-nominal adjective, not an い-adjective. While it means 'small', its grammatical
           usage is different. We're looking for a direct い-adjective modification.
       - competing_japanese:
-          - あの 子猫 は とても かわいい です。
+          - あの {子猫} は とても かわいい です。
         english: That kitten is very cute.
-        hint: 「小さい」 describes a quality of the cat. 「子猫」 is a specific noun meaning 'kitten'. We're looking
-          for an い-adjective directly modifying the noun.
+        hint: 「子猫」 is a specific noun meaning 'kitten'. It describes the cat's type, not a quality modified
+          by an い-adjective. We're looking for an い-adjective directly modifying the noun.
     scene: Two friends are visiting a pet shop.
     register: teineigo (polite)
     setting: friendly
@@ -482,22 +491,22 @@ examples:
     english_literally: That difficult problem finally solved.
     competing_grammar:
       - competing_japanese:
-          - あの 問題 が ようやく 解決 し た。
+          - あの {問題 が} ようやく 解決 し た。
         english: That problem was finally solved.
         hint: This sentence states that the problem was solved but omits the descriptive quality of 'difficult'.
           We need to modify 'problem' with an adjective.
       - competing_japanese:
-          - あの 問題 は 難しい です。そして、ようやく 解決 し た。
+          - あの 問題 は {難しい です}。そして、ようやく 解決 し た。
         english: That problem is difficult. And it's finally solved.
         hint: This uses two separate sentences. We're looking for a single phrase where the adjective
           directly modifies the noun.
       - competing_japanese:
-          - あの 厄介 な 問題 が ようやく 解決 し た。
+          - あの {厄介 な} 問題 が ようやく 解決 し た。
         english: That troublesome problem was finally solved.
         hint: 「難しい」 is an い-adjective and directly modifies 「問題」. 「厄介」 is a な-adjective and requires 「な」
           to modify a noun. We're looking for an い-adjective.
       - competing_japanese:
-          - あの 数学 の 問題 が ようやく 解決 し た。
+          - あの {数学 の} 問題 が ようやく 解決 し た。
         english: That math problem was finally solved.
         hint: 「難しい」 describes a quality of the problem. 「数学」 describes the problem's type, requiring 「の」
           to connect to 「問題」. We're looking for an い-adjective directly modifying the noun.

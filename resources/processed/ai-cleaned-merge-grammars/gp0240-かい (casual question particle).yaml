@@ -2,10 +2,15 @@ grammar_point: かい (casual question particle)
 learn_before:
   - か (question)
   - だ (casual copula)
+  - です (polite copula)
+  - じゃない (negation noun and na-adj)
+  - の? (question)
 learn_after:
   - じゃないか (isn't it?)
   - ぞ (strong emphasis)
   - ぜ (male emphatic particle)
+  - さ (casual assertion)
+  - かしら (soft uncertainty・female)
 id: gp0240
 meaning: Informal sentence ending particle, similar to 'ka' but softer and more casual, often used by
   males.
@@ -14,25 +19,26 @@ pronunciation:
   katakana: カイ
   romaji: kai
 formation:
-  動詞 (普通形) + かい: Used to ask a casual question about an action or state (e.g., 話すかい).
-  い形容詞 (普通形) + かい: Used to ask a casual question about an i-adjective quality (e.g., 高いかい).
-  な形容詞 (語幹) + だ + かい: Used to ask a casual question about a na-adjective quality (present tense, e.g.,
-    静かだかい).
-  名詞 + だ + かい: Used to ask a casual question about a noun (present tense, e.g., 学生だかい).
-  動詞 (普通形) + のかい: Used to ask a casual question about a verb, often with an explanatory nuance (e.g.,
-    話すのかい).
-  い形容詞 (普通形) + のかい: Used to ask a casual question about an i-adjective, often with an explanatory nuance
-    (e.g., 高いのかい).
-  な形容詞 (語幹) + なのかい: Used to ask a casual question about a na-adjective, with explanatory の (present tense,
-    e.g., 静かなのかい).
-  名詞 + なのかい: Used to ask a casual question about a noun, with explanatory の (present tense, e.g., 学生なのかい).
-  動詞 (普通形) + んかい: A casual, shortened form of のかい for verbs (e.g., 行くんかい).
-  い形容詞 (普通形) + んかい: A casual, shortened form of のかい for i-adjectives (e.g., 欲しいんかい).
-  な形容詞 (語幹) + なんかい: A casual, shortened form of なのかい for na-adjectives (present tense, e.g., 綺麗なんかい).
-  名詞 + なんかい: A casual, shortened form of なのかい for nouns (present tense, e.g., 大学生なんかい).
-  な形容詞 (語幹) + だった + かい: Used to ask a casual question about a na-adjective quality (past tense, e.g.,
-    静かだったかい).
-  名詞 + だった + かい: Used to ask a casual question about a noun (past tense, e.g., 学生だったかい).
+  動詞 (普通形) + {かい}: Used to ask a casual question about an action or state (e.g., 話す{かい}).
+  い形容詞 (普通形) + {かい}: Used to ask a casual question about an i-adjective quality (e.g., 高い{かい}).
+  な形容詞 (語幹) + だ + {かい}: Used to ask a casual question about a na-adjective quality (present tense, e.g.,
+    静かだ{かい}).
+  名詞 + だ + {かい}: Used to ask a casual question about a noun (present tense, e.g., 学生だ{かい}).
+  動詞 (普通形) + の + {かい}: Used to ask a casual question about a verb, often with an explanatory nuance (e.g.,
+    話すの{かい}).
+  い形容詞 (普通形) + の + {かい}: Used to ask a casual question about an i-adjective, often with an explanatory
+    nuance (e.g., 高いの{かい}).
+  な形容詞 (語幹) + なの + {かい}: Used to ask a casual question about a na-adjective, with explanatory の (present
+    tense, e.g., 静かなの{かい}).
+  名詞 + なの + {かい}: Used to ask a casual question about a noun, with explanatory の (present tense, e.g.,
+    学生なの{かい}).
+  動詞 (普通形) + ん + {かい}: A casual, shortened form of のかい for verbs (e.g., 行くん{かい}).
+  い形容詞 (普通形) + ん + {かい}: A casual, shortened form of のかい for i-adjectives (e.g., 欲しいん{かい}).
+  な形容詞 (語幹) + なん + {かい}: A casual, shortened form of なのかい for na-adjectives (present tense, e.g., 綺麗なん{かい}).
+  名詞 + なん + {かい}: A casual, shortened form of なのかい for nouns (present tense, e.g., 大学生なん{かい}).
+  な形容詞 (語幹) + だった + {かい}: Used to ask a casual question about a na-adjective quality (past tense, e.g.,
+    静かだった{かい}).
+  名詞 + だった + {かい}: Used to ask a casual question about a noun (past tense, e.g., 学生だった{かい}).
 jlpt: N4
 details:
   part-of-speech: particle
@@ -474,5 +480,44 @@ post_example_writeup: Remember to adjust your intonation when using 「かい」
   and generally only used by males. While we have included an example with a female speaker to meet the
   schema's diversity requirement, it's important to understand that this usage is highly atypical for
   women in standard Japanese speech and conveys a very specific, often rough or mimicking, nuance.
-sources:
-  bunpro: https://bunpro.jp/grammar_points/かい
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    明日 も 来る？'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 仕事、大変？'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    君 は 本当 に 丁寧 な の？'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    うち の 猫、可愛い 子 な の？'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この ドーナッツ を 食べる の？'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    その プレゼント が 欲しい の？'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼女 は 本当 に 綺麗 な の？'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 は いい 人 な の？'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    お前 も 一緒 に 行き たい の？'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    そんな に 眠い の？'
+  - '[rule-5] warning examples[10].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    大学 生 な の？'
+  - '[rule-5] warning examples[11].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あの 試合、退屈 だっ た の？'
+  - '[rule-5] warning examples[12].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 は 本当 に 医者 だっ た の？'
+  - '[rule-5] warning examples[13].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    勉強 し てる の？'
+  - '[rule-5] warning examples[14].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    また 鍵 を なくし た の？'
+  - '[rule-5] warning examples[15].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    本当 に 行き たい の？'
+  - '[rule-5] warning examples[16].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    これ だけ で 十分 な の？'
+  - '[rule-5] warning examples[17].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    その 帽子 を 被っ て 行く の？'
+  - '[rule-5] warning examples[18].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    どう し た の？恥ずかしい の？'
+  - '[rule-5] warning examples[19].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 番組、見 たく ない の？'

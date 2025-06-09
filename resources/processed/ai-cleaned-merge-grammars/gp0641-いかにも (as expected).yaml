@@ -1,13 +1,20 @@
 grammar_point: いかにも (as expected)
 learn_before:
+  - んです・のです (explanatory emphatic)
   - らしい (I hear, it seems)
   - そう (looks like)
-  - あまり (so much that)
+  - やはり (as expected・after all・still)
+  - 本当 に (really・truly)
+  - 確か に (certainly・indeed)
   - こそ (emphasis)
-  - 全然 (not at all; totally)
+  - まるで…ようだ (just like)
+  - さすが (as expected even)
 learn_after:
   - 極まりない・極まる (extreme degree)
   - いかに (how; how much)
+  - の極み (ultimate degree)
+  - といったらない (indescribable・extreme)
+  - にほかならない (nothing but)
 id: gp0641
 meaning: Truly; indeed; really; very; exactly (as expected)
 pronunciation:
@@ -58,7 +65,7 @@ false_friends:
       or 'stereotypical,' often implying that something perfectly fits a preconceived idea. In contrast,
       「本当に」 simply affirms the truth of a statement without this 'as expected' nuance, similar to 'genuinely'
       or 'factually'.
-    grammar_point: <suggest>:本当に (really・truly)
+    grammar_point: 本当 に (really・truly)
   - term: 確かに
     meaning: certainly, indeed
     kind: similar expression
@@ -66,7 +73,7 @@ false_friends:
       of 'it is true that...' or 'indeed, you are right.' 「いかにも」, on the other hand, stresses the degree
       to which something is true or characteristic, highlighting that it embodies a quality or appearance
       precisely as one would imagine.
-    grammar_point: 確かに (certainly・indeed)
+    grammar_point: 確か に (certainly・indeed)
   - term: さも
     meaning: as if, as though (implying false appearance)
     kind: similar expression
@@ -260,8 +267,8 @@ examples:
     speaker_gender: male
     listener_gender: group
     speaker_age: older
-    nuance: The idiom 「的を得たもの」 (mato o eta mono) means 'something that hit the mark' or 'something to
-      the point', implying precision and insight. An older male speaker in a professional setting might
+    nuance: The idiom 「的を得たもの」 (mato o eta mono) literally means 'something that hit the mark' or 'something
+      to the point', implying precision and insight. An older male speaker in a professional setting might
       use 「いかにも」 to emphatically endorse the boss's opinion, conveying that it was precisely as insightful
       and effective as expected from someone in that position.
     etymology: The idiom 「的を得る」 (mato o eru) literally means 'to hit the target,' with 「的」 (mato) originally
@@ -345,7 +352,7 @@ examples:
     english_literally: She, with truly newcomer-like behavior, was nervous and looked unsure.
     competing_grammar:
       - competing_japanese:
-          - 彼女 は 新人 らしい 振る舞い で、緊張 し て 不安 そう だっ た。
+          - 彼女 は 新人 の よう な 振る舞い で、緊張 し て 不安 そう だっ た。
         english: She behaved like a newcomer, looking nervous and unsure.
         hint: This phrase describes the behavior but without the strong emphasis that it's 'exactly as
           expected' from a newcomer. We're looking for an adverb to intensify that typicality.
@@ -391,3 +398,66 @@ post_example_writeup: While 「いかにも」 is versatile, be mindful of its s
   on 'as expected' can sometimes imply a stereotype or even a mild criticism if the expectation is negative.
 sources:
   bunpro: https://bunpro.jp/grammar_points/いかにも
+lint-errors:
+  - '[rule-13] unknown grammar at ''learn_before[4]'': ''本当 に (really・truly)''. You may suggest new grammar
+    points by adding a false_friend.'
+  - '[rule-13] unknown grammar at ''learn_before[5]'': ''確か に (certainly・indeed)''. You may suggest new
+    grammar points by adding a false_friend.'
+  - '[rule-13] warning unknown grammar at ''false_friends[0]'': ''本当 に (really・truly)''. It **MUST** be
+    from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
+    grammar point.'
+  - '[rule-13] warning unknown grammar at ''false_friends[1]'': ''確か に (certainly・indeed)''. It **MUST**
+    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
+    grammar point.'
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    ジョン は 試験 に 合格 し て、嬉し そう だ。'
+  - '[rule-5] warning examples[0].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    ジョン は 試験 に 合格 し て、本当 に 嬉し そう だ。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あの 有名 な 料理 店 の 味 は 本当 に プロ の 技 だ と 感じ た。'
+  - '[rule-5] warning examples[1].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    あの 有名 な 料理 店 の 味 は 確か に プロ の 技 だ と 感じ た。'
+  - '[rule-5] warning examples[1].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    あの 有名 な 料理 店 の 味 は さすが プロ の 技 だ と 感じ た。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    課長 は 最近、残業 続き で 本当 に 疲れ て いる 様子 だ。'
+  - '[rule-5] warning examples[2].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    課長 は 最近、残業 続き で 確か に 疲れ て いる 様子 だ。'
+  - '[rule-5] warning examples[2].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    課長 は 最近、残業 続き で さすが に 疲れ て いる 様子 だ。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 は 何 も 知ら ない まるで 無 関心 な 人 で ある か の よう に 振る舞っ た。'
+  - '[rule-5] warning examples[3].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    彼 は 何 も 知ら ない 本当 に 無 関心 な 人 で ある か の よう に 振る舞っ た。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    上司 の 意見 は 本当 に 的 を 得 た もの だっ た。'
+  - '[rule-5] warning examples[4].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    上司 の 意見 は 確か に 的 を 得 た もの だっ た。'
+  - '[rule-5] warning examples[4].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    上司 の 意見 は さすが 的 を 得 た もの だっ た。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あの 高級 車 は 本当 に 高 そう で、派手 だっ た。'
+  - '[rule-5] warning examples[5].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    あの 高級 車 は 確か に 高 そう で、派手 だっ た。'
+  - '[rule-5] warning examples[5].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    あの 高級 車 は さすが に 高 そう で、派手 だっ た。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    弁護 士 の 議論 は 本当 に 説得 力 が ある よう だっ た。'
+  - '[rule-5] warning examples[6].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    弁護 士 の 議論 は 確か に 説得 力 が ある よう だっ た。'
+  - '[rule-5] warning examples[6].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    弁護 士 の 議論 は さすが 説得 力 が ある よう だっ た。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 は 混乱 の 中 で も、何 も なかっ た よう に 微笑ん だ。'
+  - '[rule-5] warning examples[7].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    彼 は 混乱 の 中 で も、まるで 何 も なかっ た か の よう に 微笑ん だ。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼女 は 新人 の よう な 振る舞い で、緊張 し て 不安 そう だっ た。'
+  - '[rule-5] warning examples[8].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    彼女 は 本当 に 新人 らしい 振る舞い で、緊張 し て 不安 そう だっ た。'
+  - '[rule-5] warning examples[8].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    彼女 は さすが 新人 らしい 振る舞い で、緊張 し て 不安 そう だっ た。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    その とおり です ね、本当 に。'
+  - '[rule-5] warning examples[9].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    その とおり です ね、確か に。'

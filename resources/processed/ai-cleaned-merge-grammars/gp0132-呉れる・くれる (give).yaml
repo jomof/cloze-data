@@ -1,14 +1,17 @@
 grammar_point: 呉れる・くれる (give)
+better_grammar_point_name:
+  - 呉れる・くれる (give to speaker/in-group)
 learn_before:
   - Verb[て] (and then)
   - あげる (give away)
   - もらう (to receive)
+  - に (fixed point・target・time)
+  - を (object marker)
 learn_after:
   - てもらう (to get someone to do)
   - てあげる (to do for someone)
-  - てくれる (receiving benefaction)
-  - <suggest>:くださる (honorific give)
   - お・ご～する (humble action)
+  - お〜になる (honorific form)
 id: gp0132
 meaning: To give (to me or someone close to me)
 conjugations:
@@ -166,17 +169,17 @@ examples:
     english_literally: Friend, an interesting book, gave to me.
     competing_grammar:
       - competing_japanese:
-          - ともだち が 面白い ほん を あげ た。
+          - ともだち が 面白い ほん を {あげ た}。
         english: My friend gave an interesting book (to someone else).
         hint: This implies your friend gave the book to someone *else*, not to you. We're looking for
           the action of giving *to you*.
       - competing_japanese:
-          - わたし は ともだち から 面白い ほん を もらっ た。
+          - わたし は ともだち から 面白い ほん を {もらっ た}。
         english: I received an interesting book from my friend.
         hint: This focuses on *your act of receiving* the book. We're looking for the action of your friend
           *giving* it.
       - competing_japanese:
-          - ともだち が 面白い ほん を くださっ た。
+          - ともだち が 面白い ほん を {くださっ た}。
         english: My friend (honorifically) gave me an interesting book.
         hint: Using this implies your friend is of significantly higher social status, which is usually
           not the case for a 'friend'. We're looking for a verb where the giver is of equal or lower status
@@ -195,17 +198,17 @@ examples:
     english_literally: Older sister/brother, a new book, gave to me.
     competing_grammar:
       - competing_japanese:
-          - 姉 が 新しい ほん を あげ まし た。
+          - 姉 が 新しい ほん を {あげ まし た}。
         english: My older sibling gave a new book (to someone else).
         hint: This implies your older sibling gave the book to someone *else*. We're looking for the action
           of giving *to you*.
       - competing_japanese:
-          - わたし は 姉 から 新しい ほん を もらい まし た。
+          - わたし は 姉 から 新しい ほん を {もらい まし た}。
         english: I received a new book from my older sibling.
         hint: This emphasizes *your act of receiving* the book. We're looking for the action of your older
           sibling *giving* it.
       - competing_japanese:
-          - 姉 が 新しい ほん を くださり まし た。
+          - 姉 が 新しい ほん を {ください まし た}。
         english: My older sibling (honorifically) gave me a new book.
         hint: Using this implies your older sibling is of extremely high social status, beyond typical
           familial respect. We're looking for a polite verb for giving where the giver is of equal or
@@ -222,17 +225,17 @@ examples:
     english_literally: When I was in trouble, mother helped me.
     competing_grammar:
       - competing_japanese:
-          - 困っ て いる とき、母 が てつだっ て あげ た。
+          - 困っ て いる とき、母 が てつだっ て {あげ た}。
         english: When I was in trouble, my mother helped (someone else).
         hint: This would mean your mother helped someone *else*. We're looking for the action of her helping
           *you*.
       - competing_japanese:
-          - 困っ て いる とき、わたし は 母 に てつだっ て もらい まし た。
+          - 困っ て いる とき、わたし は 母 に てつだっ て {もらい まし た}。
         english: When I was in trouble, I received help from my mother.
         hint: This focuses on *your act of receiving* help. We're looking for the action of your mother
           *giving* help to you.
       - competing_japanese:
-          - 困っ て いる とき、母 が てつだっ て くださっ た。
+          - 困っ て いる とき、母 が てつだっ て {ください まし た}。
         english: When I was in trouble, my mother (honorifically) helped me.
         hint: While grammatically correct and respectful, using this implies a formal distance or very
           high reverence for your mother. We're looking for a natural expression for a mother's help given
@@ -243,18 +246,18 @@ examples:
     conjugation: te-form (～て)
   - english: My younger brother won't give me the game, so I'm a bit angry.
     japanese:
-      - おとうと が ゲーム を {くれ ない} から、ちょっと 怒っ てる。
+      - おとうと が ゲーム を {くれ ない} から、ちょっと 怒っ て いる。
       - おとうと が ゲーム を {くれ ませ ん} から、ちょっと 怒っ て い ます。
       - 弟 が ゲーム を {くれ ない} から、ちょっと 怒っ て いる ん だ。
     english_literally: Younger brother, game, won't give to me, so, I'm a bit angry.
     competing_grammar:
       - competing_japanese:
-          - おとうと が ゲーム を あげ ない から、ちょっと おこっ てる。
+          - おとうと が ゲーム を {あげ ない} から、ちょっと おこっ て いる。
         english: My younger brother won't give the game (to someone else), so I'm a bit angry.
         hint: This implies your brother isn't giving the game to someone *else*. We're looking for him
           not giving it *to you*.
       - competing_japanese:
-          - わたし は おとうと から ゲーム を もらわ ない から、ちょっと おこっ てる。
+          - わたし は おとうと から ゲーム を {もらわ ない} から、ちょっと おこっ て いる。
         english: I don't receive the game from my younger brother, so I'm a bit angry.
         hint: This focuses on *your inability to receive* the game. We're looking for your brother's refusal
           to *give* it to you.
@@ -276,17 +279,17 @@ examples:
     english_literally: Sorry, that salt won't you give me?
     competing_grammar:
       - competing_japanese:
-          - すみ ませ ん、その しお を あげ ましょう か？
+          - すみ ませ ん、その しお を {あげ ましょう か}？
         english: Excuse me, shall I give you that salt?
         hint: This would mean 'Shall *I* give *you* that salt?', which is the opposite of what you want
           to ask. We're looking for a request for *them* to give something *to you*.
       - competing_japanese:
-          - すみ ませ ん、その しお を もらえ ませ ん か？
+          - すみ ませ ん、その しお を {もらえ ませ ん か}？
         english: Excuse me, can't I receive that salt?
         hint: This means 'Can't I *receive* that salt from you?'. While grammatically possible, 「くれませんか」
           is a more direct and common way to ask someone to do something for you.
       - competing_japanese:
-          - すみ ませ ん、その しお を ください ます か？
+          - すみ ませ ん、その しお を {ください ませ ん か}？
         english: Excuse me, would you (honorifically) give me that salt?
         hint: Using this implies you are asking someone of higher social status. We're looking for a polite
           request to someone of generally equal status.
@@ -302,17 +305,17 @@ examples:
     english_literally: If money, then (you) give me, new camera I'll buy.
     competing_grammar:
       - competing_japanese:
-          - もし お 金 を あげ たら、新しい カメラ を 買う よ。
+          - もし お 金 を {あげ たら}、新しい カメラ を 買う よ。
         english: If I give money, I'll buy a new camera.
         hint: This means 'If *I* give money...' or 'If someone *else* gives money (to someone else)...'.
           We're looking for the condition where *you* receive money.
       - competing_japanese:
-          - もし わたし が お 金 を もらっ たら、新しい カメラ を 買う よ。
+          - もし わたし が お 金 を {もらっ た} ら、新しい カメラ を 買う よ。
         english: If I received money, I'll buy a new camera.
         hint: This focuses on *your act of receiving* the money. We're looking for the action of someone
           *giving* it to you.
       - competing_japanese:
-          - もし お 金 を くださっ たら、新しい カメラ を 買う よ。
+          - もし お 金 を {くださっ たら}、新しい カメラ を 買う よ。
         english: If you (honorifically) give me money, I'll buy a new camera.
         hint: Using this implies you are asking someone of higher social status for money. We're looking
           for a more casual request to someone like a parent, where the focus is on the action benefiting
@@ -334,12 +337,12 @@ examples:
     english_literally: Quickly that, give!
     competing_grammar:
       - competing_japanese:
-          - はやく それ を あげろ！
+          - はやく それ を {あげろ}！
         english: Quickly give that (to someone else)!
         hint: This commands someone to give their strength to *another person*, not to *you*. We're looking
           for a command to give the item *to you*.
       - competing_japanese:
-          - はやく それ を もらえ！
+          - はやく それ を {もらえ}！
         english: Quickly receive that!
         hint: This is an imperative for *receiving* something, which is grammatically awkward and unnatural
           for commanding someone to give you something. We're looking for a command for them to *give*
@@ -360,17 +363,17 @@ examples:
     english_literally: Senior colleague, politely explained, gave to me.
     competing_grammar:
       - competing_japanese:
-          - せんぱい が ていねい に せつめい し て あげ まし た。
+          - せんぱい が ていねい に せつめい し て {あげ まし た}。
         english: My senior colleague explained it politely (to someone else).
         hint: This implies your senior colleague explained it to *someone else*, not to you. We're looking
           for the action of explaining *to you*.
       - competing_japanese:
-          - わたし は せんぱい に ていねい に せつめい し て もらい まし た。
+          - わたし は せんぱい に ていねい に せつめい し て {もらい まし た}。
         english: I received a polite explanation from my senior colleague.
         hint: This emphasizes *your act of receiving* the explanation. We're looking for the action of
           your senior colleague *giving* the explanation to you.
       - competing_japanese:
-          - せんぱい が ていねい に せつめい し て くださり まし た。
+          - せんぱい が ていねい に せつめい し て {ください まし た}。
         english: My senior colleague (honorifically) explained it politely.
         hint: This is a very polite and honorific way to express your senior colleague's action, implying
           greater respect for their status. We're looking for a statement that politely describes the
@@ -392,12 +395,12 @@ examples:
     english_literally: Permission, if not given, project cannot be started.
     competing_grammar:
       - competing_japanese:
-          - 許可 を あげ なけれ ば、プロジェクト を 始め られ ませ ん。
+          - 許可 を {あげ なけれ ば}、プロジェクト を 始め られ ませ ん。
         english: If (we) don't give permission, we can't start the project.
         hint: This implies *we* are the ones not giving permission. We're looking for the situation where
           *they* don't give permission *to us*.
       - competing_japanese:
-          - 許可 を もらわ なけれ ば、プロジェクト を 始め られ ませ ん。
+          - 許可 を {もらわ なけれ ば}、プロジェクト を 始め られ ませ ん。
         english: If (we) don't receive permission, we can't start the project.
         hint: This focuses on *our act of receiving* the permission. We're looking for the action of *them
           giving* permission to us.
@@ -416,12 +419,12 @@ examples:
     english_literally: Please, your strength, please give me.
     competing_grammar:
       - competing_japanese:
-          - どうぞ、お 力 を あげ なさい。
+          - どうぞ、お 力 を {あげ なさい}。
         english: Please give your strength (to someone else).
         hint: This commands someone to give their strength to *another person*, not to *you*. We're looking
           for a request to give strength *to you*.
       - competing_japanese:
-          - どうぞ、お 力 を もらい なさい。
+          - どうぞ、お 力 を {もらい なさい}。
         english: Please receive strength.
         hint: This is an awkward and unnatural imperative for *receiving* something, not for someone *giving*
           something to you. We're looking for a polite command for them to *give* assistance.
@@ -441,17 +444,17 @@ examples:
     english_literally: Teacher, useful advice, gave me.
     competing_grammar:
       - competing_japanese:
-          - 先生 が 役 に 立つ アドバイス を あげ まし た。
+          - 先生 が 役 に 立つ アドバイス を {あげ まし た}。
         english: My teacher gave useful advice (to someone else).
         hint: This implies your teacher gave the advice to someone *else*. We're looking for the action
           of your teacher giving it *to you*.
       - competing_japanese:
-          - わたし は 先生 から 役 に 立つ アドバイス を もらい まし た。
+          - わたし は 先生 から 役 に 立つ アドバイス を {もらい まし た}。
         english: I received useful advice from my teacher.
         hint: This focuses on *your act of receiving* the advice. We're looking for the action of your
           teacher *giving* it to you.
       - competing_japanese:
-          - 先生 が 役 に 立つ アドバイス を くださり まし た。
+          - 先生 が 役 に 立つ アドバイス を {ください まし た}。
         english: My teacher (honorifically) gave me useful advice.
         hint: While correct, 「くださる」 emphasizes the teacher's higher status more strongly. 「くれる」 is suitable
           for acknowledging a benefit from a teacher without excessive deference, particularly in a general
@@ -468,17 +471,17 @@ examples:
     english_literally: Boss, tomorrow, project's approval, will give me.
     competing_grammar:
       - competing_japanese:
-          - 上司 が あした プロジェクト の 承認 を あげ ます。
+          - 上司 が あした プロジェクト の 承認 を {あげ ます}。
         english: My boss will give the approval (to someone else) tomorrow.
         hint: This implies your boss will give the approval to *someone else*, not to you. We're looking
           for the action of the boss giving it *to you*.
       - competing_japanese:
-          - わたし は 上司 から あ し た プロジェクト の 承認 を もらい ます。
+          - わたし は 上司 から あ し た プロジェクト の 承認 を {もらい ます}。
         english: I will receive the project approval from my boss tomorrow.
         hint: This focuses on *your act of receiving* the approval. We're looking for the action of your
           boss *giving* it to you.
       - competing_japanese:
-          - 上司 が あした プロジェクト の 承認 を くださり ます。
+          - 上司 が あした プロジェクト の 承認 を {ください まし た}。
         english: My boss (honorifically) will give me the approval for the project tomorrow.
         hint: While polite, in a professional context where you are reporting a fact, 「くれます」 is often
           sufficient. 「くださいます」 conveys a higher level of respect or formality than might be necessary
@@ -495,12 +498,12 @@ examples:
     english_literally: Child, for birthday, handmade card, gave me.
     competing_grammar:
       - competing_japanese:
-          - こども が 誕生 日 に 手作り の カード を あげ まし た。
+          - こども が 誕生 日 に 手作り の カード を {あげ まし た}。
         english: My child gave a handmade card (to someone else) for my birthday.
         hint: This implies your child gave the card to someone *else*. We're looking for the action of
           the child giving it *to you*.
       - competing_japanese:
-          - わたし は こども から 誕生 日 に 手作り の カード を もらい まし た。
+          - わたし は こども から 誕生 日 に 手作り の カード を {もらい まし た}。
         english: I received a handmade card from my child for my birthday.
         hint: This focuses on *your act of receiving* the card. We're looking for the action of your child
           *giving* it to you.
@@ -515,13 +518,13 @@ examples:
     english_literally: Friend, homework, helped gave me.
     competing_grammar:
       - competing_japanese:
-          - 友達 が 宿題 を 手伝っ て あげ た。
+          - 友達 が 宿題 を 手伝っ て {あげ た}。
         english: This implies your friend helped someone *else*, not you. We're looking for the action
           of them helping *you*.
         hint: This implies your friend helped someone *else*, not you. We're looking for the action of
           them helping *you*.
       - competing_japanese:
-          - 私 は 友達 に 宿題 を 手伝っ て もらっ た。
+          - 私 は 友達 に 宿題 を 手伝っ て {もらっ た}。
         english: This emphasizes *your act of receiving* help. We're looking for the action of your friend
           *giving* help to you.
         hint: This emphasizes *your act of receiving* help. We're looking for the action of your friend
@@ -542,3 +545,6 @@ post_example_writeup: As you can see from these examples, the core meaning of �
   speakers.
 sources:
   bunpro: https://bunpro.jp/grammar_points/呉れる・くれる-(give)
+lint-errors:
+  - '[rule-14] warning ''better_grammar_point_name[0]'': ''呉れる・くれる (give to speaker/in-group)'' contain
+    illegal characters: /.'

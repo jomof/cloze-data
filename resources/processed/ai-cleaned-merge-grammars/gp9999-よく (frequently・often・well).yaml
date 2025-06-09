@@ -1,13 +1,14 @@
 grammar_point: よく (frequently・often・well)
 learn_before:
-  - い-Adjectives (adjectives ending in い)
-  - な-Adjectives (adjectival nouns)
-  - あまり ない (not very or much)
+  - い-Adjective (connecting and adverbial form)
+  - Verb[て] (and then)
   - たくさん (many・a lot)
-  - めったに〜ない (rarely)
+  - あまり ない (not very or much)
   - 見える (to be visible・to seem)
   - 聞こえる (to be audible)
-  - Verb[て] (and then)
+  - どう (how what do you think?)
+  - すぐ (immediately・easily)
+  - もう (already・anymore)
 learn_after:
   - ますます (more and more)
   - ばかりだ (only continues to)
@@ -19,6 +20,9 @@ learn_after:
   - およそ・おおよそ (approximate・generally・not at all)
   - がち (tend to)
   - つつある (gradual process)
+  - とても〜ない (cannot possibly ~)
+  - かねる (unable to)
+  - まさか (no way)
 id: gp9999
 meaning: Often; frequently; well; skillfully; thoroughly; precisely
 pronunciation:
@@ -296,3 +300,24 @@ examples:
 post_example_writeup: N/A
 sources:
   bunpro: https://bunpro.jp/grammar_points/よく
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    納豆 は 毎日 食べる よ。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    田中 さん は 料理 が 上手 です。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    説明 書 を 全部 読ん で ください。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    ここ から 海 が 見える ね。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    そんな 難しい 仕事 を 頑張っ て やり遂げ た ね！'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    最近、午後 に すぐ 眠く なる ん だ。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    その ワン ピース、あなた に とても 似合う よ。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    よく 聞く 話 だ ね。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あんな 大事 な こと を なぜ 忘れ た の！'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 は 講義 に たくさん 出席 し、メモ も たくさん 取る。'

@@ -3,8 +3,10 @@ learn_before:
   - だけ (only・just)
   - ほど (extent・approximation)
   - くらい (approximate quantity or degree)
+  - ている (resultant and ongoing state)
+  - なるほど (i see)
 learn_after:
-  - に及ばない (cannot compare)
+  - ばかりだ (only continues to)
 id: gp1144
 meaning: That much; to the same extent; to that degree; correspondingly
 pronunciation:
@@ -38,18 +40,27 @@ false_friends:
     kind: similar expression
     nuance: Unlike 「それだけ」, 「それほど」 is often used in negative sentences to indicate that something is not
       as significant or intense as expected. For example, 「それほど難しくない」 means "it's not that difficult."
-    grammar_point: あまり ない (not very or much)
-  - term: その分 (そのぶん)
+    grammar_point: <suggest>:それほど (not that much)
+  - term: その分
     meaning: correspondingly, proportionately, to that extent
     kind: synonym
     nuance: While 「それだけ」 emphasizes the direct correspondence to a previously stated degree or condition,
       「その分」 often implies a 'trade-off' or a result that naturally follows as a consequence or share.
       It can sometimes carry a nuance of compensation or natural consequence.
     grammar_point: <suggest>:その分 (correspondingly・proportionately)
+  - term: ばかり
+    meaning: only・excessive
+    kind: similar expression
+    nuance: While 「それだけ」 emphasizes a proportional relationship or correspondence to a specific degree,
+      「ばかり」 primarily means "only," "just," or indicates an excessive amount of something. It can sometimes
+      imply "nothing but," focusing on singularity or excess rather than direct scaling.
+    grammar_point: ばかり (only・excessive)
 post_false_friends_writeup: 「それほど」 is generally used to downplay the intensity or degree of something,
   often in negative contexts, while 「それだけ」 emphasizes a direct and proportionate relationship. 「その分」 is
   a very close synonym to 「それだけ」, also meaning 'correspondingly' or 'to that extent,' but it often carries
-  a nuance of a natural consequence or a proportionate share/trade-off derived from a situation.
+  a nuance of a natural consequence or a proportionate share/trade-off derived from a situation. 「ばかり」,
+  on the other hand, focuses on indicating exclusivity ('only') or an excessive amount, rather than the
+  direct proportionality of 「それだけ」.
 examples:
   - english: The more you practice, the better you become to that extent.
     japanese:
@@ -91,7 +102,7 @@ examples:
       - competing_japanese:
           - 期待 が 大きけれ ば 大きい ほど、その 分 悲しい 気持ち も 大きく なる。
         english: The greater the expectations, the sadder you'll feel proportionately.
-        hint: This also expresses proportionality, but might imply a natural outcome or a share. We're
+        hint: This also expresses proportionality, but might imply a natural consequence or a share. We're
           looking for a direct correspondence to the degree of the expectation.
       - competing_japanese:
           - 期待 し て い なかっ た から、それ ほど 悲しい 気持ち に なら なかっ た。
@@ -215,8 +226,8 @@ examples:
       - competing_japanese:
           - リスク が 高けれ ば 高い ほど、その 分 リターン も 大きく なり ます。
         english: The higher the risk, the higher the return will be proportionately.
-        hint: This also expresses proportionality, but might imply a natural consequence or a share. We're
-          looking for a direct correspondence to the degree of risk.
+        hint: While this also expresses proportionality, it often implies a natural consequence or a share.
+          We're looking for a direct correspondence to the degree of risk.
       - competing_japanese:
           - どんな に リスク を 取っ て も、それ ほど リターン は 得 られ ない か も しれ ない。
         english: No matter how much risk you take, you might not get that much return.
@@ -227,8 +238,8 @@ examples:
     setting: informative
     nuance: This example demonstrates a fundamental principle in finance. 「それだけ」 here highlights that
       the magnitude of the potential reward is directly and proportionally tied to the magnitude of the
-      risk taken. The formal register and informative setting make this a straightforward explanation
-      of a cause-and-effect relationship.
+      risk taken. The formal register and informative setting are appropriate for discussing scientific
+      or societal issues.
   - english: The higher your concentration, the more efficient your studying will be to that extent.
     japanese:
       - 集中 力 が 高けれ ば 高い ほど、{それ だけ} 勉強 の 効率 も 上がり ます。
@@ -355,3 +366,62 @@ post_example_writeup: The key to understanding 「それだけ」 is recognizing
   to indicate that the subsequent result corresponds directly to the preceding condition.
 sources:
   bunpro: https://bunpro.jp/grammar_points/それだけ
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    練習 すれ ば する ほど、上手 に なり ます。'
+  - '[rule-5] warning examples[0].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    練習 すれ ば する ほど、その 分 上手 に なり ます。'
+  - '[rule-5] warning examples[0].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    いくら 練習 し て も、それ ほど 上手 に は なり ませ ん。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    期待 が 大きけれ ば 大きい ほど、悲しい 気持ち も 大きく なる。'
+  - '[rule-5] warning examples[1].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    期待 が 大きけれ ば 大きい ほど、その 分 悲しい 気持ち も 大きく なる。'
+  - '[rule-5] warning examples[1].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    期待 し て い なかっ た から、それ ほど 悲しい 気持ち に なら なかっ た。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    プロジェクト は 困難 だっ た。その 分 完了 し た 時 の 達成 感 は 計り 知れ ない ほど 大きかっ た。'
+  - '[rule-5] warning examples[2].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    プロジェクト は 困難 だっ た が、それ ほど 達成 感 を 感じ なかっ た。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    愛し て いれ ば 愛し て いる ほど、焼きもち を 焼い て しまう。'
+  - '[rule-5] warning examples[3].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    愛し て いれ ば 愛し て いる ほど、その 分 焼きもち を 焼い て しまう。'
+  - '[rule-5] warning examples[3].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    愛し て いる けれど、それ ほど 焼きもち は 焼か ない。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    食事 が 健康 的 で あれ ば ある ほど、体調 も 良く なり ます。'
+  - '[rule-5] warning examples[4].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    食事 が 健康 的 で あれ ば ある ほど、その 分 体調 も 良く なり ます。'
+  - '[rule-5] warning examples[4].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    どれ だけ 健康 的 な 食事 を し て も、それ ほど 効果 は ない と 思う。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    リスク が 高けれ ば 高い ほど、リターン も 大きく なり ます。'
+  - '[rule-5] warning examples[5].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    リスク が 高けれ ば 高い ほど、その 分 リターン も 大きく なり ます。'
+  - '[rule-5] warning examples[5].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    どんな に リスク を 取っ て も、それ ほど リターン は 得 られ ない か も しれ ない。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    集中 力 が 高けれ ば 高い ほど、勉強 の 効率 も 上がり ます。'
+  - '[rule-5] warning examples[6].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    集中 力 が 高けれ ば 高い ほど、その 分 勉強 の 効率 も 上がり ます。'
+  - '[rule-5] warning examples[6].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    いくら 集中 し て も、それ ほど 効率 が 上がる と は 限ら ない。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    コミュニケーション を 取れ ば 取る ほど、お 互い の 理解 も 深まり ます。'
+  - '[rule-5] warning examples[7].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    コミュニケーション を 取れ ば 取る ほど、その 分 お 互い の 理解 も 深まり ます。'
+  - '[rule-5] warning examples[7].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    どんな に コミュニケーション を 取っ て も、それ ほど 理解 は 深まら ない 場合 も ある。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    旅行 の 計画 を 綿密 に 立てれ ば 立てる ほど、旅 は 楽しく なり ます。'
+  - '[rule-5] warning examples[8].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    旅行 の 計画 を 綿密 に 立てれ ば 立てる ほど、その 分 旅 は 楽しく なり ます。'
+  - '[rule-5] warning examples[8].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    綿密 に 計画 を 立て て も、それ ほど 楽しい 旅 に なら ない こと も ある。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    汚染 が 増えれ ば 増える ほど、環境 へ の 影響 も 大きく なり ます。'
+  - '[rule-5] warning examples[9].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    汚染 が 増えれ ば 増える ほど、その 分 環境 へ の 影響 も 大きく なり ます。'
+  - '[rule-5] warning examples[9].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    汚染 が これ 以上 増え て も、それ ほど 環境 影響 は ない だろう。'

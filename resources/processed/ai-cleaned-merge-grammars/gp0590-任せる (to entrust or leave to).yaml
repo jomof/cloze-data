@@ -1,13 +1,16 @@
 grammar_point: 任せる (to entrust or leave to)
 learn_before:
-  - Verb[て] (and then)
+  - に (recipient)
+  - を (object marker)
+  - する (to do・make)
+  - Verb[て] + ほしい (want someone to do)
   - てくれる (receiving benefaction)
   - てもらう (to get someone to do)
-  - Verb[volitional-よう]+思う (intend to or think I will)
+  - ことにする (to decide to)
+  - ておく (to do in advance)
 learn_after:
+  - を余儀なくされる (to be forced or compelled)
   - に足る (worthy of)
-  - <suggest>:委ねる (to entrust or commit)
-  - <suggest>:〜任せ (leaving to or relying on)
 id: gp0590
 meaning: Leave X up to Y, Entrust X to Y
 conjugations:
@@ -131,11 +134,19 @@ false_friends:
       when talking about committing oneself or a large entity to a higher power or fate. 「〜に任せる」 is more
       common in everyday delegation.
     grammar_point: <suggest>:委ねる (to entrust or commit)
+  - term: 〜任せ
+    meaning: leaving to or relying on
+    kind: similar expression
+    nuance: 「〜任せ」 is a compound noun or adjective that implies passively leaving things to someone/something
+      or a state of being dependent on them, often with a nuance of carelessness or lack of personal effort.
+      「任せる」 is the active verb of entrusting.
+    grammar_point: <suggest>:〜任せ (leaving to or relying on)
 post_false_friends_writeup: While 「〜に任せる」 focuses on delegating responsibility with implied trust or resignation,
   「〜に頼む」 is simply making a request. 「〜に預ける」 is about placing something in temporary care, not necessarily
   task delegation. 「〜に委ねる」 is a more formal or literary alternative, particularly when referring to a
   surrender of control to abstract forces like fate or a higher power, whereas 「〜に任せる」 is more broadly
-  applicable to both tasks and abstract outcomes.
+  applicable to both tasks and abstract outcomes. Lastly, 「〜任せ」 often carries a nuance of carelessness
+  or lack of personal effort, in contrast to the active delegation implied by 「任せる」.
 examples:
   - english: I decided to leave this important project up to him.
     japanese:
@@ -145,7 +156,7 @@ examples:
     english_literally: This important project, to him, to entrust, I decided.
     competing_grammar:
       - competing_japanese:
-          - この 大事 な プロジェクト を 彼 に 頼む こと に し た。
+          - この 大事 な プロジェクト を 彼 に {頼む} こと に し た。
         english: I decided to ask him for this important project.
         hint: 「頼む」 means to ask for something or request a task. While it involves someone doing something,
           it doesn't necessarily mean full responsibility is entrusted to them. We're looking for an expression
@@ -169,7 +180,7 @@ examples:
     english_literally: Next generation to, future, entrust.
     competing_grammar:
       - competing_japanese:
-          - 次 の 世代 に 未来 を 委ね ます。
+          - 次 の 世代 に 未来 を {委ね ます}。
         english: We will commit the future to the next generation.
         hint: 「委ねる」 is a very close synonym but often used in more formal or literary contexts, especially
           when talking about committing something abstract like the future or oneself to a higher power
@@ -195,7 +206,7 @@ examples:
     english_literally: I, fate to, all, entrusted, so regret not exist.
     competing_grammar:
       - competing_japanese:
-          - 僕 は 運命 に 全て を 委ね た から 後悔 は ない。
+          - 僕 は 運命 に 全て を {委ね た} から 後悔 は ない。
         english: I committed everything to fate, so I have no regrets.
         hint: 「委ねる」 is a more formal and literary verb for 'to entrust' when dealing with abstract concepts
           like fate, often implying a deeper surrender. We're looking for a more common expression for
@@ -220,7 +231,7 @@ examples:
     english_literally: Busy time is, small things, her to, not entrust, better.
     competing_grammar:
       - competing_japanese:
-          - 忙しい 時 は、細かい こと は 彼女 に 頼ま ない 方 が いい。
+          - 忙しい 時 は、細かい こと は 彼女 に {頼ま ない} 方 が いい。
         english: When busy, it's better not to ask her for small details.
         hint: 「頼む」 means to ask or request, implying a task is given to someone but not necessarily that
           full responsibility is delegated. We're looking for an expression that indicates not entrusting
@@ -245,7 +256,7 @@ examples:
     english_literally: Baby's care, mother to, entrusted, went shopping.
     competing_grammar:
       - competing_japanese:
-          - 赤ちゃん の 世話 を 母 に 預け て、買い物 に 行っ た。
+          - 赤ちゃん の 世話 を 母 に {預け て}、買い物 に 行っ た。
         english: I left the baby's care with my mother and went shopping.
         hint: 「預ける」 implies temporarily leaving something or someone in someone's care, like depositing
           an item. While it's about care, it doesn't carry the same nuance of entrusting full responsibility
@@ -269,7 +280,7 @@ examples:
     english_literally: If him to work entrust, surely succeed, probably.
     competing_grammar:
       - competing_japanese:
-          - もし 彼 に 仕事 を 頼め ば、きっと 成功 する だろう。
+          - もし 彼 に 仕事 を {頼め ば}、きっと 成功 する だろう。
         english: If we ask him for the work, it will surely succeed.
         hint: 「頼む」 means to ask or request someone to do something. While this could lead to success,
           it doesn't emphasize giving full discretion or responsibility for the work. We're looking for
@@ -295,7 +306,7 @@ examples:
     english_literally: This mission's success or failure, your skill to, let's entrust.
     competing_grammar:
       - competing_japanese:
-          - この 任務 の 成否 は 君 の 腕 に 頼もう。
+          - この 任務 の 成否 は 君 の 腕 に {頼もう}。
         english: Let's ask your skill for the success or failure of this mission.
         hint: 「頼む」 means to ask for something, which doesn't convey the same level of confident delegation
           and reliance on a person's abilities. We're looking for an expression that signifies entrusting
@@ -322,7 +333,7 @@ examples:
     english_literally: This plan, all, CEO to, can be entrusted, so relieved.
     competing_grammar:
       - competing_japanese:
-          - この 企画 は 全て 社長 に 頼め る から 安心 です。
+          - この 企画 は 全て 社長 に {頼め る} から 安心 です。
         english: I can rest assured because I can ask the CEO for this whole plan.
         hint: 「頼める」 means 'can ask', focusing on the ability to make a request. It doesn't imply the comprehensive
           delegation of the entire plan with full discretion. We're looking for an expression that denotes
@@ -347,7 +358,7 @@ examples:
     english_literally: Very sorry, but, this matter, you to, all, please entrust.
     competing_grammar:
       - competing_japanese:
-          - 大変 恐縮 です が、この 件 は あなた に 全て 頼ん で ください。
+          - 大変 恐縮 です が、この 件 は あなた に 全て {頼ん で ください}。
         english: I'm terribly sorry to ask, but please ask you for everything about this matter.
         hint: 「頼む」 means to ask or request. While polite, it doesn't convey the sense of fully delegating
           and entrusting the entire matter with all its responsibility. We're looking for an expression
@@ -374,7 +385,7 @@ examples:
     english_literally: She, sometimes, her own life, chance to, entrusting, says.
     competing_grammar:
       - competing_japanese:
-          - 彼女 は 時々、自分 の 人生 を 偶然 に 委ね て いる と 言う。
+          - 彼女 は 時々、自分 の 人生 を 偶然 に {委ね て いる} と 言う。
         english: She sometimes says she's committing her life to chance.
         hint: 「委ねる」 is a more formal and literary verb for 'to entrust' or 'to commit,' especially when
           dealing with abstract concepts like life or fate. While similar, 「任せる」 is more commonly used
@@ -401,7 +412,7 @@ examples:
     english_literally: I, interior design, all, designer to, entrusted.
     competing_grammar:
       - competing_japanese:
-          - 私 は インテリア デザイン を 全て デザイナー に 頼ん だ。
+          - 私 は インテリア デザイン を 全て デザイナー に {頼ん だ}。
         english: I asked the designer for all the interior design.
         hint: 「頼む」 means to ask or request. While you might ask a designer, 「任せる」 conveys the act of entrusting
           the entire task and discretion to them. We're looking for an expression of full delegation.

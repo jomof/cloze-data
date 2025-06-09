@@ -1,15 +1,17 @@
 grammar_point: い-Adjective + くありません (polite negative form)
 learn_before:
-  - です (polite copula)
-  - ある (to exist or have)
   - い-Adjectives (adjectives ending in い)
+  - です (polite copula)
+  - <suggest>:い-Adjective (plain negative)
 learn_after:
   - ないことはない (not impossible)
   - じゃない (negation noun and na-adj)
   - ことはない (no need to or never happens)
   - わけではない (not necessarily)
-  - い-Adjective (past negative)
   - あまり ない (not very or much)
+  - てはいけない (must not・cannot)
+  - くもなんともない (not at all)
+  - <suggest>:い-Adjective (plain past negative)
 id: gp9999
 meaning: Is not (an い-adjective)
 conjugations:
@@ -45,19 +47,19 @@ writeup: |-
 
   This construction is highly versatile and is used in a wide range of everyday conversations when politeness is required. It's crucial to distinguish this from the plain negative form (「～くない」), which is used in casual settings, and from the negative forms of な-adjectives and nouns (e.g., 「ではありません」), which follow a different pattern.
 false_friends:
-  - term: い-Adjective (negative form)
+  - term: い-Adjective (plain negative)
     meaning: Is not (plain)
     kind: similar expression
     nuance: While 「い-Adjective + くありません」 is the polite negative, 「い-Adjective + くない」 is its plain, casual
       equivalent. You would use 「寒くない」 in informal conversations with friends, but 「寒くありません」 in more polite
       situations.
-    grammar_point: い-Adjectives (negative form)
-  - term: い-Adjective (past negative)
+    grammar_point: <suggest>:い-Adjective (plain negative)
+  - term: い-Adjective (plain past negative)
     meaning: Was not (plain)
     kind: similar expression
     nuance: This is the plain past negative form. If you want to say 'was not [adjective]' in a polite
       context, you would use 「い-Adjective + くありませんでした」, not 「い-Adjective + くなかった」.
-    grammar_point: い-Adjective (past negative)
+    grammar_point: <suggest>:い-Adjective (plain past negative)
   - term: じゃない (negation noun and na-adj)
     meaning: Is not (na-adjective/noun polite negative)
     kind: often confused with
@@ -82,11 +84,11 @@ examples:
     english_literally: As for this coffee, it is not hot.
     competing_grammar:
       - competing_japanese:
-          - この コーヒー は 熱く ない。
+          - この コーヒー は {熱く ない}。
         english: This coffee is not hot (plain).
         hint: This uses the plain form 「熱くない」. We're looking for the polite negative form.
       - competing_japanese:
-          - この コーヒー は 熱い じゃ ない。
+          - この コーヒー は 熱い {じゃ ない}。
         english: This coffee isn't hot, is it?
         hint: The phrasing 「～じゃない」 is typically for confirming a negative, or it can be a casual negative
           for nouns/な-adjectives. We need a straightforward polite negation for an い-adjective.
@@ -101,7 +103,7 @@ examples:
     english_literally: As for today, it is not cold.
     competing_grammar:
       - competing_japanese:
-          - 今日 は 寒く ない です。
+          - 今日 は {寒く ない です}。
         english: Today is not cold (polite, but less standard).
         hint: While 「寒くないです」 is understood and common in polite conversation, 「寒くありません」 or 「寒くございません」
           is generally considered more formal and standard for polite negation of い-adjectives. We're
@@ -118,16 +120,16 @@ examples:
     english_literally: As for that movie, it was not interesting (polite past).
     competing_grammar:
       - competing_japanese:
-          - あの 映画 は 面白く なかっ た。
+          - あの 映画 は {面白く なかっ た}。
         english: That movie was not interesting (plain past).
         hint: This uses the plain past negative form 「面白くなかった」. We need the polite past negative.
       - competing_japanese:
-          - あの 映画 は 面白く なかっ た です。
+          - あの 映画 は {面白く なかっ た です}。
         english: That movie was not interesting (polite, but less standard).
         hint: While 「面白くなかったです」 is a common polite past negative, 「面白くありませんでした」 or 「面白くございませんでした」 is generally
           considered more formal and standard. We're looking for the standard polite past negative.
       - competing_japanese:
-          - あの 映画 は 面白い じゃ あり ませ ん でし た。
+          - あの 映画 は 面白い {じゃ あり ませ ん でし た}。
         english: That movie was not interesting (incorrect application for い-adjective).
         hint: The structure 「～じゃありませんでした」 is for な-adjectives and nouns. 「面白い」 is an い-adjective.
     scene: Two friends, a male and a female, discuss a film they recently saw, the female speaker expressing
@@ -143,7 +145,7 @@ examples:
     english_literally: As for this apple, it is not delicious.
     competing_grammar:
       - competing_japanese:
-          - この りんご は 美味しく ない。
+          - この りんご は {美味しく ない}。
         english: This apple is not delicious (plain).
         hint: This is the plain form. We're looking for the polite negative form of an い-adjective.
     scene: A food critic politely delivers their verdict on a dish at a restaurant.
@@ -157,7 +159,7 @@ examples:
     english_literally: As for your new haircut, it is not short, you know.
     competing_grammar:
       - competing_japanese:
-          - あなた の 新しい 髪型 は 短く ない よ。
+          - あなた の 新しい 髪型 は {短く ない} よ。
         english: Your new haircut isn't short, you know (plain).
         hint: The plain form 「短くないよ」 is used here. We need the polite negative.
     scene: A female friend reassures her female friend, who is worried her new haircut is too short, using
@@ -177,7 +179,7 @@ examples:
     english_literally: As for the number of students, it is not few.
     competing_grammar:
       - competing_japanese:
-          - 学生 の 数 は 少ない じゃ ない。
+          - 学生 の 数 は 少ない {じゃ ない}。
         english: The number of students isn't small, is it?
         hint: This phrasing implies seeking confirmation or expressing slight surprise. We need a direct
           polite negation of the quantity.
@@ -192,7 +194,7 @@ examples:
     english_literally: As for the meeting's time, it is not early.
     competing_grammar:
       - competing_japanese:
-          - 会議 の 時間 は 早い じゃ あり ませ ん。
+          - 会議 の 時間 は 早い {じゃ あり ませ ん}。
         english: The meeting time is not early (incorrect for い-adjective).
         hint: 「早い」 is an い-adjective, so it requires 「～くありません」 for polite negation, not 「～じゃありません」.
     scene: An office worker confirms the schedule with a colleague, ensuring there's no misunderstanding
@@ -207,10 +209,9 @@ examples:
     english_literally: As for this task, it is not difficult.
     competing_grammar:
       - competing_japanese:
-          - この 仕事 は 難しい です。
-        english: This task is difficult.
-        hint: This is a positive statement, but we're looking for a negative one. Pay attention to the
-          meaning.
+          - この 仕事 は 難しい {じゃ あり ませ ん}。
+        english: This task is not difficult (incorrect for い-adjective).
+        hint: 「難しい」 is an い-adjective, so it requires 「～くありません」 for polite negation, not 「～じゃありません」。
     scene: A senior engineer reassuring a junior engineer about the complexity of a new project.
     register: formal
     setting: professional
@@ -222,7 +223,7 @@ examples:
     english_literally: As for the bath's hot water, it was not hot (polite past).
     competing_grammar:
       - competing_japanese:
-          - お 風呂 の お 湯 は 熱く なかっ た です。
+          - お 風呂 の お 湯 は {熱く なかっ た です}。
         english: The water in the bath was not hot (polite, but less standard).
         hint: 「熱くなかったです」 is a common polite past negative, especially in casual polite speech. However,
           for a more standard and formal polite negative, 「熱くありませんでした」 or 「熱くございませんでした」 is preferred.
@@ -238,7 +239,7 @@ examples:
     english_literally: As for that bag, it is not red.
     competing_grammar:
       - competing_japanese:
-          - その カバン は 赤く ない。
+          - その カバン は {赤く ない}。
         english: That bag is not red (plain).
         hint: This is the plain negative form. We need the polite negative.
     scene: A salesperson gently corrects a customer who is mistaken about the color of an item.
@@ -252,7 +253,7 @@ examples:
     english_literally: As for this room, it is not wide.
     competing_grammar:
       - competing_japanese:
-          - この 部屋 は 広く ない です。
+          - この 部屋 は {広く ない です}。
         english: This room is not wide (polite, but less standard).
         hint: While 「広くないです」 is understood and common in polite conversation, 「広くありません」 or 「広くございません」
           is generally considered more formal and standard for polite negation of い-adjectives. We're
@@ -268,7 +269,7 @@ examples:
     english_literally: As for me, I am not sad.
     competing_grammar:
       - competing_japanese:
-          - 私 は 悲しく ない。
+          - 私 は {悲しく ない}。
         english: I am not sad (plain).
         hint: This is the plain form. We need the polite negative.
     scene: A female friend politely reassures a worried friend that she is doing fine, even if circumstances
@@ -277,3 +278,8 @@ examples:
     setting: friendly
     conjugation: negative non-past polite (～ません)
     speaker_gender: female
+lint-errors:
+  - '[rule-13] unknown grammar at ''learn_before[2]'': ''<suggest>:い-Adjective (plain negative)''. You
+    may suggest new grammar points by adding a false_friend.'
+  - '[rule-13] unknown grammar at ''learn_after[7]'': ''<suggest>:い-Adjective (plain past negative)''.
+    You may suggest new grammar points by adding a false_friend.'

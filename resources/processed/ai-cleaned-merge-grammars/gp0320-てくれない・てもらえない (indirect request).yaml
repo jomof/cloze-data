@@ -1,11 +1,13 @@
 grammar_point: てくれない・てもらえない (indirect request)
 learn_before:
-  - てください (polite request)
+  - Verb[て] (casual request)
   - てくれる (receiving benefaction)
   - てもらう (to get someone to do)
+  - てあげる (to do for someone)
 learn_after:
   - Verb[て]+いただけませんか (humble request)
-  - かねる (unable to)
+  - お〜願う (polite request)
+  - お・ご～する (humble action)
 id: gp0320
 meaning: Won't you?, Will you?, Could you?, Can you?, Would you?
 meaning_warning: These expressions are used with a rising intonation
@@ -55,7 +57,7 @@ false_friends:
     kind: similar expression
     nuance: More direct and less polite than てくれない・てもらえない, often functioning as a command or a straightforward
       request.
-    grammar_point: てください (polite request)
+    grammar_point: <suggest>:ってください (polite request)
   - term: 〜てほしい
     meaning: Want someone to do ~
     kind: similar expression
@@ -92,12 +94,12 @@ examples:
     english_literally: Won't you give me the favor of reading this book?
     competing_grammar:
       - competing_japanese:
-          - この 本 を 読ん で ください。
+          - この 本 を 読ん で {ください}。
         english: Please read this book.
         hint: 「～てください」 is a more direct and formal command. We're looking for a softer, more casual request
           to a friend.
       - competing_japanese:
-          - この 本 を 読ん で。
+          - この 本 を 読ん {で}。
         english: Read this book.
         hint: 「～て」 is a blunt command in this context. We're looking for a gentler, more polite request.
     scene: You're tired but want to know the story, asking a friend.
@@ -117,12 +119,12 @@ examples:
     english_literally: Could I not receive the favor of you sending this letter?
     competing_grammar:
       - competing_japanese:
-          - この 手紙 を 送っ て ください。
+          - この 手紙 を 送っ て {ください}。
         english: Please send this letter.
         hint: 「～てください」 is more direct. We're looking for a slightly more polite and indirect request suitable
           for an acquaintance.
       - competing_japanese:
-          - この 手紙 を 送っ て。
+          - この 手紙 を 送っ {て}。
         english: Send this letter.
         hint: 「～て」 is a blunt command. We're looking for a gentler request.
     scene: You're busy and ask an acquaintance for a small favor.
@@ -140,11 +142,11 @@ examples:
     english_literally: Won't you please give me the favor of waking up early tomorrow?
     competing_grammar:
       - competing_japanese:
-          - 明日、早く 起き て ください。
+          - 明日、早く 起き て {ください}。
         english: Please get up early tomorrow.
         hint: 「～てください」 is too formal for a casual request to a sibling. We're looking for a softer approach.
       - competing_japanese:
-          - 明日、早く 起き て。
+          - 明日、早く 起き {て}。
         english: Get up early tomorrow.
         hint: 「～て」 is a command. We're looking for a gentle suggestion, not an order.
     scene: You're trying to plan an early morning outing with your sibling.
@@ -153,7 +155,7 @@ examples:
     nuance: For family, 「くれないか」 maintains a casual tone while adding a touch of politeness, making the
       request sound less like an order.
     etymology: The question particle 「か」 further softens the indirect request, turning it into more of
-      a suggestion or gentle inquiry rather than an Texpectation. This is common in casual settings to
+      a suggestion or gentle inquiry rather than an expectation. This is common in casual settings to
       reduce imposition.
   - english: Could you close the window for me?
     japanese:
@@ -163,12 +165,12 @@ examples:
     english_literally: Could I not receive the favor of you closing the window?
     competing_grammar:
       - competing_japanese:
-          - 窓 を 閉め て ください。
+          - 窓 を 閉め て {ください}。
         english: Please close the window.
         hint: 「～てください」 is still quite direct. We're looking for a more indirect and polite request, especially
           in a quiet, shared space like a library.
       - competing_japanese:
-          - 窓 を 閉め て。
+          - 窓 を 閉め {て}。
         english: Close the window.
         hint: 「～て」 is a blunt command. We're looking for a gentle suggestion to a stranger.
     scene: You're in a library, and the open window is causing a draft. You ask a nearby student.
@@ -185,12 +187,12 @@ examples:
     english_literally: Won't you give me the favor of listening to my story?
     competing_grammar:
       - competing_japanese:
-          - 私 の 話 を 聞い て ください。
+          - 私 の 話 を 聞い て {ください}。
         english: Please listen to what I have to say.
         hint: 「～てください」 is more formal and less personal. We're looking for a casual, slightly pleading
           request to a close friend.
       - competing_japanese:
-          - 私 の 話 を 聞い て。
+          - 私 の 話 を 聞い {て}。
         english: Listen to what I have to say.
         hint: 「～て」 is a command. We're looking for a softer way to ask for attention from a friend.
     scene: You're trying to explain something important to a friend who is distracted.
@@ -208,12 +210,12 @@ examples:
     english_literally: Could I not receive the favor of you making a little time?
     competing_grammar:
       - competing_japanese:
-          - 少し 時間 を 作っ て ください。
+          - 少し 時間 を 作っ て {ください}。
         english: Please make a little time.
         hint: 「～てください」 is still too direct for addressing a busy superior. We're looking for an extremely
           polite and indirect request.
       - competing_japanese:
-          - 少し 時間 を 作っ て ほしい。
+          - 少し 時間 を 作っ て {ほしい}。
         english: I want you to make a little time.
         hint: 「～てほしい」 expresses your desire, but it's not a direct request to the listener. We're looking
           for a polite way to ask for an action.
@@ -231,12 +233,12 @@ examples:
     english_literally: Won't you give me the favor of staying together with me more?
     competing_grammar:
       - competing_japanese:
-          - もっと 一緒 に い て ください。
+          - もっと 一緒 に い て {ください}。
         english: Please stay with me a little longer.
         hint: 「～てください」 is too formal and stiff for an intimate or romantic context. We're looking for
           a softer, more personal plea.
       - competing_japanese:
-          - もっと 一緒 に い て ほしい。
+          - もっと 一緒 に い て {ほしい}。
         english: I want you to stay with me a little longer.
         hint: 「～てほしい」 expresses your wish but doesn't directly ask the listener to act. We're looking
           for a gentle request or plea.
@@ -261,12 +263,12 @@ examples:
     english_literally: Could I not receive the favor of you helping with tomorrow's preparation?
     competing_grammar:
       - competing_japanese:
-          - 明日 の 準備 を 手伝っ て ください。
+          - 明日 の 準備 を 手伝っ て {ください}。
         english: Please help me prepare for tomorrow.
         hint: 「～てください」 is more formal than needed for a casual request to a roommate. We're looking for
           a friendlier, softer way to ask for help.
       - competing_japanese:
-          - 明日 の 準備 を 手伝っ て。
+          - 明日 の 準備 を 手伝っ {て}。
         english: Help me prepare for tomorrow.
         hint: 「～て」 is a blunt command. We're looking for a considerate request to a friend.
     scene: You're overwhelmed with tasks and ask a roommate for help.
@@ -284,12 +286,12 @@ examples:
     english_literally: Hey, won't you give me the favor of lending that pen?
     competing_grammar:
       - competing_japanese:
-          - その ペン を 貸し て ください。
+          - その ペン を 貸し て {ください}。
         english: Please lend me that pen.
         hint: 「～てください」 is too formal for a quick, casual request among classmates. We're looking for a
           more natural, friendly way to ask.
       - competing_japanese:
-          - その ペン を 貸し て。
+          - その ペン を 貸し {て}。
         english: Lend me that pen.
         hint: 「～て」 is a blunt command. We're looking for a softer, more polite request in a casual setting.
     scene: In a classroom, you need a pen and ask a classmate.
@@ -308,12 +310,12 @@ examples:
     english_literally: Before the meeting, could I not receive the favor of you confirming these documents?
     competing_grammar:
       - competing_japanese:
-          - 会議 の 前 に、この 書類 を 確認 し て ください。
+          - 会議 の 前 に、この 書類 を 確認 し て {ください}。
         english: Please check these documents before the meeting.
         hint: 「～てください」 can sound more like an order from a superior. We're looking for a slightly softer,
           more collaborative request in a team setting.
       - competing_japanese:
-          - 会議 の 前 に、この 書類 を 確認 し て ほしい です。
+          - 会議 の 前 に、この 書類 を 確認 し て {ほしい です}。
         english: I want you to check these documents before the meeting.
         hint: 「～てほしい」 expresses your desire, but it's not a direct request for action. We're looking for
           a polite way to ask for an action.

@@ -1,13 +1,15 @@
 grammar_point: い-adjective (past)
 learn_before:
-  - です (polite copula)
   - い-Adjectives (adjectives ending in い)
+  - です (polite copula)
   - だった・でした (past copula)
 learn_after:
   - あまり ない (not very or much)
   - すぎる (too much・excessive)
   - そう (looks like)
-  - Vて・くる (change or continuation)
+  - ていく (to continue or move away)
+  - はずだ (expected to be)
+  - らしい (I hear, it seems)
 id: gp0035
 meaning: Was, Were (Past tense)
 meaning_warning: い-Adjectives, whether positive or negative, cannot be used with だ
@@ -91,7 +93,7 @@ examples:
         hint: This form is more appropriate for formal situations or when speaking to someone of higher
           status. We're looking for a plain, casual tone.
       - competing_japanese:
-          - 昨日 の 試験 は とても 難しい。
+          - 昨日 の 試験 は とても {難しい}。
         english: Yesterday's exam is very difficult.
         hint: This is the present tense. We are describing an event that happened in the past.
       - competing_japanese:
@@ -101,13 +103,13 @@ examples:
       - competing_japanese:
           - 昨日 の 試験 は とても 難しい {でし た}。
         english: Yesterday's exam was very difficult (incorrect for い-adjective).
-        hint: 「でした」 is the polite past form used with nouns and な-adjectives, not い-adjectives. We need
-          the past tense of an い-adjective.
+        hint: 「でした」 is the polite past form used with nouns and な-adjectives. We need the past tense of
+          an い-adjective.
       - competing_japanese:
           - 昨日 の 試験 は とても 難しい {だっ た}。
         english: Yesterday's exam was very difficult (incorrect for い-adjective).
-        hint: 「だった」 is the plain past form used with nouns and な-adjectives, not い-adjectives. We need
-          the past tense of an い-adjective.
+        hint: 「だった」 is the plain past form used with nouns and な-adjectives. We need the past tense of
+          an い-adjective.
     scene: A student tells their friend about a tough exam they had.
     register: casual
     setting: informative
@@ -126,11 +128,11 @@ examples:
         english: This cake was sweet (plain).
         hint: This is the plain past tense. The context suggests a polite exchange.
       - competing_japanese:
-          - この ケーキ は 甘い です。
+          - この ケーキ は {甘い} です。
         english: This cake is sweet.
         hint: This is the present polite tense. We're talking about something tasted in the past.
       - competing_japanese:
-          - この ケーキ は 甘い でしょう。
+          - この ケーキ は {甘い} でしょう。
         english: This expresses a guess or probability about the cake's sweetness. We're stating a past
           observation.
         hint: This expresses a guess or probability about the cake's sweetness. We're stating a past observation.
@@ -162,7 +164,7 @@ examples:
         english: The weekend weather wasn't good, was it? (polite)
         hint: This form is more polite. The conversation between friends implies a casual tone.
       - competing_japanese:
-          - 週末 の 天気 は 良く ない ね。
+          - 週末 の 天気 は {良く ない} ね。
         english: The weekend weather isn't good, is it?
         hint: This is the present negative tense. We're referring to the weather of the past weekend.
       - competing_japanese:
@@ -199,7 +201,7 @@ examples:
         hint: This is a very formal negative past polite form. We're looking for a polite but slightly
           less stiff expression for this context.
       - competing_japanese:
-          - その 料理 は 美味しく ない です。
+          - その 料理 は {美味しく ない} です。
         english: That dish isn't delicious.
         hint: This is the present tense. We are describing a past experience.
       - competing_japanese:
@@ -236,7 +238,7 @@ examples:
         hint: This is the plain negative past. This context requires a formal and respectful tone when
           speaking to a superior.
       - competing_japanese:
-          - 会議 の 雰囲気 は 悪く ない です。
+          - 会議 の 雰囲気 は {悪く ない} です。
         english: The atmosphere of the meeting isn't bad.
         hint: This is the present tense. We are describing a past event.
       - competing_japanese:
@@ -271,7 +273,7 @@ examples:
         english: That trip to Kyoto was really fun (polite).
         hint: This form is polite. We are looking for a more casual and direct statement among friends.
       - competing_japanese:
-          - 京都 へ の 旅行 は 楽しい。
+          - 京都 へ の 旅行 は {楽しい}。
         english: That trip to Kyoto is fun.
         hint: This is the present tense. We are describing a past event, so the past tense is required.
       - competing_japanese:
@@ -301,7 +303,7 @@ examples:
         english: It was quite cold last night (plain).
         hint: This is the plain past tense. The context of speaking to a colleague suggests a polite tone.
       - competing_japanese:
-          - 昨夜 は 寒い です。
+          - 昨夜 は {寒い} です。
         english: It is cold last night.
         hint: This is the present tense. We are talking about the weather from the previous night, so
           the past tense is needed.
@@ -328,7 +330,7 @@ examples:
         english: The price of that laptop wasn't cheap at all (polite).
         hint: This is a polite form. The context of complaining to a friend suggests a casual tone.
       - competing_japanese:
-          - あの パソコン の 値段 は 安く ない。
+          - あの パソコン の 値段 は {安く ない}。
         english: The price of that laptop isn't cheap.
         hint: This is the present negative tense. We are referring to a past purchase, so the past tense
           is required.
@@ -358,7 +360,7 @@ examples:
         english: The restaurant wasn't busy last night (more formal polite).
         hint: This form is more formal. 「くなかったです」 is typically used in slightly more casual polite conversations.
       - competing_japanese:
-          - 昨日 の レストラン は 忙しく ない です。
+          - 昨日 の レストラン は {忙しく ない} です。
         english: The restaurant isn't busy last night.
         hint: This is the present tense. We are asking about a past event.
     scene: A diner asks the server about the restaurant's business on the previous night.
@@ -385,7 +387,7 @@ examples:
         hint: This is the plain negative past. The context of a professional discussion implies a formal
           tone.
       - competing_japanese:
-          - 彼女 に とっ て 日本 語 の 勉強 は 難しく ない です。
+          - 彼女 に とっ て 日本 語 の 勉強 は {難しく ない} です。
         english: Learning Japanese isn't difficult for her.
         hint: This is the present tense. We are talking about a past observation or experience.
       - competing_japanese:

@@ -1,11 +1,16 @@
 grammar_point: 聞こえる (to be audible)
 learn_before:
-  - ある (to exist or have)
+  - ある (inanimate existence)
   - が (subject marker)
+  - る-verbs (ichidan verbs)
+  - Verb[て] (and then)
+  - ている (resultant and ongoing state)
+  - に (fixed point・target・time)
 learn_after:
-  - かのように (as if)
   - 見える (to be visible・to seem)
+  - かのようだ・かのように (as if)
   - 思われる (to seem・impersonal)
+  - ものがある (subjective feeling)
 id: gp0219
 meaning: to be audible; to sound (like); (can) hear; to be heard
 meaning_warning: 聞こえる was originally a conjugation of 聞く, but nowadays it is treated as a standalone intransitive
@@ -58,11 +63,11 @@ conjugations:
   - conjugation-type: volitional (～よう)
     form: 聞こえよう
     rarity: very rare
-    meaning: let's be audible (uncommon usage)
+    meaning: will probably be heard (formal/literary conjecture)
   - conjugation-type: volitional polite (～ましょう)
     form: 聞こえましょう
     rarity: very rare
-    meaning: let's be audible (polite, uncommon usage)
+    meaning: will probably be heard (polite conjecture)
   - conjugation-type: imperative plain (～ろ/～え)
     form: 聞こえろ
     rarity: rare
@@ -119,7 +124,13 @@ false_friends:
     nuance: Unlike 「聞こえる」, 「聞ける」 emphasizes the ability to hear something by actively trying to listen.
       For instance, 「静か な 部屋 に いる と 聞ける よ」 implies that you need to concentrate to hear it, whereas 「静か
       な 部屋 に いる と 聞こえる よ」 suggests that the sound is naturally audible.
-    grammar_point: られる (ability)
+    grammar_point: <suggest>:聞ける (can hear - active)
+  - term: 聞く
+    meaning: To hear; to listen (actively)
+    kind: similar expression
+    nuance: Unlike the passive 「聞こえる」, which describes sound being audible, 「聞く」 implies an active effort
+      to listen or perceive a sound. For example, 「音楽 を 聞く」 means 'to listen to music'.
+    grammar_point: <suggest>:聞く (to hear・listen)
   - term: れる・られる (Potential)
     meaning: To be able to, can
     kind: often confused with
@@ -152,7 +163,7 @@ examples:
     english_literally: From far away, festival's lively sounds are audible.
     competing_grammar:
       - competing_japanese:
-          - 遠く から 祭り の 賑やか な 音 を 聞け ます。
+          - 遠く から 祭り の 賑やか な 音 を {聞け ます}。
         english: I can hear the lively sounds of the festival from afar (by actively listening).
         hint: 「聞け ます」 (kikemasu) implies an active effort or ability to hear. We're looking for a verb
           that indicates the sound is simply audible without effort.
@@ -170,7 +181,7 @@ examples:
     english_literally: His explanation a little unnatural sounded.
     competing_grammar:
       - competing_japanese:
-          - 彼 の 説明 を 少し 不 自然 に 聞き まし た。
+          - 彼 の 説明 を 少し 不 自然 に {聞き まし た}。
         english: I listened to his explanation and found it a little unnatural.
         hint: 「聞き まし た」 (kikimashita) implies actively listening. We're looking for a verb that describes
           how his explanation was perceived as unnatural, not that you actively listened for its unnaturalness.
@@ -189,7 +200,7 @@ examples:
     english_literally: This quiet room in small breath also is audible.
     competing_grammar:
       - competing_japanese:
-          - この 静か な 部屋 で は 小さな 息遣い も 聞ける。
+          - この 静か な 部屋 で は 小さな 息遣い も {聞ける}。
         english: In this quiet room, you can hear even a small breath (if you try).
         hint: 「聞ける」 (kikeru) implies that you have the *ability* to hear if you make an effort. We're
           looking for a verb that means the sound is simply audible without effort.
@@ -206,7 +217,7 @@ examples:
     english_literally: Next door house from piano sound is audible, very soothes.
     competing_grammar:
       - competing_japanese:
-          - 隣 の 家 から ピアノ の 音 を 聞い て、とても 癒さ れ ます。
+          - 隣 の 家 から ピアノ の 音 を {聞い て}、とても 癒さ れ ます。
         english: I listen to the sound of the piano from next door, and it's very soothing.
         hint: 「聞い て」 (kiite) implies actively listening to the piano. We're looking for a verb that indicates
           the piano sound is simply audible, naturally reaching your ears.
@@ -225,7 +236,7 @@ examples:
     english_literally: His jokes funny sound, but well if think unpleasant.
     competing_grammar:
       - competing_japanese:
-          - 彼 の 冗談 は 面白い が、よく 考える と 不快 だ。
+          - 彼 の 冗談 は {面白い} が、よく 考える と 不快 だ。
         english: His jokes are funny, but if you think about it closely, they are unpleasant.
         hint: This sentence directly states the jokes *are* funny, rather than describing how they *sound*
           or how they are *perceived* initially. We're looking for a verb that conveys the initial impression.
@@ -243,7 +254,7 @@ examples:
     english_literally: Mountain depths in cell phone signal is inaudible often exists.
     competing_grammar:
       - competing_japanese:
-          - 山奥 で は 携帯 の 電波 が 繋がら ない こと が よく ある。
+          - 山奥 で は 携帯 の 電波 が {繋がら ない} こと が よく ある。
         english: In the depths of the mountains, it's common for cellphone signals to not connect.
         hint: 「繋がら ない」 (tsunagaranai) means the connection cannot be established. While the result is
           similar, 「聞こえ ない」 specifically describes the signal as 'inaudible' or not being received by
@@ -262,7 +273,7 @@ examples:
     english_literally: Suddenly, someone's scream was audible, so everyone was surprised.
     competing_grammar:
       - competing_japanese:
-          - 突然、誰 か の 叫び声 を 聞い た の で、皆 驚い た。
+          - 突然、誰 か の 叫び声 を {聞い た} の で、皆 驚い た。
         english: Suddenly, I heard someone's scream, so everyone was surprised.
         hint: 「聞い た」 (kiita) implies actively hearing or listening. We're looking for a verb that conveys
           the passive perception of the scream, where it simply became audible without active effort.
@@ -279,8 +290,8 @@ examples:
     english_literally: New project next month from starts as sounds.
     competing_grammar:
       - competing_japanese:
-          - 新しい プロジェクト は 来月 から 始まる らしい。
-          - 新しい プロジェクト は 来月 から 始まる そう だ。
+          - 新しい プロジェクト は 来月 から 始まる {らしい}。
+          - 新しい プロジェクト は 来月 から 始まる {そう だ}。
         english: It seems/I heard the new project will start next month.
         hint: 「らしい」 and 「そう だ」 indicate something *seems* to be the case or is *heard* to be the case,
           based on external information or reports. We're looking for a verb that conveys an impression
@@ -299,8 +310,8 @@ examples:
     english_literally: My room from waves' sound is audible.
     competing_grammar:
       - competing_japanese:
-          - 私 の 部屋 から 波 の 音 を 聞く。
-          - 私 の 部屋 から 波 の 音 を 聞い て いる。
+          - 私 の 部屋 から 波 の 音 を {聞く}。
+          - 私 の 部屋 から 波 の 音 を {聞い て いる}。
         english: I listen to the sound of the waves from my room.
         hint: 「聞く」 (kiku) and 「聞い て いる」 (kiite iru) imply an active effort to listen. We're looking for
           a verb that expresses the passive perception of the waves, where the sound naturally reaches
@@ -321,8 +332,8 @@ examples:
     english_literally: Well ears if clear, faint melody will be audible probably.
     competing_grammar:
       - competing_japanese:
-          - よく 耳 を 澄ま せ ば、かすか な メロディー が 聞ける だろう。
-          - よく 耳 を 澄ま せ ば、かすか な メロディー を 聞く こと が できる だろう。
+          - よく 耳 を 澄ま せ ば、かすか な メロディー が {聞ける} だろう。
+          - よく 耳 を 澄ま せ ば、かすか な メロディー を {聞く こと が できる} だろう。
         english: If you listen closely, you will be able to hear a faint melody.
         hint: 「聞ける」 and 「聞く こと が できる」 imply an *ability* to hear if one makes an effort. We're looking
           for a verb that suggests the melody will simply become *audible* under the given condition,

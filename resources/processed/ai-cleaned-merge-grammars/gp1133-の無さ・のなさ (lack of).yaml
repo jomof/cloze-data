@@ -1,12 +1,14 @@
 grammar_point: の無さ・のなさ (lack of)
 learn_before:
-  - の (nominalizer)
   - い-Adjectives (negative form)
-  - ある (to exist or have)
-  - しか〜ない (only・nothing but)
+  - さ (nominalizer)
+  - の (possessive)
+  - あまり ない (not very or much)
+  - 少ない (few・little)
 learn_after:
+  - にほかならない (nothing but)
   - べくもない (no way to)
-  - ようにも (cannot despite desire)
+  - に足りない (not worthy or sufficient)
 id: gp1133
 meaning: Lack of; absence of
 pronunciation:
@@ -40,10 +42,18 @@ false_friends:
       often quantifiable or specific. 「の無さ」 is broader, referring to a general absence or non-existence
       of a quality or abstract concept, not necessarily a quantifiable shortage.
     grammar_point: <suggest>:不足 (insufficiency)
+  - term: 欠如
+    meaning: lack, deficiency
+    kind: similar expression
+    nuance: 「欠如」 is a formal and academic term for 'lack' or 'deficiency', often used for abstract concepts
+      like morality or awareness. While similar to 「の無さ」, it implies a more complete or critical absence,
+      often in intellectual or moral domains, and is generally more formal.
+    grammar_point: <suggest>:欠如 (deficiency)
 post_false_friends_writeup: The difference between 「の無さ」 and 「無い」 lies in their grammatical function.
   Use 「の無さ」 when you need a noun to describe the lack of something, and use 「無い」 to state that something
   is absent or non-existent. Furthermore, 「不足」 specifically denotes a 'shortage' from a required amount,
-  whereas 「の無さ」 indicates a more general 'absence' of a quality.
+  whereas 「の無さ」 indicates a more general 'absence' of a quality. 「欠如」 is similar to 「不足」 but often implies
+  a more critical or complete absence in formal contexts.
 examples:
   - english: I am appalled by his lack of common sense.
     japanese:
@@ -310,3 +320,48 @@ post_example_writeup: As you can see from these examples, 「の無さ」 or 「
   of a sentence. It's often used when discussing shortcomings or undesirable characteristics.
 sources:
   bunpro: https://bunpro.jp/grammar_points/の無さ・のなさ
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 は 常識 が ない の で、私 は 呆れ て い ます。'
+  - '[rule-5] warning examples[0].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    彼 の 常識 の 欠如 に 呆れ て いる。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    体力 と 筋力 が 足り ない こと を 痛感 し まし た。'
+  - '[rule-5] warning examples[1].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    体力 と 筋力 の 不足 を 痛感 し まし た。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    貴社 に 誠意 が ない こと に、大変 な 憤り を 感じ ます。'
+  - '[rule-5] warning examples[2].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    貴社 の 誠意 の 欠如 に 大変 な 憤り を 感じ ます。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    英語 力 が 足り ない こと を 痛感 し、落ち込み まし た。'
+  - '[rule-5] warning examples[3].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    英語 力 の 不足 を 痛感 し、落ち込み まし た。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    飾り気 が ない こと が、さや の 絶対 的 な 魅力 で ある。'
+  - '[rule-5] warning examples[4].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    飾り気 が ない と いう 特徴 が、さや の 魅力 だ。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    最近 の 映画 や ドラマ は、内容 が ない の で がっかり する。'
+  - '[rule-5] warning examples[5].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    最近 の 映画 や ドラマ は、内容 の 薄 さ に がっかり さ せ られる。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    調査 に よる と 日本 の 子供 は 自信 が ない 子 が 世界 一 だ そう で ある。'
+  - '[rule-5] warning examples[6].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    調査 に よる と 日本 の 子供 の 自信 の 欠如 は 世界 一 だ そう で ある。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この マンガ は、リアリティ が ない の で つい て いけ なく なっ て しまっ た。'
+  - '[rule-5] warning examples[7].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    この マンガ は、リアリティ が 欠け て いる の で つい て いけ なく なっ て しまっ た。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 は 勉強 に 努力 し ない こと が 心配 だ。'
+  - '[rule-5] warning examples[8].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    彼 の 勉強 へ の 努力 不足 が 心配 だ。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    チーム 内 で 意思 疎通 が なかっ た こと が その 問題 の 原因 でし た。'
+  - '[rule-5] warning examples[9].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    チーム 内 の 意思 疎通 不足 が その 問題 の 原因 でし た。'
+  - '[rule-5] warning examples[10].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 は 才能 が ない けれど、努力 家 だ。'
+  - '[rule-5] warning examples[10].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    彼 は 才能 が 不足 し て いる が、努力 で 補っ て いる。'

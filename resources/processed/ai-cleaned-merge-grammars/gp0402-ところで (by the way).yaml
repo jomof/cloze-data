@@ -1,9 +1,14 @@
 grammar_point: ところで (by the way)
 learn_before:
   - そして (and・and then)
+  - それから (and then・after that)
+  - それに (in addition)
 learn_after:
   - ちなみに (by the way)
-  - そこを (overcoming an obstacle)
+  - そういえば (speaking of which)
+  - それにしても (nevertheless)
+  - とはいえ (though)
+  - はともかく (setting aside・leaving aside)
 id: gp0402
 meaning: By the way, Incidentally
 pronunciation:
@@ -20,9 +25,9 @@ details:
   nuance: Implies that something in the previous topic subtly reminded the speaker of an unrelated matter.
   temporal-flow: Signifies a temporal and thematic disjunction from the previous statement to introduce
     a new subject.
-  spatial-flow: Metaphorically shifts the conversational 'space' to an entirely different area. Other
-    spatial details are not applicable. Similar to how 'in passing' or 'incidentally' allows a speaker
-    to move to a new conceptual space. Other spatial details are not applicable.
+  spatial-flow: Metaphorically shifts the conversational 'space' to an entirely different area. Similar
+    to how 'in passing' or 'incidentally' allows a speaker to move to a new conceptual space. Other spatial
+    details are not applicable.
 etymology: 「ところで」 is composed of 「所 (tokoro)」 meaning "place" or "point," and the particle 「で (de)」, indicating
   location or means. The phrase literally means "at the point," but its usage evolved to signify a shift
   in the conversation to another 'point' or topic.
@@ -49,9 +54,24 @@ false_friends:
       response to a keyword or idea just mentioned. 「ところで」, however, signals a more abrupt and often unrelated
       change of subject.
     grammar_point: ～と言えば・～と言うと・～と言ったら (speaking of)
-post_false_friends_writeup: While 「そういえば」 and 「～と言えば」 can introduce new information, their usage implies
-  a connection to the ongoing discussion or a sudden remembrance related to it. 「ところで」 stands apart by
-  signaling a clear, often abrupt, shift to an entirely unrelated topic, acting as a conversational reset.
+  - term: ちなみに
+    meaning: Incidentally, in passing, by the way (for related info)
+    kind: similar expression
+    nuance: 「ちなみに」 is used to add supplementary or related information to the current topic. 「ところで」 is
+      used to completely change the topic to an unrelated subject.
+    grammar_point: ちなみに (by the way)
+  - term: それはそうと
+    meaning: By the way, incidentally (informal topic shift)
+    kind: similar expression
+    nuance: 「それはそうと」 is a casual conversational filler to shift topic abruptly, often implying a less
+      formal setting than 「ところで」. 「ところで」 implies a more distinct break, but still maintains a certain
+      level of politeness, especially when used in formal settings.
+    grammar_point: <suggest>:それはそうと (by the way・casual)
+post_false_friends_writeup: While 「そういえば」 and 「といえば」 introduce topics that are related to the ongoing
+  discussion or are sudden recollections, and 「ちなみに」 adds supplementary related information, 「ところで」 stands
+  apart by signaling a clear, often abrupt, shift to an entirely unrelated topic. 「それはそうと」 is also used
+  for abrupt topic shifts but carries a more casual and conversational tone than 「ところで」, which can be
+  used across various registers.
 examples:
   - english: By the way, what happened to yesterday's plan?
     japanese:
@@ -222,5 +242,28 @@ examples:
     register: casual
     setting: friendly
 post_example_writeup: The usage of 「ところで」 effectively shifts the conversation's focus to an unrelated
-  topic. It's crucial to distinguish it from similar phrases like 「そういえば」 or 「といえば」, which introduce related
-  or remembered topics. 「ところで」 is a distinct signal for a clear, often abrupt, change of subject.
+  topic. It's crucial to distinguish it from similar phrases like 「そういえば」, 「といえば」, 「ちなみに」, or 「それはそうと」,
+  which introduce related topics, sudden recollections, or a more casual/abrupt shift respectively. 「ところで」
+  is a distinct signal for a clear, often abrupt, change of subject while maintaining a relatively polite
+  tone.
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    そう いえ ば、昨日 の 話 は どう なっ た？'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    そう いえ ば、ご 主人 は お 元気 です か？'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    どこ に 行く つもり です か？'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    そう いえ ば、明日 の パーティー に 何 を 持っ て 来 ます か？'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    そう いえ ば、パソコン の 使い 方 を ご 存知 です か？'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    内本 さん は どこ 出身？'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    そう いえ ば、もう 雨 は やみ まし た か？'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    今度 の デート、どこ 行き たい？'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    そう いえ ば、先週 の 休暇 は 楽しかっ た です か？'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    今夜、ご飯 行ける？'

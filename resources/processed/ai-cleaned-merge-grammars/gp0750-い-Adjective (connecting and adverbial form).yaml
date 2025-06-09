@@ -1,13 +1,12 @@
 grammar_point: い-Adjective (connecting and adverbial form)
 learn_before:
-  - い-adjective (past)
-  - い-Adjective (negative form)
-  - い-Adjective[て] (and・because)
   - い-Adjectives (adjectives ending in い)
+  - い-adjective (past)
+  - い-Adjectives (negative form)
 learn_after:
   - ば〜ほど (the more...the more)
   - げ (seeming・appearance)
-  - Adjective + 限りだ (utmost degree)
+  - くもなんともない (not at all)
 id: gp0750
 meaning: And; so; used to connect い-adjectives or to connect an い-adjective to a verb.
 pronunciation:
@@ -59,7 +58,7 @@ false_friends:
     nuance: 「と」 is typically used for listing items, conditions, or automatic outcomes. It does not imply
       the same kind of direct adjectival connection or adverbial modification that 「く」 does, nor does
       it share its formal register for connecting adjectives.
-    grammar_point: <suggest>:と (listing・conditions)
+    grammar_point: '<suggest>: と (various uses)'
   - term: ～に (adverbial particle)
     meaning: to (adverbial particle for な-adjectives and nouns)
     kind: often confused with
@@ -82,7 +81,7 @@ examples:
     english_literally: This building is tall, has history.
     competing_grammar:
       - competing_japanese:
-          - この 建物 は 高く て、歴史 が ある。
+          - この 建物 は {高く} て、歴史 が ある。
         english: This building is tall and historic (conversational).
         hint: The 「て」 form is more conversational and less formal than 「く」 for connecting adjectives in
           this way. We're looking for a formal, informative tone.
@@ -124,7 +123,7 @@ examples:
     english_literally: That problem was difficult, took time to solve.
     competing_grammar:
       - competing_japanese:
-          - その 問題 は 難しく て、解く の に 時間 が かかっ た。
+          - その 問題 は {難しく} て、解く の に 時間 が かかっ た。
         english: That problem was difficult, and it took a long time to solve (conversational).
         hint: The 「て」 form is generally less formal for causal connections than 「く」, especially in academic
           or serious contexts. We're looking for a formal tone.
@@ -166,7 +165,7 @@ examples:
     english_literally: Her shirt is white, his is blue.
     competing_grammar:
       - competing_japanese:
-          - 彼女 の シャツ は 白く て、彼 の は 青い。
+          - 彼女 の シャツ は {白く} て、彼 の は 青い。
         english: Her shirt is white and his is blue (using 'te' form).
         hint: While 「て」 is also possible, 「く」 here creates a smoother, more concise parallel structure
           for comparison, especially when connecting descriptive clauses.
@@ -182,7 +181,7 @@ examples:
     english_literally: This box is heavy, cannot be moved by one person.
     competing_grammar:
       - competing_japanese:
-          - この 箱 は 重く て、一人 で は 動か せ ない。
+          - この 箱 は {重く} て、一人 で は 動か せ ない。
         english: This box is heavy, and cannot be moved by one person (conversational).
         hint: In this professional, serious context, 「く」 provides a more concise and direct statement
           of fact and consequence than the slightly more conversational 「て」.
@@ -235,7 +234,7 @@ examples:
     english_literally: His house is old, small, but comfortable.
     competing_grammar:
       - competing_japanese:
-          - 彼 の 家 は 古く て 小さく て、居心地 が 良い。
+          - 彼 の 家 は {古く} て {小さく} て、居心地 が 良い。
         english: His house is old and small, and comfortable (using 'te' form).
         hint: Using 「て」 repeatedly can sometimes sound repetitive when connecting multiple adjectives.
           「く」 offers a smoother, more sophisticated conjunction for い-adjectives, especially when followed
@@ -257,7 +256,7 @@ examples:
     english_literally: Long hike after, water was cold, was pleasant.
     competing_grammar:
       - competing_japanese:
-          - 長 い ハイキング の 後、水 は 冷たく て、心地 よかっ た。
+          - 長 い ハイキング の 後、水 は {冷たく} て、心地 よかっ た。
         english: After a long hike, the water was cold and refreshing (using 'te' form).
         hint: While 「て」 is grammatically correct here, 「く」 provides a more concise and literary connection
           between the two descriptive adjectives, often preferred in descriptive writing.
@@ -293,3 +292,20 @@ post_example_writeup: As you can see from these examples, the 「く」 form is 
   Pay attention to the context and the desired nuance when choosing between 「く」 and other connecting forms.
 sources:
   bunpro: https://bunpro.jp/grammar_points/く
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    この 建物 は 高い です。そして 歴史 が あり ます。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 ら は 楽しい 時間 を 過ごし た。'
+  - '[rule-5] warning examples[2].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    その 問題 が 難しかっ た の で、解く の に 時間 が かかっ た。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    その 犬 は 大きな 犬 に 育っ た。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    その 知らせ を 聞い て、心 が 悲しい。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    風 が 強い。'
+  - '[rule-5] warning examples[10].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 は 悲しい 顔 で 夕日 を 見 た。'
+  - '[rule-5] warning examples[10].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    彼 は 悲しい 気分 で 夕日 を 見 た。'

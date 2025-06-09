@@ -1,11 +1,26 @@
 grammar_point: に (temporal particle)
 learn_before:
-  - を (object marker)
+  - が (subject marker)
   - は (topic and contrast)
+  - を (object marker)
   - で (at)
+  - です (polite copula)
+  - Verbs (non-past polite)
+  - ある (inanimate existence)
+  - いる (animate existence)
+  - とき (when)
+  - から (from)
+  - まで (limit extent)
+  - ている (resultant and ongoing state)
 learn_after:
+  - うちに (while・before change)
+  - 際に (at the time of)
+  - につれて (as・in proportion to)
   - までに (by the time)
   - ているあいだに (while something is happening)
+  - 最中に (in the middle of)
+  - ところだ (timing expression)
+  - たびに (each time)
 id: gp0157
 meaning: at, in, on (time)
 meaning_warning: This particle cannot be used with all time expressions. It generally applies to time
@@ -53,18 +68,18 @@ false_friends:
     nuance: Unlike 「に」 which marks a specific point in time, 「で」 indicates the location where an action
       takes place. 「に」 is for time, 「で」 is for place.
     grammar_point: で (at)
-  - term: に (ni - direction)
-    meaning: to, towards (direction)
+  - term: に (toward)
+    meaning: To, toward, at, in, for, by (passive agent)
     kind: often confused with
-    nuance: When used to indicate direction, 「に」 has a different meaning. Be mindful of context to differentiate
-      whether 「に」 is indicating time or direction.
-    grammar_point: <suggest>:に (location, direction)
+    nuance: When used to indicate direction, 「に」 denotes movement or a destination, while the temporal
+      「に」 specifies the point in time an action occurs. Context is key to distinguishing these uses.
+    grammar_point: に (toward)
   - term: 「に」の省略
     meaning: Omission of the time particle に
     kind: often confused with
-    nuance: For certain specific time expressions (e.g., days of the week, defined seasons like 夏休み, or
-      after 時), the particle 「に」 can be optionally omitted. While acceptable, including 「に」 often adds
-      a nuance of greater precision or emphasis on that specific temporal point.
+    nuance: While some time expressions allow for the optional omission of 「に」, doing so sometimes reduces
+      the emphasis on the precise timing. The presence of 「に」 consistently highlights a specific point
+      or period.
     grammar_point: <suggest>:に (optional time marker)
 post_false_friends_writeup: The particle 「に」 can sometimes be confused with 「で」 or directional uses of
   「に」. The key is to remember that when referring to time, 「に」 pinpoints *when* something occurs. 「で」
@@ -198,8 +213,8 @@ examples:
       the historical timing of the event.
   - english: I often go skiing in winter.
     japanese:
-      - 冬 {に} よく スキー に 行き ます。
-      - 冬 {に} よく スキー に 行く。
+      - 冬 {に} よく スキー {に} 行き ます。
+      - 冬 {に} よく スキー {に} 行く。
     english_literally: Winter, at, often, skiing, to, go.
     competing_grammar:
       - competing_japanese:
@@ -252,3 +267,28 @@ post_example_writeup: As you can see from these examples, 「に」 is a versati
   ambiguity and reinforces the exact moment or period of an action.
 sources:
   bunpro: https://bunpro.jp/grammar_points/に-at
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    毎日、朝 ８ 時 朝ごはん を 食べ ます。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    来月 ５ 月 ３ 日 テスト が あり ます。'
+  - '[rule-5] warning examples[1].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    来月、テスト が あり ます。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    毎週 火曜 日 サッカー を し ます。'
+  - '[rule-5] warning examples[2].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    毎週、サッカー を し ます。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    私 たち は 夏休み 旅行 を し ます。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    クリスマス プレゼント を もらい まし た。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    田中 さん は 大学 に いる 時、たくさん 本 を 読み まし た。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    東京 オリンピック は 2020 年 開催 さ れ まし た。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    冬、よく スキー に 行き ます。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    私 は 1990 年 9 月 15 日 生まれ まし た。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    会議 は 10 時 始まり ます。'

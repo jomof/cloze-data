@@ -7,6 +7,9 @@ learn_before:
 learn_after:
   - かというと (if I were to say)
   - なぜなら〜から (emphasized reason)
+  - わけだ (logical conclusion)
+  - ゆえに (because・therefore)
+  - こととて (due to・since)
 id: gp0460
 meaning: Why? Well..., Why? Because..., If you ask me why..., The reason why is..., It is because...
 meaning_warning: In casual speech, の can be changed to ん and と to って
@@ -77,11 +80,25 @@ false_friends:
       statement, often to clarify or present a contrasting view, rather than providing the *reason* for
       something as 「かというと (because)」 does.
     grammar_point: かというと (if I were to say)
+  - term: ことだから (given the nature of)
+    meaning: Given the nature of (A), (B) is to be expected; Precisely because it is (A), (B).
+    kind: similar expression
+    nuance: Unlike 「かというと」 which implies an answer to a 'why' question, 「ことだから」 expresses an expected
+      outcome based on someone's known character or a specific situation's nature.
+    grammar_point: ことだから (given the nature of)
+  - term: わけだ (logical conclusion)
+    meaning: For that reason, no wonder, as you'd expect, naturally, thus, this why
+    kind: similar expression
+    nuance: 「わけだ」 states a logical conclusion or natural consequence of prior information, often translating
+      to 'no wonder' or 'that's why.' In contrast, 「かというと」 specifically sets up an explanation *as a response
+      to an explicit or implied 'why' question*.
+    grammar_point: わけだ (logical conclusion)
 post_false_friends_writeup: While both 「かというと」 and 「なぜなら〜から」 can be used to explain reasons, 「かというと」 specifically
   sets up an explanation in response to an implicit or explicit question, while 「なぜなら〜から」 provides a direct
   statement of the reason. It is crucial to distinguish this grammar point from 「かというと (if I were to say)」,
   which shares the same form but presents a specific point or clarifies a statement rather than providing
-  a reason.
+  a reason. Furthermore, 「ことだから」 explains an expected outcome based on nature, and 「わけだ」 states a logical
+  conclusion, both differing from the interrogative setup of 「かというと」.
 examples:
   - english: If you ask why I exercise every day, it's because I want to make my body stronger.
     japanese:
@@ -113,7 +130,7 @@ examples:
     competing_grammar:
       - competing_japanese:
           - 彼 が 急 に 会社 を 辞め た 理由 は、新しい ビジネス を 始める から だ そう です。
-        english: The reason he suddenly quit the company is because it seems he's starting a new business.
+        english: The reason he suddenly quit the company is because he's starting a new business.
         hint: This states the reason directly. We're looking for a phrase that specifically addresses
           an implied question about 'why'.
     scene: Two colleagues are discussing a mutual friend's sudden departure from their company.
@@ -286,3 +303,24 @@ post_example_writeup: As demonstrated in the examples, 「かというと」 and
   and sentence endings.
 sources:
   bunpro: https://bunpro.jp/grammar_points/かというと1
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    毎日 運動 する 理由 は、体 を 強く し たい から です。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 が 急 に 会社 を 辞め た 理由 は、新しい ビジネス を 始める から だ そう です。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 計画 に 賛成 でき ない 理由 は、お 金 が 足り ない から です。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あの 服 を 買わ なかっ た 理由 は、サイズ が 合わ なかっ た から です。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    当社 が この 新しい システム を 導入 する 目的 は、お 客 様 へ の サービス を 改善 する ため です。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼女 が あんな に 怒っ て た 理由 は、約束 を 忘れ た から だ よ。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    俺 が ここ に いる 理由 は、お前 が 呼ん だ から だろ。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 本 が 売れ ない 理由 は、内容 が 悪い から で は ない。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 が いつ も 集合 に 遅れる 理由 は、時間 管理 が 苦手 だ から です。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    日本 語 を 勉強 し 始め た 理由 は、日本 の 文化 に 魅了 さ れ た から です。'

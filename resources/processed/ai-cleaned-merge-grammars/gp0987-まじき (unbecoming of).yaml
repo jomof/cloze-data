@@ -1,11 +1,12 @@
 grammar_point: まじき (unbecoming of)
 learn_before:
-  - 〜てはいけない (must not・cannot)
+  - てはいけない (must not・cannot)
+  - ないほうがいい (better not to)
   - べきではない (should not)
-  - 〜てはならない (must not)
+  - てはならない (must not)
+  - べからず (must not)
 learn_after:
-  - 〜べくもない (no way to)
-  - 〜極まりない・極まる (extreme degree)
+  - の極み (ultimate degree)
 id: gp0987
 meaning: Unbecoming of, Unworthy of, Not proper for, Should not, Must not, Cannot
 pronunciation:
@@ -16,7 +17,7 @@ formation:
     someone in a particular role or position.
   Noun + と し て + ある + {まじき} + Noun: Similar to above, but emphasizes the role or capacity in which the
     action is unbecoming.
-  Verb (dictionary form) + {まじき}: Describes something as 'unforgivable' or 'intolerable.'
+  Verb (dictionary form) + {まじき}: Describes something as 'unforgivable' or 'intolerable'.
 jlpt: N1
 details:
   part-of-speech: auxiliary adjective
@@ -28,9 +29,9 @@ etymology: The grammar point 「まじき」 is the attributive form of 「ま�
   'unforgivable' or 'unacceptable'.
 writeup: The grammar point 「まじき」 is a formal expression indicating that something is unbecoming, unworthy,
   or unacceptable for a particular person or role. It carries a strong sense of disapproval or prohibition.
-  The most common pattern is 「(A) に ある まじき (B)」, meaning "(B) is unbecoming of (A)". 「に」 can sometimes
+  The most common pattern is 「(A) に ある {まじき} (B)」, meaning "(B) is unbecoming of (A)". 「に」 can sometimes
   be replaced by 「と し て」, emphasizing the role or capacity in which the action is unacceptable. Another
-  common pattern is 「許す まじき」, meaning "unforgivable" or "intolerable". This grammar point is generally
+  common pattern is 「許す {まじき}」, meaning "unforgivable" or "intolerable". This grammar point is generally
   used in formal writing and speech. Its rigid structure and strong condemnatory nuance make it unsuitable
   for casual conversation.
 false_friends:
@@ -62,6 +63,15 @@ false_friends:
       or disgraceful for a given role or position, rather than simply being a forbidden act. 「まじき」 carries
       a stronger moral or social judgment tied to one's identity.
     grammar_point: てはならない (must not)
+  - term: に足りない (not worthy or sufficient)
+    meaning: To not be worthy, To not be sufficient, To lack
+    kind: similar expression
+    nuance: While 「に足りない」 expresses a lack of worthiness or sufficiency for a task or quality (e.g., 「信頼
+      に 足りない 人」 - a person not worthy of trust), 「まじき」 carries a stronger sense of active unsuitability
+      or disgrace, implying an action or quality that is explicitly improper or shameful for someone in
+      a specific role or context. 「まじき」 often implies a failure to live up to a standard, while 「に足りない」
+      denotes an inherent inadequacy.
+    grammar_point: に足りない (not worthy or sufficient)
 post_false_friends_writeup: 「まじき」 specifically highlights actions or qualities that are unsuitable for
   a particular role, status, or context, often implying a strong moral or professional judgment. It carries
   a strong sense of moral or social condemnation. In contrast, 「まい」 primarily expresses a strong negative
@@ -70,8 +80,9 @@ post_false_friends_writeup: 「まじき」 specifically highlights actions or q
   and less about the inherent suitability to a role. 「てはならない」 and 「べきではない」 are more general prohibitions
   meaning "must not" or "should not," respectively. They indicate actions that are forbidden or not advisable,
   but lack the specific nuance of an action being fundamentally 'unbecoming' of someone's character or
-  position that 「まじき」 conveys. 「まじき」 is largely confined to formal or literary contexts, whereas the others
-  are used more broadly in both formal and informal speech and writing.
+  position that 「まじき」 conveys. 「に足りない」 indicates an insufficiency or lack of worth, whereas 「まじき」 implies
+  an active transgression against what is proper or expected. 「まじき」 is largely confined to formal or literary
+  contexts, whereas the others are used more broadly in both formal and informal speech and writing.
 examples:
   - english: Due to negligence unbecoming of a doctor, the patient suffered severe after-effects.
     japanese:
@@ -262,7 +273,28 @@ post_example_writeup: The examples illustrate how 「まじき」 is used to des
   or professional judgment. Whether it's a doctor, a leader, a politician, a parent, or even a samurai
   or an idol, the phrase highlights a severe deviation from expected conduct. The construction 「〜に ある
   まじき」 and 「〜と し て ある まじき」 both emphasize this unsuitability for a specific role. When used with a verb
-  in its dictionary form like 「許す まじき」, it translates to "unforgivable" or "intolerable," denoting an
+  in its dictionary form like 「許す {まじき}」, it translates to "unforgivable" or "intolerable," denoting an
   heinous act that absolutely cannot be permitted.
 sources:
   bunpro: https://bunpro.jp/grammar_points/まじき
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    医師 の 不 注意 で、患者 は 重い 後遺 症 を 負っ た。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    リーダー の 優柔 不断 な 態度 で、計画 は 遅延 し た。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    政治 家 の 発言 が、彼 の 支持 率 を 大幅 に 下げ た。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    親 の 無 責任 な 行動 は、子供 に 悪 影響 を 与える。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    友人 の 信じる 心 を 踏みにじる なんて、そんな 裏切り 行為 は 絶対 に 許せ ない もの だ わ。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    武士 の 行為 に 及ん だ 者 は、切腹 を 命じ られ た。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    アイドル の 熱愛 が スクープ さ れ、ファン は 衝撃 を 受け た。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    教師 の 差別 的 発言 で、彼 は 職 を 失っ た。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    利益 の ため なら 人 を 騙す など、人間 と し て 絶対 に 許せ ない 悪事 だ。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    貴族 の 卑しい 振る舞い を 咎め られ、彼 は 追放 さ れ た。'

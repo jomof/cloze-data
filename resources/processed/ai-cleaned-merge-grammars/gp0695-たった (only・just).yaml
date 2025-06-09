@@ -1,8 +1,8 @@
 grammar_point: たった (only・just)
 learn_before:
-  - ばかり (only・excessive)
   - だけ (only・just)
   - しか〜ない (only・nothing but)
+  - ばかり (only・excessive)
 learn_after:
   - 精々 (at most)
   - 僅かに (only・slightly)
@@ -120,10 +120,14 @@ examples:
     setting: academic
     nuance: The usage of 「たった今」here emphasizes the immediacy of the action, conveying that the return
       was just moments ago, rather than simply stating it happened at the present time.
-    etymology: |-
-      「たった今」is an emphasized form of 「ただ今」 (tadaima), which means "just now." The duplication of the 'た' sound intensifies the sense of immediacy. While 「ただ今」 is commonly known from the greeting 'I'm home,' its original meaning also implies 'just now' or 'right at this moment.' The doubled consonant in 「たった」adds a strong, impactful feeling to the timing, making it more forceful and precise than a simple 「今」 (ima). This is a common linguistic phenomenon in Japanese, where repeated sounds or specific kana patterns can add emphasis or nuance, similar to how sound symbolism (onomatopoeia) functions in the language. In this case, the 'tta' sound in 「たった」conveys a sense of suddenness and completion right at the present moment, perfectly aligning with 'just now'.
-
-      Historically, 「ただ」originally meant 'only' or 'just', and its usage evolved to include temporal meanings. The intensifying effect of 「たった」makes the 'just now' very sharp and distinct, often used when precision or a slight hint of 'right on time' or 'a little late but still just now' is implied, or when emphasizing the recency of an event.
+    etymology: 「たった今」is an emphasized form of 「ただ今」 (tadaima), which means "just now." The duplication
+      of the 'た' sound intensifies the sense of immediacy. While 「ただ今」 is commonly known from the greeting
+      'I'm home,' its original meaning also implies 'just now' or 'right at this moment.' The doubled
+      consonant in 「たった」adds a strong, impactful feeling to the timing, making it more forceful and precise
+      than a simple 「今」 (ima). This is a common linguistic phenomenon in Japanese, where repeated sounds
+      or specific kana patterns can add emphasis or nuance, similar to how sound symbolism (onomatopoeia)
+      functions in the language. In this case, the 'tta' sound in 「たった」conveys a sense of suddenness and
+      completion right at the present moment, perfectly aligning with 'just now'.
   - english: Boy, you climbed this huge mountain all by yourself? That's amazing!
     japanese:
       - 少年、{たった 一人} で この 巨大 な 山 を 登っ た の か い？すごい な！
@@ -145,10 +149,11 @@ examples:
     nuance: The use of 少年 implies addressing a boy, and the exclamation すごいな！ is a casual, appreciative
       remark often used by an older male speaker. 「たった一人」emphasizes the unexpected feat of climbing alone,
       highlighting the boy's impressive determination and the speaker's surprise at the singular effort.
-    etymology: |-
-      The phrase 「たった一人」(tatta hitori) comes from 「たった」 (tatta), meaning "only" or "just," combined with 「一人」 (hitori), meaning "one person." The intensifier 「たった」highlights the singularity or isolation in a surprising or significant way. It's often used to express admiration for someone's independence or resilience, especially when facing a challenge alone, or to convey loneliness or helplessness in being completely by oneself.
-
-      Historically, the emphasis added by 「たった」to 「一人」has always served to underscore the notion of 'alone' or 'singular' in a way that evokes a strong emotional response from the speaker. It makes the 'one person' stand out as remarkably singular, whether that is impressive or lamentable depending on context. This is different from a simple 「一人で」(hitori de, by oneself), which is a neutral statement of fact.
+    etymology: The phrase 「たった一人」(tatta hitori) comes from 「たった」 (tatta), meaning "only" or "just," combined
+      with 「一人」 (hitori), meaning "one person." The intensifier 「たった」highlights the singularity or isolation
+      in a surprising or significant way. It's often used to express admiration for someone's independence
+      or resilience, especially when facing a challenge alone, or to convey loneliness or helplessness
+      in being completely by oneself.
   - english: I invited everyone in my class, but only 4 people showed up.
     japanese:
       - クラス の 皆 を 呼ん だ の に、{たっ た の} ４ 人 しか 来 て くれ なかっ た。
@@ -441,3 +446,30 @@ post_example_writeup: While 「たった(の)」is often used to express a surpr
   the precise nuance.
 sources:
   bunpro: https://bunpro.jp/grammar_points/たった-の
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    山田 先生、今 研究 室 に 戻り まし た。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    少年、一人 で この 巨大 な 山 を 登っ た の か い？すごい な！'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    クラス の 皆 を 呼ん だ の に、４ 人 しか 来 て くれ なかっ た。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この レストラン は 駅 から ５０ メートル です！'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    恐れ入り ます が、飛行 機 は 今 離陸 し まし た の で、次 の 便 を ご 利用 ください。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    友達 が 映画 を 見 た い と 言っ た が、私 に は ３００ 円 しか ない。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼女 は その 難しい パズル を １ 分 で 解い た なんて、信じ られ ない！'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    息子 は 病気 の 間、一人 で 病院 に 滞在 し まし た。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    期間 限定！５００ 円 で 大盛り ラーメン が 食べ 放題 です！'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼女 は 私 に とっ て、一人 の 大切 な 親友 です。'
+  - '[rule-5] warning examples[10].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    二 週間 も 一生 懸命 練習 し た の に、試験 で ５０ 点 しか 取れ なかっ た。'
+  - '[rule-5] warning examples[11].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    眠り に 落ち て から ５ 分 で 目 が 覚め た。'
+  - '[rule-5] warning examples[12].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 小さな 店 は ハンドメイド ジュエリー を 売っ て いる が、火曜 日 に しか 開い て い ない。'

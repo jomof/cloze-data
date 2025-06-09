@@ -1,12 +1,15 @@
 grammar_point: だけでなく (not only... but also)
 learn_before:
   - だけ (only・just)
-  - じゃない (negation noun and na-adj)
+  - ではない (formal negative copula)
+  - も (addition or emphasis particle)
   - なくて (negative te-form)
 learn_after:
   - のみならず (not only... but also)
   - ばかりでなく (not only... but also)
   - に限らず (not limited to)
+  - 上に (in addition to)
+  - はもとより (not only... but also)
 id: gp0336
 meaning: Not only… but also
 meaning_warning: It is often used together with second noun+particle も (meaning "also") in main clause.
@@ -49,14 +52,11 @@ details:
   logical-flow: Additive; expands on previous information with an additional, often surprising, point.
 etymology: 「だけでなく」 is derived from 「だけ」 (only) + 「ではない」 (it is not) + conjunctive 「て」, meaning that it's
   not *just* the thing mentioned. The 「は」 is often dropped or changed to 「じゃ」 for ease of pronunciation.
-writeup: 「だけでなく」, an abbreviation of 「だけではなく」, is a common construction in Japanese that translates to
-  "not only (A), but also (B)". Sometimes the (B) statement may be left unsaid. This expression can connect
-  to any (A) phrase that 「だけ」 would usually be able to connect to.The 「で」 in 「では」 is not the particle
-  「で」, but the auxiliary verb 「だ」 in its conjunctive form. 「は」 is regularly dropped from 「では」 expressions,
-  or it may also be changed to 「じゃ」 for ease of pronunciation.The conjunction particle 「て」 should follow
-  「なく」, as it is the conjunctive form of the い-Adjective 「ない」. However, the 「て」 in this particular construction
-  is very often omitted.In writing, if there is no comma (読点) after 「なく」, the full 「なくて」 construction
-  will be required. When a comma is present, both forms are grammatically correct.
+writeup: |-
+  「だけでなく」, an abbreviation of 「だけではなく」, is a common construction in Japanese that translates to "not only (A), but also (B)". Sometimes the (B) statement may be left unsaid. This expression can connect to any (A) phrase that 「だけ」 would usually be able to connect to.
+  The 「で」 in 「ではない」 is not the particle 「で」, but the auxiliary verb 「だ」 in its conjunctive form. 「は」 is regularly dropped from 「では」 expressions, or it may also be changed to 「じゃ」 for ease of pronunciation.
+  The conjunction particle 「て」 should follow 「なく」, as it is the conjunctive form of the い-Adjective 「ない」. However, the 「て」 in this particular construction is very often omitted.
+  In writing, if there is no comma (読点) after 「なく」, the full 「なくて」 construction will be required. When a comma is present, both forms are grammatically correct.
 false_friends:
   - term: だけ
     meaning: Only, Just
@@ -82,7 +82,7 @@ false_friends:
       a representative example'.
     grammar_point: をはじめ (starting with)
   - term: に限らず
-    meaning: Not just, Not only… but also
+    meaning: Not limited to, Not only… but also
     kind: similar expression
     nuance: Unlike 「だけでなく」 which expands on a statement, 「に限らず」 means 'not limited to' a specific category
       or example.
@@ -192,7 +192,7 @@ examples:
     conjugation: te-form (～て)
     speaker_gender: male
     listener_gender: group
-    nuance: This sentence uses 「だけ で なく」 to add to a list of possessions, implying that Thomas owns more
+    nuance: This sentence uses 「だけでなく」 to add to a list of possessions, implying that Thomas owns more
       than just a car. The particle 「も」 after 「ボート」 further emphasizes the additional items. The casual
       「持っ て いる」 is natural for listing possessions.
   - english: I heard that Takeru can not only play the piano, but also the guitar.
@@ -228,7 +228,7 @@ examples:
       - トム は 日本 語 {だけ で は なく}、中国 語 も 話せる。
       - トム は 日本 語 {だけ じゃ なく}、中国 語 も 話せる。
       - トム は 日本 語 {だけ で は なく て}、中国 語 も 話せる。
-      - トム は 日本 語 {だけ じゃ なく て}、中国 語 も 話せる。
+      - トム は 日本 語 {だけ で は なく て}、中国 語 も 話せる。
     english_literally: Tom not only Japanese, but also Chinese can speak.
     competing_grammar:
       - competing_japanese:
@@ -371,8 +371,9 @@ examples:
     speaker_gender: male
     listener_gender: female
     speaker_age: younger
-    nuance: The use of 「君はかわいい」 and 「楽しいね」 expresses admiration and hints at deeper interest, common in
-      flirty conversation. The casual particle 「ね」 softens the compliment, inviting agreement.
+    nuance: The direct compliment 「君はかわいい」 coupled with the enthusiastic 「楽しいね」 expresses admiration and
+      hints at deeper interest, common in flirty conversation. The casual particle 「ね」 softens the compliment,
+      inviting agreement.
     etymology: The particle 「よ」 at the end of a sentence adds emphasis or indicates new information, often
       used to inform or assert something to the listener.
   - english: Not only can my boyfriend cook, but he can also do housework, so it is really helpful.
@@ -434,3 +435,30 @@ post_example_writeup: It's common to follow up the second item in the 「だけ�
   true.
 sources:
   bunpro: https://bunpro.jp/grammar_points/だけでなく
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    ダイエット を する ため に は 運動 を する こと も、食べる もの に も 気 を 付け なく て は いけ ない。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    名古屋 の 夏 は 暑い し、ジメジメ し て いる。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    地方 は しずか で、空気 も きれい だ。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    トーマス は 車 と バイク と ボート を 持っ て いる。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    タ ケル は ピアノ も ギター も こなせる と 聞い た。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    トム は 日本 語 も 中国 語 も 話せる。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    かど に ある ラーメン 屋 は おいしい し、りょう も 多い。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    私 と 私 の 友達 も 日本 語 が しゃべれる。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あの 人 は 日本 語 と かんこく 語、中国 語 と タイ 語 も 話せる。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    ジョニー・デップ は カナダ と 日本 の 両方 に 行っ た こと が ある。'
+  - '[rule-5] warning examples[10].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    かのじょ も 私 も この 映画 が 好き だ よ。'
+  - '[rule-5] warning examples[11].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    かれ し が 料理 も 家事 も できる から、とても たすかる。'
+  - '[rule-5] warning examples[12].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    君 は かわいい し、話し て い て 本当 に 楽しい ね。'

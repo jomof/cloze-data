@@ -1,19 +1,25 @@
 grammar_point: みたい (appears・resembles)
 learn_before:
+  - です (polite copula)
   - だ (casual copula)
   - い-Adjectives (adjectives ending in い)
   - な-Adjectives (adjectival nouns)
-  - そう (looks or seems like)
-  - ている (resultant and ongoing state)
+  - ある (inanimate existence)
+  - いる (animate existence)
   - Verb[て] (and then)
+  - ている (resultant and ongoing state)
+  - そう (looks or seems like)
+  - だろう (conjecture)
 learn_after:
   - ようだ (it seems)
   - らしい (I hear, it seems)
-  - にみえる (to look like)
   - はずだ (expected to be)
   - に違いない (no doubt)
   - ものだ (general truth expectation)
   - であろう (conjecture・formal)
+  - かのようだ・かのように (as if)
+  - とみえる (seems from observation)
+  - わけだ (logical conclusion)
 id: gp0267
 meaning: Like, similar to, resembling; seems like
 meaning_warning: Conversational, Less formal than ようだ
@@ -93,12 +99,12 @@ examples:
     english_literally: Sky is dark, so soon rain will fall it seems.
     competing_grammar:
       - competing_japanese:
-          - 空 が 暗い から、もう すぐ 雨 が 降る そう だ。
+          - 空 が 暗い から、もう すぐ 雨 が 降る {そう だ}。
         english: It is said that it will rain soon because the sky is dark.
         hint: 「そうだ」 (reportive) indicates information received from others. We're looking for a personal
           observation.
       - competing_japanese:
-          - 空 が 暗い から、もう すぐ 雨 が 降る だろう。
+          - 空 が 暗い から、もう すぐ 雨 が 降る {だろう}。
         english: It will probably rain soon because the sky is dark.
         hint: 「だろう」 expresses probability or conjecture with less direct observation involved. We're looking
           for a personal impression based on direct sight.
@@ -113,7 +119,7 @@ examples:
     english_literally: This pancake, fluffy and cloud-like is.
     competing_grammar:
       - competing_japanese:
-          - この パン ケーキ、ふわふわ で 雲 の よう だ。
+          - この パン ケーキ、ふわふわ で {雲 の よう だ}。
         english: This pancake is fluffy, like a cloud.
         hint: 「ようだ」 is more formal and objective for comparisons. We're looking for a casual, sensory
           comparison.
@@ -128,11 +134,11 @@ examples:
     english_literally: Next door's house, no one is there, it seems.
     competing_grammar:
       - competing_japanese:
-          - 隣 の 家 は 誰 も い ない よう だ。
+          - 隣 の 家 は 誰 も {い ない よう だ}。
         english: It appears no one is home at the house next door.
         hint: 「ようだ」 is more formal and objective. We're looking for a personal deduction based on observation.
       - competing_japanese:
-          - 隣 の 家 は 誰 も い ない らしい。
+          - 隣 の 家 は 誰 も {い ない らしい}。
         english: Apparently, she is happy.
         hint: 「らしい」 implies inference from indirect evidence or hearsay. We're looking for a conclusion
           drawn from direct observation.
@@ -147,7 +153,7 @@ examples:
     english_literally: That person always smiling is, sun-like is.
     competing_grammar:
       - competing_japanese:
-          - あの 人 は いつ も 笑っ て い て、太陽 の よう だ。
+          - あの 人 は いつ も 笑っ て い て、{太陽 の よう だ}。
         english: That person is always smiling, like the sun.
         hint: 「ようだ」 is more formal for comparisons. We're looking for a casual, personal observation and
           affectionate comparison.
@@ -162,7 +168,7 @@ examples:
     english_literally: His room is completely like a garbage mansion.
     competing_grammar:
       - competing_japanese:
-          - 彼 の 部屋 は まるで ゴミ屋敷 の よう だ。
+          - 彼 の 部屋 は まるで {ゴミ屋敷 の よう だ}。
         english: His room is completely like a garbage dump.
         hint: 「ようだ」 can feel more objective. We're looking for a strong, casual comparison that might
           be exaggerated.
@@ -176,7 +182,7 @@ examples:
     english_literally: She, model-like legs are long.
     competing_grammar:
       - competing_japanese:
-          - 彼女 は モデル の よう な 足 が 長い。
+          - 彼女 は {モデル の よう な} 足 が 長い。
         english: She has long legs like a model.
         hint: 「のような」 is more formal and less conversational. We're looking for a casual observation between
           friends.
@@ -195,7 +201,7 @@ examples:
     english_literally: Today is very hot, so summer-like is.
     competing_grammar:
       - competing_japanese:
-          - 今日 は とても 暑い から、夏 の よう です。
+          - 今日 は とても 暑い から、{夏 の よう です}。
         english: It's so hot today, it's like summer.
         hint: 「ようです」 is more formal. We're looking for a conversational and less formal observation.
     scene: Commenting on the weather during an unseasonably warm day.
@@ -209,7 +215,7 @@ examples:
     english_literally: That person's painting, real-like is.
     competing_grammar:
       - competing_japanese:
-          - あの 人 の 絵 は 本物 の よう です。
+          - あの 人 の 絵 は {本物 の よう です}。
         english: That person's painting looks like the real thing.
         hint: 「ようです」 is more formal for an assessment. We're looking for a more direct and informal impression.
     scene: Admiring a realistic painting at an art exhibition.
@@ -223,11 +229,11 @@ examples:
     english_literally: She, happy it seems.
     competing_grammar:
       - competing_japanese:
-          - 彼女 は 嬉しい よう です。
+          - 彼女 は {嬉しい よう です}。
         english: It appears she is happy.
         hint: 「ようだ」 is more formal and objective. We're looking for a personal inference based on observation.
       - competing_japanese:
-          - 彼女 は 嬉しい らしい です。
+          - 彼女 は {嬉しい らしい です}。
         english: Apparently, she is happy.
         hint: 「らしい」 indicates information gathered indirectly. We're looking for a conclusion drawn from
           direct observation.
@@ -242,7 +248,7 @@ examples:
     english_literally: He, exam failed it seems, right?
     competing_grammar:
       - competing_japanese:
-          - 彼 は 試験 に 落ち た よう だ ね。
+          - 彼 は 試験 に {落ち た よう だ ね}。
         english: It appears he failed the exam, right?
         hint: 「ようだね」 is more formal for speculative conversation. We're looking for a casual, conversational
           tone between friends.
@@ -257,7 +263,7 @@ examples:
     english_literally: This game is too difficult, can't clear it, it seems.
     competing_grammar:
       - competing_japanese:
-          - この ゲーム は 難し すぎ て、クリア でき ない よう だ。
+          - この ゲーム は 難し すぎ て、{クリア でき ない よう だ}。
         english: This game is too difficult; it appears I can't clear it.
         hint: 「ようだ」 is more formal for expressing personal thoughts or complaints. We're looking for a
           natural, casual expression.
@@ -271,7 +277,7 @@ examples:
     english_literally: Section chief, today in good mood seems.
     competing_grammar:
       - competing_japanese:
-          - 部 長 は 今日 は ご 機嫌 の よう だ。
+          - 部 長 は 今日 は {ご 機嫌 の よう だ}。
         english: The manager appears to be in a good mood today.
         hint: 「ようだ」 is more formal for observations. We're looking for a direct, slightly less formal
           observation in a professional setting.
@@ -291,7 +297,7 @@ examples:
     english_literally: Dream-like time it was, you know.
     competing_grammar:
       - competing_japanese:
-          - 夢 の よう な 時間 だっ た よ。
+          - '{夢 の よう な} 時間 だっ た よ。'
         english: It was a dream-like time.
         hint: 「のような」 is more formal or literary. We're looking for an immediate and emotional reflection
           in a romantic context.
@@ -311,7 +317,7 @@ examples:
     english_literally: That child still like a child crying is.
     competing_grammar:
       - competing_japanese:
-          - あの 子 は まだ 子供 の よう に 泣い て いる。
+          - あの 子 は まだ {子供 の よう に} 泣い て いる。
         english: That child is still crying like a child.
         hint: 「のように」 is more formal for comparisons in manner. We're looking for a direct and casual comparison.
     scene: A male adult observing a younger person crying excessively.
@@ -329,7 +335,7 @@ examples:
     english_literally: She, teacher-like various things teaches me.
     competing_grammar:
       - competing_japanese:
-          - 彼女 は 先生 の よう に 色々 な こと を 教え て くれる。
+          - 彼女 は {先生 の よう に} 色々 な こと を 教え て くれる。
         english: She teaches me various things like a teacher.
         hint: 「のように」 is more formal for comparisons in manner. We're looking for a natural and warm comparison
           in a casual conversation.
@@ -348,7 +354,7 @@ examples:
     english_literally: He, tired is, it seems.
     competing_grammar:
       - competing_japanese:
-          - 彼 は 疲れ て いる よう だ。
+          - 彼 は {疲れ て いる よう だ}。
         english: He appears to be tired.
         hint: 「ようだ」 is more formal. We're looking for a casual and direct empathetic observation.
     scene: An older male observing a younger female colleague who looks exhausted.

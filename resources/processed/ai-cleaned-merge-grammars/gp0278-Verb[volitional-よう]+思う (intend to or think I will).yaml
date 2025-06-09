@@ -1,8 +1,10 @@
 grammar_point: Verb[volitional-よう]+思う (intend to or think I will)
 learn_before:
+  - Verbs (non-past polite)
+  - と (quotation)
   - (よ)う (let’s, shall we)
   - 思う (I think or thought)
-  - と (quotation)
+  - ている (~ing)
 learn_after:
   - Verb[volitional-よう] にする (to make an effort to establish a habit)
   - Verb[volitional]+とする (try about to)
@@ -68,8 +70,8 @@ formation:
   Verb[volitional-form] + と思う: Expresses the speaker's intention or decision to do something surfaces
     as a thought or internal resolve. This structure is often translated as 'I think I will...', 'I'm
     going to...', or 'I intend to...' and signifies a personal decision or plan that has formed in the
-    speaker's mind. The phrase implies a conscious consideration rather than an immediate, spontaneous
-    action or an unchangeable, rigid commitment. It is highly versatile and fits various daily conversational
+    speaker's mind. It implies a conscious consideration rather than an immediate, spontaneous action
+    or an unchangeable, rigid commitment. It is highly versatile and fits various daily conversational
     contexts, reflecting an internal thought process before action.
 jlpt: N4
 details:
@@ -130,7 +132,7 @@ false_friends:
     nuance: Unlike Verb[volitional-form] + と思う, which expresses an intention, 「と 思う」 on its own (with
       a non-volitional verb) simply conveys an opinion or belief about something, not an intention to
       act. For example, 「彼 は 来る と 思う」 means "I think he will come," not "I intend for him to come."
-    grammar_point: と思う (I think or thought)
+    grammar_point: 思う (I think or thought)
   - term: つもりだ
     meaning: To plan to, to intend to
     kind: similar expression
@@ -157,15 +159,15 @@ examples:
   - english: I think I will apply for a new job.
     japanese:
       - 新しい 仕事 に 応募 しよう と {思う}。
-      - 新しい 仕事 に 応募 しよう と {思い ます}。
+      - 新しい 仕事 に 応募 しよう と {思い ます}.
     english_literally: Regarding a new job, I think I will apply.
     competing_grammar:
       - competing_japanese:
-          - 新しい 仕事 に 応募 する つもり だ。
+          - 新しい 仕事 に 応募 する {つもり だ}。
         english: I plan to apply for a new job.
         hint: This implies a firm, announced plan. We're looking for a decision that has been formed internally.
       - competing_japanese:
-          - 新しい 仕事 に 応募 しよう。
+          - 新しい 仕事 に 応募 {しよ う}。
         english: Let's apply for a new job.
         hint: This is a simple, direct statement of intent or invitation. We're looking for a decision
           that has been formed internally.
@@ -180,11 +182,11 @@ examples:
     english_literally: For the sake of health, I think I will run every day.
     competing_grammar:
       - competing_japanese:
-          - 健康 の ため に、毎日 走る つもり だ。
+          - 健康 の ため に、毎日 走る {つもり だ}。
         english: For my health, I plan to run every day.
         hint: This implies a fixed, determined plan. We're looking for a decision made after consideration.
       - competing_japanese:
-          - 健康 の ため に、毎日 走ろう。
+          - 健康 の ため に、毎日 {走ろ う}。
         english: For my health, let's run every day.
         hint: This is a casual suggestion to oneself or an invitation. We're looking for a decision made
           after consideration.
@@ -199,7 +201,7 @@ examples:
     english_literally: This weekend, with family, I think I will go to the park.
     competing_grammar:
       - competing_japanese:
-          - 今週 末、家族 と 公園 に 行く つもり です。
+          - 今週 末、家族 と 公園 に 行く {つもり です}。
         english: This weekend, I plan to go to the park with my family.
         hint: This implies a firm plan. We're looking for a gentle, personal desire or decision expressed
           politely.
@@ -215,7 +217,7 @@ examples:
     english_literally: Next vacation, I'm thinking of going on a trip, but what about you?
     competing_grammar:
       - competing_japanese:
-          - 次 の 休み に 旅行 に 行く つもり な ん だ けど、あなた も どう？
+          - 次 の 休み に 旅行 に 行く {つもり な ん だ} けど、あなた も どう？
         english: I plan to go on a trip next vacation, what about you?
         hint: This implies a firm, unchangeable plan. We're looking for a soft, ongoing consideration
           suitable for inviting someone to join.
@@ -234,7 +236,7 @@ examples:
     english_literally: Having heard his story, I thought I would cooperate.
     competing_grammar:
       - competing_japanese:
-          - 彼 の 話 を 聞い て、協力 する つもり だっ た。
+          - 彼 の 話 を 聞い て、協力 する {つもり だっ た}。
         english: After hearing his story, I had planned to cooperate.
         hint: This implies a past plan that was already established. We're looking for a realization or
           a past decision that occurred to the speaker, emphasizing the moment the thought came to mind.
@@ -249,7 +251,7 @@ examples:
     english_literally: This problem is too difficult, I won't think about it anymore.
     competing_grammar:
       - competing_japanese:
-          - この 問題 は 難し すぎ て、もう 考え ない つもり だ。
+          - この 問題 は 難し すぎ て、もう 考え ない {つもり だ}。
         english: This problem is too difficult; I don't plan to think about it anymore.
         hint: This expresses a more definitive, pre-decided plan not to do something. We're looking for
           emphasis on the current internal state of not wanting to do something.
@@ -264,7 +266,7 @@ examples:
     english_literally: For this project this time, I do not think I will participate.
     competing_grammar:
       - competing_japanese:
-          - 今回 の プロジェクト に は 参加 し ない つもり です。
+          - 今回 の プロジェクト に は 参加 し ない {つもり です}。
         english: I don't plan to participate in this project this time.
         hint: This is a flat statement of intention. We're looking for a softened refusal by indicating
           an internal decision, making it less direct and more polite.
@@ -280,7 +282,7 @@ examples:
     english_literally: This year, I'm thinking of challenging new things overseas.
     competing_grammar:
       - competing_japanese:
-          - 今年 は 海外 で 新しい こと に 挑戦 する つもり な ん だ。
+          - 今年 は 海外 で 新しい こと に 挑戦 する {つもり な ん だ}。
         english: This year, I plan to try new things overseas.
         hint: This conveys a slightly firmer commitment. We're looking for an ongoing, perhaps still developing,
           intention suitable for casual conversation about future aspirations.
@@ -302,7 +304,7 @@ examples:
       store.
     competing_grammar:
       - competing_japanese:
-          - 週末 は 少し 贅沢 を し て、デパート で 服 を 買う つもり だ わ。
+          - 週末 は 少し 贅沢 を し て、デパート で 服 を 買う {つもり だ} わ。
         english: This weekend, I plan to splurge a bit and buy clothes at the department store.
         hint: This is a more definite statement. We're looking for a personal decision or feeling with
           a softer, slightly more reflective tone, common for female speakers.
@@ -322,7 +324,7 @@ examples:
     english_literally: If you think you will do it, anything should be possible.
     competing_grammar:
       - competing_japanese:
-          - やる つもり な ら ば、どんな こと で も できる はず だ。
+          - やる {つもり な ら ば}、どんな こと で も できる はず だ。
         english: If you plan to do it, you should be able to do anything.
         hint: This implies a concrete plan. We're looking for a focus on the internal state of making
           a decision or having an intention, which is more about mindset.
@@ -337,7 +339,7 @@ examples:
     english_literally: When I thought I would get off the train, I realized I had left something behind.
     competing_grammar:
       - competing_japanese:
-          - 電車 を 降りる つもり だっ た が、忘れ物 を し て いる こと に 気づい た。
+          - 電車 を 降りる {つもり だっ た} が、忘れ物 を し て いる こと に 気づい た。
         english: I had planned to get off the train, but I realized I had left something behind.
         hint: This is a simple past intention. We're looking for a sudden, unexpected realization or event
           that occurs concurrently with the moment of intention.
@@ -352,7 +354,7 @@ examples:
     english_literally: Within this month, I think I will finish this project.
     competing_grammar:
       - competing_japanese:
-          - 今月 中 に この プロジェクト を 終える つもり だ。
+          - 今月 中 に この プロジェクト を 終える {つもり だ}。
         english: I plan to finish this project by the end of the month.
         hint: This emphasizes a definite, pre-set plan. We're looking for the speaker's internal decision
           or resolve.
@@ -369,7 +371,7 @@ examples:
     english_literally: I didn't think I would stay this long, but in the end, I talked for hours.
     competing_grammar:
       - competing_japanese:
-          - こんな に 長く いる つもり は なかっ た けど、結局 何 時間 も 話し て しまっ た。
+          - こんな に 長く いる {つもり は なかっ た} けど、結局 何 時間 も 話し て しまっ た。
         english: I had no intention of staying this long, but I ended up talking for hours.
         hint: This emphasizes a prior fixed intention. We're looking for a statement about a realization
           that occurred after the fact, regarding what one had expected to do or not do.
@@ -388,3 +390,9 @@ post_example_writeup: The core of 「〜よう と 思う」 lies in expressing 
   of a decision-making moment, respectively.
 sources:
   bunpro: https://bunpro.jp/grammar_points/ようと思う-おうと思う
+lint-errors:
+  - '[rule-13] unknown grammar at ''learn_before[3]'': ''思う (I think or thought)''. You may suggest new
+    grammar points by adding a false_friend.'
+  - '[rule-13] warning unknown grammar at ''false_friends[2]'': ''思う (I think or thought)''. It **MUST**
+    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
+    grammar point.'

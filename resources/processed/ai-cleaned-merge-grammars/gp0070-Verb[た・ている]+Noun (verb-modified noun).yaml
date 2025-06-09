@@ -2,13 +2,17 @@ grammar_point: Verb[た・ている]+Noun (verb-modified noun)
 learn_before:
   - い-Adjective + Noun (describing nouns)
   - な-Adjective (modifying nouns)
+  - う-verb (dictionary)
+  - Verb[て] (and then)
   - ている (~ing)
   - う-verb (past)
 learn_after:
-  - の (noun modifier)
   - Verb[masu-stem]+Noun (nominalization)
   - たばかり (just did)
   - ているところ (in the process of)
+  - <suggest>:Verb[dictionary]+Noun (describing nouns with non-past verb)
+  - こと (nominalizer)
+  - れる られる (passive・potential・spontaneous・respectful)
 id: gp0070
 meaning: Noun modified by a verb in the past or continuous form (relative clause).
 pronunciation:
@@ -48,7 +52,7 @@ false_friends:
     kind: similar expression
     nuance: Unlike Verb[た・ている]+Noun, Verb[る]+Noun describes a noun related to a future or habitual action,
       or a general characteristic, not a completed or ongoing one.
-    grammar_point: <suggest>:Verb[dictionary]+Noun (noun modified by a non-past verb)
+    grammar_point: <suggest>:Verb[dictionary]+Noun (describing nouns with non-past verb)
   - term: Verb[ていた]+Noun
     meaning: Noun modified by a verb in the past progressive form.
     kind: similar expression
@@ -89,7 +93,7 @@ examples:
         hint: This separates the actions into two distinct sentences. We're looking for a concise way
           to describe the photo as something taken by the friend, directly linking the action to the noun.
       - competing_japanese:
-          - 撮ら れ た 写真 を 友達 が 見せ て くれ まし た。
+          - '{撮ら れ た} 写真 を 友達 が 見せ て くれ まし た。'
         english: My friend showed me the picture that was taken (by someone).
         hint: This uses the passive form, implying the picture was taken by an unknown agent. We're looking
           for the picture that *they* took.
@@ -104,12 +108,12 @@ examples:
         hint: This implies the picture was still in the process of being taken when something happened.
           We're looking for a picture that has already been taken and is now a finished product.
       - competing_japanese:
-          - 友達 が 写真 を 撮っ た 時、それ を 見せ て くれ まし た。
+          - 友達 が 写真 を {撮っ た 時}、それ を 見せ て くれ まし た。
         english: When my friend took the picture, they showed it to me.
         hint: This emphasizes the timing of the action. We're looking for a description of the photo itself
           as something taken by the friend.
       - competing_japanese:
-          - 友達 の {撮っ た 写真} を 見せ て くれ まし た。
+          - 友達 {の} {撮っ た 写真} を 見せ て くれ まし た。
         english: My friend's taken picture was shown to me.
         hint: While grammatically valid, using 「の」 here can imply possession more strongly than the subject
           of the action. We're looking for a direct relative clause indicating who performed the action.
@@ -139,7 +143,7 @@ examples:
         hint: This separates the action of reading from the description of the book. We're looking for
           a direct description of the book as something being read daily.
       - competing_japanese:
-          - 今 読ん で いる 本 は とても 難しい です。
+          - 今 {読ん で いる 本} は とても 難しい です。
         english: The book I'm reading now is very difficult.
         hint: This implies you are reading *now*, not necessarily *every day*. We're looking for a book
           that is being read on a daily basis.
@@ -154,12 +158,12 @@ examples:
         hint: This refers to a book you were reading habitually in the past. We're looking for a book
           you are *currently* reading habitually.
       - competing_japanese:
-          - 毎日 本 を 読む 時 は とても 難しい です。
+          - 毎日 本 を {読む 時} は とても 難しい です。
         english: When I read the book every day, it is very difficult.
         hint: This construction focuses on the time *when* you read the book. We're looking for a description
           of the book itself as something you are reading.
       - competing_japanese:
-          - 毎日 {読ん で いる の 本} は とても 難しい です。
+          - 毎日 読ん で いる {の} 本 は とても 難しい です。
         english: The book that is daily being read is very difficult.
         hint: Using 「の」 after the verb in this context is grammatically incorrect for directly modifying
           a noun. We're looking for a simple verb-noun relative clause.
@@ -191,7 +195,7 @@ examples:
         hint: This uses two separate sentences to convey the information. We're looking for a specific
           description of the car by its action.
       - competing_japanese:
-          - あの 角 に 曲がっ た 車 は とても 速かっ た です。
+          - あの 角 {に} 曲がっ た 車 は とても 速かっ た です。
         english: The car that turned *to* that corner was very fast.
         hint: The verb 「曲がる」 typically takes the direct object particle 「を」 to indicate the path or corner
           that is being turned. We're looking for the car that turned the corner.
@@ -206,7 +210,7 @@ examples:
         hint: This implies the car was still in the act of turning when you observed it. We're looking
           for a car that completed the turn.
       - competing_japanese:
-          - 車 が あの 角 を 曲がっ た 時、とても 速かっ た です。
+          - 車 が あの 角 を {曲がっ た 時}、とても 速かっ た です。
         english: When the car turned that corner, it was very fast.
         hint: This emphasizes the moment the car turned the corner. We're looking for a description of
           the car itself based on its action.
@@ -239,7 +243,7 @@ examples:
         hint: This separates the description of the student's behavior from their identity. We're looking
           for a direct way to identify the student by their recurring behavior.
       - competing_japanese:
-          - いつ も 遅い 生徒 は ジョン さん です。
+          - いつ も {遅い} 生徒 は ジョン さん です。
         english: The always late student is John.
         hint: This uses an adjective to describe the student's habitual lateness. We're looking for a
           verb phrase modifying the noun.
@@ -255,7 +259,7 @@ examples:
         hint: This implies the student is *no longer* always late, or the situation is in the past. We're
           looking for a student who *currently* is always late.
       - competing_japanese:
-          - 生徒 が いつ も 遅れる 時、それ は ジョン さん です。
+          - 生徒 が いつ も {遅れる 時}、それ は ジョン さん です。
         english: When the student is always late, it is John.
         hint: This focuses on the timing of John's lateness. We're looking for a direct description of
           the student's identity based on their habitual action.
@@ -289,7 +293,7 @@ examples:
         hint: This uses two separate sentences. We're looking for a direct description of the cake highlighting
           its origin and consistent quality.
       - competing_japanese:
-          - 母 が 作っ た の ケーキ は いつ も 美味しい です。
+          - 母 が 作っ た {の} ケーキ は いつ も 美味しい です。
         english: The cake that my mother made (it) is always delicious.
         hint: The verb form 「作った」 already directly modifies the noun. Adding 「の」 here is grammatically
           incorrect for this structure. We're looking for a verb modifying the noun directly.
@@ -304,7 +308,7 @@ examples:
         hint: This implies the cake was in the process of being made. We're referring to a cake that is
           *finished*.
       - competing_japanese:
-          - 母 が ケーキ を 作る 時 は いつ も 美味しい です。
+          - 母 が ケーキ を {作る 時} は いつ も 美味しい です。
         english: When my mother makes cake, it is always delicious.
         hint: This focuses on the timing of her making the cake. We're looking for a description of the
           cake itself.
@@ -337,7 +341,7 @@ examples:
         hint: This separates the act of living from the description of the house. We're looking for a
           direct description of the house through its relation to the speaker.
       - competing_japanese:
-          - 私 は 静か な 場所 に ある 家 に 住ん で い ます。
+          - 私 は 静か な 場所 に {ある} 家 に 住ん で い ます。
         english: I live in a house that is in a quiet place.
         hint: This sentence places more emphasis on the location of the house first. We're looking for
           a direct modification of the noun 'house' by the verb 'live in'.
@@ -352,12 +356,12 @@ examples:
         hint: This refers to a house you *used to* live in. We're looking for the house you *currently*
           live in.
       - competing_japanese:
-          - 家 に 住む 時 は 静か な 場所 に あり ます。
+          - 家 に {住む 時} は 静か な 場所 に あり ます。
         english: When I live in a house, it is in a quiet place.
         hint: This emphasizes the condition of the place when you live there. We're looking for a description
           of the house itself.
       - competing_japanese:
-          - 私 が {住ん で いる の 家} は 静か な 場所 に あり ます。
+          - 私 が 住ん で いる {の} 家 は 静か な 場所 に あり ます。
         english: The house that is being lived in by me is in a quiet place.
         hint: Using 「の」 after the verb in this context is grammatically incorrect for directly modifying
           a noun. We're looking for a simple verb-noun relative clause.
@@ -472,12 +476,12 @@ examples:
         hint: This uses two separate sentences. We're looking for a direct description of the window by
           its state.
       - competing_japanese:
-          - 壊れる 窓 は 危ない です。
+          - '{壊れる} 窓 は 危ない です。'
         english: Windows that break are dangerous. (General statement)
         hint: This refers to windows in general that *might* break, or the act of breaking itself. We're
           talking about a specific window that is *currently* in a broken state.
       - competing_japanese:
-          - 壊れ た 窓 は 早く 直す 必要 が あり まし た。
+          - '{壊れ た} 窓 は 早く 直す 必要 が あり まし た。'
         english: The window that broke needed to be fixed soon.
         hint: This refers to a window that *broke* at some point in the past. We're focusing on its *current*
           broken state.
@@ -587,3 +591,32 @@ examples:
       clearly refers to a specific, completed interaction.
 post_example_writeup: Remember that the verb always comes before the noun it modifies. This is a fundamental
   aspect of Japanese sentence structure.
+lint-errors:
+  - '[rule-13] unknown grammar at ''learn_after[3]'': ''<suggest>:Verb[dictionary]+Noun (describing nouns
+    with non-past verb)''. You may suggest new grammar points by adding a false_friend.'
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    友達 が 写真 を 撮り まし た。それ を 見せ て くれ まし た。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    毎日 本 を 読ん で い ます。それ は とても 難しい です。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あの 角 で 車 が 曲がり まし た。その 車 は とても 速かっ た です。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    生徒 は いつ も 遅れ て い ます。その 生徒 は ジョン さん です。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    母 が ケーキ を 作り まし た。それ は いつ も 美味しい です。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    私 は 家 に 住ん で い ます。その 家 は 静か な 場所 に あり ます。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    昨日 人 に 会い まし た。その 人 は 有名 な 俳優 でし た。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    公園 で 犬 が 走っ て い ます。その 犬 は 本当 に 可愛い です。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    先週 仕事 に 応募 し まし た。その 仕事 は 競争 率 が とても 高かっ た です。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    窓 が 壊れ て い ます。それ は 早く 直す 必要 が あり ます。'
+  - '[rule-5] warning examples[10].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    昨日 間違い を し まし た。それ が 大きな 問題 を 引き起こし まし た。'
+  - '[rule-5] warning examples[11].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    庭 で 花 が 咲い て い ます。その 花 は 綺麗 です。'
+  - '[rule-5] warning examples[12].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    先月、方 に 相談 し まし た。その 方 は いい アドバイス を くれ まし た。'

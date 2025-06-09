@@ -1,13 +1,12 @@
 grammar_point: だんだん (gradually)
 learn_before:
-  - ずつ (each・one at a time・little by little)
-  - ている (~ing)
+  - ている (resultant and ongoing state)
   - になる・くなる (to become)
 learn_after:
   - つつある (gradual process)
   - 一方だ (unidirectional trend)
   - ますます (more and more)
-  - 徐々に (gradually, slowly)
+  - <suggest>:徐々に (gradually, slowly)
 id: gp0251
 meaning: Gradually, little by little, step by step
 pronunciation:
@@ -78,7 +77,7 @@ examples:
     english_literally: Body is gradually getting warmer.
     competing_grammar:
       - competing_japanese:
-          - 体 が 少し ずつ 暖かく なっ て き まし た。
+          - 体 が {少し ずつ} 暖かく なっ て き まし た。
         english: My body is getting warmer little by little.
         hint: 「少しずつ」 emphasizes discrete, incremental steps. We're looking for a continuous, natural warming
           process.
@@ -93,7 +92,7 @@ examples:
     english_literally: Japanese is gradually getting better, isn't it?
     competing_grammar:
       - competing_japanese:
-          - 日本 語 が 少し ずつ 上手 に なっ て き まし た ね。
+          - 日本 語 が {少し ずつ} 上手 に なっ て き まし た ね。
         english: Your Japanese is improving little by little.
         hint: 「少しずつ」 implies smaller, more intermittent gains. We're looking for an observation of steady,
           ongoing progress.
@@ -108,7 +107,7 @@ examples:
     english_literally: She was nervous at first, but gradually seems to have relaxed.
     competing_grammar:
       - competing_japanese:
-          - 彼女 は 最初 は 緊張 し て い た けど、徐々 に リラックス し て き た みたい だ。
+          - 彼女 は 最初 は 緊張 し て い た けど、{徐々 に} リラックス し て き た みたい だ。
         english: She was nervous at first, but she seems to be slowly relaxing.
         hint: 「徐々に」 is more formal or written. We're looking for a natural, unfolding process in casual
           conversation.
@@ -123,7 +122,7 @@ examples:
     english_literally: You will gradually not want to eat sweets.
     competing_grammar:
       - competing_japanese:
-          - あなた は 徐々 に お かし を 食べ たく なく なる でしょう。
+          - あなた は {徐々 に} お かし を 食べ たく なく なる でしょう。
         english: You will slowly lose interest in sweets.
         hint: 「徐々に」 sounds too formal for a mother speaking to her child. We're looking for a gentle,
           natural evolution of taste.
@@ -147,7 +146,7 @@ examples:
     english_literally: Gradually, I am coming to like you.
     competing_grammar:
       - competing_japanese:
-          - 少し ずつ 君 の こと が 好き に なっ て いき ます。
+          - '{少し ずつ} 君 の こと が 好き に なっ て いき ます。'
         english: I'm falling in love with you little by little.
         hint: 「少しずつ」 can feel more deliberate or measured. We're looking for a continuous, natural development
           of feelings in an intimate context.
@@ -170,7 +169,7 @@ examples:
     english_literally: Gradually, tiredness has accumulated, so let's take a break soon.
     competing_grammar:
       - competing_japanese:
-          - 少し ずつ 疲れ が たまっ て き た から、そろそろ 休憩 しよう。
+          - '{少し ずつ} 疲れ が たまっ て き た から、そろそろ 休憩 しよう。'
         english: I'm getting tired little by little, so let's take a break soon.
         hint: 「少しずつ」 might imply a deliberate accumulation of tiredness. We're looking for a naturally
           developing fatigue.
@@ -185,7 +184,7 @@ examples:
     english_literally: Gradually, I have become sleepy.
     competing_grammar:
       - competing_japanese:
-          - 少し ずつ 眠く なっ て き まし た。
+          - '{少し ずつ} 眠く なっ て き まし た。'
         english: I'm getting sleepy little by little.
         hint: 「少しずつ」 suggests a more conscious or measured progression. We're looking for the natural
           onset of drowsiness.
@@ -201,12 +200,11 @@ examples:
   - english: The pain has gradually become worse.
     japanese:
       - '{だんだん} 痛み が ひどく なっ て き まし た。'
-      - と 同時 に 痛み が ひどく なっ て き た。
       - 痛み が {だんだん} 増し て き まし た。
     english_literally: Gradually, the pain has become severe.
     competing_grammar:
       - competing_japanese:
-          - 少し ずつ 痛み が ひどく なっ て き まし た。
+          - '{少し ずつ} 痛み が ひどく なっ て き まし た。'
         english: The pain has become worse little by little.
         hint: 「少しずつ」 might imply discrete, minor worsening. We're looking for a continuous, worsening
           nature of the pain for diagnosis.
@@ -221,7 +219,7 @@ examples:
     english_literally: What the professor is saying, gradually I've come to understand.
     competing_grammar:
       - competing_japanese:
-          - 先生 の 言っ て いる こと が 少し ずつ 分かっ て き まし た。
+          - 先生 の 言っ て いる こと が {少し ずつ} 分かっ て き まし た。
         english: I'm understanding what the professor is saying little by little.
         hint: 「少しずつ」 implies discrete steps in understanding. We're looking for a continuous, unfolding
           process of comprehension.
@@ -242,7 +240,7 @@ examples:
     english_literally: Train's sound gradually became distant.
     competing_grammar:
       - competing_japanese:
-          - 列車 の 音 が 少し ずつ 遠ざかっ て いき まし た。
+          - 列車 の 音 が {少し ずつ} 遠ざかっ て いき まし た。
         english: The sound of the train faded little by little.
         hint: 「少しずつ」 implies distinct, incremental changes in sound. We're looking for a smooth, continuous
           diminishing of the sound.
@@ -260,3 +258,6 @@ post_example_writeup: 「だんだん」 is frequently paired with verbs in the 
   unfolding change.
 sources:
   bunpro: https://bunpro.jp/grammar_points/だんだん
+lint-errors:
+  - '[rule-13] unknown grammar at ''learn_after[3]'': ''<suggest>:徐々に (gradually, slowly)''. You may suggest
+    new grammar points by adding a false_friend.'

@@ -1,11 +1,12 @@
 grammar_point: 済む (to be sufficient・to get by)
 learn_before:
-  - てしまう・ちゃう (completion・regret・accident)
   - だけで (just by)
+  - 必要 が ある (it is necessary)
+  - てしまう・ちゃう (completion・regret・accident)
   - 終わる (to finish)
-  - なくていい (no need to)
-  - 間に合う (to be on time・to suffice)
-  - 足りる (to be sufficient・to be enough)
+  - 足りる (to be sufficient; to be enough)
+  - 間に合う (to be on time; to suffice)
+  - なくてもいい (no need to)
 learn_after:
   - <suggest>:済ませる (to finish・to complete transitive)
 id: gp1108
@@ -113,14 +114,14 @@ false_friends:
     nuance: Unlike 「済む」, 「足りる」 emphasizes that there is enough of something in terms of quantity or capacity,
       rather than a situation being resolved or completed with minimal effort or a specific condition
       being met.
-    grammar_point: <suggest>:足りる (to be sufficient・to be enough)
+    grammar_point: 足りる (to be sufficient; to be enough)
   - term: 間に合う
     meaning: to be on time; to suffice
     kind: similar expression
     nuance: 「間に合う」 refers to being in time for something or something being sufficient for a particular
       purpose or deadline. While it implies adequacy, it differs from the broader sense of resolution
       or completion conveyed by 「済む」, which focuses more on getting by or doing with minimal fuss.
-    grammar_point: <suggest>:間に合う (to be on time・to suffice)
+    grammar_point: 間に合う (to be on time; to suffice)
   - term: 済ませる
     meaning: to finish; to complete (transitive)
     kind: similar expression
@@ -129,27 +130,44 @@ false_friends:
       a state of being sufficient or completed, 「済ませる」 implies agency in making something sufficient or
       completed. For example, 宿題を済ませる (to finish homework) vs 宿題が済む (homework is finished/done).
     grammar_point: <suggest>:済ませる (to finish・to complete transitive)
+  - term: 終わる
+    meaning: to finish; to end
+    kind: similar expression
+    nuance: 「終わる」 is a general verb for 'to end' or 'to finish', without the specific nuance of 'being
+      sufficient' or 'getting by with minimal resources' that 「済む」 conveys.
+    grammar_point: 終わる (to finish)
+  - term: なくてもいい
+    meaning: no need to; it's okay not to
+    kind: similar expression
+    nuance: 「なくてもいい」 directly expresses the lack of necessity, while 「済む」 implies that a situation is
+      resolved *because* something is not needed or *can be managed without* it. 「済む」 carries a sense
+      of efficient resolution.
+    grammar_point: なくてもいい (no need to)
 post_false_friends_writeup: While 「足りる」 and 「間に合う」 can sometimes overlap in meaning with 「済む」, it's important
   to consider the specific context. 「足りる」 focuses on sufficiency in quantity, while 「間に合う」 emphasizes
   timeliness or suitability for a particular purpose. 「済む」, on the other hand, carries a broader sense
   of something being completed, resolved, or managed with minimal effort. The transitive verb 「済ませる」 emphasizes
   the action of bringing something to completion or making it sufficient, in contrast to 「済む」's intransitive
-  nature of something simply being sufficient or finished on its own.
+  nature of something simply being sufficient or finished on its own. 「終わる」 is a general verb for 'to
+  end' or 'to finish', lacking the specific nuance of sufficiency or managing with minimal resources found
+  in 「済む」. Lastly, 「なくてもいい」 explicitly states that something is not needed or is acceptable to omit, whereas
+  「済む」 implies that a situation can be resolved or managed *because* something is not needed, focusing
+  on the efficient outcome.
 examples:
   - english: This job will probably be finished in just an hour.
     japanese:
       - この 仕事 は 1 時間 で {済む} でしょう。
       - この 仕事 は 1 時間 で {済む} だろう。
       - この 仕事 は 1 時間 で {済む} よ。
-      - この 仕事 なら 1 時間 で {済む} でしょう。
+      - この 仕事 なら 1 時間 で {済む} でしょう.
     english_literally: This job, if one hour, will be finished/suffice, probably.
     competing_grammar:
       - competing_japanese:
-          - この 仕事 は 1 時間 で 終わる でしょう。
+          - この 仕事 は 1 時間 で {終わる} でしょう。
         english: This job will probably end in just an hour.
-        hint: 「終わる」 means to simply end or finish. 「済む」 emphasizes that a minimal amount of time or effort
-          is sufficient to complete it. We're looking for an expression that conveys 'suffice' or 'get
-          by with minimal resources'.
+        hint: '「終わる」 means to simply end or finish. 「済む」 emphasizes that a minimal amount of time or effort
+          is sufficient to complete it. We''re looking for an HINT: expression that conveys ''suffice''
+          or ''get by with minimal resources''.'
     scene: A manager estimating the quick completion of a task.
     register: formal
     setting: professional
@@ -164,15 +182,15 @@ examples:
       - 報告 は メール 一 通 だけ で {済む} そう です。
       - 報告 は メール 一 通 だけ で {済む} そう だ よ。
       - ご 報告 は メール 一 通 だけ で {済み ます} そう です。
-      - 報告 は メール 一 通 で {済む} らしい です。
+      - 報告 は メール 一 通 で {済む} らしい です.
     english_literally: Report, email one letter just by, will be finished/suffice, heard.
     competing_grammar:
       - competing_japanese:
-          - 報告 は メール 一 通 だけ で でき ます そう です。
+          - 報告 は メール 一 通 だけ で {でき ます} そう です。
         english: I heard the report can be done with just one email.
-        hint: While 「できる」 indicates possibility, 「済む」 specifically highlights that the report can be completed
-          with *only* one email, implying sufficiency and minimal effort. We're looking for an expression
-          that suggests 'getting by with minimal means'.
+        hint: 'While 「できる」 indicates possibility, 「済む」 specifically highlights that the report can be
+          completed with *only* one email, implying sufficiency and minimal effort. We''re looking for
+          an HINT: expression that suggests ''getting by with minimal means''.'
     scene: Colleagues discussing a simplified reporting procedure.
     register: semi-formal
     setting: informative
@@ -187,16 +205,16 @@ examples:
       - スマート フォン が なく て も 意外 と {済む} もの です ね。
       - スマホ なく て も 意外 と {済む} もん だ ね。
       - スマホ なく て も 意外 と {済む} よ。
-      - スマート フォン が なく て も 意外 と {済ん で} しまう もの です ね。
+      - スマート フォン が なく て も 意外 と {済ん で} しまう もの です ね.
     english_literally: Smartphone even if not, unexpectedly, will be finished/suffice, indeed.
     competing_grammar:
       - competing_japanese:
-          - スマート フォン が なく て も 意外 と 生活 でき ます ね。
+          - スマート フォン が なく て も 意外 と {生活 でき ます} ね。
         english: It's surprising how you can live/manage life without a smartphone, isn't it?
-        hint: While 「生活 できる」 means to be able to live or manage daily life. 「済む」 emphasizes that something
+        hint: 'While 「生活 できる」 means to be able to live or manage daily life. 「済む」 emphasizes that something
           can be resolved or managed without *needing* something else, implying sufficiency or a lack
-          of necessity. We're looking for an expression that conveys 'managing without' or 'being okay
-          without'.
+          of necessity. We''re looking for an HINT: expression that conveys ''managing without'' or ''being
+          okay without''.'
     scene: Someone reflecting on their digital detox experience.
     register: casual
     setting: reflective
@@ -209,15 +227,15 @@ examples:
     japanese:
       - 謝っ て {済む} なら、誰 で も 苦労 し ませ ん。
       - 謝っ て {済む} なら、誰 で も 苦労 なんか し ない。
-      - 謝っ て {済む} なら、誰 も 苦労 し ない よ ね。
+      - 謝っ て {済む} なら、誰 も 苦労 し ない よ ね.
     english_literally: Apologizing, if it finishes/suffices, anyone will not struggle.
     competing_grammar:
       - competing_japanese:
-          - 謝っ て 解決 する なら、誰 で も 苦労 し ませ ん。
+          - 謝っ て {解決 する} なら、誰 で も 苦労 し ませ ん。
         english: If it could be resolved with just an apology, no one would struggle.
-        hint: 「解決 する」 means to resolve a problem. 「済む」 implies that something is sufficient to *end* or
-          *settle* the matter easily, often with a nuance of minimal consequences. We're looking for an
-          expression that suggests 'a minimal action being enough to conclude something'.
+        hint: '「解決 する」 means to resolve a problem. 「済む」 implies that something is sufficient to *end*
+          or *settle* the matter easily, often with a nuance of minimal consequences. We''re looking for
+          an HINT: expression that suggests ''a minimal action being enough to conclude something''.'
     scene: A person expressing frustration that some problems require more than simple words.
     register: casual
     setting: serious
@@ -232,16 +250,16 @@ examples:
     japanese:
       - 出席 する だけ で {済む} 会議 なら、参加 でき ます。
       - ご 出席 いただく だけ で {済む} 会議 でし たら、参加 さ せ て いただき ます。
-      - 出席 する だけ で {済む} 会議 なら、出れる よ。
+      - 出席 する だけ で {済む} 会議 なら、出れる よ.
     english_literally: Attend just by, will be finished/suffice, meeting if, participate can.
     competing_grammar:
       - competing_japanese:
-          - 出席 する だけ で 十分 な 会議 なら、参加 でき ます。
+          - 出席 する だけ で {十分 な} 会議 なら、参加 でき ます。
         english: If it's a meeting where just attending is enough, I can participate.
-        hint: While 「十分だ」 means 'enough' in terms of quantity or quality, 「済む」 specifically implies that
-          the action of simply attending *suffices* to fulfill the requirement for the meeting, indicating
-          no further action is necessary. We're looking for an expression that highlights minimal required
-          effort.
+        hint: 'While 「十分だ」 means ''enough'' in terms of quantity or quality, 「済む」 specifically implies
+          that the action of simply attending *suffices* to fulfill the requirement for the meeting, indicating
+          no further action is necessary. We''re looking for an HINT: expression that highlights minimal
+          required effort.'
     scene: An employee checking the level of engagement required for a meeting.
     register: semi-formal
     setting: professional
@@ -255,16 +273,16 @@ examples:
     japanese:
       - 交通 機関 を 使わ ず に {済む} よう、歩い て 行き まし た。
       - 交通 機関 使わ ず に {済む} よう に、歩い てっ た。
-      - 交通 機関 を 利用 せ ず に {済む} よう、歩い て 参り まし た。
+      - 交通 機関 を 利用 せ ず に {済む} よう、歩い て 参り まし た.
     english_literally: Public transport using without, will be finished/suffice, so that, walking went.
     competing_grammar:
       - competing_japanese:
-          - 交通 機関 を 使う 必要 が ない よう、歩い て 行き まし た。
+          - 交通 機関 を {使う 必要 が ない} よう、歩い て 行き まし た。
         english: I walked so that I wouldn't need to use public transport.
-        hint: 「必要 が ない」 means there is no need for something. 「済む」 conveys the idea of avoiding something
+        hint: '「必要 が ない」 means there is no need for something. 「済む」 conveys the idea of avoiding something
           or managing *without* it, implying that the situation can be resolved or handled simply by abstaining
-          from that action. We're looking for an expression that means 'to get by without' or 'to avoid
-          having to do something'.
+          from that action. We''re looking for an HINT: expression that means ''to get by without'' or
+          ''to avoid having to do something''.'
     scene: Someone explaining their choice to walk instead of taking a bus.
     register: casual
     setting: informative
@@ -278,15 +296,15 @@ examples:
     japanese:
       - 店員 に 聞け ば すぐ に {済む} こと だ よ。
       - 店員 に 聞け ば すぐ に {済む} こと さ。
-      - 店員 に お 尋ね いただけれ ば すぐ に {済む} こと か と 存じ ます。
+      - 店員 に お 尋ね いただけれ ば すぐ に {済む} こと か と 存じ ます.
     english_literally: Clerk to ask if, immediately, will be finished/suffice, thing is.
     competing_grammar:
       - competing_japanese:
-          - 店員 に 聞け ば すぐ に 解決 する こと だ よ。
+          - 店員 に 聞け ば すぐ に {解決 する} こと だ よ。
         english: It's something that will be resolved quickly if you just ask the store clerk.
-        hint: 「解決 する」 means to resolve a problem. 「済む」 suggests that a minimal action is *sufficient*
-          to bring about a quick and simple resolution. We're looking for an expression that conveys 'can
-          be settled easily' or 'will be over quickly'.
+        hint: '「解決 する」 means to resolve a problem. 「済む」 suggests that a minimal action is *sufficient*
+          to bring about a quick and simple resolution. We''re looking for an HINT: expression that conveys
+          ''can be settled easily'' or ''will be over quickly''.'
     scene: A friend advising another on an easy way to solve a minor problem.
     register: casual
     setting: friendly
@@ -301,15 +319,15 @@ examples:
       - 検査 は 無事 に {済ん で}、ほっと し まし た。
       - 検査 は 無事 に {済ん で}、ホッと し た よ。
       - 検査 が 無事 に {済ん で}、ほっと し た。
-      - 検査 は 無事 に {済ん で}、ほっと し た わ。
+      - 検査 は 無事 に {済ん で}、ほっと し た わ.
     english_literally: Inspection, safely, finished, felt relieved.
     competing_grammar:
       - competing_japanese:
-          - 検査 は 無事 に 終わっ て、ほっと し まし た。
+          - 検査 は 無事 に {終わっ て}、ほっと し まし た。
         english: The inspection finished safely, and I felt relieved.
-        hint: While 「終わる」 simply means 'to finish', 「済む」 in this context implies that the inspection was
-          completed *without any problems or further complications*, leading to a sense of relief. We're
-          looking for an expression that means 'to conclude smoothly'.
+        hint: 'While 「終わる」 simply means ''to finish'', 「済む」 in this context implies that the inspection
+          was completed *without any problems or further complications*, leading to a sense of relief.
+          We''re looking for an HINT: expression that means ''to conclude smoothly''.'
     scene: Someone feeling relief after a stressful procedure.
     register: formal
     setting: reflective
@@ -324,15 +342,15 @@ examples:
     japanese:
       - 簡単 に {済ま ない} 問題 も ある。
       - 簡単 に {済ま ない} 問題 も ある ん だ。
-      - 簡単 に は {済ま ない} 問題 も 存在 する。
+      - 簡単 に は {済ま ない} 問題 も 存在 する.
     english_literally: Easily will not finish/suffice, problems also exist.
     competing_grammar:
       - competing_japanese:
-          - 簡単 に 解決 し ない 問題 も ある。
+          - 簡単 に {解決 し ない} 問題 も ある。
         english: There are also problems that will not easily resolve.
-        hint: 「解決 しない」 means something won't resolve. 「済まない」 specifically conveys that a problem cannot
-          be settled or dismissed with minimal effort or a simple solution, implying a deeper issue. We're
-          looking for an expression that suggests 'cannot be simply dismissed or handled'.
+        hint: '「解決 しない」 means something won''t resolve. 「済まない」 specifically conveys that a problem cannot
+          be settled or dismissed with minimal effort or a simple solution, implying a deeper issue. We''re
+          looking for an HINT: expression that suggests ''cannot be simply dismissed or handled''.'
     scene: A philosopher contemplating the complexities of life.
     register: casual
     setting: serious
@@ -347,16 +365,16 @@ examples:
     japanese:
       - その 件 は 謝罪 だけ で は {済み ませ ん} よ。
       - その 件 は 謝罪 だけ で は {済ま ない}。
-      - その 件 は 謝罪 だけ で は {済み ませ ん} こと は ご 理解 ください。
+      - その 件 は 謝罪 だけ で は {済み ませ ん} こと は ご 理解 ください.
     english_literally: That matter, apology just by, will not finish/suffice.
     competing_grammar:
       - competing_japanese:
-          - その 件 は 謝罪 だけ で は 許さ れ ませ ん よ。
+          - その 件 は 謝罪 だけ で は {許さ れ ませ ん} よ。
         english: That matter won't be forgiven with just an apology.
-        hint: 「許されない」 means something will not be forgiven. 「済みません」 implies that the apology alone is
+        hint: '「許されない」 means something will not be forgiven. 「済みません」 implies that the apology alone is
           *insufficient* to resolve or conclude the matter, suggesting that further consequences or actions
-          are required. We're looking for an expression that emphasizes an apology's inadequacy to resolve
-          a serious matter.
+          are required. We''re looking for an HINT: expression that emphasizes an apology''s inadequacy
+          to resolve a serious matter.'
     scene: A supervisor sternly telling an employee that their apology is insufficient for a serious mistake.
     register: formal
     setting: serious
@@ -372,15 +390,15 @@ examples:
     japanese:
       - 二人 で {済ん だ} の で、助かり まし た。
       - 二人 で {済ん だ} ん で、助かっ た よ。
-      - 二人 で {済ん だ} の で、大変 助かり まし た。
+      - 二人 で {済ん だ} の で、大変 助かり まし た.
     english_literally: Two people by, was sufficient, so, was helped.
     competing_grammar:
       - competing_japanese:
-          - 二人 で 足り た の で、助かり まし た。
+          - 二人 で {足り た} の で、助かり まし た。
         english: Since two people were enough, I was helped.
-        hint: While 「足りる」 focuses on sufficiency in number, 「済む」 here emphasizes that the situation was
-          *resolved* or *managed* with only two people, avoiding the need for more. We're looking for
-          an expression that highlights managing with minimal resources.
+        hint: 'While 「足りる」 focuses on sufficiency in number, 「済む」 here emphasizes that the situation was
+          *resolved* or *managed* with only two people, avoiding the need for more. We''re looking for
+          an HINT: expression that highlights managing with minimal resources.'
     scene: After a small event or task, someone expresses relief that they didn't need more helpers.
     register: casual
     setting: friendly
@@ -394,15 +412,15 @@ examples:
     japanese:
       - これ を 早く {済ま せ て} しまい ましょう。
       - これ を 早く {済ま せよう}。
-      - これ を 早く {済まそう} よ。
+      - これ を 早く {済まそう} よ.
     english_literally: This, quickly, let's finish.
     competing_grammar:
       - competing_japanese:
-          - これ を 早く 終わら せ ましょう。
+          - これ を 早く {終わら せ ましょう}。
         english: Let's quickly finish this.
-        hint: While 「終わらせる」 simply means to finish, 「済ませる」 implies completing something quickly or efficiently
-          to get it out of the way. We're looking for a verb that conveys 'getting something done and
-          over with'.
+        hint: 'While 「終わらせる」 simply means to finish, 「済ませる」 implies completing something quickly or efficiently
+          to get it out of the way. We''re looking for a HINT: verb that conveys ''getting something done
+          and over with''.'
     scene: Friends at work encouraging each other to finish a task quickly so they can go home.
     register: casual
     setting: friendly
@@ -417,3 +435,21 @@ post_example_writeup: 「済む」 is a versatile verb that appears frequently i
   to the context to grasp the precise nuance, as it can range from simple completion to the avoidance
   of a more serious situation. The key is understanding that something is deemed *sufficient* or *adequate*
   to handle the situation at hand.
+lint-errors:
+  - '[rule-13] unknown grammar at ''learn_before[3]'': ''終わる (to finish)''. You may suggest new grammar
+    points by adding a false_friend.'
+  - '[rule-13] unknown grammar at ''learn_before[4]'': ''足りる (to be sufficient; to be enough)''. You may
+    suggest new grammar points by adding a false_friend.'
+  - '[rule-13] unknown grammar at ''learn_before[5]'': ''間に合う (to be on time; to suffice)''. You may suggest
+    new grammar points by adding a false_friend.'
+  - '[rule-13] unknown grammar at ''learn_after[0]'': ''<suggest>:済ませる (to finish・to complete transitive)''.
+    You may suggest new grammar points by adding a false_friend.'
+  - '[rule-13] warning unknown grammar at ''false_friends[0]'': ''足りる (to be sufficient; to be enough)''.
+    It **MUST** be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to
+    suggest a new grammar point.'
+  - '[rule-13] warning unknown grammar at ''false_friends[1]'': ''間に合う (to be on time; to suffice)''.
+    It **MUST** be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to
+    suggest a new grammar point.'
+  - '[rule-13] warning unknown grammar at ''false_friends[3]'': ''終わる (to finish)''. It **MUST** be from
+    ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new grammar
+    point.'

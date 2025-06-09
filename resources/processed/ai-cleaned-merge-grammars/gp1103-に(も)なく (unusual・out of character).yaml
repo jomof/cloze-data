@@ -1,7 +1,13 @@
 grammar_point: に(も)なく (unusual・out of character)
 learn_before:
+  - はずだ (expected to be)
+  - に対して (towards; in contrast)
+  - いつものように (as usual)
   - らしい (typical of, -like)
-  - ている (habitual action)
+learn_after:
+  - だに (even a minimal action or inaction)
+  - ともなく (unintended action or unknown source)
+  - ばかりだ (only continues to)
 id: gp1103
 meaning: Unusually; more ~ than usual; unlike (someone/something)
 pronunciation:
@@ -24,6 +30,16 @@ details:
     emphasizing the deviation from the expected state. While grammatically optional, 「も」 is frequently
     used for emphasis. The phrase highlights a notable contrast between a current state/action and the
     typical one, conveying a sense of mild astonishment or remarkability.
+  counterpoint: In contrast to expressions indicating normalcy or regularity, this highlights deviation.
+  colocation: Often used with temporal words like いつ (usual time) or nouns indicating character/self like
+    柄 (nature) or 我 (self).
+  grammatical-role: Functions as an adverbial phrase, modifying verbs or adjectives to describe the manner
+    or state of an action/event.
+  logical-flow: Implies a comparison to a previously established norm, highlighting the unexpectedness
+    of the current situation or action.
+  temporal-flow: Can describe a temporary deviation from a long-standing norm, or an unusual occurrence
+    at a specific time.
+  spatial-flow: Less commonly used for spatial descriptions, more for behavioral/temporal deviations.
 etymology: The phrase 「に(も)なく」 combines 「に」 (a particle indicating state or condition or direction), 「も」
   (an emphatic particle meaning 'even' or 'also'), and 「なく」 (the negative form of 「ある」, meaning 'to be/exist').
   Syntactically, it implies 'not being in that usual state' or 'not existing in the expected manner for
@@ -75,7 +91,7 @@ false_friends:
     nuance: 「とても」 is an adverb that simply intensifies an adjective or adverb, indicating a high degree.
       It does not carry the nuance of 'unusualness' or 'deviation from the norm' that 「に(も)なく」 does, which
       implies a comparison to a typical state.
-    grammar_point: <suggest>:とても (very)
+    grammar_point: とても〜ない (cannot possibly ~)
 post_false_friends_writeup: When distinguishing 「に(も)なく」 from similar expressions, remember that 「に(も)なく」
   emphasizes a deviation from the norm or an unusual state. For instance, while 「いつか」 talks about a future
   point in time, and 「いつものように」 describes routine, 「に(も)なく」 specifically highlights something being 'more
@@ -326,3 +342,28 @@ post_example_writeup: As you can see from the examples, 「に(も)なく」 is 
   perfectly natural.
 sources:
   bunpro: https://bunpro.jp/grammar_points/に(も)なく
+lint-errors:
+  - '[rule-13] unknown grammar at ''learn_before[2]'': ''いつものように (as usual)''. You may suggest new grammar
+    points by adding a false_friend.'
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    今日 は 空 が とても 澄み 切っ て、気持ち が いい。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    田中 さん は、会議 で 普段 と 違っ て 静か で、何 か 心配 事 が ある の だろう か。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    普段 は 甘い もの を 食べ ない 佐藤 さん が、珍しく ケーキ を 頼ん だ。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    普段 は 甘い もの を 食べ ない 佐藤 さん が、佐藤 さん らしく なく ケーキ を 頼ん だ。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    突然 の 大きな 音 に、思わ ず 息 を 飲ん で しまっ た。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    普段 と は 違う 社長 が、今日 の 記者 会見 で は 狼狽 し て い た。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    普段 は 真面目 な 友達 が、珍しく 大声 で 笑っ て い た。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    普段 は 賑やか な 渋谷 の スクランブル 交差 点 が、昨夜 は 人 が とても 少なかっ た。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    その 知らせ に 驚き すぎ て、思わ ず 息 を 飲ん で しまっ た。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    いつ も 落ち着い て いる 彼女 が、今日 は 気分 が 悪 そう だっ た。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    普段 は 慎重 な 弟 が、うっかり ミス を し て しまっ た。'

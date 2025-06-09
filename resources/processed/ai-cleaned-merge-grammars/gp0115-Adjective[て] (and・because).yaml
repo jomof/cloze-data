@@ -5,11 +5,11 @@ learn_before:
   - だ (casual copula)
   - Verb[て] (and then)
 learn_after:
-  - Verbて (uncontrollable consequence)
-  - 〜てしまう・ちゃう (completion・regret・accident)
-  - 〜ながら (while doing)
+  - てしまう・ちゃう (completion・regret・accident)
+  - ながら (while doing)
+  - ても (even if・even though)
 id: gp0115
-meaning: Connecting adjectives or clauses (and, because)
+meaning: Connecting adjectives or clauses (and・because)
 conjugations:
   - conjugation-type: te-form (～て)
     form: 〜くて
@@ -160,7 +160,8 @@ examples:
     competing_grammar:
       - competing_japanese:
           - 道 が 狭い です。危ない です。だ から、注意 し て ください。
-        english: The road is narrow. It is dangerous. Therefore, please be careful.
+        english: Listing separate reasons with 「からです」 or 「だから」 makes the warning less immediate and cohesive.
+          We're looking for a combined reason for caution.
         hint: Listing separate reasons with 「からです」 or 「だから」 makes the warning less immediate and cohesive.
           We're looking for a combined reason for caution.
       - competing_japanese:
@@ -461,3 +462,60 @@ post_example_writeup: Understanding whether 「〜くて/〜で」 indicates a s
   explains or causes the second, it's a reason; otherwise, it's a list of attributes or events.
 sources:
   bunpro: https://bunpro.jp/grammar_points/adjective-て-b
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 猫 は 小さい です。可愛い です。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼女 の 部屋 は 綺麗 です。静か です。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 は 大学 生 です。アルバイト を し て い ます。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    道 が 狭い です。危ない です。だ から、注意 し て ください。'
+  - '[rule-5] warning examples[3].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    道 が 狭い し、危ない し、注意 し て ください。'
+  - '[rule-5] warning examples[3].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    道 が 狭い から、危ない から、注意 し て ください。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    今日 は 暇 です。時間 が あり ます。それ で、買い物 に 行き ませ ん か。'
+  - '[rule-5] warning examples[4].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    今日 は 暇 だ し、時間 が ある し、買い物 に 行き ませ ん か。'
+  - '[rule-5] warning examples[4].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    今日 は 暇 だ から、時間 が ある から、買い物 に 行き ませ ん か。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この ケーキ は 甘い です。おいしい です。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    昨日 は あまり 楽しく なかっ た です。それ で、早く 寝 まし た。'
+  - '[rule-5] warning examples[6].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    昨日 は あまり 楽しく ない し、早く 寝 まし た。'
+  - '[rule-5] warning examples[6].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    昨日 は あまり 楽しく ない から、早く 寝 まし た。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    今日 は 寒い です。それ で 厚い コート を 着 まし た。'
+  - '[rule-5] warning examples[7].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    今日 は 寒い し、厚い コート を 着 まし た。'
+  - '[rule-5] warning examples[7].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    今日 は 寒い から、厚い コート を 着 まし た。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あの ホテル は 便利 です。綺麗 です。だ から、人気 が あり ます。'
+  - '[rule-5] warning examples[8].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    あの ホテル は 便利 だ し、綺麗 だ し、人気 が あり ます。'
+  - '[rule-5] warning examples[8].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    あの ホテル は 便利 だ から、綺麗 だ から、人気 が あり ます。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼女 は 医者 です。健康 に とても 詳しい です。'
+  - '[rule-5] warning examples[9].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    彼女 は 医者 な の で、健康 に とても 詳しい です。'
+  - '[rule-5] warning examples[9].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    彼女 は 医者 だ から、健康 に とても 詳しい です。'
+  - '[rule-5] warning examples[10].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    試験 は 難しかっ た です。だ から、いい 点 が 取れ ませ ん でし た。'
+  - '[rule-5] warning examples[10].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    試験 は 難しかっ た の で、いい 点 が 取れ ませ ん でし た。'
+  - '[rule-5] warning examples[10].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    試験 は 難しかっ た から、いい 点 が 取れ ませ ん でし た。'
+  - '[rule-5] warning examples[11].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あの レストラン は 便利 です。綺麗 です。だ から、人気 が あり ます。'
+  - '[rule-5] warning examples[11].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    あの レストラン は 有名 だ し、美味しい し、いつ も 混ん で い ます。'
+  - '[rule-5] warning examples[11].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
+    あの レストラン は 有名 だ から、美味しい から、いつ も 混ん で い ます。'

@@ -2,11 +2,12 @@ grammar_point: を込めて (with emotion)
 learn_before:
   - を (object marker)
   - Verb[て] (and then)
-  - つもりだ (intention or conviction)
-  - ために (purpose・reason)
+  - てくれる (receiving benefaction)
+  - にあたって (at the time of)
 learn_after:
   - てやまない (never ceasing to)
-  - を以て (by means of)
+  - の極み (ultimate degree)
+  - 極まりない・極まる (extreme degree)
 id: gp0715
 meaning: Full of, Filled with, With
 pronunciation:
@@ -49,18 +50,24 @@ false_friends:
   - term: ～がいっぱいだ
     meaning: Is full of, Is filled with
     kind: similar expression
-    nuance: While 「～がいっぱいだ」 also means 'full of,' it describes a state of being full or brimming, often
-      physically or quantitatively, without necessarily implying a deliberate act of infusing emotion.
-      「を込めて」 specifically focuses on the action of *putting* the emotion into something.
+    nuance: While 「～がいっぱいだ」 describes a state of being full, often physically or quantitatively, 「を込めて」
+      focuses on the deliberate act of *infusing* a feeling or intention into something.
     grammar_point: <suggest>:がいっぱいだ (is full of)
   - term: ～の気持ちで
     meaning: With a feeling of, With the intention of
     kind: similar expression
-    nuance: 「～の気持ちで」 indicates the emotional state or intention *while* performing an action. It's about
-      the manner or mindset. In contrast, 「を込めて」 emphasizes the deliberate act of *embedding* or *pouring*
-      that emotion into the object or outcome of the action, suggesting a deeper, more active infusion
-      of feeling.
+    nuance: 「～の気持ちで」 indicates the emotional state or intention *while* performing an action. In contrast,
+      「を込めて」 emphasizes the deliberate act of *embedding* or *pouring* that emotion into the object or
+      outcome of the action.
     grammar_point: <suggest>:～の気持ちで (with a feeling of)
+  - term: ～にあふれている
+    meaning: Overflowing with, abounding in
+    kind: similar expression
+    nuance: 「～にあふれている」 describes a state where something is so abundant it seems to overflow, often naturally
+      or passively. 「を込めて」, however, signifies an *active and intentional act* of infusing emotion or
+      spirit into an action or creation. The difference lies in the active vs. passive nature of the emotional
+      presence.
+    grammar_point: <suggest>:にあふれている (overflowing with)
 post_false_friends_writeup: While 「を込めて」 implies an active process of infusing emotion, expressions like
   「～がいっぱいだ」 describe a state of being full, and 「～の気持ちで」 describe the mindset during an action. When choosing
   between these, consider whether you want to emphasize the deliberate act of 'pouring' an emotion into
@@ -280,3 +287,30 @@ post_example_writeup: As seen in these examples, 「を込めて」 allows for p
   infusion and heartfelt dedication.
 sources:
   bunpro: https://bunpro.jp/grammar_points/を込めて
+lint-errors:
+  - '[rule-13] unknown grammar at ''learn_before[3]'': ''にあたって (at the time of)''. You may suggest new
+    grammar points by adding a false_friend.'
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    感謝 の 気持ち で、1 年間 お 世話 に なっ た 先生 に 花束 を あげ た。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    夫 は 毎晩、愛情 たっぷり に 晩御飯 を 作っ て くれる。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    歌う の が 下手 で も、一生 懸命 に 歌え ば 上手 に 聞こえる。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼女 が 愛情 こもっ た 弁当 を 作っ て くれる。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    希望 を 持っ て、人々 は 代表 チーム を 応援 し て いる！'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    『祖父 より 愛情 の ある 葉書 が 届い た。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    感謝 の 気持ち が いっぱい の プレゼント を 贈っ た。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    期待 し て 少し 厳しい こと を 言っ て しまい まし た。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    一生 懸命 作っ た 料理 だ から、全部 食べ て くれる と 嬉しい な。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 曲 は、若い 頃 の 思い出 が たくさん ある 歌詞 です。'
+  - '[rule-5] warning examples[10].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 手紙 に は、感謝 と 友情 の 気持ち が いっぱい です。'
+  - '[rule-5] warning examples[11].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    バレンタイン に 愛情 いっぱい の チョコ、受け取っ て くれる？'

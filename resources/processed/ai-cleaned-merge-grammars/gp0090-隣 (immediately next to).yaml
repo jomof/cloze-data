@@ -1,8 +1,11 @@
 grammar_point: 隣 (immediately next to)
 learn_before:
+  - で (at)
   - 横 (side・horizontal)
   - 前・後ろ (front and back spatial orientation)
 learn_after:
+  - の間に (within an interval)
+  - に向かって (physical direction)
   - を中心に (focused on)
   - にわたって (throughout a range)
 id: gp0090
@@ -56,10 +59,18 @@ false_friends:
       implying they are facing the same way or forming a contiguous block. It's a stronger, more descriptive
       form of adjacency than a simple 「隣」.
     grammar_point: <suggest>:隣り合わせ (side by side)
+  - term: 間
+    meaning: Between, middle spatial
+    kind: similar expression
+    nuance: 「間」 indicates a space or interval *between* two or more points, implying that something is
+      located in the middle, or refers to a duration. It contrasts with 「隣」 which implies direct, immediate
+      adjacency with nothing in between.
+    grammar_point: 間 (between・middle spatial)
 post_false_friends_writeup: While 「隣」 conveys immediate proximity, it is more specific than 「そば」 and 「近く」.
   「そば」 suggests being 'at hand' or 'in one's presence', while 「近く」 is simply 'not far away'. Neither of
   them implies direct adjacency as strongly as 「隣」 does. 「隣り合わせ」 is a more emphatic way to say 'immediately
-  next to each other', often used for items placed in a row.
+  next to each other', often used for items placed in a row. Furthermore, 「間」 is distinct as it refers
+  to something located *between* two points, rather than directly adjacent to one.
 examples:
   - english: I sat next to him.
     japanese:
@@ -81,12 +92,12 @@ examples:
     english_literally: I, him's next to, sat.
     competing_grammar:
       - competing_japanese:
-          - 私 は 彼 の そば に 座っ た。
+          - 私 は 彼 の {そば} に 座っ た。
         english: I sat near him.
         hint: 「そば」 indicates general closeness, not necessarily the seat right next to him. We're looking
           for immediate adjacency.
       - competing_japanese:
-          - 私 は 彼 の 近く に 座っ た。
+          - 私 は 彼 の {近く} に 座っ た。
         english: I sat close to him.
         hint: 「近く」 implies general proximity, not sitting directly beside someone. We're looking for the
           seat right next to him.
@@ -97,7 +108,7 @@ examples:
           rather than simply sitting *next to* someone in an available spot. We're looking for the simple
           act of taking the seat next to someone.
       - competing_japanese:
-          - 彼 と 並ん で 座っ た。
+          - 彼 と {並ん で} 座っ た。
         english: I sat side-by-side with him.
         hint: While `並んで` emphasizes sitting in alignment, it doesn't specify the immediate adjacency
           in the same way that `隣` does for a single seat. We're looking for the simple act of taking
@@ -130,12 +141,12 @@ examples:
     english_literally: My house station's next door, is.
     competing_grammar:
       - competing_japanese:
-          - 私 の 家 は 駅 の そば です。
+          - 私 の 家 は 駅 の {そば} です。
         english: I house is near the station.
         hint: 「そば」 means 'near' in a general sense, not necessarily immediately adjacent. We're looking
           for a direct neighbor relationship.
       - competing_japanese:
-          - 私 の 家 は 駅 の 近く です。
+          - 私 の 家 は 駅 の {近く} です。
         english: My house is close to the station.
         hint: 「近く」 implies general proximity, not necessarily the very next building. We're looking for
           direct adjacency.
@@ -147,7 +158,7 @@ examples:
           for simply stating one building is adjacent to another. We're looking for the simple adjacency
           of the house to the station.
       - competing_japanese:
-          - 私 の 家 は 駅前 に あり ます。
+          - 私 の 家 は {駅前} に あり ます。
         english: My house is in front of the station.
         hint: While 「駅前」 means 'in front of the station', it implies a general area, not necessarily the
           *next* building. We're looking for the house being directly next door to the station.
@@ -181,12 +192,12 @@ examples:
     english_literally: This seat's next is empty?
     competing_grammar:
       - competing_japanese:
-          - この 席 の そば は 空い て い ます か？
+          - この 席 の {そば} は 空い て い ます か？
         english: Is the area near this seat free?
         hint: 「そば」 is too vague; it asks if the general area nearby is free, not the specific adjacent
           seat. We're asking about the very next seat.
       - competing_japanese:
-          - この 席 の 近く は 空い て い ます か？
+          - この 席 の {近く} は 空い て い ます か？
         english: Is the area close to this seat free?
         hint: 「近く」 refers to the general vicinity, not the specific seat directly beside. We're asking
           about the very next seat.
@@ -197,12 +208,12 @@ examples:
           「隣」 is the direct and natural way to ask about the single seat immediately beside the current
           one. We're looking for the specific seat right next to this one.
       - competing_japanese:
-          - この 辺り は 空い て い ます か？
+          - この {辺り} は 空い て い ます か？
         english: Is this area free?
         hint: This asks about the general vicinity, not the specific seat immediately next to the one
           in question. We're looking for the specific seat right next to this one.
       - competing_japanese:
-          - ここ は 空い て い ます か？
+          - '{ここ} は 空い て い ます か？'
         english: Is here free?
         hint: This is too vague and might refer to the speaker's own spot or a general area, not the specific
           adjacent seat. We're looking for the specific seat right next to this one.
@@ -231,12 +242,12 @@ examples:
     english_literally: Train's next seat became free.
     competing_grammar:
       - competing_japanese:
-          - 電車 の そば の 席 が 空い た。
+          - 電車 の {そば} の 席 が 空い た。
         english: The seat near the train became free.
         hint: 「そば」 implies a seat near the train itself, not the specific seat immediately next to yours.
           We're looking for the seat right beside you.
       - competing_japanese:
-          - 電車 の 近く の 席 が 空い た。
+          - 電車 の {近く} の 席 が 空い た。
         english: The seat close to the train became free.
         hint: 「近く」 indicates a seat in the general vicinity of the train, not the specific seat immediately
           next to yours. We're looking for the seat right beside you.
@@ -260,12 +271,12 @@ examples:
     english_literally: Bookstore, cafe's next to, is.
     competing_grammar:
       - competing_japanese:
-          - 本屋 は カフェ の そば です。
+          - 本屋 は カフェ の {そば} です。
         english: The bookstore is near the cafe.
         hint: 「そば」 indicates general closeness, not necessarily immediate adjacency. We're looking for
           the specific next-door location.
       - competing_japanese:
-          - 本屋 は カフェ の 近く です。
+          - 本屋 は カフェ の {近く} です。
         english: The bookstore is close to the cafe.
         hint: 「近く」 means in the general vicinity, not necessarily the very next building. We're looking
           for direct adjacency.
@@ -286,12 +297,12 @@ examples:
     english_literally: This box, that box's next to, please place.
     competing_grammar:
       - competing_japanese:
-          - この 箱 を あの 箱 の そば に 置い て ください。
+          - この 箱 を あの 箱 の {そば} に 置い て ください。
         english: Please place this box near that one.
         hint: 「そば」 indicates general closeness, not necessarily directly adjacent. We're looking for placing
           it right next to it.
       - competing_japanese:
-          - この 箱 を あの 箱 の 近く に 置い て ください。
+          - この 箱 を あの 箱 の {近く} に 置い て ください。
         english: Please place this box close to that one.
         hint: 「近く」 implies a broader area, not a specific position directly next to it. We're looking
           for placing it right next to it.
@@ -311,12 +322,12 @@ examples:
     english_literally: My desk window's next to, exists.
     competing_grammar:
       - competing_japanese:
-          - 私 の 机 は 窓 の そば に あり ます。
+          - 私 の 机 は 窓 の {そば} に あり ます。
         english: My desk is near the window.
         hint: 「そば」 indicates general closeness, not necessarily directly against it. We're implying the
           desk is flush with the window.
       - competing_japanese:
-          - 私 の 机 は 窓 の 近く に あり ます。
+          - 私 の 机 は 窓 の {近く} に あり ます。
         english: My desk is close to the window.
         hint: 「近く」 implies a broader area, not a specific position directly beside. We're implying the
           desk is flush with the window.
@@ -333,12 +344,12 @@ examples:
     english_literally: Cat dog's next to, sleeping.
     competing_grammar:
       - competing_japanese:
-          - 猫 は 犬 の そば で 寝 て いる。
+          - 猫 は 犬 の {そば} で 寝 て いる。
         english: The cat is sleeping near the dog.
         hint: 「そば」 suggests general closeness, not necessarily directly touching. We're implying they
           are sleeping in contact.
       - competing_japanese:
-          - 猫 は 犬 の 近く で 寝 て いる。
+          - 猫 は 犬 の {近く} で 寝 て いる。
         english: The cat is sleeping close to the dog.
         hint: 「近く」 indicates general proximity, not specifically side-by-side contact. We're implying
           they are sleeping in contact.
@@ -359,12 +370,12 @@ examples:
     english_literally: That park elementary school's next to, is.
     competing_grammar:
       - competing_japanese:
-          - その 公園 は 小 学校 の そば です。
+          - その 公園 は 小 学校 の {そば} です。
         english: The park is near the elementary school.
         hint: 「そば」 indicates general closeness, not necessarily directly adjacent. We're looking for the
           specific next-door location.
       - competing_japanese:
-          - その 公園 は 小 学校 の 近く です。
+          - その 公園 は 小 学校 の {近く} です。
         english: The park is close to the elementary school.
         hint: 「近く」 means in the general vicinity, not necessarily bordering it. We're looking for direct
           adjacency.
@@ -386,12 +397,12 @@ examples:
     english_literally: Tanaka-san's next to person is who?
     competing_grammar:
       - competing_japanese:
-          - 田中 さん の そば の 人 は 誰 です か？
+          - 田中 さん の {そば} の 人 は 誰 です か？
         english: Who is the person near Tanaka-san?
         hint: 「そば」 indicates general closeness, not necessarily the person immediately beside them. We're
           looking for the person directly adjacent.
       - competing_japanese:
-          - 田中 さん の 近く の 人 は 誰 です か？
+          - 田中 さん の {近く} の 人 は 誰 です か？
         english: Who is the person close to Tanaka-san?
         hint: 「近く」 implies a broader area, not the specific person directly beside. We're looking for
           the person directly adjacent.

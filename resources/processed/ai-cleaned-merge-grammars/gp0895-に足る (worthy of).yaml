@@ -1,10 +1,13 @@
 grammar_point: に足る (worthy of)
 learn_before:
+  - ある (to exist or have)
   - べき (should)
   - である (formal copula)
+  - 十分だ (enough・sufficient)
 learn_after:
+  - に満たない (not reaching)
   - たる (to be in a position of)
-  - を置いて他に〜ない (nothing else compares)
+  - にほかならない (nothing but)
 id: gp0895
 meaning: To be worthy of, To be enough, To be sufficient
 conjugations:
@@ -69,17 +72,17 @@ etymology: The grammar point 「に足る」 is derived from the Godan verb 「�
   Therefore, 「に足る」 literally means "to be sufficient for" or "to meet the requirements of" something.
   It suggests that something has the necessary qualities or merit for a given purpose or evaluation.
 writeup: 'The grammar point 「に足る」 (ni taru) expresses that something is "worthy of" or "sufficient for"
-  a particular purpose or standard. It is generally used in **formal contexts**, such as in books, speeches,
-  or academic writing.  **Form**: 「に足る」 typically follows a noun or a verb in its dictionary form. While
+  a particular purpose or standard. It is generally used in **formal contexts**, such that in books, speeches,
+  or academic writing. **Form**: 「に足る」 typically follows a noun or a verb in its dictionary form. While
   「に足る」 often appears in its dictionary form when modifying a noun (e.g., 信頼に足る人物, "a person worthy of
   trust"), the verb 「足る」 itself can be conjugated to express different tenses or modalities, such as in
   negative or past forms. These conjugations preserve the core meaning of "to be worthy of" or "to be
-  sufficient for".  **Important Consideration**: When expressing that something is "not worthy" or "not
+  sufficient for". **Important Consideration**: When expressing that something is "not worthy" or "not
   sufficient," 「足る」 can be directly negated (e.g., に足らない). However, it is often more natural, especially
   in more complex sentences, to negate the main predicate that 「に足る」 modifies (e.g., 信頼に足る人物ではない). This
   construction allows for greater flexibility and nuance.'
 false_friends:
-  - term: たる (to be in a position of)
+  - term: たる
     meaning: To be (in a position of), As a, For
     kind: often confused with
     nuance: Unlike 「に足る」, which indicates worthiness or sufficiency, 「～たる」 indicates a role, position,
@@ -98,14 +101,14 @@ false_friends:
     nuance: 「に足る」 emphasizes that something meets a certain standard or is worthy of something specific,
       often with a formal or evaluative tone. 「十分だ」 simply means "enough" or "sufficient" in a more general
       and less formal sense.
-    grammar_point: <suggest>:十分だ (enough, sufficient)
+    grammar_point: 十分だ (enough・sufficient)
   - term: に値する
     meaning: To be worth, to deserve
     kind: similar expression
     nuance: 「に値する」 is used to say something is worth or deserves a certain outcome, emphasizing merit
       or inherent value. In contrast, 「に足る」 means something is sufficient or meets the standard for something,
       implying adequacy for a purpose.
-    grammar_point: <suggest>:に値する (to be worth, to deserve)
+    grammar_point: <suggest>:に値する (to be worth・to deserve)
   - term: べき
     meaning: Should, ought to, must
     kind: often confused with
@@ -380,3 +383,49 @@ post_example_writeup: The usage of 「に足る」 implies that something posses
   such as 「に足るものではない」 or 「に足る人物ではない」, particularly in more formal contexts.
 sources:
   bunpro: https://bunpro.jp/grammar_points/に足る
+lint-errors:
+  - '[rule-13] unknown grammar at ''learn_before[3]'': ''十分だ (enough・sufficient)''. You may suggest new
+    grammar points by adding a false_friend.'
+  - '[rule-13] warning unknown grammar at ''false_friends[2]'': ''十分だ (enough・sufficient)''. It **MUST**
+    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
+    grammar point.'
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 の 提案 は、検討 に 値 する 価値 が ある。'
+  - '[rule-5] warning examples[0].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    彼 の 提案 は、検討 す べき 価値 が ある。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 作品 は、語る べき 深み を 持っ て いる。'
+  - '[rule-5] warning examples[1].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    この 作品 は、語る 価値 の ある 深み を 持っ て いる。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    その 行為 は、称賛 に 値 し ない。'
+  - '[rule-5] warning examples[2].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    その 行為 は、褒める べき で は ない。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    その 情報 は、信じる に 値 し ない 内容 だっ た。'
+  - '[rule-5] warning examples[3].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    その 情報 は、信じる べき 情報 で は なかっ た。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼女 の 貢献 は、記憶 に 値 する 素晴らしい もの だっ た。'
+  - '[rule-5] warning examples[4].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    彼女 の 貢献 は、記憶 に 残す べき 素晴らしい もの だっ た。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    私 の 新しい 上司 は、尊敬 に 値 する 人物 で ござい ます。'
+  - '[rule-5] warning examples[5].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    私 の 新しい 上司 は、尊敬 す べき 人物 で ござい ます。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 の 人柄 は、深く 付き合う に 値 し、多く の 人 に 慕わ れ て いる。'
+  - '[rule-5] warning examples[6].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    彼 の 人柄 は、深く 付き合う べき 人柄 で、多く の 人 に 慕わ れ て いる。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 の 言葉 は、信頼 でき ない。'
+  - '[rule-5] warning examples[7].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    彼 の 言葉 は、信用 に 値 し ない。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 科学 的 発見 は、真 に 注目 す べき だ。'
+  - '[rule-5] warning examples[8].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    この 科学 的 発見 は、真 に 価値 が ある。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    そう し た 無 責任 な 行為 は、許さ れる べき で は ない。'
+  - '[rule-5] warning examples[9].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
+    そう し た 無 責任 な 行為 は、許す 価値 が ない。'

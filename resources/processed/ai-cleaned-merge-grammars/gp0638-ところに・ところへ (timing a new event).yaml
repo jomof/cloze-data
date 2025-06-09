@@ -2,12 +2,16 @@ grammar_point: ところに・ところへ (timing a new event)
 learn_before:
   - とき (when)
   - ながら (while doing)
+  - ている (resultant and ongoing state)
+  - ていた (past continuous or state)
   - ているところ (in the process of)
-  - ている (~ing)
+  - Verb[volitional]+とする (try about to)
 learn_after:
   - か〜ないかのうちに (immediately after)
   - ともなると (when a significant point is reached)
   - に至って・に至り (finally reached)
+  - たら最後 (inevitable negative outcome)
+  - あげく (culmination of effort)
 id: gp0638
 meaning: At the time, When, While, Timing
 meaning_warning: Puts more emphasis on a state/scene than an action.
@@ -90,12 +94,12 @@ examples:
     english_literally: My son was studying, {at that point} a call from his friend came.
     competing_grammar:
       - competing_japanese:
-          - 息子 が 勉強 し て いる 時 に、友達 から 電話 が かかっ て き た。
+          - 息子 が 勉強 し て いる {時 に}、友達 から 電話 が かかっ て き た。
         english: A call from his friend came when my son was studying.
         hint: Using 「時 に」 refers to a general period or occasion. We're looking for an expression that
           highlights the precise moment of an interruption during an ongoing action.
       - competing_japanese:
-          - 息子 が 勉強 し て いる 間 に、友達 から 電話 が かかっ て き た。
+          - 息子 が 勉強 し て いる {間 に}、友達 から 電話 が かかっ て き た。
         english: During the time my son was studying, a call from his friend came.
         hint: 「間に」 indicates a duration of time. We're looking for an expression that pinpoints the specific
           instant of an interruption.
@@ -133,12 +137,12 @@ examples:
     english_literally: I was making food, {at that point} suddenly became a power outage.
     competing_grammar:
       - competing_japanese:
-          - 料理 を 作っ て い た 時 に 急 に 停電 に なっ た。
+          - 料理 を 作っ て い た {時 に} 急 に 停電 に なっ た。
         english: While I was cooking, there was a sudden power outage.
         hint: Using 「時 に」 emphasizes the general time period, not the specific point of interruption.
           We're looking for something that highlights the precise moment the power went out.
       - competing_japanese:
-          - 料理 を 作っ て いる 最中 に 急 に 停電 に なっ た。
+          - 料理 を 作っ て いる {最中 に} 急 に 停電 に なっ た。
         english: In the middle of cooking, there was a sudden power outage.
         hint: 「最中 に」 emphasizes being in the peak of an action. While similar, it doesn't carry the same
           nuance of pinpoint timing for an external event as 「ところに」.
@@ -157,7 +161,7 @@ examples:
     english_literally: At a difficult {situation}, I am sorry, but could I have a little time?
     competing_grammar:
       - competing_japanese:
-          - 大変 な 時 に 申し訳 あり ませ ん が、少し お 時間 を いただけ ます か。
+          - 大変 な {時 に} 申し訳 あり ませ ん が、少し お 時間 を いただけ ます か。
         english: I apologize for intruding at a difficult time, but could I have a moment of your time?
         hint: Using 「時 に」 refers to a general time. We are looking for something that emphasizes the current
           difficult *situation* or *state* you are interrupting.
@@ -179,7 +183,7 @@ examples:
     english_literally: She was about to leave the room, {at that point} he appeared.
     competing_grammar:
       - competing_japanese:
-          - 彼女 が 部屋 を 出る とき に 彼 が 現れ た。
+          - 彼女 が 部屋 を 出る {とき に} 彼 が 現れ た。
         english: When she was about to leave the room, he appeared.
         hint: 「時 に」 indicates a general time. We are looking for a phrase that expresses an event happening
           *just as* someone is on the verge of doing something.
@@ -200,7 +204,7 @@ examples:
     english_literally: My homework finished, {at that point} I was invited by my friend to go play.
     competing_grammar:
       - competing_japanese:
-          - 宿題 が 終わっ た 後 に 友達 から 遊び に 行こう と 誘わ れ た。
+          - 宿題 が 終わっ た {後 に} 友達 から 遊び に 行こう と 誘わ れ た。
         english: After my homework finished, my friend invited me to hang out.
         hint: 「後 に」 indicates something happened simply after an action. We're looking for an expression
           that implies something happened *immediately* after an action was completed, often as a timely
@@ -223,7 +227,7 @@ examples:
     english_literally: At a sad {state}, as if adding a chase-hit, bad news arrived.
     competing_grammar:
       - competing_japanese:
-          - 悲しい 時 に、追い打ち を かける よう に 悪い ニュース が 届い た。
+          - 悲しい {時 に}、追い打ち を かける よう に 悪い ニュース が 届い た。
         english: When I was sad, bad news arrived, as if to add insult to injury.
         hint: 「時 に」 refers to a general period of time when you felt sad. We're looking for a phrase that
           emphasizes the specific existing emotional *state* at the moment the bad news arrived.
@@ -245,7 +249,7 @@ examples:
     english_literally: I was about to go to bed, {at that point} a huge earthquake came.
     competing_grammar:
       - competing_japanese:
-          - 寝る 直前 に 大 き な 地震 が 来 た。
+          - 寝る {直前 に} 大 き な 地震 が 来 た。
         english: Right before going to bed, a huge earthquake struck.
         hint: 「直前 に」 means immediately before, focusing on the proximity in time. We're looking for an
           expression that emphasizes being *on the verge* of an action when something else occurs.
@@ -266,7 +270,7 @@ examples:
     english_literally: I got home, {at that point} a call from my mother came.
     competing_grammar:
       - competing_japanese:
-          - 家 に 着 い て すぐ に、母 から 電話 が かかっ て き た。
+          - 家 に 着 い て {すぐ に}、母 から 電話 が かかっ て き た。
         english: Immediately after getting home, my mother called.
         hint: 「すぐに」 implies immediate succession. We're looking for an expression that indicates something
           happened *just as* an action was completed, emphasizing the precise timing or coincidence.
@@ -287,7 +291,7 @@ examples:
     english_literally: At a crucial {point/situation}, the protagonist delivered a decisive blow.
     competing_grammar:
       - competing_japanese:
-          - 肝心 な 時 に、主人 公 が 決定 的 な 一撃 を 与え た。
+          - 肝心 な {時 に}、主人 公 が 決定 的 な 一撃 を 与え た。
         english: At a crucial time, the protagonist delivered a decisive blow.
         hint: 「時 に」 refers to a general time. We're looking for an expression that refers to a critical
           *situation* or *juncture*, not just a point in time.
@@ -312,7 +316,7 @@ examples:
     english_literally: I was walking, {at that point} a stray cat came running up.
     competing_grammar:
       - competing_japanese:
-          - 散歩 し て いる 時 に、野良 猫 が 駆け寄っ て き た。
+          - 散歩 し て いる {時 に}、野良 猫 が 駆け寄っ て き た。
         english: When I was walking, a stray cat came running up to me.
         hint: 「時 に」 indicates a general time. We're looking for an expression that specifies an event
           happening *within* the ongoing action, highlighting the precise moment of interaction.
@@ -333,7 +337,7 @@ examples:
     english_literally: Discussing an important matter, {at that point} a new proposal was suddenly made.
     competing_grammar:
       - competing_japanese:
-          - 重要 な 案件 を 議論 し て いる 際 に、突然 新しい 提案 が なさ れ た。
+          - 重要 な 案件 を 議論 し て いる {際 に}、突然 新しい 提案 が なさ れ た。
         english: When discussing a critical issue, a new proposal was suddenly put forth.
         hint: 「際 に」 is more formal for 'at the time of' or 'on the occasion of'. We're looking for an
           expression that emphasizes the precise moment an unexpected intervention occurred during an
@@ -348,7 +352,7 @@ examples:
       of the passive voice 「なさ れた」 are appropriate for a professional setting. The male speaker addresses
       a group in a neutral, informative tone.
 post_example_writeup: As you can see from the examples, the core function of 「〜ところに/へ」 is to pinpoint
-  a moment within an ongoing situation or state, or immediately before/after an action, and then introduce
+  a moment within an ongoing situation or state, or immediately before/after an an action, and then introduce
   a new, often impactful, event. It's about highlighting the precise juncture at which something happens,
   making the timing feel very specific and sometimes dramatic or coincidental. Pay close attention to
   the verb form preceding 「ところ」, as it dictates the exact temporal relationship between the established

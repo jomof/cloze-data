@@ -6,17 +6,20 @@ learn_before:
   - たくさん (many・a lot)
   - だけ (only・just)
   - しか〜ない (only・nothing but)
+  - Number+も (emphatic quantity)
+  - くらい (approximate quantity or degree)
 learn_after:
   - だけましだ (at least・it's better)
-  - 以上 (more than or equal to)
+  - 〜までだ (just・merely)
   - にすぎない (no more than)
-  - にとどまらず (not limited to)
+  - 〜たりとも〜ない (not even a single)
+  - さえ〜ば (if only; as long as)
 id: gp0297
 meaning: At least, or so
 pronunciation:
   katakana: ナンバープラスワ
   romaji: nanbā purasu wa
-  pronunciation_warning: The は particle is pronounced as 'wa' in this context.
+  pronunciation_warning: The は particle is pronounced as 'wa', not 'ha', in this context.
 formation:
   Number + は: Indicates 'at least' or 'or so' regarding the given number, emphasizing it as a minimum
     or contrast.
@@ -80,6 +83,12 @@ false_friends:
       term for "more than or equal to," often used in explicit criteria, without the same subtle contrasting
       nuance of 「は」.
     grammar_point: 以上 (more than or equal to)
+  - term: だけ (only・just)
+    meaning: Only, Just
+    kind: similar expression
+    nuance: 「Number+は」 sets a minimum, while 「だけ」 simply states the exact amount without implying a minimum
+      or comparison to other possibilities. It focuses on exclusivity rather than a threshold.
+    grammar_point: だけ (only・just)
 post_false_friends_writeup: While 「は」 can mark the topic of a sentence, when it follows a number, it introduces
   a sense of 'at least' or 'or so'. Pay attention to the context and the placement of 「は」 to distinguish
   between these usages. If it emphasizes the quantity, it's likely indicating a minimum or approximation.
@@ -281,10 +290,10 @@ examples:
     setting: professional
     nuance: The 「は」 emphasizes the significant minimum overtime required, highlighting the demanding nature
       of the project. 「必要 が ある」 conveys necessity, making the statement very direct.
-    etymology: '「残業」 (zangyou, overtime) is formed from 「残」 (zan, leftover/remain) and 「業」 (gyou, work/business),
-      literally meaning ''remaining work''. The phrase 「必要 が ある」 means "there is a necessity" or "it is
+    etymology: 「残業」 (zangyou, overtime) is formed from 「残」 (zan, leftover/remain) and 「業」 (gyou, work/business),
+      literally meaning 'remaining work'. The phrase 「必要 が ある」 means "there is a necessity" or "it is
       necessary" and is a common way to express requirements or obligations in Japanese. 「時間」 refers to
-      ''hours'', originating from the ancient Chinese concept of measuring time with specific intervals. '
+      'hours', originating from the ancient Chinese concept of measuring time with specific intervals.
   - english: If you're a university student, you should read for at least two hours every day.
     japanese:
       - 大学 生 なら、毎日 ２ 時間 {は} 読書 する べき だ。
@@ -340,3 +349,72 @@ post_example_writeup: As you can see, the particle 「は」 after a number adds
   Pay attention to how this subtle addition changes the emphasis in each sentence.
 sources:
   bunpro: https://bunpro.jp/grammar_points/number-amount-は
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    毎日、水 を ２ リットル 飲ん で い ます。'
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    毎日、水 を ２ リットル 飲ん で いる。'
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[2] missing {bold} grammar point:
+    毎日、水 を ２ リットル 飲み ます。'
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[3] missing {bold} grammar point:
+    毎日、水 を ２ リットル 飲む。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この プロジェクト に は、５ 人 必要 です。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    この プロジェクト に は、５ 人 必要 だ。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    その パソコン は ３ 年 くらい 使える と 思う。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    その パソコン は ３ 年 くらい 使える と 思い ます。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    試験 に 合格 する ため に は、毎日 ３ 時間 勉強 し なさい。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    試験 に 合格 する ため に は、毎日 ３ 時間 勉強 する べき です。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[2] missing {bold} grammar point:
+    試験 に 合格 する ため に は、毎日 ３ 時間 勉強 する べき だ。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[3] missing {bold} grammar point:
+    試験 に 合格 する ため に は、毎日 ３ 時間 勉強 し た 方 が いい です。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[4] missing {bold} grammar point:
+    試験 に 合格 する ため に は、毎日 ３ 時間 勉強 し た 方 が いい。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 仕事 を 終わら せる の に、あと １ 時間 かかる だろう。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    この 仕事 を 終わら せる の に、あと １ 時間 かかる でしょ う。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[2] missing {bold} grammar point:
+    この 仕事 を 終わら せる の に、あと １ 時間 かかる。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[3] missing {bold} grammar point:
+    この 仕事 を 終わら せる の に、あと １ 時間 かかり ます。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼女 は １ 回 謝る べき だっ た。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    彼女 は １ 回 謝る べき でし た。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[2] missing {bold} grammar point:
+    彼女 は １ 回 謝れ ば よかっ た。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[3] missing {bold} grammar point:
+    彼女 は １ 回 謝れ ば よかっ た です。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    夏休み に は、１ 週間 旅行 に 行き たい。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    夏休み に は、１ 週間 旅行 に 行き たい です。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この プロジェクト は、毎日 ５ 時間 残業 する 必要 が ある。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    この プロジェクト は、毎日 ５ 時間 残業 する 必要 が あり ます。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[2] missing {bold} grammar point:
+    この プロジェクト は、毎日 ５ 時間 残業 が 必要 だ。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[3] missing {bold} grammar point:
+    この プロジェクト は、毎日 ５ 時間 残業 が 必要 です。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    大学 生 なら、毎日 ２ 時間 読書 する べき だ。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    大学 生 なら、毎日 ２ 時間 読書 する べき です。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[2] missing {bold} grammar point:
+    大学 生 なら、毎日 ２ 時間 読書 し た 方 が いい。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[3] missing {bold} grammar point:
+    大学 生 なら、毎日 ２ 時間 読書 し た 方 が いい です。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    た と え 一 つ だけ で も、今日 中 に この 報告 書 を 終わら せ て ください。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[1] missing {bold} grammar point:
+    た と え 一 つ だけ で も、今日 中 に この 報告 書 を 終わら せ て。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[2] missing {bold} grammar point:
+    た と え 一 つ だけ で も、今日 中 に この 報告 書 を 終わら せ て くれ。'

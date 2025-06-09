@@ -1,13 +1,13 @@
 grammar_point: ような気がする (have a feeling)
+better_grammar_point_name:
+  - ような気がする (to have a feeling or hunch)
 learn_before:
-  - だろう (conjecture)
+  - 思う (I think or thought)
   - かもしれない (might)
-  - そう (looks or seems like)
-  - まるで…ようだ (just like)
+  - ようだ (it seems)
+  - ように・ような (like・as・similar to)
 learn_after:
   - ものがある (subjective feeling)
-  - そうにない (unlikely to)
-  - 思われる (to seem・impersonal)
 id: gp0451
 meaning: Have a feeling that
 conjugations:
@@ -46,7 +46,7 @@ formation:
 jlpt: N3
 details:
   part-of-speech: phrase
-  register: teineigo (polite)
+  register: casual
   usage-context: general
   function: To express a subtle or vague personal feeling, intuition, or hunch without strong conviction.
   nuance: Adds a layer of uncertainty and softness to the expression, indicating that the speaker is not
@@ -69,36 +69,46 @@ false_friends:
   - term: ぎみ
     meaning: Looking, Feeling a little, Touch of, Tending to, Slightly
     kind: similar expression
-    nuance: 「ぎみ」 indicates a slight tendency towards something, while 「ような気がする」 expresses a feeling or
-      intuition.
+    nuance: 「ぎみ」 indicates a slight tendency towards something, such as feeling unwell, while 「ような気がする」
+      expresses a feeling or intuition about a situation or a fact.
     grammar_point: ぎみ (slight tendency or feeling)
   - term: そう
     meaning: Look like, Appear, Seem, Have a feeling that
     kind: similar expression
-    nuance: 「そう」 often implies a more direct observation or appearance, while 「ような気がする」 is a more internal
-      feeling.
+    nuance: 「そう」 often implies a more direct observation or appearance based on external cues (e.g., 'looks
+      delicious'), while 「ような気がする」 is a more internal feeling or hunch that is not necessarily tied to
+      immediate visual evidence.
     grammar_point: そう (looks or seems like)
   - term: げ
     meaning: Seemingly, Giving appearance of, [Expresses emotions or feelings]
     kind: similar expression
     nuance: 「げ」 is used to describe how someone or something appears outwardly, especially in terms of
-      emotion, whereas 「ような気がする」 describes an internal feeling or hunch.
+      emotion or state (e.g., 'lonely-looking'), whereas 「ような気がする」 describes an internal feeling or hunch.
     grammar_point: げ (seeming・appearance)
   - term: ように・ような
-    meaning: As・like, Just like
+    meaning: Like, As, Similar to
     kind: often confused with
-    nuance: 「ように」 and 「ような」 are used for comparisons or examples, while 「ような気がする」 is for expressing a
-      feeling or intuition.
+    nuance: 「ように」 and 「ような」 are used for direct comparisons or to describe manner, while 「ような気がする」 is
+      a fixed phrase that *uses* 「ような」 to express a feeling or intuition, not merely a comparison.
     grammar_point: ように・ような (like・as・similar to)
   - term: 気
-    meaning: Feel like ~, Spirit
+    meaning: Feeling, spirit, inclination, motivation, mood, atmosphere
     kind: similar expression
-    nuance: 「気」 alone refers to the feeling itself, whereas 「ような気がする」 is a more nuanced expression of
-      a vague feeling.
+    nuance: 「気」 alone refers to the abstract concept of a 'feeling' or 'spirit', whereas 「ような気がする」 is
+      the specific grammatical construction used to express *having* a vague feeling or hunch about something.
     grammar_point: 気 (feeling・inclination・atmosphere)
-post_false_friends_writeup: When choosing between 「ぎみ」, 「そう」, 「げ」, 「ように/ような」, and 「ような気がする」, consider
-  whether you're describing a tendency, an outward appearance, a direct comparison, or an internal feeling.
-  「ような気がする」 is best when you want to express a subtle, uncertain feeling or hunch.
+  - term: のではないだろうか
+    meaning: I think... isn't it?, It might be that..., Don't you agree?
+    kind: similar expression
+    nuance: 「のではないだろうか」 is used to make a gentle suggestion or express a mild conjecture, often inviting
+      agreement from the listener. In contrast, 「ような気がする」 expresses a personal, internal hunch or vague
+      feeling, without necessarily seeking confirmation.
+    grammar_point: のではないだろうか (indirect suggestion)
+post_false_friends_writeup: When choosing between 「ぎみ」, 「そう」, 「げ」, 「ように/ような」, 「気」, and 「ような気がする」, consider
+  whether you're describing a tendency, an outward appearance, a direct comparison, an abstract feeling,
+  or an internal, vague hunch. 「ような気がする」 is best when you want to express a subtle, uncertain feeling
+  or impression. 「のではないだろうか」, while also softening a statement, is more about proposing a possibility
+  for consideration by others, rather than simply stating one's own vague internal sensation.
 examples:
   - english: I have a feeling that I went the wrong way.
     japanese:
@@ -301,3 +311,28 @@ post_example_writeup: 「ような気がする」 is useful for softening statem
   common way to express hunches or impressions without committing to a firm opinion.
 sources:
   bunpro: https://bunpro.jp/grammar_points/ような気がする
+lint-errors:
+  - '[rule-13] unknown grammar at ''learn_before[0]'': ''思う (I think or thought)''. You may suggest new
+    grammar points by adding a false_friend.'
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    道 を 間違え た と 思う。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    分かる と 思い ます。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あの 人 に 利用 さ れ た。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あの 二 人 は 結婚 し て も きっと うまく いか ない だろう。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    お 風呂 に 入り すぎ た から、ちょっと 熱 っぽい。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あいつ と 話し た 感じ で は、元気 だっ た。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    前 に いる 人 は 警察 だ。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    文法 を 勉強 すれ ば する ほど、しゃべる こと が できる よう に なる。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    その 可愛い ワン ピース、どこ か で 見 た こと が ある。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼女 の 新しい ビジネス、成功 し ない と 思う わ。'
+  - '[rule-5] warning examples[10].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    何 も 悪い こと が 起こる と 思わ なかっ た。'

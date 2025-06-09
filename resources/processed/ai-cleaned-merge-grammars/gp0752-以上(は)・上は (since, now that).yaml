@@ -2,15 +2,18 @@ grammar_point: 以上(は)・上は (since, now that)
 learn_before:
   - から (reason cause)
   - ので (reason)
-  - なければならない・なくてはいけない (must do, have to do)
+  - なければならない (must do)
+  - べき (should)
   - はずだ (expected to be)
   - ては (inevitable negative outcome)
   - わけだ (logical conclusion)
+  - ことだ (should・ought to)
 learn_after:
   - ざるを得ない (have no choice but to)
-  - 〜べからず (must not)
+  - よりほかない (have no choice but)
   - べく (for the purpose of)
   - ゆえに (because・therefore)
+  - に相違ない (without a doubt)
 id: gp0752
 meaning: Since; now that; once; as long as; so long as; given that.
 pronunciation:
@@ -83,11 +86,28 @@ false_friends:
       part, whereas 「以上(は)・上は」 place more emphasis on the inherent or natural logical consequence of the
       established fact.
     grammar_point: からには (since; obligation)
+  - term: べからず
+    meaning: must not; should not
+    kind: similar expression
+    nuance: While 「以上(は)・上は」 expresses what logically *must* follow given a premise, 「べからず」 is a strong,
+      archaic negative imperative meaning 'must not' or 'should not'. It states a direct prohibition rather
+      than a logical consequence.
+    grammar_point: <suggest>:べからず (must not)
+  - term: よりほかない
+    meaning: have no choice but
+    kind: similar expression
+    nuance: 「以上(は)・上は」 establishes a premise that leads to an obligation or consequence, implying 'therefore,
+      X must be done.' In contrast, 「よりほかない」 directly states that there is 'no other choice but X', often
+      used when faced with an unavoidable or undesirable situation. Both imply necessity but from different
+      angles.
+    grammar_point: よりほかない (have no choice but)
 post_false_friends_writeup: To differentiate between 「以上(は)・上は」, 「限り(は)」, and 「からには」, consider the specific
   nuance you wish to convey. Use 「以上(は)・上は」 when highlighting the logical consequence of an action or
   established fact. Use 「限り(は)」 when emphasizing the duration or continuation of a condition. And use
   「からには」 when expressing a strong sense of personal determination or resolve, often accompanied by a feeling
-  of having committed oneself to a course of action.
+  of having committed oneself to a course of action. Additionally, while 「べからず」 is a strong prohibition,
+  and 「よりほかない」 expresses having no other option, 「以上(は)・上は」 focuses on the inherent obligation or natural
+  consequence that *arises* from a preceding state or action.
 examples:
   - english: Now that I've come to Japan, I really want to study Japanese.
     japanese:
@@ -98,14 +118,14 @@ examples:
     english_literally: Having come to Japan, more than that, I want to study Japanese diligently.
     competing_grammar:
       - competing_japanese:
-          - 日本 に 来 た から、日本 語 を しっかり 勉強 し たい。
+          - 日本 に 来 た {から}、日本 語 を しっかり 勉強 し たい。
         english: Because I came to Japan, I want to study Japanese diligently.
         hint: This example emphasizes the speaker's strong personal commitment and inherent responsibility
           to study Japanese, which 「以上は」 conveys more emphatically as an inherent consequence of having
           come to Japan, rather than just a simple reason with 「から」 (because). We're looking for a strong
           sense of commitment and consequence.
       - competing_japanese:
-          - 日本 に 来 た の で、日本 語 を しっかり 勉強 し たい。
+          - 日本 に 来 た {の で}、日本 語 を しっかり 勉強 し たい。
         english: Since I came to Japan, I want to study Japanese diligently.
         hint: While 「ので」 indicates a reason, it lacks the strong sense of obligation or logical necessity
           that 「以上は」 implies regarding the commitment to study, given the fact of being in Japan. We're
@@ -122,15 +142,18 @@ examples:
     english_literally: As long as you are a student, you should study.
     competing_grammar:
       - competing_japanese:
-          - 学生 だ から、勉強 す べき だ。
+          - 学生 だ {から}、勉強 す べき だ。
         english: Because you are a student, you should study.
         hint: The scene of a professor advising students highlights that being a student inherently carries
           the expectation and duty to study, which 「以上は」 conveys more aptly as an inherent consequence
           of their status, rather than a basic causal 「から」 (because). We're looking for a consequence
           that naturally follows from a state.
       - competing_japanese:
-          - 学生 な の で、勉強 す べき だ。
-        english: Since you are a student, you should study.
+          - 学生 な {の で}、勉強 す べき だ。
+        english: Similar to 「から」, 「ので」 (since/so) explains a reason but doesn't convey the same level
+          of logical necessity or obligation stemming from the very status of being a student as 「以上は」
+          does. The advice is presented as an inherent truth. We're looking for a statement about an inherent
+          truth or obligation.
         hint: Similar to 「から」, 「ので」 (since/so) explains a reason but doesn't convey the same level of
           logical necessity or obligation stemming from the very status of being a student as 「以上は」 does.
           The advice is presented as an inherent truth. We're looking for a statement about an inherent
@@ -148,13 +171,13 @@ examples:
     english_literally: Having promised, more than that, I must keep it.
     competing_grammar:
       - competing_japanese:
-          - 約束 し た から、守 ら なけれ ば なら ない。
+          - 約束 し た {から}、守 ら なけれ ば なら ない。
         english: Because I promised, I must keep it.
         hint: The scene emphasizes the unavoidable necessity and strong commitment to fulfill a promise,
           a nuance of inherent consequence that 「以上」 conveys more strongly than a simple 「から」 (because).
           We're looking for an unchangeable obligation.
       - competing_japanese:
-          - 約束 し た の で、守 ら なけれ ば なら ない。
+          - 約束 し た {の で}、守 ら なけれ ば なら ない。
         english: Since I promised, I must keep it.
         hint: 「ので」 (since/so) indicates a reason, but 「以上」 is preferred when the speaker feels an unchangeable
           obligation that stems directly from the fact of having made the promise. The scene illustrates
@@ -171,13 +194,13 @@ examples:
     english_literally: As long as we love each other, I think we should be together.
     competing_grammar:
       - competing_japanese:
-          - 愛し合っ て いる から、一緒 に いる べき だ と 思う よ。
+          - 愛し合っ て いる {から}、一緒 に いる べき だ と 思う よ。
         english: Because we love each other, I think we should be together.
         hint: The scene shows a natural and logical outcome of mutual love, where 「以上」 expresses this
           inherent truth more aptly than a general 「から」 (because). We're looking for a natural and logical
           consequence.
       - competing_japanese:
-          - 愛し合っ て いる ん だ から、一緒 に いる べき だ と 思う よ。
+          - 愛し合っ て いる {ん だ から}、一緒 に いる べき だ と 思う よ。
         english: Since it's the case that we love each other, I think we should be together.
         hint: While 「んだから」 emphasizes the reason, 「以上」 highlights that mutual love is a condition that
           naturally and logically leads to the conclusion of being together, implying a stronger, almost
@@ -195,13 +218,13 @@ examples:
     english_literally: Having become a professional, more than that, I will absolutely not give up.
     competing_grammar:
       - competing_japanese:
-          - プロ に なっ た から、絶対 に 諦め ない。
+          - プロ に なっ た {から}、絶対 に 諦め ない。
         english: Because I became a professional, I will absolutely never give up.
         hint: The athlete's declaration in the scene emphasizes the unyielding commitment that comes inherently
           with their new professional status, a stronger resolve than conveyed by simple causal 「から」 (because).
           We're looking for a strong, inherent commitment.
       - competing_japanese:
-          - プロ に なっ た ん だ から、絶対 に 諦め ない。
+          - プロ に なっ た {ん だ から}、絶対 に 諦め ない。
         english: Since it's the case that I became a professional, I will absolutely never give up.
         hint: While 「んだから」 (since it is the case that) conveys a reason with some emphasis, 「以上は」 conveys
           that the professional status itself imposes an unshakeable determination, expressing the logical
@@ -219,13 +242,13 @@ examples:
     english_literally: Having found out the secret, more than that, I feel like I must do something.
     competing_grammar:
       - competing_japanese:
-          - 秘密 を 知っ て しまっ た の で、何 か 行動 し なけれ ば なら ない 気 が する。
+          - 秘密 を 知っ て しまっ た {の で}、何 か 行動 し なけれ ば なら ない 気 が する。
         english: Since I found out the secret, I feel like I have to do something.
         hint: The scene highlights the inherent and unavoidable responsibility the speaker feels after
           gaining secret knowledge, making 「以上」 the best fit for this sense of inescapable obligation,
           rather than a mere reason with 「ので」 (since/so). We're looking for an inescapable obligation.
       - competing_japanese:
-          - 秘密 を 知っ て しまっ た から、何 か 行動 し なけれ ば なら ない 気 が する。
+          - 秘密 を 知っ て しまっ た {から}、何 か 行動 し なけれ ば なら ない 気 が する。
         english: Because I found out the secret, I feel like I have to do something.
         hint: 「から」 (because) states a reason, but 「以上」 expresses a stronger logical connection, implying
           that the knowledge of the secret inherently dictates the need for action. The scene emphasizes
@@ -243,13 +266,13 @@ examples:
     english_literally: As long as I have a boyfriend, I shouldn't go on a date with other men, right?
     competing_grammar:
       - competing_japanese:
-          - 彼氏 が いる から、他 の 男 の 人 と デート に 行く べき じゃ ない よ ね。
+          - 彼氏 が いる {から}、他 の 男 の 人 と デート に 行く べき じゃ ない よ ね。
         english: Because I have a boyfriend, I shouldn't go on a date with other men, right?
         hint: The scene emphasizes that having a boyfriend logically and inherently establishes a social
           norm or expectation about dating others, a stronger implication of consequence than a simple
           「から」 (because). We're looking for an inherent social norm or expectation.
       - competing_japanese:
-          - 彼氏 が いる ん だ から、他 の 男 の 人 と デート に 行く べき じゃ ない よ ね。
+          - 彼氏 が いる {ん だ から}、他 の 男 の 人 と デート に 行く べき じゃ ない よ ね。
         english: Since it's the case that I have a boyfriend, I shouldn't go on a date with other men,
           right?
         hint: While 「んだから」 (since it is the case that) can emphasize a reason, 「以上」 highlights the condition
@@ -271,16 +294,16 @@ examples:
       - 決定 し た {以上}、従う べき です。
       - 決定 し た {以上 は}、従う べき だ。
       - 決定 し た {上 は}、従う べき です。
-    english_literally: Having decided, more than that, we must follow.
+    english_literally: Having decided, more than that, I must follow.
     competing_grammar:
       - competing_japanese:
-          - 決定 し た から、従う べき です。
+          - 決定 し た {から}、従う べき です。
         english: Because a decision has been made, we must abide by it.
         hint: 「以上は」 emphasizes that abiding by the decision is an inherent consequence or obligation once
           it's finalized, not just a simple reason. We're looking for a strong sense of necessity that
           flows from a resolved situation.
       - competing_japanese:
-          - 決定 し た の で、従う べき です。
+          - 決定 し た {の で}、従う べき です。
         english: Since a decision has been made, we must abide by it.
         hint: While 「ので」 indicates a reason, 「以上は」 implies a stronger logical imperative that once a decision
           is established, following it becomes a mandatory outcome. We're looking for an unavoidable outcome
@@ -298,13 +321,13 @@ examples:
       own actions.
     competing_grammar:
       - competing_japanese:
-          - 大人 に なっ た から、自分 の 行動 に 責任 を 持つ べき だ。
+          - 大人 に なっ た {から}、自分 の 行動 に 責任 を 持つ べき だ。
         english: Because you became an adult, you should take responsibility for your actions.
         hint: The phrase 「以上は」 highlights that becoming an adult inherently brings with it the expectation
           and duty of responsibility, a stronger implication of consequence than a basic causal 「から」 (because).
           We're looking for an inherent expectation tied to a status.
       - competing_japanese:
-          - 大人 に なっ た ん だ から、自分 の 行動 に 責任 を 持つ べき だ。
+          - 大人 に なっ た {ん だ から}、自分 の 行動 に 責任 を 持つ べき だ。
         english: Since it's the case that you became an adult, you should take responsibility for your
           actions.
         hint: While 「んだから」 emphasizes the reason, 「以上は」 conveys that adulthood itself establishes a clear,
@@ -330,13 +353,13 @@ examples:
     english_literally: Being a public servant, more than that, one must uphold justice.
     competing_grammar:
       - competing_japanese:
-          - 公務 員 だ から、正義 を 守ら なけれ ば なり ませ ん。
+          - 公務 員 だ {から}、正義 を 守ら なけれ ば なり ませ ん。
         english: Because you are a public servant, you must uphold justice.
         hint: 「以上は」 strongly conveys that upholding justice is an inherent and fundamental obligation
           of being a public servant, rather than just a simple reason. We're looking for an inherent,
           professional duty.
       - competing_japanese:
-          - 公務 員 な の で、正義 を 守ら なけれ ば なり ませ ん。
+          - 公務 員 な {の で}、正義 を 守ら なけれ ば なり ませ ん。
         english: Since you are a public servant, you must uphold justice.
         hint: While 「ので」 indicates a reason, 「以上は」 places stronger emphasis on the inherent responsibility
           and unshakeable requirement that comes with the role of a public servant. We're looking for
@@ -358,13 +381,13 @@ examples:
     english_literally: This project to proceed, now that, no turning back is possible.
     competing_grammar:
       - competing_japanese:
-          - この プロジェクト を 進める から、もう 後戻り は でき ない。
+          - この プロジェクト を 進める {から}、もう 後戻り は でき ない。
         english: Because we're proceeding with this project, there's no turning back.
         hint: This scene emphasizes a firm, unchangeable commitment once a decision has been made, which
           「上は」 captures with its strong implication of inherent, inevitable consequence. 「から」 simply states
           a reason without this depth of commitment. We're looking for an inherent, inevitable consequence.
       - competing_japanese:
-          - この プロジェクト を 進める の で、もう 後戻り は でき ない。
+          - この プロジェクト を 進める {の で}、もう 後戻り は でき ない。
         english: Since we're proceeding with this project, there's no turning back.
         hint: While 「ので」 gives a reason, 「上は」 conveys the sense that the decision to proceed has created
           an unalterable situation where returning is no longer an option, implying a higher level of

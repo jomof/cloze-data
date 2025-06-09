@@ -4,9 +4,10 @@ learn_before:
   - ましょう (polite volitional or suggestion)
 learn_after:
   - てもらう (to get someone to do)
-  - Verb[volitional-よう]+ではないか (let's・why don't we)
   - たらいい・といい (hope・suggestion)
-  - ませんか (invitation or suggestion)
+  - てほしい (I want you to)
+  - Verb[て]+ごらん (gentle suggestion)
+  - Verb[volitional-よう]+ではないか (let's・why don't we)
 id: gp0100
 meaning: Shall we? Shall I?
 pronunciation:
@@ -79,7 +80,7 @@ examples:
     english_literally: This book, shall read?
     competing_grammar:
       - competing_japanese:
-          - この 本 を 読ん で も いい です か。
+          - この 本 を 読ん {で も いい です か}。
         english: May I read this book?
         hint: 「～て も いい です か」 asks for permission to do something. We're looking for an offer to perform
           an action.
@@ -101,7 +102,7 @@ examples:
     english_literally: Honorable help, shall do?
     competing_grammar:
       - competing_japanese:
-          - お 手伝い でき ます か。
+          - お 手伝い {でき ます か}。
         english: Can I help you?
         hint: 「～できます か」 asks about one's ability to help. We're looking for an offer of assistance.
     scene: A student sees their teacher struggling to carry a stack of heavy books.
@@ -121,7 +122,7 @@ examples:
     english_literally: Station until together, shall go?
     competing_grammar:
       - competing_japanese:
-          - 一緒 に 駅 まで 行き ませ ん か。
+          - 一緒 に 駅 まで 行き {ませ ん か}。
         english: Why don't we go to the station together?
         hint: 「～ませんか」 is a stronger, more direct invitation. We're looking for a softer, more tentative
           suggestion.
@@ -136,7 +137,7 @@ examples:
     english_literally: With this, meeting, shall end?
     competing_grammar:
       - competing_japanese:
-          - これ で 会議 を 終わり に し ましょう。
+          - これ で 会議 を 終わり に し {ましょう}。
         english: Let's end the meeting here.
         hint: 「～ましょう」 is a direct suggestion or statement of intent. We're looking for a question seeking
           consensus or a softer suggestion.
@@ -151,7 +152,7 @@ examples:
     english_literally: One more glass, shall drink?
     competing_grammar:
       - competing_japanese:
-          - もう 一杯 飲み ませ ん か。
+          - もう 一杯 飲み {ませ ん か}。
         english: Won't you have another drink?
         hint: 「～ませんか」 is a stronger, more direct invitation. We're looking for a more subtle and gentle
           inquiry.
@@ -172,7 +173,7 @@ examples:
     english_literally: Well then, little break, shall do?
     competing_grammar:
       - competing_japanese:
-          - 少し 休み ましょう。
+          - 少し 休み {ましょう}。
         english: Let's take a break.
         hint: 「～ましょう」 is a direct suggestion. We're looking for a more gentle and interrogative way to
           propose a break.
@@ -193,7 +194,7 @@ examples:
     english_literally: Honorable luggage, shall carry for you?
     competing_grammar:
       - competing_japanese:
-          - お 荷物、運べ ます か。
+          - お 荷物、{運べ ます か}。
         english: Can you carry your luggage?
         hint: 「～できますか」 asks about one's ability. We're looking for an offer to perform an action for someone
           else.
@@ -213,7 +214,7 @@ examples:
     english_literally: Coffee to drink, shall go?
     competing_grammar:
       - competing_japanese:
-          - コーヒー 飲み に 行き ませ ん か。
+          - コーヒー 飲み に 行き {ませ ん か}。
         english: Why don't we go drink coffee?
         hint: 「～ませんか」 is a stronger, more direct invitation. We're looking for a softer, more tentative
           suggestion.
@@ -234,7 +235,7 @@ examples:
     english_literally: Presentation, shall start?
     competing_grammar:
       - competing_japanese:
-          - プレゼンテーション を 始め ます。
+          - プレゼンテーション を 始め {ます}。
         english: I will start the presentation.
         hint: 「～ます」 is a direct statement of intent. We're looking for a question seeking consensus or
           permission from a group.
@@ -255,7 +256,7 @@ examples:
     english_literally: A little honorable rest, shall do?
     competing_grammar:
       - competing_japanese:
-          - 少し 休み ましょう。
+          - 少し 休み {ましょう}。
         english: Let's rest a little.
         hint: 「～ましょう」 is a direct suggestion. We're looking for a more gentle and interrogative way to
           propose a rest, often when speaking to someone younger or needing a softer tone.
@@ -274,3 +275,6 @@ post_example_writeup: 'The usage of ましょうか varies depending on the soci
   input rather than imposing an '
 sources:
   bunpro: https://bunpro.jp/grammar_points/204-%E3%81%BE%E3%81%97%E3%82%87%E3%81%86%E3%81%8B
+lint-errors:
+  - '[rule-13] unknown grammar at ''learn_after[3]'': ''Verb[て]+ごらん (gentle suggestion)''. You may suggest
+    new grammar points by adding a false_friend.'

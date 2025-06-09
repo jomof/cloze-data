@@ -2,9 +2,11 @@ grammar_point: てある (resultant state)
 learn_before:
   - ある (to exist or have)
   - ている (resultant and ongoing state)
+  - Verb[て] (and then)
 learn_after:
   - 〜っぱなし (leaving something in a state)
   - だらけ (covered in)
+  - 切る (do completely or thoroughly)
 id: gp0227
 meaning: Something is done, Has been done, Remaining state
 meaning_warning: Only used with transitive verbs!
@@ -71,6 +73,13 @@ details:
     than the doer of the action.
   nuance: Implies that the action was performed for a specific purpose or in preparation for something,
     and the result of that action currently exists.
+  grammatical-role: Indicates a state that has been brought about by an intentional, completed action,
+    with emphasis on the object and the enduring result.
+  logical-flow: Action (transitive verb) -> Resultant state of object -> Continued existence of that state.
+  temporal-flow: Past action leads to a current, ongoing state.
+  spatial-flow: Implies a fixed, prepared state in a particular location or arrangement for an object,
+    as in an object being placed or set up in a certain way and remaining there. For example, 「机の上に本が置いてある」
+    (The book has been placed on the desk).
 etymology: The grammar point 「てある」 is a combination of the te-form of a verb and the verb 「ある」 (aru),
   meaning "to exist" or "to be". The te-form indicates a completed action, and 「ある」 signifies the resulting
   state of that action. This construction emphasizes the continued existence of the result of a purposeful
@@ -121,11 +130,19 @@ false_friends:
       window was closed) highlights the action of closing, while 「窓が閉めてある」 (mado ga shimete aru - The
       window is closed/has been closed) highlights its present state due to someone's deliberate action.
     grammar_point: れる られる (passive・potential・spontaneous・respectful)
+  - term: 〜ずじまい (ended up not doing)
+    meaning: Ended up not, Did not (in the end), Never did
+    kind: similar expression
+    nuance: 「てある」 expresses a completed action and its resultant state. In contrast, 「〜ずじまい」 signifies
+      an action that was intended but ultimately was not carried out, focusing on the lack of completion
+      and a resultant state of omission.
+    grammar_point: <suggest>:〜ずじまい (ended up not doing)
 post_false_friends_writeup: 'To differentiate these, remember: 「てある」 focuses on a **resultant state caused
   by a purposeful transitive action**. 「ておく」 is about performing an **action in advance** for a future
   purpose. 「ている」 (when indicating a state) describes a state that is a result of an **intransitive action
   or natural change**, without emphasis on an agent''s intention. The passive form, 「れる/られる」, emphasizes
-  the **action being performed** on the subject rather than the lasting state.'
+  the **action being performed** on the subject rather than the lasting state. 「〜ずじまい」 expresses an intention
+  that ultimately remained unfulfilled.'
 examples:
   - english: The party preparations are all done, so we can start right away.
     japanese:
@@ -135,7 +152,7 @@ examples:
     english_literally: Because the party preparations have been completely done, we can start right away.
     competing_grammar:
       - competing_japanese:
-          - パーティー の 準備 が すっかり でき て いる から、すぐ に 始め られる よ。
+          - パーティー の 準備 が すっかり {でき て いる} から、すぐ に 始め られる よ。
         english: The party preparations are completely ready, so we can start right away.
         hint: 「できている」 focuses on the state of readiness without emphasizing the purposeful action of someone
           having prepared it. We're looking for a state resulting from a purposeful action.
@@ -157,7 +174,7 @@ examples:
     english_literally: On the wall, a new painting has been displayed (and is in that state).
     competing_grammar:
       - competing_japanese:
-          - 壁 に 新しい 絵 が 飾ら れ て い ます。
+          - 壁 に 新しい 絵 が {飾ら れ て い ます}。
         english: A new painting is displayed on the wall (passive).
         hint: 「飾られています」 is the passive form, stating that the painting has been displayed, but it doesn't
           carry the nuance of a purposeful action resulting in a specific state, which 「てあります」 does. We're
@@ -179,7 +196,7 @@ examples:
     english_literally: Because the window isn't opened (by someone), the air is stuffy, isn't it?
     competing_grammar:
       - competing_japanese:
-          - 窓 が 開い て い ない から、空気 が こもっ て いる ね。
+          - 窓 が {開い て い ない} から、空気 が こもっ て いる ね。
         english: Because the window isn't open, the air feels stale, doesn't it?
         hint: 「開いていない」 (aite inai) is the negative of the intransitive verb 'to open', simply stating
           the window's current condition. 「開けてない」 (aketenai) implies that someone didn't open it. We're
@@ -204,7 +221,7 @@ examples:
       yet.
     competing_grammar:
       - competing_japanese:
-          - お 客 様 の ため に、資料 は まだ 用意 さ れ て い ませ ん。
+          - お 客 様 の ため に、資料 は まだ {用意 さ れ て い ませ ん}。
         english: The materials for the clients have not been prepared yet (passive).
         hint: 「用意されていません」 (yōi sarete imasen) is the passive form, stating that the materials have not
           been acted upon. 「用意してありません」 (yōi shite arimasen) implies that the intended state of being prepared
@@ -226,7 +243,7 @@ examples:
     english_literally: This book, already to the library, I had returned it (and it was in that state).
     competing_grammar:
       - competing_japanese:
-          - この 本、もう 図書 館 に 返し た よ。
+          - この 本、もう 図書 館 に {返し た} よ。
         english: This book, I already returned it to the library.
         hint: 「返した」 (kaeshita) is a simple past action, focusing on the completion of the action itself.
           「返してあった」 (kaeshite atta) emphasizes the resultant state of the book being returned. We're looking
@@ -249,7 +266,7 @@ examples:
     english_literally: The report had already been submitted to the teacher (and was in that state).
     competing_grammar:
       - competing_japanese:
-          - レポート は すでに 先生 に 提出 さ れ て い まし た。
+          - レポート は すでに 先生 に {提出 さ れ て い まし た}。
         english: The report had already been submitted to the teacher (passive).
         hint: 「提出されていました」 (teishutsu sarete imashita) is the passive form, focusing on the report being
           acted upon. 「提出してありました」 (teishutsu shite arimashita) highlights the report's resultant state
@@ -273,11 +290,12 @@ examples:
     english_literally: Still, no one had read that new rule (and it wasn't in that state).
     competing_grammar:
       - competing_japanese:
-          - まだ 誰 も その 新しい ルール を 読ん で い ませ ん でし た。
+          - まだ 誰 も その 新しい ルール を {読ん で い ませ ん でし た}。
         english: No one was reading that new rule yet.
-        hint: 「読んでいませんでした」 (yonde imasen deshita) is the negative progressive, indicating an action that
-          wasn't ongoing. 「読んでなかった」 (yonde nakatta) implies that the resultant state of having been read
-          was not achieved. We're looking for a state that resulted from a lack of past purposeful action.
+        hint: '「読んでいませんでした」 (yonde imasen deshita) is the negative progressive, indicating an common example:
+          an action that wasn''t ongoing. 「読んでなかった」 (yonde nakatta) implies that the resultant state of
+          having been read was not achieved. We''re looking for a state that resulted from a lack of past
+          purposeful action.'
     scene: A team discussing a problem caused by a lack of awareness of a new company policy.
     register: casual
     setting: serious
@@ -295,7 +313,7 @@ examples:
       could enter.
     competing_grammar:
       - competing_japanese:
-          - チケット は 予約 さ れ て い ませ ん でし た が、何 と か 入場 でき まし た。
+          - チケット は {予約 さ れ て い ませ ん でし た} が、何 と か 入場 でき まし た。
         english: The tickets had not been reserved (passive), but we managed to get in somehow.
         hint: 「予約されていませんでした」 (yoyaku sarete imasen deshita) is the passive form. 「予約してありませんでした」 (yoyaku
           shite arimasen deshita) emphasizes that the tickets were not in the intended state of being
@@ -319,7 +337,7 @@ examples:
       and afterwards, it's just eating.
     competing_grammar:
       - competing_japanese:
-          - 朝食 は もう 食卓 に 用意 さ れ て い て、後 は 食べる だけ だ。
+          - 朝食 は もう 食卓 に {用意 さ れ て い て}、後 は 食べる だけ だ。
         english: Breakfast has already been prepared on the dining table (passive), and all that's left
           is to eat.
         hint: 「用意されていて」 (yōi sarete ite) is passive and simply states the condition. 「用意してあって」 (yōi shite
@@ -344,7 +362,7 @@ examples:
       start the meeting right away.
     competing_grammar:
       - competing_japanese:
-          - もし 書類 が きちんと 整理 さ れ て いれ ば、すぐ に 会議 を 始め られ ます。
+          - もし 書類 が きちんと {整理 さ れ て いれ ば}、すぐ に 会議 を 始め られ ます。
         english: If the documents have been properly filed away (passive), we can start the meeting right
           away.
         hint: 「整理されていれば」 (seiri sarete ireba) is the passive form. 「整理してあれば」 (seiri shite areba) implies
@@ -368,7 +386,7 @@ examples:
       wouldn't have broken down.
     competing_grammar:
       - competing_japanese:
-          - この 機械 は ちゃんと 点検 さ れ て い たら、故障 し なかっ た だろう。
+          - この 機械 は ちゃんと {点検 さ れ て い たら}、故障 し なかっ た だろう。
         english: If this machine had been properly inspected (passive), it probably wouldn't have broken
           down.
         hint: 「点検されていたら」 (tenken sarete itara) is the passive form. 「点検してあったら」 (tenken shite attara) emphasizes

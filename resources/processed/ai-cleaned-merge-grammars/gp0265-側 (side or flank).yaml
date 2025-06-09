@@ -1,13 +1,16 @@
 grammar_point: 側 (side or flank)
 learn_before:
-  - 横 (side or flank)
-  - に (fixed point・target・time)
-  - まえに (before・in front)
+  - に (static location)
+  - ある (inanimate existence)
+  - いる (animate existence)
+  - 横 (side・horizontal)
+  - 隣 (immediately next to)
 learn_after:
   - に対して (towards; in contrast)
   - 側面 (aspect side)
-  - 向き (suitability and direction)
-  - を 中心 に (focused on)
+  - 向き (suitability direction)
+  - を巡って (concerning・over)
+  - 一方 (on the one hand)
 id: gp0265
 meaning: side (left/right, or general spatial side)
 pronunciation:
@@ -56,7 +59,7 @@ false_friends:
     nuance: 横 (yoko) typically refers to the horizontal side or width of something, or being "beside"
       something. 側 is more general for any "side" (left, right, front, back, etc.) that defines a distinct
       face or region. 横 often implies adjacency, while 側 defines a part of the object itself.
-    grammar_point: <suggest>:横 (side or flank)
+    grammar_point: 横 (side・horizontal)
   - term: 隣 (となり)
     meaning: Next to, neighboring
     kind: similar expression
@@ -70,7 +73,7 @@ false_friends:
     nuance: 方 (ほう) indicates a general direction or a broader area, often used to specify a general vicinity
       or preferred option. 側, in contrast, specifies a precise, distinct side or face of an object or
       space, emphasizing a defined boundary.
-    grammar_point: <suggest>:方 (general direction)
+    grammar_point: 方 (ほう)
   - term: 方面 (ほうめん)
     meaning: Direction, area, quarter (often used for routes or general orientation)
     kind: similar expression
@@ -78,6 +81,21 @@ false_friends:
       route (e.g., 新宿方面 - Shinjuku direction/bound). 側 is used for a precise, defined 'side' or 'face'
       of an object or location, indicating a boundary rather than a broader area or route.
     grammar_point: <suggest>:方面 (general direction or route)
+  - term: を中心に
+    meaning: Focused on, centered on or around, mainly, most notably
+    kind: similar expression
+    nuance: 側 defines a specific physical or conceptual 'side' or 'party'. を中心に specifies something as
+      a central point or focus, implying distribution or activity radiating from it, rather than being
+      a distinct 'side'.
+    grammar_point: を中心に (focused on)
+  - term: を巡って (concerning・over)
+    meaning: Concerning, in regard to, about, (split) over
+    kind: similar expression
+    nuance: 「を巡って」 indicates that something revolves around a topic or is a point of contention. While
+      related to aspects or sides of an argument, it doesn't refer to a physical or conceptual 'side'
+      in the same way 側 does. 側 specifies a distinct viewpoint or part, whereas 巡って describes the *focus*
+      of discussion or movement.
+    grammar_point: を巡って (concerning・over)
 post_false_friends_writeup: When describing locations, understanding the subtle differences between 側
   and similar terms is crucial. While 右 and 左 indicate general direction, 右側 and 左側 specifically refer
   to a designated surface or area on that side of an object or area. 横 implies a horizontal dimension
@@ -89,44 +107,44 @@ post_false_friends_writeup: When describing locations, understanding the subtle 
 examples:
   - english: The coffee shop is on the left side of the station.
     japanese:
-      - カフェ は 駅 の 左側 に あり ます。
-      - カフェ は 駅 の 左側 に ござい ます。
-      - 駅 の 左側 に カフェ が ある よ。
-      - 駅 の 左側 だ よ、カフェ は。
-      - カフェ は 駅 の 左側 です。
-      - カフェ は 駅 の 左側 に ある。
-      - カフェ は 駅 の 左側 だ。
-      - 駅 の 左側 に カフェ が ある。
-      - 駅 の 左側 に カフェ が あり ます。
-      - 駅 の 左側 に カフェ あん じゃん。
-      - 駅 の 左側 で ござい ます。
-      - 駅 の 左側 に カフェ が ある わ よ。
-      - 駅 の 左側 に カフェ が あり ます から ね。
-      - 駅 の 左側 に カフェ が ござい まし て。
+      - カフェ は 駅 の {左側} に あり ます。
+      - カフェ は 駅 の {左側} に ござい ます。
+      - 駅 の {左側} に カフェ が ある よ。
+      - 駅 の {左側} だ よ、カフェ は。
+      - カフェ は 駅 の {左側} です。
+      - カフェ は 駅 の {左側} に ある。
+      - カフェ は 駅 の {左側} だ。
+      - 駅 の {左側} に カフェ が ある。
+      - 駅 の {左側} に カフェ が あり ます。
+      - 駅 の {左側} に カフェ あん じゃん。
+      - 駅 の {左側} で ござい ます。
+      - 駅 の {左側} に カフェ が ある わ よ。
+      - 駅 の {左側} に カフェ が あり ます から ね。
+      - 駅 の {左側} に カフェ が ござい まし て。
     english_literally: The cafe, at station's left side, exists.
     competing_grammar:
       - competing_japanese:
-          - カフェ は 駅 の 左 に あり ます。
+          - カフェ は 駅 の {左} に あり ます。
         english: The cafe is on the left of the station.
         hint: 左 means 'left' direction/location, while 左側 emphasizes the 'side' as a distinct area of
           the station. We're looking for the phrase that highlights a specific side.
       - competing_japanese:
-          - カフェ は 駅 の 隣 に あり ます。
+          - カフェ は 駅 の {隣} に あり ます。
         english: The cafe is next to the station.
         hint: 隣 means 'next to', implying immediate adjacency. We're looking for the phrase that specifies
           a side *of* the station, not just something adjacent to it.
       - competing_japanese:
-          - カフェ は 駅 の 左 の 方 に あり ます。
+          - カフェ は 駅 の 左 の {方} に あり ます。
         english: The cafe is in the left direction of the station.
         hint: 方 (ほう) indicates a general direction, whereas 側 specifies a particular side or boundary.
           We're looking for the phrase that refers to a specific 'side' of the station.
       - competing_japanese:
-          - カフェ は 駅 の 横 に あり ます。
+          - カフェ は 駅 の {横} に あり ます。
         english: The cafe is beside the station.
         hint: 横 means 'beside' or 'horizontal side'. We're looking for the phrase that indicates a specific
           'side' or 'face' of the station, not just something adjacent.
       - competing_japanese:
-          - カフェ は 駅 の 左 方面 に あり ます。
+          - カフェ は 駅 の 左 {方面} に あり ます。
         english: The cafe is in the left direction/area of the station.
         hint: 方面 (ほうめん) refers to a general direction or broader area, not a specific 'side' or 'face'
           of the station. We're looking for the phrase that highlights a specific side.
@@ -137,32 +155,32 @@ examples:
     listener_gender: group
     speaker_age: older
     nuance: The use of ございます in the second Japanese option is a highly polite form of あります, often used
-      in formal or service-oriented contexts. The phrase 駅 の 左側 specifically points to the station's defined
-      left face, distinguishing it from simply saying 駅 の 左 which could be more ambiguous in a busy area.
-      The third option, 駅 の 左側 に カフェ が ある よ, is more casual and would be used in a friendly context with
-      a younger or peer audience, often with the よ particle providing emphasis or confirmation. The fourth
-      option, 駅 の 左側 だ よ、カフェ は, is even more casual, with the topic marked by は at the end, typical in
-      spoken Japanese. The fifth option, カフェ は 駅 の 左側 です, is a simple, standard polite statement. The
-      sixth option, カフェ は 駅 の 左側 に ある, is a neutral plain form, suitable for describing facts informally.
-      The seventh option, カフェ は 駅 の 左側 だ, is also a plain form, often used for more direct, declarative
-      statements in casual conversation. The eighth option, 駅 の 左側 に カフェ が ある, places more emphasis on
-      the existence of the cafe on that side, while the ninth option, 駅 の 左側 に カフェ が あり ます, is its polite
-      counterpart, maintaining the emphasis on location. The colloquial あんじゃん in 駅 の 左側 に カフェ あんじゃん is
-      common among younger male speakers, expressing surprise or confirmation. 駅 の 左側 でございます is a very
-      polite and formal way to state location, often used in customer service. 駅 の 左側 に カフェ が ある わ よ adds
-      the feminine particle わ and the assertive よ, making it friendly and slightly emphatic, common for
-      female speakers. 駅 の 左側 に カフェ が あり ます から ね provides an explanatory or confirming tone, often used
-      when guiding someone. 駅 の 左側 に カフェ が ござい まし て introduces further description formally and continuously,
-      suggesting more is to follow.
+      in formal or service-oriented contexts. The phrase 駅 の {左側} specifically points to the station's
+      defined left face, distinguishing it from simply saying 駅 の 左 which could be more ambiguous in a
+      busy area. The third option, 駅 の {左側} に カフェ が ある よ, is more casual and would be used in a friendly
+      context with a younger or peer audience, often with the よ particle providing emphasis or confirmation.
+      The fourth option, 駅 の {左側} だ よ、カフェ は, is even more casual, with the topic marked by は at the end,
+      typical in spoken Japanese. The fifth option, カフェ は 駅 の {左側} です, is a simple, standard polite statement.
+      The sixth option, カフェ は 駅 の {左側} に ある, is a neutral plain form, suitable for describing facts informally.
+      The seventh option, カフェ は 駅 の {左側} だ, is also a plain form, often used for more direct, declarative
+      statements in casual conversation. The eighth option, 駅 の {左側} に カフェ が ある, places more emphasis
+      on the existence of the cafe on that side, while the ninth option, 駅 の {左側} に カフェ が あり ます, is its
+      polite counterpart, maintaining the emphasis on location. The colloquial あんじゃん in 駅 の {左側} に カフェ
+      あんじゃん is common among younger male speakers, expressing surprise or confirmation. 駅 の {左側} でございます
+      is a very polite and formal way to state location, often used in customer service. 駅 の {左側} に カフェ
+      が ある わ よ adds the feminine particle わ and the assertive よ, making it friendly and slightly emphatic,
+      common for female speakers. 駅 の {左側} に カフェ が あり ます から ね provides an explanatory or confirming tone,
+      often used when guiding someone. 駅 の {左側} に カフェ が ござい まし て introduces further description formally
+      and continuously, suggesting more is to follow.
   - english: The management side has agreed to the terms.
     japanese:
-      - 経営 側 は 条件 に 合意 し まし た。
-      - 経営 側 は 条件 に 合意 し た。
-      - 経営 側 が 条件 に 合意 いたし まし た。
+      - '{経営 側} は 条件 に 合意 し まし た。'
+      - '{経営 側} は 条件 に 合意 し た。'
+      - '{経営 側} が 条件 に 合意 いたし まし た。'
     english_literally: Management side, as for, terms to agreement did.
     competing_grammar:
       - competing_japanese:
-          - 経営 陣 は 条件 に 合意 し まし た。
+          - '{経営 陣} は 条件 に 合意 し まし た。'
         english: The management team has agreed to the terms.
         hint: 「経営陣」 refers to the collective group of managers. We're looking for a term that emphasizes
           the 'side' or party in a negotiation or discussion.
@@ -176,13 +194,13 @@ examples:
       'sides' in a context.
   - english: Let's sit on the window side.
     japanese:
-      - 窓側 に 座 ろう よ。
-      - 窓側 に 座り ましょう か。
-      - 窓側 に 座ろう。
+      - '{窓側} に 座 ろう よ。'
+      - '{窓側} に 座り ましょう か。'
+      - '{窓側} に 座ろう。'
     english_literally: Window side to sit, let's.
     competing_grammar:
       - competing_japanese:
-          - 窓 の 横 に 座 ろう よ。
+          - 窓 の {横} に 座 ろう よ。
         english: Let's sit next to the window.
         hint: 「窓の横」 means 'next to the window' but doesn't specifically refer to a 'side' of the seating
           area. We're looking for the phrase that specifies the window *side* of the seat/table.
@@ -196,13 +214,13 @@ examples:
       The use of よ adds a friendly, inviting tone.
   - english: Please keep to the left side of the road.
     japanese:
-      - 道路 の 左側 を 通行 し て ください。
-      - 道路 の 左側 を 通行 し て 下さい。
-      - 道路 の 左側 を 歩い て ください。
+      - 道路 の {左側} を 通行 し て ください。
+      - 道路 の {左側} を 通行 し て 下さい。
+      - 道路 の {左側} を 歩い て ください。
     english_literally: Road's left side along traffic do please.
     competing_grammar:
       - competing_japanese:
-          - 道路 の 左 を 通行 し て ください。
+          - 道路 の {左} を 通行 し て ください。
         english: Please keep to the left of the road.
         hint: 「左」 alone indicates a direction, but 「左側」 clearly specifies the particular *side* for keeping.
           We're looking for the phrase that highlights the defined side of the road.
@@ -213,15 +231,16 @@ examples:
       indicating the specific side for traffic flow.
   - english: From the consumer side, quality is paramount.
     japanese:
-      - 消費 者 側 から する と、品質 が 最も 重要 です。
-      - 消費 者 側 から すれ ば、品質 が 最も 重要 だ。
+      - '{消費 者 側} から する と、品質 が 最も 重要 です。'
+      - '{消費 者 側} から すれ ば、品質 が 最も 重要 だ。'
     english_literally: Consumer side from if consider, quality is most important.
     competing_grammar:
       - competing_japanese:
-          - 消費 者 は 品質 を 最も 重要 だ と 考え て い ます。
+          - '{消費 者} は 品質 が 最も 重要 です。'
         english: Consumers consider quality to be the most important.
-        hint: This sentence describes what consumers think. We're looking for a phrase that specifically
-          refers to the *perspective* or *standpoint* of the consumer group, like 'from the consumer side'.
+        hint: 「消費者」 refers to the individual or collective group of consumers. We're looking for a phrase
+          that specifically refers to the *perspective* or *standpoint* of the consumer group, like 'from
+          the consumer side'.
     scene: A business analyst discussing market perspectives.
     register: formal
     setting: academic
@@ -229,13 +248,13 @@ examples:
       issue. This is an abstract use of 側.
   - english: I saw him on the other side of the street.
     japanese:
-      - 道 の 反対 側 で 彼 を 見 た の。
-      - 道 の 反対 側 に 彼 が い た。
-      - 道 の 反対 側 に 彼 を 見かけ た。
+      - 道 の {反対 側} で 彼 を 見 た の。
+      - 道 の {反対 側} に 彼 が い た。
+      - 道 の {反対 側} に 彼 を 見かけ た。
     english_literally: Road's opposite side at him saw (female speech).
     competing_grammar:
       - competing_japanese:
-          - 道 の 向こう側 で 彼 を 見 た の。
+          - 道 の {向こう側} で 彼 を 見 た の。
         english: I saw him on the far side of the road.
         hint: 「向こう側」 is 'the other side' or 'far side', which is similar. However, 「反対側」 more strongly
           implies the *opposing* side of the speaker's position. We're looking for the term meaning the
@@ -249,17 +268,17 @@ examples:
       a mild emphasis or explanation in casual female speech.
   - english: We need to consider the vendor's side as well.
     japanese:
-      - ベンダー 側 の 意見 も 考慮 する 必要 が あり ます。
-      - ベンダー 側 の 意見 も 考慮 する べき です。
-      - ベンダー 側 の 意見 も 考慮 し なく て は なら ない。
+      - '{ベンダー 側} の 意見 も 考慮 する 必要 が あり ます。'
+      - '{ベンダー 側} の 意見 も 考慮 する べき です。'
+      - '{ベンダー 側} の 意見 も 考慮 し なく て は なら ない。'
     english_literally: Vendor side's opinion also consider need exists.
     competing_grammar:
       - competing_japanese:
-          - ベンダー の 意見 も 考慮 する 必要 が あり ます。
+          - '{ベンダー} の 意見 も 考慮 する 必要 が あり ます。'
         english: We need to consider the vendor's opinion as well.
-        hint: While 「ベンダーの意見」 is correct, 「ベンダー側」 specifies the vendor as a 'side' or 'party' in a transaction,
-          adding a layer of formal distinction. We're looking for the phrase that emphasizes the vendor's
-          collective viewpoint as a party.
+        hint: While 「ベンダー」 refers to the vendor as an entity, 「ベンダー側」 specifies the vendor as a 'side'
+          or 'party' in a transaction, adding a layer of formal distinction. We're looking for the phrase
+          that emphasizes the vendor's collective viewpoint as a party.
     scene: A project manager discussing a strategy with their team.
     register: semi-formal
     setting: negotiating
@@ -269,13 +288,13 @@ examples:
       of understanding the perspective of the other party in a transaction or negotiation.
   - english: My house is on the mountain side.
     japanese:
-      - うち は 山側 な ん だ よ ね。
-      - うち は 山側 に ある ん です。
-      - うち は 山側 だ よ。
+      - うち は {山側} な ん だ よ ね。
+      - うち は {山側} に ある ん です。
+      - うち は {山側} だ よ。
     english_literally: My house, as for, mountain side is, you know.
     competing_grammar:
       - competing_japanese:
-          - うち は 山 の 近く な ん だ よ ね。
+          - うち は 山 の {近く} な ん だ よ ね。
         english: My house is near the mountain, you know.
         hint: 「山の近く」 means 'near the mountain'. We're looking for a phrase that specifically describes
           the house's location *on the side* facing or adjacent to the mountain.
@@ -288,13 +307,13 @@ examples:
       agreement, typical in friendly female conversation.
   - english: Don't fall off the boat's left side!
     japanese:
-      - 船 の 左側 から 落ちる な よ！
-      - 船 の 左側 から 落ち ない で！
-      - 船 の 左側 から 落ちる ん じゃ ない ぞ！
+      - 船 の {左側} から 落ちる な よ！
+      - 船 の {左側} から 落ち ない で！
+      - 船 の {左側} から 落ちる ん じゃ ない ぞ！
     english_literally: Boat's left side from fall, don't! (male speech)
     competing_grammar:
       - competing_japanese:
-          - 船 の 左 から 落ちる な よ！
+          - 船 の {左} から 落ちる な よ！
         english: Don't fall from the boat's left!
         hint: 「左」 indicates a general direction. We're looking for the phrase that specifically refers
           to the *side* of the boat, emphasizing its boundary.
@@ -308,13 +327,13 @@ examples:
       commonly used by male speakers to warn or command.
   - english: The plaintiff's side presented new evidence.
     japanese:
-      - 原告 側 が 新しい 証拠 を 提出 し まし た。
-      - 原告 側 が 新しい 証拠 を 提出 し た。
-      - 原告 側 から 新しい 証拠 が 提出 さ れ まし た。
+      - '{原告 側} が 新しい 証拠 を 提出 し まし た。'
+      - '{原告 側} が 新しい 証拠 を 提出 し た。'
+      - '{原告 側} から 新しい 証拠 が 提出 さ れ まし た。'
     english_literally: Plaintiff side, as for, new evidence submitted.
     competing_grammar:
       - competing_japanese:
-          - 原告 が 新しい 証拠 を 提出 し まし た。
+          - '{原告} が 新しい 証拠 を 提出 し まし た。'
         english: The plaintiff presented new evidence.
         hint: 「原告」 refers to the plaintiff as an individual or entity. We're looking for a phrase that
           specifies the plaintiff's *side* or *party* in a legal context, implying a collective entity.
@@ -330,3 +349,7 @@ post_example_writeup: The examples illustrate how 側 can be used to precisely d
   descriptions.
 sources:
   bunpro: https://bunpro.jp/grammar_points/右側・左側・側（がわ）
+lint-errors:
+  - '[rule-13] warning unknown grammar at ''false_friends[3]'': ''方 (ほう)''. It **MUST** be from ALL_GRAMMARS_SUMMARY
+    or you can prepend ''<suggest>:'' to the grammar point to suggest a new grammar point.'
+  - '[rule-9] warning false_friends[3].grammar_point (meaning) starts with invalid char: ほ'

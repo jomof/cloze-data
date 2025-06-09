@@ -1,14 +1,15 @@
 grammar_point: はたして (really; as expected)
 learn_before:
-  - ようだ (it seems)
   - だろう (conjecture)
-  - のだろうか (I wonder)
   - かもしれない (might)
+  - ようだ (it seems)
   - らしい (I hear, it seems)
   - はずだ (expected to be)
+  - のだろうか (I wonder)
 learn_after:
   - さぞ (how... it must be)
   - いかにも (as expected)
+  - ばこそ (precisely because)
 id: gp0867
 meaning: Indeed, really?, As expected, Sure enough, I wonder if... (really), I wonder how... (actually)
 meaning_warning: 「果たして + Phrase」 is mostly found in literature.
@@ -69,9 +70,18 @@ false_friends:
     nuance: 「〜のだろうか」 expresses a wondering tone in a question, but adding 「はたして」 emphasizes the doubt
       the speaker has, intensifying the inquiry or uncertainty.
     grammar_point: のだろうか (I wonder)
+  - term: まさしく
+    meaning: precisely, exactly, surely
+    kind: similar expression
+    nuance: 「まさしく」 conveys a strong sense of certainty and exactness, affirming that something is precisely
+      as stated or expected. While 「はたして」 can confirm expectations, it also carries a nuance of initial
+      doubt or a deeper, probing inquiry that 「まさしく」 does not.
+    grammar_point: <suggest>:まさしく (precisely・exactly)
 post_false_friends_writeup: While 「さすが」, 「かな」, and 「〜のだろうか」 share some overlap with 「はたして」, they carry
   distinct nuances. Use 「さすが」 when you want to express admiration, 「かな」 for simple wonder, and 「〜のだろうか」
-  for expressing an actual question. Choose 「はたして」 when you want to emphasize doubt or confirm an expectation.
+  for expressing an actual question. 「まさしく」, on the other hand, is a strong affirmation. Choose 「はたして」
+  when you want to emphasize doubt or confirm an expectation, often with a sense of relief or resignation
+  that something turned out to be true.
 examples:
   - english: I wonder if the world is truly warming.
     japanese:
@@ -81,7 +91,7 @@ examples:
     english_literally: World, indeed, really warming, is it, I wonder?
     competing_grammar:
       - competing_japanese:
-          - 世界 は 本当 に 温暖 化 し て いる の だろう か。
+          - 世界 は 本当 に 温暖 化 し て いる {の だろう か}。
         english: I wonder if the world is warming.
         hint: The original sentence with 「はたして」 expresses a stronger, more profound doubt or inquiry about
           the truth. We're looking for a sentence that conveys that deeper level of questioning.
@@ -104,7 +114,7 @@ examples:
     english_literally: This plan, indeed, succeed, will it, I wonder?
     competing_grammar:
       - competing_japanese:
-          - この 計画 は 成功 する の でしょう か。
+          - この 計画 は 成功 する {の でしょう か}。
         english: I wonder if this plan will succeed.
         hint: The original sentence with 「はたして」 adds a stronger emphasis on the speaker's serious doubt
           or skepticism about the plan's success. We're looking for that heightened sense of uncertainty.
@@ -126,7 +136,7 @@ examples:
     english_literally: Many years' effort's result, indeed, her dream came true.
     competing_grammar:
       - competing_japanese:
-          - 長年 の 努力 の 結果、彼女 の 夢 が 叶っ た。
+          - 長年 の 努力 の 結果、彼女 の 夢 が {叶っ た}。
         english: As a result of many years of effort, her dream came true.
         hint: The original sentence with 「はたして」 specifically highlights that the outcome was 'as expected'
           or 'sure enough,' fulfilling a prior anticipation. We're looking for that sense of confirmed
@@ -149,7 +159,7 @@ examples:
     english_literally: Repeated warnings ignored, result, indeed, that business huge failure was.
     competing_grammar:
       - competing_japanese:
-          - 度重なる 警告 を 無視 し た 結果、その 事業 は 大 失敗 だっ た。
+          - 度重なる 警告 を 無視 し た 結果、その 事業 は {大 失敗 だっ た}。
         english: Ignoring repeated warnings, the business was a huge failure.
         hint: The original sentence with 「はたして」 emphasizes that the failure was not just a fact, but a
           predictable consequence of the ignored warnings. We're looking for that explicit confirmation
@@ -175,7 +185,7 @@ examples:
     english_literally: He, indeed, time-on-time, come, I wonder?
     competing_grammar:
       - competing_japanese:
-          - 彼 は 時間 通り に 来る の か な。
+          - 彼 は 時間 通り に 来る {の か な}。
         english: I wonder if he'll come on time.
         hint: The original sentence uses 「はたして」 to add a stronger, more genuine doubt or skepticism to
           the casual question, reflecting a deeper level of questioning. We're looking for that emphasized
@@ -200,7 +210,7 @@ examples:
     english_literally: Her intuition sharp, indeed, that prediction hit the mark.
     competing_grammar:
       - competing_japanese:
-          - 彼女 の 直感 は 鋭く、その 予測 は 的中 し た。
+          - 彼女 の 直感 は 鋭く、その 予測 は {的中 し た}。
         english: Her intuition was sharp, and her prediction came true.
         hint: The original sentence uses 「はたして」 to emphasize that the prediction was 'indeed' or 'sure
           enough' accurate, reinforcing the uncanny fulfillment of expectation. We're looking for that
@@ -223,7 +233,7 @@ examples:
     english_literally: This situation, indeed, we how act should, I wonder?
     competing_grammar:
       - competing_japanese:
-          - この 状況 で、私 たち は どう 行動 する べき な の だろう か。
+          - この 状況 で、私 たち は どう 行動 する べき {な の だろう か}。
         english: In this situation, I wonder how we should act.
         hint: The original sentence uses 「はたして」 to convey a strong sense of internal questioning and profound
           uncertainty, suggesting a highly complex problem. We're looking for that intensified deliberation.
@@ -245,7 +255,7 @@ examples:
     english_literally: He, indeed, teacher, is he, I wonder?
     competing_grammar:
       - competing_japanese:
-          - 彼 は 先生 な の だろう か。
+          - 彼 は 先生 {な の だろう か}。
         english: I wonder if he's a teacher.
         hint: The original sentence with 「はたして」 adds a stronger emphasis to the doubt about his profession,
           implying that his actions don't quite fit the expected behavior of a teacher. We're looking
@@ -268,7 +278,7 @@ examples:
     english_literally: This food, indeed, really delicious, is it, I wonder?
     competing_grammar:
       - competing_japanese:
-          - この 料理 は 本当 に 美味しい の だろう か。
+          - この 料理 は 本当 に 美味しい {の だろう か}。
         english: I wonder if this food is delicious.
         hint: The original sentence with 「はたして」 conveys a stronger, more profound skepticism about the
           taste, perhaps despite its appearance or reputation. We're looking for that intensified doubt.
@@ -295,7 +305,7 @@ examples:
     english_literally: He, indeed, genius, even if, still effort necessary is.
     competing_grammar:
       - competing_japanese:
-          - 彼 が 天才 だ と し て も、やはり 努力 は 必要 だ。
+          - 彼 が 天才 だ {と し て も}、やはり 努力 は 必要 だ。
         english: Even if he is a genius, he still needs to put in effort.
         hint: The original sentence uses 「はたして」 to emphasize that the premise (being a genius) is something
           that is strongly questioned or doubted by the speaker, adding a layer of skepticism to the concession.

@@ -2,9 +2,12 @@ grammar_point: あげる (give away)
 learn_before:
   - を (object marker)
   - に (fixed point・target・time)
+  - Verb[て] (and then)
 learn_after:
   - くれる (to give to me or in-group)
   - てあげる (to do for someone)
+  - てくれる (receiving benefaction)
+  - てもらう (to get someone to do)
 id: gp0119
 meaning: To give (away), to present, to provide.
 meaning_warning: For both あげる and くれる, に marks the recipient.
@@ -136,11 +139,26 @@ false_friends:
       close in-group (e.g., family). 「あげる」 is used when the giver gives something away from their perspective,
       typically to someone outside their in-group, or when the speaker is the giver.
     grammar_point: 呉れる・くれる (do something for someone)
-post_false_friends_writeup: Distinguishing between 「あげる」, 「もらう」, and 「くれる」 is fundamental for accurate
-  communication in Japanese. The key lies in understanding the **direction of the action** and the **speaker's
-  perspective** relative to the giver and receiver. 「あげる」 is about giving away from oneself, 「もらう」 is
-  about receiving towards oneself, and 「くれる」 is about someone giving towards oneself or one's in-group.
-  Mastering these distinctions will significantly improve your naturalness in Japanese.
+  - term: やる
+    meaning: To give (to animals, plants, or people of lower status; can be condescending for people)
+    kind: similar expression
+    nuance: While also meaning 'to give', 「やる」 carries a nuance of being informal, or giving to someone
+      of clearly lower status (e.g., animals, younger children in some contexts), or can even be condescending
+      when used for adults. 「あげる」 is generally more neutral and polite.
+    grammar_point: やる (do・give・send・show resolve)
+  - term: 差し上げる
+    meaning: To give (humble form)
+    kind: similar expression
+    nuance: 「差し上げる」 is the humble form of 「あげる」, used to show respect to the recipient. It implies an
+      action done for a superior or honored person. 「あげる」 is a more general or neutral verb used for equals
+      or inferiors.
+    grammar_point: <suggest>:差し上げる (humble give)
+post_false_friends_writeup: Distinguishing between 「あげる」, 「もらう」, 「くれる」, 「やる」, and 「差し上げる」 is fundamental
+  for accurate communication in Japanese. The key lies in understanding the **direction of the action**
+  and the **speaker's perspective** relative to the giver and receiver. 「あげる」 is about giving away from
+  oneself, 「もらう」 is about receiving towards oneself, and 「くれる」 is about someone giving towards oneself
+  or one's in-group. 「やる」 is a casual or condescending form of giving, while 「差し上げる」 is the humble form,
+  used to show respect. Mastering these distinctions will significantly improve your naturalness in Japanese.
 examples:
   - english: I'll give my friend some sweets.
     japanese:
@@ -252,7 +270,7 @@ examples:
         english: She won't give me any more presents.
         hint: 「くれない」 means 'someone won't give to me'. We're looking for the speaker's refusal to give.
       - competing_japanese:
-          - もう プレゼント を 渡さ ない
+          - もう プレゼント を {渡さ ない}
         english: I won't hand over presents anymore.
         hint: 「渡す」 is a neutral verb meaning "to hand over" or "to pass," without the directionality implied
           by あげる. We're looking for the act of *giving* away.
@@ -303,10 +321,10 @@ examples:
         hint: The phrase 「あげて も いい です よ」 focuses on the speaker's permission to give the book away, not
           the listener's action of receiving.
       - competing_japanese:
-          - この 本 を 読み 終わっ たら、あなた が 持っ て 行っ て も いい です よ
+          - この 本 を 読み 終わっ たら、あなた が 持っ {て 行っ て} も いい です よ
         english: When I finish reading this book, you can take it.
-        hint: This is a more general way to say 'you can have it' without explicitly mentioning the act
-          of giving. We're looking for an example that specifically uses あげる.
+        hint: This suggests taking rather than having something given to you. We're looking for an example
+          that specifically uses あげる.
     scene: You're discussing a book with a colleague and offer to give it to them once you've finished
       reading it.
     register: teineigo (polite)
@@ -425,9 +443,9 @@ examples:
     setting: informative
     conjugation: progressive (～ている)
     speaker_gender: female
-    nuance: 「あげる」 can be used for abstract "gifts" like 「配慮」 (考慮) or 「愛情」 (affection). The progressive
-      form 「あげている」 emphasizes the ongoing nature of the mother's care. This usage highlights the broad
-      applicability of 「あげる」 beyond physical objects, extending to intangible contributions.
+    nuance: 「あげる」 can be used for abstract "gifts" like 「配慮」 (考慮) or 「愛情」 (愛情). The progressive form 「あげている」
+      emphasizes the ongoing nature of the mother's care. This usage highlights the broad applicability
+      of 「あげる」 beyond physical objects, extending to intangible contributions.
   - english: I can give you a ride to the station.
     japanese:
       - 駅 まで 送っ て {あげ られ ます} よ
@@ -442,7 +460,7 @@ examples:
         english: I will get a ride to the station.
         hint: 「もらいます」 means receiving a favor. We are looking for offering a favor.
       - competing_japanese:
-          - 駅 まで 送り ます よ
+          - 駅 まで {送り ます} よ
         english: I will send you to the station.
         hint: 「送ります」 is a neutral verb meaning 'to send' or 'to escort'. Adding 「あげられます」 implies doing
           it as a favor or benefit to the other person, which is the nuance we're aiming for.
@@ -484,10 +502,11 @@ examples:
       ください」 (please say). It frames the opinion as something valuable being offered or provided, which
       is appropriate in a professional setting when seeking input. The use of 「ください」 makes it a direct,
       polite request.
-post_example_writeup: Distinguishing between 「あげる」, 「もらう」, and 「くれる」 is fundamental for accurate communication
-  in Japanese. The key lies in understanding the **direction of the action** and the **speaker's perspective**
-  relative to the giver and receiver. 「あげる」 is about giving away from oneself, 「もらう」 is about receiving
-  towards oneself, and 「くれる」 is about someone giving towards oneself or one's in-group. Mastering these
-  distinctions will significantly improve your naturalness in Japanese.
+post_example_writeup: Distinguishing between 「あげる」, 「もらう」, 「くれる」, 「やる」, and 「差し上げる」 is fundamental for
+  accurate communication in Japanese. The key lies in understanding the **direction of the action** and
+  the **speaker's perspective** relative to the giver and receiver. 「あげる」 is about giving away from oneself,
+  「もらう」 is about receiving towards oneself, and 「くれる」 is about someone giving towards oneself or one's
+  in-group. 「やる」 is a casual or condescending form of giving, while 「差し上げる」 is the humble form, used to
+  show respect. Mastering these distinctions will significantly improve your naturalness in Japanese.
 sources:
   bunpro: https://bunpro.jp/grammar_points/あげる

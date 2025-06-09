@@ -1,17 +1,22 @@
 grammar_point: なし (without・no)
 learn_before:
-  - ある (to exist or have)
-  - いる (existence of animate objects)
+  - ある (inanimate existence)
+  - いる (animate existence)
   - う-verb (negative)
   - い-Adjectives (negative form)
   - じゃない (negation noun and na-adj)
   - ないで (without doing or don't)
-  - だ (casual copula)
+  - ずに (without doing)
+  - しか〜ない (only・nothing but)
 learn_after:
   - ずにはいられない (cannot help but do)
   - ないことには〜ない (unless ~ will not)
   - なくしては (indispensable condition)
   - べからず (must not)
+  - ないまでも (even if not... at least)
+  - をものともせず (making nothing of)
+  - に足りない (not worthy or sufficient)
+  - に満たない (not reaching)
 id: gp0484
 meaning: Without, no
 pronunciation:
@@ -21,6 +26,7 @@ formation:
   Noun + なし: Indicates the absence of the noun.
   Noun + なしで: Without the noun.
   Noun + なしの + Noun: A noun that is without the first noun.
+  Noun + なしにする: To decide to go without the noun; to skip the noun.
 jlpt: N3
 details:
   register: formal
@@ -57,7 +63,7 @@ false_friends:
     nuance: While 「なし」 indicates absence, it often carries a more formal, literary, or definitive nuance
       compared to the everyday negative adjective 「ない」, which simply states non-existence. 「なし」 is frequently
       used in set phrases or to describe a characteristic lack.
-    grammar_point: い-Adjectives (negative form)
+    grammar_point: ない (not exist)
 post_false_friends_writeup: While both 「なし」 and 「抜きで」 can translate to "without," remember that 「抜きで」
   and 「抜き」 have a connotation of intentional removal or omission. If you're simply stating the absence
   of something without implying an active removal, 「なし」 is often more appropriate. For example, a "room
@@ -172,7 +178,7 @@ examples:
     english_literally: This plan is without flaws.
     competing_grammar:
       - competing_japanese:
-          - この 作戦 は 完璧 だ。
+          - この 作戦 は {完璧 だ}。
         english: This plan is perfect.
         hint: 「完璧だ」 explicitly means 'perfect.' 「欠点なしだ」 states 'without flaws,' implying perfection through
           absence of negatives.
@@ -192,7 +198,7 @@ examples:
     english_literally: Without you, I can no longer live.
     competing_grammar:
       - competing_japanese:
-          - あなた が い なかっ たら、もう 生き て いけ ませ ん。
+          - あなた が い なかっ た ら、もう 生き て いけ ませ ん。
         english: If you weren't here, I couldn't live anymore.
         hint: 「いなかったら」 implies a hypothetical condition 'if you were not here.' 「なしでは」 states 'without
           you' as a direct condition for existence.
@@ -237,7 +243,7 @@ examples:
     english_literally: This area is parking-less.
     competing_grammar:
       - competing_japanese:
-          - この エリア は 駐車 禁止 です。
+          - この エリア は 駐車 {禁止 です}。
         english: This area is parking prohibited.
         hint: 「禁止」 explicitly states a prohibition. 「なし」 states the absolute absence of something, making
           it common in concise rules or signs where 'no' means 'not available' or 'not permitted'.
@@ -267,7 +273,7 @@ examples:
     speaker_gender: male
     nuance: 「後戻りなし」 strongly expresses that the option of 'turning back' absolutely does not exist. It
       implies a point of no return, often used when someone has made a decisive commitment and must proceed.
-      The casual 「だ」 reflects a personal, internal realization, and the added 「ぞ」 reinforces a strong,
+      The casual 「だ ぞ」 reflects a personal, internal realization, and the added 「ぞ」 reinforces a strong,
       typically masculine, assertion.
     etymology: 「後戻りなし」 combines 「後戻り」 (atomodori, turning back) with 「なし」, emphasizing the complete absence
       of the possibility to retreat. This phrasing highlights a definitive state.
@@ -276,3 +282,23 @@ post_example_writeup: The expressions using 「なし」 are versatile and can b
   with 「なし」 to match the desired politeness level and nuance.
 sources:
   bunpro: https://bunpro.jp/grammar_points/なし
+lint-errors:
+  - '[rule-13] warning unknown grammar at ''false_friends[2]'': ''ない (not exist)''. It **MUST** be from
+    ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new grammar
+    point.'
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 部屋 に は テレビ が ない。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    準備 せ ず に 試験 を 受け た。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    砂糖 抜き の コーヒー を 注文 し た。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    今日 は 夕食 を やめよう と 思う。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    昔 から『病気 に 薬 が ない』と 言う。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あなた が い なかっ た ら、もう 生き て いけ ませ ん。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    エンジン が ない ドローン は 飛ば ない。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    もう 後戻り でき ない。'

@@ -1,12 +1,12 @@
 grammar_point: てあげる (to do for someone)
 learn_before:
   - Verb[て] (and then)
+  - あげる (give away)
   - くれる (to give to me or in-group)
-  - てみる (try and see)
+  - もらう (to receive)
 learn_after:
-  - なさい (polite imperative)
-  - お〜する (humble action)
-  - ていただく (humble request)
+  - お・ご～する (humble action)
+  - Verb[て]+いただけませんか (humble request)
 id: gp0229
 meaning: To do something for someone; To perform an action as a favor for someone.
 meaning_warning: This expression can sound patronizing or condescending, especially when used with people
@@ -118,13 +118,13 @@ false_friends:
     nuance: 「てくれる」 indicates that someone is doing something for the speaker's benefit, or for the benefit
       of someone within the speaker's in-group, whereas 「てあげる」 indicates that the speaker is doing something
       for someone else's benefit.
-    grammar_point: 呉れる・くれる (do something for someone)
+    grammar_point: てくれる (receiving benefaction)
   - term: てもらう
     meaning: To receive the favor of someone doing something
     kind: similar expression
     nuance: 「てもらう」 means that the speaker (or someone in the speaker's in-group) is receiving a favor
       from someone else, while 「てあげる」 means that the speaker is giving a favor.
-    grammar_point: もらう (have someone do)
+    grammar_point: てもらう (to get someone to do)
   - term: あげる
     meaning: To give (away), to present, to provide (a thing)
     kind: often confused with
@@ -272,7 +272,7 @@ examples:
     english_literally: If you clean your room, I will buy a new toy for your benefit.
     competing_grammar:
       - competing_japanese:
-          - 部屋 を 掃除 し たら、新しい おもちゃ を 買っ て {あげる}。
+          - 部屋 を 掃除 し たら、新しい おもちゃ を 買っ て あげる。
         english: If you clean your room, I will buy a new toy.
         hint: Both are valid, but the plain volitional suggests a promise or decision rather than a simple
           statement of fact. We're looking for a conditional promise.
@@ -350,3 +350,24 @@ post_example_writeup: Remember that while 「てあげる」 is useful, it's imp
   don't know well.
 sources:
   bunpro: https://bunpro.jp/grammar_points/てあげる
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    弟 に 宿題 を 教える。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    昨日、父 が 私 の 自転 車 を 直し た。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    プレゼン の 準備 を 手伝い ます。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    親切 な 生徒 が 先生 の 落とし た ペン を 拾い まし た。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 に お 金 を 貸さ なかっ た から、彼 は 怒っ た。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    今晩、お 母 さん の 晩ご飯 を 作ろう！'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    部屋 を 掃除 し たら、新しい おもちゃ を 買っ て あげる。'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    後輩 の ため に レポート を 仕上げ られ ませ ん でし た。'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼女 に ゲーム の ルール を 説明 し たら いい と 思う よ。'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    妹 に いつ も 絵本 を 読ん で いる。'

@@ -1,7 +1,14 @@
 grammar_point: 全然 (not at all; totally)
+learn_before:
+  - ないで (without doing or don't)
+  - じゃない (negation noun and na-adj)
+  - る-verbs (negative forms)
+  - う-verb (negative)
 learn_after:
   - とても〜ない (cannot possibly ~)
   - 決して〜ない (emphatic never)
+  - 全く〜ない (not at all)
+  - 一切〜ない (not at all)
 id: gp0272
 meaning: (Not) at all
 meaning_warning: 'Slang: totally・completely, exceptionally'
@@ -17,40 +24,57 @@ details:
   register: casual
   usage-context: General
 etymology: 全然 (ぜんぜん) is formed from the kanji 全 (ぜん, zen) meaning "all" or "whole," repeated for emphasis.
-  This repetition intensifies the meaning to convey a complete or total negation.
+  This repetition intensifies the meaning to convey a complete or total negation. Its usage has broadened
+  over time to include emphatic positive statements, particularly in casual speech, reflecting a natural
+  linguistic evolution towards intensifying expressions.
 writeup: The adverb 全然 (ぜんぜん) is traditionally used with negative expressions to mean "not at all." For
-  instance, when combined with ない, it conveys complete negation. While it is grammatically expected to
-  be used with negative forms, it is increasingly common, especially among younger speakers, to find it
-  with positive statements, meaning "totally" or "completely." In writing, both hiragana (ぜんぜん) and kanji
-  (全然) are acceptable. Be aware that 全く (まったく), a similar expression, can sound more formal and sometimes
-  carries a negative nuance, depending on tone.
+  instance, when combined with ない, it conveys complete negation. This original usage emphasizes a complete
+  lack or absence. However, in modern casual Japanese, especially among younger speakers, 全然 is increasingly
+  used with positive statements to mean "totally" or "completely," adding strong emphasis. This is a significant
+  shift in usage, and while common in spoken language, it might be perceived as informal or even incorrect
+  in more formal or traditional contexts. In writing, both hiragana (ぜんぜん) and kanji (全然) are acceptable.
+  Be aware that 全く (まったく), a similar expression, can sound more formal and sometimes carries a negative
+  or disappointed nuance, depending on tone, making 全然 generally more neutral in its original negative
+  context.
 false_friends:
   - term: とても〜ない
     meaning: Not ~ at all, Cannot ~ at all
-    kind: synonym
-    nuance: 「とても〜ない」 is similar, but often implies a stronger inability or impossibility than 全然.
+    kind: similar expression
+    nuance: 「とても〜ない」 is similar, but often implies a stronger inability or impossibility, or difficulty,
+      than 全然, and is almost exclusively used with negatives.
     grammar_point: とても〜ない (cannot possibly ~)
   - term: すこしも〜ない
     meaning: Not even a little, Not at all, Not in the least, Never
     kind: synonym
-    nuance: 「少しも〜ない」 emphasizes the lack of even a small amount, whereas 全然 focuses on the totality of
-      negation.
+    nuance: 「少しも〜ない」 emphasizes the lack of even a small amount, highlighting a quantitative or minimal
+      absence. 全然, on the other hand, focuses on the totality or completeness of the negation, implying
+      an absolute absence without any trace.
     grammar_point: すこしも〜ない (not even a little)
   - term: 全く〜ない
-    meaning: Not~at all
+    meaning: Not at all
     kind: synonym
-    nuance: 「全く〜ない」 is a more formal synonym, and can occasionally carry a negative or displeased tone,
-      unlike the more neutral 全然.
+    nuance: 「全く〜ない」 is a more formal and slightly more emphatic synonym for complete negation. It can
+      also be used positively, like 全然, but tends to retain a slightly more formal or serious tone. Its
+      positive use is less common than 全然's.
     grammar_point: 全く〜ない (not at all)
   - term: ろくに〜ない
     meaning: Not properly; not sufficiently; hardly.
     kind: similar expression
     nuance: 「ろくに〜ない」 suggests a failure to do something adequately or properly, implying a lack of quality
-      or effort, whereas 全然 (in its traditional use) indicates a complete absence or total lack of something.
+      or effort, or a state of not being sufficient. This contrasts with 全然 (in its traditional use),
+      which indicates a complete absence or total lack of something.
     grammar_point: ろくに〜ない (not properly)
-post_false_friends_writeup: To avoid confusion, remember that 全然 is generally safe for casual conversation
-  and emphasizes totality. 全く is more formal and might imply displeasure, while expressions like とても〜ない,
-  少しも〜ない, and ろくに〜ない highlight inability, the lack of even a small amount, or insufficient effort, respectively.
+  - term: あまり ない
+    meaning: Not very, Not much
+    kind: similar expression
+    nuance: 「あまり ない」 indicates 'not very' or 'not much,' suggesting a partial negation or a low degree.
+      「全然ない」 signifies a complete and absolute 'not at all.'
+    grammar_point: あまり ない (not very or much)
+post_false_friends_writeup: To avoid mixing these expressions, remember that 全然 is generally safe for
+  casual conversation and emphasizes totality (either complete absence or complete presence, colloquially).
+  全く is more formal and slightly stronger for negation, and its positive use is less frequent. Expressions
+  like とても〜ない, 少しも〜ない, and ろくに〜ない highlight specific nuances such as strong inability, the lack of even
+  a minimal amount, or insufficient effort, respectively. 「あまり ない」 is for partial negation, not total.
 examples:
   - english: I have no savings at all this month.
     japanese:
@@ -63,7 +87,7 @@ examples:
           - 今月 は 貯金 が ない。
         english: I have no savings this month.
         hint: The simple negative `ない` indicates a lack, but `全然` emphasizes a complete absence, meaning
-          'not at all'.
+          'not at all'. We're looking for a complete absence.
     scene: A young professional checking their bank account at the end of the month, feeling financially
       strapped.
     register: casual
@@ -79,7 +103,7 @@ examples:
           - 先生 の 説明 が 理解 でき ませ ん でし た。
         english: I couldn't understand the teacher's explanation.
         hint: While `理解できませんでした` states a lack of understanding, adding `全然` emphasizes a **complete**
-          inability to understand.
+          inability to understand. We're looking for a complete inability to understand.
     scene: A high school student talking to a classmate after a particularly difficult math lesson, feeling
       completely lost.
     register: semi-formal
@@ -96,7 +120,7 @@ examples:
           - その ニュース に は 興味 が ない。
         english: I have no interest in that news.
         hint: Simply saying `興味がない` expresses disinterest, but `全然` emphasizes a **total** lack of interest,
-          leaving no room for ambiguity.
+          leaving no room for ambiguity. We're looking for a total lack of interest.
     scene: A man dismissing a tabloid headline his friend is showing him, clearly indicating his disinterest.
     register: casual
     setting: friendly
@@ -112,7 +136,7 @@ examples:
           - 彼、昔 と 変わっ て ない ね。
         english: He hasn't changed from before, has he?
         hint: The phrase `変わっていない` means 'hasn't changed', but `全然` adds emphasis, meaning 'hasn't changed
-          **at all**'.
+          **at all**'. We're looking for an emphasis on 'not at all'.
     scene: Two old friends remarking on a mutual acquaintance they haven't seen in a long time, surprised
       by his consistency.
     register: casual
@@ -128,7 +152,7 @@ examples:
           - 今日 は ゲーム が 楽しく なかっ た。
         english: The game wasn't fun today.
         hint: While `楽しくなかった` conveys it wasn't fun, `全然` accentuates that it was **not fun in any way**,
-          emphasizing complete disappointment.
+          emphasizing complete disappointment. We're looking for complete disappointment.
     scene: A child complaining to their parent after playing a new video game, feeling utterly disappointed.
     register: casual
     setting: pessimistic
@@ -144,7 +168,7 @@ examples:
           - 週末 は 大丈夫 だ よ。会える よ。
         english: The weekend is fine. We can meet.
         hint: Using `大丈夫だ` means 'it's fine', but `全然` adds a stronger, more emphatic 'totally fine' or
-          'perfectly fine' in this positive context.
+          'perfectly fine' in this positive context. We're looking for an emphatically fine status.
     scene: A young woman reassuring her friend about scheduling a get-together, indicating her full availability
       and enthusiasm.
     register: casual
@@ -161,7 +185,7 @@ examples:
           - あの 猫、かわいい！
         english: That cat is cute!
         hint: While `かわいい` means 'cute', `全然` in this positive context is a colloquial way to say 'totally'
-          or 'really cute', adding strong emphasis.
+          or 'really cute', adding strong emphasis. We're looking for strong emphasis on cuteness.
     scene: A group of friends admiring a cat in a cafe, expressing their strong positive reaction.
     register: casual
     setting: excited
@@ -180,7 +204,8 @@ examples:
           - この 料理、美味しい ね！
         english: This dish is delicious, isn't it!
         hint: '`美味しい` means ''delicious'', but `全然` here serves to intensely emphasize the deliciousness,
-          translating to ''completely'' or ''exceptionally delicious''.'
+          translating to ''completely'' or ''exceptionally delicious''. We''re looking for exceptional
+          deliciousness.'
     scene: Friends sharing a meal at a new restaurant, expressing strong approval for the food.
     register: casual
     setting: excited
@@ -195,7 +220,7 @@ examples:
           - 彼 の プレゼン、すごかっ た！
         english: His presentation was amazing!
         hint: '`すごかった` means ''was amazing'', but `全然` amplifies this, expressing ''was **totally** amazing''
-          or ''exceptionally amazing''.'
+          or ''exceptionally amazing''. We''re looking for something totally amazing.'
     scene: Colleagues discussing a highly impressive presentation given by a peer, expressing their awe.
     register: casual
     setting: informative
@@ -210,7 +235,7 @@ examples:
           - この アプリ、便利 だ ね。
         english: This app is convenient, isn
         hint: While `便利だ` means 'convenient', `全然` here adds strong emphasis, indicating 'totally convenient'
-          or 'remarkably convenient'.
+          or 'remarkably convenient'. We're looking for something remarkably convenient.
     scene: Two students discovering a new study app that significantly helps them, expressing pleasant
       surprise at its usefulness.
     register: casual
@@ -226,7 +251,7 @@ examples:
           - ここ は うるさく て、話 が 聞こえ ない。
         english: It's so loud here, I can't hear what you're saying.
         hint: Using `聞こえない` means 'can't hear', but `全然` emphasizes a **complete** inability to hear,
-          meaning 'can't hear **at all**'.
+          meaning 'can't hear **at all**'. We're looking for a complete inability to hear.
     scene: A person trying to have a conversation in a noisy environment like a concert or busy street,
       expressing their frustration.
     register: casual
@@ -236,3 +261,26 @@ post_example_writeup: As you can see from these examples, 全然 can be used to 
   which nuance is intended and understood.
 sources:
   bunpro: https://bunpro.jp/grammar_points/ぜんぜん
+lint-errors:
+  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    今月 は 貯金 が ない。'
+  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    先生 の 説明 が 理解 でき ませ ん でし た。'
+  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    その ニュース に は 興味 が ない。'
+  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼、昔 と 変わっ て ない ね。'
+  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    今日 は ゲーム が 楽しく なかっ た。'
+  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    週末 は 大丈夫 だ よ。会える よ。'
+  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    あの 猫、かわいい！'
+  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この 料理、美味しい ね！'
+  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    彼 の プレゼン、すごかっ た！'
+  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    この アプリ、便利 だ ね。'
+  - '[rule-5] warning examples[10].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
+    ここ は うるさく て、話 が 聞こえ ない。'
