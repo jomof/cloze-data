@@ -583,7 +583,7 @@ def save_updated_constraints(
         for from_node, to_node, constraint_ref in cuts:
             # Parse constraint_ref to get node and field (e.g., "nodeA.learn_before")
             node_name, field_name = constraint_ref.split('.', 1)
-            
+        
             if node_name not in cuts_by_node:
                 cuts_by_node[node_name] = {f"{before_field}_deletes": [], f"{after_field}_deletes": []}
             
@@ -674,12 +674,20 @@ if __name__ == '__main__':
         yaml.dump(changes_made, f, allow_unicode=True)  
 
     def cut_edges(grammar_point, parsed_obj, cuts):
+        # Ensure learn_before and learn_after fields always exist
+        if 'learn_before' not in parsed_obj:
+            parsed_obj['learn_before'] = []
+        if 'learn_after' not in parsed_obj:
+            parsed_obj['learn_after'] = []
+            
         if grammar_point in cuts:
             edit = cuts[grammar_point]
             before = edit['learn_before_deletes'] 
-            after = edit['learn_after_deletes'] 
-            parsed_obj['learn_before'] = list(set(parsed_obj.get('learn_before', [])) - set(before))
-            parsed_obj['learn_after']  = list(set(parsed_obj.get('learn_after', [])) - set(after))
+            after = edit['learn_after_deletes']
+            
+            # Remove items to delete while preserving order
+            parsed_obj['learn_before'] = [e for e in parsed_obj['learn_before'] if e not in before]
+            parsed_obj['learn_after'] = [e for e in parsed_obj['learn_after'] if e not in after]
         
     def preprocess(parsed_obj, file_path):
         if parsed_obj['grammar_point'] in cuts:

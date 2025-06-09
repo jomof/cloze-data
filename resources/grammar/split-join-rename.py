@@ -38,6 +38,12 @@ if __name__ == '__main__':
             new_name_to_id = {}
             
             for new_name, old_names_list in renames.items():
+                if new_name == "":
+                    # Handle deletion operation - just add to old_to_new with empty new name
+                    for old_name in old_names_list:
+                        old_to_new[old_name] = [""]
+                    continue
+                
                 # Find the ID from the first old name that exists, or use gp9999
                 found_id = "gp9999"
                 for old_name in old_names_list:
@@ -111,6 +117,19 @@ if __name__ == '__main__':
             new_name_paths = set()
             for new_name in renames:
                 old_names = renames[new_name]
+                
+                if new_name == "":
+                    # Handle deletion operations - add old files to deletion list
+                    for old_name in old_names:
+                        # Find the ID from the grammar summary to build correct path
+                        found_id = "gp9999"
+                        if old_name in grammar_summary['all-grammar-points']:
+                            found_id = grammar_summary['all-grammar-points'][old_name]['id']
+                        old_id_name = f"{found_id}-{old_name}"
+                        old_path = os.path.join(grammar_root, old_id_name + '.yaml')
+                        old_name_paths.add(old_path)
+                    continue
+                    
                 grammar_id = new_name_to_id[new_name]
                 new_id_name = f"{grammar_id}-{new_name}"
                 

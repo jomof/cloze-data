@@ -1,7 +1,8 @@
 grammar_point: からある (at least as much as)
 learn_before:
   - Number+も (emphatic quantity)
-  - 以上 (more than or equal)
+  - 以上 (more than or equal to)
+  - 以上 (that’s all, the end)
   - ほど (extent・approximation)
 learn_after:
   - 〜たりとも〜ない (not even a single)
@@ -392,3 +393,7 @@ post_example_writeup: The usage of 「からある」 and 「からいる」 add
   that suggests it's a significant or impressive lower bound.
 sources:
   bunpro: https://bunpro.jp/grammar_points/からある
+lint-errors:
+  - '[rule-13] warning unknown grammar at ''false_friends[0]'': ''以上 (more than or equal)''. It **MUST**
+    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
+    grammar point.'

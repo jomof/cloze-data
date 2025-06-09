@@ -1,7 +1,8 @@
 grammar_point: 以上に (more than expected)
 learn_before:
   - より (comparative)
-  - 以上 (more than or equal)
+  - 以上 (more than or equal to)
+  - 以上 (that’s all, the end)
   - すぎる (too much・excessive)
   - ても (even if・even though)
 learn_after:
@@ -270,3 +271,7 @@ post_example_writeup: In all these examples, 「以上に」 serves to highlight
   that the reality is notably greater than anticipated.
 sources:
   bunpro: https://bunpro.jp/grammar_points/以上に
+lint-errors:
+  - '[rule-13] warning unknown grammar at ''false_friends[1]'': ''以上 (more than or equal)''. It **MUST**
+    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
+    grammar point.'

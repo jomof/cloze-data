@@ -1,7 +1,8 @@
 grammar_point: 以内 (within)
 learn_before:
   - だけ (only・just)
-  - 以上 (more than or equal)
+  - 以上 (more than or equal to)
+  - 以上 (that’s all, the end)
   - まで (limit extent)
   - くらい (approximate quantity or degree)
 learn_after:
@@ -212,3 +213,7 @@ examples:
     scene: A customer support agent reassures a caller about a callback time.
     register: teineigo (polite)
     setting: professional
+lint-errors:
+  - '[rule-13] warning unknown grammar at ''false_friends[1]'': ''以上 (more than or equal)''. It **MUST**
+    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
+    grammar point.'
