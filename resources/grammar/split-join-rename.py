@@ -87,6 +87,15 @@ if __name__ == '__main__':
             all_old_names = set(old_to_new.keys())
             # Make a set of all new names
             all_new_names = set(renames.keys())
+            
+            # Check for illegal filename characters in new grammar point names
+            for new_name in all_new_names:
+                if new_name == "":  # Skip deletion operations
+                    continue
+                if '/' in new_name or '\0' in new_name:
+                    logger.error(f"New grammar point name contains illegal filename character: '{new_name}'")
+                    display.check(f"ERROR: New grammar point name contains illegal filename character: '{new_name}'")
+                    sys.exit(1)
 
             # Check for cases where items are split into multiple new names
             split_new_names = set()

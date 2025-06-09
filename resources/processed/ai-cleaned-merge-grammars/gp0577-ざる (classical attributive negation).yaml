@@ -1,9 +1,9 @@
 grammar_point: ざる (classical attributive negation)
 learn_before:
-  - る-verbs (negative forms)
   - い-Adjectives (negative form)
   - ずに (without doing)
-  - ないで (without doing or don't)
+  - ないで (without doing)
+  - ないでください・ないで (please don't)
 learn_after:
   - べくもない (no way to)
   - だに~しない (not even)
@@ -48,7 +48,6 @@ false_friends:
     kind: similar expression
     nuance: Unlike 「〜ざる」, 「〜ない」 is the standard and most common negative form used in everyday conversation.
       While both express negation, 「〜ざる」 is considerably more formal and literary.
-    grammar_point: る-verbs (negative forms)
   - term: 〜ず
     meaning: not (classical negative)
     kind: similar expression
@@ -375,3 +374,5 @@ post_example_writeup: As seen in the examples, 「〜ざる」 is often used in 
   role in more formal and literary expressions.
 sources:
   bunpro: https://bunpro.jp/grammar_points/ざる
+lint-errors:
+  - '[rule-12] warning false_friends[0].grammar_point is missing or empty'
