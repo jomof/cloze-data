@@ -136,7 +136,11 @@ if __name__ == '__main__':
                 # Collect all old content for joining case
                 all_old_content = []
                 for old_name in old_names:
-                    old_id_name = f"{grammar_id}-{old_name}"
+                    # Find the actual ID for this old name
+                    old_grammar_id = "gp9999"
+                    if old_name in grammar_summary['all-grammar-points']:
+                        old_grammar_id = grammar_summary['all-grammar-points'][old_name]['id']
+                    old_id_name = f"{old_grammar_id}-{old_name}"
                     old_path = os.path.join(grammar_root, old_id_name + '.yaml')
                     if os.path.exists(old_path):
                         with open(old_path, 'r', encoding='utf-8') as f:

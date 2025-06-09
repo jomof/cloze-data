@@ -2,12 +2,11 @@ grammar_point: そこで (therefore)
 learn_before:
   - から (reason cause)
   - ので (reason)
-  - <suggest>:だから (therefore, so)
+  - だから (therefore, so)
   - それで (so・and then)
-  - そのため (for that reason)
+  - ため・ために (for the purpose ofbecause of)
 learn_after:
   - したがって (therefore)
-  - からには (since; obligation)
   - を以て (by means of)
   - ゆえに (because・therefore)
   - ひいては (eventually leading to)
@@ -59,7 +58,7 @@ false_friends:
     nuance: 「その結果」 more directly emphasizes the outcome or consequence of a situation, whereas 「そこで」 highlights
       the deliberate action or decision taken in response to that situation. It points to what happened
       because of something, not necessarily what was decided.
-    grammar_point: 結果 (result)
+    grammar_point: その結果 (as a result)
   - term: すると
     meaning: Having done..., If...is done..., (And/just) then, Thereupon, If so
     kind: synonym
@@ -73,7 +72,7 @@ false_friends:
     nuance: 「そのため(に)」 places greater emphasis on the reason or cause behind an action, focusing on explaining
       why something occurred. 「そこで」, however, emphasizes the action itself as a chosen response to the
       preceding situation.
-    grammar_point: ため (purpose・reason)
+    grammar_point: ため・ために (for the purpose ofbecause of)
   - term: したがって
     meaning: Therefore, consequently
     kind: synonym
@@ -88,7 +87,7 @@ false_friends:
       or strong personal conviction, and can sound more forceful or accusatory. 「そこで」 specifically implies
       a deliberate, active, and volitional response to a situation, without necessarily implying a strong
       emotional or assertive tone.
-    grammar_point: <suggest>:だから (therefore, so)
+    grammar_point: だから (therefore, so)
   - term: それで
     meaning: And so, therefore, that's why
     kind: synonym
@@ -371,3 +370,7 @@ post_example_writeup: Remember that 「そこで」 connects two clauses where t
   Pay attention to the nuanced difference between a spontaneous or natural reaction and a conscious decision.
 sources:
   bunpro: https://bunpro.jp/grammar_points/そこで
+lint-errors:
+  - '[rule-13] warning unknown grammar at ''false_friends[4]'': ''だから (therefore, so)''. It **MUST** be
+    from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
+    grammar point.'
