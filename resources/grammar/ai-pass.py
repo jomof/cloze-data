@@ -238,7 +238,7 @@ if __name__ == '__main__':
                     "func": logic,
                 }
             },
-            max_threads          = 5,
+            max_threads          = 10,
         )
 
         result = asyncio.run(mr.run())
