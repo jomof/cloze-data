@@ -104,43 +104,72 @@ if __name__ == '__main__':
                 old_names = renames[new_name]['old-names']
                 grammar_id = renames[new_name]['id']
                 new_id_name = f"{grammar_id}-{new_name}"
+                
+                # Collect all old content for joining case
+                all_old_content = []
                 for old_name in old_names:
                     old_id_name = f"{grammar_id}-{old_name}"
                     old_path = os.path.join(grammar_root, old_id_name + '.yaml')
-                    new_path = os.path.join(grammar_root, new_id_name + '.yaml')
-                    old_name_paths.add(old_path)
-                    new_name_paths.add(new_path)
-                    if old_path != new_path and not os.path.exists(new_path):
-                        # Read the old content
+                    if os.path.exists(old_path):
                         with open(old_path, 'r', encoding='utf-8') as f:
-                            content = f.read() 
+                            content = f.read()
+                            all_old_content.append(f"=== {old_name} ===\n{content}")
+                    old_name_paths.add(old_path)
+                
+                new_path = os.path.join(grammar_root, new_id_name + '.yaml')
+                new_name_paths.add(new_path)
+                
+                if not os.path.exists(new_path):
+                    # Determine the type of operation and create appropriate header
+                    if len(old_names) > 1:
+                        # Multiple old names -> one new name (joining)
+                        old_names_list = ', '.join(f"'{name}'" for name in old_names)
+                        header = f"Multiple old grammar points have been combined into one: {old_names_list} -> '{new_name}'. Please create a unified grammar point that incorporates the relevant aspects of all the old points. "
+                        combined_content = '\n\n'.join(all_old_content)
+                    elif len(old_names) == 1:
+                        old_name = old_names[0]
                         if old_name in old_to_new and len(old_to_new[old_name]) > 1:
+                            # One old name -> multiple new names (splitting)
                             all_new_names = old_to_new[old_name]
                             new_names_list = ', '.join(f"'{item}'" for item in all_new_names)
                             header = f"An old grammar point, '{old_name}', has been split into multiple new names: {new_names_list}. You are working on '{new_name}', please be sure to call out the distinction between this new point and the other new points. "
                         else:
+                            # Simple rename
                             header = f"An old grammar point has had its name changed from '{old_name}' to '{new_name}'. "
-
-                        old_grammar_obj = yaml.safe_load(content)
-                        new_content = {
-                            'grammar_point': new_name,
-                            'id': grammar_id,
-                            'learn_before': old_grammar_obj['learn_before'],
-                            'learn_after': old_grammar_obj['learn_after'],
-                            'split_predecessor': 
-                                f"{header}"
-                                f"Please recreate this grammar point with this information in mind. All fields **MUST** be suitable for the new name. "
-                                f"For your reference, here is the old content:\n\n{content}",
-                            'lint-errors': [f"You **MUST** repopulate this grammar point with the new name '{new_name}' in mind. All fields **MUST** be suitable for the new name."],
-                        }
+                        combined_content = all_old_content[0] if all_old_content else ""
                     
-                        with open(new_path, 'w', encoding='utf-8') as f:
-                            f.write(json.dumps(new_content, ensure_ascii=False, indent=2))
+                    # Get learn_before/learn_after from first old grammar point
+                    first_old_content = ""
+                    learn_before = []
+                    learn_after = []
+                    if all_old_content:
+                        first_old_content = all_old_content[0].split('\n', 1)[1] if '\n' in all_old_content[0] else all_old_content[0]
+                        try:
+                            old_grammar_obj = yaml.safe_load(first_old_content)
+                            learn_before = old_grammar_obj.get('learn_before', [])
+                            learn_after = old_grammar_obj.get('learn_after', [])
+                        except:
+                            pass
+
+                    new_content = {
+                        'grammar_point': new_name,
+                        'id': grammar_id,
+                        'learn_before': learn_before,
+                        'learn_after': learn_after,
+                        'split_predecessor': 
+                            f"{header}"
+                            f"Please recreate this grammar point with this information in mind. All fields **MUST** be suitable for the new name. "
+                            f"For your reference, here is the old content:\n\n{combined_content}",
+                        'lint-errors': [f"You **MUST** repopulate this grammar point with the new name '{new_name}' in mind. All fields **MUST** be suitable for the new name."],
+                    }
+                
+                    with open(new_path, 'w', encoding='utf-8') as f:
+                        f.write(json.dumps(new_content, ensure_ascii=False, indent=2))
         
         
             # Remove old name files that are not in the new name paths
             for old_path in old_name_paths:
-                if old_path not in new_name_paths:
+                if old_path not in new_name_paths and os.path.exists(old_path):
                     display.check(f"Removing old name file {old_path}")
                     os.remove(old_path)
 
