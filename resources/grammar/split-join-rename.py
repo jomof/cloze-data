@@ -9,6 +9,8 @@ from python.grammar import GRAMMAR_SCHEMA
 import time
 import json
 from python.console import display
+from python.grammar import clean_lint
+import logging
 
 if __name__ == '__main__':
     try:
@@ -18,6 +20,21 @@ if __name__ == '__main__':
             workspace_root,
             'resources', 'processed', 'ai-cleaned-merge-grammars'
         )
+        
+        # Set up debug logging
+        log_file = os.path.join(grammar_root, 'summary', 'split-join-rename.log')
+        logging.basicConfig(
+            level=logging.DEBUG,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.FileHandler(log_file, mode='w')
+            ]
+        )
+        logger = logging.getLogger(__name__)
+        
+        logger.info(f"Starting split-join-rename process")
+        logger.info(f"Grammar root: {grammar_root}")
+        logger.info(f"Log file: {log_file}")
 
         # The name of the renames file
         renames_allowed = os.path.join(grammar_root, 'summary/renames-allowed.yaml')
@@ -28,16 +45,20 @@ if __name__ == '__main__':
         display.check(f"Generated grammar summary with {len(grammar_summary['all-grammar-points'])} grammar points.")
 
         if os.path.exists(renames_allowed):
+            logger.info(f"Renames file {renames_allowed} exists, renaming now.")
             display.check(f"Renames file {renames_allowed} exists, renaming now.")
             # Read the renames-allowed.yaml file
             with open(renames_allowed, 'r', encoding='utf-8') as f:
                 renames = yaml.safe_load(f)
+            
+            logger.info(f"Loaded renames: {renames}")
             
             # Build a map of old name to new names and look up IDs
             old_to_new = {}
             new_name_to_id = {}
             
             for new_name, old_names_list in renames.items():
+                logger.debug(f"Processing rename: {new_name} <- {old_names_list}")
                 if new_name == "":
                     # Handle deletion operation - just add to old_to_new with empty new name
                     for old_name in old_names_list:
@@ -54,10 +75,13 @@ if __name__ == '__main__':
                 new_name_to_id[new_name] = found_id
                 
                 for old_name in old_names_list:
+                    logger.debug(f"  Mapping old name '{old_name}' -> new name '{new_name}'")
                     if old_name in old_to_new:
                         old_to_new[old_name].append(new_name)
+                        logger.debug(f"    Added to existing mapping: {old_to_new[old_name]}")
                     else:
                         old_to_new[old_name] = [new_name]
+                        logger.debug(f"    Created new mapping: {old_to_new[old_name]}")
             
             # Make a set of all old names
             all_old_names = set(old_to_new.keys())
@@ -71,6 +95,30 @@ if __name__ == '__main__':
                     split_new_names.add(new_name)
                     display.check(f"Splitting {old_name} -> {old_to_new[old_name]}")
 
+            # Update the grammar summary by removing old names and adding new names
+            updated_summary = {'all-grammar-points': {}}
+            
+            # Add existing grammar points that are not being renamed
+            for name, point_data in grammar_summary['all-grammar-points'].items():
+                if name not in all_old_names:
+                    # Remove better_grammar_point_name field if it exists
+                    clean_point_data = {k: v for k, v in point_data.items() if k != 'better_grammar_point_name'}
+                    updated_summary['all-grammar-points'][name] = clean_point_data
+            
+            # Add new grammar points
+            for new_name in all_new_names:
+                if new_name != "":  # Skip deletion operations
+                    updated_summary['all-grammar-points'][new_name] = {
+                        'id': new_name_to_id[new_name]
+                    }
+            
+            # Save the updated summary
+            save_summary(updated_summary, grammar_root, 'split-join-rename-summary.json')
+            display.check(f"Updated summary with {len(updated_summary['all-grammar-points'])} grammar points after renames.")
+
+            # Log the final old_to_new mapping
+            logger.info(f"Final old_to_new mapping: {old_to_new}")
+            
             # Replace references to old names with new names in all grammar files
             def fn(value, type_name, path):
                 if type_name == None: 
@@ -80,27 +128,34 @@ if __name__ == '__main__':
                         for grammar_point in learn:
                             stripped = grammar_point.removeprefix('<suggest>:').strip()
                             if stripped in old_to_new:
+                                logger.debug(f"Renaming learn_{act} '{grammar_point}' to '{old_to_new[stripped]}' at {path}")
                                 result.extend(old_to_new[stripped])
                             else:
                                 result.append(grammar_point)
                         value[f'learn_{act}'] = result
                     
                     return value
-                if type_name != 'grammarType': return
+                if type_name != 'grammarType': 
+                    return
                 # Strip: <suggest>: prefix from value
                 stripped = value.removeprefix('<suggest>:').strip()
                 if stripped in old_to_new:
+                    new_value = old_to_new[stripped][0]
+                    logger.info(f"Renaming grammarType '{value}' to '{new_value}' at {path}")
                     if '<suggest>:' in value:
-                        display.check(f"Renaming {value} to {old_to_new[stripped][0]} at {path}")
-                    return old_to_new[stripped][0]
+                        display.check(f"Renaming {value} to {new_value} at {path}")
+                    return new_value
                 return value
     
             def logic(parsed_obj, file_path):
                 better_names = parsed_obj.get('better_grammar_point_name', [])
                 if len(better_names) == 1 and parsed_obj['grammar_point'] in old_to_new:
                     del parsed_obj['better_grammar_point_name']
+                
                 visit_json(parsed_obj, GRAMMAR_SCHEMA, fn)
-                return parsed_obj
+                
+                result = clean_lint(parsed_obj, file_path, updated_summary)
+                return result
             
             mr = MapReduce(
                 input_dir            = grammar_root,

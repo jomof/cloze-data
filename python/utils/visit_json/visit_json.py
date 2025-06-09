@@ -85,14 +85,16 @@ def visit_json(
             chain = alias_chain_cache.get(target_name, [])
             # Call fn on each alias in reverse (most general -> most specific)
             path_str = segments_to_string(path_segments)
+            current_value = value
             for schema_node, tn in reversed(chain):
-                replacement = fn(value, tn, path_str)
+                replacement = fn(current_value, tn, path_str)
                 if replacement is not None:
-                    return replacement
+                    current_value = replacement
             # Descend into the most general schema node, skipping fn there
             if chain:
                 most_general_schema = chain[-1][0]
-                return _visit(value, most_general_schema, path_segments, inherited_prefix=None, skip_fn=True)
+                return _visit(current_value, most_general_schema, path_segments, inherited_prefix=None, skip_fn=True)
+            return current_value
 
         # 2) Inline type name by inherited_prefix and subschema type
         if isinstance(subschema, dict):
@@ -104,11 +106,12 @@ def visit_json(
         else:
             type_name = None
         # 3) Call fn if not skipped
+        current_value = value
         if not skip_fn:
             path_str = segments_to_string(path_segments)
-            replacement = fn(value, type_name, path_str)
+            replacement = fn(current_value, type_name, path_str)
             if replacement is not None:
-                return replacement
+                current_value = replacement
 
         # 4) Descend based on type: object, array, or primitive
         if isinstance(subschema, dict):
@@ -116,25 +119,25 @@ def visit_json(
         else:
             schema_type = None
         # 4.a) Object: recurse into properties
-        if schema_type == 'object' and isinstance(value, dict):
+        if schema_type == 'object' and isinstance(current_value, dict):
             props = subschema.get('properties')
             if isinstance(props, dict):
                 for key, child_schema in props.items():
-                    if key in value:
+                    if key in current_value:
                         new_segments = path_segments + [('prop', key)]
-                        new_val = _visit(value[key], child_schema, new_segments, inherited_prefix=key, skip_fn=False)
-                        if new_val is not value[key]:
-                            value[key] = new_val  # type: ignore
+                        new_val = _visit(current_value[key], child_schema, new_segments, inherited_prefix=key, skip_fn=False)
+                        if new_val is not current_value[key]:
+                            current_value[key] = new_val  # type: ignore
         # 4.b) Array: recurse into items
-        elif schema_type == 'array' and isinstance(value, list):
+        elif schema_type == 'array' and isinstance(current_value, list):
             item_schema = subschema.get('items')
             if item_schema is not None:
-                for idx, item in enumerate(value):
+                for idx, item in enumerate(current_value):
                     new_segments = path_segments + [('idx', idx)]
                     new_item = _visit(item, item_schema, new_segments, inherited_prefix=inherited_prefix, skip_fn=False)
                     if new_item is not item:
-                        value[idx] = new_item  # type: ignore
+                        current_value[idx] = new_item  # type: ignore
         # 4.c) Primitives: nothing to do
-        return value
+        return current_value
 
     return _visit(obj, schema, path_segments=[], inherited_prefix=None, skip_fn=False)

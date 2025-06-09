@@ -6,7 +6,6 @@ import textwrap
 from python.grammar import clean_lint, GRAMMAR_SCHEMA_WITH_COMMENTS
 from python.mapreduce import MapReduce
 import asyncio
-import sys
 import json
 from json_repair import repair_json
 from grammar_summary import generate_summary, save_summary

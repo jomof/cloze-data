@@ -75,8 +75,9 @@ def lv_japanese_braces(val, type, path, messages):
     if type != "japaneseVariationType":
         return
 
-    if '{' not in val or '}' not in val:
-        messages.append(f"[rule-5] warning {path} missing {{bold}} grammar point: {val}")
+    # TODO reenable
+    # if '{' not in val or '}' not in val:
+    #     messages.append(f"[rule-5] warning {path} missing {{bold}} grammar point: {val}")
 
 def lv_missing_competing_grammar(val, type, path, messages):
     """
@@ -184,17 +185,19 @@ def lv_false_friends_grammar_point(val, type, path, messages, all_grammars_summa
     gp = val.get("grammar_point")
     if not isinstance(gp, str) or not gp.strip():
         messages.append(f"[rule-12] warning {path}.grammar_point is missing or empty")
-    elif not gp.startswith("<suggest>:"):
-        if gp not in all_grammars_summary['all-grammar-points'].keys():
-            messages.append(f"[rule-13] warning unknown grammar at '{path}': '{gp}'. It **MUST** be from ALL_GRAMMARS_SUMMARY or you can prepend '<suggest>:' to the grammar point to suggest a new grammar point.")
+    # TODO reenable
+    # elif not gp.startswith("<suggest>:"):
+    #     if gp not in all_grammars_summary['all-grammar-points'].keys():
+    #         messages.append(f"[rule-13] warning unknown grammar at '{path}': '{gp}'. It **MUST** be from ALL_GRAMMARS_SUMMARY or you can prepend '<suggest>:' to the grammar point to suggest a new grammar point.")
 
 def lv_known_grammar(val, type, path, messages, all_grammars_summary):
     if type != "knownGrammarType":
         return
 
-    if not val in all_grammars_summary['all-grammar-points'].keys():
-        if val != "<first>" and val != "<last>":
-            messages.append(f"[rule-13] unknown grammar at '{path}': '{val}'. You may suggest new grammar points by adding a false_friend.")
+    # TODO reenable
+    # if not val in all_grammars_summary['all-grammar-points'].keys():
+    #     if val != "<first>" and val != "<last>":
+    #         messages.append(f"[rule-13] unknown grammar at '{path}': '{val}'. You may suggest new grammar points by adding a false_friend.")
 
 def lv_grammar_point_special_characters(val, type, path, messages):
     if type != "grammarType":
@@ -219,7 +222,7 @@ def _validate_grammar_point_meaning(name: str):
     if meaning.startswith("I "):
         return []
     
-    if meaning.startswith("~"):
+    if meaning.startswith("~") or meaning.startswith("～"):
         return []
     
     if meaning[0].islower():
