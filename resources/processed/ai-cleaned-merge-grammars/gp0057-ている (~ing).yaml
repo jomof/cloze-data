@@ -1,9 +1,13 @@
 grammar_point: ている (~ing)
 learn_before:
   - Verb[て] (and then)
+  - いる (animate existence)
+  - Verbs (non-past plain)
 learn_after:
   - ているあいだに (while something is happening)
   - ているところ (in the process of)
+  - ていく (to continue or move away)
+  - つつある (gradual process)
 id: gp0057
 meaning: Is, Am, Are (~ing)
 conjugations:
@@ -101,7 +105,7 @@ false_friends:
     kind: similar expression
     nuance: While the Verb + て form can link actions sequentially, {ている} specifically describes an ongoing
       action or resultant state. It is not merely a connector.
-    grammar_point: Verb[て] (and then another event)
+    grammar_point: Verb[て] (and then)
   - term: ているところだ
     meaning: In the process of doing ~ right now/at this moment
     kind: often confused with
@@ -301,7 +305,8 @@ examples:
           for a past continuous action.
       - competing_japanese:
           - 雨 が 降っ て、道 が 濡れ た。
-        english: It rained, and the road got wet.
+        english: This uses the plain 'て' form to link sequential actions. We're looking for an action
+          that was ongoing.
         hint: This uses the plain 'て' form to link sequential actions. We're looking for an action that
           was ongoing.
       - competing_japanese:
@@ -501,7 +506,8 @@ examples:
   - english: They were no longer living here.
     japanese:
       - 彼 ら は もう ここ に 住ん で {い ませ ん でし た}。
-      - 彼 ら は もう ここ に 住ん で {い ませ ん でし た}。
+      - 彼 ら は もう ここ に 住ん で {い なかっ た}。
+      - 彼 ら は もう ここ に 住ん で {なかっ た}。
     english_literally: As for them, they were no longer in the state of living here.
     competing_grammar:
       - competing_japanese:
@@ -519,6 +525,32 @@ examples:
     register: formal
     setting: informative
     conjugation: negative past polite (～ませんでした)
+  - english: If you are diligently studying, you will surely pass the exam.
+    japanese:
+      - 一生 懸命 勉強 し て {いれ ば}、きっと 試験 に 合格 し ます。
+      - 一生 懸命 勉強 し て {いれ ば}、きっと 試験 に 合格 する。
+      - 一生 懸命 勉強 し て {れ ば}、きっと 試験 に 合格 する よ。
+    english_literally: If diligently studying, surely to exam pass will do.
+    competing_grammar:
+      - competing_japanese:
+          - 一生 懸命 勉強 すれ ば、きっと 試験 に 合格 し ます。
+        english: If you study diligently, you will surely pass the exam.
+        hint: This uses a general conditional form, implying that if you study, you'll pass. We're looking
+          for an example that highlights the *ongoing* nature of studying.
+      - competing_japanese:
+          - 一生 懸命 勉強 する なら、きっと 試験 に 合格 し ます。
+        english: If you are to study diligently, you will surely pass the exam.
+        hint: This conditional implies a hypothetical future action. We're looking for a continuous action
+          as the condition.
+      - competing_japanese:
+          - 一生 懸命 勉強 し たら、きっと 試験 に 合格 し ます。
+        english: If you study diligently, then you will surely pass the exam.
+        hint: This implies a completed action or a condition that happens once. We're looking for an ongoing
+          action as the condition.
+    scene: A supportive friend encourages another student before an exam.
+    register: semi-formal
+    setting: supportive
+    conjugation: conditional (～ば)
 post_example_writeup: The versatility of 「ている」 allows it to express both ongoing actions and the continuous
   state resulting from a past action. Understanding the context and the nature of the verb is key to discerning
   its precise meaning.

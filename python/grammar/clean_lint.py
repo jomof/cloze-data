@@ -379,7 +379,8 @@ with open(path, "rb") as f:
     seed = hashlib.sha256(f.read()).hexdigest()
 
 def clean_lint_memoize(grammar_point, path: str = None, all_grammars_summary: dict = { "all-grammar-points": {"known":{}} }):
-    return memoize_to_disk_seeded("clean_lint", seed, clean_lint, grammar_point, path, all_grammars_summary)
+    # return memoize_to_disk_seeded("clean_lint", seed, clean_lint, grammar_point, path, all_grammars_summary)
+    return clean_lint(grammar_point, path, all_grammars_summary)
     
 def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = { "all-grammar-points": {"known":{}} }):
     lint = []

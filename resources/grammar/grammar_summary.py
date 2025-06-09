@@ -27,7 +27,7 @@ def save_summary(summary, grammar_root, name='summary.yaml'):
     with open(file_path, 'w', encoding='utf-8') as f:
         dump_yaml_file(summary, f)
     
-def generate_summary(grammar_root, fields = ['id', 'meaning']):
+def generate_summary(grammar_root, fields = ['meaning']):
     """
     Generates a summary of all grammar points in the specified directory.
     """
