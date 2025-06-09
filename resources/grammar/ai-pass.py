@@ -209,8 +209,16 @@ if __name__ == '__main__':
         display.check(f"Generated grammar summary with {len(grammar_summary['all-grammar-points'])} grammar points.")
 
         def lint(parsed_obj, file_path):
+            # Convert original object to JSON for comparison
+            original_json = json.dumps(parsed_obj, ensure_ascii=False, sort_keys=True)
+            
             result = clean_lint_memoize(parsed_obj, file_path, grammar_summary)
-            if len(result.get('lint-errors', [])) == 0:
+            
+            # Convert result to JSON for comparison
+            result_json = json.dumps(result, ensure_ascii=False, sort_keys=True)
+            
+            # If there are no lint errors AND content hasn't changed, return None
+            if len(result.get('lint-errors', [])) == 0 and original_json == result_json:
                 return None
             return result
         
