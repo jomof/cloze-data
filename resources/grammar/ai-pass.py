@@ -208,7 +208,7 @@ if __name__ == '__main__':
         save_summary(grammar_summary, grammar_root)
         display.check(f"Generated grammar summary with {len(grammar_summary['all-grammar-points'])} grammar points.")
 
-        def lint(parsed_obj, file_path):
+        async def lint(parsed_obj, file_path):
             # Convert original object to JSON for comparison
             original_json = json.dumps(parsed_obj, ensure_ascii=False, sort_keys=True)
             

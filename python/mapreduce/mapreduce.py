@@ -3,6 +3,7 @@ import sys
 import asyncio
 import threading
 import time
+import inspect
 
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 from threading import Lock
@@ -56,7 +57,7 @@ class MapReduce:
 
         map_func_name: str = 'mapping',
         map_func = None,
-        map_inproc: bool = False,  
+        map_inproc = None,  
 
         fold_func_name: str = 'folding',
         fold_func=None,
@@ -73,9 +74,33 @@ class MapReduce:
         self.deserialize_func = deserialize_func
         self.preprocess_func = preprocess_func
         if isinstance(map_func, dict):
-            self.map_func = map_func
+            # Process dict to auto-detect async functions when in_proc not explicitly set
+            self.map_func = {}
+            for name, config in map_func.items():
+                if isinstance(config, dict) and 'func' in config:
+                    func = config['func']
+                    # Validate: async functions cannot run out-of-process
+                    if config.get('in_proc') is False and inspect.iscoroutinefunction(func):
+                        raise ValueError(f"Async function '{name}' cannot run with in_proc=False. Async functions require in_proc=True.")
+                    # Only auto-detect async if in_proc not explicitly specified
+                    elif 'in_proc' not in config and inspect.iscoroutinefunction(func):
+                        self.map_func[name] = {**config, 'in_proc': True}
+                    else:
+                        self.map_func[name] = config
+                else:
+                    self.map_func[name] = config
         elif map_func is not None:
-            self.map_func = { map_func_name: { 'func': map_func, 'in_proc': map_inproc } }
+            # Validate: async functions cannot run out-of-process
+            if map_inproc is False and inspect.iscoroutinefunction(map_func):
+                raise ValueError(f"Async function cannot run with in_proc=False. Async functions require in_proc=True.")
+            # Determine in_proc: explicit value, or auto-detect async, or default False
+            if map_inproc is not None:
+                inproc_value = map_inproc
+            elif inspect.iscoroutinefunction(map_func):
+                inproc_value = True
+            else:
+                inproc_value = False
+            self.map_func = { map_func_name: { 'func': map_func, 'in_proc': inproc_value } }
         else:
             self.map_func = { }
 
@@ -153,7 +178,10 @@ class MapReduce:
                             if processed:
                                 with display.work(basename, map_func_name):
                                     if map_inproc:
-                                        processed = map_func(processed, input_file_path)
+                                        if inspect.iscoroutinefunction(map_func):
+                                            processed = await map_func(processed, input_file_path)
+                                        else:
+                                            processed = map_func(processed, input_file_path)
                                     else:
                                         # Only check state before expensive executor work
                                         if self.run_state != 'running':
