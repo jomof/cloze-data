@@ -633,7 +633,6 @@ if __name__ == '__main__':
 
     # Generate a grammar summary object with only learn_before and learn_after fields
     grammar_summary = generate_summary(grammar_root, ['id', 'learn_before', 'learn_after'])
-    # for key in grammar_summary['all-grammar-points']:
     save_summary(grammar_summary, grammar_root, 'toposort-summary.json')
 
     with display.work("toposort", "updating list"):

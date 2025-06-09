@@ -3,7 +3,7 @@ import json
 from python.mapreduce import MapReduce
 import asyncio
 import os
-import yaml
+from python.console import display
 from dumpyaml import dump_yaml_file
 
 def sort_summary(summary):
@@ -33,6 +33,16 @@ def generate_summary(grammar_root, fields = ['meaning']):
     """
     summary = {'all-grammar-points': OrderedDict()}
 
+    seen = {}
+
+    def preprocess(parsed_obj, file_path):
+        basename = os.path.basename(file_path)
+        _, grammar_point = os.path.splitext(basename)[0].split('-', 1)
+        if grammar_point not in seen:
+            seen[grammar_point] = []
+        seen[grammar_point].append(file_path)
+        return parsed_obj
+        
     def fold(_, current):
         summary_field = { }
         for field in fields:
@@ -42,11 +52,21 @@ def generate_summary(grammar_root, fields = ['meaning']):
     
     mr = MapReduce(
         input_dir            = grammar_root,
+        preprocess_func      = preprocess,
         fold_func_name       = 'summarizing',
         fold_func            = fold,
         max_threads          = 4,
     )
 
     asyncio.run(mr.run())
-    
+
+    # Check for 'seen' grammar points that have multiple filenames
+    should_error = False
+    for grammar_point, files in seen.items():
+        if len(files) > 1:
+            basenames = [os.path.basename(f) for f in files]
+            display.warn(f"Grammar point '{grammar_point}' has multiple files: {basenames}")
+            should_error = True
+    if should_error:
+        raise ValueError("Multiple files found for the same grammar point. Please resolve the conflicts.")
     return summary
