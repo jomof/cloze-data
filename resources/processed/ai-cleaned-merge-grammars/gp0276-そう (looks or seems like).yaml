@@ -1,18 +1,21 @@
 grammar_point: そう (looks or seems like)
 learn_before:
-  - な-Adjectives (adjectival nouns)
-  - Verbs (non-past plain)
-  - かもしれない (might)
-  - そう (looks like)
-  - ようだ (it seems)
   - い-Adjectives (adjectives ending in い)
-  - 見える (to be visible・to seem)
-  - みたい (similar to)
+  - な-Adjectives (adjectival nouns)
+  - です (polite copula)
+  - Verbs (non-past plain)
+  - かな (I wonder)
 learn_after:
   - げ (seeming・appearance)
+  - がち (tend to)
+  - そうになる (almost・on the verge of)
+  - 思われる (to seem・impersonal)
   - ものがある (subjective feeling)
-  - とみえる (seems from observation)
   - っぽい (ish; characteristic of)
+  - そうもない (unlikely to)
+  - とみえる (seems from observation)
+  - に違いない (no doubt)
+  - ようだ (it seems)
 id: gp0276
 meaning: Seems, Looks like, Sounds like
 conjugations:
@@ -66,6 +69,10 @@ details:
   part-of-speech: auxiliary adjective
   register: teineigo (polite)
   usage-context: Used to convey impressions based on direct sensory information or immediate observation.
+  nuance: This specific 「そう」 focuses purely on direct observation and impression.
+  counterpoint: Be mindful of the context to differentiate 「そう」 meaning "it seems" from other uses of
+    「そう」, such as the 「伝聞・様態のそう」 which indicates hearsay (e.g., 「～だそうだ」 meaning "I hear that...") or describes
+    the manner of an action (e.g., 「～ように」 meaning "as if...").
 etymology: The grammar point 「そう」 originates from a contraction of 「様 (さま)」 (form, appearance) and the
   classical auxiliary verb 「なり」 (meaning 'to be' or 'to become'). Thus, 「様なり」 evolved into 「そう」, signifying
   something "is like an appearance" or "takes on a certain form/look." This root explains its function
@@ -80,7 +87,6 @@ writeup: |-
 
   *   When using 「そう」 with negative verb forms, remove the 「い」 from the plain negative 「ない」 and attach 「そう」. For example, 「する」 (to do) becomes 「しなさそう」 (doesn't look like it will do), not 「しなそう」.
   *   Similarly, for negative い-adjectives, the 「い」 from 「ない」 is removed and 「さ」 is added before attaching 「そう」, resulting in 「なさそう」. For example, 「おいしい」 (delicious) becomes 「おいしくなさそう」 (doesn't look delicious).
-  *   Be mindful of the context to differentiate 「そう」 meaning "it seems" from other uses of 「そう」, such as the 「伝聞・様態のそう」 which indicates hearsay (e.g., 「～だそうだ」 meaning "I hear that...") or describes the manner of an action (e.g., 「～ように」 meaning "as if..."). This specific 「そう」 focuses purely on direct observation and impression.
 false_friends:
   - term: げ
     meaning: Seemingly, Giving appearance of, [Expresses emotions or feelings]
@@ -123,7 +129,7 @@ false_friends:
     nuance: 「らしい」 suggests an impression or conclusion based on indirect evidence or hearsay (e.g., 'I
       heard it's good' (良いらしい)), whereas 「そうに/そうな」 expresses an impression derived from direct sensory
       observation (e.g., 'It looks good' (良さそう)).
-    grammar_point: らしい (hearsay or conjecture)
+    grammar_point: らしい (I hear, it seems)
 post_false_friends_writeup: While these expressions share similarities with 「そうに・そうな」, they each carry
   unique nuances. 「ように」 and 「みたい」 imply a more direct comparison or resemblance, whereas 「そうに・そうな」 suggests
   a subjective impression based on immediate sensory input. 「見える」 focuses on visual perception, while
@@ -137,6 +143,8 @@ examples:
       - 彼 は 今 に も 泣き {そう に} なっ て い た。
       - 彼 は 今 に も 泣き {そう だっ た}。
       - 彼、今 に も 泣き {そう だっ た} よ。
+      - 彼 は 今 に も 泣き {そう} でし た。
+      - 彼 は 今 に も 泣き {そう な} 顔 を し て い た。
     english_literally: He at any moment crying-seemingly became.
     competing_grammar:
       - competing_japanese:
@@ -157,338 +165,196 @@ examples:
     conjugation: dictionary (plain non-past)
     nuance: The phrase 「今にも泣きそうに」 (about to cry at any moment) describes a strong visual impression of
       impending action. The use of 「そうに」 here emphasizes the visual cue of his face and body language.
-  - english: She always works as if she's enjoying it.
+    etymology: The expression 「今にも～そうだ」 is a common collocation to describe something that appears to
+      be on the verge of happening, emphasizing the immediate visual signs of an impending event. The
+      「今にも」 part indicates immediacy, strengthening the predictive sense of 「～そう」. It captures the sense
+      of observable readiness.
+  - english: This cake looks really delicious!
     japanese:
-      - 彼女 は いつ も 楽し {そう に} 仕事 を し て いる。
-      - 彼女 は いつ も 楽し {そう に} 仕事 し てる。
-      - 彼女 は いつ も 楽し {そう に} 仕事 を し て い ます。
-    english_literally: She enjoy-seemingly work is doing.
+      - この ケーキ、とても 美味し {そう}！
+      - この ケーキ は とても 美味し {そう} です ね。
+      - この ケーキ は とても 美味し {そう} だ。
+    english_literally: This cake, very delicious-seems!
     competing_grammar:
       - competing_japanese:
-          - 彼女 は いつ も 楽しく 仕事 を し て いる。
-        english: She always works enjoyably.
-        hint: The scene focuses on the outward appearance of enjoyment ('楽しそうに'), rather than definitively
-          stating she *is* enjoying it ('楽しく'). This highlights the observer's impression. We're looking
-          for a phrase describing an appearance of enjoyment.
-      - competing_japanese:
-          - 彼女 は いつ も 楽しむ よう に 仕事 を し て いる。
-        english: She always works as if she enjoys it.
-        hint: While 'ように' also means 'like', 'そうに' is more about the immediate appearance or impression
-          from observation, whereas 'ように' can imply a simile or comparison. We're looking for a phrase
-          conveying a direct impression based on visual cues.
-    scene: Observing a colleague at work, who appears genuinely happy with her tasks.
-    register: semi-formal
-    setting: informative
-    conjugation: dictionary (plain non-past)
-  - english: He solved this difficult problem as if it were easy.
-    japanese:
-      - この 難しい 問題 を 彼 は 簡単 {そう に} 解い た。
-      - この 難しい 問題、彼 は 簡単 {そう に} 解い た。
-      - この 難しい 問題 を 彼 は 簡単 {そう に} 解き まし た。
-    english_literally: This difficult problem he easy-seemingly solved.
-    competing_grammar:
-      - competing_japanese:
-          - この 難しい 問題 を 彼 は 簡単 に 解い た。
-        english: He solved this difficult problem easily.
-        hint: The scene emphasizes that the problem was difficult for *others*, and the speaker's observation
-          is that *he made it look easy* ('簡単そうに'), not necessarily that it *was* easy ('簡単に'). We're
-          looking for a phrase describing the perceived manner of an action.
-      - competing_japanese:
-          - この 難しい 問題 を 彼 は 簡単 で ある か の よう に 解い た。
-        english: He solved this difficult problem as if it were easy.
-        hint: The nuance of 'そうに' is a direct, immediate impression based on observation, more concise
-          than the longer 'であるかのように', which might suggest a more conscious pretense. We're looking for
-          a more direct expression of an observed manner.
-    scene: Watching a classmate effortlessly solve a complex math problem that everyone else struggled
-      with.
-    register: casual
-    setting: informative
-    conjugation: dictionary (plain non-past)
-  - english: I don't order dishes that don't look delicious.
-    japanese:
-      - 美味しく な さ {そう な} 料理 は 注文 し ない。
-      - 美味しく な さ {そう な} 料理 は 注文 し ませ ん。
-      - 美味しく な さ {そう な} 料理 は 頼ま ない。
-    english_literally: Delicious-not-seemingly dishes I don't order.
-    competing_grammar:
-      - competing_japanese:
-          - 美味しく ない 料理 は 注文 し ない。
-        english: I don't order dishes that are not delicious.
-        hint: The scene specifies that the decision is based on *appearance* ('なさそうな'), not on a prior
-          experience of the food *being* undelicious ('美味しくない'). We're looking for a phrase based on visual
-          appearance.
-      - competing_japanese:
-          - 美味しく ない か も しれ ない 料理 は 注文 し ない。
-        english: I don't order dishes that might not be delicious.
-        hint: The scene implies a stronger visual impression ('なさそうな') leading to a decision, rather than
-          just a weak possibility ('かもしれない'). We're looking for a phrase conveying a direct visual impression.
-    scene: A picky eater choosing from a restaurant menu, avoiding anything that visually unappealing.
-    register: teineigo (polite)
-    setting: informative
-    conjugation: negative plain (～ない)
-  - english: This box looks small, but unexpectedly it doesn't seem light.
-    japanese:
-      - この 箱 は 小さく 見える けど、意外 と 軽く な さ {そう だ} よ。
-      - この 箱 は 小さく 見え ます けど、意外 と 軽く な さ {そう だ} よ。
-      - この 箱 は 小さく 見える の に、意外 と 軽く な さ {そう だ} よ。
-    english_literally: This box small looks, but unexpectedly light-not-seemingly is.
-    competing_grammar:
-      - competing_japanese:
-          - この 箱 は 小さく 見える けど、意外 と 軽く ない よ。
-        english: This box looks small, but unexpectedly it is not light.
-        hint: The scene highlights the *appearance* ('軽くなさそうだ') of the weight, which contradicts the initial
-          visual impression. '軽くない' would state a fact, not an appearance. We're looking for a phrase
-          that expresses a perceived attribute.
-      - competing_japanese:
-          - この 箱 は 小さく 見える けど、意外 と 重い よ。
-        english: This box looks small, but unexpectedly it is heavy.
-        hint: The scene suggests a moment of realization based on perceived weight ('軽くなさそうだ'), not a
-          definitive statement that it *is* heavy ('重い'). We're looking for an expression that conveys
-          a visual impression that turns out to be misleading.
-    scene: Attempting to lift a small package that feels surprisingly heavy.
-    register: casual
-    setting: informative
-    conjugation: negative plain (～ない)
-  - english: You can throw away old furniture that doesn't look useful.
-    japanese:
-      - 使え な さ {そう な} 古い 家具 は、捨て て も いい です よ。
-      - 使え な さ {そう な} 古い 家具 は 捨て て も いい よ。
-      - 使え な さ {そう な} 古い 家具 は 捨て て ください。
-    english_literally: Usable-not-seemingly old furniture, throw away is good.
-    competing_grammar:
-      - competing_japanese:
-          - 使え ない 古い 家具 は、捨て て も いい です よ。
-        english: You can throw away old furniture that cannot be used.
-        hint: The scene focuses on the *appearance* of uselessness ('使えなさそうな'), indicating a judgment
-          based on observation, not a confirmed fact that it *cannot* be used ('使えない'). We're looking
-          for a phrase based on visual assessment.
-      - competing_japanese:
-          - 役 に 立た ない 古い 家具 は、捨て て も いい です よ。
-        english: You can throw away useless old furniture.
-        hint: While '役に立たない' means 'useless', '使えなさそうな' specifically implies a visual assessment leading
-          to that conclusion. We're looking for an expression that suggests a judgment from observation.
-    scene: A homeowner telling a friend to clear out unnecessary items from a storage room.
-    register: teineigo (polite)
-    setting: instructional
-    conjugation: negative plain (～ない)
-  - english: That person has a face that doesn't look like they get angry, but in reality, they're short-tempered.
-    japanese:
-      - あの 人 は 怒ら な さ {そう な} 顔 を し て いる が、実 は 短気 だ。
-      - あの 人、怒ら な さ {そう な} 顔 し てる けど、実 は 短気 だ よ。
-      - あの 人 は 怒ら な さ {そう な} 顔 を し て いる けれど、実 は 短気 だ。
-    english_literally: That person angry-not-seemingly face is doing, but actually short-tempered is.
-    competing_grammar:
-      - competing_japanese:
-          - あの 人 は 怒ら ない 顔 を し て いる が、実 は 短気 だ。
-        english: That person has a face that doesn't get angry, but in reality, they're short-tempered.
-        hint: The scene emphasizes the *appearance* of not getting angry ('怒らなさそうな'), contrasting with
-          the reality, rather than a definitive statement about their anger management ('怒らない'). We're
-          looking for a phrase highlighting a deceptive appearance.
-      - competing_japanese:
-          - あの 人 は 穏やか な 顔 を し て いる が、実 は 短気 だ。
-        english: While '穏やか な' also describes a calm face, '怒らなさそうな' specifically implies the *lack* of
-          an angry appearance, directly setting up the contrast. We're looking for an expression that
-          implies a visual judgment about temperament.
-        hint: While '穏やか な' also describes a calm face, '怒らなさそうな' specifically implies the *lack* of an
-          angry appearance, directly setting up the contrast. We're looking for an expression that implies
-          a visual judgment about temperament.
-    scene: Two colleagues discussing a new manager whose calm demeanor is misleading.
-    register: casual
-    setting: informative
-    conjugation: negative plain (～ない)
-  - english: He is studying as if he's not enjoying it.
-    japanese:
-      - 彼 は 楽し {く な さ そう に} 勉強 を し て いる。
-      - 彼 は 楽し {く な さ そう に} 勉強 し てる。
-      - 彼 は 楽し {く な さ そう に} 勉強 を し て い ます。
-    english_literally: He enjoyable-not-seemingly study is doing.
-    competing_grammar:
-      - competing_japanese:
-          - 彼 は 楽しく ない 勉強 を し て いる。
-        english: He is doing enjoyable study.
-        hint: The scene highlights the *appearance* of not enjoying it ('楽しくなさそうに'), based on observation
-          of his actions, not a direct statement about the enjoyment ('楽しくない') of the study itself. We're
-          looking for a phrase describing an observed manner.
-      - competing_japanese:
-          - 彼 は 苦しい 勉強 を し て いる。
-        english: He is doing painful study.
-        hint: While '苦しい' means painful/hard, '楽しくなさそうに' specifically conveys the *lack of enjoyment*
-          in his manner, based on an observable impression. We're looking for an expression that describes
-          the visible lack of pleasure.
-    scene: A student begrudgingly doing homework, with slumped shoulders and a bored expression.
-    register: casual
-    setting: informative
-    conjugation: negative plain (～ない)
-  - english: It looks like it's going to rain tomorrow, doesn't it?
-    japanese:
-      - 明日 は 雨 が 降り {そう な} 天気 だ ね。
-      - 明日 は 雨 が 降り {そう} だ ね。
-      - 明日 は 雨 が 降り {そう な} 感じ だ ね。
-    english_literally: Tomorrow rain fall-seemingly weather is, isn't it?
-    competing_grammar:
-      - competing_japanese:
-          - 明日 は 雨 が 降る 天気 だ ね。
-        english: Tomorrow is rain weather, isn't it?
-        hint: The scene emphasizes the *apparent* likelihood of rain ('降りそうな'), based on current weather
-          conditions, rather than a certainty ('降る天気'). We're looking for a phrase that expresses a prediction
-          based on observation.
-      - competing_japanese:
-          - 明日 は 雨 が 降る か も しれ ない ね。
-        english: Tomorrow it might rain, might it?
-        hint: '''そう'' indicates a stronger, more direct visual inference about what is likely to happen,
-          compared to the more tentative ''かもしれない'' which simply states a possibility. We''re looking
-          for a stronger visual inference of likelihood.'
-    scene: Two friends observing dark clouds gathering in the sky.
-    register: casual
-    setting: informative
-    conjugation: dictionary (plain non-past)
-  - english: This book has an easy-to-understand title, but the content is difficult.
-    japanese:
-      - この 本 は 分かり やす {そう な} タイトル だ が、内容 は 難しい。
-      - この 本 は 分かり やす {そう な} タイトル です が、内容 は 難しい です。
-      - この 本、分かり やす {そう な} タイトル だ けど、内容 は 難しい よ。
-    english_literally: This book easy-to-understand-seemingly title is, but content is difficult.
-    competing_grammar:
-      - competing_japanese:
-          - この 本 は 分かり やすい タイトル だ が、内容 は 難しい。
-        english: This book has an easy-to-understand title, but the content is difficult.
-        hint: The scene highlights the deceptive *appearance* of being easy to understand ('分かりやすそうな'),
-          rather than stating it *is* easy ('分かりやすい'). We're looking for a phrase describing an impression
-          of ease.
-      - competing_japanese:
-          - この 本 は 分かり やすく 見える タイトル だ が、内容 は 難しい。
-        english: This book has a title that looks easy to understand, but the content is difficult.
-        hint: While '見えな' can also imply appearance, 'そう' is more directly about the impression of likely
-          outcome or characteristic, here, 'likely to be easy to understand'. We're looking for a phrase
-          that conveys a direct impression of an attribute.
-    scene: A student struggling with a textbook whose title seemed approachable but whose content is unexpectedly
-      complex.
-    register: semi-formal
-    setting: academic
-    conjugation: dictionary (plain non-past)
-  - english: She's always playing only games that look interesting.
-    japanese:
-      - 彼女 は いつ も 面白 {そう な} ゲーム ばかり やっ て いる。
-      - 彼女、いつ も 面白 {そう な} ゲーム ばかり やっ てる。
-      - 彼女 は いつ も 面白 {そう な} ゲーム ばかり やっ て い ます。
-    english_literally: She always interesting-seemingly games only is playing.
-    competing_grammar:
-      - competing_japanese:
-          - 彼女 は いつ も 面白い ゲーム ばかり やっ て いる。
-        english: She's always playing only interesting games.
-        hint: The scene emphasizes that the selection is based on the *appearance* of being interesting
-          ('面白そうな'), rather than the confirmed fact that they *are* interesting ('面白い'). We're looking
-          for a phrase indicating selection based on visual appeal.
-      - competing_japanese:
-          - 彼女 は いつ も 面白い と 思う ゲーム ばかり やっ て いる。
-        english: She's always playing only games she thinks are interesting.
-        hint: The scene uses 'そう' to imply an immediate visual judgment, simpler and more direct than
-          '面白いと思う' (thinks it's interesting). We're looking for a more direct expression of visual impression.
-    scene: A friend commenting on another's gaming habits, noting their preference for visually appealing
-      games.
+          - この ケーキ は 美味しい です。
+        english: This cake is delicious.
+        hint: We are describing how the cake *appears* visually, not making a definitive statement about
+          its taste. We're looking for an expression of an impression based on sight.
+    scene: Two friends are looking at a beautifully decorated cake in a bakery window.
     register: casual
     setting: friendly
     conjugation: dictionary (plain non-past)
-  - english: Which cheese looks like it would pair well with this wine?
+    nuance: The casual utterance 「美味しそう！」 directly expresses a visual impression of the cake's quality.
+      The dropped 「い」 from 「美味しい」 before attaching 「そう」 is the standard colloquial usage.
+  - english: You look very energetic today, Tanaka-san.
     japanese:
-      - この ワイン に 合い {そう な} チーズ は どれ です か？
-      - この ワイン に 合い {そう な} チーズ、どれ？
-      - この ワイン に 合い {そう な} 感じ の チーズ は どれ？
-    english_literally: This wine to suit-seemingly cheese is which?
+      - 田中 さん、今日 は とても 元気 {そう} です ね。
+      - 田中 さん、今日 は とても 元気 {そう} だ ね。
+      - 田中 さん は 今日 は とても 元気 {そう} に 見え ます。
+    english_literally: Tanaka-san, today very energetic-seems, isn't it?
     competing_grammar:
       - competing_japanese:
-          - この ワイン に 合う チーズ は どれ です か？
-        english: Which cheese suits this wine?
-        hint: The scene implies a subjective judgment based on general knowledge or visual cue ('合いそうな'),
-          rather than an objective fact of compatibility ('合う'). We're looking for a phrase that implies
-          a likely suitability based on appearance.
-      - competing_japanese:
-          - この ワイン に 合う か も しれ ない チーズ は どれ です か？
-        english: Which cheese might suit this wine?
-        hint: The question implies a more confident expectation or informed guess ('合いそうな'), rather than
-          a simple possibility ('かもしれない'). We're looking for a more confident visual assessment.
-    scene: A customer asking a sommelier for a recommendation based on perceived compatibility.
+          - 田中 さん、今日 は とても 元気 です ね。
+        english: Tanaka-san, you are very energetic today, aren't you?
+        hint: We are commenting on Tanaka-san's *apparent* state based on observation, not stating it
+          as an absolute fact. We're looking for a phrase that conveys a visual impression.
+    scene: A colleague greets Tanaka-san at the office in the morning.
     register: teineigo (polite)
-    setting: informative
+    setting: professional
     conjugation: dictionary (plain non-past)
-  - english: My mother gently stroked the baby's head.
+    nuance: The use of 「元気そうですね」 politely conveys an observation about Tanaka-san's energetic appearance.
+      「そう」 directly attaches to the な-adjective stem 「元気」.
+  - english: It looks like it's going to rain soon. We should hurry.
     japanese:
-      - 母 は 優し {そう に} 赤ちゃん の 頭 を 撫で た。
-      - 母 は 優し {そう に} 赤ちゃん の 頭 撫で た。
-      - 母 は 優し {そう に} 赤ちゃん の 頭 を 撫で まし た。
-    english_literally: Mother gently-seemingly baby's head stroked.
+      - もう すぐ 雨 が 降り {そう} だ。急い だ ほう が いい。
+      - もう すぐ 雨 が 降り {そう} です。急い だ ほう が いい です。
+      - もう すぐ 雨 降り {そう}。急い だ ほう が いい よ。
+    english_literally: Soon rain falls-seems. Should hurry.
     competing_grammar:
       - competing_japanese:
-          - 母 は 優しく 赤ちゃん の 頭 を 撫で た。
-        english: My mother gently stroked the baby's head.
-        hint: The scene emphasizes the *appearance* or *manner* of gentleness ('優しそうに'), as observed by
-          the speaker, rather than just stating that she *was* gentle ('優しく'). We're looking for a phrase
-          describing an observed manner.
-      - competing_japanese:
-          - 母 は 優し さ を 込め て 赤ちゃん の 頭 を 撫で た。
-        english: My mother stroked the baby's head with kindness.
-        hint: While '優しさを込めて' (with kindness) conveys intent, '優しそうに' describes the observable gentle
-          *action* or *manner*. We're looking for an expression that describes the visible quality of
-          an action.
-    scene: Observing a mother's tender gesture towards her child.
-    register: semi-formal
-    setting: reflective
-    conjugation: dictionary (plain non-past)
-    nuance: The use of 「優しそうに」 (gently/kindly) describes the *manner* in which the action of stroking
-      is performed, implying that the action itself conveyed gentleness. This nuance is common in descriptions
-      where an action's appearance reflects an underlying quality or feeling.
-  - english: That dress, the color looks like it would really suit you.
-    japanese:
-      - その ドレス、君 に すごく 似合い {そう な} 色 だ ね。
-      - その ドレス、すごく 似合い {そう な} 色 だ よ。
-      - その ドレス の 色、君 に すごく 似合い {そう} だ ね。
-    english_literally: That dress, you to very suit-seemingly color is, isn't it?
-    competing_grammar:
-      - competing_japanese:
-          - その ドレス、君 に すごく 似合う 色 だ ね。
-        english: That dress, the color really suits you.
-        hint: The scene implies a positive prediction based on visual assessment ('似合いそうな'), rather than
-          a definitive statement of fact ('似合う'), making it a softer compliment. We're looking for a phrase
-          that implies a likely suitability based on appearance.
-      - competing_japanese:
-          - その ドレス、君 に すごく 似合う と 思う 色 だ ね。
-        english: That dress, it's a color I think really suits you.
-        hint: Using 'そう' offers a more direct and natural expression of an immediate visual impression,
-          as opposed to explicitly stating 'I think it suits you'. We're looking for a more direct expression
-          of an observed suitability.
-    scene: A man complimenting a woman on a dress she is considering buying, trying to encourage her.
+          - もう すぐ 雨 が 降る と 思う。
+        english: I think it will rain soon.
+        hint: The grammar point emphasizes a visual impression or immediate sign, not just a general thought
+          or belief. We're looking for an expression about what the weather *appears* to be doing.
+    scene: Two people are walking outside and notice dark clouds gathering.
     register: casual
-    setting: flirty
+    setting: serious
     conjugation: dictionary (plain non-past)
-    speaker_gender: male
-    listener_gender: female
-    nuance: The phrase 「似合いそうな色」 (a color that looks like it would suit you) is a common compliment, often
-      used by men to women, especially when trying to be charming. The 「そう」 indicates a visual judgment
-      that suggests potential suitability, rather than a definitive statement. This makes the compliment
-      softer and more inviting for further interaction.
-  - english: This chocolate doesn't look sweet, but it's actually very sweet.
+    nuance: 「降りそう」 indicates a strong visual prediction based on the sky's appearance. The stem of 「降る」
+      (to fall/rain) is 「降り」. This phrase suggests an immediate likelihood based on observed conditions.
+  - english: That plan doesn't seem like it will work out well.
     japanese:
-      - この チョコレート、見 た 目 は 甘 {く な さ そう な} の に、実際 は とても 甘い よ。
-      - この チョコレート、見 た 目 は 甘 {く な さ そう な} の に、実際 は とても 甘い です よ。
-      - この チョコレート、甘 {く な さ そう} に 見える けど、実際 は とても 甘い よ。
-    english_literally: This chocolate, appearance sweet-not-seemingly though, actually very sweet is.
+      - その 計画 は うまく い か な {さそう} だ ね。
+      - その 計画 は うまく い か な {さそう} です ね。
+      - その 計画、うまく い か な {さそう}。
+    english_literally: That plan well go-not-seems, right.
     competing_grammar:
       - competing_japanese:
-          - この チョコレート、見 た 目 は 甘く ない の に、実際 は とても 甘い よ。
-        english: This chocolate's appearance is not sweet, but it's actually very sweet.
-        hint: The scene highlights the deceptive *appearance* of lacking sweetness ('甘くなさそうな'), contrasting
-          with the actual taste. '甘くない' would state a definitive lack of sweetness based on prior knowledge,
-          not just appearance. We're looking for a phrase that emphasizes visual deception.
-      - competing_japanese:
-          - この チョコレート、見 た 目 は 苦い の に、実際 は とても 甘い よ。
-        english: This chocolate's appearance is bitter, but it's actually very sweet.
-        hint: While it might look bitter ('苦い'), the point is specifically about the *lack of apparent
-          sweetness* ('甘くなさそうな'), which 'そう' captures precisely as a visual inference. We're looking for
-          an expression that directly addresses the apparent lack of sweetness.
-    scene: Someone offering a piece of dark chocolate that looks bitter but tastes surprisingly sugary.
+          - その 計画 は うまく いか ない だろう。
+        english: That plan probably won't go well.
+        hint: This implies an assessment based on observable flaws or current conditions, not just a general
+          probability. We're looking for a phrase that conveys a negative impression based on observation.
+    scene: Two coworkers are reviewing a proposal.
     register: casual
-    setting: humorous
+    setting: professional
     conjugation: negative plain (～ない)
+    nuance: 「いかなさそう」 expresses a negative prediction based on observation or assessment. The 「ない」 of 「いかない」
+      (not go) becomes 「なさそう」. This form correctly conveys a negative appearance or likelihood.
+  - english: The new game doesn't look very fun.
+    japanese:
+      - あの 新しい ゲーム は あまり 楽しく な {さそう} だ ね。
+      - あの 新しい ゲーム は あまり 楽しく な {さそう} です ね。
+      - あの 新しい ゲーム、あまり 楽しく な {さそう}。
+    english_literally: That new game not very fun-not-seems, right.
+    competing_grammar:
+      - competing_japanese:
+          - あの 新しい ゲーム は 面白く ない だろう。
+        english: That new game probably isn't interesting.
+        hint: This explicitly states that it *looks* like it won't be fun, emphasizing the visual impression
+          from the trailer. We're looking for a phrase that conveys a negative impression of enjoyment.
+    scene: Two friends are looking at a new video game trailer online.
+    register: casual
+    setting: friendly
+    conjugation: negative plain (～ない)
+    nuance: 「楽しくなさそう」 conveys a negative impression about the game's perceived fun. The 「い」 of 「楽しい」 is
+      removed, 「く」 is added, then the 「い」 of 「ない」 is removed to attach 「なさそう」, indicating an outward appearance
+      of lack of fun.
+  - english: She is a teacher who always seems to be thinking about her students.
+    japanese:
+      - 彼女 は いつ も 生徒 の こと を 考え {そう な} 先生 です。
+      - 彼女 は いつ も 生徒 の こと を 考え {そう な} 先生 だ。
+      - 彼女 は いつ も 生徒 の こと を 考え て いる よう な 先生 です。
+    english_literally: She always students' things thinking-seeming teacher is.
+    competing_grammar:
+      - competing_japanese:
+          - 彼女 は いつ も 生徒 の こと を 考える 先生 です。
+        english: She is a teacher who always thinks about her students.
+        hint: This isn't about what she *actually* does, but what she *appears* to be like based on observation.
+          We're looking for a phrase describing an apparent disposition.
+    scene: A parent is talking to another parent about their child's teacher.
+    register: teineigo (polite)
+    setting: friendly
+    conjugation: dictionary (plain non-past)
+    nuance: 「考えそうな先生」 describes the teacher as having an *appearance* or *disposition* of someone who
+      seems to always be thinking about her students. 「考え」 is the stem of 「考える」 (to think), forming an
+      attributive phrase.
+  - english: That looks like a warm and cozy house.
+    japanese:
+      - あれ は 暖か {そう な} 家 です ね。
+      - あれ は 暖か {そう な} 家 だ ね。
+      - あれ は 暖か {そう} に 見える 家 です ね。
+    english_literally: That warm-seeming house is, right.
+    competing_grammar:
+      - competing_japanese:
+          - あれ は 暖かい 家 です ね。
+        english: That is a warm house, isn't it?
+        hint: We are describing the *impression* the house gives, implying a visual cue, not stating definitively
+          that it *is* warm. We're looking for an adjective that describes how it *appears*.
+    scene: Friends are admiring a house from the street.
+    register: casual
+    setting: friendly
+    conjugation: dictionary (plain non-past)
+    nuance: 「暖かそうな家」 describes the house based on its outward appearance, giving an impression of warmth.
+      The 「い」 of 「暖かい」 (warm) is removed before attaching 「そうな」 to modify the noun 「家」.
+  - english: That looks like a rather difficult task.
+    japanese:
+      - それ は かなり 大変 {そう な} 仕事 です ね。
+      - それ は かなり 大変 {そう な} 仕事 だ ね。
+      - それ は かなり 大変 {そう} に 見える 仕事 です ね。
+    english_literally: That rather difficult-seeming work is, right.
+    competing_grammar:
+      - competing_japanese:
+          - それ は かなり 大変 な 仕事 です ね。
+        english: That is a rather difficult task, isn't it?
+        hint: This conveys the *apparent* nature of the task, implying a subjective assessment based on
+          its presentation, not necessarily its actual difficulty. We're looking for a phrase that describes
+          how the task appears.
+    scene: A student is looking at an assignment sheet.
+    register: teineigo (polite)
+    setting: academic
+    conjugation: dictionary (plain non-past)
+    nuance: 「大変そうな仕事」 describes the work by its apparent difficulty. 「大変」 (difficult/tough) is a な-adjective,
+      and 「そうな」 directly attaches to modify the noun 「仕事」, indicating an impression of difficulty.
+  - english: This cake is pretty, but it doesn't look like it'll sell well.
+    japanese:
+      - この ケーキ は きれい だ けど、あまり 売れ な {さそう な} 感じ だ ね。
+      - この ケーキ は きれい だ けど、あまり 売れ な {さそう な} 感じ です ね。
+      - この ケーキ は きれい だ けど、売れ な {さそう} だ よ。
+    english_literally: This cake is pretty, but not much sells-not-seeming feeling, right.
+    competing_grammar:
+      - competing_japanese:
+          - この ケーキ は きれい だ けど、あまり 売れ ない だろう。
+        english: This cake is pretty, but it probably won't sell much.
+        hint: This specifically highlights the *appearance* or *impression* that leads to the prediction,
+          rather than just a general probability. We're looking for a phrase about how it *appears* it
+          will not sell.
+    scene: A pastry chef is discussing a new cake with a colleague.
+    register: casual
+    setting: professional
+    conjugation: negative plain (～ない)
+    nuance: 「売れなさそうな」 is a negative prediction based on visual appeal (or lack thereof). 「売れない」 (will
+      not sell) becomes 「売れなさそうな」, modifying 「感じ」 (feeling/impression). This signifies an outward appearance
+      suggesting poor sales.
+  - english: This dress looks pretty, but it doesn't look expensive.
+    japanese:
+      - この ドレス は きれい だ けど、高く な {さそう な} 感じ だ ね。
+      - この ドレス は きれい だ けど、高く な {さそう な} 感じ です ね。
+      - この ドレス は きれい だ けど、高く な {さそう} だ よ。
+    english_literally: This dress is pretty, but expensive-not-seeming feeling, right.
+    competing_grammar:
+      - competing_japanese:
+          - この ドレス は きれい だ けど、高く ない と 思う。
+        english: This dress is pretty, but I think it's not expensive.
+        hint: This implies a judgment based on visual observation and the impression it gives, not just
+          a personal opinion. We're looking for a phrase that describes a negative appearance.
+    scene: Two friends are shopping for clothes.
+    register: casual
+    setting: friendly
+    conjugation: negative plain (～ない)
+    nuance: 「高くなさそうな」 describes the dress's appearance as not seeming expensive. 「高い」 (expensive) loses
+      its 「い」, takes 「く」, then 「ない」 becomes 「なさそうな」, modifying 「感じ」. This conveys a visual impression
+      of being inexpensive.
 post_example_writeup: These examples demonstrate how 「そうに・そうな」 functions by conveying an impression or
   appearance rather than a definitive statement. The context, such as visual cues or observed behavior,
   is crucial for understanding its usage. Remember that 「そうに」 modifies verbs or adjectives, describing
