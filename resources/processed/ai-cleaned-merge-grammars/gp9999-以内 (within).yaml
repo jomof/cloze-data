@@ -1,10 +1,9 @@
 grammar_point: 以内 (within)
 learn_before:
   - だけ (only・just)
-  - 以上 (more than or equal to)
-  - 以上 (that’s all, the end)
   - まで (limit extent)
   - くらい (approximate quantity or degree)
+  - 以下 (less than or equal to)
 learn_after:
   - 〜たりとも〜ない (not even a single)
   - すら (even)
@@ -53,7 +52,7 @@ false_friends:
     kind: similar expression
     nuance: While 以内 sets an upper inclusive limit, 以上 (more than or equal) sets a lower inclusive limit.
       For example, 「10歳以上」 means '10 years old or older, including 10'.
-    grammar_point: 以上 (more than or equal)
+    grammar_point: 以上 (more than or equal to)
   - term: まで (limit extent)
     meaning: Until, Till, To (but no further than)
     kind: similar expression
@@ -213,7 +212,3 @@ examples:
     scene: A customer support agent reassures a caller about a callback time.
     register: teineigo (polite)
     setting: professional
-lint-errors:
-  - '[rule-13] warning unknown grammar at ''false_friends[1]'': ''以上 (more than or equal)''. It **MUST**
-    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
-    grammar point.'
