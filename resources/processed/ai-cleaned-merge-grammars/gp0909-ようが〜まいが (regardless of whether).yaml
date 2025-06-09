@@ -1,17 +1,21 @@
 grammar_point: ようが〜まいが (regardless of whether)
 learn_before:
   - ても (even if・even though)
-  - にしろ〜にしろ (whether... or...)
   - Volitional Form (casual suggestion or intention)
-  - どんなに〜ても (no matter how much)
-  - とも (even if・no matter)
+  - だろう (conjecture)
   - 〜ても〜なくても (whether or not)
+  - どんなに〜ても (no matter how much)
+  - にしろ〜にしろ (whether... or...)
+  - とも (even if・no matter)
+  - ようと・が (no matter・even if)
 learn_after:
-  - 〜たら最後 (inevitable negative outcome)
+  - たら最後 (inevitable negative outcome)
   - をものともせず (making nothing of)
   - たところで (even if futile)
   - といえども (even if)
   - ども (even though)
+  - いかなる (no matter what kind of)
+  - を問わず (regardless of)
 id: gp0909
 meaning: Even if; no matter what; whether or not (emphatic)
 pronunciation:
@@ -63,16 +67,16 @@ false_friends:
     meaning: Whether ~ or not
     kind: synonym
     nuance: While similar in meaning, 「〜ても〜なくても」 focuses more on the condition as a general concession,
-      whereas 「ようが〜まいが」 emphasizes that the outcome remains the same regardless of a strong, often volitional,
-      contrasting condition. It conveys a more emphatic and determined nuance.
+      whereas 「ようが〜まいが」 emphasizes a stronger, more indifferent, or determined stance that the outcome
+      is fixed regardless of the opposing conditions. It conveys a more emphatic and determined nuance.
     grammar_point: 〜ても〜なくても (whether or not)
-  - term: 〜てでも (even if I have to・no matter what it takes)
+  - term: ～てでも (even if I have to・no matter what it takes)
     meaning: Even if I have to, by any or all means, no matter what
     kind: synonym
     nuance: 「てでも」 emphasizes the *effort* one is willing to expend or the extreme measure one might take
       to achieve something. In contrast, 「ようが〜まいが」 focuses on the *result* being unchanged regardless
       of opposing conditions, rather than the effort involved in causing that result.
-    grammar_point: 〜てでも (even if I have to・no matter what it takes)
+    grammar_point: ～てでも (even if I have to・no matter what it takes)
   - term: とも (even if・no matter)
     meaning: Even if, no matter
     kind: synonym
@@ -93,7 +97,7 @@ false_friends:
     nuance: 「たって」 is a more colloquial and emphatic version of 「ても」, often emphasizing the degree or extent
       of something. While it conveys concession, 「ようが〜まいが」 specifically contrasts two opposing possibilities
       (often volitional) and asserts that the outcome is unchanged regardless of which of the two occurs.
-    grammar_point: (っ)たって (even if)
+    grammar_point: (っ)たって (hypothetical・futile)
   - term: にしろ〜にしろ (whether... or...)
     meaning: Whether A or B; Regardless of A or B
     kind: similar expression
@@ -436,7 +440,3 @@ post_example_writeup: 'This grammar pattern effectively conveys a sense of inevi
   consistent: despite any contrasting conditions, the outcome or the speaker''s stance will not change.'
 sources:
   bunpro: https://bunpro.jp/grammar_points/-よう-う-まい - が-と
-lint-errors:
-  - '[rule-13] warning unknown grammar at ''false_friends[1]'': ''〜てでも (even if I have to・no matter what
-    it takes)''. It **MUST** be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar
-    point to suggest a new grammar point.'

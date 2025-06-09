@@ -678,8 +678,8 @@ if __name__ == '__main__':
             edit = cuts[grammar_point]
             before = edit['learn_before_deletes'] 
             after = edit['learn_after_deletes'] 
-            parsed_obj['learn_before'] = list(set(parsed_obj['learn_before']) - set(before))
-            parsed_obj['learn_after'] = list(set(parsed_obj['learn_after']) - set(after))
+            parsed_obj['learn_before'] = list(set(parsed_obj.get('learn_before', [])) - set(before))
+            parsed_obj['learn_after']  = list(set(parsed_obj.get('learn_after', [])) - set(after))
         
     def preprocess(parsed_obj, file_path):
         if parsed_obj['grammar_point'] in cuts:
