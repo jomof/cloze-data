@@ -32,22 +32,31 @@ if __name__ == '__main__':
             # Read the renames-allowed.yaml file
             with open(renames_allowed, 'r', encoding='utf-8') as f:
                 renames = yaml.safe_load(f)
-            # Make a set of all old names
-            all_old_names = set()
-            for new_name in renames:
-                for old_name in renames[new_name]['old-names']:
-                    all_old_names.add(old_name)
-            # Make a set of all new names
-            all_new_names = set(renames.keys())
             
-            # Build a map of old name to new names
+            # Build a map of old name to new names and look up IDs
             old_to_new = {}
-            for new_name in renames:
-                for old_name in renames[new_name]['old-names']:
+            new_name_to_id = {}
+            
+            for new_name, old_names_list in renames.items():
+                # Find the ID from the first old name that exists, or use gp9999
+                found_id = "gp9999"
+                for old_name in old_names_list:
+                    # Look up the ID from the grammar summary
+                    if old_name in grammar_summary['all-grammar-points']:
+                        found_id = grammar_summary['all-grammar-points'][old_name]['id']
+                        break
+                new_name_to_id[new_name] = found_id
+                
+                for old_name in old_names_list:
                     if old_name in old_to_new:
                         old_to_new[old_name].append(new_name)
                     else:
                         old_to_new[old_name] = [new_name]
+            
+            # Make a set of all old names
+            all_old_names = set(old_to_new.keys())
+            # Make a set of all new names
+            all_new_names = set(renames.keys())
 
             # Check for cases where items are split into multiple new names
             split_new_names = set()
@@ -101,8 +110,8 @@ if __name__ == '__main__':
             old_name_paths = set()
             new_name_paths = set()
             for new_name in renames:
-                old_names = renames[new_name]['old-names']
-                grammar_id = renames[new_name]['id']
+                old_names = renames[new_name]
+                grammar_id = new_name_to_id[new_name]
                 new_id_name = f"{grammar_id}-{new_name}"
                 
                 # Collect all old content for joining case
@@ -178,12 +187,9 @@ if __name__ == '__main__':
 
             sys.exit(0)
 
-        # Create a map of renames
+        # Create a map of renames in the new simplified format
         # {
-        #   'better-name': {
-        #     'id': 'gp0001',
-        #     'old-names': ['old-name-1', 'old-name-2'],
-        #   }
+        #   'better-name': ['old-name-1', 'old-name-2']
         # }
         renames = {} # Key is new name, value is list of old names
         for grammar_point_name in grammar_summary['all-grammar-points']:
@@ -194,9 +200,9 @@ if __name__ == '__main__':
 
             for better_name in better_names:
                 if better_name not in summary_point:
-                    node = renames.get(better_name, { 'id': summary_point['id'], 'old-names': [] })
-                    node['old-names'].append(grammar_point_name)
-                    renames[better_name] = node
+                    if better_name not in renames:
+                        renames[better_name] = []
+                    renames[better_name].append(grammar_point_name)
 
         # Save the renames-allowed.yaml file
         if len(renames) > 0:
