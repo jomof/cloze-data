@@ -1,20 +1,21 @@
-grammar_point: 向き (suitability and direction)
+grammar_point: '[Noun]向き (suitable for)'
 learn_before:
   - に (static location・time)
   - に (target・destination)
-  - へ (directional particle)
+  - へいく (to head toward)
   - になる・くなる (to become)
-  - '[Verb-stem]やすい (easy to do・prone to)'
-  - '[Verb-stem]やすい (easy to do・prone to)'
   - にくい (difficult to do)
+  - な-Adjective (modifying nouns)
+  - の (noun modifier)
 learn_after:
   - 向け (intended for)
   - きらいがある (undesirable tendency)
   - に足る (worthy of)
   - ならでは (unique to)
   - に越したことはない (nothing better than)
+  - に則って・に即して (in accordance with)
 id: gp0488
-meaning: Suitable for, Facing
+meaning: Suitable for, Facing, Orientation
 pronunciation:
   katakana: ムキ
   romaji: muki
@@ -88,11 +89,43 @@ false_friends:
       implying an pragmatic adjustment to meet certain conditions. 「向き」 focuses on inherent suitability
       or a natural direction/orientation, without necessarily implying an active effort to match something.
     grammar_point: に合わせる・に合う (match or fit)
+  - term: 方向
+    meaning: general direction, way
+    kind: similar expression
+    nuance: 「方向」 is a general term for 'direction' or 'way,' often used for travel or abstract paths.
+      Unlike 「向き」, it doesn't typically imply suitability or the exact facing of an object. 「向き」 refers
+      to the precise way something is facing.
+    grammar_point: <suggest>:方向 (direction)
+  - term: 方
+    meaning: direction, person, method
+    kind: similar expression
+    nuance: 「方」 can refer to a 'direction' or a 'way of doing something,' and as an honorific for 'person.'
+      It is much broader and less precise than 「向き」 for indicating an exact facing, and doesn't carry
+      the 'suitability' nuance.
+    grammar_point: <suggest>:方 (direction・person・method)
+  - term: ～用
+    meaning: for use by
+    kind: similar expression
+    nuance: 「～用」 indicates something is specifically 'for use by' a certain group or for a certain purpose.
+      While similar to 「向き」 in targeting, 「向き」 often describes a general suitability or appropriateness,
+      whereas 「～用」 implies a designated item for that purpose.
+    grammar_point: <suggest>:～用 (for use by)
+  - term: ～専用
+    meaning: exclusive use for
+    kind: similar expression
+    nuance: 「～専用」 denotes something that is exclusively for a specific use or group, implying restriction
+      or dedication. This is stronger and more restrictive than 「向き」, which simply implies suitability
+      or intention.
+    grammar_point: <suggest>:～専用 (exclusive use for)
 post_false_friends_writeup: When choosing between 「向き」 and similar expressions, consider the nuance you
   want to convey. If you want to emphasize physical movement or a specific direction of action, use 「に向かって」.
   If the focus is on a particular aim or intended target, use 「に向けて」. If the focus is on a reason or purpose,
-  「ため(に)」 is appropriate. For specifically designed targets, 「向け」 is best. And if you need to indicate
-  matching or conformity, use 「に合わせて/に合った」.
+  「ため(に)」 is appropriate. For specifically designed targets, 「向け」 is best. If you need to indicate matching
+  or conformity, use 「に合わせて/に合った」. While 「方向」 and 「方」 both mean 'direction,' they are more general; 「方向」
+  refers to a path or general bearing, and 「方」 can mean a general area or method, whereas 「向き」 refers
+  to the precise way something is facing. Lastly, 「～用」 indicates something is 'for use by' a group, and
+  「～専用」 implies 'exclusive use', both being more specific designations than the general 'suitability'
+  of 「向き」.
 examples:
   - english: This camera is suitable for travel; it's small and light.
     japanese:
@@ -349,7 +382,273 @@ examples:
     scene: A chef is advising a home cook on the best preparation method for a particular fish.
     register: teineigo (polite)
     setting: informative
+  - english: Our living room window faces the garden.
+    japanese:
+      - 我が家 の リビング の 窓 は 庭 {向き} です。
+      - リビング の 窓、庭 {向き} に なっ て て いい よ ね。
+    english_literally: Our home's living room's window, garden-facing is.
+    competing_grammar:
+      - competing_japanese:
+          - 我が家 の リビング の 窓 は 庭 の 方 に {向い て い ます}。
+        english: Our living room window is turned towards the garden.
+        hint: While 「向い て い ます」 (to be facing) is grammatically correct, 「向き」 is a more concise and common
+          way to describe a permanent orientation or feature, like a window's direction. We're looking
+          for a natural way to describe its fixed orientation.
+      - competing_japanese:
+          - 我が家 の リビング の 窓 は 庭 の {方向} です。
+        english: Our living room window is in the direction of the garden.
+        hint: 「方向」 refers to a general direction, not the precise orientation or facing of a fixed object.
+          We're looking for the exact way the window is positioned.
+      - competing_japanese:
+          - 我が家 の リビング の 窓 は 庭 の {側} です。
+        english: Our living room window is on the garden side.
+        hint: 「側」 indicates a general side or part, but 「向き」 specifically conveys its direct facing or
+          orientation towards the garden. We're looking for the precise facing.
+    scene: You are showing a friend around your new house, highlighting the pleasant view from the living
+      room.
+    register: casual
+    setting: friendly
+    speaker_gender: female
+    nuance: 「庭向き」 describes the orientation of the window. The casual version uses 「いい よ ね」 which is typical
+      female speech seeking agreement, making the conversation more engaging and intimate.
+  - english: This movie is definitely for adults.
+    japanese:
+      - この 映画 は 絶対 に 大人 {向き} です。
+      - この 映画、絶対 大人 {向き} だ よ。
+      - この 映画 は、間違い なく 大人 {向き} と 言える でしょう。
+      - これ は 大人 の 観客 {向き} の 作品 です。
+      - この 作品 は、大人 {向き} に 作ら れ て い ます。
+      - この 商品 は、大人 {向き} に 開発 さ れ まし た。
+      - 内容 が 内容 だけ に、この 本 は 大人 {向き} だ。
+      - この ドラマ は 完全 に 家族 {向き} だ と 思い ます。
+      - この ゲーム は 初心 者 {向き} で は あり ませ ん。
+    english_literally: This movie, absolutely adult-facing is.
+    competing_grammar:
+      - competing_japanese:
+          - この 映画 は 絶対 に 大人 の 方 {向け} です。
+        english: This movie is absolutely for adults (colloquial).
+        hint: While 「方向け」 is similar, 「向き」 is a more standard and neutral way to express suitability or
+          being 'intended for'.
+      - competing_japanese:
+          - この 映画 は 大人 の {側} です。
+        english: This movie is on the adult's side.
+        hint: 「側」 implies a general side or part, not an intended audience or suitability. We're looking
+          for something specifically designed or appropriate for adults.
+      - competing_japanese:
+          - この 映画 は 絶対 に 大人 {用} です。
+        english: This movie is absolutely for adult use.
+        hint: While 「～用」 indicates 'for use by', 「向き」 conveys suitability or being 'intended for' a specific
+          audience or purpose, which is slightly different. We're looking for something appropriate for
+          adults.
+      - competing_japanese:
+          - この 映画 は 絶対 に 大人 {向け} です。
+        english: This movie is absolutely made for adults.
+        hint: 「向け」 implies a more active designation or targeting by the creator, whereas 「向き」 often describes
+          an inherent suitability or appropriateness. We're looking for suitability, not necessarily active
+          targeting.
+      - competing_japanese:
+          - この 映画 は 絶対 に 大人 {専用} です。
+        english: This movie is absolutely for adult-exclusive use.
+        hint: 「専用」 implies exclusive use, like a dedicated lane or a product only adults can purchase.
+          「向き」 indicates general suitability or being intended for a target audience. We're looking for
+          general suitability.
+      - competing_japanese:
+          - この 映画 は 絶対 に 大人 の {面} です。
+        english: This movie is absolutely the adult aspect.
+        hint: 「面」 can refer to a surface or aspect, but not usually suitability for an audience. We're
+          looking for something appropriate for adults.
+    scene: You are discussing a film with a younger sibling or student, warning them that it might not
+      be appropriate for their age.
+    register: semi-formal
+    setting: informative
+    speaker_gender: female
+    listener_gender: male
+    speaker_age: older
+    nuance: 「大人向き」 indicates that the movie is suitable or intended for adults. The use of 「絶対」 reinforces
+      this. The informal version uses 「だ よ」. The female speaker's use of a soft tone with 「だ よ」 is typical
+      in advising a younger person. The slightly more formal version with 「と 言える でしょう」 suggests a more
+      reasoned conclusion, appropriate for an older speaker addressing a younger person.
+  - english: This textbook is perfect for beginners.
+    japanese:
+      - この 教科 書 は 初心 者 {向き} です。
+      - この 参考 書 は 初心 者 {向き} に 書か れ て いる よ。
+    english_literally: This textbook, beginner-suitable is.
+    competing_grammar:
+      - competing_japanese:
+          - この 教科 書 は 初心 者 の 方 に {向け て い ます}。
+        english: This textbook is directed towards beginners.
+        hint: 「向け」 implies active targeting or designation by the creator, whereas 「向き」 conveys inherent
+          suitability. We're looking for something that is simply appropriate for beginners.
+      - competing_japanese:
+          - この 教科 書 は 初心 者 の 方 に {用} です。
+        english: This textbook is for beginner's use.
+        hint: While 「～用」 indicates something is specifically 'for use by' a certain group or for a certain
+          purpose. While related, 「向き」 describes a general appropriateness or suitability. We're looking
+          for suitability.
+      - competing_japanese:
+          - この 教科 書 は 初心 者 の {側} です。
+        english: This textbook is on the beginner's side.
+        hint: 「側」 implies a general side or part, not suitability for an audience. We're looking for something
+          appropriate for beginners.
+    scene: A teacher is recommending study materials to a new student who is just starting to learn Japanese.
+    register: teineigo (polite)
+    setting: instructional
+    nuance: 「初心者向き」 indicates that the textbook is suitable or appropriate for beginners, focusing on
+      its inherent quality for that audience. The use of 「です」 is polite and appropriate for an instructional
+      setting. The second Japanese option adds 「に 書か れ て いる よ」 (is written for), which still implies suitability,
+      but with a slightly more active voice, while 「よ」 adds a friendly, informing tone.
+  - english: This restaurant is not suitable for children.
+    japanese:
+      - この レストラン は 子供 {向き} で は あり ませ ん。
+      - ここ の レストラン は 子供 {向き} じゃ ない よ。
+    english_literally: This restaurant, child-suitable is not.
+    competing_grammar:
+      - competing_japanese:
+          - この レストラン は 子供 {用} で は あり ませ ん。
+        english: This restaurant is not for children's use.
+        hint: 「～用」 indicates something is designated for a specific use or group. 「向き」 is more about general
+          suitability or appropriateness. We're looking for something that is generally not appropriate.
+      - competing_japanese:
+          - この レストラン は 子供 {向け} で は あり ませ ん。
+        english: This restaurant is not directed towards children.
+        hint: 「向け」 implies active targeting or design for a group. 「向き」 can simply mean 'suitable' or
+          'appropriate', regardless of whether it was intentionally designed that way. We're looking for
+          general suitability.
+      - competing_japanese:
+          - この レストラン は 子供 {側} で は あり ませ ん。
+        english: This restaurant is on the children's side.
+        hint: 「側」 implies a general side or part, not suitability or appropriateness for an audience.
+          We're looking for something not appropriate for children.
+    scene: A parent is advising another parent who is looking for a family-friendly place to eat.
+    register: semi-formal
+    setting: informative
+    nuance: 「子供向きでは ありません」 conveys that the restaurant is not appropriate or suitable for children, implying
+      aspects like atmosphere or menu. The formal negative 「で は あり ませ ん」 is common in general polite conversation.
+      The casual version 「じゃ ない よ」 is more direct and conversational, often used among close acquaintances.
+  - english: The desk is facing the wall.
+    japanese:
+      - 机 は 壁 {向き} に 置い て あり ます。
+      - 机 は 壁 {向き} だ。
+      - 机 が 壁 {向き} に 置か れ て い ます。
+    english_literally: Desk, wall-facing is placed.
+    competing_grammar:
+      - competing_japanese:
+          - 机 は 壁 に {向い て 置い て あり ます}。
+        english: The desk is placed facing the wall.
+        hint: While 「向い て い ます」 (to be facing) is grammatically correct, 「向き」 is a more concise way to
+          describe a fixed orientation of an object. We're looking for a simple description of its orientation.
+      - competing_japanese:
+          - 机 は 壁 に {接し て 置い て あり ます}。
+        english: The desk is placed touching the wall.
+        hint: 「接し て いる」 implies physical contact, whereas 「向き」 describes the direction something is oriented.
+          We're looking for its facing direction, not necessarily if it's touching.
+    scene: You're showing your newly arranged room to a friend.
+    register: teineigo (polite)
+    setting: informative
+    nuance: This example uses 「壁向き」 to describe the physical orientation of the desk. The Japanese variations
+      show how it can be used in polite or casual contexts, emphasizing a simple, direct description of
+      the object's direction.
+  - english: This cafe is facing the ocean, so the view is amazing.
+    japanese:
+      - この カフェ は 海 {向き} な の で、景色 が 最高 です。
+      - この カフェ、海 {向き} だ から、景色 マジ 最高！
+    english_literally: This cafe, ocean-facing, so, view is best.
+    competing_grammar:
+      - competing_japanese:
+          - この カフェ は 海 に {面 し て いる} の で、景色 が 最高 です。
+        english: This cafe is facing the ocean, so the view is amazing.
+        hint: 「面し て いる」 is similar in meaning, but 「向き」 is a common and natural way to describe a place's
+          advantageous orientation, especially when highlighting a view. We're looking for a common phrasing
+          for a good view.
+      - competing_japanese:
+          - この カフェ は 海岸 {沿い に ある} の で、景色 が 最高 です。
+        english: This cafe is along the coast, so the view is amazing.
+        hint: 「海岸 沿い に ある」 describes location, not the specific orientation towards the ocean. We're focusing
+          on the direction it faces for the view.
+    scene: You're recommending a cafe to a friend, highlighting its scenic location.
+    register: teineigo (polite)
+    setting: friendly
+    speaker_gender: male
+    nuance: 「海向き」 emphasizes that the cafe's orientation towards the sea is its key feature, making the
+      view excellent. The casual variant with 「マジ」 adds strong emphasis, typical of younger male speech,
+      making the recommendation more enthusiastic.
+  - english: This car isn't suitable for rough roads.
+    japanese:
+      - この 車 は 悪路 {向き} で は あり ませ ん。
+      - この 車、悪路 {向き} じゃ ない ね。
+      - この 車 は 悪路 {向き} と は 言え ませ ん。
+    english_literally: This car, rough roads-suitable is not.
+    competing_grammar:
+      - competing_japanese:
+          - この 車 は 悪路 に {適し て い ませ ん}。
+        english: This car is not suited for rough roads.
+        hint: 「適し て いる」 means 'suited for', but 「向き」 is often used for general suitability or appropriateness
+          for a condition or environment. We're looking for general suitability.
+      - competing_japanese:
+          - この 車 は 悪路 で 走る の に は {不向き} です。
+        english: This car is unsuitable for driving on rough roads.
+        hint: 「不向き」 (fumuki) directly means 'unsuitable', but 「向き で は あり ませ ん」 is a common way to express
+          the negative suitability. We're looking for the 'not suitable' expression.
+    scene: A car enthusiast is giving advice on vehicle suitability for different terrains to a friend.
+    register: semi-formal
+    setting: informative
+    speaker_gender: male
+    nuance: 「悪路向きでは ありません」 conveys that the car's characteristics (e.g., suspension, ground clearance)
+      make it unsuitable for rough terrain. The casual 「じゃ ない ね」 is a softer way to convey the same, implying
+      a shared understanding with the listener.
+  - english: This casual cafe is perfect for a quick lunch.
+    japanese:
+      - この カジュアル な カフェ は、さっ と 昼食 を 取る の に {向き} です。
+      - この カフェ、昼食 に ちょうど {向き} だ よ。
+      - この カフェ は、短 時間 で 食事 を する の に {向き} です。
+    english_literally: This casual cafe, quickly lunch to take for, suitable is.
+    competing_grammar:
+      - competing_japanese:
+          - この カジュアル な カフェ は、さっ と 昼食 を 取る の に {最適} です。
+        english: This casual cafe is optimal for a quick lunch.
+        hint: 「最適」 means 'optimal' or 'best suited', while 「向き」 implies 'suitable' or 'appropriate' in
+          a more general sense. We're looking for general suitability rather than the absolute best.
+      - competing_japanese:
+          - この カジュアル な カフェ は、さっ と 昼食 を 取る の に {適し て い ます}。
+        english: This casual cafe is suited for a quick lunch.
+        hint: 「適し て いる」 uses a verb to express suitability, but 「向き」 as a noun provides a more concise
+          way to describe something's inherent appropriateness. We're looking for inherent appropriateness.
+    scene: You're suggesting a convenient lunch spot to a coworker during a busy workday.
+    register: teineigo (polite)
+    setting: friendly
+    listener_gender: group
+    nuance: 「昼食 に 向き」 indicates that the cafe is appropriate or convenient for a quick lunch, highlighting
+      its practical suitability. The informal variant 「だ よ」 makes the suggestion friendly and approachable
+      among colleagues. The third variation emphasizes 'short amount of time' for lunch.
+  - english: This complex problem is for experts.
+    japanese:
+      - この 複雑 な 問題 は 専門 家 {向き} です。
+      - この 複雑 な 問題、専門 家 {向き} だ ね。
+    english_literally: This complex problem, expert-suitable is.
+    competing_grammar:
+      - competing_japanese:
+          - この 複雑 な 問題 は 専門 家 {向け} です。
+        english: This complex problem is directed towards experts.
+        hint: 「向け」 implies that something was specifically designed or targeted for a group, while 「向き」
+          conveys inherent suitability due to its nature. We're looking for inherent suitability, not
+          active targeting.
+      - competing_japanese:
+          - この 複雑 な 問題 は 専門 家 で ない と {解決 でき ませ ん}。
+        english: Only an expert can solve this complex problem.
+        hint: This phrasing implies that only experts *can* solve it, focusing on ability. 「向き」 means
+          it is *suitable for* experts, implying that it requires their expertise. We're looking for suitability
+          based on expertise.
+    scene: A senior researcher is discussing a challenging task with a junior colleague.
+    register: teineigo (polite)
+    setting: academic
+    speaker_age: older
+    nuance: 「専門家向き」 suggests that the problem's complexity requires the specific knowledge and skills
+      of an expert, making it appropriate only for them. The casual variant 「だ ね」 implies a shared understanding
+      of the problem's difficulty. The third example clearly states the exclusivity of solving the problem
+      to experts.
 post_example_writeup: Remember that 「向き」 implies suitability or directionality in a more general or natural
-  sense, while 「向け」 suggests a specific design or intention.
+  sense, while 「向け」 suggests a specific design or intention. By carefully considering the context, you
+  can accurately convey whether something is 'facing' a certain way or 'intended/appropriate' for a particular
+  purpose or group.
 sources:
   bunpro: https://bunpro.jp/grammar_points/向き

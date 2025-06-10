@@ -1,4 +1,4 @@
-grammar_point: からして・からすると・からすれば (judging from)
+grammar_point: '[Noun]からすると・からすれば・から見ると・から言って (judging from・from the perspective of)'
 learn_before:
   - から (from)
   - 〜のだ・〜んだ (explanatory)
@@ -6,6 +6,11 @@ learn_before:
   - 〜ようだ・〜みたいだ (seems・like)
   - はずだ (is expected to be)
   - '[Sentence]らしい (it seems, based on evidence・I hear)'
+  - '[Verb-stem・Adj-stem]〜そうだ (it seems・looks like)'
+  - に取って (to・for・from the perspective of)
+  - '[Clause]〜から (because・so)'
+  - '[Clause]〜ので (because・so)'
+  - によると・によれば (according to)
 learn_after:
   - かのようだ・かのように (as if)
   - にほかならない (nothing but)
@@ -14,10 +19,10 @@ learn_after:
   - に至っては (when it comes to a surprising extreme)
   - に足る (worthy of)
 id: gp0876
-meaning: Judging from, considering, based on (even a minimal example)
+meaning: judging from・from the perspective of
 pronunciation:
-  katakana: カラシテ・カラ スルト・カラ スレバ
-  romaji: kara shite, kara suru to, kara sureba
+  katakana: カラ スルト・カラ スレバ・カラ ミルト・カラ イッテ
+  romaji: kara suru to・kara sureba・kara miru to・kara itte
 formation:
   Noun + からして: Indicates a basis for judgment, often implying even a minimal example is sufficient for
     assessment, sometimes with strong emphasis or criticism.
@@ -25,8 +30,15 @@ formation:
     for objective or general deductions.
   Noun + からすれば: Expresses a more definitive or hypothetical judgment based on the preceding noun or situation,
     often implying stronger certainty or a counterfactual scenario.
-  Noun + からし ます と: Polite form of Noun + からすると/からすれば, used to express a judgment or inference based on
-    the preceding noun.
+  Noun + から見ると: Used when stating a perspective or making a judgment based on a noun's viewpoint.
+  Noun + から見たら: Used for a conditional perspective or judgment, implying "if one were to look from..."
+  Noun + から見れば: Similar to たら, but often used for making a hypothetical or general statement about perspective,
+    or for an evaluative standpoint.
+  Noun + から見て: Used when making a judgment or conclusion based on observation or consideration of the
+    noun.
+  Noun + から見ても: Used to express a viewpoint or judgment even when considering the noun's perspective.
+  Noun + から言って: Used to express 'in terms of' or 'judging from' a specific perspective, leading to a conclusion
+    or evaluation.
 jlpt: N2
 details:
   part-of-speech: phrase
@@ -34,25 +46,29 @@ details:
   usage-context: Used to express a judgment or inference based on a specific piece of information, situation,
     or perspective. It can apply to various registers from casual observation to formal analysis.
   function: To express a judgment or inference based on a specific piece of information, situation, or
-    perspective, often implying that this evidence is sufficient or even minimal for the assessment.
+    perspective, often implying that this evidence is sufficient or even minimal for the assessment, or
+    to convey a viewpoint from which an observation, judgment, or inference is made.
   nuance: Implies a logical conclusion drawn from the given information or observation. It conveys the
     speaker's deduction or assessment based on a source. からして often emphasizes that even a minimal or
     foundational example is sufficient to make a broader judgment, sometimes with a strong or critical
     nuance. からすると is generally used for objective or general deductions, while からすれば can suggest a stronger,
-    more definitive, or hypothetical conclusion.
+    more definitive, or hypothetical conclusion. から見ると emphasizes the source or basis of a perspective
+    or judgment, often implying a direct observation or consideration of the preceding noun. から言って clarifies
+    that the following statement is a logical inference derived from the specified preceding element,
+    often carrying a strong evaluative tone.
   grammatical-role: Functions as an adverbial phrase, modifying the following statement or judgment by
     providing the basis for the assessment.
   logical-flow: Establishes a cause-and-effect relationship where the stated noun is the cause or basis
     for the subsequent deduction.
-etymology: Both からして and からすると・からすれば derive from the particle から (from・since) combined with forms of the
-  verb する (to do). The literal sense of からして is 'starting from', emphasizing a foundational element as
-  the basis for judgment. For からすると・からすれば, the verb する functions to establish the preceding noun as the
-  source or basis for an inference, akin to 'operating from' or 'proceeding from' a piece of information.
-  The conditional suffixes と and ば further nuance the inference, with ば sometimes implying a stronger
-  or hypothetical conclusion. This evolution highlights how these phrases establish a clear origin for
-  a deduction or assessment.
+etymology: The phrases からして, からすると, からすれば, から見ると, and から言って all share a common origin in the particle
+  から (from・since). The verb する (to do) in からすると/からすれば and the verb 言う (いう - to say) in から言って combine with
+  から to literally mean "from doing" or "from saying," establishing the preceding noun as the source or
+  basis for an inference. The verb 見る (to see/look) in から見ると means "when looking from," evolving from
+  the physical act of viewing to expressing a conceptual viewpoint. This evolution highlights how these
+  phrases establish a clear origin for a deduction or assessment, whether it's based on an observation,
+  an action, or a statement.
 writeup: |-
-  The expressions からして, からすると, and からすれば are all used to convey a judgment, conclusion, or opinion based on a particular piece of information, observation, or situation. They can generally be translated as 'judging from', 'considering', or 'based on'. The structure is typically **[Noun] + からして/からすると/からすれば**.
+  The expressions からして, からすると, からすれば, から見ると, and から言って are all used to convey a judgment, conclusion, or opinion based on a particular piece of information, observation, or situation. They can generally be translated as 'judging from', 'considering', or 'based on'. The structure is typically **[Noun] + からして/からすると/からすれば/から見ると/から言って**.
 
   While sharing a core meaning, each form carries distinct nuances:
 
@@ -62,56 +78,47 @@ writeup: |-
 
   *   **からすれば** can imply a slightly stronger, more definitive, or even hypothetical judgment. It might suggest 'if we consider it from this perspective, then...' or 'given this, it must be the case.'
 
+  *   **から見ると** emphasizes the source or basis of a perspective or judgment. It can be used for objective observations or subjective opinions, implying a direct observation or consideration of the preceding noun. It is versatile with variations like **から見たら** (conditional), **から見れば** (hypothetical/evaluative), **から見て** (based on observation), and **から見ても** (concessive).
+
+  *   **から言って** introduces the basis for a judgment, evaluation, or conclusion, meaning "in terms of" or "judging from." It establishes a viewpoint from which a statement is made, often used in analytical discussions, formal reports, or to articulate a strong personal judgment or observation. It clarifies that the following statement is a logical inference derived from the specified preceding element.
+
   These phrases highlight that the preceding noun is the definitive basis or source from which the speaker's assessment or inference is drawn. They are versatile and appear in various contexts, from casual daily observations to more formal analyses, effectively communicating the logical link between an observation and a resulting conclusion.
 false_friends:
-  - term: から見ると
-    meaning: From the point of view of, By the look of
-    kind: synonym
-    nuance: から見ると emphasizes a specific viewpoint or subjective perspective from which something is observed,
-      while からして・からすると・からすれば focus on drawing a judgment directly from objective or given information
-      as a basis.
-    grammar_point: から見ると (from the perspective of)
   - term: ことから
     meaning: From the fact that
     kind: synonym
     nuance: ことから highlights the reason or cause for a situation or outcome, explaining why something is
-      the case. In contrast, からして・からすると・からすれば focus on what can be inferred or judged from a specific
+      the case. In contrast, からすると・からすれば・から見ると・から言って focus on what can be inferred or judged from a specific
       piece of evidence or circumstance.
     grammar_point: ことから (from the fact that)
   - term: にしたら
     meaning: From the point of view of
     kind: synonym
     nuance: にしたら specifically refers to a judgment or feeling from a particular person's subjective perspective
-      or circumstances. からして・からすると・からすれば are broader, referring to an objective or inferential judgment
-      based on general information or evidence.
+      or circumstances. からすると・からすれば・から見ると・から言って are broader, referring to an objective or inferential
+      judgment based on general information or evidence.
     grammar_point: にしたら・にしてみれば (from the perspective of)
   - term: ところを見ると
     meaning: Judging from, seeing that
     kind: synonym
     nuance: ところを見ると strongly emphasizes a judgment based on direct, often visual, observation or a visible
-      action/state. からして・からすると・からすれば can be based on various types of information, including less direct
-      or more abstract evidence, not just visual.
+      action/state. からすると・からすれば・から見ると・から言って can be based on various types of information, including less
+      direct or more abstract evidence, not just visual.
     grammar_point: ところを見ると (judging from observation)
   - term: にしては
     meaning: (Even) considering, (Even) for
     kind: synonym
     nuance: にしては highlights an unexpected outcome or a contrast, indicating that something is surprising
-      given a certain condition (e.g., 'considering X, it's surprisingly Y'). In contrast, からして・からすると・からすれば
+      given a certain condition (e.g., 'considering X, it's surprisingly Y'). In contrast, からすると・からすれば・から見ると・から言って
       simply present a logical conclusion or judgment based on the given information without implying
       surprise or contradiction.
     grammar_point: にしては (considering)
-  - term: に応じて
-    meaning: Depending on, based on, according to, in response to, suitable for or to
-    kind: synonym
-    nuance: に応じて indicates something changes or is determined by something else. からして・からすると・からすれば provide
-      a basis for making a judgment or inference.
-    grammar_point: に応じて (depending on)
-  - term: にもとづいて
+  - term: ににもとづいて
     meaning: Based on, in accordance with
     kind: synonym
     nuance: にもとづいて implies adherence to a rule, principle, or formal procedure, often in an objective
-      or official context (e.g., 'based on regulations'). からして・からすると・からすれば are more about forming a personal
-      judgment or inference from given information, which can be less formal or objective.
+      or official context (e.g., 'based on regulations'). からすると・からすれば・から見ると・から言って are more about forming
+      a personal judgment or inference from given information, which can be less formal or objective.
     grammar_point: にもとづいて (based on)
   - term: でさえ
     meaning: Even (emphasizing an extreme or unexpected example)
@@ -144,39 +151,40 @@ false_friends:
   - term: 上
     meaning: From the standpoint of
     kind: synonym
-    nuance: 上 indicates a judgment based on a specific standard, rule, or system (e.g., 法律上). からすると・からすれば
+    nuance: 上 indicates a judgment based on a specific standard, rule, or system (e.g., 法律上). からすると・からすれば・から見ると・から言って
       are more general, referring to any information or observation as the basis for a judgment.
     grammar_point: 上 (from the standpoint of)
   - term: から言うと
     meaning: Speaking in terms of, from the point of view of
     kind: synonym
-    nuance: から言うと states a point of view or judgment, often in a formal or analytical context. からすると・からすれば
+    nuance: から言うと states a point of view or judgment, often in a formal or analytical context. からすると・からすれば・から見ると・から言って
       specifically emphasize the information as the *source* of the deduction rather than just a perspective.
     grammar_point: から言うと (speaking in terms of)
   - term: を考えると
     meaning: If one considers, considering
     kind: similar expression
     nuance: を考えると implies a more active and deliberative process of considering information before concluding.
-      からすると・からすれば often suggest a more immediate or direct deduction based on presented facts, requiring
-      less overt 'thinking through'.
+      からすると・からすれば・から見ると・から言って often suggest a more immediate or direct deduction based on presented facts,
+      requiring less overt 'thinking through'.
     grammar_point: <suggest>:を考えると (considering)
   - term: によると
     meaning: According to
     kind: similar expression
     nuance: によると is used to report information from a source without necessarily implying a personal judgment
-      or inference. からすると・からすれば use the information as the basis for one's *own* judgment or conclusion.
+      or inference. からすると・からすれば・から見ると・から言って use the information as the basis for one's *own* judgment
+      or conclusion.
     grammar_point: によると・によれば (according to)
   - term: を見る限り
     meaning: As far as one can see, observe
     kind: similar expression
     nuance: を見る限り suggests a judgment limited to what is directly observable, implying there might be
-      other unobserved factors. からすると・からすれば state the basis of judgment without implying such observational
-      limitations.
+      other unobserved factors. からすると・からすれば・から見ると・から言って state the basis of judgment without implying such
+      observational limitations.
     grammar_point: <suggest>:を見る限り (as far as one can see)
   - term: の観点からすると
     meaning: From the point of view of
     kind: similar expression
-    nuance: の観点からすると formally emphasizes a specific 'viewpoint' or 'perspective' for judgment. からすると・からすれば
+    nuance: の観点からすると formally emphasizes a specific 'viewpoint' or 'perspective' for judgment. からすると・からすれば・から見ると・から言って
       are more general phrases for stating a judgment based on information, without explicitly highlighting
       the 'angle' of consideration.
     grammar_point: <suggest>:の観点からすると (from the viewpoint of)
@@ -184,25 +192,46 @@ false_friends:
     meaning: In light of, based on, according to, referencing, comparing against, in view of
     kind: similar expression
     nuance: に照らして implies evaluating something by comparing it against a standard or fact, suggesting
-      scrutiny. からすると・からすれば are about drawing an inference *from* information, not necessarily assessing
-      *against* a defined criterion.
+      scrutiny. からすると・からすれば・から見ると・から言って are about drawing an inference *from* information, not necessarily
+      assessing *against* a defined criterion.
     grammar_point: に照らして・に照らすと (in light of)
   - term: 見るからに
     meaning: Visibly; obviously; can tell just by looking at
     kind: similar expression
-    nuance: 見るからに specifically refers to judgments immediately obvious from *visual observation*. からすると・からすれば
+    nuance: 見るからに specifically refers to judgments immediately obvious from *visual observation*. からすると・からすれば・から見ると・から言って
       can be based on various types of information, not just visual, and inferences might require more
       thought than an 'obvious at first sight' impression.
     grammar_point: 見るからに (visibly obvious)
+  - term: に応答じて
+    meaning: Depending on, based on, according to, in response to, suitable for or to
+    kind: synonym
+    nuance: に応答じて indicates something changes or is determined by something else. からする・からすれば・から見ると・から言って
+      provide a basis for making a judgment or inference.
+    grammar_point: <suggest>:に応答じて (depending on)
+  - term: とみえる
+    meaning: Seems from observation
+    kind: similar expression
+    nuance: とみえる indicates a conclusion or impression based on visible evidence, often about an internal
+      state or an unstated fact. It focuses on *what* seems to be the case. In contrast, から見ると highlights
+      the *source* or *perspective* from which something is observed or judged.
+    grammar_point: とみえる (seems from observation)
+  - term: という点で
+    meaning: In terms of; from the point of view of
+    kind: similar expression
+    nuance: という点で is generally more formal and academic than から言って, often used in essays, presentations,
+      or when stating a neutral point of discussion. から言って carries a stronger nuance of making an inference
+      or judgment.
+    grammar_point: <suggest>:という点で (in terms of)
 post_false_friends_writeup: While many expressions convey 'based on' or 'from the perspective of', からして,
-  からすると, and からすれば are distinct in their focus on drawing a *judgment or inference* directly from a given
-  piece of information or observation. Remember that からして often carries a strong emphasis or indicates
-  that even a minimal detail is sufficient for a broader judgment. からすると and からすれば are more general for
-  stating a logical conclusion. Unlike によると, which simply reports information, or に基づいて, which signifies
+  からすると, からすれば, から見ると, and から言って are distinct in their focus on drawing a *judgment or inference* directly
+  from a given piece of information or observation. Remember that からして often carries a strong emphasis
+  or indicates that even a minimal detail is sufficient for a broader judgment. からすると and からすれば are more
+  general for stating a logical conclusion. から見ると specifically relates to a viewpoint or what is observed.
+  から言って is used for a broader, more subjective evaluation or a stronger, more conclusive judgment based
+  on a particular viewpoint. Unlike によると, which simply reports information, or に基づいて, which signifies
   adherence to a standard, these phrases are about the speaker's personal deduction. Pay close attention
   to whether the context calls for simply relaying information, adhering to a rule, expressing a contrast,
-  stating an an obvious visual impression, or making a logical conclusion derived from observation or
-  data.
+  stating an obvious visual impression, or making a logical conclusion derived from observation or data.
 examples:
   - english: Judging from the way he speaks, he must be nervous.
     japanese:
@@ -468,33 +497,49 @@ examples:
     nuance: The use of 「握手からして」 highlights that even a single, brief action like a handshake is sufficient
       for the speaker to determine the other person's integrity. This indicates a sharp observational
       skill and a confident judgment in a professional setting.
-  - english: Judging from those big footprints, a bear must be nearby.
+  - english: From a foreigner's perspective, Japanese customs probably seem strange.
     japanese:
-      - あの 大きな 足跡 から {する と}、熊 が 近く に いる はず だ。
-      - あの 大きな 足跡 から {すれ ば}、熊 が 近く に いる はず だ。
-      - あの 大きな 足跡 から {し ます と}、熊 が 近く に いる はず です。
-      - あの 大きな 足跡 から {すれ ば}、熊 が 近く に いる はず です。
-    english_literally: From those big footprints, a bear should be nearby.
+      - 外国 人 {から 見る と}、日本 の 習慣 は 不思議 に 見える でしょう。
+      - 外国 人 {から 見る と}、日本 の 習慣 は 不思議 に 見える だろう。
+      - 外国 人 {から 見る と}、日本 の 習慣 は 不思議 に 見える はず です。
+    english_literally: From a foreigner looking, Japanese customs probably appear strange.
     competing_grammar:
       - competing_japanese:
-          - あの 大きな 足跡 {から 見る と}、熊 が 近く に いる はず だ。
-        english: Looking at those big footprints, a bear should be nearby.
-        hint: 「から見ると」 emphasizes the specific viewpoint from which something is observed. We're looking
-          for a direct judgment from the evidence.
-      - competing_japanese:
-          - あの 大きな 足跡 を {考える と}、熊 が 近く に いる はず だ。
-        english: Considering those big footprints, a bear should be nearby.
-        hint: 「を考えると」 implies a more deliberate process of 'considering' rather than a spontaneous deduction
-          based on the evidence presented.
-    scene: Two hikers are deep in the mountains and discover exceptionally large footprints on the ground.
+          - 外国 人 に {とっ て}、日本 の 習慣 は 不思議 に 見える でしょう。
+        english: To a foreigner, Japanese customs probably seem strange.
+        hint: 「にとって」 states a general opinion or feeling held by a group. 「から見ると」, on the other hand,
+          emphasizes that the strangeness is an observation made by the foreigner, based on their viewpoint
+          or how things appear to them. We're looking for a grammar that implies 'when looking at it from
+          their perspective'.
+    scene: A Japanese person is explaining cultural differences to a foreign friend.
     register: casual
-    setting: cautious
+    setting: informative
+    speaker_gender: male
+    listener_gender: female
+    nuance: The use of 「から見ると」 emphasizes the viewpoint of the foreigner, indicating how Japanese customs
+      appear when observed from their cultural lens. The polite でしょう softens the statement, making it
+      a thoughtful observation rather than a direct assertion.
+  - english: Judging from his expression, the news must not have been good.
+    japanese:
+      - 彼 の 表情 {から 見れ ば}、その 知らせ は 良く なかっ た に 違い ない。
+      - 彼 の 表情 {から 見れ ば}、その 知らせ は 良く なかっ た に 違い あり ませ ん。
+      - 彼 の 表情 {から 見れ ば}、その 知らせ は 良く なかっ た よう だ。
+    english_literally: If looking from his expression, the news must not have been good.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 の 表情 {から 判断 する と}、その 知らせ は 良く なかっ た に 違い ない。
+        english: Judging from his expression, the news must have been good.
+        hint: 「判断すると」 means 'to judge based on', which is similar but less directly tied to the visual
+          observation implied by 「から見れば」. We're looking for a grammar that emphasizes the visual basis
+          for the judgment.
+    scene: Two colleagues are observing their boss after a difficult meeting.
+    register: formal
+    setting: serious
     speaker_gender: male
     listener_gender: male
-    speaker_age: older
-    nuance: The speaker's use of 「はずだ」 strengthens the certainty of the deduction based on the visible
-      evidence of the 「足跡」 (footprints). The older male speaker's assessment is presented with confidence,
-      implying experience in discerning such signs.
+    nuance: 「から見れば」 here implies a hypothetical judgment based on observing his expression. The choice
+      of form adds a layer of indirectness or a general observation, suitable for a formal, serious context
+      between colleagues.
   - english: From your statement, it seems he's not interested in this project, does he?
     japanese:
       - 君 の 発言 から {すれ ば}、彼 は この プロジェクト に 興味 が ない よう です ね。
@@ -716,11 +761,54 @@ examples:
     nuance: The speaker evaluates practicality 「一番現実的」 (most practical) based on the financial aspect
       「コスト面」 (cost aspect), using a reflective tone. The use of 「だろう」 indicates a personal judgment or
       strong assumption.
-post_example_writeup: These examples demonstrate how からして, からすると, and からすれば are employed to convey a judgment
-  or inference derived from a specific piece of information or observation. Notice how からして often emphasizes
-  a strong, sometimes critical, deduction based even on a minimal detail. からすると and からすれば are more commonly
-  used for objective or hypothetical deductions. The key is that the noun preceding these phrases provides
-  the definitive basis for the speaker's assessment, allowing you to articulate precise judgments in various
-  situations.
+  - english: Judging from the current economic situation, it's unlikely that salaries will increase significantly
+      next year.
+    japanese:
+      - 現在 の 経済 状況 {から 言っ て}、来年 大幅 な 給料 アップ は 期待 でき ない でしょう。
+      - 今 の 経済 状況 {から 言っ て}、来年 給料 が 大幅 に 上がる こと は ない だろう。
+      - 現在 の 経済 情勢 {から 言い ます と}、来年 の 給与 大幅 増 は 望め ませ ん。
+    english_literally: From the current economic situation, a significant salary increase next year is
+      not expected, probably.
+    competing_grammar:
+      - competing_japanese:
+          - 現在 の 経済 状況 {から 考える と}、来年 大幅 な 給料 アップ は 期待 でき ない でしょう。
+        english: Considering the current economic situation, it's unlikely that salaries will increase
+          significantly next year.
+        hint: 「から考える と」 means 'considering' or 'thinking from,' indicating a more deliberative process.
+          「から言って」 directly states the conclusion drawn from the economic situation.
+    scene: An economic analyst giving a pessimistic forecast, or employees discussing their financial
+      outlook.
+    register: formal
+    setting: serious
+    nuance: The statement reflects a professional assessment based on a broad context. 「期待できないでしょう」 or
+      「ないだろう」 expresses a strong, almost certain negative prediction. The formal 「経済情勢」 (economic situation)
+      and 「給与大幅増」 (significant salary increase) elevate the tone, suitable for a professional setting.
+  - english: Judging from common sense, such an action is clearly unreasonable.
+    japanese:
+      - 常識 {から 言っ て}、そう し た 行為 は 明らか に 不 合理 です。
+      - 常識 {から 言っ て}、そんな こと する の は おかしい だろう。
+      - 一般 的 な 常識 {から 言い ます と}、その よう な 行為 は 筋 が 通り ませ ん。
+    english_literally: From common sense, such an action is clearly unreasonable.
+    competing_grammar:
+      - competing_japanese:
+          - 常識 {から する と}、そう し た 行為 は 明らか に 不 合理 です。
+        english: Going by common sense, such an action is clearly unreasonable.
+        hint: 「からすると」 can also imply judging by common sense, but 「から言って」 highlights that common sense
+          *dictates* or *leads to* this conclusion.
+    scene: Someone expressing strong disapproval of an illogical or inappropriate action.
+    register: semi-formal
+    setting: commanding
+    nuance: 「明らか に 不合理 です」 or 「おかしいだろう」 conveys strong disapproval based on a universal principle. 「常識」
+      (jōshiki - common sense) is presented as the undeniable basis for judgment. The use of 「筋が通りません」
+      (suji ga tōrimasen - doesn't make sense/isn't logical) adds to the commanding tone, suggesting the
+      action lacks rational foundation.
+post_example_writeup: These examples demonstrate how からして, からすると, からすれば, から見ると, and から言って are employed
+  to convey a judgment or inference derived from a specific piece of information or observation. Notice
+  how からして often emphasizes a strong, sometimes critical, deduction based even on a minimal detail. からすると
+  and からすれば are more commonly used for objective or hypothetical deductions. から見ると establishes a viewpoint
+  from which an observation, judgment, or inference is made. から言って is used when you want to convey that
+  your conclusion is a logical deduction derived from a specific viewpoint, adding a layer of certainty
+  or justification to your statement. The key is that the noun preceding these phrases provides the definitive
+  basis for the speaker's assessment, allowing you to articulate precise judgments in various situations.
 sources:
   bunpro: https://bunpro.jp/grammar_points/からすると-からすれば

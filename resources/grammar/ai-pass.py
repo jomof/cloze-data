@@ -92,7 +92,23 @@ def ALL_GRAMMARS_SUMMARY(all_grammars_summary):
 
     """).replace("[prior_input_replace]", dump_yaml(all_grammars_summary))
 
+def ALL_GRAMMARS_SUMMARY_FILE(file):
+    with open(file, 'r', encoding='utf-8') as f:
+        content = f.read()
+    return ws("""
+        ** -Summary of all grammar points- **
+        This is a list of all grammar points in the order they should be learned.
+              
+        BEGIN ALL_GRAMMARS_SUMMARY
+        [prior_input_replace]
+        END ALL_GRAMMARS_SUMMARY
+
+    """).replace("[prior_input_replace]", content)
+
 def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
+
+    output_dir = os.path.dirname(output_file)
+    summary_dir = f"{output_dir}/summary"
     prior_input_obj = prior_grammar_point
 
     # if 'split_predecessor' in prior_input_obj:
@@ -104,7 +120,7 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
         OUTPUT_SCHEMA,
         # KANJI_BY_LEVEL,
         # INSPIRATION_GRAMMAR_POINTS(data), 
-        ALL_GRAMMARS_SUMMARY(all_grammars_summary),
+        ALL_GRAMMARS_SUMMARY_FILE(f"{summary_dir}/toposort-order.yaml"),
         PRIOR_GRAMMAR_POINT(prior_input_obj),
         #         ws("""
         #     ** OPERATING INSTRUCTIONS **

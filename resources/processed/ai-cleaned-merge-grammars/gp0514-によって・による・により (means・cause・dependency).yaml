@@ -1,10 +1,12 @@
 grammar_point: によって・による・により (means・cause・dependency)
 learn_before:
   - で (means・method)
-  - から・ので (reason・cause)
+  - '[Clause]〜から (because・so)'
+  - '[Clause]〜ので (because・so)'
   - '[Verb-potential] (can do)'
   - ため・ために (for the purpose of・because of)
-  - から・ので (reason・cause)
+  - '[Clause]〜から (because・so)'
+  - '[Clause]〜ので (because・so)'
 learn_after:
   - を以て・をもって (by means of・with)
   - に則って・に即して (in accordance with)
@@ -14,7 +16,7 @@ learn_after:
   - に伴って・に伴い (along with・as a result of)
   - に照らして・に照らすと (in light of)
   - を踏まえて (based on)
-  - からして・からすると・からすれば (judging from)
+  - '[Noun]からすると・からすれば・から見ると・から言って (judging from・from the perspective of)'
 id: gp0514
 meaning: By means of, according to, depending on, because of, due to
 conjugations:
@@ -107,7 +109,7 @@ false_friends:
     kind: often confused with
     nuance: While `から` indicates a direct and often personal reason, `によって` is more formal and objective,
       often used for causes leading to significant events, especially in written or official contexts.
-    grammar_point: から・ので (reason・cause)
+    grammar_point: '[Clause]〜から (because・so)'
   - term: せい (because of・blame)
     meaning: Because of, Due to, Blame
     kind: similar expression

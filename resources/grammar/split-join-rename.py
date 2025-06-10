@@ -285,18 +285,33 @@ if __name__ == '__main__':
                         header = f"Creating a new grammar point '{new_name}' without any old content. "
                         combined_content = ""
                     
-                    # Get learn_before/learn_after from first old grammar point
-                    first_old_content = ""
+                    # Get learn_before/learn_after from all old grammar points
+                    def remove_duplicates_preserve_order(items):
+                        """Remove duplicates while preserving order"""
+                        seen = set()
+                        result = []
+                        for item in items:
+                            if item not in seen:
+                                seen.add(item)
+                                result.append(item)
+                        return result
+                    
                     learn_before = []
                     learn_after = []
-                    if all_old_content:
-                        first_old_content = all_old_content[0].split('\n', 1)[1] if '\n' in all_old_content[0] else all_old_content[0]
+                    for old_content in all_old_content:
+                        # Extract YAML content (skip the === header ===)
+                        old_yaml_content = old_content.split('\n', 1)[1] if '\n' in old_content else old_content
                         try:
-                            old_grammar_obj = yaml.safe_load(first_old_content)
-                            learn_before = old_grammar_obj.get('learn_before', [])
-                            learn_after = old_grammar_obj.get('learn_after', [])
+                            old_grammar_obj = yaml.safe_load(old_yaml_content)
+                            if old_grammar_obj:
+                                learn_before.extend(old_grammar_obj.get('learn_before', []))
+                                learn_after.extend(old_grammar_obj.get('learn_after', []))
                         except:
                             pass
+                    
+                    # Remove duplicates while preserving order
+                    learn_before = remove_duplicates_preserve_order(learn_before)
+                    learn_after = remove_duplicates_preserve_order(learn_after)
 
                     new_content = {
                         'grammar_point': new_name,
