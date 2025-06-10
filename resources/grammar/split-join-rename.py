@@ -12,6 +12,45 @@ from python.console import display
 from python.grammar import clean_lint
 import logging
 
+def check_renames_allowed(renames, grammar_summary):
+    """
+    Check that all old grammar point names in renames exist in grammar summary.
+    Also check for no-op renames where new name equals old name with single old name.
+    If any issues are found, display warnings and return False. Otherwise return True.
+    """
+    missing_names = []
+    noop_renames = []
+    all_grammar_points = grammar_summary.get('all-grammar-points', {})
+    
+    for new_name, old_names_list in renames.items():
+        # Check for no-op rename: new name same as old name when there's only one old name
+        if len(old_names_list) == 1 and new_name == old_names_list[0]:
+            noop_renames.append(new_name)
+        
+        for old_name in old_names_list:
+            if old_name not in all_grammar_points:
+                missing_names.append(old_name)
+    
+    has_errors = False
+    
+    if missing_names:
+        for missing_name in missing_names:
+            display.warn(f"Old grammar point name '{missing_name}' not found in grammar summary")
+        display.warn(f"Found {len(missing_names)} missing grammar point names.")
+        has_errors = True
+    
+    if noop_renames:
+        for noop_name in noop_renames:
+            display.warn(f"No-op rename detected: '{noop_name}' -> ['{noop_name}'] (new name same as old name)")
+        display.warn(f"Found {len(noop_renames)} no-op renames.")
+        has_errors = True
+    
+    if has_errors:
+        display.warn("Cannot proceed with renames due to validation errors.")
+        return False
+    
+    return True
+
 if __name__ == '__main__':
     try:
         # Determine workspace root: Bazel sets BUILD_WORKSPACE_DIRECTORY, otherwise use cwd
@@ -52,6 +91,10 @@ if __name__ == '__main__':
                 renames = yaml.safe_load(f)
             
             logger.info(f"Loaded renames: {renames}")
+            
+            # Check that all old grammar point names exist in grammar summary
+            if not check_renames_allowed(renames, grammar_summary):
+                sys.exit(1)
             
             # Build a map of old name to new names and look up IDs
             old_to_new = {}
@@ -139,8 +182,13 @@ if __name__ == '__main__':
                             if stripped in old_to_new:
                                 logger.debug(f"Renaming learn_{act} '{grammar_point}' to '{old_to_new[stripped]}' at {path}")
                                 result.extend(old_to_new[stripped])
-                            else:
+                            elif stripped in updated_summary['all-grammar-points']:
+                                # Keep known grammar points that aren't being renamed
                                 result.append(grammar_point)
+                            else:
+                                # Remove unknown grammar points
+                                logger.debug(f"Removing unknown grammar point '{grammar_point}' from learn_{act} at {path}")
+                                display.check(f"Removing unknown grammar point '{stripped}' from learn_{act}")
                         value[f'learn_{act}'] = result
                     
                     return value

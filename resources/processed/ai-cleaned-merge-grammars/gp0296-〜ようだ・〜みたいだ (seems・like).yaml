@@ -1,4 +1,7 @@
-grammar_point: みたい・ようだ (it seems・resembles・like)
+grammar_point: 〜ようだ・〜みたいだ (seems・like)
+better_grammar_point_name:
+  - <suggest>:ようだ・みたいだ (conjecture)
+  - <suggest>:ように・ような (comparison・manner・purpose)
 learn_before:
   - です (polite copula)
   - だ (casual copula)
@@ -6,21 +9,21 @@ learn_before:
   - な-Adjectives (adjectival nouns)
   - ある (to exist, inanimate・to have)
   - いる (to exist, animate)
+  - の (possession)
   - Verb[て] (and then)
   - てくる (movement towards or gradual change)
-  - <suggest>:'[Adj・V-stem]そうだ (it looks・seems like)'
   - だろう・でしょう (probably・right?)
+  - は (topic and contrast)
 learn_after:
-  - <suggest>:'[Sentence]らしい (it seems, based on evidence・I hear)'
+  - かのようだ・かのように (as if)
   - はずだ (is expected to be)
   - に違いない (no doubt)
   - ものだ (general truth expectation)
   - であろう (conjecture・formal)
-  - かのようだ・かのように (as if)
   - とみえる (seems from observation)
   - わけだ (logical conclusion)
-id: gp0267
-meaning: To seem or appear; to be like or resemble
+id: gp0296
+meaning: To seem, appear, be like, resemble, or be as/similar to.
 conjugations:
   - conjugation-type: dictionary (plain non-past)
     form: みたいだ
@@ -99,85 +102,138 @@ formation:
   Noun + (の) + みたい・(の) + ようだ: Indicates similarity, conjecture, or resemblance. 'の' is necessary for ようだ,
     and 'みたいな' or 'みたいに' are common.
   Demonstrative (e.g., その) + ようだ: Used to express 'it seems so' or 'it looks like that'.
+  Noun + の + ように: Adverbial phrase meaning 'like a noun', modifying a verb or adjective.
+  Noun + の + ような + Noun: Adjectival phrase meaning 'like a noun', modifying a noun.
+  Verb (plain form) + ように: Adverbial phrase meaning 'as if (verb)' or 'in order to (verb)' to achieve
+    a certain state or purpose.
+  Verb (plain form) + ような + Noun: Adjectival phrase meaning 'a noun that is like (verb)' or 'a noun that
+    resembles the state/action of (verb)'.
 jlpt: N4
 details:
   part-of-speech: auxiliary adjective
   register: teineigo (polite)
   usage-context: General
-  function: Expresses the likelihood or resemblance of something or someone.
+  function: Expresses the likelihood or resemblance of something or someone, or describes manner/purpose.
   nuance: Expresses conjecture or resemblance based on observation or evidence, ranging from casual subjective
-    impressions (for みたい) to more formal, objective deductions (for ようだ).
+    impressions (for みたい) to more formal, objective deductions (for ようだ). Also describes manner, comparison,
+    or purpose (for ように/ような).
 etymology: The etymology of 「みたい」 traces back to 「見たような」 (mita yō na), meaning 'like I saw,' reflecting
   its origin in visual or perceived similarities. 「よう」, on the other hand, derives from the noun 「様」 (sama/yō),
   meaning 'appearance' or 'manner,' explaining its core function of describing how something appears or
   seems based on observation or deduction. Both forms have evolved to express conjecture, appearance,
-  and resemblance.
-writeup: "The grammar points 「みたい」 and 「ようだ」 are auxiliary adjectives used to express observations about\
-  \ something, indicating **likelihood or resemblance**. While they share a core meaning, they differ\
-  \ significantly in nuance and formality. \n\n**「みたい」** is more **casual, conversational, and subjective**.\
-  \ It often conveys a personal impression or a general resemblance, much like saying \"seems like\" or\
-  \ \"looks like\" in English based on direct observation or a strong feeling. It can attach to the plain\
-  \ form of verbs, い-adjectives, the stem of な-adjectives, and nouns. When modifying a noun, it uses 「みたいな」\
-  \ (e.g., 子供みたいな人 - a person like a child). When modifying a verb or adjective, it uses 「みたいに」 (e.g.,\
-  \ 鳥みたいに飛ぶ - fly like a bird). At the end of a sentence, it typically appears as 「みたいだ」 or the polite\
-  \ 「みたいです」, though the 「だ」 is often omitted in very casual speech.\n\n**「ようだ」** is generally more **formal\
-  \ and objective**, implying a higher degree of certainty and a deduction based on more reliable, often\
-  \ firsthand, evidence. It is commonly used in written Japanese or more formal spoken contexts. It also\
-  \ attaches to the plain form of verbs and い-adjectives. For な-adjectives, it requires 「な」 (e.g., 静かなようだ\
-  \ - it seems quiet), and for nouns, it requires 「の」 (e.g., 医者のようだ - he seems to be a doctor). 「ようだ」\
-  \ can also be written with the kanji 「様だ」 in very formal or literary contexts.\n\nBoth forms can be\
-  \ used with various parts of speech, but remember that **「みたい」 is typically associated with a personal,\
-  \ immediate impression, while 「ようだ」 is linked to a more reasoned conclusion**."
+  and resemblance, while the 「ように」 form uniquely extends to express purpose or goal, signifying reaching
+  a desired 'state' or 'manner' of action.
+writeup: |-
+  The grammar points 「みたい」, 「ようだ」, and their adjectival/adverbial forms 「ような」 and 「ように」 are highly versatile expressions used to convey **likelihood, resemblance, comparison, manner, or purpose**. While sharing core functionalities, they exhibit distinct nuances and formality levels.
+
+  **「みたい」** is notably more **casual, conversational, and subjective**. It frequently expresses a personal impression or a general resemblance, akin to saying "seems like" or "looks like" based on direct observation or intuition. It can attach to the plain form of verbs, い-adjectives, the stem of な-adjectives, and nouns. When modifying a noun, it typically takes the form 「みたいな」 (e.g., 子供みたいな人 - a person like a child). When modifying a verb or adjective, it uses 「みたいに」 (e.g., 鳥みたいに飛ぶ - fly like a bird). At the end of a sentence, it commonly appears as 「みたいだ」 or the polite 「みたいです」, with the 「だ」 often omitted in very casual speech.
+
+  **「ようだ」** is generally more **formal and objective**, suggesting a deduction based on more reliable, often firsthand, evidence or a considered assessment. It is commonly found in written Japanese or more formal spoken contexts. It attaches to the plain form of verbs and い-adjectives. For な-adjectives, it requires 「な」 (e.g., 静かなようだ - it seems quiet), and for nouns, it requires 「の」 (e.g., 医者のようだ - he seems to be a doctor). 「ようだ」 can also be written with the kanji 「様だ」 in very formal or literary contexts.
+
+  Beyond expressing conjecture and resemblance, the forms **「ように」 and 「ような」** have additional significant uses derived from their root in 様 (さま - appearance/manner - state):
+  *   **Comparison/Manner**: 「ような」 modifies nouns (e.g., 夢のような空間 - a dream-like space) while 「ように」 modifies verbs or adjectives adverbially (e.g., 鳥のように歌う - sings like a bird). They indicate that something is *like* something else, describing a resemblance in quality or manner. 「ように」 can also mean "as if" or "as instructed" (e.g., 先生が教えてくれたように - as the teacher taught).
+  *   **Purpose/Goal**: 「ように」 is used to express a purpose or goal, indicating the desired state or manner of an action (e.g., 試験に合格できるように勉強する - study so that I can pass the exam). This function highlights the objective or result one aims to achieve.
+
+  In summary, while 「みたい」 and 「ようだ」 primarily focus on conjecture and resemblance, 「ようだ」 also encompasses a more formal comparison. The forms 「ように」 and 「ような」 extend this to include detailed comparisons, descriptions of manner, and, uniquely, the expression of purpose or goal. Understanding these distinctions is key to using them accurately and naturally in Japanese.
 false_friends:
-  - term: にみえる
-    meaning: To look, to seem, to appear
-    kind: similar expression
-    nuance: 「みたい・ようだ」 express a broader deduction of conjecture or resemblance based on various evidence,
-      while 「に見える」 specifically focuses on visual impressions or how something physically appears to someone.
-    grammar_point: にみえる (to look like)
-  - term: そうだ
-    meaning: I heard that, It is said that / Seem, Look like
+  - term: そうに・そうな
+    meaning: Seem, Look like, Sound
     kind: often confused with
-    nuance: When indicating appearance, 「そうだ」 often implies a less certain, immediate impression based
-      solely on superficial visual cues. 「みたい・ようだ」 convey a more confident deduction based on more comprehensive
-      observation or evidence. When indicating hearsay, 「そうだ」 reports information from others, whereas
-      「みたい・ようだ」 are based on the speaker's own observation or deduction.
-    grammar_point: <suggest>:'[Adj・V-stem]そうだ (it looks・seems like)'
+    nuance: 「そうに・そうな」 indicates an immediate impression based on sensory information (visual or auditory),
+      suggesting appearance or likelihood. In contrast, 「ように・ような」 can be based on a broader, more considered
+      assessment of similarity in manner, state, or condition. When expressing conjecture, 「みたい・ようだ」 can
+      be based on more comprehensive observation or evidence than 「そうに・そうな」.
+    grammar_point: 〜そうだ (appearance)
   - term: らしい
     meaning: Seems like, Apparently, I heard
     kind: often confused with
     nuance: 「らしい」 signifies conjecture or inference drawn from indirect information or common knowledge,
-      where the source might be vague. 「みたい・ようだ」 are typically used when the observation is direct or
-      the evidence is more concrete and reliable.
-    grammar_point: <suggest>:'[Sentence]らしい (it seems, based on evidence・I hear)'
-  - term: ように・ような
-    meaning: Like, As, Similar to
+      where the source might be vague or external. 「みたい・ようだ」 are typically used when the observation is
+      direct or the evidence is more concrete and reliable, or to express a more subjective resemblance.
+    grammar_point: '[Sentence]らしい (it seems, based on evidence・I hear)'
+  - term: とおり
+    meaning: In that way, Exactly, Precisely, Just as
+    kind: often confused with
+    nuance: 「とおり」 means "exactly as," indicating a precise, direct match or correspondence. While 「ように」
+      can sometimes mean "just as," it more generally suggests similarity or a manner resembling something,
+      allowing for slight variation rather than strict identity. When expressing purpose, 「ように」 refers
+      to the *way* something is done to achieve a result, not an exact replication.
+    grammar_point: とおり (exactly as)
+  - term: にみえる
+    meaning: To look, to seem, to appear
     kind: similar expression
-    nuance: 「ように・ような」 primarily focus on making objective comparisons, providing examples, or describing
-      a manner or standard, and can be more formal. 「みたい・ようだ」 emphasize a subjective resemblance or a
-      deduction based on an observation, with 「みたい」 being more casual and 「ようだ」 more formal.
-    grammar_point: ように・ような (like・as・similar to)
+    nuance: 「にみえる」 primarily focuses on how something appears visually, a subjective perception. 「みたい・ようだ」
+      and 「ように・ような」 express a broader range of comparisons or deductions, including manner, condition,
+      or abstract resemblance, not limited to visual appearance.
+    grammar_point: にみえる (to look like)
   - term: とみえる
     meaning: It seems that, it appears that, one can conclude that
     kind: similar expression
-    nuance: 「とみえる」 denotes a logical conclusion or deduction from circumstantial evidence, often in more
-      formal or academic contexts. 「みたい・ようだ」 are broader in scope, encompassing general observations and
-      subjective impressions.
+    nuance: 「とみえる」 denotes a logical conclusion or deduction from circumstantial evidence, often used
+      in more formal or academic contexts, implying a more reasoned inference. 「みたい・ようだ」 are broader in
+      scope, encompassing general observations and subjective impressions, while 「ように・ような」 focus on comparisons
+      or manner.
     grammar_point: とみえる (seems from observation)
+  - term: かのようだ・かのように
+    meaning: As if, Just like
+    kind: similar expression
+    nuance: 「かのようだ・かのように」 implies a strong, often metaphorical, 'as if' comparison where the stated condition
+      is not necessarily true but appears to be so. It is more formal or literary. 「みたい・ようだ」 express what
+      genuinely seems or appears to be the case based on observation or evidence, and 「ように・ような」 are used
+      for more direct, factual, or realistic comparisons.
+    grammar_point: かのようだ・かのように (as if)
+  - term: まるで…ようだ
+    meaning: It is entirely as if, It is just as though
+    kind: similar expression
+    nuance: 「まるで…ようだ」 is a strong comparison meaning 'just like' or 'as if', often used for dramatic or
+      literary effect, emphasizing an almost unreal resemblance. While 「まるで…みたいだ」 can also be used, 「まるで…ようだ」
+      often carries a slightly more formal or emphatic tone than the more general 「みたいだ」 or 「ようだ」 for
+      conjecture.
+    grammar_point: まるで…ようだ (just like)
+  - term: ふうに
+    meaning: in a manner that suggests, like, in the manner of
+    kind: similar expression
+    nuance: 「ふうに」 emphasizes the manner, style, or appearance in which something is done or perceived.
+      While similar, 「ように」 often conveys a more direct or inherent resemblance or indicates a general
+      manner, rather than just the outward 'look' of something.
+    grammar_point: ふうに (in a manner that suggests)
+  - term: という風に
+    meaning: As if to say, as if to suggest that, in such a way that, things like
+    kind: similar expression
+    nuance: 「という風に」 often introduces a general category, an example, or a description of how something
+      is said or understood. It is broader than 「ように」, which focuses on direct similarity or manner.
+    grammar_point: という風に (as if to say)
+  - term: 〜のごとく
+    meaning: Like, As (literary)
+    kind: similar expression
+    nuance: A highly literary and archaic expression, 「ごとし」 is not commonly used in modern spoken Japanese,
+      unlike the versatile 「ように・ような」. It is typically found in classical texts or very formal writing.
+    grammar_point: 如く・如き・如し (classical comparison)
+  - term: ような気がする
+    meaning: Have a feeling that
+    kind: similar expression
+    nuance: 「ような気がする」 indicates a subjective feeling, intuition, or sense about something, which is distinct
+      from making a direct comparison or expressing a deduction based on objective qualities or manner.
+    grammar_point: ような気がする (have a feeling)
+  - term: ように〜てほしい
+    meaning: To want someone to do something in a certain way, to want someone to be able to do something,
+      to want something to happen in a certain way.
+    kind: similar expression
+    nuance: While it contains the term 「ように」, this pattern expresses a wish or request regarding the manner
+      of doing something or achieving a certain state, rather than a direct comparison of two entities.
+    grammar_point: ように〜てほしい (want someone to act in a certain way)
+  - term: まい〜のように
+    meaning: Almost every ~, Nearly every ~, On a ~ basis
+    kind: similar expression
+    nuance: This pattern is used to describe the frequency or regularity of an event rather than a similarity
+      or comparison between two things.
+    grammar_point: まい〜のように (almost every time)
   - term: ときいた
     meaning: I heard that
     kind: often confused with
     nuance: 「ときいた」 is a direct statement of hearsay, clearly indicating information received from another
       source. 「みたい・ようだ」 convey the speaker's own inference or observation, not merely reported information.
     grammar_point: ときいた (I heard that)
-  - term: かのようだ・かのように
-    meaning: As if, Just like
-    kind: similar expression
-    nuance: 「かのようだ・かのように」 implies a strong, often metaphorical, 'as if' comparison where the stated condition
-      is not necessarily true but appears to be so. It is more formal or literary. 「みたい・ようだ」 express what
-      genuinely seems or appears to be the case based on observation or evidence, with 「みたい」 being more
-      casual.
-    grammar_point: かのようだ・かのように (as if)
   - term: ようでは・ようじゃ
     meaning: If it seems that / If it is true that (often implying a negative consequence)
     kind: often confused with
@@ -192,33 +248,26 @@ false_friends:
       「みたい」 (when expressing similarity) is more subjective and impressionistic, conveying a general likeness
       rather than a precise comparison.
     grammar_point: と同じで・と違って (similarity and contrast)
-  - term: Nounらしい
+  - term: '[Noun]らしい'
     meaning: In the sense of 'typical of,' 「らしい」 implies something is characteristic or befitting of a
       person or thing, indicating an inherent quality. In contrast, 「みたい」 suggests a superficial resemblance,
       a 'looks like' quality rather than an 'is like' quality.
     kind: often confused with
-    nuance: 「Nounらしい」 indicates that something is characteristic of or befitting a noun, implying an inherent
-      quality or typical nature. 「みたい」 suggests a superficial resemblance, a 'looks like' quality rather
-      than an 'is truly like' quality.
-    grammar_point: <suggest>:'[Noun]らしい (typical of・-like)'
-  - term: まるで…ようだ
-    meaning: It is entirely as if, It is just as though
-    kind: similar expression
-    nuance: 「まるで…ようだ」 is a strong comparison meaning 'just like' or 'as if', often used for dramatic or
-      literary effect. While 「まるで…みたいだ」 can also be used with 「まるで」, 「まるで…ようだ」 often carries a slightly
-      more formal or emphatic tone than 「まるで…みたいだ」.
-    grammar_point: まるで…ようだ (just like)
+    nuance: 「[Noun]らしい」 indicates that something is characteristic of or befitting a noun, implying an
+      inherent quality or typical nature. 「みたい」 suggests a superficial resemblance, a 'looks like' quality
+      rather than an 'is truly like' quality. This nuance also applies to 「よう」 in its comparative function.
+    grammar_point: '[Noun]らしい (typical of・-like)'
 post_false_friends_writeup: To avoid confusion, it is crucial to understand the distinct nuances of these
   expressions. 「みたい」 and 「ようだ」 both express conjecture or resemblance, but 「みたい」 is more casual and subjective,
   suitable for personal impressions or direct observations. In contrast, 「ようだ」 is more formal and objective,
-  conveying a higher degree of certainty based on concrete evidence. For comparison, 「そう」 (for appearance)
-  offers a less certain, immediate impression, while (for hearsay) it reports information from others.
-  「らしい」 suggests inference from indirect evidence or common knowledge. 「ように・ような」 are used for objective
-  comparisons or to describe a manner. 「かのようだ・かのように」 and 「まるで…ようだ」 imply a strong, often metaphorical
-  'as if' comparison where the condition might not be factual. 「にみえる」 focuses specifically on visual appearance,
-  and 「とみえる」 indicates a logical deduction. Finally, 「ときいた」 is a straightforward statement of hearsay,
-  「ようでは」 sets a negative conditional outcome, and 「[Noun]らしい」 and 「と同じで・と違って」 are for expressing inherent
-  qualities or factual comparisons, respectively.
+  conveying a higher degree of certainty based on concrete evidence. The forms 「ように」 and 「ような」 are used
+  for detailed comparisons, descriptions of manner, and to express purpose. For comparison, 「そう」 (for
+  appearance) offers a less certain, immediate impression, while (for hearsay) it reports information
+  from others. 「らしい」 suggests inference from indirect evidence or common knowledge. 「かのようだ・かのように」 and
+  「まるで…ようだ」 imply a strong, often metaphorical 'as if' comparison where the condition might not be factual.
+  「にみえる」 focuses specifically on visual appearance, and 「とみえる」 indicates a logical deduction. Finally,
+  「ときいた」 is a straightforward statement of hearsay, 「ようでは」 sets a negative conditional outcome, and 「[Noun]らしい」
+  and 「と同じで・と違って」 are for expressing inherent qualities or factual comparisons, respectively.
 examples:
   - english: It looks like it's going to rain soon because the sky is dark.
     japanese:
@@ -230,17 +279,17 @@ examples:
     english_literally: Sky is dark, so soon rain will fall it seems.
     competing_grammar:
       - competing_japanese:
-          - 空 が 暗い から、もう すぐ 雨 が 降る {そう だ}。
+          - 空 が 暗い から、もう すぐ 雨 が 降る {そう だ}
         english: It is said that it will rain soon because the sky is dark.
         hint: 「そうだ」 (reportive) indicates information received from others. We're looking for a personal
           observation or deduction.
       - competing_japanese:
-          - 空 が 暗い から、もう すぐ 雨 が 降る {だろう}。
+          - 空 が 暗い から、もう すぐ 雨 が 降る {だろう}
         english: It will probably rain soon because the sky is dark.
         hint: 「だろう」 expresses probability or conjecture with less direct observation involved. We're looking
           for a personal impression based on direct sight or evidence.
       - competing_japanese:
-          - 空 が 暗く なっ て き た から、雨 が 降り 出す {らしい}。
+          - 空 が 暗く なっ て き た から、雨 が 降り 出す {らしい}
         english: The sky has gotten dark, so apparently it's starting to rain (based on indirect information).
         hint: 「らしい」 implies conjecture based on indirect information. We're looking for a deduction based
           on direct observation.
@@ -256,7 +305,7 @@ examples:
     english_literally: This pancake, fluffy and cloud-like is.
     competing_grammar:
       - competing_japanese:
-          - この パン ケーキ、ふわふわ で {雲 の よう だ}。
+          - この パン ケーキ、ふわふわ で {雲 の よう だ}
         english: This pancake is fluffy, like a cloud.
         hint: 「ようだ」 is more formal and objective for comparisons. We're looking for a casual, sensory
           comparison.
@@ -272,11 +321,11 @@ examples:
     english_literally: Next door's house, no one is there, it seems.
     competing_grammar:
       - competing_japanese:
-          - 隣 の 家 は 誰 も {い ない よう だ}。
+          - 隣 の 家 は 誰 も {い ない よう だ}
         english: It appears no one is home at the house next door.
         hint: 「ようだ」 is more formal and objective. We're looking for a personal deduction based on observation.
       - competing_japanese:
-          - 隣 の 家 は 誰 も {い ない らしい}。
+          - 隣 の 家 は 誰 も {い ない らしい}
         english: Apparently, she is happy.
         hint: 「らしい」 implies inference from indirect evidence or hearsay. We're looking for a conclusion
           drawn from direct observation.
@@ -292,7 +341,7 @@ examples:
     english_literally: That person always smiling is, sun-like is.
     competing_grammar:
       - competing_japanese:
-          - あの 人 は いつ も 笑っ て い て、{太陽 の よう だ}。
+          - あの 人 は いつ も 笑っ て い て、{太陽 の よう だ}
         english: That person is always smiling, like the sun.
         hint: 「ようだ」 is more formal for comparisons. We're looking for a casual, personal observation and
           affectionate comparison.
@@ -308,7 +357,7 @@ examples:
     english_literally: His room is completely like a garbage mansion.
     competing_grammar:
       - competing_japanese:
-          - 彼 の 部屋 は まるで {ゴミ屋敷 の よう だ}。
+          - 彼 の 部屋 は まるで {ゴミ屋敷 の よう だ}
         english: His room is completely like a garbage dump.
         hint: 「ようだ」 can feel more objective. We're looking for a strong, casual comparison that might
           be exaggerated.
@@ -380,8 +429,8 @@ examples:
       - competing_japanese:
           - 彼女 は {嬉しい らしい です}。
         english: Apparently, she is happy.
-        hint: 「らしい」 indicates information gathered indirectly. We're looking for a conclusion drawn from
-          direct observation.
+        hint: 「らしい」 implies inference from indirect evidence or hearsay. We're looking for a conclusion
+          drawn from direct observation.
     scene: Observing a friend's cheerful demeanor.
     register: teineigo (polite)
     setting: informative
@@ -394,7 +443,7 @@ examples:
     english_literally: He, exam failed it seems, right?
     competing_grammar:
       - competing_japanese:
-          - 彼 は 試験 に {落ち た よう だ ね}。
+          - 彼 は 試験 に {落ち た よう だ ね}
         english: It appears he failed the exam, right?
         hint: 「ようだね」 is more formal for speculative conversation. We're looking for a casual, conversational
           tone between friends.
@@ -410,7 +459,7 @@ examples:
     english_literally: This game is too difficult, can't clear it, it seems.
     competing_grammar:
       - competing_japanese:
-          - この ゲーム は 難し すぎ て、{クリア でき ない よう だ}。
+          - この ゲーム は 難し すぎ て、{クリア でき ない よう だ}
         english: This game is too difficult; it appears I can't clear it.
         hint: 「ようだ」 is more formal for expressing personal thoughts or complaints. We're looking for a
           natural, casual expression.
@@ -425,7 +474,7 @@ examples:
     english_literally: Section chief, today in good mood seems.
     competing_grammar:
       - competing_japanese:
-          - 部 長 は 今日 は {ご 機嫌 の よう だ}。
+          - 部 長 は 今日 は {ご 機嫌 の よう だ}
         english: The manager appears to be in a good mood today.
         hint: 「ようだ」 is more formal for observations. We're looking for a direct, slightly less formal
           observation in a professional setting.
@@ -555,20 +604,20 @@ examples:
     english_literally: Tanaka-san today, always than free it seems. His desk on documents few because.
     competing_grammar:
       - competing_japanese:
-          - 田中 さん は 今日、いつ も より 暇 な {みたい だ}。
+          - 田中 さん は 今日、いつ も より 暇 な {みたい だ}
         english: Mr. Tanaka seems less busy than usual today (casual, subjective impression).
         hint: 「みたい」 is more casual and subjective. We're looking for a more confident deduction based
           on concrete evidence.
       - competing_japanese:
-          - 田中 さん は 今日、いつ も より 暇 {そう だ}。
+          - 田中 さん は 今日、いつ も より 暇 {そう だ}
         english: Mr. Tanaka looks less busy than usual today (based on superficial appearance).
         hint: 「そうだ」 (when indicating appearance) suggests a judgment based on superficial visual cues.
           We're looking for a deduction from solid evidence like the number of documents.
       - competing_japanese:
-          - 田中 さん は 今日、いつ も より 暇 な {らしい}。
+          - 田中 さん は 今日、いつ も より 暇 な {らしい}
         english: Apparently, Mr. Tanaka is less busy than usual today (based on indirect information).
-        hint: 「らしい」 implies inference from indirect information. We're looking for a deduction based on
-          direct observation.
+        hint: 「らしい」 implies inference from indirect cues or reports from others. We're looking for a deduction
+          based on direct observation.
     scene: Observing a colleague's desk and deducing their workload based on the number of documents.
     register: semi-formal
     setting: informative
@@ -580,18 +629,18 @@ examples:
     english_literally: Far from heard that sound dog's barking sound it seems.
     competing_grammar:
       - competing_japanese:
-          - 遠く から 聞こえる あの 音 は 犬 の 鳴き声 {みたい だ}。
+          - 遠く から 聞こえる あの 音 は 犬 の 鳴き声 {みたい だ}
         english: That sound heard from far away is like a dog's bark (casual, subjective comparison).
         hint: 「みたい」 is more casual and subjective. We're looking for a more analytical deduction about
           the sound's nature.
       - competing_japanese:
-          - 遠く から 聞こえる あの 音 は 犬 の 鳴き声 {らしい}。
+          - 遠く から 聞こえる あの 音 は 犬 の 鳴き声 {らしい}
         english: That sound heard from far away is apparently a dog's bark (based on indirect information
           or common sense).
         hint: 「らしい」 implies conjecture from indirect information. We're looking for a deduction based
           on direct auditory evidence.
       - competing_japanese:
-          - 遠く から 聞こえる あの 音 は 犬 の 鳴き声 {に 聞こえる}。
+          - 遠く から 聞こえる あの 音 は 犬 の 鳴き声 {に 聞こえる}
         english: That sound heard from far away sounds like a dog's bark (focus on auditory perception).
         hint: 「に聞こえる」 specifically means 'sounds like' to one's ear, focusing on perception. We're looking
           for a broader deduction about what the sound 'is'.
@@ -607,17 +656,17 @@ examples:
     english_literally: Sato-san yesterday's exam passed it seems. Everyone smiling was, so.
     competing_grammar:
       - competing_japanese:
-          - 佐藤 さん は 昨日 の 試験 に 合格 し た {みたい です}。
+          - 佐藤 さん は 昨日 の 試験 に 合格 し た {みたい です}
         english: It seems Ms. Sato passed yesterday's exam (casual, subjective impression).
         hint: 「みたい」 is less formal and more about subjective impression. We're looking for a more objective
           assessment in a professional context.
       - competing_japanese:
-          - 佐藤 さん は 昨日 の 試験 に 合格 し た {らしい です}。
+          - 佐藤 さん は 昨日 の 試験 に 合格 し た {らしい です}
         english: Apparently, Ms. Sato passed yesterday's exam (based on indirect information).
         hint: 「らしい」 implies inference based on indirect cues or reports from others. We're looking for
           a deduction based on direct observation of everyone's smiles.
       - competing_japanese:
-          - 佐藤 さん は 昨日 の 試験 に 合格 し た {と 聞き まし た}。
+          - 佐藤 さん は 昨日 の 試験 に 合格 し た {と 聞き まし た}
         english: I heard that Ms. Sato passed yesterday's exam (direct hearsay).
         hint: 「ときいた」 explicitly states hearsay. We're looking for a deduction based on observation, not
           explicitly hearing information.
@@ -639,17 +688,17 @@ examples:
     english_literally: Other day's event participants also many, very success was it seemed.
     competing_grammar:
       - competing_japanese:
-          - 先日 の イベント は 参加 者 も 多く、大変 成功 だっ た {みたい でし た}。
+          - 先日 の イベント は 参加 者 も 多く、大変 成功 だっ た {みたい でし た}
         english: The other day's event seemed to be a great success (casual, subjective impression).
         hint: 「みたい」 is more casual and subjective. We're looking for a more formal and objective assessment
           suitable for a report.
       - competing_japanese:
-          - 先日 の イベント は 参加 者 も 多く、大変 成功 だっ た {らしい です}。
+          - 先日 の イベント は 参加 者 も 多く、大変 成功 だっ た {らしい です}
         english: Apparently, the other day's event was a great success (based on indirect information).
         hint: 「らしい」 implies inference based on indirect information. We're looking for a deduction based
           on direct observation of participation.
       - competing_japanese:
-          - 先日 の イベント は 参加 者 も 多く、大変 成功 だっ た {と 見える}。
+          - 先日 の イベント は 参加 者 も 多く、大変 成功 だっ た {と 見える}
         english: The other day's event appears to have been a great success (logical deduction from evidence).
         hint: 「とみえる」 emphasizes a logical deduction, often used in written or academic contexts. We're
           looking for a broader, observational inference.
@@ -666,18 +715,18 @@ examples:
     english_literally: He this important communication yet not know it seems. I speak should?
     competing_grammar:
       - competing_japanese:
-          - 彼 は この 重要 な 連絡 を まだ 知ら ない {みたい だ}。
+          - 彼 は この 重要 な 連絡 を まだ 知ら ない {みたい だ}
         english: It seems he doesn't know about this important communication yet (casual, subjective impression).
         hint: 「みたい」 is more casual and subjective. We're looking for a more confident deduction based
           on observation of his behavior.
       - competing_japanese:
-          - 彼 は この 重要 な 連絡 を まだ 知ら ない {らしい}。
+          - 彼 は この 重要 な 連絡 を まだ 知ら ない {らしい}
         english: Apparently, he doesn't know about this important communication yet (inferred from indirect
           cues).
         hint: 「らしい」 implies inference from indirect cues or general knowledge. We're looking for a deduction
           based on more direct observation of his current state.
       - competing_japanese:
-          - 彼 は この 重要 な 連絡 を まだ 知ら {な そう だ}。
+          - 彼 は この 重要 な 連絡 を まだ 知ら {な さ そう だ}
         english: He doesn't look like he knows about this important communication yet (based on his appearance/expression).
         hint: 「そうに・そうな」 focuses on how someone 'looks' or 'appears' based on their expression or demeanor.
           We're looking for a broader deduction about his state of knowledge.
@@ -726,18 +775,18 @@ examples:
     english_literally: New system employees by well accepted not it seemed not.
     competing_grammar:
       - competing_japanese:
-          - 新しい システム は 社員 に よく 受け入れ られ て い ない {みたい でし た}。
+          - 新しい システム は 社員 に よく 受け入れ られ て い ない {みたい でし た}
         english: It seemed like the new system wasn't being well-received by the employees (casual, subjective).
         hint: 「みたい」 suggests a more casual or subjective impression, whereas we're looking for a more
           formal and objective assessment.
       - competing_japanese:
-          - 新しい システム は 社員 に よく 受け入れ られ て い ない {らしい でし た}。
+          - 新しい システム は 社員 に よく 受け入れ られ て い ない {らしい です}
         english: Apparently, the new system wasn't being well-received by the employees (based on indirect
           information).
         hint: 「らしい」 implies inference based on indirect information or common knowledge. We're looking
           for a deduction based on direct observation of employee reactions.
       - competing_japanese:
-          - 新しい システム は 社員 に よく 受け入れ られ て い {な さ そう でし た}。
+          - 新しい システム は 社員 に よく 受け入れ られ て い {な さ そう でし た}
         english: The new system didn't look like it was being well-received by the employees (based on
           superficial appearance).
         hint: 「そうだ」 (when indicating appearance) suggests a judgment based on superficial visual cues.
@@ -754,12 +803,12 @@ examples:
     english_literally: Eyes opened if, everything dream's like was.
     competing_grammar:
       - competing_japanese:
-          - 目 が 覚め たら、すべて が 夢 {みたい だっ た}。
+          - 目 が 覚め たら、すべて が 夢 {みたい だっ た}
         english: When I woke up, everything seemed like a dream (casual, subjective comparison).
         hint: 「みたい」 is more colloquial and informal, emphasizing a subjective resemblance rather than
           a strong deduction about reality.
       - competing_japanese:
-          - 目 が 覚め たら、すべて が まるで 夢 で ある か の {よう だっ た}。
+          - 目 が 覚め たら、すべて が まるで 夢 で ある か の {よう だっ た}
         english: When I woke up, everything was as if it were a dream.
         hint: 「かのようだ」 specifically implies 'as if' something were true, even though it is not, often used
           for metaphorical comparisons. We're looking for a direct observation that something *was* dream-like.
@@ -768,11 +817,254 @@ examples:
     register: casual
     setting: reflective
     conjugation: past plain (～た)
-post_example_writeup: As you can see from the examples, 「みたい」 and 「ようだ」 are versatile and can be used
-  in various situations to express resemblance or conjecture. 「みたい」 is particularly common in casual conversation,
-  making your speech sound more natural and approachable. Pay attention to how it connects to nouns, verbs,
-  and adjectives. 「ようだ」 tends to be used in more formal settings, conveying a greater sense of objectivity.
-  Remember that 「みたい」 itself does not have a kanji form and should be written in hiragana or katakana,
-  which is important to avoid confusing it with similarly sounding words such as 「見たい」 (want to see).
+  - english: This room is like a dream-like space.
+    japanese:
+      - この 部屋 は まるで 夢 の {よう な} 空間 だ。
+      - この 部屋 は まるで 夢 の {よう な} 空間 です。
+      - この 部屋、まるで 夢 の {よう な} 空間 だ ね。
+    english_literally: This room is completely a dream-like space.
+    competing_grammar:
+      - competing_japanese:
+          - この 部屋 は まるで 夢 {みたい な} 空間 だ。
+        english: This room is like a dream-like space (colloquial).
+        hint: While 「みたい な」 is also common, 「よう な」 provides a slightly more refined and descriptive comparison,
+          fitting the almost surreal quality of the room. We're looking for a comparison that emphasizes
+          a sense of wonder and beauty.
+      - competing_japanese:
+          - この 部屋 は 夢 {だ}。
+        english: This room is a dream.
+        hint: This simply states the room *is* a dream. We're looking for a grammar point that expresses
+          something *like* a dream, indicating similarity rather than direct identity.
+    scene: You are describing a beautifully decorated room that feels almost surreal to a friend.
+    register: formal
+    setting: reflective
+  - english: She sings like a bird.
+    japanese:
+      - 彼女 は 鳥 の {よう に} 歌う。
+      - 彼女 は 鳥 の {よう に} 歌い ます。
+      - 彼女 は 本当 に 鳥 の {よう に} 歌う。
+    english_literally: She sings like a bird.
+    competing_grammar:
+      - competing_japanese:
+          - 彼女 は 鳥 {みたい に} 歌う。
+        english: She sings like a bird (colloquial).
+        hint: While 「みたい に」 is also common, 「よう に」 can sometimes emphasize the inherent quality or naturalness
+          of the comparison. We're looking for a comparison that praises the talent.
+      - competing_japanese:
+          - 彼女 は 歌 が 上手 {だ}。
+        english: She is good at singing.
+        hint: This simply states she sings well. We're looking for an expression that makes a comparison
+          to illustrate *how* she sings beautifully.
+    scene: You are praising someone's beautiful singing to a mutual friend.
+    register: casual
+    setting: friendly
+    speaker_gender: female
+    listener_gender: female
+    nuance: The phrase 「鳥 の ように 歌う」 is a classic comparison for someone with a beautiful singing voice.
+      The casual register and the direct praise make this suitable for a friendly conversation between
+      female speakers.
+  - english: It's raining as if someone flipped over a bucket.
+    japanese:
+      - バケツ を ひっくり返し た {よう に} 雨 が 降っ て いる。
+      - バケツ を ひっくり返し た {よう に} 雨 が 降っ て い ます。
+      - バケツ ひっくり返し た {よう に} 雨 降っ てる。
+    english_literally: Rain is falling as if a bucket was overturned.
+    competing_grammar:
+      - competing_japanese:
+          - バケツ を ひっくり返し た {みたい に} 雨 が 降っ て いる。
+        english: It's raining as if someone flipped over a bucket (colloquial).
+        hint: While 「みたい に」 is also possible, 「よう に」 here emphasizes the intense *manner* of the rain,
+          fitting the exclamatory tone and vivid imagery of the idiom. We're looking for a strong, descriptive
+          comparison.
+      - competing_japanese:
+          - 大雨 {だ}。
+        english: It's heavy rain.
+        hint: 「大雨 だ」 simply states it's heavy rain. We're looking for a phrase that captures the *intensity*
+          and *manner* of the rain with a vivid simile.
+    scene: You are exclaiming about a sudden, incredibly heavy downpour while looking out the window.
+    register: casual
+    setting: excited
+  - english: He has a face that looks like he wants to say something.
+    japanese:
+      - 彼 は 何 か 言い たい {よう な} 顔 を し て いる。
+      - 彼 は 何 か 言い たい {よう な} 顔 を し て い ます。
+      - 彼、何 か 言い たい {よう な} 顔 し てる。
+    english_literally: He is doing a face that looks like he wants to say something.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 何 か 言い たい {そう な} 顔 を し て いる。
+        english: He has a face that looks like he's about to say something (immediate impression).
+        hint: 「〜そう」 indicates an appearance of immediate likelihood or readiness. 「よう な」 implies a more
+          general resemblance or characteristic look, fitting a situation where the desire to speak is
+          evident in their typical expression, not just a fleeting emotion. We're looking for a general
+          impression rather than an immediate one.
+      - competing_japanese:
+          - 彼 は 何 か 言い たい と {思っ て いる}。
+        english: This states his internal thought. We're looking for a description of his *face* that
+          suggests his desire to speak, not just the thought itself.
+        hint: This states his internal thought. We're looking for a description of his *face* that suggests
+          his desire to speak, not just the thought itself.
+    scene: You observe a friend who seems to be holding something back, their expression giving away their
+      thoughts.
+    register: casual
+    setting: informative
+  - english: As the teacher taught me, preparation is also important.
+    japanese:
+      - 先生 が 教え て くれ た {よう に}、予習 も 大切 だ。
+      - 先生 が 教え て くださっ た {よう に}、予習 も 大切 です。
+      - 先生 が 教え て くれ た {よう に}、予習 も 大切 だ よ。
+    english_literally: As the teacher taught me, preparation is also important.
+    competing_grammar:
+      - competing_japanese:
+          - 先生 が 教え て くれ た {とおり}、予習 も 大切 だ。
+        english: Exactly as the teacher taught me, preparation is also important.
+        hint: 「〜とおり」 means 'exactly as you said/taught,' implying a precise reiteration. 「よう に」 suggests
+          following the teacher's instruction or advice in a general sense, which is more natural for
+          a student reflecting on a lesson's essence rather than quoting verbatim. We're looking for a
+          general adherence to advice.
+      - competing_japanese:
+          - 先生 が 教え て くれ た {から}、予習 も 大切 だ。
+        english: Because the teacher taught me, preparation is also important.
+        hint: 「から」 indicates a reason or cause. We're looking for an expression that describes the *manner*
+          in which something is important, aligning with the teacher's teaching, not just a causal link.
+    scene: A student is reflecting on advice from their teacher and sharing a study habit.
+    register: teineigo (polite)
+    setting: academic
+    speaker_gender: male
+    speaker_age: younger
+    nuance: The use of 「先生 が 教え て くれ た」 and the polite form 「大切 だ」 creates a respectful and academic tone,
+      characteristic of a younger male student speaking about their teacher's wisdom.
+  - english: When I'm with you, I feel like time has stopped.
+    japanese:
+      - 君 と いる と、時間 が 止まっ た {よう に} 感じる。
+      - 君 と いる と、時間 が 止まっ た {よう に} 感じ ます。
+      - 君 と いる と、時間 が 止まっ た {よう に} 感じる わ。
+    english_literally: When I am with you, I feel as if time has stopped.
+    competing_grammar:
+      - competing_japanese:
+          - 君 と いる と、時間 が 止まっ た {みたい に} 感じる。
+        english: When I'm with you, I feel like time has stopped (colloquial).
+        hint: While 「みたい に」 is possible, 「よう に」 allows for a more poetic or idealized expression, aligning
+          with the scene of expressing deep and somewhat surreal affection. We're looking for a comparison
+          that conveys a profound emotional experience.
+      - competing_japanese:
+          - 君 と いる と、時間 が ゆっくり {感じる}。
+        english: When I'm with you, time feels slow.
+        hint: This describes the *feeling* of time. We're looking for a comparison that evokes the specific
+          sensation of time having *stopped* due to the presence of the other person.
+    scene: A woman expressing deep affection to her partner, emphasizing the idealized feeling of time
+      passing slowly.
+    register: shitashii kuchō (intimate)
+    setting: intimate
+    speaker_gender: female
+    listener_gender: male
+    nuance: The phrase 「時間 が 止まっ た ように 感じる」 conveys a profound emotional experience, typical in intimate
+      relationships. The casual sentence ending 「感じる」 is natural for a female speaker in an intimate setting.
+  - english: This problem is as big as a mountain.
+    japanese:
+      - この 問題 は 山 の {よう な} 大き さ だ。
+      - この 問題 は 山 の {よう な} 大き さ です。
+      - この 問題 は まるで 山 の {よう な} 大き さ で ござい ます。
+    english_literally: This problem is a mountain-like size.
+    competing_grammar:
+      - competing_japanese:
+          - この 問題 は 山 {みたい に} 大きい。
+        english: This problem is big like a mountain (colloquial).
+        hint: While 「みたい に」 is casual, 「よう な」 provides a more formal and somewhat more objective comparison,
+          fitting the serious tone of a business meeting where a precise yet impactful description is
+          needed. We're looking for a comparison suitable for a serious context.
+      - competing_japanese:
+          - この 問題 は {大きい}。
+        english: This simply states the problem is big. We're looking for a phrase that uses a comparison
+          to emphasize the overwhelming scale, not just a plain description.
+        hint: This simply states the problem is big. We're looking for a phrase that uses a comparison
+          to emphasize the overwhelming scale, not just a plain description.
+    scene: You are describing the overwhelming scale of a challenge during a serious business meeting.
+    register: formal
+    setting: serious
+  - english: I'm studying hard every day so that I can pass the exam.
+    japanese:
+      - 試験 に 合格 できる {よう に}、毎日 一生 懸命 勉強 し て い ます。
+      - 試験 に 合格 でき ます {よう に}、毎日 一生 懸命 勉強 し て おり ます。
+      - 試験 に 合格 できる {よう に}、毎日 一生 懸命 勉強 し ます。
+    english_literally: So that I can pass the exam, every day I am studying diligently.
+    competing_grammar:
+      - competing_japanese:
+          - 試験 に 合格 する {ため に}、毎日 一生 懸命 勉強 し て い ます。
+        english: I'm studying hard every day for the purpose of passing the exam.
+        hint: 「ため に」 explicitly states the purpose or goal. While similar, 「よう に」 emphasizes the *manner*
+          or *state* desired, focusing on reaching a certain condition. We're looking for an expression
+          that highlights the desired outcome as a state to be achieved.
+      - competing_japanese:
+          - 試験 に {合格 し ます}。毎日 一生 懸命 勉強 し て い ます。
+        english: This simply states two separate facts. We're looking for a clear connection between studying
+          and the goal of passing the exam, expressing *why* the studying is being done.
+        hint: This simply states two separate facts. We're looking for a clear connection between studying
+          and the goal of passing the exam, expressing *why* the studying is being done.
+    scene: A student talking about their study habits and goals, explaining their motivation.
+    register: teineigo (polite)
+    setting: academic
+    nuance: The phrase 「合格 できる ように」 expresses the desired *state* or *result* of being able to pass the
+      exam, indicating a goal-oriented action. The polite verb ending 「し て い ます」 is appropriate for discussing
+      one's efforts in an academic setting.
+  - english: Please be careful not to catch a cold.
+    japanese:
+      - 風邪 を 引か ない {よう に} 気 を つけ て ください。
+      - 風邪 引か ない {よう に} 気 を つけ て。
+      - どうぞ 風邪 を 引か ない {よう に}、くれぐれ も 気 を つけ て ください。
+    english_literally: So that you don't catch a cold, please be careful.
+    competing_grammar:
+      - competing_japanese:
+          - 風邪 を {引く な}。
+        english: Don't catch a cold (imperative).
+        hint: This is a direct, strong command. We're looking for a softer request or advice, encouraging
+          caution to prevent an undesirable outcome rather than forbidding it outright.
+      - competing_japanese:
+          - 風邪 を 引い {たら いけ ませ ん}。
+        english: You must not catch a cold.
+        hint: This expresses a prohibition. We're looking for an encouragement to prevent an undesirable
+          outcome through one's actions, focusing on the manner of avoiding it.
+    scene: A parent telling their child to be mindful of their health during cold season.
+    register: teineigo (polite)
+    setting: supportive
+    speaker_gender: female
+    listener_gender: male
+    speaker_age: older
+    nuance: The negative form 「引か ない ように」 combined with 「気 を つけ て ください」 conveys a gentle admonition or
+      wish for the listener's well-being, commonly used by a caring older person, like a parent, to a
+      younger one. The use of 「ください」 makes it a polite request.
+  - english: Her voice was soft, like a whisper.
+    japanese:
+      - 彼女 の 声 は ささやき の {よう な} 柔らか さ だっ た。
+      - 彼女 の 声 は ささやき の {よう な} 柔らか さ です。
+      - 彼女 の 声 は ささやき の {よう な} 柔らか さ で あっ た。
+    english_literally: Her voice was a whisper's like softness.
+    competing_grammar:
+      - competing_japanese:
+          - 彼女 の 声 は ささやき {みたい に} 柔らかかっ た。
+        english: Her voice was soft like a whisper (colloquial).
+        hint: While 「みたい に」 is acceptable, 「よう な」 here lends a more descriptive and slightly more formal
+          tone, suitable for narration. We're looking for a comparison that emphasizes a delicate, almost
+          poetic quality.
+      - competing_japanese:
+          - 彼女 の 声 は {柔らかかっ た}。
+        english: This simply states her voice was soft. We're looking for a comparison that illustrates
+          *how* soft it was, using an analogy to evoke a specific image.
+        hint: This simply states her voice was soft. We're looking for a comparison that illustrates *how*
+          soft it was, using an analogy to evoke a specific image.
+    scene: Narrating a scene in a story, describing a character's quiet demeanor to emphasize their gentle
+      nature.
+    register: formal
+    setting: storytelling
+    nuance: The phrase 「ささやき の ような 柔らか さ」 uses 「ような」 to draw a refined comparison between the voice and
+      a whisper, conveying a delicate and quiet quality. The formal register and descriptive nature fit
+      well within a storytelling context, enhancing the imagery.
+post_example_writeup: As you can see from the examples, 「みたい」, 「ようだ」, 「ように」, and 「ような」 are versatile and
+  can be used in various situations to express resemblance, conjecture, comparison, manner, or purpose.
+  「みたい」 is particularly common in casual conversation, making your speech sound more natural and approachable.
+  Pay attention to how it connects to nouns, verbs, and adjectives. 「ようだ」 tends to be used in more formal
+  settings, conveying a greater sense of objectivity. Remember that 「みたい」 itself does not have a kanji
+  form and should be written in hiragana or katakana, which is important to avoid confusing it with similarly
+  sounding words such as 「見たい」 (want to see).
 sources:
   bunpro: https://bunpro.jp/grammar_points/みたい
