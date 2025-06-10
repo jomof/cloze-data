@@ -157,7 +157,8 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
         ])
 
     os.makedirs(temp_dir, exist_ok=True)
-    with open(temp_dir + "/" + os.path.basename(output_file)+".prompt", 'w', encoding='utf-8') as file:
+    basename = os.path.basename(output_file)
+    with open(temp_dir + f"/{basename}.prompt", 'w', encoding='utf-8') as file:
         file.write(prompt)
 
     id = prior_input_obj["id"]
@@ -168,11 +169,9 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
     else:
         model = "gemini-2.0-flash-001"
     
-    basename = os.path.basename(output_file)
 
     with AiChatSession(model, GRAMMAR_SCHEMA_WITH_COMMENTS) as session:
         response = session.send_message(prompt)
-        response = response.removeprefix("```json").removesuffix("\n").removesuffix("```")
         response = repair_json(response)
         json_response = json.loads(response)
         original_json_response = dump_yaml(json_response)
@@ -210,6 +209,7 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
     if len(sources) > 0:
         json_response['sources'] = sources
 
+    display.check(f"Created grammar point {basename}.")
     return clean_lint(json_response, output_file, all_grammars_summary)
  
 

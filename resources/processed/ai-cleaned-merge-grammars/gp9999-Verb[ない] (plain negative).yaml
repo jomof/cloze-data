@@ -1,31 +1,43 @@
-grammar_point: '[Verb-ない form] (negative plain)'
+grammar_point: Verb[ない] (plain negative)
 learn_before:
-  - う-verb (dictionary)
+  - Verb[dictionary] (dictionary form)
+  - Verb[ます] (polite present)
 learn_after:
+  - <suggest>:~ないことには~ない (unless ~ will not)
   - '[Verb-ない]ほうがいい (it is better not to do)'
+  - なければならない・なきゃ (must do・have to)
 id: gp9999
-meaning: To not do; will not do (plain negative)
+meaning: Expresses that an action is not performed or will not be performed, or that a state does not
+  exist (plain negative form).
 conjugations:
   - conjugation-type: dictionary (plain non-past)
     form: 食べない
+    rarity: common
+    meaning: will not eat
+  - conjugation-type: negative non-past polite (～ません)
+    form: 食べません
     rarity: common
     meaning: will not eat
   - conjugation-type: negative past plain (～なかった)
     form: 食べなかった
     rarity: common
     meaning: did not eat
+  - conjugation-type: negative past polite (～ませんでした)
+    form: 食べませんでした
+    rarity: common
+    meaning: did not eat
   - conjugation-type: te-form (～て)
     form: 食べなくて
     rarity: common
     meaning: not eating (and/because)
-  - conjugation-type: negative non-past polite (～ません)
-    form: 食べません
+  - conjugation-type: conditional (～ば)
+    form: 食べなければ
     rarity: common
-    meaning: will not eat (polite)
-  - conjugation-type: negative past polite (～ませんでした)
-    form: 食べませんでした
+    meaning: if not eat / unless eat
+  - conjugation-type: conditional (～たら)
+    form: 食べなかったら
     rarity: common
-    meaning: did not eat (polite)
+    meaning: if did not eat / unless did eat
 pronunciation:
   katakana: ナイ
   romaji: nai
@@ -42,33 +54,36 @@ details:
   part-of-speech: auxiliary adjective
   register: casual
   usage-context: Used for direct, plain negation of actions or states. Forms the basis for many other
-    negative grammatical structures.
-  function: Expresses that an an action is not or will not be performed, or that a state does not exist.
-  nuance: Implies a simple, factual absence of action or state without additional politeness or formality.
-    Can also convey a strong, direct refusal depending on intonation.
-  grammatical-role: Attaches to verb stems to create their plain negative form.
+    negative grammatical structures, and can be used to form polite negative expressions as well.
+  function: Expresses that an action is not or will not be performed, or that a state does not exist.
+  nuance: Implies a simple, factual absence of action or state without additional politeness or formality
+    in its plain form. Can convey a strong, direct refusal depending on intonation. The polite forms (～ません,
+    ～ませんでした) convey politeness without changing the core negative meaning.
+  grammatical-role: Attaches to verb stems to create their negative forms, which can then be further conjugated
+    or used in various grammatical structures.
 etymology: The negative auxiliary verb 「ない」 evolved from the classical Japanese negative auxiliary 「ず」
   (later 「ぬ」). In the Heian period, 「ぬ」 became 「ない」 through a process of sound change, specifically through
   the conjunctive form 「なく」 which then developed into 「ない」 when used as a predicate. This historical link
   explains why 「ない」 behaves grammatically like an い-adjective, able to conjugate further (e.g., 「なかった」,
   「なくて」). Its fundamental meaning of "absence" or "non-existence" has remained consistent, forming the
-  core of negation in modern Japanese.
+  core of negation in modern Japanese. The polite form 「ません」 is derived from the negative conjugation
+  of 「ます」, the polite auxiliary verb.
 writeup: |-
-  The plain negative form of verbs, ending in 「ない」, is a fundamental grammatical component in Japanese. It is used to express that an action is not being performed, will not be performed, or that a state does not exist. This form is central to casual speech and writing, and it also serves as a base for constructing many more complex grammatical expressions.
+  The plain negative form of verbs, ending in 「ない」, is a fundamental grammatical component in Japanese. It is used to express that an action is not being performed, will not be performed, or that a state does not exist. This form is central to casual speech and writing, and it also serves as a base for constructing many more complex grammatical expressions, including polite negations.
 
   Forming the plain negative depends on the verb group:
-  *   **Godan Verbs (Group 1)**: For these verbs, the last character (which is in the う-column) is changed to its corresponding あ-column, and then 「ない」 is appended. For example, 読む (yomu, to read) becomes 読まない (yomanai, do not read). A special consideration is for verbs ending in 「う」 (e.g., 買う - kau, to buy), where 「う」 changes to 「わ」 before 「ない」 is added, making it 買わない (kawanai, do not buy). Another notable exception is 行く (iku, to go), which uniquely becomes 行かない (ikanai, do not go) instead of いかない.
+  *   **Godan Verbs (Group 1)**: For these verbs, the last character (which is in the う-column) is changed to its corresponding あ-column sound, and then 「ない」 is appended. For example, 読む (yomu, to read) becomes 読まない (yomanai, do not read). A special consideration is for verbs ending in 「う」 (e.g., 買う - kau, to buy), where 「う」 changes to 「わ」 before 「ない」 is added, making it 買わない (kawanai, do not buy). Another notable exception is 行く (iku, to go), which uniquely becomes 行かない (ikanai, do not go) instead of いかない.
   *   **Ichidan Verbs (Group 2)**: For Ichidan verbs, the process is simpler: the final 「る」 is dropped, and 「ない」 is directly attached. For example, 食べる (taberu, to eat) becomes 食べない (tabenai, do not eat).
   *   **Irregular Verbs**: The two irregular verbs, する (suru, to do) and 来る (kuru, to come), have unique negative forms: しない (shinai, do not do) and こない (konai, do not come), respectively.
 
-  Because 「ない」 functions grammatically like an い-adjective, it can be conjugated further into forms like the past tense (なかった), the te-form (なくて), or for conditional statements. Understanding this basic negative form is crucial for effective communication in Japanese, as it forms the basis for expressing inability, prohibition, and various nuances of negation.
+  Because 「ない」 functions grammatically like an い-adjective, it can be conjugated further into forms like the past tense (なかった), the te-form (なくて), or for conditional statements (なければ, なかったら). Understanding this basic negative form is crucial for effective communication in Japanese, as it forms the basis for expressing inability, prohibition, and various nuances of negation, both casually and politely (using forms like 「ません」 and 「ませんでした」).
 false_friends:
-  - term: ないことには〜ない
+  - term: ないことには~ない
     meaning: Unless ~ will not
     kind: similar expression
-    nuance: 'While both involve negation, 「ないことには〜ない」 expresses a necessary condition: unless something
+    nuance: 'While both involve negation, 「ないことには~ない」 expresses a necessary condition: unless something
       happens, something else won''t happen. It''s a conditional negation, not a simple statement of non-action.'
-    grammar_point: ないことには〜ない (unless ~ will not)
+    grammar_point: <suggest>:~ないことには~ない (unless ~ will not)
   - term: てはいけない
     meaning: Must not; may not; cannot.
     kind: similar expression
@@ -88,12 +103,52 @@ false_friends:
     nuance: This expression conveys a sense of unavoidable necessity or compulsion to do something, despite
       possibly not wanting to. It's a much stronger, more complex nuance than a simple verb negation.
     grammar_point: ざるを得ない (have no choice but to)
+  - term: ない
+    meaning: there is no / not exist
+    kind: often confused with
+    nuance: This 「ない」 is a completely different word. This grammar point modifies a verb to express its
+      negation, while the other refers to non-existence. For example, 「猫 が いない」 (There is no cat) versus
+      「猫 が 飲ま ない」 (The cat doesn't drink).
+    grammar_point: <suggest>:ない (non-existent)
+  - term: ~ず
+    meaning: without doing, not doing
+    kind: similar expression
+    nuance: While both express a negative state, 「~ず」 or 「~ずに」 focuses on the absence of an action as
+      a prerequisite or accompanying circumstance for another action, often translating to 'without doing
+      X'. In contrast, the 「~ない」 form for verbs simply states that an action is not performed or will
+      not be performed.
+    grammar_point: ずに・ないで・ことなく (without doing)
+  - term: まい
+    meaning: won't, probably not, not going to
+    kind: similar expression
+    nuance: While this grammar point expresses general or habitual negation, 「まい」 conveys a strong negative
+      volition or conjecture, similar to 'won't' or 'probably won't'. It carries a sense of determination
+      or strong unlikelihood rather than a simple statement of non-action.
+    grammar_point: まい (won't・probably not)
+  - term: っこない
+    meaning: no chance of, impossible
+    kind: similar expression
+    nuance: This grammar point indicates that an action is not or will not be performed. In contrast,
+      「っこない」 is a more emphatic expression of impossibility, meaning 'there's no way it will happen' or
+      'it's impossible'. It's much stronger and more definitive than a simple negative.
+    grammar_point: っこない (no chance of)
+  - term: ~なくてもいい
+    meaning: no need to
+    kind: similar expression
+    nuance: While the verb negative expresses that an action is not or will not be performed, 「~なくてもいい」
+      indicates that there is no necessity or obligation to perform an action. It implies permission not
+      to do something rather than simply stating non-performance.
+    grammar_point: なくてもいい (no need to)
 post_false_friends_writeup: It is important to distinguish the simple plain negative 「ない」 from other negative
   expressions that add layers of meaning like prohibition, necessity, or specific conditional relationships.
-  While 「ない」 is a direct statement of non-action or non-existence, constructions like 「ないことには〜ない」 and
+  While 「ない」 is a direct statement of non-action or non-existence, constructions like 「ないことには~ない」 and
   「てはいけない」 introduce conditions or commands. Also, be careful not to confuse verb negation with the negation
   of nouns and な-adjectives using 「じゃない」, as they apply to different word types. The choice depends on
-  whether you are simply stating a fact, imposing a rule, or expressing compulsion.
+  whether you are simply stating a fact, imposing a rule, or expressing compulsion. Additionally, the
+  auxiliary verb 「ない」 used for negation should not be confused with the adjective 「ない」 meaning "non-existent";
+  although they sound the same, their grammatical roles are distinct. Similarly, other negative expressions
+  like 「~ず」, 「まい」, and 「っこない」 carry specific nuances of condition, volition, or impossibility that go
+  beyond a simple statement of non-performance.
 examples:
   - english: I don't drink coffee.
     japanese:
@@ -195,7 +250,7 @@ examples:
       - competing_japanese:
           - 彼 が 来 ない の で、私 たち だけ で 行こう。
         english: Since he won't come, let's go by ourselves.
-        hint: 「ので」 expresses a reason more explicitly, while 「〜なくて」 connects clauses as a cause or condition.
+        hint: 「ので」 expresses a reason more explicitly, while 「~なくて」 connects clauses as a cause or condition.
     scene: Two friends deciding what to do.
     register: casual
     setting: friendly
@@ -252,13 +307,9 @@ examples:
     register: casual
     setting: supportive
     conjugation: dictionary (plain non-past)
-    speaker_gender: female
-    listener_gender: male
-    speaker_age: older
     nuance: The plain negative followed by 「でください」 forms a polite negative request. The use of 「でください」
-      makes it a gentle plea suitable for an older female speaking to a younger male, emphasizing care.
-      「心配なさらないでください」 is a more respectful option using the honorific for the verb, making the request
-      even softer.
+      makes it a gentle plea, emphasizing care. 「心配なさらないでください」 is a more respectful option using the honorific
+      for the verb, making the request even softer.
   - english: Don't forget your homework.
     japanese:
       - 宿題 を {忘れ ない} で ください。
@@ -282,24 +333,31 @@ examples:
     nuance: A common way to give a polite negative instruction from a position of authority, suitable
       for a formal setting like a classroom. 「忘れませんように」 is a slightly softer, more indirect polite request,
       often used when expressing a wish or hope.
-  - english: If you don't read, you won't understand.
+  - english: If you don't read the instructions, you can't build it.
     japanese:
-      - '{読ま ない} と、分から ない。'
-      - '{読ま なけれ ば}、分から ない。'
-    english_literally: Will not read if, do not understand.
+      - 説明 書 を {読ま なけれ ば}、作れ ない よ。
+      - 説明 書 {読ま なけれ ば} 作れ ない よ。
+      - 説明 書 を {読ま なけれ ば}、作れ ない だろ。
+      - 説明 書 {読ま なけれ ば} 作れ ない だろ。
+      - 説明 書 を {読ま なけれ ば}、きっと 作れ ない よ。
+      - 説明 書 を {読ま なけれ ば}、絶対 に 作れ ない ぞ。
+    english_literally: Instructions if you don't read, cannot make it.
     competing_grammar:
       - competing_japanese:
           - 読ま なかっ たら、分から ない。
         english: If you didn't read (in the past), you won't understand (now).
         hint: This conditional form implies a past condition, whereas the example implies a general truth
           or future condition.
-    scene: Explaining a consequence.
+    scene: A father tells his child why they are struggling to assemble a toy.
     register: casual
-    setting: informative
-    conjugation: dictionary (plain non-past)
-    nuance: Demonstrates the plain negative in a conditional 「と」 clause, indicating a natural consequence.
-      「読まなければ」 uses the more common `ば` conditional for general truths or negative conditions, which is
-      often interchangeable with 「と」 in this context.
+    setting: instructional
+    conjugation: conditional (～ば)
+    speaker_gender: male
+    speaker_age: older
+    nuance: The male, older speaker uses 「読ま なけれ ば」 to convey a direct, logical consequence, typical of
+      a parent instructing a child. The ending 「よ」 adds a gentle assertion, common when offering advice
+      or stating a fact to someone younger. The alternative 「だろ」 (used in some variations) indicates a
+      stronger, more masculine assertion, implying 'you know, right?' or 'don't you agree?'.
   - english: He doesn't know how to swim.
     japanese:
       - 彼 は 泳ぎ 方 を {知ら ない}。
@@ -340,8 +398,86 @@ examples:
     nuance: Used to state a general rule or policy, often heard in professional settings to clearly communicate
       what is not done or allowed. 「使いません」 is the polite counterpart to 「使わない」, maintaining the same meaning
       but at a higher register.
-post_example_writeup: The plain negative form is highly versatile and serves as a foundational component
-  for many more complex grammatical structures in Japanese. Mastering its formation and various contextual
-  uses is key to achieving fluency in casual conversation and understanding more nuanced expressions.
-  Pay close attention to how it combines with other particles and grammatical patterns to convey different
-  meanings, such as requests, conditions, or reasons.
+  - english: Won't you sing at the party next week?
+    japanese:
+      - 来週 の パーティー で {歌い ませ ん} か？
+      - 来週 の パーティー、{歌い ませ ん} か？
+      - 来週 の パーティー で {お 歌い に なり ませ ん} か？
+    english_literally: Next week's party at won't sing?
+    competing_grammar:
+      - competing_japanese:
+          - 来週 の パーティー で {歌わ ない}？
+        english: Won't you sing at the party next week? (casual)
+        hint: The polite ending 「~ませ ん か」 is a standard way to make a polite invitation. We're looking
+          for a polite negative question form.
+      - competing_japanese:
+          - 来週 の パーティー で {歌い ます} か？
+        english: Will you sing at the party next week? (direct polite question)
+        hint: While grammatically correct, a direct question with 「~ますか」 can sometimes sound a bit blunt
+          for an invitation. 「~ませ ん か」 softens the request and is a more common way to invite.
+    scene: A person is inviting a friend or acquaintance to a social gathering.
+    register: semi-formal
+    setting: friendly
+    conjugation: negative non-past polite (～ません)
+    nuance: The phrase 「歌い ませ ん か？」 is a very common and polite way to extend an invitation or make a
+      suggestion. By phrasing it as a negative question, it softens the request and gives the invitee
+      an easier way to decline without feeling rude, implying 'Is there any reason you *wouldn't* come?'.
+  - english: I really don't want to go to school tomorrow.
+    japanese:
+      - 明日、学校 に 全然 {行き たく ない} なあ。
+      - 明日、学校 に {行き たく ない} なあ。
+      - 明日 は 学校 に 全然 {行き たく ない} よ ね。
+      - 明日、学校 なんか 全然 {行き たく ない} ん だ けど なあ。
+    english_literally: Tomorrow, school to completely don't want to go, sigh.
+    competing_grammar:
+      - competing_japanese:
+          - 明日、学校 に {行か ない}。
+        english: Tomorrow, I won't go to school.
+        hint: This sentence expresses a simple decision not to go. We are looking for an expression of
+          lack of desire or reluctance to go to school.
+      - competing_japanese:
+          - 明日、学校 に 全然 {行け ない} なあ。
+        english: Tomorrow, I completely can't go to school.
+        hint: This phrase expresses inability. We are looking for an expression of not wanting to go.
+    scene: A student expresses their strong reluctance to attend school the next day, perhaps to a friend
+      or to themselves.
+    register: casual
+    setting: pessimistic
+    conjugation: dictionary (plain non-past)
+    speaker_age: younger
+    nuance: The phrase 「行き たく ない なあ」 combines the negative desiderative form 「~たくない」 (don't want to) with
+      the casual, self-reflective particle 「なあ」. This combination is common among younger speakers when
+      expressing a personal feeling of reluctance or mild complaint, often to themselves or to close peers.
+      「全然」 (zenzen) intensifies the negation, meaning 'not at all'.
+  - english: He doesn't usually talk much in meetings.
+    japanese:
+      - 彼 は 会議 で あまり {話さ ない}。
+      - 彼 は 会議 で あまり たくさん {話さ ない}。
+      - 彼 は 会議 で ほとんど {話さ ない}。
+      - 彼 は 会議 で めった に {話さ ない}。
+    english_literally: He, in meetings, not much talks.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 会議 で あまり {話し ませ ん}。
+        english: He doesn't usually talk much in meetings (polite).
+        hint: This example focuses on a casual observation of a habitual action. We're looking for the
+          plain negative form.
+      - competing_japanese:
+          - 彼 は 会議 で 全然 {しゃべら ない}。
+        english: He doesn't talk at all in meetings (casual, informal verb).
+        hint: While 「しゃべる」 is also an う-verb meaning 'to talk', 「話す」 is more common for formal or general
+          'speaking'. This example uses a plain negative with a common verb for general talking.
+    scene: Two colleagues are discussing a quiet team member.
+    register: casual
+    setting: informative
+    conjugation: dictionary (plain non-past)
+    nuance: The use of 「あまり ~ ない」 implies 'not very much' or 'not often'. This is a common construction
+      for partial negation. 「話さ ない」 is the plain negative form of 「話す」 (hanasu), a common Godan verb.
+      The structure allows for a casual observation between colleagues.
+post_example_writeup: Remember that the negative form of verbs indicates "will not do", "do not do", or
+  "cannot do", so the translation will depend on the context. Pay close attention to particles and sentence-final
+  expressions, as they often convey additional nuance about the speaker's feelings or the relationship
+  with the listener. Mastering these patterns is fundamental for forming negative sentences in Japanese,
+  as the underlying principles apply to all verb types.
+sources:
+  bunpro: https://bunpro.jp/grammar_points/うverb--ない
