@@ -233,6 +233,9 @@ if __name__ == '__main__':
                             # Simple rename
                             header = f"An old grammar point has had its name changed from '{old_name}' to '{new_name}'. "
                         combined_content = all_old_content[0] if all_old_content else ""
+                    else:
+                        header = f"Creating a new grammar point '{new_name}' without any old content. "
+                        combined_content = ""
                     
                     # Get learn_before/learn_after from first old grammar point
                     first_old_content = ""
