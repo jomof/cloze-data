@@ -269,7 +269,7 @@ if __name__ == '__main__':
             # Remove old name files that are not in the new name paths
             for old_path in old_name_paths:
                 if old_path not in new_name_paths and os.path.exists(old_path):
-                    display.check(f"Removing old name file {old_path}")
+                    display.check(f"Removing old name file {os.path.basename(old_path)}")
                     os.remove(old_path)
 
             # Rename the renames-allowed.yaml file to renames-allowed.yaml.bak
