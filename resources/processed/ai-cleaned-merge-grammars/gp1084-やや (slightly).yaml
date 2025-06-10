@@ -2,8 +2,8 @@ grammar_point: やや (slightly)
 learn_before:
   - たくさん (many・a lot)
   - あまり ない (not very or much)
-  - 少し (a little・a bit)
-  - ちょっと (a little)
+  - <suggest>:少し (a little・a bit)
+  - <suggest>:ちょっと (a little)
 learn_after:
   - 極まりない・極まる (extreme degree)
   - に満たない (not reaching)
@@ -34,13 +34,13 @@ false_friends:
     kind: similar expression
     nuance: 「やや」 implies a slight but noticeable difference. 「少し」 is more general and can refer to any
       small amount, regardless of perceptibility.
-    grammar_point: 少し (a little・a bit)
+    grammar_point: <suggest>:少し (a little・a bit)
   - term: いくらか
     meaning: some・a little
     kind: similar expression
     nuance: 「やや」 indicates a perceptible degree. 「いくらか」 refers to an unspecified, vague amount, often
       implying 'somewhat' without a clear sense of degree.
-    grammar_point: いくらか (some・a little)
+    grammar_point: <suggest>:いくらか (some・a little)
   - term: 僅かに
     meaning: only・slightly
     kind: similar expression
@@ -427,14 +427,3 @@ post_example_writeup: As these examples demonstrate, 「やや」 is versatile a
   it a valuable adverb for precise communication.
 sources:
   bunpro: https://bunpro.jp/grammar_points/やや
-lint-errors:
-  - '[rule-13] unknown grammar at ''learn_before[2]'': ''少し (a little・a bit)''. You may suggest new grammar
-    points by adding a false_friend.'
-  - '[rule-13] unknown grammar at ''learn_before[3]'': ''ちょっと (a little)''. You may suggest new grammar
-    points by adding a false_friend.'
-  - '[rule-13] warning unknown grammar at ''false_friends[0]'': ''少し (a little・a bit)''. It **MUST** be
-    from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
-    grammar point.'
-  - '[rule-13] warning unknown grammar at ''false_friends[1]'': ''いくらか (some・a little)''. It **MUST**
-    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
-    grammar point.'

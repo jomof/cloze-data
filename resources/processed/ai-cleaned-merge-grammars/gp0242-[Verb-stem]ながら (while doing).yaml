@@ -2,7 +2,7 @@ grammar_point: '[Verb-stem]ながら (while doing)'
 learn_before:
   - る-verbs (ichidan verbs)
   - う-verb (dictionary)
-  - ている (~ing)
+  - ている (habitual action)
   - Verb[て] (and then)
 learn_after:
   - つつ (while, during)
@@ -10,309 +10,273 @@ learn_after:
   - ながら (although・despite)
   - を兼ねて (to serve multiple purposes)
 id: gp0242
-split_predecessor: |
-  An old grammar point has had its name changed from 'ながら (while doing)' to '[Verb-stem]ながら (while doing)'. Please recreate this grammar point with this information in mind. All fields **MUST** be suitable for the new name. For your reference, here is the old content:
+meaning: While doing (something); during
+pronunciation:
+  katakana: ナガラ
+  romaji: nagara
+formation:
+  Verb[masu-stem] + ながら: Indicates that the action of the first verb is performed simultaneously with
+    the action of the second verb.
+jlpt: N4
+details:
+  part-of-speech: auxiliary verb
+  register: casual
+  usage-context: Used to describe two actions performed concurrently by the same subject. Often, the action
+    before ながら is a continuous or background activity.
+  function: Expresses simultaneity of actions.
+  nuance: One action occurs as a primary activity, and the other as a secondary or accompanying action.
+    The emphasis is typically on the action in the main clause (after ながら).
+  counterpoint: In contrast to sequential actions (using て form) or merely listing actions, ながら specifically
+    highlights concurrent execution.
+  colocation: Commonly used with verbs of movement (歩く, 走る), sensory input (聞く, 見る), or communication
+    (話す, 考える).
+  grammatical-role: Connects two clauses, indicating that the action of the preceding clause happens at
+    the same time as the action of the main clause.
+  temporal-flow: Simultaneous actions.
+etymology: The origin of ながら is believed to be rooted in the classical Japanese word なが（し） (nagashi),
+  meaning 'long' or 'continuous,' combined with the particle らか (raka), which indicates a state or appearance.
+  Over time, this evolved to denote the continuous or simultaneous nature of an action, emphasizing that
+  one action 'stretches out' alongside another.
+writeup: |-
+  The grammar point 「ながら」 attaches to the masu-stem of a verb to indicate that two actions are happening simultaneously. Both actions are performed by the same subject. The action described before 「ながら」 is typically a continuous or ongoing activity that serves as a backdrop or accompaniment to the main action, which follows the 「ながら」 clause. While both actions occur at the same time, the main focus or emphasis is usually placed on the action expressed in the second part of the sentence.
 
-  === ながら (while doing) ===
-  grammar_point: ながら (while doing)
-  learn_before:
-    - る-verbs (ichidan verbs)
-    - う-verb (dictionary)
-    - ている (~ing)
-    - Verb[て] (and then)
-  learn_after:
-    - つつ (while, during)
-    - かたわら (while doing something else)
-    - ながら (although・despite)
-    - を兼ねて (to serve multiple purposes)
-  id: gp0242
-  meaning: While ~ing, During, As
-  meaning_warning: The subject of A and B must be the same.
-  pronunciation:
-    katakana: ナガラ
-    romaji: nagara
-  formation:
-    Verb (ます-stem) + ながら: Indicates doing something 'while' or 'during' another action.
-  jlpt: N4
-  details:
-    part-of-speech: particle
-    usage-context: general
-    function: Connects two simultaneous actions performed by the same subject.
-    nuance: Emphasizes the primary action in the main clause, with the action preceding ながら being secondary.
-    grammatical-role: conjunction
-    logical-flow: simultaneous action
-    temporal-flow: concurrent actions
-  etymology: The particle 「ながら」 originates from the verb 「ながらえる」 (nagaraeru), meaning "to keep alive, maintain,
-    or prolong." This hints at the sense of continuing an action alongside another.
-  writeup: The grammar point 「ながら」 indicates that two actions are happening simultaneously, performed by
-    the **same subject**. It is attached to the ます-stem of the verb describing the secondary action (A),
-    which provides context or background for the primary action (B) expressed in the main clause. The structure
-    can be understood as "while doing A, one does B." The action in the main clause (B) is considered the
-    more important or focal action. This particle highlights the continuous nature of the secondary action
-    occurring concurrently with the primary action. It is commonly used in everyday speech to describe habits,
-    routines, or events unfolding concurrently. Note that 「ながら」 specifically focuses on the simultaneity
-    of *actions* performed by the same agent, distinguishing it from other temporal expressions that might
-    refer to a general duration or period.
-  false_friends:
-    - term: ているあいだに
-      meaning: While, During the time that ~
-      kind: similar expression
-      nuance: 「ているあいだに」 emphasizes the duration of time during which something occurs, whereas 「ながら」 focuses
-        on the simultaneity of actions by the same subject.
-      grammar_point: あいだ (between・among・while・during)
-    - term: の間に
-      meaning: While, During, Between, Period
-      kind: similar expression
-      nuance: 「の間に」 indicates a specific time frame, while 「ながら」 connects two actions done by the same person
-        at the same time.
-      grammar_point: あいだ (between・among・while・during)
-    - term: つつ
-      meaning: While, And
-      kind: similar expression
-      nuance: 「つつ」 is a more formal or literary way to express doing something while doing something else,
-        whereas 「ながら」 is more common in everyday speech.
-      grammar_point: つつ (while, during)
-    - term: とき
-      meaning: When, At the time of
-      kind: similar expression
-      nuance: 「とき」 refers to a specific point in time or a general period, while 「ながら」 shows two actions
-        occurring at the same time by the same subject.
-      grammar_point: とき (when)
-    - term: かたわら
-      meaning: While, Besides, In addition to
-      kind: similar expression
-      nuance: 「かたわら」 suggests doing something in addition to another, often as a side job or activity, while
-        「ながら」 simply means doing two things at the same time.
-      grammar_point: かたわら (while doing something else)
-    - term: 中
-      meaning: During, While, Throughout, In the process of
-      kind: similar expression
-      nuance: 「中」 (chuu) is a noun meaning "during," while 「ながら」 is a conjunction that connects two actions
-        performed by the same subject simultaneously.
-      grammar_point: 中 (duration・entirety)
-    - term: うちに
-      meaning: While, During
-      kind: similar expression
-      nuance: 「うちに」 implies that something should be done within a certain time period or before a change
-        occurs, whereas 「ながら」 focuses on two actions happening simultaneously.
-      grammar_point: うちに (while・before change)
-    - term: ついでに
-      meaning: While you are at it, On the occasion
-      kind: similar expression
-      nuance: 「ついでに」 means doing something as an aside or in addition to a main task, whereas 「ながら」 connects
-        two simultaneous actions by the same subject.
-      grammar_point: ついでに (taking the opportunity)
-    - term: ているところだ
-      meaning: In the process of doing ~ right now/at this moment
-      kind: similar expression
-      nuance: 「ているところだ」 emphasizes being in the midst of an action, while 「ながら」 connects two actions happening
-        at the same time by the same subject.
-      grammar_point: ているところ (in the process of)
-    - term: がてら
-      meaning: On the occasion of, While … as well, While … (one is) at it, During, Along the way
-      kind: similar expression
-      nuance: 「がてら」 suggests doing something in addition to another, often when going somewhere, while 「ながら」
-        connects two simultaneous actions by the same subject.
-      grammar_point: がてら (on the occasion of)
-    - term: つつある
-      meaning: -ing, Be -ing
-      kind: similar expression
-      nuance: 「つつある」 describes a continuous process or ongoing change, while 「ながら」 connects two actions
-        happening at the same time by the same subject.
-      grammar_point: つつある (gradual process)
-  post_false_friends_writeup: To avoid confusion, remember that 「ながら」 requires the same subject performing
-    both actions simultaneously. Expressions like 「ているあいだに」 and 「のうちに」 focus more on the duration or timeframe,
-    whereas 「ながら」 is about the concurrent nature of the actions.
-  examples:
-    - english: He studies while listening to music.
-      japanese:
-        - 彼 は 音楽 を 聴き {ながら} 勉強 する。
-        - 彼 は 音楽 を 聴き {ながら} 勉強 し ます。
-      english_literally: As for him, listening to music while he studies.
-      competing_grammar:
-        - competing_japanese:
-            - 彼 は 音楽 を 聴い {て} 勉強 する。
-          english: He listens to music and then studies.
-          hint: 「～て」 connects actions in sequence or indicates a cause-and-effect, not necessarily simultaneous
-            actions. We're looking for continuous, concurrent actions.
-        - competing_japanese:
-            - 彼 は 音楽 を 聴く {間 に} 勉強 する。
-          english: He studies during the time he listens to music.
-          hint: 「～間 に」 (aida ni) focuses on a specific time frame, implying the study occurs at some point
-            within that duration. We're looking for two actions happening continuously at the same time.
-      scene: A student describes their study habits, multitasking with audio.
-      register: casual
-      setting: informative
-      speaker_gender: male
-      listener_gender: no one
-      nuance: 「聴き {ながら}」 emphasizes the continuous, simultaneous act of studying 「勉強 する」 *with* music, indicating
-        a habit or preferred method of studying.
-    - english: Please don't operate your smartphone while driving.
-      japanese:
-        - 運転 し {ながら} スマート フォン を 操作 し ない で ください。
-        - 運転 し {ながら} スマート フォン を 操作 する な。
-      english_literally: While driving, please do not operate your smartphone.
-      competing_grammar:
-        - competing_japanese:
-            - 運転 {中 に} スマート フォン を 操作 し ない で ください。
-          english: Please don't operate your smartphone during driving.
-          hint: 「～中 に」 (untenchuu ni) refers to a general period of time during driving. We're looking for
-            actions that are happening concurrently with the act of driving itself, emphasizing the simultaneity
-            of the actions.
-      scene: A driving instructor gives a safety warning to a student.
-      register: formal
-      setting: instructional
-      nuance: 「操作 しない で ください」 is a polite negative command. 「運転 し {ながら}」 clearly links the prohibited action
-        「スマート フォン を 操作 する」 to the concurrent act of driving, underscoring the danger of multitasking.
-    - english: I watch the news every morning while eating breakfast.
-      japanese:
-        - 私 は 毎日 朝食 を 食べ {ながら} ニュース を 見る。
-        - 私 は 毎日 朝食 を 食べ {ながら} ニュース を 見 ます。
-      english_literally: As for me, every day eating breakfast while I watch the news.
-      competing_grammar:
-        - competing_japanese:
-            - 私 は 毎日 朝食 を 食べ {て いる 間 に} ニュース を 見る。
-          english: Every day, I watch the news during the time I am eating breakfast.
-          hint: 「～間 に」 (aida ni) focuses on a time duration. We're looking for an integrated daily routine
-            where two activities occur simultaneously.
-      scene: A person describes their established daily routine.
-      register: casual
-      setting: friendly
-      speaker_gender: female
-      listener_gender: no one
-      nuance: The use of 「毎日」 (every day) with 「食べ {ながら}」 reinforces the habitual and continuous nature
-        of watching news 「ニュース を 見る」 concurrently with eating breakfast, a common daily ritual.
-    - english: She was listening to my story while smiling.
-      japanese:
-        - 彼女 は 笑い {ながら} 私 の 話 を 聞い て い た。
-        - 彼女 は 笑い {ながら} 私 の 話 を 聞い て い まし た。
-        - 彼女 は 私 の 話 を 笑い {ながら} 聞い て い た。
-      english_literally: As for her, smiling while she was listening to my story.
-      competing_grammar:
-        - competing_japanese:
-            - 彼女 は 笑っ {て} 私 の 話 を 聞い て い た。
-          english: She smiled and listened to my story.
-          hint: 「～て」 can indicate a sequence of actions or a state after an action. Here, we want to emphasize
-            that smiling was a continuous action occurring *throughout* the listening. We're looking for
-            simultaneous actions.
-      scene: A friend recounts an interaction, noting the other person's demeanor.
-      register: casual
-      setting: storytelling
-      speaker_gender: male
-      listener_gender: male
-      nuance: 「笑い {ながら}」 highlights that her smiling was a continuous and concurrent action with her listening
-        「話 を 聞い て い た」, suggesting her mood or a subtle reaction throughout the conversation.
-    - english: The students took notes while listening to the teacher's explanation.
-      japanese:
-        - 学生 たち は 先生 の 話 を 聞き {ながら} メモ を 取っ た。
-        - 学生 たち は 先生 の 話 を 聞き {ながら} メモ を 取り まし た。
-      english_literally: As for the students, listening to the teacher's explanation while they took notes.
-      competing_grammar:
-        - competing_japanese:
-            - 学生 たち は 先生 の 話 を 聞い て いる {時 に} メモ を 取っ た。
-          english: The students took notes at the time they were listening to the teacher's explanation.
-          hint: 「～時 に」 (toki ni) refers to a specific point or period when something happened. We're looking
-            for the continuous, concurrent action of taking notes *as* they listen, implying active engagement
-            throughout the lecture.
-      scene: Observing students in a classroom.
-      register: formal
-      setting: academic
-      nuance: 「聞き {ながら}」 indicates that the note-taking 「メモ を 取っ た」 occurred continuously and concurrently
-        with the act of listening, showing active engagement and attentiveness during the lecture.
-    - english: Shall we talk a little while drinking tea?
-      japanese:
-        - お 茶 を 飲み {ながら} 少し お 話し し ませ ん か。
-        - お 茶 を 飲み {ながら} 少し 話し ませ ん か。
-      english_literally: Drinking tea while, shall we talk a little?
-      competing_grammar:
-        - competing_japanese:
-            - お 茶 を 飲ん {で いる 間 に} 少し お 話し し ませ ん か。
-          english: Shall we talk a little during the time we are drinking tea?
-          hint: 「～間 に」 (aida ni) suggests talking *at some point* within the tea-drinking period. We're
-            looking for conversation and tea-drinking to happen simultaneously and continuously.
-      scene: Two colleagues are about to have a relaxed, informal meeting.
-      register: teineigo (polite)
-      setting: friendly
-      speaker_gender: female
-      listener_gender: male
-      nuance: The phrase 「お話し しません か」 is a polite invitation. 「飲み {ながら}」 implies that the conversation 「少し
-        お 話し」 will unfold concurrently with the tea, creating a relaxed and conducive atmosphere for discussion.
-        The polite forms are suitable for colleagues.
-    - english: He attends graduate school while working.
-      japanese:
-        - 彼 は 働き {ながら} 大学 院 に 通っ て いる。
-        - 彼 は 働き {ながら} 大学 院 に 通っ て い ます。
-      english_literally: As for him, working while he attends graduate school.
-      competing_grammar:
-        - competing_japanese:
-            - 彼 は 働い {て いる 間 に} 大学 院 に 通っ て いる。
-          english: He attends graduate school during the time he is working.
-          hint: 「～間 に」 (aida ni) suggests that his graduate studies occur at some point within his working
-            period. We're looking to emphasize that these two significant pursuits are happening continuously
-            and concurrently.
-      scene: Discussing someone's busy academic and professional life.
-      register: casual
-      setting: informative
-      speaker_gender: male
-      listener_gender: no one
-      nuance: 「働き {ながら}」 clearly indicates the concurrent pursuit of graduate studies 「大学 院 に 通っ て い る」
-        and employment, highlighting a continuous effort in both fields, often implying a demanding schedule.
-    - english: The baby smiled while sleeping.
-      japanese:
-        - 赤ちゃん が 寝 {ながら} 微笑 ん だ。
-        - 赤ちゃん が 寝 {ながら} 微笑 み まし た。
-      english_literally: The baby sleeping while it smiled.
-      competing_grammar:
-        - competing_japanese:
-            - 赤ちゃん が 寝 {て いる 時 に} 微笑 ん だ。
-          english: The baby smiled at the time it was sleeping.
-          hint: 「～時 に」 (toki ni) marks a moment or period when something happened. We're looking to convey
-            that the smiling was a continuous, accompanying action *as* the baby slept.
-      scene: A parent observes a tender, unexpected moment with their child.
-      register: casual
-      setting: intimate
-      nuance: 「寝 {ながら}」 points to the unexpected yet simultaneous occurrence of smiling 「微笑 ん だ」 during
-        sleep, capturing a gentle and often heartwarming moment for the observer.
-    - english: He always eats breakfast while watching TV.
-      japanese:
-        - 彼 は いつ も テレビ を 見 {ながら} 朝ごはん を 食べる。
-        - 彼 は いつ も テレビ を 見 {ながら} 朝ごはん を 食べ ます。
-      english_literally: As for him, always watching TV while eating breakfast.
-      competing_grammar:
-        - competing_japanese:
-            - 彼 は いつ も テレビ を 見 {て} 朝ごはん を 食べる。
-          english: He always watches TV and then eats breakfast.
-          hint: 「～て」 indicates a sequence of actions. We are looking for actions that occur simultaneously
-            and are part of a routine.
-      scene: A friend describing someone's consistent daily routine.
-      register: casual
-      setting: informative
-      speaker_gender: male
-      listener_gender: no one
-      nuance: The combination of 「いつも」 (always) and 「見 {ながら}」 highlights a habitual action where watching
-        TV 「テレビ を 見る」 is an integral, continuous part of his breakfast routine 「朝ごはん を 食べる」.
-    - english: It's difficult to run while talking on the phone.
-      japanese:
-        - 電話 し {ながら} 走る の は 難しい。
-        - 電話 し {ながら} 走る の は 難しい です。
-      english_literally: Talking on the phone while running is difficult.
-      competing_grammar:
-        - competing_japanese:
-            - 電話 {中 に} 走る の は 難しい。
-          english: Running during a phone call is difficult.
-          hint: 「～中 に」 (chuu ni) refers to a general period or state. Here, we want to emphasize the direct
-            simultaneity of the two actions and the challenge of combining them.
-      scene: Someone reflecting on multitasking during physical activity.
-      register: casual
-      setting: reflective
-      listener_gender: no one
-      nuance: 「電話 し {ながら}」 clearly expresses the simultaneous nature of talking on the phone and running
-        「走る」, underscoring the difficulty that arises from attempting both actions concurrently.
-  post_example_writeup: Remember, the action described by the verb attached to 「ながら」 should be a continuous
-    or ongoing action, not a one-time event. Also, make sure the subject is the same for both actions.
-  sources:
-    bunpro: https://bunpro.jp/grammar_points/ながら
-lint-errors:
-  - error grammar point is missing required field 'meaning'
-  - '[rule-18] warning grammar point has split_predecessor field. Use the information in it to help compose
-    this new grammar point, then remove the field.'
+  For example, in 「音楽 を {聞きながら} 勉強する」 (I study while listening to music), 'studying' is the primary action, and 'listening to music' is the accompanying background activity. It's crucial to distinguish this usage from other expressions that indicate sequential actions or different types of concurrent activities.
+
+  「ながら」 is versatile and can be used in various registers, though its direct equivalent 「つつ」 is often found in more formal or literary contexts.
+false_friends:
+  - term: ながら (although・despite)
+    meaning: Although; despite; even though (indicating contradiction or concession)
+    kind: similar expression
+    nuance: While the form is identical, this 「ながら」 expresses a contradictory or concessive relationship
+      between two clauses (e.g., 'even though I know, I do'). The 「ながら (while doing)」 discussed here indicates
+      simultaneous action.
+    grammar_point: ながら (although・despite)
+  - term: つつ (while, during)
+    meaning: While; during (simultaneous actions or ongoing state); even though (implying a contrast or
+      concession)
+    kind: synonym
+    nuance: 「つつ」 is a more formal or literary equivalent of 「ながら (while doing)」 for simultaneous actions.
+      It can also carry a concessive meaning similar to the other 「ながら」.
+    grammar_point: つつ (while, during)
+  - term: かたわら (while doing something else)
+    meaning: While, besides, in addition to (indicating a side activity or occupation)
+    kind: similar expression
+    nuance: 「かたわら」 suggests that the activity after the phrase is a main occupation, while the activity
+      before it is a side job or hobby. 「ながら (while doing)」 simply denotes simultaneous actions without
+      implying a primary/secondary occupation distinction.
+    grammar_point: かたわら (while doing something else)
+  - term: Verb[て] (and then)
+    meaning: And, and then, after that (sequence)
+    kind: similar expression
+    nuance: The て-form expresses a sequence of actions (A happens, then B happens) or a continuous state,
+      whereas 「ながら (while doing)」 strictly implies that two actions are occurring at the same time.
+    grammar_point: Verb[て] (and then)
+post_false_friends_writeup: Understanding the precise nuance of 「ながら」 is essential. While the form is
+  the same, its function changes significantly based on context. The 'while doing' meaning focuses on
+  two concurrent actions by the same subject. The 'although/despite' meaning, on the other hand, expresses
+  a contradiction between the two clauses. Pay close attention to the verb form it attaches to and the
+  overall meaning of the sentence to differentiate.
+examples:
+  - english: I always listen to music while studying.
+    japanese:
+      - 私 は いつ も 音楽 を {聞き ながら} 勉強 し ます。
+      - いつ も 音楽 を {聞き ながら} 勉強 し てる。
+      - いつ も 音楽 を {聞き ながら} 勉強 を する。
+    english_literally: As for me, always music listening-while study-do.
+    competing_grammar:
+      - competing_japanese:
+          - 私 は いつ も 音楽 を 聞い て 勉強 し ます。
+        english: I always listen to music and then study.
+        hint: This uses the て-form which typically implies a sequence of actions, not simultaneous actions.
+          We're looking for an action happening at the same time as another.
+    scene: A student describes their study habits.
+    register: teineigo (polite)
+    setting: informative
+    nuance: This sentence uses the masu-stem of 聞く (聞きます becomes 聞き) with 「ながら」 to show that 'listening
+      to music' is happening concurrently with 'studying'. The polite form 「します」 indicates a general habit.
+  - english: He was singing while walking down the street.
+    japanese:
+      - 彼 は 道 を {歩き ながら} 歌っ て い た。
+      - 彼 は 道 を {歩き ながら} 歌っ て い まし た。
+      - あいつ 道 {歩き ながら} 歌っ て た ぜ。
+    english_literally: As for him, road walking-while singing was.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 道 を 歩い て、歌っ て い た。
+        english: He walked down the road, and then was singing.
+        hint: 'The て-form here suggests a sequence of events: first he walked, then he sang. We need to
+          express both actions happening at the same time.'
+    scene: Observing someone's actions in public.
+    register: casual
+    setting: storytelling
+    conjugation: progressive (～ている)
+    speaker_gender: male
+    nuance: 「歩きながら」 (from 歩く) indicates that 'walking' and 'singing' happened at the same time. The casual
+      past progressive 「歌っていた」 describes a continuous action in the past.
+  - english: Please eat your breakfast while watching the news.
+    japanese:
+      - ニュース を {見 ながら} 朝ごはん を 食べ て ください。
+      - ニュース を {見 ながら} 朝食 を お 召し上がり ください。
+      - ニュース {見 ながら} 朝ごはん 食べ なさい。
+    english_literally: News watching-while breakfast eat please.
+    competing_grammar:
+      - competing_japanese:
+          - ニュース を 見 て から 朝ごはん を 食べ て ください。
+        english: Please watch the news and then eat your breakfast.
+        hint: 「てから」 indicates that one action must be completed before the next begins. We want both actions
+          to happen at the same time.
+    scene: A parent instructs their child at the breakfast table.
+    register: teineigo (polite)
+    setting: instructional
+    nuance: 「見ながら」 (from 見る) expresses the concurrent action of 'watching' while 'eating breakfast'. The
+      polite command 「食べてください」 makes it a gentle request.
+  - english: The child was crying while looking for their mother.
+    japanese:
+      - 子供 は 母親 を {探し ながら} 泣い て い た。
+      - 子供 は 母親 を {探し ながら} 泣い て い まし た。
+      - 子供 が お 母 さん を {探し ながら} 泣い て た ん だ よ。
+    english_literally: Child as for mother searching-while crying was.
+    competing_grammar:
+      - competing_japanese:
+          - 子供 は 母親 を 探し た が 泣い て い た。
+        english: The child looked for their mother, but was crying.
+        hint: This uses the concessive 'が' particle to show a contrast ('looked for but cried'), not simultaneous
+          actions.
+    scene: A young child is lost in a department store.
+    register: casual
+    setting: storytelling
+    conjugation: progressive (～ている)
+    nuance: 「探しながら」 (from 探す) shows 'searching' and 'crying' simultaneously. 「泣いていた」 emphasizes the ongoing
+      nature of the crying in the past.
+  - english: I like to talk with friends while drinking coffee.
+    japanese:
+      - コーヒー を {飲み ながら} 友達 と 話す の が 好き だ。
+      - コーヒー を {飲み ながら} 友達 と 話す の が 好き です。
+      - コーヒー {飲み ながら} 友達 と 喋る の 好き だ な。
+    english_literally: Coffee drinking-while friends with talk like.
+    competing_grammar:
+      - competing_japanese:
+          - コーヒー を 飲む ついで に 友達 と 話す の が 好き だ。
+        english: I like to talk with friends incidentally while drinking coffee.
+        hint: 「ついでに」 implies doing something incidentally while doing something else, not necessarily
+          strictly simultaneously or as a primary accompanying action.
+    scene: Two friends chatting in a cafe.
+    register: casual
+    setting: friendly
+    nuance: 「飲みながら」 (from 飲む) denotes the simultaneous action of 'drinking coffee' while 'talking'. 「好きだ」
+      indicates a general preference.
+  - english: He skillfully played the piano while singing.
+    japanese:
+      - 彼 は {歌い ながら} 上手 に ピアノ を 弾い た。
+      - 彼 は {歌い ながら} 上手 に ピアノ を 弾き まし た。
+      - 彼 が {歌い ながら} ピアノ を 華麗 に 奏で た。
+    english_literally: He singing-while skillfully piano played.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 歌っ た 後 に 上手 に ピアノ を 弾い た。
+        english: He sang, and after that, skillfully played the piano.
+        hint: 「た後に」 clearly states a sequence, where singing finishes before playing the piano. We need
+          to convey simultaneous performance.
+    scene: A musician performing at a concert.
+    register: formal
+    setting: informative
+    conjugation: past plain (～た)
+    speaker_gender: male
+    nuance: 「歌いながら」 (from 歌う) highlights the concurrent actions of 'singing' and 'playing the piano'.
+      The plain past tense 「弾いた」 describes a completed action in the past.
+  - english: She was knitting a scarf while watching TV.
+    japanese:
+      - 彼女 は テレビ を {見 ながら} マフラー を 編ん で い た。
+      - 彼女 は テレビ を {見 ながら} マフラー を 編ん で い まし た。
+      - 彼女、テレビ {見 ながら} マフラー 編ん で た ん だ。
+    english_literally: She TV watching-while scarf knitting was.
+    competing_grammar:
+      - competing_japanese:
+          - 彼女 は テレビ を 見 て 編ん だ。
+        english: She watched TV and knitted.
+        hint: The て-form here could imply either a sequence or a casual connection, but it doesn't emphasize
+          the strict simultaneity as clearly as ながら does.
+    scene: Someone relaxing at home.
+    register: casual
+    setting: intimate
+    conjugation: progressive (～ている)
+    speaker_gender: female
+    nuance: 「見ながら」 (from 見る) expresses 'watching TV' as an accompanying action to 'knitting'. The past
+      progressive 「編んでいた」 describes the ongoing nature of knitting in the past.
+  - english: Don't walk while looking at your phone; it's dangerous.
+    japanese:
+      - 携帯 を {見 ながら} 歩か ない で ください、危ない です よ。
+      - 携帯 を {見 ながら} 歩く の は やめ なさい、危険 だ よ。
+      - スマホ {見 ながら} 歩く な、危ねえ ぞ。
+    english_literally: Phone watching-while walk-don't please, dangerous is (yo).
+    competing_grammar:
+      - competing_japanese:
+          - 携帯 を 見 て 歩く の は 危ない です よ。
+        english: Walking while looking at your phone is dangerous.
+        hint: This is a general statement about the act, but it doesn't directly use the 'while doing'
+          structure in the same way. We want to show the 'while doing' aspect.
+    scene: A concerned friend gives advice.
+    register: teineigo (polite)
+    setting: cautious
+    conjugation: negative plain (～ない)
+    nuance: 「見ながら」 (from 見る) highlights the dangerous simultaneity of 'looking at your phone' and 'walking'.
+      The negative imperative 「歩かないでください」 gives a polite warning.
+  - english: The elderly couple chatted happily while strolling in the park.
+    japanese:
+      - 老 夫婦 は 公園 を {散歩 し ながら} 楽し そう に 話し た。
+      - 老 夫婦 は 公園 を {散歩 し ながら} 楽し そう に 話し まし た。
+      - 老 夫婦 が 公園 を {散策 し ながら} 楽し げ に 語らっ た。
+    english_literally: Elderly couple park strolling-while happily talked.
+    competing_grammar:
+      - competing_japanese:
+          - 老 夫婦 は 公園 で 散歩 し て、楽し そう に 話し た。
+        english: The elderly couple strolled in the park, and then talked happily.
+        hint: Similar to previous examples, the て-form suggests a sequence or simple connection, not the
+          precise simultaneity of ながら.
+    scene: An peaceful scene in a park.
+    register: formal
+    setting: reflective
+    conjugation: past plain (～た)
+    nuance: 「散歩しながら」 (from 散歩する) emphasizes the simultaneous actions of 'strolling' and 'chatting'. The
+      adverbial phrase 「楽しそうに」 (happily) adds to the scene.
+  - english: She learns English by listening to podcasts every day.
+    japanese:
+      - 彼女 は 毎日 ポッド キャスト を {聞き ながら} 英語 を 勉強 する。
+      - 彼女 は 毎日 ポッド キャスト を {聞き ながら} 英語 を 勉強 し ます。
+      - 毎日 ポッド キャスト を {聞き ながら} 英語 を 学ぶ の が 彼女 の 習慣 だ。
+    english_literally: She every-day podcast listening-while English study-does.
+    competing_grammar:
+      - competing_japanese:
+          - 彼女 は ポッド キャスト で 英語 を 勉強 する。
+        english: She studies English with podcasts.
+        hint: While grammatically correct, this lacks the explicit nuance of doing two things at once
+          that ながら provides. We want to show the 'while doing' aspect.
+    scene: Describing someone's method of language learning.
+    register: casual
+    setting: informative
+    nuance: 「聞きながら」 (from 聞く) indicates 'listening' is happening at the same time as 'studying English',
+      highlighting it as a method. The plain form 「勉強する」 describes a regular habit.
+  - english: He often eats bread while reading a newspaper.
+    japanese:
+      - 彼 は 新聞 を {読み ながら} パン を よく 食べる。
+      - 彼 は 新聞 を {読み ながら} パン を よく 食べ ます。
+      - 彼 は よく 新聞 を {読み ながら} パン を 食す。
+    english_literally: He newspaper reading-while bread often eats.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 新聞 を 読み、パン を よく 食べる。
+        english: He reads a newspaper, and often eats bread.
+        hint: This just lists two actions. It doesn't explicitly state that he does them at the same time.
+    scene: A common morning routine.
+    register: casual
+    setting: informative
+    conjugation: dictionary (plain non-past)
+    speaker_gender: male
+    nuance: 「読みながら」 (from 読む) shows 'reading a newspaper' happening concurrently with 'eating bread'.
+      The adverb 「よく」 (often) emphasizes the habitual nature of this action.
+post_example_writeup: As you can see from the examples, 「ながら」 is commonly used to describe a secondary
+  or background action that accompanies a main action. It's an efficient way to convey simultaneity by
+  the same subject. Pay attention to the context to distinguish it from its homophone, the concessive
+  「ながら」.
+sources:
+  bunpro: https://bunpro.jp/grammar_points/%E3%81%AA%E3%81%8C%E3%82%89

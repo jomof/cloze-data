@@ -1,4 +1,8 @@
 grammar_point: だ (casual copula)
+learn_before:
+  - です (polite copula)
+  - が (subject marker)
+  - を (object marker)
 learn_after:
   - だった・でした (past copula)
   - じゃない (negation noun and na-adj)
@@ -128,7 +132,7 @@ post_false_friends_writeup: To avoid confusion, remember that 「だ」 is a cas
   the existence of animate beings. Finally, 「だった」 and 「でした」 indicate past tense, in contrast to the present
   tense of 「だ」, and 「でしょう」 expresses probability or seeks confirmation. Additionally, 「となる」 signifies
   a change of state, distinct from 「だ」's static assertion. 「にすぎない」 emphasizes that something is *merely*
-  something, adding a limiting nuance to what 「だ」 identifies. Lastly, 「という」 is used for naming or defining,
+  something, adding a limiting nuance to what 「だ」 identifies. Lastly, 「という」 is for naming or defining,
   whereas 「だ」 is for direct factual statements.
 examples:
   - english: This is my book.
@@ -169,11 +173,6 @@ examples:
         english: 'My book exists here (literally: As for this, my book exists).'
         hint: 「がある」 indicates the existence of something, not its identification. We are identifying the
           object as 'my book'.
-      - competing_japanese:
-          - これ は 私 の 本。
-        english: This is my book.
-        hint: While often omitted in very casual speech, 「だ」 makes the assertion more definitive. We are
-          looking for a clear, direct statement.
       - competing_japanese:
           - これ は 私 の 本 {で は ない}。
         english: This is not my book (more formal/written).
@@ -224,11 +223,6 @@ examples:
           - 部屋 は きれい {だっ た}。
         english: The room was clean.
         hint: The statement describes the current state of the room, not its past state.
-      - competing_japanese:
-          - 部屋 は きれい。
-        english: The room is clean.
-        hint: While often omitted in very casual speech, 「だ」 makes the assertion more definitive. We are
-          looking for a clear, direct statement.
       - competing_japanese:
           - 部屋 {が ある}。
         english: There is a room.
@@ -289,11 +283,6 @@ examples:
         hint: 「がある」 indicates possession or existence of an inanimate object. We are identifying *who*
           the order belongs to, not stating that an order exists for someone.
       - competing_japanese:
-          - 俺 が 注文！
-        english: It's my order!
-        hint: While often omitted in very casual speech, 「だ」 makes the assertion more definitive and assertive.
-          We are looking for a strong, direct statement.
-      - competing_japanese:
           - 注文 {が ある}。
         english: There is an order.
         hint: 「がある」 indicates existence of an inanimate object. We are identifying who the order belongs
@@ -351,11 +340,6 @@ examples:
         english: This cake was very lovely.
         hint: The statement describes the current state of the cake, not its past state.
       - competing_japanese:
-          - この ケーキ は とても 素敵 よ。
-        english: This cake is very lovely, you know.
-        hint: While often omitted in very casual speech, 「だ」 makes the assertion more definitive. We are
-          looking for a clear, direct statement.
-      - competing_japanese:
           - この ケーキ {が ある}。
         english: There is this cake.
         hint: 「がある」 indicates existence, not a quality or state like 'lovely'.
@@ -394,7 +378,7 @@ examples:
         hint: The speaker is making a casual introduction among peers, not a formal one.
       - competing_japanese:
           - 私 の 先生 は 山田 さん {じゃ ない}。
-        english: My teacher is not Mr. Yamada.
+        english: The statement asserts that the teacher *is* Mr. Yamada, not that they aren't.
         hint: The statement asserts that the teacher *is* Mr. Yamada, not that they aren't.
       - competing_japanese:
           - 私 の 先生 は 山田 さん {で ござい ます}。
@@ -413,11 +397,6 @@ examples:
         english: Mr. Yamada is present/exists.
         hint: 「がいる」 indicates the presence or existence of an animate being. We are identifying *who*
           the teacher is, not stating that Mr. Yamada is merely present.
-      - competing_japanese:
-          - 私 の 先生 は 山田 さん。
-        english: My teacher is Mr. Yamada.
-        hint: While often omitted in very casual speech, 「だ」 makes the identification more definitive.
-          We are looking for a clear, direct statement.
       - competing_japanese:
           - 私 の 先生 は 山田 さん {で は ない}。
         english: My teacher is not Mr. Yamada (more formal/written).
@@ -466,11 +445,6 @@ examples:
         english: Health was the most important thing.
         hint: The statement expresses a current, universal truth, not a past condition that may no longer
           be true.
-      - competing_japanese:
-          - 健康 は 最も 大切 な もの。
-        english: Health is the most important thing.
-        hint: While often omitted, especially in proverbs or general statements, 「だ」 makes the assertion
-          more definitive and impactful. We are looking for a clear, direct statement.
       - competing_japanese:
           - 健康 {が ある}。
         english: There is health.
@@ -667,16 +641,3 @@ post_example_writeup: As you can see, 「だ」 provides a direct and casual way
   to speaking Japanese naturally in informal settings.
 sources:
   bunpro: https://bunpro.jp/grammar_points/だ
-lint-errors:
-  - '[rule-5] warning examples[0].competing_grammar[6].competing_japanese[0] missing {bold} grammar point:
-    これ は 私 の 本。'
-  - '[rule-5] warning examples[1].competing_grammar[6].competing_japanese[0] missing {bold} grammar point:
-    部屋 は きれい。'
-  - '[rule-5] warning examples[2].competing_grammar[7].competing_japanese[0] missing {bold} grammar point:
-    俺 が 注文！'
-  - '[rule-5] warning examples[3].competing_grammar[6].competing_japanese[0] missing {bold} grammar point:
-    この ケーキ は とても 素敵 よ。'
-  - '[rule-5] warning examples[4].competing_grammar[6].competing_japanese[0] missing {bold} grammar point:
-    私 の 先生 は 山田 さん。'
-  - '[rule-5] warning examples[5].competing_grammar[5].competing_japanese[0] missing {bold} grammar point:
-    健康 は 最も 大切 な もの。'

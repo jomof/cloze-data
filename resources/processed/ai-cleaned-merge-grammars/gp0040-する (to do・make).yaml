@@ -5,7 +5,6 @@ learn_before:
   - を (object marker)
   - に (static location・time)
   - に (target・direction)
-  - う-verb (dictionary)
 learn_after:
   - 使役 (causative)
   - することができる (can・be able to)
@@ -14,6 +13,10 @@ learn_after:
   - ことにする (to decide to)
   - れる られる (passive・potential・spontaneous・respectful)
   - はずだ (expected to be)
+  - する (cost)
+  - する (to have a characteristic)
+  - がする (sense perception)
+  - ようにする (make an effort to)
 id: gp0040
 meaning: To do, to make, to play (a game or sport)
 meaning_warning: Although not common, 為る kanji use can be seen
@@ -110,9 +113,12 @@ pronunciation:
   katakana: スル
   romaji: suru
 formation:
-  Noun + を + する: To do [noun], to play [noun]
-  Noun + に + する: To decide on [noun], to make it [noun]
-  Verb (dictionary form) + こと + に + する: To decide to [verb]
+  Noun + を + する: To do [noun], to perform [noun].
+  Noun + に + する: To decide on [noun], to make it [noun].
+  Verb (dictionary form) + こと + に + する: To decide to [verb].
+  '[Amount (price/time)] + する': To cost [amount], to take [time].
+  '[Sensory Noun] + が + する': To sense [sensory noun] (e.g., sound, smell, taste, feeling).
+  '[Quality Noun] + を + する': To show a [quality] or have a [characteristic].
 jlpt: N5
 details:
   part-of-speech: verb
@@ -435,10 +441,49 @@ examples:
     nuance: The use of 「し て いる の」 with the sentence-final particle 「の」 (often used by females or in a
       softer, questioning tone) indicates a casual, inquisitive tone between close friends. 「いる」 is the
       progressive form of 「する」, showing an action in progress.
+  - english: This book costs 2,000 yen.
+    japanese:
+      - この 本 は 二千 円 {し ます}。
+      - この 本 は 二千 円 {し ます} よ。
+      - この 本 は 二千 円 {し ます} と 言わ れ まし た。
+      - この 本 は 二千 円 も {し ます}。
+    english_literally: This book costs 2,000 yen.
+    competing_grammar:
+      - competing_japanese:
+          - この 本 は 二千 円 {です}。
+        english: This book is 2,000 yen.
+        hint: While 「です」 states the price, 「する」 emphasizes the act of costing or being priced at that
+          amount. We're looking for the verb form of 'to cost'.
+      - competing_japanese:
+          - この 本 は 二千 円 が {かかり ます}。
+        english: This book takes 2,000 yen (as a cost).
+        hint: 「かかる」 is used for time, money, or effort that 'takes' or 'is required', but 「する」 is a more
+          direct way to express the item's price. We're looking for the cost of the item itself.
+    scene: A customer is asking a bookstore clerk about the price of a book.
+    register: teineigo (polite)
+    setting: informative
+    conjugation: non-past polite (～ます)
+  - english: I hear a strange noise.
+    japanese:
+      - 変 な 音 が {し ます}。
+      - 何 か 変 な 音 が {し ます} ね。
+      - 向こう から 変 な 音 が {し ます}。
+      - 今、変 な 音 が {し た}！
+    english_literally: A strange sound makes.
+    competing_grammar:
+      - competing_japanese:
+          - 変 な 音 が {聞こえ ます}。
+        english: A strange noise is audible.
+        hint: 「聞こえる」 refers to sound being audible to you, while 「音が する」 describes the occurrence or presence
+          of the sound itself, as if the sound is 'doing' something. We're looking for the nuance of a
+          sound manifesting itself. 「音が する」 is distinct from simply 'hearing' a sound; it describes the
+          *existence* of a sound that one senses.
+    scene: Someone is in a quiet room and suddenly hears an unexpected sound.
+    register: teineigo (polite)
+    setting: informative
+    conjugation: non-past polite (～ます)
 post_example_writeup: As illustrated by these examples, 「する」 is incredibly flexible, adapting its nuance
   based on particles like 「を」 and 「に」, and through its various conjugations. Pay close attention to the
   context and desired level of politeness or formality when choosing the appropriate form.
 sources:
   bunpro: https://bunpro.jp/grammar_points/する
-lint-errors:
-  - '[rule-6] at examples there are only 9 example(s); should have at least 10'

@@ -1,7 +1,7 @@
 grammar_point: なお (supplementary information)
 learn_before:
   - そして (and・and then)
-  - また (again; also・or)
+  - <suggest>:また (again; also・or)
   - それに (in addition)
   - その上 (in addition)
   - しかしながら (however・nevertheless)
@@ -41,7 +41,7 @@ false_friends:
       (in addition), 「なお (still)」 indicates that a state or condition continues or remains the same, or
       that something is 'even more' the case (e.g., 「なお 美しい」 - even more beautiful). It doesn't introduce
       new, unrelated information, and typically modifies a verb or adjective directly.
-    grammar_point: なお (still・even・yet・still more)
+    grammar_point: <suggest>:なお (still・even・yet・still more)
   - term: しかも
     meaning: Moreover, Furthermore
     kind: similar expression
@@ -312,9 +312,3 @@ post_example_writeup: As you can see from these examples, 「なお」 is consis
   formality that makes it distinct.
 sources:
   bunpro: https://bunpro.jp/grammar_points/なお2
-lint-errors:
-  - '[rule-13] unknown grammar at ''learn_before[1]'': ''また (again; also・or)''. You may suggest new grammar
-    points by adding a false_friend.'
-  - '[rule-13] warning unknown grammar at ''false_friends[0]'': ''なお (still・even・yet・still more)''. It
-    **MUST** be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest
-    a new grammar point.'

@@ -454,7 +454,7 @@ class ConsoleDisplay:
         """Print a warning immediately (not tied to any slot)."""
         if not self._is_stopping:
             try:
-                sys.stdout.write(f'\r⚠️ {message} {self.CLEAR_TO_EOL}\n')
+                sys.stdout.write(f'\r⚠️  {message} {self.CLEAR_TO_EOL}\n')
                 sys.stdout.flush()
             except (ValueError, OSError):
                 pass

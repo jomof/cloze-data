@@ -1,7 +1,7 @@
 grammar_point: 何から何まで (everything)
 learn_before:
-  - 全て (all・every)
-  - 何でも (anything・everything)
+  - <suggest>:全て (all・every)
+  - <suggest>:何でも (anything・everything)
 learn_after:
   - に至るまで (up to; including everything)
 id: gp0716
@@ -36,7 +36,7 @@ false_friends:
     nuance: While 「全て」 also means "all" or "everything," 「何から何まで」 often carries a more emphatic nuance,
       highlighting the exhaustive and detailed nature of what is being referred to. 「全て」 can be more generic
       or factual, whereas 「何から何まで」 implies a thoroughness or pervasive quality.
-    grammar_point: 全て (all・every)
+    grammar_point: <suggest>:全て (all・every)
   - term: 色々 (iroiro)
     meaning: various, a variety of
     kind: similar expression
@@ -50,7 +50,7 @@ false_friends:
     nuance: 「なんでも」 implies a wide range of things or options, suggesting "whatever it may be." In contrast,
       「何から何まで」 focuses on a specific scope and emphasizes that every single item *within that scope* is
       included, often conveying depth or completeness rather than just variety.
-    grammar_point: 何でも (anything・everything)
+    grammar_point: <suggest>:何でも (anything・everything)
   - term: どこもかしこも (doko mo kashiko mo)
     meaning: everywhere, all over
     kind: similar expression
@@ -300,14 +300,3 @@ post_example_writeup: As demonstrated in the examples, 「何から何まで」 
   neglect. The key is its emphasis on the entirety of a given scope, leaving no aspect untouched.
 sources:
   bunpro: https://bunpro.jp/grammar_points/何から何まで
-lint-errors:
-  - '[rule-13] unknown grammar at ''learn_before[0]'': ''全て (all・every)''. You may suggest new grammar
-    points by adding a false_friend.'
-  - '[rule-13] unknown grammar at ''learn_before[1]'': ''何でも (anything・everything)''. You may suggest
-    new grammar points by adding a false_friend.'
-  - '[rule-13] warning unknown grammar at ''false_friends[0]'': ''全て (all・every)''. It **MUST** be from
-    ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new grammar
-    point.'
-  - '[rule-13] warning unknown grammar at ''false_friends[2]'': ''何でも (anything・everything)''. It **MUST**
-    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
-    grammar point.'

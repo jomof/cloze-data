@@ -1,332 +1,252 @@
 grammar_point: '[X]は[Y]の一つだ (X is one of Y)'
 learn_before:
-  - は (topic and contrast)
-  - の (possession)
-  - だ (casual copula)
-  - です (polite copula)
-  - 多い (many・a lot・much)
+  - る-verbs (ichidan verbs)
+  - <suggest>:negative plain (～ない)
+  - <suggest>:past plain (～た)
+  - <suggest>:い-adjective (past negative)
 learn_after:
-  - を中心に (focused on)
-  - にすぎない (no more than)
-  - をはじめ (starting with)
-  - はもとより・のみならず (not only・let alone)
+  - <suggest>:negative past polite (～ませんでした)
+  - てくる (movement towards or gradual change)
 id: gp0301
-split_predecessor: |
-  An old grammar point has had its name changed from 'XはYの一つだ (one of)' to '[X]は[Y]の一つだ (X is one of Y)'. Please recreate this grammar point with this information in mind. All fields **MUST** be suitable for the new name. For your reference, here is the old content:
+meaning: る-verbs in the negative past tense.
+pronunciation:
+  katakana: ル・バーブ (ネガティブ・パスト)
+  romaji: ru-verb (negative-past)
+formation:
+  Verb (る-verb dictionary form) + なかった: This formation expresses the negative past tense for る-verbs,
+    indicating that the action did not occur.
+jlpt: N5
+details:
+  part-of-speech: auxiliary verb
+  register: casual
+  function: Indicates that an action or state did not take place in the past for る-verbs.
+  grammatical-role: conjugation
+etymology: The negative past tense ending for る-verbs, 「なかった」, is a combination of 「ない」 (the plain negative
+  form) and 「た」 (the plain past tense ending). This structure signifies 'did not (do/be)'. The 「な」 comes
+  from the classical negative auxiliary 「ず」 (zu) which evolved into 「ない」, and the 「かった」 suffix is the
+  past tense form for い-adjectives, which 「ない」 functions as grammatically.
+writeup: |-
+  The negative past tense for る-verbs is formed by taking the dictionary (plain) form of the verb, removing the final 「る」, and attaching 「なかった」. This conjugation expresses that an action *did not occur* in the past. It is the plain form, meaning it is used in casual conversations and can be used when speaking to oneself or close friends and family. For polite situations, you would use 「ませんでした」.
 
-  === XはYの一つだ (one of) ===
-  grammar_point: XはYの一つだ (one of)
-  learn_before:
-    - は (topic and contrast)
-    - の (possession)
-    - だ (casual copula)
-    - です (polite copula)
-    - 多い (many)
-  learn_after:
-    - を中心に (focused on)
-    - にすぎない (no more than)
-    - をはじめ (starting with)
-    - のみならず (not only... but also)
-  id: gp0301
-  meaning: A is one of B (many of them)
-  pronunciation:
-    katakana: メイシ・ケイヨウシハ〜ノヒトツダ
-    romaji: meishi, keiyoushi wa ~ no hitotsu da
-  formation:
-    '[Noun (A) は] + [Category (B) の 一つだ]': States that noun A is a single entity within the broader category
-      B. '一つ' is the general counter for objects.
-    '[Noun (A) は] + [Category (B) の 一人だ]': Used when noun A refers to a person.
-    '[Noun (A) は] + [Category (B) の 一本だ]': Used when noun A refers to a long, cylindrical object.
-    '[Noun (A) は] + [Category (B) の 一冊だ]': Used when noun A refers to a book or bound volume.
-    '[Noun (A) は] + [Category (B) の 一種類だ]': Used when noun A refers to a type or kind
-  jlpt: N4
-  details:
-    part-of-speech: phrase
-    register: formal
-    usage-context: general
-    function: To classify or categorize a specific item as belonging to a larger group.
-    nuance: Emphasizes that the item in question is simply one instance among many similar items within
-      a category, rather than being unique or the only one
-  etymology: The grammar point is constructed from 「〜は」 (topic marker), 「〜の一つ」 (one of ~), and 「だ」 (copula).
-    「一つ」 is a counter for general objects, and 「〜の一つだ」 indicates that something is one of many within a
-    larger group or category. This fundamental structure reflects the directness of classification in Japanese.
-  writeup: 'The grammatical construction **Noun・Adjective+は〜の一つだ** is used to assert that a particular noun
-    is a single item or instance belonging to a larger, broader category. While the grammar point name includes
-    ''Adjective'', this refers to an adjective modifying the noun which is the subject. The structure fundamentally
-    applies to nouns.In this pattern, the specific item (Noun A) is followed by the topic particle 「は」.
-    The larger category (Noun B) is then followed by 「の」 and a suitable counter, most commonly 「一つ」, which
-    means ''one'' and is used for general objects. The sentence concludes with the copula 「だ」 (or 「です」 for
-    polite speech).For example, if you say 「猫はペットの一つです。」, you are classifying ''cats'' as belonging to the
-    category of ''pets''. This highlights that there are many other types of pets besides cats.It is important
-    to note that while 「一つ」 is the most common counter used, it is not the only one. Depending on the nature
-    of the noun being discussed, other counters may be more appropriate and commonly used. For instance:For
-    people, 「一人」 (ひとり) is used: 「彼は優秀な学生の一人です。」 (He is one of the excellent students.)For long, cylindrical
-    objects, 「一本」 (いっぽん) is used: 「この鉛筆は私の筆記用具の一本です。」 (This pencil is one of my writing tools.)For books
-    or bound volumes, 「一冊」 (いっさつ) is used: 「この本は彼のお気に入りの漫画の一冊だ。」 (This book is one of his favorite manga.)For
-    types or kinds, 「一種類」 (ひと しゅるい) is used: 「トマトは果物の一種類です。」 (Tomatoes are one type of fruit.)The choice
-    of counter depends directly on the noun (A) being classified, ensuring natural and correct Japanese
-    usage.'
-  false_friends:
-    - term: のなかで
-      meaning: Among, out of, within
-      kind: similar expression
-      nuance: While both expressions involve a group, 「〜は〜の一つだ」 simply states that something is a member
-        of a larger category. In contrast, 「〜のうち(で)」 is used when you are selecting, comparing, or singling
-        out something *from within* that group, often implying a subset or a particular instance among others.
-      grammar_point: のなかで (in・among)
-  post_false_friends_writeup: The crucial distinction between 「〜は〜の一つだ」 and 「〜のうち(で)」 lies in their primary
-    function. 「〜は〜の一つだ」 serves to classify, stating that something belongs to a general category. For example,
-    「犬は動物の一つだ」 (A dog is one of the animals) classifies dogs as animals. On the other hand, 「〜のうち(で)」 focuses
-    on selection or comparison *within* a defined group. For instance, 「犬のうちで、柴犬が一番好きだ」 (Among dogs, I like
-    Shiba Inu the most) picks a favorite from the group of dogs. Therefore, if you are simply categorizing,
-    use 「〜は〜の一つだ」; if you are choosing or making a distinction within a group, consider 「〜のうち(で)」.
-  examples:
-    - english: A cat is one of many pets.
-      japanese:
-        - 猫 は ペット の {一 つ です}
-        - 猫 は ペット の {一 つ だ}
-      english_literally: Cat is of pets one.
-      competing_grammar:
-        - competing_japanese:
-            - 猫 は ペット {の うち で} 飼わ れる 動物 です。
-          english: A cat is an animal that is kept among pets.
-          hint: This sentence implies selection or popularity within a group. We're looking for a simple
-            classification stating a cat is a type of pet.
-      scene: A man is explaining to a child about different types of animals people keep in their homes.
-      register: teineigo (polite)
-      setting: informative
-      speaker_gender: male
-      listener_gender: male
-      speaker_age: older
-      nuance: The use of 「です」 makes the sentence polite and suitable for an older man explaining a general
-        fact to a child. The phrase 「一つです」 classifies 'cats' as a type of 'pet', emphasizing that there
-        are many other pets.
-      etymology: The Japanese counter 「一つ」 (hitotsu) originally combined 「日」 (hi, meaning 'day' or 'sun')
-        and 「つ」 (tsu, a common Old Japanese particle for counting things). Over time, its meaning evolved
-        to simply 'one' for general objects, reflecting a universal way of categorizing single items.
-    - english: She is one of my important friends.
-      japanese:
-        - 彼女 は 私 の 大切 な 友達 の {一人 です}
-        - 彼女 は 私 の 大切 な 友達 の {一人 だ}
-      english_literally: She is my important friends of one person.
-      competing_grammar:
-        - competing_japanese:
-            - 私 の 大切 な 友達 {の うち で} 彼女 は 最も 面白い です。
-          english: Among my important friends, she is the most interesting.
-          hint: This sentence highlights a quality or preference *within* the group of friends. We're looking
-            for a statement classifying her as simply a member of the group.
-      scene: A woman is introducing one of her friends to another acquaintance, emphasizing her connection
-        to a specific group.
-      register: teineigo (polite)
-      setting: friendly
-      speaker_gender: female
-      listener_gender: group
-      speaker_age: younger
-      nuance: 「大切 な 友達 の 一人です」 uses the counter 「一人」 for a person, emphasizing that she is a valuable member
-        of her friend circle. The polite 「です」 maintains a friendly but respectful tone appropriate when
-        introducing someone.
-      etymology: The counter 「一人」 (hitori) for people is an exception to the regular reading of the numeral
-        'one' (ichi) combined with the counter 'nin' (nin). It derives from an older pronunciation, perhaps
-        influenced by the native Japanese word for 'one person', highlighting its long-standing usage for
-        individuals.
-    - english: Happiness is one of life's ultimate goals.
-      japanese:
-        - 幸福 は 人生 の 究極 の 目標 の {一 つ だ}
-        - 幸福 は 人生 の 究極 の 目標 の {一 つ です}
-      english_literally: Happiness is life's ultimate goals of one.
-      competing_grammar:
-        - competing_japanese:
-            - 人生 の 究極 の 目標 {の うち で} 幸福 が 最も 重要 だ。
-          english: Among life's ultimate goals, happiness is the most important.
-          hint: This sentence compares or selects happiness as superior or preferred. We're looking for
-            a statement classifying happiness as one type of ultimate goal.
-      scene: During a late-night philosophical discussion among friends, a man is sharing his thoughts on
-        the meaning of life.
-      register: casual
-      setting: reflective
-      speaker_gender: male
-      listener_gender: group
-      speaker_age: younger
-      nuance: The casual 「だ」 reflects the relaxed, intimate setting of a philosophical discussion among
-        peers. The abstract concept of 「幸福」 (happiness) being categorized as one of 「究極 の 目標」 (ultimate
-        goals) makes this a thought-provoking statement.
-      etymology: The concept of 「究極 の 目標」 (kyūkyoku no mokuhyō) refers to a 'final' or 'ultimate' goal,
-        often stemming from philosophical discourse. The combination of 「究極」 (ultimate) and 「目標」 (goal)
-        creates a strong sense of a culminating objective, implying a deeper, more profound pursuit in life.
-    - english: This book is one of his bestseller works.
-      japanese:
-        - この 本 は 彼 の ベスト セラー 作品 の {一 冊 だ}
-        - この 本 は 彼 の ベスト セラー 作品 の {一 冊 です}
-      english_literally: This book is his bestseller works of one volume.
-      competing_grammar:
-        - competing_japanese:
-            - 彼 の ベスト セラー 作品 {の うち で} この 本 が 一番 売れ まし た。
-          english: Among his bestseller works, this book sold the most.
-          hint: This sentence emphasizes ranking or preference within the bestseller category. We're looking
-            for a simple statement classifying the book as one of his bestsellers.
-      scene: A librarian is recommending a popular author's books, pointing out a specific one as an example
-        of his success.
-      register: casual
-      setting: informative
-      speaker_gender: female
-      listener_gender: group
-      speaker_age: older
-      nuance: The use of the specific counter 「一冊」 for a book is appropriate. The casual 「だ」 suggests a
-        direct, informative tone, as if providing a factual statement without needing excessive formality.
-      etymology: The counter 「冊」 (satsu) specifically for books and volumes originated from the ancient
-        Chinese practice of counting bundles of bamboo slips or scrolls. This unit of measurement was adopted
-        into Japanese, evolving to denote bound volumes like books and magazines, hence its specific use
-        for printed materials.
-    - english: Environmental protection is one of our most important issues.
-      japanese:
-        - 環境 保護 は 私 たち の 最も 重要 な 課題 の {一 つ だ}
-        - 環境 保護 は 私 たち の 最も 重要 な 課題 の {一 つ です}
-      english_literally: Environmental protection is our most important issues of one.
-      competing_grammar:
-        - competing_japanese:
-            - 私 たち の 最も 重要 な 課題 {の うち で} 環境 保護 が 最も 深刻 だ。
-          english: Among our most important issues, environmental protection is the most serious.
-          hint: This sentence ranks or prioritizes environmental protection among issues. We're looking
-            for a statement classifying it as one of the important issues.
-      scene: During a town hall meeting, a woman passionate about community issues is presenting her views
-        to local residents.
-      register: semi-formal
-      setting: persuasive
-      speaker_gender: female
-      listener_gender: group
-      speaker_age: older
-      nuance: This sentence uses 「環境 保護」 (environmental protection) as the subject, categorizing it among
-        「最も 重要 な 課題」 (most important issues). The formal register emphasizes the seriousness of the topic
-        and the speaker's conviction.
-      etymology: The term 「環境 保護」 (kankyō hogo, environmental protection) is a modern compound. 「環境」 (environment)
-        combines 「環」 (circle, ring) and 「境」 (border, boundary), implying the surroundings. 「保護」 (protection)
-        consists of 「保」 (to protect, maintain) and 「護」 (to guard). Together, they form a clear and direct
-        concept of safeguarding one's surroundings, reflecting a contemporary social concern.
-    - english: Mount Fuji is one of Japan's most famous mountains.
-      japanese:
-        - 富士 山 は 日本 の 最も 有名 な 山 の {一 つ です}
-        - 富士 山 は 日本 の 最も 有名 な 山 の {一 つ だ}
-      english_literally: Mount Fuji is Japan's most famous mountains of one.
-      competing_grammar:
-        - competing_japanese:
-            - 富士 山 は 日本 の 山々 {の うち で} 一番 美しい です。
-          english: Mount Fuji is the most beautiful among Japan's mountains.
-          hint: This sentence makes a comparison or judgment about Mount Fuji among other mountains. We're
-            looking for a statement simply classifying it as one of the famous mountains.
-      scene: A tour guide is pointing out landmarks to a group of tourists, speaking respectfully but clearly.
-      register: teineigo (polite)
-      setting: informative
-      speaker_gender: female
-      listener_gender: group
-      speaker_age: older
-      nuance: The polite form 「です」 is appropriate for a tour guide addressing a group. 「最も 有名 な 山 の 一つです」
-        clearly states its status as a famous mountain, without implying it's the *only* famous one or the
-        *most* famous.
-      etymology: 「富士山」 (Fujisan) has a long and debated etymology, with theories ranging from 'immortal'
-        (不死) to 'abundant warriors' (富士), reflecting its historical significance. The use of 「山」 (yama/san)
-        for mountains is fundamental, categorizing it as a geographical feature. The phrase emphasizes its
-        place among other famous mountains in Japan.
-    - english: He is one of the company's oldest employees.
-      japanese:
-        - 彼 は 会社 の 最も 古い 従業 員 の {一人 です}
-        - 彼 は 会社 の 最も 古い 従業 員 の {一人 だ}
-      english_literally: He is company's most old employees of one person.
-      competing_grammar:
-        - competing_japanese:
-            - 彼 は 会社 の 従業 員 {の うち で} 最も 長く 働い て い ます。
-          english: Among the company's employees, he has worked the longest.
-          hint: This sentence specifies who has worked the longest. We're looking for a statement classifying
-            him as one of the older employees.
-      scene: An HR manager is discussing the company's long-standing staff during an internal meeting.
-      register: formal
-      setting: professional
-      speaker_gender: male
-      listener_gender: group
-      speaker_age: older
-      nuance: Using 「一人です」 with 「従業 員」 (employee) clearly indicates he is one person within that group.
-        The formal 「です」 is suitable for a professional meeting. The phrase highlights his tenure as a distinguishing
-        characteristic.
-      etymology: The term 「従業 員」 (jūgyōin) refers to a 'staff member' or 'employee'. 「従業」 (jūgyō) means
-        'employment' or 'following a profession', combining 「従」 (to follow) and 「業」 (business, profession).
-        「員」 (in) means 'member'. This term is widely used in business contexts to refer to personnel.
-    - english: This car is one of the most popular models in our lineup.
-      japanese:
-        - この 車 は 私 ども の ラインナップ の 人気 モデル の {一 台 です}
-        - この 車 は 私 ども の ラインナップ の 人気 モデル の {一 台 だ}
-      english_literally: This car is our lineup's popular models of one unit.
-      competing_grammar:
-        - competing_japanese:
-            - 私 ども の ラインナップ の 人気 モデル {の うち で} この 車 が 一番 売れ て い ます。
-          english: Among the popular models in our lineup, this car sells the most.
-          hint: This implies a ranking of sales within the group of popular models. We're looking for a
-            statement classifying it as one of the popular models.
-      scene: A car salesman is proudly presenting a vehicle on the showroom floor to potential buyers.
-      register: bijinesu nihongo (business)
-      setting: persuasive
-      speaker_gender: male
-      listener_gender: group
-      speaker_age: younger
-      nuance: The use of 「一台です」 with 「車」 (car) correctly employs the counter for vehicles. 「私 ども」 (watakushi
-        domo) is a humble and formal way to refer to 'our company', appropriate for a salesman. The overall
-        phrasing aims to persuade by highlighting its status as a popular choice.
-      etymology: The counter 「台」 (dai) for machines and vehicles originates from the practice of counting
-        stands or pedestals on which objects were placed. It expanded to count vehicles, machines, and other
-        durable goods, reflecting their functional nature.
-    - english: Kindness is one of the most important virtues.
-      japanese:
-        - 優し さ は 最も 大切 な 美徳 の {一 つ だ}
-        - 優し さ は 最も 大切 な 美徳 の {一 つ です}
-      english_literally: Kindness is most important virtues of one.
-      competing_grammar:
-        - competing_japanese:
-            - 美徳 {の うち で} 優し さ が 一番 大切 だ と 思う。
-          english: Among virtues, I think kindness is the most important.
-          hint: This sentence expresses a personal opinion about kindness being the most important. We're
-            looking for a general statement classifying it as one of the important virtues.
-      scene: Two friends are having a casual conversation about what values matter most in life.
-      register: casual
-      setting: reflective
-      speaker_gender: female
-      listener_gender: female
-      speaker_age: younger
-      nuance: Using 「一つだ」 with an abstract noun like 「優しさ」 (kindness) categorizes it as a member of the
-        group 「美徳」 (virtues). The casual 「だ」 suits the intimate setting between friends. 「優しさ」 itself is
-        a feminine-sounding word, often associated with gentle qualities.
-      etymology: 「美徳」 (bitoku) means 'virtue' or 'moral excellence'. 「美」 (bi) means 'beauty' or 'beautiful',
-        and 「徳」 (toku) means 'virtue' or 'morality'. This compound emphasizes the inherent goodness and
-        aesthetic quality of moral values. The concept of virtues is universal, but its expression varies
-        culturally.
-    - english: Tokyo Tower is one of the iconic landmarks of Tokyo.
-      japanese:
-        - 東京 タワー は 東京 の 象徴 的 な ランドマーク の {一 つ です}
-        - 東京 タワー は 東京 の 象徴 的 な ランドマーク の {一 つ だ}
-      english_literally: Tokyo Tower is Tokyo's symbolic landmarks of one.
-      competing_grammar:
-        - competing_japanese:
-            - 東京 の ランドマーク {の うち で}、東京 タワー が 最も 有名 です。
-          english: Among Tokyo's landmarks, Tokyo Tower is the most famous.
-          hint: This sentence compares Tokyo Tower to other landmarks. We're looking for a statement classifying
-            it as one of the iconic landmarks.
-      scene: A local resident is showing a visitor around Tokyo, pointing out famous sights.
-      register: teineigo (polite)
-      setting: informative
-      speaker_gender: male
-      listener_gender: male
-      speaker_age: older
-      nuance: 「一つ です」 is used to classify Tokyo Tower as one of the many iconic landmarks. The polite 「です」
-        is appropriate for guiding a visitor. The term 「象徴 的 な ランドマーク」 (shōchōteki na randomaaku) implies
-        a significant and recognizable symbol of the city.
-      etymology: 「ランドマーク」 (randomaaku) is a loanword from English 'landmark'. Its adoption into Japanese
-        reflects the need for specific terms to describe prominent, easily recognizable features in a landscape
-        or city, especially in the context of tourism and urban development.
-  post_example_writeup: As demonstrated in the examples, the counter used with 「一つだ」 will vary depending
-    on the type of noun being described. While 「一つ」 serves as a general counter, choosing the appropriate
-    specific counter (e.g., 「一人」 for people, 「一冊」 for books) enhances the naturalness and precision of the
-    Japanese expression. This highlights the importance of mastering Japanese counters alongside this grammar
-    point.
-  sources:
-    bunpro: https://bunpro.jp/grammar_points/は-の一つだ
-lint-errors:
-  - error grammar point is missing required field 'meaning'
-  - '[rule-18] warning grammar point has split_predecessor field. Use the information in it to help compose
-    this new grammar point, then remove the field.'
+  This form is essential for recounting past events that did not happen, or for denying previous actions. It directly negates the past occurrence of the verb's action.
+false_friends:
+  - term: なかった
+    meaning: Was not (for い-adjectives or nouns with ない)
+    kind: similar expression
+    nuance: While both use 「なかった」, the grammar point 「る-verb (negative-past)」 (e.g., 「食べなかった」) attaches
+      it to the stem of a る-verb. The standalone 「なかった」 is the past negative of 「ない」 for い-adjectives
+      (e.g., 「楽しくなかった」) or nouns/な-adjectives when used with 「じゃない」 (e.g., 「学生じゃなかった」). The grammatical
+      attachment and the word it modifies differ.
+    grammar_point: <suggest>:い-adjective (past negative)
+  - term: る-verb (negative plain)
+    meaning: る-verbs in the negative plain tense (present/future)
+    kind: similar expression
+    nuance: 「る-verb (negative-past)」 (e.g., 「食べなかった」 - didn't eat) specifies an action *did not happen*
+      in the past. In contrast, 「る-verb (negative plain)」 (e.g., 「食べない」 - don't eat/won't eat) indicates
+      an action *does not or will not happen* in the present or future, or expresses a general negative
+      state without a past timeframe.
+    grammar_point: <suggest>:る-verb (negative plain)
+post_false_friends_writeup: When using 「なかった」, pay close attention to what it is attaching to. If it follows
+  the stem of a る-verb (e.g., 「見なかった」, 「寝なかった」), it signifies 'did not do'. If it follows 「く」 (as in い-adjectives,
+  e.g., 「寒くなかった」), it means 'was not'. Similarly, distinguish it from the non-past negative form, which
+  lacks the 「かっ」 portion, as it changes the temporal aspect of the negation.
+examples:
+  - english: I didn't eat lunch today.
+    japanese:
+      - 今日 は 昼ごはん を {食べ なかっ た}。
+      - 今日 は 昼ごはん を 食べ ませ ん でし た。
+    english_literally: Today as for lunch object marker ate not.
+    competing_grammar:
+      - competing_japanese:
+          - 今日 は 昼ごはん を 食べ ませ ん でし た。
+        english: I didn't eat lunch today (polite).
+        hint: This uses the polite negative past form. We're looking for the plain form.
+      - competing_japanese:
+          - 今日 は まだ 昼ごはん を 食べ て い ませ ん。
+        english: I still haven't eaten lunch today.
+        hint: This implies an ongoing state of not having eaten yet. We're looking for a simple past action
+          that did not occur.
+    scene: A student tells their friend they skipped lunch.
+    register: casual
+    setting: friendly
+    conjugation: negative past plain (～なかった)
+  - english: She didn't watch that movie.
+    japanese:
+      - 彼女 は その 映画 を {見 なかっ た}。
+      - 彼女 は その 映画 を 見 ませ ん でし た。
+    english_literally: She as for that movie object marker watched not.
+    competing_grammar:
+      - competing_japanese:
+          - 彼女 は その 映画 を 見 ませ ん でし た。
+        english: She didn't watch that movie (polite).
+        hint: This uses the polite negative past form. We're looking for the plain form.
+      - competing_japanese:
+          - 彼女 は その 映画 を 見 ない。
+        english: She doesn't watch that movie.
+        hint: This indicates a general habit or present/future non-action. We're looking for a specific
+          past action that did not occur.
+    scene: Two friends are discussing movies they've seen recently.
+    register: casual
+    setting: friendly
+    conjugation: negative past plain (～なかった)
+    speaker_gender: female
+    listener_gender: female
+    nuance: The casual 「見なかった」 fits a conversation between female friends. It's a simple statement of
+      fact about a past action that didn't occur.
+  - english: He didn't get up early yesterday.
+    japanese:
+      - 彼 は 昨日、早く {起き なかっ た}。
+      - 彼 は 昨日、早く 起き ませ ん でし た。
+    english_literally: He as for yesterday, early got up not.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 昨日、早く 起き ませ ん でし た。
+        english: He didn't get up early yesterday (polite).
+        hint: This uses the polite negative past form. We're looking for the plain form.
+      - competing_japanese:
+          - 彼 は 昨日、早く 起き て い ませ ん でし た。
+        english: He wasn't awake early yesterday.
+        hint: This describes a state of not being awake, not the act of not getting up. We're looking
+          for the simple past action that did not occur.
+    scene: A colleague is explaining why their coworker seemed tired.
+    register: casual
+    setting: professional
+    conjugation: negative past plain (～なかった)
+    speaker_gender: male
+    listener_gender: male
+    nuance: Used casually between male colleagues to explain a simple past event. 「起きなかった」 conveys the
+      action of not waking up early.
+  - english: I didn't think about it at all.
+    japanese:
+      - 私 は 全然 それ を {考え なかっ た}。
+      - 私 は 全然 それ を 考え ませ ん でし た。
+    english_literally: I as for at all that object marker thought not.
+    competing_grammar:
+      - competing_japanese:
+          - 私 は 全然 それ を 考え ませ ん でし た。
+        english: I didn't think about it at all (polite).
+        hint: This uses the polite negative past form. We're looking for the plain form.
+    scene: Someone is asked if they considered a particular option.
+    register: casual
+    setting: serious
+    conjugation: negative past plain (～なかった)
+  - english: The baby didn't sleep well last night.
+    japanese:
+      - 赤ちゃん は 昨夜、よく {寝 なかっ た}。
+      - 赤ちゃん は 昨夜、よく 寝 ませ ん でし た。
+    english_literally: Baby as for last night, well slept not.
+    competing_grammar:
+      - competing_japanese:
+          - 赤ちゃん は 昨夜、よく 寝 ませ ん でし た。
+        english: The baby didn't sleep well last night (polite).
+        hint: This uses the polite negative past form. We're looking for the plain form.
+      - competing_japanese:
+          - 赤ちゃん は 昨夜、よく 寝 て い ませ ん でし た。
+        english: The baby wasn't sleeping well last night.
+        hint: This describes a continuous state of not sleeping, rather than the simple past action. We're
+          looking for the simple past action that did not occur.
+    scene: A parent talks to their spouse about their baby's sleep.
+    register: casual
+    setting: intimate
+    conjugation: negative past plain (～なかった)
+    listener_gender: female
+    nuance: An intimate, casual remark shared between partners about a common domestic concern. 「寝なかった」
+      indicates the lack of proper sleep.
+  - english: The train didn't stop at this station.
+    japanese:
+      - 電車 は この 駅 に {止まら なかっ た}。
+      - 電車 は この 駅 に 止まり ませ ん でし た。
+    english_literally: Train as for this station at stopped not.
+    competing_grammar:
+      - competing_japanese:
+          - 電車 は この 駅 に 止まり ませ ん でし た。
+        english: The train didn't stop at this station (polite).
+        hint: This uses the polite negative past form. We're looking for the plain form.
+      - competing_japanese:
+          - 電車 は この 駅 に 止まっ て い ませ ん でし た。
+        english: The train wasn't stopped at this station.
+        hint: This describes a state of not being stopped, not the action of not stopping. We're looking
+          for the simple past action that did not occur.
+    scene: A commuter explains why they missed their stop.
+    register: casual
+    setting: informative
+    conjugation: negative past plain (～なかった)
+  - english: We didn't decide on anything yet.
+    japanese:
+      - 私 たち は まだ 何 も {決め なかっ た}。
+      - 私 たち は まだ 何 も 決め ませ ん でし た。
+    english_literally: We as for still nothing decided not.
+    competing_grammar:
+      - competing_japanese:
+          - 私 たち は まだ 何 も 決め ませ ん でし た。
+        english: We didn't decide on anything yet (polite).
+        hint: This uses the polite negative past form. We're looking for the plain form.
+      - competing_japanese:
+          - 私 たち は まだ 何 も 決め て い ませ ん。
+        english: We still haven't decided on anything.
+        hint: This implies that the decision has not yet been made, which is a state, rather than a past
+          action that didn't occur. We're looking for a simple past action that did not occur.
+    scene: A team member reports to their manager on progress.
+    register: casual
+    setting: professional
+    conjugation: negative past plain (～なかった)
+  - english: He didn't forget his wallet this time.
+    japanese:
+      - 彼 は 今度、財布 を {忘れ なかっ た}。
+      - 彼 は 今度、財布 を 忘れ ませ ん でし た。
+    english_literally: He as for this time, wallet object marker forgot not.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 今度、財布 を 忘れ ませ ん でし た。
+        english: He didn't forget his wallet this time (polite).
+        hint: This uses the polite negative past form. We're looking for the plain form.
+    scene: Someone comments on a friend's unusual preparedness.
+    register: casual
+    setting: humorous
+    conjugation: negative past plain (～なかった)
+  - english: I didn't answer the phone.
+    japanese:
+      - 私 は 電話 に {出 なかっ た}。
+      - 私 は 電話 に 出 ませ ん でし た。
+    english_literally: I as for phone to came out not.
+    competing_grammar:
+      - competing_japanese:
+          - 私 は 電話 に 出 ませ ん でし た。
+        english: I didn't answer the phone (polite).
+        hint: This uses the polite negative past form. We're looking for the plain form.
+      - competing_japanese:
+          - 私 は 電話 に 出る こと が でき なかっ た。
+        english: I wasn't able to answer the phone.
+        hint: This implies inability rather than a simple negation of a past action. We're looking for
+          a simple past action that did not occur.
+    scene: A teenager explains why they missed a call.
+    register: casual
+    setting: friendly
+    conjugation: negative past plain (～なかった)
+    speaker_age: younger
+    nuance: The casual 「出なかった」 is typical for a younger person explaining a simple past action to a peer
+      or family member. 「電話 に 出る」 is the common phrase for 'answering the phone'.
+  - english: The meeting didn't finish on time.
+    japanese:
+      - 会議 は 時間 通り に {終わら なかっ た}。
+      - 会議 は 時間 通り に 終わり ませ ん でし た。
+    english_literally: Meeting as for time-as-is at finished not.
+    competing_grammar:
+      - competing_japanese:
+          - 会議 は 時間 通り に 終わり ませ ん でし た。
+        english: The meeting didn't finish on time (polite).
+        hint: This uses the polite negative past form. We're looking for the plain form.
+      - competing_japanese:
+          - 会議 は 時間 通り に 終わっ て い ませ ん でし た。
+        english: The meeting wasn't finished on time.
+        hint: This describes a state of not being finished, not the action of not finishing. We're looking
+          for the simple past action that did not occur.
+    scene: A busy professional updates a colleague on their schedule.
+    register: casual
+    setting: professional
+    conjugation: negative past plain (～なかった)
+post_example_writeup: These examples demonstrate the versatility of the る-verb negative past tense in
+  various casual settings, from daily conversations to professional updates. It's a fundamental structure
+  for denying past actions.
+sources:
+  bunpro: https://bunpro.jp/grammar_points/る-verb-(negative-past)

@@ -128,7 +128,7 @@ py_binary(
     srcs = ["ai-clean.py"],
     visibility = ["//visibility:public"],
     deps = [
-        "//python/ai:aigen",
+        "//python/ai",
         "//python/grammar",
         "//python/utils/build_cache/memoize",
         "@pip//json5",
@@ -236,12 +236,13 @@ py_binary(
     ],
     visibility = ["//:__subpackages__"],
     deps = [
-        "//python/ai:aigen",
+        ":grammar",
+        "//python/ai",
+        "//python/console:display",
         "//python/grammar",
         "//python/mapreduce",
         "//python/utils/build_cache/memoize",
         "@pip//json_repair",
-        "@pip//pyyaml",
     ],
 )
 
@@ -276,6 +277,7 @@ py_binary(
     visibility = ["//:__subpackages__"],
     deps = [
         ":grammar",
+        "//python/console:display",
         "//python/grammar",
         "//python/mapreduce",
     ],
@@ -291,6 +293,7 @@ py_binary(
     visibility = ["//:__subpackages__"],
     deps = [
         ":grammar",
+        "//python/console:display",
         "//python/grammar",
         "//python/mapreduce",
         "//python/utils/visit_json",
@@ -308,6 +311,8 @@ py_binary(
     visibility = ["//:__subpackages__"],
     deps = [
         ":grammar",
+        "//python/console:display",
+        "//python/grammar",
         "//python/mapreduce",
         "@pip//pyyaml",
     ],
@@ -334,7 +339,8 @@ py_library(
     ],
     visibility = ["//:__subpackages__"],
     deps = [
-        "//python/ai:aigen",
+        "//python/ai",
+        "//python/console:display",
         "//python/grammar",
         "//python/mapreduce",
         "//python/mecab",

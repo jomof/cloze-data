@@ -44,15 +44,18 @@ false_friends:
     kind: similar expression
     nuance: 「そちら」 is the polite and formal counterpart to 「そっち」. While 「そっち」 is appropriate in casual
       settings, 「そちら」 should be used in professional or respectful contexts.
+    grammar_point: <suggest>:そちら (polite 'that way')
   - term: <suggest>:こっち (this way, near speaker)
     meaning: this way, here (casual, near the speaker)
     kind: similar expression
     nuance: 「こっち」 refers to the speaker's general direction or location, whereas 「そっち」 refers to the listener's.
+    grammar_point: <suggest>:こっち (this way, near speaker)
   - term: <suggest>:あっち (that way, far from both)
     meaning: that way, over there (casual, far from both speaker and listener)
     kind: similar expression
     nuance: 「あっち」 indicates a direction or location distant from both the speaker and the listener, in
       contrast to 「そっち」 which is near the listener.
+    grammar_point: <suggest>:あっち (that way, far from both)
   - term: どっち (which of two)
     meaning: which one (of two), which way (casual)
     kind: similar expression
@@ -242,31 +245,3 @@ examples:
     nuance: The use of 「僕」 (boku) for 'my' is common for younger male speakers. 「そっち に」 indicates the
       ball rolled in the general direction of the listener or where the listener might be looking. The
       sentence ends with 「よ」, a common particle used by children and in casual speech to inform or confirm.
-lint-errors:
-  - '[rule-13] unknown grammar at ''learn_after[0]'': ''<suggest>:そちら (polite ''that way'')''. You may
-    suggest new grammar points by adding a false_friend.'
-  - '[rule-13] unknown grammar at ''learn_after[1]'': ''<suggest>:あっち (that way, far from both)''. You
-    may suggest new grammar points by adding a false_friend.'
-  - '[rule-12] warning false_friends[0].grammar_point is missing or empty'
-  - '[rule-12] warning false_friends[1].grammar_point is missing or empty'
-  - '[rule-12] warning false_friends[2].grammar_point is missing or empty'
-  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    こっち に 来 て。'
-  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    そちら の 調子 は どう です か？'
-  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    お 手洗い は あちら です。'
-  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    あなた たち は 楽し そう です ね。'
-  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    私 は あちら の 方 が いい です。'
-  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    これ も いい です が、そちら も いい です ね。'
-  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    あなた の チーム も 強い です ね。'
-  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    そこ の 方 が 快適 です よ。'
-  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    すみ ませ ん、少し そちら に 寄っ て いただけ ます か。'
-  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    僕 の ボール、あそこ に 転がっ て いっ た よ。'

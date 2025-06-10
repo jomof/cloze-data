@@ -21,6 +21,7 @@ py_library(
     visibility = ["//:__subpackages__"],
     deps = [
         "//python/mecab",
+        "//python/utils/build_cache/memoize",
         "//python/utils/visit_json",
         "@pip//json5",
         "@pip//jsonschema",

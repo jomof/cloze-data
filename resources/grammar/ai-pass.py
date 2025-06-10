@@ -1,5 +1,5 @@
 import json
-from python.ai import aigen
+from python.ai import AiChatSession
 from python.grammar import clean_lint_memoize
 import os
 import textwrap
@@ -11,6 +11,7 @@ from json_repair import repair_json
 from grammar_summary import generate_summary, save_summary
 from python.console import display
 from python.utils.build_cache.memoize.memoize import memoize_to_disk
+from dumpyaml import dump_yaml
 
 def ws(s: str) -> str:
     return "\n".join(line.strip() for line in s.splitlines())
@@ -78,7 +79,7 @@ def PRIOR_GRAMMAR_POINT(prior_input_obj):
         [prior_input_replace]
         END PRIOR_GRAMMAR_POINT
 
-    """).replace("[prior_input_replace]", json.dumps(prior_input_obj, ensure_ascii=False, indent=4))
+    """).replace("[prior_input_replace]", dump_yaml(prior_input_obj))
 
 def ALL_GRAMMARS_SUMMARY(all_grammars_summary):
     return ws("""
@@ -89,10 +90,13 @@ def ALL_GRAMMARS_SUMMARY(all_grammars_summary):
         [prior_input_replace]
         END ALL_GRAMMARS_SUMMARY
 
-    """).replace("[prior_input_replace]", json.dumps(all_grammars_summary, ensure_ascii=False, indent=4))
+    """).replace("[prior_input_replace]", dump_yaml(all_grammars_summary))
 
 def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
     prior_input_obj = prior_grammar_point
+
+    if 'split_predecessor' in prior_input_obj:
+        del prior_input_obj['split_predecessor']
 
     prompt = '\n'.join([
         PERSONA, 
@@ -145,11 +149,8 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
             ** BEGIN PRIORITY INSTRUCTIONS ALGORITHM **
             Follow these steps:
                 ------------------------------------------------------------------------------------------
-                EXECUTE: Improve the learn_after field.
-                EXECUTE: Improve the learn_before field.
                 for each lint-error in the input:
                     **EXECUTE**: Fix the lint-error.
-                EXECUTE: Double-check. Did you really add a learn_after and/or learn_before field?
                 ------------------------------------------------------------------------------------------
             ** END PRIORITY INSTRUCTIONS ALGORITHM **
            """)
@@ -167,30 +168,50 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
     else:
         model = "gemini-2.0-flash-001"
     
-    for i in range(6):
-      try:
-        log_file = temp_dir + "/" + os.path.basename(output_file) + ".log"
-        response = memoize_to_disk("ai-pass", aigen, prompt + str(i), model, GRAMMAR_SCHEMA_WITH_COMMENTS, log_file)
+    basename = os.path.basename(output_file)
+
+    with AiChatSession(model, GRAMMAR_SCHEMA_WITH_COMMENTS) as session:
+        response = session.send_message(prompt)
         response = response.removeprefix("```json").removesuffix("\n").removesuffix("```")
         response = repair_json(response)
         json_response = json.loads(response)
-        json_response["id"] = id
-        
-        if 'rank' in json_response:
-            del json_response['rank']
-        if 'lesson_order' in json_response:
-            del json_response['lesson_order']
-        if 'bunpro' in json_response:
-            del json_response['bunpro']
-        if 'dojg' in json_response:
-            del json_response['dojg']
-        if len(sources) > 0:
-            json_response['sources'] = sources
+        original_json_response = dump_yaml(json_response)
+        j = 0
+        for _ in range(5):
+            json_resonse = clean_lint(json_response, output_file, all_grammars_summary)
+            lint_errors = json_resonse.get('lint-errors', [])
+            with open(temp_dir + "/" + os.path.basename(output_file)+f"-{j}.response", 'w', encoding='utf-8') as f:
+                f.write(original_json_response + f"\n\nLint errors:\n{lint_errors}")
+            
+            if lint_errors:
+                display.warn(f"{len(lint_errors)} lint errors found {basename}")
 
-        return clean_lint(json_response, output_file, all_grammars_summary)
-      except Exception as e:
-        if i == 2:
-            raise e
+                new_prompt = f"There were lint errors in the previous response.\nPlease fix them and return a valid JSON response.\n{dump_yaml(lint_errors)}"
+                with open(temp_dir + "/" + os.path.basename(output_file)+f"-{j+1}.prompt", 'w', encoding='utf-8') as f:
+                    f.write(new_prompt)
+                response = session.send_message(new_prompt)
+                json_response = json.loads(response)
+                original_json_response = dump_yaml(json_resonse)
+            else:
+                break
+            j += 1
+
+
+    json_response["id"] = id
+    
+    if 'rank' in json_response:
+        del json_response['rank']
+    if 'lesson_order' in json_response:
+        del json_response['lesson_order']
+    if 'bunpro' in json_response:
+        del json_response['bunpro']
+    if 'dojg' in json_response:
+        del json_response['dojg']
+    if len(sources) > 0:
+        json_response['sources'] = sources
+
+    return clean_lint(json_response, output_file, all_grammars_summary)
+ 
 
 if __name__ == '__main__':
     try:
@@ -208,6 +229,7 @@ if __name__ == '__main__':
         display.check(f"Generated grammar summary with {len(grammar_summary['all-grammar-points'])} grammar points.")
 
         async def lint(parsed_obj, file_path):
+            # if parsed_obj['id'] != 'gp0013': return None
             # Convert original object to JSON for comparison
             original_json = json.dumps(parsed_obj, ensure_ascii=False, sort_keys=True)
             
@@ -237,7 +259,7 @@ if __name__ == '__main__':
                     "func": logic,
                 }
             },
-            max_threads          = 30,
+            max_threads          = 5,
         )
 
         result = asyncio.run(mr.run())

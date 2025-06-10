@@ -1,6 +1,6 @@
 grammar_point: 真(っ) (completely)
 learn_before:
-  - とても (very, extremely)
+  - <suggest>:とても (very, extremely)
   - すぎる (too much・excessive)
 learn_after:
   - 極まりない・極まる (extreme degree)
@@ -43,7 +43,7 @@ false_friends:
     kind: similar expression
     nuance: Unlike 真(っ), とても is a general adverb for intensity that functions as a standalone word. It
       does not cause euphonic changes or integrate directly into the modified word, and its usage is broader.
-    grammar_point: とても (very, extremely)
+    grammar_point: <suggest>:とても (very, extremely)
   - term: 本当に
     meaning: Really, truly
     kind: similar expression
@@ -343,9 +343,3 @@ post_example_writeup: As you can see from these examples, the prefix 真 (ma) is
   in Japanese.
 sources:
   bunpro: https://bunpro.jp/grammar_points/真(っ)
-lint-errors:
-  - '[rule-13] unknown grammar at ''learn_before[0]'': ''とても (very, extremely)''. You may suggest new
-    grammar points by adding a false_friend.'
-  - '[rule-13] warning unknown grammar at ''false_friends[0]'': ''とても (very, extremely)''. It **MUST**
-    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
-    grammar point.'

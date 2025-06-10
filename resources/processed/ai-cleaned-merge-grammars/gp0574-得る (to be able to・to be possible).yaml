@@ -2,7 +2,7 @@ grammar_point: 得る (to be able to・to be possible)
 learn_before:
   - れる られる (passive・potential・spontaneous・respectful)
   - することができる (can・be able to)
-  - できる (general ability)
+  - <suggest>:できる (general ability)
   - かもしれない (might)
   - はずだ (expected to be)
 learn_after:
@@ -123,13 +123,13 @@ false_friends:
     nuance: 「できる」 expresses general ability or possibility and is more colloquial, used in a wide range
       of contexts. In contrast, 「得る」 focuses on specific achievability or potential capability, implying
       that the possibility for (A) to occur has arisen. It carries a more formal, literary tone.
-    grammar_point: できる (general ability)
+    grammar_point: <suggest>:できる (general ability)
   - term: 可能性がある
     meaning: There is a possibility
     kind: similar expression
     nuance: 「可能性がある」 directly states the existence of a possibility. However, 「得る」 connects to a verb
       and carries a stronger nuance that the action is "inherently possible" or achievable.
-    grammar_point: 可能性がある (there is a possibility)
+    grammar_point: <suggest>:可能性がある (there is a possibility)
   - term: かもしれない
     meaning: Might, maybe, perhaps
     kind: similar expression
@@ -434,12 +434,3 @@ post_example_writeup: As demonstrated in the examples, 「得る・うる」 is 
   helps differentiate it from more general expressions of ability like 「できる」 or the potential form.
 sources:
   bunpro: https://bunpro.jp/grammar_points/得る-得る
-lint-errors:
-  - '[rule-13] unknown grammar at ''learn_before[2]'': ''できる (general ability)''. You may suggest new
-    grammar points by adding a false_friend.'
-  - '[rule-13] warning unknown grammar at ''false_friends[1]'': ''できる (general ability)''. It **MUST**
-    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
-    grammar point.'
-  - '[rule-13] warning unknown grammar at ''false_friends[2]'': ''可能性がある (there is a possibility)''. It
-    **MUST** be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest
-    a new grammar point.'

@@ -1,1444 +1,270 @@
 grammar_point: ないでください・ないで (please don't)
-learn_before:
-  - Verb[て] (and then)
-  - う-verb (dictionary)
-  - ないでください・ないで (please don't)
 learn_after:
   - ずに (without doing)
   - なくしては (indispensable condition)
-  - '[Verb-dictionary]ことなく (without doing)'
+  - <suggest>:Verb[dictionary]ことなく (without doing)
   - ないことには〜ない (unless ~ will not)
   - ずに済む (get by without)
   - まい (won't・probably not)
 id: gp0195
-split_predecessor: |
-  Multiple old grammar points have been combined into one: 'ないで (without doing or don't)', 'Verb[ないで] (please don't)', 'ないでください (please don't)' -> 'ないでください・ないで (please don't)'. Please create a unified grammar point that incorporates the relevant aspects of all the old points. Please recreate this grammar point with this information in mind. All fields **MUST** be suitable for the new name. For your reference, here is the old content:
+meaning: Please don't (do something); do not
+pronunciation:
+  katakana: ナイデクダサイ
+  romaji: naide kudasai
+formation:
+  Verb (ない form) + でください: Polite negative request.
+  Verb (ない form) + で: Casual negative request.
+jlpt: N5
+details:
+  part-of-speech: auxiliary verb
+  register: teineigo (polite)
+  usage-context: Used for general requests not to perform an action. Can be used in both polite and casual
+    contexts depending on the ending.
+  function: Expresses a negative request or prohibition.
+  nuance: Used to ask or tell someone not to do something. The use of ください softens the command to a polite
+    request. Without ください, it is a more direct, casual instruction or mild command.
+etymology: The negative form ～ない combines with the te-form of the verb する which is で (acting as a conjunctive
+  particle or marking a means/state). Historically, this comes from ～ないにて, where にて is the classical te-form
+  of に, implying 'in a state of not doing' or 'by means of not doing'. ください is the imperative form of
+  くださる, an honorific verb meaning 'to give'. Therefore, ～ないでください literally means 'please bestow the favor
+  of not doing ～'. This linguistic evolution underpins its function as a polite negative request.
+writeup: |-
+  The grammar point 「ないでください・ないで」is used to express a negative request or to tell someone not to do something. It is formed by taking the negative plain form of a verb (～ない form) and adding either 「でください」for a polite request or simply 「で」for a casual request.
 
-  === ないで (without doing or don't) ===
-  grammar_point: ないで (without doing or don't)
-  learn_before:
-    - Verb[て] (and then)
-    - う-verb (dictionary)
-    - ないでください・ないで (please don't)
-  learn_after:
-    - ずに (without doing)
-    - なくしては (indispensable condition)
-    - ことなく (without doing)
-    - ないことには〜ない (unless ~ will not)
-    - ずに済む (get by without)
-    - まい (won't・probably not)
-  id: gp0195
-  meaning: Without doing; Don't do (a request)
-  pronunciation:
-    katakana: ナイデ
-    romaji: naide
-  formation:
-    Verb[ない形] + で: Indicates an action performed without performing another action, or a request to not
-      perform an action.
-  jlpt: N4
-  details:
-    part-of-speech: phrase
-    usage-context: General
-  etymology: The grammar point 「ないで」 is formed from the negative auxiliary verb 「ない」 and the particle 「で」.
-    「で」 here retains its meaning of 'by means of' or 'with'. Therefore, it literally means 'by not doing'.
-  writeup: The grammar point 「ないで」 (naide) functions in two primary ways. Firstly, it expresses an action
-    (B) performed without first performing another action (A). This often implies that action (A) was expected
-    but omitted, or that the omission of (A) is notable or surprising. For instance, 「朝ご飯を{食べないで}学校へ行った」
-    (I went to school without eating breakfast) highlights the absence of eating breakfast before going
-    to school.Secondly, 「ないで」 can be used to form polite negative requests or commands, indicating that
-    one should not perform an action. For example, 「まだ{帰らないで}ください」 (Please don't go home yet) is a polite
-    way to ask someone to refrain from leaving.It is crucial to distinguish 「ないで」 from 「なくて」. While both
-    involve negation, 「ないで」 emphasizes the manner in which an action is performed (i.e., *without* doing
-    something else) or a direct request *not to do* something. In contrast, 「なくて」 typically expresses a
-    reason or cause for a state or action (e.g., 「時間がなくて行けなかった」 - I couldn't go *because I didn't have time*).
-    「なくて」 focuses on the preceding clause as the *reason* for the following clause, whereas 「ないで」 connects
-    two actions where the first is merely unperformed in relation to the second.
-  false_friends:
-    - term: ないでください
-      meaning: Please don't do...
-      kind: similar expression
-      nuance: While 「ないで」 can be used in general statements of not doing something, 「ないでください」 is specifically
-        a polite request to *refrain* from an action.
-      grammar_point: ないでください・ないで (please don't)
-    - term: ずに
-      meaning: Without doing
-      kind: similar expression
-      nuance: While 「ないで」 is versatile for both 'without doing' and negative requests in various contexts,
-        「ずに」 primarily means 'without doing' and is generally considered more formal or literary.
-      grammar_point: ずに (without doing)
-    - term: なくて
-      meaning: Without doing; Because not
-      kind: often confused with
-      nuance: Unlike 「ないで」 which emphasizes an action performed without another, 「なくて」 primarily indicates
-        a reason or cause for something not being done, often leading to a negative consequence or state.
-      grammar_point: なくて (conjunction)
-    - term: てください
-      meaning: Please do (Polite request)
-      kind: antonym
-      nuance: Unlike 「ないで」 which expresses an action without doing another or a negative request, 「～てください」
-        is a polite request to *do* something.
-      grammar_point: てください (polite request)
-    - term: なさい
-      meaning: Command to do
-      kind: antonym
-      nuance: Unlike 「ないで」 which expresses an action without doing another or a negative request, 「～なさい」
-        is a direct command to *do* something.
-      grammar_point: なさい (polite imperative)
-    - term: な
-      meaning: Don't, Do not (Prohibitive)
-      kind: synonym
-      nuance: Unlike the broader uses of 「ないで」, 「～な」 is a very strong, casual, and direct prohibitive command
-        to *not* do something.
-      grammar_point: な (prohibitive particle)
-    - term: Verb[ない] + まま
-      meaning: While remaining in a state of not doing; without having done
-      kind: similar expression
-      nuance: While 「ないで」 indicates an action performed without another action, 「ないまま」 specifically emphasizes
-        that the state of 'not having done' something persists during the subsequent action. It literally
-        means 'as if not having done'.
-      grammar_point: まま (as is)
-  post_false_friends_writeup: To avoid confusion between 「ないで」, 「ずに」, and 「なくて」, remember that 「ないで」 is
-    a general way to express doing something without something else. 「ずに」 is its more formal counterpart,
-    and 「なくて」 implies a reason or cause for something not being done.
-  examples:
-    - english: He went out without taking an umbrella.
-      japanese:
-        - 彼 は 傘 を {持た ない で} 出かけ た。
-        - 彼、傘 を {持た ない で} 出かけ ちゃっ た よ。
-        - 彼 は 傘 を {持た ない で} 家 を 出 て いっ た。
-        - 彼 は 傘 を {持た ない で} 外 へ 出 た。
-      english_literally: He umbrella not-having went out.
-      competing_grammar:
-        - competing_japanese:
-            - 彼 は 傘 を {持た ず に} 出かけ た。
-          english: He went out without taking an umbrella (more formal).
-          hint: 「ずに」 is another way to say 'without doing something', but it often carries a more formal
-            or literary nuance than 「ないで」. We're looking for a common, versatile expression.
-        - competing_japanese:
-            - 傘 が {なく て} 彼 は 出かけ た。
-          english: Because he didn't have an umbrella, he went out.
-          hint: 「なくて」 indicates a reason or cause. Here, we're talking about performing an action while
-            omitting another, not a reason for the action. We're looking for 'without doing'.
-        - competing_japanese:
-            - 傘 を 持っ {て 出かけ て ください}。
-          english: Please take an umbrella and go out.
-          hint: The sentence indicates an action performed without another. This is a request to do something.
-            We're looking for the original meaning of 'without'.
-        - competing_japanese:
-            - 傘 を 持っ {て 出かけ なさい}。
-          english: Take an umbrella and go out!
-          hint: This is a direct command. We're looking for the original meaning of 'without doing'.
-        - competing_japanese:
-            - 傘 を {持つ な}。
-          english: Don't take an umbrella.
-          hint: 「～な」 is a very strong, direct prohibitive command, often used in casual or angry contexts,
-            and usually applies to a single action. Here, we're describing an action taken *without* another
-            action. We're looking for the sense of 'without doing'.
-        - competing_japanese:
-            - 彼 は 傘 を {持た ない まま} 出かけ た。
-          english: He went out without having an umbrella (the state of not having continued).
-          hint: 「～ないまま」 indicates that an action was performed while a certain state (of not doing something)
-            continued. While very similar, 「ないで」 is more general for describing an action done *without*
-            another. We're looking for a straightforward 'without doing'.
-      scene: A man quickly leaves his house despite the weather.
-      register: casual
-      setting: cautious
-      speaker_gender: male
-      listener_gender: male
-      nuance: The use of 「持たないで」 here indicates the action of leaving was done while omitting the action
-        of bringing an umbrella, implying it was a choice or oversight. The casual tone suits the everyday
-        observation.
-      etymology: 「出かける」 comes from 「出る」 (to go out) and 「掛ける」 (to hang, to start). Here, it means to start
-        going out or to depart.
-    - english: She quit the company without telling anyone.
-      japanese:
-        - 彼女 は 誰 に も {言わ ない で} 会社 を 辞め た。
-        - 彼女 は 誰 に も {言わ ない で} 会社 を 辞め ちゃっ た。
-        - 彼女 は 誰 に も 伝え {ない で} 会社 を 退職 し た。
-        - 彼女 は 誰 に も {話さ ない で} 会社 を 辞め た。
-      english_literally: She anyone to not-saying company quit.
-      competing_grammar:
-        - competing_japanese:
-            - 彼女 は 誰 に も {言わ ず に} 会社 を 辞め た。
-          english: She quit the company without telling anyone (more formal).
-          hint: 「ずに」 is a more formal alternative for 'without doing something'. We're looking for a more
-            common, everyday expression.
-        - competing_japanese:
-            - 誰 に も {言わ なく て} 彼女 は 会社 を 辞め た。
-          english: Because she didn't tell anyone, she quit the company.
-          hint: 「なくて」 indicates a reason or cause. The original sentence describes the *manner* in which
-            she quit. We're looking for 'without doing'.
-        - competing_japanese:
-            - 誰 に も {言い なさい}。
-          english: Tell everyone!
-          hint: This is a direct command. The original sentence describes an action taken without another
-            action. We're looking for 'without doing'.
-        - competing_japanese:
-            - 誰 に も {言う な}。
-          english: Don't tell anyone.
-          hint: 「～な」 is a strong, direct prohibitive command. The original sentence describes an action
-            taken without another action. We're looking for the sense of 'without doing'.
-        - competing_japanese:
-            - 彼女 は 誰 に も {言わ ない まま} 会社 を 辞め た。
-          english: She quit the company without having told anyone (the state of not telling continued).
-          hint: 「～ないまま」 indicates that an action was performed while a certain state (of not doing something)
-            continued. While very similar, 「ないで」 is more general for describing an action done *without*
-            another. We're looking for a straightforward 'without doing'.
-      scene: Colleagues are surprised by a coworker's sudden departure.
-      register: semi-formal
-      setting: informative
-      speaker_gender: female
-      listener_gender: female
-      nuance: 「言わないで」 signifies the action of quitting was done while omitting the act of telling anyone.
-        The use of 「辞めた」 (quit) combined with 「誰に も」 (to anyone) emphasizes the suddenness and lack of communication,
-        suitable for relaying a surprising event.
-      etymology: 「辞める」 (やめる) means to quit or resign. Its kanji 「辞」 relates to words, suggesting the act
-        of formally notifying resignation, though here it's used with 「ないで」 to convey the opposite.
-    - english: I failed when I tried cooking without looking at the recipe.
-      japanese:
-        - レシピ を {見 ない で} 料理 を 作っ たら 失敗 し た。
-        - レシピ {見 ない で} 料理 作っ たら 失敗 し ちゃっ た。
-        - レシピ を {見 ない で} 料理 を 作ろう と し たら 失敗 し た。
-        - レシピ を {見 ない で} 作っ たら 料理 が 失敗 し た。
-      english_literally: Recipe not-seeing cooking if-I-made failed.
-      competing_grammar:
-        - competing_japanese:
-            - レシピ を {見 ず に} 料理 を 作っ たら 失敗 し た。
-          english: I failed when I tried cooking without looking at the recipe (more formal).
-          hint: 「ずに」 is a more formal alternative for 'without doing something'. We're looking for a more
-            common, everyday expression.
-        - competing_japanese:
-            - レシピ を {見 なく て} 料理 を 作っ たら 失敗 し た。
-          english: Because I didn't look at the recipe, I failed when I tried cooking.
-          hint: 「なくて」 indicates a reason or cause. The original sentence describes the *manner* in which
-            the cooking was done. We're looking for 'without doing'.
-        - competing_japanese:
-            - レシピ を 見 て 料理 を {作っ て ください}。
-          english: Please look at the recipe and cook.
-          hint: The sentence describes an action taken without another. This is a request to do something.
-            We're looking for the original meaning of 'without doing'.
-        - competing_japanese:
-            - レシピ を 見 て 料理 を {作り なさい}。
-          english: Look at the recipe and cook!
-          hint: This is a direct command. The original sentence describes an action taken without another
-            action. We're looking for 'without doing'.
-        - competing_japanese:
-            - レシピ を {見る な}。
-          english: Don't look at the recipe.
-          hint: 「～な」 is a very strong, direct prohibitive command, often used in casual or angry contexts.
-            Here, we're describing an action taken *without* another action. We're looking for the sense
-            of 'without doing'.
-        - competing_japanese:
-            - レシピ を {見 ない まま} 料理 を 作っ たら 失敗 し た。
-          english: I failed when I tried cooking without having looked at the recipe (the state of not looking
-            continued).
-          hint: 「～ないまま」 indicates that an action was performed while a certain state (of not doing something)
-            continued. While very similar, 「ないで」 is more general for describing an action done *without*
-            another. We're looking for a straightforward 'without doing'.
-      scene: Someone admits to a friend that their culinary experiment didn't go well.
-      register: casual
-      setting: humorous
-      speaker_gender: female
-      listener_gender: female
-      nuance: 「見ないで」 naturally states the condition of not looking at the recipe, leading to the failure.
-        The casual tone of the Japanese (e.g., 「失敗 した」) and the setting of a humorous admission among friends
-        fits well.
-      etymology: 「失敗」 (しっぱい) is a compound noun and verb meaning 'failure' or 'to fail'. 「失」 means 'lose'
-        and 「敗」 means 'defeat'.
-    - english: Please don't worry. I'm here.
-      japanese:
-        - 心配 {し ない で} ください。私 が い ます から。
-        - 心配 {し ない で} ね。私 が いる から。
-        - 心配 {し ない で}。私 が いる から。
-        - 心配 {し ない で} 済む よ。私 が 付い て いる から。
-      english_literally: Worry not-doing please. I am here because.
-      competing_grammar:
-        - competing_japanese:
-            - 心配 {し て ください}。私 が い ます から。
-          english: Please worry. I'm here.
-          hint: This is a polite request to *do* something, the opposite of the original sentence. We're
-            looking for a polite request to *not* do something.
-        - competing_japanese:
-            - 心配 {し なさい}。
-          english: Worry!
-          hint: This is a direct command to *do* something. We're looking for a polite request to *not*
-            do something.
-        - competing_japanese:
-            - 心配 {する な}。
-          english: Don't worry.
-          hint: 「～な」 is a very direct and strong prohibitive command, often considered harsh depending on
-            context. While it means 'don't do', it lacks the politeness of the original request. We're looking
-            for a polite negative request.
-        - competing_japanese:
-            - 心配 {し て は いけ ませ ん}。
-          english: You must not worry.
-          hint: 「～てはいけません」 is a strong prohibition, indicating something is forbidden or not allowed. The
-            original sentence is a softer, reassuring request. We're looking for a gentle negative request.
-      scene: A friend comforts another after a minor setback, assuring them of support.
-      register: teineigo (polite)
-      setting: supportive
-      speaker_gender: female
-      listener_gender: female
-      nuance: The use of 「ないでください」 creates a soft and comforting tone for the request. The addition of 「私
-        が いますから」 (because I am here) further emphasizes the supportive and reassuring nuance. For the second
-        example 「心配 {しないで} ね」 adds a gentle, feminine touch, common among female friends. The third example
-        「心配 {しないで}」 without 「ください」 is a more direct, yet still caring, casual address.
-      etymology: 「心配」 (しんぱい) combines 「心」 (heart, mind) and 「配」 (distribute, arrange), literally meaning
-        'to distribute one's heart' or 'to worry'.
-    - english: Don't make noise here anymore.
-      japanese:
-        - もう ここ で {騒が ない で} よ。
-        - もう ここ で {騒が ない で}。
-        - もう ここ で {騒が ない で} ください。
-        - もう ここ で は {騒が ない で} ほしい。
-      english_literally: Already here not-making-noise particle.
-      competing_grammar:
-        - competing_japanese:
-            - もう ここ で {騒い で ください}。
-          english: Please make noise here anymore.
-          hint: This is a polite request to *do* something, the opposite of the original sentence. We're
-            looking for a negative request.
-        - competing_japanese:
-            - もう ここ で {騒ぎ なさい}。
-          english: Make noise here anymore!
-          hint: This is a direct command to *do* something. We're looking for a negative request.
-        - competing_japanese:
-            - もう ここ で {騒ぐ な}。
-          english: Don't make noise here anymore.
-          hint: 「～な」 is a very direct and strong prohibitive command, often considered harsh. While it means
-            'don't do', it's much harsher than the original request using 「ないで」. We're looking for a slightly
-            softer prohibitive.
-        - competing_japanese:
-            - もう ここ で {騒い で は いけ ませ ん}。
-          english: You must not make noise here anymore.
-          hint: 「～てはいけません」 is a strong prohibition, indicating something is forbidden. The original sentence
-            is a direct request or command, but often less formal or strict than 「～てはいけません」. We're looking
-            for a more common negative command.
-      scene: A man asks a noisy child to quiet down in a public space.
-      register: casual
-      setting: commanding
-      speaker_gender: male
-      listener_gender: male
-      speaker_age: older
-      nuance: The final particle 「よ」 in 「騒がないで よ」 adds a direct, emphatic, but not overly aggressive tone,
-        common for a male speaker addressing a younger person or child. It's a casual warning. The second
-        example 「騒がないで」 is slightly less emphatic but still firm. The third example 「騒がないで ください」 is a polite
-        request, suitable if the speaker wanted to soften the command.
-      etymology: 「騒ぐ」 (さわぐ) means to make noise, be boisterous. It is related to commotion or disturbance.
-    - english: She worked straight through the afternoon without taking a break.
-      japanese:
-        - 彼女 は 休憩 を {取ら ない で} 午後 も ずっと 働い た。
-        - 彼女 は 休憩 {取ら ない で} 午後 も ぶっ通し で 働い た。
-        - 彼女 は 休憩 {取ら ない で} 昼 から ずっと 働い た。
-        - 彼女 は 休憩 を {取ら ない で} 午後 中 働い た。
-      english_literally: She break not-taking afternoon also continuously worked.
-      competing_grammar:
-        - competing_japanese:
-            - 彼女 は 休憩 を {取ら ず に} 午後 も ずっと 働い た。
-          english: She worked straight through the afternoon without taking a break (more formal).
-          hint: 「ずに」 is a more formal alternative for 'without doing something'. We're looking for a more
-            common, everyday expression.
-        - competing_japanese:
-            - 彼女 は 休憩 が {なく て} 午後 も ずっと 働い た。
-          english: Because she didn't have a break, she worked straight through the afternoon.
-          hint: 「なくて」 indicates a reason or cause. The original sentence describes the *manner* in which
-            she worked. We're looking for 'without doing'.
-        - competing_japanese:
-            - 彼女 は 休憩 を {取ら ない まま} 午後 も ずっと 働い た。
-          english: She worked straight through the afternoon without having taken a break (the state of
-            not taking continued).
-          hint: 「～ないまま」 indicates that an action was performed while a certain state (of not doing something)
-            continued. While very similar, 「ないで」 is more general for describing an action done *without*
-            another. We're looking for a straightforward 'without doing'.
-      scene: A coworker observes their diligent colleague.
-      register: semi-formal
-      setting: informative
-      speaker_gender: male
-      listener_gender: group
-      nuance: 「取らないで」 emphasizes the omission of taking a break while continuing to work. The phrase 「午後
-        も ずっと」 (throughout the afternoon as well) highlights the continuous nature of her work. This phrasing
-        is common when describing someone's dedication or diligence. The second example uses 「ぶっ通し で」 (continuously,
-        straight through), adding more emphasis to the unbroken work period.
-      etymology: 「休憩」 (きゅうけい) combines 「休」 (rest) and 「憩」 (repose), meaning a period of rest or a break.
-    - english: It's not good to be late without contacting.
-      japanese:
-        - 連絡 を {し ない で} 遅刻 する の は よく ない。
-        - 連絡 も {し ない で} 遅刻 する の は よく ない。
-      english_literally: Contact not-doing late being is not-good.
-      competing_grammar:
-        - competing_japanese:
-            - 連絡 を {せ ず に} 遅刻 する の は 難しい。
-            - 連絡 も {せ ず に} 遅刻 する の は 良く ない。
-          english: It's not good to be late without contacting (more formal).
-          hint: 「ずに」 is a more formal alternative for 'without doing something'. We're looking for a more
-            common, everyday expression.
-        - competing_japanese:
-            - 連絡 が {なく て} 遅刻 する の は よく ない。
-          english: Because there's no daily study, it's difficult to pass a test.
-          hint: 「なくて」 indicates a reason or cause. The original sentence describes the *manner* of being
-            late. We're looking for 'without doing'.
-        - competing_japanese:
-            - 連絡 {なし で} 遅刻 する の は よく ない。
-          english: It's not good to be late without contact.
-          hint: 「～なしで」 uses the noun 「なし」 (absence) with 「で」 to mean 'without'. While similar, it can feel
-            slightly more formal or direct compared to the verb conjugation of 「ないで」. We're looking for
-            a verbal construction of 'without doing'.
-        - competing_japanese:
-            - 連絡 を {し ない まま} 遅刻 する の は よく ない。
-          english: It's not good to be late without having contacted (the state of not contacting continued).
-          hint: 「～ないまま」 indicates that an action was performed while a certain state (of not doing something)
-            continued. While very similar, 「ないで」 is more general for describing an action done *without*
-            another. We're looking for a straightforward 'without doing'.
-      scene: A supervisor gives advice to a new employee about workplace etiquette.
-      register: teineigo (polite)
-      setting: instructional
-      speaker_gender: male
-      listener_gender: group
-      speaker_age: older
-      nuance: This phrasing would be typical of an older male supervisor giving general workplace guidance.
-        The straightforward statement 「よくない」 (is not good) combined with 「ないで」 makes it clear advice without
-        being overly strict, suitable for a formal instructional context. The second example adds 「も」 to
-        「しないで」, adding an emphasis of 'even without contacting', implying it's even worse.
-      etymology: 「連絡」 (れんらく) combines 「連」 (to link, connect) and 「絡」 (to entwine, entangle), meaning communication
-        or contact. 「遅刻」 (ちこく) combines 「遅」 (late) and 「刻」 (time, moment), meaning to be late or tardy.
-    - english: I want you not to tell him about that.
-      japanese:
-        - 彼 に その こと を {言わ ない で} 欲しい ん だ。
-        - 彼 に その こと {言わ ない で} 欲しい。
-        - 彼 に は その こと を {話さ ない で} 欲しい ん だ。
-      english_literally: Him to that thing not-saying I-want-it.
-      competing_grammar:
-        - competing_japanese:
-            - 彼 に その こと を {伝え て 欲しい} ん だ。
-          english: I want you to tell him about that.
-          hint: This is a request to *do* something, the opposite of the original sentence. We're looking
-            for a request to *not* do something.
-        - competing_japanese:
-            - 彼 に その こと を {伝える な}。
-          english: Don't tell him about that.
-          hint: 「～な」 is a very direct and strong prohibitive command. While it means 'don't do', it lacks
-            the nuance of a personal desire expressed by 「～て欲しい」. We're looking for an expression of desire.
-        - competing_japanese:
-            - 彼 に その こと を {言っ て は いけ ない}。
-          english: You must not tell him about that.
-          hint: 「～てはいけない」 is a strong prohibition, indicating something is forbidden. The original sentence
-            expresses a personal desire for someone not to do something, which is softer than a general
-            prohibition. We're looking for an expression of desire.
-      scene: A person confides a secret to a close friend and asks for discretion.
-      register: shitashii kuchō (intimate)
-      setting: serious
-      speaker_gender: female
-      listener_gender: female
-      nuance: The use of 「欲しいんだ」 (I want it, in a slightly explanatory or casual tone) in combination with
-        「言わないで」 creates an intimate and earnest plea. This phrasing, particularly the 「～んだ」 ending, is common
-        among close female friends sharing something sensitive. The second example, 「言わないで 欲しい」, is slightly
-        less explanatory but maintains the intimacy.
-      etymology: 「欲しい」 (ほしい) is an adjective meaning 'wanted' or 'desired'. When combined with the て-form
-        of a verb (or in this case, ないで), it expresses a desire for someone to do (or not to do) something.
-    - english: It's difficult to pass a test without studying every day.
-      japanese:
-        - 毎日 勉強 を {し ない で} テスト に 合格 する の は 難しい。
-        - 毎日 勉強 を {し ない で} は テスト に 合格 でき ない。
-      english_literally: Everyday study not-doing test to pass is difficult.
-      competing_grammar:
-        - competing_japanese:
-            - 毎日 勉強 を {せ ず に} テスト に 合格 する の は 難しい。
-          english: It's difficult to pass a test without studying every day (more formal).
-          hint: 「ずに」 is a more formal alternative for 'without doing something'. We're looking for a more
-            common, everyday expression.
-        - competing_japanese:
-            - 毎日 勉強 が {なく て} テスト に 合格 する の は 難しい。
-          english: Because there is no daily study, it's difficult to pass a test.
-          hint: 「なくて」 indicates a reason or cause. The original sentence describes the *condition* for passing.
-            We're looking for 'without doing'.
-        - competing_japanese:
-            - 毎日 勉強 {なし で} テスト に 合格 する の は 難しい。
-          english: It's not good to pass a test without daily study.
-          hint: 「～なしで」 uses the noun 「なし」 (absence) with 「で」 to mean 'without'. While similar, it can feel
-            slightly more formal or direct compared to the verb conjugation of 「ないで」. We're looking for
-            a verbal construction of 'without doing'.
-        - competing_japanese:
-            - 毎日 勉強 を {し ない まま} テスト に 受かる の は 難しい よ。
-          english: It's difficult to pass a test without having studied every day (the state of not studying
-            continued).
-          hint: 「～ないまま」 indicates that an action was performed while a certain state (of not doing something)
-            continued. While very similar, 「ないで」 is more general for describing an action done *without*
-            another. We're looking for a straightforward 'without doing'.
-      scene: A student discusses their struggles with a friend.
-      register: casual
-      setting: academic
-      speaker_gender: male
-      listener_gender: male
-      nuance: This sentence uses 「ないで」 to indicate the condition of not studying daily, making passing difficult.
-        It's a common lament among students. The inclusion of 「毎日」 (every day) emphasizes the consistent
-        effort required. The second example uses 「ないで は」 (cannot without doing) to emphasize the impossibility
-        without daily study.
-      etymology: 「合格」 (ごうかく) means passing an exam. 「合」 means 'to fit, meet' and 「格」 (かく) means 'status,
-        rule', thus 'meeting the standard'. 「難しい」 (むずかしい) means difficult, challenging.
-    - english: Don't forget your homework.
-      japanese:
-        - 宿題 を {忘れ ない で} ね。
-        - 宿題 {忘れ ない で}。
-        - 宿題 を {忘れ ない で} ください。
-      english_literally: Homework not-forgetting particle.
-      competing_grammar:
-        - competing_japanese:
-            - 宿題 を {忘れ て ください}。
-          english: Please forget your homework.
-          hint: This is a polite request to *do* something, the opposite of the original sentence. We're
-            looking for a polite request to *not* do something.
-        - competing_japanese:
-            - 宿題 を {忘れ なさい}。
-          english: Forget your homework!
-          hint: This is a direct command to *do* something. We're looking for a polite request to *not*
-            do something.
-        - competing_japanese:
-            - 宿題 を {忘れる な}。
-          english: Don't forget your homework!
-          hint: 「～な」 is a very direct and strong prohibitive command, often considered harsh depending on
-            context. While it means 'don't do', it lacks the gentleness and nuance of a reminder. We're
-            looking for a softer, cautionary request.
-        - competing_japanese:
-            - 宿題 を {忘れ て は いけ ませ ん}。
-          english: You must not forget your homework.
-          hint: 「～てはいけません」 is a strong prohibition, indicating something is forbidden. The original sentence
-            is a softer, more personal reminder. We're looking for a gentle negative request.
-      scene: A parent reminds their child before they leave for school.
-      register: casual
-      setting: instructional
-      speaker_gender: female
-      listener_gender: male
-      nuance: The phrase 「忘れ ない で ね」 is a common, gentle, yet firm reminder used by parents or guardians
-        to children. The particle 「ね」 softens the imperative nature, making it sound more like a caring
-        prompt than a strict command. This casual register is typical for intimate family interactions.
-        If the speaker wanted to be more formal, they might use 「忘れ ない で ください」.
-      etymology: 「宿題」 (しゅくだい) combines 「宿」 (lodging, inn; implying 'assigned to one's residence') and 「題」
-        (topic, subject), referring to tasks given to be completed at home. 「忘れる」 (わすれる) means to forget.
-    - english: Please don't open that box.
-      japanese:
-        - その 箱 を {開け ない で} ください。
-        - その 箱 {開け ない で} ね。
-        - その 箱 は {開け ない で} 欲しい。
-      english_literally: That box not-opening please.
-      competing_grammar:
-        - competing_japanese:
-            - その 箱 を {開け て ください}。
-          english: Please open that box.
-          hint: This is a polite request to *do* something, the opposite of the original sentence. We're
-            looking for a polite request to *not* do something.
-        - competing_japanese:
-            - その 箱 を {開け なさい}。
-          english: Open that box!
-          hint: This is a direct command to *do* something. We're looking for a polite request to *not*
-            do something.
-        - competing_japanese:
-            - その 箱 を {開ける な}。
-          english: Don't open that box!
-          hint: 「～な」 is a very direct and strong prohibitive command. While it means 'don't do', it is much
-            harsher than a polite request. We're looking for a polite negative request.
-        - competing_japanese:
-            - その 箱 を {開け て は いけ ませ ん}。
-          english: You must not open that box.
-          hint: 「～てはいけません」 is a strong prohibition, indicating something is forbidden. The original sentence
-            is a softer, more direct request. We're looking for a polite negative request.
-      scene: Someone warns another person about a delicate or dangerous package.
-      register: teineigo (polite)
-      setting: cautious
-      speaker_gender: male
-      listener_gender: female
-      nuance: Using 「開け ない で ください」 is a standard polite negative request, conveying a clear instruction
-        without being overly demanding. The scenario of a delicate or dangerous package highlights the importance
-        of the request. The second example 「開け ない で ね」 is a slightly softer version, often used between
-        acquaintances or in less formal situations, still conveying caution.
-      etymology: 「開ける」 (あける) means to open, derived from 「開く」 (ひらく) which means to open (intransitive).
-        The causative form means to cause something to open. 「箱」 (はこ) means a box or case.
-  post_example_writeup: Pay attention to the context when using 「ないで」. It's crucial to ensure that the sentence
-    conveys the intended meaning of doing one action *without* doing another. Practice using it in different
-    scenarios to get a feel for its nuances.
-  sources:
-    bunpro: https://bunpro.jp/grammar_points/ないで
+  When using 「～ないでください」, you are making a polite and often gentle plea or instruction not to perform a specific action. This form is suitable for most situations where politeness is required, such as talking to strangers, superiors, or in formal settings. It is less forceful than direct prohibitions like 「～てはいけない」or 「～てはなりません」, conveying a sense of asking for cooperation rather than enforcing a strict rule.
 
-
-  === Verb[ないで] (please don't) ===
-  grammar_point: Verb[ないで] (please don't)
-  learn_before:
-    - てください (polite request)
-    - う-verb (negative)
-  learn_after:
-    - べきではない (should not)
-    - ことなく (without doing)
-  id: gp0318
-  meaning: Please do not (for me), Casual request
-  conjugations:
-    - conjugation-type: negative plain (～ない)
-      form: ないで
-      rarity: common
-      meaning: Please don't
-    - conjugation-type: negative plain (～ない)
-      form: ないでください
-      rarity: common
-      meaning: Please don't (polite)
-  pronunciation:
-    katakana: ナイデ
-    romaji: naide
-  formation:
-    Verb (negative stem) + ないで: Forms a casual request or command not to do something.
-    Verb (negative stem) + ないでください: Forms a polite request or command not to do something.
-  jlpt: N4
-  details:
-    part-of-speech: auxiliary verb
-    register: casual
-    usage-context: Used to express a request or command not to do something, often in casual settings. Can
-      be made polite with 「ください」.
-  etymology: The grammar point 「ないで」 is derived from the negative form of a verb, 「ない」, combined with the
-    particle 「で」. The auxiliary verb 「ない」 indicates negation. The particle 「で」, in this construction, functions
-    to connect the negative verbal phrase, forming a direct or implied prohibition. It's akin to stating
-    'by not doing (X)' or 'in the state of not doing (X)', leading to the nuance of 'please do not (X)'.
-    The addition of 「ください」 further formalizes this request, making it a polite command.
-  writeup: |-
-    「ないで」 is a grammatical construct used to express a request or gentle command **not** to do something. While 「ないでください」 provides a more polite form, 「ないで」 on its own is frequently employed in casual contexts, particularly among close friends and family. It functions as a direct statement or a mild prohibition. Grammatically, this structure combines the auxiliary verb 「ない」, indicating negation, with the particle 「で」. To form it, attach 「ないで」 to the **negative stem** of the verb you wish to negate. The sentence often concludes directly with 「ないで」.
-
-    It is crucial to distinguish this usage from the 「ないで」 that means 'without doing (A), (B)', which connects two clauses. This grammar point refers to the terminal usage as a request or command, where the sentence ends with 「ないで」 or 「ないでください」.
-  false_friends:
-    - term: なくて (conjunction)
-      meaning: Without doing; Not ~ and ~
-      kind: often confused with
-      nuance: When used to mean "without doing", 「ないで」 connects two actions. For example, 「朝ご飯を食べないで学校へ行った」
-        means "I went to school without eating breakfast." This 「ないで」 serves as a conjunctive particle,
-        linking two clauses, and does not function as a request.
-      grammar_point: なくて (conjunction)
-    - term: てはいけない (must not・cannot)
-      meaning: You must not; it is forbidden.
-      kind: often confused with
-      nuance: 「ないで」 is a softer request or gentle command, implying a wish or preference. 「～てはいけない」 is a
-        strong prohibition or rule, indicating something is forbidden or highly discouraged, with a more
-        authoritative tone.
-      grammar_point: てはいけない (must not・cannot)
-    - term: な (prohibitive particle)
-      meaning: Don't, Do not (Prohibitive)
-      kind: often confused with
-      nuance: 「ないで」 is a polite or gentle request. 「～な」 is a very direct and often harsh command, typically
-        used in informal settings or when scolding, with a strong, prohibitive tone.
-      grammar_point: な (prohibitive particle)
-    - term: なくてもいい (no need to)
-      meaning: There is no need to; it's okay not to do.
-      kind: antonym
-      nuance: While 「ないで」 requests *not* to do something, 「～なくてもいい」 states that doing something is *unnecessary*
-        or *permissible to omit*.
-      grammar_point: なくてもいい (no need to)
-  post_false_friends_writeup: 'It''s crucial to differentiate between 「ないで」 as a request and 「ないで」 indicating
-    ''without doing''. Context is key: if it stands alone as a gentle command, it''s likely a request. If
-    it connects two clauses, it probably means ''without doing''. 「ないで」 also differs from stronger prohibitions
-    like 「～てはいけない」 or the blunt 「～な」 in its level of politeness and assertiveness. Furthermore, it''s the
-    opposite of 「～なくてもいい」, which grants permission to omit an action.'
-  examples:
-    - english: Don't stop here!
-      japanese:
-        - ここ に 立ち 止ま {ない で}！
-        - ここ に 立ち 止ま {ない で ください}。
-      english_literally: Here standing-stop-not-by!
-      competing_grammar:
-        - competing_japanese:
-            - ここ に 立ち 止まっ {て は いけ ない}。
-          english: You must not stop here!
-          hint: 「～てはいけない」 is a strong prohibition, like 'must not' or 'it is forbidden.' We're looking for
-            a softer request.
-      scene: A teacher instructing students in a busy hallway during school hours.
-      register: casual
-      setting: instructional
-      conjugation: negative plain (～ない)
-      nuance: This direct command 「立ち止まないで」 (don't stop) is a common instruction given by figures of authority,
-        such as teachers, in school environments. It is firm yet not overly harsh, conveying an expectation
-        of obedience. The lack of 「ください」 makes it more direct. While it can be casual, in this context from
-        a teacher, it is a straightforward instruction rather than an informal plea.
-      etymology: The phrase 「立ち止まらないで」 combines 「立ち止まる」 (to stop) with the negative request form. This construction
-        is common in directives, emphasizing the act of not stopping in a particular location, suggesting
-        flow or continuation. The casualness suits an immediate, on-the-spot instruction to students to
-        keep moving or clear the way, reflecting the dynamic nature of a busy school hallway. The nuance
-        here is more about directing movement rather than strict prohibition, making it appropriate for
-        a teacher guiding students.
-    - english: Don't go with strangers.
-      japanese:
-        - 知ら ない 人 に は つい て いか {ない で}。
-        - 知ら ない 人 に は つい て いか {ない で ください}。
-      english_literally: Unknown people to follow-go-not-by.
-      competing_grammar:
-        - competing_japanese:
-            - 知ら ない 人 に は つい て いっ {て は いけ ない}。
-          english: You must not go with strangers.
-          hint: 「～てはいけない」 is a strong prohibition, like 'must not' or 'it is forbidden.' Here, we're looking
-            for a more gentle warning.
-      scene: A mother warning her young daughter about safety when they are out in public.
-      register: casual
-      setting: cautious
-      conjugation: negative plain (～ない)
-      speaker_gender: female
-      listener_gender: female
-      speaker_age: older
-      nuance: The casual 「ないで」 is appropriate for a parent speaking to their child. It conveys a direct
-        warning. The absence of additional softening particles makes it a clear, simple instruction, suitable
-        for safety advice. The phrasing 「知らない 人には」 (to unknown people) emphasizes the danger.
-      etymology: The expression 「ついていかないで」 combines 「ついていく」 (to follow someone, to go with someone) with
-        the negative request form. This phrase is a common way to express a warning or prohibition, especially
-        in contexts of caution or safety. The nuance of 「ついていかないで」 is a gentle yet firm directive, often
-        used by parents or guardians to convey important safety instructions without being overly harsh.
-        It implies a protective sentiment, instructing the listener to avoid potentially dangerous situations.
-    - english: Don't spend so much money.
-      japanese:
-        - そんな に お 金 を 使わ {ない で}。
-        - そんな に お 金 を 使わ {ない で ください}。
-      english_literally: So much money use-not-by.
-      competing_grammar:
-        - competing_japanese:
-            - そんな に お 金 を 使っ {て は いけ ない}。
-          english: You must not spend so much money.
-          hint: 「～てはいけない」 is a strong prohibition, like 'must not.' We're looking for a softer, advisory
-            tone.
-      scene: A mother advising her teenage son about managing his pocket money after he spent a lot on unnecessary
-        items.
-      register: casual
-      setting: informative
-      conjugation: negative plain (～ない)
-      speaker_gender: female
-      listener_gender: male
-      nuance: This simple 「使わないで」 is a common, direct request in a casual family setting, emphasizing the
-        speaker's concern about excessive spending. The absence of politeness markers highlights the intimacy
-        of the relationship, allowing for a straightforward expression of mild disapproval. 「そんなに」 (so much)
-        intensifies the request.
-      etymology: The phrase 「そんなにお金を使わないで」 integrates 「そんなに」 (that much, so much) with 「お金を使う」 (to spend
-        money) in the negative request form. This construction is often used to express a gentle reproof
-        or advice regarding excessive action. The nuance here is one of concern and guidance rather than
-        a strict prohibition, fitting a parental role. 「そんなに」 adds a sense of surprise or mild disapproval
-        at the extent of the action, making the request more specific and personal.
-    - english: Please don't drink so much.
-      japanese:
-        - そんな に たくさん 飲ま {ない で}。
-        - そんな に たくさん 飲ま {ない で ください}。
-      english_literally: So much a lot drink-not-by.
-      competing_grammar:
-        - competing_japanese:
-            - そんな に たくさん 飲ん {で は いけ ない}。
-          english: You must not drink so much.
-          hint: 「～てはいけない」 implies a stronger rule or prohibition. Here, the speaker is expressing concern
-            in a softer way.
-      scene: A friend expressing concern to another friend about their drinking habits at a party.
-      register: casual
-      setting: sympathetic
-      conjugation: negative plain (～ない)
-      speaker_gender: male
-      listener_gender: male
-      nuance: The direct 「飲まないで」 without any additional particles indicates a straightforward concern often
-        shared among close male friends, reflecting genuine care. The phrase 「そんなにたくさん」 (so much) emphasizes
-        the quantity, conveying a clear message without being overly formal. This implies a friendly warning
-        rather than a harsh reprimand.
-      etymology: The expression 「そんなにたくさん飲まないで」 combines 「そんなにたくさん」 (such a large amount) with the negative
-        request form of 「飲む」 (to drink). This is a very common phrase used to offer comfort or reassurance.
-        The nuance of 「そんなにたくさん飲まないで」 is one of gentle encouragement to alleviate anxiety, implying that
-        the situation might not be as bad as one thinks, or that worrying excessively is counterproductive.
-        It's an empathetic expression used to console someone.
-    - english: Don't run so much.
-      japanese:
-        - そんな に 走ら {ない で} よ。
-        - そんな に 走ら {ない で}。
-        - そんな に 走ら {ない で ください} ね。
-        - そんな に 走ら {ない で ください}。
-      english_literally: So much run-not-by, you know.
-      competing_grammar:
-        - competing_japanese:
-            - そんな に 走る {な} よ！
-          english: Don't run so much, you hear!
-          hint: 「～な」 is a very direct and often harsh command. We're looking for a gentler request, suitable
-            for a parent to a child.
-      scene: A parent gently asking their energetic child to calm down while playing inside the house.
-      register: shitashii kuchō (intimate)
-      setting: supportive
-      conjugation: negative plain (～ない)
-      speaker_gender: female
-      listener_gender: male
-      nuance: The casual 「走らないで」 is used in an intimate family context. The particle 「よ」 at the end softens
-        the request into a gentle plea, common in affectionate speech from a parent to a child. This conveys
-        concern rather than a strict command, suggesting an emotional appeal. The specific phrasing 「そんなに
-        走らないでよ」 makes it sound like a loving mother's exasperated but soft request.
-      etymology: The phrase 「そんなに走らないでよ」 combines the intensifying adverb 「そんなに」 (so much) with the negative
-        request form of 「走る」 (to run), adding the sentence-final particle 「よ」. The 「よ」 particle adds emphasis,
-        assertion, or a gentle emotional appeal, making the request softer and more intimate. This construction
-        is commonly used within families to express a gentle directive or a plea, particularly from a parent
-        to a child. The nuance is one of caring guidance, aiming to encourage a desired behavior without
-        resorting to a harsh command, reflecting the close bond.
-    - english: I want to talk more, so please don't go home yet.
-      japanese:
-        - もっと 話し たい から、まだ 帰ら {ない で}。
-        - もっと 話し たい から、まだ 帰ら {ない で ください}。
-      english_literally: More want-to-talk because, still return-home-not-by.
-      competing_grammar:
-        - competing_japanese:
-            - もっと 話し たい から、まだ 帰る {な}。
-          english: I want to talk more, so don't go home yet!
-          hint: 「～な」 is a very strong and blunt command. The speaker here is making a gentle plea.
-      scene: One person subtly expressing a desire to extend a first date, hinting at wanting to spend more
-        time together.
-      register: casual
-      setting: first-date
-      conjugation: negative plain (～ない)
-      speaker_gender: male
-      listener_gender: female
-      nuance: The casual 「帰らないで」 directly conveys a sincere desire for the interaction to continue, creating
-        an intimate atmosphere that is perfect for a developing romantic relationship. The reason 「もっと話したいから」
-        (because I want to talk more) makes the request feel earnest and personal. The lack of 「ください」 makes
-        it a more direct and heartfelt plea.
-      etymology: The sentence 「もっと話したいから、まだ帰らないで」 uses 「から」 (because) to state the reason for the negative
-        request. 「まだ」 (still, yet) emphasizes the timing of the request, urging the listener not to leave
-        at the current moment. This construction conveys a heartfelt plea or a gentle request, often used
-        in personal or intimate settings. The nuance of 「まだ帰らないで」 is a soft, persuasive appeal, highlighting
-        the speaker's desire for continued interaction. It implies a personal longing rather than a formal
-        demand, making it suitable for expressing affection or a wish for more time together in developing
-        relationships.
-    - english: Please don't fall, okay?
-      japanese:
-        - 転ば {ない で ください} ね。
-        - 転ば {ない で ください}。
-        - 転ば {ない で}。
-      english_literally: Fall-not-by, please, okay?
-      competing_grammar:
-        - competing_japanese:
-            - 転ん {で は いけ ませ ん} ね。
-          english: You must not fall, okay?
-          hint: 「～てはいけません」 is a formal way to say 'you must not.' We're looking for a gentle, caring reminder.
-      scene: A caring older sibling gently reminds their younger sibling to be careful while walking on
-        an uneven path.
-      register: teineigo (polite)
-      setting: supportive
-      conjugation: negative plain (～ない)
-      nuance: The polite 「転ばないでください」 (please don't fall) is softened by the final particle 「ね」, transforming
-        it into a gentle, caring suggestion rather than a stern command. This nuance is often used to express
-        concern for the listener's well-being and is common in polite yet warm interactions, such as between
-        siblings or friends. The phrase 「くださいね」 makes it a soft request.
-      etymology: The phrase 「転ばないでくださいね」 combines the polite negative request 「転ばないでください」 with the sentence-final
-        particle 「ね」. The 「ね」 particle seeks agreement or confirmation, and in this context, it softens
-        the request further, making it sound more like a gentle suggestion or a caring reminder. This construction
-        is commonly used when expressing concern for someone's well-being, conveying a warm and supportive
-        tone. The nuance is a blend of polite instruction and affectionate concern, making it suitable for
-        familial interactions where care is paramount.
-    - english: Please do not enter here.
-      japanese:
-        - ここ へ は、入ら {ない で ください}。
-        - ここ へ は、入ら {ない で}。
-      english_literally: To here, enter-not-by, please.
-      competing_grammar:
-        - competing_japanese:
-            - ここ へ は、入っ {て は いけ ませ ん}。
-          english: You must not enter here.
-          hint: 「～てはいけません」 indicates a rule or strict prohibition. The speaker is giving an instruction
-            in a slightly less authoritative, but still polite, manner.
-      scene: A security guard politely giving an instruction to a visitor at the entrance of a restricted
-        area.
-      register: teineigo (polite)
-      setting: informative
-      conjugation: negative plain (～ない)
-      nuance: This example uses the polite 「入らないでください」 to convey a clear, formal instruction, typical of
-        official or public settings. It's a clear, impersonal instruction, avoiding the harsher tone of
-        a direct prohibition. The use of 「ここへは」 (to here) specifies the location, making the instruction
-        unambiguous and formal.
-      etymology: The phrase 「ここへは、入らないでください」 explicitly uses 「ここへは」 (to here) to specify the location of
-        the prohibition, followed by the polite negative request 「入らないでください」. This construction is formal
-        and clear, commonly used in public or official settings where instructions need to be polite yet
-        unambiguous. The nuance of 「入らないでください」 in this context is a formal directive, emphasizing that entry
-        is not permitted, but delivered in a respectful manner. It is often seen in signage or spoken instructions
-        by staff in places requiring regulated access.
-    - english: Please don't disclose confidential information.
-      japanese:
-        - 機密 情報 を 漏ら {ない で ください}。
-        - 機密 情報 を 漏ら {ない で}。
-      english_literally: Confidential information leak-not-by, please.
-      competing_grammar:
-        - competing_japanese:
-            - 機密 情報 を 漏洩 し {て は いけ ませ ん}。
-          english: You must not leak confidential information.
-          hint: 「～てはいけません」 expresses a stronger prohibition or a rule that must be followed. We're looking
-            for a polite request or instruction.
-      scene: A manager speaking to employees during a training session on company policy.
-      register: formal
-      setting: informative
-      conjugation: negative plain (～ない)
-      nuance: The use of 「漏らさないでください」 (please don't disclose) is appropriate in a professional setting where
-        a clear, polite instruction regarding sensitive information is required. This phrasing is firm but
-        respectful, suitable for a manager addressing their team. It conveys a standard of conduct without
-        being overly authoritarian.
-      etymology: The phrase 「機密情報を漏らさないでください」 combines 「機密情報」 (confidential information) with the negative
-        request form of 「漏らす」 (to disclose, to leak). This construction is common in business or legal contexts
-        for giving instructions or setting policies. The nuance is a formal directive that is expected to
-        be followed, reflecting professional conduct and the importance of discretion regarding sensitive
-        matters.
-    - english: Don't worry too much.
-      japanese:
-        - あまり 心配 し {ない で}。
-        - あまり 心配 し {ない で ください}。
-      english_literally: Too much worry do-not-by.
-      competing_grammar:
-        - competing_japanese:
-            - あまり 心配 する {な}。
-          english: Don't worry too much!
-          hint: 「～するな」 is a very direct and strong prohibition, often used in scolding. We're looking for
-            a gentler, empathetic suggestion.
-      scene: A friend comforting another friend who is anxious about something.
-      register: casual
-      setting: supportive
-      conjugation: negative plain (～ない)
-      nuance: The casual 「心配しないで」 (don't worry) is a common expression of comfort among friends. The use
-        of 「あまり」 (too much) adds a softening touch, indicating that some worry might be natural, but excessive
-        worry is not helpful. This conveys empathy and support, typical for intimate conversations.
-      etymology: The expression 「あまり心配しないで」 combines the adverb 「あまり」 (not much, not too) with the negative
-        request form of 「心配する」 (to worry). This is a very common phrase used to offer comfort or reassurance.
-        The nuance of 「あまり心配しないで」 is one of gentle encouragement to alleviate anxiety, implying that the
-        situation might not be as bad as one thinks, or that worrying excessively is counterproductive.
-        It's an empathetic expression used to console someone.
-  post_example_writeup: The usage of 「ないで」 or 「ないでください」 allows for a range of expressions from casual requests
-    to polite directives. The addition of sentence-final particles like 「よ」 or 「ね」 can further soften or
-    emphasize the nuance, making the request sound more intimate, empathetic, or gently assertive. Understanding
-    these nuances is crucial for effective communication in Japanese.
-  sources:
-    bunpro: https://bunpro.jp/grammar_points/verb-ないで
-
-
-  === ないでください (please don't) ===
-  grammar_point: ないでください (please don't)
-  learn_before:
-    - う-verb (negative)
-    - てください (polite request)
-  learn_after:
-    - な (prohibitive particle)
-    - べからず (must not)
-    - てはいけない (must not・cannot)
-  id: gp0104
-  meaning: Please don't (Polite request)
-  pronunciation:
-    katakana: ナイデクダサイ
-    romaji: naide kudasai
-  formation:
-    Verb (ない form) + で + ください: Polite request not to do something
-  jlpt: N5
-  details:
-    part-of-speech: auxiliary verb
+  Conversely, 「～ないで」is the casual version. It is typically used among friends, family members, or in informal situations. The nuance can vary from a soft request, a gentle reminder, a plea, or even a mild, direct command, depending on the context and intonation. While it conveys urgency or directness in some scenarios, it generally maintains a less confrontational tone compared to stronger negative commands. Adding sentence-ending particles like 「よ」or 「ね」can further modulate its nuance, making it more emphatic or seeking agreement, respectively.
+false_friends:
+  - term: てはいけない
+    meaning: Must not, must not do, not allowed to.
+    kind: similar expression
+    nuance: 「てはいけない」expresses a stronger prohibition or rule, indicating something is forbidden or wrong
+      to do. It carries a sense of obligation or rule-based restriction, whereas 「ないでください」is a request
+      or gentle command.
+    grammar_point: てはいけない (must not・cannot)
+  - term: んじゃない
+    meaning: Don't (casual), shouldn't (casual).
+    kind: similar expression
+    nuance: This is a very casual, often emphatic, form of negative command or suggestion. It can imply
+      the speaker's frustration or a strong warning, or simply a casual "Don't do that." It's more direct
+      than 「ないで」.
+    grammar_point: んじゃない (prohibition・regret・speculation)
+  - term: べからず
+    meaning: Must not, forbidden.
+    kind: similar expression
+    nuance: Highly formal and emphatic prohibition, often found in written rules, signs, or very formal
+      declarations. It sounds archaic in everyday speech. Much stronger and less personal than 「ないでください」.
+    grammar_point: べからず (must not)
+  - term: てはならない
+    meaning: Must not, should not, not allowed to.
+    kind: similar expression
+    nuance: Similar to 「てはいけない」but often even more formal or literary, used for strong moral imperatives
+      or regulations. It implies a sense of what is ethically or legally unacceptable.
+    grammar_point: てはならない (must not)
+post_false_friends_writeup: Distinguishing 「ないでください・ないで」from 「てはいけない・てはならない」and 「べからず」is crucial. While
+  「ないでください」politely asks someone _not_ to do something, the others actively state that something _must
+  not_ be done or _is forbidden_. Think of 「ないでください」as "Please refrain from doing X" and 「てはいけない」as "Doing
+  X is not permitted." 「んじゃない」is a casual, sometimes emotionally charged "Don't do X!", and 「べからず」is a
+  very formal, often written, absolute prohibition.
+examples:
+  - english: Please don't worry.
+    japanese:
+      - 心配 {し ない で ください}。
+      - 心配 {なさら ない で ください}。
+      - 心配 {し ない で}。
+      - 心配 {し ない で ね}。
+    english_literally: Worry do not give favor.
+    competing_grammar:
+      - competing_japanese:
+          - 心配 {し ちゃ いけ ない} よ。
+        english: You mustn't worry.
+        hint: 「しちゃいけない」is a stronger prohibition or rule, implying that worrying is not allowed or is
+          wrong, whereas we are trying to make a gentle request.
+    scene: A friend is preparing for an important presentation and is visibly anxious. You want to offer
+      comfort.
     register: teineigo (polite)
-  etymology: 'The grammar point 「ないでください」 is composed of: 「ない」, the negative form of a verb; the particle
-    「で」, indicating a state or condition; and 「ください」, the polite imperative form of 「くださる」, meaning "to
-    give" (in this context, used to request a favor).'
-  writeup: |-
-    「ないでください」 is an expression used to politely ask someone **not** to do something. It is a combination of the casual negative form of a verb, the particle 「で」, and 「ください」, which is the conjunctive form of 「くださる」. 「くださる」 itself is the honorific language equivalent of 「くれる」 (to give).
-
-    「くださる」 (kudasaru) is categorized as honorific language (敬語 - keigo), a polite form of speech used when referring to the actions of others. The 「ください」 (kudasai) form of 「くださる」 is used almost exclusively for making requests.
-
-    In friendly conversation, 「ください」 may be omitted from this expression, and the 「で」 form itself can be used as a very casual way to say "please don't do (A)".
-
-    **Important Considerations**
-
-    Although 「ください」 is the polite form of 「くれる」, using 「ないでくれ」 (the conjunctive form of 「くれる」) is generally considered far too casual in most situations.
-  false_friends:
-    - term: てください
-      meaning: Please do (Polite request)
-      kind: antonym
-      nuance: Unlike 「ないでください」 which asks someone not to do something, 「てください」 asks someone to do something.
-      grammar_point: てください (polite request)
-    - term: てくれる
-      meaning: To do something for someone (usually you)
-      kind: antonym
-      nuance: Unlike 「ないでください」 which requests someone not to do something, 「てくれる」 describes someone doing
-        something for the speaker's benefit, focusing on the action itself rather than a request to refrain.
-      grammar_point: てくれる (receiving benefaction)
-    - term: お〜願う
-      meaning: Please, Could you please
-      kind: antonym
-      nuance: Unlike 「ないでください」 which asks someone not to do something, 「お〜願う」 makes a polite request for
-        an action to be performed.
-      grammar_point: お〜願う (polite request)
-    - term: お〜ください
-      meaning: Please do (Honorific)
-      kind: antonym
-      nuance: Unlike 「ないでください」 which asks someone not to do something, 「お〜ください」 makes an honorific request
-        for an action to be performed by a superior or customer.
-      grammar_point: お〜ください (polite request)
-    - term: てごらん
-      meaning: (Please) try to, (Please) look
-      kind: antonym
-      nuance: Unlike 「ないでください」 which asks someone not to do something, 「てごらん」 suggests trying or looking
-        at something, often used from an adult to a child.
-      grammar_point: Verb[て] + ごらん (gentle suggestion)
-    - term: ていただけませんか
-      meaning: Won't you, Could you please (Humble request)
-      kind: antonym
-      nuance: Unlike 「ないでください」 which asks someone not to do something, 「ていただけませんか」 makes a humble request
-        for an action, emphasizing the speaker's gratitude if the action is performed.
-      grammar_point: Verb[て]+いただけませんか (humble request)
-    - term: なさい
-      meaning: Command to do
-      kind: antonym
-      nuance: Unlike 「ないでください」 which makes a polite request not to do something, 「なさい」 issues a mild command
-        or instruction to do something.
-      grammar_point: なさい (polite imperative)
-    - term: ないで
-      meaning: Without doing, Not ~ and ~, Please don't (casual)
-      kind: similar expression
-      nuance: While 「ないで」 can function as a casual request to mean "please don't" by itself, it also commonly
-        means "without doing" (e.g., 「ご飯を 食べないで 学校へ 行った」 - "I went to school without eating") or connects
-        clauses (e.g., 「勉強 しないで 遊んだ」 - "I played without studying"). 「ないでください」 specifically forms a polite
-        negative request.
-      grammar_point: ないで (without doing)
-    - term: な
-      meaning: Don't, Do not (Prohibitive)
-      kind: synonym
-      nuance: 「な」 is a very casual and direct prohibitive, meaning "don't!". 「ないでください」 is a much more polite
-        and softer request, "please don't".
-      grammar_point: な (prohibitive particle)
-    - term: Verb-te + は いけません
-      meaning: Must not do, It's not allowed to do
-      kind: similar expression
-      nuance: While 「ないでください」 makes a polite request to refrain from an action, 「Verb-te + は いけません」 states
-        a general prohibition or rule, indicating that an action is not permitted. The latter is a statement
-        of rule, the former is a direct request.
-      grammar_point: てはいけない (must not・cannot)
-  post_false_friends_writeup: To avoid confusion between these expressions and 「ないでください」, remember that
-    「ないでください」 is exclusively for making polite negative requests. Antonyms like 「てください」 and 「お〜ください」 are
-    for positive requests. Similarly, 「なさい」 is a mild command or instruction to perform an action. The key
-    distinction for 「ないで」 is its dual function as a casual negative request and a conjunction meaning "without
-    doing," whereas 「ないでください」 is always a direct request to refrain from an action. 「な」 is a very strong,
-    casual prohibition, unlike the politeness of 「ないでください」。 Lastly, 「Verb-te + は いけません」 expresses a general
-    rule or prohibition, rather than a direct personal request to avoid an action.
-  examples:
-    - english: Please don't touch this painting.
-      japanese:
-        - この {絵 に 触ら ない で ください}
-        - この {絵 に 触ら ん で ください}
-        - この {絵 に 触ら ない で} ください
-      english_literally: Please do not touch to this painting.
-      competing_grammar:
-        - competing_japanese:
-            - この 絵 に 触る {な}
-          english: Don't touch this painting!
-          hint: 「な」 is a very strong, direct prohibition, often used by superiors or in very casual, angry
-            contexts. We're looking for a polite request.
-        - competing_japanese:
-            - この 絵 に {触っ て は いけ ませ ん}
-          english: You must not touch this painting.
-          hint: 「～て は いけません」 states a general rule or prohibition. We're looking for a direct, polite request
-            to refrain from an action.
-        - competing_japanese:
-            - この 絵 に {触っ て ください}
-          english: Please touch this painting.
-          hint: 「～てください」 is a polite request to perform an action. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - この 絵 に {お 触り ください}
-          english: Please touch this painting (honorific).
-          hint: 「お～ください」 is an honorific request to perform an an action. We're looking for a request to
-            refrain from an action.
-        - competing_japanese:
-            - この 絵 に {触っ て ごらん}
-          english: Please try touching this painting.
-          hint: 「～てごらん」 suggests trying or looking at something. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - この 絵 に {触っ て いただけ ませ ん か}
-          english: Would you mind touching this painting?
-          hint: 「～ていただけませんか」 is a humble request to perform an action. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - この 絵 に 触り {なさい}
-          english: Touch this painting!
-          hint: 「なさい」 is a mild command to perform an action. We're looking for a request to refrain from
-            an action.
-        - competing_japanese:
-            - この 絵 に {触ら ない で}
-          english: Don't touch this painting (casual).
-          hint: 「～ないで」 can be a casual negative request. We're looking for a polite negative request.
-      scene: A museum guide speaks to a visitor who is getting too close to a valuable artwork.
-      register: teineigo (polite)
-      setting: instructional
-      speaker_gender: female
-      listener_gender: male
-      speaker_age: older
-      nuance: An older female museum guide uses 「触らないでください」. This polite form is appropriate when addressing
-        adults in a professional context, ensuring the message is clear yet respectful. The use of 「ください」
-        softens the instruction, making it a request rather than a command.
-    - english: Please don't forget tomorrow's homework.
-      japanese:
-        - 明日 の 宿題 を {忘れ ない で ください}
-        - 明日 の 宿題 を {忘れ ん で ください}
-      english_literally: Please do not forget tomorrow's homework.
-      competing_grammar:
-        - competing_japanese:
-            - 明日 の 宿題 を 忘れる {な}
-          english: Don't forget tomorrow's homework!
-          hint: 「な」 is a very strong, direct prohibition. A teacher would typically use a softer tone for
-            a reminder. We're looking for a polite request.
-        - competing_japanese:
-            - 明日 の 宿題 を {忘れ て は いけ ませ ん}
-          english: You must not forget tomorrow's homework.
-          hint: 「～て は いけません」 states a general rule or prohibition. We're looking for a direct, polite request
-            to refrain from an action.
-        - competing_japanese:
-            - 明日 の 宿題 を {覚え て ください}
-          english: Please remember tomorrow's homework.
-          hint: 「～てください」 is a polite request to perform an action. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - 明日 の 宿題 を {お 覚え ください}
-          english: Please remember tomorrow's homework (honorific).
-          hint: 「お～ください」 is an honorific request to perform an an action. We're looking for a request to
-            refrain from an action.
-        - competing_japanese:
-            - 明日 の 宿題 を {確認 し て み て ごらん}
-          english: Please try confirming tomorrow's homework.
-          hint: 「～てごらん」 suggests trying or looking at something. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - 明日 の 宿題 を {確認 し て いただけ ませ ん か}
-          english: Would you mind confirming tomorrow's homework?
-          hint: 「～ていただけませんか」 is a humble request to perform an action. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - 明日 の 宿題 を よく 見 {なさい}
-          english: Look carefully at tomorrow's homework!
-          hint: 「なさい」 is a mild command to perform an action. We're looking for a request to refrain from
-            an action.
-        - competing_japanese:
-            - 明日 の 宿題 を {忘れ ない で}
-          english: Don't forget tomorrow's homework (casual).
-          hint: 「～ないで」 can be a casual negative request. We're looking for a polite negative request.
-      scene: A teacher reminds their students before dismissing class.
-      register: teineigo (polite)
-      setting: instructional
-      speaker_gender: male
-      listener_gender: group
-      speaker_age: older
-      nuance: An older male teacher uses 「忘れないでください」 to gently remind a group of students. The polite form
-        「ください」 maintains respect and encourages responsibility without sounding overly strict, common in
-        an educational environment.
-    - english: Please don't give up on your dream.
-      japanese:
-        - 夢 を {諦め ない で ください}
-        - 夢 を {諦め ん で ください}
-      english_literally: Please do not give up dream.
-      competing_grammar:
-        - competing_japanese:
-            - 夢 を 諦める {な}
-          english: Don't give up on your dream!
-          hint: 「な」 is a very strong, direct prohibition. For a supportive mentor, a gentler tone is usually
-            preferred. We're looking for a polite request.
-        - competing_japanese:
-            - 夢 を {諦め て は いけ ませ ん}
-          english: You must not give up on your dream.
-          hint: 「～て は いけません」 states a general rule or prohibition. We're looking for a direct, polite request
-            to refrain from an action.
-        - competing_japanese:
-            - 夢 を {追いかけ て ください}
-          english: Please chase your dream.
-          hint: 「～てください」 is a polite request to perform an action. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - 夢 を {お 追いかけ ください}
-          english: Please chase your dream (honorific).
-          hint: 「お～ください」 is an honorific request to perform an an action. We're looking for a request to
-            refrain from an action.
-        - competing_japanese:
-            - 夢 を {追いかけ て ごらん}
-          english: Please try chasing your dream.
-          hint: 「～てごらん」 suggests trying or looking at something. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - 夢 を {追いかけ て いただけ ませ ん か}
-          english: Would you mind chasing your dream?
-          hint: 「～ていただけませんか」 is a humble request to perform an action. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - 夢 を 追いかけ {なさい}
-          english: Chase your dream!
-          hint: 「なさい」 is a mild command to perform an action. We're looking for a request to refrain from
-            an action.
-        - competing_japanese:
-            - 夢 を {諦め ない で}
-          english: Don't give up on your dream (casual).
-          hint: 「～ないで」 can be a casual negative request. We're looking for a polite negative request.
-      scene: A seasoned artist encourages a struggling young apprentice.
-      register: semi-formal
-      setting: inspirational
-      speaker_gender: female
-      listener_gender: male
-      speaker_age: older
-      nuance: An older female artist uses 「諦めないでください」 to gently but firmly inspire a younger male apprentice.
-        The use of 「ください」 makes it a plea, conveying genuine care and encouragement, suitable for a mentor-mentee
-        relationship.
-    - english: Please don't run in the hallway.
-      japanese:
-        - 廊下 で {走ら ない で ください}
-        - 廊下 で {走ら ん で ください}
-      english_literally: Please do not run in hallway.
-      competing_grammar:
-        - competing_japanese:
-            - 廊下 で 走る {な}
-          english: Don't run in the hallway!
-          hint: 「な」 is a very strong, direct prohibition. A principal would typically use a more formal
-            tone. We're looking for a polite request.
-        - competing_japanese:
-            - 廊下 で {走っ て は いけ ませ ん}
-          english: You must not run in the hallway.
-          hint: 「～て は いけません」 states a general rule or prohibition. We're looking for a direct, polite request
-            to refrain from an action.
-        - competing_japanese:
-            - 廊下 で {走っ て ください}
-          english: Please run in the hallway.
-          hint: 「～てください」 is a polite request to perform an action. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - 廊下 で {お 走り ください}
-          english: Please run in the hallway (honorific).
-          hint: 「お～ください」 is an honorific request to perform an action. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - 廊下 で {走っ て ごらん}
-          english: Please try running in the hallway.
-          hint: 「～てごらん」 suggests trying or looking at something. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - 廊下 で {走っ て いただけ ませ ん か}
-          english: Would you mind running in the hallway?
-          hint: 「～ていただけませんか」 is a humble request to perform an action. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - 廊下 で 走り {なさい}
-          english: Run in the hallway!
-          hint: 「なさい」 is a mild command to perform an action. We're looking for a request to refrain from
-            an action.
-        - competing_japanese:
-            - 廊下 で {走ら ない で}
-          english: Don't run in the hallway (casual).
-          hint: 「～ないで」 can be a casual negative request. We're looking for a polite negative request.
-      scene: A school principal addresses students who are running in the school corridor during lunch break.
-      register: teineigo (polite)
-      setting: commanding
-      speaker_gender: male
-      listener_gender: group
-      speaker_age: older
-      nuance: An older male principal uses 「走らないでください」 to give clear instructions to a group of students.
-        This polite yet firm command is effective for maintaining order in a public school environment,
-        demonstrating authority while still respecting the students.
-    - english: Please don't bother the person next door.
-      japanese:
-        - 隣 の 人 に {迷惑 を かけ ない で ください}
-        - 隣 の 人 に {迷惑 を かけ ん で ください}
-      english_literally: Please do not cause trouble to person next door.
-      competing_grammar:
-        - competing_japanese:
-            - 隣 の 人 に 迷惑 を かける {な}
-          english: Don't bother the person next door!
-          hint: 「な」 is a very strong, direct prohibition. A parent teaching manners would typically use
-            a softer tone. We're looking for a polite request.
-        - competing_japanese:
-            - 隣 の 人 に {迷惑 を かけ て は いけ ませ ん}
-          english: You must not bother the person next door.
-          hint: 「～て は いけません」 states a general rule or prohibition. We're looking for a direct, polite request
-            to refrain from an action.
-        - competing_japanese:
-            - 隣 の 人 に {親切 に し て ください}
-          english: Please be kind to the person next door.
-          hint: 「～てください」 is a polite request to perform an action. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - 隣 の 人 に {お 優しく し て ください}
-          english: Please be kind to the person next door (honorific).
-          hint: 「お～ください」 is an honorific request to perform an an action. We're looking for a request to
-            refrain from an action.
-        - competing_japanese:
-            - 隣 の 人 と {話し て み て ごらん}
-          english: Please try talking to the person next door.
-          hint: 「～てごらん」 suggests trying or looking at something. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - 隣 の 人 に {優しく し て いただけ ませ ん か}
-          english: Would you mind being kind to the person next door?
-          hint: 「～ていただけませんか」 is a humble request to perform an action. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - 隣 の 人 と 仲良く し {なさい}
-          english: Be friendly with the person next door!
-          hint: 「なさい」 is a mild command to perform an action. We're looking for a request to refrain from
-            an action.
-        - competing_japanese:
-            - 隣 の 人 に {迷惑 を かけ ない で}
-          english: Don't bother the person next door (casual).
-          hint: 「～ないで」 can be a casual negative request. We're looking for a polite negative request.
-      scene: A parent reminds their child to be considerate while playing loudly in an apartment building.
-      register: semi-formal
-      setting: instructional
-      speaker_gender: female
-      listener_gender: male
-      speaker_age: older
-      nuance: An older female parent uses 「迷惑をかけないでください」 to teach her younger child consideration for others.
-        This phrasing is appropriate for guiding children, as it conveys a clear boundary with politeness,
-        fostering empathy rather than mere obedience.
-    - english: Please don't make noise during the meeting.
-      japanese:
-        - 会議 中 に {うるさく し ない で ください}
-        - 会議 中 に {うるさく せ ん で ください}
-      english_literally: Please do not make noise during meeting.
-      competing_grammar:
-        - competing_japanese:
-            - 会議 中 に うるさく する {な}
-          english: Don't make noise during the meeting!
-          hint: 「な」 is a very strong, direct prohibition, often unsuitable for a professional setting. We're
-            looking for a polite request.
-        - competing_japanese:
-            - 会議 中 に {うるさく し て は いけ ませ ん}
-          english: You must not make noise during the meeting.
-          hint: 「～て は いけません」 states a general rule or prohibition. We're looking for a direct, polite request
-            to refrain from an action.
-        - competing_japanese:
-            - 会議 中 に {静か に し て ください}
-          english: Please be quiet during the meeting.
-          hint: 「～てください」 is a polite request to perform an action. We're looking for a request to refrain
-            from an action.
-        - competing_japanese:
-            - 会議 中 に {お 静か に ください}
-          english: Please be quiet during the meeting (honorific).
-          hint: 「お～ください」 is an honorific request to perform an an action. We're looking for a request to
-            refrain from an action.
-      scene: A manager addresses their team at the start of a meeting.
-      register: formal
-      setting: professional
-      speaker_gender: male
-      listener_gender: group
-      speaker_age: older
-      nuance: An older male manager uses 「うるさくしないでください」 to set a respectful tone for the meeting. The use
-        of 「ください」 keeps the instruction polite and professional, emphasizing an appeal to cooperation rather
-        than a strict command, which is typical in Japanese business etiquette.
-    - english: Please don't worry about it.
-      japanese:
-        - '{気 に し ない で ください}'
-        - '{気 に せ ん で ください}'
-      english_literally: Please do not worry about it.
-      competing_grammar:
-        - competing_japanese:
-            - 気 に する {な}
-          english: Don't worry!
-          hint: 「な」 is a very strong, direct prohibition, too casual for many contexts. We're looking for
-            a polite and comforting request.
-        - competing_japanese:
-            - 心配 し て は {いけ ませ ん}
-          english: You must not worry.
-          hint: 「～て は いけません」 states a general rule or prohibition, lacking the personal touch of a comforting
-            request. We're looking for a direct, polite request to refrain from an action.
-        - competing_japanese:
-            - '{安心 し て ください}'
-          english: Please be relieved/at ease.
-          hint: 「～てください」 is a polite request to perform an action. We're looking for a request to refrain
-            from an action.
-      scene: A friend comforts another who is stressed about a minor issue.
-      register: semi-formal
-      setting: supportive
-      speaker_gender: female
-      listener_gender: female
-      speaker_age: younger
-      nuance: A younger female friend uses 「気にしないでください」 to reassure her peer. This is a common and gentle
-        way to express comfort, with 「ください」 maintaining a polite distance that makes the advice easier to
-        receive without feeling overly familiar or demanding, even among friends.
-    - english: Please don't move for a moment.
-      japanese:
-        - しばらく {動か ない で ください}
-        - しばらく {動か ん で ください}
-      english_literally: Please do not move for a while.
-      competing_grammar:
-        - competing_japanese:
-            - しばらく 動く {な}
-          english: Don't move for a moment!
-          hint: 「な」 is a very strong, direct prohibition, typically not used by a medical professional for
-            general instructions. We're looking for a polite request.
-        - competing_japanese:
-            - しばらく {動い て は いけ ませ ん}
-          english: You must not move for a moment.
-          hint: 「～て は いけません」 states a general rule or prohibition, less suitable for a direct instruction
-            during a procedure. We're looking for a direct, polite request to refrain from an action.
-        - competing_japanese:
-            - しばらく {静か に し て ください}
-          english: Please be still for a moment.
-          hint: 「～てください」 is a polite request to perform an action. We're looking for a request to refrain
-            from an action.
-      scene: A doctor or nurse instructs a patient during a medical examination.
-      register: formal
-      setting: instructional
-      speaker_gender: male
-      listener_gender: female
-      speaker_age: older
-      nuance: An older male doctor uses 「動かないでください」 to give clear instructions to a patient during an examination.
-        The use of 「ください」 is standard polite language in a medical setting, ensuring clarity and professionalism
-        while maintaining patient comfort.
-    - english: Please don't smoke here.
-      japanese:
-        - ここ で {タバコ を 吸わ ない で ください}
-        - ここ で {タバコ を 吸わ ん で ください}
-      english_literally: Please do not smoke here.
-      competing_grammar:
-        - competing_japanese:
-            - ここ で タバコ を 吸う {な}
-          english: Don't smoke here!
-          hint: 「な」 is a very strong, direct prohibition, typically used in casual or harsh contexts. For
-            public signs, a softer approach is preferred. We're looking for a polite request.
-        - competing_japanese:
-            - ここ で {タバコ を 吸っ て は いけ ませ ん}
-          english: You must not smoke here.
-          hint: 「～て は いけません」 states a general rule or prohibition. This is also common, but less of a direct
-            request than 「ないでください」. We're looking for a direct, polite request to refrain from an action.
-        - competing_japanese:
-            - 喫煙 は {ご 遠慮 ください}
-          english: Please refrain from smoking.
-          hint: This is a very formal and indirect way to ask someone not to smoke. We're looking for a
-            more direct, polite negative request.
-      scene: A public sign in a non-smoking area.
-      register: formal
-      setting: informative
-      speaker_gender: male
-      listener_gender: group
-      speaker_age: older
-      nuance: This is a standard phrase for public signs or announcements, indicating a polite prohibition.
-        The use of 「ください」 makes it a request rather than a strict command, inviting cooperation from the
-        public, which is characteristic of Japanese public notices.
-    - english: Please don't tell anyone my secret.
-      japanese:
-        - 私 の 秘密 を {誰 に も 言わ ない で ください}
-        - 私 の 秘密 を {誰 に も 言わ ん で ください}
-      english_literally: Please do not tell anyone my secret.
-      competing_grammar:
-        - competing_japanese:
-            - 私 の 秘密 を 誰 に も 言う {な}
-          english: Don't tell anyone my secret!
-          hint: 「な」 is a very strong, direct prohibition, which might sound too demanding or aggressive
-            when asking a favor of trust. We're looking for a polite request.
-        - competing_japanese:
-            - 私 の 秘密 を 誰 に も {話し て は いけ ませ ん}
-          english: You must not tell anyone my secret.
-          hint: 「～て は いけません」 states a general prohibition, less suitable for a personal plea about a secret.
-            We're looking for a direct, polite request to refrain from an action.
-        - competing_japanese:
-            - 私 の 秘密 を {守っ て ください}
-          english: Please keep my secret.
-          hint: 「～てください」 is a polite request to perform an action. We're looking for a request to refrain
-            from an action.
-      scene: One close friend confides a sensitive secret to another.
-      register: casual
-      setting: intimate
-      speaker_gender: female
-      listener_gender: male
-      speaker_age: younger
-      nuance: A younger female uses 「言わないでください」 to ask a male friend to keep a secret. Even in a casual
-        and intimate context, the 「ください」 adds a layer of earnestness and respect for the friend's discretion,
-        highlighting the importance of the request without being overly demanding. The phrase is direct
-        yet maintains politeness suitable for a serious personal request.
-  post_example_writeup: 'As you can see from the examples, 「ないでください」 is a versatile phrase for making polite
-    negative requests in various situations, from formal to semi-formal. The choice of verb and context
-    will further define the nuance of the request, whether it is a gentle reminder, a firm instruction,
-    or an inspirational plea. Remember to distinguish it from more direct prohibitions or positive requests
-    by focusing on its core meaning: a polite negative request.'
-  sources:
-    bunpro: https://bunpro.jp/grammar_points/ないでください
-lint-errors:
-  - error grammar point is missing required field 'meaning'
-  - '[rule-18] warning grammar point has split_predecessor field. Use the information in it to help compose
-    this new grammar point, then remove the field.'
+    setting: supportive
+    speaker_gender: female
+    listener_gender: female
+    nuance: The use of 「しないでください」is a gentle and polite way to tell someone not to worry. It implies consideration
+      for the listener's feelings.
+  - english: Don't touch that!
+    japanese:
+      - それ に 触ら {ない で}！
+      - それ に 触ら {ない で ください}！
+      - それ に 触ら {ない で} よ！
+      - それ に 触ら {ない で} ね。
+    english_literally: That to touch do not!
+    competing_grammar:
+      - competing_japanese:
+          - それ に 触っ {ちゃ だめ}！
+        english: You cannot touch that!
+        hint: 「触っちゃだめ」is a stronger, more direct prohibition, often used by adults to children when something
+          is strictly forbidden or dangerous. We're looking for a direct but perhaps less harsh command.
+    scene: A child is about to grab a hot pot on the stove.
+    register: casual
+    setting: emergency/alarm
+    speaker_gender: female
+    listener_gender: male
+    nuance: The short form 「触らないで」is direct and urgent, typical for a parent addressing a child in a sudden
+      situation.
+  - english: Please don't forget your passport.
+    japanese:
+      - パスポート を 忘れ {ない で ください}。
+      - パスポート を 忘れ {ない で ください} ね。
+      - パスポート を 忘れ {ない で ください} よ。
+    english_literally: Passport object marker forget do not give favor.
+    competing_grammar:
+      - competing_japanese:
+          - パスポート を 忘れ {て は いけ ませ ん}。
+        english: You must not forget your passport.
+        hint: 「忘れてはいけません」implies a strict rule or obligation, sounding more like a warning about consequences
+          rather than a polite reminder.
+    scene: A hotel receptionist reminding a guest upon checkout.
+    register: formal
+    setting: informative
+    speaker_gender: male
+    listener_gender: female
+    nuance: The professional setting requires the polite 「ないでください」. It's a standard polite reminder.
+  - english: Don't go yet!
+    japanese:
+      - まだ 行か {ない で}！
+      - まだ 行か {ない で} よ！
+      - まだ 行か {ない で} ね。
+      - まだ 行か {ない で ください}！
+    english_literally: Still go do not!
+    competing_grammar:
+      - competing_japanese:
+          - まだ 行っ {ちゃ だめ}！
+        english: You can't go yet!
+        hint: 「行っちゃだめ」is a more assertive prohibition, implying that leaving is impermissible, whereas
+          we want a softer plea.
+    scene: A friend at a party asking another friend who is about to leave early to stay longer.
+    register: shitashii kuchō (intimate)
+    setting: friendly
+    speaker_gender: female
+    listener_gender: male
+    nuance: The simple 「行かないで」expresses a personal desire for the person to stay, conveying a sense of
+      closeness and a gentle plea.
+  - english: Please don't eat in the library.
+    japanese:
+      - 図書 館 で 食べ {ない で ください}。
+      - 図書 館 で 食べ {ない で} ください。
+      - 図書 館 で 食べ {ない で}。
+    english_literally: Library in eat do not give favor.
+    competing_grammar:
+      - competing_japanese:
+          - 図書 館 で 食べ {て は なり ませ ん}。
+        english: Eating in the library is prohibited.
+        hint: 「食べてはなりません」is a very formal and strict prohibition, typically used for official rules, rather
+          than a direct, polite request.
+    scene: A librarian addressing a student.
+    register: formal
+    setting: instructional
+    speaker_gender: male
+    listener_gender: group
+    nuance: This sentence maintains a polite yet firm tone, appropriate for enforcing rules in a public,
+      formal setting like a library.
+  - english: Don't be so loud!
+    japanese:
+      - そんな に うるさく {し ない で}！
+      - そんな に うるさく {し ない で} よ！
+      - そんな に うるさく {し ない で} ね。
+      - そんな に うるさく {し ない で ください}！
+    english_literally: So loud do not!
+    competing_grammar:
+      - competing_japanese:
+          - そんな に うるさく {し ちゃ いけ ない}！
+        english: You mustn't be so loud!
+        hint: 「しちゃいけない」again carries a stronger sense of moral wrongness or rule violation. Here, it's
+          more of a frustrated direct request.
+    scene: A roommate telling another roommate to quiet down while they are studying.
+    register: casual
+    setting: serious
+    speaker_gender: male
+    listener_gender: male
+    nuance: The direct 「しないで」with the casual tone reflects immediate annoyance or frustration between
+      close acquaintances.
+  - english: Please don't worry about minor details.
+    japanese:
+      - 細かい こと は 気 に {し ない で ください}。
+      - 細かい こと は 気 に {し ない で ください} ね。
+      - 細かい こと は 気 に {し ない で}。
+      - 細かい こと は 気 に {し ない で} ね。
+    english_literally: Small things mind do not give favor.
+    competing_grammar:
+      - competing_japanese:
+          - 細かい こと は 気 に {す べき で は ない} です。
+        english: You shouldn't worry about minor details.
+        hint: 「すべきではない」is a judgment about what is right or proper, rather than a personal request for
+          action.
+    scene: A manager reassuring a subordinate after a project review.
+    register: formal
+    setting: supportive
+    speaker_gender: male
+    listener_gender: female
+    nuance: The phrase 「気にしないでください」is a polite and professional way to alleviate concern, fostering a
+      good working relationship.
+  - english: Don't you dare forget my birthday!
+    japanese:
+      - 私 の 誕生 日、忘れ {ない で} よ！
+      - 私 の 誕生 日、忘れ {ない で}！
+      - 私 の 誕生 日、忘れ {ない で} ね。
+    english_literally: My birthday, object marker forget do not, emphasis!
+    competing_grammar:
+      - competing_japanese:
+          - 私 の 誕生 日、忘れ {ちゃ だめ} だ から ね！
+        english: You can't forget my birthday, okay?!
+        hint: 「忘れちゃだめ」is a more serious and direct command, while 「忘れないでよ」can be playful or a lighthearted
+          warning among friends, especially with the added 「よ」.
+    scene: A teenager jokingly threatening a friend.
+    register: casual
+    setting: humorous
+    speaker_gender: female
+    listener_gender: female
+    nuance: The addition of the sentence-ending particle 「よ」makes the casual 「忘れないで」sound more like a
+      friendly warning or a plea with emphasis, common among close friends.
+  - english: Please don't waste food.
+    japanese:
+      - 食べ物 を 無駄 に {し ない で ください}。
+      - 食べ物 を 無駄 に {し ない で}。
+      - 食べ物 を 無駄 に {し ない で} ね。
+    english_literally: Food object marker waste do not give favor.
+    competing_grammar:
+      - competing_japanese:
+          - 食べ物 を 無駄 に {する な}。
+        english: Do not waste food.
+        hint: 「するな」is a very strong, plain imperative negative command, often used in a disciplinary or
+          strict instructional context, lacking the politeness of our target phrase.
+    scene: A parent teaching their child about good habits at dinner.
+    register: teineigo (polite)
+    setting: instructional
+    speaker_gender: male
+    listener_gender: male
+    nuance: Even in an instructional setting with a child, using 「しないでください」teaches politeness and respect,
+      rather than just issuing a blunt command.
+  - english: Don't give up!
+    japanese:
+      - 諦め {ない で}！
+      - 諦め {ない で} よ！
+      - 諦め {ない で} ね。
+      - 諦め {ない で ください}！
+    english_literally: Give up do not!
+    competing_grammar:
+      - competing_japanese:
+          - 諦め {ちゃ いけ ない}！
+        english: You mustn't give up!
+        hint: 「諦めちゃいけない」implies a rule or expectation that giving up is wrong, while 「諦めないで」is a direct
+          encouragement not to cease effort.
+    scene: A coach encouraging an athlete during a tough training session.
+    register: casual
+    setting: inspirational
+    speaker_gender: male
+    listener_gender: female
+    nuance: A short, direct 「諦めないで」is common in encouraging or motivating situations, conveying immediate
+      support without formality.
+post_example_writeup: The casual form 「ないで」can gain additional nuance with sentence-ending particles.
+  For instance, 「～ないでよ」adds emphasis, often used for a friendly warning or a plea, while 「～ないでね」softens
+  the request, seeking agreement or implying a shared understanding between speakers.
+sources:
+  bunpro: https://bunpro.jp/grammar_points/195

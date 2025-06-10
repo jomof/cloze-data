@@ -1,1 +1,1 @@
-from .aigen import *
+from .aichat import *

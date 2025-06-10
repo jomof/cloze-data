@@ -2,11 +2,11 @@ grammar_point: には及ばない (not comparable)
 learn_before:
   - より (comparative)
   - より〜のほうが (comparison)
-  - できない (cannot)
+  - <suggest>:できない (cannot)
   - ほど〜ない (not as... as)
   - はずがない (logical impossibility)
   - とても〜ない (cannot possibly ~)
-  - 劣る (to be inferior)
+  - <suggest>:劣る (to be inferior)
 learn_after:
   - とは比べものにならない (incomparable)
   - を置いて他に〜ない (nothing else compares)
@@ -59,7 +59,7 @@ false_friends:
     kind: similar expression
     nuance: 劣る directly states inferiority, whereas には及ばない means 'does not reach the level of' or 'does
       not compare', implying a gap in standard rather than just being worse.
-    grammar_point: 劣る (to be inferior)
+    grammar_point: <suggest>:劣る (to be inferior)
   - term: かなわない (cannot compete with)
     meaning: cannot compete with; no match for
     kind: similar expression
@@ -442,11 +442,3 @@ examples:
 post_example_writeup: None for this grammar point.
 sources:
   bunpro: https://bunpro.jp/grammar_points/には及ばない1
-lint-errors:
-  - '[rule-13] unknown grammar at ''learn_before[2]'': ''できない (cannot)''. You may suggest new grammar
-    points by adding a false_friend.'
-  - '[rule-13] unknown grammar at ''learn_before[6]'': ''劣る (to be inferior)''. You may suggest new grammar
-    points by adding a false_friend.'
-  - '[rule-13] warning unknown grammar at ''false_friends[0]'': ''劣る (to be inferior)''. It **MUST** be
-    from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
-    grammar point.'

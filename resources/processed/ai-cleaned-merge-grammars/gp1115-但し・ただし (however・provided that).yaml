@@ -1,6 +1,6 @@
 grammar_point: 但し・ただし (however・provided that)
 learn_before:
-  - しかし (however)
+  - <suggest>:しかし (however)
   - けれども (but・although)
   - ても (even if・even though)
   - からといって (just because)
@@ -41,7 +41,7 @@ false_friends:
       used in everyday conversation and writing to link two contrasting ideas or statements. In contrast,
       「但し」 specifically introduces conditions, provisos, or exceptions that limit or qualify the preceding
       statement, often implying a rule or official clarification.
-    grammar_point: しかし (however)
+    grammar_point: <suggest>:しかし (however)
   - term: だが
     meaning: But, however
     kind: similar expression
@@ -298,9 +298,3 @@ post_example_writeup: As illustrated by the examples, 「但し」 is versatile 
   formal settings to more casual conversations where a crucial exception or condition must be conveyed
   with precision. Its consistent function is to introduce a proviso that narrows or qualifies the preceding
   statement, regardless of the overall register.
-lint-errors:
-  - '[rule-13] unknown grammar at ''learn_before[0]'': ''しかし (however)''. You may suggest new grammar
-    points by adding a false_friend.'
-  - '[rule-13] warning unknown grammar at ''false_friends[0]'': ''しかし (however)''. It **MUST** be from
-    ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new grammar
-    point.'

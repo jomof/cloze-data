@@ -340,7 +340,7 @@
         "properties": {
           // Term is the name of the false friend (e.g., "とみえる"). 
           // Term **MUST NOT** be a conjugation of the current grammar point.
-          "term": { "$ref": "#/definitions/grammarType" },
+          "term": { "type": "string" },
           // Meaning of the false friend in English (e.g., "to seem, to appear")
           "meaning": { "$ref": "#/definitions/english" },
           // Kind is the relationship to the main grammar point 

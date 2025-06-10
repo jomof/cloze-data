@@ -1,4 +1,6 @@
 grammar_point: '[V-stem]やすい (prone to・likely to)'
+better_grammar_point_name:
+  - <suggest>:Verb masu-stem + やすい (tendency)
 learn_before:
   - Verb[masu-stem] (conjunction)
   - い-Adjectives (adjectives ending in い)
@@ -7,519 +9,313 @@ learn_after:
   - がち (tend to)
   - きらいがある (undesirable tendency)
 id: gp0191
-split_predecessor: |
-  An old grammar point, 'やすい (easy to do・likely to)', has been split into multiple new names: '[V-stem]やすい (easy to do)', '[V-stem]やすい (prone to・likely to)'. You are working on '[V-stem]やすい (prone to・likely to)', please be sure to call out the distinction between this new point and the other new points. Please recreate this grammar point with this information in mind. All fields **MUST** be suitable for the new name. For your reference, here is the old content:
+meaning: To have a tendency or a predisposition to do something; to be prone to or likely to do something
+  (often, though not exclusively, with a negative nuance).
+conjugations:
+  - conjugation-type: dictionary (plain non-past)
+    form: V-masu + やすい
+    rarity: common
+    meaning: prone to do, likely to do
+  - conjugation-type: non-past polite (～ます)
+    form: V-masu + やすいです
+    rarity: common
+    meaning: prone to do, likely to do (polite)
+  - conjugation-type: negative plain (～ない)
+    form: V-masu + やすくない
+    rarity: common
+    meaning: not prone to do, not likely to do
+  - conjugation-type: negative non-past polite (～ません)
+    form: V-masu + やすくありません
+    rarity: common
+    meaning: not prone to do, not likely to do (polite)
+  - conjugation-type: past plain (～た)
+    form: V-masu + やすかった
+    rarity: common
+    meaning: was prone to do, was likely to do
+  - conjugation-type: past polite (～ました)
+    form: V-masu + やすかったです
+    rarity: common
+    meaning: was prone to do, was likely to do (polite)
+  - conjugation-type: negative past plain (～なかった)
+    form: V-masu + やすくなかった
+    rarity: common
+    meaning: was not prone to do, was not likely to do
+  - conjugation-type: te-form (～て)
+    form: V-masu + やすくて
+    rarity: common
+    meaning: being prone to and...
+  - conjugation-type: concessive (～ても)
+    form: V-masu + やすくても
+    rarity: common
+    meaning: even if prone to...
+pronunciation:
+  katakana: ヤスイ
+  romaji: yasui
+formation:
+  Verb [masu-stem] + やすい: Indicates a tendency or predisposition towards an action.
+jlpt: N3
+details:
+  part-of-speech: auxiliary adjective
+  function: Expresses a tendency, likelihood, or susceptibility to an action or state.
+  nuance: Often used for inherent characteristics, frequent occurrences, or situations where something
+    is easily affected. While it can carry a slight negative nuance, it is not exclusively negative and
+    is broader than がち or きらいがある.
+  grammatical-role: Forms a compound adjective, modifying a verb's action to describe its inherent ease
+    of happening or tendency.
+  temporal-flow: Describes an ongoing or habitual tendency rather than a single event.
+etymology: The suffix 「やすい」 originates from the い-adjective 「易い」 (yasui), meaning "easy to do" or "simple."
+  Over time, its usage extended to describe not just the ease of an action, but also an inherent tendency
+  or a predisposition for something to occur, often with a nuance of susceptibility. This evolution reflects
+  how something "easy to do" can also imply something that is "likely to happen" or "prone to." The same
+  form is used for both "easy to do" and "prone to/likely to," which can sometimes be a source of confusion
+  for learners.
+writeup: |-
+  The grammar point 「〜やすい」, when indicating a tendency, is used to describe that someone or something has a predisposition or likelihood to perform a certain action or fall into a certain state. It attaches to the **masu-stem** of a verb and conjugates like a regular い-adjective.
 
-  === やすい (easy to do・likely to) ===
-  grammar_point: やすい (easy to do・likely to)
-  learn_before:
-    - Verb[masu-stem] (conjunction)
-    - い-Adjectives (adjectives ending in い)
-  learn_after:
-    - にくい (difficult to do)
-    - がち (tend to)
-    - きらいがある (undesirable tendency)
-  id: gp0191
-  meaning: Easy to do, likely to happen
-  conjugations:
-    - conjugation-type: dictionary (plain non-past)
-      form: やすい
-      rarity: common
-      meaning: easy to do; prone to
-    - conjugation-type: non-past polite (～ます)
-      form: やすいです
-      rarity: common
-      meaning: easy to do; prone to (polite)
-    - conjugation-type: negative plain (～ない)
-      form: やすくない
-      rarity: common
-      meaning: not easy to do; not prone to
-    - conjugation-type: negative non-past polite (～ません)
-      form: やすくありません
-      rarity: common
-      meaning: not easy to do; not prone to (polite)
-    - conjugation-type: past plain (～た)
-      form: やすかった
-      rarity: common
-      meaning: was easy to do; was prone to
-    - conjugation-type: past polite (～ました)
-      form: やすかったです
-      rarity: common
-      meaning: was easy to do; was prone to (polite)
-    - conjugation-type: negative past plain (～なかった)
-      form: やすくなかった
-      rarity: common
-      meaning: was not easy to do; was not prone to
-    - conjugation-type: negative past polite (～ませんでした)
-      form: やすくありませんでした
-      rarity: common
-      meaning: was not easy to do; was not prone to (polite)
-    - conjugation-type: te-form (～て)
-      form: やすくて
-      rarity: common
-      meaning: being easy to do; being prone to (te-form)
-    - conjugation-type: conditional (～ば)
-      form: やすければ
-      rarity: uncommon
-      meaning: if it is easy to do; if it is prone to
-    - conjugation-type: conditional (～たら)
-      form: やすかったら
-      rarity: uncommon
-      meaning: if it was easy to do; if it was prone to
-  pronunciation:
-    katakana: ヤスイ
-    romaji: yasui
-  formation:
-    Verb ます-stem + やすい: Indicates that the action is easy to perform, or that the subject is prone to a
-      certain state or action.
-  jlpt: N4
-  details:
-    part-of-speech: auxiliary adjective
-    usage-context: General use when describing the ease of an action or a tendency.
-    grammatical-role: modifies verbs to describe ease or tendency
-  etymology: The grammar point 「やすい」 originates from the classical Japanese adjective 「易し (やすし)」, meaning
-    "easy" or "simple." Over time, its form evolved into the modern い-adjective 「易い (やすい)」. When attached
-    to the ます-stem of a verb, it compounds with the verb to create an adjectival phrase, indicating the
-    ease with which an action can be performed or a natural tendency toward a state.
-  writeup: |-
-    The grammar point 「やすい」 is an い-adjective that attaches to the ます-stem of a verb. It serves two primary functions:
+  While this form can mean "easy to do" (e.g., 読みやすい - easy to read), its "prone to/likely to" meaning emphasizes an inherent characteristic or a recurring pattern, often (but not always) implying a slight negative connotation or an undesirable outcome. For instance, if someone is said to 「怒りやすい」, it means they are "prone to getting angry" or "easily angered," describing a character trait. Similarly, if an object is 「壊れやすい」, it is "prone to breaking" or "fragile."
 
-    1.  **To express that something is easy to do.** In this sense, it describes the inherent ease of performing an action. For example, a pen that is easy to write with, or food that is easy to eat.
-    2.  **To indicate that something is prone to happen or likely to occur.** This nuance is often used for tendencies, susceptibilities, or emotional responses. For instance, a person who is prone to crying easily, or a material that is likely to wrinkle.
-
-    While the kanji 「易い」 exists, 「やすい」 is **most commonly written in hiragana**. It conjugates just like a regular い-adjective, allowing for various forms such as past tense (やすかった), negative (やすくない), and te-form (やすくて).
-
-    **Important Considerations:**
-    *   Do not confuse 「やすい」 with 「安い (やすい)」, which means "cheap" or "inexpensive." Although they share the same pronunciation, their kanji and meanings are entirely distinct.
-    *   While 「やすい」 describes ease of action, if you wish to state that something is simply "easy" (as a general quality, not specifically linked to a verb), it is more natural to use the な-adjective 「簡単 (かんたん)」 (kantan) instead. For example, you would say 「簡単な問題」 (an easy problem), not 「易い問題」. 「やすい」 nearly always appears compounded with a verb.
-  false_friends:
-    - term: にくい
-      meaning: Difficult to do, hard to
-      kind: antonym
-      nuance: Unlike 「やすい」, 「にくい」 indicates that an action is difficult to perform or that something is
-        resistant to a certain change.
-      grammar_point: にくい (difficult to do)
-    - term: 安い
-      meaning: Cheap
-      kind: often confused with
-      nuance: 「安い」 shares the same pronunciation but means "cheap" or "inexpensive." It is spelled with
-        a different kanji (安) and is not used to describe ease of action.
-      grammar_point: <suggest>:安い (cheap)
-    - term: 簡単
-      meaning: Easy, simple
-      kind: similar expression
-      nuance: While 「簡単」 also means "easy," it is a な-adjective used for general simplicity or straightforwardness,
-        often for concepts or tasks. 「やすい」, however, specifically attaches to a verb's ます-stem to describe
-        the *ease of performing an action* or a *tendency*.
-      grammar_point: <suggest>:簡単 (easy)
-    - term: がち
-      meaning: Prone to; apt to; tends to (often negative connotation)
-      kind: similar expression
-      nuance: 「がち」 also expresses a tendency, but it often implies a negative or undesirable predisposition,
-        whereas 「やすい」 can describe a natural ease or tendency without negative implications.
-      grammar_point: がち (tend to)
-    - term: づらい
-      meaning: Difficult to do (due to internal/emotional reasons)
-      kind: similar expression
-      nuance: Similar to 「にくい」, 「づらい」 indicates difficulty in performing an action, but it often emphasizes
-        an internal or psychological resistance or discomfort, rather than external obstacles. 「やすい」 indicates
-        the opposite, ease of action.
-      grammar_point: <suggest>:づらい (difficult due to internal reasons)
-  post_false_friends_writeup: When encountering words that sound similar, always consider the kanji and
-    the context. 「やすい」, when used to mean 'easy to do' or 'prone to,' will typically be attached to a verb's
-    ます-stem and is often written in hiragana or with the kanji 「易」. In contrast, 「安い」 (with the kanji 安)
-    exclusively means 'cheap.' Furthermore, while 「簡単」 (kantan) conveys general 'easiness' for concepts
-    or tasks, 「やすい」 is specifically about the 'ease of performing an action' directly linked to a verb.
-    Pay attention to the subtle differences between 「がち」 and 「づらい」 as well. While 「がち」 expresses a general
-    tendency (often negative), 「づらい」 highlights an internal difficulty or discomfort, setting them apart
-    from the more neutral or positive implications of 「やすい」.
-  examples:
-    - english: This pen is very easy to write with.
-      japanese:
-        - この ペン は とても 書き {やすい} です。
-        - この ペン は とても 書き {やすい} よ。
-        - この ペン は とても 書き {やすい} ん です。
-        - これ、すごく 書き {やすい} ん だ けど。
-      english_literally: As for this pen, it is very easy to write with.
-      competing_grammar:
-        - competing_japanese:
-            - この ペン は 書く の が とても {簡単} です。
-          english: This pen is very simple to write.
-          hint: 「簡単」 describes general simplicity. We're looking for a word that describes the ease of performing
-            an action due to an inherent quality (「やすい」).
-        - competing_japanese:
-            - この ペン は とても 書き {にくい} です。
-          english: This implies difficulty, the opposite of the intended meaning. We're looking for a word
-            that describes ease of action.
-          hint: This implies difficulty, the opposite of the intended meaning. We're looking for a word
-            that describes ease of action (「やすい」).
-        - competing_japanese:
-            - この ペン は とても {安い} です。
-          english: This talks about price, not the quality or ease of writing. We're looking for a word
-            about how easy it is to perform an action.
-          hint: This talks about price, not the quality or ease of writing. We're looking for a word about
-            how easy it is to perform an action (「やすい」).
-        - competing_japanese:
-            - この ペン は とても 書き {づらい} です。
-          english: This indicates difficulty due to internal discomfort or resistance, rather than the general
-            ease of use.
-          hint: This indicates difficulty due to internal discomfort or resistance, rather than the general
-            ease of use. We're looking for ease of action (「やすい」).
-      scene: A student trying out a new pen.
-      register: teineigo (polite)
-      setting: academic
-      conjugation: non-past polite (～ます)
-    - english: She tends to cry easily when she's happy.
-      japanese:
-        - 彼女 は 嬉しい と すぐ に 泣き {やすい} です。
-        - 彼女、嬉しい と すぐ に 泣き {やすい} よ ね。
-        - 彼女 は 嬉しい と ついつい 泣き {やすい} の です。
-      english_literally: As for her, when she is happy, she is immediately prone to crying.
-      competing_grammar:
-        - competing_japanese:
-            - 彼女 は 嬉しい と すぐ に {泣い て しまい ます}。
-          english: She cries unintentionally when she's happy.
-          hint: 「〜てしまいます」 often implies an unintentional or regrettable action. We're looking for a word
-            that expresses a consistent tendency or predisposition (「やすい」).
-        - competing_japanese:
-            - 彼女 は 嬉しい と すぐ に 泣き {がち} です。
-          english: She tends to cry when she's happy.
-          hint: While `泣きがち` also expresses tendency, it often has a slightly negative connotation, whereas
-            `泣きやすい` describes a natural ease of crying.
-      scene: Two friends discussing a sensitive mutual acquaintance.
-      register: teineigo (polite)
-      setting: friendly
-      conjugation: non-past polite (～ます)
-    - english: This puzzle was harder than I imagined, it wasn't easy to solve at all.
-      japanese:
-        - この パズル は 想像 より 難しく て、全然 解き {やすく なかっ た}。
-        - この パズル、想像 より 難しく て、全然 解き {やすく なかっ た} なあ。
-        - この パズル は 想像 より 難しく て、まったく 解き {やすく なかっ た} です。
-      english_literally: As for this puzzle, it was more difficult than imagined, and it was not at all
-        easy to solve.
-      competing_grammar:
-        - competing_japanese:
-            - この パズル は 全然 {簡単 じゃ なかっ た}。
-          english: This puzzle was not simple at all.
-          hint: 「簡単」 describes general simplicity. We're looking for a phrase that specifically highlights
-            the difficulty in the *act of solving* the puzzle (「やすい」).
-        - competing_japanese:
-            - この パズル は 想像 より 難しく て、全然 解き {にくかっ た}。
-          english: This puzzle was harder than I imagined, it was difficult to solve.
-          hint: 「にくい」 conveys general difficulty. We're looking for a word that specifies the *lack of ease*
-            in solving the puzzle (「やすい」).
-        - competing_japanese:
-            - この パズル は 想像 より 難しく て、全然 解き {づらく なかっ た}。
-          english: This also implies difficulty, suggesting an internal or emotional resistance to solving,
-            which is not the straightforward difficulty of the puzzle itself.
-          hint: This also implies difficulty, suggesting an internal or emotional resistance to solving,
-            which is not the straightforward difficulty of the puzzle itself. We're looking for the lack
-            of ease (「やすい」).
-      scene: A person complaining to a friend about a difficult puzzle they just finished.
-      register: casual
-      setting: serious
-      conjugation: negative past plain (～なかった)
-    - english: These shoes are light and easy to run in, so they're my favorite.
-      japanese:
-        - この 靴 は 軽く て 走り {やすく て}、お 気 に 入り だ。
-        - この 靴 軽く て 走り {やすく て}、気 に 入 てる ん だ。
-        - この 靴 は 軽く て 走り {やすく て}、お 気 に 入り です。
-      english_literally: As for these shoes, being light and easy to run in, they are my favorite.
-      competing_grammar:
-        - competing_japanese:
-            - この 靴 は 軽く て 走る の が {簡単} だ から、お 気 に 入り だ。
-          english: These shoes are light and simple to run in, so they're my favorite.
-          hint: 「簡単」 describes general simplicity. We're looking for a word that describes an inherent quality
-            that makes an action easy (「やすい」).
-        - competing_japanese:
-            - この 靴 は 軽く て 走り {にくく て}、お 気 に 入り だ。
-          english: These shoes are light and hard to run in, so they're my favorite.
-          hint: This implies difficulty in running, contradicting the reason for them being a favorite.
-            We're looking for ease (「やすい」).
-        - competing_japanese:
-            - この 靴 は 軽く て 走り {づらく て}、お 気 に 入り だ。
-          english: This also implies difficulty, suggesting an internal or emotional resistance to running
-            in them, which is the opposite of the intended meaning.
-          hint: This also implies difficulty, suggesting an internal or emotional resistance to running
-            in them, which is the opposite of the intended meaning. We're looking for ease (「やすい」).
-      scene: A runner showing off their new shoes to a friend.
-      register: casual
-      setting: friendly
-      conjugation: te-form (～て)
-    - english: If it were a quieter place, I wish it would be easier to concentrate.
-      japanese:
-        - もっと 静か な 場所 なら、集中 し {やすかっ たら} いい の に。
-        - もっと 静か な 場所 なら、集中 し {やすかっ たら} いい の に ね。
-        - もっと 静か な 場所 なら、集中 し {やすかっ たら} よかっ た の に。
-      english_literally: If it were a quieter place, I wish it would be easy to concentrate.
-      competing_grammar:
-        - competing_japanese:
-            - もっと 静か な 場所 なら、集中 する の が {簡単 だっ たら} いい の に。
-          english: If it were a quieter place, I wish it would be simple to concentrate.
-          hint: 「簡単」 describes general simplicity. We're looking for a word that directly links the ease
-            of an action to a specific condition (「やすい」).
-        - competing_japanese:
-            - もっと 静か な 場所 なら、集中 し {にくかっ たら} いい の に。
-          english: If it were a quieter place, I wish it would be harder to concentrate.
-          hint: This suggests a desire for difficulty, which is the opposite of the speaker's intent. We're
-            looking for ease (「やすい」).
-        - competing_japanese:
-            - もっと 静か な 場所 なら、集中 し {づらかっ たら} いい の に。
-          english: This also conveys difficulty, implying an internal resistance to concentrating, which
-            is not the speaker's desired outcome.
-          hint: This also conveys difficulty, implying an internal resistance to concentrating, which is
-            not the speaker's desired outcome. We're looking for ease (「やすい」).
-      scene: A student trying to study in a noisy cafe, expressing frustration.
-      register: casual
-      setting: academic
-      conjugation: conditional (～たら)
-    - english: If it gets easier to improve the more I practice, I will work hard.
-      japanese:
-        - 練習 すれ ば する ほど、上達 し {やすけれ ば}、頑張り ます。
-        - 練習 すれ ば する ほど、上達 し {やすけれ ば}、私 も 頑張り ます。
-        - 練習 すれ ば する ほど、上達 し {やすけれ ば}、一層 励み ます。
-      english_literally: The more I practice, if it becomes easy to improve, I will work hard.
-      competing_grammar:
-        - competing_japanese:
-            - 練習 すれ ば する ほど、上達 する の が {簡単 なら ば}、頑張り ます。
-          english: If it gets simple to improve the more I practice, I will work hard.
-          hint: 「簡単」 describes general simplicity. We're looking for a word that connects the *ease of improvement*
-            directly to the act of practice (「やすい」).
-        - competing_japanese:
-            - 練習 すれ ば する ほど、上達 し {にくけれ ば}、頑張り ます。
-          english: If it gets harder to improve the more I practice, I will work hard.
-          hint: This presents a contradictory condition that would not motivate hard work. We're looking
-            for ease of improvement (「やすい」).
-        - competing_japanese:
-            - 練習 すれ ば する ほど、上達 し {づらけれ ば}、頑張り ます。
-          english: This implies a psychological or internal difficulty, which is not what the speaker hopes
-            for to be motivated.
-          hint: This implies a psychological or internal difficulty, which is not what the speaker hopes
-            for to be motivated. We're looking for ease of improvement (「やすい」).
-      scene: A determined student discussing their study strategy with their teacher.
-      register: teineigo (polite)
-      setting: serious
-      conjugation: conditional (～ば)
-    - english: Old tree branches are prone to breaking, so please be careful.
-      japanese:
-        - 古い 木 の 枝 は 折れ {やすい} から、注意 し て ください。
-        - 古い 木 の 枝 は 折れ {やすい} です から、お 気 を つけ ください。
-        - 古い 木 の 枝 は 折れ {やすい} ん で、お 気 を つけ ください。
-      english_literally: As for old tree branches, because they are prone to breaking, please be careful.
-      competing_grammar:
-        - competing_japanese:
-            - 古い 木 の 枝 は {折れる こと が 多い} から、注意 し て ください。
-          english: Old tree branches often break, so please be careful.
-          hint: 「が多い」 means 'happens often.' We're looking for a word that conveys an inherent fragility
-            or consistent tendency to break, which is more concise (「やすい」).
-        - competing_japanese:
-            - 古い 木 の 枝 は 折れ {にくい} から、注意 し て ください。
-          english: Old tree branches are hard to break, so please be careful.
-          hint: This suggests resistance to breaking, which contradicts the warning for caution. We're looking
-            for prone to breaking (「やすい」).
-        - competing_japanese:
-            - 古い 木 の 枝 は {安い} から、注意 し て ください。
-            - 古い 木 の 枝 は {安く} て 脆い から、注意 し て ください。
-          english: Old tree branches are cheap, so please be careful.
-          hint: This talks about price, not fragility, and the warning is based on the branches breaking,
-            not their cost. We're looking for prone to breaking (「やすい」).
-        - competing_japanese:
-            - 古い 木 の 枝 は 折れ {がち} だ から、注意 し て ください。
-          english: Old tree branches tend to break, so please be careful.
-          hint: While `折れがち` also expresses tendency, `折れやすい` highlights the inherent fragility making it
-            easy for them to break, which is more about the physical property.
-      scene: A park ranger warning visitors about the dangers of old trees.
-      register: teineigo (polite)
-      setting: instructional
-      conjugation: dictionary (plain non-past)
-    - english: This type of smartphone is easy to drop, but its characteristic is that it's hard to break.
-      japanese:
-        - この タイプ の スマホ は 落とし {やすい} けど、割れ {にくい} の が 特徴 だ。
-        - この タイプ の スマホ は 落とし {やすい} けど、割れ {にくい} の が 特徴 な ん です。
-        - この タイプ の スマホ は 落下 し {やすい} 反面、破損 し {にくい} の が 特徴 で ござい ます。
-      english_literally: As for this type of smartphone, it is easy to drop, but its characteristic is that
-        it is hard to break.
-      competing_grammar:
-        - competing_japanese:
-            - この タイプ の スマホ は 落とす の が {簡単} だ けど、割る の が {難しい} の が 特徴 だ。
-          english: This type of smartphone is simple to drop, but its characteristic is that it's difficult
-            to break.
-          hint: 「簡単」 describes general simplicity, and 「難しい」 describes general difficulty. We're looking
-            for words that describe inherent properties of being prone to an action or resistant to it (「やすい」
-            and 「にくい」).
-        - competing_japanese:
-            - この タイプ の スマホ は 落とし {にくい} けど、割れ {にくい} の が 特徴 だ。
-          english: This describes a phone that is hard to drop, which contradicts the speaker's initial
-            point about its drop-prone nature. We're looking for 'easy to drop' (「やすい」).
-          hint: This describes a phone that is hard to drop, which contradicts the speaker's initial point
-            about its drop-prone nature. We're looking for 'easy to drop' (「やすい」).
-        - competing_japanese:
-            - この タイプ の スマホ は {安い} けど、割れ {にくい} の が 特徴 だ。
-          english: This talks about the price of the phone, not how easily it is dropped. We're looking
-            for how easy it is to drop.
-          hint: This talks about the price of the phone, not how easily it is dropped. We're looking for
-            how easy it is to drop (「やすい」).
-        - competing_japanese:
-            - この タイプ の スマホ は 落とし {がち} だ けど、割れ {にくい} の が 特徴 だ。
-          english: This type of smartphone tends to be dropped, but its characteristic is that it's hard
-            to break.
-          hint: 「落としがち」 implies a general tendency to drop, often due to carelessness, whereas `落としやすい`
-            suggests the phone's design makes it prone to being dropped.
-      scene: A tech reviewer comparing the features of a new smartphone model.
-      register: semi-formal
-      setting: informative
-      conjugation: dictionary (plain non-past)
-    - english: Those clothes are easy to wear, so I end up wearing them every day, you know?
-      japanese:
-        - あの 服 は 着 {やすい} から、毎日 着 て しまう の よ ね。
-        - あの 服 は 着 {やすい} から、つい 毎日 着 ちゃう の よ ね。
-        - あの 服 は 着 {やすい} の で、毎日 着 て しまい ます わ。
-      english_literally: As for those clothes, because they are easy to wear, I end up wearing them every
-        day, you know?
-      competing_grammar:
-        - competing_japanese:
-            - あの 服 は 着る の が {簡単} だ から、毎日 着 て しまう の よ ね。
-          english: Those clothes are simple to wear, so I end up wearing them every day, you know?
-          hint: 「簡単」 describes general simplicity. We're looking for a word that describes the ease of performing
-            an action, making the reason for wearing them often more natural (「やすい」).
-        - competing_japanese:
-            - あの 服 は 着 {にくい} から、毎日 着 て しまう の よ ね。
-          english: Those clothes are hard to wear, so I end up wearing them every day, you know?
-          hint: This presents a contradictory reason for wearing the clothes often. We're looking for ease
-            of wearing (「やすい」).
-        - competing_japanese:
-            - あの 服 は {安い} から、毎日 着 て しまう の よ ね。
-          english: This talks about the price of the clothes, not how comfortable or convenient they are
-            to wear. We're looking for ease of wearing.
-          hint: This talks about the price of the clothes, not how comfortable or convenient they are to
-            wear. We're looking for ease of wearing (「やすい」).
-        - competing_japanese:
-            - あの 服 は 着 {づらい} から、毎日 着 て しまう の よ ね。
-          english: This implies an internal difficulty in wearing the clothes, which contradicts the reason
-            for wearing them daily. We're looking for ease of wearing.
-          hint: This implies an internal difficulty in wearing the clothes, which contradicts the reason
-            for wearing them daily. We're looking for ease of wearing (「やすい」).
-      scene: A woman sharing her daily fashion choice with a female friend.
-      register: casual
-      setting: friendly
-      conjugation: dictionary (plain non-past)
-      speaker_gender: female
-      listener_gender: female
-      nuance: The use of 「〜の よね」 is primarily used by female speakers in casual conversation. It adds a
-        soft, somewhat explanatory or confiding tone, often seeking subtle agreement or understanding from
-        the listener, making the statement feel more personal.
-    - english: This dish is easy for anyone to make, so even I, a man, can handle it.
-      japanese:
-        - この 料理 は 誰 に で も 作り {やすい} から、男 の 俺 で も 大丈夫 だ。
-        - この 料理 は 誰 に で も 作り {やすい} から、俺 なんか で も 大丈夫 だ ぜ。
-        - この 料理 は 誰 に で も 作り {やすい} の で、私 で も 問題 あり ませ ん。
-      english_literally: As for this dish, because it is easy for anyone to make, even me, a man, it is
-        fine.
-      competing_grammar:
-        - competing_japanese:
-            - この 料理 は 誰 に で も 作る の が {簡単} だ から、男 の 俺 で も 大丈夫 だ。
-          english: This dish is simple for anyone to make, so even I, a man, can handle it.
-          hint: 「簡単」 describes general simplicity. We're looking for a word that describes the inherent
-            ease of the recipe itself (「やすい」).
-        - competing_japanese:
-            - この 料理 は 誰 に で も 作り {にくい} から、男 の 俺 で も 大丈夫 だ。
-          english: This dish is hard for anyone to make, so even I, a man, can handle it.
-          hint: This implies universal difficulty, making the speaker's boast less impressive. We're looking
-            for ease of making (「やすい」).
-        - competing_japanese:
-            - この 料理 は 誰 に で も {安い} から、男 の 俺 で も 大丈夫 だ。
-          english: This talks about the cost, not the ease of preparation. We're looking for ease of making.
-          hint: This talks about the cost, not the ease of preparation. We're looking for ease of making
-            (「やすい」).
-        - competing_japanese:
-            - この 料理 は 誰 に で も 作り {づらい} から、男 の 俺 で も 大丈夫 だ。
-          english: This suggests a psychological difficulty in making the dish, which doesn't fit the context
-            of its general ease. We're looking for ease of making.
-          hint: This suggests a psychological difficulty in making the dish, which doesn't fit the context
-            of its general ease. We're looking for ease of making (「やすい」).
-      scene: A man who usually avoids cooking boasting about a simple recipe he just made.
-      register: casual
-      setting: humorous
-      conjugation: dictionary (plain non-past)
-      speaker_gender: male
-      listener_gender: group
-      nuance: The use of the masculine first-person pronoun `俺 (おれ)` and the phrase `男の俺でも` (even I, a man)
-        are characteristic of male speech, often employed for lighthearted self-deprecation or playful boasting,
-        reinforcing the `humorous` setting.
-    - english: This system is designed to be easy to operate.
-      japanese:
-        - この システム は 操作 し {やすい} よう に 設計 さ れ て い ます。
-        - この システム は 操作 し {やすい} よう に 設計 さ れ て おり ます。
-        - この システム は 操作 し {やすい} よう に 作ら れ て い ます。
-      english_literally: As for this system, it is designed so that it is easy to operate.
-      competing_grammar:
-        - competing_japanese:
-            - この システム は 操作 する の が {簡単 な よう に} 設計 さ れ て い ます。
-          english: This system is designed to be simple to operate.
-          hint: 「簡単」 describes general simplicity. We're looking for a word that is more direct and concise
-            for describing the inherent user-friendliness (「やすい」).
-        - competing_japanese:
-            - この システム は 操作 し {にくい} よう に 設計 さ れ て い ます。
-          english: This system is designed to be hard to operate.
-          hint: This contradicts the core design principle of user-friendliness. We're looking for ease
-            of operation (「やすい」).
-        - competing_japanese:
-            - この システム は {安い} よう に 設計 さ れ て い ます。
-          english: This focuses on cost, not user interface design. We're looking for ease of operation.
-          hint: This focuses on cost, not user interface design. We're looking for ease of operation (「やすい」).
-        - competing_japanese:
-            - この システム は 操作 し {づらい} よう に 設計 さ れ て い ます。
-          english: This also implies difficulty, suggesting an internal resistance to operation, which is
-            the opposite of the system's design intent. We're looking for ease of operation.
-          hint: This also implies difficulty, suggesting an internal resistance to operation, which is the
-            opposite of the system's design intent. We're looking for ease of operation (「やすい」).
-      scene: A software developer presenting a new system's user-friendly features to potential clients.
-      register: bijinesu nihongo (business)
-      setting: professional
-      conjugation: dictionary (plain non-past)
-    - english: Grandpa, this book has large print, so it's easy to read, isn't it?
-      japanese:
-        - お じい ちゃん、この 本 は 字 が 大きく て 読み {やすい} でしょう？
-        - お じい ちゃん、この 本、字 が 大きく て 読み {やすい} でしょう？
-        - お じい ちゃん、この 本 は 字 が 大きく て 大変 読み {やすい} の で は ない でしょう か。
-      english_literally: Grandpa, this book's characters are large, so it is easy to read, isn't it?
-      competing_grammar:
-        - competing_japanese:
-            - お じい ちゃん、この 本 は 字 が 大きく て 読む の が {簡単} でしょう？
-          english: Grandpa, this book has large print, so it's simple to read, isn't it?
-          hint: 「簡単」 describes general simplicity. We're looking for a word that directly addresses the
-            ease of performing an action, like reading, especially in a thoughtful context (「やすい」).
-        - competing_japanese:
-            - お じい ちゃん、この 本 は 字 が 大きく て 読み {にくい} でしょう？
-          english: Grandpa, this book has large print, so it's hard to read, isn't it?
-          hint: This implies that large print makes it hard to read, which contradicts the purpose of large
-            print. We're looking for ease of reading (「やすい」).
-        - competing_japanese:
-            - お じい ちゃん、この 本 は 字 が 大きく て {安い} でしょう？
-          english: Grandpa, this book has large print, so it's cheap, isn't it?
-          hint: This talks about the price, not the readability for vision-impaired readers. We're looking
-            for ease of reading (「やすい」).
-        - competing_japanese:
-            - お じい ちゃん、この 本 は 字 が 大きく て 読み {づらい} でしょう？
-          english: This also conveys difficulty, implying an internal resistance to reading, which is the
-            opposite of the grandchild's intention. We're looking for ease of reading.
-          hint: This also conveys difficulty, implying an internal resistance to reading, which is the opposite
-            of the grandchild's intention. We're looking for ease of reading (「やすい」).
-      scene: A grandchild showing a large-print book to their grandfather, trying to be helpful.
-      register: casual
-      setting: intimate
-      conjugation: non-past polite (～ます)
-      speaker_age: younger
-      nuance: The use of `おじいちゃん` (grandpa) and the gentle `でしょう` (seeking confirmation) creates an affectionate
-        and considerate tone typical of a younger speaker addressing an older relative. The specific mention
-        of `字が大きい` (large print) highlights the accommodation for older readers.
-  post_example_writeup: As demonstrated in the examples, 「やすい」 seamlessly integrates with verbs to convey
-    either ease of action or a tendency/susceptibility. Its versatile nature allows it to be used across
-    various registers and contexts, making it a fundamental component for expressing inherent qualities
-    or predispositions in Japanese.
-  sources:
-    bunpro: https://bunpro.jp/grammar_points/やすい
-lint-errors:
-  - error grammar point is missing required field 'meaning'
-  - '[rule-18] warning grammar point has split_predecessor field. Use the information in it to help compose
-    this new grammar point, then remove the field.'
+  It is crucial to distinguish this meaning from the "easy to do" meaning of 「〜やすい」. Context usually clarifies which nuance is intended, but understanding the difference is key to proper comprehension and usage. This grammatical construction points to a natural inclination or a susceptibility.
+false_friends:
+  - term: '[V-stem]やすい (easy to do)'
+    meaning: easy to do
+    kind: similar expression
+    nuance: While both use the same form, this refers to the ease with which an action can be performed,
+      whereas the current grammar point describes a tendency or predisposition for something to happen.
+    grammar_point: '[V-stem]やすい (easy to do)'
+  - term: がち (tend to)
+    meaning: Apt to do, Tend to do, Prone to do
+    kind: similar expression
+    nuance: Both express a tendency, but 「がち」 carries a stronger and almost exclusive nuance of a negative,
+      undesirable, or frequent habit. 「〜やすい (prone to)」 is broader and can be neutral or positive, though
+      it often suggests a less controlled or spontaneous occurrence.
+    grammar_point: がち (tend to)
+  - term: きらいがある (undesirable tendency)
+    meaning: Have a tendency to, Tend to, Be slightly~
+    kind: similar expression
+    nuance: Unlike 「〜やすい (prone to)」 which can be neutral or negative, 「きらいがある」 is almost exclusively
+      used for undesirable or problematic tendencies, implying a fault or defect in character or behavior.
+    grammar_point: きらいがある (undesirable tendency)
+  - term: にくい (difficult to do)
+    meaning: Difficult to, Hard to
+    kind: antonym
+    nuance: This is the direct opposite of the 'easy to do' sense of 「〜やすい」, indicating difficulty in
+      performing an action. While 「〜やすい (prone to)」 describes likelihood, 「にくい」 implies resistance or
+      difficulty.
+    grammar_point: にくい (difficult to do)
+post_false_friends_writeup: While 「〜やすい」, 「がち」, and 「きらいがある」 all convey a sense of tendency, their nuances
+  differ. 「〜やすい」 focuses on an inherent characteristic or susceptibility. 「がち」 typically implies an undesirable
+  habit or frequent negative occurrence. 「きらいがある」 is reserved for specific, usually negative, personal
+  or behavioral faults.
+examples:
+  - english: My grandfather is prone to forgetting things these days.
+    japanese:
+      - 祖父 は 最近、物 を {忘れ やすい}。
+      - 祖父 は 最近、物 を {忘れ やすい} です。
+      - 祖父 は 最近、物 を {忘れ やすい} ん です。
+    english_literally: Grandfather, recently, things, prone to forgetting.
+    competing_grammar:
+      - competing_japanese:
+          - 祖父 は 最近、物 を 忘れ がち だ。
+        english: My grandfather tends to forget things these days (implying a negative habit).
+        hint: While both imply a tendency, 「忘れがち」 highlights a negative, frequent habit. 「忘れやすい」 indicates
+          an inherent predisposition or susceptibility.
+    scene: A family member is discussing their grandfather's memory with a friend.
+    register: casual
+    setting: friendly
+    conjugation: dictionary (plain non-past)
+    speaker_gender: female
+    listener_gender: female
+    nuance: The use of 「忘れやすい」 here describes an inherent characteristic of the grandfather's memory,
+      implying he is susceptible to forgetting. It's a neutral observation about his condition.
+  - english: This smartphone screen is prone to getting scratched easily.
+    japanese:
+      - この スマホ の 画面 は 傷 が {つき やすい}。
+      - この スマホ の 画面 は 傷 が {つき やすい} です。
+      - この スマホ の 画面 は 傷 が {つき やすい} ん だ。
+    english_literally: This smartphone's screen, scratches, prone to attaching.
+    competing_grammar:
+      - competing_japanese:
+          - この スマホ の 画面 は 傷 が つき がち だ。
+        english: This smartphone screen tends to get scratched (implies a frequent, undesirable habit
+          of the screen, which doesn't make sense for an object).
+        hint: 「つきがち」 would imply a habit or frequent negative occurrence of the screen itself, which is
+          grammatically awkward for an inanimate object. 「つきやすい」 is better for describing material properties.
+    scene: Someone is complaining about their new smartphone.
+    register: casual
+    setting: casual slang
+    conjugation: dictionary (plain non-past)
+    nuance: 「つきやすい」 describes an inherent quality of the screen material, that it's susceptible to scratching.
+      This is a common and natural use for inanimate objects.
+  - english: Children are likely to catch colds.
+    japanese:
+      - 子ども は 風邪 を {ひき やすい}。
+      - 子ども は 風邪 を {ひき やすい} です。
+      - 子ども は 風邪 を {ひき やすい} ん だ よ。
+    english_literally: Children, cold, prone to catching.
+    competing_grammar:
+      - competing_japanese:
+          - 子ども は 風邪 を ひき がち だ。
+        english: Children tend to catch colds (emphasizes a frequent negative habit).
+        hint: While both are possible, 「ひきやすい」 sounds more like a general truth about children's immune
+          systems. 「ひきがち」 could imply they frequently catch colds, perhaps due to carelessness.
+    scene: A parent giving advice to another parent.
+    register: semi-formal
+    setting: informative
+    conjugation: dictionary (plain non-past)
+    nuance: This sentence uses 「ひきやすい」 to state a general, natural tendency or vulnerability that children
+      have. It's a common observation.
+  - english: These shoes are prone to slipping on wet surfaces.
+    japanese:
+      - この 靴 は 濡れ た 路面 で {滑り やすい} です。
+      - この 靴 は 濡れ た 路面 で {滑り やすい}。
+      - この 靴 は 濡れ た 路面 で {滑り やすい} ん です。
+    english_literally: These shoes, wet road surface, prone to slipping (polite).
+    competing_grammar:
+      - competing_japanese:
+          - この 靴 は 濡れ た 路面 で 滑り がち です。
+        english: These shoes tend to slip on wet surfaces (implies a repeated, possibly problematic, occurrence).
+        hint: 「滑りがち」 would suggest a habit or repeated negative outcome for the shoes. 「滑りやすい」 describes
+          an inherent design flaw or material property making them susceptible to slipping.
+    scene: A customer is asking a shoe salesperson about the grip of certain shoes.
+    register: formal
+    setting: professional
+    conjugation: non-past polite (～ます)
+    nuance: The use of 「滑りやすい」 describes an inherent property of the shoes, indicating their susceptibility
+      to slipping due to their design or material, rather than a repeated action they 'tend' to do.
+  - english: That employee is prone to making mistakes.
+    japanese:
+      - あの 社員 は ミス を {し やすい}。
+      - あの 社員 は ミス を {し やすい} です。
+      - あの 社員 は ミス を {し やすい} ん だ。
+    english_literally: That employee, mistakes, prone to doing.
+    competing_grammar:
+      - competing_japanese:
+          - あの 社員 は ミス を し がち だ。
+        english: That employee tends to make mistakes (implying a frequent, undesirable habit).
+        hint: 「しがち」 emphasizes a negative, frequent habit. 「しやすい」 is a more general statement about their
+          predisposition or susceptibility to making mistakes.
+      - competing_japanese:
+          - あの 社員 は ミス を する きらい が ある。
+        english: That employee has a tendency to make mistakes (implying an undesirable habit or fault).
+        hint: 「きらいがある」 more strongly implies a negative behavioral fault or defect. 「しやすい」 is a more general
+          statement about their inherent likelihood to make mistakes.
+    scene: Two colleagues are discussing a problematic coworker.
+    register: casual
+    setting: professional
+    conjugation: dictionary (plain non-past)
+    speaker_gender: male
+    listener_gender: male
+    nuance: 「しやすい」 describes an inherent characteristic of the employee, their susceptibility to making
+      mistakes. While it can imply a negative tendency, it is a broader description than 「しがち」 or 「きらいがある」,
+      which more specifically point to undesirable habits or faults.
+  - english: He was prone to getting lost when he went abroad for the first time.
+    japanese:
+      - 彼 は 初めて 海外 に 行っ た 時、{迷い やすかっ た}。
+      - 彼 は 初めて 海外 に 行っ た 時、{迷い やすかっ た} です。
+      - 彼 は 初めて 海外 に 行っ た 時、{迷い やすかっ た} ん だ。
+    english_literally: He, first time abroad, went, when, was prone to getting lost.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 初めて 海外 に 行っ た 時、よく 道 に 迷っ た。
+        english: He often got lost when he went abroad for the first time.
+        hint: This uses 'often' (よく) with a simple past verb. 「迷いやすかった」 directly describes his inherent
+          tendency to get lost in that unfamiliar situation.
+    scene: Someone is recounting a friend's travel experience.
+    register: casual
+    setting: storytelling
+    conjugation: past plain (～た)
+    speaker_gender: female
+    listener_gender: female
+    nuance: 「迷いやすかった」 in this context describes an inherent predisposition to get lost, possibly due to
+      his lack of experience or poor sense of direction. It's a past observation of his characteristic.
+  - english: This type of plant is not prone to disease.
+    japanese:
+      - この 種類 の 植物 は 病気 に {なり やすく ない}。
+      - この 種類 の 植物 は 病気 に {なり やすく あり ませ ん}。
+    english_literally: This type of plant, disease, not prone to becoming.
+    competing_grammar:
+      - competing_japanese:
+          - この 種類 の 植物 は 病気 に なり にくい。
+        english: This type of plant is hard to get diseased (i.e., it's resistant).
+        hint: 「なりにくい」 means 'hard to become' or 'resistant to becoming'. While semantically similar to
+          'not prone to', it uses the antonym 'にくい' rather than the direct negation of 'やすい'.
+      - competing_japanese:
+          - この 種類 の 植物 は 病気 に なり にくく ない。
+        english: It's not that this type of plant is hard to get diseased (i.e., it is prone to disease).
+        hint: This is a double negative ('not not prone to'). It actually means the plant *is* prone to
+          disease, which contradicts the English sentence.
+    scene: A gardening expert is giving advice.
+    register: formal
+    setting: informative
+    conjugation: negative plain (～ない)
+    nuance: The use of 「なりやすくない」 indicates that the plant lacks the tendency to become diseased. It's
+      the direct negative form of 「なりやすい」 (prone to becoming). This phrasing confirms it is not susceptible
+      to disease.
+  - english: I'm the type of person who is prone to worrying.
+    japanese:
+      - 私 は 心配 {し やすい} タイプ です。
+      - 私 は 心配 {し やすい} タイプ な ん です。
+      - 私 は 心配 {し やすい} タイプ だ。
+    english_literally: I, worry, prone to, type, am.
+    competing_grammar:
+      - competing_japanese:
+          - 私 は 心配 性 だ。
+        english: I am a worrier (noun for someone who worries a lot).
+        hint: 「心配性」 is a noun referring to a worrier. 「心配しやすい」 describes the inherent tendency to worry
+          using verb + やすい.
+    scene: Someone describing their personality to a new friend.
+    register: casual
+    setting: intimate
+    conjugation: dictionary (plain non-past)
+    speaker_gender: female
+    listener_gender: female
+    nuance: 「心配しやすい」 describes an inherent character trait of being easily worried or prone to worrying.
+      This is a common way to describe personal characteristics.
+  - english: Japanese people are often considered polite and shy, but it's not always easy to characterize
+      them as such.
+    japanese:
+      - 日本 人 は 丁寧 で 恥ずかし がり 屋 だ と {思わ れ やすい} が、いつ も そう と は 限ら ない。
+      - 日本 人 は 丁寧 で 恥ずかし がり 屋 だ と {思わ れ やすい} です が、いつ も そう と は 限り ませ ん。
+      - 日本 人 は 丁寧 で 恥ずかし がり 屋 だ と {思わ れ やすい} けど、いつ も そう と は 限ら ない。
+    english_literally: Japanese people, polite and shy, thought, prone to being, but, always so, not limited
+      to.
+    competing_grammar:
+      - competing_japanese:
+          - 日本 人 は 丁寧 で 恥ずかし がり 屋 だ と よく 思わ れる が、いつ も そう と は 限ら ない。
+        english: Japanese people are often thought to be polite and shy, but that's not always true.
+        hint: This uses the passive form with 'often' (よく). 「思われやすい」 implies a natural tendency for people
+          to think that way, making it a more inherent observation.
+    scene: A speaker is giving a presentation on cultural misconceptions.
+    register: formal
+    setting: academic
+    conjugation: dictionary (plain non-past)
+    nuance: Here, 「思われやすい」 indicates that it is easy or common for people to form the impression that
+      Japanese people are polite and shy. It describes a predisposition of perception rather than the
+      action itself.
+  - english: These older model cars were generally prone to rusting.
+    japanese:
+      - これ ら の 旧型 車 は 一般 に {錆び やすかっ た} の です。
+      - これ ら の 旧型 車 は 一般 に {錆び やすかっ た}。
+      - これ ら の 旧型 車 は 一般 に {錆び やすかっ た} の だ。
+    english_literally: These old model cars, generally, was prone to rusting, it is.
+    competing_grammar:
+      - competing_japanese:
+          - これ ら の 旧型 車 は 一般 に 錆び がち だっ た の です。
+        english: These older model cars generally tended to rust (implying a frequent undesirable problem).
+        hint: 「錆びがち」 would emphasize a frequent, undesirable occurrence. 「錆びやすかった」 points to an inherent
+          material characteristic or design flaw making them susceptible to rust.
+    scene: A mechanic is explaining common issues with vintage cars.
+    register: semi-formal
+    setting: professional
+    conjugation: past polite (～ました)
+    nuance: 「錆びやすかった」 describes an inherent vulnerability of the older car models to rust, indicating
+      a material or manufacturing quality that made them susceptible. The use of 「のです」 adds an explanatory
+      nuance.
+post_example_writeup: Understanding the precise nuance of 「〜やすい」 is crucial. While it can describe the
+  ease of an action, its use for "prone to" or "likely to" often highlights an inherent characteristic,
+  susceptibility, or tendency. This is particularly evident when describing physical properties of objects
+  or inherent traits of people, which may not always carry a negative connotation but imply a natural
+  inclination. When considering negative habits or frequent undesirable occurrences, 「がち」 or 「きらいがある」
+  might be more appropriate, but 「〜やすい」 provides a broader and often more neutral description of a predisposition.
+sources:
+  bunpro: https://bunpro.jp/grammar_points/191

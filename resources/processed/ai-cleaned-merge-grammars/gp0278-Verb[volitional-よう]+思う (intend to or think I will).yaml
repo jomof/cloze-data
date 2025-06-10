@@ -2,7 +2,7 @@ grammar_point: Verb[volitional-よう]+思う (intend to or think I will)
 learn_before:
   - と (quotation)
   - (よ)う (let’s, shall we)
-  - 思う (I think or thought)
+  - <suggest>:思う (I think or thought)
   - ている (~ing)
 learn_after:
   - Verb[volitional-よう] にする (to make an effort to establish a habit)
@@ -131,7 +131,7 @@ false_friends:
     nuance: Unlike Verb[volitional-form] + と思う, which expresses an intention, 「と 思う」 on its own (with
       a non-volitional verb) simply conveys an opinion or belief about something, not an intention to
       act. For example, 「彼 は 来る と 思う」 means "I think he will come," not "I intend for him to come."
-    grammar_point: 思う (I think or thought)
+    grammar_point: <suggest>:思う (I think or thought)
   - term: つもりだ
     meaning: To plan to, to intend to
     kind: similar expression
@@ -389,9 +389,3 @@ post_example_writeup: The core of 「〜よう と 思う」 lies in expressing 
   of a decision-making moment, respectively.
 sources:
   bunpro: https://bunpro.jp/grammar_points/ようと思う-おうと思う
-lint-errors:
-  - '[rule-13] unknown grammar at ''learn_before[2]'': ''思う (I think or thought)''. You may suggest new
-    grammar points by adding a false_friend.'
-  - '[rule-13] warning unknown grammar at ''false_friends[2]'': ''思う (I think or thought)''. It **MUST**
-    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
-    grammar point.'

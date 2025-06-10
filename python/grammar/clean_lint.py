@@ -42,6 +42,16 @@ def strip_matching_quotes(text, _ = None):
                 break
     return stripped
 
+def false_friends_unknown_grammar_type_to_suggest(val, type, all_grammars_summary):
+    if type != "grammarType": return val
+    with_no_suggest = val.strip().removeprefix("<suggest>:").strip()
+
+    if with_no_suggest in all_grammars_summary['all-grammar-points'].keys():
+        # Strip <suggest>: if it is in the dictionary
+        return with_no_suggest 
+    else:
+        # Prepend <suggest>: if it is in the dictionary
+        return f"<suggest>:{with_no_suggest}" # Otherwise, prepend <suggest>:
 
 def lv_quotes(val, type, path, messages):
     """
@@ -75,8 +85,8 @@ def lv_japanese_braces(val, type, path, messages):
     if type != "japaneseVariationType":
         return
 
-    if '{' not in val or '}' not in val:
-        messages.append(f"[rule-5] warning {path} missing {{bold}} grammar point: {val}")
+    # if '{' not in val or '}' not in val:
+    #     messages.append(f"[rule-5] warning {path} missing {{bold}} grammar point: {val}")
 
 def lv_missing_competing_grammar(val, type, path, messages):
     """
@@ -184,15 +194,12 @@ def lv_false_friends_grammar_point(val, type, path, messages, all_grammars_summa
     gp = val.get("grammar_point")
     if not isinstance(gp, str) or not gp.strip():
         messages.append(f"[rule-12] warning {path}.grammar_point is missing or empty")
-    elif not gp.startswith("<suggest>:"):
-        if gp not in all_grammars_summary['all-grammar-points'].keys():
-            messages.append(f"[rule-13] warning unknown grammar at '{path}': '{gp}'. It **MUST** be from ALL_GRAMMARS_SUMMARY or you can prepend '<suggest>:' to the grammar point to suggest a new grammar point.")
 
 def lv_known_grammar(val, type, path, messages, all_grammars_summary):
     if type != "knownGrammarType":
         return
     if not val in all_grammars_summary['all-grammar-points'].keys():
-        if val != "<first>" and val != "<last>":
+        if not val.startswith("<suggest>:"):
             messages.append(f"[rule-13] unknown grammar at '{path}': '{val}'. You may suggest new grammar points by adding a false_friend.")
 
 def lv_grammar_point_special_characters(val, type, path, messages):
@@ -414,10 +421,13 @@ def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = { "
             
     def fn(value, type_name, path):
         # print(f"fn: {type_name=}, {path=}")
-        result = value
+        result = value.strip() if isinstance(value, str) else value
         try:
+            result = false_friends_unknown_grammar_type_to_suggest(result, type_name, all_grammars_summary)
+
             if type_name == "grammarType":
-                return value.strip()
+                result = strip_matching_quotes(result)
+
             if type_name == None:
                 grammar_point = value
                 if 'better_grammar_point_name' in grammar_point:

@@ -9,804 +9,376 @@ learn_after:
   - げ (seeming・appearance)
   - っぽい (ish; characteristic of)
 id: gp0213
-split_predecessor: |
-  Multiple old grammar points have been combined into one: 'がる (to show signs)', 'たがる (to appear to want to)' -> '[i-Adj-stem]がる・[na-Adj]がる (to show signs of feeling)'. Please create a unified grammar point that incorporates the relevant aspects of all the old points. Please recreate this grammar point with this information in mind. All fields **MUST** be suitable for the new name. For your reference, here is the old content:
+meaning: To show signs of feeling or appearing to be in a certain state; to act as if.
+conjugations:
+  - conjugation-type: dictionary (plain non-past)
+    form: がる
+    rarity: common
+    meaning: to show signs of feeling
+  - conjugation-type: negative plain (～ない)
+    form: がらない
+    rarity: common
+    meaning: not to show signs of feeling
+  - conjugation-type: past plain (～た)
+    form: がった
+    rarity: common
+    meaning: showed signs of feeling
+  - conjugation-type: te-form (～て)
+    form: がって
+    rarity: common
+    meaning: showing signs of feeling (and...)
+  - conjugation-type: non-past polite (～ます)
+    form: がります
+    rarity: common
+    meaning: shows signs of feeling (polite)
+  - conjugation-type: negative non-past polite (～ません)
+    form: がと
+    rarity: common
+    meaning: does not show signs of feeling (polite)
+  - conjugation-type: past polite (～ました)
+    form: がりました
+    rarity: common
+    meaning: showed signs of feeling (polite)
+  - conjugation-type: negative past polite (～ませんでした)
+    form: がりませんでした
+    rarity: common
+    meaning: did not show signs of feeling (polite)
+  - conjugation-type: conditional (～たら)
+    form: がったら
+    rarity: common
+    meaning: if one shows signs of feeling
+  - conjugation-type: concessive (～ても)
+    form: がっても
+    rarity: common
+    meaning: even if one shows signs of feeling
+pronunciation:
+  katakana: ガル
+  romaji: garu
+formation:
+  い-Adjective stem + がる: Used to describe an outward manifestation of an emotion or state expressed by
+    an い-adjective. For example, 寒い (samui, cold) becomes 寒がる (samugaru, to act cold).
+  な-Adjective stem + がる: Used for な-adjectives to describe someone appearing to be in a certain state.
+    For example, 嫌い (kirai, dislike) becomes 嫌がる (iyagaru, to show signs of disliking).
+  たい-form stem + がる: Used to describe someone outwardly showing a desire. For example, 食べたい (tabetai,
+    want to eat) becomes 食べたがる (tabetagaru, to show signs of wanting to eat).
+jlpt: N3
+details:
+  part-of-speech: auxiliary verb
+  register: casual
+  usage-context: Used to describe observable behavior that indicates someone else's feelings or state,
+    as you cannot directly know what another person is thinking or feeling. It transforms adjectives and
+    desires into verbs.
+  function: To express an indirect observation of someone else's emotional state or desire, based on their
+    external signs or behavior.
+  nuance: This grammar point implies that the speaker is inferring an emotion or state from external signs,
+    rather than directly stating it. It cannot be used for the speaker's own feelings or desires, as one
+    would express those directly (e.g., 私は寒い desu, I am cold; 私は食べたい desu, I want to eat). It can sometimes
+    carry a nuance of slight disapproval, or simply an objective observation of behavior.
+  counterpoint: Direct expression of feeling (e.g., 寒い desu, 食べたい desu).
+  grammatical-role: Transforms adjectives and the desiderative form into verbs that can be conjugated
+    like regular godan verbs.
+etymology: The suffix がる is thought to be derived from the verb がるい (garui), an old form meaning 'to be
+  eager for' or 'to desire strongly'. Over time, its function broadened from expressing strong internal
+  desire to indicating an outward manifestation of any internal state or feeling. This linguistic evolution
+  highlights how Japanese often relies on observable behaviors to describe internal experiences, a practice
+  reflected in this grammatical construction.
+writeup: |-
+  The grammar point 「〜がる」 is an auxiliary verb suffix that attaches to the stem of い-adjectives, な-adjectives, and the たい-form (desiderative form) to describe someone else's apparent feelings or desires. Since you cannot directly perceive another person's internal state, 「〜がる」 is used to convey that someone is exhibiting outward signs of an emotion, a physical state, or a desire.
 
-  === がる (to show signs) ===
-  grammar_point: がる (to show signs)
-  learn_before:
-    - い-Adjectives (adjectives ending in い)
-    - な-Adjectives (adjectival nouns)
-    - たい (want to do)
-    - Verb[masu-stem] (conjunction)
-  learn_after:
-    - ぎみ (slight tendency or feeling)
-    - げ (seeming・appearance)
-    - っぽい (ish; characteristic of)
-  id: gp0213
-  meaning: to show signs of feeling/wanting; to appear to be
-  conjugations:
-    - conjugation-type: dictionary (plain non-past)
-      form: がる
-      rarity: common
-      meaning: to show signs of feeling/wanting; to appear to be
-    - conjugation-type: non-past polite (～ます)
-      form: がります
-      rarity: common
-      meaning: to show signs of feeling/wanting; to appear to be (polite)
-    - conjugation-type: negative plain (～ない)
-      form: がらない
-      rarity: common
-      meaning: not to show signs of feeling/wanting; not to appear to be
-    - conjugation-type: negative non-past polite (～ません)
-      form: がりません
-      rarity: common
-      meaning: not to show signs of feeling/wanting; not to appear to be (polite)
-    - conjugation-type: past plain (～た)
-      form: がった
-      rarity: common
-      meaning: showed signs of feeling/wanting; appeared to be
-    - conjugation-type: past polite (～ました)
-      form: がりました
-      rarity: common
-      meaning: showed signs of feeling/wanting; appeared to be (polite)
-    - conjugation-type: negative past plain (～なかった)
-      form: がらなかった
-      rarity: common
-      meaning: did not show signs of feeling/wanting; did not appear to be
-    - conjugation-type: negative past polite (～ませんでした)
-      form: がりませんでした
-      rarity: common
-      meaning: did not show signs of feeling/wanting; did not appear to be (polite)
-    - conjugation-type: te-form (～て)
-      form: がって
-      rarity: common
-      meaning: showing signs of feeling/wanting; appearing to be (te-form)
-    - conjugation-type: conditional (～ば)
-      form: がれば
-      rarity: uncommon
-      meaning: if one shows signs of feeling/wanting; if one appears to be
-    - conjugation-type: conditional (～たら)
-      form: がったら
-      rarity: uncommon
-      meaning: if one showed signs of feeling/wanting; if one appeared to be
-    - conjugation-type: volitional (～よう)
-      form: がろう
-      rarity: rare
-      meaning: let's show signs of feeling/wanting; let's appear to be
-    - conjugation-type: volitional polite (～ましょう)
-      form: がりましょう
-      rarity: rare
-      meaning: let's show signs of feeling/wanting; let's appear to be (polite)
-    - conjugation-type: imperative plain (～ろ/～え)
-      form: がれ
-      rarity: very rare
-      meaning: show signs of!
-    - conjugation-type: imperative polite (～なさい)
-      form: がってください
-      rarity: very rare
-      meaning: please show signs of
-    - conjugation-type: potential (～られる/～える)
-      form: がれる
-      rarity: rare
-      meaning: can show signs of feeling/wanting; can appear to be
-    - conjugation-type: passive (～られる/～かれる)
-      form: がられる
-      rarity: rare
-      meaning: to be perceived as showing signs of feeling/wanting
-    - conjugation-type: causative (～させる)
-      form: がらせる
-      rarity: very rare
-      meaning: to make someone show signs of feeling/wanting; to cause to appear to be
-  pronunciation:
-    katakana: ガル
-    romaji: garu
-  formation:
-    い-adjective stem + がる: Indicates that someone shows signs of feeling a certain way (e.g., being happy,
-      sad, scared).
-    な-adjective stem + がる: Indicates that someone acts as if they possess a certain quality (e.g., being
-      annoyed, bothered).
-    Verb stem + たがる: Indicates that someone wants to do something. This construction is simply 「たい」 + 「がる」。
-  jlpt: N4
-  details:
-    part-of-speech: auxiliary verb
+  **Key Usages:**
+  *   **い-adjectives:** Drop the final い and add がる. For example, 寒い (samui - cold) becomes 寒がる (samugaru - to show signs of being cold, to act cold). 悲しい (kanashii - sad) becomes 悲しがる (kanashigaru - to act sad, to appear sad).
+  *   **な-adjectives:** Drop the な and add がる. For example, 嫌い (kirai - dislike) becomes 嫌がる (iyagaru - to show signs of disliking, to be reluctant).
+  *   **たい-form:** Drop the い from たい and add がる. For example, 食べたい (tabetai - want to eat) becomes 食べたがる (tabetagaru - to show signs of wanting to eat).
+
+  **Important Considerations:**
+  *   **Third-person only:** 「〜がる」 is strictly used for the third person. You cannot use it to describe your own feelings (e.g., you wouldn't say 私は寒がります). For your own feelings, you would simply use the adjective or たい form (e.g., 私は寒いです, 私は食べたいです).
+  *   **Inferring from external signs:** The use of 「〜がる」 emphasizes that the speaker is inferring the feeling or state based on visible actions, expressions, or words, rather than knowing it directly. This distinguishes it from other expressions that might describe a direct appearance.
+  *   **Nuance:** While often neutral, 「〜がる」 can sometimes carry a slight nuance of observation or mild criticism, especially when describing someone's apparent fussiness or reluctance (e.g., 子供みたいに嫌がる - to show dislike like a child). However, it is also used in a neutral way to simply describe observed behavior.
+  *   **Conjugation:** The resulting verb (e.g., 寒がる, 嫌がる, 食べたがる) conjugates like a regular Godan verb.
+false_friends:
+  - term: 〜げ
+    meaning: Seeming; appearance; giving the impression of (often emotional or state-related)
+    kind: similar expression
+    nuance: While 「〜がる」 describes the *act* of showing a feeling (a verb), 「〜げ」 describes the *appearance*
+      itself (often a な-adjective or adverb). For example, 悲しがる means 'to act sad' (verb), while 悲しげ means
+      'sad-looking' (adjective/adverb, describing the appearance).
+    grammar_point: げ (seeming・appearance)
+  - term: 〜そう
+    meaning: Looks like; seems like; appears to be (based on direct observation)
+    kind: similar expression
+    nuance: 「〜そう」 generally describes a direct visual appearance or a strong likelihood, often used for
+      objective observations. For example, 美味しそう (oishisou - looks delicious) is a direct observation.
+      「〜がる」 is specifically about someone *exhibiting* an internal state or desire through their actions,
+      which is an inference, not a direct visual property of an object.
+    grammar_point: '[Adj-stem]・[V-stem]そうだ (looks・seems like)'
+  - term: 〜らしい
+    meaning: It seems; I hear; typical of; characteristic of
+    kind: similar expression
+    nuance: 「〜らしい」 conveys that something seems to be the case based on hearsay or reliable information,
+      or that someone/something is typical of a certain characteristic. It's about an inference based
+      on information or established traits, not an outward demonstration of an internal feeling like 「〜がる」.
+    grammar_point: '[Sentence]らしい (it seems・I hear)'
+  - term: 〜っぽい
+    meaning: Ish; like; characteristic of; prone to (often with a negative connotation)
+    kind: similar expression
+    nuance: 「〜っぽい」 indicates a strong tendency or resemblance, often implying a negative or undesirable
+      quality (e.g., 子供っぽい - childish, implying immaturity). It's about a persistent trait, not a temporary
+      display of emotion or desire.
+    grammar_point: っぽい (ish; characteristic of)
+post_false_friends_writeup: 'To differentiate 「〜がる」 from similar expressions: remember that 「〜がる」 always
+  refers to the *observable actions* someone takes that indicate an internal feeling or desire. You are
+  describing their *behavior*, not just their appearance or what you heard. For example, if a child is
+  whining and stomping their feet because they don''t want to go to school, you would say 学校に{行きたがっている}
+  (gakkou ni ikitagatte iru - they are showing signs of wanting to go to school), not just that they look
+  sad (悲しそう). This behavioral aspect is key to understanding 「〜がる」.'
+examples:
+  - english: My son seems to be cold, so I turned on the heater.
+    japanese:
+      - 息子 が 寒 がっ て い た から、ヒーター を つけ た。
+      - 息子 が 寒 がっ て い まし た から、ヒーター を つけ まし た。
+    english_literally: My son was showing signs of being cold, so I turned on the heater.
+    competing_grammar:
+      - competing_japanese:
+          - 息子 が 寒い から、ヒーター を つけ た。
+        english: My son is cold, so I turned on the heater.
+        hint: This directly states your son is cold. We're looking for an expression that indicates you're
+          observing their outward behavior.
+      - competing_japanese:
+          - 息子 が 寒 そう だっ た から、ヒーター を つけ た。
+        english: My son looked cold, so I turned on the heater.
+        hint: 「〜そう」 indicates appearance based on direct observation. We're looking for a form that implies
+          an action or behavior.
+    scene: A parent notices their child shivering.
     register: casual
-    usage-context: general
-  etymology: The grammar point 「がる」 originates from the verb 「気(き)がある (ki ga aru)」, meaning "to have a feeling"
-    or "to show interest". Over time, it evolved into a suffix to express that someone other than the speaker
-    exhibits certain feelings or desires. Its function is to externalize an internal state, making it observable
-    behavior.
-  writeup: |-
-    「がる」 is a versatile verb suffix, added to adjectives or the 「たい」 form of verbs, to describe how someone *appears* to feel or what they *seem* to want. Since one cannot directly know another person's internal feelings, 「がる」 allows you to express your perception of their feelings or desires based on their observable behavior.When attached to **い-adjectives**, drop the final 「い」 and add 「がる」. For example, 「寒(さむ)い (samui)」 (cold) becomes 「寒(さむ)がる (samugaru)」 (to appear cold, to show signs of being cold). With **な-adjectives**, simply remove the 「な」 and add 「がる」. For example, 「嫌(いや)な (iya na)」 (disagreeable) becomes 「嫌(いや)がる (iyagaru)」 (to dislike, to show aversion). For **verbs**, it is typically attached to the 「たい」 form, which expresses desire. So, 「食(た)べる (taberu)」 (to eat) first becomes 「食(た)べたい (tabetai)」 (want to eat), and then 「食(た)べたがる (tabetagaru)」 (to want to eat, to appear to want to eat).
-
-    **Important Considerations**
-
-    「がる」 is generally used for people other than yourself (third person). If you want to talk about your own feelings, you typically use the adjective directly (e.g., 「寒い」 for "I'm cold") or the 「食べたい」 form (e.g., 「食べたい」 for "I want to eat"). Using 「がる」 for oneself is grammatically possible but often sounds unnatural, unless you are describing your own outward behavior as if observing yourself from an external perspective, or emphasizing an intense, almost uncontrollable desire. The continuous form 「～たがっている」 describes someone's current state or ongoing display of feelings/desires, while the dictionary form 「～たがる」 can describe a habitual tendency or general inclination. While 「～そうだ」 (it seems) is a similar expression indicating appearance, 「がる」 specifically emphasizes the *behavior* or *action* that leads you to believe they feel that way, focusing on the external manifestation of an internal state. 「～そうだ」, on the other hand, often implies a direct visual observation of a state or an imminent action.
-  false_friends:
-    - term: たい
-      meaning: want to do
-      kind: similar expression
-      nuance: 「たい」 expresses your own direct desire to do something, whereas 「がる」 describes someone else's
-        apparent desire or how they are showing signs of wanting something.
-      grammar_point: たい (want to do)
-    - term: 欲しい
-      meaning: to want something
-      kind: similar expression
-      nuance: 「欲しい」 expresses your own direct desire for an object, while 「がる」 describes someone else's
-        apparent desire for an object or how they are showing signs of wanting it.
-      grammar_point: 欲しい (to want something)
-    - term: てほしい
-      meaning: I want you to
-      kind: similar expression
-      nuance: 「てほしい」 expresses your desire for someone else to perform an action for you, while 「がる」 describes
-        someone else's apparent desires or actions in general, observed by the speaker.
-      grammar_point: てほしい (I want you to)
-    - term: そう
-      meaning: looks or seems like
-      kind: similar expression
-      nuance: 「がる」 describes an action or behavior that expresses an internal state, often implying a tendency
-        or a conscious effort. 「～そう」 describes an appearance based on direct observation, typically referring
-        to a static state or imminent action, and doesn't necessarily imply the subject's internal feeling
-        or a continuous behavioral display.
-      grammar_point: そう (looks or seems like)
-    - term: にみえる
-      meaning: To look, to seem, to appear
-      kind: similar expression
-      nuance: 「がる」 is specifically used for expressing feelings or desires through outward behavior (e.g.,
-        acting cold, wanting something). 「～に見える」 is broader, describing a general appearance or how something
-        strikes one's eye, often used for physical attributes or situations, not necessarily internal states
-        or desires. While sometimes interchangeable, 「がる」 is more focused on the *expression* of feeling.
-      grammar_point: にみえる (to look like)
-    - term: げ
-      meaning: seeming・appearance
-      kind: similar expression
-      nuance: 「がる」 actively verbs an adjective to describe an observable behavior or active display of feeling.
-        「げ」, on the other hand, is a suffix that forms a noun or a な-adjective, describing a general *impression*
-        or *hint* of a state or emotion, without necessarily implying active behavior. For example, 「寂しげ」
-        (looking lonely) versus 「寂しがる」 (to act lonely).
-      grammar_point: げ (seeming・appearance)
-  post_false_friends_writeup: It's important to remember that 「がる」 is used to describe your *perception*
-    of someone else's feelings or desires based on observable behavior. When talking about your own feelings,
-    use the standard adjectives or the 「たい」 form of verbs. Using 「がる」 for yourself is generally unnatural,
-    unless you're describing how you think you appear to others.
-  examples:
-    - english: This kid always wants new toys.
-      japanese:
-        - この 子 は いつ も 新しい おもちゃ を 欲し {がる}。
-        - この 子 は いつ も 新しい おもちゃ を 欲し {がり} ます。
-        - この 子、いつ も 新しい おもちゃ 欲し {がっ} てる。
-      english_literally: This child always appears to want new toys.
-      competing_grammar:
-        - competing_japanese:
-            - この 子 は いつ も 新しい おもちゃ が {欲しい}。
-          english: This child always wants new toys (direct internal feeling).
-          hint: 「がる」 describes an *observable behavior* or *outward sign* of wanting, rather than a direct
-            statement of internal desire. We're looking for an expression of outward appearance.
-      scene: A parent talking about their child's behavior.
-      register: casual
-      setting: informative
-      conjugation: dictionary (plain non-past)
-      speaker_gender: female
-      listener_gender: female
-      nuance: The speaker is using 「欲しがる」 to imply that the child's desire is evident through their actions,
-        such as pointing at toys or constantly mentioning them. The use of 「この 子」 and the casual tone are
-        typical of parent-to-parent conversations.
-    - english: You must not do anything that the dog would dislike.
-      japanese:
-        - 犬 が 嫌 {がる} 事 を し て は いけ ない。
-        - 犬 が 嫌 {がる} 事 を し て は いけ ませ ん。
-        - 犬 が 嫌 {がる} 事、し ちゃ だめ だ よ。
-      english_literally: You must not do things that the dog appears to dislike.
-      competing_grammar:
-        - competing_japanese:
-            - 犬 が {嫌い} な 事 を し て は いけ ない。
-          english: You must not do things that the dog dislikes (dog's inherent dislike).
-          hint: While 「嫌い」 describes a general dislike, 「嫌がる」 focuses on the *dog's reaction* or *behavior*
-            of showing aversion, which is what the speaker is advising against. We're looking for something
-            that describes the dog's visible reaction.
-      scene: Someone giving advice about caring for a dog.
-      register: teineigo (polite)
-      setting: instructional
-      conjugation: dictionary (plain non-past)
-      nuance: The use of 「嫌がる」 emphasizes avoiding actions that cause the dog to *visibly show signs of
-        discomfort or dislike*, such as pulling away or growling. It's about respecting the dog's apparent
-        boundaries. The phrase 「～してはいけない」 is a common polite prohibition.
-    - english: He always acts tough in front of girls, but amongst our friends he is the biggest scaredy-cat.
-      japanese:
-        - 彼 は いつ も 女の子 の 前 で は 強 {がる} けど 友達 の 中 で は 彼 は 一番 の 怖 がり だ。
-        - あいつ、いつ も 女の子 の 前 で は 強 {がっ} てる けど、友達 の 中 で は 一番 の 怖 がり な ん だ ぜ。
-        - 彼 は いつ も 女の子 の 前 で は 強 {がり} ます が、友達 の 中 で は 彼 は 一番 の 怖 がり です。
-      english_literally: He always appears tough in front of girls, but among friends, he is the biggest
-        scaredy-cat.
-      competing_grammar:
-        - competing_japanese:
-            - 彼 は いつ も 女の子 の 前 で {強い} けど 友達 の 中 で は 彼 は 一番 の 怖 がり だ。
-          english: He is always strong in front of girls, but among friends, he is the biggest scaredy-cat
-            (inherent strength).
-          hint: 「強がる」 implies *putting on an act* or *pretending* to be tough, rather than actually being
-            strong. We're looking for an expression that describes someone's outward facade.
-      scene: Two friends gossiping about a mutual acquaintance.
-      register: casual
-      setting: humorous
-      conjugation: dictionary (plain non-past)
-      speaker_gender: male
-      listener_gender: male
-      nuance: The speaker is using 「強がる」 to highlight the contrast between the person's behavior around
-        girls (acting tough) and their true personality (scaredy-cat). The casual tone and the use of 「あいつ」
-        (a less formal term for 'he') indicate a close friendship. The male-specific ending particle 「ぜ」
-        reinforces the casual male speech.
-    - english: That person seems cold. It would be better if they wore a jacket.
-      japanese:
-        - あの 人、寒 {がっ} て いる。ジャケット 着れ ば いい の に。
-        - あの 人、寒 {がっ} て い ます。ジャケット 着れ ば いい の に。
-        - あの 人、寒 {がっ} てる。ジャケット 着れ ば いい の に。
-      english_literally: That person is appearing to be cold. It would be good if they wore a jacket.
-      competing_grammar:
-        - competing_japanese:
-            - あの 人、{寒い}。
-          english: That person is cold (a direct statement of internal feeling).
-          hint: 「寒がる」 describes the *outward signs* of being cold, like shivering or hugging oneself, rather
-            than directly stating an internal feeling. We're looking for an expression of visible discomfort.
-        - competing_japanese:
-            - あの 人、{寒 そう}。
-          english: That person looks cold (based on visual impression).
-          hint: 「～そう」 describes a general appearance, while 「寒がっている」 implies the person is actively *displaying*
-            signs of being cold through their actions or behavior. We're looking for a verb that describes
-            active behavior, not just a visual impression.
-        - competing_japanese:
-            - あの 人、寒い {よう に 見える}。
-          english: That person appears cold (to my eye).
-          hint: 「～に見える」 is a broader term for 'appears' or 'looks like'. While similar, 「寒がっている」 is more
-            specific to showing *feelings* through behavior. We're looking for an expression tied to exhibiting
-            a feeling.
-      scene: Observing someone who looks cold.
-      register: casual
-      setting: sympathetic
-      conjugation: progressive (～ている)
-      nuance: The use of 「寒がっている」 conveys that the speaker is inferring visible cues (like shivering, hunching
-        over, or rubbing arms) that suggest the person is feeling cold, rather than directly knowing their
-        internal state. The phrase 「いいのに」 indicates a sense of mild concern or suggestion.
-    - english: My cat is jumpy.
-      japanese:
-        - 私 の 猫 は 怖 {がる}。
-        - 私 の 猫 は 怖 {がり} ます。
-        - うち の 猫、怖 {がる} ね。
-        - 私 の 猫 は 怖 {がっ} て いる。
-      english_literally: My cat appears to be scared.
-      competing_grammar:
-        - competing_japanese:
-            - 私 の 猫 は {怖い}。
-          english: My cat is scary (causes fear) / My cat is scared (internal state).
-          hint: 「怖い」 can mean 'scary' or 'scared'. 「怖がる」 specifically means to *show signs of being scared*
-            or to *act scared*. We're looking for an expression of outward behavior.
-        - competing_japanese:
-            - 私 の 猫 は {怖 そう}。
-          english: My cat looks like he's scared (based on general appearance).
-          hint: 「～そう」 describes a general appearance, while 「怖がる」 implies the cat *actively exhibits* behavior
-            typical of being scared. We're looking for a verb that describes a behavioral tendency.
-        - competing_japanese:
-            - 私 の 猫 は {怖い よう に 見える}。
-          english: My cat looks like it's scared.
-          hint: 「～に見える」 describes a visual appearance. 「怖がる」 specifically means the cat *acts scared* through
-            its behavior. We're looking for an expression that describes active behavioral traits, not just
-            a visual impression.
-      scene: Describing a pet's personality; the cat tends to act scared.
-      register: casual
-      setting: informative
-      conjugation: dictionary (plain non-past)
-      nuance: Using 「怖がる」 describes the cat's general tendency to exhibit fearful behaviors, such as jumping
-        at sudden noises or hiding. It characterizes the cat's personality through observable actions. 「うちの猫」
-        is a common, affectionate way to say 'my cat' among Japanese speakers, particularly in casual conversation.
-    - english: Tom seems to want this new game.
-      japanese:
-        - トム は この 新しい ゲーム を 欲し {がっ} て いる よ。
-        - トム は この 新しい ゲーム を 欲し {がっ} て い ます よ。
-        - トム、この 新しい ゲーム 欲し {がっ} てる ぜ。
-      english_literally: Tom is appearing to want this new game.
-      competing_grammar:
-        - competing_japanese:
-            - トム は この 新しい ゲーム が {欲しい}。
-          english: Tom wants this new game (direct statement of desire).
-          hint: 「欲しがっている」 indicates that Tom's desire is observable through his actions or expressions (e.g.,
-            frequently looking at it, talking about it). We're looking for an expression based on observation.
-        - competing_japanese:
-            - トム は この 新しい ゲーム が {欲し そう}。
-          english: Tom looks like he wants this new game (based on general appearance).
-          hint: While 「～そう」 describes a general appearance, 「欲しがっている」 focuses on the specific *behavior*
-            or *active display* of wanting something. We're looking for a verb that describes the active
-            exhibition of desire.
-      scene: You notice your friend Tom frequently looking at a new game display with longing eyes.
-      register: casual
-      setting: informative
-      conjugation: progressive (～ている)
-      speaker_gender: male
-      listener_gender: male
-      nuance: The use of 「欲しがっている」 highlights that the speaker is inferring Tom's desire based on his outward
-        actions, such as how he looks at the game or talks about it. The sentence-final particle 「よ」 adds
-        a sense of confirmation or informing the listener. The male speech marker 「ぜ」 in one of the examples
-        adds a strong, casual, masculine tone, suggesting a close relationship between the speakers.
-    - english: This is your first time on an airplane, so I think it might be scary, but don't be afraid.
-      japanese:
-        - 初めて の 飛行 機 な の で 怖い と 思う けど、怖 {がら} ない で ね。
-        - 初めて の 飛行 機 です の で 怖い と 思い ます が、怖 {がら} ない で ください ね。
-        - 初めて の 飛行 機 だ から 怖い と 思う けど、怖 {がる} な よ。
-      english_literally: Since it's your first time on an airplane, I think you might be scared, but please
-        don't show signs of fear.
-      competing_grammar:
-        - competing_japanese:
-            - 初めて の 飛行 機 な の で 怖い と 思う けど、{心配 し ない で} ね。
-          english: Since it's your first time on an airplane, I think you might be scared, but don't worry.
-          hint: 「心配しないで」 means 'don't worry'. 「怖がらないで」 specifically means 'don't act scared' or 'don't show
-            signs of fear', focusing on the outward manifestation of fear. We're looking for an expression
-            that addresses external behavior.
-        - competing_japanese:
-            - 初めて の 飛行 機 な の で 怖い と 思う けど、{怖 がら ない 方 が いい} よ。
-          english: Since it's your first time on an airplane, I think you might be scared, but it's better
-            not to act scared.
-          hint: This is a softer suggestion. The original uses a direct command/request. We're looking for
-            a more direct instruction regarding fear manifestation.
-      scene: Comforting someone before their first flight.
-      register: casual
-      setting: supportive
-      conjugation: negative plain (～ない)
-      speaker_gender: female
-      listener_gender: female
-      nuance: The speaker is not asking the listener not to *feel* fear, but not to *show* it through their
-        actions. 「怖がらないで」 implies keeping one's composure. The final particle 「ね」 softens the imperative,
-        making it sound more like a gentle plea or shared understanding.
-    - english: Right now, I want a dog, but since I live in an apartment, I can't get one yet.
-      japanese:
-        - 私 は 今、犬 を 欲し {がっ} て いる けど、マンション に 住ん で いる から まだ 飼え ない。
-        - 私 は 今、犬 を 欲し {がっ} て い ます けど、マンション に 住ん で い ます から まだ 飼え ませ ん。
-        - 私、今、犬 欲し {がっ} てる ん だ けど、マンション 住ん でる から まだ 飼え ない ん だ よ ね。
-      english_literally: Right now, I am appearing to want a dog, but since I live in an apartment, I can't
-        keep one yet.
-      competing_grammar:
-        - competing_japanese:
-            - 私 は 今、犬 が {欲しい} けど マンション に 住ん で いる から まだ 飼え ない。
-          english: Right now, I want a dog, but since I live in an apartment, I can't get one yet (direct
-            internal feeling).
-          hint: 「欲しがっている」 is used here to describe the speaker's own strong, almost overwhelming desire,
-            as if it's so palpable it's an observable state, even to themselves. We're looking for an expression
-            that externalizes the desire.
-        - competing_japanese:
-            - 私 は 今、犬 が {欲しく て 仕方 が ない} けど、マンション に 住ん で いる から まだ 飼え ない。
-          english: Right now, I want a dog so badly that I can't help it, but since I live in an apartment,
-            I can't get one yet.
-          hint: 「～て仕方がない」 emphasizes an uncontrollable internal feeling. 「欲しがっている」 in the first person implies
-            an *outward manifestation* of that desire, as if the desire itself is so strong it's an observable
-            behavior. We're looking for an expression that describes a feeling that is almost externally
-            expressed by its intensity.
-      scene: Explaining why you can't have a pet right now.
-      register: casual
-      setting: melancholic
-      conjugation: progressive (～ている)
-      nuance: This example showcases a rare usage of 「がる」 in the first person. While typically used for
-        third-person observations, here the speaker describes their own outward expression or intense desire
-        for a dog, almost as if viewing themselves from an external perspective, highlighting the overwhelming
-        nature of the emotion. This usage often carries a nuanced sense of self-awareness or a desire for
-        empathy.
-    - english: He seems to want to go on a date, but he's too shy to say it.
-      japanese:
-        - 彼 は デート に 行き た {がっ} て いる みたい だ けど、恥ずかしく て 言え ない らしい よ。
-        - 彼 は デート に 行き た {がっ} て いる よう です が、恥ずかしく て 言え ない よう です よ。
-        - あいつ デート に 行き た {がっ} てる みたい だ けど、恥ずかしく て 言え ない らしい よ。
-      english_literally: He seems to be appearing to want to go on a date, but it seems he can't say it
-        because he's shy.
-      competing_grammar:
-        - competing_japanese:
-            - 彼 は デート に {行き たい} みたい だ けど、恥ずかしく て 言え ない らしい よ。
-          english: He seems to want to go on a date, but it seems he can't say it because he's shy (direct
-            desire, simply reported).
-          hint: 「行きたがっている」 emphasizes that the desire is inferred from his *behavior* (e.g., hints, longing
-            glances). We're looking for an expression that describes observable signs of wanting.
-        - competing_japanese:
-            - 彼 は デート に {行き た そう} だ けど、恥ずかしく て 言え ない らしい よ。
-          english: He looks like he wants to go on a date, but it seems he can't say it because he's shy
-            (based on general appearance).
-          hint: While 「～そう」 describes a general appearance, 「行きたがっている」 implies observing his *actions* that
-            convey his desire. We're looking for a verb that focuses on expressing desire through behavior.
-        - competing_japanese:
-            - 彼 は デート に {行き たい よう に 見える} けど、恥ずかしく て 言え ない らしい よ。
-          english: He looks like he wants to go on a date, but it seems he can't say it because he's shy.
-          hint: 「～に見える」 is a broader expression for 'appears' or 'looks like'. 「行きたがっている」 emphasizes observing
-            his *behavior* that conveys his desire. We're looking for an expression that focuses on outward
-            behavioral display.
-      scene: Two friends gossiping about a shy guy who wants to go on a date.
-      register: casual
-      setting: flirty
-      conjugation: progressive (～ている)
-      speaker_gender: female
-      listener_gender: female
-      nuance: The use of 「行きたがっている」 implies that the friends have noticed subtle cues from him that suggest
-        his desire for a date, but he's too shy to verbalize it directly. The phrase 「みたいだ」 (or 「ようだ」 in
-        polite form) reinforces that this is an observation or inference. The casual tone and topic are
-        typical of close friends discussing relationships.
-    - english: The child is acting bothered by their homework and isn't trying to start it.
-      japanese:
-        - 子供 は 宿題 を 面倒 {がっ} て、なかなか 始めよう と し ない。
-        - 子供 は 宿題 を 面倒 {がっ} て、なかなか 始めよう と し ませ ん。
-        - 子供 は 宿題 を 面倒 {がっ} て いる。なかなか 始めよう と し ない。
-      english_literally: The child appears to be bothered by their homework and is not trying to start it
-        easily.
-      competing_grammar:
-        - competing_japanese:
-            - 子供 は 宿題 が {面倒 だ と 思っ て いる}。
-          english: The child thinks their homework is bothersome.
-          hint: 「面倒がって」 indicates that the child is *acting* bothered or showing signs of being bothered
-            by the homework through their behavior (e.g., hints, longing glances). We're looking for an
-            expression that describes outward behavior rather than an internal thought.
-      scene: A parent observes their child procrastinating on homework.
-      register: casual
-      setting: informative
-      conjugation: te-form (～て)
-      nuance: 「面倒がって」 describes the child's observable behavior of reluctance or annoyance towards their
-        homework, such as fidgeting, complaining, or simply avoiding it. It’s an inference based on action,
-        not a direct statement of feeling. The phrase 「なかなか～ない」 emphasizes the difficulty in getting them
-        to start.
-    - english: The little dog was missing its owner and whined.
-      japanese:
-        - 子犬 は ご 主人 が 恋 し {がっ} て 鳴い て い た。
-        - 子犬 は ご 主人 が 恋 し {がっ} て 鳴い て い まし た。
-        - 子犬 は ご 主人 が 恋 し {がっ} て 鳴い て た。
-      english_literally: The puppy was appearing to miss its owner and was whining.
-      competing_grammar:
-        - competing_japanese:
-            - 子犬 は ご 主人 が {恋しい と 思っ て} 鳴い て い た。
-          english: The puppy thought it missed its owner and whined.
-          hint: 「恋しがって」 emphasizes the puppy's *observable behavior* (whining, looking sad) that indicates
-            its feeling of longing, not a direct internal thought. We're looking for an expression of outward
-            signs of emotion.
-        - competing_japanese:
-            - 子犬 は ご 主人 が {恋し そう に} 鳴い て い た。
-          english: The puppy whined as if it missed its owner.
-          hint: While 「～そう」 describes a general appearance, 「恋しがって」 implies the puppy is *actively displaying*
-            signs of missing its owner through its actions. We're looking for a verb that describes a behavioral
-            tendency.
-      scene: A puppy left alone at home, missing its owner.
-      register: casual
-      setting: melancholic
-      conjugation: progressive (～ている)
-      nuance: 「恋しがって」 describes the observable behavior of the puppy (whining, looking sad) that indicates
-        it misses its owner. This emphasizes the external manifestation of the internal feeling.
-  post_example_writeup: As illustrated in the examples, 「がる」 is primarily used to describe the external
-    manifestation of feelings or desires in a third person. However, the last example demonstrates its less
-    common, but valid, use in the first person when the speaker describes their own intense feelings as
-    if observing themself from an external perspective, highlighting the overwhelming nature of the emotion.
-    This usage often carries a nuanced sense of self-awareness or a desire for empathy.
-  sources:
-    bunpro: https://bunpro.jp/grammar_points/がる
-
-
-  === たがる (to appear to want to) ===
-  grammar_point: たがる (to appear to want to)
-  learn_before:
-    - たい (want to do)
-    - '[i-Adj-stem]がる・[na-Adj]がる (to show signs of feeling)'
-    - ほしい (want something)
-  learn_after:
-    - っぽい (ish; characteristic of)
-    - がち (tend to)
-  id: gp0274
-  meaning: To want to (Third person)
-  conjugations:
-    - conjugation-type: dictionary (plain non-past)
-      form: たがる
-      rarity: common
-      meaning: to want to (third person)
-    - conjugation-type: non-past polite (～ます)
-      form: たがります
-      rarity: common
-      meaning: to want to (third person) (polite)
-    - conjugation-type: negative plain (～ない)
-      form: たがらない
-      rarity: common
-      meaning: not to want to (third person)
-    - conjugation-type: negative non-past polite (～ません)
-      form: たがりません
-      rarity: common
-      meaning: not to want to (third person) (polite)
-    - conjugation-type: past plain (～た)
-      form: たがった
-      rarity: common
-      meaning: wanted to (third person)
-    - conjugation-type: past polite (～ました)
-      form: たがりました
-      rarity: common
-      meaning: wanted to (third person) (polite)
-    - conjugation-type: negative past plain (～なかった)
-      form: たがらなかった
-      rarity: common
-      meaning: did not want to (third person)
-    - conjugation-type: negative past polite (～ませんでした)
-      form: たがりませんでした
-      rarity: common
-      meaning: did not want to (third person) (polite)
-    - conjugation-type: te-form (～て)
-      form: たがって
-      rarity: common
-      meaning: wanting to (third person)
-    - conjugation-type: conditional (～ば)
-      form: たがれば
-      rarity: uncommon
-      meaning: if (third person) wants to
-    - conjugation-type: conditional (～たら)
-      form: たがったら
-      rarity: uncommon
-      meaning: if (third person) wanted to
-    - conjugation-type: concessive (～ても)
-      form: たがっても
-      rarity: common
-      meaning: even if (third person) wants to
-    - conjugation-type: volitional (～よう)
-      form: たがろう
-      rarity: rare
-      meaning: let's suppose (third person) wants to
-    - conjugation-type: volitional polite (～ましょう)
-      form: たがりましょう
-      rarity: rare
-      meaning: let's suppose (third person) wants to (polite)
-    - conjugation-type: imperative plain (～ろ/～え)
-      form: たがれ
-      rarity: very rare
-      meaning: want to! (third person)
-    - conjugation-type: imperative polite (～なさい)
-      form: たがってください
-      rarity: very rare
-      meaning: please want to (third person) (polite)
-    - conjugation-type: potential (～られる/～える)
-      form: たがれる
-      rarity: rare
-      meaning: can want to (third person)
-    - conjugation-type: passive (～られる/～かれる)
-      form: たがられる
-      rarity: rare
-      meaning: is wanted to (third person)
-    - conjugation-type: causative (～させる)
-      form: たがらせる
-      rarity: very rare
-      meaning: to make (third person) want to
-  pronunciation:
-    katakana: タガル
-    romaji: tagaru
-  formation:
-    '[Verb stem たい] + がる': Expresses that someone else seems to want to do something (not the speaker).
-  jlpt: N4
-  details:
-    part-of-speech: auxiliary verb
+    setting: friendly
+    conjugation: past plain (～た)
+    speaker_gender: female
+    listener_gender: no one
+    nuance: This example uses 寒がっていた (samugatte ita) to indicate the speaker inferred the child was cold
+      based on external signs, rather than the child explicitly stating it. 「から」 shows the cause-effect
+      relationship.
+  - english: He pretends to dislike natto.
+    japanese:
+      - 彼 は 納豆 を 嫌 がる。
+      - 彼 は 納豆 を 嫌 がり ます。
+    english_literally: He shows signs of disliking natto.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 納豆 が 嫌い だ。
+        english: He dislikes natto.
+        hint: This states his dislike as a known fact. We're looking for an expression that implies observation
+          of his behavior.
+      - competing_japanese:
+          - 彼 は 納豆 が 嫌い そう に 見える。
+        english: He looks like he dislikes natto.
+        hint: This describes his appearance. We're looking for a verb that indicates he is *acting* in
+          a way that shows dislike.
+    scene: Observing someone's reaction to food.
+    register: casual
+    setting: friendly
+    conjugation: dictionary (plain non-past)
+    speaker_gender: male
+    listener_gender: no one
+    nuance: 嫌がる (iyagaru) describes the act of showing distaste or reluctance towards natto, implying
+      an observable behavior, like making a face or refusing to eat it.
+  - english: The girl was shy, so she hid behind her mother.
+    japanese:
+      - その 女の子 は 恥ずかし がっ て、お 母 さん の 後ろ に 隠れ た。
+      - その 女の子 は 恥ずかし がっ て、お 母 さん の 後ろ に 隠れ まし た。
+    english_literally: That girl was showing signs of shyness, and hid behind her mother.
+    competing_grammar:
+      - competing_japanese:
+          - その 女の子 は 恥ずかしい の で、お 母 さん の 後ろ に 隠れ た。
+        english: That girl was shy, so she hid behind her mother.
+        hint: This uses the adjective 恥ずかしい directly. We're looking for a verb that describes her *acting*
+          shy.
+      - competing_japanese:
+          - その 女の子 は 恥ずかし そう に 見え た の で、お 母 さん の 後ろ に 隠れ た。
+        english: That girl looked shy, so she hid behind her mother.
+        hint: This focuses on her appearance. We're looking for an expression that describes her behavior
+          resulting from shyness.
+    scene: A child in a new social situation.
+    register: casual
+    setting: friendly
+    conjugation: te-form (～て)
+    speaker_gender: female
+    listener_gender: group
+    nuance: 恥ずかしがって (hazukashigatte) shows the girl's actions (hiding) are a result of her shyness. 「て」
+      connects the two actions sequentially.
+  - english: Children often want to eat sweets.
+    japanese:
+      - 子供 は よく お 菓子 を 食べ たがる。
+      - 子供 は よく お 菓子 を 食べ たがり ます。
+    english_literally: Children often show signs of wanting to eat sweets.
+    competing_grammar:
+      - competing_japanese:
+          - 子供 は よく お 菓子 が 食べ たい。
+        english: Children often want to eat sweets.
+        hint: This is a direct statement of desire. We're looking for an expression that describes them
+          *acting* in a way that shows this desire.
+      - competing_japanese:
+          - 子供 は よく お 菓子 を 食べ たがる 傾向 が ある。
+        english: Children often have a tendency to want to eat sweets.
+        hint: This explicitly states a tendency. We're looking for a more direct observation of their
+          desire through their actions.
+    scene: General observation about children's behavior.
+    register: casual
+    setting: informative
+    conjugation: dictionary (plain non-past)
+    speaker_gender: male
+    listener_gender: no one
+    nuance: 食べたがる (tabetagaru) describes the common tendency of children to show desire for sweets, perhaps
+      through asking or looking longingly. It's a general statement about their observable behavior.
+  - english: Don't be afraid!
+    japanese:
+      - 怖 がる な！
+      - 怖 がら ない で ください！
+    english_literally: Don't show signs of fear!
+    competing_grammar:
+      - competing_japanese:
+          - 怖い と 思わ ない で！
+        english: Don't think it's scary!
+        hint: This prohibits the internal feeling itself. We're looking for a command to stop *acting*
+          afraid.
+      - competing_japanese:
+          - 怖 がる の を やめ なさい。
+        english: Stop being afraid.
+        hint: This uses a different verb structure for prohibition. We're looking for the simpler form
+          of prohibiting the outward sign of fear.
+    scene: A coach encouraging a timid player.
+    register: casual
+    setting: commanding
+    conjugation: negative plain (～ない)
+    speaker_gender: male
+    listener_gender: male
+    nuance: 怖がるな (kowagaru na) is a direct, strong command to someone to stop acting scared. 「な」 is a
+      masculine prohibitive particle.
+  - english: The dog was yelping in pain, so I took it to the vet immediately.
+    japanese:
+      - 犬 が 痛 がっ て い た から、すぐ 病院 に 連れ て 行っ た。
+      - 犬 が 痛 がっ て い まし た から、すぐ 病院 に 連れ て 行き まし た。
+    english_literally: The dog was showing signs of pain, so I immediately took it to the hospital.
+    competing_grammar:
+      - competing_japanese:
+          - 犬 が 痛かっ た から、すぐ 病院 に 連れ て 行っ た。
+        english: The dog was in pain, so I immediately took it to the hospital.
+        hint: This states the pain as a fact. We're looking for an expression that emphasizes the *outward
+          signs* of pain.
+      - competing_japanese:
+          - 犬 が 痛 そう だっ た から、すぐ 病院 に 連れ て 行っ た。
+        english: The dog looked painful, so I immediately took it to the hospital.
+        hint: 「〜そう」 describes a visual appearance. We're looking for a verb that describes the dog *acting*
+          in pain.
+    scene: A pet owner describing their dog's distress.
+    register: casual
+    setting: serious
+    conjugation: past plain (～た)
+    speaker_gender: female
+    listener_gender: no one
+    nuance: 痛がっていた (itagatte ita) indicates the dog was outwardly expressing its pain, likely through
+      sounds or movements. This shows how 「〜がる」 applies to animals as well.
+  - english: The manager wanted his subordinates to be happy.
+    japanese:
+      - 部 長 は 部下 に 喜ん で ほし がっ て い た。
+      - 部 長 は 部下 に 喜ん で ほし がっ て い まし た。
+    english_literally: The manager was showing signs of wanting his subordinates to be happy.
+    competing_grammar:
+      - competing_japanese:
+          - 部 長 は 部下 に 喜ん で ほしい と 思っ て い た。
+        english: The manager thought he wanted his subordinates to be happy.
+        hint: This directly states the manager's thought. We're looking for an expression that describes
+          the manager *showing signs* of this desire.
+      - competing_japanese:
+          - 部 長 は 部下 に 喜ん で ほしい と いう 顔 を し て い た。
+        english: The manager had a face that showed he wanted his subordinates to be happy.
+        hint: This focuses on a specific visual cue (his face). We're looking for a more general observation
+          of his desire through his actions or overall demeanor.
+    scene: A superior reflecting on their manager's wishes.
     register: semi-formal
-    usage-context: general
-  etymology: The grammar point 「たがる」 is formed by combining the auxiliary verb 「たい」 (tai), which expresses
-    the speaker's desire to do something, with the verb 「がる」 (garu), which indicates a feeling or behavior
-    is being exhibited by someone other than the speaker. Thus, 「たがる」 essentially means "to show signs of
-    wanting to do something," referring to a third person's apparent desire.
-  writeup: "This grammar point, 「たがる」, is used to express that someone *appears* or *acts like* they want\
-    \ to do something. It is used exclusively for third persons, not the speaker themselves. You learned\
-    \ about 「がる」 already, and this is another place it appears. It is formed by attaching 「たい」 to the ます\
-    \ stem of a verb and then replacing the い of 「たい」 with 「がる」. Think of it as \"wanting to want\" something.\
-    \ \n\n**Important Considerations:**\n\n*   「たがる」 contrasts with 「てほしい」, which means \"to want someone\
-    \ to do (A).\" The nuance is different: 「たがる」 describes an observed behavior, while 「てほしい」 expresses\
-    \ a direct desire."
-  false_friends:
-    - term: たい
-      meaning: Want to do
-      kind: similar expression
-      nuance: 「たい」 expresses the speaker's own desire to do something, whereas 「たがる」 expresses someone else's
-        apparent desire.
-      grammar_point: たい (want to do)
-    - term: がほしい
-      meaning: To want something, To be in need of
-      kind: similar expression
-      nuance: 「がほしい」 expresses the desire for a *thing* (object), whereas 「たがる」 expresses the desire to
-        *do* something (action), and is about observing that someone else wants to do something.
-      grammar_point: ほしい (want something)
-    - term: てほしい
-      meaning: I want you to
-      kind: similar expression
-      nuance: 「てほしい」 expresses a direct request or wish that someone does something for the speaker, while
-        「たがる」 describes an observed behavior or feeling of wanting to do something by a third party.
-      grammar_point: てほしい (I want you to)
-    - term: がる
-      meaning: To feel, To think, To act as if, To want, To desire
-      kind: similar expression
-      nuance: 「がる」 is a suffix used to describe how a third person shows signs of feeling or appears to
-        have a certain desire. While 「たがる」 is specifically for wanting to *do* a verb, 「がる」 also combines
-        with i-adjectives, such as 「ほしい」 to form 「ほしがる」 (to show signs of wanting a *thing*), or 「さびしい」
-        to form 「さびしがる」 (to act lonely).
-      grammar_point: '[i-Adj-stem]がる・[na-Adj]がる (to show signs of feeling)'
-  post_false_friends_writeup: The key to differentiating these expressions lies in understanding who is
-    expressing the desire and what the object of that desire is. 「たい」 is for your own desires, 「がほしい」 is
-    for wanting things, 「てほしい」 is for wanting someone to do something for you, and 「たがる」 is for describing
-    another person's apparent desire to *do* something.
-  examples:
-    - english: When children see new toys, they immediately want to play with them.
-      japanese:
-        - 子ども は 新しい おもちゃ を 見る と、すぐ に 遊び {たがる}。
-        - 子ども は 新しい おもちゃ を 見る と、すぐ に 遊び {たがり ます}。
-      english_literally: Child new toy see if, immediately play want-to.
-      competing_grammar:
-        - competing_japanese:
-            - 子ども は 新しい おもちゃ を 見る と、すぐ に {遊び たい} と 思う。
-          english: When children see new toys, they immediately think they want to play with them.
-          hint: This phrase describes an internal thought about wanting to play, not an observable action
-            or outward manifestation of that desire. We're looking for an observation of their behavior.
-      scene: A parent describing their child's typical reaction to seeing new toys.
-      register: casual
-      setting: informative
-      conjugation: dictionary (plain non-past)
-      nuance: 「子ども は」 (kodomo wa) refers to children generally. 「すぐに」 (sugu ni) emphasizes the immediate
-        nature of their desire, which is an observed behavior.
-    - english: He seems tired. He wants to go home quickly.
-      japanese:
-        - 彼 は 疲れ て いる よう だ。早く 家 に 帰り {たがっ て いる}。
-        - 彼 は 疲れ て いる よう だ。早く 家 に 帰り {たがっ て い ます}。
-        - 彼 は 疲れ て いる よう だ。早く 家 に 帰り {たがっ てる}。
-      english_literally: He tired being seems. Quickly home return wants-to-be.
-      competing_grammar:
-        - competing_japanese:
-            - 彼 は 疲れ て いる よう だ。早く 家 に {帰り たい} と 思っ て いる。
-          english: He seems tired. He is thinking he wants to go home quickly.
-          hint: This describes an internal thought or feeling, not an outward indication or observable behavior
-            of wanting to go home. We're looking for an cohesion of his apparent desire.
-      scene: A colleague noticing someone's exhaustion and apparent desire to leave.
-      register: semi-formal
-      setting: sympathetic
-      conjugation: progressive (～ている)
-      speaker_gender: male
-      listener_gender: male
-      nuance: The 「～ている」 (te iru) form of 「たがる」 emphasizes an ongoing state of wanting, suggesting visible
-        signs of tiredness. The speaker, a man, observes another man's behavior.
-    - english: It seems she doesn't want to meet anyone today.
-      japanese:
-        - 彼女 は 今日 は 誰 に も 会い {たがら ない} らしい。
-        - 彼女 は 今日 は 誰 に も 会い {たがり ませ ん} らしい。
-      english_literally: She today to anyone meet not-want-to seems.
-      competing_grammar:
-        - competing_japanese:
-            - 彼女 は 今日 は 誰 に も {会い たく ない} らしい。
-          english: It seems she doesn't want to meet anyone today.
-          hint: This directly states her internal feeling of not wanting to meet anyone, rather than inferring
-            it from her behavior or state. We're looking for an observation of her apparent desire.
-      scene: Someone relaying information about a friend's preference, possibly due to a mood.
-      register: casual
-      setting: informative
-      conjugation: negative plain (～ない)
-      speaker_gender: female
-      listener_gender: female
-      nuance: The use of 「～らしい」 (rashii) indicates that the speaker is conveying something they've heard
-        or inferred, reinforcing the observational nature of 「たがらない」. This is a common way for female speakers
-        to share observations about friends.
-    - english: Everyone wanted to try his new recipe.
-      japanese:
-        - みんな、彼 の 新しい レシピ を 試 し {たがり まし た} よ。
-        - みんな、彼 の 新しい レシピ を 試 し {たがっ た} よ。
-      english_literally: Everyone, his new recipe try wanted (polite) you know.
-      competing_grammar:
-        - competing_japanese:
-            - みんな、彼 の 新しい レシピ を {試 し たかっ た} です よ。
-          english: Everyone wanted to try his new recipe, you know.
-          hint: This directly states the desire of the group. We are looking for an expression that conveys
-            an observed eagerness or desire to try the recipe.
-      scene: A host telling a friend about their guests' enthusiastic reaction to a new dish at a party.
-      register: teineigo (polite)
-      setting: friendly
-      conjugation: past polite (～ました)
-      nuance: The polite past form 「～たがりました」 (tagarimashita) along with the sentence-ending particle 「よ」
-        (yo) conveys a polite report of others' past eagerness, suitable for a casual but polite conversation.
-    - english: If she wants to quit, we probably can't force her to stay.
-      japanese:
-        - もし 彼女 が 辞め {たがっ たら}、無理 に 止める こと は でき ない だろう。
-        - もし 彼女 が 辞め {たがれ ば}、無理 に 止める こと は でき ない だろう。
-      english_literally: If she quit wanted-if, forcibly stop thing cannot probably.
-      competing_grammar:
-        - competing_japanese:
-            - もし 彼女 が {辞め たい} なら、無理 に 止める こと は でき ない だろう。
-          english: If she wants to quit, we probably can't force her to stay.
-          hint: This implies her internal desire to quit. We are looking for a phrasing that emphasizes
-            her desire becoming apparent through her actions or expressions.
-      scene: Colleagues discussing a potential resignation, considering her likely actions.
-      register: formal
-      setting: serious
-      conjugation: conditional (～たら)
-      nuance: 「辞め たがったら」 (yametagattara) expresses a hypothetical situation where her desire to quit becomes
-        apparent, making it difficult to intervene. This phrasing emphasizes the outward sign of her desire.
-    - english: No matter how much they seem to want to stay busy, a break is necessary.
-      japanese:
-        - どんな に 忙しく {たがっ て も}、休憩 は 必要 だ。
-        - どんな に 忙しく {たがり まし て も}、休憩 は 必要 です。
-      english_literally: How busy want-to-even-if, break is necessary.
-      competing_grammar:
-        - competing_japanese:
-            - どんな に {忙しく て も}、休憩 は 必要 だ。
-          english: No matter how busy they are, a break is necessary.
-          hint: This simply states that they are busy, without implying an active desire or appearance of
-            wanting to be busy. We're looking for an observation of their apparent desire to stay busy.
-      scene: A manager discussing team well-being, observing their tendency to overwork.
-      register: semi-formal
-      setting: informative
-      conjugation: concessive (～ても)
-      nuance: The 「～たがっても」 (tagattemo) form implies that even if someone shows outward signs of wanting
-        to be busy, a break is still essential. This suggests an observation of their behavior, not just
-        their internal state.
-    - english: The dog was scratching at the door, wanting to go for a walk.
-      japanese:
-        - 犬 は 散歩 に 行き {たがっ て}、ドア を 引っ掻い て い た。
-        - 犬 は 散歩 に 行き {たがっ て}、ドア を 引っ掻い て い まし た。
-      english_literally: Dog walk go-wanting-to, door scratching was.
-      competing_grammar:
-        - competing_japanese:
-            - 犬 は 散歩 に {行き たい} の で、ドア を 引っ掻い て い た。
-          english: The dog wanted to go for a walk, so it was scratching the door.
-          hint: This implies the dog's internal desire as the direct reason. We're looking for an expression
-            that emphasizes the observable signs of wanting.
-      scene: A dog owner describes their pet's eagerness for outdoor activity.
-      register: casual
-      setting: friendly
-      conjugation: te-form (～て)
-      nuance: 「たがって」 (tagatte) describes the dog's observable desire to go for a walk, directly inferred
-        from its action of 「ドア を 引っ掻い て い た」 (doa o hikkai te ita - scratching the door).
-    - english: That student wanted to ask the teacher a question and kept their hand raised the whole time.
-      japanese:
-        - その 生徒 は 先生 に 質問 し {たがっ て}、ずっと 手 を 挙げ て い た。
-        - その 生徒 は 先生 に 質問 し {たがっ て い} て、ずっと 手 を 挙げ て い まし た。
-      english_literally: That student to teacher question want-to-te, continuously hand raising-was.
-      competing_grammar:
-        - competing_japanese:
-            - その 生徒 は 先生 に {質問 し たかっ た} の で、ずっと 手 を 挙げ て い た。
-          english: That student wanted to ask the teacher a question, so they kept their hand raised the
-            whole time.
-          hint: This phrasing emphasizes the internal reason for the action. We're looking for a phrase
-            that links an observable desire to a continuous action, emphasizing the outward manifestation
-            of that desire.
-      scene: A teacher recalling a particularly eager student's behavior during a lesson.
-      register: semi-formal
-      setting: academic
-      conjugation: te-form (～て)
-      nuance: The te-form 「たがって」 (tagatte) links the observable desire (wanting to ask a question) to the
-        continuous action of 「手 を 挙げ て いた」 (te wo ageteita - keeping their hand raised), showing the outward
-        manifestation of that desire.
-    - english: The child kept looking at the candy, clearly wanting to eat it.
-      japanese:
-        - 子ども は お 菓子 を ずっと 見 て、食べ {たがっ て い た}。
-        - 子ども は お 菓子 を ずっと 見 て、食べ {たがっ て い まし た}。
-      english_literally: Child candy continuously looking, eat wanted to be.
-      competing_grammar:
-        - competing_japanese:
-            - 子ども は お 菓子 を ずっと 見 て、{食べ たい} と 思っ て い た。
-          english: The child kept looking at the candy, thinking they wanted to eat it.
-          hint: This describes an internal thought about wanting to eat, not an outward, observable behavior.
-            We're looking for the visible signs of wanting.
-      scene: A parent observing their child's fascination with sweets at the supermarket.
-      register: casual
-      setting: informative
-      conjugation: progressive (～ている)
-      nuance: The progressive form 「たがって い た」 emphasizes the continuous nature of the child's observable
-        desire to eat the candy, inferred from their action of 「ずっと 見 て」 (zutto mite - continuously looking).
-    - english: He didn't seem to want to join the party, so we didn't push him.
-      japanese:
-        - 彼 は パーティー に 参加 し {たがら なかっ た} の で、無理 強い し なかっ た。
-        - 彼 は パーティー に 参加 し {たがり ませ ん でし た} の で、無理 強い し ませ ん でし た。
-      english_literally: He party to participate did not want-to, so forced did not.
-      competing_grammar:
-        - competing_japanese:
-            - 彼 は パーティー に {参加 し たく ない} と 言っ て い た の で、無理 強い し なかっ た。
-          english: He said he didn't want to join the party, so we didn't push him.
-          hint: This implies a direct verbal refusal. We're looking for an inference based on his demeanor
-            or actions that he didn't want to join.
-      scene: Friends discussing a mutual friend who opted out of an event.
-      register: casual
-      setting: reflective
-      conjugation: negative past plain (～なかった)
-      nuance: The negative past form 「たがらなかった」 (tagaranakatta) indicates that his lack of desire was evident
-        through his actions or expressions, leading to the decision not to pressure him. This highlights
-        the observational aspect of 「たがる」.
-  post_example_writeup: Note that 「たがる」 describes an external observation of someone's desire or inclination.
-    It is not used for the speaker's own desires, which would be expressed with 「～たい」. When you use 「たがる」,
-    you are reporting what you see or infer about another person's wishes, often through their actions or
-    expressions.
-  sources:
-    bunpro: https://bunpro.jp/grammar_points/たがる
-lint-errors:
-  - error grammar point is missing required field 'meaning'
-  - '[rule-18] warning grammar point has split_predecessor field. Use the information in it to help compose
-    this new grammar point, then remove the field.'
+    setting: professional
+    conjugation: past plain (～た)
+    speaker_gender: male
+    listener_gender: no one
+    nuance: 喜んでほしがっていた (yorokonde hoshigatte ita) describes the manager's implied desire for his subordinates'
+      happiness, perhaps inferred from his actions or efforts to please them. It's an observation of a
+      desire, not a feeling.
+  - english: My younger sister always wants new clothes.
+    japanese:
+      - 妹 は いつ も 新しい 服 を 欲し がり ます。
+      - 妹 は いつ も 新しい 服 を 欲し がる。
+    english_literally: My younger sister always shows signs of wanting new clothes.
+    competing_grammar:
+      - competing_japanese:
+          - 妹 は いつ も 新しい 服 が 欲しい。
+        english: My younger sister always wants new clothes.
+        hint: This is a direct statement of desire. We're looking for an expression that describes her
+          *outwardly showing* this desire.
+      - competing_japanese:
+          - 妹 は いつ も 新しい 服 を 欲し がる 傾向 が ある。
+        english: My younger sister always has a tendency to want new clothes.
+        hint: This explicitly states a tendency. We're looking for a more direct observation of her desire
+          through her actions.
+    scene: A sibling talking about their younger sister's habits.
+    register: casual
+    setting: friendly
+    conjugation: non-past polite (～ます)
+    speaker_gender: female
+    listener_gender: no one
+    nuance: 欲しがります (hoshigarimasu) describes her consistent observable desire for new things, indicating
+      a pattern of behavior like asking for them or admiring them in stores. It is polite as it ends in
+      ます.
+  - english: The shy boy didn't want to participate in the school play.
+    japanese:
+      - その 内気 な 男の子 は 学芸 会 に 出 たがら なかっ た。
+      - その 内気 な 男の子 は 学芸 会 に 出 たがり ませ ん でし た。
+    english_literally: That shy boy did not show signs of wanting to participate in the school play.
+    competing_grammar:
+      - competing_japanese:
+          - その 内気 な 男の子 は 学芸 会 に 出 たく なかっ た。
+        english: That shy boy didn't want to participate in the school play.
+        hint: This directly states his lack of desire. We're looking for an expression that describes
+          him *acting* unwilling to participate.
+      - competing_japanese:
+          - その 内気 な 男の子 は 学芸 会 に 出る つもり は なかっ た。
+        english: That shy boy had no intention of participating in the school play.
+        hint: This expresses his intention. We're looking for a more direct observation of his reluctance
+          through his actions.
+    scene: A teacher discussing a student's reluctance.
+    register: formal
+    setting: academic
+    conjugation: negative past plain (～なかった)
+    speaker_gender: female
+    listener_gender: group
+    nuance: 出たがらなかった (detagaranakatta) emphasizes that the boy's reluctance to participate was evident
+      through his actions or expressions, rather than him directly stating 'I don't want to participate'.
+      The past negative form shows a completed lack of desire.
+  - english: He seemed busy and didn't have time to talk.
+    japanese:
+      - 彼 は 忙し がっ て い て、話す 時間 が なかっ た。
+      - 彼 は 忙し がっ て い て、話す 時間 が あり ませ ん でし た。
+    english_literally: He was showing signs of being busy, and did not have time to talk.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 忙しかっ た の で、話す 時間 が なかっ た。
+        english: He was busy, so he had no time to talk.
+        hint: This states his busyness as a fact. We're looking for an expression that describes him *acting*
+          busy.
+      - competing_japanese:
+          - 彼 は 忙し そう に 見え て、話す 時間 が なかっ た。
+        english: He looked busy, so he had no time to talk.
+        hint: 「〜そう」 describes his visual appearance. We're looking for an expression that describes him
+          *exhibiting* busyness through his actions or demeanor.
+    scene: A colleague observing another's demeanor.
+    register: casual
+    setting: professional
+    conjugation: te-form (～て)
+    speaker_gender: male
+    listener_gender: male
+    nuance: 忙しがっていて (isogashigatte ite) describes him appearing busy through his actions or demeanor (e.g.,
+      rushing, stressed expression), not necessarily that he explicitly said he was busy. The て-form connects
+      this observation to the consequence.
+post_example_writeup: As these examples demonstrate, 「〜がる」 is a versatile expression for describing external
+  manifestations of internal states. It is particularly useful when you are observing someone else's feelings
+  or desires and need to convey that observation to others. Mastering its usage, especially the distinction
+  between it and direct expressions of feelings, will significantly enhance your ability to describe social
+  interactions in Japanese.

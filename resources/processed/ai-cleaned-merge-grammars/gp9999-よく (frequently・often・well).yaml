@@ -107,7 +107,7 @@ examples:
     english_literally: Natto, I often eat.
     competing_grammar:
       - competing_japanese:
-          - 納豆 は 毎日 食べる よ。
+          - 納豆 は {毎日} 食べる よ。
         english: I eat natto every day.
         hint: 「毎日」means 'every day,' indicating absolute regularity, whereas we're looking for 'often,'
           which implies high but not necessarily daily frequency.
@@ -127,7 +127,7 @@ examples:
     english_literally: Tanaka-san, cooking can do well.
     competing_grammar:
       - competing_japanese:
-          - 田中 さん は 料理 が 上手 です。
+          - 田中 さん は 料理 が {上手} です。
         english: Mr. Tanaka is good at cooking.
         hint: 「上手です」 describes someone's general skill, while 「よくできます」 emphasizes the *action* of cooking
           being done well. We're looking for the adverbial usage describing the act.
@@ -146,7 +146,7 @@ examples:
     english_literally: Instruction manual, thoroughly read please.
     competing_grammar:
       - competing_japanese:
-          - 説明 書 を 全部 読ん で ください。
+          - 説明 書 を {全部} 読ん で ください。
         english: Please read all the instructions.
         hint: 「全部」 means 'all,' focusing on quantity. We're looking for 'carefully' or 'thoroughly,' which
           relates to the quality of reading.
@@ -154,7 +154,7 @@ examples:
     register: teineigo (polite)
     setting: instructional
     nuance: 「よく」 here means 'thoroughly' or 'carefully,' emphasizing the importance of detailed understanding.
-      The polite imperative 「てください」 makes it a respectful command.
+      The polite imperative 「ってください」 makes it a respectful command.
     etymology: N/A
   - english: From here, the ocean can be seen clearly, right?
     japanese:
@@ -165,7 +165,7 @@ examples:
     english_literally: From here, ocean can be seen well, right?
     competing_grammar:
       - competing_japanese:
-          - ここ から 海 が 見える ね。
+          - ここ から 海 が {見える} ね。
         english: From here, the ocean can be seen, right?
         hint: Without 「よく」, the sentence simply states that the ocean is visible. We're looking for the
           nuance that it's *clearly* visible, implying good visibility.
@@ -185,7 +185,7 @@ examples:
     english_literally: Such difficult work, well completed!
     competing_grammar:
       - competing_japanese:
-          - そんな 難しい 仕事 を 頑張っ て やり遂げ た ね！
+          - そんな 難しい 仕事 を {頑張っ て} やり遂げ た ね！
         english: You worked hard and completed such a difficult task!
         hint: 「頑張って」 means 'worked hard,' which is a good thing to say, but we are specifically looking
           for the direct expression of 'well done' or 'did well' using 「よく」.
@@ -204,7 +204,7 @@ examples:
     english_literally: Recently, in afternoon, often sleepy become.
     competing_grammar:
       - competing_japanese:
-          - 最近、午後 に すぐ 眠く なる ん だ。
+          - 最近、午後 に {すぐ} 眠く なる ん だ。
         english: Recently, I immediately get sleepy in the afternoon.
         hint: 「すぐ」 means 'immediately,' indicating quickness, not frequency. We're looking for the sense
           of an action happening often.
@@ -224,7 +224,7 @@ examples:
     english_literally: That dress, to you, suits well.
     competing_grammar:
       - competing_japanese:
-          - その ワン ピース、あなた に とても 似合う よ。
+          - その ワン ピース、あなた に {とても} 似合う よ。
         english: That dress, suits you very much.
         hint: 「とても」 also means 'very,' but 「よく」 in 「よく似合う」 carries a nuance of 'fitting perfectly' or
           'looking naturally good,' beyond just 'very.' We're looking for that specific nuance of suitability.
@@ -244,7 +244,7 @@ examples:
     english_literally: Often existing story, isn't it?
     competing_grammar:
       - competing_japanese:
-          - よく 聞く 話 だ ね。
+          - '{よく} 聞く 話 だ ね。'
         english: That's a story I often hear, isn't it?
         hint: 「よく聞く話」 focuses on the act of hearing it often, while 「よくある話」 refers to the story itself
           being common or often occurring. We're looking for the latter, implying commonplace occurrence.
@@ -263,7 +263,7 @@ examples:
     english_literally: Such important thing, how well forgot!
     competing_grammar:
       - competing_japanese:
-          - あんな 大事 な こと を なぜ 忘れ た の！
+          - あんな 大事 な こと を {なぜ} 忘れ た の！
         english: Why did you forget such an important thing?
         hint: 「なぜ」 asks for a reason, but 「よく」 here expresses exasperation or disbelief, conveying 'how
           dare you' rather than seeking an explanation. We're looking for that rhetorical, accusatory
@@ -286,7 +286,7 @@ examples:
     english_literally: He, to lectures, often attends, notes also well takes.
     competing_grammar:
       - competing_japanese:
-          - 彼 は 講義 に たくさん 出席 し、メモ も たくさん 取る。
+          - 彼 は 講義 に {たくさん} 出席 し、メモ も {たくさん} 取る。
         english: He attends many lectures and takes many notes.
         hint: 「たくさん」 refers to quantity. Here, 「よく」 is used for both frequency ('attends often') and quality
           ('takes notes well'). We're looking to convey both aspects.
@@ -300,24 +300,3 @@ examples:
 post_example_writeup: N/A
 sources:
   bunpro: https://bunpro.jp/grammar_points/よく
-lint-errors:
-  - '[rule-5] warning examples[0].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    納豆 は 毎日 食べる よ。'
-  - '[rule-5] warning examples[1].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    田中 さん は 料理 が 上手 です。'
-  - '[rule-5] warning examples[2].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    説明 書 を 全部 読ん で ください。'
-  - '[rule-5] warning examples[3].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    ここ から 海 が 見える ね。'
-  - '[rule-5] warning examples[4].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    そんな 難しい 仕事 を 頑張っ て やり遂げ た ね！'
-  - '[rule-5] warning examples[5].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    最近、午後 に すぐ 眠く なる ん だ。'
-  - '[rule-5] warning examples[6].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    その ワン ピース、あなた に とても 似合う よ。'
-  - '[rule-5] warning examples[7].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    よく 聞く 話 だ ね。'
-  - '[rule-5] warning examples[8].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    あんな 大事 な こと を なぜ 忘れ た の！'
-  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    彼 は 講義 に たくさん 出席 し、メモ も たくさん 取る。'

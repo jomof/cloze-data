@@ -635,6 +635,7 @@ if __name__ == '__main__':
     grammar_summary = generate_summary(grammar_root, ['id', 'learn_before', 'learn_after'])
     save_summary(grammar_summary, grammar_root, 'toposort-summary.json')
 
+
     with display.work("toposort", "updating list"):
         new_ordered, changes_made = update_priority_list_minimal(
             current_list=existing_ordered,

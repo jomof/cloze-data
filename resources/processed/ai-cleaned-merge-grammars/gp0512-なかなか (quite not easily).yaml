@@ -2,7 +2,7 @@ grammar_point: なかなか (quite not easily)
 learn_before:
   - あまり ない (not very or much)
   - 全然 (not at all; totally)
-  - とても (very, extremely)
+  - <suggest>:とても (very, extremely)
 learn_after:
   - 極まりない・極まる (extreme degree)
   - どうにも〜ない (no way to ~)
@@ -57,7 +57,7 @@ false_friends:
       context. 「なかなか」 does not have these additional meanings related to sufficiency or refusal. 「なかなか」
       also often carries a nuance of pleasant surprise or exceeding expectations, which 「結構」 does not
       always.
-    grammar_point: 結構 (quite・ample・no thanks)
+    grammar_point: <suggest>:結構 (quite・ample・no thanks)
   - term: あまりに
     meaning: So much...that, (way) too...
     kind: similar expression
@@ -79,7 +79,7 @@ false_friends:
       Unlike 「なかなか」, it doesn't carry the nuanced implication of unexpectedness, noteworthy quality, or
       difficulty/persistence when used with negatives. 「なかなか」 often suggests something is surprisingly
       good or hard to achieve, whereas 「とても」 is a more neutral measure of high degree.
-    grammar_point: とても (very, extremely)
+    grammar_point: <suggest>:とても (very, extremely)
   - term: 全然〜ない
     meaning: Not at all; completely not
     kind: similar expression
@@ -445,24 +445,3 @@ post_example_writeup: 「なかなか」 is often used to express a degree of qu
   a remarkable degree in various situations, from appreciating talent to describing unexpected difficulties.
 sources:
   bunpro: https://bunpro.jp/grammar_points/なかなか
-lint-errors:
-  - '[rule-13] unknown grammar at ''learn_before[2]'': ''とても (very, extremely)''. You may suggest new
-    grammar points by adding a false_friend.'
-  - '[rule-13] warning unknown grammar at ''false_friends[1]'': ''結構 (quite・ample・no thanks)''. It **MUST**
-    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
-    grammar point.'
-  - '[rule-13] warning unknown grammar at ''false_friends[4]'': ''とても (very, extremely)''. It **MUST**
-    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
-    grammar point.'
-  - '[rule-5] warning examples[5].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
-    難しい 問題 だ が、彼 なら たぶん 解く だろ う。'
-  - '[rule-5] warning examples[6].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
-    この ラーメン は 本当 に 美味しく て、すぐ 飽きる よ。'
-  - '[rule-5] warning examples[7].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
-    その 荷物 は 意外 と 重く て、簡単 に 持ち上がっ た。'
-  - '[rule-5] warning examples[8].competing_grammar[1].competing_japanese[0] missing {bold} grammar point:
-    彼女 は 仕事 を ゆっくり 終わら せ た。'
-  - '[rule-5] warning examples[8].competing_grammar[2].competing_japanese[0] missing {bold} grammar point:
-    彼女 は 仕事 を まあまあ 早く 終わら せ た。'
-  - '[rule-5] warning examples[9].competing_grammar[0].competing_japanese[0] missing {bold} grammar point:
-    彼女 は 普通 の 腕前 の 音楽 家 だ。'

@@ -1,4 +1,6 @@
 grammar_point: '[V-stem]・[Noun]ぐるみ (the whole, entire)'
+better_grammar_point_name:
+  - <suggest>:Noun + ぐるみ (the whole, entire)
 learn_before:
   - 毎・まい (every・per)
   - たくさん (many・a lot)
@@ -6,452 +8,250 @@ learn_after:
   - もさることながら (not only・but more so)
   - たる (to be in a position of)
 id: gp0945
-split_predecessor: |
-  An old grammar point has had its name changed from 'ぐるみ (whole・entire)' to '[V-stem]・[Noun]ぐるみ (the whole, entire)'. Please recreate this grammar point with this information in mind. All fields **MUST** be suitable for the new name. For your reference, here is the old content:
+meaning: The whole; entire; all of; together with (a group or entity).
+meaning_warning: While the grammar point name includes "V-stem・ぐるみ", this usage is not standard or common.
+  "ぐるみ" almost exclusively attaches to nouns to mean 'the whole of' or 'including everyone/everything
+  in a group/entity'. It emphasizes the collective involvement or scope of an entire unit.
+pronunciation:
+  katakana: グルミ
+  romaji: gurumi
+formation:
+  Noun + ぐるみ: Indicates that the entire group or entity of the noun is included or involved in an action
+    or state.
+jlpt: N2
+details:
+  part-of-speech: suffix
+  register: casual
+  usage-context: Used to describe collective action or involvement where an entire group or entity participates
+    as a single unit.
+  function: Expresses comprehensiveness, totality, or collective participation of a group or organization.
+  nuance: Implies that the entire specified unit (e.g., family, company, town) is involved, often suggesting
+    shared responsibility, effort, or experience. It's stronger than simply 'all members' as it emphasizes
+    the unit acting as a whole.
+  colocation: Commonly used with nouns referring to groups or organizations such as 家族 (kazoku), 町 (machi),
+    会社 (kaisha), 国 (kuni), チーム (chīmu), 組織 (soshiki).
+  grammatical-role: Acts as an adverbial modifier, modifying the verb or the overall action of the sentence.
+etymology: The suffix 『ぐるみ』 is believed to be derived from the verb 『くるむ』 (kurumu), meaning "to wrap"
+  or "to envelop". This etymological root clearly reflects its meaning of encompassing or including an
+  entire group or entity, as if 'wrapped together' in an action or situation. It signifies a comprehensive
+  involvement, where nothing within the specified scope is left out.
+writeup: |-
+  『ぐるみ』 is a suffix that expresses the involvement or scope of an entire group or entity. It is almost exclusively attached to nouns, indicating that the 'whole' of that noun is involved in an action or state. This grammatical pattern highlights collective participation, shared responsibility, or a comprehensive reach within a defined unit.
 
-  === ぐるみ (whole・entire) ===
-  grammar_point: ぐるみ (whole・entire)
-  learn_before:
-    - 毎・まい (every・per)
-    - たくさん (many・a lot)
-  learn_after:
-    - もさることながら (not only・but more so)
-    - たる (to be in a position of)
-  id: gp0945
-  meaning: Whole, -wide, Across the, Entire, All of, With … altogether
-  pronunciation:
-    katakana: グルミ
-    romaji: gurumi
-  formation:
-    Noun + ぐるみで: Indicates comprehensive inclusion of the preceding noun, meaning 'whole,' 'entire,' or
-      'all of it.'
-  jlpt: N1
-  details:
-    part-of-speech: suffix
+  For example, 『家族ぐるみ』 (kazoku gurumi) means 'the whole family' or 'family-wide,' suggesting that all family members are participating together. Similarly, 『町ぐるみ』 (machi gurumi) means 'the whole town' or 'town-wide,' implying a collective effort or characteristic that extends throughout the entire town.
+
+  It is important to note that while the grammar point name includes 『V-stem・ぐるみ』, this usage is not standard in modern Japanese. 『ぐるみ』 is predominantly used with nouns to convey the sense of 'including the entire entity' or 'the whole of something' acting collectively.
+
+  This grammar point emphasizes the idea of a unit acting as one, rather than simply a collection of individuals. It often carries a nuance of thoroughness or a unified front, making it suitable for describing events, initiatives, or characteristics that involve every part of a defined group.
+false_friends:
+  - term: すべて
+    meaning: All, every.
+    kind: similar expression
+    nuance: 『すべて』 is a general term for 'all' or 'everything', referring to discrete items or the totality
+      of things. 『ぐるみ』, however, specifically implies the comprehensive involvement of an entire *unit*
+      or *group* acting collectively as a single entity, often with a sense of shared action or experience.
+      For example, 『家族すべて』 would mean every single family member, while 『家族ぐるみ』 implies the family acting
+      as a unified body.
+    grammar_point: <suggest>:すべて (all・every)
+  - term: 全部
+    meaning: All, entire (of a specific collection).
+    kind: similar expression
+    nuance: Similar to 『すべて』, 『全部』 refers to the entirety of a collection of items. 『ぐるみ』 focuses on the
+      collective involvement or comprehensive scope of a single *entity* or *group*, often implying a
+      joint effort or shared experience among its members.
+    grammar_point: <suggest>:全部 (all・entire)
+  - term: を挙げて
+    meaning: With all efforts; wholehearted; mobilizing the entire [group].
+    kind: similar expression
+    nuance: 『を挙げて』 often implies a strong, concerted effort or mobilization by the entire group towards
+      a specific goal. While 『ぐるみ』 also implies collective involvement, 『を挙げて』 emphasizes the *action*
+      and *effort* of the group, whereas 『ぐるみ』 emphasizes the *scope* of involvement, indicating that
+      the entire unit is participating or characterized in a certain way. They are very close in meaning
+      and can sometimes be interchangeable, but 『ぐるみ』 leans more towards inclusive participation, and
+      『を挙げて』 leans more towards unified effort.
+    grammar_point: <suggest>:を挙げて (with all efforts・wholehearted)
+  - term: 一同
+    meaning: All members present; the whole company/group.
+    kind: similar expression
+    nuance: 『一同』 refers to all individuals within a defined group, often used when addressing them or
+      referring to them as a collection of people (e.g., 『社員一同』 - all employees). 『ぐるみ』, in contrast,
+      refers to the group *as a whole unit* participating in an activity or embodying a characteristic,
+      focusing on the collective aspect rather than just the summation of its members.
+    grammar_point: <suggest>:一同 (all people)
+post_false_friends_writeup: When distinguishing 『ぐるみ』 from similar terms like 『すべて』, 『全部』, 『を挙げて』, or
+  『一同』, remember that 『ぐるみ』 emphasizes the *collective participation of an entire unit or group* acting
+  as a unified body. It often implies a shared experience, joint effort, or comprehensive characteristic
+  that extends throughout the whole entity, rather than just a simple count of all members or a general
+  sense of totality.
+examples:
+  - english: The whole family went on a trip to Okinawa.
+    japanese:
+      - 家族 ぐるみ で 沖縄 旅行 に 行っ た。
+      - 家族 ぐるみ で 沖縄 旅行 に 行き まし た。
+      - 家族 ぐるみ の 沖縄 旅行 でし た。
+    english_literally: Family whole, by means of, Okinawa trip to went.
+    competing_grammar:
+      - competing_japanese:
+          - 家族 の すべて が 沖縄 旅行 に 行っ た。
+        english: Every single family member went on a trip to Okinawa.
+        hint: 『すべて』 implies every individual member, not necessarily the family acting as a collective
+          unit. We're looking for the family as a unified group experience.
+    scene: A family is reminiscing about a past vacation.
+    register: casual
+    setting: friendly
+  - english: The entire town participated in the summer festival.
+    japanese:
+      - 町 ぐるみ で 夏祭り に 参加 し た。
+      - 町 ぐるみ で 夏祭り に 参加 し まし た。
+      - 町 ぐるみ の 協力 で 夏祭り が 開催 さ れ た。
+    english_literally: Town whole, by means of, summer festival to participated.
+    competing_grammar:
+      - competing_japanese:
+          - 町 の 全部 が 夏祭り に 参加 し た。
+        english: All parts of the town participated in the summer festival.
+        hint: 『全部』 can refer to all physical parts of the town. We need to express that the people of
+          the town participated collectively.
+    scene: Two neighbors are discussing the success of the recent town festival.
+    register: casual
+    setting: friendly
+  - english: It's a company-wide effort to reduce waste.
+    japanese:
+      - それ は 会社 ぐるみ の ゴミ 削減 の 取り組み だ。
+      - それ は 会社 ぐるみ の ゴミ 削減 の 取り組み です。
+    english_literally: That is company whole's waste reduction initiative.
+    competing_grammar:
+      - competing_japanese:
+          - 会社 が ゴミ 削減 に 取り組ん で いる。
+        english: The company is working on waste reduction.
+        hint: This sentence is too general and doesn't emphasize that *everyone* in the company is involved
+          in the effort. We need to express that it's a unified, company-wide initiative.
+    scene: During a corporate meeting, a manager is explaining a new environmental policy.
+    register: formal
+    setting: professional
+  - english: The parents are involved in their children's education.
+    japanese:
+      - PTA は 親子 ぐるみ で 教育 に 関わっ て いる。
+      - PTA は 親子 ぐるみ で 教育 に 関わっ て い ます。
+    english_literally: PTA, parents-and-children whole, education in is involved.
+    competing_grammar:
+      - competing_japanese:
+          - PTA は 親 も 子 も 教育 に 関わっ て いる。
+        english: The PTA is involved in education, both parents and children.
+        hint: This phrasing lists parents and children separately. We're looking for an expression that
+          signifies both groups acting as a combined unit in their involvement.
+    scene: A school principal is explaining the involvement of the Parent-Teacher Association (PTA) to
+      new teachers.
+    register: formal
+    setting: academic
+  - english: The whole country celebrated the Olympic gold medal.
+    japanese:
+      - 国 ぐるみ で オリンピック の 金 メダル を 祝っ た。
+      - 国 ぐるみ で オリンピック の 金 メダル を 祝い まし た。
+    english_literally: Country whole, by means of, Olympics' gold medal celebrated.
+    competing_grammar:
+      - competing_japanese:
+          - 国 中 の 人々 が オリンピック の 金 メダル を 祝っ た。
+        english: People all over the country celebrated the Olympic gold medal.
+        hint: This describes people across the country. 『国ぐるみ』 emphasizes the entire nation, as a collective
+          entity, engaging in the celebration.
+    scene: A news anchor reporting on national celebrations.
+    register: formal
+    setting: informative
+  - english: It's a district-wide effort to prevent crime.
+    japanese:
+      - それ は 地域 ぐるみ の 防犯 対策 だ。
+      - それ は 地域 ぐるみ の 防犯 対策 です。
+    english_literally: That is district whole's crime prevention measure.
+    competing_grammar:
+      - competing_japanese:
+          - 地域 全体 で 防犯 対策 を 行っ て いる。
+        english: The entire region is implementing crime prevention measures.
+        hint: 『地域全体』 can sound more descriptive of geographical area. 『地域ぐるみ』 highlights the collective,
+          unified action of the community within that area.
+    scene: A community leader explaining new safety initiatives at a town hall meeting.
     register: semi-formal
-    function: Indicates comprehensive involvement or inclusion of a group or entity.
-    nuance: Emphasizes that an action or state applies to the collective as a unified entity, rather than
-      just individual components.
-    colocation: Often collocates with nouns denoting collective bodies such as 家族 (family), 会社 (company),
-      地域 (region), or 街 (town), and idiomatically with 身 (body/self) to mean all one's belongings.
-    grammatical-role: Functions adverbially when followed by で or adjectivally when followed by の, describing
-      the scope of an action or state.
-  etymology: The term ぐるみ stems from the verb 包む (tsutsumu), meaning "to wrap" or "to encompass." This etymology
-    suggests the nuance of something being completely enveloped or included.
-  writeup: |-
-    The suffix **ぐるみ** is attached to nouns to express that something encompasses or includes the entirety of that noun, often translating to 'whole,' 'entire,' or 'all of [noun].'
-
-    It is commonly followed by the particle **で**, indicating 'with' or 'by means of' the entire group. Occasionally, **の** may follow when **ぐるみ** modifies another noun directly, such as in 「家族ぐるみのお付き合い」 (family-wide relationship).
-
-    This grammar point is frequently used with nouns that denote a collective entity, such as families (家族), companies (会社), or communities (地域, 街). It implies that the action or state applies to the collective as a whole, rather than just individual components within it.
-
-    The core nuance of **ぐるみで** emphasizes a unified and comprehensive involvement, highlighting that the group itself shares a common trait or participates in a collective action.
-  false_friends:
-    - term: 全体
-      meaning: The whole; entirety; general
-      kind: similar expression
-      nuance: 「全体」 generally refers to the whole of something as a sum of its parts. While it can imply
-        comprehensiveness, it lacks the nuance of inherent unity or deep-seated collective action that 「ぐるみ」
-        conveys.
-      grammar_point: <suggest>:全体 (the whole)
-    - term: 全部
-      meaning: All; everything; whole
-      kind: similar expression
-      nuance: 「全部」 refers to all items or components of a set. It is more about quantity or completeness
-        of individual parts, whereas 「ぐるみ」 focuses on the collective nature or character of the group acting
-        as one.
-      grammar_point: <suggest>:全部 (all; everything)
-    - term: ～中 (じゅう)
-      meaning: Throughout; all over; during
-      kind: similar expression
-      nuance: 「～中」 indicates a spatial or temporal extent (e.g., throughout the day, all over the world).
-        It describes coverage across a period or area, not the collective internal unity or shared characteristic
-        of a group like 「ぐるみ」.
-      grammar_point: 中 (duration・entirety)
-  post_false_friends_writeup: While 「全体」, 「全部」, and 「～中」 can all express completeness or inclusivity, **ぐるみ**
-    specifically emphasizes a deep, inherent involvement or a unified action by an entire collective. For
-    instance, 「会社ぐるみ」 suggests the company itself, in its very character, is involved, rather than merely
-    stating that 'all parts of the company' (会社全体) are involved, or that 'everything within the company'
-    (会社全部) is included. 「～中」 focuses on spatial or temporal coverage, which is distinct from the collective
-    agency implied by **ぐるみ**.
-  examples:
-    - english: Every year, our whole family goes on a hot spring trip.
-      japanese:
-        - 毎年、家族 {ぐるみ で} 温泉 旅行 へ 行き ます。
-        - 毎年、家族 {ぐるみ で} 温泉 旅行 に 行き ます。
-        - 毎年、家族 {ぐるみ で} 温泉 旅行 に 出かけ ます。
-        - 毎年、私 たち の 家族 {ぐるみ で} 温泉 旅行 に 参り ます。
-      english_literally: Every year, including the whole family, we go to a hot spring trip.
-      competing_grammar:
-        - competing_japanese:
-            - 家族 {全体 で} 温泉 旅行 へ 行き ます。
-          english: The entire family (all members) goes on a hot spring trip.
-          hint: 「全体」 emphasizes 'all members' or 'all parts' of a group. We're looking for an expression
-            that suggests the family acts as a unified, collective entity.
-        - competing_japanese:
-            - 家族 {みんな で} 温泉 旅行 へ 行き ます。
-          english: Everyone in the family goes on a hot spring trip.
-          hint: 「みんな」 refers to 'all people' in a group. We're looking for an expression emphasizing the
-            family as a single, unified entity.
-        - competing_japanese:
-            - 家族 {全員 で} 温泉 旅行 へ 行き ます。
-          english: All family members go on a hot spring trip.
-          hint: 「全員」 specifies that every single individual is participating. We're looking for a phrase
-            that indicates the family acts as a single, collective unit.
-      scene: A woman is telling her friend about her annual family vacation plans.
-      register: casual
-      setting: friendly
-      speaker_gender: female
-      listener_gender: female
-      nuance: The use of 「家族ぐるみで」 emphasizes that the family goes as a single, united unit, not just some
-        members, highlighting a collective and shared experience.
-      etymology: While 「家族全員で」 (all family members) describes the participation of everyone, 「家族ぐるみで」 implies
-        a deeper, inherent collective involvement, suggesting that the family's very nature as a unit is
-        engaged in the activity.
-    - english: At that company, illegal activities were conducted by the entire company, so the management
-        was arrested.
-      japanese:
-        - その 会社 で は、不正 が 会社 {ぐるみ で} 行わ れ て い た ため、経営 陣 が 逮捕 さ れ た。
-        - その 会社 で は、不正 が 会社 {ぐるみ で} 行わ れ て い た の で、経営 陣 が 逮捕 さ れ た。
-        - その 会社 で は、会社 {ぐるみ で} の 不正 が 明るみ に 出 て、経営 陣 が 逮捕 さ れ た。
-        - 会社 {ぐるみ で} の 不正 行為 が 発覚 し、その 会社 の 経営 陣 が 逮捕 さ れ た。
-      english_literally: At that company, illegal acts were, including the whole company, being done, so
-        the management was arrested.
-      competing_grammar:
-        - competing_japanese:
-            - 会社 {全体 で} 不正 が 行わ れ て い た。
-          english: Illegal activities were conducted throughout the entire company.
-          hint: 「全体」 focuses on the scope of the wrongdoing across the entire organization. We're looking
-            for a phrase that highlights the company's inherent involvement as a unified body.
-        - competing_japanese:
-            - 会社 の {全て の 部署 で} 不正 が 行わ れ て い た。
-          english: Illegal activities were conducted in all departments of the company.
-          hint: 「全て の 部署 で」 indicates the scope across different parts. We're looking for a phrase that
-            implies the company itself, as a whole, was engaged in the misconduct.
-        - competing_japanese:
-            - 会社 {中 で} 不正 が 行わ れ て い た。
-          english: Illegal activities were conducted throughout the company (spatially, across the premises/organization).
-          hint: 「～中」 emphasizes the spread of something across an area or organization. We're looking for
-            a phrase highlighting the company's inherent involvement as a unified body.
-      scene: A news anchor reporting on a corporate scandal.
-      register: formal
-      setting: serious
-      nuance: 「会社ぐるみで」 indicates that the illegal activities were not isolated incidents but were systematically
-        carried out with the knowledge and involvement of the entire corporate structure, implying a deep-rooted
-        problem.
-      etymology: Using 「会社ぐるみで」 suggests the company's organizational character and very being were implicated,
-        not just that illegal acts were spread throughout various departments (会社全体で) or committed by all
-        its members (会社全部で).
-    - english: We have a family-wide relationship with Mr. Tanaka.
-      japanese:
-        - 田中 さん と は 家族 {ぐるみ} の お 付き合い を し て い ます。
-        - 田中 さん と は 家族 {ぐるみ} で 付き合っ て い ます。
-        - 田中 さん と は 昔 から の 家族 {ぐるみ} の お 付き合い です。
-        - 私 たち は 田中 さん ご 家族 と 家族 {ぐるみ} で 親しく 付き合っ て い ます。
-      english_literally: With Mr. Tanaka, we are having a family-including relationship.
-      competing_grammar:
-        - competing_japanese:
-            - 家族 {全体 で} の お 付き合い。
-          english: A relationship involving all family members.
-          hint: 「全体」 implies that each family member is involved individually. We're looking for an expression
-            that signifies the relationship is between the families as unified entities.
-        - competing_japanese:
-            - 家族 {全員 と} の お 付き合い。
-          english: A relationship with all individual family members.
-          hint: 「全員」 emphasizes that each and every member is involved. We're looking for an expression
-            that conveys the relationship exists between the families as unified entities.
-        - competing_japanese:
-            - 田中 さん と は {家族 間 で} の お 付き合い を し て い ます。
-          english: We have a relationship among our families with Mr. Tanaka.
-          hint: 「家族 間 で」 implies interactions between individual families. We're looking for an expression
-            that signifies the relationship is between the families as unified entities.
-      scene: A man is introducing a long-time acquaintance to a new colleague at a social event. This implies
-        that their families are friends.
-      register: semi-formal
-      setting: professional
-      speaker_gender: male
-      nuance: 「家族ぐるみ」 used with 「の」 emphasizes that the friendship encompasses all members of both families,
-        indicating a deep, collective bond.
-      etymology: This expression implies that the relationship is ingrained in the very fabric of both families,
-        going beyond individual acquaintances to a collective, unified bond, unlike simply stating that
-        all family members know each other (家族全員が付き合いです).
-    - english: The entire community participated in the disaster prevention drill, raising awareness of
-        disasters.
-      japanese:
-        - 地域 {ぐるみ で} 防災 訓練 に 参加 し、災害 へ の 意識 を 高め まし た。
-        - 地域 {ぐるみ で} 防災 訓練 に 参加 し て、災害 へ の 意識 を 高め まし た。
-        - 地域 {ぐるみ で} の 防災 訓練 が 行わ れ、住民 の 災害 へ の 意識 が 高まり まし た。
-        - 災害 へ の 意識 向上 の ため、地域 {ぐるみ で} 環境 保護 政策 を 推進 し て い ます。
-      english_literally: Including the whole region, we participated in disaster prevention training, and
-        raised awareness of disasters.
-      competing_grammar:
-        - competing_japanese:
-            - 地域 {全体 で} 防災 訓練 に 参加 し た。
-          english: The entire region participated in the disaster prevention drill.
-          hint: 「全体」 means that participation was spread across the whole region. We're looking for a phrase
-            emphasizing the community's collective, unified effort.
-        - competing_japanese:
-            - 地域 の {全て の 人々 が} 防災 訓練 に 参加 し た。
-          english: All people in the region participated in the disaster prevention drill.
-          hint: 「全て の 人々」 focuses on each individual's participation. We're looking for a phrase emphasizing
-            the community's collective, unified effort.
-        - competing_japanese:
-            - 地域 {中 で} 防災 訓練 に 参加 し た。
-          english: Participation in the disaster prevention drill spread throughout the region.
-          hint: 「～中」 emphasizes the activity happening *across* the entire region. We're looking for a phrase
-            emphasizing the community's collective, unified effort.
-      scene: A local newspaper article headline about community efforts.
-      register: formal
-      setting: informative
-      nuance: 「地域ぐるみで」 highlights a unified and widespread participation by the entire community, indicating
-        a collective and concerted effort towards disaster preparedness.
-      etymology: The nuance here is not merely that everyone in the area participated (地域全体で) but that the
-        community as a cohesive entity acted collectively and with unified purpose, implying a deep, community-wide
-        commitment.
-    - english: This project was promoted department-wide, so it's not an individual's responsibility.
-      japanese:
-        - この プロジェクト は 部門 {ぐるみ で} 推進 さ れ た もの な の で、個人 の 責任 で は あり ませ ん。
-        - この プロジェクト は 部門 {ぐるみ で} 推進 さ れ た もの だ から、個人 の 責任 で は あり ませ ん。
-        - この プロジェクト は 部門 {ぐるみ で} 推進 さ れ た もの で あり、個人 が 責任 を 負う べき で は あり ませ ん。
-        - 部門 {ぐるみ で} の プロジェクト です の で、個人 の 責任 を 問う べき で は ない。
-      english_literally: This project was, including the whole department, promoted, so it's not an individual's
-        responsibility.
-      competing_grammar:
-        - competing_japanese:
-            - 部門 {全体 で} 推進 さ れ た。
-          english: It was promoted by the entire department.
-          hint: 「全体」 means all parts or members of the department were involved. We're looking for a term
-            that conveys the department acted as a cohesive unit with shared responsibility.
-        - competing_japanese:
-            - 部門 の {全員 で} 推進 さ れ た。
-          english: All members in the department promoted it.
-          hint: 「全員」 means all individual members were involved. We're looking for a term that conveys the
-            department acted as a cohesive unit with shared responsibility.
-        - competing_japanese:
-            - 部門 {中 で} 推進 さ れ た。
-          english: It was promoted throughout the department.
-          hint: 「～中」 emphasizes the process happening across the department. We're looking for a term that
-            conveys the department acted as a cohesive unit with shared responsibility.
-      scene: A senior manager explaining a failed project outcome to a junior employee.
-      register: semi-formal
-      setting: serious
-      speaker_gender: male
-      speaker_age: older
-      nuance: 「部門ぐるみで」 emphasizes that the project's promotion was a collective decision and effort by the
-        entire department, thus diffusing individual blame. This phrasing is common in business Japanese
-        to indicate shared, deep-seated responsibility.
-      etymology: This implies that the department, in its core function and character, was inherently involved
-        in promoting the project, conveying a stronger sense of shared responsibility than merely stating
-        the project was promoted by the entire department (部門全体で).
-    - english: The entire city introduced a new environmental protection policy, and residents were asked
-        for their cooperation.
-      japanese:
-        - 市 {ぐるみ で} 新しい 環境 保護 政策 を 導入 し、住民 の 協力 が 呼びかけ られ まし た。
-        - 市 {ぐるみ で} 新しい 環境 保護 政策 を 導入 し て、住民 の 協力 が 呼びかけ られ まし た。
-        - 新しい 環境 保護 政策 が 市 {ぐるみ で} 導入 さ れ、住民 に 協力 が 求め られ た。
-        - 住民 の 協力 を 得 て、市 {ぐるみ で} 環境 保護 政策 を 推進 し て い ます。
-      english_literally: Including the whole city, a new environmental protection policy was introduced,
-        and residents' cooperation was called for.
-      competing_grammar:
-        - competing_japanese:
-            - 市 {全体 で} 新しい 環境 保護 政策 を 導入 し た。
-          english: The entire city introduced a new environmental protection policy.
-          hint: 「全体」 focuses on the policy being implemented throughout the city. We're looking for a phrase
-            implying the city, as a unified body, collectively decided and acted.
-        - competing_japanese:
-            - 市 の {全て の 部署 が} 新しい 環境 保護 政策 を 導入 し た。
-          english: All departments of the city introduced a new environmental protection policy.
-          hint: 「全て の 部署」 indicates involvement across all sections. We're looking for a phrase implying
-            the city, as a unified body, collectively decided and acted.
-        - competing_japanese:
-            - 市 {中 で} 新しい 環境 保護 政策 が 導入 さ れ た。
-          english: A new environmental protection policy was introduced throughout the city.
-          hint: 「～中」 means the policy was implemented across the entire city's area. We're looking for a
-            phrase implying the city, as a unified body, collectively decided and acted.
-      scene: A government press release announcing a new initiative.
-      register: formal
-      setting: informative
-      nuance: 「市ぐるみで」 suggests a unified effort where the city government and its residents are working
-        together as a single entity towards the policy, implying comprehensive participation and support.
-      etymology: This phrase suggests a deep, comprehensive commitment from the city as a unified entity,
-        with all its parts (government, residents) acting in concert, rather than just a policy implemented
-        across the entire city (市全体で).
-    - english: He got deeply in debt from gambling and lost his house, assets, and all his belongings.
-      japanese:
-        - 彼 は ギャンブル で 借金 まみれ に なり、家 も 財産 も 身 {ぐるみ} 取ら れ て しまっ た。
-        - 彼 は ギャンブル で 借金 まみれ に なり、家 も 財産 も 身 {ぐるみ} 取ら れ て しまっ た ん です。
-        - 彼 は ギャンブル の せい で 借金 地獄 に 陥り、身 {ぐるみ} 剥がさ れ た。
-        - ギャンブル に 溺れ た 彼 は、全て の 財産 を 失い、身 {ぐるみ} 丸裸 に さ れ た。
-      english_literally: He became covered in gambling debt, and his house, assets, and all his body-belongings
-        were taken.
-      competing_grammar:
-        - competing_japanese:
-            - '{財産 の 全て} を 失っ た。'
-          english: He lost all of his assets.
-          hint: 「財産 の 全て」 refers to the total sum of possessions. We're looking for an idiomatic expression
-            that implies a complete and devastating stripping away of everything.
-        - competing_japanese:
-            - 彼 は ギャンブル で 借金 まみれ に なり、家 も 財産 も {全て} 失っ た。
-          english: He got deeply in debt from gambling and lost his house, assets, and everything.
-          hint: 「全て 失っ た」 is a direct description of losing everything. We're looking for a more idiomatic
-            and emotionally charged expression implying a complete and utter loss of all personal belongings.
-      scene: A friend explaining the tragic consequences of someone's gambling addiction.
-      register: casual
-      setting: serious
-      nuance: 「身ぐるみ」 is an idiomatic phrase meaning "all one's possessions," often implying a complete and
-        devastating stripping away of everything, conveying a strong sense of ruin.
-      etymology: The idiom 「身ぐるみ」 literally means "body-wrap" or "what's wrapped around one's body," evoking
-        the sense of losing everything one possesses, down to the clothes on one's back. It implies a total
-        and often sudden or violent loss of all personal effects.
-    - english: The entire school participated in the volunteer activities, making it a great success.
-      japanese:
-        - 学校 {ぐるみ で} ボランティア 活動 に 参加 し、大 成功 を 収め まし た。
-        - 学校 {ぐるみ で} ボランティア 活動 に 参加 し て、大 成功 を 収め まし た。
-        - 学校 {ぐるみ で} の ボランティア 活動 は、大 成功 に 終わり まし た。
-        - 全校 生徒 が {ぐるみ で} 参加 し た ボランティア 活動 は、高く 評価 さ れ まし た。
-      english_literally: Including the whole school, we participated in volunteer activities, and achieved
-        great success.
-      competing_grammar:
-        - competing_japanese:
-            - 学校 {全体 で} ボランティア 活動 に 参加 し た。
-          english: The entire school participated in volunteer activities.
-          hint: 「全体」 emphasizes the scope across the entire school. We're looking for an expression that
-            signifies the school acted as a unified, collective entity with a shared purpose.
-        - competing_japanese:
-            - '{全て の 生徒 が} ボランティア 活動 に 参加 し た。'
-          english: All students participated in volunteer activities.
-          hint: 「全て の 生徒」 focuses on each individual's participation. We're looking for a phrase that conveys
-            the school's collective, unified effort.
-      scene: A school principal reporting on a successful event at a PTA meeting.
-      register: formal
-      setting: informative
-      nuance: 「学校ぐるみで」 highlights that the volunteer effort was a unified initiative involving the entire
-        institution, not just a collection of individuals or separate groups. It implies a deeper, more
-        comprehensive commitment from the school as a whole.
-      etymology: Similar to other uses of ぐるみ, this emphasizes the school as a single, cohesive body acting
-        together. It goes beyond merely stating that 'everyone in the school participated' (学校の全員が参加した)
-        by conveying a sense of institutional, collective involvement.
-    - english: The entire nation watched the World Cup final, cheering for their team.
-      japanese:
-        - 国民 {ぐるみ で} ワールド カップ 決勝 を 見守り、自国 チーム を 応援 し まし た。
-        - 国民 {ぐるみ で} ワールド カップ 決勝 を 見守り、自国 チーム を 応援 し た。
-        - ワールド カップ 決勝 に は、国民 {ぐるみ で} が 熱狂 し まし た。
-        - あの ワールド カップ の 時 は、国民 {ぐるみ で} が 一 つ に なっ て 応援 し た もの です。
-      english_literally: Including the whole nation, we watched the World Cup final, and cheered for our
-        own country's team.
-      competing_grammar:
-        - competing_japanese:
-            - '{全 国民 が} ワールド カップ 決勝 を 見守っ た。'
-          english: All citizens watched the World Cup final.
-          hint: 「全国民」 focuses on every individual citizen. We're looking for an expression that emphasizes
-            the collective, unified spirit and emotional involvement of the entire nation.
-        - competing_japanese:
-            - 国 {全体 で} ワールド カップ 決勝 を 見守っ た。
-          english: The entire country watched the World Cup final.
-          hint: 「国全体」 can refer to the physical land or the organizational structure. We're looking for
-            a phrase that specifically highlights the unified emotional and active support of the people
-            as a collective.
-      scene: A sports commentator reflecting on a memorable World Cup tournament.
-      register: semi-formal
-      setting: excited
-      nuance: 「国民ぐるみで」 conveys a powerful sense of national unity and collective passion. It implies that
-        the entire populace, as a cohesive entity, was deeply invested emotionally and collectively participating
-        in the cheering, rather than just a large number of individuals.
-      etymology: This usage extends the core meaning of 'encompassing' to the collective will and emotion
-        of a nation. It's not merely that all citizens (全国民) participated, but that the nation itself, as
-        a unified entity, was enveloped in this shared experience.
-    - english: Thanks to a neighborhood-wide effort, the shopping street regained its former liveliness.
-      japanese:
-        - 近所 {ぐるみ で} の 努力 の おかげ で、商店 街 は 昔 の 賑わい を 取り戻し まし た。
-        - 近所 {ぐるみ で} の 協力 に より、商店 街 は 昔 の 活気 を 取り戻し まし た。
-        - 近所 {ぐるみ で} の 地域 活性 化 の 取り組み で、商店 街 は 再び 賑やか に なっ た。
-        - あの 商店 街 は、近所 {ぐるみ で} の 支援 が あり、見事 に 復活 し た。
-      english_literally: Thanks to efforts including the whole neighborhood, the shopping street regained
-        its former liveliness.
-      competing_grammar:
-        - competing_japanese:
-            - 近所 {全体 の} 努力 の おかげ で、商店 街 は 賑わい を 取り戻し まし た。
-          english: Thanks to the efforts of the entire neighborhood, the shopping street regained its liveliness.
-          hint: 「全体」 indicates the scope of effort across the neighborhood. We're looking for a phrase that
-            emphasizes the neighborhood's unified, collective effort as a single entity.
-        - competing_japanese:
-            - 近所 の {みんな の} 努力 の おかげ で、商店 街 は 賑わい を 取り戻し まし た。
-          english: Thanks to everyone in the neighborhood's efforts, the shopping street regained its liveliness.
-          hint: 「みんな」 refers to all individuals. We're looking for an expression that highlights the neighborhood
-            acting as a cohesive unit for a common goal.
-      scene: A local community leader giving a speech at a neighborhood gathering.
-      register: casual
-      setting: optimistic
-      nuance: 「近所ぐるみで」 emphasizes that the revival of the shopping street was a concerted, unified effort
-        by the entire neighborhood. It implies a collective spirit and deep involvement of the community
-        as a whole, rather than just individual contributions.
-      etymology: This use of ぐるみ highlights the comprehensive nature of the effort, where the entire neighborhood,
-        in its collective character, was involved. It suggests a shared sense of ownership and responsibility,
-        leading to a unified action for the common good.
-    - english: This research project was supported by the entire academic society, making its results highly
-        credible.
-      japanese:
-        - この 研究 プロジェクト は 学会 {ぐるみ で} 支援 さ れ た の で、その 結果 は 高い 信頼 性 を 持つ。
-        - この 研究 プロジェクト は 学会 {ぐるみ で} 支援 さ れ た ため、その 成果 は 極めて 信頼 できる もの と なっ た。
-        - 学会 {ぐるみ で} の 協力 に より、この 研究 は 画期 的 な 成果 を 上げ た。
-      english_literally: This research project was, including the whole academic society, supported, so
-        its results have high reliability.
-      competing_grammar:
-        - competing_japanese:
-            - 学会 {全体 が} この 研究 プロジェクト を 支援 し た。
-          english: The entire academic society supported this research project.
-          hint: 「全体」 indicates that support was spread across the whole society. We're looking for a phrase
-            that emphasizes the academic society's unified, collective endorsement and deep involvement.
-        - competing_japanese:
-            - 学会 の {全て の 会員 が} この 研究 プロジェクト を 支援 し た。
-          english: All members of the academic society supported this research project.
-          hint: 「全て の 会員」 focuses on each individual member's support. We're looking for a phrase that conveys
-            the society's collective, unified commitment as an entity.
-      scene: A researcher presenting findings at a conference.
-      register: formal
-      setting: academic
-      nuance: 「学会ぐるみで」 emphasizes that the research project received not just widespread support but also
-        the collective endorsement and deep involvement of the academic community as a unified entity, lending
-        significant authority and credibility to its findings.
-      etymology: This application of ぐるみ suggests that the academic society, in its very structure and collective
-        character, was invested in and supported the project. It goes beyond mere widespread participation
-        to imply a deep, integrated commitment from the institution itself.
-    - english: The corruption scandal involved the entire government, leading to a complete overhaul of
-        the system.
-      japanese:
-        - その 汚職 事件 は 政府 {ぐるみ で} 行わ れ て い た ため、制度 の 徹底 的 な 見直し に つながっ た。
-        - 政府 {ぐるみ で} の 汚職 が 明るみ に 出 て、国民 の 信頼 は 失わ れ た。
-        - その 汚職 は 政府 {ぐるみ で} 隠蔽 さ れ て おり、大きな 批判 を 浴び た。
-      english_literally: That corruption incident was, including the whole government, being done, so it
-        led to a thorough review of the system.
-      competing_grammar:
-        - competing_japanese:
-            - 政府 {全体 で} 汚職 が 行わ れ て い た。
-          english: Corruption was carried out throughout the entire government.
-          hint: 「全体」 describes the scope of corruption across the government. We're looking for a phrase
-            that highlights the government's inherent involvement as a unified, systematically corrupt entity.
-        - competing_japanese:
-            - 政府 の {全て の 部門 で} 汚職 が 行わ れ て い た。
-          english: Corruption was carried out in all departments of the government.
-          hint: 「全て の 部門」 indicates the spread of corruption across different sections. We're looking for
-            a phrase that implies the government itself, as a whole, was engaged in systemic misconduct.
-      scene: A political analyst discussing a major national scandal.
-      register: formal
-      setting: serious
-      nuance: 「政府ぐるみで」 highlights that the corruption was not an isolated incident but pervasive and deeply
-        embedded within the government's structure, implying a systemic issue that involved the government
-        as a unified body, rather than just individual corrupt officials.
-      etymology: This phrase suggests that the government, in its core identity and operational character,
-        was intrinsically tied to the corruption. It conveys a stronger sense of deep-seated, institutionalized
-        misconduct than merely stating that corruption was widespread across all government parts (政府全体で).
-  post_example_writeup: The usage of **ぐるみで** allows for a powerful expression of collective involvement,
-    whether it's a family going on a trip, a company engaged in misconduct, or a community coming together.
-    The phrase 「身ぐるみ」, while using the same 'ぐるみ' suffix, is an established idiom with a specific meaning
-    related to losing all one's possessions, often with a strong emotional connotation of ruin or destitution.
-    Understanding these nuances helps in selecting the most appropriate phrase for the desired emphasis.
-  sources:
-    bunpro: https://bunpro.jp/grammar_points/ぐるみで
-lint-errors:
-  - error grammar point is missing required field 'meaning'
-  - '[rule-18] warning grammar point has split_predecessor field. Use the information in it to help compose
-    this new grammar point, then remove the field.'
+    setting: informative
+  - english: The manager decided to push for a department-wide overhaul.
+    japanese:
+      - 部 長 は 部署 ぐるみ の 改革 を 決め た。
+      - 部 長 は 部署 ぐるみ の 改革 を 決め まし た。
+    english_literally: The manager, department whole, overhaul decided.
+    competing_grammar:
+      - competing_japanese:
+          - 部 長 は 部署 の メンバー 全員 に 改革 を 求める と 決め た。
+        english: The manager decided to ask all department members for reforms.
+        hint: This phrasing emphasizes individual members. 『部署ぐるみ』 conveys the idea of the department
+          as a single entity undergoing a complete reform.
+    scene: Two colleagues discussing recent management decisions.
+    register: casual
+    setting: professional
+  - english: He was involved in the fraud with his whole family.
+    japanese:
+      - 彼 は 家族 ぐるみ で 詐欺 に 関わっ て い た。
+      - 彼 は 家族 ぐるみ で 詐欺 に 関わっ て い まし た。
+    english_literally: He, family whole, fraud in was involved.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 家族 全員 と 詐欺 に 関わっ て い た。
+        english: He was involved in the fraud with all his family members.
+        hint: This implies he and each family member were involved. 『家族ぐるみ』 suggests the family as a unit
+          was involved in the fraud, often implying a deeper, collective conspiracy.
+    scene: Two detectives discussing a criminal case.
+    register: formal
+    setting: serious
+  - english: The company held a staff-wide training session.
+    japanese:
+      - 会社 は 社員 ぐるみ の 研修 を 行っ た。
+      - 会社 は 社員 ぐるみ の 研修 を 行い まし た。
+    english_literally: Company, staff whole's training carried out.
+    competing_grammar:
+      - competing_japanese:
+          - 会社 は 全 社員 に 研修 を 行っ た。
+        english: The company conducted training for all employees.
+        hint: This just states training for all employees. 『社員ぐるみ』 implies a training initiative where
+          the collective staff as a unified body participated or was targeted.
+    scene: An HR manager informing the executive board about recent company activities.
+    register: formal
+    setting: professional
+  - english: This is a team-wide project.
+    japanese:
+      - これ は チーム ぐるみ の プロジェクト だ。
+      - これ は チーム ぐるみ の プロジェクト です。
+    english_literally: This is team whole's project.
+    competing_grammar:
+      - competing_japanese:
+          - これ は チーム 全体 の プロジェクト だ。
+        english: This is a project for the entire team.
+        hint: 『チーム全体』 can mean the project concerns the entire team's area of responsibility. 『チームぐるみ』
+          emphasizes the collective, unified participation of the team members.
+    scene: A project manager introducing a new task to their team.
+    register: semi-formal
+    setting: professional
+  - english: The school made an effort, involving all students, to clean the local park.
+    japanese:
+      - 学校 は 生徒 ぐるみ で 近所 の 公園 を 掃除 する 活動 を し た。
+      - 学校 は 生徒 ぐるみ で 近所 の 公園 を 掃除 する 活動 を し まし た。
+    english_literally: School, students whole, nearby park to clean activity did.
+    competing_grammar:
+      - competing_japanese:
+          - 学校 は 生徒 全員 と 一緒 に 近所 の 公園 を 掃除 し た。
+        english: The school, along with all students, cleaned the nearby park.
+        hint: This emphasizes 'all students' as individuals. 『生徒ぐるみ』 stresses the collective, unified
+          involvement of the student body.
+    scene: A teacher reporting on a community service event.
+    register: formal
+    setting: academic
+  - english: It became a community-wide problem.
+    japanese:
+      - それ は 地域 ぐるみ の 問題 と なっ た。
+      - それ は 地域 ぐるみ の 問題 と なり まし た。
+    english_literally: That, region whole, problem became.
+    competing_grammar:
+      - competing_japanese:
+          - 地域 全体 に 広がる 問題 と なっ た。
+        english: It became a problem spreading throughout the entire region.
+        hint: This describes a problem that spread. 『地域ぐるみ』 implies the problem affected the community
+          as a whole unit, impacting its collective identity or functioning.
+    scene: A local news report discussing an issue affecting residents.
+    register: formal
+    setting: informative

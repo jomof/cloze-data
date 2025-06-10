@@ -2,7 +2,7 @@ grammar_point: のうち(で) (within・among)
 learn_before:
   - の (possession)
   - うち (within or while)
-  - の中で一番 (the most among)
+  - <suggest>:のなかで一番 (the most among)
   - だけ (only・just)
   - しかない (no other option)
 learn_after:
@@ -28,7 +28,8 @@ details:
   usage-context: Often used when explicitly selecting from a defined group, or for formal/precise contexts.
   nuance: While grammatically correct and versatile, 「のうち(で)」 is generally less common in natural speech
     than 「のなか(で)」, especially when simply meaning 'among' or 'within'. It tends to carry a slightly more
-    formal or precise nuance, often used when explicitly selecting from a defined group.
+    formal or precise nuance, often used when explicitly selecting from a defined group or when precise
+    quantification is required.
 etymology: The grammar point 「のうち」 comes from the noun 「内(うち)」, meaning "inside" or "within". The 「の」
   particle connects it to the preceding noun, specifying that the selection is being made from within
   that noun's scope. The 「で」 particle is optional and indicates the location or context of the selection.
@@ -43,25 +44,25 @@ writeup: '「のうち(で)」 is a grammar pattern derived from the noun 「内
   followed by 「から」 in place of 「で」, emphasizing selection "from" a group or origin of a choice. • **Scope**:
   The noun or number preceding 「のうち」 can represent a range or a limit, and its use is not restricted to
   numerical contexts. • **Frequency**: While grammatically correct, 「のうち(で)」 is generally less common
-  in natural speech than 「のなか(で)」, especially when simply meaning ''among'' or ''within''. It tends to
-  carry a slightly more formal or precise nuance, often used when explicitly selecting from a defined
-  group or when precise quantification is required. • **Kanji vs. Hiragana**: Although rooted in the kanji
-  「内」, the hiragana form 「うち」 is far more frequently encountered in this grammar pattern. This contributes
-  to its slightly more colloquial feel compared to the more formal 「のなか」.'
+  in natural speech than 「のなか(で)」, especially when simply meaning ''''among'''' or ''''within''''. It
+  tends to carry a slightly more formal or precise nuance, often used when explicitly selecting from a
+  defined group or when precise quantification is required. • **Kanji vs. Hiragana**: Although rooted
+  in the kanji 「内」, the hiragana form 「うち」 is far more frequently encountered in this grammar pattern.
+  This contributes to its slightly more colloquial feel compared to the more formal 「のなか」.'
 false_friends:
   - term: 〜は〜の一つだ
     meaning: 〜 is one of (many) 〜
     kind: similar expression
     nuance: 「〜は〜の一つだ」 emphasizes that something is *one* of many, stating its membership in a category,
       while 「のうち」 focuses on selecting *from* a group or making a comparison within it.
-    grammar_point: '[X]は[Y]の一つだ (X is one of Y)'
+    grammar_point: <suggest>:[X]は[Y]の一つだ (one of)
   - term: 同士
     meaning: Fellow, With each other, Mutually, Between, Among, Together, With
     kind: often confused with
     nuance: 「同士」 implies a sense of mutual action or shared status among members of a group (e.g., 学生同士
       'fellow students'), whereas 「のうち」 simply indicates being within a group for selection or comparison,
       without implying mutuality.
-    grammar_point: 同士 (fellow; mutual)
+    grammar_point: <suggest>:同士 (fellow・mutual)
   - term: のなかで
     meaning: In, Among, Within
     kind: synonym
@@ -69,12 +70,12 @@ false_friends:
       interchangeable with 「のうちで」, 「のうちで」 can sometimes imply a more precise or deliberate selection from
       a defined set, especially in formal or academic contexts.
     grammar_point: のなかで (in・among)
-  - term: のなかで〜がいちばん〜
+  - term: のなかで一番
     meaning: Out of ~, ~ is the best/most ~
     kind: similar expression
-    nuance: 「のなかで〜がいちばん〜」 is a specific superlative form using 「のなかで」, and is generally more common. While
+    nuance: 「のなかで一番」 is a specific superlative form using 「のなかで」, and is generally more common. While
       「のうち(で)」 can also be used in superlative comparisons, 「のなかで」 is often preferred for general comparisons.
-    grammar_point: の中で一番 (the most among)
+    grammar_point: <suggest>:のなかで一番 (the most among)
   - term: そのうち
     meaning: Eventually; before long; of those/them
     kind: often confused with
@@ -444,5 +445,3 @@ post_example_writeup: The examples illustrate how 「のうち(で/の/から)�
   or 'within', 「のなか(で)」 is often the more common and natural choice in everyday conversation.
 sources:
   bunpro: https://bunpro.jp/grammar_points/のうち(で) (within, among)
-lint-errors:
-  - '[rule-9] warning false_friends[0].grammar_point (meaning) starts with invalid char: X'

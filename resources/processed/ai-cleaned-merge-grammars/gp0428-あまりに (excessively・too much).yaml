@@ -1,7 +1,7 @@
 grammar_point: あまりに (excessively・too much)
 learn_before:
   - すぎる (too much・excessive)
-  - とても (very)
+  - <suggest>:とても (very)
   - '[i-Adj-stem]くて (and・because)'
   - ので (reason)
 learn_after:
@@ -68,7 +68,7 @@ false_friends:
     nuance: とても is a general intensifier that means 'very' or 'extremely,' but unlike あまりに, it describes
       a high degree without inherently implying an excessive amount that leads to a specific, often surprising
       or undesirable, outcome.
-    grammar_point: とても (very)
+    grammar_point: <suggest>:とても (very)
   - term: どんなに〜ても (no matter how much)
     meaning: No matter how
     kind: similar expression
@@ -360,8 +360,3 @@ post_example_writeup: The examples illustrate how あまりに is used to emphas
   intensifies this meaning, making the excessive nature even more pronounced.
 sources:
   bunpro: https://bunpro.jp/grammar_points/428
-lint-errors:
-  - '[rule-13] unknown grammar at ''learn_before[1]'': ''とても (very)''. You may suggest new grammar points
-    by adding a false_friend.'
-  - '[rule-13] warning unknown grammar at ''false_friends[3]'': ''とても (very)''. It **MUST** be from ALL_GRAMMARS_SUMMARY
-    or you can prepend ''<suggest>:'' to the grammar point to suggest a new grammar point.'

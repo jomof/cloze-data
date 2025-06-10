@@ -1,6 +1,6 @@
 grammar_point: は言うまでもない (goes without saying)
 learn_before:
-  - もちろん (of course・certainly)
+  - <suggest>:もちろん (of course・certainly)
   - はずだ (expected to be)
   - べき (should)
 learn_after:
@@ -65,7 +65,7 @@ false_friends:
     kind: similar expression
     nuance: 「もちろん」 states something as being 'of course' or 'naturally,' but it doesn't carry the rhetorical
       weight of 「は言うまでもない」, which suggests the statement is so foundational it's unnecessary to even utter.
-    grammar_point: もちろん (of course・certainly)
+    grammar_point: <suggest>:もちろん (of course・certainly)
   - term: 当たり前だ
     meaning: It's natural, it's a matter of course
     kind: similar expression
@@ -386,9 +386,3 @@ post_example_writeup: This grammar point is highly versatile, effectively commun
   saying" remains consistent.
 sources:
   bunpro: https://bunpro.jp/grammar_points/は言うまでもない1
-lint-errors:
-  - '[rule-13] unknown grammar at ''learn_before[0]'': ''もちろん (of course・certainly)''. You may suggest
-    new grammar points by adding a false_friend.'
-  - '[rule-13] warning unknown grammar at ''false_friends[3]'': ''もちろん (of course・certainly)''. It **MUST**
-    be from ALL_GRAMMARS_SUMMARY or you can prepend ''<suggest>:'' to the grammar point to suggest a new
-    grammar point.'
