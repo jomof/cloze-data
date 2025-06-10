@@ -95,8 +95,8 @@ def ALL_GRAMMARS_SUMMARY(all_grammars_summary):
 def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
     prior_input_obj = prior_grammar_point
 
-    if 'split_predecessor' in prior_input_obj:
-        del prior_input_obj['split_predecessor']
+    # if 'split_predecessor' in prior_input_obj:
+    #     del prior_input_obj['split_predecessor']
 
     prompt = '\n'.join([
         PERSONA, 
