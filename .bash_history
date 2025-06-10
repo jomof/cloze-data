@@ -1127,3 +1127,4 @@ bazel run //resources/grammar:ai-pass &> scratch.log
 bazel run //resources/grammar:ai-pass
 clear
 bazel run //resources/grammar:lint-grammar-points
+exit
