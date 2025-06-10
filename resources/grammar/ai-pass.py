@@ -253,7 +253,7 @@ if __name__ == '__main__':
                     english = value['english']
                     japanese = value.get('japanese', [])
                     clean_list = [s.replace('{', '').replace('}', '') for s in japanese]
-                    db.add_values_to_key(english, clean_list)
+                    db.add_english_translations(english, clean_list)
                     return value
                 return value
             visit_json(parsed_obj, GRAMMAR_SCHEMA, fn)

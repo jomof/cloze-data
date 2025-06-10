@@ -28,14 +28,14 @@ class Database:
                 # Schema with optimized indexing - composite primary key provides set semantics
                 conn.execute('''
                     CREATE TABLE english_to_japanese (
-                        key TEXT NOT NULL,
-                        value TEXT NOT NULL,
-                        PRIMARY KEY (key, value)
+                        japanese TEXT NOT NULL,
+                        english TEXT NOT NULL,
+                        PRIMARY KEY (japanese, english)
                     )
                 ''')
                 
-                conn.execute('CREATE INDEX idx_english_to_japanese_key ON english_to_japanese(key)')
-                conn.execute('CREATE INDEX idx_english_to_japanese_value ON english_to_japanese(value)')
+                conn.execute('CREATE INDEX idx_english_to_japanese_japanese ON english_to_japanese(japanese)')
+                conn.execute('CREATE INDEX idx_english_to_japanese_english ON english_to_japanese(english)')
                 
                 conn.commit()
             
@@ -52,7 +52,7 @@ class Database:
     
     @contextmanager
     def get_connection(self):
-        """Connection optimized for frequent key updates"""
+        """Connection optimized for frequent japanese term updates"""
         max_retries = 5
         for attempt in range(max_retries):
             try:
@@ -61,7 +61,7 @@ class Database:
                 # Set all the performance optimizations per connection
                 conn.execute('PRAGMA busy_timeout=45000')
                 conn.execute('PRAGMA synchronous=NORMAL')
-                conn.execute('PRAGMA cache_size=50000')  # Larger cache for frequent key lookups
+                conn.execute('PRAGMA cache_size=50000')  # Larger cache for frequent japanese term lookups
                 conn.execute('PRAGMA temp_store=MEMORY')
                 
                 # WAL-specific optimizations (only effective if WAL mode is enabled)
@@ -81,142 +81,142 @@ class Database:
                 if 'conn' in locals():
                     conn.close()
     
-    def add_values_to_key(self, key: str, values: List[str]):
-        """Add multiple values to an existing or new key"""
-        if not values:
+    def add_english_translations(self, japanese: str, english_translations: List[str]):
+        """Add multiple English translations to an existing or new Japanese term"""
+        if not english_translations:
             return
         
         # Pre-filter duplicates to reduce database work
-        unique_values = list(set(values))
-        batch_data = [(key, value) for value in unique_values]
+        unique_translations = list(set(english_translations))
+        batch_data = [(japanese, english) for english in unique_translations]
         
         with self.get_connection() as conn:
             conn.execute('BEGIN IMMEDIATE')
             try:
-                # INSERT OR IGNORE is perfect for adding to existing keys
-                # It handles both new keys and adding to existing keys seamlessly
-                # The composite primary key (key, value) provides set semantics automatically
+                # INSERT OR IGNORE is perfect for adding to existing japanese terms
+                # It handles both new terms and adding to existing terms seamlessly
+                # The composite primary key (japanese, english) provides set semantics automatically
                 conn.executemany(
-                    'INSERT OR IGNORE INTO english_to_japanese (key, value) VALUES (?, ?)',
+                    'INSERT OR IGNORE INTO english_to_japanese (japanese, english) VALUES (?, ?)',
                     batch_data
                 )
                 conn.commit()
-                return len(batch_data)  # Return number of values attempted
+                return len(batch_data)  # Return number of translations attempted
             except Exception:
                 conn.rollback()
                 raise
     
-    def add_values_to_key_with_feedback(self, key: str, values: List[str]) -> dict:
-        """Add values and return detailed feedback about what was inserted"""
-        if not values:
+    def add_english_translations_with_feedback(self, japanese: str, english_translations: List[str]) -> dict:
+        """Add English translations and return detailed feedback about what was inserted"""
+        if not english_translations:
             return {'attempted': 0, 'inserted': 0, 'duplicates': 0}
         
-        unique_values = list(set(values))
+        unique_translations = list(set(english_translations))
         
         with self.get_connection() as conn:
             conn.execute('BEGIN IMMEDIATE')
             try:
-                # Check existing values first
+                # Check existing translations first
                 existing_cursor = conn.execute(
-                    f'SELECT value FROM english_to_japanese WHERE key = ? AND value IN ({",".join("?" * len(unique_values))})',
-                    [key] + unique_values
+                    f'SELECT english FROM english_to_japanese WHERE japanese = ? AND english IN ({",".join("?" * len(unique_translations))})',
+                    [japanese] + unique_translations
                 )
-                existing_values = {row[0] for row in existing_cursor.fetchall()}
+                existing_translations = {row[0] for row in existing_cursor.fetchall()}
                 
-                # Only insert truly new values
-                new_values = [v for v in unique_values if v not in existing_values]
+                # Only insert truly new translations
+                new_translations = [t for t in unique_translations if t not in existing_translations]
                 inserted_count = 0
                 
-                if new_values:
-                    batch_data = [(key, value) for value in new_values]
+                if new_translations:
+                    batch_data = [(japanese, english) for english in new_translations]
                     conn.executemany(
-                        'INSERT INTO english_to_japanese (key, value) VALUES (?, ?)',
+                        'INSERT INTO english_to_japanese (japanese, english) VALUES (?, ?)',
                         batch_data
                     )
-                    inserted_count = len(new_values)
+                    inserted_count = len(new_translations)
                 
                 conn.commit()
                 
                 return {
-                    'attempted': len(unique_values),
+                    'attempted': len(unique_translations),
                     'inserted': inserted_count,
-                    'duplicates': len(existing_values)
+                    'duplicates': len(existing_translations)
                 }
             except Exception:
                 conn.rollback()
                 raise
     
-    def add_single_value(self, key: str, value: str):
-        """Add single key-value pair (convenience method)"""
+    def add_single_translation(self, japanese: str, english: str):
+        """Add single Japanese-English translation pair (convenience method)"""
         with self.get_connection() as conn:
             conn.execute(
-                'INSERT OR IGNORE INTO english_to_japanese (key, value) VALUES (?, ?)',
-                (key, value)
+                'INSERT OR IGNORE INTO english_to_japanese (japanese, english) VALUES (?, ?)',
+                (japanese, english)
             )
             conn.commit()
     
-    def contains_key(self, key: str) -> bool:
-        """Fast key existence check"""
+    def contains_japanese_term(self, japanese: str) -> bool:
+        """Fast Japanese term existence check"""
         with self.get_connection() as conn:
-            cursor = conn.execute('SELECT 1 FROM english_to_japanese WHERE key = ? LIMIT 1', (key,))
+            cursor = conn.execute('SELECT 1 FROM english_to_japanese WHERE japanese = ? LIMIT 1', (japanese,))
             return cursor.fetchone() is not None
     
-    def get_values(self, key: str) -> Set[str]:
-        """Get all values for a key as a set"""
+    def get_english_translations(self, japanese: str) -> Set[str]:
+        """Get all English translations for a Japanese term as a set"""
         with self.get_connection() as conn:
-            cursor = conn.execute('SELECT value FROM english_to_japanese WHERE key = ?', (key,))
+            cursor = conn.execute('SELECT english FROM english_to_japanese WHERE japanese = ?', (japanese,))
             return {row[0] for row in cursor.fetchall()}
     
-    def get_value_count(self, key: str) -> int:
-        """Get count of values for a key"""
+    def get_translation_count(self, japanese: str) -> int:
+        """Get count of English translations for a Japanese term"""
         with self.get_connection() as conn:
-            cursor = conn.execute('SELECT COUNT(*) FROM english_to_japanese WHERE key = ?', (key,))
+            cursor = conn.execute('SELECT COUNT(*) FROM english_to_japanese WHERE japanese = ?', (japanese,))
             return cursor.fetchone()[0]
     
-    def get_key_stats(self, key: str) -> dict:
-        """Get statistics for a specific key"""
+    def get_japanese_term_stats(self, japanese: str) -> dict:
+        """Get statistics for a specific Japanese term"""
         with self.get_connection() as conn:
-            cursor = conn.execute('SELECT COUNT(*) FROM english_to_japanese WHERE key = ?', (key,))
+            cursor = conn.execute('SELECT COUNT(*) FROM english_to_japanese WHERE japanese = ?', (japanese,))
             count = cursor.fetchone()[0]
             return {
-                'key': key,
-                'value_count': count,
+                'japanese_term': japanese,
+                'translation_count': count,
                 'exists': count > 0
             }
     
-    def is_value_in_key(self, key: str, value: str) -> bool:
-        """Check if a specific value exists for a key"""
+    def has_translation(self, japanese: str, english: str) -> bool:
+        """Check if a specific English translation exists for a Japanese term"""
         with self.get_connection() as conn:
             cursor = conn.execute(
-                'SELECT 1 FROM english_to_japanese WHERE key = ? AND value = ? LIMIT 1',
-                (key, value)
+                'SELECT 1 FROM english_to_japanese WHERE japanese = ? AND english = ? LIMIT 1',
+                (japanese, english)
             )
             return cursor.fetchone() is not None
     
-    def get_all_keys(self) -> Set[str]:
-        """Get all keys in the database"""
+    def get_all_japanese_terms(self) -> Set[str]:
+        """Get all Japanese terms in the database"""
         with self.get_connection() as conn:
-            cursor = conn.execute('SELECT DISTINCT key FROM english_to_japanese')
+            cursor = conn.execute('SELECT DISTINCT japanese FROM english_to_japanese')
             return {row[0] for row in cursor.fetchall()}
     
     def get_database_stats(self) -> dict:
         """Get overall database statistics"""
         with self.get_connection() as conn:
-            # Total number of key-value pairs
+            # Total number of japanese-english pairs
             cursor = conn.execute('SELECT COUNT(*) FROM english_to_japanese')
             total_pairs = cursor.fetchone()[0]
             
-            # Number of unique keys
-            cursor = conn.execute('SELECT COUNT(DISTINCT key) FROM english_to_japanese')
-            unique_keys = cursor.fetchone()[0]
+            # Number of unique Japanese terms
+            cursor = conn.execute('SELECT COUNT(DISTINCT japanese) FROM english_to_japanese')
+            unique_japanese_terms = cursor.fetchone()[0]
             
-            # Average values per key
-            avg_values = total_pairs / unique_keys if unique_keys > 0 else 0
+            # Average translations per Japanese term
+            avg_translations = total_pairs / unique_japanese_terms if unique_japanese_terms > 0 else 0
             
             return {
-                'total_key_value_pairs': total_pairs,
-                'unique_keys': unique_keys,
-                'average_values_per_key': round(avg_values, 2)
+                'total_translation_pairs': total_pairs,
+                'unique_japanese_terms': unique_japanese_terms,
+                'average_translations_per_term': round(avg_translations, 2)
             }
     
     def vacuum(self):
