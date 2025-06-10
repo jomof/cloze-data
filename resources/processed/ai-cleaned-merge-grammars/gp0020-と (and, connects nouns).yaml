@@ -1,4 +1,4 @@
-grammar_point: と (and)
+grammar_point: と (and, connects nouns)
 learn_before:
   - だ (casual copula)
   - です (polite copula)
@@ -55,7 +55,7 @@ false_friends:
       this'.
     grammar_point: も (addition or emphasis particle)
   - term: や
-    meaning: Things like, And the like
+    meaning: Things like, And so on
     kind: similar expression
     nuance: 「や」 implies that the list is not exhaustive, suggesting there might be other items in the
       same category. 「と」 indicates an exhaustive list, including everything mentioned, leaving no room
@@ -68,28 +68,28 @@ false_friends:
       expresses simultaneous actions, shared circumstances, or collaboration, often with a more formal
       or literary tone than simple 「と」. It doesn't just list items.
     grammar_point: と共に (together with)
-  - term: 及び (and・formal)
+  - term: 及び
     meaning: And; as well as
     kind: synonym
     nuance: 「および」 is a more formal and written equivalent of 「と」, primarily used in official documents,
       legal texts, or very formal speech. While both mean 'and', 「と」 is common in everyday conversation,
       whereas 「および」 is not.
     grammar_point: 及び (and・formal)
-  - term: とか (listing examples)
+  - term: とか
     meaning: Among other things, for example, such as
     kind: similar expression
     nuance: Like 「や」, 「とか」 also indicates a non-exhaustive list and is more colloquial. However, 「とか」
       can also imply uncertainty or provide examples, making the list sound more casual or less definitive
       than 「や」. 「と」 is for definitive, exhaustive lists.
     grammar_point: とか〜とか (listing examples)
-  - term: も~も (both neither ~ nor)
+  - term: も~も
     meaning: Both ~ and ~; neither ~ nor ~; also; (not) either
     kind: similar expression
     nuance: While 「と」 simply lists items exhaustively, 「も〜も」 emphasizes that *each* item in the list possesses
       a certain quality or is included, often conveying a sense of "both A and B" or "neither A nor B"
       with a stronger rhetorical force than a simple 「と」 list.
     grammar_point: も~も (both neither ~ nor)
-  - term: そして (and・and then)
+  - term: そして
     meaning: And; and then
     kind: similar expression
     nuance: 「そして」 connects sentences or clauses, indicating a sequence of events or additional information.
@@ -101,7 +101,7 @@ post_false_friends_writeup: To avoid confusing 「と」 with similar expression
   While 「と」 simply lists, 「も〜も」 emphasizes that *each* item in the list possesses a certain quality or
   is included, often conveying a sense of "both A and B" or "neither A nor B" with a stronger rhetorical
   force. 「と共に」 explicitly expresses togetherness or simultaneity, a more complex relationship than simple
-  listing. For connecting sentences or clauses, 「そして」 is used, not 「と」. Finally, while 「および」 is a formal
+  listing. For connecting sentences or clauses, 「そして」 is used, not 「と」。 Finally, while 「および」 is a formal
   synonym for 'and', it is primarily used in written or official contexts, whereas 「と」 is common in everyday
   speech.
 examples:
@@ -283,7 +283,7 @@ examples:
       - competing_japanese:
           - この ケーキ に は、小麦 粉 {も} 卵 {も} 砂糖 {も} 必要 です。
         english: For this cake, flour, eggs, and sugar are all necessary (with emphasis).
-        hint: 「も」 implies 'also' or 'even', potentially adding stronger emphasis to each item. We're looking
+        hint: 「も」 implies 'both' or 'even', potentially adding stronger emphasis to each item. We're looking
           for a simple, exhaustive list of ingredients.
     scene: A chef giving precise instructions for a simple recipe, listing only the core ingredients that
       are essential.
@@ -453,7 +453,42 @@ examples:
     nuance: 「読書 {と} 絵 を 描く こと {と} 料理」 lists all three hobbies exhaustively, implying these are the speaker's
       main and perhaps only hobbies for now. The use of 「です」 keeps the sentence polite and appropriate
       for an introduction.
+  - english: In my pencil case, there are pencils and erasers.
+    japanese:
+      - 私 の ペン ケース に は、鉛筆 {と} 消し ゴム が 入っ て い ます。
+      - 私 の ペン ケース に は、鉛筆 {と} 消し ゴム が 入っ て いる。
+      - 私 の ペン ケース に 鉛筆 {と} 消し ゴム が ある。
+      - ペン ケース に 鉛筆 {と} 消し ゴム が ある。
+      - ペン ケース に 鉛筆 {と} 消し ゴム 入っ てる。
+    english_literally: My pencil case's inside, pencil and eraser are entered.
+    competing_grammar:
+      - competing_japanese:
+          - 私 の ペン ケース に は、鉛筆 {や} 消し ゴム が 入っ て い ます。
+        english: In my pencil case, there are pencils and erasers and so on.
+        hint: The particle 「や」 suggests an incomplete list, implying there might be other items. We're
+          looking for an exhaustive list of essential items.
+      - competing_japanese:
+          - 私 の ペン ケース に は、鉛筆 {および} 消し ゴム が 入っ て い ます。
+        english: In my pencil case, there are pencils as well as erasers.
+        hint: 「および」 is a more formal equivalent of 'and', typically used in written or official contexts.
+          We're looking for common, polite speech.
+      - competing_japanese:
+          - 私 の ペン ケース に は、鉛筆 {も} 消し ゴム {も} 入っ て い ます。
+        english: In my pencil case, both pencils and erasers are included.
+        hint: 「も」 implies 'both' or 'also' with emphasis, perhaps indicating that these are the only two
+          items. We're looking for a simple, exhaustive list.
+    scene: A student showing the only two essential items they have in their pencil case to a friend.
+    register: teineigo (polite)
+    setting: informative
+    speaker_gender: male
+    listener_gender: group
+    speaker_age: younger
+    nuance: 「鉛筆 {と} 消しゴム」 exhaustively lists the essential items in the pencil case. The polite 「入っています」
+      is used. The sentence structure is straightforward and informative, suitable for a young student
+      talking to peers.
 post_example_writeup: The examples provided demonstrate how 「と」 is used to create an exhaustive list of
   nouns. Notice how the politeness level can change with the verb ending (e.g., 「ある」 vs. 「あります」 vs. 「ございます」)
   while the fundamental function of 「と」 remains consistent. In casual speech, the final 「と」 in a series
   is often omitted, making the expression more natural.
+sources:
+  bunpro: https://bunpro.jp/grammar_points/%E3%81%A8-(and)
