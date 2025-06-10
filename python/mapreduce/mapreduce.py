@@ -1,12 +1,13 @@
-import os
 import asyncio
 import inspect
-
-from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
-from threading import Lock
-import aiofiles  
-import yaml
+import os
 from collections import OrderedDict
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
+from threading import Lock
+
+import aiofiles
+import yaml
+
 from python.console import display
 
 class MyDumper(yaml.Dumper):

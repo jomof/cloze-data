@@ -1,9 +1,9 @@
-PROJECT_ID = "jomof-sandbox"  # @param {type:"string"}
-LOCATION = "us-west1"  # @param {type:"string"}
+import os
 
 import vertexai
 
-import os
+PROJECT_ID = "jomof-sandbox"  # @param {type:"string"}
+LOCATION = "us-west1"  # @param {type:"string"}
 
 def find_and_trim_files(directory, file_extension):
     """

@@ -1,16 +1,17 @@
-import os
-from grammar_summary import generate_summary, save_summary
-import yaml
-import sys
-from python.utils.visit_json.visit_json import visit_json
-from python.mapreduce import MapReduce
 import asyncio
-from python.grammar import GRAMMAR_SCHEMA
-import time
 import json
-from python.console import display
-from python.grammar import clean_lint
 import logging
+import os
+import sys
+import time
+
+import yaml
+
+from grammar_summary import generate_summary, save_summary
+from python.console import display
+from python.grammar import GRAMMAR_SCHEMA, clean_lint
+from python.mapreduce import MapReduce
+from python.utils.visit_json.visit_json import visit_json
 
 def check_renames_allowed(renames, grammar_summary):
     """

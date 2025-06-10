@@ -1,0 +1,10 @@
+load("@rules_python//python:defs.bzl", "py_library")
+
+py_library(
+    name = "db",
+    srcs = [
+        "db.py",
+        "__init__.py",
+    ],
+    visibility = ["//visibility:public"],
+)

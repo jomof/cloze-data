@@ -1,25 +1,24 @@
 import unittest
 
 from python.grammar.clean_lint import (
-    strip_matching_quotes,
-    lv_quotes,
-    lv_english_brackets,
-    lv_japanese_braces,
-    lv_missing_competing_grammar,
-    lv_example_count,
-    lv_japanese_count,
-    lv_better_grammar_name,
-    lv_validate_parenthetical_meaning,
-    lv_learn_before,
-    lv_learn_after,
-    lv_false_friends_grammar_point,
-    lint_schema_enums_with_jsonschema,
     clean_lint,
-    reorder_keys
+    lv_better_grammar_name,
+    lv_english_brackets,
+    lv_example_count,
+    lv_false_friends_grammar_point,
+    lv_japanese_braces,
+    lv_japanese_count,
+    lv_learn_after,
+    lv_learn_before,
+    lv_missing_competing_grammar,
+    lv_quotes,
+    lv_validate_parenthetical_meaning,
+    lint_schema_enums_with_jsonschema,
+    reorder_keys,
+    strip_matching_quotes,
 )
-
-from python.utils.visit_json.visit_json import visit_json
 from python.grammar.grammar_schema import GRAMMAR_SCHEMA
+from python.utils.visit_json.visit_json import visit_json
 
 class TestLintSchemaUtils(unittest.TestCase):
     def test_strip_matching_quotes_english(self):

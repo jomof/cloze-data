@@ -1,11 +1,10 @@
-import queue
-import time
-import threading
-import traceback  # Keep for now, though error messages are also event-driven
 import inspect
-import sys
 import os
-import traceback
+import queue
+import sys
+import threading
+import time
+import traceback  # Keep for now, though error messages are also event-driven
 
 class ConsoleDisplay:
     """

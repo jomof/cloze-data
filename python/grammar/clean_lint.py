@@ -1,14 +1,16 @@
 import copy
-from collections import OrderedDict
-from jsonschema import Draft7Validator
-from .grammar_schema import GRAMMAR_SCHEMA
-import os
-from python.mecab.compact_sentence import japanese_to_japanese_with_spaces
-import re
-from typing import Optional
-from python.utils.visit_json.visit_json import visit_json
 import hashlib
+import os
+import re
+from collections import OrderedDict
+from typing import Optional
+
+from jsonschema import Draft7Validator
+
+from .grammar_schema import GRAMMAR_SCHEMA
+from python.mecab.compact_sentence import japanese_to_japanese_with_spaces
 from python.utils.build_cache.memoize.memoize import memoize_to_disk_seeded
+from python.utils.visit_json.visit_json import visit_json
 
 QUOTE_PAIRS = [
     ('"', '"'),

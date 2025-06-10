@@ -1,5 +1,6 @@
-import yaml
 from collections import OrderedDict
+
+import yaml
 
 class MyDumper(yaml.Dumper):
     def increase_indent(self, flow=False, indentless=False):

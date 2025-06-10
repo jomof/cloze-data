@@ -1,10 +1,11 @@
-from collections import OrderedDict
-import json
-from python.mapreduce import MapReduce
 import asyncio
+import json
 import os
-from python.console import display
+from collections import OrderedDict
+
 from dumpyaml import dump_yaml_file
+from python.console import display
+from python.mapreduce import MapReduce
 
 def sort_summary(summary):
     """

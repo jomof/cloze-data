@@ -239,9 +239,11 @@ py_binary(
         ":grammar",
         "//python/ai",
         "//python/console:display",
+        "//python/db",
         "//python/grammar",
         "//python/mapreduce",
         "//python/utils/build_cache/memoize",
+        "//python/utils/visit_json",
         "@pip//json_repair",
     ],
 )
@@ -341,6 +343,7 @@ py_library(
     deps = [
         "//python/ai",
         "//python/console:display",
+        "//python/db",
         "//python/grammar",
         "//python/mapreduce",
         "//python/mecab",

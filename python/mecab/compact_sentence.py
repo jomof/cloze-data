@@ -1,6 +1,7 @@
 import json
-from python.mecab.tagger import get_mecab_tagger
 from dataclasses import dataclass
+
+from python.mecab.tagger import get_mecab_tagger
 
 pos_map = {
     "名詞": "n",  # Noun

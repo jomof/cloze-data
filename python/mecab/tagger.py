@@ -1,6 +1,7 @@
+import os
+
 import MeCab
 import unidic
-import os
 
 tagger = None
 

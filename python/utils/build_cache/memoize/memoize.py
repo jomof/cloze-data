@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
+import base64
 import hashlib
+import logging
 import os
+import pickle
 import socket
 import struct
-import base64
-import logging
-import pickle
 
 SOCKET_PATH = '/dev/shm/cloze.sock'
 DEBUG_LOGGING = True  # Control flag for logging

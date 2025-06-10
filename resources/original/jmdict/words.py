@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-import xml.etree.ElementTree as ET
-import json
 import argparse
+import json
+import xml.etree.ElementTree as ET
 
 
 def extract_entries_to_json(input_file, output_file):

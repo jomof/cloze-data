@@ -1,17 +1,20 @@
-import json
-from python.ai import AiChatSession
-from python.grammar import clean_lint_memoize
-import os
-import textwrap
-from python.grammar import clean_lint, GRAMMAR_SCHEMA_WITH_COMMENTS
-from python.mapreduce import MapReduce
 import asyncio
 import json
+import os
+import textwrap
+
 from json_repair import repair_json
-from grammar_summary import generate_summary, save_summary
-from python.console import display
-from python.utils.build_cache.memoize.memoize import memoize_to_disk
+
 from dumpyaml import dump_yaml
+from grammar_summary import generate_summary, save_summary
+from python.ai import AiChatSession
+from python.console import display
+from python.grammar import clean_lint, clean_lint_memoize, GRAMMAR_SCHEMA_WITH_COMMENTS
+from python.grammar.grammar_schema import GRAMMAR_SCHEMA
+from python.mapreduce import MapReduce
+from python.utils.build_cache.memoize.memoize import memoize_to_disk
+from python.utils.visit_json.visit_json import visit_json
+from python.db import db
 
 def ws(s: str) -> str:
     return "\n".join(line.strip() for line in s.splitlines())
@@ -245,6 +248,15 @@ if __name__ == '__main__':
         display.check(f"Generated grammar summary with {len(grammar_summary['all-grammar-points'])} grammar points.")
 
         async def lint(parsed_obj, file_path):
+            def fn(value, type_name, path):
+                if type_name == 'examples/object':
+                    english = value['english']
+                    japanese = value.get('japanese', [])
+                    clean_list = [s.replace('{', '').replace('}', '') for s in japanese]
+                    db.add_values_to_key(english, clean_list)
+                    return value
+                return value
+            visit_json(parsed_obj, GRAMMAR_SCHEMA, fn)
             # if parsed_obj['id'] != 'gp0013': return None
             # Convert original object to JSON for comparison
             original_json = json.dumps(parsed_obj, ensure_ascii=False, sort_keys=True)
@@ -262,7 +274,9 @@ if __name__ == '__main__':
         def logic(parsed_obj, file_path):
             if len(parsed_obj.get('lint-errors', [])) == 0:
                 return parsed_obj
-            return ai_pass(parsed_obj, grammar_summary, file_path, temp_dir)
+            result = ai_pass(parsed_obj, grammar_summary, file_path, temp_dir)
+
+            return result
 
         mr = MapReduce(
             input_dir            = grammar_root,
@@ -280,6 +294,8 @@ if __name__ == '__main__':
 
         result = asyncio.run(mr.run())
         display.check(f"Replaced {result['files-written']} grammar files.")
+        display.check(f"Compacting {db.db_path}.")
+        db.maintenance(force_vacuum=True)
     finally:
         display.stop()
 

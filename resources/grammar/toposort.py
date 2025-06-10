@@ -1,16 +1,16 @@
-import os
-from grammar_summary import generate_summary, save_summary
-import yaml
-from collections import defaultdict, deque
 import asyncio
-from python.mapreduce import MapReduce
-from python.console import display
-import logging
 import json
-from python.grammar import clean_lint_memoize
-
+import logging
+import os
 from collections import defaultdict, deque
-from typing import List, Dict, Set, Tuple, Any, Optional
+from typing import Any, Dict, List, Optional, Set, Tuple
+
+import yaml
+
+from grammar_summary import generate_summary, save_summary
+from python.console import display
+from python.grammar import clean_lint_memoize
+from python.mapreduce import MapReduce
 
 tlogging = logging.getLogger(__name__)
 from collections import defaultdict, deque
