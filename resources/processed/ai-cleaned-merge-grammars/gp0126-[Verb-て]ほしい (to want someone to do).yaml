@@ -1,6 +1,6 @@
-grammar_point: Verb[て] + ほしい (want someone to do)
+grammar_point: '[Verb-て]ほしい (to want someone to do)'
 learn_before:
-  - ほしい (want something)
+  - '[Noun]が欲しい (to want something)'
   - たい (want to do)
   - Verb[て] (and then)
 learn_after:
@@ -10,7 +10,7 @@ learn_after:
   - ように祈る (pray or hope for)
   - てたまらない・てならない・て仕方がない・てしょうがない (unbearably・cannot help but)
 id: gp0126
-meaning: Want someone to do something
+meaning: The speaker's desire for someone else to perform an action.
 conjugations:
   - conjugation-type: dictionary (plain non-past)
     form: ほしい
@@ -45,8 +45,8 @@ conjugations:
     rarity: common
     meaning: didn't want someone to do (polite)
 pronunciation:
-  katakana: ホシイ
-  romaji: hoshii
+  katakana: テホシイ
+  romaji: te hoshii
 formation:
   Verb in te-form + ほしい: Expresses the speaker's desire for someone to do something.
   Person + に + Verb in te-form + ほしい: Specifies who the speaker wants to perform the action.
@@ -59,28 +59,70 @@ details:
     someone of higher status.
   function: Expresses the speaker's desire for an action to be performed by someone else.
   nuance: Implies a subtle expectation or gentle request, often not suitable for direct commands or superiors.
-etymology: The adjective 「ほしい」 means "wanted" or "desired". When attached to the te-form of a verb, it
-  expresses the speaker's desire for someone else to perform that action.
-writeup: |-
-  The grammar point 「ほしい」 expresses the speaker's desire for someone to do something. It follows the pattern [Person] + に + [Verb in te-form] + ほしい. The person you want to perform the action is marked with the 「に」 particle.
-
-  **Important Considerations:**
-  *   This grammar is generally not used when the person you're asking is of higher status. Using 「もらいたい」 is more appropriate in such cases.
+etymology: The grammatical construction 「てほしい」 is formed by combining the te-form of a verb with the auxiliary
+  adjective 「ほしい」. The te-form acts as a conjunctive particle, linking the verb to 「ほしい」. Historically,
+  「ほしい」 comes from the classical Japanese word 「ほし」, meaning 'to want' or 'to desire', which could be
+  used for both objects and actions. Over time, its use evolved, particularly in modern Japanese, to pair
+  with the te-form of verbs specifically for expressing a desire for *another person's* action. This evolution
+  highlights a linguistic mechanism of using adjectives to modify actions rather than just nouns, forming
+  a core part of Japanese desiderative expressions.
+writeup: The grammar point 「てほしい」 (te hoshii) is used to express the speaker's desire for **someone else**
+  to perform an action. It is formed by taking a verb, changing it to its **te-form**, and then appending
+  「ほしい」. While 「ほしい」 on its own means 'to want (an object)', when combined with the te-form of a verb,
+  it transforms into an auxiliary adjective indicating a desire for an action. For example, if you want
+  someone to help you, you would say 「手伝ってほしい」 (tetsudatte hoshii - literally, 'help-te want'). The level
+  of politeness can be adjusted by adding 「です」 (desu) after 「ほしい」, making it 「てほしいです」 for polite contexts.
+  However, the basic 「てほしい」 can be used in casual settings. **Important Considerations:** * **Who wants
+  whom to do what?** It's crucial to understand the subject of the desire (the speaker) and the object
+  of the action (the person performing the action). While it often translates as "I want *you* to do X,"
+  it can also be used to report what a third person wants someone to do, such as 「彼が私にこれを読んでほしいと言っていた」
+  (Kare ga watashi ni kore o yonde hoshii to itteita - He said he wants me to read this). The context,
+  including particles (e.g., に for the recipient of the request) and surrounding phrases, helps clarify
+  this. * **Nuance:** Depending on the context and intonation, 「てほしい」 can convey a range of meanings from
+  a gentle request or wish to a stronger demand.
 false_friends:
   - term: たい
     meaning: want to do
     kind: similar expression
-    nuance: Unlike 「ほしい」, 「たい」 expresses the speaker's own desire to perform an action, not someone else's.
+    nuance: Unlike 「てほしい」, 「たい」 expresses the speaker's own desire to perform an action (e.g., 「食べたい」
+      - I want to eat). It cannot be used to express a desire for someone else to do something.
     grammar_point: たい (want to do)
-  - term: もらいたい
-    meaning: want someone to do for me (humble)
+  - term: がほしい
+    meaning: To want something, To be in need of
     kind: similar expression
-    nuance: 「もらいたい」 can be used when requesting someone of higher status to do something, which 「ほしい」
-      should generally not be used for.
-    grammar_point: '[Verb-て]もらう (to have someone do, receive an action)'
-post_false_friends_writeup: To avoid confusion, remember that 「ほしい」 is used when you want someone to do
-  something for you (and they are not superior to you), while 「たい」 is used for your own desires. For requests
-  to superiors, consider using 「もらいたい」 instead to maintain proper politeness.
+    nuance: While sharing the core word 「ほしい」, 「がほしい」 is used to express a desire for a **thing** (a noun)
+      rather than an action (e.g., 「新しい車がほしい」 - I want a new car). It cannot be directly followed by a
+      verb in te-form.
+    grammar_point: '[Noun]が欲しい (to want something)'
+  - term: たがる
+    meaning: To want to (Third person)
+    kind: similar expression
+    nuance: 「たがる」 is used to describe a third person's desire to do something, often based on observable
+      behavior or inference (e.g., 「彼は遊びたがっている」 - He seems to want to play). It conveys an external observation
+      of desire, whereas 「てほしい」 expresses the speaker's internal desire for someone else's action.
+    grammar_point: '[i-Adj-stem]がる・[na-Adj]がる (to show signs of feeling)'
+  - term: がる
+    meaning: To show signs of feeling/wanting; to appear to be
+    kind: similar expression
+    nuance: 「がる」 is a suffix indicating that someone *appears* to feel or want something, often based
+      on external signs. It can attach to various adjectives or the masu-stem of verbs (e.g., 「悲しがる」 -
+      to act sad, 「痛がる」 - to complain of pain). While it relates to feelings, it focuses on their outward
+      expression rather than a direct desire for an action.
+    grammar_point: '[i-Adj-stem]がる・[na-Adj]がる (to show signs of feeling)'
+  - term: ように〜てほしい
+    meaning: Want ~ to ~ like ~, Want ~ to be able to ~, Want ~ to ~ in the way of ~
+    kind: similar expression
+    nuance: Unlike 「てほしい」, which directly expresses a desire for an action, 「ように〜てほしい」 expresses a desire
+      for a state or condition to be reached, or for an action to be done in a specific manner or so that
+      something becomes possible (e.g., 「病気が治るように安静にしてほしい」 - I want you to rest quietly so your illness
+      heals). It implies an indirect or outcome-oriented desire.
+    grammar_point: ように〜てほしい (want someone to act in a certain way)
+post_false_friends_writeup: While 「てほしい」 expresses the speaker's desire for another's action, other related
+  expressions convey different nuances of wanting. 「たい」 is exclusively for the speaker's own desire to
+  perform an action. 「がほしい」 is used for wanting objects. When observing another person's desire, 「たがる」
+  or 「がる」 are used to describe what they *appear* to want or feel. Lastly, 「ように〜てほしい」 is for when the
+  desire is for a certain outcome or state to be achieved through an action, rather than simply for the
+  action itself.
 examples:
   - english: I want everyone to be energetic.
     japanese:
@@ -98,7 +140,7 @@ examples:
         hint: 「もらいたい」 implies receiving a favor, which can sound slightly formal or demanding in this
           context. We're looking for a general wish for everyone's well-being.
       - competing_japanese:
-          - みんな に 元気 で い て 欲しい と {願う}。
+          - みんな に 元気 で い て ほしい と {願う}。
         english: I wish for everyone to be energetic.
         hint: 「と願う」 implies a stronger, more formal wish or prayer. We're looking for a simpler, more
           personal desire without such intensity.
@@ -204,7 +246,7 @@ examples:
     conjugation: negative plain (～ない)
     speaker_gender: male
     listener_gender: female
-    nuance: The use of 「ほっとい て 」 (a contraction of 放っ て おいて) is a casual, somewhat blunt way for a male
+    nuance: The use of 「ほっとい て 」 (a contraction of 放っ て おく) is a casual, somewhat blunt way for a male
       speaker to express a negative desire. It fits a direct assertion of feeling in a casual setting.
     etymology: 「ほっとく」 is a colloquial contraction of 「放っておく」 (to leave alone).
   - english: I don't want anyone to know about this matter.
@@ -413,9 +455,118 @@ examples:
       is a natural way for a female speaker to express such feelings in a casual, reflective context.
     etymology: 「ばれる」 is an informal verb meaning 'to be exposed' or 'to leak out', often used for secrets
       or hidden truths.
-post_example_writeup: As you can see from the examples, 「ほしい」 can be used across various registers and
-  situations. The key is to remember that it always expresses the speaker's desire for **someone else**
-  to perform an action. Pay close attention to the particles used, especially 「に」 to mark the person who
-  you want to do the action, and consider the nuance of politeness and context.
+  - english: I didn't want to cause trouble for everyone by delaying the report.
+    japanese:
+      - 報告 が 遅れ て、皆 様 に ご 迷惑 を お かけ し て {ほしく あり ませ ん でし た}。
+      - 報告 が 遅れ て、皆 様 に ご 迷惑 を お かけ し て {ほしく なかっ た} です。
+    english_literally: Report delayed, everyone to trouble cause didn't want (polite).
+    competing_grammar:
+      - competing_japanese:
+          - 報告 が 遅れ て、皆 様 に ご 迷惑 を お かけ する {べき で は あり ませ ん でし た}。
+        english: I should not have caused trouble for everyone by delaying the report.
+        hint: 「おかけするべきではありませんでした」 sounds more like an admission of a mistake or oversight. The scene implies
+          an apology from a manager who didn't *intend* to cause trouble, which is better expressed by
+          「てほしくありませんでした」 experimental sentence generation, not simple translation
+      - competing_japanese:
+          - 報告 が 遅れ て、皆 様 に ご 迷惑 を お かけ し {たく あり ませ ん でし た}。
+        english: I didn't want to cause trouble for everyone by delaying the report (myself).
+        hint: 「〜たくありませんでした」 expresses the speaker's own past desire *not* to perform an action. Here,
+          the speaker is expressing a past desire that others not be troubled *by their actions*. We're
+          looking for an expression of the speaker's past desire for their actions not to have caused
+          a certain outcome for others experimental sentence generation, not simple translation
+      - competing_japanese:
+          - 報告 が 遅れ て、皆 様 に ご 迷惑 を お かけ する {つもり は あり ませ ん でし た}。
+        english: I didn't intend to cause trouble for everyone by delaying the report.
+        hint: 「〜するつもりはありませんでした」 expresses a lack of intention to do something. While related, 「てほしくありませんでした」
+          expresses the speaker's personal wish that a negative outcome caused by them had not occurred.
+          We're looking for an expression of the speaker's past desire for their actions not to have caused
+          a certain outcome for others experimental sentence generation, not simple translation
+    scene: A project manager is apologizing to stakeholders for a delayed report and the inconvenience
+      it caused.
+    register: teineigo (polite)
+    setting: apologetic
+    conjugation: negative past polite (～ませんでした)
+    speaker_gender: male
+    listener_gender: group
+    nuance: The phrase 「ご迷惑をおかけしてほしくありませんでした」 uses humble language 「おかけして」 and the polite past negative
+      form of 「ほしい」 to express sincere regret for having caused trouble, emphasizing that it was not the
+      speaker's desire
+  - english: I wish you wouldn't worry so much about trivial things.
+    japanese:
+      - そんな 些細 な こと で あまり 心配 し て {ほしく ない} よ。
+      - そんな 些細 な こと で あまり 心配 し て {欲しく ない} よ。
+    english_literally: Such trivial things about too much worry do don't want (emphatic particle).
+    competing_grammar:
+      - competing_japanese:
+          - そんな 些細 な こと で 心配 する {な}。
+        english: Don't worry about such trivial things!
+        hint: 「するな」 is a direct and strong command. The scene implies a supportive and gentle approach,
+          where expressing a personal desire is more appropriate than an outright prohibition. We're looking
+          for an expression of the speaker's personal wish for the listener's action experimental sentence
+          generation, not simple translation
+      - competing_japanese:
+          - そんな 些細 な こと で 心配 し {ない ほう が いい}。
+        english: It's better not to worry so much about trivial things.
+        hint: 「〜ないほうがいい」 offers advice or a suggestion. While well-intentioned, it lacks the direct expression
+          of the speaker's personal desire that 「てほしくない」 conveys. We're looking for the speaker's wish
+          for the listener's action experimental sentence generation, not simple translation
+      - competing_japanese:
+          - そんな 些細 な こと で 心配 し {たく ない}。
+        english: I don't want to worry so much about trivial things.
+        hint: 「〜たくない」 expresses the speaker's own desire not to perform an action. Here, the speaker wants
+          *someone else* not to worry. We're looking for an expression of the speaker's desire for another
+          person *not* to perform an action experimental sentence generation, not simple translation
+    scene: A close friend tries to comfort another who is overly anxious about small matters.
+    register: casual
+    setting: supportive
+    conjugation: negative plain (～ない)
+    speaker_gender: female
+    listener_gender: female
+    nuance: The 「よ」 particle at the end softens the negative desire, making it sound more like a gentle
+      plea or a caring suggestion from a friend who wishes for the listener's peace of mind, rather than
+      a strong admonition. The casual setting and relationship are key
+  - english: I hope we can resolve this issue peacefully.
+    japanese:
+      - この 問題 が 平和 的 に 解決 さ れ て {ほしい} と 思い ます。
+      - この 問題 が 平和 的 に 解決 さ れ て {欲しい} と 思い ます。
+      - この 問題 が 平和 的 に 解決 さ れ て {ほしい} と 存じ ます。
+    english_literally: This problem peacefully resolved be want think.
+    competing_grammar:
+      - competing_japanese:
+          - この 問題 は 平和 的 に 解決 {す べき だ} と 思い ます。
+        english: I think this issue should be resolved peacefully.
+        hint: 「すべきだ」 implies obligation or necessity, focusing on what *must* be done. 「てほしい」 expresses
+          a personal hope or desire for an outcome. We're looking for a statement of personal desire rather
+          than a declaration of what is necessary experimental sentence generation, not simple translation
+      - competing_japanese:
+          - この 問題 が 平和 的 に 解決 さ れる {こと を 願っ て い ます}。
+        english: I am wishing that this issue be resolved peacefully.
+        hint: 「〜ことを願っています」 is a very formal and indirect way of expressing a wish for an outcome, often
+          used for broad or general hopes. 「てほしい」 combined with 「と思います」 offers a slightly more direct,
+          yet still polite, expression of personal desire. We're looking for a slightly more direct expression
+          of the speaker's desire for the action to occur experimental sentence generation, not simple
+          translation
+      - competing_japanese:
+          - この 問題 を 平和 的 に 解決 し {たい} と 思い ます。
+        english: I want to resolve this issue peacefully (myself).
+        hint: 「〜したい」 expresses the speaker's own desire to perform an action. Here, the speaker wants
+          the *issue* to be resolved (by implication, by those involved), not necessarily by themselves
+          alone. We're looking for an expression of a desire for a state or action to occur, not necessarily
+          performed by the speaker experimental sentence generation, not simple translation
+    scene: A diplomat or leader expresses a hopeful desire for a peaceful resolution during negotiations.
+    register: formal
+    setting: negotiating
+    conjugation: dictionary (plain non-past)
+    speaker_gender: male
+    listener_gender: group
+    nuance: The use of the passive voice 「解決されて」 (to be resolved) implies that the action is not necessarily
+      carried out by the speaker but by circumstances or involved parties. The added 「と思います」 softens the
+      directness of 「ほしい」, making it a polite expression of hope for a collective outcome, suitable for
+      a diplomatic context. It conveys a strong personal wish without directly commanding
+post_example_writeup: The usage of 「てほしい」 allows for expressing a wide range of desires, from simple requests
+  to regrets about past actions. Its flexibility makes it a key tool in conveying personal wishes regarding
+  the actions of others. Pay close attention to the context and particles, particularly 「に」, to correctly
+  identify who the request is directed towards. The addition of 「です」 (or lack thereof) clearly dictates
+  the level of politeness.
 sources:
-  bunpro: https://bunpro.jp/grammar_points/126
+  bunpro: https://bunpro.jp/grammar_points/てほしい
