@@ -1,16 +1,16 @@
-grammar_point: 以上 (more than or equal to)
+grammar_point: '[Noun]以上 (more than or equal to)'
 learn_before:
   - より (comparative)
   - くらい (approximate quantity or degree)
-  - '[Clause]〜から (because・so)'
-  - '[Clause]〜ので (because・so)'
-  - '[Clause]〜から (because・so)'
-  - '[Clause]〜ので (because・so)'
 learn_after:
   - 以上に (more than expected)
   - からには (since; obligation)
   - に至っては (when it comes to a surprising extreme)
   - にとどまらず (not limited to)
+  - て当然だ (natural・obvious)
+  - 〜までだ (just・merely)
+  - ばこそ (precisely because)
+  - ずにはすまない (cannot avoid)
 id: gp0290
 meaning: More than or equal to; That's all; Since/Now that (a condition is met or a situation has reached
   a certain point)
@@ -42,11 +42,11 @@ etymology: The term 「以上」 (ijō) is formed from the kanji 以 (i), meanin
 writeup: |-
   「以上」 (ijō) is a fundamental and versatile Japanese expression used in three primary ways:
 
-  1.  **"More than or equal to" / "At least"**: When 「以上」 is attached to a quantity, value, or number, it establishes a **minimum threshold**, crucially including the specified amount itself. For example, 「100人以上」 (hyakunin ijō) means "100 people or more." This usage literally conveys "by means of being above or at this level." It can be translated as "more than," "over," "greater than," or "exceeding," always with the understanding that the specified value is included.
+  1. **"More than or equal to" / "At least"**: When 「以上」 is attached to a quantity, value, or number, it establishes a **minimum threshold**, crucially including the specified amount itself. For example, 「100人以上」 (hyakunin ijō) means "100 people or more." This usage literally conveys "by means of being above or at this level." It can be translated as "more than," "over," "greater than," or "exceeding," always with the understanding that the specified value is included.
 
-  2.  **"That's all" / "The end" / "Nothing more"**: In this context, 「以上」 serves as a concluding statement, indicating that a list, explanation, or request is complete. It frequently appears as 「以上です」 (ijō desu) or 「以上になります」 (ijō ni narimasu). This usage means "the above (list of things mentioned) is all." While stating "the end" might sound abrupt or demanding in English, it is a perfectly natural, polite, and common way to conclude a list, a report, or an order in Japanese business settings, presentations, and transactional situations.
+  2. **"That's all" / "The end" / "Nothing more"**: In this context, 「以上」 serves as a concluding statement, indicating that a list, explanation, or request is complete. It frequently appears as 「以上です」 (ijō desu) or 「以上になります」 (ijō ni narimasu). This usage means "the above (list of things mentioned) is all." While stating "the end" might sound abrupt or demanding in English, it is a perfectly natural, polite, and common way to conclude a list, a report, or an order in Japanese business settings, presentations, and transactional situations.
 
-  3.  **"Since ~ / Now that ~" (as a reason or logical consequence)**: When used with a verb in the past tense (た-form), a noun/な-adjective stem followed by 「である」, or an い-adjective, 「以上」 indicates that a situation or action has reached a certain point, and therefore a logical consequence, decision, or obligation necessarily follows. It carries a strong sense of inevitability or commitment once a condition is met. For example, 「約束した以上は守るべきだ」 (Yakusoku shita ijō wa, mamoru beki da) means "Since you made a promise, you should keep it." This emphasizes that the act of promising creates a binding obligation. This nuance highlights a transition point where a new set of responsibilities or consequences comes into play, implying that there is no turning back from the established premise.
+  3. **"Since ~ / Now that ~" (as a reason or logical consequence)**: When used with a verb in the past tense (た-form), a noun/な-adjective stem followed by 「である」, or an い-adjective, 「以上」 indicates that a situation or action has reached a certain point, and therefore a logical consequence, decision, or obligation necessarily follows. It carries a strong sense of inevitability or commitment once a condition is met. For example, 「約束した以上は守るべきだ」 (Yakusoku shita ijō wa, mamoru beki da) means "Since you made a promise, you should keep it." This emphasizes that the act of promising creates a binding obligation. This nuance highlights a transition point where a new set of responsibilities or consequences comes into play, implying that there is no turning back from the established premise.
 false_friends:
   - term: 以下
     meaning: Less than (or equal to)
@@ -106,12 +106,14 @@ examples:
       - competing_japanese:
           - この 箱 に は リンゴ が {５ つ 入っ て い ます}。
         english: This box contains five apples.
-        hint: 「5つ入っています」 would imply exactly five apples. We're looking for a minimum count.
+        hint: 「5つ入っています」 would imply exactly five apples. We're looking for a minimum count, including
+          the specified number itself. This example does not express a minimum threshold, which is the
+          function of 以上.
       - competing_japanese:
           - この 箱 に は リンゴ が {５ つ より 多く 入っ て い ます}。
         english: This box contains more than five apples.
-        hint: 「5つより多く入っています」 means strictly more than five. We're looking for a count that includes five
-          as the minimum.
+        hint: 「5つより多く入っています」 means strictly more than five, excluding five. We're looking for a count
+          that includes five as the minimum, which 以上 expresses.
     scene: Someone is checking the contents of a box of fruit.
     register: casual
     setting: informative
@@ -126,13 +128,13 @@ examples:
       - competing_japanese:
           - その 仕事 に は {３ 年間 の 経験} が 必要 だ。
         english: That job requires three years of experience.
-        hint: 「3年間の経験」 means three years of experience, but doesn't specify 'at least'. We're looking
-          for a minimum experience requirement.
+        hint: 「3年間の経験」 means exactly three years of experience. We're looking for a minimum experience
+          requirement, including the specified duration itself, which 以上 conveys.
       - competing_japanese:
           - その 仕事 に は {３ 年 を 超える 経験} が 必要 だ。
         english: That job requires experience exceeding three years.
         hint: 「3年を超える経験」 implies strictly more than three years. We're looking for a requirement that
-          includes the stated minimum.
+          includes the stated minimum, as expressed by 以上.
     scene: A hiring manager is reviewing job requirements for a new position.
     register: formal
     setting: informative
@@ -148,12 +150,12 @@ examples:
           - 彼女 は 毎日 {２ 時間 勉強 し て いる}。
         english: She studies for two hours every day.
         hint: 「2時間勉強している」 implies exactly two hours. We're looking for a statement that means 'at least'
-          two hours.
+          two hours, including the specified duration itself, which 以上 clearly states.
       - competing_japanese:
           - 彼女 は 毎日 {２ 時間 より 多く 勉強 し て いる}。
         english: She studies for more than two hours every day.
         hint: 「2時間より多く勉強している」 implies strictly more than two hours. We're looking for an expression that
-          includes the two-hour mark.
+          includes the two-hour mark, as conveyed by 以上.
     scene: A student is describing their study habits to a friend.
     register: casual
     setting: informative
@@ -168,13 +170,13 @@ examples:
       - competing_japanese:
           - その 山 は 標高 {3000 メートル ある}。
         english: That mountain is 3000 meters above sea level.
-        hint: 「3000メートルある」 means it is 3000 meters, which doesn't specify it's a minimum. We're looking
-          for a precise factual statement conveying a minimum elevation.
+        hint: 「3000メートルある」 means it is exactly 3000 meters. We're looking for a precise factual statement
+          conveying a minimum elevation, including the specified height itself, which 以上 accomplishes.
       - competing_japanese:
           - その 山 は 標高 {3000 メートル を 超える}。
         english: That mountain exceeds 3000 meters above sea level.
         hint: 「3000メートルを超える」 means strictly more than 3000 meters. We're looking for a statement that
-          includes 3000 meters as a minimum.
+          includes 3000 meters as a minimum, as indicated by 以上.
     scene: A geographer is presenting facts about a mountain range.
     register: formal
     setting: informative
@@ -189,20 +191,21 @@ examples:
       - competing_japanese:
           - もう {待て ない}。
         english: I can't wait anymore.
-        hint: 「もう待てない」 simply means 'I can't wait anymore'. We're looking for an expression that specifically
-          refers to 'beyond this current point/time'.
+        hint: 「もう待てない」 simply means 'I can't wait anymore' in a general sense. We're looking for an expression
+          that specifically refers to 'beyond this current point/time', which 以上 clarifies.
       - competing_japanese:
           - これ {より は 待て ない}。
         english: I can't wait more than this.
         hint: 「これよりは待てない」 is grammatically less natural for expressing a limit of patience compared to
-          the idiomatic expression needed here.
+          the idiomatic expression with 以上.
     scene: A young man is impatiently waiting for his friend at a meeting spot.
     register: casual
     setting: serious
     speaker_gender: male
     nuance: The speaker, a man, uses 「待てない」 (cannot wait) in a direct, somewhat exasperated tone, emphasizing
       his impatience. The use of 「もう これ {以上}」 highlights that he has reached his absolute limit. The masculine
-      「~かよ」 (if used in an alternative variant) adds a strong, slightly rougher emphasis.
+      「~かよ」 (if used) adds a strong, slightly rougher emphasis, though it's not present in this specific
+      example.
   - english: My order is complete. / That's all for my order.
     japanese:
       - 注文 は これ で {以上} です。

@@ -1,79 +1,80 @@
-grammar_point: られる (ability)
+grammar_point: Verb[(ら)れる] (potential)
 learn_before:
   - Verb[dictionary] (dictionary form)
   - Verb[ます] (polite present)
-  - Verb[dictionary] (dictionary form)
-  - Verb[ます] (polite present)
+  - する (to do・make)
   - Verb[て] (and then)
 learn_after:
   - することができる (can・be able to)
+  - V-る 一方だ (unidirectional trend, more and more)
   - 得る (to be able to・to be possible)
   - がたい (hard to do)
-  - かねる (unable to)
+  - '[Verb-stem]かねる (unable to・hesitant to)'
   - ようがない・ようもない (no way to)
-id: gp0234
+id: gp0258
 meaning: To be able, can (potential)
 conjugations:
   - conjugation-type: dictionary (plain non-past)
-    form: られる
+    form: '[Verb]-Potential Form (〜える/〜られる/できる)'
     rarity: common
-    meaning: can be / can do
+    meaning: to be able to do
   - conjugation-type: non-past polite (～ます)
-    form: られます
+    form: '[Verb]-Potential Form (〜えます/〜られます/できます)'
     rarity: common
-    meaning: can be / can do (polite)
+    meaning: to be able to do (polite)
   - conjugation-type: negative plain (～ない)
-    form: られない
+    form: '[Verb]-Potential Form (〜えない/〜られない/できない)'
     rarity: common
-    meaning: cannot be / cannot do
+    meaning: not able to do
   - conjugation-type: negative non-past polite (～ません)
-    form: られません
+    form: '[Verb]-Potential Form (〜えません/〜られません/できません)'
     rarity: common
-    meaning: cannot be / cannot do (polite)
+    meaning: not able to do (polite)
   - conjugation-type: past plain (～た)
-    form: られた
+    form: '[Verb]-Potential Form (〜えた/〜られた/できた)'
     rarity: common
-    meaning: could be / could do
+    meaning: was able to do
   - conjugation-type: past polite (～ました)
-    form: られました
+    form: '[Verb]-Potential Form (〜えました/〜られました/できました)'
     rarity: common
-    meaning: could be / could do (polite)
+    meaning: was able to do (polite)
   - conjugation-type: negative past plain (～なかった)
-    form: られなかった
+    form: '[Verb]-Potential Form (〜えなかった/〜られなかった/できなかった)'
     rarity: common
-    meaning: could not be / could not do
+    meaning: was not able to do
   - conjugation-type: negative past polite (～ませんでした)
-    form: られませんでした
+    form: '[Verb]-Potential Form (〜えませんでした/〜られませんでした/できませんでした)'
     rarity: common
-    meaning: could not be / could not do (polite)
+    meaning: was not able to do (polite)
   - conjugation-type: te-form (～て)
-    form: られて
+    form: '[Verb]-Potential Form (〜えて/〜られて/できて)'
     rarity: common
-    meaning: being able to / being done
+    meaning: being able to do (te-form)
   - conjugation-type: conditional (～ば)
-    form: られれば
+    form: '[Verb]-Potential Form (〜えれば/〜られれば/できれば)'
     rarity: uncommon
-    meaning: if one can be / if one can do
+    meaning: if able to do
   - conjugation-type: conditional (～たら)
-    form: られたら
+    form: '[Verb]-Potential Form (〜えたら/〜られたら/できたら)'
     rarity: uncommon
-    meaning: if one could be / if one could do
+    meaning: if able to do
   - conjugation-type: volitional (～よう)
-    form: られよう
+    form: '[Verb]-Potential Form (〜えよう/〜られよう/できよう)'
     rarity: very rare
-    meaning: let's be able to / let's be able to do
+    meaning: let's be able to do
   - conjugation-type: volitional polite (～ましょう)
-    form: られましょう
+    form: '[Verb]-Potential Form (〜えましょう/〜られましょう/できましょう)'
     rarity: very rare
-    meaning: shall we be able to / shall we be able to do
+    meaning: shall we be able to do
 pronunciation:
-  katakana: ラレル
-  romaji: rareru
+  katakana: カナウケイ
+  romaji: kanoukei
 formation:
-  Godan (う) verbs: Verb's final kana changes to its corresponding え sound, then add る (e.g., 泳ぐ -> 泳げる)
-  Ichidan (る) verbs: Verb stem + られる (e.g., 食べる -> 食べられる)
-  Irregular verb 'kuru' (来る): 来られる (korareru)
-  Irregular verb 'suru' (する): できる (dekiru)
+  う-verbs (godan): Change the final う-sound to its え-sound equivalent + る (e.g., 書く -> 書ける)
+  る-verbs (ichidan): 'Replace the る with られる (e.g., 食べる -> 食べられる). Note: In casual speech, ら抜き言葉 (dropping
+    ら) like 食べれる is common, but 食べられる is standard.'
+  する: できる
+  くる: 'こられる (Note: In casual speech, これる is common, but こられる is standard)'
 jlpt: N4
 details:
   part-of-speech: auxiliary verb
@@ -90,27 +91,51 @@ details:
     is also expressed.
 etymology: The potential form 「られる」 evolved from the passive/respectful form of verbs. Over time, it took
   on a separate meaning of 'ability' or 'potential'. The base form 「る」 is a suffix that indicates the
-  potential or possibility of an action.
+  potential or possibility of an action. The potential forms of Japanese verbs, ending in 「〜える」 for godan
+  verbs and 「〜られる」 for ichidan verbs (along with irregulars like 「できる」), evolved from classical Japanese
+  auxiliary verbs which originally conveyed spontaneity or natural occurrence. Over time, these forms
+  specifically gained the meaning of 'ability' or 'possibility'. The grammatical distinction for different
+  verb types reflects historical sound changes and linguistic development, solidifying their role in expressing
+  capability.
 writeup: |-
-  The auxiliary verb 「られる」 indicates the **potential** to do something, translating to “can” or “to be able to.” Its formation varies slightly between verb groups.
+  The potential form of a Japanese verb indicates that the subject 'can' or 'is able to' perform an action, or that an action 'is possible'. It's a crucial aspect of expressing capability in Japanese. While many verbs have a direct potential form, the verb 「できる」 is used as the potential form for 「する」 (to do), meaning 'can do' or 'to be able to do'. Similarly, 「くる」 (to come) becomes 「こられる」 in its potential form, meaning 'can come'.
 
-  For **Godan (う) verbs**, the final kana of the verb changes to its corresponding え sound, and then 「る」 is added. For example, 「書く」(kaku, to write) becomes 「書ける」(kakeru, can write), and 「泳ぐ」(oyogu, to swim) becomes 「泳げる」(oyogeru, can swim).
+  For **godan (う-verbs)**, the last kana of the dictionary form (which ends in an う-sound) is changed to its corresponding え-sound, and then 「る」 is added. For example:
+  *   書く (kaku, to write) → 書ける (kakeru, can write)
+  *   読む (yomu, to read) → 読める (yomeru, can read)
+  *   行く (iku, to go) → 行ける (ikeru, can go)
 
-  For **Ichidan (る) verbs**, 「られる」 is added directly to the verb stem. For instance, 「食べる」(taberu, to eat) becomes 「食べられる」(taberareru, can eat).
+  For **ichidan (る-verbs)**, the 「る」 at the end of the dictionary form is replaced with 「られる」. For example:
+  *   食べる (taberu, to eat) → 食べられる (taberareru, can eat)
+  *   見る (miru, to see) → 見られる (mirareru, can see)
+  *   寝る (neru, to sleep) → 寝られる (nerareru, can sleep)
 
-  The irregular verb 「来る」(kuru, to come) takes the potential form 「来られる」(korareru, can come). The irregular verb 「する」(suru, to do) is unique, as its potential form is replaced by 「できる」(dekiru, can do).
+  An important point for ichidan verbs is the phenomenon known as 「ら抜き言葉」(ra-nuki kotoba), or the omission of 「ら」. In modern, casual Japanese, particularly among younger speakers, this involves omitting the 「ら」 from the 「られる」 form of Ichidan verbs, resulting in forms like 「食べれる」(tabereru) instead of 「食べられる」(taberareru). While this is widely used in informal settings, it is grammatically incorrect in standard Japanese and should be avoided in formal or written contexts. It can also lead to ambiguity, as the original 「られる」 form can also indicate passive voice, respect, or spontaneous occurrence, which are distinct from potential meaning.
 
   When using the potential form, either the particle 「を」 or 「が」 can mark the object of the verb. However, it's more common and often feels more natural to use 「が」, especially with potential forms, as it emphasizes the inherent ability or possibility. For instance, 「日本語を話せる」(Nihongo o hanaseru) and 「日本語が話せる」(Nihongo ga hanaseru) are both correct, but the latter often feels more natural for expressing the ability to speak Japanese. An important exception is 「できる」, which **only** takes 「が」 to mark its object (e.g., 「日本語ができます」).
-
-  **Common Usage and 'ラ抜き言葉' (ra-nuki kotoba)**
-
-  In modern, casual Japanese, particularly among younger speakers, a phenomenon called 「ラ抜き言葉」(ra-nuki kotoba), or “ra-omission speech,” is prevalent. This involves omitting the 「ら」 from the 「られる」 form of Ichidan verbs, resulting in forms like 「食べれる」(tabereru) instead of 「食べられる」(taberareru). While this is widely used in informal settings, it is grammatically incorrect in standard Japanese and should be avoided in formal or written contexts. It can also lead to ambiguity, as the original 「られる」 form can also indicate passive voice, respect, or spontaneous occurrence, which are distinct from potential meaning.
-
-  **Comparison with 'ことができる'**
-
-  The expression 「～ることができる」 (koto ga dekiru) also means “can” or “to be able to.” It can be used interchangeably with the potential form of verbs in many situations. However, 「～することができる」 is generally considered slightly more polite or formal than the direct potential verb form. It is also more versatile as it can be used with any verb, even those for which a direct potential form might not exist or is awkward. For example, while 「する」 becomes 「できる」, other verbs can still take 「～することができる」 (e.g., 「見ることができる」 instead of 「見られる」).
 false_friends:
-  - term: Verb[れる・られる]
+  - term: 使役 (causative)
+    meaning: To make/let/have (somebody do something)
+    kind: often confused with
+    nuance: The causative form (〜せる/〜させる) indicates that someone causes another to perform an action.
+      The potential form indicates ability or possibility to perform an action.
+    grammar_point: Verb[させる] (causative)
+  - term: させてしまう (casual completion)
+    meaning: To end up doing something (often unintentionally or regrettably)
+    kind: similar expression
+    nuance: While the potential form emphasizes ability, させてしまう combines causative with the nuance of
+      accidental or regrettable completion, meaning 'to end up letting someone do something'.
+    grammar_point: <suggest>:させてしまう (casual completion)
+  - term: することができる (can・be able to)
+    meaning: To be able to; can (general possibility or ability)
+    kind: similar expression
+    nuance: Both express ability. The potential verb form is a direct conjugation, often more concise
+      and natural for common verbs. 「〜することができる」 is a more general and often formal way to express ability
+      or possibility, applicable to any verb, including those for which a potential form is not common
+      or does not exist. It is also more versatile as it can be used with any verb, even those for which
+      a direct potential form might not exist or is awkward.
+    grammar_point: することができる (can・be able to)
+  - term: Verb[(ら)れる]
     meaning: To be done to ~ by ~, to be done without consent, to be done to one's dismay
     kind: often confused with
     nuance: The passive form 「れる・られる」 indicates an action being performed *on* or *to* the subject. For
@@ -119,18 +144,8 @@ false_friends:
       praise someone). The distinction is crucial and depends entirely on context and sentence structure.
       The shared form can lead to ambiguity, as the original 「られる」 form can also indicate passive voice,
       respect, or spontaneous occurrence, which are distinct from potential meaning.
-    grammar_point: '[Verb-potential] (can do)'
-  - term: することができる
-    meaning: Can, be able to
-    kind: synonym
-    nuance: 「～することができる」 is a more formal and universally applicable way to express ability. It can be
-      used with any verb and is often preferred in situations where the potential form might be ambiguous
-      (due to its overlap with passive) or where a more polite expression is desired. While 「られる」 (potential)
-      is more direct and concise, 「～することができる」 provides clarity and politeness, making it a safe choice
-      in various situations, especially when emphasizing the acquired skill rather than inherent ability
-      or natural possibility.
-    grammar_point: することができる (can・be able to)
-  - term: 得る・得る
+    grammar_point: Verb[(ら)れる] (direct passive)
+  - term: 得る (to be able to・to be possible)
     meaning: To obtain, to gain; (auxiliary) can, able to
     kind: similar expression
     nuance: While 「得る」(eru) can indicate possibility or ability, its primary meaning often relates to
@@ -139,7 +154,7 @@ false_friends:
       of an agent to perform an action. 「得る」 is generally more formal or literary than 「られる」 for expressing
       ability, and often appears in specific constructions like ～し得る (can do/is capable of doing).
     grammar_point: 得る (to be able to・to be possible)
-  - term: かねる
+  - term: かねる (unable to)
     meaning: Cannot, be unable to, hard to, hesitant to
     kind: similar expression
     nuance: 「かねる」 often expresses an inability due to a sense of difficulty, hesitation, or impossibility
@@ -147,8 +162,8 @@ false_friends:
       in formal or business settings to politely decline or state inability, not a simple lack of inherent
       capability. The potential negative 「られない」, on the other hand, indicates a more direct or physical
       inability to perform an action.
-    grammar_point: かねる (unable to)
-  - term: ようがない・ようもない
+    grammar_point: '[Verb-stem]かねる (unable to・hesitant to)'
+  - term: ようがない・ようもない (no way to)
     meaning: There's no way to, It's impossible to
     kind: similar expression
     nuance: 「ようがない」 expresses that there is *no method* or *no means* to do something, implying an objective
@@ -158,7 +173,7 @@ false_friends:
       nothing one can do about it) implies a lack of method or solution, while 「できない」(can't do) is a direct
       statement of inability.
     grammar_point: ようがない・ようもない (no way to)
-  - term: 聞こえる
+  - term: 聞こえる (to be audible)
     meaning: To be audible, to sound (like), (can) hear, to be heard
     kind: similar expression
     nuance: 「聞こえる」(kikoeru) inherently means 'to be audible' or 'can be heard' (something can be heard
@@ -168,7 +183,7 @@ false_friends:
       and 「聞ける」 refers to one's active capacity to perceive or listen to a sound. For example, 「遠くから音が聞こえる」(A
       sound can be heard from afar) vs. 「このラジオはよく聞ける」(This radio can be heard well / is good for listening).
     grammar_point: 聞こえる (to be audible)
-  - term: 見える
+  - term: 見える (to be visible・to seem)
     meaning: To be visible, to seem, to be in sight
     kind: similar expression
     nuance: Similar to 「聞こえる」, 「見える」(mieru) inherently means 'to be visible' or 'can be seen' (something
@@ -299,7 +314,7 @@ examples:
     setting: apologetic
     conjugation: negative plain (～ない)
     nuance: The Godan verb 「間に合う」(maniau, to make it on time) conjugates to its potential form 「間に合える」(maniae-ru),
-      and then its negative potential form 「間に合えない」(manae-nai), indicating an H ability to be on time.
+      and then its negative potential form 「間に合えない」(manae-nai), indicating an inability to be on time.
       This phrase is used to express a failed attempt or an inability to achieve something due to external
       circumstances, fitting the apologetic tone of someone who is late. The directness of the potential
       form expresses the personal setback.
@@ -415,9 +430,10 @@ examples:
       casual expression of regret for a past inability, often used by male speakers to share personal
       failures or limitations. The plain form 「泳げなかった」 conveys a straightforward, albeit melancholic,
       statement.
-post_example_writeup: Remember that while the potential form 「られる」 and 「～することができる」 have similar meanings,
-  「～することができる」 is often perceived as slightly more polite and is also more versatile as it can apply to
-  all verbs, including 「する」 verbs. The informal 「ラ抜き言葉」, where the 「ら」 is omitted from Ichidan verb potential
-  forms (e.g., 「食べれる」), is common in casual speech but should be avoided in formal settings.
+post_example_writeup: The potential form primarily expresses ability or possibility. While the usage of
+  「ら抜き言葉」 (e.g., 食べれる instead of 食べられる) is widespread in informal speech, it is generally considered non-standard
+  and should be avoided in formal contexts. Choosing between the standard potential form and 「〜することができる」
+  often comes down to nuance and formality; the direct potential form tends to be more natural and concise
+  for verbs that commonly use it.
 sources:
   bunpro: https://bunpro.jp/grammar_points/Verb[potential]
