@@ -248,15 +248,7 @@ if __name__ == '__main__':
         display.check(f"Generated grammar summary with {len(grammar_summary['all-grammar-points'])} grammar points.")
 
         async def lint(parsed_obj, file_path):
-            def fn(value, type_name, path):
-                if type_name == 'examples/object':
-                    english = value['english']
-                    japanese = value.get('japanese', [])
-                    clean_list = [s.replace('{', '').replace('}', '') for s in japanese]
-                    db.add_english_translations(english, clean_list)
-                    return value
-                return value
-            visit_json(parsed_obj, GRAMMAR_SCHEMA, fn)
+  
             # if parsed_obj['id'] != 'gp0013': return None
             # Convert original object to JSON for comparison
             original_json = json.dumps(parsed_obj, ensure_ascii=False, sort_keys=True)
@@ -272,10 +264,28 @@ if __name__ == '__main__':
             return result
         
         def logic(parsed_obj, file_path):
+
+
             if len(parsed_obj.get('lint-errors', [])) == 0:
                 return parsed_obj
             result = ai_pass(parsed_obj, grammar_summary, file_path, temp_dir)
 
+
+            def fn(value, type_name, path):
+                if type_name == 'examples/object':
+                    english = value['english']
+                    japanese = value.get('japanese', [])
+                    clean_list = [s.replace('{', '').replace('}', '') for s in japanese]
+                    db.add_japanese_translations(english, clean_list)
+                    return value
+                if type_name == 'examples/competing_grammar/object':
+                    english = value['english']
+                    japanese = value.get('competing_japanese', [])
+                    clean_list = [s.replace('{', '').replace('}', '') for s in japanese]
+                    db.add_japanese_translations(english, clean_list)
+                    return value
+                return value
+            visit_json(parsed_obj, GRAMMAR_SCHEMA, fn)
             return result
 
         mr = MapReduce(

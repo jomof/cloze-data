@@ -116,6 +116,14 @@ def lv_example_count(val, type, path, messages):
     if count < 10:
         messages.append(f"[rule-6] at {path} there are only {count} example(s); should have at least 10")
 
+def lv_competing_grammar_count(val, type, path, messages):
+    if type != "examples/competing_grammar/object":
+        return
+    competing_japanese = val.get("competing_japanese", [])
+    count = len(competing_japanese)
+    if count < 1:
+        messages.append(f"warning at {path} there are only {count} ways of saying english in japanese; should have at least 2")
+
 def lv_japanese_count(val, type, path, messages):
     """
     Walks over each example and warns if there are fewer than 2 'japanese' entries.
@@ -463,6 +471,7 @@ def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = { "
             lv_japanese_braces(result, type_name, path, lint)
             lv_missing_competing_grammar(result, type_name, path, lint)
             lv_example_count(result, type_name, path, lint)
+            lv_competing_grammar_count(result, type_name, path, lint)
             lv_japanese_count(result, type_name, path, lint)
             lv_better_grammar_name(result, type_name, path, lint)
             lv_validate_parenthetical_meaning(result, type_name, path, lint)

@@ -125,7 +125,8 @@ def visit_json(
                 for key, child_schema in props.items():
                     if key in current_value:
                         new_segments = path_segments + [('prop', key)]
-                        new_val = _visit(current_value[key], child_schema, new_segments, inherited_prefix=key, skip_fn=False)
+                        new_inherited_prefix = f"{inherited_prefix}/{key}" if inherited_prefix else key
+                        new_val = _visit(current_value[key], child_schema, new_segments, inherited_prefix=new_inherited_prefix, skip_fn=False)
                         if new_val is not current_value[key]:
                             current_value[key] = new_val  # type: ignore
         # 4.b) Array: recurse into items
