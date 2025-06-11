@@ -461,5 +461,59 @@ class TestLintSchemaUtils(unittest.TestCase):
         # And for competing_japanese arrays, the type_name is "japaneseVariationsType" 
         # and individual items are "japaneseVariationType"
 
+    def test_clean_lint_removes_duplicates_and_sorts_learn_arrays(self):
+        """Test that clean_lint removes duplicates and sorts learn_before and learn_after arrays."""
+        grammar_point = {
+            "grammar_point": "test grammar point (meaning)",
+            "learn_before": ["z-item", "a-item", "b-item", "a-item", "z-item"],  # has duplicates, unsorted
+            "learn_after": ["y-point", "x-point", "y-point", "a-point"],  # has duplicates, unsorted
+        }
+        
+        cleaned = clean_lint(grammar_point)
+        
+        # Check that duplicates are removed and arrays are sorted
+        self.assertEqual(cleaned['learn_before'], ["<suggest>:a-item", "<suggest>:b-item", "<suggest>:z-item"])
+        self.assertEqual(cleaned['learn_after'], ["<suggest>:a-point", "<suggest>:x-point", "<suggest>:y-point"])
+
+    def test_clean_lint_handles_empty_learn_arrays(self):
+        """Test that clean_lint handles empty learn arrays without error."""
+        grammar_point = {
+            "grammar_point": "test grammar point (meaning)",
+            "learn_before": [],
+            "learn_after": [],
+        }
+        
+        cleaned = clean_lint(grammar_point)
+        
+        # Empty arrays should be pruned (removed) by the prune_empty function
+        self.assertNotIn('learn_before', cleaned)
+        self.assertNotIn('learn_after', cleaned)
+
+    def test_clean_lint_handles_missing_learn_arrays(self):
+        """Test that clean_lint handles missing learn arrays without error."""
+        grammar_point = {
+            "grammar_point": "test grammar point (meaning)",
+        }
+        
+        cleaned = clean_lint(grammar_point)
+        
+        # Should not create the fields if they don't exist
+        self.assertNotIn('learn_before', cleaned)
+        self.assertNotIn('learn_after', cleaned)
+
+    def test_clean_lint_handles_single_item_learn_arrays(self):
+        """Test that clean_lint handles learn arrays with single items."""
+        grammar_point = {
+            "grammar_point": "test grammar point (meaning)",
+            "learn_before": ["single-item"],
+            "learn_after": ["another-item"],
+        }
+        
+        cleaned = clean_lint(grammar_point)
+        
+        # Single items should be preserved
+        self.assertEqual(cleaned['learn_before'], ["<suggest>:single-item"])
+        self.assertEqual(cleaned['learn_after'], ["<suggest>:another-item"])
+
 if __name__ == '__main__':
     unittest.main()

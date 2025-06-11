@@ -1,0 +1,263 @@
+grammar_point: な-Adjective[そう] (appearance)
+learn_before:
+  - い-Adjectives (adjectives ending in い)
+  - な-Adjectives (adjectival nouns)
+learn_after:
+  - '[Clause]はずだ・はずがない (is expected to be・cannot be)'
+  - 〜ようだ・〜みたいだ (seems・like)
+id: gp9999
+meaning: appears to be; looks like (based on observation)
+pronunciation:
+  katakana: ナアドジェクティブソウ
+  romaji: na-ajiektibu sou
+formation:
+  な-Adjective (stem) + そうだ: Used to describe how something or someone appears, often based on visual observation.
+jlpt: N4
+details:
+  part-of-speech: auxiliary adjective
+  register: casual
+  function: Describes an appearance or impression based on direct observation or inference.
+  nuance: Conveys an immediate impression or deduction from visual cues. It implies a direct observation
+    leading to a conclusion about appearance or state.
+  grammatical-role: Functions as a descriptive modifier, often predicatively or attributively.
+etymology: The そう in な-Adjective[そう] is derived from the classical Japanese verb 候う (そうろう), which meant
+  'to be in attendance' or 'to serve.' Over time, its meaning evolved to express the state or appearance
+  of something, implying that something 'appears to be' or 'looks like' a certain way. This distinguishes
+  it from the そう (said to be) of hearsay, which shares the same pronunciation but has a different origin
+  and grammatical function.
+writeup: |-
+  The grammar point な-Adjective[そう] is used to describe how something or someone **appears to be** or **looks like**, based on a direct visual or sensory impression. It attaches to the stem of a な-adjective by removing the final だ (or な in some cases for attributive use). For example, 綺麗 (きれい - beautiful) becomes 綺麗そう (きれいそう - looks beautiful), and 簡単 (かんたん - easy) becomes 簡単そう (かんたんそう - looks easy).
+
+  This form focuses on an immediate, observable impression. It's often used when you are making a quick judgment about someone's state or an object's quality just by looking at them. It's a common and versatile expression in everyday Japanese. The impression conveyed can be about a person's mood, a task's difficulty, or an object's quality.
+false_friends:
+  - term: い-Adjective[そう] (appearance)
+    meaning: appears to be; looks like
+    kind: similar expression
+    nuance: This form also expresses appearance, but it attaches to the stem of an い-adjective by dropping
+      the final い. For example, 寒い (さむい - cold) becomes 寒そう (さむそう - looks cold). While the meaning is
+      nearly identical to な-Adjective[そう], the conjugation rule is different.
+    grammar_point: い-Adjective[そう] (appearance)
+  - term: Verb[そう] (appearance)
+    meaning: seems like; looks like (about to happen)
+    kind: similar expression
+    nuance: This form attaches to the verb stem and implies that something looks like it's about to happen
+      or is likely to happen. For example, 降りそう (ふりそう - looks like it will rain). While it also conveys
+      appearance, it focuses on the likelihood of an action, whereas な-Adjective[そう] describes a current
+      state or quality.
+    grammar_point: <suggest>:[Verb-stem]そうだ (it seems・looks like)
+  - term: Verb[dictionary]そうだ (hearsay)
+    meaning: I heard that; it is said that
+    kind: often confused with
+    nuance: This そう is completely different in meaning and formation. It indicates hearsay or reported
+      information, attaching to the dictionary form of verbs or plain forms of adjectives/nouns. For example,
+      雨が降るそうだ (あめがふるそうだ - I heard it will rain). It doesn't describe appearance.
+    grammar_point: '[Sentence]そうだ (i heard・it is said)'
+  - term: 〜ようだ・〜みたいだ (seems・like)
+    meaning: seems like; appears to be (general inference or comparison)
+    kind: similar expression
+    nuance: While な-Adjective[そう] is typically based on immediate visual observation, ようだ and みたいだ can
+      be used for inferences based on less direct evidence or for comparisons ('it's like...'). For example,
+      彼は元気そうだ (かれはげんきそう - He looks healthy/energetic) is a direct observation, while 彼は元気なようだ (かれはげんきなようだ
+      - It seems he's healthy/energetic) could be based on a phone call or indirect information.
+    grammar_point: 〜ようだ・〜みたいだ (seems・like)
+post_false_friends_writeup: Understanding the subtle differences between these expressions is key. な-Adjective[そう]
+  and い-Adjective[そう] are about direct visual appearance, Verb[そう] is about an impending action's appearance,
+  and the hearsay そう is about reported information. ようだ and みたいだ are broader in scope, allowing for inference
+  beyond direct observation or expressing comparisons.
+examples:
+  - english: That bag looks expensive.
+    japanese:
+      - あの カバン は {高 そう} だ ね。
+      - あの カバン は {高 そう} です ね。
+      - あの カバン、{高 そう} じゃん。
+      - あの カバン、{高 そう} に 見える ね。
+    english_literally: That bag looks expensive, right.
+    competing_grammar:
+      - competing_japanese:
+          - あの カバン は 高い みたい だ ね。
+        english: That bag seems expensive, right.
+        hint: 「みたいだ」 can also convey appearance, but it can also be used for things that are not directly
+          observed or for comparisons. We're looking for a direct visual impression here.
+    scene: You and a friend are window shopping and see a designer bag.
+    register: casual
+    setting: friendly
+  - english: She looks happy.
+    japanese:
+      - 彼女 は {幸せ そう} だ ね。
+      - 彼女 は {幸せ そう} です ね。
+      - 彼女、{幸せ そう} だ わ。
+      - 彼女 は {幸せ そう} に 見える ね。
+    english_literally: She looks happy, right.
+    competing_grammar:
+      - competing_japanese:
+          - 彼女 は 幸せ の よう だ ね。
+        english: She seems happy, right.
+        hint: 「ようだ」 can imply an appearance or inference, but 「〜そう」 is a more direct statement about observable
+          happiness.
+    scene: You see a friend smiling brightly while talking on the phone.
+    register: casual
+    setting: friendly
+    speaker_gender: female
+    listener_gender: male
+    nuance: Using 「幸せそう」 emphasizes that the happiness is clearly visible on her face or in her demeanor,
+      making it a direct observation.
+  - english: The test looks difficult.
+    japanese:
+      - テスト は {難し そう} です。
+      - テスト は {難し そう} だ。
+      - この テスト は {難し そう} に 見え ます。
+    english_literally: Test looks difficult.
+    competing_grammar:
+      - competing_japanese:
+          - テスト は 難しい と 聞い た。
+        english: I heard the test is difficult.
+        hint: We are making an observation about the test's appearance of difficulty, not reporting what
+          someone else said.
+    scene: A student glances at a test paper and makes a quick judgment.
+    register: formal
+    setting: academic
+  - english: He seems serious about his studies.
+    japanese:
+      - 彼 は 勉強 に {真面目 そう} だ。
+      - 彼 は 勉強 に {真面目 そう} です ね。
+      - 彼、勉強 に {真面目 そう} だ な。
+      - 彼 は 勉強 に {真面目 そう} に 見える。
+    english_literally: He study seriously looks.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 勉強 が 好き だ。
+        english: He likes studying.
+        hint: The sentence describes his apparent attitude towards studying, not necessarily his enjoyment
+          of it.
+    scene: Observing a classmate who always studies diligently.
+    register: casual
+    setting: academic
+    speaker_gender: male
+    listener_gender: no one
+    nuance: 「真面目そう」 implies that his seriousness is evident from his behavior or expressions, such as
+      his focused posture or lack of distraction.
+  - english: That restaurant looks delicious and popular.
+    japanese:
+      - あの レストラン は {美味し そう} で {賑やかそう} だ。
+      - あの レストラン は {美味し そう} で {賑やかそう} です ね。
+      - あの レストラン は {美味し そう} に 見える し、{賑やかそう} だ。
+    english_literally: That restaurant looks delicious and looks bustling.
+    competing_grammar:
+      - competing_japanese:
+          - あの レストラン は 美味しい と 言わ れ て いる。
+        english: It is said that that restaurant is delicious.
+        hint: We are describing how the restaurant *appears* based on observation (e.g., seeing people
+          enjoy food, lots of customers), not what is rumored.
+    scene: Walking past a busy restaurant with inviting aromas.
+    register: casual
+    setting: friendly
+  - english: That game looks fun.
+    japanese:
+      - あの ゲーム は {楽し そう} だ ね。
+      - あの ゲーム は {楽し そう} です ね。
+      - あの ゲーム、{楽し そう} だ な。
+    english_literally: That game looks fun, right.
+    competing_grammar:
+      - competing_japanese:
+          - あの ゲーム は 楽しい そう だ ね。
+        english: I heard that game is fun, right.
+        hint: The sentence is about how the game *appears* to be fun from observing it, not based on what
+          you've been told about it.
+    scene: Watching someone play a new video game.
+    register: casual
+    setting: friendly
+  - english: The new teacher looks kind.
+    japanese:
+      - 新しい 先生 は {優し そう} だ。
+      - 新しい 先生 は {優し そう} です。
+      - 新しい 先生 は {優し そう} に 見える。
+    english_literally: New teacher looks kind.
+    competing_grammar:
+      - competing_japanese:
+          - 新しい 先生 は 優しい らしい。
+        english: It seems the new teacher is kind (based on evidence).
+        hint: 「らしい」 implies an inference based on evidence or common perception, while 「〜そう」 is a direct
+          visual impression of kindness.
+    scene: Students observing their new teacher on the first day.
+    register: casual
+    setting: academic
+  - english: The house looks very quiet.
+    japanese:
+      - その 家 は とても {静か そう} だ。
+      - その 家 は とても {静か そう} です。
+      - その 家 は とても {静か そう} に 見える。
+    english_literally: That house very looks quiet.
+    competing_grammar:
+      - competing_japanese:
+          - その 家 は 誰 も い ない よう だ。
+        english: It seems no one is in that house.
+        hint: While an empty house might appear quiet, the grammar point describes the *appearance* of
+          quietness, not the absence of people itself.
+    scene: Passing by a house with no lights on and no sounds coming from it.
+    register: casual
+    setting: reflective
+  - english: He looks healthy after his trip.
+    japanese:
+      - 旅行 から 帰っ て き て 彼 は {健康 そう} だ。
+      - 旅行 から 帰っ て き て 彼 は {健康 そう} です ね。
+      - 旅行 から 帰っ て き て 彼 は {健康 そう} に 見える。
+    english_literally: Returned from trip, he looks healthy.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 健康 に なっ た。
+        english: He became healthy.
+        hint: We are describing his apparent current state, not necessarily the process of becoming healthy.
+    scene: Greeting a friend who just returned from a long vacation.
+    register: casual
+    setting: friendly
+    speaker_gender: female
+    listener_gender: male
+    nuance: 「健康そう」 suggests that his health is evident from his complexion, energy, or overall appearance
+      after the trip.
+  - english: This problem looks complicated.
+    japanese:
+      - この 問題 は {複雑 そう} だ。
+      - この 問題 は {複雑 そう} です。
+      - この 問題 は {複雑 そう} に 見える。
+    english_literally: This problem looks complicated.
+    competing_grammar:
+      - competing_japanese:
+          - この 問題 は 難しい だろう。
+        english: This problem is probably difficult.
+        hint: We are expressing a visual impression of complexity, not a probabilistic conjecture about
+          difficulty.
+    scene: A student looks at a math problem in a textbook.
+    register: casual
+    setting: academic
+  - english: The children look energetic.
+    japanese:
+      - 子供 たち は {元気 そう} だ。
+      - 子供 たち は {元気 そう} です。
+      - 子供 たち は {元気 そう} に 見える。
+    english_literally: Children look energetic.
+    competing_grammar:
+      - competing_japanese:
+          - 子供 たち は 元気 だっ た。
+        english: The children were energetic.
+        hint: We are describing their current visible state of being energetic, not their past state.
+    scene: Watching children playing vigorously in a park.
+    register: casual
+    setting: friendly
+  - english: Her room looks messy.
+    japanese:
+      - 彼女 の 部屋 は {乱雑 そう} だ。
+      - 彼女 の 部屋 は {乱雑 そう} です。
+      - 彼女 の 部屋 は {乱雑 そう} に 見える。
+    english_literally: Her room looks disorderly.
+    competing_grammar:
+      - competing_japanese:
+          - 彼女 の 部屋 は 乱雑 だ。
+        english: Her room is messy.
+        hint: We are describing the *appearance* of messiness, not stating it as a fact.
+    scene: Peeking into a friend's room which seems disorganized.
+    register: casual
+    setting: friendly
+    nuance: 「乱雑そう」 means it gives off an impression of disorder, perhaps with clothes or books scattered
+      around.
+post_example_writeup: As you can see, な-Adjective[そう] is quite flexible and applies to a wide range of
+  observations about appearances. Remember to remove the な or だ from the adjective before adding そう.

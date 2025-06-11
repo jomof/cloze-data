@@ -450,6 +450,15 @@ def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = { "
                         grammar_point['better_grammar_point_name'] = new_better_names
                     else: 
                         del grammar_point['better_grammar_point_name']
+                
+                # Clean and sort learn_before and learn_after arrays
+                for field_name in ['learn_before', 'learn_after']:
+                    if field_name in grammar_point:
+                        field_value = grammar_point[field_name]
+                        if isinstance(field_value, list):
+                            # Remove duplicates and sort
+                            cleaned = sorted(list(set(field_value)))
+                            grammar_point[field_name] = cleaned
 
             if type_name == "japanese":
                 result = strip_matching_quotes(value)

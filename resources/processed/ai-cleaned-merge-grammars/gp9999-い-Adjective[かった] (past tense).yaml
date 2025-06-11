@@ -1,0 +1,264 @@
+grammar_point: い-Adjective[かった] (past tense)
+learn_before:
+  - Verb[た] (past tense)
+  - い-Adjectives (adjectives ending in い)
+  - です (polite copula)
+learn_after:
+  - い-Adjective (past negative)
+  - じゃなかった (was not)
+id: gp9999
+meaning: was [i-adjective]
+conjugations:
+  - conjugation-type: past plain (～た)
+    form: い-Adjective[かった]
+    rarity: common
+    meaning: was [i-adjective]
+  - conjugation-type: past polite (～ました)
+    form: い-Adjective[かったです]
+    rarity: common
+    meaning: was [i-adjective]
+pronunciation:
+  katakana: カッタ
+  romaji: katta
+formation:
+  い-Adjective (stem) + かった: Forms the plain past tense of い-adjectives.
+jlpt: N5
+details:
+  part-of-speech: auxiliary adjective
+  register: casual
+  usage-context: Used to describe a state or quality that existed in the past.
+  function: Expresses a past state or quality of a noun or pronoun. It is the plain, affirmative past
+    tense form of い-adjectives.
+  nuance: This form directly attaches to the stem of an い-adjective (by dropping the final い) to indicate
+    a past state. It is a fundamental conjugation. When です is appended (e.g., 良かったです), it becomes polite.
+etymology: The `〜かった` ending for い-adjectives, denoting past tense, is a unique historical development.
+  It is believed to have originated from the stem of the い-adjective combined with the classical past
+  auxiliary verb `き` (which changed to `け` and eventually fused to `かった`). This contrasts with how nouns
+  and な-adjectives form their past tense (using `だった`). This distinct origin highlights the fundamental
+  grammatical difference between い-adjectives and other parts of speech in Japanese.
+writeup: |-
+  The `い-Adjective[かった]` form is the plain past tense of い-adjectives. To form this, you remove the final 「い」 from the dictionary form of an い-adjective and append 「かった」. For example, 「高い」(takai - high) becomes 「高かった」(takakatta - was high), and 「美味しい」(oishii - delicious) becomes 「美味しかった」(oishikatta - was delicious).
+
+  This form is used to describe something that *was* a certain way in the past. It expresses an affirmative past state. For example, if you want to say "The book was interesting," you would use 「面白かった」 (omoshirokatta) because 「面白い」 (omoshiroi) is an い-adjective.
+
+  While 「かった」 itself is a plain form, it can be made polite by adding 「です」 (e.g., 「高かったです」, 「美味しかったです」). This polite form is commonly used in everyday conversations.
+
+  Understanding `い-Adjective[かった]` is crucial for building past tense sentences involving descriptions, as it's one of the most basic and frequently used grammatical structures in Japanese.
+false_friends:
+  - term: じゃなかった
+    meaning: was not
+    kind: often confused with
+    nuance: Unlike `〜かった` which is the affirmative past for い-adjectives, `じゃなかった` is the plain negative
+      past for nouns and な-adjectives (e.g., 「学生じゃなかった」wasn't a student, 「元気じゃなかった」wasn't energetic).
+    grammar_point: じゃなかった (was not)
+  - term: い-Adjective (past negative)
+    meaning: was not [adjective]
+    kind: similar expression
+    nuance: This form uses `〜くなかった` (e.g., 「高くなかった」wasn't high). While it applies to い-adjectives and
+      is in the past tense, it expresses the negative meaning, directly contrasting with the affirmative
+      meaning of `〜かった`.
+    grammar_point: い-Adjective (past negative)
+  - term: Verb[なかった]
+    meaning: did not do
+    kind: often confused with
+    nuance: This is the plain past negative form for verbs (e.g., 「食べなかった」didn't eat). It applies to actions
+      and indicates that an action did not occur in the past, distinct from `〜かった` which describes a past
+      state for い-adjectives.
+    grammar_point: Verb[なかった] (past negative)
+post_false_friends_writeup: While `い-Adjective[かった]` describes a past affirmative state, it is important
+  to distinguish it from similar-sounding or functionally similar expressions. `じゃなかった` is used for nouns
+  and な-adjectives in their past negative form. The past negative form of い-adjectives is `〜くなかった`, which,
+  though related, expresses the opposite meaning. Finally, `Verb[なかった]` is exclusively for verbs, indicating
+  a past action that did not happen. Pay attention to the part of speech and whether the meaning is affirmative
+  or negative.
+examples:
+  - english: The weather was good yesterday.
+    japanese:
+      - 昨日、天気 が {良かっ た}。
+      - 昨日、天気 が {良かっ た です}。
+    english_literally: Yesterday, weather was good.
+    competing_grammar:
+      - competing_japanese:
+          - 昨日、天気 は {いい}。
+        english: Yesterday, the weather is good.
+        hint: The verb is in the present tense here. We're looking for a past state.
+    scene: You're reminiscing about the previous day's pleasant weather.
+    register: casual
+    setting: informative
+  - english: That movie was very interesting.
+    japanese:
+      - あの 映画 は とても {面白かっ た です}。
+      - あの 映画 は とても {面白かっ た}。
+    english_literally: That movie as for very was interesting.
+    competing_grammar:
+      - competing_japanese:
+          - あの 映画 は とても {面白い}。
+        english: That movie is very interesting.
+        hint: This sentence describes the movie in the present tense. We're describing a movie you've
+          already seen, so it should be in the past.
+    scene: You're recommending a movie you watched to a friend.
+    register: teineigo (polite)
+    setting: friendly
+    conjugation: past polite (～ました)
+  - english: The test was difficult.
+    japanese:
+      - テスト は {難しかっ た}。
+      - テスト は {難しかっ た です}。
+    english_literally: Test as for was difficult.
+    competing_grammar:
+      - competing_japanese:
+          - テスト は {難しく ない}。
+        english: The test is not difficult.
+        hint: This is a present negative form. We're talking about the difficulty of a past test, so it
+          should be in the past affirmative.
+    scene: You're expressing your feelings about a recently finished test.
+    register: casual
+    setting: reflective
+  - english: My old house was small, but it was very cozy.
+    japanese:
+      - 私 の 前 の 家 は 小 さ {かっ た} けど、とても 居心地 が {良かっ た} です。
+      - 私 の 前 の 家 は 小 さ {かっ た} けど、とても 居心地 が {良かっ た}。
+      - 私 の 前 の 家 は 小 さ {かった です} けど、とても 居心地 が {良かっ た です}。
+    english_literally: My old house as for was small but, very coziness was good.
+    competing_grammar:
+      - competing_japanese:
+          - 私 の 前 の 家 は 小さい けど、とても 居心地 が いい です。
+        english: My old house is small, but it is very cozy.
+        hint: This is in the present tense. We're talking about a house you no longer live in, so the
+          description should be in the past.
+    scene: You're sharing a memory about your previous residence.
+    register: teineigo (polite)
+    setting: storytelling
+    conjugation: past polite (～ました)
+  - english: Last year's summer was hotter than this year's.
+    japanese:
+      - 去年 の 夏 は 今年 より {暑かっ た}。
+      - 去年 の 夏 は 今年 より {暑かっ た です}。
+    english_literally: Last year's summer as for this year than was hot.
+    competing_grammar:
+      - competing_japanese:
+          - 去年 の 夏 は 今年 より {暑い}。
+        english: Last year's summer is hotter than this year's.
+        hint: The current sentence compares two past summers, so the adjective should be in the past tense.
+          This version uses the present tense.
+    scene: You're making a seasonal comparison with a friend.
+    register: casual
+    setting: informative
+  - english: You seemed busy yesterday.
+    japanese:
+      - 昨日、忙し {かっ た} よう でし た ね。
+      - 昨日、忙し {かっ た} よう だっ た ね。
+    english_literally: Yesterday, was busy, it seemed, right?
+    competing_grammar:
+      - competing_japanese:
+          - 昨日、忙しい よう です ね。
+        english: Yesterday, you seem busy.
+        hint: The observation or seeming took place in the past. This version uses the present tense for
+          'seem'.
+    scene: You noticed your colleague seemed very occupied the day before and are asking for confirmation.
+    register: teineigo (polite)
+    setting: friendly
+    conjugation: past polite (～ました)
+  - english: Because it was cold, I stayed home.
+    japanese:
+      - 寒 {かっ た} から、家 に い まし た。
+      - 寒 {かっ た} から、家 に い た。
+    english_literally: Because was cold, house in was.
+    competing_grammar:
+      - competing_japanese:
+          - 寒い から、家 に い まし た。
+        english: Because it is cold, I stayed home.
+        hint: The reason for staying home (the coldness) happened in the past, so the adjective describing
+          it should also be in the past tense. This version uses the present tense for the reason.
+    scene: You're explaining to a friend why you didn't go out.
+    register: teineigo (polite)
+    setting: informative
+    conjugation: past plain (～た)
+  - english: That concert was awesome!
+    japanese:
+      - あの コンサート は 最高 に {良かっ た} ぞ！
+      - あの コンサート は 最高 に {良かっ た です}！
+    english_literally: That concert as for supremely was good, you know!
+    competing_grammar:
+      - competing_japanese:
+          - あの コンサート は 最高 に {いい} ぞ！
+        english: That concert is awesome!
+        hint: The concert has already concluded, so the description should be in the past tense. This
+          version uses the present tense.
+    scene: A young man is excitedly telling his friend about a concert he attended.
+    register: casual
+    setting: excited
+    conjugation: past plain (～た)
+    speaker_gender: male
+    listener_gender: male
+    nuance: The use of the sentence-ending particle 「ぞ」 (zo) adds a strong, assertive, and typically masculine
+      emphasis, reinforcing the speaker's excitement about the concert.
+  - english: The cake was really delicious, wasn't it?
+    japanese:
+      - ケーキ、すごく {美味しかっ た} わ ね。
+      - ケーキ、すごく {美味しかっ た です} わ ね。
+    english_literally: Cake, really was delicious, wasn't it?
+    competing_grammar:
+      - competing_japanese:
+          - ケーキ、すごく {美味しい} わ ね。
+        english: The cake is really delicious, isn't it?
+        hint: You have already eaten the cake, so the description should be in the past tense. This version
+          uses the present tense.
+    scene: Two women are chatting after having dessert together.
+    register: casual
+    setting: friendly
+    conjugation: past plain (～た)
+    speaker_gender: female
+    listener_gender: female
+    nuance: The combination of 「美味しかった」 (oishikatta) and the feminine sentence-ending particle 「わね」 (wa
+      ne) creates a soft, gentle way for a female speaker to express her positive sentiment and seek agreement
+      from the listener. 「わ」 is often used by women to express a light assertion or emotion, and 「ね」 seeks
+      agreement.
+  - english: The night was long and dark.
+    japanese:
+      - その 夜 は 長く、そして 暗 {かっ た}。
+      - その 夜 は 長く、そして 暗 {かっ た} の だ。
+    english_literally: That night as for long, and dark was.
+    competing_grammar:
+      - competing_japanese:
+          - その 夜 は 長く、そして 暗い。
+        english: The night is long and dark.
+        hint: This sentence is part of a narrative set in the past, so the description of the night should
+          also be in the past tense. This version uses the present tense.
+    scene: A passage from a story describing a past night.
+    register: bungo (literary)
+    setting: storytelling
+  - english: That mountain looked very high.
+    japanese:
+      - あの 山 は とても 高 {かっ た} よう です。
+      - あの 山 は とても 高 {かっ た} よう だ。
+    english_literally: That mountain as for very was high, it seems.
+    competing_grammar:
+      - competing_japanese:
+          - あの 山 は とても 高い よう です。
+        english: That mountain looks very high.
+        hint: The observation of the mountain's height was made in the past. This version uses the present
+          tense for 'looks'.
+    scene: You're recalling a past sight and describing it to someone.
+    register: teineigo (polite)
+    setting: informative
+    conjugation: past polite (～ました)
+  - english: The scenery was beautiful.
+    japanese:
+      - 景色 は {美しかっ た}。
+      - 景色 は {美しかっ た です}。
+    english_literally: Scenery as for was beautiful.
+    competing_grammar:
+      - competing_japanese:
+          - 景色 は {美しい}。
+        english: The scenery is beautiful.
+        hint: You are recalling a past experience of seeing the scenery. This version uses the present
+          tense.
+    scene: You're reflecting on a trip or memory of a beautiful place.
+    register: casual
+    setting: reflective
+post_example_writeup: As these examples demonstrate, the `い-Adjective[かった]` form is versatile and fundamental
+  for expressing past states with い-adjectives. Remember to drop the final 「い」 before adding 「かった」. The
+  formality can be adjusted by adding 「です」 for polite speech.
+sources:
+  bunpro: https://bunpro.jp/grammar_points/い-Adjective[かった] (past tense)
