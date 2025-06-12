@@ -1,0 +1,162 @@
+{
+    "basic_stats": {
+        "n_samples": 40222,
+        "n_unique_labels": 1151,
+        "n_distinct_labelsets": 1151,
+        "avg_labels_per_sample": 1.0,
+        "label_density": 0.0008688097306689834
+    },
+    "sample_examples": [
+        {
+            "sample_id": "無事 に プロジェクト が 終わっ た の は、ひとえに 皆 様 の 協力 {の おかげ で} す。",
+            "labels": [
+                "〜おかげで・〜せいで (because of, positive・negative result)"
+            ],
+            "label_count": 1
+        },
+        {
+            "sample_id": "言い訳 {は いい と し て も}、その 態度 は 許せ ませ ん。",
+            "labels": [
+                "はいいとしても (even if acceptable)"
+            ],
+            "label_count": 1
+        },
+        {
+            "sample_id": "{なまじ} 専門 分野 を かじる と、逆 に 誤解 を 生じ させる 可能 性 も あり ます。",
+            "labels": [
+                "なまじ(っか) (inadequate effort)"
+            ],
+            "label_count": 1
+        },
+        {
+            "sample_id": "週末 {に なる と}、必ず ジム に 行っ て 運動 し ます。",
+            "labels": [
+                "になると (when it comes to)"
+            ],
+            "label_count": 1
+        },
+        {
+            "sample_id": "犬 は 人間 に 忠実 な 動物 {だ} {と 思わ れ て いる}",
+            "labels": [
+                "と考えられている (is considered to be)"
+            ],
+            "label_count": 1
+        }
+    ],
+    "label_distribution": {
+        "min_labels_per_sample": 1,
+        "max_labels_per_sample": 1,
+        "median_labels_per_sample": 1.0,
+        "std_labels_per_sample": 0.0
+    },
+    "label_frequency_stats": {
+        "most_frequent_labels": [
+            [
+                "ここ・そこ・あそこ・どこ (here・there・over there・where)",
+                255
+            ],
+            [
+                "これ・それ・あれ・どれ (demonstrative pronouns)",
+                198
+            ],
+            [
+                "な-Adjectives (adjectival nouns)",
+                192
+            ],
+            [
+                "願う (wish・request)",
+                167
+            ],
+            [
+                "しかし・だが・けれど・しかしながら (but・however)",
+                159
+            ],
+            [
+                "もし・もしも (if, emphasis)",
+                147
+            ],
+            [
+                "〜だけでなく・〜ばかりでなく・〜ばかりか (not only... but also)",
+                144
+            ],
+            [
+                "近く,遠く (proximity・distance spatial)",
+                141
+            ],
+            [
+                "[Verb-ない form]ずにはいられない・ないではいられない (cannot help but do)",
+                139
+            ],
+            [
+                "と言って (having said that)",
+                130
+            ]
+        ],
+        "least_frequent_labels": [
+            [
+                "なお (still; even; yet; still more)",
+                20
+            ],
+            [
+                "並びに (and・as well as・formal)",
+                20
+            ],
+            [
+                "となる (to become・result in)",
+                20
+            ],
+            [
+                "と考えられる (can be considered)",
+                20
+            ],
+            [
+                "おり (humble formal connective)",
+                20
+            ],
+            [
+                "以上だ・以上です (that is all)",
+                20
+            ],
+            [
+                "[Verb-た・Nounの]結果 (as a result of)",
+                19
+            ],
+            [
+                "がいい (strong suggestion)",
+                19
+            ],
+            [
+                "こちら・そちら・あちら・どちら (this way・that way・which way, formal)",
+                18
+            ],
+            [
+                "ん (slang)",
+                16
+            ]
+        ],
+        "rare_labels_count": 1151,
+        "rare_labels": [
+            "〜おかげで・〜せいで (because of, positive・negative result)",
+            "に気がつく (to notice・realize)",
+            "たるや (when it comes to)",
+            "に至っても (even when reaching)",
+            "だんだん (gradually)",
+            "もさることながら (not only・but more so)",
+            "を中心に (focused on)",
+            "である (formal copula)",
+            "ひとつ (one small thing)",
+            "なるべく (as much as possible)"
+        ],
+        "imbalance_ratio": 15.9375
+    },
+    "co_occurrence_stats": {
+        "top_label_pairs": [],
+        "total_cooccurrence_pairs": 0
+    },
+    "design_recommendations": [
+        "LARGE_LABEL_SPACE: Binary Relevance or embedding-based approaches recommended",
+        "LOW_CARDINALITY: Simple approaches like Binary Relevance work well",
+        "MODERATE_IMBALANCE: Consider balanced sampling or weighted loss functions",
+        "MANY_RARE_LABELS: Consider label hierarchy or transfer learning approaches"
+    ]
+}

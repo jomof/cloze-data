@@ -253,6 +253,15 @@ def mecab_raw_to_compact_sentence(raw: str) -> str:
 def mecab_raw_to_tokens(raw):
     return compact_sentence_to_tokens(mecab_raw_to_compact_sentence(raw))
 
+def japanese_to_compact_sentence(japanese: str) -> str:
+    wakati = get_mecab_tagger()
+
+    # Fix for special case seen
+    japanese = japanese.replace(' っ', 'っ').replace('っ ', 'っ')
+    raw = wakati.parse(japanese)
+    return mecab_raw_to_compact_sentence(raw)
+
+    
 def japanese_to_japanese_with_spaces(japanese: str) -> str:
     wakati = get_mecab_tagger()
     try:

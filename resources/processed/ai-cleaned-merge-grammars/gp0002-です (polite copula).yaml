@@ -1,485 +1,231 @@
 grammar_point: です (polite copula)
+learn_before:
+  - だ (casual copula)
 learn_after:
-  - たい (want to do)
-  - だろう・でしょう (probably・right?)
-  - ましょう (polite volitional or suggestion)
-  - ませんか (invitation or suggestion)
+  - Verb[ます] (polite present)
+  - Verb[ません] (polite negative)
 id: gp0002
-meaning: To be, Is
-meaning_warning: Unlike だ, です is often used with both い-Adjectives and な-Adjectives
-conjugations:
-  - conjugation-type: non-past polite (～ます)
-    form: です
-    rarity: common
-    meaning: To be, Is
-  - conjugation-type: negative non-past polite (～ません)
-    form: ではありません
-    rarity: common
-    meaning: Is not
-  - conjugation-type: past polite (～ました)
-    form: でした
-    rarity: common
-    meaning: Was, Were
-  - conjugation-type: negative past polite (～ませんでした)
-    form: ではありませんでした
-    rarity: common
-    meaning: Was not, Were not
-  - conjugation-type: negative non-past polite (～ません)
-    form: で は ござい ませ ん
-    rarity: less common
-    meaning: Is not (more formal)
+meaning: to be (polite copula)
 pronunciation:
   katakana: デス
   romaji: desu
 formation:
-  Noun + です: Indicates the noun is a certain way.
-  な-Adjective + です: Indicates the adjective is a certain way.
-  い-Adjective + です: Adds politeness to い-Adjectives, common in spoken Japanese. Abbreviates or softens
-    the formal い-Adjective+くありません
+  Noun + です: Used to assert that something is a noun.
+  い-Adjective + です: Used to assert that something is an i-adjective (though often optional for i-adjectives
+    in predicate position).
 jlpt: N5
 details:
-  part-of-speech: auxiliary verb
+  part-of-speech: auxiliary adjective
   register: teineigo (polite)
-  grammatical-role: Auxiliary verb
-  temporal-flow: Used to assert or determine the state of something in the present or past (with conjugation),
-    not implying a flow or transition.
-  spatial-flow: Does not inherently imply spatial flow; it primarily concerns existence, identity, or
-    state of being at a particular location or in a particular context.
-etymology: The origin of 「です」, widely used as a polite auxiliary verb, is a subject of debate. The most
-  prominent theory suggests it evolved from 「であります」, which is a combination of the particle 「で」 and the
-  polite form of the verb 「ある」 (to be), which is 「あります」. It is thought that this 「であります」 was contracted
-  to become the modern 「です」.
-writeup: '「です」 serves as an auxiliary verb, indicating assertion or determination, essentially meaning
-  ''to be'' or ''it is''. It is the polite counterpart to 「だ」. While their functions are similar, 「です」
-  and 「だ」 are distinct grammatical structures. 「です」 connects to nouns and な-adjectives in the same manner
-  as 「だ」. However, it is also frequently attached to the end of い-adjectives. This usage with い-adjectives,
-  while common in everyday spoken Japanese and casual communication like texting, is sometimes considered
-  grammatically incorrect in formal written Japanese. Important Considerations: Although attaching 「です」
-  to い-adjectives is widely accepted in colloquial Japanese, it is advisable to avoid it in official documents
-  or highly rigid contexts. Nevertheless, in contemporary Japanese, this usage is gradually becoming more
-  standard.'
+  function: Polite assertion or identification; forms the predicate of a sentence.
+  nuance: Indicates politeness and respect toward the listener, making sentences suitable for general
+    conversation.
+etymology: The etymology of 「です」is complex and debated among linguists, but one prominent theory suggests
+  it evolved from the classical Japanese verb 「で候う」(de gozaru), which also carried a polite or humble
+  nuance. Over time, 「で候う」simplified phonetically and grammatically, eventually becoming 「です」. This evolution
+  reflects a linguistic trend towards regularization and simplification in Japanese, transforming a more
+  complex verbal phrase into a single, highly versatile copula for polite assertion.
+writeup: |-
+  「です」 is a fundamental component of polite Japanese, serving as a copula (linking verb) to assert facts, identify things, or describe states. It is crucial for constructing sentences in the polite style, known as teineigo. Unlike its casual counterpart 「だ」, 「です」 is used in most formal and general polite conversations, making it one of the first and most frequently encountered grammatical elements for learners.
+
+  While 「です」 directly follows nouns and some particles, its usage with adjectives has nuances. With い-adjectives, 「です」 often follows the adjective to add politeness (e.g., 「美味しいです」 - "It is delicious"), though it is not strictly necessary for grammatical correctness when the adjective is at the end of a sentence. However, with な-adjectives, 「です」 is essential for politeness and predicative use (e.g., 「綺麗です」 - "It is beautiful").
+
+  「です」 does not conjugate for tense itself in the same way as verbs or adjectives; instead, tense is indicated by other elements of the sentence or by replacing 「です」 with its past polite form, 「でした」. It primarily serves to convey the speaker's politeness and respect towards the listener, making interactions smoother and more appropriate in various social contexts.
 false_friends:
-  - term: じゃない (negation noun and na-adj)
-    meaning: Is not, Isn't
-    kind: antonym
-    nuance: 「じゃない」 is the casual negative form of 「です」 and 「だ」, whereas 「ではありません」 is the polite negative
-      form of 「です」.
-    grammar_point: じゃない (negation noun and na-adj)
   - term: だ (casual copula)
-    meaning: To be, Is
-    kind: synonym
-    nuance: 「です」 is the polite form of 「だ」. Use 「です」 when speaking to someone you aren't familiar with,
-      someone older than you, or someone in a position of authority.
+    meaning: to be (casual copula)
+    kind: antonym
+    nuance: 「だ」 is the casual equivalent of 「です」, used in informal settings among friends and family,
+      whereas 「です」 maintains politeness. Using 「だ」 when 「です」 is expected can sound abrupt or impolite.
+      We're looking for politeness here.
     grammar_point: だ (casual copula)
-  - term: でございます (polite copula)
-    meaning: To be, Polite copula
-    kind: synonym
-    nuance: 「でございます」 is a more formal and humble version of 「です」, often used in business settings.
+  - term: でございます (polite copula, formal)
+    meaning: to be (very polite copula)
+    kind: similar expression
+    nuance: 「でございます」 is a highly formal and humble version of 「です」, typically used in business, customer
+      service, or very respectful contexts, far more formal than the general politeness of 「です」. We're
+      looking for polite here, not humble.
     grammar_point: でございます (polite copula, formal)
-  - term: ある (to exist or have)
-    meaning: To be, There is
-    kind: often confused with
-    nuance: 「がある」 indicates existence, whereas 「です」 is used to identify something. 「がある」 is for inanimate
-      objects' existence, while 「です」 for identification or description.
-    grammar_point: ある (to exist, inanimate・to have)
-  - term: んです・のです (explanatory emphatic)
-    meaning: Explanatory, Emphasis, The fact is
-    kind: often confused with
-    nuance: 「んです」 adds explanatory or emphatic nuance, often providing a reason or context, while 「です」
-      simply states a fact.
-    grammar_point: 〜のだ・〜んだ (explanatory)
-  - term: である (formal copula)
-    meaning: Formal or literary だ, Authoritative, Copula
-    kind: synonym
-    nuance: 「である」 is a formal or literary equivalent of 「だ」, predominantly used in written contexts like
-      academic papers or official reports, rarely in conversation.
-    grammar_point: である (formal copula)
-  - term: い-Adjectives (negative form)
-    meaning: Is not new (plain form)
-    kind: similar expression
-    nuance: 「新しくない」 is the plain negative form of the い-adjective 「新しい」. It is grammatically complete
-      on its own in plain contexts, while 「ではないです」 explicitly adds politeness when combined with a noun
-      or な-adjective structure, or functions as a colloquial polite negative for い-adjectives.
-    grammar_point: い-Adjectives (negative form)
-  - term: い-Adjective + くありません (polite negative form)
-    meaning: Is not new (polite form)
-    kind: similar expression
-    nuance: 「新しくありません」 is the polite negative form of the い-adjective 「新しい」, used in formal situations.
-      While 「ではないです」 can also convey politeness for い-adjectives, 「新しくありません」 is generally more formal
-      and standard.
-    grammar_point: い-Adjective + くありません (polite negative form)
-post_false_friends_writeup: When using 「です」, it is always crucial to consider the listener and the context.
-  In casual conversation, one might use 「だ」 or even omit the copula entirely. In more polite situations,
-  「でございます」 may be more appropriate. Understanding these subtle differences will enable you to speak more
-  natural and suitable Japanese.
+post_false_friends_writeup: When choosing between 「です」, 「だ」, and 「でございます」, consider the social context
+  and your relationship with the listener. 「です」 is your standard polite form for general situations. 「だ」
+  is reserved for very casual conversations, and 「でございます」 is for situations requiring extreme formality
+  or humility. Mastering these distinctions is key to natural and appropriate Japanese communication.
 examples:
-  - english: This is a pen.
+  - english: I am a student.
     japanese:
-      - これ は ペン {です}。
-      - こちら は ペン {です}。
-      - それ は ペン {です}。
-      - これ ペン {です}。
-      - これ は ペン {です} よ。
-      - これ は ペン {です} ね。
-      - これ が ペン {です}。
-      - これ が ペン {です} か？
-      - これ は 私 の ペン {です}。
-    english_literally: This is a pen.
+      - 私 は 学生 {です}。
+      - わたくし は 学生 {です}。
+      - 私、学生 {です}。
+    english_literally: As for me, I student am.
     competing_grammar:
       - competing_japanese:
-          - これ は ペン {だ}。
-        english: This is a pen (casual).
-        hint: The scene involves a teacher addressing students, which generally requires polite language.
-          Consider the appropriate level of formality, which is polite.
-      - competing_japanese:
-          - これ は ペン {で ござい ます}。
-        english: This is a pen (more humble/formal).
-        hint: This form is used in very formal or humble contexts, like business or service interactions,
-          not typically in a classroom setting. We're looking for a standard polite form, not overly humble.
-      - competing_japanese:
-          - これ は ペン {な ん です}。
-        english: This is a pen (explanatory).
-        hint: This adds an explanatory nuance, as if providing a reason or background, which is not the
-          primary purpose of simply identifying an object here. We're looking for a simple statement of
-          fact, not an explanation.
-      - competing_japanese:
-          - これ は ペン {で ある}。
-        english: This is a pen (formal/literary).
-        hint: This form is highly formal and literary, unsuitable for casual or instructional spoken Japanese.
-          We're looking for a common polite form, not a literary one.
-      - competing_japanese:
-          - ここ に ペン が {ある}。
-        english: There is a pen here.
-        hint: 「ある」 indicates existence of inanimate objects, while 「です」 identifies what something is.
-          We're looking for a statement that identifies the object, not states its existence.
-      - competing_japanese:
-          - これ は ペン {じゃ ない}。
-        english: This is not a pen (casual).
-        hint: The statement is affirmative. We're looking for a positive statement of identification in
-          a polite register, not a negative one.
-    scene: A teacher is introducing classroom objects to young students.
+          - 私 は 学生 だ。
+        english: I am a student (casual).
+        hint: 「だ」 is the casual form of the copula. We're looking for a polite assertion here.
+    scene: Introducing yourself politely in a new classroom setting.
     register: teineigo (polite)
-    setting: instructional
-    conjugation: non-past polite (～ます)
-    speaker_age: older
-  - english: My name is John.
+    setting: informative
+  - english: This book is interesting.
     japanese:
-      - 私 の 名前 は ジョン {です}。
-      - ジョン {です}。
-      - 私 の 名前 は ジョン {です} よ。
-      - ジョン {です} が。
-      - 私 は ジョン {です}。
-      - 私 は ジョン {です} と 申し ます。
-      - 私 は ジョン {です} よ。
-      - 私、ジョン {です}。
-    english_literally: My name is John.
+      - この 本 は 面白い {です}。
+      - この 本 面白い {です}。
+    english_literally: This book, as for it, interesting is.
     competing_grammar:
       - competing_japanese:
-          - 私 の 名前 は ジョン {だ}。
-        english: My name is John (casual).
-        hint: In a professional setting, especially when introducing oneself to a new colleague, a polite
-          form is standard. Consider the appropriate level of formality, which is polite.
-      - competing_japanese:
-          - ジョン と {申し ます}。
-        english: My name is John (humble).
-        hint: When introducing yourself in a highly formal or humble context, a different verb is used
-          instead of the general polite copula. Consider an expression that specifically conveys humility,
-          not just politeness.
-      - competing_japanese:
-          - ジョン と {言い ます}。
-        english: My name is John (literally, 'I say John').
-        hint: This phrase is also polite and commonly used for introductions, emphasizing the act of being
-          called something. However, for a simple statement of identity, the copula is often more direct.
-          Consider which expression states your identity simply, without extra nuance.
-      - competing_japanese:
-          - ジョン {で ござい ます}。
-        english: My name is John (very formal/humble).
-        hint: While correct, 「でございます」 is extremely formal and usually reserved for specific business or
-          service contexts. Consider a standard polite introduction, not an overly humble one.
-      - competing_japanese:
-          - ジョン {な ん です}。
-        english: My name is John (explanatory).
-        hint: This form adds an explanatory nuance, as if clarifying your name, which might be too indirect
-          for a direct introduction. We're looking for a simple, polite statement, not an explanation.
-    scene: John introduces himself formally to a new colleague in a business setting.
+          - この 本 は 面白い。
+        english: This book is interesting (casual).
+        hint: 「面白い」 alone is grammatically complete for i-adjectives in casual speech. We're looking for
+          the polite form here.
+    scene: Recommending a book to a new acquaintance.
     register: teineigo (polite)
-    setting: professional
-    conjugation: non-past polite (～ます)
+    setting: friendly
+  - english: My mother is a doctor.
+    japanese:
+      - 私 の 母 は 医者 {です}。
+      - 私 の 母、医者 {です}。
+    english_literally: My mother, as for her, doctor is.
+    competing_grammar:
+      - competing_japanese:
+          - 私 の 母 は 医者 だ。
+        english: My mother is a doctor (casual).
+        hint: Using 「だ」 would make the sentence sound casual. We're aiming for politeness.
+    scene: Describing a family member's profession to a colleague.
+    register: teineigo (polite)
+    setting: informative
+    speaker_gender: female
+    nuance: The use of 「です」 makes this statement polite and appropriate for formal or semi-formal conversations,
+      showing respect for the listener and the topic. There is no gender-specific Japanese used here.
+  - english: That restaurant is very famous.
+    japanese:
+      - あの レストラン は とても 有名 {です}。
+      - あの レストラン とても 有名 {です}。
+    english_literally: That restaurant, as for it, very famous is.
+    competing_grammar:
+      - competing_japanese:
+          - あの レストラン は とても 有名 だ。
+        english: That restaurant is very famous (casual).
+        hint: 「有名だ」 is the casual form. We need the polite copula for this context.
+    scene: Giving a recommendation to a tourist.
+    register: teineigo (polite)
+    setting: informative
+  - english: My hobby is reading.
+    japanese:
+      - 私 の 趣味 は 読書 {です}。
+      - 私 の 趣味、読書 {です}。
+    english_literally: My hobby, as for it, reading is.
+    competing_grammar:
+      - competing_japanese:
+          - 私 の 趣味 は 読書 だ。
+        english: My hobby is reading (casual).
+        hint: 「だ」 is the plain form. We need the polite copula for this sentence.
+    scene: Sharing personal information with a new classmate.
+    register: teineigo (polite)
+    setting: friendly
     speaker_gender: male
-    listener_gender: group
-  - english: This is big.
+    nuance: This is a polite self-introduction. While 「です」 itself isn't gender-specific, a male speaker
+      using it in this context sounds standard and polite. There is no specific Japanese here that indicates
+      the speaker's gender.
+  - english: Tomorrow is a holiday.
     japanese:
-      - これ は 大きい {です}。
-      - これ は とても 大きい {です}。
-      - 大きい {です} ね。
-      - 大きい {です} よ。
-      - これ、大きい {です}。
-      - すごく 大きい {です}。
-      - うわ、大きい {です}！
-      - これ、かなり 大きい {です}。
-      - 本当 に 大きい {です} ね。
-      - ずいぶん 大きい {です} ね。
-    english_literally: This is big.
+      - 明日 は 祝日 {です}。
+      - 明日 祝日 {です}。
+    english_literally: Tomorrow, as for it, holiday is.
     competing_grammar:
       - competing_japanese:
-          - これ は {大きい}。
-        english: This is big (plain).
-        hint: The scene describes a child showing something to a friend. Even children often use polite
-          forms in such interactions to show a certain level of respect or excitement. Consider what makes
-          the statement more polite, such as adding です at the end of the sentence for an i-adjective.
-      - competing_japanese:
-          - これ は {大きい だ}。
-        english: This is big (incorrect plain).
-        hint: The plain form of an い-adjective like 「大きい」 does not use 「だ」. Consider how い-adjectives
-          directly conclude a plain sentence, which is by themselves.
-      - competing_japanese:
-          - これ は {大きい ん です}。
-        english: This is big (explanatory).
-        hint: This adds an explanatory nuance, as if providing a reason, which is not the primary intent
-          here. We're looking for a simple, polite statement, not an explanation.
-    scene: A child proudly showing a large toy to their friend.
+          - 明日 は 祝日 だ。
+        english: Tomorrow is a holiday (casual).
+        hint: To make the statement polite, you need to use 「です」, not 「だ」.
+    scene: Informing your coworker about tomorrow's schedule.
     register: teineigo (polite)
-    setting: friendly
-    conjugation: non-past polite (～ます)
-  - english: Today is very hot.
+    setting: informative
+  - english: The weather today is nice.
     japanese:
-      - 今日 は とても 暑い {です}。
-      - 本日 は とても 暑い {です}。
-      - 今日 は とても 暑い {です} ね。
-      - 今日 は すごく 暑い {です}。
-      - 今日 は 暑い {です} ね。
-      - 今日、すごく 暑い {です} ね。
-      - 暑い {です} ね、今日 は。
-      - 今日 は 本当 に 暑い {です}。
-      - うわあ、今日 も 暑い {です} ね。
-      - 今日 は また 暑い {です} ね。
-      - 本当 に 暑い {です} ね。
-    english_literally: Today is very hot.
+      - 今日 の 天気 は いい {です}。
+      - 今日 の 天気 いい {です}。
+    english_literally: Today's weather, as for it, good is.
     competing_grammar:
       - competing_japanese:
-          - 今日 は とても {暑い}。
-        english: Today is very hot (plain).
-        hint: When casually discussing the weather with a neighbor, using polite language helps maintain
-          a comfortable social distance. Consider adding politeness to the statement, such as adding です
-          to an i-adjective.
-    scene: Two neighbors casually discussing the weather over their fence.
+          - 今日 の 天気 は いい。
+        english: Today's weather is good (casual).
+        hint: For i-adjectives, 「です」 is often added for politeness, but the base form is grammatically
+          correct casually. We're looking for the polite version.
+    scene: Making small talk with a neighbor.
     register: teineigo (polite)
     setting: friendly
-    conjugation: non-past polite (～ます)
+  - english: My younger sister is a high school student.
+    japanese:
+      - 私 の 妹 は 高校 生 {です}。
+      - 私 の 妹、高校 生 {です}。
+    english_literally: My younger sister, as for her, high school student is.
+    competing_grammar:
+      - competing_japanese:
+          - 私 の 妹 は 高校 生 だ。
+        english: My younger sister is a high school student (casual).
+        hint: This is a casual statement. We need the polite form here.
+    scene: Describing a family member to a new friend.
+    register: teineigo (polite)
+    setting: informative
     speaker_gender: female
     listener_gender: female
-  - english: Yesterday was rainy.
+    nuance: A female speaker using 「です」 to describe her younger sister in a friendly setting maintains
+      politeness. While some women might use more feminine particles, 「です」 is universally polite. There
+      is no specific Japanese here that indicates the speaker's gender.
+  - english: The problem is simple.
     japanese:
-      - 昨日 は 雨 {でし た}。
-      - 昨日 は 雨 {でし た} ね。
-      - 昨日 は 雨 {でし た} よ。
-      - はい、昨日 は 雨 {でし た}。
-      - 雨 {でし た} ね。
-      - ええ、昨日 は 雨 {でし た}。
-      - 昨日 は、雨 {でし た} よ。
-      - 昨夜 も 雨 {でし た}。
-      - 昨日 は ずっと 雨 {でし た}。
-      - 夕べ も 雨 {でし た}。
-      - 一 日 中 雨 {でし た} よ。
-    english_literally: Yesterday was rain was.
+      - 問題 は 簡単 {です}。
+      - 問題 簡単 {です}。
+    english_literally: The problem, as for it, simple is.
     competing_grammar:
       - competing_japanese:
-          - 昨日 は 雨 {だっ た}。
-        english: Yesterday was rainy (casual).
-        hint: When speaking to a senior, it is important to use polite language to show respect. Consider
-          the appropriate past polite form, which is でした.
-    scene: Recalling past weather conditions in a conversation with a senior.
+          - 問題 は 簡単 だ。
+        english: The problem is simple (casual).
+        hint: 「簡単だ」 is the casual form. We require the polite copula for this context.
+    scene: Answering a question from a junior colleague.
     register: teineigo (polite)
     setting: informative
-    conjugation: past polite (～ました)
-    speaker_age: younger
-    nuance: When a younger speaker addresses a senior with 「でした」, it conveys politeness and respect. This
-      polite past form, as seen in 「雨でした」, is suitable for giving information to someone in a higher social
-      position.
-    etymology: The kanji 昨日 (きのう) literally combines 'yesterday' (昨) and 'day' (日), directly indicating
-      the previous day.
-  - english: This person is always energetic.
+  - english: This is my cat.
     japanese:
-      - この 人 は いつ も 元気 {です}。
-      - 彼 は いつ も 元気 {です}。
-      - 彼女 は いつ も 元気 {です}。
-      - あの 人 は いつ も 元気 {です}。
-      - いつ も 元気 {です} ね、あの 人。
-      - あの 人 は いつ も 元気 {です} よ。
-      - ほんと、元気 {です} よ ね、あの 人。
-      - うち の 部長 は いつ も 元気 {です}。
-      - 部 長 は いつ も 元気 {です}。
-      - あの 方 は いつ も 元気 {です} ね。
-      - 彼、いつ も 元気 {です} よ ね。
-    english_literally: This person is always energetic.
+      - これ は 私 の 猫 {です}。
+      - これ、私 の 猫 {です}。
+    english_literally: This, as for it, my cat is.
     competing_grammar:
       - competing_japanese:
-          - この 人 は いつ も {元気 だ}。
-        english: This person is always energetic (casual).
-        hint: Even when making casual observations about a colleague, maintaining a polite tone is generally
-          expected in a professional or semi-professional environment. Consider the level of formality,
-          which is polite.
-    scene: Observing a cheerful colleague at work.
+          - これ は 私 の 猫 だ。
+        english: This is my cat (casual).
+        hint: For a casual introduction, 「だ」 would be used. We're looking for polite introduction.
+    scene: Introducing your pet to a guest at your home.
     register: teineigo (polite)
     setting: friendly
-    conjugation: non-past polite (～ます)
+  - english: Next week's meeting is on Tuesday.
+    japanese:
+      - 来週 の 会議 は 火曜 日 {です}。
+      - 来週 の 会議 火曜 日 {です}。
+    english_literally: Next week's meeting, as for it, Tuesday is.
+    competing_grammar:
+      - competing_japanese:
+          - 来週 の 会議 は 火曜 日 だ。
+        english: Next week's meeting is on Tuesday (casual).
+        hint: To state this politely in Japanese, you must use 「です」.
+    scene: Confirming the schedule with a client.
+    register: teineigo (polite)
+    setting: professional
+  - english: The answer is correct.
+    japanese:
+      - 答え は 正しい {です}。
+      - 答え 正しい {です}。
+    english_literally: The answer, as for it, correct is.
+    competing_grammar:
+      - competing_japanese:
+          - 答え は 正しい。
+        english: The answer is correct (casual).
+        hint: While 「正しい」 itself is an i-adjective and can end a casual sentence, adding 「です」 makes it
+          polite. We need the polite form.
+    scene: A teacher confirming a student's answer in class.
+    register: teineigo (polite)
+    setting: academic
+    speaker_gender: male
     speaker_age: older
-    nuance: An older speaker using 「です」 to describe a colleague, such as 「元気です」, suggests a respectful
-      and professional distance, even in a friendly observation. This polite ending avoids sounding too
-      casual or familiar.
-    etymology: The word 元気 (げんき) literally means 'origin' (元) and 'spirit/energy' (気), reflecting its
-      meaning of being full of energy or healthy.
-  - english: This is not my book.
-    japanese:
-      - これ は 私 の 本 {で は あり ませ ん}。
-      - それ は 私 の 本 {で は あり ませ ん}。
-      - こちら は 私 の 本 {で は あり ませ ん}。
-      - 私 の 本 {で は あり ませ ん}。
-      - これ は 私 の 本 {で は ござい ませ ん}。
-      - 私 の 本 で は ない {です}。
-      - 私 の 本 {で は あり ませ ん} よ。
-      - これ は 私 の 本 で は ない {です}。
-      - 残念 ながら、私 の 本 {で は あり ませ ん}。
-    english_literally: This is my book is not.
-    competing_grammar:
-      - competing_japanese:
-          - これ は 私 の 本 {じゃ ない}。
-        english: This is not my book (casual).
-        hint: When addressing a stranger, using polite language is crucial for clarity and maintaining
-          decorum. Consider the appropriate polite negative form, which is ではありません.
-    scene: A man clarifying ownership of a book to a stranger who mistakenly picked it up.
-    register: teineigo (polite)
-    setting: informative
-    conjugation: negative non-past polite (～ません)
-    speaker_gender: male
-    listener_gender: male
-  - english: My phone isn't new.
-    japanese:
-      - 私 の 電話 は 新しい で は ない {です}。
-      - この 電話 は 新しい で は ない {です}。
-      - 私 の 電話 は 新しく ない {です}。
-      - 私 の 電話 は 新しく ない ん {です}。
-      - この 電話 は 新しく ない {です} よ。
-      - 私 の スマホ は 新しく ない {です}。
-      - 全然 新しく ない {です}。
-      - もう 古く て、新しく ない {です}。
-      - 全然 新しく ない ん {です} よ。
-    english_literally: My cell phone is new is not.
-    competing_grammar:
-      - competing_japanese:
-          - 私 の 電話 は {新しく ない}。
-        english: My phone isn't new (plain).
-        hint: While grammatically correct, this sounds too casual for a conversation that might involve
-          persuasion or explanation to a parent. Consider a polite alternative that still feels natural,
-          such as ではないです or くないです.
-    scene: A teenager explaining why they need a new phone to their parent.
-    register: teineigo (polite)
-    setting: persuasive
-    conjugation: non-past polite (～ます)
-    speaker_age: younger
-    nuance: A younger speaker, like a teenager, using 「新しいではないです」 or 「新しくないです」 towards a parent, particularly
-      a female parent, is a colloquial polite negative form often used to provide a softer, slightly more
-      emphatic justification. It's less formal than 「新しくありません」 but more polite than 「新しくない」, fitting for
-      a persuasive context within a family.
-    etymology: The word 新しい (あたらしい) means 'new'. The construction of attaching 「ではないです」 to an い-adjective
-      like this, while common in casual speech, is an interesting example of grammatical evolution where
-      the polite copula is applied after a noun or な-adjective negative form is implicitly formed, then
-      combined with the い-adjective stem.
-  - english: That book wasn't interesting.
-    japanese:
-      - あの 本 は 面白く なかっ た {です}。
-      - その 本 は 面白く なかっ た {です}。
-      - あの 本 は 面白く なかっ た {です} よ。
-      - あの 本 は 全然 面白く なかっ た {です}。
-      - 面白く なかっ た {です} ね。
-      - 全然 面白く なかっ た {です} よ。
-      - その 本、面白く なかっ た {です}。
-      - あの 漫画 は 面白く なかっ た {です}。
-      - 正直、面白く なかっ た {です}。
-      - 期待 外れ {でし た}、面白く なかっ た {です}。
-      - 残念 ながら、面白く なかっ た {です}。
-    english_literally: That book is interesting was not.
-    competing_grammar:
-      - competing_japanese:
-          - あの 本 は {面白く なかっ た}。
-        english: That book wasn't interesting (plain).
-        hint: Adding 「です」 to the past negative of an い-adjective makes the statement more polite and suitable
-          for general conversation, even if the plain form is grammatically complete. Consider how to
-          add politeness, which is by adding です.
-    scene: Discussing a book with a friend, maintaining a polite but conversational tone.
-    register: teineigo (polite)
-    setting: friendly
-    conjugation: non-past polite (～ます)
-    speaker_gender: male
-    listener_gender: female
-    nuance: In a friendly setting, a male speaker using 「面白くなかったです」 to a female listener adds a layer
-      of politeness to the conversation, softening the negative statement. The 「です」 here, even after the
-      past negative of an い-adjective, maintains a respectful and conversational tone.
-    etymology: 面白い (おもしろい) refers to something interesting or amusing. Its etymology is sometimes linked
-      to 'omote' (surface) and 'shiroi' (white), suggesting something 'white on the surface' or 'bright
-      and cheerful'.
-  - english: That wasn't true.
-    japanese:
-      - それ は 本当 {で は あり ませ ん でし た}。
-      - その 話 は 本当 {で は あり ませ ん でし た}。
-      - 本当 {で は あり ませ ん でし た}。
-      - 全く 本当 {で は あり ませ ん でし た}。
-      - その 情報 は 本当 {で は あり ませ ん でし た}。
-      - その 事実 は 本当 {で は あり ませ ん でし た}。
-      - 一切 本当 {で は あり ませ ん でし た}。
-      - 信じ られ ませ ん が、本当 {で は あり ませ ん でし た}。
-    english_literally: That is true was not.
-    competing_grammar:
-      - competing_japanese:
-          - それ は 本当 {で は なかっ た}。
-        english: That wasn't true (casual).
-        hint: In a formal and serious context like an investigation, the fully polite past negative form
-          is necessary to convey professionalism. Consider the most formal negative past expression, which
-          is ではありませんでした.
-    scene: A detective confirming false information during an investigation.
-    register: formal
-    setting: serious
-    conjugation: negative past polite (～ませんでした)
-    speaker_gender: male
-    listener_gender: group
-    nuance: A male speaker, acting as a detective, using the formal 「ではありませんでした」 to a group during an
-      investigation conveys a serious and authoritative tone. This highly polite and formal past negative
-      emphasizes the definitive nature of the statement, fitting the gravity of the situation.
-    etymology: 本当 (ほんとう) means 'truth' or 'reality', combining 本 (hon), meaning 'origin' or 'true', and
-      当 (tou), meaning 'to hit' or 'to be correct'.
-  - english: This is your new book.
-    japanese:
-      - これ が あなた の 新しい 本 {です} よ。
-      - こちら が あなた の 新しい 本 {です} よ。
-      - これ が あなた の 新しい 本 {です} ね。
-      - これ が 新しい 本 {です} よ。
-      - 新しい 本 {です} よ、これ が。
-      - あなた の 新しい 本 {です} よ、これ が。
-      - はい、どうぞ、あなた の 新しい 本 {です} よ。
-      - それ が あなた の 新しい 本 {です} よ。
-      - はい、どうぞ、あなた の 新しい 本 {です} よ。
-      - こちら が ご 新しい 本 {です} よ。
-      - これ が 先生 が おっしゃっ て い た 新しい 本 {です} よ。
-    english_literally: This is your new book, you know.
-    competing_grammar:
-      - competing_japanese:
-          - これ が あなた の 新しい 本 {だ よ}。
-        english: This is your new book, you know (casual with emphasis).
-        hint: While 「だ よ」 can add emphasis, for a teacher-student relationship, using the polite copula
-          maintains appropriate respect. Consider a more formal way to convey emphasis, such as using
-          ですよ.
-    scene: A teacher giving a book to a student.
-    register: teineigo (polite)
-    setting: instructional
-    conjugation: non-past polite (～ます)
-    speaker_age: older
-    nuance: An older speaker, specifically a female teacher, using 「です よ」 when addressing a male student,
-      as in 「本 です よ」, indicates that she is providing new information or confirmation with a gentle assurance.
-      The combination of 「です」 for politeness and 「よ」 for emphasis or assertion is common in such teaching
-      contexts.
-    etymology: 新しい (あたらしい) means 'new'. The particle よ is an emphatic sentence-ending particle that indicates
-      the speaker is informing the listener of something new or asserting something.
-post_example_writeup: Remember that while it's increasingly common to attach 「です」 to い形容詞 in casual speech,
-  it's still considered less formal and should be used with care in professional contexts.
-sources:
-  bunpro: https://bunpro.jp/grammar_points/です
+    nuance: An older male teacher using 「です」 when speaking to students is common and maintains a professional
+      yet approachable tone. While some might use plainer forms depending on the student's age or relationship,
+      「です」 is generally appropriate in an academic setting. There is no specific Japanese here that indicates
+      the speaker's gender or age.

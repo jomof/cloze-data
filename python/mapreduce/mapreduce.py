@@ -210,7 +210,8 @@ class MapReduce:
 
                                     self.result['files-written'] = self.result.get('files-written', 0) + 1
                             else:
-                                raise ValueError("TODO support writing to different output directory")
+                                if self.output_dir:
+                                    raise ValueError("TODO support writing to different output directory")
                         result_item = processed
                     else:
                         result_item = original_obj

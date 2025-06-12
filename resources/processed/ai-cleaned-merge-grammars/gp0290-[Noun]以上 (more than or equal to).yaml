@@ -1,374 +1,260 @@
 grammar_point: '[Noun]以上 (more than or equal to)'
 learn_before:
-  - くらい (approximate quantity or degree)
+  - Number+も (emphatic quantity)
   - より (comparative)
 learn_after:
-  - 〜までだ (just・merely)
-  - からには (since; obligation)
-  - ずにはすまない (cannot avoid)
-  - て当然だ (natural・obvious)
-  - にとどまらず (not limited to)
-  - に至っては (when it comes to a surprising extreme)
-  - ばこそ (precisely because)
-  - 以上に (more than expected)
+  - 〜以下 (less than or equal to・the following)
+  - 未満 (strictly less than)
 id: gp0290
-meaning: More than or equal to; That's all; Since/Now that (a condition is met or a situation has reached
-  a certain point)
+meaning: more than or above
 pronunciation:
   katakana: イジョウ
   romaji: ijō
 formation:
-  '[Amount] + 以上': Indicates a minimum quantity or value, including the stated amount.
-  これ + 以上: Indicates 'more than this' or 'beyond this point'.
-  '[Statement/List] + 以上です/以上になります': Indicates the conclusion of a statement, list, or presentation.
-  '[Verb た-form] + 以上 (は)': Indicates that once a certain action has occurred, a specific outcome or obligation
-    follows.
-  '[Noun/な-Adjective (stem)] である + 以上 (は)': Indicates that given a certain state or fact, a specific outcome
-    or obligation follows.
-  '[い-Adjective] + 以上 (は)': Indicates that given a certain quality, a specific outcome or obligation follows.
-jlpt: N4
+  '[Noun] + 以上': Indicates a quantity or degree equal to or greater than the specified noun/number.
+jlpt: N3
 details:
   part-of-speech: phrase
-  register: teineigo (polite)
-  usage-context: general
-etymology: The term 「以上」 (ijō) is formed from the kanji 以 (i), meaning 'by means of' or 'from,' and 上
-  (jō), meaning 'above' or 'on.' Historically, this combination first signified 'by means of above,' leading
-  to its core meaning of indicating a quantity or level that meets or surpasses a specified value. Its
-  use to conclude a statement, as in 'that's all,' logically extends from this by implying 'everything
-  listed above is complete.' Furthermore, the meaning of 'since' or 'now that' (as in, a logical consequence
-  following a condition) evolved from the core idea of 'from this point upward/onward.' Once a certain
-  point or condition has been established ('above' a threshold), the subsequent action or state is seen
-  as a natural or inevitable progression from that established baseline.
+  register: semi-formal
+  function: indicating minimum quantity or higher degree
+  nuance: It suggests meeting or exceeding a baseline. Can imply sufficiency or excess depending on context.
+  grammatical-role: adverbial phrase modifier
+etymology: The kanji 以 (i) means "by means of, because, taking as", and 上 (jō) means "above, up, top".
+  Combined, 以上 literally means "taking as above/up", signifying "from this point upwards" or "this and
+  beyond". This explains its use for "more than or equal to" a certain point or quantity, as well as "beyond"
+  a certain expectation or standard.
 writeup: |-
-  「以上」 (ijō) is a fundamental and versatile Japanese expression used in three primary ways:
+  以上 (ijō) is a versatile expression in Japanese, primarily used to indicate a quantity or degree that is "more than or equal to" a specified amount or level. It establishes a lower bound or a threshold that is met or surpassed. While its most straightforward application is with numbers and concrete quantities, it can also extend to abstract concepts, signifying a state or quality that is "beyond" a certain point or expectation.
 
-  1. **"More than or equal to" / "At least"**: When 「以上」 is attached to a quantity, value, or number, it establishes a **minimum threshold**, crucially including the specified amount itself. For example, 「100人以上」 (hyakunin ijō) means "100 people or more." This usage literally conveys "by means of being above or at this level." It can be translated as "more than," "over," "greater than," or "exceeding," always with the understanding that the specified value is included.
+  When used with numerical figures or specific quantities, 以上 indicates that the actual amount includes the stated number and any amount greater than it. For instance, 「100円{以上}」 (hyaku en ijō) means "100 yen or more." This is a crucial distinction for precision in numerical contexts.
 
-  2. **"That's all" / "The end" / "Nothing more"**: In this context, 「以上」 serves as a concluding statement, indicating that a list, explanation, or request is complete. It frequently appears as 「以上です」 (ijō desu) or 「以上になります」 (ijō ni narimasu). This usage means "the above (list of things mentioned) is all." While stating "the end" might sound abrupt or demanding in English, it is a perfectly natural, polite, and common way to conclude a list, a report, or an order in Japanese business settings, presentations, and transactional situations.
+  Beyond simple quantities, 以上 can also be attached to nouns to express that something is "beyond" a certain state, level, or expectation. For example, 「プロ{以上}の腕前」 (puro ijō no udemae) would describe a skill level "beyond that of a professional," implying an exceptional ability. This usage shifts from strict quantity to a qualitative assessment, suggesting a higher degree or superior characteristic.
 
-  3. **"Since ~ / Now that ~" (as a reason or logical consequence)**: When used with a verb in the past tense (た-form), a noun/な-adjective stem followed by 「である」, or an い-adjective, 「以上」 indicates that a situation or action has reached a certain point, and therefore a logical consequence, decision, or obligation necessarily follows. It carries a strong sense of inevitability or commitment once a condition is met. For example, 「約束した以上は守るべきだ」 (Yakusoku shita ijō wa, mamoru beki da) means "Since you made a promise, you should keep it." This emphasizes that the act of promising creates a binding obligation. This nuance highlights a transition point where a new set of responsibilities or consequences comes into play, implying that there is no turning back from the established premise.
+  It is important to differentiate this 以上 from another usage that indicates "now that" or "since" a certain condition is met, which creates a logical consequence. That particular usage, [Clause]以上(は), functions differently and implies obligation or certainty based on a premise. The [Noun]以上 discussed here specifically refers to quantitative or qualitative "more than or equal to" or "above and beyond" scenarios.
 false_friends:
-  - term: 以下
-    meaning: Less than (or equal to)
+  - term: 〜以下 (ika)
+    meaning: less than or equal to
     kind: antonym
-    nuance: Unlike 「以上」, 「以下」 indicates a maximum value or limit, meaning 'less than or equal to' a certain
-      quantity.
+    nuance: This is the direct opposite of 以上, indicating a quantity or degree that is "equal to or less
+      than" a specified amount. While 以上 sets a minimum, 以下 sets a maximum.
     grammar_point: 〜以下 (less than or equal to・the following)
-  - term: より
-    meaning: More than, Less than
+  - term: 〜超 (chō) or 〜を超える (o koeru)
+    meaning: exceeding, over
     kind: similar expression
-    nuance: While both indicate comparison, 「より」 strictly means 'more than' or 'less than', explicitly
-      *excluding* the stated number. For example, 「100人より」 means 'more than 100 people' (101 or more),
-      whereas 「100人以上」 means '100人 or more' (including 100). Thus, 「より」 creates an exclusive boundary,
-      unlike the inclusive nature of 「以上」.
-    grammar_point: より (comparative)
-  - term: 以上に
-    meaning: More than, No less than, Even more
+    nuance: 〜超 (or 〜を超える) strictly means "exceeding" the specified amount, excluding the stated number
+      itself. For example, 「100円超」 means "over 100 yen" (e.g., 101 yen, but not 100 yen). In contrast,
+      以上 *includes* the specified number.
+    grammar_point: <suggest>:〜超える (to exceed)
+  - term: 〜未満 (miman)
+    meaning: less than, below
     kind: similar expression
-    nuance: 「以上に」 is used to emphasize that something is significantly more than expected, has surpassed
-      a certain level, or is of a higher degree. It carries a nuance of surprise or a comparative increase,
-      whereas 「以上」 simply denotes a minimum quantity or value.
-    grammar_point: 以上に (more than expected)
-  - term: からある
-    meaning: As much as, As many as, At least
-    kind: similar expression
-    nuance: 「からある」 emphasizes a large quantity or size, often implying that the amount is surprisingly
-      significant. It tends to be used when describing something impressive or unexpectedly large, while
-      「以上」 is a more neutral and objective indicator of a minimum quantity without necessarily conveying
-      surprise.
-    grammar_point: からある (at least as much as)
-  - term: からには
-    meaning: Since, now that, given that; implies a sense of obligation or determination.
-    kind: similar expression
-    nuance: Both 「以上」 and 「からには」 convey a sense of obligation or logical consequence once a condition
-      is met. However, 「からには」 tends to emphasize the speaker's resolve or determination *given* the situation,
-      often with a stronger emotional tone. 「以上」, while also indicating inevitability, feels slightly
-      more objective and less about personal resolve, implying that the consequence *naturally* follows
-      from the established fact.
-    grammar_point: からには (since; obligation)
-post_false_friends_writeup: To avoid confusion, remember that 「以上」 (ijō) consistently includes the stated
-  number, establishing it as a minimum threshold. In contrast, expressions using 「より」 (yori) for comparison
-  strictly exclude the specified value, indicating 'more than' or 'less than' without including the boundary.
-  Additionally, 「以上に」 (ijō ni) is used to express an an unexpected or significant increase or a comparative
-  degree, while 「からある」 (kara aru) highlights surprisingly large quantities. For the 'since' meaning, 「以上」
-  often highlights the natural consequence or logical step following a pre-established condition, whereas
-  「からには」 often conveys a strong personal determination or resolve based on that condition. Understanding
-  these nuances will help you choose the appropriate expression for precision.
+    nuance: 〜未満 indicates "less than" the specified amount, strictly excluding the stated number. This
+      is similar to 以下 but *does not* include the stated number. For example, 「100円未満」 means "less than
+      100 yen" (e.g., 99 yen, but not 100 yen).
+    grammar_point: 未満 (strictly less than)
+  - term: '[Clause]以上(は) (ijō wa)'
+    meaning: now that; since
+    kind: often confused with
+    nuance: This 以上 functions as a conjunction, indicating a logical consequence or obligation based on
+      a premise. For example, 「やると以上は、最後までやるべきだ」(Yaru to ijō wa, saigo made yaru beki da - "Now that you're
+      going to do it, you should do it to the end."). It shares the same kanji but has a completely different
+      grammatical function and meaning from the quantitative/degree 以上.
+    grammar_point: '[Clause]以上(は)・上は (since・now that)'
+post_false_friends_writeup: It's common to confuse 以上 with expressions like 超える or 未満 because they all
+  deal with numerical thresholds. The key distinction lies in whether the stated number itself is included
+  in the range. 以上 (and its counterpart 以下) *includes* the specified number, while 超える (or 超) and 未満 *exclude*
+  it. Furthermore, be careful not to mix up the quantitative 以上 with the entirely different grammatical
+  pattern [Clause]以上(は), which indicates "now that" or "since." Always consider the context to determine
+  which meaning of 以上 is intended.
 examples:
-  - english: This box contains at least five apples.
+  - english: Please prepare more than or equal to 5 copies.
     japanese:
-      - この 箱 に は リンゴ が ５ つ {以上} 入っ て い ます。
-      - この 箱 リンゴ ５ つ {以上} 入っ てる。
-      - この 箱 に は リンゴ が ５ つ {以上} 入っ て おり ます。
-      - この 箱 に リンゴ ５ つ {以上} ある。
-    english_literally: This box, as for apples, five or more, entered.
+      - ５ 部 {以上} 用意 し て ください。
+      - ５ 部 {以上} 用意 し て くれ。
+      - ５ 部 {以上} 必要 です。
+    english_literally: Please prepare 5 copies or more.
     competing_grammar:
       - competing_japanese:
-          - この 箱 に は リンゴ が {５ つ 入っ て い ます}。
-        english: This box contains five apples.
-        hint: 「5つ入っています」 would imply exactly five apples. We're looking for a minimum count, including
-          the specified number itself. This example does not express a minimum threshold, which is the
-          function of 以上.
-      - competing_japanese:
-          - この 箱 に は リンゴ が {５ つ より 多く 入っ て い ます}。
-        english: This box contains more than five apples.
-        hint: 「5つより多く入っています」 means strictly more than five, excluding five. We're looking for a count
-          that includes five as the minimum, which 以上 expresses.
-    scene: Someone is checking the contents of a box of fruit.
-    register: casual
-    setting: informative
-  - english: That job requires at least three years of experience.
-    japanese:
-      - その 仕事 に は ３ 年 {以上} の 経験 が 必要 だ。
-      - その お 仕事 に は ３ 年 {以上} の 経験 が 必要 です。
-      - 当該 業務 に は ３ 年 {以上} の 実務 経験 が 求め られ ます。
-      - その 仕事 だ と ３ 年 {以上} 経験 が いる ね。
-    english_literally: That job, as for experience, three years or more, is necessary.
-    competing_grammar:
-      - competing_japanese:
-          - その 仕事 に は {３ 年間 の 経験} が 必要 だ。
-        english: That job requires three years of experience.
-        hint: 「3年間の経験」 means exactly three years of experience. We're looking for a minimum experience
-          requirement, including the specified duration itself, which 以上 conveys.
-      - competing_japanese:
-          - その 仕事 に は {３ 年 を 超える 経験} が 必要 だ。
-        english: That job requires experience exceeding three years.
-        hint: 「3年を超える経験」 implies strictly more than three years. We're looking for a requirement that
-          includes the stated minimum, as expressed by 以上.
-    scene: A hiring manager is reviewing job requirements for a new position.
-    register: formal
-    setting: informative
-  - english: She studies for at least two hours every day.
-    japanese:
-      - 彼女 は 毎日 ２ 時間 {以上} 勉強 し て いる。
-      - 彼女 毎日 ２ 時間 {以上} 勉強 し てる。
-      - 彼女 は 毎日 ２ 時間 {以上} も 勉強 し て いる。
-      - 彼女 は 毎日 ２ 時間 {以上} 勉強 し て い ます。
-    english_literally: She, every day, two hours or more, is studying.
-    competing_grammar:
-      - competing_japanese:
-          - 彼女 は 毎日 {２ 時間 勉強 し て いる}。
-        english: She studies for two hours every day.
-        hint: 「2時間勉強している」 implies exactly two hours. We're looking for a statement that means 'at least'
-          two hours, including the specified duration itself, which 以上 clearly states.
-      - competing_japanese:
-          - 彼女 は 毎日 {２ 時間 より 多く 勉強 し て いる}。
-        english: She studies for more than two hours every day.
-        hint: 「2時間より多く勉強している」 implies strictly more than two hours. We're looking for an expression that
-          includes the two-hour mark, as conveyed by 以上.
-    scene: A student is describing their study habits to a friend.
-    register: casual
-    setting: informative
-  - english: That mountain is at least 3000 meters above sea level.
-    japanese:
-      - その 山 は 標高 3000 メートル {以上} だ。
-      - その 山 は 標高 3000 メートル {以上} です。
-      - その 山 は 標高 3000 メートル {以上} で ござい ます。
-      - その 山 は 3000 メートル {以上} の 標高 が ある。
-    english_literally: That mountain, as for elevation, 3000 meters or more, is.
-    competing_grammar:
-      - competing_japanese:
-          - その 山 は 標高 {3000 メートル ある}。
-        english: That mountain is 3000 meters above sea level.
-        hint: 「3000メートルある」 means it is exactly 3000 meters. We're looking for a precise factual statement
-          conveying a minimum elevation, including the specified height itself, which 以上 accomplishes.
-      - competing_japanese:
-          - その 山 は 標高 {3000 メートル を 超える}。
-        english: That mountain exceeds 3000 meters above sea level.
-        hint: 「3000メートルを超える」 means strictly more than 3000 meters. We're looking for a statement that
-          includes 3000 meters as a minimum, as indicated by 以上.
-    scene: A geographer is presenting facts about a mountain range.
-    register: formal
-    setting: informative
-  - english: I can't wait any longer than this.
-    japanese:
-      - もう これ {以上} は 待て ない。
-      - もう これ {以上} は 待て ませ ん。
-      - もう これ {以上} は 待てる か よ。
-      - もう これ {以上} は 待て ない わ。
-    english_literally: Already, more than this, cannot wait.
-    competing_grammar:
-      - competing_japanese:
-          - もう {待て ない}。
-        english: I can't wait anymore.
-        hint: 「もう待てない」 simply means 'I can't wait anymore' in a general sense. We're looking for an expression
-          that specifically refers to 'beyond this current point/time', which 以上 clarifies.
-      - competing_japanese:
-          - これ {より は 待て ない}。
-        english: I can't wait more than this.
-        hint: 「これよりは待てない」 is grammatically less natural for expressing a limit of patience compared to
-          the idiomatic expression with 以上.
-    scene: A young man is impatiently waiting for his friend at a meeting spot.
-    register: casual
-    setting: serious
-    speaker_gender: male
-    nuance: The speaker, a man, uses 「待てない」 (cannot wait) in a direct, somewhat exasperated tone, emphasizing
-      his impatience. The use of 「もう これ {以上}」 highlights that he has reached his absolute limit. The masculine
-      「~かよ」 (if used) adds a strong, slightly rougher emphasis, though it's not present in this specific
-      example.
-  - english: My order is complete. / That's all for my order.
-    japanese:
-      - 注文 は これ で {以上} です。
-      - ご 注文 は これ で {以上} と なり ます。
-      - ご 注文 は {以上} で ござい ます。
-    english_literally: Order, with this, is the above.
-    competing_grammar:
-      - competing_japanese:
-          - 注文 は これ で {終わり です}。
-        english: My order is finished with this.
-        hint: While 「これで終わりです」 (This is the end) is understandable, we're looking for the standard and
-          more polite way to conclude an order or statement in a service context.
-      - competing_japanese:
-          - 注文 は これ で {全部 です}。
-        english: My order is all with this.
-        hint: 「これで全部です」 (This is everything) is also valid. However, we're looking for an expression that
-          specifically conveys 'the above is complete' in a formal or semi-formal interaction.
-    scene: A customer is concluding their order at a fast-food restaurant.
-    register: teineigo (polite)
-    setting: professional
-  - english: That concludes the explanation. Thank you for your attention.
-    japanese:
-      - 説明 は {以上} に なり ます。ご 清聴 ありがとう ござい まし た。
-      - 説明 は {以上} です。ご 清聴 ありがとう ござい まし た。
-      - 本 説明 は {以上} と さ せ て いただき ます。ご 清聴 いただき 誠 に ありがとう ござい まし た。
-      - ご 説明 は {以上} です。ありがとう ござい まし た。
-    english_literally: Explanation, becomes the above. Thank you for your kind listening.
-    competing_grammar:
-      - competing_japanese:
-          - 説明 は {終わり に なり ます}。
-        english: The explanation will end.
-        hint: 「終わりになります」 indicates completion but lacks the formal, conclusive nuance of the expression
-          needed when signaling the end of a detailed explanation or report in a formal presentation.
-      - competing_japanese:
-          - 説明 は {終了 です}。
-        english: The explanation is terminated.
-        hint: 「終了です」 is a direct statement of termination. We're looking for a softer, more deferential
-          way to conclude a presentation, showing politeness to the audience.
-    scene: A speaker is ending a formal presentation to an audience.
+          - ５ 部 {超} 用意 し て ください。
+        english: Please prepare over 5 copies.
+        hint: 「超える」means "to exceed," strictly indicating *more than* the number, not including the number
+          itself. We're looking for "five or more."
+    scene: A busy office worker giving instructions.
     register: formal
     setting: professional
-    listener_gender: group
-  - english: That concludes my report.
+  - english: You must be 18 or older to enter.
     japanese:
-      - 私 から の 報告 は {以上} です。
-      - 私 から の 報告 は {以上} と なり ます。
-      - 私 から の ご 報告 は {以上} で ござい ます。
-      - 私 から の ご 報告 は {以上} と さ せ て いただき ます。
-    english_literally: From me, report, is the above.
+      - 入場 に は １８ 歳 {以上} の 年齢 が 必要 です。
+      - 入場 は １８ 歳 {以上} で なけれ ば なり ませ ん。
+      - １８ 歳 {以上} じゃ ない と 入れ ない よ。
+    english_literally: For entrance, an age of 18 years or more is necessary.
     competing_grammar:
       - competing_japanese:
-          - 私 から の 報告 は {終わり です}。
-        english: My report is finished.
-        hint: While 「終わりです」 expresses completion, we're looking for the standard and more professional
-          way to conclude a formal report or statement, conveying that all points have been covered.
-    scene: A project manager is finishing a status update meeting.
+          - 入場 に は １８ 歳 {未満} の 年齢 は 許可 さ れ ませ ん。
+        english: For entrance, an age of less than 18 years is not permitted.
+        hint: 「未満」 means "less than," strictly excluding the number. We're looking for "18 or older."
+    scene: A sign at the entrance of a venue.
     register: formal
     setting: informative
-  - english: You need to be at least 20 years old to buy alcohol.
+  - english: To pass the exam, you need a score of 70 points or higher.
     japanese:
-      - お 酒 を 買う に は ２０ 歳 {以上} で ない と いけ ませ ん。
-      - お 酒 を 買う に は ２０ 歳 {以上} で なけれ ば なり ませ ん。
-      - お 酒 は ２０ 歳 {以上} の 方 で ない と ご 購入 いただけ ませ ん。
-      - ２０ 歳 {以上} じゃ ない と お 酒 は 買え ない よ。
-    english_literally: Alcohol to buy, as for, 20 years old or more, if not, cannot.
+      - 試験 に 合格 する に は、７０ 点 {以上} の 点数 が 必要 です。
+      - 試験 に 合格 する に は ７０ 点 {以上} 取ら ない と だめ です。
+      - テスト で ７０ 点 {以上} ない と 合格 でき ない よ。
+    english_literally: To pass the exam, a score of 70 points or more is necessary.
     competing_grammar:
       - competing_japanese:
-          - お 酒 を 買う に は {２０ 歳 で ない と いけ ませ ん}。
-        english: You need to be 20 years old to buy alcohol.
-        hint: This phrase specifies exactly 20 years old. We're looking for an expression that includes
-          20 as the minimum age.
-      - competing_japanese:
-          - お 酒 を 買う に は {２０ 歳 より 上 で ない と いけ ませ ん}。
-        english: You need to be older than 20 years old to buy alcohol.
-        hint: 「20歳より上」 means strictly older than 20. We're looking for a requirement that includes 20
-          years old.
-    scene: A store clerk explains the age restriction to a young customer.
-    register: teineigo (polite)
-    setting: informative
-    speaker_age: older
-  - english: Is that all for today's meeting?
+          - 試験 に 合格 する に は、７０ 点 {以下} の 点数 は 認め られ ませ ん。
+        english: To pass the exam, a score of 70 points or less is not acceptable.
+        hint: 「以下」 means "less than or equal to". We're looking for "70 points or higher" not a limit
+          on what's unacceptable.
+    scene: A teacher explaining grading criteria to students.
+    register: formal
+    setting: academic
+  - english: This package weighs 2 kg or more.
     japanese:
-      - 今日 の 会議 は {以上} で よろしい でしょ う か。
-      - 本日 の 会議 は {以上} と なり ます でしょう か。
-      - 本日 の 会議 は {以上} で 問題 ない でしょ う か。
-      - 今日 の ミーティング は これ で {以上}？
-    english_literally: Today's meeting, is it all with the above?
+      - この 荷物 は ２ キロ {以上} あり ます。
+      - この 荷物 は ２ キロ {以上} だ。
+      - この 荷物 の 重 さ は ２ キロ {以上} です。
+    english_literally: This package has 2 kilograms or more.
     competing_grammar:
       - competing_japanese:
-          - 今日 の 会議 は {終わり で よろしい でしょ う か}。
-        english: Is today's meeting finished?
-        hint: While 「終わり」 means end, 「以上」 is typically used when asking for confirmation that everything
-          that needed to be covered has been covered.
-      - competing_japanese:
-          - 今日 の 会議 は {全部 です か}。
-        english: Is today's meeting everything?
-        hint: 「全部」 refers to totality, but 「以上」 is more appropriate for concluding a list of topics or
-          discussions in a meeting setting.
-    scene: A manager is concluding a team meeting and asking for any remaining items.
-    register: semi-formal
-    setting: professional
-  - english: Once you make a promise, you have to keep it.
+          - この 荷物 は ２ キロ {未満} です。
+        english: This package weighs less than 2 kg.
+        hint: 「未満」 means "less than," strictly excluding the number. We're looking for "2 kg or more."
+    scene: A postal worker assessing a package.
+    register: formal
+    setting: technical
+  - english: We've been waiting for over an hour.
     japanese:
-      - 一 度 約束 し た {以上} は、守ら なけれ ば なり ませ ん。
-      - 一 度 約束 し た {以上}、守る べき だ。
-      - 約束 し た {以上}、ちゃんと やり なさい。
-      - 一 度 約束 し た {以上} は、果たさ なけれ ば なり ませ ん。
-    english_literally: Once promised, given that, must keep it.
+      - １ 時間 {以上} 待っ て い ます。
+      - １ 時間 {以上} 待っ てる よ。
+      - １ 時間 {以上} も 待たさ れ て いる。
+    english_literally: We are waiting for 1 hour or more.
     competing_grammar:
       - competing_japanese:
-          - 一 度 約束 し {たら、守ら なけれ ば なり ませ ん}。
-        english: If you make a promise, you have to keep it.
-        hint: While 「〜たら」 expresses a conditional, 「〜た以上」 implies a stronger sense of obligation or inevitability
-          once the condition is met.
-      - competing_japanese:
-          - 一 度 約束 し た {から に は、守ら なけれ ば なり ませ ん}。
-        english: Because you made a promise, you have to keep it.
-        hint: 「〜からには」 also indicates a reason for obligation, but 「〜た以上」 emphasizes that the obligation
-          arises from the very fact of the past action.
-    scene: A parent is teaching their child about the importance of promises.
+          - １ 時間 {以内} に 到着 し ます。
+        english: We will arrive within 1 hour.
+        hint: 「以内」 means "within" a certain amount of time. We're looking for a duration that has already
+          exceeded an hour.
+    scene: Someone complaining about a delay.
     register: casual
-    setting: instructional
-    speaker_age: older
-    nuance: The use of 「一度 約束 し た {以上}」 signifies that because the act of promising has already occurred,
-      the consequence (keeping it) is a natural and inescapable obligation. The nuance is that once a
-      certain state is established, the follow-up action is a logical and necessary result.
-  - english: Since you have started, you must finish it.
+    setting: pessimistic
+  - english: His performance was more than excellent.
     japanese:
-      - 始め た {以上} は、最後 まで やり 遂げ なさい。
-      - 始め た {以上}、終わり まで やり きれ。
-      - 一 度 始め た {以上} は、責任 を 持っ て 完遂 する べき です。
-      - 始め た {以上}、投げ出す わけ に は いか ない だろう。
-    english_literally: Started, given that, must finish until the end.
+      - 彼 の 演技 は 素晴らしい {以上} でし た。
+      - 彼 の 演技 は 素晴らしい {以上} だっ た。
+      - 彼 の 演技 は 素晴らし さ を {超える} もの だっ た。
+    english_literally: His performance was above wonderful.
     competing_grammar:
       - competing_japanese:
-          - 始め た {の で、最後 まで やり 遂げ なさい}。
-        english: Because you started, finish it until the end.
-        hint: 「〜ので」 simply states a reason. 「〜た以上」 emphasizes that the commitment to finish arises directly
-          from the act of having started.
+          - 彼 の 演技 は 良く も 悪く も なかっ た。
+        english: His performance was neither good nor bad.
+        hint: This phrase suggests a neutral or mediocre performance. We are looking to express that the
+          performance *exceeded* excellence.
+    scene: Two friends discussing a play they just watched.
+    register: casual
+    setting: excited
+    nuance: Here, 「以上」 is attached to an abstract concept (「素晴らしい」, excellent) to mean "beyond" or "surpassing,"
+      indicating a higher degree of quality.
+  - english: This project requires more than just technical skills.
+    japanese:
+      - この プロジェクト に は、技術 力 {以上} の もの が 必要 です。
+      - この プロジェクト に は 技術 力 {以上} の もの が 求め られる。
+      - 技術 力 {以上} の もの が、この プロジェクト に はいる。
+    english_literally: For this project, something more than technical skills is necessary.
+    competing_grammar:
       - competing_japanese:
-          - 始め た {から に は、最後 まで やり 遂げ なさい}。
-        english: 「〜からには」 also expresses a strong obligation based on a premise, but 「〜た以上」 carries a nuance
-          of inevitability or logical consequence. Both are similar, but 「以上」 often implies a greater
-          sense of 'having crossed a point of no return'.
-        hint: 「〜からには」 also expresses a strong obligation based on a premise, but 「〜た以上」 carries a nuance
-          of inevitability or logical consequence. Both are similar, but 「以上」 often implies a greater
-          sense of 'having crossed a point of no return'.
-    scene: A coach is motivating an athlete to complete a difficult training session.
+          - この プロジェクト に は、技術 力 だけ が 必要 です。
+        english: This project only requires technical skills.
+        hint: 「だけ」 means "only" or "just." We're looking to express that *more than just* technical skills
+          are required.
+    scene: A team leader explaining the demands of a new project.
     register: formal
-    setting: inspirational
-    speaker_gender: male
-    listener_gender: group
-    nuance: The phrase 「始めた {以上}」 asserts that the act of beginning something establishes an unavoidable
-      responsibility to see it through. The commanding tone with 「やり遂げなさい」 is typical of a coach addressing
-      their team, implying that once the commitment is made, there's no turning back. This usage highlights
-      the logical implication and consequence of an action.
-post_example_writeup: Understanding the precise nuance of 「以上」 in various contexts is key. When used with
-  quantities, remember it always includes the specified number as a minimum. When used as a concluding
-  statement, it acts as a formal and polite way to signal completeness, often preferred in business and
-  formal communications over simpler expressions like 「終わりです」. Furthermore, when used in the pattern Verb[た]
-  + 以上, it conveys a strong sense of obligation or logical consequence, implying that once a certain action
-  has been taken, a particular outcome or responsibility is unavoidable. Pay close attention to the context
-  and what the speaker intends to convey—is it a minimum quantity, a declaration that nothing further
-  will be added, or a statement of commitment and inevitability?
+    setting: informative
+    nuance: 「以上」 here signifies "beyond" or "more than just," indicating that additional, non-technical
+      qualities are also required.
+  - english: You need at least two years of experience for this position.
+    japanese:
+      - この ポジション に は ２ 年 {以上} の 経験 が 必要 です。
+      - この ポジション に は ２ 年 {以上} の 経験 が 求め られ ます。
+      - この 仕事 に は 経験 が ２ 年 {以上} いる よ。
+    english_literally: For this position, 2 years or more of experience is necessary.
+    competing_grammar:
+      - competing_japanese:
+          - この ポジション に は ２ 年 {未満} の 経験 で は だめ です。
+        english: For this position, less than two years of experience is not acceptable.
+        hint: 「未満」 means "less than," strictly excluding the number. We're looking for "at least two years,"
+          which includes two years.
+    scene: An HR representative explaining job requirements.
+    register: formal
+    setting: professional
+  - english: The temperature today is above 30 degrees Celsius.
+    japanese:
+      - 今日 の 気温 は ３０ 度 {以上} です。
+      - 今日 の 気温 は ３０ 度 {以上} ある。
+      - 今日 は ３０ 度 {以上} に なっ てる よ。
+    english_literally: Today's temperature is 30 degrees or more.
+    competing_grammar:
+      - competing_japanese:
+          - 今日 の 気温 は ３０ 度 {以下} です。
+        english: Today's temperature is 30 degrees Celsius or below.
+        hint: 「以下」 means "less than or equal to." We're looking for a temperature that is "above 30 degrees."
+    scene: A weather report.
+    register: formal
+    setting: informative
+  - english: The donation received was over 1 million yen.
+    japanese:
+      - 寄付 金 は １００ 万 円 {以上} 集まり まし た。
+      - 寄付 金 は １００ 万 円 {以上} 集まっ た。
+      - １００ 万 円 {以上} の 寄付 が 集まっ た そう です。
+    english_literally: The donation collected was 1 million yen or more.
+    competing_grammar:
+      - competing_japanese:
+          - 寄付 金 は １００ 万 円 {に 達し ませ ん でし た}。
+        english: The donation did not reach 1 million yen.
+        hint: This expresses that the amount *failed to reach* the target. We're looking for an amount
+          that *exceeded* the target.
+    scene: A charity event organizer announcing results.
+    register: formal
+    setting: informative
+  - english: His kindness was beyond words.
+    japanese:
+      - 彼 の 優し さ は 言葉 {以上} の もの でし た。
+      - 彼 の 優し さ は 言葉 {以上} だっ た。
+      - 彼 の 優し さ は 言葉 で は 言い表せ ない ほど だっ た。
+    english_literally: His kindness was something more than words.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 の 優し さ は 普通 だっ た。
+        english: His kindness was ordinary.
+        hint: This implies a standard or unremarkable level of kindness. We are looking to express that
+          his kindness *surpassed* typical description.
+    scene: Reflecting on someone's character.
+    register: casual
+    setting: reflective
+    nuance: 「以上」 applied to an abstract noun (「言葉」, words) to convey a level or quality that transcends
+      typical description.
+  - english: She put in more than the necessary effort.
+    japanese:
+      - 彼女 は 必要 な 努力 {以上} を し まし た。
+      - 彼女 は 必要 な 努力 {以上} の もの を し た。
+      - 彼女 は 必要 な 努力 {以上} を 払っ た。
+    english_literally: She did effort more than necessary.
+    competing_grammar:
+      - competing_japanese:
+          - 彼女 は 必要 な 努力 {しか} し なかっ た。
+        english: She only put in the necessary effort.
+        hint: 「しか〜ない」 means "only" or "nothing but." We're looking to express that she put in *more than*
+          the required effort, not just the minimum.
+    scene: A manager praising an employee.
+    register: formal
+    setting: supportive
+    nuance: Indicates exceeding a standard or expectation, implying extra effort or quality.
+post_example_writeup: The examples illustrate how 以上 can be used across various contexts, from concrete
+  quantities like age, score, and weight, to more abstract concepts such as effort, kindness, and quality.
+  Pay attention to how 以上 always sets a minimum threshold or indicates a state that goes beyond a defined
+  point, distinguishing it from related expressions that either exclude the threshold or carry a different
+  logical implication.
 sources:
-  bunpro: https://bunpro.jp/grammar_points/以上1
+  bunpro: https://bunpro.jp/grammar_points/以上

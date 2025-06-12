@@ -303,6 +303,26 @@ py_binary(
     ],
 )
 
+# bazel run //resources/grammar:grammar-labeled-japanese
+py_binary(
+    name = "grammar-labeled-japanese",
+    srcs = ["grammar-labeled-japanese.py"],
+    data = [
+        "//resources/processed:ai-cleaned-merge-grammars",
+    ],
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//python/console:display",
+        "//python/mapreduce",
+        "//python/mecab",
+        "@pip//joblib",
+        "@pip//mecab_python3",
+        "@pip//numpy",
+        "@pip//scikit_learn",
+        "@pip//tqdm",
+    ],
+)
+
 # bazel run //resources/grammar:toposort
 py_binary(
     name = "toposort",
@@ -331,6 +351,7 @@ py_library(
         "extract-grammar-point-names.py",
         "extract-yaml.py",
         "fixup-bunpro-grammar.py",
+        "grammar-labeled-japanese.py",
         "grammar_summary.py",
         "lint-grammar-points.py",
         "merge-grammars.py",
@@ -350,8 +371,13 @@ py_library(
         "//python/utils/build_cache/memoize",
         "//python/utils/visit_json",
         "@pip//beautifulsoup4",
+        "@pip//joblib",
         "@pip//json5",
         "@pip//json_repair",
+        "@pip//mecab_python3",
+        "@pip//numpy",
         "@pip//pyyaml",
+        "@pip//scikit_learn",
+        "@pip//tqdm",
     ],
 )
