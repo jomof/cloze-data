@@ -692,30 +692,24 @@ class JapaneseGrammarLabelCompletingClassifier:
         )
         return train_texts, test_texts, train_labels, test_labels
 
-    def analyze_label_interference(self, texts=None, labels=None, training_data=None, 
-                                sample_percent=None, max_label_pairs=None, min_labels_for_sampling=100,
-                                auto_create_test_split=True):
+    def analyze_label_interference(self, training_data, 
+                                sample_percent=None, max_label_pairs=None, min_labels_for_sampling=100):
         """
         Comprehensive analysis of potentially interfering labels with intelligent sampling.
         
         Args:
-            texts: Test texts for prediction confusion analysis
-            labels: True labels for test texts
-            training_data: Training data dictionary for sample similarity analysis
+            training_data: Training data dictionary for all analysis
             sample_percent: Percentage of data to sample (0.1 = 10%). If None, auto-determines based on size
             max_label_pairs: Maximum number of label pairs to analyze for sample similarity (default: 1000)
             min_labels_for_sampling: Minimum number of labels before sampling kicks in (default: 100)
-            auto_create_test_split: Whether to automatically create test split from training_data (default: True)
         """
         import random
         
         if max_label_pairs is None:
             max_label_pairs = 1000
         
-        # Auto-create test split if no test data provided but training data is available
-        if auto_create_test_split and training_data and not (texts and labels):
-            display.check("Auto-creating train/test split for prediction confusion analysis")
-            _, texts, _, labels = self._test_train_split(training_data)
+        # Create test split for prediction confusion analysis
+        _, texts, _, labels = self._test_train_split(training_data)
         
         # Count labels to determine if sampling is needed
         total_labels = 0
@@ -745,8 +739,7 @@ class JapaneseGrammarLabelCompletingClassifier:
             'sampling_info': {
                 'total_labels': total_labels,
                 'sample_percent': sample_percent,
-                'max_label_pairs': max_label_pairs,
-                'auto_created_test_split': auto_create_test_split and training_data and not (texts and labels)
+                'max_label_pairs': max_label_pairs
             }
         }
         
@@ -754,72 +747,66 @@ class JapaneseGrammarLabelCompletingClassifier:
         with display.work("analyzing feature overlap"):
             results['feature_overlap'] = self._analyze_label_feature_overlap()
         
-        # 2. Prediction confusion (now possible with auto-created test data)
-        if texts and labels:
-            sample_size = len(texts)
-            if sample_percent < 1.0:
-                sample_size = max(1000, int(len(texts) * sample_percent))  # At least 1000 samples
-                if sample_size < len(texts):
-                    display.check(f"Sampling {sample_size:,} out of {len(texts):,} test samples")
-                    indices = random.sample(range(len(texts)), sample_size)
-                    sampled_texts = [texts[i] for i in indices]
-                    sampled_labels = [labels[i] for i in indices]
-                else:
-                    sampled_texts = texts
-                    sampled_labels = labels
+        # 2. Prediction confusion analysis
+        sample_size = len(texts)
+        if sample_percent < 1.0:
+            sample_size = max(1000, int(len(texts) * sample_percent))  # At least 1000 samples
+            if sample_size < len(texts):
+                display.check(f"Sampling {sample_size:,} out of {len(texts):,} test samples")
+                indices = random.sample(range(len(texts)), sample_size)
+                sampled_texts = [texts[i] for i in indices]
+                sampled_labels = [labels[i] for i in indices]
             else:
                 sampled_texts = texts
                 sampled_labels = labels
-            
-            results['sampling_info']['test_samples_used'] = len(sampled_texts)
-            
-            with display.work("analyzing prediction confusion"):
-                results['prediction_confusion'] = self._analyze_prediction_confusion(sampled_texts, sampled_labels)
         else:
-            display.warn("No test data available for prediction confusion analysis")
+            sampled_texts = texts
+            sampled_labels = labels
         
-        # 3. Sample similarity (with intelligent sampling)
-        if training_data:
-            # Decide whether to run sample similarity based on computational cost
-            estimated_pairs = (total_labels * (total_labels - 1)) // 2
+        results['sampling_info']['test_samples_used'] = len(sampled_texts)
+        
+        with display.work("analyzing prediction confusion"):
+            results['prediction_confusion'] = self._analyze_prediction_confusion(sampled_texts, sampled_labels)
+        
+        # 3. Sample similarity analysis with intelligent sampling
+        estimated_pairs = (total_labels * (total_labels - 1)) // 2
+        
+        if estimated_pairs <= max_label_pairs:
+            # Small enough to run without sampling
+            with display.work("analyzing sample similarity"):
+                results['sample_similarity'] = self._analyze_sample_overlap(training_data)
+            results['sampling_info']['label_pairs_analyzed'] = estimated_pairs
+        else:
+            # Need to sample label pairs or labels
+            display.check(f"Large label space detected ({estimated_pairs:,} potential pairs)")
             
-            if estimated_pairs <= max_label_pairs:
-                # Small enough to run without sampling
-                with display.work("analyzing sample similarity"):
-                    results['sample_similarity'] = self._analyze_sample_overlap(training_data)
-                results['sampling_info']['label_pairs_analyzed'] = estimated_pairs
+            if sample_percent >= 0.5:
+                # Sample by most frequent labels
+                label_counts = Counter(label for labels in training_data.values() for label in labels)
+                num_labels_to_keep = int(total_labels * sample_percent)
+                top_labels = set(label for label, _ in label_counts.most_common(num_labels_to_keep))
+                
+                display.check(f"Analyzing top {num_labels_to_keep} most frequent labels")
+                
+                # Filter training data
+                filtered_data = {}
+                for text, labels in training_data.items():
+                    filtered_labels = [l for l in labels if l in top_labels]
+                    if filtered_labels:
+                        filtered_data[text] = filtered_labels
+                
+                with display.work("analyzing sample similarity (top labels)"):
+                    results['sample_similarity'] = self._analyze_sample_overlap(filtered_data)
+                results['sampling_info']['label_pairs_analyzed'] = (num_labels_to_keep * (num_labels_to_keep - 1)) // 2
             else:
-                # Need to sample label pairs or labels
-                display.check(f"Large label space detected ({estimated_pairs:,} potential pairs)")
+                # Random sampling of label pairs
+                display.check(f"Randomly sampling {max_label_pairs:,} label pairs from {estimated_pairs:,}")
                 
-                if sample_percent >= 0.5:
-                    # Sample by most frequent labels
-                    label_counts = Counter(label for labels in training_data.values() for label in labels)
-                    num_labels_to_keep = int(total_labels * sample_percent)
-                    top_labels = set(label for label, _ in label_counts.most_common(num_labels_to_keep))
-                    
-                    display.check(f"Analyzing top {num_labels_to_keep} most frequent labels")
-                    
-                    # Filter training data
-                    filtered_data = {}
-                    for text, labels in training_data.items():
-                        filtered_labels = [l for l in labels if l in top_labels]
-                        if filtered_labels:
-                            filtered_data[text] = filtered_labels
-                    
-                    with display.work("analyzing sample similarity (top labels)"):
-                        results['sample_similarity'] = self._analyze_sample_overlap(filtered_data)
-                    results['sampling_info']['label_pairs_analyzed'] = (num_labels_to_keep * (num_labels_to_keep - 1)) // 2
-                
-                else:
-                    # Random sampling of label pairs
-                    display.check(f"Randomly sampling {max_label_pairs:,} label pairs from {estimated_pairs:,}")
-                    
-                    with display.work("analyzing sample similarity (sampled pairs)"):
-                        results['sample_similarity'] = self._analyze_sample_overlap_sampled(
-                            training_data, max_pairs=max_label_pairs
-                        )
-                    results['sampling_info']['label_pairs_analyzed'] = max_label_pairs
+                with display.work("analyzing sample similarity (sampled pairs)"):
+                    results['sample_similarity'] = self._analyze_sample_overlap_sampled(
+                        training_data, max_pairs=max_label_pairs
+                    )
+                results['sampling_info']['label_pairs_analyzed'] = max_label_pairs
         
         # 4. Co-occurrence analysis (always fast)
         with display.work("analyzing suspicious co-occurrences"):
@@ -844,8 +831,6 @@ class JapaneseGrammarLabelCompletingClassifier:
                 output.append(f"Test samples analyzed: {info['test_samples_used']:,}")
             if 'label_pairs_analyzed' in info:
                 output.append(f"Label pairs analyzed: {info['label_pairs_analyzed']:,}")
-            if info.get('auto_created_test_split', False):
-                output.append("✨ Auto-created train/test split for prediction confusion analysis")
         
         if results['feature_overlap']:
             output.append(f"\n📊 LABELS NEEDING DISTINCTION IMPROVEMENT")
