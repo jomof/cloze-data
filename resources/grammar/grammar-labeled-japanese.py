@@ -550,7 +550,7 @@ class JapaneseGrammarLabelCompletingClassifier:
             
             if vectors1.shape[0] > 0 and vectors2.shape[0] > 0:
                 cross_sim = cosine_similarity(vectors1, vectors2)
-                avg_similarity = np.mean(cross_sim)
+                avg_similarity = float(np.mean(cross_sim))
                 similarities.append((label1, label2, avg_similarity))
         
         return sorted(similarities, key=lambda x: x[2], reverse=True)
@@ -902,7 +902,7 @@ if __name__ == '__main__':
         'resources', 'processed', 'ai-cleaned-merge-grammars'
     )
     training_data_file = os.path.join(grammar_root, 'summary', 'grammar-labeled-japanese-training-data.json')
-    model_file = os.path.join(grammar_root, 'summary', 'grammar-labeled-japanese-classifier.json')
+    model_file = os.path.join(grammar_root, 'summary', 'grammar-labeled-japanese-classifier.pkl')
     interference_results_file = os.path.join(grammar_root, 'summary', 'grammar-labeled-japanese-interference.json')
     interference_analysis_file = os.path.join(grammar_root, 'summary', 'grammar-labeled-japanese-interference-analysis.txt')
     test_evaluation_results_file = os.path.join(grammar_root, 'summary', 'grammar-labeled-japanese-test-evaluation.json')
@@ -968,7 +968,7 @@ if __name__ == '__main__':
         with display.work("analyzing label interference"):
             interference_results = classifier.analyze_label_interference(
                 training_data=training_data,
-                max_label_pairs=40000
+                max_label_pairs=1000
             )
         with open(interference_results_file, 'w', encoding='utf-8') as file:
             json.dump(interference_results, file, ensure_ascii=False, indent=4)
