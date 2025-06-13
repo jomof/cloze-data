@@ -483,7 +483,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         with open(file_path, 'wb') as f:
             pickle.dump(model_data, f)
         
-        display.check(f"Model saved to {file_path}")
+        display.check(f"Model saved to {os.path.basename(file_path)}")
     
     def load_model(self, file_path: str):
         """Load a trained model."""
@@ -693,7 +693,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         return train_texts, test_texts, train_labels, test_labels
 
     def analyze_label_interference(self, training_data, 
-                                sample_percent=None, max_label_pairs=None, min_labels_for_sampling=100):
+                                sample_percent=0.1, max_label_pairs=1000):
         """
         Comprehensive analysis of potentially interfering labels with intelligent sampling.
         
@@ -701,33 +701,15 @@ class JapaneseGrammarLabelCompletingClassifier:
             training_data: Training data dictionary for all analysis
             sample_percent: Percentage of data to sample (0.1 = 10%). If None, auto-determines based on size
             max_label_pairs: Maximum number of label pairs to analyze for sample similarity (default: 1000)
-            min_labels_for_sampling: Minimum number of labels before sampling kicks in (default: 100)
         """
         import random
-        
-        if max_label_pairs is None:
-            max_label_pairs = 1000
         
         # Create test split for prediction confusion analysis
         _, texts, _, labels = self._test_train_split(training_data)
         
         # Count labels to determine if sampling is needed
-        total_labels = 0
-        if hasattr(self, 'label_binarizer') and self.label_binarizer:
-            total_labels = len(self.label_binarizer.classes_)
-        elif training_data:
-            total_labels = len(set(label for labels in training_data.values() for label in labels))
+        total_labels = len(set(label for labels in training_data.values() for label in labels))
         
-        # Auto-determine sampling if not specified
-        if sample_percent is None:
-            if total_labels <= min_labels_for_sampling:
-                sample_percent = 1.0  # No sampling needed
-            elif total_labels <= 300:
-                sample_percent = 0.5  # Sample 50%
-            elif total_labels <= 500:
-                sample_percent = 0.3  # Sample 30%
-            else:
-                sample_percent = 0.1  # Sample 10% for very large label spaces
         
         display.check(f"Label interference analysis: {total_labels} labels, {sample_percent:.1%} sampling")
         
