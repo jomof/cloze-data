@@ -4,36 +4,27 @@ import asyncio
 from python.mecab.compact_sentence import japanese_to_compact_sentence, compact_sentence_to_japanese
 from python.console import display
 import json
-import json
 import numpy as np
 from collections import Counter, defaultdict
 from itertools import combinations
-import json
-import numpy as np
-from collections import Counter, defaultdict
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.multioutput import MultiOutputClassifier
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.svm import LinearSVC
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.preprocessing import MultiLabelBinarizer
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report, hamming_loss, jaccard_score
+from sklearn.metrics import hamming_loss, jaccard_score
 import pickle
 import re
-from typing import List, Dict, Tuple, Union
+from typing import List, Dict, Union
 import warnings
 warnings.filterwarnings('ignore')
 
-class JapaneseGrammarClassifier:
+class JapaneseGrammarLabelCompletingClassifier:
     """
-    Multi-label classifier for Japanese grammar patterns.
-    Supports multiple algorithms and handles imbalanced data.
+    Multi-label classifier for Japanese grammar patterns using logistic regression.
+    Handles imbalanced data with configurable parameters.
     """
     
     def __init__(self, 
-                 algorithm='logistic_regression',
                  min_label_freq=2,
                  max_features=10000,
                  ngram_range=(1, 3),
@@ -44,13 +35,13 @@ class JapaneseGrammarClassifier:
         Initialize the classifier.
         
         Args:
-            algorithm: 'logistic_regression', 'random_forest', or 'svm'
             min_label_freq: Minimum frequency for a label to be included
             max_features: Maximum number of TF-IDF features
             ngram_range: N-gram range for TF-IDF
             class_weight: How to handle class imbalance
+            random_state: Random seed for reproducibility
+            test_size: Fraction of data to use for testing (0.0-1.0)
         """
-        self.algorithm = algorithm
         self.min_label_freq = min_label_freq
         self.max_features = max_features
         self.ngram_range = ngram_range
@@ -98,48 +89,17 @@ class JapaneseGrammarClassifier:
         return filtered_labels
     
     def _setup_classifier(self):
-        """Setup the base classifier based on algorithm choice."""
-        if self.algorithm == 'logistic_regression':
-            base_classifier = LogisticRegression(
-                max_iter=1000,
-                class_weight=self.class_weight,
-                random_state=self.random_state
-            )
-        elif self.algorithm == 'random_forest':
-            base_classifier = RandomForestClassifier(
-                n_estimators=100,
-                class_weight=self.class_weight,
-                random_state=self.random_state,
-                n_jobs=-1
-            )
-        elif self.algorithm == 'svm':
-            base_classifier = LinearSVC(
-                class_weight=self.class_weight,
-                random_state=self.random_state,
-                max_iter=2000
-            )
-        else:
-            raise ValueError(f"Unknown algorithm: {self.algorithm}")
+        """Setup the logistic regression classifier."""
+        base_classifier = LogisticRegression(
+            max_iter=1000,
+            class_weight=self.class_weight,
+            random_state=self.random_state
+        )
         
         # Use OneVsRestClassifier for multi-label classification
         self.classifier = OneVsRestClassifier(base_classifier, n_jobs=-1)
     
-    def load_data(self, data_path: str) -> Tuple[List[str], List[List[str]]]:
-        """Load training data from JSON file."""
-        with open(data_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        
-        texts = []
-        labels_list = []
-        
-        for sample_text, labels in data.items():
-            texts.append(sample_text)
-            labels_list.append(labels)
-        
-        return texts, labels_list
-    
-    def fit_from_dict(self, data: Dict[str, List[str]], 
-                      evaluate: bool = True):
+    def fit_from_dict(self, data: Dict[str, List[str]]):
         """
         Train the classifier directly from a dictionary with automatic evaluation.
         
@@ -149,14 +109,13 @@ class JapaneseGrammarClassifier:
                 ⌈ˢ机ᵖnʳツクエ⌉の⌈ˢ上ᵖnʳウエ⌉に⌈ˢ本ᵖnʳホン⌉は⌈ˢありᵖvᵇあるʳアル⌉⌈ˢますᵖauxvʳマス⌉。 for 机の上に本はあります。
               Values are lists of grammar point names. For example:
                 な-Adjective[でも] (concessive)
-            evaluate: Whether to evaluate on holdback set and print statistics
         """
         texts = list(data.keys())
-        labels_list = list(data.values())
+        labels = list(data.values())
         
-        if evaluate and len(data) > 10:  # Only split if we have enough data
+        if len(data) > 10:  # Only split if we have enough data
             # Split data for evaluation
-            train_texts, test_texts, train_labels, test_labels = self.test_train_split(data)
+            train_texts, test_texts, train_labels, test_labels = self._test_train_split(data)
             display.check(f"Dataset split: {len(train_texts):,} train, {len(test_texts):,} test")
             
             # Train on training set
@@ -168,36 +127,17 @@ class JapaneseGrammarClassifier:
 
             return results
         else:
-            # Train on all data if evaluation disabled or insufficient data
-            if not evaluate:
-                display.warn("Evaluation disabled - training on full dataset")
-            else:
-                display.warn("Insufficient data for split - training on full dataset")
-            self.fit(texts, labels_list)
+            # Train on all data if insufficient data for split
+            display.warn("Insufficient data for split - training on full dataset")
+            self.fit(texts, labels)
             return None # No evaluation results in this case
     
-    def fit_from_file(self, data_path: str, 
-                      evaluate: bool = True):
-        """
-        Train the classifier from a JSON file with automatic evaluation.
-        
-        Args:
-            data_path: Path to JSON file
-            evaluate: Whether to evaluate on holdback set and print statistics
-        """
-        with open(data_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        
-        display.check(f"Loaded {len(data):,} samples from {data_path}")
-        return self.fit_from_dict(data, evaluate)
-    
-    
-    def fit(self, texts: List[str], labels_list: List[List[str]]):
+    def fit(self, texts: List[str], labels: List[List[str]]):
         """Train the classifier."""
         # Clean texts and filter labels
         with display.work("preprocessing"):
             cleaned_texts = [self._clean_text(text) for text in texts]
-            filtered_labels = self._filter_rare_labels(labels_list)
+            filtered_labels = self._filter_rare_labels(labels)
         
         # Vectorize texts
         with display.work("vectorizing"):
@@ -273,7 +213,7 @@ class JapaneseGrammarClassifier:
         
         # Get probability predictions
         if hasattr(self.classifier, "predict_proba"):
-            # For algorithms that support predict_proba
+            # For logistic regression classifier that supports predict_proba
             try:
                 y_prob = self.classifier.predict_proba(X)
                 # Convert to binary predictions based on threshold
@@ -303,14 +243,14 @@ class JapaneseGrammarClassifier:
         
         return result[0] if single_input else result
     
-    def evaluate(self, texts: List[str], true_labels: List[str]) -> Dict:
+    def evaluate(self, texts: List[str], labels: List[List[str]]) -> Dict:
         """Evaluate the classifier performance with detailed statistics."""
 
-        # texts, true_labels should be lists of the same length
+        # texts, labels should be lists of the same length
         predictions = self.predict(texts)
         
         # Convert to binary matrix for metrics
-        y_true = self.label_binarizer.transform(true_labels)
+        y_true = self.label_binarizer.transform(labels)
         y_pred = self.label_binarizer.transform(predictions)
         
         # Basic multi-label metrics
@@ -318,7 +258,7 @@ class JapaneseGrammarClassifier:
         jaccard = jaccard_score(y_true, y_pred, average='samples')
         
         # Additional sample-wise metrics
-        exact_match_ratio = np.mean([set(true) == set(pred) for true, pred in zip(true_labels, predictions)])
+        exact_match_ratio = np.mean([set(true) == set(pred) for true, pred in zip(labels, predictions)])
         
         # Label-wise statistics
         from sklearn.metrics import precision_recall_fscore_support, accuracy_score
@@ -366,7 +306,7 @@ class JapaneseGrammarClassifier:
         over_predictions = 0
         under_predictions = 0
         
-        for true, pred in zip(true_labels, predictions):
+        for true, pred in zip(labels, predictions):
             true_set = set(true)
             pred_set = set(pred)
             
@@ -395,15 +335,15 @@ class JapaneseGrammarClassifier:
             cooccurrence_counts = defaultdict(int)
             cooccurrence_samples = defaultdict(list)
             
-            for i, labels in enumerate(true_labels):
-                if len(labels) > 1:  # Only analyze multi-label samples
-                    for label1, label2 in combinations(sorted(labels), 2):
-                        pair_key = f"{label1}||{label2}"  # NEW: string key
+            for i, label_list in enumerate(labels):
+                if len(label_list) > 1:  # Only analyze multi-label samples
+                    for label1, label2 in combinations(sorted(label_list), 2):
+                        pair_key = f"{label1}||{label2}"  # Use string key for consistency
                         cooccurrence_counts[pair_key] += 1
                         if len(cooccurrence_samples[pair_key]) < 3:
                             cooccurrence_samples[pair_key].append({
                                 'text': texts[i][:100] + "..." if len(texts[i]) > 100 else texts[i],
-                                'labels': labels
+                                'labels': label_list
                             })
             
             top_cooccurrences = [
@@ -522,7 +462,7 @@ class JapaneseGrammarClassifier:
         print("\n" + "=" * 60)
        
     
-    def save_model(self, filepath: str):
+    def save_model(self, file_path: str):
         """Save the trained model."""
         model_data = {
             'vectorizer': self.vectorizer,
@@ -533,7 +473,6 @@ class JapaneseGrammarClassifier:
             'cooccurrence_counts': getattr(self, 'cooccurrence_counts', {}),
             'cooccurrence_samples': getattr(self, 'cooccurrence_samples', {}),
             'config': {
-                'algorithm': self.algorithm,
                 'min_label_freq': self.min_label_freq,
                 'max_features': self.max_features,
                 'ngram_range': self.ngram_range,
@@ -541,14 +480,14 @@ class JapaneseGrammarClassifier:
             }
         }
         
-        with open(filepath, 'wb') as f:
+        with open(file_path, 'wb') as f:
             pickle.dump(model_data, f)
         
-        display.check(f"Model saved to {filepath}")
+        display.check(f"Model saved to {file_path}")
     
-    def load_model(self, filepath: str):
+    def load_model(self, file_path: str):
         """Load a trained model."""
-        with open(filepath, 'rb') as f:
+        with open(file_path, 'rb') as f:
             model_data = pickle.load(f)
         
         self.vectorizer = model_data['vectorizer']
@@ -561,16 +500,15 @@ class JapaneseGrammarClassifier:
         
         # Restore config
         config = model_data['config']
-        self.algorithm = config['algorithm']
         self.min_label_freq = config['min_label_freq']
         self.max_features = config['max_features']
         self.ngram_range = config['ngram_range']
         self.class_weight = config['class_weight']
         
-        display.check(f"Model loaded from {os.path.basename(filepath)}")
+        display.check(f"Model loaded from {os.path.basename(file_path)}")
         return self
     
-    def analyze_sample_overlap_sampled(self, training_data, max_pairs=1000):
+    def _analyze_sample_overlap_sampled(self, training_data, max_pairs=1000):
         """Sample similarity analysis with random sampling of label pairs."""
         import random
         from sklearn.feature_extraction.text import TfidfVectorizer
@@ -617,7 +555,7 @@ class JapaneseGrammarClassifier:
         
         return sorted(similarities, key=lambda x: x[2], reverse=True)
 
-    def analyze_sample_overlap(self, training_data):
+    def _analyze_sample_overlap(self, training_data):
         """Find labels that appear on very similar samples."""
         from sklearn.feature_extraction.text import TfidfVectorizer
         from sklearn.metrics.pairwise import cosine_similarity
@@ -658,13 +596,13 @@ class JapaneseGrammarClassifier:
         
         return sorted(similarities, key=lambda x: x[2], reverse=True)
 
-    def analyze_prediction_confusion(self, texts, true_labels):
+    def _analyze_prediction_confusion(self, texts, labels):
         """Find labels that are frequently confused with each other."""
         predictions = self.predict(texts)
         
         confusion_pairs = defaultdict(int)
         
-        for true_set, pred_set in zip(true_labels, predictions):
+        for true_set, pred_set in zip(labels, predictions):
             true_set = set(true_set)
             pred_set = set(pred_set)
             
@@ -681,7 +619,7 @@ class JapaneseGrammarClassifier:
         
         return sorted(confusion_pairs.items(), key=lambda x: x[1], reverse=True)
 
-    def find_suspicious_cooccurrences(self):
+    def _find_suspicious_cooccurrences(self):
         """Find label pairs that co-occur more than expected by chance."""
         if not hasattr(self, 'cooccurrence_counts'):
             raise ValueError("No co-occurrence data available")
@@ -706,7 +644,7 @@ class JapaneseGrammarClassifier:
         
         return sorted(suspicious_pairs, key=lambda x: x[5], reverse=True) 
     
-    def analyze_label_feature_overlap(self):
+    def _analyze_label_feature_overlap(self):
         """Find labels with highly overlapping feature importance."""
         if not hasattr(self, 'classifier') or not hasattr(self.classifier, 'estimators_'):
             raise ValueError("Model must be trained first")
@@ -734,8 +672,15 @@ class JapaneseGrammarClassifier:
         
         return sorted(overlaps, key=lambda x: x[2], reverse=True)
     
-    def test_train_split(self, training_data: Dict[str, List[str]]):
+    def _test_train_split(self, training_data: Dict[str, List[str]]):
         """
+        Split training data into train and test sets.
+        
+        Args:
+            training_data: Dictionary with texts as keys and label lists as values
+            
+        Returns:
+            Tuple of (train_texts, test_texts, train_labels, test_labels)
         """
         all_texts = list(training_data.keys())
         all_labels = list(training_data.values())
@@ -747,7 +692,7 @@ class JapaneseGrammarClassifier:
         )
         return train_texts, test_texts, train_labels, test_labels
 
-    def analyze_label_interference(self, texts=None, true_labels=None, training_data=None, 
+    def analyze_label_interference(self, texts=None, labels=None, training_data=None, 
                                 sample_percent=None, max_label_pairs=None, min_labels_for_sampling=100,
                                 auto_create_test_split=True):
         """
@@ -755,7 +700,7 @@ class JapaneseGrammarClassifier:
         
         Args:
             texts: Test texts for prediction confusion analysis
-            true_labels: True labels for test texts
+            labels: True labels for test texts
             training_data: Training data dictionary for sample similarity analysis
             sample_percent: Percentage of data to sample (0.1 = 10%). If None, auto-determines based on size
             max_label_pairs: Maximum number of label pairs to analyze for sample similarity (default: 1000)
@@ -768,9 +713,9 @@ class JapaneseGrammarClassifier:
             max_label_pairs = 1000
         
         # Auto-create test split if no test data provided but training data is available
-        if auto_create_test_split and training_data and not (texts and true_labels):
+        if auto_create_test_split and training_data and not (texts and labels):
             display.check("Auto-creating train/test split for prediction confusion analysis")
-            train_texts, texts, train_labels, true_labels = self.test_train_split(training_data)
+            _, texts, _, labels = self._test_train_split(training_data)
         
         # Count labels to determine if sampling is needed
         total_labels = 0
@@ -801,16 +746,16 @@ class JapaneseGrammarClassifier:
                 'total_labels': total_labels,
                 'sample_percent': sample_percent,
                 'max_label_pairs': max_label_pairs,
-                'auto_created_test_split': auto_create_test_split and training_data and not (texts and true_labels)
+                'auto_created_test_split': auto_create_test_split and training_data and not (texts and labels)
             }
         }
         
         # 1. Feature overlap analysis (always run - relatively fast)
         with display.work("analyzing feature overlap"):
-            results['feature_overlap'] = self.analyze_label_feature_overlap()
+            results['feature_overlap'] = self._analyze_label_feature_overlap()
         
         # 2. Prediction confusion (now possible with auto-created test data)
-        if texts and true_labels:
+        if texts and labels:
             sample_size = len(texts)
             if sample_percent < 1.0:
                 sample_size = max(1000, int(len(texts) * sample_percent))  # At least 1000 samples
@@ -818,18 +763,18 @@ class JapaneseGrammarClassifier:
                     display.check(f"Sampling {sample_size:,} out of {len(texts):,} test samples")
                     indices = random.sample(range(len(texts)), sample_size)
                     sampled_texts = [texts[i] for i in indices]
-                    sampled_labels = [true_labels[i] for i in indices]
+                    sampled_labels = [labels[i] for i in indices]
                 else:
                     sampled_texts = texts
-                    sampled_labels = true_labels
+                    sampled_labels = labels
             else:
                 sampled_texts = texts
-                sampled_labels = true_labels
+                sampled_labels = labels
             
             results['sampling_info']['test_samples_used'] = len(sampled_texts)
             
             with display.work("analyzing prediction confusion"):
-                results['prediction_confusion'] = self.analyze_prediction_confusion(sampled_texts, sampled_labels)
+                results['prediction_confusion'] = self._analyze_prediction_confusion(sampled_texts, sampled_labels)
         else:
             display.warn("No test data available for prediction confusion analysis")
         
@@ -841,7 +786,7 @@ class JapaneseGrammarClassifier:
             if estimated_pairs <= max_label_pairs:
                 # Small enough to run without sampling
                 with display.work("analyzing sample similarity"):
-                    results['sample_similarity'] = self.analyze_sample_overlap(training_data)
+                    results['sample_similarity'] = self._analyze_sample_overlap(training_data)
                 results['sampling_info']['label_pairs_analyzed'] = estimated_pairs
             else:
                 # Need to sample label pairs or labels
@@ -851,7 +796,7 @@ class JapaneseGrammarClassifier:
                     # Sample by most frequent labels
                     label_counts = Counter(label for labels in training_data.values() for label in labels)
                     num_labels_to_keep = int(total_labels * sample_percent)
-                    top_labels = set(label for label, count in label_counts.most_common(num_labels_to_keep))
+                    top_labels = set(label for label, _ in label_counts.most_common(num_labels_to_keep))
                     
                     display.check(f"Analyzing top {num_labels_to_keep} most frequent labels")
                     
@@ -863,7 +808,7 @@ class JapaneseGrammarClassifier:
                             filtered_data[text] = filtered_labels
                     
                     with display.work("analyzing sample similarity (top labels)"):
-                        results['sample_similarity'] = self.analyze_sample_overlap(filtered_data)
+                        results['sample_similarity'] = self._analyze_sample_overlap(filtered_data)
                     results['sampling_info']['label_pairs_analyzed'] = (num_labels_to_keep * (num_labels_to_keep - 1)) // 2
                 
                 else:
@@ -871,14 +816,14 @@ class JapaneseGrammarClassifier:
                     display.check(f"Randomly sampling {max_label_pairs:,} label pairs from {estimated_pairs:,}")
                     
                     with display.work("analyzing sample similarity (sampled pairs)"):
-                        results['sample_similarity'] = self.analyze_sample_overlap_sampled(
+                        results['sample_similarity'] = self._analyze_sample_overlap_sampled(
                             training_data, max_pairs=max_label_pairs
                         )
                     results['sampling_info']['label_pairs_analyzed'] = max_label_pairs
         
         # 4. Co-occurrence analysis (always fast)
         with display.work("analyzing suspicious co-occurrences"):
-            results['suspicious_cooccurrence'] = self.find_suspicious_cooccurrences()
+            results['suspicious_cooccurrence'] = self._find_suspicious_cooccurrences()
         
         return results
 
@@ -927,7 +872,7 @@ class JapaneseGrammarClassifier:
         if results['suspicious_cooccurrence']:
             output.append("\n🔗 UNEXPECTEDLY FREQUENT COMBINATIONS (Top 10)")
             output.append("-" * 30)
-            for label1, label2, obs, exp, lift, chi2 in results['suspicious_cooccurrence'][:10]:
+            for label1, label2, _, _, lift, chi2 in results['suspicious_cooccurrence'][:10]:
                 output.append(f"{label1[:30]} ↔ {label2[:30]}: {lift:.2f}x more than expected (χ²={chi2:.1f})")
         
         # Remove the section that tries to access evaluation metrics
@@ -940,71 +885,6 @@ class JapaneseGrammarClassifier:
         output.append("4. Consider splitting unexpectedly frequent combinations")
         
         return "\n".join(output)
-        """Generate interference analysis results as formatted text."""
-        output = []
-        output.append(f"\n🎯 LABEL REFINEMENT OPPORTUNITIES")
-        output.append("=" * 50)
-        
-        # Show sampling information
-        if 'sampling_info' in results:
-            info = results['sampling_info']
-            output.append(f"\n📋 ANALYSIS SCOPE")
-            output.append("-" * 20)
-            output.append(f"Total labels: {info['total_labels']:,}")
-            output.append(f"Sampling rate: {info['sample_percent']:.1%}")
-            if 'test_samples_used' in info:
-                output.append(f"Test samples analyzed: {info['test_samples_used']:,}")
-            if 'label_pairs_analyzed' in info:
-                output.append(f"Label pairs analyzed: {info['label_pairs_analyzed']:,}")
-            if info.get('auto_created_test_split', False):
-                output.append("✨ Auto-created train/test split for prediction confusion analysis")
-        
-        if results['feature_overlap']:
-            output.append(f"\n📊 LABELS NEEDING DISTINCTION IMPROVEMENT")
-            output.append("-" * 30)
-            for label1, label2, jaccard, overlap in results['feature_overlap'][:10]:
-                output.append(f"{label1[:30]} ↔ {label2[:30]}: {jaccard:.3f} jaccard ({overlap} features)")
-        
-        if results['prediction_confusion']:
-            output.append("\n🔀 SYSTEMATIC CONFUSION PATTERNS (Top 10)")
-            output.append("-" * 30)
-            for (label1, label2), count in results['prediction_confusion'][:10]:
-                output.append(f"{label1[:30]} ↔ {label2[:30]}: confused {count} times")
-        else:
-            output.append("\n🔀 SYSTEMATIC CONFUSION PATTERNS")
-            output.append("-" * 30)
-            output.append("❌ No prediction confusion data available")
-        
-        if results['sample_similarity']:
-            output.append("\n📝 SIMILAR PATTERN CONTEXTS (Top 10)")
-            output.append("-" * 30)
-            for label1, label2, similarity in results['sample_similarity'][:10]:
-                output.append(f"{label1[:30]} ↔ {label2[:30]}: {similarity:.3f} avg similarity")
-        
-        if results['suspicious_cooccurrence']:
-            output.append("\n🔗 UNEXPECTEDLY FREQUENT COMBINATIONS (Top 10)")
-            output.append("-" * 30)
-            for label1, label2, obs, exp, lift, chi2 in results['suspicious_cooccurrence'][:10]:
-                output.append(f"{label1[:30]} ↔ {label2[:30]}: {lift:.2f}x more than expected (χ²={chi2:.1f})")
-        
-
-        output.append(f"\n🎉 LABEL COMPLETION PROGRESS SUMMARY")
-        output.append(f"{'='*50}")
-        
-        total_discovered = results['partial_matches'] + results['over_predictions']
-        discovery_rate = total_discovered / results['sample_count']
-        
-        output.append(f"✨ Enhanced {total_discovered:,} samples with additional grammar patterns")
-        output.append(f"🎯 {results['correct_predictions']:,} samples already perfectly labeled")
-        output.append(f"🔍 {results['complete_misses']:,} samples need manual review")
-        output.append(f"📈 Overall label completeness improved by {discovery_rate:.1%}")
-        
-        if results['recall_micro'] > 0.9:
-            output.append(f"🏆 Excellent recall ({results['recall_micro']:.1%}) - rarely missing true patterns")
-        
-        output.append(f"\n💡 Next steps: Review high-confidence additions and refine {len(results['per_label_stats'])} distinct grammar patterns")
-        return "\n".join(output)
-
 if __name__ == '__main__':
     if os.getenv("ENABLE_DEBUGPY"):
         import debugpy
@@ -1027,8 +907,7 @@ if __name__ == '__main__':
     interference_analysis_file = os.path.join(grammar_root, 'summary', 'grammar-labeled-japanese-interference-analysis.txt')
     test_evaluation_results_file = os.path.join(grammar_root, 'summary', 'grammar-labeled-japanese-test-evaluation.json')
     
-    classifier = JapaneseGrammarClassifier(
-        algorithm='logistic_regression',
+    classifier = JapaneseGrammarLabelCompletingClassifier(
         min_label_freq=3,  # Adjust based on your data
         max_features=15000,
         ngram_range=(1, 4)
@@ -1049,7 +928,7 @@ if __name__ == '__main__':
                 test_split_evaluation = json.load(f)
     else:
         training_data = {}
-        def map(current, file_path):
+        def map(current, _):
             grammar_point = current['grammar_point']
             examples = current.get('examples', [])
             result = []
@@ -1057,7 +936,6 @@ if __name__ == '__main__':
                 japaneses = example.get('japanese', [])
                 for japanese in japaneses:
                     compact = japanese_to_compact_sentence(japanese.replace('{', '').replace('}', ''))
-                    # compact = japanese#.replace('{', '').replace('}', '')
                     result.append([grammar_point, compact])
             return result
 
@@ -1099,12 +977,3 @@ if __name__ == '__main__':
     interference_analysis_output = classifier.dump_interference_analysis(interference_results)
     classifier.print_evaluation_results(test_split_evaluation)
     print(interference_analysis_output)
-
-
-
-    
-
-
-
-    
-    
