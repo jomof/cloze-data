@@ -315,11 +315,9 @@ py_binary(
         "//python/console:display",
         "//python/mapreduce",
         "//python/mecab",
-        "@pip//joblib",
-        "@pip//mecab_python3",
+        "@pip//debugpy",
         "@pip//numpy",
         "@pip//scikit_learn",
-        "@pip//tqdm",
     ],
 )
 
@@ -371,13 +369,11 @@ py_library(
         "//python/utils/build_cache/memoize",
         "//python/utils/visit_json",
         "@pip//beautifulsoup4",
-        "@pip//joblib",
+        "@pip//debugpy",
         "@pip//json5",
         "@pip//json_repair",
-        "@pip//mecab_python3",
         "@pip//numpy",
         "@pip//pyyaml",
         "@pip//scikit_learn",
-        "@pip//tqdm",
     ],
 )

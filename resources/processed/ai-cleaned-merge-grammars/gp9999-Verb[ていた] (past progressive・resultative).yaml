@@ -2,297 +2,253 @@ grammar_point: Verb[ていた] (past progressive・resultative)
 learn_before:
   - Verb[た] (past tense)
   - Verb[て] (and then)
-  - '[Verb-て]いる (ongoing state・habitual action・resultant state)'
+  - Verb[ている・てる] (progressive・resultative)
 learn_after:
-  - '[Verb-た]ことがある (experience of having done)'
-  - '[Verb-た]ところだ (just finished doing)'
+  - 〜のだ・〜んだ (explanatory)
+  - ものだ (general truth expectation)
 id: gp9999
-meaning: was doing / was in a state (past progressive or resultant state)
-conjugations:
-  - conjugation-type: past plain (～た)
-    form: 〜ていた
-    rarity: common
-    meaning: was doing / was in a state
-  - conjugation-type: past polite (～ました)
-    form: 〜ていました
-    rarity: common
-    meaning: was doing (polite) / was in a state (polite)
-  - conjugation-type: negative past plain (～なかった)
-    form: 〜ていなかった
-    rarity: common
-    meaning: was not doing / was not in a state
-  - conjugation-type: negative past polite (～ませんでした)
-    form: 〜ていませんでした
-    rarity: common
-    meaning: was not doing (polite) / was not in a state (polite)
-  - conjugation-type: conditional (～ば)
-    form: 〜ていれば
-    rarity: less common
-    meaning: if was doing / if was in a state
-  - conjugation-type: conditional (～たら)
-    form: 〜ていたら
-    rarity: common
-    meaning: if was doing (then) / if was in a state (then)
-  - conjugation-type: concessive (～ても)
-    form: 〜ていても
-    rarity: common
-    meaning: even if was doing / even if was in a state
+meaning: was doing (past progressive)・had done (resultative state)
 pronunciation:
   katakana: テイタ
   romaji: te ita
 formation:
-  Verbて形 + いた: Indicates an action that was ongoing in the past or a state that existed as a result of
-    a past action.
-jlpt: N3
+  Verb[て] + いた: Indicates a state that began in the past and continued up to or was true at a point in
+    the past (resultative state).
+jlpt: N4
 details:
   part-of-speech: auxiliary verb
-  register: teineigo (polite)
-  temporal-flow: Describes actions or states that persisted over a period in the past.
-  spatial-flow: Implies a state or action that was maintained in a particular location in the past. (e.g.,
-    窓が開いていた - The window was open.)
-etymology: The grammatical form Verb + 「ている」 is a contraction of 「て」 (the conjunctive form of a verb)
-  and 「いる」 (the verb meaning 'to exist' or 'to be located'). Originally, this construction emphasized
-  the result of an action. Over time, it evolved to also express ongoing actions. When 「いる」 is conjugated
-  to its past form 「いた」, the entire construction 「ていた」 shifts the temporal reference to the past, indicating
-  either an action that was in progress at a past point in time or a state that had resulted from a past
-  action and continued to exist in the past.
-writeup: "The grammar point 「ていた」 is the past tense form of 「ている」. It describes actions or states that\
-  \ existed or were ongoing at a specific point in the past. Understanding its usage is crucial for accurately\
-  \ describing past events in Japanese. There are three primary uses for 「ていた」:\n\n1.  **Past Progressive\
-  \ Action**: This is similar to the English past continuous tense (e.g., \"was doing\"). It describes\
-  \ an action that was in progress at some point in the past.\n    *   Example: 彼は昨日の夜、テレビを**見ていました**。\
-  \ (He **was watching** TV last night.)\n\n2.  **Habitual Action in the Past**: 「ていた」 can also describe\
-  \ actions that were regularly performed or habits that existed in the past, but are no longer necessarily\
-  \ true in the present. This often appears with adverbs like 「いつも」 (always) or 「よく」 (often).\n    * \
-  \  Example: 学生の時、毎日 図書館で**勉強していました**。 (When I was a student, I **used to study** at the library every\
-  \ day.)\n\n3.  **Resultant State in the Past**: This describes a state that resulted from a past action\
-  \ and continued to exist up to or at a specific point in the past. This is particularly common with\
-  \ intransitive verbs that describe a change of state (e.g., 開く 'to open' becoming 開いている 'is open').\
-  \ When referring to something that was placed or prepared, transitive verbs combined with 「てある」 (which\
-  \ becomes 「てあった」 in the past) are generally used, but 「ていた」 can also describe the resultant state of\
-  \ something that has stopped or changed. \n    *   Example: 窓が**開いていた**。 (The window **was open**.)\
-  \ – meaning it was opened at some point and remained in that state.\n\nIt is important to distinguish\
-  \ 「ていた」 from the simple past tense 「た」 form. While 「た」 simply states that an action was completed in\
-  \ the past, 「ていた」 emphasizes the *duration*, *continuation*, or *persistence* of an action or state\
-  \ in the past. For example, 「食べた」 means \"ate\" (a completed action), whereas 「食べていた」 means \"was eating\"\
-  \ (an ongoing action)."
+  register: casual
+  function: Expresses either an action that was in progress in the past or a state that resulted from
+    a past action and continued.
+  nuance: 'This form covers two distinct meanings: ongoing action in the past (past progressive) and a
+    state resulting from a past action that was true at some point in the past (resultative). The specific
+    meaning is usually clear from context.'
+  grammatical-role: Modifies the verb to indicate past aspectual information.
+etymology: The 〜て form serves as a conjunctive or gerundive form of verbs, indicating a connection between
+  actions or states. いる (iru) means "to exist" for animate objects, and by extension, "to be in a state
+  of." Historically, 居る (iru) was used for living things, while 有る (aru) for inanimate things. The combination
+  〜て + いる evolved to express continuous action or a resultant state. When いる became いた (its past form),
+  it naturally extended these meanings into the past. So, 〜ていた literally means "was in the state of [verb]-ing"
+  or "was in the state resulting from [verb]-ing."
+writeup: 'Verb[ていた] is the past tense of Verb[ている]. Like its present tense counterpart, 〜ていた has two primary
+  uses: expressing an action that was in progress in the past, often referred to as the past progressive
+  or past continuous, and expressing a state that resulted from a past action and was true at a particular
+  point in the past. The context in which it is used typically clarifies which meaning is intended. For
+  instance, if you say 「ご飯 を {食べていた}。」, it could mean "I was eating a meal" (ongoing action) or "I had
+  already eaten a meal" (resultative state, implying the meal was finished and the state of having eaten
+  continued). Understanding the core verb and the surrounding context is crucial for disambiguating these
+  meanings. This grammar point is fundamental for describing past events and states in Japanese, adding
+  depth and precision to narratives.'
 false_friends:
   - term: Verb[た]
-    meaning: simple past tense
+    meaning: did
     kind: similar expression
-    nuance: Verb[た] indicates a completed action or a single event in the past. Verb[ていた] emphasizes the
-      duration, continuity, or resulting state of an action in the past.
+    nuance: Verb[た] simply indicates a completed action in the past. Verb[ていた] implies either an ongoing
+      action at a past point or a state that resulted from a past action and continued. It provides more
+      detail about the temporal aspect or the lasting consequence.
     grammar_point: Verb[た] (past tense)
-  - term: Verb[て]いる
-    meaning: present progressive / resultant state
+  - term: Verb[ている]
+    meaning: is doing・has done
     kind: similar expression
-    nuance: Verb[て]いる describes an action ongoing in the present or a state existing in the present. Verb[ていた]
-      shifts this temporal reference to the past.
-    grammar_point: '[Verb-て]いる (ongoing state・habitual action・resultant state)'
-  - term: Verb[た]ことがある
-    meaning: have the experience of doing something
-    kind: similar expression
-    nuance: Verb[た]ことがある specifically denotes having the experience of doing an action at least once.
-      Verb[ていた] describes an action that was in progress or a state that existed at a specific time in
-      the past, without necessarily implying an accumulated experience.
-    grammar_point: '[Verb-た]ことがある (experience of having done)'
-  - term: Verb[た]ところだ
-    meaning: just finished doing
-    kind: often confused with
-    nuance: Verb[た]ところだ signifies that an action was completed very recently. Verb[ていた] describes an action
-      that was ongoing or a state that existed at some point in the past, not its immediate completion.
-    grammar_point: '[Verb-た]ところだ (just finished doing)'
-  - term: Verb[つつある]
-    meaning: is in the process of (gradually changing)
-    kind: similar expression
-    nuance: Verb[つつある] (or its past form Verb[つつあった]) implies a more formal or literary expression for
-      a gradual, ongoing process of change. Verb[ていた] is a more general and common form for any continuous
-      action or state in the past.
-    grammar_point: <suggest>:[Verb-stem]つつある (gradual process)
-post_false_friends_writeup: While 「ていた」 covers a broad range of past continuous and resultant states,
-  other expressions specify different nuances. For example, the simple past 「た」 form focuses on completion
-  rather than duration. 「ている」 describes present states or ongoing actions, while 「ていた」 moves this to the
-  past. When discussing past experiences, 「たことがある」 is used. For actions that were just completed, 「たところだ」
-  is appropriate. Finally, 「つつあった」 (the past form of 「つつある」) is a more formal way to describe a gradual,
-  ongoing process in the past, often implying a slow development rather than a simple continuous action.
+    nuance: Verb[ている] describes actions ongoing in the present or states resulting from past actions that
+      are true now. Verb[ていた] shifts these same concepts into the past. It provides the same pattern,
+      just a different temporal frame.
+    grammar_point: Verb[ている・てる] (progressive・resultative)
+post_false_friends_writeup: 'The distinction between 〜た and 〜ていた often lies in whether the focus is simply
+  on the completion of an action (〜た) or on the process of an action at a past point in time, or a state
+  that existed in the past as a result of a prior action (〜ていた). When considering 〜ている versus 〜ていた, remember
+  that いる indicates present existence or state, while いた indicates past existence or state. Therefore,
+  the choice depends entirely on the timeframe you wish to convey: present ongoing/resultant state vs.
+  past ongoing/resultant state.'
 examples:
-  - english: She was laughing yesterday.
+  - english: Yesterday, I was studying in my room.
     japanese:
-      - 彼女 は 昨日 {笑っ て い た}。
-      - 彼女 は 昨日 {笑っ て い まし た}。
-    english_literally: As for her, yesterday, was laughing.
+      - 昨日、部屋 で {勉強 し て い た}。
+      - 昨日、部屋 で {勉強 し て い まし た}。
+    english_literally: Yesterday, in room, was studying.
     competing_grammar:
       - competing_japanese:
-          - 彼女 は 昨日 笑っ た。
-        english: She laughed yesterday.
-        hint: 「笑った」 indicates a completed action. We are looking for an action that was ongoing in the
-          past.
-    scene: A friend recounts something amusing that happened the previous day during a casual chat.
+          - 昨日、部屋 で 勉強 し た。
+        english: Yesterday, I studied in my room (completed action).
+        hint: This simply states a completed action. We're looking for an action that was in progress
+          at a specific time in the past.
+    scene: A student recalling their activities from the previous day.
     register: casual
-    setting: friendly
-  - english: The window was open.
+    setting: informative
+  - english: When I entered the room, the window was open.
     japanese:
-      - 窓 が {開い て い た}。
-      - 窓 が {開い て い まし た}。
-    english_literally: Window was open.
+      - 部屋 に 入っ た 時、窓 が {開い て い た}。
+      - 部屋 に 入っ た 時、窓 が {開い て い まし た}。
+    english_literally: When I entered room, window was open.
     competing_grammar:
       - competing_japanese:
-          - 窓 が 開き まし た。
-        english: The window opened.
-        hint: 「開きました」 focuses on the action of opening. We are looking for a state of being open in the
-          past.
-    scene: A detective inspects a room after an incident, noting the state of the window.
-    register: formal
-    setting: serious
-  - english: When I was a student, I used to study at the library every day.
+          - 部屋 に 入っ た 時、窓 が 開い た。
+        english: When I entered the room, the window opened.
+        hint: This means the window opened at the same time you entered. We're looking for the state of
+          the window being open.
+    scene: Describing a scene upon entering a room.
+    register: casual
+    setting: informative
+  - english: At that time, my grandmother was always knitting.
     japanese:
-      - 学生 の 時、毎日 図書 館 で {勉強 し て い た}。
-      - 学生 の 時、毎日 図書 館 で {勉強 し て い まし た}。
-    english_literally: Student's time, every day, at library, was studying.
+      - あの 時、祖母 は いつ も 編み物 を {し て い た}。
+      - あの 時、祖母 は いつ も 編み物 を {し て い まし た}。
+    english_literally: That time, grandmother always knitting was doing.
     competing_grammar:
       - competing_japanese:
-          - 学生 の 時、毎日 図書 館 で 勉強 し た。
-        english: When I was a student, I studied at the library every day.
-        hint: While 「勉強した」 can imply a habitual action with 「毎日」, 「勉強していた」 more explicitly conveys the
-          continuous and repeated nature of the action in the past. We're looking for emphasis on the
-          past habit.
-    scene: An older man reminisces about his college days with a younger friend.
+          - あの 時、祖母 は いつ も 編み物 を し た。
+        english: At that time, my grandmother always knitted.
+        hint: This implies a series of completed actions, not a continuous or habitual state in the past.
+          We're looking for an action that was habitually ongoing.
+    scene: Describing a memory of a grandmother.
     register: casual
     setting: reflective
-    speaker_age: older
-    nuance: The use of 「勉強していた」 with 「毎日」 emphasizes the continuous and habitual nature of studying at
-      the library during his student days. This reflects the speaker's past routine.
-  - english: The manager was giving instructions at that time.
-    japanese:
-      - その 時、部長 は 指示 を {出し て い た}。
-      - その 時、部長 は 指示 を {出し て い まし た}。
-    english_literally: At that time, the manager was putting out instructions.
-    competing_grammar:
-      - competing_japanese:
-          - その 時、部長 は 指示 を 出し まし た。
-        english: At that time, the manager gave instructions.
-        hint: 「出しました」 implies a single, completed act of giving instructions. We're looking for an action
-          that was ongoing.
-    scene: A junior employee explains a past event during a project review to a senior colleague.
-    register: formal
-    setting: professional
-  - english: My room was messy because I hadn't cleaned it.
-    japanese:
-      - 掃除 し て なかっ た から、部屋 が {散らかっ て い た}。
-      - 掃除 し て い なかっ た の で、部屋 が {散らかっ て い まし た}。
-    english_literally: Had not cleaned because, room was messy.
-    competing_grammar:
-      - competing_japanese:
-          - 掃除 し て なかっ た から、部屋 が 散らかっ た。
-        english: My room became messy because I hadn't cleaned it.
-        hint: 「散らかった」 focuses on the event of becoming messy. We're looking for the state of being messy
-          that existed.
-    scene: A college student complaining to a roommate about the state of their shared living space.
-    register: casual
-    setting: casual slang
-  - english: I was looking for my keys earlier.
-    japanese:
-      - さっき 鍵 を {探し て い た} の。
-      - さっき 鍵 を {探し て い まし た}。
-    english_literally: A little while ago, keys was looking for.
-    competing_grammar:
-      - competing_japanese:
-          - さっき 鍵 を 探し た の。
-        english: I looked for my keys earlier.
-        hint: 「探した」 implies a completed search. We're looking for the ongoing action of searching.
-    scene: A woman explains to her friend why she seemed distracted a moment ago.
-    register: casual
-    setting: friendly
     speaker_gender: female
-    nuance: The use of 「探していたの」 with the feminine sentence-ending particle 「の」 adds a soft, explanatory
-      nuance typical of female speech in casual conversation, indicating a reason for a past state.
-  - english: The lights were already off.
+    nuance: The 「いつも」 (always) reinforces the continuous nature of the past action. 「していた」 indicates a
+      habitual action in the past, often associated with a female elder like a grandmother in this context.
+  - english: He was wearing a red shirt.
     japanese:
-      - 電気 は すでに {消え て い た}。
-      - 電気 は すでに {消え て い まし た}。
-    english_literally: Lights already were turned off.
+      - 彼 は 赤い シャツ を {着 て い た}。
+      - 彼 は 赤い シャツ を {着 て い まし た}。
+    english_literally: He red shirt was wearing.
     competing_grammar:
       - competing_japanese:
-          - 電気 が すでに 消え まし た。
-        english: The lights already turned off.
-        hint: 「消えました」 focuses on the action of the lights turning off. We're describing the resultant
-          state of the lights being off.
-    scene: A security guard reports the status of a building late at night.
-    register: formal
-    setting: professional
-  - english: Until last year, I was going to the gym three times a week.
-    japanese:
-      - 去年 まで は、週 に 三 回 ジム に {通っ て い た}。
-      - 去年 まで は、週 に 三 回 ジム に {通っ て い まし た}。
-    english_literally: Until last year, weekly three times, to gym, was commuting.
-    competing_grammar:
-      - competing_japanese:
-          - 去年 まで は、週 に 三 回 ジム に 通い まし た。
-        english: Until last year, I went to the gym three times a week.
-        hint: 「通いました」 is a simple past action. 「通っていました」 explicitly conveys the habitual and continuous
-          nature of attending the gym.
-    scene: Someone discusses their past fitness routine during a casual conversation.
-    register: teineigo (polite)
-    setting: informative
-  - english: He was playing video games all night.
-    japanese:
-      - 彼 は 一 晩 中 テレビ ゲーム を {やっ て い た} よ。
-      - 彼 は 一 晩 中 テレビ ゲーム を {やっ て い まし た}。
-    english_literally: As for him, all night, video games was doing, you know.
-    competing_grammar:
-      - competing_japanese:
-          - 彼 は 一 晩 中 テレビ ゲーム を やっ た よ。
-        english: He played video games all night.
-        hint: 「やった」 implies a completed action. We're emphasizing the continuous nature of playing throughout
-          the night.
-    scene: A father tells his son's friend about his son's late night activity.
+          - 彼 は 赤い シャツ を 着 た。
+        english: He put on a red shirt.
+        hint: This describes the action of putting on the shirt. We're looking for the state of wearing
+          it.
+    scene: Describing someone's attire.
     register: casual
-    setting: friendly
-    speaker_gender: male
-    nuance: The sentence-ending particle 「よ」 in 「やっていたよ」 adds a friendly, informative tone, often used
-      by male speakers to share information or provide a light explanation. The speaker is relaying a
-      fact to his son's friend.
-  - english: The store was closed.
+    setting: informative
+  - english: What were you doing at 8 PM yesterday?
     japanese:
-      - その 店 は {閉まっ て い た}。
-      - その 店 は {閉まっ て い まし た}。
-    english_literally: That store was closed.
+      - 昨日 の 午後 8 時 に 何 を {し て い まし た} か。
+      - 昨日 の 午後 8 時 に 何 を {し て い た} の か。
+    english_literally: Yesterday's 8 PM at what was doing?
     competing_grammar:
       - competing_japanese:
-          - その 店 は 閉まり まし た。
-        english: The store closed.
-        hint: 「閉まりました」 focuses on the action of closing. We're describing the resultant state of being
-          closed.
-    scene: Someone explains to a friend why they couldn't buy something they needed.
+          - 昨日 の 午後 8 時 に 何 を し まし た か。
+        english: What did you do at 8 PM yesterday?
+        hint: This asks about a completed action at a specific time. We're looking for an action that
+          was ongoing at that time.
+    scene: A friend asking about the previous night.
     register: teineigo (polite)
-    setting: serious
-  - english: My grandmother was always humming a song.
+    setting: interrogative
+    conjugation: past polite (～ました)
+    nuance: The phrase 「していました か」 seeks to know what activity was in progress at a very specific past
+      time, showing politeness through the 「〜ました」 form.
+  - english: I already knew that. I had already heard it.
     japanese:
-      - 祖母 は いつ も 歌 を {口ずさん で い た}。
-      - 祖母 は いつ も 歌 を {口ずさん で い まし た}。
-    english_literally: Grandmother always song was humming.
+      - それ は もう {聞い て い た}。
+      - それ は もう {聞い て い まし た}。
+    english_literally: That already was heard.
     competing_grammar:
       - competing_japanese:
-          - 祖母 は いつ も 歌 を 口ずさみ まし た。
-        english: My grandmother always hummed a song.
-        hint: While 「口ずさみました」 can imply habit with 「いつも」, 「口ずさんでいました」 more strongly emphasizes the continuous
-          and habitual nature of the action over time.
-    scene: A person shares a fond memory of their grandmother with a younger family member.
-    register: teineigo (polite)
-    setting: reflective
-    nuance: The use of 「いつも」 with 「口ずさんでいました」 strongly emphasizes the habitual nature of the action in
-      the past, portraying it as a continuous characteristic of the grandmother.
-  - english: My car was parked in front of the station.
+          - それ は もう 聞い た。
+        english: I already heard that.
+        hint: This emphasizes the completed action of hearing. We're focusing on the state of possessing
+          that information from having heard it.
+    scene: Someone expressing prior knowledge.
+    register: casual
+    setting: informative
+  - english: For a long time, she was living abroad.
     japanese:
-      - 私 の 車 は 駅 の 前 に {止まっ て い た}。
-      - 私 の 車 は 駅 の 前 に {止まっ て い まし た}。
-    english_literally: My car in front of station was stopped.
+      - 長い 間、彼女 は 海外 に {住ん で い まし た}。
+      - 長い 間、彼女 は 海外 に {住ん で い た}。
+    english_literally: Long time, she abroad was living.
     competing_grammar:
       - competing_japanese:
-          - 私 の 車 は 駅 の 前 に 止まり まし た。
-        english: My car stopped in front of the station.
-        hint: 「止まりました」 focuses on the event of the car stopping. We're describing the state of the car
-          being parked.
-    scene: Someone explains to the police where their car was located after an incident.
+          - 長い 間、彼女 は 海外 に 住み まし た。
+        english: For a long time, she lived abroad.
+        hint: This focuses on the completed act of living there. We're looking for a continuous state
+          of living there in the past.
+    scene: Discussing someone's past residency.
     register: teineigo (polite)
     setting: informative
+    conjugation: past polite (～ました)
+    nuance: 「住んでいました」 indicates a prolonged state of living in a foreign country during a past period.
+      This is a common resultative state continuing in the past, conveyed politely with 「〜ました」.
+  - english: The plate was broken.
+    japanese:
+      - お 皿 が {割れ て い た}。
+      - お 皿 が {割れ て い まし た}。
+    english_literally: Plate was broken.
+    competing_grammar:
+      - competing_japanese:
+          - お 皿 が 割れ た。
+        english: The plate broke.
+        hint: This means the plate broke at that specific moment. We're describing the state of it being
+          broken.
+    scene: Discovering a damaged item.
+    register: casual
+    setting: reflective
+  - english: The birds were singing, and the sun was shining.
+    japanese:
+      - 鳥 が {歌っ て い て}、太陽 が 輝い て い まし た。
+      - 鳥 が {歌っ て い て}、太陽 が 輝い て い た。
+    english_literally: Birds were singing, sun was shining.
+    competing_grammar:
+      - competing_japanese:
+          - 鳥 が 歌い、太陽 が 輝い て い まし た。
+        english: The birds sang, and the sun shone.
+        hint: This describes two completed or sequential actions. We're looking for continuous actions
+          happening simultaneously in the past.
+    scene: Describing a pleasant outdoor scene.
+    register: teineigo (polite)
+    setting: creative
+    nuance: Both 「歌っていて」 (te-form of 歌っていた) and 「輝いていました」 describe continuous actions that were happening
+      in the background of a past narrative, setting the scene.
+  - english: He had a lot of money when he was young.
+    japanese:
+      - 彼 は 若い 頃、たくさん お 金 を {持っ て い た}。
+      - 彼 は 若い 頃、たくさん お 金 を {持っ て い まし た}。
+    english_literally: He young time, a lot of money was having.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 若い 頃、たくさん お 金 を 持っ た。
+        english: He got a lot of money when he was young.
+        hint: This describes the acquisition of money. We're looking for the state of possessing money
+          continuously in the past.
+    scene: Talking about someone's past wealth.
+    register: casual
+    setting: informative
+    nuance: 「持っていた」 means "he was in possession of" money. This is a common resultative usage for verbs
+      like 持つ (to hold/have), indicating a state of possession that continued in the past.
+  - english: Were you waiting for me?
+    japanese:
+      - 私 を {待っ て い た} の です か。
+      - 私 を {待っ て い た} の か。
+    english_literally: Me was waiting of is it?
+    competing_grammar:
+      - competing_japanese:
+          - 私 を 待ち まし た か。
+        english: Did you wait for me?
+        hint: This asks if the action of waiting was completed. We're looking for whether the action was
+          ongoing at a specific past point.
+    scene: Someone arriving and seeing another person, asking if they were waiting.
+    register: teineigo (polite)
+    setting: interrogative
+    nuance: 「待っていた」 asks about an ongoing action in the past, specifically whether the act of waiting
+      was happening before their arrival. The ending 「のです か」 adds a nuance of seeking explanation or confirmation
+      politely.
+  - english: The book was placed on the table.
+    japanese:
+      - 本 が テーブル の 上 に {置い て あっ た}。
+      - 本 が テーブル の 上 に {置い て あり まし た}。
+    english_literally: Book table's top on was placed.
+    competing_grammar:
+      - competing_japanese:
+          - 本 が テーブル の 上 に 置か れ た。
+        english: The book was placed on the table (by someone).
+        hint: This uses the passive voice, emphasizing the action of being placed. We're looking for the
+          resulting state of the book being there.
+    scene: Describing the location of an object.
+    register: casual
+    setting: informative
+    nuance: 「置いてあった」 uses the 〜てある form in the past. It indicates a state of being placed, usually as
+      a result of someone intentionally placing it there, and that state existed in the past.
+post_example_writeup: As shown in the examples, the context is vital for discerning whether 〜ていた refers
+  to a continuous action or a resultant state. Pay close attention to the nature of the verb and any surrounding
+  adverbs or temporal markers, as these often provide clear clues to the intended meaning.
+sources:
+  bunpro: https://bunpro.jp/grammar_points/Verb%5B%E3%81%A6%E3%81%84%E3%81%9F%5D%20(past%20progressive%E3%83%BBresultative)

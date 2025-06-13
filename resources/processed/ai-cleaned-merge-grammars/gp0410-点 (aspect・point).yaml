@@ -1,331 +1,211 @@
 grammar_point: 点 (aspect・point)
 learn_before:
-  - '[Clause]こと (the act of・the fact that)'
-  - の (noun modifier)
-learn_after:
-  - という点から考えると (from the viewpoint of)
-  - において・における (formal context)
-  - にとどまらず (not limited to)
+  - Verb[dictionary] (dictionary form)
+  - い-Adjectives (adjectives ending in い)
+  - な-Adjectives (adjectival nouns)
+  - の (possession)
 id: gp0410
-meaning: Aspect, respect, point, way, in terms of, from the point of view
+meaning: aspect or point of consideration
 pronunciation:
   katakana: テン
   romaji: ten
 formation:
-  Noun (Attributive Form) + 点 + で: Used to highlight a specific quality or characteristic of the preceding
-    noun.
-  Noun + の + 点 + で: Used to highlight a specific point or aspect related to the preceding noun.
-  Phrase + という + 点 + で: Used to highlight a specific point or aspect contained within the preceding phrase
-    or statement.
-jlpt: N3
+  Noun + の + {点}: To highlight a specific point or aspect related to a noun.
+  い-Adjective + {点}: To refer to an aspect described by an い-adjective.
+  な-Adjective + な + {点}: To refer to an aspect described by a な-adjective.
+  Verb[dictionary] + {点}: To refer to a point concerning an action or state.
+jlpt: N2
 details:
   part-of-speech: noun
-  usage-context: Used to specify a particular aspect, point, or respect when making a comparison, evaluation,
-    or explanation. It serves to narrow down the focus to a specific characteristic or condition.
-  function: To specify a focal point or aspect.
-  nuance: Emphasizes a particular characteristic, perspective, or criterion for discussion or comparison.
-    It often implies a detailed analysis or consideration of specific attributes, making statements more
-    precise.
-  grammatical-role: Acts as a nominalizer, turning the preceding phrase or word into a specific 'point'
-    for further discussion, typically followed by the particle で.
-  spatial-flow: Used metaphorically to denote a specific conceptual 'point' or 'spot' within a larger
-    argument or context, narrowing focus to a particular detail or aspect rather than a physical location.
-etymology: The kanji 点 (ten) literally means 'dot' or 'spot'. Its semantic development led to its use
-  in a more abstract sense, signifying a specific 'point' or 'aspect' within a larger context. This evolution
-  reflects how a 'dot' can represent a single, distinct element in a broader picture or argument, thus
-  enabling its application to denote a specific respect or viewpoint.
+  usage-context: Used to highlight a specific feature, characteristic, or aspect when discussing or evaluating
+    something. Often appears in evaluative or comparative contexts.
+  function: Specifies a particular point or area of focus within a larger subject.
+  nuance: Implies a distinct, often enumerable, characteristic or a specific item in a list of considerations.
+    It suggests a more granular focus than 面 (aspect/side).
+  grammatical-role: Functions as a noun, often preceded by a modifier (noun + の, adjective).
+etymology: The kanji 「点」 originally depicted a small mark or a spot. From this basic meaning of a "point"
+  or "dot," its usage expanded to denote a specific "point" of consideration, an "aspect," or an "item"
+  within a larger context. This evolution reflects how one isolates and focuses on discrete elements for
+  analysis or discussion.
 writeup: |-
-  「点」(ten) is a fundamental kanji that signifies a specific **point**, **aspect**, or **respect** in a discussion or comparison. It functions as a nominalizer, allowing a preceding word or phrase to be singled out as the particular focus. This grammar point is highly versatile and is commonly translated as: “From the aspect of (A)”, “In respect to (A)”, “In terms of (A)”, or “From the point of view of (A)”.
+  「点」 (ten) is a noun used to refer to a specific "aspect," "point," or "respect" when discussing or evaluating something. It allows the speaker to hone in on a particular characteristic or detail, often in contexts of comparison, analysis, or critique.
 
-  ### Formation Guidelines
+  When used to describe qualities, it typically follows adjectives or nouns. For example, 「良い 点」 (yoi ten) means "good points," and 「悪い 点」 (warui ten) means "bad points." It can also follow verbs to specify an action or state as the point of discussion.
 
-  「点」 is typically attached to the **attributive form** of another word, a noun followed by 「の」, or a phrase followed by 「という」. In most common usages, 「点」 is typically followed by the case-marking particle 「で」. For example:
-
-  *   **[Noun (Attributive Form)] + 点 + で**: Used when the preceding word is an adjective or verb in its plain form directly modifying 「点」. For instance, 「難しい点」(difficult point) or 「良い点」(good point).
-  *   **[Noun] + の + 点 + で**: Used when connecting a noun directly to 「点」, indicating that the noun itself is the specific aspect being considered. For example, 「その点」(that point) or 「値段の点」(the point of price).
-  *   **[Phrase] + という + 点 + で**: This construction is used to refer to a complex statement or idea as a specific point or aspect. The 「という」 acts as a quotative particle, turning the entire preceding phrase into a noun-like clause that 「点」 then modifies. For example, 「彼が正直であるという点」(the point that he is honest).
-
-  ### Usage with other particles
-
-  While 「で」 is the most common particle following 「点」, it can sometimes be replaced by other expressions that also serve to highlight a specific focus or relationship. For instance, 「について」(in relation to) or 「から言うと」(speaking from/from the perspective of) can precede 「点」, especially when further elaborating on the highlighted aspect. However, it's crucial that the accompanying grammatical structure also functions to draw attention to something specific and can logically be paired with a noun, to ensure natural Japanese usage.
+  This usage of 「点」 is common in formal or semi-formal discourse, such as academic discussions, business meetings, or detailed personal evaluations. It provides a structured way to break down complex subjects into manageable elements.
 false_friends:
-  - term: ことから
-    meaning: From the fact that; because of
-    kind: often confused with
-    nuance: While 「点」 focuses on a specific aspect or quality, 「ことから」 is used to state a reason or basis
-      from which a conclusion is drawn. It emphasizes causality derived from a general fact.
-    grammar_point: ことから (from the fact that)
-  - term: にしたら
-    meaning: From the point of view of (someone); if one were (someone)
-    kind: often confused with
-    nuance: 「点」 highlights an abstract aspect or characteristic. In contrast, 「にしたら」 expresses a perspective
-      *from a specific person or group*, often implying empathy or a shift in viewpoint, which is not
-      the function of 「点」.
-    grammar_point: にしたら・にしてみれば (from the perspective of)
-  - term: にとって
-    meaning: For (someone); to (someone); in (someone's) eyes
-    kind: often confused with
-    nuance: 「点」 specifies an objective aspect. 「にとって」 indicates the significance or relevance of something
-      *to a particular person or entity*, emphasizing their subjective benefit or impact.
-    grammar_point: にとって (from the standpoint of)
-  - term: ところ
-    meaning: Place, part, point, aspect
-    kind: often confused with
-    nuance: When meaning 'point' or 'aspect', 「ところ」 often refers to a more concrete or general part of
-      something, or a specific situation/state, whereas 「点」 emphasizes a distinct, often conceptual, characteristic
-      or criterion for evaluation. For example, 「難しいところ」 might be a difficult part of a process, while
-      「難しい点」 highlights a specific difficult characteristic.
-    grammar_point: <suggest>:ところ (aspect)
-  - term: こと
-    meaning: Thing, matter, fact, abstract thing
-    kind: often confused with
-    nuance: 「こと」 is a broader nominalizer that turns a verb or adjective into a noun-like entity, focusing
-      on the abstract fact or action itself. 「点」 narrows this to a specific 'point' or 'aspect' that is
-      being singled out, highlighted, or evaluated within that broader fact.
-    grammar_point: '[Clause]こと (the act of・the fact that)'
-  - term: 面
-    meaning: Aspect, side, viewpoint, in terms of
+  - term: 面 (aspect・side)
+    meaning: aspect; side; surface; face
     kind: similar expression
-    nuance: While 「面」 and 「点」 are often interchangeable, 「面」 tends to refer to a broader 'side' or 'face'
-      of something, while 「点」 focuses on a more specific, sometimes singular, 'point' or 'detail'. 「面」
-      might feel slightly more about 'surface' or 'general characteristic', while 「点」 is more about 'a
-      particular detail or criterion'.
-    grammar_point: 面 (aspect)
-  - term: において・における
-    meaning: In, on, at, regarding, in terms of (formal)
+    nuance: While both 「点」 and 「面」 can refer to "aspects," 「点」 often implies a more specific, sometimes
+      countable, distinct point or characteristic. 「面」 suggests a broader "side" or "facet" of something,
+      a general area rather than a precise detail. 「面」 can also be used in physical contexts (a surface),
+      which 「点」 typically is not.
+    grammar_point: <suggest>:面 (aspect side)
+  - term: ところ (place・point)
+    meaning: place; point; aspect; part; situation
     kind: similar expression
-    nuance: While 「点」 specifies a *specific individual characteristic or criterion*, 「において・における」 sets
-      a broader *context, field, or area* for discussion or action. They both can translate to 'in terms
-      of', but 「点」 zeroes in on a particular attribute, while 「において」 establishes the domain.
-    grammar_point: において・における (formal context)
-post_false_friends_writeup: To differentiate between these expressions, remember that 「点」 isolates a specific
-  attribute or perspective *of* something. 「ことから」 provides the factual basis *for* something happening
-  or being concluded. 「にしたら」 frames a situation *from the viewpoint of a person*. 「にとって」 identifies what
-  something means *to* a particular party, highlighting its subjective importance or relevance. Lastly,
-  「ところ」 is often used for more concrete 'parts' or general 'situations', while 「こと」 is a general nominalizer
-  for abstract 'things' or 'facts', whereas 「点」 specifically zooms in on a particular 'aspect' or 'point'
-  for detailed consideration. 「において・における」, similar to 「点」, can express 'in terms of' but typically sets
-  a broader context or field of consideration, rather than pinpointing a singular characteristic.
+    nuance: 「ところ」 can also mean "point" or "aspect," but it often carries a nuance of a specific part
+      of something, a state or situation, or a moment in time. 「点」 is more focused on a distinct characteristic
+      or a logical point in an argument or description.
+    grammar_point: ところだ (location by travel time)
+post_false_friends_writeup: Understanding the distinction between 「点」, 「面」, and 「ところ」 is key. 「点」 specifies
+  a particular, often enumerable, characteristic or detail. 「面」 refers to a broader facet or side of something.
+  「ところ」 can denote a specific part, a moment in time, or a situation, making it more versatile but less
+  precisely focused on an "aspect" as 「点」 is. Choose 「点」 when you want to highlight a distinct, often
+  analytical, point.
 examples:
-  - english: The new smartphone is wonderful in terms of design.
+  - english: This product's strongest point is its ease of use.
     japanese:
-      - 新しい スマート フォン は、デザイン の {点} で 素晴らしい です。
-      - 新しい スマート フォン は、デザイン の {点} で 優れ て い ます。
-      - 新しい スマート フォン は、デザイン の {点} で すごく 良い です。
-    english_literally: As for new smartphone, in the point of design, it is wonderful.
+      - この 製品 の {良い 点} は 使い やす さ です。
+      - この 製品 の {良い 点} は 使い やす さ だ。
+      - この 製品 の {良い 点} と し て は、使い やす さ が 挙げ られ ます。
+    english_literally: This product's good point is its ease of use.
     competing_grammar:
       - competing_japanese:
-          - 新しい スマート フォン は、デザイン {に つい て} 素晴らしい です。
-        english: The new smartphone is wonderful about its design.
-        hint: 「について」 indicates 'about design' which is broader. 「デザインの点」 specifically focuses on 'the
-          aspect of design' as the precise reason for its wonderfulness, highlighting a particular feature
-          rather than a general topic. We are looking for a specific aspect.
-      - competing_japanese:
-          - 新しい スマート フォン は、デザイン {が} 素晴らしい です。
-        english: The new smartphone's design is wonderful.
-        hint: This is a direct statement about the design. Adding 「の点」 provides a more analytical or evaluative
-          nuance, signaling that the design is a specific criterion being considered for its excellence.
-          We are looking for an emphasis on a specific point.
-    scene: Two colleagues are discussing a newly released smartphone. One colleague is particularly impressed
-      by its aesthetics, wanting to emphasize this specific quality.
-    register: semi-formal
-    setting: informative
-    nuance: This sentence uses 「の点」 to highlight 'design' as the specific area of excellence, suitable
-      for a semi-formal discussion. The polite 「です」 maintains a professional tone.
-  - english: The difficult aspect of this book is that it contains many technical terms.
-    japanese:
-      - この 本 の 難しい {点} は、専門 用語 が 多い こと です。
-      - この 本 の 難しい {点} は、専門 用語 が 多い こと だ。
-    english_literally: As for this book's difficult point, it is that technical terms are many.
-    competing_grammar:
-      - competing_japanese:
-          - この 本 の 難しい {ところ} は、専門 用語 が 多い こと です。
-        english: The difficult part of this book is that it contains many technical terms.
-        hint: 「ところ」 can refer to a 'place' or a 'part' of something, but 「点」 specifically refers to a
-          'point' or 'aspect' that is difficult, making it more suitable for identifying a specific problematic
-          characteristic of the book's content. We are looking for a specific difficult point.
-      - competing_japanese:
-          - この 本 が 難しい の は、専門 用語 が 多い {から} です。
-        english: The reason this book is difficult is because it contains many technical terms.
-        hint: This is a general statement about the book's difficulty. 「難しい点」 specifies *what* makes it
-          difficult, focusing on a particular problematic characteristic rather than the overall impression.
-          We are looking for a specific aspect that makes it difficult.
-    scene: A student is explaining to a friend why they are struggling with a textbook. They want to pinpoint
-      the exact reason for the difficulty.
-    register: casual
-    setting: informative
-    nuance: The speaker identifies 「専門用語が多いこと」 (the fact that there are many technical terms) as the specific
-      「難しい点」 (difficult aspect) of the book. This casual explanation between friends pinpoints the exact
-      challenge.
-  - english: The fact that she is always positive is truly admirable.
-    japanese:
-      - 彼女 は いつ も 前向き だ と いう {点} が、本当 に 尊敬 でき ます。
-      - 彼女 は いつ も 前向き だ と いう {点} が、本当 に 尊敬 できる。
-    english_literally: As for her, the point that she is always positive, is truly admirable.
-    competing_grammar:
-      - competing_japanese:
-          - 彼女 が いつ も 前向き だ と いう {こと} が、本当 に 尊敬 でき ます。
-        english: The fact that she is always positive is truly admirable.
-        hint: 「ということ」 refers to the general fact. 「という点」 specifically points to 'her being positive' as
-          the particular 'aspect' or 'quality' that is admirable, focusing on a specific characteristic
-          being evaluated. We are looking for an emphasis on a particular aspect.
-      - competing_japanese:
-          - 彼女 の ポジティブ な {ところ} が、本当 に 尊敬 でき ます。
-        english: Her positive part is truly admirable.
-        hint: 「ところ」 implies a general positive part or trait. 「という点」 specifically elevates the entire
-          phrase 'she is always positive' into a distinct 'point' of admiration, emphasizing a specific
-          behavior. We are looking for a specific point of admiration.
-    scene: During a team review, a manager is praising a team member. They want to highlight a specific
-      positive characteristic of the team member that stands out.
+          - この 製品 の 良い ところ は 使い やす さ です。
+        english: The good part about this product is its ease of use.
+        hint: 「ところ」 often refers to a specific place, part, or general characteristic. We're looking for
+          a more precise, enumerable 'point' in an evaluation.
+    scene: A product reviewer is presenting their findings on a new gadget.
     register: formal
-    setting: professional
-    nuance: This example uses 「という点」 to emphasize a specific admirable quality (「いつも前向きだ」 - always positive).
-      The use of 「尊敬できます」 (can be respected) and formal register suits a professional context.
-  - english: This machine is a bit complex in terms of operation.
+    setting: informative
+  - english: The only bad point about this plan is the high cost.
     japanese:
-      - この 機械 は、操作 の {点} で 少し 複雑 です。
-      - この 機械 は、操作 の {点} で 少し 複雑 だ。
-    english_literally: As for this machine, in the point of operation, it is a little complex.
+      - この 計画 の 唯一 の {悪い 点} は 費用 が 高い こと です。
+      - この 計画 の 唯一 の {悪い 点} は 費用 が 高い こと だ。
+      - この 計画 で 懸念 さ れる {点} は 費用 です。
+    english_literally: This plan's only bad point is that the cost is high.
     competing_grammar:
       - competing_japanese:
-          - この 機械 は、操作 {に つい て} 少し 複雑 です。
-        english: This machine is a little complex about its operation.
-        hint: 「について」 is 'about operation' and broader. 「操作の点」 specifically focuses on 'the aspect of operation'
-          as the particular area where complexity lies, rather than the machine being generally complex.
-          We are looking for a specific aspect of complexity.
-      - competing_japanese:
-          - この 機械 は、操作 {が} 少し 複雑 です。
-        english: This machine's operation is a little complex.
-        hint: Adding 「の点」 provides a more objective, analytical framing, indicating that complexity is
-          a specific characteristic identified in the operational aspect. We are looking for an analytical
-          focus on one characteristic.
-    scene: An engineer is describing a new piece of equipment to a technician. They want to convey that
-      while the machine is advanced, its user interface is not straightforward.
+          - この 計画 の 唯一 の 悪い ところ は 費用 が 高い こと です。
+        english: The only bad part about this plan is the high cost.
+        hint: 「ところ」 is more general. Here, we're singling out a specific 'point' of criticism.
+    scene: A team is discussing a new project plan and identifying potential issues.
     register: semi-formal
+    setting: professional
+  - english: From the perspective of safety, this design has some issues.
+    japanese:
+      - 安全 の {点} から 見る と、この デザイン に は 問題 が あり ます。
+      - 安全 の {点} に おい て は、この デザイン に 問題 が ござい ます。
+      - 安全 面 で {問題 点} が あり ます。
+    english_literally: From the point of safety, if one looks, this design has problems.
+    competing_grammar:
+      - competing_japanese:
+          - 安全 の 面 から 見る と、この デザイン に は 問題 が あり ます。
+        english: From the side of safety, this design has some issues.
+        hint: 「面」 refers to a broader facet or side. We are focusing on a specific 'point' or aspect for
+          analysis.
+    scene: Engineers are evaluating a new product design during a safety review meeting.
+    register: formal
     setting: technical
-    nuance: Using 「操作の点」 specifically points out that the complexity lies in its operation. This phrasing
-      is common in technical discussions where specific aspects are being evaluated.
-  - english: He is expected to have a bright future because he is experienced despite his youth.
+  - english: Although it's convenient, it also has a troublesome point.
     japanese:
-      - 彼 は 若い の に 経験 豊富 だ と いう {点} で、将来 が 期待 さ れ て い ます。
-      - 彼 は 若い の に 経験 豊富 だ と いう {点} で、将来 が 期待 さ れ て いる。
-      - 彼 は 若い の に 経験 豊富 だ と いう {点} から、将来 が 期待 さ れ ます。
-    english_literally: As for him, in the point that he is experienced despite being young, his future
-      is expected.
+      - 便利 な {点} も あり ます が、面倒 な {点} も あり ます。
+      - 便利 な {点} も ある けど、面倒 な {点} も ある よ。
+      - '{便利 な 点} と {不便 な 点} が あり ます。'
+    english_literally: There are convenient points, but there are also troublesome points.
     competing_grammar:
       - competing_japanese:
-          - 彼 は 若い の に 経験 豊富 だ と いう {こと} で、将来 が 期待 さ れ て い ます。
-        english: He is expected to have a bright future because of the fact that he is experienced despite
-          his youth.
-        hint: 「ということ」 is a general fact. 「という点」 specifically elevates 'being experienced despite youth'
-          into a distinct 'point' or 'attribute' that is the reason for future expectations, making it
-          a specific quality that stands out. We are looking for a specific attribute.
-    scene: A senior colleague is discussing a promising junior employee with another manager. They want
-      to highlight a specific, impressive characteristic that bodes well for his career.
-    register: formal
-    setting: informative
-    nuance: This sentence uses 「という点」 to emphasize a specific, contrasting quality (「若いのに経験豊富だ」 - experienced
-      despite being young) as the reason for future expectations. This professional context highlights
-      a distinct advantage.
-  - english: The histories of Japan and Korea are common in many respects.
-    japanese:
-      - 日本 と 韓国 の 歴史 は、多く の {点} で 共通 し て い ます。
-      - 日本 と 韓国 の 歴史 は、多く の {点} で 共通 し て いる。
-      - 日本 と 韓国 の 歴史 は、多く の {点} に おい て 共通 し て い ます。
-    english_literally: As for the histories of Japan and Korea, in many points, they are common.
-    competing_grammar:
-      - competing_japanese:
-          - 日本 と 韓国 の 歴史 は、多く の {部分} で 共通 し て い ます。
-        english: The histories of Japan and Korea are common in many parts.
-        hint: 「部分」 refers to 'parts' or 'sections', which is less abstract. 「点」 specifically refers to
-          'points' or 'aspects' of commonality, appropriate for an academic discussion of shared historical
-          characteristics. We are looking for shared aspects, not just general parts.
-    scene: A historian is giving a lecture on East Asian history, drawing parallels between two nations
-      to illustrate interconnectedness.
-    register: formal
-    setting: informative
-    nuance: Using 「多くの点」 indicates that there are numerous specific aspects or characteristics where their
-      histories align, a precise way to describe historical parallels in an academic context.
-  - english: There are several points that need improvement in this movie.
-    japanese:
-      - この 映画 の 改善 す べき {点} が いく つ か あり ます。
-      - この 映画 の 改善 す べき {点} が いく つ か ある。
-      - この 映画、改善 す べき {点} が いく つ か ある ね。
-    english_literally: As for this movie, points to be improved, there are several.
-    competing_grammar:
-      - competing_japanese:
-          - この 映画 で 改善 す べき {ところ} が いく つ か あり ます。
-        english: There are several places that need improvement in this movie.
-        hint: 「ところ」 could refer to general sections or parts. 「点」 specifically implies distinct 'points'
-          or 'aspects' that need improvement, suitable for constructive criticism that identifies precise
-          flaws. We are looking for specific points of improvement.
-    scene: A film critic is giving feedback on a movie to its director. They want to specifically list
-      the areas where the film could be better.
-    register: formal
-    setting: serious
-    nuance: The phrase 「改善すべき点」 (points to be improved) is a standard way to offer constructive criticism,
-      focusing on specific aspects that require attention. 「いくつかあります」 (there are several) suggests a detailed
-      review.
-  - english: From the perspective of environmental protection, electric cars are an excellent choice.
-    japanese:
-      - 環境 保護 と いう {点} から 言う と、電気 自動 車 は 素晴らしい 選択 です。
-      - 環境 保護 と いう {点} から 言う と、電気 自動 車 は 素晴らしい 選択 だ。
-      - 環境 保護 と いう {点} に おい て、電気 自動 車 は 素晴らしい 選択 です。
-    english_literally: Speaking from the point of environmental protection, electric cars are an excellent
-      choice.
-    competing_grammar:
-      - competing_japanese:
-          - 環境 保護 と いう {こと} から 言う と、電気 自動 車 は 素晴らしい 選択 です。
-        english: Speaking from the fact of environmental protection, electric cars are an excellent choice.
-        hint: 「ということ」 refers to the general fact. 「という点」 specifically frames 'environmental protection'
-          as the key 'aspect' or 'criterion' from which the evaluation is made, common in formal argumentation.
-          We are looking for a specific criterion for evaluation.
-    scene: A speaker at an environmental conference is advocating for electric vehicles. They want to
-      make a strong argument by focusing on a specific benefit.
-    register: semi-formal
-    setting: persuasive
-    nuance: The construction 「〜という点から言うと」 is a common formal expression used to state an opinion or conclusion
-      from a specific viewpoint. Here, 「環境保護」 (environmental protection) is the emphasized aspect.
-  - english: The only thing I regret in my life is not studying more.
-    japanese:
-      - 私 の 人生 で 唯一 の 後悔 し て いる {点} は、もっと 勉強 し なかっ た こと です。
-      - 私 の 人生 で 唯一 の 後悔 し て いる {点} は、もっと 勉強 し なかっ た こと だ。
-      - 私 の 人生 で 唯一 の 後悔 し て いる {点} は ね、もっと 勉強 し なかっ た こと だ よ。
-    english_literally: As for my life, the only point of regret is not having studied more.
-    competing_grammar:
-      - competing_japanese:
-          - 私 の 人生 で 唯一 の 後悔 し て いる {こと} は、もっと 勉強 し なかっ た こと です。
-        english: The only thing I regret in my life is not studying more.
-        hint: 「こと」 is general for 'thing'. 「点」 specifically frames 'not studying more' as the single 'point'
-          or 'aspect' of regret, emphasizing a distinct, identified regret rather than a general feeling.
-          We are looking for a specific point of regret.
-    scene: An elderly woman is reflecting on her life, sharing a deep personal regret with a younger confidante.
+          - 便利 な ところ も あり ます が、面倒 な ところ も あり ます。
+        english: Although it's convenient, it also has a troublesome part.
+        hint: 「ところ」 can be used, but 「点」 more clearly identifies distinct, evaluable characteristics.
+    scene: Someone is giving informal feedback on a new online system to a friend.
     register: casual
-    setting: reflective
-    nuance: An older speaker expresses her singular regret using 「唯一の後悔している点」 (the only point of regret).
-      The thoughtful and somewhat reserved tone, common in reflective speech, is conveyed through the
-      overall sentence structure and the polite 「です」 ending.
-  - english: This proposal has no issues regarding cost.
+    setting: friendly
+  - english: What specific points are you referring to?
     japanese:
-      - この 提案 は、コスト の {点} で は 問題 あり ませ ん。
-      - この 提案 は、コスト の {点} で は 問題 ない。
-      - この 提案 は、コスト の {点} に おい て 問題 は 御座 い ませ ん。
-    english_literally: As for this proposal, in the point of cost, there is no problem.
+      - 具体 的 に どの {点} を 指し て いる の です か？
+      - 具体 的 に どの {点} を 指し て いる の？
+      - 具体 的 に どの {点} を おっしゃっ て いらっしゃい ます か？
+    english_literally: Specifically which point are you pointing to?
     competing_grammar:
       - competing_japanese:
-          - この 提案 は、コスト {に つい て} は 問題 あり ませ ん。
-        english: This proposal has no issues about cost.
-        hint: 「について」 is 'about cost' and broader. 「コストの点」 specifically clarifies that 'the aspect of cost'
-          is the precise criterion being evaluated, confirming that there are no problems *in that specific
-          area*. We are looking for a specific area of evaluation.
-    scene: In a business meeting, a financial analyst is giving an update on a project proposal, specifically
-      addressing the budgetary implications.
-    register: bijinesu nihongo (business)
+          - 具体 的 に どの ところ を 指し て いる の です か？
+        english: What specific parts are you referring to?
+        hint: 「ところ」 is more general, referring to a part or aspect. 「点」 requests a more precise and focused
+          'point' in the discussion.
+    scene: A manager is seeking clarification from an employee during a project update meeting.
+    register: formal
     setting: professional
-    nuance: Using 「コストの点では」 (in terms of cost) is a precise way to specify the area of evaluation. This
-      is common in business settings to address specific concerns.
-post_example_writeup: As demonstrated in the examples, 「点」 allows for precise articulation of where a
-  specific characteristic, evaluation, or comparison applies. It helps to delineate the exact aspect being
-  discussed, making your statements more focused and clear.
+  - english: There are still points that need improvement.
+    japanese:
+      - まだ 改善 する {点} が いく つ か あり ます。
+      - まだ 改善 する {点} が いく つ か ある よ。
+      - まだ 改善 す べき {点} が いく つ か ござい ます。
+    english_literally: There are still several points to improve.
+    competing_grammar:
+      - competing_japanese:
+          - まだ 改善 する ところ が いく つ か あり ます。
+        english: There are still some parts that need improvement.
+        hint: 「ところ」 can imply a general area. 「点」 here specifies distinct, actionable 'points' for improvement.
+    scene: A supervisor reviews a draft report and provides feedback to their subordinate.
+    register: formal
+    setting: professional
+  - english: Regarding these two points, I would like to discuss them further.
+    japanese:
+      - これ ら 二 つ の {点} に つい て、さらに 議論 し たい と 思い ます。
+      - これ ら 二 つ の {点} に つき まし て、さらに 議論 さ せ て いただき たい と 存じ ます。
+      - この 二 つ の {点} は、もっと 議論 が 必要 だ。
+    english_literally: Regarding these two points, I think I want to discuss further.
+    competing_grammar:
+      - competing_japanese:
+          - これ ら 二 つ の 項目 に つい て、さらに 議論 し たい と 思い ます。
+        english: Regarding these two items, I would like to discuss them further.
+        hint: 「項目」 refers to an item on a list. 「点」 refers to an 'aspect' or 'point' of consideration
+          within a discussion.
+    scene: During a panel discussion, a speaker refers to specific topics they want to elaborate on.
+    register: formal
+    setting: academic
+  - english: This is an important point in understanding the culture.
+    japanese:
+      - これ は 文化 を 理解 する 上 で 重要 な {点} です。
+      - これ は 文化 を 理解 する 上 で 重要 な {点} だ よ。
+      - これ こそ が 文化 を 理解 する 上 で 肝心 な {点} だ。
+    english_literally: This is an important point in understanding culture.
+    competing_grammar:
+      - competing_japanese:
+          - これ は 文化 を 理解 する 上 で 重要 な 事柄 です。
+        english: This is an important matter in understanding the culture.
+        hint: 「事柄」 means a matter or affair, which is broader. 「点」 highlights a specific 'point' of significance
+          for comprehension.
+    scene: A university professor explains a critical concept during a lecture on cultural studies.
+    register: formal
+    setting: academic
+  - english: I agree with that point.
+    japanese:
+      - その {点} に は 同意 し ます。
+      - その {点} に は 同意 する よ。
+      - その {点} に つき まし て は、異論 ござい ませ ん。
+    english_literally: Regarding that point, I agree.
+    competing_grammar:
+      - competing_japanese:
+          - その 意見 に は 同意 し ます。
+        english: I agree with that opinion.
+        hint: 「意見」 refers to an opinion, which is a broader concept. 「点」 specifically refers to a particular
+          'point' or aspect within an argument or statement.
+    scene: Two friends are casually discussing a movie they both watched, sharing their opinions.
+    register: casual
+    setting: friendly
+  - english: There is a problematic point with the schedule.
+    japanese:
+      - スケジュール の {点} で 問題 が あり ます。
+      - スケジュール の {点} で 問題 が ある ね。
+      - スケジュール の {点} に つき まし て、問題 が 生じ て おり ます。
+    english_literally: Regarding the point of the schedule, there is a problem.
+    competing_grammar:
+      - competing_japanese:
+          - スケジュール の 面 で 問題 が あり ます。
+        english: There is a problem on the side of the schedule.
+        hint: 「面」 might imply a general area of concern, but 「点」 pinpoints a specific 'point' or issue
+          within the schedule.
+    scene: A project manager is informing the team about a specific issue that has arisen with the project
+      timeline.
+    register: semi-formal
+    setting: professional
+post_example_writeup: As illustrated by these examples, 「点」 is a versatile noun for isolating and discussing
+  specific characteristics, issues, or aspects of a subject. Its precise nature makes it invaluable for
+  detailed analysis and evaluation in both formal and informal contexts. Pay attention to the modifying
+  word before 「点」 to understand which specific aspect is being highlighted.
 sources:
   bunpro: https://bunpro.jp/grammar_points/点

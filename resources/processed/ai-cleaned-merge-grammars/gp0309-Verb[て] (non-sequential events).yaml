@@ -1,288 +1,234 @@
 grammar_point: Verb[て] (non-sequential events)
 learn_before:
   - Verb[て] (and then)
-  - '[Noun]で・[na-Adj]で (and・because)'
-  - '[Verb-て]いる (ongoing state・habitual action・resultant state)'
-  - '[i-Adj-stem]くて (and)'
-learn_after:
-  - し〜し (and; listing reasons)
-  - それに・加えて・その上・しかも (in addition・moreover)
-  - 一方で (on the other hand・while)
 id: gp0309
-meaning: Indicates non-sequential events, contrast, or parallel actions/states (and, but, while).
-conjugations:
-  - conjugation-type: te-form (～て)
-    form: Verb[て]
-    rarity: common
-    meaning: connecting actions/states in a non-sequential manner, expressing parallel actions, conditions,
-      or a contrast
+meaning: Connecting clauses to indicate cause, means, manner, or simultaneous state/action
 pronunciation:
   katakana: テ
   romaji: te
 formation:
-  Verb[て] + Clause B: Connects an action or state (Clause A) to a subsequent or parallel action or state
-    (Clause B), indicating non-sequential flow, contrast, or parallel activities.
-  い-adjective (remove い) + くて + Clause B: Connects an i-adjective description (Clause A) to a subsequent
-    or parallel description (Clause B).
-  な-adjective (add で) + で + Clause B: Connects a na-adjective description (Clause A) to a subsequent or
-    parallel description (Clause B).
-  Noun + で + Clause B: Connects a noun-based description (Clause A) to a subsequent or parallel description
-    (Clause B).
-jlpt: N4
+  Verb[て] + Verb/Adjective/Noun phrase: Connects clauses where the preceding action/state provides context,
+    reason, or manner for the following, without implying strict chronological order.
+jlpt: N5
 details:
-  part-of-speech: phrase
-  register: teineigo (polite)
-  usage-context: general use
-etymology: The particle 「て」 originally derives from the conjunctive particle 「而 (して)」 in classical Japanese,
-  which was used to connect clauses. Over time, it evolved into the 「て」-form, serving various functions,
-  including connecting clauses in a non-sequential manner, indicating reasons, or providing a sequence
-  of actions.
-writeup: The 「て」-form of a verb, adjective, or noun can connect two independent clauses, indicating a
-  variety of relationships between the actions or states described. These relationships can be non-sequential
-  events, contrasts (similar to the contrastive use of 「は」), or parallel actions/states. It's crucial
-  to consider whether the events happen one after the other or if they simply describe "(A), and (B)".
-  Sometimes, this usage of 「て」 is translated as "while (A), also (B)." The key difference between this
-  and other "while" or "but" grammar points (like 「けど」, 「のに」, or 「だが」) is that both (A) and (B) have equal
-  weight and importance. These other grammar points usually imply that either (A) or (B) is more important.
+  part-of-speech: auxiliary verb
+  register: casual
+  usage-context: Used to connect clauses where the first clause describes a cause, a means, a manner,
+    or a state that accompanies the action of the second clause. The relationship is not necessarily sequential
+    in time.
+  function: Connects clauses, expresses cause/reason, means, manner, or simultaneous action/state.
+  nuance: While the `て-form` can indicate sequential actions, in this non-sequential usage, the action
+    or state described by the first clause provides the background, reason, or method for the second clause.
+    It implies a closer, more integrated relationship than simple chronological order.
+etymology: The `て-form` itself is a versatile conjunctive form of verbs and adjectives, tracing its origins
+  to classical Japanese. Its evolution allowed it to express not only sequential actions but also causality,
+  means, and concurrent states, reflecting the language's tendency to create complex sentences by concatenating
+  simpler clauses without explicit conjunctions. This broadening of function highlights how dependent
+  clauses can describe the *condition* or *context* for the main clause, rather than just a preceding
+  event.
+writeup: |-
+  The `て-form` of verbs and adjectives is incredibly versatile, extending beyond its basic function of indicating sequential actions. This grammar point focuses on its non-sequential uses, where the first clause connected by `て` provides context, reason, means, or describes a simultaneous state or manner for the action or state in the second clause.
+
+  ### Indicating Cause or Reason
+  When `て` connects two clauses, the first clause can indicate the cause or reason for the second. This usage is common with verbs describing emotional states or involuntary actions, or when an adjective describes a state leading to a consequence. For example, if you say `お腹が空い {て} 力が出ない` (I'm hungry, so I have no energy), the hunger (`お腹が空い {て}`) is the reason for lacking energy (`力が出ない`).
+
+  ### Indicating Means or Method
+  Another common non-sequential use is to show the means or method by which an action is performed. Here, the `て-form` clause explains *how* something is done. For instance, `バスに乗っ {て} 駅に行った` (I went to the station by bus) indicates that the bus was the means of transportation to the station. The act of 'riding the bus' is the method for 'going to the station'.
+
+  ### Describing a State or Manner
+  This usage describes a continuous state or the manner in which an action occurs. The action in the first clause provides the ongoing condition or describes *how* the action in the second clause is performed. An example is `座っ {て} 本を読んでいる` (I am sitting and reading), where `座っ {て}` describes the state of sitting while reading. Similarly, `笑っ {て} 話した` (I spoke while laughing) indicates the manner of speaking, which was 'laughing'.
+
+  ### Important Considerations
+  While this `て-form` can imply simultaneity, it's not always a strict 'at the same time' meaning. Often, the first clause simply sets the stage or provides a background condition for the second. The context usually makes it clear whether the actions are simultaneous, causative, or descriptive of a state.
 false_friends:
-  - term: てもいい
-    meaning: May; allowed to
+  - term: Verb[て] (and then)
+    meaning: Sequential action (and then)
     kind: similar expression
-    nuance: Unlike Verb[て] used for non-sequential events, 「てもいい」 expresses permission to do something.
-      It uses the て-form but attaches a different meaning through the addition of 「もいい」.
-    grammar_point: Verb[て]+もいい (permission)
-  - term: てから
-    meaning: After doing something
-    kind: often confused with
-    nuance: Unlike Verb[て] in this context, 「てから」 explicitly indicates a sequential action where A happens,
-      and then B happens. This grammar point specifically highlights non-sequential or simultaneous relationships.
-    grammar_point: てから (after and since)
-  - term: そして
-    meaning: And; then; and then
+    nuance: Unlike the non-sequential `て`, this form strictly implies that the action in the first clause
+      happens *before* and leads to the action in the second clause. For example, `ご飯を食べ {て} 寝た` (I ate
+      and then slept) indicates a clear sequence.
+    grammar_point: Verb[て] (and then)
+  - term: '[Clause]から'
+    meaning: Because of; from
     kind: similar expression
-    nuance: 「そして」 primarily indicates a sequence of events or adds another item to a list, often with
-      a stronger emphasis on the transition. The 「て」 form, in contrast, can connect actions/states that
-      are concurrent, parallel, or simply presented as facts without a strong sequential implication.
-    grammar_point: そして (and・and then)
-  - term: けど
-    meaning: But; although
+    nuance: While `て` can express cause, `から` emphasizes the reason or cause more directly and strongly.
+      `から` often implies a more explicit logical connection or consequence. For example, `雨が降ったから、行かない`
+      (Because it rained, I won't go) sounds like a more definite reason than `雨が降っ {て} 行かない` (It rained
+      and I won't go, implying 'so I won't go').
+    grammar_point: '[Clause]から (because・so)'
+  - term: '[Verb-stem]ながら・つつ'
+    meaning: While doing (simultaneous actions)
     kind: similar expression
-    nuance: 「けど」 emphasizes a contradiction or concession. While 「て」 can show contrast, it typically presents
-      two facts with equal weight, without necessarily highlighting a strong contradiction.
-    grammar_point: しかし・だが・けれど・しかしながら (but・however)
-  - term: それに
-    meaning: In addition; moreover
-    kind: similar expression
-    nuance: 「それに」 adds further information or another item to a list, similar to 'and' or 'moreover' in
-      English. The 「て」 form can also connect additional information, but 「それに」 tends to emphasize the
-      additive nature more explicitly, often introducing a separate, reinforcing point.
-    grammar_point: それに・加えて・その上・しかも (in addition・moreover)
-  - term: それから
-    meaning: And then; after that; since then
-    kind: similar expression
-    nuance: 「それから」 clearly marks a temporal sequence of events or a transition to the next topic. The
-      「て」 form, while sometimes indicating sequence, is broader and can connect non-sequential, parallel,
-      or descriptive clauses. 「それから」 places a stronger emphasis on the passage of time or the order of
-      listing.
-    grammar_point: それから (and then・after that)
-  - term: 一方
-    meaning: On the other hand; meanwhile
-    kind: similar expression
-    nuance: 「一方」 (いっぽう) is a more formal expression used to introduce a contrasting or parallel situation,
-      often when comparing two distinct subjects or aspects. The 「て」 form offers a more natural and less
-      formal way to simply state two concurrent or contrasting facts without explicitly drawing a comparison.
-    grammar_point: 一方で (on the other hand・while)
-  - term: Verb[て] (sequential action)
-    meaning: And, and then, after that (sequence)
-    kind: often confused with
-    nuance: While this 「て」 form emphasizes non-sequential or parallel events, Verb[て] (sequential action)
-      specifically denotes a strict chronological sequence of actions where one action definitively follows
-      another.
-    grammar_point: <suggest>:Verb[て] (sequential action)
-  - term: Verbて (uncontrollable consequence)
-    meaning: Because of, due to, since; expresses a cause-and-effect relationship where the cause is often
-      beyond the speaker's control.
-    kind: similar expression
-    nuance: Unlike this 「て」 form which simply connects events or states, Verbて (uncontrollable consequence)
-      explicitly expresses a cause-and-effect relationship, often for an undesirable or uncontrollable
-      outcome.
-    grammar_point: Verbて (uncontrollable consequence)
-  - term: '[Verb-stem]ながら (while doing)'
-    meaning: While ~ing, During, As
-    kind: similar expression
-    nuance: While this 「て」 form can describe parallel actions, 「ながら」 specifically emphasizes two actions
-      happening simultaneously, with one action often being secondary or background to the main action.
-      The 「て」 form for parallel events often describes two independent actions or states without a main/secondary
-      relationship.
+    nuance: Both `ながら` and `て` can express simultaneous actions. However, `ながら` more strongly emphasizes
+      two actions performed by the *same subject* at the *exact same time*. For example, `音楽を聞き {ながら}
+      勉強する` (I study while listening to music) highlights the simultaneity of the two actions. `て` in
+      `座っ {て} 本を読んでいる` is more about the state (sitting) accompanying the action (reading), rather than
+      two distinct actions occurring simultaneously.
     grammar_point: '[Verb-stem]ながら・つつ (while doing)'
-  - term: し〜し (and; listing reasons)
-    meaning: And, Giving reasons
-    kind: similar expression
-    nuance: Both 「て」 and 「し〜し」 can list multiple characteristics or reasons. However, 「し〜し」 often implies
-      that the listed items are reasons or contributing factors, and it can also have a more emphatic
-      or exhaustive nuance, sometimes implying 'not only A but also B and C'.
-    grammar_point: し〜し (and; listing reasons)
-post_false_friends_writeup: It's important to distinguish this non-sequential 「て」 from other uses of the
-  「て」-form and similar conjunctions. For instance, while this 「て」 describes concurrent or contrasting
-  situations without a strict order, 「Verb[て] (sequential action)」 strictly implies a sequence. 「Verbて
-  (uncontrollable consequence)」 focuses on cause and effect. Other conjunctions like 「てから」, 「そして」, 「それから」,
-  and 「一方」 also connect clauses, but each carries specific nuances of sequence, contrast, or addition
-  that differ from the more balanced, non-sequential nature of this 「て」 form. 「ながら」 and 「し〜し」 can also
-  indicate parallel actions or lists, but they often carry additional nuances of emphasis or secondary
-  actions. Paying close attention to the context and the precise relationship between clauses will help
-  you choose the appropriate expression.
+post_false_friends_writeup: Understanding the subtle differences between these forms is crucial. While
+  `て` can cover various relationships between clauses, `から` specifies a strong cause-effect link, and
+  `ながら` emphasizes concurrent actions by the same agent. Distinguishing these nuances will make your Japanese
+  sound more natural and precise.
 examples:
-  - english: My older sister drinks coffee every day, and I drink tea every day.
+  - english: I got sleepy and fell asleep.
     japanese:
-      - 姉 は 毎日 コーヒー を 飲ん {で}、私 は 毎日 お 茶 を 飲む。
-      - 姉 は 毎日 コーヒー を 飲ん {で}、私 は 毎日 お 茶 を 飲み ます。
-    english_literally: As for older sister, drinks coffee every day, and as for me, drinks tea every day.
+      - 眠く {て} 寝 て しまっ た。
+      - 眠く {て} 寝 て しまい まし た。
+    english_literally: Being sleepy, I ended up sleeping.
     competing_grammar:
       - competing_japanese:
-          - 姉 は 毎日 コーヒー を 飲む。{そして}、私 は 毎日 お 茶 を 飲む。
-        english: My older sister drinks coffee every day. And then, I drink tea every day.
-        hint: 「そして」 implies a sequence or strong addition. We're looking for actions that happen in parallel,
-          without a strict order.
-    scene: Two siblings are casually discussing their daily routines.
+          - 眠く なっ た から、寝 て しまっ た。
+        english: Because I got sleepy, I ended up sleeping.
+        hint: 「から」 emphasizes the cause more directly. We're looking for a more natural connection where
+          the state of being sleepy leads to falling asleep.
+    scene: A person recounts why they unexpectedly fell asleep.
+    register: casual
+    setting: reflective
+  - english: I went to the library by bicycle.
+    japanese:
+      - 自転 車 に 乗っ {て} 図書 館 に 行っ た。
+      - 自転 車 に 乗っ {て} 図書 館 に 行き まし た。
+    english_literally: Riding a bicycle, I went to the library.
+    competing_grammar:
+      - competing_japanese:
+          - 自転 車 で 図書 館 に 行っ た。
+        english: I went to the library by bicycle (using the bicycle as a means).
+        hint: 「で」 as a particle indicates the means or instrument. We're looking for the `て-form` to express
+          the means.
+    scene: Someone explains their mode of transport.
     register: casual
     setting: informative
-    conjugation: te-form (～て)
-  - english: My mother cooks, and my father cleans the room.
+  - english: The window is open.
     japanese:
-      - 母 は 料理 を {し て}、父 は 部屋 を 掃除 する。
-      - 母 は 料理 を {し て}、父 は 部屋 を 掃除 し ます。
-    english_literally: As for mother, cooks, and as for father, cleans the room.
+      - 窓 が 開い {て} いる。
+      - 窓 が 開い {て} い ます。
+      - 窓 が 開い {て} る。
+    english_literally: The window has opened (and is in that state).
     competing_grammar:
       - competing_japanese:
-          - 母 は 料理 を する。{そして}、父 は 部屋 を 掃除 する。
-        english: My mother cooks. And then, my father cleans the room.
-        hint: 「そして」 suggests one action happens after another. We're describing simultaneous, parallel
-          actions.
-    scene: A child is telling a friend what their parents usually do on weekends.
+          - 窓 は 開い て いる。
+        english: The window is open (general statement).
+        hint: While technically correct, this sentence omits the explicit `て` form's contribution to indicating
+          a resulting state. We're focusing on the `て` form here.
+    scene: Describing the current state of a window.
     register: casual
     setting: informative
-    conjugation: te-form (～て)
-  - english: This dog is small and very energetic.
+  - english: She cried and laughed.
     japanese:
-      - この 犬 は 小さく {て} とても 元気 だ。
-      - この 犬 は 小さく {て} とても 元気 です。
-    english_literally: This dog is small, and very energetic.
+      - 彼女 は 泣い {て} 笑っ た。
+      - 彼女 は 泣い {て} 笑い まし た。
+    english_literally: She cried and laughed.
     competing_grammar:
       - competing_japanese:
-          - この 犬 は 小さい。{そして}、とても 元気 だ。
-        english: This dog is small. And, it's very energetic.
-        hint: 「そして」 is used for connecting separate sentences or distinct items. We're describing multiple
-          qualities of the same thing.
-    scene: Someone is enthusiastically describing their new pet to a friend.
+          - 彼女 は 泣き {ながら} 笑っ た。
+        english: She cried while laughing.
+        hint: 「ながら」 emphasizes simultaneity more strongly, often when one action is primary and the other
+          secondary. This sentence implies the actions occurred close in time or intertwined, but not
+          necessarily literally at the exact same moment.
+      - competing_japanese:
+          - 彼女 は 泣き、笑っ た。
+        english: She cried, and she laughed.
+        hint: This uses the conjunctive form directly, which sounds more formal or literary. We're looking
+          for the common `て-form` connection.
+    scene: Observing someone's mixed emotions.
     register: casual
-    setting: friendly
-    conjugation: te-form (～て)
-  - english: He likes fish, but she likes meat.
+    setting: reflective
+    speaker_gender: male
+    listener_gender: no one
+  - english: I'm sorry for being late.
     japanese:
-      - 彼 は 魚 が 好き {で}、彼女 は 肉 が 好き だ。
-      - 彼 は 魚 が 好き {で}、彼女 は 肉 が 好き です。
-    english_literally: As for him, fish is liked, and as for her, meat is liked.
+      - 遅れ {て} すみ ませ ん。
+      - 遅れ {て} 申し訳 ござい ませ ん。
+      - 遅れ {て} ごめん。
+    english_literally: Being late, I am sorry.
     competing_grammar:
       - competing_japanese:
-          - 彼 は 魚 が 好き だ {けど}、彼女 は 肉 が 好き だ。
-        english: He likes fish, but she likes meat.
-        hint: 「けど」 emphasizes a contradiction or concession. We're simply stating two different preferences.
-    scene: Two friends are trying to decide what to order for dinner, discussing their preferences.
+          - 遅れ た の で、すみ ませ ん。
+        english: Since I was late, I am sorry.
+        hint: 「ので」 is another way to express reason but is generally more formal and explicit. We're looking
+          for the common `て-form` connection for apologies.
+    scene: Apologizing for tardiness.
+    register: formal
+    setting: apologetic
+  - english: The concert was so good, I cried.
+    japanese:
+      - コンサート が 良かっ {て} 泣い て しまっ た。
+      - コンサート が 良かっ {て} 泣い て しまい まし た。
+    english_literally: The concert being good, I cried.
+    competing_grammar:
+      - competing_japanese:
+          - コンサート が 良かっ た から、泣い て しまっ た。
+        english: Because the concert was good, I cried.
+        hint: 「から」 gives a stronger, more explicit reason. This `て-form` connects the feeling of goodness
+          to the subsequent action as a natural consequence.
+    scene: Recounting an emotional experience at a concert.
     register: casual
-    setting: informative
-    conjugation: te-form (～て)
-  - english: The store is spacious, and it also has many products.
+    setting: excited
+    speaker_gender: female
+    listener_gender: group
+  - english: He wasn't hearing well.
     japanese:
-      - 店 は 広く {て}、商品 も たくさん ある。
-      - 店 は 広く {て}、商品 も たくさん あり ます。
-    english_literally: The store is wide, and products also many exist.
+      - 彼 は よく 聞こえ {て} い なかっ た。
+      - 彼 は よく 聞こえ {て} い ませ ん でし た。
+      - 彼 は よく 聞こえ {て} ない。
+      - 彼 は よく 聞こえ {て} ませ ん。
+    english_literally: He was not hearing well.
     competing_grammar:
       - competing_japanese:
-          - 店 は 広い。{それ に}、商品 も たくさん ある。
-        english: The store is wide. In addition, there are many products.
-        hint: 「それに」 adds a separate, additional point. We're describing different aspects of the same
-          subject.
-    scene: A shopper is describing a newly opened store to a friend.
-    register: casual
-    setting: informative
-    conjugation: te-form (～て)
-  - english: He is tall and has a loud voice.
-    japanese:
-      - 彼 は 背 が 高く {て}、声 も 大きい。
-      - 彼 は 背 が 高く {て}、声 も 大きい です。
-    english_literally: As for him, height is tall, and voice is also loud.
-    competing_grammar:
-      - competing_japanese:
-          - 彼 は 背 が 高い。{それ から}、声 も 大きい。
-        english: He is tall. And then, he also has a loud voice.
-        hint: 「それから」 implies a sequence or a list of distinct items. We're describing multiple characteristics
-          of one person.
-    scene: A colleague is briefly describing a new team member to another colleague.
-    register: casual
-    setting: informative
-    conjugation: te-form (～て)
-  - english: I read a book, and my younger brother watches TV.
-    japanese:
-      - 私 は 本 を 読ん {で}、弟 は テレビ を 見る。
-      - 私 は 本 を 読ん {で}、弟 は テレビ を 見 ます。
-    english_literally: As for me, reads a book, and as for younger brother, watches TV.
-    competing_grammar:
-      - competing_japanese:
-          - 私 は 本 を 読む。{一方}、弟 は テレビ を 見る。
-        english: I read a book. On the other hand, my younger brother watches TV.
-        hint: 「一方」 is a more formal term for "on the other hand." We're making a simple observation of
-          concurrent activities.
-    scene: A parent is observing their children's quiet activities in the living room.
+          - 彼 は よく 聞い て い なかっ た。
+        english: He was not listening well.
+        hint: 「聞こえる」 (to be audible) is a potential verb, indicating something *can be heard*. 「聞く」 (to
+          listen) implies an active effort. This sentence uses the `て-form` to describe a state (not hearing
+          well).
+    scene: Someone observing a person who seems distracted.
     register: casual
     setting: informative
-    conjugation: te-form (～て)
-  - english: This cake is sweet and very delicious.
+  - english: You can solve this problem by trying several methods.
     japanese:
-      - この ケーキ は 甘く {て}、とても おいしい。
-      - この ケーキ は 甘く {て} とても おいしい です。
-    english_literally: This cake is sweet, and very delicious.
+      - いく つ か の 方法 を 試し て み {て}、この 問題 を 解決 できる。
+      - いく つ か の 方法 を 試し て み {て}、この 問題 を 解決 でき ます。
+      - いく つ か の 方法 を 試み {て}、この 問題 を 解決 でき ます。
+    english_literally: Trying several methods, this problem can be solved.
     competing_grammar:
       - competing_japanese:
-          - この ケーキ は 甘い。{そして}、とても おいしい。
-        english: This cake is sweet. And, it's very delicious.
-        hint: 「そして」 is typically for connecting separate sentences or events. We're describing two qualities
-          of the same item.
-    scene: Someone is enjoying a dessert and commenting on its taste to a companion.
+          - いく つ か の 方法 を 試す こと で、この 問題 を 解決 できる。
+        english: By trying several methods, this problem can be solved.
+        hint: 「〜ことで」 explicitly states the means by which something is achieved. The `て-form` offers a
+          slightly more concise way to express the same idea.
+    scene: A teacher giving advice on problem-solving.
+    register: formal
+    setting: instructional
+  - english: The child, scared, hid behind their mother.
+    japanese:
+      - 子供 は 怖 がっ {て}、母親 の 後ろ に 隠れ た。
+      - 子供 は 怖 がっ {て}、母親 の 後ろ に 隠れ まし た。
+    english_literally: The child, being scared, hid behind their mother.
+    competing_grammar:
+      - competing_japanese:
+          - 子供 は 怖 がっ た の で、母親 の 後ろ に 隠れ た。
+        english: Because the child was scared, they hid behind their mother.
+        hint: 「ので」 gives a clear reason. The `て-form` here describes the state of being scared as the
+          condition for hiding.
+    scene: Describing a child's reaction to fear.
     register: casual
-    setting: friendly
-    conjugation: te-form (～て)
-  - english: The park is wide, and it's very quiet.
+    setting: storytelling
+  - english: Please take a seat and wait.
     japanese:
-      - 公園 は 広く {て}、とても 静か です。
-      - 公園 は 広く {て}、とても 静か だ。
-    english_literally: As for park, is wide, and very quiet is.
+      - どうぞ 座っ {て} お 待ち ください。
+      - どうぞ 座っ {て} 待っ て ください。
+      - 座っ {て} 待っ て。
+    english_literally: Please sit and wait.
     competing_grammar:
       - competing_japanese:
-          - 公園 は 広い。{そして}、とても 静か です。
-        english: The park is wide. And, it's very quiet.
-        hint: 「そして」 implies a sequence or strong addition. We are describing two parallel qualities of
-          the park.
-    scene: Someone is describing a local park to a friend.
-    register: semi-formal
-    setting: informative
-    conjugation: te-form (～て)
-  - english: He is a student, and he also works part-time.
-    japanese:
-      - 彼 は 学生 {で}、アルバイト も し て いる。
-      - 彼 は 学生 {で}、アルバイト も し て い ます。
-    english_literally: As for him, is student, and part-time job also doing.
-    competing_grammar:
-      - competing_japanese:
-          - 彼 は 学生 だ。{それ に}、アルバイト も し て いる。
-        english: He is a student. In addition, he also works part-time.
-        hint: 「それに」 adds a separate, additional point. We're describing two concurrent states of the same
-          person.
-    scene: Explaining someone's current status and activities to a curious third party.
-    register: casual
-    setting: informative
-    conjugation: te-form (～て)
-post_example_writeup: Remember, the 「て」-form in this usage doesn't imply a strict sequence of events but
-  rather connects two related but independent clauses. The relationship between these clauses can be one
-  of simple addition, contrast, or parallel action.
+          - どうぞ 座っ て から、お 待ち ください。
+        english: Please sit, and then wait.
+        hint: Adding `から` emphasizes the sequence, implying waiting *only after* sitting. The simpler
+          `て-form` here means 'sit and wait' where sitting is the posture while waiting.
+    scene: A receptionist or staff member instructing a customer.
+    register: teineigo (polite)
+    setting: professional
+post_example_writeup: These examples illustrate how the `て-form` facilitates a fluid connection between
+  clauses, conveying a variety of relationships beyond simple sequence. Mastering these nuances allows
+  for more natural and expressive Japanese.
 sources:
-  bunpro: https://bunpro.jp/grammar_points/verbて-b
+  bunpro: https://bunpro.jp/grammar_points/200

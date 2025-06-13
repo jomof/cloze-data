@@ -396,7 +396,9 @@ class ConsoleDisplay:
                 self.display._finish(self.slot_key, f"finished {self.message}")
             return False #Propagate exceptions
 
-    def work(self, slot_key: str, item_type: str):
+    def work(self, slot_key: str, item_type: str = None):
+        if not item_type:
+             return self.MessageScope(self, f"{slot_key}", f"{slot_key}", slot_key)
         return self.MessageScope(self, f"{item_type}:{slot_key}", f"{item_type} {slot_key}", item_type)
 
     def _begin(self, slot_key: str, message: str, item_type: str):

@@ -114,8 +114,8 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
     summary_dir = f"{output_dir}/summary"
     prior_input_obj = prior_grammar_point
 
-    # if 'split_predecessor' in prior_input_obj:
-    #     del prior_input_obj['split_predecessor']
+    if 'split_predecessor' in prior_input_obj:
+        del prior_input_obj['split_predecessor']
 
     prompt = '\n'.join([
         PERSONA, 
@@ -264,8 +264,6 @@ if __name__ == '__main__':
             return result
         
         def logic(parsed_obj, file_path):
-
-
             if len(parsed_obj.get('lint-errors', [])) == 0:
                 return parsed_obj
             result = ai_pass(parsed_obj, grammar_summary, file_path, temp_dir)

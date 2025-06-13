@@ -1,334 +1,219 @@
 grammar_point: い-Adjective[くなかった] (past negative)
 learn_before:
+  - い-Adjective[かった] (past tense)
+  - い-Adjective[くない] (negative)
   - い-Adjectives (adjectives ending in い)
-  - い-Adjectives (negative form)
-  - い-adjective (past)
-  - だ (casual copula)
-  - です (polite copula)
 learn_after:
-  - 〜ても〜なくても (whether or not)
-  - あまり ない (not very or much)
-  - ではない (formal negative copula)
+  - い-Adjective[くても] (concessive)
+  - い-Adjective[くなくても] (negative concessive)
 id: gp9999
 meaning: was not (i-adjective)
-conjugations:
-  - conjugation-type: dictionary (plain non-past)
-    form: 高い
-    rarity: common
-    meaning: expensive
-  - conjugation-type: negative plain (～ない)
-    form: 高くない
-    rarity: common
-    meaning: not expensive
-  - conjugation-type: past plain (～た)
-    form: 高かった
-    rarity: common
-    meaning: was expensive
-  - conjugation-type: negative past plain (～なかった)
-    form: 高くなかった
-    rarity: common
-    meaning: was not expensive
-  - conjugation-type: negative past polite (～ませんでした)
-    form: 高くありませんでした
-    rarity: common
-    meaning: was not expensive (polite)
-  - conjugation-type: dictionary (plain non-past)
-    form: いい
-    rarity: common
-    meaning: good
-  - conjugation-type: negative plain (～ない)
-    form: よくない
-    rarity: common
-    meaning: not good
-  - conjugation-type: past plain (～た)
-    form: よかった
-    rarity: common
-    meaning: was good
-  - conjugation-type: negative past plain (～なかった)
-    form: よくなかった
-    rarity: common
-    meaning: was not good
-  - conjugation-type: negative past polite (～ませんでした)
-    form: よくありませんでした
-    rarity: common
-    meaning: was not good (polite)
 pronunciation:
-  katakana: クナカッタ
-  romaji: kunakatta
+  katakana: イアドジェクティブ クナカッタ
+  romaji: i-adjective kunakatta
 formation:
-  い-adjective (remove い) + くなかった: Used for most i-adjectives to express a past negative state.
-  いい -> よくなかった: The irregular conjugation for いい.
-jlpt: N5
+  い-Adjective (stem) + くなかった: Indicates the past negative form of an い-adjective, signifying that something
+    was not [adjective].
+jlpt: N4
 details:
   part-of-speech: auxiliary adjective
   register: casual
-  function: To express that an i-adjective was not true or present in the past.
-  nuance: This form directly negates the quality or state described by an i-adjective in the past tense.
-    It is a straightforward, factual statement.
-  grammatical-role: Predicate or modifier expressing past negative attribution.
-  temporal-flow: Refers to a state or quality that did not exist or was not true at a specific point or
-    period in the past.
-etymology: The suffix 「く」 is the adverbial form of an i-adjective, often used to connect adjectives to
-  other words or to function adverbially. 「なかった」 is the past negative form of the verb 「ある」 (to exist)
-  or an auxiliary verb with similar roots. Thus, 「くなかった」 literally means 'did not exist in an [adjective]
-  way' or 'was not [adjective]'. This formation pattern is consistent with how adjectives are historically
-  treated as verb-like elements in Japanese.
-writeup: The structure 「い-Adjective[くなかった]」 is used to describe that something **was not** a certain quality
-  or state in the past. It is the past negative form of i-adjectives. To form it, you typically drop the
-  final 「い」 from the i-adjective and append 「くなかった」. For example, 「高い」 (takai - expensive) becomes 「高くなかった」
-  (takakunakatta - was not expensive). An important exception to remember is the adjective 「いい」 (ii -
-  good), which irregularly conjugates to 「よくない」 (yokunai - not good) in the present negative and 「よくなかった」
-  (yokunakatta - was not good) in the past negative. It never becomes 「いくなかった」. This form is casual and
-  commonly used in everyday conversation. It states a past fact without any particular nuance of surprise
-  or emphasis beyond the simple negation.
+  function: Expresses a past negative state or quality of an い-adjective.
+  nuance: This form is a straightforward and common way to express that an い-adjective did not apply in
+    the past. It is typically used in casual conversation and informal writing. For more formal contexts,
+    the polite negative past form (～くありませんでした) would be used.
+etymology: The formation of い-adjective + 「くなかった」 comes from combining the adverbial form of an い-adjective
+  (ending in 「く」), the negative auxiliary 「ない」, and the past tense auxiliary 「た」. Historically, 「ない」 fused
+  with 「た」 to form 「なかった」. Thus, 「[い-Adjective stem] + く + ない + た」 evolved into the common and concise
+  「[い-Adjective stem] + くなかった」, directly stating a past absence of a quality.
+writeup: |-
+  The grammar point 「い-Adjective[くなかった]」 is used to express that an い-adjective did not describe something in the past. It is the plain, casual past negative form of い-adjectives. To form it, you take the い-adjective, drop the final い, and add 「くなかった」. This structure is very common in everyday conversation.
+
+  For instance, if you want to say "it was not cold," you would take the い-adjective 「寒い」 (samui), drop the い to get 「寒」 (samu), and add 「くなかった」, resulting in 「寒くなかった」 (samukunakatta). Similarly, 「楽しくなかった」 (tanoshikunakatta) means "it was not fun," and 「美味しくなかった」 (oishikunakatta) means "it was not delicious."
+
+  This form is primarily used in casual settings among friends, family, or people of similar social standing. In more formal or polite situations, you would use the 「～くありませんでした」 form. For example, 「寒くありませんでした」 (samuku arimasen deshita) for "it was not cold (polite)."
+
+  Understanding 「くなかった」 is crucial for expressing past negative statements involving descriptive adjectives in Japanese.
 false_friends:
-  - term: じゃなかった (was not)
-    meaning: was not (noun/na-adjective)
+  - term: な-Adjective[ではなかった・じゃなかった] (plain past negative)
+    meaning: was not (na-adjective/noun)
     kind: similar expression
-    nuance: 「くなかった」 is exclusively for i-adjectives, describing past qualities. 「じゃなかった」 is used for negating
-      nouns or na-adjectives in the past, describing past identities or states.
-    grammar_point: じゃなかった (was not)
-  - term: い-Adjective (negative form)
+    nuance: Used for な-adjectives and nouns, 「ではなかった」 (or the more casual 「じゃなかった」) expresses a past negative
+      state. In contrast, 「くなかった」 is exclusively for い-adjectives. While both convey past negation, they
+      apply to different word classes.
+    grammar_point: な-Adjective[ではなかった・じゃなかった] (plain past negative)
+  - term: い-Adjective[くない] (negative)
     meaning: is not (i-adjective)
-    kind: similar expression
-    nuance: 「くなかった」 specifies a past negative state, indicating something was *not* a certain way. 「くない」
-      indicates a present negative state, meaning something *is not* a certain way.
-    grammar_point: い-Adjectives (negative form)
-  - term: い-adjective (past)
+    kind: often confused with
+    nuance: '「くない」 indicates a present negative state for an い-adjective. 「くなかった」 specifies that the negative
+      state occurred in the past. The key difference lies in the tense: present vs. past.'
+    grammar_point: い-Adjective[くない] (negative)
+  - term: い-Adjective[かった] (past tense)
     meaning: was (i-adjective)
     kind: antonym
-    nuance: 「くなかった」 expresses the past negative of an i-adjective, while 「かった」 expresses the past affirmative.
-      They are direct opposites in their meaning regarding a past quality.
-    grammar_point: い-adjective (past)
-  - term: Verb[なかった] (past negative)
-    meaning: did not (verb)
-    kind: similar expression
-    nuance: While both use 「なかった」, 「くなかった」 follows an i-adjective stem to negate a quality, whereas 「なかった」
-      directly follows a verb stem to negate an action. They apply to different parts of speech.
-    grammar_point: Verb[なかった] (past negative)
-post_false_friends_writeup: When using the past negative, it is crucial to distinguish between i-adjectives,
-  na-adjectives, and verbs. I-adjectives, like 「高い」, use 「高くなかった」. Na-adjectives and nouns, like 「きれい」
-  (clean/beautiful) or 「学生」 (student), use 「じゃなかった」 (e.g., 「きれいじゃなかった」 or 「学生じゃなかった」). For verbs, you
-  simply attach 「なかった」 to the plain negative stem (e.g., 「食べなかった」 - didn't eat). The common element 「なかった」
-  across these forms indicates past negation, but the preceding particle or stem form dictates the part
-  of speech being negated.
+    nuance: While 「くなかった」 expresses a past negative, 「かった」 denotes a past positive state. They are opposite
+      in meaning but share the past tense, making them easily confused in terms of polarity.
+    grammar_point: い-Adjective[かった] (past tense)
+post_false_friends_writeup: When distinguishing between 「くなかった」 and other similar expressions, always
+  consider the part of speech and the tense. 「くなかった」 is specifically for い-adjectives in the past negative.
+  For な-adjectives or nouns, you'll use 「ではなかった」 or 「じゃなかった」. When you mean "is not" (present negative),
+  use 「くない」, and for "was" (past positive), use 「かった」. Paying attention to these distinctions will help
+  avoid common errors.
 examples:
-  - english: The test was not difficult.
+  - english: It was not cold yesterday.
     japanese:
-      - テスト は 難しく なかっ た。
-      - テスト は 難しく あり ませ ん でし た。
-    english_literally: Test topic difficult-was-not.
+      - 昨日、寒 {くなかっ た}。
+      - 昨日、寒 {く あり ませ ん でし た}。
+      - 昨日、寒 {くなかっ た} よ。
+      - 昨日、寒 {くなかっ た} わ。
+    english_literally: Yesterday, it was not cold.
     competing_grammar:
       - competing_japanese:
-          - テスト は 難しく ない。
-        english: The test is not difficult.
-        hint: This sentence describes the *current* state of the test. We are looking for something that
-          indicates a *past* state.
+          - 昨日、寒く ない。
+        english: It is not cold yesterday.
+        hint: The Japanese sentence is in the present tense. We're looking for a past negative form, indicating
+          something that was not true in the past.
+    scene: A person is reminiscing about the previous day's weather.
+    register: casual
+    setting: reflective
+  - english: The movie was not interesting.
+    japanese:
+      - その 映画 は 面白 {くなかっ た}。
+      - その 映画 は 面白 {く あり ませ ん でし た}。
+      - その 映画 は 面白 {くなかっ た} ね。
+    english_literally: That movie, was not interesting.
+    competing_grammar:
       - competing_japanese:
-          - テスト は 難しかっ た。
-        english: The test was difficult.
-        hint: This sentence says the test *was* difficult. We need to say it *was not* difficult.
-    scene: A student is discussing their recent test with a friend.
+          - その 映画 は 面白く ない。
+        english: That movie is not interesting.
+        hint: This is a present tense statement. We need to express that the movie was not interesting
+          in the past.
+    scene: Two friends discussing a movie they watched.
     register: casual
     setting: friendly
-    conjugation: negative past plain (～なかった)
-    nuance: The use of 「難しくなかった」 directly states a past fact in a casual context. It indicates the speaker's
-      assessment of the test's difficulty after it was taken. There are no gender-specific elements here.
-  - english: The weather yesterday was not good.
+  - english: The food wasn't delicious.
     japanese:
-      - 昨日 の 天気 は よく なかっ た。
-      - 昨日 の 天気 は よく あり ませ ん でし た。
-    english_literally: Yesterday's weather topic good-was-not.
+      - 料理 は 美味し {くなかっ た}。
+      - 料理 は 美味し {く あり ませ ん でし た}。
+      - 料理 は 美味し {くなかっ た} な。
+    english_literally: The food, was not delicious.
     competing_grammar:
       - competing_japanese:
-          - 昨日 の 天気 は 悪かっ た。
-        english: The weather yesterday was bad.
-        hint: This sentence affirms that the weather was bad. We need to express that it *was not* good.
-      - competing_japanese:
-          - 昨日 の 天気 は 良く ない。
-        english: The weather yesterday is not good.
-        hint: This implies the weather is *currently* not good, but we need to talk about yesterday's
-          weather.
-    scene: Two friends are lamenting about a canceled outdoor event.
-    register: casual
-    setting: friendly
-    conjugation: negative past plain (～なかった)
-    nuance: Here, 「よくなかった」 is the irregular past negative form of 「いい」 (good). It is a common and natural
-      way to express a negative past quality, specifically about the weather in a casual setting. No gender
-      or age specific language is used.
-  - english: Her new dress was not cheap.
-    japanese:
-      - 彼女 の 新しい ドレス は 安く なかっ た。
-      - 彼女 の 新しい ドレス は 安く あり ませ ん でし た。
-    english_literally: Her new dress topic cheap-was-not.
-    competing_grammar:
-      - competing_japanese:
-          - 彼女 の 新しい ドレス は 高かっ た。
-        english: Her new dress was expensive.
-        hint: This sentence means the dress *was* expensive. We are looking for a statement that it *was
-          not* cheap.
-      - competing_japanese:
-          - 彼女 の 新しい ドレス は 安く ない。
-        english: Her new dress is not cheap.
-        hint: This describes the *current* state of the dress. We need to refer to its past state.
-    scene: Two friends are commenting on a mutual acquaintance's recent purchase.
-    register: casual
-    setting: friendly
-    conjugation: negative past plain (～なかった)
-    nuance: The phrase 「安くなかった」, meaning 'was not cheap', is a direct and factual statement. This usage
-      is gender-neutral and can be said by anyone in a casual conversation.
-  - english: The movie was not interesting at all.
-    japanese:
-      - その 映画 は 全然 面白く なかっ た。
-      - その 映画 は 全然 面白く あり ませ ん でし た。
-    english_literally: That movie topic totally interesting-was-not.
-    competing_grammar:
-      - competing_japanese:
-          - その 映画 は 全然 面白く ない。
-        english: That movie describes the movie's *current* lack of interest. We need to say it *wasn't*
-          interesting in the past.
-        hint: This sentence describes the movie's *current* lack of interest. We need to say it *wasn't*
-          interesting in the past.
-      - competing_japanese:
-          - その 映画 は つまら なかっ た。
-        english: That movie was boring.
-        hint: While similar in meaning, this sentence uses a different adjective. We are specifically
-          looking for the negative past of 'interesting'.
-    scene: A group of friends discusses a movie they watched last night.
-    register: casual
-    setting: friendly
-    conjugation: negative past plain (～なかった)
-    nuance: The use of 「全然 面白くなかった」 (zenzen omoshirokunakatta) emphasizes the complete lack of interest.
-      The use of 「全然」 (not at all) coupled with the negative past is a common way to express strong negative
-      opinions in a casual context.
-  - english: The food at that restaurant was not tasty.
-    japanese:
-      - あの レストラン の 料理 は 美味しく なかっ た。
-      - あの レストラン の 料理 は 美味しく あり ませ ん でし た。
-    english_literally: That restaurant's food topic tasty-was-not.
-    competing_grammar:
-      - competing_japanese:
-          - あの レストラン の 料理 は 美味しく ない。
-        english: The food at that restaurant is not tasty.
-        hint: This describes the food's taste in the present. We are talking about the past.
-      - competing_japanese:
-          - あの レストラン の 料理 は まずかっ た。
-        english: The food at that restaurant was bad/unappetizing.
-        hint: This uses an antonym for 'tasty'. We need the direct negative of 'tasty'.
-    scene: Two colleagues are discussing where to eat lunch, and one recalls a bad experience.
-    register: casual
-    setting: friendly
-    conjugation: negative past plain (～なかった)
-    nuance: 「美味しくなかった」 directly expresses a past negative opinion about food. This phrasing is common
-      and suitable for casual conversations about shared experiences.
-  - english: My summer vacation was not long enough.
-    japanese:
-      - 夏休み は 長く なかっ た。
-      - 夏休み は 長く あり ませ ん でし た。
-    english_literally: Summer vacation topic long-was-not.
-    competing_grammar:
-      - competing_japanese:
-          - 夏休み は 短かっ た。
-        english: Summer vacation was short.
-        hint: This sentence means the vacation *was* short. We need to say it *was not* long.
-      - competing_japanese:
-          - 夏休み は 長く ない。
-        english: Summer vacation is not long (in general).
-        hint: This sentence speaks in general or about the present. We are looking for a past specific
-          statement.
-    scene: A student expresses disappointment about their summer break ending.
-    register: casual
-    setting: melancholic
-    conjugation: negative past plain (～なかった)
-    nuance: The use of 「長くなかった」 (nagakunakatta) conveys the feeling that the vacation was insufficient
-      in length. This is a common sentiment expressed casually, especially after a break.
-  - english: The hotel room was not very wide.
-    japanese:
-      - ホテル の 部屋 は あまり 広く なかっ た。
-      - ホテル の 部屋 は あまり 広く あり ませ ん でし た。
-    english_literally: Hotel's room topic not very wide-was-not.
-    competing_grammar:
-      - competing_japanese:
-          - ホテル の 部屋 は あまり 広く ない。
-        english: The hotel room is not very wide.
-        hint: This refers to the room's current state. We need to describe its past state.
-      - competing_japanese:
-          - ホテル の 部屋 は 狭かっ た。
-        english: The hotel room was narrow.
-        hint: This uses the antonym for 'wide'. We are looking for the direct negative past of 'wide'.
-    scene: A traveler complains to a friend about their recent stay.
-    register: casual
-    setting: friendly
-    conjugation: negative past plain (～なかった)
-    nuance: 「あまり 広くなかった」 (amari hirokunakatta) is a common way to express mild dissatisfaction in the
-      past. 「あまり」 (not very) softens the negative statement slightly.
-  - english: Unfortunately, today's weather wasn't warm.
-    japanese:
-      - 残念 ながら 今日 の 天気 は 暖かく なかっ た。
-      - 残念 ながら 今日 の 天気 は 暖かく あり ませ ん でし た。
-    english_literally: Unfortunately today's weather topic warm-was-not.
-    competing_grammar:
-      - competing_japanese:
-          - 残念 ながら 今日 の 天気 は 暖かく ない。
-        english: Unfortunately, today's weather is not warm.
-        hint: This sentence describes the *current* weather. We are talking about the weather today, but
-          implying its state has passed or that the day is ending.
-      - competing_japanese:
-          - 残念 ながら 今日 の 天気 は 寒かっ た。
-        english: Unfortunately, today's weather was cold.
-        hint: This uses an antonym. We need the direct negative past of 'warm'.
-    scene: A person expresses regret about the day's weather, perhaps at the end of the day.
-    register: casual
-    setting: melancholic
-    conjugation: negative past plain (～なかった)
-    nuance: By saying 「暖かくなかった」 (atatakunakatta), the speaker states a past fact about the weather. The
-      inclusion of 「残念ながら」 (zannennagara - unfortunately) adds a nuance of mild regret or disappointment,
-      a common human emotion.
-  - english: My grades last semester were not bad.
-    japanese:
-      - 先 学期 の 成績 は 悪く なかっ た。
-      - 先 学期 の 成績 は 悪く あり ませ ん でし た。
-    english_literally: Last semester's grades topic bad-was-not.
-    competing_grammar:
-      - competing_japanese:
-          - 先 学期 の 成績 は よかっ た。
-        english: My grades last semester were good.
-        hint: This sentence says the grades *were* good. We need to state that they *were not* bad.
-      - competing_japanese:
-          - 先 学期 の 成績 は 悪く ない。
-        english: My grades last semester are not bad.
-        hint: This implies a general or current state of grades. We need to talk about grades from a past
-          semester.
-    scene: A student is reassuring their parents or a friend about their academic performance.
+          - 料理 は 美味しかっ た。
+        english: The food was delicious.
+        hint: This means the food was delicious, which is the opposite of what we're trying to say. We
+          need a negative form.
+    scene: A person commenting on a meal they recently ate.
     register: casual
     setting: informative
-    conjugation: negative past plain (～なかった)
-    nuance: 「悪くなかった」 (warukunakatta) is a common way to indicate that something was 'not bad', implying
-      it was acceptable or even good. It's a modest way of expressing satisfaction without boasting. This
-      is a common way to describe academic results.
-  - english: The air conditioner was old, so it wasn't cool.
+  - english: His story was not sad at all.
     japanese:
-      - エアコン は 古かっ た の で、涼しく なかっ た。
-      - エアコン は 古かっ た の で、涼しく あり ませ ん でし た。
-    english_literally: Air conditioner topic old-was, so cool-was-not.
+      - 彼 の 話 は 全然 悲し {くなかっ た}。
+      - 彼 の 話 は 全然 悲し {く あり ませ ん でし た}。
+      - 彼 の 話 は 全然 悲し {くなかっ た} よ。
+    english_literally: His story, completely not sad.
     competing_grammar:
       - competing_japanese:
-          - エアコン は 古かっ た の で、涼しく ない。
-        english: The air conditioner was old, so it is not cool (anymore).
-        hint: While implying a continuing state, this doesn't explicitly state the past condition of 'not
-          cool'.
+          - 彼 の 話 は 全然 悲しく ない。
+        english: His story is not sad at all.
+        hint: This states a present condition. The sentence implies a past event or narration that is
+          being evaluated.
+    scene: A group of friends discussing a sad story someone told.
+    register: casual
+    setting: serious
+  - english: The test wasn't difficult.
+    japanese:
+      - テスト は 難し {くなかっ た}。
+      - テスト は 難し {く あり ませ ん でし た}。
+      - テスト は 難し {くなかっ た} ね。
+    english_literally: The test, was not difficult.
+    competing_grammar:
       - competing_japanese:
-          - エアコン は 古かっ た の で、暖かかっ た。
-        english: The air conditioner was old, so it was warm.
-        hint: This uses an antonym for 'cool'. We need the direct negative past of 'cool'.
-    scene: Someone explains why their room was uncomfortable during a hot period.
+          - テスト は 難しく あり ませ ん でし た。
+        english: The test was not difficult (polite).
+        hint: This is the polite version. We're looking for the plain, casual form.
+    scene: A student discussing a recent exam with a classmate.
+    register: casual
+    setting: academic
+  - english: Actually, the new game was not fun.
+    japanese:
+      - 実 は 新しい ゲーム は 楽し {くなかっ た}。
+      - 実 は 新しい ゲーム は 楽し {く あり ませ ん でし た}。
+      - 実 は 新しい ゲーム は 楽し {くなかっ た} よ。
+    english_literally: Actually, new game, was not fun.
+    competing_grammar:
+      - competing_japanese:
+          - 実 は 新しい ゲーム は 楽しく なかっ た の です。
+        english: Actually, the new game was not fun (explanatory/slightly formal).
+        hint: While correct, this version adds an explanatory nuance. We are aiming for a simple, casual
+          past negative statement.
+    scene: Someone admitting their true feelings about a recently released video game.
     register: casual
     setting: informative
-    conjugation: negative past plain (～なかった)
-    nuance: The phrase 「涼しくなかった」 (suzushikunakatta) succinctly explains a past negative state of the air
-      conditioner's function. The structure 「〜ので」 (node - because) naturally links the reason (old AC)
-      to the result (not cool).
-post_example_writeup: As seen in the examples, the い-Adjective[くなかった] form is versatile and frequently
-  used in everyday Japanese to negate qualities or states in the past. Pay special attention to the irregular
-  conjugation of 「いい」 to 「よくなかった」. Understanding this pattern is fundamental for expressing past negative
-  descriptions accurately.
+  - english: The explanation was not clear.
+    japanese:
+      - 説明 は 分かり やす {くなかっ た}。
+      - 説明 は 分かり やす {く あり ませ ん でし た}。
+      - 説明 は 分かり やす {くなかっ た} ね。
+    english_literally: The explanation, was not easy to understand.
+    competing_grammar:
+      - competing_japanese:
+          - 説明 は 分かり にくい。
+        english: The explanation is difficult to understand.
+        hint: This is a present tense, positive difficulty. We need a past negative form, indicating a
+          lack of clarity in the past.
+    scene: A student reflecting on a confusing lecture.
+    register: casual
+    setting: academic
+  - english: That restaurant wasn't cheap.
+    japanese:
+      - あの レストラン は 安 {くなかっ た}。
+      - あの レストラン は 安 {く あり ませ ん でし た}。
+      - あの レストラン は 安 {くなかっ た} な。
+    english_literally: That restaurant, was not cheap.
+    competing_grammar:
+      - competing_japanese:
+          - あの レストラン は 高かっ た。
+        english: That restaurant was expensive.
+        hint: This is a positive statement about the price. We need a negative statement indicating it
+          was not cheap.
+    scene: Friends discussing dining experiences.
+    register: casual
+    setting: friendly
+  - english: My room wasn't very big.
+    japanese:
+      - 私 の 部屋 は あまり 広 {くなかっ た}。
+      - 私 の 部屋 は あまり 広 {く あり ませ ん でし た}。
+      - 私 の 部屋 は あまり 広 {くなかっ た} な。
+    english_literally: My room, not very, was not spacious.
+    competing_grammar:
+      - competing_japanese:
+          - 私 の 部屋 は あまり 大きく なかっ た。
+        english: My room was not very big.
+        hint: While similar, this uses a different い-adjective (大きい vs 広い). The nuance for '広かった' is 'spacious'
+          and for '大きかった' it is 'large' in size. We are looking for 'spacious'.
+    scene: Someone describing their past living situation.
+    register: casual
+    setting: informative
+  - english: The weather today wasn't bad, was it?
+    japanese:
+      - 今日 の 天気 は 悪 {くなかっ た} よ ね？
+      - 今日 の 天気 は 悪 {く あり ませ ん でし た} よ ね？
+      - 今日 の 天気 は 悪 {くなかっ た} な？
+    english_literally: Today's weather, was not bad, right?
+    competing_grammar:
+      - competing_japanese:
+          - 今日 の 天気 は 良く なかっ た よ ね？
+        english: Today's weather was not good, right?
+        hint: While 「良くなかった」 is a valid negative form of 「良い」, 「悪くなかった」 specifically means 'was not bad',
+          conveying a slightly positive or neutral nuance. We're asking if it was 'not bad'.
+    scene: Two people chatting about the day's weather at the end of the day.
+    register: casual
+    setting: friendly
+    nuance: The 「よね」 at the end seeks agreement or confirmation from the listener. It's a very common
+      conversational pattern. The speaker is expressing their opinion that the weather was 'not bad' and
+      inviting the listener to confirm.
+post_example_writeup: As you can see from the examples, 「い-Adjective[くなかった]」 provides a direct and natural
+  way to negate an い-adjective in the past tense. It's an indispensable form for everyday Japanese communication.
+  Remember to always drop the final 「い」 of the adjective before adding 「くなかった」. Practice with various
+  い-adjectives to get comfortable with this pattern.

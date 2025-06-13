@@ -1128,3 +1128,6 @@ bazel run //resources/grammar:ai-pass
 clear
 bazel run //resources/grammar:lint-grammar-points
 exit
+./update-python.sh 
+bazel run //resources/grammar:grammar-labeled-japanese
+exit

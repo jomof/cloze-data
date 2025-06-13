@@ -1,12 +1,12 @@
 grammar_point: 悪い (bad)
 learn_before:
-  - いい (good)
-  - です (polite copula)
+  - い-Adjective[かった] (past tense)
+  - い-Adjective[くない] (negative)
+  - い-Adjectives (adjectives ending in い)
 learn_after:
-  - ぞ (strong emphasis)
-  - てたまらない・てならない・て仕方がない・てしょうがない (unbearably・cannot help but)
+  - になる・くなる (to become)
 id: gp9999
-meaning: Bad; poor; wrong
+meaning: bad
 conjugations:
   - conjugation-type: dictionary (plain non-past)
     form: 悪い
@@ -27,7 +27,19 @@ conjugations:
   - conjugation-type: te-form (～て)
     form: 悪くて
     rarity: common
-    meaning: being bad (and then)
+    meaning: being bad, and
+  - conjugation-type: concessive (～ても)
+    form: 悪くても
+    rarity: common
+    meaning: even if bad
+  - conjugation-type: conditional (～ば)
+    form: 悪ければ
+    rarity: common
+    meaning: if bad
+  - conjugation-type: conditional (～たら)
+    form: 悪かったら
+    rarity: common
+    meaning: if it was bad
   - conjugation-type: non-past polite (～ます)
     form: 悪いです
     rarity: common
@@ -45,276 +57,264 @@ conjugations:
     rarity: common
     meaning: was not bad (polite)
 pronunciation:
-  katakana: わるい
+  katakana: ワルい
   romaji: warui
 formation:
-  い-adjective: 悪い
-  い-adjective stem + くない: 悪くない (negative)
-  い-adjective stem + かった: 悪かった (past)
-  い-adjective stem + くて: 悪くて (te-form)
+  Noun が + 悪い: Expresses that the noun is bad or poor.
+  Verb[dictionary form] の が 悪い: States that the act of doing the verb is bad.
 jlpt: N5
 details:
   part-of-speech: adjective
   register: casual
-  function: Describes negative qualities or states.
-  nuance: Can refer to moral badness, poor quality, or wrongness in a situation.
-etymology: The word 悪い (warui) is an い-adjective. Its origin can be traced back to earlier forms like
-  吾ろしい (waroshii) and 吾し (warashi), which also carried meanings of unpleasantness or poor quality. It's
-  fundamentally descriptive of a state that deviates negatively from an ideal or expected condition.
-writeup: 「悪い (warui)」 is a fundamental Japanese い-adjective meaning "bad," "poor," or "wrong." It is highly
-  versatile and can be used in a wide range of contexts, from describing physical conditions to moral
-  judgments and situational appropriateness. **Core Meanings:** * **Quality:** It describes something
-  of poor quality, e.g., 「悪い 天気」 (bad weather), 「悪い 味」 (bad taste). * **Morality/Ethics:** It can refer
-  to actions or intentions that are morally wrong or undesirable, e.g., 「悪い こと」 (a bad thing/deed). *
-  **Physical/Health State:** It can indicate a state of ill health or poor physical condition, e.g., 「体調
-  が 悪い」 (feeling unwell). * **Situation/Circumstance:** It can describe an unfavorable or awkward situation,
-  e.g., 「悪い 知らせ」 (bad news), 「悪い けど」 (sorry, but...). **Usage Notes:** * When used to describe a *person's
-  nature*, it implies someone is "naughty," "wicked," or "mischievous," especially for children. For adults,
-  it might imply a more serious moral failing. * It is often used in softened apologies or requests, such
-  as 「悪い けど」, which is a casual way to say "Sorry, but..." or "It's bad, but could you...". This usage
-  doesn't imply moral badness but rather an inconvenience or slight imposition on the listener. * Like
-  all い-adjectives, it conjugates by changing the final 「い」. For example, the past tense is 「悪かった」 (was
-  bad), and the negative form is 「悪くない」 (not bad). Understanding the broad applicability of 「悪い」 is crucial,
-  as its specific nuance often depends heavily on the context and the noun it modifies.
+  function: Describes the quality or state of something as negative.
+  nuance: Can refer to moral badness, poor quality, or unfavorable conditions.
+etymology: 「悪い」 (warui) originates from the Old Japanese verb 「あし」 (ashi), meaning "to be bad, evil, ugly."
+  Over time, this evolved into 「あしき」 (ashiki) and eventually 「わろし」 (waroshi) in the Heian period, which
+  then became 「わるい」 (warui) in the modern language. The fundamental concept of undesirability or negativity
+  has been consistent throughout its development. It is often contrasted with 「良い」 (ii/yoi), meaning "good."
+writeup: 「悪い」 (warui) is a fundamental i-adjective in Japanese used to describe something as "bad," "poor,"
+  "evil," or "unfavorable." Like all i-adjectives, it directly modifies nouns by preceding them (e.g.,
+  悪い人 - warui hito, "bad person") and can stand alone as a predicate (e.g., それは悪い - sore wa warui, "That
+  is bad"). Its core meaning encompasses a wide range of negative qualities. It can refer to moral badness,
+  as in someone with a bad character (悪い人). It can describe poor quality or performance (悪い成績 - warui
+  seiseki, "bad grades"). It can also express an unfavorable state or condition, such as bad weather (悪い天気
+  - warui tenki) or an unfortunate situation (悪い状況 - warui joukyou). When used colloquially, especially
+  among close friends or family, 「悪い」 can sometimes function similarly to "sorry" or "my bad," particularly
+  in phrases like 「悪い、悪い」 (warui, warui) to acknowledge a minor mistake or inconvenience. This usage stems
+  from the idea of something being "my fault" or "a bad thing" on my part. However, it is important to
+  note that this is a casual and informal apology and is not suitable for formal settings where 「ごめんなさい」
+  or 「すみません」 would be more appropriate. 「悪い」 can also be used ironically or sarcastically in certain contexts,
+  much like "bad" in English. For example, a student might jokingly say 「悪い点数だったね」 ("It was a bad score,
+  wasn't it?") to a friend who actually got a very high score, implying the opposite. Understanding the
+  nuance often comes from the context of the noun it modifies or the situation in which it is used. For
+  instance, 「顔色が悪い」 (kaoiro ga warui) means someone's complexion is poor, implying they look unwell, not
+  that their face is morally bad.
 false_friends:
-  - term: いい (good)
-    meaning: Good; nice; fine
-    kind: antonym
-    nuance: 「いい」 is the direct opposite of 「悪い」, describing something of positive quality or favorable
-      state.
-    grammar_point: いい (good)
-  - term: まずい (unappetizing or awkward)
-    meaning: Unappetizing; tasteless; unpleasant; clumsy; awkward
+  - term: だめ
+    meaning: no good, useless, impossible
     kind: similar expression
-    nuance: While 「まずい」 can mean "bad" in terms of taste, it also describes a situation as "awkward" or
-      "clumsy," often less about moral wrongness and more about social discomfort or poor execution. 「悪い」
-      is more general for "bad quality" or "morally wrong."
-    grammar_point: <suggest>:まずい (unappetizing or awkward)
-  - term: ひどい (terrible or harsh)
-    meaning: Terrible; awful; severe; harsh; unfair
-    kind: similar expression
-    nuance: 「ひどい」 conveys a stronger sense of severity, cruelty, or unfairness than 「悪い」. It implies something
-      is "terrible" or "atrocious," often with an emotional impact.
-    grammar_point: <suggest>:ひどい (terrible or harsh)
-  - term: だめ (no good)
-    meaning: No good; useless; hopeless; forbidden
-    kind: similar expression
-    nuance: 「だめ」 often implies something is forbidden, useless, or has failed. It's less about inherent
-      quality and more about functionality or rules. 「悪い」 is about inherent badness.
+    nuance: 「だめ」 often implies something is prohibited, useless, or won't work, whereas 「悪い」 describes
+      an inherent negative quality. If something is だめ, it means "it's no good, don't do it, or it failed."
+      If something is 悪い, it just means "it has bad qualities."
     grammar_point: <suggest>:だめ (no good)
-  - term: いけない (must not or wrong)
-    meaning: Must not; should not; wrong; bad
+  - term: まずい
+    meaning: bad tasting, unskillful, unfavorable/awkward
     kind: similar expression
-    nuance: 「いけない」 specifically refers to something being forbidden, morally wrong, or undesirable in
-      a rule-based sense. While it can translate to "bad," its core is "not permissible" or "wrong to
-      do." 「悪い」 is a more general descriptive term.
-    grammar_point: <suggest>:いけない (must not or wrong)
-  - term: すみません (apology)
-    meaning: I'm sorry; excuse me
+    nuance: 「まずい」 primarily means "bad tasting" for food, but also "unskillful" or "awkward/unfavorable"
+      for situations. While both can mean "bad," 「まずい」 focuses on sensory quality (taste) or situational
+      awkwardness, whereas 「悪い」 is broader and more general.
+    grammar_point: <suggest>:まずい (bad tasting)
+  - term: 良くない
+    meaning: not good
     kind: similar expression
-    nuance: 「すみません」 is a general apology, contrasting with 「悪い けど」's specific use for "I feel bad to ask"
-      or "I'm sorry to trouble you."
-    grammar_point: <suggest>:すみません (apology)
-post_false_friends_writeup: When distinguishing between 「悪い」 and similar negative expressions, consider
-  the *type* of "badness" being conveyed. 「悪い」 is versatile for general quality, moral standing, or an
-  unfavorable state. 「まずい」 often relates to taste or awkward situations. 「ひどい」 emphasizes severity or
-  cruelty. 「だめ」 implies uselessness, prohibition, or failure. 「いけない」 highlights moral wrongness or impermissibility.
-  Paying attention to these subtle differences will help you choose the most appropriate word.
+    nuance: 「良くない」 is the direct negation of "good." While it often means the same as 「悪い」, 「悪い」 can sometimes
+      carry a stronger, more inherent sense of "badness" or "evil," while 「良くない」 simply means "lacks goodness"
+      or "is not up to par."
+    grammar_point: い-Adjective[くない] (negative)
+  - term: ひどい
+    meaning: terrible, awful, cruel
+    kind: similar expression
+    nuance: 「ひどい」 implies a much stronger degree of badness, often evoking feelings of cruelty, severity,
+      or extreme awfulness. 「悪い」 is more general and less intense.
+    grammar_point: <suggest>:ひどい (terrible)
+post_false_friends_writeup: While 「悪い」 broadly covers "bad" or "poor," distinguishing it from similar
+  expressions is key. 「だめ」 implies a state of being unacceptable, forbidden, or broken, as in 「この計画はだめだ」
+  (This plan is no good/won't work). 「まずい」 often refers to bad taste or an awkward/unfavorable situation,
+  like 「まずい料理」 (bad tasting food) or 「まずい状況だ」 (It's an awkward situation). 「良くない」 is simply the negative
+  form of "good," meaning "not good," and can be interchangeable with 「悪い」 in many contexts but lacks
+  the potential for stronger moral implications. 「ひどい」 expresses a much more extreme degree of badness,
+  suggesting something terrible, cruel, or outrageous, such as 「ひどい話だ」 (a terrible story) or 「ひどい扱い」 (cruel
+  treatment). Choose the most appropriate word based on the specific type and intensity of "badness" you
+  wish to convey.
 examples:
-  - english: This apple tastes bad.
+  - english: This movie is bad.
     japanese:
-      - この リンゴ は {悪い} 味 が し ます。
-      - この リンゴ は {悪い} です。
-    english_literally: This apple, as for it, bad taste does.
+      - この 映画 は {悪い}。
+      - この 映画 は {悪い です}。
+      - この 映画 は {悪かっ た}。
+      - この 映画 は {悪かっ た です}。
+    english_literally: This movie as for bad.
     competing_grammar:
       - competing_japanese:
-          - この リンゴ は {まずい} です。
-        english: This apple is unappetizing.
-        hint: 「まずい」 refers specifically to bad taste, while 「悪い」 can be broader, like the apple itself
-          is bad (rotten) or its quality is generally poor. We're looking for a general bad taste.
-    scene: A child complaining about a fruit.
+          - この 映画 は まずい。
+        english: This movie tastes bad.
+        hint: 「まずい」 is typically used for things that taste bad or are awkward. We are looking for a general
+          bad quality of the movie here.
+    scene: Two friends discussing a movie they just watched.
     register: casual
     setting: friendly
-    conjugation: dictionary (plain non-past)
-  - english: It's not a bad idea.
+  - english: The weather today is bad.
     japanese:
-      - それ は {悪く ない} 考え です ね。
-      - それ は {悪く ない} と 思い ます。
-      - それ は {悪く ない}。
-    english_literally: That is not bad idea, isn't it?
+      - 今日 の 天気 は {悪い}。
+      - 今日 の 天気 は {悪い です}。
+      - 今日 の 天気 は {悪かっ た}。
+      - 今日 の 天気 は {悪かっ た です}。
+    english_literally: Today's weather as for bad.
     competing_grammar:
       - competing_japanese:
-          - それ は {ひどい} 考え じゃ ない です ね。
-        english: That's not a terrible idea, is it?
-        hint: 「ひどい」 implies something is awful or severe, not just 'bad' in a neutral sense. We're looking
-          for a simple 'not bad' idea.
-    scene: Two colleagues discussing a plan.
-    register: semi-formal
-    setting: professional
-    conjugation: negative plain (～ない)
-  - english: Last night's movie was really bad.
-    japanese:
-      - 昨夜 の 映画 は 本当 に {悪かっ た} です。
-      - 昨夜 の 映画 は 本当 に {悪かっ た}。
-    english_literally: Last night's movie, as for it, truly was bad.
-    competing_grammar:
-      - competing_japanese:
-          - 昨夜 の 映画 は 本当 に {ひどかっ た} です。
-        english: Last night's movie was truly terrible.
-        hint: 「ひどい」 expresses a stronger degree of 'badness,' often implying emotional impact or severity.
-          We're looking for a simpler 'bad' in quality.
-    scene: Friends chatting about entertainment.
+          - 今日 の 天気 は 良く ない。
+        english: Today's weather is not good.
+        hint: 「良くない」 is simply the negation of 'good'. While it can sometimes be interchangeable, 「悪い」
+          carries a more direct sense of 'badness' or 'poor quality'.
+    scene: A person looking out the window on a rainy day.
     register: casual
-    setting: friendly
-    conjugation: past plain (～た)
-  - english: Because the weather was bad, we cancelled the picnic.
-    japanese:
-      - 天気 が {悪く て}、ピクニック は 中止 に なり まし た。
-      - 天気 が {悪い} の で、ピクニック は 中止 に なり まし た。
-    english_literally: Weather was bad, picnic became cancelled.
-    competing_grammar:
-      - competing_japanese:
-          - 天気 が {まずく て}、ピクニック は 中止 に なり まし た。
-        english: Because the weather was awkward, we cancelled the picnic.
-        hint: 「まずい」 refers to awkwardness or bad taste, not meteorological conditions. 「悪い」 is suitable
-          for describing bad weather.
-    scene: Explaining a cancelled event.
-    register: formal
-    setting: informative
-    conjugation: te-form (～て)
-  - english: My eyesight is getting bad.
-    japanese:
-      - 最近、目 が {悪い} です。
-      - 最近、目 が {悪く なっ て き まし た}。
-    english_literally: Recently, eyes are bad.
-    competing_grammar:
-      - competing_japanese:
-          - 最近、目 が {だめ} です。
-        english: Recently, my eyes are useless.
-        hint: 「だめ」 implies something is useless or broken, not just of poor quality like eyesight. 「悪い」
-          is correct for describing poor vision.
-    scene: An adult talking about their health.
-    register: teineigo (polite)
     setting: reflective
-    conjugation: non-past polite (～ます)
-    nuance: This sentence uses 「悪い」 in a common way to describe a physical deficiency, in this case, poor
-      eyesight. The polite form 「です」 makes it suitable for general conversation.
-  - english: Eating too much sugar is bad for your health.
+  - english: My eyesight is bad.
     japanese:
-      - 砂糖 の 食べ すぎ は 体 に {悪い} です。
-      - 砂糖 の 食べ すぎ は 体 に {悪い}。
-    english_literally: Sugar over-eating, as for it, body for bad is.
+      - 私 は 目 が {悪い}。
+      - 私 は 目 が {悪い です}。
+      - 私 は 目 が {悪かっ た}。
+      - 私 は 目 が {悪かっ た です}。
+    english_literally: As for me, eyes are bad.
     competing_grammar:
       - competing_japanese:
-          - 砂糖 の 食べ すぎ は 体 に {ひどい} です。
-        english: Eating too much sugar is terrible for your health.
-        hint: While too much sugar can be 'terrible,' 「悪い」 is the more common and natural term for generally
-          'bad for your health' without extreme emphasis.
-    scene: A doctor giving advice.
-    register: formal
-    setting: instructional
-    conjugation: dictionary (plain non-past)
-  - english: Don't be a bad boy, okay?
+          - 私 は 目 が だめ だ。
+        english: My eyes are useless.
+        hint: 「だめ」 suggests something is completely useless or broken. We are looking for a description
+          of a poor condition, not utter uselessness.
+    scene: Someone trying to read fine print without glasses.
+    register: casual
+    setting: informative
+  - english: He's a bad person.
     japanese:
-      - '{悪い} 子 に なら ない で ね。'
-      - '{悪い} 子 に なら ない で ください ね。'
-    english_literally: Bad child, don't become, okay?
+      - 彼 は {悪い} 人 だ。
+      - 彼 は {悪い} 人 です。
+      - 彼 は {悪い} やつ だ。
+    english_literally: As for him, bad person is.
     competing_grammar:
       - competing_japanese:
-          - '{だめ} な 子 に なら ない で ね。'
-        english: Don't be a useless child, okay?
-        hint: 「だめ」 implies being useless or incapable, while 「悪い」 implies naughtiness or misbehavior for
-          a child.
-    scene: A mother scolding her child.
+          - 彼 は ひどい 人 だ。
+        english: He's a terrible person.
+        hint: 「ひどい」 implies a much stronger, often cruel or outrageous, degree of badness. 「悪い」 is more
+          general, referring to poor character.
+    scene: Two people gossiping about a third person.
     register: casual
     setting: friendly
-    conjugation: dictionary (plain non-past)
-    speaker_gender: female
-    listener_gender: male
-    nuance: 「悪い 子」 is a common phrase used by adults, particularly mothers, when admonishing children.
-      The 「ね」 softens the imperative slightly, seeking understanding.
-  - english: Sorry, but could you open the window?
+  - english: I have some bad news.
     japanese:
-      - '{悪い} けど、窓 を 開け て くれる？'
-      - '{悪い} ん です が、窓 を 開け て もらえ ます か？'
-    english_literally: Bad, but, window open please?
+      - '{悪い} 知らせ が ある。'
+      - '{悪い} 知らせ が あり ます。'
+      - '{悪い} 知らせ が {あっ た}。'
+      - '{悪い} 知らせ が {あり まし た}。'
+    english_literally: Bad news there is.
     competing_grammar:
       - competing_japanese:
-          - '{すみ ませ ん} が、窓 を 開け て くれる？'
-        english: Excuse me, but could you open the window?
-        hint: 「すみません」 is a general apology, while 「悪い けど」 is a more casual and slightly apologetic way
-          to make a request that might be inconvenient. We're looking for the slightly apologetic, casual
-          imposition.
-    scene: A roommate asking for a favor.
-    register: casual
-    setting: intimate
-    conjugation: dictionary (plain non-past)
-    nuance: 「悪い けど」 is a very common casual expression meaning "Sorry, but..." or "I feel bad, but...".
-      It's a way to politely impose on someone without a formal apology.
-  - english: That decision wasn't bad at all.
-    japanese:
-      - その 決定 は 決して {悪く あり ませ ん でし た}。
-      - その 決定 は 決して {悪く なかっ た} です。
-    english_literally: That decision, as for it, certainly was not bad.
-    competing_grammar:
-      - competing_japanese:
-          - その 決定 は 決して {だめ} じゃ なかっ た です。
-        english: That decision certainly wasn't useless.
-        hint: 「だめ」 implies a decision was useless or failed completely. 「悪い」 simply means it wasn't poor
-          in quality.
-    scene: Reviewing a past choice.
-    register: formal
-    setting: professional
-    conjugation: negative past polite (～ませんでした)
-  - english: I have a bad feeling about this.
-    japanese:
-      - 何 だ か {悪い} 予感 が する。
-      - 何 だ か {悪い} 予感 が し ます。
-    english_literally: Somehow bad premonition does.
-    competing_grammar:
-      - competing_japanese:
-          - 何 だ か {ひどい} 予感 が する。
-        english: I have a terrible premonition about this.
-        hint: 「ひどい 予感」 implies a very severe or cruel premonition. 「悪い 予感」 is more general for a simply
-          negative feeling.
-    scene: Someone expressing apprehension.
+          - 良く ない 知らせ が ある。
+        english: There is not good news.
+        hint: While 「良くない」 is possible, 「悪い」 is more commonly used for 'bad news,' directly conveying
+          the negative nature of the information.
+    scene: A friend calling another friend with unfortunate news.
     register: casual
     setting: serious
-    conjugation: dictionary (plain non-past)
-  - english: My handwriting is bad, so I'm sorry.
+  - english: My luck is bad today.
     japanese:
-      - 字 が {悪い} から、ごめん なさい。
-      - 字 が {悪く て}、ごめん なさい。
-    english_literally: Handwriting is bad, so, sorry.
+      - 今日 は 運 が {悪い}。
+      - 今日 は 運 が {悪い です}。
+      - 今日 は 運 が {悪かっ た}。
+      - 今日 は 運 が {悪かっ た です}。
+    english_literally: Today, as for luck, bad.
     competing_grammar:
       - competing_japanese:
-          - 字 が {まずい} から、ごめん なさい。
-        english: My handwriting is clumsy, so I'm sorry.
-        hint: 「まずい」 implies clumsiness or awkwardness, which can apply to handwriting, but 「悪い」 is more
-          common for simply 'bad handwriting' in terms of legibility or neatness.
-    scene: Explaining illegible notes.
+          - 今日 は 運 が だめ だ。
+        english: My luck is no good today.
+        hint: 「だめ」 implies a failure or something being useless. While your luck might be 'no good,' 「悪い」
+          is the more natural and common way to describe having 'bad luck'.
+    scene: Someone who just missed a train.
+    register: casual
+    setting: pessimistic
+  - english: My bad! I forgot my wallet.
+    japanese:
+      - '{悪い}！財布 を 忘れ た。'
+      - '{悪かっ た}！財布 を 忘れ た。'
+    english_literally: Bad! Wallet forgot.
+    competing_grammar:
+      - competing_japanese:
+          - ごめん！財布 を 忘れ た。
+        english: Sorry! I forgot my wallet.
+        hint: 「ごめん」 is a direct apology. 「悪い」 in this context implies "my fault" or "my bad" for a minor
+          inconvenience, which is a more casual and slightly less direct apology.
+    scene: A friend realizing they left something important at home.
     register: casual
     setting: friendly
-    conjugation: dictionary (plain non-past)
-  - english: This is a bit of bad timing, but...
+    nuance: The casual utterance of 「悪い」 is a common, very informal way to apologize for a minor inconvenience
+      or mistake, similar to "my bad" in English. It implies "it's my fault that something bad happened".
+  - english: I'm feeling a little bad today.
     japanese:
-      - 少し {悪い} タイミング です が…
-      - 少し {悪い} タイミング だ けど…
-    english_literally: A little bad timing is, but...
+      - 今日 は 少し 気分 が {悪く} て。
+      - 今日 は 少し 気分 が {悪い} です。
+      - 今日 は 少し 気分 が {悪い}。
+      - 今日 は 少し 気分 が {悪かっ た}。
+    english_literally: Today as for, little feeling bad, and.
     competing_grammar:
       - competing_japanese:
-          - 少し {まずい} タイミング です が…
-        english: This is a bit of awkward timing, but...
-        hint: Both 「悪い タイミング」 and 「まずい タイミング」 can be used. 「まずい」 implies more social awkwardness or clumsiness,
-          while 「悪い」 is simply 'not good' timing.
-    scene: Interrupting someone.
+          - 今日 は 少し 気分 が 良く なく て。
+        english: I'm feeling a little not good today.
+        hint: 「良くない」 is the direct opposite of 'good.' While it conveys a similar meaning, 「気分が悪い」 is
+          a common fixed expression for feeling unwell, implying a specific type of 'bad' feeling.
+    scene: A colleague explaining why they might leave early.
+    register: semi-formal
+    setting: professional
+    conjugation: te-form (～て)
+  - english: Eating too much sugar is bad for your health.
+    japanese:
+      - 砂糖 の 食べ すぎ は 健康 に {悪い}。
+      - 砂糖 の 食べ すぎ は 健康 に {悪い です}。
+    english_literally: Sugar's eating too much as for health to bad.
+    competing_grammar:
+      - competing_japanese:
+          - 砂糖 の 食べ すぎ は 健康 に 良く ない。
+        english: Eating too much sugar is not good for your health.
+        hint: Both are correct here, but 「悪い」 often describes an inherent negative quality or effect,
+          whereas 「良くない」 is simply the absence of good.
+    scene: A doctor advising a patient.
+    register: formal
+    setting: informative
+  - english: That kind of company is a bad influence.
+    japanese:
+      - そう いう 仲間 は {悪い} 影響 を 与える。
+      - その よう な 仲間 は {悪い} 影響 を 与え ます。
+      - ああ いう 仲間 は {悪い} 影響 を 与える。
+    english_literally: That kind of friends as for bad influence give.
+    competing_grammar:
+      - competing_japanese:
+          - そう いう 仲間 は だめ な 影響 を 与える。
+        english: That kind of friends give a useless influence.
+        hint: 「だめ」 implies something is ineffective or useless. We are looking for a quality of 'badness'
+          in the influence, not its ineffectiveness.
+    scene: A parent talking to their child about choosing friends.
+    register: casual
+    setting: instructional
+  - english: It is bad that he is always late.
+    japanese:
+      - 彼 が いつ も 遅刻 する の は {悪い} こと だ。
+      - 彼 が いつ も 遅刻 する の は {悪い} こと です。
+    english_literally: He is always late is a bad thing.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 が いつ も 遅刻 する の は 良く ない こと だ。
+        english: It is not good that he is always late.
+        hint: Both 「悪い」 and 「良くない」 are acceptable here. 「悪い」 can convey a stronger sense of it being an
+          undesirable or problematic action.
+    scene: A manager discussing an employee's punctuality.
+    register: formal
+    setting: professional
+  - english: I'm sorry, I seem to have made a bad mistake.
+    japanese:
+      - '{悪い} こと を し て しまっ た よう です。'
+      - '{悪い} 間違い を し て しまっ た よう です。'
+      - 大変 {悪い} こと を し て しまっ た よう です。
+    english_literally: Bad thing did it seems.
+    competing_grammar:
+      - competing_japanese:
+          - ひどい こと を し て しまっ た よう です。
+        english: I seem to have done a terrible thing.
+        hint: 「ひどい」 implies an action that is cruel or extremely severe. While your mistake might feel
+          terrible, 「悪い」 suggests a negative action without the extreme emotional weight of cruelty.
+    scene: A student apologizing to a teacher for a significant error.
     register: semi-formal
     setting: apologetic
-    conjugation: dictionary (plain non-past)
-post_example_writeup: The examples illustrate the broad applicability of 「悪い」 across various contexts,
-  from describing physical qualities and situations to expressing personal feelings or making casual apologies.
-  Notice how its usage can shift from a direct description of "badness" to a more nuanced expression depending
-  on the accompanying noun or particle. The colloquial 「悪い けど」 is a particularly common and useful expression
-  for making polite requests that might cause slight inconvenience.
-sources:
-  bunpro: https://bunpro.jp/grammar_points/悪い (bad)
+post_example_writeup: The examples illustrate how 「悪い」 can be applied to describe qualities, situations,
+  physical conditions, and even serve as a casual apology. Note that the adverbial form 「悪く」 (waruku)
+  is used when modifying verbs or other adjectives, such as 「気分が悪く」 (kibun ga waruku) meaning "feeling
+  bad," or when used in the te-form to connect clauses like 「悪くてすみません」 (warukute sumimasen, "Sorry for
+  being bad/troubling you").

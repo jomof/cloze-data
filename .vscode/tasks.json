@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "run-grammar-labeled-japanese-debug",
+            "type": "shell",
+            "command": "ENABLE_DEBUGPY=1 bazel run //resources/grammar:grammar-labeled-japanese",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": ".*",
+                    "file": 1
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "⏳ Waiting for debugger to attach on port 5678...",
+                    "endsPattern": "✅ Debugger attached!"
+                }
+            }
+        }
+    ]
+}

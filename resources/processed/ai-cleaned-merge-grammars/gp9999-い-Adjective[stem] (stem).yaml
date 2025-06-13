@@ -1,0 +1,218 @@
+grammar_point: い-Adjective[stem] (stem)
+learn_before:
+  - い-Adjectives (adjectives ending in い)
+  - だ (casual copula)
+  - です (polite copula)
+learn_after:
+  - Verb[ば] (conditional)
+  - い-Adjective[がる] (showing signs of)
+  - い-Adjective[く] (adverbial form)
+  - い-Adjective[さ] (nominalizer)
+  - い-Adjective[すぎる] (excessive)
+  - い-Adjective[そう] (appearance)
+id: gp9999
+meaning: The base form of い-adjectives, used for conjugation and to form compound words.
+pronunciation:
+  katakana: ケイヨウシ ゴカン
+  romaji: keiyoushi gokan
+  pronunciation_warning: This is the technical term for 'adjective stem'. The stem itself is pronounced
+    as the base adjective without the final い, as in 『高い』 (takai) becoming 『高』 (taka).
+formation:
+  い-Adjective (minus い): The base form of an い-adjective, used for various conjugations and to form compound
+    words (e.g., 高い → 高).
+  い-Adjective[stem] + [Suffix]: Connects the stem to various suffixes and auxiliary verbs (e.g., 楽しい +
+    そう → 楽しそう).
+  い-Adjective[stem] + Noun: Forms compound nouns (e.g., 早い + 飯 → 早飯).
+  い-Adjective[stem] + Verb: Forms compound verbs (e.g., 辛い + 当たる → 辛く当たる).
+jlpt: N5
+details:
+  register: casual
+  usage-context: Primarily used as a component in conjugated forms or compound words; not typically used
+    as a standalone word in modern Japanese.
+  function: Serves as the foundational element for various conjugations and word formations, enabling
+    combination with suffixes and other words.
+  nuance: The い-adjective stem itself carries no inherent nuance; any nuance is imparted by the suffixes
+    or particles it combines with, or by the compound word it helps create.
+  grammatical-role: A fundamental morphological component of い-adjectives, representing the part that
+    remains constant across certain conjugations.
+etymology: The concept of a 'stem' (語幹・ごかん) in Japanese grammar originates from classical linguistic analysis,
+  where words were broken down into invariant parts (stems) and variant parts (endings or suffixes). For
+  い-adjectives, the final い is the conjugational ending, while the preceding part is the stem, signifying
+  the core meaning. This analytical approach helps understand the systematic nature of Japanese word formation.
+writeup: The い-adjective stem is the base form of an い-adjective, created by removing the final い. For
+  example, the stem of 楽しい (tanoshii, fun) is 楽し (tanoshi). This stem form is not a standalone word in
+  modern Japanese but serves as a crucial building block for various conjugations and the formation of
+  compound words. It's essential to understand the stem because it's the point of attachment for suffixes
+  like く (adverbial form), さ (nominalizer), そう (appearance), がる (showing signs), and すぎる (excessive).
+  While the stem itself doesn't carry independent meaning or register, its combination with other elements
+  allows for a wide range of grammatical functions and expressive nuances.
+false_friends:
+  - term: い-Adjective[く] (adverbial form)
+    meaning: used to connect to verbs or to form adverbial phrases
+    kind: similar expression
+    nuance: While both い-adjective stem and the く-form are derived from the い-adjective, the stem (e.g.,
+      高) is the core base, whereas the く-form (e.g., 高く) is an adverbial conjugation used to modify verbs
+      or other adjectives, or to connect clauses. The stem cannot stand alone as a modifier.
+    grammar_point: い-Adjective[く] (adverbial form)
+  - term: い-Adjective[さ] (nominalizer)
+    meaning: forms a noun indicating the degree or extent of the adjective's quality
+    kind: similar expression
+    nuance: The さ-form (e.g., 高さ - height) converts the adjective into a noun, indicating a measurable
+      quality. The stem is merely the base for this transformation; さ is the actual nominalizing suffix
+      that performs the nominalization.
+    grammar_point: い-Adjective[さ] (nominalizer)
+  - term: い-Adjective[そう] (appearance)
+    meaning: to seem or look like
+    kind: similar expression
+    nuance: The そう-form (e.g., 楽しそう - looks fun) directly attaches to the い-adjective stem to express
+      appearance or likelihood. The stem provides the core meaning, and そう adds the nuance of conjecture
+      or outward appearance.
+    grammar_point: い-Adjective[そう] (appearance)
+post_false_friends_writeup: The い-adjective stem is the fundamental part of the adjective before any conjugations
+  are applied. The forms that follow, such as the く-form, さ-form, and そう-form, are all created by attaching
+  different suffixes directly to this stem. It's important to remember that the stem itself is usually
+  not used independently in a sentence; it requires a suffix or another word to complete its grammatical
+  function or form a new compound word. Each suffix adds a distinct grammatical role or nuance to the
+  original adjective's meaning.
+examples:
+  - english: It looks like the new movie is interesting.
+    japanese:
+      - 新しい 映画 は {面白} そう です ね。
+      - 新しい 映画 は {面白} そう だ ね。
+    english_literally: New movie, it looks interesting, isn't it.
+    competing_grammar:
+      - competing_japanese:
+          - 新しい 映画 は 面白い です ね。
+        english: The new movie is interesting, isn't it.
+        hint: This simply states a fact about the movie. We're looking for a way to express that it 'looks'
+          interesting.
+    scene: You and a friend are looking at a poster for a new movie.
+    register: teineigo (polite)
+    setting: friendly
+  - english: She always acts like she's sad, but she's actually fine.
+    japanese:
+      - 彼女 は いつ も {悲} し がり ます が、本当 は 大丈夫 です。
+      - 彼女 は いつ も {悲} し がる けど、本当 は 大丈夫 だ よ。
+    english_literally: She always shows signs of sadness, but truly is fine.
+    competing_grammar:
+      - competing_japanese:
+          - 彼女 は いつ も 悲しい です が、本当 は 大丈夫 です。
+        english: She is always sad, but she's actually fine.
+        hint: This directly states she is sad. We're looking for a way to express that she 'acts like'
+          or 'shows signs of' being sad.
+    scene: Two colleagues are discussing another colleague's behavior.
+    register: teineigo (polite)
+    setting: professional
+  - english: This coffee is too hot to drink right now.
+    japanese:
+      - この コーヒー は 今 {熱} すぎ ます。
+      - この コーヒー は 今 {熱} すぎる。
+    english_literally: This coffee is now too hot.
+    competing_grammar:
+      - competing_japanese:
+          - この コーヒー は 今 熱い です。
+        english: This coffee is hot now.
+        hint: This just states the coffee is hot. We're looking for an expression that means it's 'too
+          hot'.
+    scene: You've just been served coffee and it's steaming.
+    register: teineigo (polite)
+    setting: casual slang
+  - english: The height of Mt. Fuji is impressive.
+    japanese:
+      - 富士 山 の {高} さ は 印象 的 です。
+      - 富士 山 の {高} さ は 印象 的 だ。
+    english_literally: Fuji-san's height is impressive.
+    competing_grammar:
+      - competing_japanese:
+          - 富士 山 は 高い です。
+        english: Mt. Fuji is tall.
+        hint: This states Mt. Fuji is tall. We're looking for the noun form 'height' to describe its impressiveness.
+    scene: A teacher is giving a lecture on famous Japanese landmarks.
+    register: teineigo (polite)
+    setting: academic
+  - english: He had a quick meal before going out.
+    japanese:
+      - 彼 は 出かける 前 に {早} 飯 を し た。
+      - 彼 は 出かける 前 に {早} 飯 を し まし た。
+    english_literally: He going out before quick-meal did.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 出かける 前 に 早く 食事 を し た。
+        english: He ate quickly before going out.
+        hint: This describes how he ate. We're looking for a compound noun that means 'a quick meal'.
+    scene: A narrator describing someone's daily routine.
+    register: casual
+    setting: storytelling
+    speaker_gender: male
+  - english: The kindness of that person is something I'll never forget.
+    japanese:
+      - あの 人 の {優} し さ は 忘れ られ ませ ん。
+      - あの 人 の {優} し さ は 忘れ られ ない。
+    english_literally: That person's kindness cannot be forgotten.
+    competing_grammar:
+      - competing_japanese:
+          - あの 人 は 優しい です。
+        english: That person is kind.
+        hint: This states the person is kind. We're looking for the noun form 'kindness'.
+    scene: Someone reflecting on a past interaction.
+    register: teineigo (polite)
+    setting: reflective
+  - english: If the weather is good tomorrow, let's go hiking.
+    japanese:
+      - 明日 {良} けれ ば、ハイキング に 行き ましょう。
+      - 明日 {良} けれ ば、ハイキング に 行こう。
+    english_literally: Tomorrow if good, hiking let's go.
+    competing_grammar:
+      - competing_japanese:
+          - 明日 天気 が いい です から、ハイキング に 行き ましょう。
+        english: Because the weather is good tomorrow, let's go hiking.
+        hint: This states a reason. We're looking for a conditional statement 'if the weather is good'.
+    scene: Two friends making plans for the weekend.
+    register: teineigo (polite)
+    setting: friendly
+  - english: It's a little painful when I move my arm.
+    japanese:
+      - 腕 を 動かす と {痛} い です。
+      - 腕 を 動かす と {痛} い。
+    english_literally: Arm moving when painful is.
+    competing_grammar:
+      - competing_japanese:
+          - 腕 を 動かす と 痛み が あり ます。
+        english: When I move my arm, there is pain.
+        hint: This uses a noun for pain. We're looking for the adjective 'painful'.
+    scene: Someone explaining an injury to a doctor.
+    register: teineigo (polite)
+    setting: serious
+  - english: The color of the leaves in autumn is beautiful.
+    japanese:
+      - 秋 の 葉 の {美} し さ は 素晴らしい です。
+      - 秋 の 葉 の {美} し さ は 素晴らしい。
+    english_literally: Autumn's leaves' beauty is wonderful.
+    competing_grammar:
+      - competing_japanese:
+          - 秋 の 葉 は 美しい です。
+        english: The leaves in autumn are beautiful.
+        hint: This describes the leaves as beautiful. We're looking for the noun 'beauty' to emphasize
+          the quality.
+    scene: A person admiring the autumn scenery.
+    register: teineigo (polite)
+    setting: reflective
+  - english: This old house has a lot of history.
+    japanese:
+      - この {古} い 家 は 歴史 が たくさん あり ます。
+      - この {古} い 家 は 歴史 が たくさん ある。
+    english_literally: This old house history much exists.
+    competing_grammar:
+      - competing_japanese:
+          - この 家 は 古い です。
+        english: This house is old.
+        hint: This simply states the house is old. We're looking for the adjective to directly modify
+          'house'.
+    scene: A guide explaining the features of a historical building.
+    register: teineigo (polite)
+    setting: informative
+post_example_writeup: These examples illustrate how the い-adjective stem acts as a foundation. Whether
+  forming compound words like 早飯 (hayameshi) or serving as the base for conjugations and suffixes such
+  as in 楽しそう (tanoshisou) or 美しさ (utsukushisa), the stem is the invariable core that carries the adjective's
+  fundamental meaning. Understanding this allows for a more intuitive grasp of how い-adjectives function
+  and adapt within sentences.

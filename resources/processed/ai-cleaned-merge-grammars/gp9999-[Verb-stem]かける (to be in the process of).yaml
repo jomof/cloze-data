@@ -1,320 +1,245 @@
 grammar_point: '[Verb-stem]かける (to be in the process of)'
 learn_before:
-  - Verb[dictionary] (dictionary form)
-  - Verb[た] (past tense)
-  - Verb[て] (and then)
-  - '[Verb-stem]おわる (to finish doing)'
-  - '[Verb-stem]はじめる (to start doing)'
+  - Verb[stem] (continuative)
 learn_after:
-  - '[Verb-dictionary]ところだった (was just about to)'
-  - '[Verb-stem]つづける (to continue doing)'
+  - '[Verb-stem]だす (to suddenly start doing)'
+  - '[Verb-stem]はじめる (to start doing)'
 id: gp9999
-meaning: to be in the process of; to start to; to be about to (with nuance of incompletion)
+meaning: To begin to do something, to be in the middle of doing something, or to be on the verge of doing
+  something, often implying incompleteness or a partial state.
 conjugations:
   - conjugation-type: dictionary (plain non-past)
-    form: 〜かける
+    form: かける
     rarity: common
-    meaning: to start to do; to be in the process of
+    meaning: to be in the process of
   - conjugation-type: non-past polite (～ます)
-    form: 〜かけます
+    form: かけます
     rarity: common
-    meaning: to start to do; to be in the process of (polite)
-  - conjugation-type: negative plain (～ない)
-    form: 〜かけない
-    rarity: less common
-    meaning: not to start to do; not to be in the process of
-  - conjugation-type: negative non-past polite (～ません)
-    form: 〜かけません
-    rarity: less common
-    meaning: not to start to do; not to be in the process of (polite)
-  - conjugation-type: past plain (～た)
-    form: 〜かけた
-    rarity: common
-    meaning: started to do (but didn't finish); was about to
-  - conjugation-type: past polite (～ました)
-    form: 〜かけました
-    rarity: common
-    meaning: started to do (but didn't finish); was about to (polite)
-  - conjugation-type: negative past plain (～なかった)
-    form: 〜かけなかった
-    rarity: less common
-    meaning: did not start to do
-  - conjugation-type: negative past polite (～ませんでした)
-    form: 〜かけませんでした
-    rarity: less common
-    meaning: did not start to do (polite)
+    meaning: to be in the process of (polite)
   - conjugation-type: te-form (～て)
-    form: 〜かけて
+    form: かけて
     rarity: common
-    meaning: being in the process of; having started (and left incomplete)
-  - conjugation-type: potential (～られる/～える)
-    form: 〜かけられる
-    rarity: uncommon
-    meaning: to be able to start to do
+    meaning: being in the process of
+  - conjugation-type: past plain (～た)
+    form: かけた
+    rarity: common
+    meaning: was in the process of
+  - conjugation-type: negative plain (～ない)
+    form: かけない
+    rarity: common
+    meaning: not in the process of
 pronunciation:
   katakana: カケル
   romaji: kakeru
 formation:
-  Verb-stem + かける: Indicates that an action has begun but is incomplete, or that one is on the verge of
-    starting an action.
+  Verb-stem + かける: Indicates the beginning, partial completion, or being on the verge of an action.
 jlpt: N3
 details:
-  part-of-speech: suffix
+  part-of-speech: auxiliary verb
   register: casual
-  usage-context: Used to describe an action that is partially completed, on the verge of being completed,
-    or started but interrupted. It emphasizes the unfinished state.
-  function: Indicates partial completion or an incipient action.
-  nuance: Often carries a nuance of incompletion, interruption, or being at a critical point (e.g., about
-    to fall). Can suggest fragility or a pending state. It is distinct from simply 'starting' an action;
-    it highlights the 'half-done' or 'about-to-do' aspect.
-etymology: The verb 「かける」(kakeru) has numerous meanings, including "to hang," "to begin," "to span," or
-  "to apply." When used as a suffix 「〜かける」, it draws from the sense of "beginning an action" or "doing
-  something partially." The core idea behind its grammatical function is the notion of an action being
-  in a state of 'being put on' or 'being initiated' but not yet fully concluded, hence the nuance of incompletion
-  or being on the verge of completion. This originates from the concept of 'hanging' something, implying
-  it is not fully settled or finished.
-writeup: |-
-  The grammar point 「〜かける」 is formed by attaching the verb 「かける」 to the **stem form** of another verb. It conveys the meaning that an action has been started but is not yet complete, or that someone is on the verge of doing something. It emphasizes the **incompleteness** or **incipient nature** of the action.
-
-  For example, 「読みかける」 (yomikakeru) means "to start reading (but not finish)" or "to be in the middle of reading." It implies that the reading was interrupted or only partially done. Similarly, 「食べかける」 (tabekakeru) means "to start eating (but not finish)" or "to eat half of something." The key nuance here is that the action is not fully carried out.
-
-  This form can also express being "about to" do something, especially when there's a sense of suddenness or near miss. For instance, 「倒れかける」 (taorekakeru) means "to be about to fall" or "to almost fall." Here, the action of falling has not fully occurred but is imminent or has just begun.
-
-  「〜かける」 is versatile and can be used with various types of verbs to describe actions that are initiated but left unfinished, or actions that are on the cusp of happening. It is commonly seen in both spoken and written Japanese.
+  usage-context: Used to express an action that has started but is not finished, or is about to start,
+    or is done only partially.
+  function: Expresses incompleteness, imminence, or partiality of an action.
+  nuance: Often implies an unfinished state or an action that was interrupted. Can also imply a strong
+    intention to start an action.
+  grammatical-role: Functions as a suffix to a verb stem, forming a compound verb.
+etymology: The verb 「掛ける (かける)」 itself has many meanings, including "to hang," "to start," "to put on,"
+  etc. In this grammatical context, it stems from the nuance of "starting something" or "putting something
+  in motion," and also "leaving something hanging" or "unfinished." The idea of 「[Verb-stem]かける」 captures
+  both the initiation and the potential incompleteness of an action.
+writeup: The grammar point 「[Verb-stem]かける」 is attached to the ます-stem of a verb to indicate that an action
+  has begun but is not yet complete, or that it is on the verge of beginning. It conveys a sense of incompleteness
+  or a partial state of an action. This grammar is versatile and can be used in various contexts to express
+  nuance related to the initiation or interruption of an action. For instance, when describing an action
+  that suddenly starts, like 「雨が降りかける」 (it starts to rain), or an action that is halfway done, like 「本を読みかける」
+  (to be in the middle of reading a book). It can also indicate being on the verge of doing something,
+  like 「言いかける」 (to be about to say). The implication of incompleteness is key; the action is not fully
+  executed or concluded.
 false_friends:
-  - term: Verb-stemはじめる (to start doing)
+  - term: Verb[dictionary]ところだ
+    meaning: about to do, just about to do
+    kind: similar expression
+    nuance: 「ところだ」 emphasizes the exact moment an action is about to begin or has just finished. 「かける」
+      implies the action has begun or is about to, but focuses more on its incomplete or partial state.
+    grammar_point: '[Verb-dictionary]ところだ (about to do)'
+  - term: Verb[stem]はじめる
     meaning: to start doing
     kind: similar expression
-    nuance: 「〜はじめる」 emphasizes the definitive beginning of an action, implying a new phase or activity
-      has commenced. In contrast, 「〜かける」 suggests that an action has been initiated but is incomplete,
-      or that one is on the verge of starting, often with a nuance of interruption or partiality. For
-      example, 「本 を 読み始めた」 (Hon o yomihajimeta - I started reading a book) simply states the action began,
-      while 「本 を 読みかけた」 (Hon o yomikaketa - I started reading a book but didn't finish/was in the middle
-      of reading) implies incompletion.
+    nuance: 「はじめる」 simply means "to start an action." While 「かける」 also indicates a start, it often carries
+      an additional nuance of the action being incomplete or interrupted. 「はじめる」 does not inherently carry
+      this nuance of incompleteness.
     grammar_point: '[Verb-stem]はじめる (to start doing)'
-  - term: Verb-dictionaryところだ (about to do)
-    meaning: to be about to do
+  - term: Verb[stem]だす
+    meaning: to suddenly start doing, to burst into (action)
     kind: similar expression
-    nuance: 「〜ところだ」 indicates that an action is just about to happen, is happening, or has just happened.
-      When used to mean "about to do," it emphasizes the *imminence* of the action, suggesting it hasn't
-      started yet. 「〜かける」, while sometimes translating to "about to," implies the action has already *begun*
-      but is incomplete, or one is at the *verge* of it, hinting at a state of being unfinished.
-    grammar_point: '[Verb-dictionary]ところだ (about to do)'
-  - term: Verb-stemおわる (to finish doing)
+    nuance: 「だす」 emphasizes a sudden, often unexpected, initiation of an action. 「かける」 does not necessarily
+      imply suddenness, but rather the onset or partial state.
+    grammar_point: '[Verb-stem]だす (to suddenly start doing)'
+  - term: Verb[stem]おわる
     meaning: to finish doing
     kind: antonym
-    nuance: 「〜おわる」 indicates the **completion** of an action, meaning the task is fully done. 「〜かける」,
-      on the other hand, describes an action that is **incomplete** or only partially done. They are direct
-      opposites in terms of the state of the action.
+    nuance: 「おわる」 indicates the completion of an action, which is the opposite of the incompleteness or
+      partiality implied by 「かける」.
     grammar_point: '[Verb-stem]おわる (to finish doing)'
-  - term: Verb-stemつづける (to continue doing)
-    meaning: to continue doing
-    kind: antonym
-    nuance: 「〜続ける」 denotes the **continuation** of an action without interruption. 「〜かける」 implies an action
-      that is either **just starting** or has been **interrupted** or is **incomplete**, making them conceptual
-      opposites.
-    grammar_point: '[Verb-stem]つづける (to continue doing)'
-post_false_friends_writeup: While 「〜はじめる」 focuses on the initial point of an action's commencement, 「〜かける」
-  emphasizes the state of that action being partial or on the brink of happening. Think of 「〜かける」 as describing
-  something that is 'half-done' or 'almost done' rather than just 'started'. When you see 「〜かける」, consider
-  the possibility of interruption or incompletion. For 'about to do', 「〜ところだ」 typically describes the
-  immediate future, whereas 「〜かける」 might describe a physical state of being on the verge of an action,
-  like almost falling.
+post_false_friends_writeup: While 「[Verb-stem]かける」 signifies an action's initiation or partial state,
+  it's crucial to distinguish it from similar-sounding expressions. 「[Verb-dictionary]ところだ」 specifically
+  points to the imminent beginning or the just-completed action, lacking the continuous or interrupted
+  nuance of 「かける」. 「[Verb-stem]はじめる」 is a more general "start," without the strong implication of an unfinished
+  state. 「[Verb-stem]だす」 uniquely emphasizes the suddenness of an action's commencement. Conversely, 「[Verb-stem]おわる」
+  is the direct opposite, denoting completion. Understanding these subtle differences is key to accurately
+  conveying the intended meaning in Japanese.
 examples:
-  - english: She started to read the book, but didn't finish it.
+  - english: The old man began to speak, but then paused.
     japanese:
-      - 彼女 は 本 を 読み {かけ た}。
-      - 彼女 は 本 を 読み {かけ まし た}。
-    english_literally: As for her, the book she started to read.
+      - 老人 が {話し} かけ た が、途中 で 黙っ た。
+      - 老人 が {話し} かけ まし た が、途中 で 黙り まし た。
+    english_literally: The old man {started speaking} but became silent midway.
     competing_grammar:
       - competing_japanese:
-          - 彼女 は 本 を 読み 始め た。
-        english: She started reading the book (and may have finished).
-        hint: 「読み始めた」 simply states the action of reading began. 「読みかけた」 implies the reading was started
-          but not completed, suggesting an unfinished state. We're looking for an action that was started
-          but left unfinished.
-    scene: A student is explaining why they haven't completed their reading assignment.
+          - 老人 が 話し 始め た が、途中 で 黙っ た。
+        english: The old man started speaking, but became silent midway.
+        hint: 「話し始めた」 simply means "started speaking." 「話しかけた」 implies not just the start, but also that
+          the speech was incomplete or interrupted. We're looking for the nuance of an unfinished attempt
+          at speaking.
+    scene: A quiet meeting.
+    register: formal
+    setting: serious
+  - english: I started to eat the cake, but then my friend called.
+    japanese:
+      - ケーキ を {食べ} かけ た ところ で、友達 から 電話 が 来 た。
+      - ケーキ を {食べ} かけ た ところ で、友達 から 電話 が 来 まし た。
+    english_literally: At the point where I {started to eat} the cake, a phone call came from a friend.
+    competing_grammar:
+      - competing_japanese:
+          - ケーキ を 食べよう と し たら、友達 から 電話 が 来 た。
+        english: When I was about to eat the cake, a phone call came from a friend.
+        hint: 「食べようとしたら」 means "when I was about to eat." 「食べかけた」 indicates the action of eating had already
+          begun, even if just slightly. We're looking for the nuance that the eating had already commenced.
+    scene: Eating a snack at home.
     register: casual
-    setting: academic
-    conjugation: past plain (～た)
+    setting: friendly
+  - english: She was about to cry, but she held back.
+    japanese:
+      - 彼女 は {泣き} かけ た が、なん と か こらえ た。
+      - 彼女 は {泣き} かけ まし た が、なん と か こらえ まし た。
+    english_literally: She {was about to cry} but somehow endured.
+    competing_grammar:
+      - competing_japanese:
+          - 彼女 は 泣き そう に なっ た が、なん と か こらえ た。
+        english: She looked like she was about to cry, but somehow endured.
+        hint: 「泣きそうになった」 focuses on the appearance of being about to cry. 「泣きかけた」 emphasizes the onset
+          of the action itself, even if internal. We're looking for the actual beginning of the action,
+          not just its appearance.
+    scene: A tense moment between friends.
+    register: casual
+    setting: serious
     speaker_gender: female
-    listener_gender: group
-    nuance: The use of 「読みかけた」 highlights that the action of reading was initiated but remained incomplete,
-      suggesting an interruption or lack of full effort. This implies the student only read a portion
-      of the book. The nuance is that she started it, but left it unfinished.
-  - english: The child almost fell off the chair.
+  - english: Don't leave your homework half-done!
     japanese:
-      - 子供 が 椅子 から 倒れ {かけ た}。
-      - 子供 が 椅子 から 倒れ {かけ まし た}。
-    english_literally: The child from the chair almost fell.
+      - 宿題 を {やり} かけ に し ない で ください！
+      - 宿題 を {やり} かけ の まま に し ない で ください！
+    english_literally: Please don't leave your homework {in the midst of doing}.
     competing_grammar:
       - competing_japanese:
-          - 子供 が 椅子 から 倒れる ところ だっ た。
-        english: The child was just about to fall off the chair.
-        hint: 「ところだった」 expresses something was just about to happen, but was prevented from starting.
-          「倒れかけた」 indicates the action of falling actually began (e.g., losing balance) but was not completed.
-    scene: A parent recounts a scary moment to their partner.
+          - 宿題 を 終わら せ ない で ください！
+        english: Please don't leave your homework unfinished!
+        hint: 「終わらせないで」 simply means "don't finish." 「やりかけ」 specifically refers to the state of something
+          being started but not completed, implying a partial state. We're looking for the nuance of leaving
+          something partially done.
+    scene: A parent scolding a child.
     register: casual
-    setting: friendly
-    conjugation: past plain (～た)
-    nuance: 「倒れかけた」 suggests that the child actually began to lose balance and started to fall, but the
-      action was interrupted or prevented from full completion, implying a 'near miss'. This indicates
-      a partial or incipient action.
-  - english: The half-eaten apple was left on the table.
+    setting: instructional
+  - english: The child tried to open the door, but it was locked.
     japanese:
-      - 食べ {かけ} の りんご が テーブル に 置い て あっ た。
-      - 食べ {かけ} の りんご が テーブル に 置い て あり まし た。
-    english_literally: The half-eaten apple was placed on the table.
+      - 子供 は ドア を {開け} かけ た が、鍵 が かかっ て い た。
+      - 子供 は ドア を {開け} かけ まし た が、鍵 が かかっ て い まし た。
+    english_literally: The child {started to open} the door but it was locked.
     competing_grammar:
       - competing_japanese:
-          - 食べ 終わっ た りんご が テーブル に 置い て あっ た。
-        english: The apple that had been finished eating was on the table.
-        hint: 「食べ終わった」 indicates the apple was fully consumed. 「食べかけ」 specifically means the apple was
-          only partially eaten and left unfinished. We're looking for a partially eaten apple.
-    scene: Someone observes a messy kitchen after a child's snack time.
+          - 子供 は ドア を 開けよう と し た が、鍵 が かかっ て い た。
+        english: The child tried to open the door, but it was locked.
+        hint: 「開けようとした」 means "tried to open" or "was about to open." 「開けかけた」 implies the action of opening
+          was already slightly initiated. We're looking for the nuance of the action already having begun.
+    scene: A child attempting to get into a room.
     register: casual
-    setting: casual slang
-    conjugation: dictionary (plain non-past)
-    nuance: 「食べかけ」 functions adjectivally here, describing the apple as being 'in the process of being
-      eaten' or 'partially eaten'. The nuance is that someone started eating it but didn't finish.
-  - english: I started to say something, but then stopped.
+    setting: informative
+  - english: The project is still halfway through.
     japanese:
-      - 私 は 何 か 言い {かけ た} が、すぐ に やめ た。
-      - 私 は 何 か 言い {かけ まし た} が、すぐ に やめ まし た。
-    english_literally: As for me, something started to say, but immediately stopped.
+      - プロジェクト は まだ {終わ} かけ だ。
+      - プロジェクト は まだ {終わ} かけ です。
+    english_literally: The project is still {ending-started}.
     competing_grammar:
       - competing_japanese:
-          - 私 は 何 か 言い 始め た が、すぐ に やめ た。
-        english: I began to say something, but immediately stopped.
-        hint: 「言い始めた」 emphasizes the clear start of speaking. 「言いかけた」 specifically highlights that the
-          speech was only partially uttered or on the verge of being said before being cut short.
-    scene: A person is reflecting on a conversation where they hesitated to speak their mind.
-    register: casual
-    setting: reflective
-    conjugation: past plain (～た)
-    speaker_gender: male
-    listener_gender: no one
-    nuance: 「言いかけた」 means the speaker opened their mouth or started to form words, but the action of speaking
-      was incomplete or interrupted. It conveys hesitation or a change of mind before fully articulating.
-  - english: He was about to cry when he heard the news.
-    japanese:
-      - 彼 は その ニュース を 聞い て 泣き {かけ た}。
-      - 彼 は その ニュース を 聞い て 泣き {かけ まし た}。
-    english_literally: As for him, hearing that news, started to cry.
-    competing_grammar:
-      - competing_japanese:
-          - 彼 は その ニュース を 聞い て 泣き 始め た。
-        english: He started crying when he heard the news.
-        hint: 「泣き始めた」 indicates crying fully began. 「泣きかけた」 implies he was on the verge of crying or tears
-          started to well up, but the full act of crying might not have manifested. We're looking for
-          the sense of 'almost crying'.
-    scene: A friend describes another friend's emotional reaction to sudden news.
-    register: casual
-    setting: friendly
-    conjugation: past plain (～た)
-    nuance: 「泣きかけた」 implies that tears welled up or a sob began, but the full act of crying might not
-      have manifested, or it was a very strong urge to cry that was initiated. It captures the very beginning
-      or the verge of crying.
-  - english: The work that was started yesterday is still unfinished.
-    japanese:
-      - 昨日 始め {かけ} た 仕事 が まだ 終わっ て い ない。
-      - 昨日 始め {かけ} た 仕事 が まだ 終わっ て い ませ ん。
-    english_literally: The work that was started yesterday has not yet finished.
-    competing_grammar:
-      - competing_japanese:
-          - 昨日 始め た 仕事 が まだ 終わっ て い ない。
-        english: The work that began yesterday is still unfinished.
-        hint: 「始めた」 only indicates that the work was started. 「始めかけた」 carries the additional nuance that
-          the work was started *but left incomplete*. We're looking for emphasis on the 'unfinished' aspect
-          of the started work.
-    scene: A manager is checking the progress of a project.
+          - プロジェクト は まだ 途中 だ。
+        english: The project is still midway.
+        hint: 「途中だ」 means "in the middle of." 「終わかけだ」 specifies that the ending process has begun but
+          is not complete, implying it's in the process of concluding. We're looking for the nuance that
+          the project is in the process of concluding.
+    scene: A team meeting about project status.
     register: formal
     setting: professional
-    conjugation: past plain (～た)
-    nuance: Using 「始めかけた」 describes the 'work' itself as having been partially started and currently in
-      an unfinished state. It highlights the work's status of being incomplete since its initiation.
-  - english: The half-opened door was swinging slightly in the wind.
+  - english: He started to run, but then remembered something and stopped.
     japanese:
-      - 開け {かけ} の ドア が 風 で 少し 揺れ て い た。
-      - 開け {かけ} の ドア が 風 で 少し 揺れ て い まし た。
-    english_literally: The half-opened door was swaying slightly by the wind.
+      - 彼 は {走り} かけ た が、何 か を 思い出し て 立ち止まっ た。
+      - 彼 は {走り} かけ まし た が、何 か を 思い出し て 立ち止まり まし た。
+    english_literally: He {started to run} but remembered something and stopped.
     competing_grammar:
       - competing_japanese:
-          - 開い た ドア が 風 で 少し 揺れ て い た。
-        english: The open door was swinging slightly in the wind.
-        hint: 「開いた」 means the door is fully open. 「開けかけ」 specifically implies the door is only partially
-          open, or in the process of opening/closing. We're looking for a door that's not fully open.
-    scene: Someone notices a door in an old, windy house.
+          - 彼 は 走り 出し た が、何 か を 思い出し て 立ち止まっ た。
+        english: He suddenly started to run, but remembered something and stopped.
+        hint: 「走り出した」 emphasizes a sudden burst into running. 「走りかけた」 focuses on the initiation of running,
+          not necessarily its suddenness, and the subsequent interruption. We're looking for the onset
+          of running that was then paused.
+    scene: Someone leaving quickly but then stopping.
     register: casual
-    setting: reflective
-    conjugation: dictionary (plain non-past)
-    nuance: 「開けかけ」 functions as an adjective here, describing the door as being 'partially opened' or
-      'in the process of being opened', not fully shut or fully open. It conveys a state of incompletion.
-  - english: I tried to call him, but my phone died.
+    setting: friendly
+  - english: I was about to ask a question, but then decided against it.
     japanese:
-      - 彼 に 電話 を かけ {かけ た} が、携帯 が 切れ まし た。
-      - 彼 に 電話 を かけ {かけ まし た} が、携帯 が 切れ まし た。
-    english_literally: To him, phone started to call, but cell phone died.
+      - 質問 を {し} かけ た が、やめ た。
+      - 質問 を {し} かけ まし た が、やめ まし た。
+    english_literally: I {started to do} a question, but stopped.
     competing_grammar:
       - competing_japanese:
-          - 彼 に 電話 を かけよう と し た が、携帯 が 切れ まし た。
-        english: I tried to call him, but my phone died.
-        hint: 「かけようとした」 means you *intended* or *attempted* to call. 「かけかけた」 implies the action of calling
-          actually began (e.g., dialing started) but was interrupted and not completed. We're looking
-          for the call to be initiated but unfinished.
-    scene: A person explains why they couldn't reach someone.
+          - 質問 を しよう と し た が、やめ た。
+        english: I was about to ask a question, but stopped.
+        hint: 「しようとした」 means "was about to do." 「しかけた」 suggests the action was already partially initiated
+          or on the very verge of actual execution. We're looking for the nuance that the action was slightly
+          begun or almost begun.
+    scene: In a classroom or meeting.
     register: casual
-    setting: casual slang
-    conjugation: past plain (～た)
-    speaker_gender: male
-    listener_gender: female
-    nuance: 「かけかけた」 implies that the action of calling was initiated (e.g., dialing started, or the call
-      was on the verge of connecting) but was interrupted before completion due to the phone's battery
-      dying. It means the call was 'half-placed'.
-  - english: She stared at the picture as if about to speak.
-    japanese:
-      - 彼女 は その 絵 を 見 て 話し {かけ} ん ばかり に 見つめ て い た。
-      - 彼女 は その 絵 を 見 て 話し {かけ} ん ばかり に 見つめ て い まし た。
-    english_literally: As for her, seeing that picture, she was gazing as if about to speak.
-    competing_grammar:
-      - competing_japanese:
-          - 彼女 は その 絵 を 見 て 話そう と し て い た。
-        english: She stared at the picture trying to speak.
-        hint: 「話そうとしていた」 indicates an intention or attempt to speak. 「話しけんばかりに」 (from 話しかける) describes
-          the outward appearance of being on the *verge* of speaking, not necessarily an active attempt.
-          We're looking for the 'as if about to' visual cue.
-    scene: An art critic observes someone's intense reaction to a painting.
-    register: formal
     setting: academic
-    conjugation: dictionary (plain non-past)
-    speaker_gender: female
-    listener_gender: group
-    nuance: 「話しけんばかりに」 uses the archaic volitional form plus 「ばかりに」 to mean 'as if on the verge of speaking'.
-      While not a direct conjugation of 「〜かける」, it shows the 'about to' nuance. The core 「話しかけ」 implies
-      the initial state of speaking, though in this case, it's figurative.
-  - english: The train almost left while I was running to catch it.
+  - english: I found a half-read book on the table.
     japanese:
-      - 走っ て いる うち に、電車 は 出 {かけ} て しまっ た。
-      - 走っ て いる うち に、電車 は 出 {かけ} て しまい まし た。
-    english_literally: While running, the train started to leave.
+      - 机 の 上 に {読み} かけ の 本 が あっ た。
+      - 机 の 上 に {読み} かけ の 本 が あり まし た。
+    english_literally: On the table, there was a {started reading} book.
     competing_grammar:
       - competing_japanese:
-          - 走っ て いる うち に、電車 は 出発 し て しまっ た。
-        english: While running, the train departed.
-        hint: 「出発してしまった」 implies the train fully departed. 「出かけてしまった」 suggests the train began its movement
-          (was 'in the process' of leaving) but not necessarily completed its departure, highlighting
-          the 'almost' or narrow escape. We're looking for the sense of the train being 'on the verge
-          of leaving'.
-    scene: A person recounts their stressful commute.
+          - 机 の 上 に 読み 途中 の 本 が あっ た。
+        english: On the table, there was a book in the middle of being read.
+        hint: 「読み途中」 means "in the middle of reading." 「読みかけ」 implies that the reading was started but
+          not finished, often with the nuance of being left unfinished. We're looking for the nuance of
+          a book that was started but not completed.
+    scene: Describing a messy room.
     register: casual
-    setting: storytelling
-    conjugation: te-form (～て)
-    nuance: 「出かけてしまった」 implies the train began its departure (started to move) while the speaker was still
-      attempting to reach it, leading to a sense of near-miss or unfortunate timing. The 「〜てしまう」 adds
-      a nuance of regret or completion of the unwanted action.
-post_example_writeup: As you can see from the examples, 「〜かける」 is often used to describe an action that
-  is interrupted, left incomplete, or is on the verge of occurring. It's a powerful way to express the
-  'half-done' state of a verb. Pay close attention to the context, as it can imply anything from a simple
-  unfinished action to a dramatic near-miss.
+    setting: informative
+  - english: When I was about to go home, it started to rain.
+    japanese:
+      - 家 に {帰り} かけ た 時、雨 が 降り 出し た。
+      - 家 に {帰り} かけ た 時、雨 が 降り 出し まし た。
+    english_literally: When I {started to return} home, rain started to fall.
+    competing_grammar:
+      - competing_japanese:
+          - 家 に 帰ろう と し た 時、雨 が 降り 出し た。
+        english: When I was about to go home, it started to rain.
+        hint: 「帰ろうとした」 means "was about to go home." 「帰りかけた」 suggests the action of returning home had
+          already been initiated. We're looking for the nuance that the action of going home had already
+          commenced.
+    scene: Unexpected weather change.
+    register: casual
+    setting: melancholic
+post_example_writeup: Understanding 「かける」 is about capturing the precise moment of an action's initiation
+  or its unfinished state. While it can often be translated as "to start," its unique value lies in implying
+  a sense of incompletion or being on the verge of something significant.
 sources:
-  bunpro: https://bunpro.jp/grammar_points/%E3%81%8B%E3%81%91%E3%82%8B
+  bunpro: https://bunpro.jp/grammar_points/280

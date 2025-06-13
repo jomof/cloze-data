@@ -1,531 +1,229 @@
 grammar_point: か (question)
 learn_before:
-  - い-Adjectives (adjectives ending in い)
   - だ (casual copula)
   - です (polite copula)
-  - な-Adjectives (adjectival nouns)
-  - は (topic and contrast)
 learn_after:
-  - 〜のだ・〜んだ (explanatory)
-  - かい (casual question particle)
-  - かしら (soft uncertainty・female)
-  - かどうか (whether or not)
-  - かな (I wonder)
-  - じゃないか (isn't it?)
+  - Question-phrase+か (embedded question)
   - だろう・でしょう (probably・right?)
-  - の? (question)
-  - のだろうか (I wonder)
 id: gp0011
-meaning: Question marking particle
-meaning_warning: か is also often used to mark uncertainty/doubt
+meaning: question particle
 pronunciation:
   katakana: カ
   romaji: ka
 formation:
-  Verb (plain form/ます form) + か: Used to form a question about an action or state, or to indicate uncertainty.
-  い-Adjective (plain form/です form) + か: Used to form a question about a characteristic or state, or to
-    indicate uncertainty.
-  な-Adjective stem/Noun + (だ/です) + か: Used to form a question about a characteristic or identity, or to
-    indicate uncertainty.
-  Plain Form + の + か: Used to seek explanation, confirmation, or express internal doubt.
+  '[Sentence] + か': Turns a statement into a direct question.
+  '[Question-word] + か': Used in conjunction with interrogative words (e.g., 誰, 何, いつ, どこ, どう) to form
+    questions.
+  '[Plain form] + のか': Adds an explanatory or inquisitive nuance to a question, often seeking explanation
+    or confirmation.
 jlpt: N5
 details:
   part-of-speech: particle
-  register: teineigo (polite)
+  register: casual
   particle-syntactic-function: sentence-final
   particle-pragmatic-function: interrogative
-  usage-context: Commonly used in both formal and casual speech to form questions or express uncertainty.
-  function: Transforms a statement into an interrogative clause or indicates speaker's doubt.
-  nuance: When used at the end of a sentence, it functions similarly to a question mark. It can also mark
-    embedded questions or express uncertainty within a sentence. In casual speech, omitting です/ます before
-    か implies familiarity.
-  counterpoint: In casual speech, a rising intonation can also convey a question without か, though か provides
-    explicit grammatical marking.
-  colocation: Frequently follows verb/adjective plain forms or です/ます forms. Often seen with どうか (whether
-    or not).
-  grammatical-role: Sentence-ending particle, or an internal particle forming embedded questions.
-  logical-flow: Changes a declarative statement into an inquiry or an expression of doubt.
-  temporal-flow: No specific temporal implications, its function is primarily grammatical/pragmatic.
-  spatial-flow: No specific spatial implications, its function is primarily grammatical/pragmatic.
-etymology: The particle 「か」 originally indicated a choice or alternative, similar to “or” in English.
-  Over time, it evolved to also mark questions by presenting the statement as a possibility, seeking confirmation
-  or denial.
-writeup: The particle 「か」 is widely used in Japanese and serves a function similar to a question mark
-  in English, turning a statement into a question. While most commonly found at the end of a sentence,
-  「か」 is not strictly limited to this position and can appear internally in certain structures, particularly
-  when forming embedded questions or expressing uncertainty. It frequently follows the polite forms of
-  verbs and adjectives, such as 「〜ですか」 or 「〜ますか」, which is typical for N5 level learning. However, in
-  more casual conversation, 「か」 can also be directly appended to the plain form of a word or phrase to
-  form a question. While grammatically correct, using 「か」 directly with plain forms without 「です」 or 「ます」
-  can sound overly direct or even rude in some contexts, particularly if the speaker is not on familiar
-  terms with the listener. Beyond explicit questioning, 「か」 can also convey uncertainty or doubt, indicating
-  that the speaker is unsure about the preceding statement rather than seeking information from the listener.
+  usage-context: Appended to the end of a sentence to indicate it is a question. Can also indicate uncertainty
+    or a desire for explanation.
+  function: Transforms a statement into an interrogative sentence.
+  nuance: When used with plain forms, it can make a direct question, sometimes implying a search for explanation.
+    With polite forms, it maintains politeness. Can also express uncertainty.
+  grammatical-role: Forms interrogative sentences.
+etymology: The particle 「か」 has ancient roots in classical Japanese, originating from a question marker
+  that, over time, also took on functions of indicating alternatives or uncertainty. Its primary role
+  has always been to introduce an interrogative nuance to a statement, making it a fundamental element
+  for expressing inquiry in Japanese.
+writeup: |-
+  The particle 「か」 is one of the most fundamental particles in Japanese, primarily used to turn a statement into a question. Unlike English, which relies on word order changes and question marks, Japanese uses 「か」 at the end of a sentence to denote an inquiry.
+
+  When used with polite forms like です or ます, the question formed is polite. For example, 「これはペンですか？」 (Is this a pen?) is a polite question.
+
+  When used with plain forms (dictionary form verbs, plain adjectives, or plain copulas), it forms a casual question. For example, 「これ、ペンか？」 (This, a pen?). Note that in casual speech, 「か」 is often omitted when asking a question, relying on intonation to convey the interrogative nature. However, including 「か」 with plain forms, especially in written casual Japanese, makes the question explicit.
+
+  Beyond simple questions, 「か」 also has other important functions:
+
+  *   **Expressing uncertainty**: When used without an explicit question word (e.g., どこ, 何), 「か」 can convey uncertainty or possibility. For example, 「そうか」 can mean "I see," or with rising intonation, "Is that so?" implying a question or seeking confirmation.
+  *   **Embedded Questions**: 「か」 is crucial for forming embedded questions (indirect questions). For example, 「彼 が 来る か どう か 分からない」 (I don't know whether he will come or not). In this usage, it often pairs with どうか (whether or not).
+  *   **Seeking explanation**: When used after a plain form (e.g., Verb-plain のか), it often seeks an explanation or reason, conveying a sense of inquiry about the situation.
 false_friends:
-  - term: かい
-    meaning: Question marker
-    kind: synonym
-    nuance: 「かい」 is a question marker often used by males in casual speech. Unlike 「か」, it is generally
-      not used in polite speech.
-    grammar_point: かい (casual question particle)
-  - term: っけ
-    meaning: What is…again?, Was it... that... ?, Did you say...?
-    kind: synonym
-    nuance: 「っけ」 is used to confirm something you thought you knew but are not entirely sure about. 「か」
-      is used for general questions.
-    grammar_point: っけ (seeking confirmation)
-  - term: かどうか
-    meaning: whether or not
+  - term: ね (seeking agreement)
+    meaning: seeking agreement
     kind: similar expression
-    nuance: While 「か」 can introduce an embedded question, 「かどうか」 explicitly presents two alternatives
-      (X or not X), often implying a need for confirmation or decision.
-    grammar_point: かどうか (whether or not)
-  - term: かな
-    meaning: I wonder if...; I hope...
+    nuance: 「ね」 is used to seek agreement or confirmation from the listener, implying a shared understanding,
+      whereas 「か」 is used to ask for new information or to turn a statement into a direct question.
+    grammar_point: ね (seeking agreement)
+  - term: よ (emphasis・information sharing)
+    meaning: emphasis・information sharing
     kind: similar expression
-    nuance: 「かな」 is a combination of 「か」 and sentence-final particle 「な」, expressing personal uncertainty,
-      contemplation, or a gentle question, often spoken to oneself or with a soft tone. It's softer than
-      a direct 「か」 question.
-    grammar_point: かな (I wonder)
-  - term: だろうか
-    meaning: I wonder if...; Could it be that...?
+    nuance: 「よ」 is used to emphasize information or to state something definitively to the listener, often
+      implying new information. 「か」, conversely, requests information or seeks confirmation.
+    grammar_point: よ (emphasis・information sharing)
+  - term: か (or)
+    meaning: or
+    kind: often confused with
+    nuance: This 「か」 connects alternatives, functioning like "or" between nouns or clauses. It does not
+      turn the sentence into a question about its content, but rather presents choices. The question particle
+      「か」, on the other hand, makes the entire sentence an inquiry.
+    grammar_point: か (or)
+  - term: だろう・でしょう (probably・right?)
+    meaning: probably・right?
     kind: similar expression
-    nuance: 「だろうか」 combines the speculative auxiliary 「だろう」 with 「か」, indicating a stronger sense of conjecture
-      or doubt, often posed as a rhetorical question or a deep internal musing. It's more formal or literary
-      than 「かな」.
-    grammar_point: のだろうか (I wonder)
-  - term: かしら
-    meaning: I wonder if... (feminine)
-    kind: similar expression
-    nuance: Similar to 「だろうか」 or 「かな」, 「かしら」 is typically used by female speakers to express uncertainty,
-      doubt, or a soft inquiry. It carries a more gentle, sometimes contemplative, nuance.
-    grammar_point: かしら (soft uncertainty・female)
-  - term: の？ (question)
-    meaning: Is it that...?; Are you...?
-    kind: similar expression
-    nuance: 「の？」 is a casual question marker often used by women or when seeking an explanation or confirmation.
-      It's less formal than 「のですか？」 and carries a softer, more inquisitive tone than a plain 「か」 question.
-    grammar_point: の? (question)
-  - term: んですか？
-    meaning: Is it that...?; Is that so?
-    kind: similar expression
-    nuance: 「んですか？」 explicitly asks for an explanation or the reason behind something, often indicating
-      the speaker's interest or surprise. While 「か」 simply asks for information, 「んですか？」 probes deeper
-      into the underlying circumstances.
-    grammar_point: 〜のだ・〜んだ (explanatory)
-  - term: でしょう？
-    meaning: Right?; Isn't it?
-    kind: similar expression
-    nuance: 「でしょう？」 implies that the speaker already has an expectation or belief and is seeking agreement
-      from the listener. Unlike 「か」, which is a neutral inquiry, 「でしょう？」 is suggestive and expects a confirmation
-      rather than new information.
+    nuance: While 「だろう・でしょう」 can be used to seek confirmation, they primarily convey conjecture or probability.
+      They ask for agreement on a *presumed* fact, unlike 「か」 which can be a neutral request for information.
     grammar_point: だろう・でしょう (probably・right?)
-post_false_friends_writeup: 「か」, 「かい」, and 「っけ」 are all used to form questions, but they have distinct
-  nuances and levels of formality. 「か」 is the most versatile and polite, suitable for a wide range of
-  situations. 「かい」 is generally used by males in casual conversation. 「っけ」 is used to confirm something
-  you already thought you knew. Additionally, 「かどうか」 explicitly states 'whether or not', 「かな」 expresses
-  personal uncertainty or a softer question, 「だろうか」 indicates conjecture or formal doubt, and 「かしら」 is
-  a feminine way of expressing similar uncertainty. Furthermore, 「の？」 is a casual way to seek explanation
-  or confirmation, often used by women, while 「んですか？」 is a common way to ask for background information
-  or reasons. Lastly, 「でしょう？」 is used when the speaker is seeking agreement or confirmation for something
-  they already believe to be true.
+  - term: んじゃない (prohibition・regret・speculation)
+    meaning: isn't it? (speculation)
+    kind: similar expression
+    nuance: 「んじゃない」 (or 「んじゃないか」) is often used to express a strong opinion, make a suggestion, or ask
+      a rhetorical question that implies the speaker already has an idea of the answer. It's less of a
+      neutral inquiry than a simple 「か」.
+    grammar_point: んじゃない (prohibition・regret・speculation)
+post_false_friends_writeup: While 「か」 is a core question particle, it's important not to confuse it with
+  other sentence-final particles or homophones. For instance, 「ね」 seeks agreement and implies shared knowledge,
+  whereas 「か」 genuinely asks for information. Similarly, 「よ」 emphasizes new information being conveyed
+  by the speaker. The particle 「か」 that means 'or' (e.g., AかBか) is a conjunctive particle presenting alternatives,
+  not turning the sentence into a question about the general statement. Lastly, expressions like 「だろうか」
+  or 「んじゃないか」, while interrogative, carry nuances of conjecture or assertion, respectively, unlike the
+  neutral information-seeking function of a simple 「か」.
 examples:
-  - english: Is this apple delicious?
+  - english: Is this correct?
     japanese:
-      - この りんご は 美味しい {です か}
-      - この りんご 美味しい {か}
-    english_literally: This apple, is it delicious?
+      - これ で {合っ て い ます か}。
+      - これ で 合っ てる？
+    english_literally: With this, is it correct?
     competing_grammar:
       - competing_japanese:
-          - この りんご は {美味しい}。
-        english: This is a declarative statement. We're looking for a question about the apple's characteristic.
-        hint: This is a declarative statement. We're looking for a question about the apple's characteristic.
-      - competing_japanese:
-          - この りんご、{美味しい}？
-        english: This apple, is it delicious?
-        hint: This is a simple question indicated by rising intonation. We're looking for a specific particle
-          to explicitly mark the question.
-      - competing_japanese:
-          - この りんご は 美味しい {か い}。
-        english: Is this apple delicious?
-        hint: 「かい」 is a question particle typically used by males in casual contexts. We're looking for
-          the more general particle 「か」 experimenting with how it attaches to a plain form.
-      - competing_japanese:
-          - この りんご は 美味しかっ た {っけ}？
-        english: Was this apple delicious, again?
-        hint: 「っけ」 is used when asking for confirmation about something you are trying to recall. We're
-          looking for a general question about taste.
-      - competing_japanese:
-          - この りんご は 美味しい {か どう か}、教え て ください。
-        english: Please tell me whether or not this apple is delicious.
-        hint: 「かどうか」 explicitly asks for confirmation between two possibilities. We're looking for a simple
-          question about the apple's characteristic.
-      - competing_japanese:
-          - この りんご 美味しい {か な}。
-        english: I wonder if this apple is delicious.
-        hint: 「かな」 expresses personal uncertainty or a softer question, often spoken to oneself. We're
+          - これ で 合っ て い ます ね。
+        english: This is correct, isn't it?
+        hint: 「ね」 seeks agreement or confirmation, implying the speaker expects a positive answer. We're
           looking for a direct question.
-      - competing_japanese:
-          - この りんご は 美味しい {だろう か}。
-        english: I wonder if this apple is delicious.
-        hint: 「だろうか」 implies a deeper conjecture or formal doubt. We're looking for a straightforward
-          question.
-      - competing_japanese:
-          - この りんご は 美味しい {かしら}。
-        english: I wonder if this apple is delicious. (feminine)
-        hint: 「かしら」 is a feminine expression of uncertainty. We're looking for a general question.
-      - competing_japanese:
-          - この りんご 美味しい {の？}
-        english: Is this apple delicious?
-        hint: 「の？」 is a casual question, often used by women or to seek explanation/confirmation. We're
-          looking for a general question.
-      - competing_japanese:
-          - この りんご は 美味しい {ん です か}。
-        english: Is it that this apple is delicious?
-        hint: 「んですか？」 seeks an explanation or background information. We're looking for a simple question
-          about a characteristic.
-      - competing_japanese:
-          - この りんご は 美味しい {でしょ}？
-        english: This apple is delicious, right?
-        hint: 「でしょう？」 seeks agreement or confirmation, implying the speaker already has an expectation.
-          We're looking for a neutral inquiry.
-    scene: A child asks their mother about the taste of an apple.
-    register: teineigo (polite)
-    setting: friendly
-    speaker_gender: female
-    listener_gender: female
-    speaker_age: younger
-    nuance: When a younger female speaker asks her mother (older female listener) 「この りんご は 美味しい です か」,
-      it is a polite and appropriate way to ask about a characteristic. For a closer, more casual interaction,
-      a child might drop 「です」 and use 「美味しい か」, which is direct and natural between family members. This
-      shows the contrast between polite and plain forms with 「か」
-  - english: Do you go to the library every day?
-    japanese:
-      - 毎日 図書 館 へ 行き {ます か}
-      - 毎日 図書 館 へ 行く {か}
-    english_literally: Every day, to the library, do you go?
-    competing_grammar:
-      - competing_japanese:
-          - 毎日 図書 館 へ 行き {ます}。
-        english: This is a statement about daily routine. We need to form a question about it.
-        hint: This is a statement about daily routine. We need to form a question about it.
-      - competing_japanese:
-          - 毎日 図書 館 へ {行く}？
-        english: Do you go to the library every day?
-        hint: This is a casual question indicated by rising intonation. We're focusing on questions explicitly
-          marked by a particle.
-      - competing_japanese:
-          - 毎日 図書 館 へ 行く {か い}。
-        english: Do you go to the library every day?
-        hint: 「かい」 is a question particle typically used by males in casual contexts. We're looking for
-          the more general particle 「か」 experimenting with how it attaches to a plain form.
-      - competing_japanese:
-          - 毎日 図書 館 へ 行く ん だ {っけ}？
-        english: You go to the library every day, right/again?
-        hint: 「っけ」 is used when asking for confirmation about something you are trying to recall. We're
-          looking for a general question about routine.
-      - competing_japanese:
-          - 毎日 図書 館 へ 行く {か どう か}、私 は 知ら ない。
-        english: I don't know whether or not you go to the library every day.
-        hint: 「かどうか」 explicitly presents two alternatives. We're looking for a direct question about a
-          routine.
-      - competing_japanese:
-          - 毎日 図書 館 へ 行く {か な}。
-        english: I wonder if I go to the library every day (or if you go to the library every day).
-        hint: 「かな」 expresses personal uncertainty or a softer question, often spoken to oneself. We're
-          looking for a direct question about someone's routine.
-      - competing_japanese:
-          - 毎日 図書 館 へ 行く {だろう か}。
-        english: I wonder if they'll go to the library every day.
-        hint: 「だろうか」 implies conjecture or formal doubt. We're looking for a direct question.
-      - competing_japanese:
-          - 毎日 図書 館 へ 行く {かしら}。
-        english: I wonder if they'll go to the library every day. (feminine)
-        hint: 「かしら」 is a feminine expression of uncertainty. We're looking for a direct question.
-      - competing_japanese:
-          - 毎日 図書 館 へ 行く {の？}
-        english: Do you go to the library every day?
-        hint: 「の？」 is a casual question, often used by women or to seek explanation/confirmation. We're
-          looking for a general question.
-      - competing_japanese:
-          - 毎日 図書 館 へ 行く {ん です か}。
-        english: Is it that you're coming to the library every day?
-        hint: 「んですか？」 seeks an explanation or background information. We're looking for a simple question
-          about a routine.
-      - competing_japanese:
-          - 毎日 図書 館 へ 行く {でしょ}？
-        english: You go to the library every day, right?
-        hint: 「でしょう？」 seeks agreement or confirmation, implying the speaker already has an expectation.
-          We're looking for a neutral inquiry.
-    scene: Two university students chat in the cafeteria, one asking about the other's study habits.
-    register: teineigo (polite)
-    setting: friendly
-    speaker_gender: male
-    listener_gender: male
-    nuance: Among male university students, using 「毎日 図書 館 へ 行き ます か」 maintains a polite distance typical
-      for early acquaintances or general conversation. If they are close friends, 「毎日 図書 館 へ 行く か」 would
-      be a more casual and direct inquiry, reflecting their familiar relationship. This highlights the
-      contrast between polite and plain forms with 「か」
-  - english: Are you coming to the party tomorrow?
-    japanese:
-      - 明日 パーティー に 来る {か}
-      - 明日 パーティー に 来 ます {か}
-    english_literally: Tomorrow, to the party, come (question)?
-    competing_grammar:
-      - competing_japanese:
-          - 明日 パーティー に {来る}？
-        english: This is a simple question conveyed by rising intonation. We're looking for a specific
-          particle to explicitly mark the question.
-        hint: This is a simple question conveyed by rising intonation. We're looking for a specific particle
-          to explicitly mark the question.
-      - competing_japanese:
-          - 明日 パーティー に 来 {て} {ね}。
-        english: Please come to the party tomorrow, okay?
-        hint: This is an invitation or a soft request. We're looking for a question about someone's attendance.
-      - competing_japanese:
-          - 明日 パーティー に 来る {か い}。
-        english: Are you coming to the party tomorrow?
-        hint: 「かい」 is a question particle typically used by males in casual contexts. We're looking for
-          the more general particle 「か」 experimenting with how it attaches to a plain form.
-      - competing_japanese:
-          - 明日 パーティー に 来る ん だ {っけ}？
-        english: 「っけ」 is used when asking for confirmation about something you are trying to recall. We're
-          looking for a general question about attendance.
-        hint: 「っけ」 is used when asking for confirmation about something you are trying to recall. We're
-          looking for a general question about attendance.
-      - competing_japanese:
-          - 明日 パーティー に 来る {か どう か}、教え て ください。
-        english: Please tell me whether or not you will come to the party tomorrow.
-        hint: 「かどうか」 explicitly asks for confirmation between two possibilities. We're looking for a simple
-          question about attendance.
-      - competing_japanese:
-          - 明日 パーティー に 来る {だろう か}。
-        english: I wonder if they'll come to the party tomorrow.
-        hint: 「だろうか」 implies conjecture or formal doubt. We're looking for a direct question.
-      - competing_japanese:
-          - 明日 パーティー に 来る {かしら}。
-        english: I wonder if they'll come to the party tomorrow. (feminine)
-        hint: 「かしら」 is a feminine expression of uncertainty. We're looking for a direct question.
-      - competing_japanese:
-          - 明日 パーティー に 来る {の？}
-        english: Are you coming to the party tomorrow?
-        hint: 「の？」 is a casual question, often used by women or to seek explanation/confirmation. We're
-          looking for a general question.
-      - competing_japanese:
-          - 明日 パーティー に 来る {ん です か}。
-        english: Is it that you're coming to the party tomorrow?
-        hint: 「んですか？」 seeks an explanation or background information. We're looking for a simple question
-          about attendance.
-      - competing_japanese:
-          - 明日 パーティー に 来る {でしょ}？
-        english: You're coming to the party tomorrow, right?
-        hint: 「でしょう？」 seeks agreement or confirmation, implying the speaker already has an expectation.
-          We're looking for a neutral inquiry.
-    scene: A friend asks a close friend about their attendance at an upcoming casual gathering.
-    register: casual
-    setting: friendly
-    speaker_gender: female
-    listener_gender: female
-    nuance: For a female speaker asking a close female friend about party attendance, 「明日 パーティー に 来る か」
-      is a very natural and casual inquiry. It shows closeness, eliminating the need for more formal language
-      like 「来 ます か」, which would create an unnecessary distance in this friendly context. This highlights
-      the contrast between polite and plain forms with 「か」
-  - english: Is he a student?
-    japanese:
-      - 彼 は 学生 {か}
-      - 彼 は 学生 {です か}
-    english_literally: He, student (question)?
-    competing_grammar:
-      - competing_japanese:
-          - 彼 は 学生 {です}。
-        english: This sentence states that he is a student. We need to form a question.
-        hint: This sentence states that he is a student. We need to form a question.
-      - competing_japanese:
-          - 彼、{学生}？
-        english: He, a student?
-        hint: This is a casual question indicated by intonation. We're looking for a question marked by
-          a specific particle.
-      - competing_japanese:
-          - 彼 は 学生 {か い}。
-        english: Is he a student?
-        hint: 「かい」 is a question particle typically used by males in casual contexts. We're looking for
-          the more general particle 「か」 experimenting with how it attaches to a plain form.
-      - competing_japanese:
-          - 彼 は 学生 だっ た {っけ}？
-        english: He was a student, right/again?
-        hint: 「っけ」 is used when asking for confirmation about something you are trying to recall. We're
-          looking for a general question about his status.
-      - competing_japanese:
-          - 彼 が 学生 {か どう か}、知り たい です。
-        english: I want to know whether or not he is a student.
-        hint: 「かどうか」 explicitly asks for confirmation between two possibilities. We're looking for a simple
-          question about his status.
-      - competing_japanese:
-          - 彼 は 学生 {か な}。
-        english: I wonder if he is a student.
-        hint: 「かな」 expresses personal uncertainty or a softer question. We're looking for a direct question.
-      - competing_japanese:
-          - 彼 は 学生 {だろう か}。
-        english: I wonder if he is a student.
-        hint: 「だろうか」 implies a deeper conjecture or formal doubt. We're looking for a straightforward
-          question.
-      - competing_japanese:
-          - 彼 は 学生 {かしら}。
-        english: I wonder if he is a student. (feminine)
-        hint: 「かしら」 is a feminine expression of uncertainty. We're looking for a general question.
-      - competing_japanese:
-          - 彼 は 学生 {の？}
-        english: Is he a student?
-        hint: 「の？」 is a casual question, often used by women or to seek explanation/confirmation. We're
-          looking for a general question about status.
-      - competing_japanese:
-          - 彼 は 学生 {ん です か}。
-        english: Is it that he is a student?
-        hint: 「んですか？」 seeks an explanation or background information. We're looking for a simple question
-          about status.
-      - competing_japanese:
-          - 彼 は 学生 {でしょ}？
-        english: He's a student, right?
-        hint: 「でしょう？」 seeks agreement or confirmation, implying the speaker already has an expectation.
-          We're looking for a neutral inquiry.
-    scene: Two siblings are looking at an old photo, one asking about the identity of a person in it.
-    register: casual
-    setting: intimate
-    speaker_gender: male
-    listener_gender: female
-    nuance: In an intimate setting between a male speaker and his female sibling, 「彼 は 学生 か」 is a direct
-      and natural casual inquiry about someone's status. The omission of 「だ」 or 「です」 emphasizes the casual
-      and intimate nature of the sibling relationship, as politeness forms are typically relaxed in such
-      contexts. This shows the contrast between polite and plain forms with 「か」
-  - english: No one knows when she's coming.
-    japanese:
-      - 彼女 が いつ 来る {か}、誰 も 分から ない。
-      - 彼女 が いつ 来る {か}、誰 も 分かり ませ ん。
-    english_literally: She, when she comes (question), no one knows.
-    competing_grammar:
-      - competing_japanese:
-          - 彼女 が いつ {来る}。
-        english: This is a statement. We need to express uncertainty or an embedded question about her
-          arrival time.
-        hint: This is a statement. We need to express uncertainty or an embedded question about her arrival
-          time.
-    scene: Colleagues are waiting for a team member and discussing their uncertain arrival time.
-    register: semi-formal
-    setting: informative
-    speaker_gender: female
-    listener_gender: group
-    nuance: In a semi-formal work setting, a female speaker using 「いつ 来る か、誰 も 分から ない」 demonstrates the
-      use of 「か」 to form an embedded question, signifying collective uncertainty about a team member's
-      arrival time. This structure clearly communicates a lack of information without being impolite.
-      This illustrates the use of 「か」 for embedded questions.
-  - english: Please check whether it will rain tomorrow.
-    japanese:
-      - 明日 雨 が 降る {か} どう {か}、確認 し て ください。
-      - 明日 雨 が 降る {か} どう {か}、ご 確認 ください。
-    english_literally: Tomorrow, rain will fall (question) whether or not, please confirm.
-    competing_grammar:
-      - competing_japanese:
-          - 明日 雨 が {降る}。
-        english: This is a declarative statement. We need to express a request to confirm a possibility.
-        hint: This is a declarative statement. We need to express a request to confirm a possibility.
-    scene: A supervisor tells an assistant to verify the weather forecast for an outdoor event.
+    scene: A student asks their teacher for confirmation on their work.
     register: formal
-    setting: instructional
-    speaker_gender: male
-    listener_gender: female
-    nuance: When a male supervisor instructs a female assistant, the use of 「明日 雨 が 降る か どう か、確認 し て ください」
-      is highly appropriate for a formal, instructional setting. The phrase 「か どう か」 explicitly requests
-      confirmation regarding two alternatives (rain or no rain), conveying a precise and clear directive
-      in a respectful manner. This illustrates the use of 「か どう か」 for choices.
-  - english: Did you already finish your homework?
+    setting: academic
+  - english: Are you going?
     japanese:
-      - 宿題 は もう 終わり {まし た か}
-      - 宿題 は もう 終わっ た {か}
-      - 宿題 は もう 終わっ た の {か}
-    english_literally: Homework, already finished (question)?
+      - 行く？
+      - 行き ます か。
+    english_literally: Go?
     competing_grammar:
       - competing_japanese:
-          - 宿題 は もう 終わり {まし た}。
-        english: This is a declarative statement. We need to form a question about the homework's completion.
-        hint: This is a declarative statement. We need to form a question about the homework's completion.
-    scene: A parent asking their child about homework after school.
+          - 行く ね？
+        english: You're going, right?
+        hint: Using intonation alone for a question is common in casual speech. 「ね」 seeks confirmation,
+          not a pure question.
+    scene: Friends talking about plans for the weekend.
+    register: casual
+    setting: friendly
+  - english: Is it okay if I sit here?
+    japanese:
+      - ここ に 座っ て いい {か}？
+      - ここ に 座っ て も いい {です か}。
+    english_literally: Here sit good, question?
+    competing_grammar:
+      - competing_japanese:
+          - ここ に 座っ て いい ね？
+        english: It's okay to sit here, right?
+        hint: 「ね」 seeks confirmation or agreement. We're looking for a question asking for permission.
+    scene: Asking a friend if a seat is available at a cafe.
+    register: casual
+    setting: friendly
+  - english: What did you buy?
+    japanese:
+      - 何 を {買い まし た か}。
+      - 何 を 買っ た？
+    english_literally: What object did you buy, question?
+    competing_grammar:
+      - competing_japanese:
+          - 何 を 買っ た の。
+        english: What did you buy? (seeking explanation)
+        hint: 「の」 at the end of a question often implies seeking an explanation or reason, rather than
+          a neutral inquiry. We're looking for a polite, direct question.
+    scene: After shopping, a family member asks what was purchased.
     register: teineigo (polite)
-    setting: instructional
-    speaker_gender: female
-    listener_gender: female
-    speaker_age: older
-    nuance: The mother (older female) using 「終わり ました か」 is a common way for a parent to politely check
-      on a child's progress. While 「終わっ た か」 is also possible, 「終わっ た の か」 would imply a deeper probe
-      into the circumstances if the child has not finished, seeking an explanation. This illustrates the
-      difference in nuance between direct questions and those seeking explanation with 「の か」
-  - english: I wonder if this is the right answer.
+    setting: friendly
+  - english: Where is the station?
     japanese:
-      - これ で 合っ て いる の {か}
-      - これ は 正しい 答え {か} どう {か}
-    english_literally: Is this correct answer (question)?
+      - 駅 は {どこ です か}。
+      - 駅 は どこ だ？
+    english_literally: As for the station, where is it, question?
     competing_grammar:
       - competing_japanese:
-          - これ は 正しい 答え {です}。
-        english: This is a declarative statement. We need to express internal doubt or questioning.
-        hint: This is a declarative statement. We need to express internal doubt or questioning.
-    scene: A student reviewing their exam answers, silently questioning their choices.
+          - 駅 は どこ だろう？
+        english: I wonder where the station is.
+        hint: 「だろう」 implies conjecture or wondering. We're looking for a direct, polite question asking
+          for specific information.
+    scene: Asking for directions from a passerby in a city.
+    register: teineigo (polite)
+    setting: informative
+  - english: Could it be true?
+    japanese:
+      - 本当 {だろう か}。
+      - 本当 です か？
+    english_literally: True, probably, question?
+    competing_grammar:
+      - competing_japanese:
+          - 本当 だ よ。
+        english: It's true!
+        hint: When 「か」 follows a plain form like 「だろう」, it expresses uncertainty or a rhetorical question.
+          「よ」 asserts truth, it doesn't question it.
+    scene: Someone is pondering a surprising piece of news they just heard.
     register: casual
     setting: reflective
-    speaker_gender: male
-    listener_gender: no one
-    nuance: When speaking to oneself, as a male speaker might do while reviewing answers, 「これ で 合っ て いる
-      の か」 uses 「の か」 to express internal doubt or questioning. This highlights the speaker pondering
-      the correctness of something without requiring an external listener, making the internal process
-      explicit with 「か」. This illustrates the use of 「か」 for internal monologue or doubt.
-  - english: Shall we go to the cafe or the bookstore?
+  - english: Is this really the best way?
     japanese:
-      - 喫茶 店 に 行く {か}、本 屋 に 行く {か}
-      - 喫茶 店 に 行き ます {か}、本 屋 に 行き ます {か}
-    english_literally: Cafe go (question), bookstore go (question)?
+      - これ が 本当 に 一番 いい 方法 {な の か}。
+      - これ が 本当 に 一番 いい 方法 な ん です か。
+    english_literally: This is truly the best method, is it?
     competing_grammar:
       - competing_japanese:
-          - 喫茶 店 に 行き ます か、{それ と も} 本 屋 に 行き ます か。
-        english: This uses 「それとも」 to explicitly state 'or'. We're looking for a more concise way to present
-          choices using 「か」.
-        hint: This uses 「それとも」 to explicitly state 'or'. We're looking for a more concise way to present
-          choices using 「か」.
-    scene: Two friends trying to decide where to go on a weekend afternoon.
+          - これ が 本当 に 一番 いい 方法 です よ ね。
+        english: This is really the best way, isn't it?
+        hint: 「〜のか」 seeks an explanation or confirms understanding, often internal. 「よ」 and 「ね」 seek external
+          agreement or assert information.
+    scene: A person is internally questioning a decision they have made for a project.
+    register: casual
+    setting: reflective
+  - english: I don't know if he is coming.
+    japanese:
+      - 彼 が 来る {か} 分から ない。
+      - 彼 が 来る {か} どう {か} 分かり ませ ん。
+    english_literally: He comes, question, I don't know.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 が 来る こと は 分から ない。
+        english: I don't know the fact that he's coming.
+        hint: 「か」 is used to embed uncertainty or a question within a larger sentence. 「こと」 nominalizes
+          the clause but doesn't convey uncertainty.
+    scene: Someone is discussing an uncertain event with a friend.
+    register: casual
+    setting: informative
+  - english: I want to know whether or not she can sing.
+    japanese:
+      - 彼女 が 歌える {か どう か} 知り たい。
+      - 彼女 が 歌える {か どう か} 知り たい です。
+    english_literally: She can sing, whether or not, I want to know.
+    competing_grammar:
+      - competing_japanese:
+          - 彼女 が 歌える か 知り たい。
+        english: I want to know if she can sing.
+        hint: While 「か」 alone can form an embedded question, 「かどうか」 explicitly emphasizes the 'whether
+          or not' aspect, making the two alternatives clear.
+    scene: Talking about someone's talent with a mutual acquaintance.
+    register: teineigo (polite)
+    setting: informative
+  - english: Didn't you hear?
+    japanese:
+      - 聞か なかっ た {か}？
+      - 聞き ませ ん でし た {か}。
+    english_literally: Didn't hear, question?
+    competing_grammar:
+      - competing_japanese:
+          - 聞か なかっ た の？
+        english: Didn't you hear? (seeking explanation)
+        hint: While 「か」 with a plain form is a direct question, 「の」 after a plain form (especially a negative)
+          often implies seeking an explanation for a situation. We're looking for a simple, direct question.
+    scene: A father asking his child if they heard a noise from outside.
     register: casual
     setting: friendly
-    speaker_gender: female
-    listener_gender: male
-    speaker_age: younger
-    nuance: The repetition of 「行く か」 for each option, such as 「喫茶 店 に 行く か、本 屋 に 行く か」, implicitly presents
-      choices and asks for a decision. This structure is common in casual conversation between younger
-      female and male friends, indicating a shared decision-making process where politeness is maintained
-      but without excessive formality. This illustrates the use of repeated 「か」 for options.
-  - english: How could such a thing happen?
-    japanese:
-      - どう し て こんな こと が 起こる {こと か}
-      - どう し て こんな こと に なっ た の {か}
-    english_literally: Why such a thing happen (question)?
-    competing_grammar:
-      - competing_japanese:
-          - どう し て そんな こと が 起こっ た {の です か}。
-        english: This is a standard question seeking an answer. We're looking for a rhetorical question
-          expressing strong emotion.
-        hint: This is a standard question seeking an answer. We're looking for a rhetorical question expressing
-          strong emotion.
-    scene: Someone reacting with disbelief to an unexpected and negative event.
-    register: semi-formal
-    setting: serious
     speaker_gender: male
-    listener_gender: no one
-    speaker_age: older
-    nuance: The phrase 「どうして こんな こと が 起こる こと か」, particularly with 「ことか」, often functions as a rhetorical
-      question expressing strong emotion like disbelief or frustration. It's not seeking an answer but
-      rather emphasizing the unacceptability or inexplicability of the situation. The older male speaker's
-      use reflects a sense of profound perplexity, often directed at no one in particular. This illustrates
-      the use of 「か」 in rhetorical questions for strong emotion.
-post_example_writeup: As you can see from the examples, 「か」 serves not only to form direct questions but
-  also to express uncertainty or embed questions within larger sentences. The level of formality and the
-  nuance conveyed can change depending on whether 「です/ます」 forms are used, or if other particles like 「な」
-  or 「よ」 accompany it, or if it's used in specific structures like 「〜か どう か」. Other question-marking particles
-  like 「の？」, 「んですか？」, and 「でしょう？」 also exist, each carrying its own distinct nuance regarding formality,
-  speaker's intention, and expected response.
-sources:
-  bunpro: https://bunpro.jp/grammar_points/か
+    nuance: Using 「か」 with a plain negative verb can sound direct or slightly interrogative, commonly
+      used by male speakers in casual settings, as seen in 「聞かなかったか？」.

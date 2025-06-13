@@ -1,430 +1,261 @@
 grammar_point: は〜だ (topic & copula)
 learn_before:
-  - ある (to exist, inanimate・to have)
-  - いる (to exist, animate)
-  - じゃない (negation noun and na-adj)
+  - Verb[dictionary] (dictionary form)
+  - い-Adjectives (adjectives ending in い)
+  - が (subject marker)
   - だ (casual copula)
   - です (polite copula)
+  - な-Adjectives (adjectival nouns)
   - は (topic and contrast)
 learn_after:
+  - 〜のだ・〜んだ (explanatory)
+  - だった (past copula, casual)
   - である (formal copula)
-  - ということ (nominalizer・conclusion)
-  - は (emphatic)
-  - ものだ (general truth expectation)
-  - んじゃない (prohibition・regret・speculation)
+  - でした (past copula, polite)
+  - な-Adjective[ではない・じゃない] (plain negative)
 id: gp0152
-meaning: Indicates the topic of the sentence and provides information about it.
-conjugations:
-  - conjugation-type: dictionary (plain non-past)
-    form: は〜だ
-    rarity: common
-    meaning: is (casual)
-  - conjugation-type: non-past polite (～ます)
-    form: は〜です
-    rarity: common
-    meaning: is (polite)
-  - conjugation-type: past plain (～た)
-    form: は〜だった
-    rarity: common
-    meaning: was (casual)
-  - conjugation-type: past polite (～ました)
-    form: は〜でした
-    rarity: common
-    meaning: was (polite)
-  - conjugation-type: negative plain (～ない)
-    form: は〜で は ない
-    rarity: common
-    meaning: is not (casual)
-  - conjugation-type: negative plain (～ない)
-    form: は〜じゃ ない
-    rarity: common
-    meaning: is not (casual, colloquial)
-  - conjugation-type: negative non-past polite (～ません)
-    form: は〜で は あり ませ ん
-    rarity: common
-    meaning: is not (polite)
-  - conjugation-type: negative non-past polite (～ません)
-    form: は〜じゃ あり ませ ん
-    rarity: common
-    meaning: is not (polite, colloquial)
-  - conjugation-type: negative past plain (～なかった)
-    form: は〜で は なかっ た
-    rarity: common
-    meaning: was not (casual)
-  - conjugation-type: negative past plain (～なかった)
-    form: は〜じゃ なかっ た
-    rarity: common
-    meaning: was not (casual, colloquial)
-  - conjugation-type: negative past polite (～ませんでした)
-    form: は〜で は あり ませ ん でし た
-    rarity: common
-    meaning: was not (polite)
-  - conjugation-type: negative past polite (～ませんでした)
-    form: は〜じゃ あり ませ ん でし た
-    rarity: common
-    meaning: was not (polite, colloquial)
+meaning: Identifies the topic of a sentence and asserts a statement about it, typically with nouns or
+  na-adjectives.
 pronunciation:
-  katakana: ワ ダ
+  katakana: ワダ
   romaji: wa da
-  pronunciation_warning: The particle は is pronounced 'wa', not 'ha', when used as a topic marker.
 formation:
-  '[Topic] + は + [Information/Description] + だ/です': Basic sentence structure indicating the topic and
-    providing information about it subjected to the copula's conjugation as needed
+  Noun は Noun だ: Defines what a noun is in a casual register.
+  Noun は な-Adjective だ: Describes a noun using a な-adjective in a casual register.
+  Noun は Noun です: Defines what a noun is in a polite register.
+  Noun は な-Adjective です: Describes a noun using a な-adjective in a polite register.
 jlpt: N5
 details:
   part-of-speech: phrase
-  function: Topic marker and declarative ending.
-  colocation: Often found with nouns, na-adjectives, or noun phrases.
-  grammatical-role: Functions as the main declarative sentence structure, forming simple statements.
-  temporal-flow: Can express present, past, or future states/facts based on the copula's conjugation.
-  spatial-flow: Can describe the location or presence of the topic, e.g., '学校は駅の近くです' (The school is near
-    the station). Most commonly expresses states/facts.
-etymology: 「は」 is a topic marker particle, originating from the hiragana form of the kanji 「波」, meaning
-  'wave,' initially used to indicate contrast. 「だ」 is a copula derived from the classical Japanese auxiliary
-  verb 「なり」, which evolved to indicate assertion or declaration.
-writeup: "The grammar point 「は〜だ」 is a fundamental sentence structure in Japanese used to **identify the\
-  \ topic** of a sentence and then provide information or a description about that topic. \n\nThe particle\
-  \ 「は」 marks the topic, while 「だ」 (casual) or 「です」 (polite) acts as a copula, connecting the topic to\
-  \ the information being presented. \n\nKey points:\n*   「は」 is pronounced as 「わ」 when used as a topic\
-  \ marker.\n*   「だ」 is considered casual speech, while 「です」 is polite. Using 「です」 shows respect to the\
-  \ listener.\n*   The structure can be used with nouns, adjectives, and verbs in certain forms.\n*  \
-  \ Negative forms such as 「ではない」 and 「ではありません」 are used to negate the information being presented about\
-  \ the topic. You can also use 「じゃない」 as a more colloquial negative form, although 「ではない」 is more grammatically\
-  \ correct.\n\nThis structure is foundational for building declarative sentences in Japanese, allowing\
-  \ the speaker to assert facts, describe entities, or state conditions."
+  register: casual
+  usage-context: Used in declarative sentences where the predicate is a noun or a な-adjective. 「は」 marks
+    the topic, and 「だ」 or 「です」 serves as the copula.
+  function: To state identity, provide descriptions, or declare attributes of the grammatical topic.
+  nuance: 「は」 establishes the topic, indicating what the sentence is about, often implying shared or known
+    information. 「だ」 (casual) and 「です」 (polite) assert the nature or identity of that topic, forming a
+    fundamental declarative structure.
+  grammatical-role: Predication
+etymology: The particle 「は」 (wa) derives from the older particle 「葉」 (ha), meaning 'leaf' or 'husk,' evolving
+  into a topic marker that subtly 'points' to or 'highlights' the subject of discussion. The copula 「だ」
+  itself is a contraction and phonetic change from 「である」 (de aru), which combined 「で」 (an old form of
+  「にて」, indicating existence or state) and 「ある」 (to be, exist). Thus, 「は〜だ」 fundamentally states 'as for
+  [topic], it exists as [predicate].'
+writeup: |-
+  The 「は〜だ」 construction is one of the most fundamental sentence patterns in Japanese, serving to identify the topic of a sentence and make a declarative statement about it. It is used when the predicate is a noun or a な-adjective.
+
+  The particle 「は」 (read "wa," despite being written with the hiragana for "ha") marks the topic. The topic is what the sentence is "about." It's often information that is already known or generally understood within the context of the conversation.
+
+  The copula 「だ」 is the plain, casual form of "to be" or "it is." It is used at the end of sentences when the predicate is a noun or a な-adjective. For example, 「私は学生だ」 (Watashi wa gakusei da - I am a student). When using な-adjectives, the 「な」 is dropped before 「だ」, so it becomes 「きれいだ」 (kirei da - it is beautiful).
+
+  The polite equivalent of 「だ」 is 「です」. So, 「私は学生です」 and 「きれいです」 are the polite versions. While 「です」 often functions similarly to 「だ」 in making declarative statements, it inherently carries a polite tone, making it suitable for more formal conversations or when addressing someone of higher status or unfamiliarity. The choice between 「だ」 and 「です」 largely depends on the social context and the relationship between the speakers.
 false_friends:
-  - term: ある
-    meaning: To be, There is
-    kind: similar expression
-    nuance: Unlike 「は〜だ」, 「ある」 indicates the existence of something. For example, 「本がある」 means 'there
-      is a book'. It focuses on existence, not defining the topic.
-    grammar_point: ある (to exist, inanimate・to have)
-  - term: です
-    meaning: To be, Is
+  - term: が (subject marker)
+    meaning: marks the subject of a verb or identifies new information
     kind: often confused with
-    nuance: While 「です」 is the polite form of 「だ」, it's only part of the larger 「は〜だ」 structure. 「です」 alone
-      does not introduce a topic. For example, 「そうです」 means 'that's right' and doesn't use 「は」 because
-      it's a statement about something previously mentioned, not a new topic introduction.
-    grammar_point: です (polite copula)
-  - term: が
-    meaning: Subject marker
-    kind: often confused with
-    nuance: While 「は」 introduces the general topic of the sentence, 「が」 marks the grammatical subject,
-      often highlighting new information or emphasizing the subject in contrast to other elements. For
-      example, 「私 は 学生です」 (I am a student - general statement) versus 「私 が 学生です」 (It is I who is the student
-      - emphasis on 'I').
+    nuance: While 「は」 marks the topic (what the sentence is about, often known information), 「が」 marks
+      the grammatical subject and often introduces new or specific information, or is used when the subject
+      is the focus of the sentence.
     grammar_point: が (subject marker)
-  - term: らしい
-    meaning: Appears to be; seems; I hear that
-    kind: similar expression
-    nuance: Unlike the definitive statement of 「は〜だ」, 「らしい」 indicates that something appears to be true
-      based on external information, observation, or hearsay, rather than a direct assertion by the speaker.
-      For instance, 「彼は日本人だ」 (He is Japanese) is a direct statement, while 「彼は日本人らしい」 (He seems to be
-      Japanese/I hear he is Japanese) is an inference.
-    grammar_point: '[Sentence]らしい (it seems, based on evidence・I hear)'
-  - term: そうだ
-    meaning: Looks like; seems like
-    kind: similar expression
-    nuance: 「そうだ」 (looks like) expresses an appearance or impression based on direct observation, while
-      「は〜だ」 states a fact. For example, 「雨だ」 means 'It is rain' (a fact), while 「雨そうだ」 means 'It looks
-      like rain' (an observation based on appearance).
-    grammar_point: '[Verb-stem・Adj-stem]そうだ (it seems・looks like)'
-post_false_friends_writeup: When constructing sentences, carefully consider whether you're introducing
-  a topic requiring the 「は〜だ」 structure, or simply stating the existence of something or offering a polite
-  assertion. The choice between 「は」 and 「が」 is crucial for conveying emphasis. Furthermore, distinguish
-  between direct statements of fact using 「は〜だ」 and expressions of appearance or inference like 「らしい」
-  or 「そうだ」, as they convey different levels of certainty and source of information. Misusing these can
-  lead to unnatural-sounding Japanese.
+  - term: Verb[dictionary] (dictionary form)
+    meaning: The plain, non-past form of a verb
+    kind: often confused with
+    nuance: 「は〜だ」 asserts a statement about a noun or な-adjective using a copula. Verbs, like 「食べる」 (to
+      eat), describe actions or states directly and stand alone at the end of a plain sentence, without
+      requiring a copula like 「だ」.
+    grammar_point: Verb[dictionary] (dictionary form)
+  - term: い-Adjective (sentence-ending)
+    meaning: An adjective ending in い used to directly describe something
+    kind: often confused with
+    nuance: 「は〜だ」 is used for nouns and な-adjectives. い-adjectives, such as 「高い」 (expensive), can end
+      a sentence directly in their plain form without requiring 「だ」 or 「です」. For example, 「このリンゴは高い」 (This
+      apple is expensive).
+    grammar_point: <suggest>:い-Adjective (sentence-ending)
+post_false_friends_writeup: Understanding the distinction between 「は」 and 「が」 is critical in Japanese.
+  Think of 「は」 as setting the stage or context, announcing "as for X, this is what I'm going to say about
+  it." In contrast, 「が」 highlights the subject, answering "who or what did/is X?" or introducing new information.
+  For verbs and い-adjectives, remember that they naturally complete a sentence in their plain forms without
+  needing 「だ」 or 「です」, unlike nouns and な-adjectives which almost always require a copula to form a complete
+  declarative sentence.
 examples:
-  - english: This is my book.
+  - english: I am a student.
     japanese:
-      - これ {は} 私 の 本 {だ}。
-      - これ {は} 僕 の 本 {だ}。
-      - これ {は} 俺 の 本 {だ}。
-    english_literally: This, as for topic, my book is.
+      - わたし {は} がくせい {だ}。
+      - わたし {は} がくせい {です}。
+    english_literally: As for me, I am a student.
     competing_grammar:
       - competing_japanese:
-          - これ {が} 私 の 本 だ。
-        english: This is *my* book (among others).
-        hint: 「が」 emphasizes the subject as new information or one among many, often implying a contrast.
-          「は」 marks the topic for general discussion. We are looking for a general statement about the
-          topic.
-    scene: A young child pointing to a book they want to show their parent.
+          - わたし {が} がくせい だ。
+        english: I am the student (among others).
+        hint: 「が」 emphasizes who the student is, whereas 「は」 sets 'I' as the topic. We're looking for
+          a simple topic introduction.
+    scene: A new student introducing themselves casually to a classmate.
     register: casual
-    setting: informative
+    setting: friendly
     conjugation: dictionary (plain non-past)
     speaker_gender: male
-    listener_gender: male
-    speaker_age: younger
-    nuance: 'The use of 「だ」 makes this sentence casual, appropriate for a child speaking to a parent.
-      The simple statement identifies the topic ''this'' as ''my book''. The variants use different first-person
-      pronouns: 「僕」 (boku) is a generally polite male pronoun, while 「俺」 (ore) is a very casual, masculine
-      pronoun.'
-    etymology: 「僕」 (boku) historically referred to a servant or male retainer, which evolved into a humble
-      or familiar first-person pronoun. 「俺」 (ore) has roots in older, rougher speech patterns, signifying
-      a strong, informal male identity. These pronouns illustrate how social nuances are embedded in word
-      choice in Japanese.
-  - english: Today is sunny.
+  - english: That person is Mr. Tanaka.
     japanese:
-      - 今日 {は} 晴れ {です}。
-      - 今日 {は} 良い 天気 {です}。
-      - 本日 {は} 晴天 {です}。
-    english_literally: Today, as for topic, sunny is.
+      - あの ひと {は} たなか さん {です}。
+      - あの ひと {は} たなか さん {だ}。
+    english_literally: As for that person, it is Mr. Tanaka.
     competing_grammar:
       - competing_japanese:
-          - 今日 {が} 晴れ です。
-        english: It is *today* that is sunny.
-        hint: 「が」 specifies the subject when it is contrasted or singled out. 「は」 marks the general topic
-          of discussion. We are looking for a general observation.
-    scene: You are making a polite observation about the weather to a colleague at work.
-    register: teineigo (polite)
-    setting: professional
-    conjugation: non-past polite (～ます)
-    nuance: The use of 「です」 in this declarative sentence expresses politeness, which is appropriate when
-      making an observation to a colleague in a professional setting. 「良い天気です」 (yoi tenki desu) provides
-      a more general, slightly warmer alternative to simply 'sunny'. 「本日は晴天です」 (honjitsu wa seiten desu)
-      uses more formal vocabulary, fitting for a more business-like or official context.
-    etymology: 「本日」 (honjitsu) literally means 'this day', and is a more formal counterpart to the common
-      「今日」 (kyō). Similarly, 「晴天」 (seiten) means 'clear sky' or 'fine weather' and is a more formal noun
-      than the simpler 「晴れ」 (hare).
-  - english: Yesterday was rainy.
-    japanese:
-      - 昨日 {は} 雨 {だっ た}。
-      - 昨日 {は} 雨 {だっ た} ね。
-      - 昨日 {は} 結構 雨 {だっ た} よ。
-    english_literally: Yesterday, as for topic, rainy was.
-    competing_grammar:
-      - competing_japanese:
-          - 昨日 雨 {が} 降っ た。
-        english: It rained yesterday.
-        hint: 「雨が降る」 means 'it rains' or 'rain falls', focusing on the action. 「雨だった」 simply states 'it
-          was rain' or 'it was rainy', focusing on the state. We are looking for a statement about the
-          state, not the action.
-    scene: You are casually chatting with a friend about the weather yesterday.
-    register: casual
-    setting: friendly
-    conjugation: past plain (～た)
-    nuance: The casual copula 「だった」 is used here, reflecting the informal and friendly nature of the conversation
-      between friends about a past event. Adding 「ね」 (ne) seeks agreement or confirmation from the listener,
-      while 「よ」 (yo) emphasizes the statement or provides new information with a casual assertion. 「結構」
-      (kekkō) means 'quite' or 'rather', intensifying the description of the rain.
-    etymology: The particle 「ね」 (ne) has roots in the classical particle 「なむ」 (namu), used to convey emphasis
-      or a mild imperative, evolving to its current role in seeking agreement. 「よ」 (yo) comes from the
-      classical particle 「ぞ」 (zo), which also emphasized assertions, later softening into a particle indicating
-      new information or strong assertion.
-  - english: This cake was really delicious, wasn't it?
-    japanese:
-      - この ケーキ {は} 本当 に 美味しかっ た {です}。
-      - この ケーキ {は} とても 美味しかっ た {です}。
-      - この ケーキ {は} 実 に 美味しかっ た {です} わ。
-    english_literally: This cake, as for topic, really delicious was.
-    competing_grammar:
-      - competing_japanese:
-          - この ケーキ {が} 本当 に 美味しかっ た です。
-        english: It was *this* cake that was really delicious.
-        hint: 「が」 highlights the subject, often used when contrasting or introducing new information.
-          「は」 sets the general topic. We are looking for a general statement about the topic.
-    scene: You are politely complimenting the host of a party on their cake.
-    register: teineigo (polite)
-    setting: friendly
-    conjugation: past polite (～ました)
-    nuance: Appending 「です」 to the past tense i-adjective 「美味しかった」 makes the compliment polite and suitable
-      for expressing gratitude or appreciation to a host in a friendly setting. 「とても」 (totemo) is a very
-      common adverb for 'very' and can be used interchangeably with 「本当に」 (hontō ni) in many contexts.
-      Adding 「わ」 (wa) at the end of the sentence, especially after 「です」, gives a softer, often feminine
-      nuance, making the compliment sound more gentle and refined.
-    etymology: The sentence-final particle 「わ」 (wa), typically used by women, originated from an exclamatory
-      particle 「ば」 (ba) in Old Japanese, evolving to add emphasis or emotion, and later became a marker
-      of refined feminine speech.
-  - english: I am not a student.
-    japanese:
-      - 私 {は} 学生 {で は ない}。
-      - 俺 {は} 学生 {で は ない}。
-      - 学生 {で は ない}。
-      - 私 {は} 学生 {じゃ ない}。
-    english_literally: I, as for topic, student is not.
-    competing_grammar:
-      - competing_japanese:
-          - 私 は 学生 {じゃ なかっ た}。
-        english: I was not a student.
-        hint: 「じゃなかった」 is the casual past negative. We are looking for the plain present negative.
-    scene: Someone mistakenly assumes you are a student, and you are correcting them in a neutral, casual
-      tone.
-    register: casual
-    setting: informative
-    conjugation: negative plain (～ない)
-    nuance: The negative copula 「ではない」 is a direct and plain way to state a fact, common in casual yet
-      informative contexts where a neutral correction is being made. Using 「俺は」 (ore wa) instead of 「私は」
-      (watashi wa) conveys a more masculine and assertive tone. Omitting the topic 「私は」 is common when
-      the context makes it clear, creating a more concise statement. 「じゃない」 (janai) is a more colloquial
-      and very common contraction of 「ではない」, reflecting a more informal speech pattern.
-    etymology: The contraction 「じゃない」 (janai) evolved from 「ではない」 (de wa nai) through a natural process
-      of phonetic reduction, where the 'de wa' sound often reduces to 'ja'. This is a common linguistic
-      phenomenon in Japanese where frequently used sequences become condensed over time, reflecting a
-      tendency towards ease of articulation in casual speech.
-  - english: That person is not a doctor.
-    japanese:
-      - あの 人 {は} 医者 {で は あり ませ ん}。
-      - あの 方 {は} 医者 {で は あり ませ ん}。
-      - その 方 {は} 医者 {で は あり ませ ん}。
-      - 医者 {で は あり ませ ん}。
-    english_literally: That person, as for topic, doctor is not.
-    competing_grammar:
-      - competing_japanese:
-          - あの 人 は 医者 {じゃ ない}。
-        english: That person is not a doctor (casual).
-        hint: 「じゃない」 is the casual contraction of 「ではない」. We are looking for the polite negative form.
-    scene: You are politely clarifying someone's profession to another person.
-    register: teineigo (polite)
-    setting: informative
-    conjugation: negative non-past polite (～ません)
-    nuance: The polite negative copula 「ではありません」 provides a formal and respectful clarification about
-      someone's profession, suitable for an informative context among acquaintances or in public. 「あの方」
-      (ano kata) is a more polite way to refer to 'that person' compared to 「あの人」 (ano hito). 「その方」 (sono
-      kata) refers to 'that person' already mentioned or nearby. Omitting the topic is possible if the
-      context is clear, making the statement more concise while remaining polite.
-    etymology: The word 「方」 (kata) meaning 'person' when referring to others, particularly in a polite
-      context, derives from the concept of 'direction' or 'side'. This suggests a historical emphasis
-      on respecting a person by referring to them indirectly, via their general direction or status, rather
-      than directly with a simple 'hito' (人), which is more direct and less formal.
-  - english: That story was not true.
-    japanese:
-      - その 話 {は} 本当 {で は なかっ た}。
-      - その 話 {は} 嘘 {だっ た}。
-      - その 話 {は} 嘘 {だっ た} よ。
-    english_literally: That story, as for topic, true was not.
-    competing_grammar:
-      - competing_japanese:
-          - その 話 は 本当 {じゃ ない}。
-        english: That story is not true (present tense).
-        hint: 「じゃない」 is the casual present negative. We are looking for the casual past negative.
-    scene: You are discussing a rumor with a close friend and revealing it was false.
-    register: casual
-    setting: serious
-    conjugation: negative past plain (～なかった)
-    nuance: The plain negative past form 「ではなかった」 is used in casual conversation to state a past fact
-      that turned out to be untrue, conveying a straightforward and serious tone among close friends.
-      An alternative is 「嘘だった」 (uso datta), meaning 'was a lie,' which is a more direct way to express
-      falseness. Adding 「よ」 (yo) to 「嘘だった」 strengthens the assertion and confirms the information for
-      the listener, suitable for casual but serious discussions.
-    etymology: The word 「嘘」 (uso) meaning 'lie' or 'falsehood' has origins in Old Japanese, stemming from
-      words related to 'falsehood' or 'deception'. Its straightforward nature makes it a direct alternative
-      to the more descriptive phrase 'not true', demonstrating a common tendency in language to have both
-      direct and descriptive expressions for similar concepts.
-  - english: His explanation was not clear.
-    japanese:
-      - 彼 の 説明 {は} 明確 {で は あり ませ ん でし た}。
-      - 彼 の 説明 {は} 不 明瞭 {でし た}。
-      - ご 説明 {は} 明確 {で は あり ませ ん でし た}。
-    english_literally: His explanation, as for topic, clear was not.
-    competing_grammar:
-      - competing_japanese:
-          - 彼 の 説明 は 明確 {で は あり ませ ん}。
-        english: His explanation is not clear (present tense).
-        hint: 「ありませんでした」 is the polite past negative. We are looking for the polite past negative.
-    scene: In a business meeting, you are politely stating that a previous explanation was insufficient.
-    register: teineigo (polite)
-    setting: professional
-    conjugation: negative past polite (～ませんでした)
-    nuance: The polite negative past copula 「ではありませんでした」 is appropriate for professional settings, allowing
-      one to express a past negative assessment respectfully and formally, such as during a business discussion.
-      Using 「不明瞭でした」 (fumeiryō deshita) is a more concise way to say 'was unclear,' as 「不明瞭」 (fumeiryō)
-      is the antonym of 「明確」 (meikaku). Using 「ご説明は」 (go-setsumei wa) adds a layer of politeness by prefixing
-      「ご」 (go) to the noun 「説明」 (setsumei), often used when speaking about someone else's actions or possessions
-      in a respectful manner.
-    etymology: The honorific prefix 「ご」 (go) originates from Chinese and was adopted into Japanese to
-      denote respect towards the speaker, listener, or the subject being discussed. Its use in 「ご説明」 transforms
-      a neutral noun into a polite reference, highlighting the intricate system of honorifics in Japanese
-      language, which is deeply rooted in social hierarchy and deference.
-  - english: She is very beautiful, isn't she? I think her smile is wonderful.
-    japanese:
-      - 彼女 {は} とても 綺麗 {です} ね。笑顔 が とても 素敵 {だ} と 思 い ます。
-      - 彼女 {は} すごく 綺麗 {です} ね。笑顔 が とても 素敵 {だ} と 思 い ます。
-      - 彼女 {は} とても 美人 {です} ね。笑顔 が とても 素敵 {だ} と 思 い ます。
-    english_literally: She, as for topic, very beautiful is, isn't it? Smile, as for subject, very wonderful
-      is, I think.
-    competing_grammar:
-      - competing_japanese:
-          - 彼女 {が} とても 綺麗 です ね。笑顔 が とても 素敵 だ と 思 い ます。
-        english: It is *she* who is very beautiful, isn't she? I think her smile is wonderful.
-        hint: 「が」 would emphasize 'she' as the specific person who is beautiful, implying a contrast or
-          selection. 「は」 introduces 'she' as the general topic of conversation. We are looking for a general
-          discussion about the person.
-    scene: Two men are observing a woman and one is commenting on her attractiveness. They are talking
-      to each other.
-    register: semi-formal
-    setting: flirty
-    speaker_gender: male
-    listener_gender: male
-    speaker_age: younger
-    nuance: The use of 「です」 and 「だ」 within the same sentence (「綺麗です」 and 「素敵だ」) reflects a natural shift
-      between a polite observation and a more definitive, casual internal thought. The final 「と思います」 (to
-      omoimasu) softens the assertion, common in general conversation. The casual tone and topic make
-      this appropriate for male speakers discussing someone. 「すごく」 (sugoku) is a more casual but equally
-      strong alternative to 「とても」 (totemo) for 'very'. 「美人」 (bijin) is a noun meaning 'beautiful person,'
-      often used to describe a woman's appearance.
-    etymology: The adverb 「すごく」 (sugoku) is the adverbial form of the adjective 「すごい」 (sugoi), which originally
-      meant 'frightening' or 'awe-inspiring'. Over time, its meaning broadened to convey strong intensity,
-      much like 'terribly' or 'awfully' in English evolving to mean 'very'. This semantic shift illustrates
-      how words related to intense emotion can become general intensifiers.
-  - english: The atmosphere of this restaurant is very good, isn't it? I think it's perfect for a date.
-    japanese:
-      - この レストラン の 雰囲気 {は} とても 良い {です} ね。デート に ぴったり {だ} と 思 い ます。
-      - この レストラン の 雰囲気 {は} すごく 良い {です} ね。デート に ぴったり {だ} と 思 い ます。
-      - この お 店 の 雰囲気 {は} とても 良い {です} ね。デート に ぴったり {だ} と 思 い ます。
-    english_literally: This restaurant's atmosphere, as for topic, very good is, isn't it? Date, for,
-      perfect is, I think.
-    competing_grammar:
-      - competing_japanese:
-          - この レストラン の 雰囲気 {が} とても 良い です ね。デート に ぴったり だ と 思 い ます。
-        english: It is the *atmosphere* of this restaurant that is very good, isn't it? I think it's perfect
-          for a date.
-        hint: 「が」 emphasizes the atmosphere as the specific thing that is good, perhaps in contrast to
-          other aspects of the restaurant. 「は」 sets the atmosphere as the topic for general discussion.
-          We are looking for a general observation about the atmosphere.
-    scene: A young man is on a first date, subtly suggesting the location is ideal for their outing.
-    register: teineigo (polite)
-    setting: first-date
-    speaker_gender: male
-    listener_gender: female
-    speaker_age: younger
-    nuance: The combination of 「です」 for politeness and 「ね」 for seeking agreement sets a friendly, engaging
-      tone suitable for a first date. The phrase 「デートにぴったりだ」 explicitly connects the setting to the purpose
-      of the date, conveying a subtle romantic suggestion while maintaining politeness. 「すごく」 (sugoku)
-      is a slightly more casual but still appropriate intensifier than 「とても」 (totemo) for a first date.
-      Using 「お店」 (omise) instead of 「レストラン」 (resutoran) is a common, slightly softer way to refer to a
-      shop or restaurant, adding a touch of casual familiarity within a polite conversation.
-    etymology: The word 「お店」 (omise) is a polite form of 「店」 (mise), meaning 'shop' or 'store'. The prefix
-      「お」 (o-) is an honorific prefix, indicating respect for the place or the service it provides. While
-      it broadly applies to various establishments, its use for 'restaurant' (レストラン) is common and conveys
-      a slightly softer, more colloquial nuance than the direct loanword 'restaurant', which can sound
-      more formal in some contexts.
-  - english: My younger brother is really active.
-    japanese:
-      - 私 の 弟 {は} とても 活発 {です}。
-      - 私 の 弟 {は} かなり 活発 {です}。
-      - 私 の 弟 {は} とても 元気 {です}。
-    english_literally: My younger brother, as for topic, very active is.
-    competing_grammar:
-      - competing_japanese:
-          - 私 の 弟 {が} とても 活発 です。
-        english: It is *my younger brother* who is very active.
-        hint: 「が」 would emphasize 'my younger brother' specifically. 「は」 introduces 'my younger brother'
-          as the general topic of conversation. We are looking for a general description of the younger
-          brother.
-    scene: A sister is describing her younger brother to a family friend.
+          - あの ひと {が} たなか さん です。
+        english: That person (specifically) is Mr. Tanaka.
+        hint: 「が」 points out a specific person. We're establishing 'that person' as the topic.
+    scene: Introducing someone politely to a group.
     register: teineigo (polite)
     setting: informative
     conjugation: non-past polite (～ます)
+  - english: This book is convenient.
+    japanese:
+      - この ほん {は} べんり {だ}。
+      - この ほん {は} べんり {です}。
+    english_literally: As for this book, it is convenient.
+    competing_grammar:
+      - competing_japanese:
+          - この ほん {は} おもしろい。
+        english: This book is interesting.
+        hint: 「おもしろい」 is an い-adjective and does not take 「だ」 at the end in plain form. We're looking
+          for a な-adjective.
+    scene: Talking about a book with a friend.
+    register: casual
+    setting: friendly
+    conjugation: dictionary (plain non-past)
+  - english: The library is quiet.
+    japanese:
+      - と しょ かん {は} しずか {です}。
+      - と しょ かん {は} しずか {だ}。
+    english_literally: As for the library, it is quiet.
+    competing_grammar:
+      - competing_japanese:
+          - と しょ かん {が} しずか です。
+        english: The library (in particular) is quiet.
+        hint: 「が」 emphasizes the library. We are stating a general characteristic of the library.
+    scene: Describing the atmosphere of a library to someone.
+    register: teineigo (polite)
+    setting: informative
+    conjugation: non-past polite (～ます)
+  - english: The school is over there.
+    japanese:
+      - がっこう {は} あそこ {だ}。
+      - がっこう {は} あそこ {です}。
+    english_literally: As for the school, it is over there.
+    competing_grammar:
+      - competing_japanese:
+          - がっこう {が} あそこ だ。
+        english: The school (which we're looking for) is over there.
+        hint: Use 「は」 to set 'school' as the topic for providing its location.
+    scene: Giving directions to a friend.
+    register: casual
+    setting: instructional
+    conjugation: dictionary (plain non-past)
+  - english: Today is Monday.
+    japanese:
+      - きょう {は} げつ ようび {です}。
+      - きょう {は} げつ ようび {だ}。
+    english_literally: As for today, it is Monday.
+    competing_grammar:
+      - competing_japanese:
+          - きょう {が} げつ ようび です。
+        english: Today (specifically) is Monday.
+        hint: 「は」 sets 'today' as the topic. We're simply stating the day.
+    scene: Someone confirming the day of the week.
+    register: teineigo (polite)
+    setting: informative
+    conjugation: non-past polite (～ます)
+  - english: Japanese food is healthy.
+    japanese:
+      - にほん りょうり {は} けんこう てき {だ}。
+      - にほん りょうり {は} けんこう てき {です}。
+    english_literally: As for Japanese food, it is healthy.
+    competing_grammar:
+      - competing_japanese:
+          - にほん りょうり {は} おいしい。
+        english: Japanese food is delicious.
+        hint: 「おいしい」 is an い-adjective and doesn't take 「だ」 in its plain form. We need a な-adjective.
+    scene: Discussing cuisine with a friend.
+    register: casual
+    setting: friendly
+    conjugation: dictionary (plain non-past)
+  - english: My hobby is reading.
+    japanese:
+      - わたし の しゅみ {は} どくしょ {です}。
+      - わたし の しゅみ {は} どくしょ {だ}。
+    english_literally: As for my hobby, it is reading.
+    competing_grammar:
+      - competing_japanese:
+          - わたし の しゅみ {が} どくしょ です。
+        english: My hobby (among other things) is reading.
+        hint: 「は」 is used to state a fact about 'my hobby.'
+    scene: Sharing personal information in a formal setting.
+    register: teineigo (polite)
+    setting: informative
+    conjugation: non-past polite (～ます)
+  - english: My little brother is very energetic.
+    japanese:
+      - おとうと {は} とても げんき {だ}。
+      - おとうと {は} とても げんき {です}。
+    english_literally: As for my younger brother, he is very energetic.
+    competing_grammar:
+      - competing_japanese:
+          - おとうと {は} とても げんき {です}。
+        english: My little brother is very energetic.
+        hint: While polite, 「です」 would change the register. We're looking for a casual statement.
+    scene: A sister talking about her younger brother to a close friend.
+    register: shitashii kuchō (intimate)
+    setting: intimate
+    conjugation: dictionary (plain non-past)
     speaker_gender: female
-    listener_gender: female
-    speaker_age: older
-    nuance: Using 「です」 maintains politeness suitable for a family friend. 「活発」 (kappatsu) is a na-adjective
-      meaning 'active' or 'lively'.
-post_example_writeup: It's important to remember that 「は」 marks the topic, not necessarily the grammatical
-  subject, of the sentence. The actual subject may be implied or understood from the context. For example,
-  in 「今日 は 晴れ です」, while 「今日」 is the topic, the implicit subject that is 'sunny' is the weather, not 'today'
-  itself. This distinction between topic and subject is fundamental to understanding Japanese sentence
-  structure and correctly using the は particle.
+    nuance: The use of 「おとうと」 (younger brother) and the casual 「だ」 at the end fits a female speaker talking
+      intimately about a family member.
+  - english: The internet is a convenient tool.
+    japanese:
+      - インターネット {は} べんり な ツール {です}。
+      - インターネット {は} べんり な ツール {だ}。
+    english_literally: As for the internet, it is a convenient tool.
+    competing_grammar:
+      - competing_japanese:
+          - インターネット {は} べんり {だ} ツール です。
+        english: The internet is convenient tool.
+        hint: When a な-adjective modifies a noun, it retains its 「な」 before the noun. We are looking for
+          the correct way to link a な-adjective to a noun before the copula.
+    scene: A speaker in a presentation defining a concept.
+    register: formal
+    setting: academic
+    conjugation: non-past polite (～ます)
+  - english: He is not a doctor.
+    japanese:
+      - かれ {は} いしゃ {じゃ ない}。
+      - かれ {は} いしゃ {で は あり ませ ん}。
+      - かれ {は} いしゃ {で は ない}。
+    english_literally: As for him, he is not a doctor.
+    competing_grammar:
+      - competing_japanese:
+          - かれ {は} いしゃ {で は ない}。
+        english: He is not a doctor.
+        hint: 「ではない」 is more formal than 「じゃない」. We're aiming for a casual tone.
+    scene: A friend clarifying someone's profession.
+    register: casual
+    setting: friendly
+    conjugation: negative plain (～ない)
+  - english: Yesterday was Sunday.
+    japanese:
+      - きのう {は} にち ようび {でし た}。
+      - きのう {は} にち ようび {だっ た}。
+    english_literally: As for yesterday, it was Sunday.
+    competing_grammar:
+      - competing_japanese:
+          - きのう {は} にち ようび {だっ た}。
+        english: Yesterday was Sunday.
+        hint: 「だった」 is the casual past form. We need the polite past form.
+    scene: Reflecting on the past day.
+    register: teineigo (polite)
+    setting: reflective
+    conjugation: past polite (～ました)
+post_example_writeup: These examples demonstrate how 「は〜だ/です」 is used to make declarative statements about
+  various topics, from personal identity to descriptions and locations. Pay close attention to the choice
+  between the casual 「だ」 and polite 「です」, and how they apply to nouns and な-adjectives, which form the
+  core of this sentence pattern.
 sources:
   bunpro: https://bunpro.jp/grammar_points/は〜だ

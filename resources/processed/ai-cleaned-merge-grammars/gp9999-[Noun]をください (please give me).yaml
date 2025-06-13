@@ -1,238 +1,221 @@
 grammar_point: '[Noun]をください (please give me)'
 learn_before:
-  - Verb[ます] (polite present)
   - てください (polite request)
   - を (direct object marker)
 learn_after:
-  - '[Verb-て]もらう (to have someone do, receive an action)'
-  - くれる (to give, inward to me・in-group)
-  - もらう (to receive)
+  - '[Verb-て]くれる (to do for me・in-group)'
 id: gp9999
-meaning: Please give me ~; I'll have ~
+meaning: please give me
 pronunciation:
   katakana: クダサイ
   romaji: kudasai
 formation:
-  Noun + を + ください: Requests a specific noun to be given to the speaker.
+  Noun + を + ください: Used to politely ask for a noun.
 jlpt: N5
 details:
   part-of-speech: phrase
   register: teineigo (polite)
-  function: To make a direct, polite request for an object or an abstract concept (like information).
-  nuance: This is a polite and direct way to ask for something. It is very common in transactional settings
-    like shops or restaurants. While polite, it can sound slightly demanding if not accompanied by a friendly
-    tone or context, as it is a direct command. It literally means 'please give (to me/us)'.
-etymology: The verb ください is the imperative form of くださる (kudasaru), which is an honorific verb meaning
-  'to give' (from a superior to an inferior, or from someone to the speaker/in-group). Over time, its
-  use became generalized as a polite imperative for requests, both for actions (when preceded by a te-form
-  verb) and for objects (when preceded by a direct object particle を and a noun). Its origin as a verb
-  indicating direction of giving (to the speaker) reinforces its function as 'give (to me)'.
-writeup: The expression 「〜をください」 is a fundamental phrase used to politely request an object or item in
-  Japanese. It directly translates to "Please give me ~" or "I'll have ~". It is widely used in various
-  daily situations, particularly in transactional settings like shops, cafes, and restaurants. To use
-  this phrase, you simply place the noun of the item you want, followed by the direct object particle
-  を, and then ください. For example, if you want a coffee, you would say 「コーヒーをください」 (Koohii o kudasai). If
-  you want water, it's 「水をください」 (Mizu o kudasai). While 「ください」 itself is a polite imperative form, its
-  directness means that the tone and context are important. In a friendly shop or casual setting, it sounds
-  perfectly natural and polite. However, in more formal or distant interactions, you might consider softening
-  your tone or adding other polite expressions. For instance, sometimes 「〜をお願いします」 (onegai shimasu) is
-  used, which can feel slightly softer or more general when requesting something or a service. It's important
-  to remember that 「〜をください」 is specifically for requesting *objects* or *items*. It is not used to request
-  an action from someone. For requesting an action, a different grammatical structure involving the te-form
-  of a verb is used, such as 「〜て ください」 (please do ~). The distinction between requesting an object versus
-  an action is crucial for correct usage.
+  usage-context: Used when directly asking for an object.
+  function: request
+  nuance: Direct and polite request for an item. It implies the speaker expects to receive the item from
+    the listener.
+etymology: The word 「ください」 comes from the verb 「くださる」 (kudasaru), which is the honorific equivalent of
+  「くれる」 (kureru), meaning "to give (to me or my in-group)". The imperative form 「ください」 thus directly translates
+  to "please give (me)". Its use with 「を」 to request objects is a fundamental aspect of transactional
+  language in Japanese, emphasizing the polite request for an item to be given to the speaker.
+writeup: 「[Noun]をください」 is a fundamental and polite way to request an object in Japanese. It directly translates
+  to "Please give me [Noun]." This construction is widely used in daily interactions, such as ordering
+  food, asking for items in a store, or requesting things from friends and family. The particle 「を」 clearly
+  marks the preceding noun as the direct object of the verb 「ください」, indicating what is being requested.
+  While simple, its polite nature makes it suitable for most situations. For more casual contexts among
+  close friends, one might drop 「ください」 and simply state the noun, sometimes followed by a rising intonation
+  or a casual particle like 「ね」 or 「な」. However, 「[Noun]をください」 remains the standard polite form. It's
+  important to remember that 「ください」 is specifically used for the listener giving something to the speaker
+  or the speaker's in-group. It cannot be used for the speaker giving something to the listener.
 false_friends:
-  - term: Verb[て] + ください
-    meaning: Please do (verb)
+  - term: をくれますか
+    meaning: Will you give me...?
     kind: similar expression
-    nuance: While both use 「ください」, this construction requests an action to be performed (e.g., 「座って ください」
-      - Please sit down), whereas 「[Noun]をください」 requests a tangible item or object to be given.
-    grammar_point: てください (polite request)
-  - term: お願いします
-    meaning: Please; I request (a favor or service)
+    nuance: This is a question, seeking confirmation or willingness, rather than a direct command. 「ください」
+      is a direct request.
+    grammar_point: <suggest>:Verb[て]くれるか (will you do for me)
+  - term: をあげます
+    meaning: I will give (to you/out-group)
+    kind: antonym
+    nuance: 「あげます」 is used when the speaker gives something to someone else. 「ください」 is used when the speaker
+      receives something from someone else. The direction of the giving/receiving is opposite.
+    grammar_point: あげる・やる (to give, outward)
+  - term: を下さい
+    meaning: Please give me (written form)
     kind: similar expression
-    nuance: 「お願いします」 is a more general and often softer request, typically used when asking for a service,
-      favor, or assistance, or when making a general plea (e.g., 「手伝って お願いします」 - Please help). 「〜をください」
-      is specifically for requesting a concrete item or object.
-    grammar_point: <suggest>:お願いする (to request ask for)
-  - term: 頂戴
-    meaning: Give me (informal, often feminine or for children)
-    kind: similar expression
-    nuance: 「頂戴」 is a much more casual and informal way to ask for something, often used by women or children,
-      or in very familiar contexts. It implies a direct command, and while polite in some specific contexts
-      (like between close family), it lacks the general politeness of 「ください」 for broader use.
-    grammar_point: <suggest>:頂戴 (informal request for item)
-post_false_friends_writeup: The key to distinguishing these expressions lies in what is being requested.
-  If you are asking for an action to be performed, use the te-form of the verb followed by 「ください」. If
-  you are asking for a tangible item, use the noun followed by を and 「ください」. While 「お願いします」 can sometimes
-  be used in place of 「〜をください」, especially in softer contexts or when the request is less about a specific
-  item and more about a general transaction (like "Check, please" at a restaurant, which is often 「お会計
-  お願いします」), remember that 「〜をください」 is the direct and clear way to ask for an item.
+    nuance: This is the same grammar point, but written using kanji for 「下さい」. While common, 「ください」 in
+      hiragana is also very frequent, especially in more general contexts, and is often preferred for
+      its softness or when the request is not literally about "receiving."
+    grammar_point: <suggest>:ください (hiragana for requests)
+post_false_friends_writeup: Be careful not to confuse 「ください」 with forms like 「くれますか」 or 「あげます」. While
+  all relate to giving and receiving, 「ください」 is a direct polite request for something to be given to the
+  speaker. 「くれますか」 is a question asking if someone will give something. 「あげます」 is used when the speaker
+  gives something to another person. The crucial difference lies in the direction of the action. Also,
+  「ください」 is often written in hiragana to distinguish it from its original kanji usage as the imperative
+  of the verb 「下さる」 (to give downwards), emphasizing its fixed usage as a request form rather than the
+  literal act of lowering something.
 examples:
-  - english: Can I have some water, please?
+  - english: Please give me water.
     japanese:
       - 水 を {ください}。
       - お 水 を {ください}。
-    english_literally: Water, please give me.
+      - 水 {ください}。
+      - お 水 {ください}。
+    english_literally: Water (object marker) please give.
     competing_grammar:
       - competing_japanese:
-          - 水 を 飲ん で ください。
-        english: Please drink water.
-        hint: 「飲んで ください」 requests an action (drinking), not the item itself. We're looking for a direct
-          request for the item.
-      - competing_japanese:
-          - お 水 を お 願い し ます。
-        english: Water, please (a general request).
-        hint: 「お願いします」 is a general request for a service or favor. We're looking for a direct request
-          to be given an item.
-    scene: You are at a casual restaurant and want to order water.
+          - 水、お 願い し ます。
+        english: Water, please.
+        hint: 「お願いします」 is a more general request for a service or an item, often used in service industries.
+          We're looking for a direct command to 'give'.
+    scene: At a restaurant, ordering.
     register: teineigo (polite)
     setting: informative
-  - english: Could you give me that book, please?
+  - english: Please give me that book.
     japanese:
       - その 本 を {ください}。
-      - その 御 本 を {ください}。
-    english_literally: That book, please give me.
+      - その 本 {ください}。
+    english_literally: That book (object marker) please give.
     competing_grammar:
       - competing_japanese:
-          - その 本 を 読ん で ください。
-        english: Please read that book.
-        hint: 「読んで ください」 asks for an action (reading the book), not for the book to be given. We're looking
-          for a request to receive the book.
-    scene: A customer pointing to a book on a high shelf in a bookstore.
+          - その 本、もらえ ます か。
+        english: Can I receive that book?
+        hint: 「もらえますか」 is a question about receiving, focusing on the speaker's ability to receive. We're
+          looking for a direct request for the listener to give.
+    scene: In a bookstore, asking an assistant.
     register: teineigo (polite)
     setting: informative
-  - english: Two apples, please.
+  - english: Could I have coffee, please?
     japanese:
-      - りんご を 二 つ {ください}。
-      - 林檎 を 二 つ {ください}。
-      - りんご を ２ つ {ください}。
-    english_literally: Apples, two, please give me.
+      - コーヒー を {ください}。
+      - コーヒー {ください}。
+      - お コーヒー を {ください}。
+      - お コーヒー {ください}。
+    english_literally: Coffee (object marker) please give.
     competing_grammar:
       - competing_japanese:
-          - りんご を 二 つ 買っ て ください。
-        english: Please buy two apples.
-        hint: 「買って ください」 requests an action of buying. We are requesting the apples to be given.
-    scene: At a fruit stand, telling the vendor what you want.
-    register: teineigo (polite)
-    setting: informative
-  - english: Please give me some advice.
-    japanese:
-      - アドバイス を {ください}。
-      - 助言 を {ください}。
-      - ご 助言 を {ください}。
-    english_literally: Advice, please give me.
-    competing_grammar:
-      - competing_japanese:
-          - アドバイス し て ください。
-        english: Please advise me.
-        hint: 「アドバイスして ください」 requests the action of advising. We are asking for the noun 'advice'.
-    scene: A student asking their teacher for guidance on a difficult project.
+          - コーヒー を いただけ ます か。
+        english: Could I humbly receive coffee?
+        hint: 「いただけますか」 is a more humble and polite way to ask, often used by customers. We're looking
+          for a standard polite request.
+    scene: Ordering at a cafe.
     register: teineigo (polite)
     setting: professional
-  - english: Mommy, give me that toy!
+  - english: Please give me a copy.
     japanese:
-      - ママ、その おもちゃ を {ください}！
-      - ママ、その 玩具 を {ください}！
-    english_literally: Mommy, that toy, please give me!
+      - コピー を {ください}。
+      - コピー {ください}。
+      - 一 枚 コピー を {ください}。
+      - 一 枚 コピー {ください}。
+    english_literally: Copy (object marker) please give.
     competing_grammar:
       - competing_japanese:
-          - ママ、その おもちゃ で 遊ん で ください！
-        english: Mommy, please play with that toy!
-        hint: 「遊んで ください」 asks for the action of playing. The child wants the toy itself.
+          - コピー を し て いただけ ます か。
+        english: Could you humbly make a copy?
+        hint: This is a request for an action ("to make a copy") using 「〜てください」. We're looking for a direct
+          request for the noun "copy".
+    scene: At an office, asking a colleague to make a copy.
+    register: formal
+    setting: professional
+  - english: Please give me the menu.
+    japanese:
+      - どうぞ、メニュー を {ください}。
+      - どうぞ、メニュー {ください}。
+      - メニュー を {ください}。
+      - メニュー {ください}。
+    english_literally: Please, menu (object marker) please give.
+    competing_grammar:
       - competing_japanese:
-          - ママ、その おもちゃ 頂戴！
-        english: Mommy, give me that toy! (informal)
-        hint: 「頂戴」 is a more casual and direct request, typically used in very familiar contexts like
-          with family, and can sometimes sound demanding depending on tone. 「ください」 is polite even in casual
-          settings like this.
-    scene: A child excitedly pointing to a toy they want their mother to give them.
-    register: casual
+          - メニュー を お 願い し ます。
+        english: The menu, please.
+        hint: 「お願いします」 is a general polite request. We're focusing on the direct request to "give" using
+          「ください」.
+    scene: At a restaurant, the waiter has just approached your table.
+    register: teineigo (polite)
+    setting: informative
+  - english: Please give me some apples.
+    japanese:
+      - りんご を {ください}。
+      - りんご {ください}。
+      - いく つ か りんご を {ください}。
+      - いく つ か りんご {ください}。
+    english_literally: Apple (object marker) please give.
+    competing_grammar:
+      - competing_japanese:
+          - りんご、ちょっと いい です か。
+        english: Apples, is it okay? (Can I have some apples?)
+        hint: This is a more indirect or softer way to inquire if something is available. We're looking
+          for a direct command to 'give'.
+    scene: At a fruit stand.
+    register: teineigo (polite)
+    setting: friendly
+  - english: Please give me two of these.
+    japanese:
+      - これ を 二 つ {ください}。
+      - これ 二 つ {ください}。
+    english_literally: This (object marker) two please give.
+    competing_grammar:
+      - competing_japanese:
+          - これ を 二 つ お 願い し ます。
+        english: These, two please.
+        hint: 「お願いします」 is a general polite request. We're focusing on the direct command to "give" using
+          「ください」.
+    scene: Shopping for small items.
+    register: teineigo (polite)
+    setting: professional
+  - english: Could you give me the salt?
+    japanese:
+      - 塩 を {ください}。
+      - お 塩 を {ください}。
+      - 塩 {ください}。
+      - お 塩 {ください}。
+    english_literally: Salt (object marker) please give.
+    competing_grammar:
+      - competing_japanese:
+          - 塩、取っ て くれる？
+        english: Could you get the salt for me?
+        hint: 「取ってくれる」 is a casual request for an action ("to get"). We're looking for a direct request
+          for the noun "salt" using the polite imperative.
+    scene: At the dinner table, an older family member asks a younger one.
+    register: teineigo (polite)
     setting: intimate
-    speaker_gender: female
-    listener_gender: female
-    speaker_age: younger
-    nuance: The child's direct use of 「ください」 without further politeness is common within intimate family
-      settings, especially from younger speakers to older family members. The phrase 「ママ」 emphasizes the
-      familiar context.
-  - english: Could I get a receipt, please?
+    speaker_age: older
+    nuance: Even within a family, using 「ください」 maintains a polite distance or shows that it's a direct
+      request rather than a casual suggestion. The older speaker might use this to simply ask for an item
+      without implying a strong hierarchy, just a clear request.
+  - english: Please give me the receipt.
     japanese:
       - 領収 書 を {ください}。
-      - 領収 証 を {ください}。
-      - 御 領収 書 を {ください}。
-    english_literally: Receipt, please give me.
+      - 領収 書 {ください}。
+    english_literally: Receipt (object marker) please give.
     competing_grammar:
       - competing_japanese:
-          - 領収 書 を 発行 し て ください。
-        english: Please issue a receipt.
-        hint: 「発行して ください」 is a request for the action of issuing. We are simply asking for the receipt.
-    scene: A businessman at a cash register after making a purchase.
+          - 領収 書、お 願い し ます。
+        english: Receipt, please.
+        hint: 「お願いします」 is a general polite request. We're focusing on the direct command to "give" using
+          「ください」.
+    scene: After a purchase at a store.
     register: teineigo (polite)
     setting: professional
-    speaker_gender: male
-    nuance: A male speaker would typically use this concise and polite phrase, 「領収書 を ください」, in a professional
-      or transactional setting to request a receipt. It is a standard and unambiguous request.
-  - english: Could you give me some sugar?
+  - english: Please give me your opinion.
     japanese:
-      - 砂糖 を {ください}。
-      - お 砂糖 を {ください}。
-    english_literally: Sugar, please give me.
+      - ご 意見 を {ください}。
+      - ご 意見 {ください}。
+    english_literally: Your opinion (object marker) please give.
     competing_grammar:
       - competing_japanese:
-          - 砂糖 を 取っ て ください。
-        english: Please pass the sugar.
-        hint: 「取って ください」 requests the action of 'taking' or 'passing' the sugar. We are asking for the
-          sugar to be given directly to us.
-    scene: At a cafe, asking the waiter for sugar for your coffee.
-    register: teineigo (polite)
-    setting: friendly
-    speaker_gender: female
-    nuance: While the phrase itself is direct, a female speaker might employ a slightly softer tone or
-      a gentle smile to convey politeness when using 「砂糖 を ください」 in a casual setting like a cafe.
-  - english: One takoyaki, please!
-    japanese:
-      - たこ焼き を 一 つ {ください}！
-      - 蛸焼き を 一 つ {ください}！
-      - たこ焼き を １ つ {ください}！
-    english_literally: Takoyaki, one, please give me.
-    competing_grammar:
-      - competing_japanese:
-          - たこ焼き 一 つ お 願い し ます！
-        english: One takoyaki, please! (general request)
-        hint: 「お願いします」 is a more general request for an item or service. 「ください」 is specifically asking
-          to be *given* the item.
-    scene: Ordering food at a lively festival stall.
-    register: teineigo (polite)
-    setting: casual slang
-  - english: Can I have another cup of coffee, please?
-    japanese:
-      - コーヒー を もう 一 杯 {ください}。
-      - 珈琲 を もう 一 杯 {ください}。
-      - コーヒー を もう 一ぱい {ください}。
-    english_literally: Coffee, another cup, please give me.
-    competing_grammar:
-      - competing_japanese:
-          - コーヒー を もう 一杯 飲ん で ください。
-        english: Please drink another cup of coffee.
-        hint: 「飲んで ください」 requests the action of drinking. We are asking to be given another cup of coffee.
-    scene: At a cafe, asking the staff for a refill.
-    register: teineigo (polite)
-    setting: friendly
-  - english: Help! Give me your hand!
-    japanese:
-      - 助け て！手 を {ください}！
-      - 助け て！お 手 を {ください}！
-    english_literally: Help! Hand, please give me!
-    competing_grammar:
-      - competing_japanese:
-          - 助け て ください！
-        english: Please help me!
-        hint: 「助けて ください」 requests the action of helping. This sentence specifically asks for a tangible
-          item, 'your hand'.
-    scene: Someone has fallen and is reaching out for help from a passerby.
-    register: casual
-    setting: emergency/alarm
-post_example_writeup: As you can see from the examples, 「〜をください」 is a versatile phrase for requesting
-  items. While polite, its directness makes it efficient and widely understood in various contexts, from
-  casual to professional. Pay close attention to whether you are requesting an object (use を ください) or
-  an action (use 〜て ください) to ensure your Japanese is natural and correct.
+          - ご 意見 を お 聞か せ いただけ ます か。
+        english: Could you humbly let me hear your opinion?
+        hint: 「お聞かせいただけますか」 is a more formal and indirect request for input, often used in highly polite
+          contexts. We're looking for a direct, polite request.
+    scene: In a business meeting, seeking input from a colleague.
+    register: formal
+    setting: professional
+post_example_writeup: As shown in the examples, 「[Noun]をください」 can be used in a variety of contexts, from
+  simple everyday requests to more formal situations. The nuance often comes from the context, the specific
+  noun being requested, and other politeness markers that might accompany the phrase.

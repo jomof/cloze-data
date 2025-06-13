@@ -1,247 +1,195 @@
 grammar_point: '[X]は[Y]の一つだ (X is one of Y)'
 learn_before:
-  - Verb[dictionary] (dictionary form)
-  - Verb[ます] (polite present)
+  - だ (casual copula)
+  - です (polite copula)
+  - の (possession)
+  - は (topic and contrast)
 id: gp0301
-meaning: る-verbs in the negative past tense.
+meaning: X is one of Y
 pronunciation:
-  katakana: ル・バーブ (ネガティブ・パスト)
-  romaji: ru-verb (negative-past)
+  katakana: エックス は ワイ の ひとつ だ
+  romaji: X wa Y no hitotsu da
 formation:
-  Verb (る-verb dictionary form) + なかった: This formation expresses the negative past tense for る-verbs,
-    indicating that the action did not occur.
+  '[Noun X] は [Noun Y] の {一つだ}': X is one of Y (plain form)
+  '[Noun X] は [Noun Y] の {一つです}': X is one of Y (polite form)
 jlpt: N5
 details:
-  part-of-speech: auxiliary verb
+  part-of-speech: phrase
   register: casual
-  function: Indicates that an action or state did not take place in the past for る-verbs.
-  grammatical-role: conjugation
-etymology: The negative past tense ending for る-verbs, 「なかった」, is a combination of 「ない」 (the plain negative
-  form) and 「た」 (the plain past tense ending). This structure signifies 'did not (do/be)'. The 「な」 comes
-  from the classical negative auxiliary 「ず」 (zu) which evolved into 「ない」, and the 「かった」 suffix is the
-  past tense form for い-adjectives, which 「ない」 functions as grammatically.
-writeup: |-
-  The negative past tense for る-verbs is formed by taking the dictionary (plain) form of the verb, removing the final 「る」, and attaching 「なかった」. This conjugation expresses that an action *did not occur* in the past. It is the plain form, meaning it is used in casual conversations and can be used when speaking to oneself or close friends and family. For polite situations, you would use 「ませんでした」.
-
-  This form is essential for recounting past events that did not happen, or for denying previous actions. It directly negates the past occurrence of the verb's action.
+  function: classification, categorization, stating a subset relationship
+  nuance: Indicates that X belongs to a larger category Y as one of its members. It emphasizes the 'one
+    of' aspect.
+etymology: 「一つ (ひと-つ)」 literally means “one thing” or “one item”. The combination with 「の」 creates a possessive
+  or associative relationship, indicating “one of Y”. 「は」 marks X as the topic, and 「だ」 or 「です」 acts as
+  the copula, stating identity. The phrase simply states that the topic (X) is identified as one single
+  item belonging to the category (Y).
+writeup: 「[X]は[Y]の一つだ」 is a fundamental Japanese phrase used to express that something (X) is one member
+  or example of a larger group or category (Y). This structure is widely used for classification and to
+  provide examples. The particle 「は」 identifies X as the topic, followed by the group Y, connected by
+  「の」 which indicates belonging or association. Finally, 「一つだ」 (or 「一つです」 for polite speech) asserts that
+  X is one element within Y. This grammatical pattern is essential for basic descriptive sentences, allowing
+  you to categorize items, people, or concepts within broader definitions. It's often used when introducing
+  examples or explaining relationships between different entities.
 false_friends:
-  - term: なかった
-    meaning: Was not (for い-adjectives or nouns with ない)
+  - term: 一人 (ひとり)
+    meaning: one person
     kind: similar expression
-    nuance: While both use 「なかった」, the grammar point 「る-verb (negative-past)」 (e.g., 「食べなかった」) attaches
-      it to the stem of a る-verb. The standalone 「なかった」 is the past negative of 「ない」 for い-adjectives
-      (e.g., 「楽しくなかった」) or nouns/な-adjectives when used with 「じゃない」 (e.g., 「学生じゃなかった」). The grammatical
-      attachment and the word it modifies differ.
-    grammar_point: <suggest>:い-adjective (past negative)
-  - term: る-verb (negative plain)
-    meaning: る-verbs in the negative plain tense (present/future)
+    nuance: While 「一つ」 can sometimes be used generally, 「一人」 specifically counts one person and is more
+      natural when the group consists of people. We're looking for something that classifies "one item"
+      or "one concept" rather than "one person".
+    grammar_point: <suggest>:一人 (counter for people)
+  - term: 〜の一部 (いちぶ)
+    meaning: a part of / a portion of
     kind: similar expression
-    nuance: 「る-verb (negative-past)」 (e.g., 「食べなかった」 - didn't eat) specifies an action *did not happen*
-      in the past. In contrast, 「る-verb (negative plain)」 (e.g., 「食べない」 - don't eat/won't eat) indicates
-      an action *does not or will not happen* in the present or future, or expresses a general negative
-      state without a past timeframe.
-    grammar_point: <suggest>:る-verb (negative plain)
-post_false_friends_writeup: When using 「なかった」, pay close attention to what it is attaching to. If it follows
-  the stem of a る-verb (e.g., 「見なかった」, 「寝なかった」), it signifies 'did not do'. If it follows 「く」 (as in い-adjectives,
-  e.g., 「寒くなかった」), it means 'was not'. Similarly, distinguish it from the non-past negative form, which
-  lacks the 「かっ」 portion, as it changes the temporal aspect of the negation.
+    nuance: 「一部」 refers to a segment or portion of a whole, suggesting something that can be divided.
+      「一つ」 refers to a single, distinct entity within a collection or category. We're looking for something
+      that identifies a singular item within a group, not a piece of a whole.
+    grammar_point: <suggest>:〜の一部 (a part of)
+post_false_friends_writeup: While both 「一つ」 and 「一人」 denote ‘one’, 「一つ」 is a general counter for inanimate
+  objects or abstract concepts, whereas 「一人」 is specifically for counting people. For instance, when referring
+  to “one of the students”, 「学生の一人」 would be more precise and natural than 「学生の一つ」. Similarly, 「〜の一部」
+  signifies a “part” or “segment” of something, suggesting a divisible whole. In contrast, 「〜の一つ」 identifies
+  a distinct, individual member within a larger category.
 examples:
-  - english: I didn't eat lunch today.
+  - english: Mount Fuji is one of Japan's highest mountains.
     japanese:
-      - 今日 は 昼ごはん を {食べ なかっ た}。
-      - 今日 は 昼ごはん を 食べ ませ ん でし た。
-    english_literally: Today as for lunch object marker ate not.
+      - 富士 山 は 日本 の 最も 高い 山 の {一 つ だ}。
+      - 富士 山 は 日本 の 最も 高い 山 の {一 つ です}。
+    english_literally: Mount Fuji as for Japan's most high mountain's one thing is.
     competing_grammar:
       - competing_japanese:
-          - 今日 は 昼ごはん を 食べ ませ ん でし た。
-        english: I didn't eat lunch today (polite).
-        hint: This uses the polite negative past form. We're looking for the plain form.
-      - competing_japanese:
-          - 今日 は まだ 昼ごはん を 食べ て い ませ ん。
-        english: I still haven't eaten lunch today.
-        hint: This implies an ongoing state of not having eaten yet. We're looking for a simple past action
-          that did not occur.
-    scene: A student tells their friend they skipped lunch.
-    register: casual
-    setting: friendly
-    conjugation: negative past plain (～なかった)
-  - english: She didn't watch that movie.
-    japanese:
-      - 彼女 は その 映画 を {見 なかっ た}。
-      - 彼女 は その 映画 を 見 ませ ん でし た。
-    english_literally: She as for that movie object marker watched not.
-    competing_grammar:
-      - competing_japanese:
-          - 彼女 は その 映画 を 見 ませ ん でし た。
-        english: She didn't watch that movie (polite).
-        hint: This uses the polite negative past form. We're looking for the plain form.
-      - competing_japanese:
-          - 彼女 は その 映画 を 見 ない。
-        english: She doesn't watch that movie.
-        hint: This indicates a general habit or present/future non-action. We're looking for a specific
-          past action that did not occur.
-    scene: Two friends are discussing movies they've seen recently.
-    register: casual
-    setting: friendly
-    conjugation: negative past plain (～なかった)
-    speaker_gender: female
-    listener_gender: female
-    nuance: The casual 「見なかった」 fits a conversation between female friends. It's a simple statement of
-      fact about a past action that didn't occur.
-  - english: He didn't get up early yesterday.
-    japanese:
-      - 彼 は 昨日、早く {起き なかっ た}。
-      - 彼 は 昨日、早く 起き ませ ん でし た。
-    english_literally: He as for yesterday, early got up not.
-    competing_grammar:
-      - competing_japanese:
-          - 彼 は 昨日、早く 起き ませ ん でし た。
-        english: He didn't get up early yesterday (polite).
-        hint: This uses the polite negative past form. We're looking for the plain form.
-      - competing_japanese:
-          - 彼 は 昨日、早く 起き て い ませ ん でし た。
-        english: He wasn't awake early yesterday.
-        hint: This describes a state of not being awake, not the act of not getting up. We're looking
-          for the simple past action that did not occur.
-    scene: A colleague is explaining why their coworker seemed tired.
-    register: casual
-    setting: professional
-    conjugation: negative past plain (～なかった)
-    speaker_gender: male
-    listener_gender: male
-    nuance: Used casually between male colleagues to explain a simple past event. 「起きなかった」 conveys the
-      action of not waking up early.
-  - english: I didn't think about it at all.
-    japanese:
-      - 私 は 全然 それ を {考え なかっ た}。
-      - 私 は 全然 それ を 考え ませ ん でし た。
-    english_literally: I as for at all that object marker thought not.
-    competing_grammar:
-      - competing_japanese:
-          - 私 は 全然 それ を 考え ませ ん でし た。
-        english: I didn't think about it at all (polite).
-        hint: This uses the polite negative past form. We're looking for the plain form.
-    scene: Someone is asked if they considered a particular option.
-    register: casual
-    setting: serious
-    conjugation: negative past plain (～なかった)
-  - english: The baby didn't sleep well last night.
-    japanese:
-      - 赤ちゃん は 昨夜、よく {寝 なかっ た}。
-      - 赤ちゃん は 昨夜、よく 寝 ませ ん でし た。
-    english_literally: Baby as for last night, well slept not.
-    competing_grammar:
-      - competing_japanese:
-          - 赤ちゃん は 昨夜、よく 寝 ませ ん でし た。
-        english: The baby didn't sleep well last night (polite).
-        hint: This uses the polite negative past form. We're looking for the plain form.
-      - competing_japanese:
-          - 赤ちゃん は 昨夜、よく 寝 て い ませ ん でし た。
-        english: The baby wasn't sleeping well last night.
-        hint: This describes a continuous state of not sleeping, rather than the simple past action. We're
-          looking for the simple past action that did not occur.
-    scene: A parent talks to their spouse about their baby's sleep.
-    register: casual
-    setting: intimate
-    conjugation: negative past plain (～なかった)
-    listener_gender: female
-    nuance: An intimate, casual remark shared between partners about a common domestic concern. 「寝なかった」
-      indicates the lack of proper sleep.
-  - english: The train didn't stop at this station.
-    japanese:
-      - 電車 は この 駅 に {止まら なかっ た}。
-      - 電車 は この 駅 に 止まり ませ ん でし た。
-    english_literally: Train as for this station at stopped not.
-    competing_grammar:
-      - competing_japanese:
-          - 電車 は この 駅 に 止まり ませ ん でし た。
-        english: The train didn't stop at this station (polite).
-        hint: This uses the polite negative past form. We're looking for the plain form.
-      - competing_japanese:
-          - 電車 は この 駅 に 止まっ て い ませ ん でし た。
-        english: The train wasn't stopped at this station.
-        hint: This describes a state of not being stopped, not the action of not stopping. We're looking
-          for the simple past action that did not occur.
-    scene: A commuter explains why they missed their stop.
+          - 富士 山 は 日本 の 最も 高い 山 の 一番 だ。
+        english: Mount Fuji is the most highest mountain in Japan.
+        hint: 「一番」 indicates the absolute best or greatest, not one among many. We're looking for a phrase
+          that means 'one of' something.
+    scene: A tour guide is explaining Japanese geography.
     register: casual
     setting: informative
-    conjugation: negative past plain (～なかった)
-  - english: We didn't decide on anything yet.
+  - english: Sushi is one of Japan's representative dishes.
     japanese:
-      - 私 たち は まだ 何 も {決め なかっ た}。
-      - 私 たち は まだ 何 も 決め ませ ん でし た。
-    english_literally: We as for still nothing decided not.
+      - 寿司 は 日本 の 代表 的 な 料理 の {一 つ です}。
+      - 寿司 は 日本 の 代表 的 な 料理 の {一 つ だ}。
+    english_literally: Sushi as for Japan's representative dish's one thing is.
     competing_grammar:
       - competing_japanese:
-          - 私 たち は まだ 何 も 決め ませ ん でし た。
-        english: We didn't decide on anything yet (polite).
-        hint: This uses the polite negative past form. We're looking for the plain form.
+          - 寿司 は 日本 の 代表 的 な 料理 の 一部 です。
+        english: Sushi is a part of Japan's representative dishes (as a whole).
+        hint: 「一部」 suggests a portion of a whole, not a distinct item within a category. We're looking
+          to classify sushi as one individual dish among others.
+    scene: A chef is talking about Japanese cuisine.
+    register: formal
+    setting: informative
+  - english: Learning kanji is one of the biggest challenges for Japanese learners.
+    japanese:
+      - 漢字 を 習う こと は 日本 語 学習 者 に とっ て 最大 の 課題 の {一 つ だ}。
+      - 漢字 を 習う こと は 日本 語 学習 者 に とっ て 最大 の 課題 の {一 つ です}。
+    english_literally: Kanji to learn the act of as for Japanese learners for biggest challenge's one
+      thing is.
+    competing_grammar:
       - competing_japanese:
-          - 私 たち は まだ 何 も 決め て い ませ ん。
-        english: We still haven't decided on anything.
-        hint: This implies that the decision has not yet been made, which is a state, rather than a past
-          action that didn't occur. We're looking for a simple past action that did not occur.
-    scene: A team member reports to their manager on progress.
+          - 漢字 を 習う こと は 日本 語 学習 者 に とっ て 最大 の 課題 の 中 で 一番 だ。
+        english: Learning kanji is the biggest challenge among Japanese learners.
+        hint: This emphasizes 'the biggest', not just 'one of the biggest'. We're looking to list it as
+          one among several challenges.
+    scene: A student is discussing language learning difficulties with a friend.
     register: casual
+    setting: academic
+  - english: This painting is one of the most famous works of that artist.
+    japanese:
+      - この 絵 は その 画家 の 最も 有名 な 作品 の {一 つ です}。
+      - この 絵 は その 画家 の 最も 有名 な 作品 の {一 つ だ}。
+    english_literally: This painting as for that artist's most famous work's one thing is.
+    competing_grammar:
+      - competing_japanese:
+          - この 絵 は その 画家 の 作品 の 中 で 一番 有名 です。
+        english: This painting is the most famous among that artist's works.
+        hint: 「一番有名」 states it as *the* most famous, not *one of* the most famous. We're looking for an
+          expression that allows for multiple famous works.
+    scene: A museum curator is describing an exhibit.
+    register: formal
+    setting: academic
+  - english: Protecting the environment is one of the most important issues facing humanity.
+    japanese:
+      - 環境 を 守る こと は 人類 が 直面 する 最も 重要 な 問題 の {一 つ だ}。
+      - 環境 を 守る こと は 人類 が 直面 する 最も 重要 な 問題 の {一 つ です}。
+    english_literally: Environment to protect the act of as for humanity facing most important problem's
+      one thing is.
+    competing_grammar:
+      - competing_japanese:
+          - 環境 を 守る こと は 人類 が 直面 する 最も 重要 な 問題 です。
+        english: Protecting the environment is the most important issue facing humanity.
+        hint: This makes it the *sole* most important issue, not one among several. We're looking for
+          an expression that allows for multiple important issues.
+    scene: A politician is giving a speech about global issues.
+    register: semi-formal
+    setting: serious
+  - english: Honesty is one of the important qualities for a leader.
+    japanese:
+      - 正直 さ は リーダー に とっ て 大切 な 資質 の {一 つ だ}。
+      - 正直 さ は リーダー に とっ て 大切 な 資質 の {一 つ です}。
+    english_literally: Honesty as for leader for important quality's one thing is.
+    competing_grammar:
+      - competing_japanese:
+          - 正直 さ は リーダー に とっ て 大切 な 資質 です。
+        english: Honesty is an important quality for a leader.
+        hint: This implies it's *an* important quality, but doesn't explicitly state it's one of several.
+          We're emphasizing its position within a set.
+    scene: A boss is giving advice to a junior employee.
+    register: formal
     setting: professional
-    conjugation: negative past plain (～なかった)
-  - english: He didn't forget his wallet this time.
+  - english: Summer festivals are one of the charms of Japan.
     japanese:
-      - 彼 は 今度、財布 を {忘れ なかっ た}。
-      - 彼 は 今度、財布 を 忘れ ませ ん でし た。
-    english_literally: He as for this time, wallet object marker forgot not.
+      - 夏祭り は 日本 の 魅力 の {一 つ です}。
+      - 夏祭り は 日本 の 魅力 の {一 つ だ}。
+    english_literally: Summer festivals as for Japan's charm's one thing is.
     competing_grammar:
       - competing_japanese:
-          - 彼 は 今度、財布 を 忘れ ませ ん でし た。
-        english: He didn't forget his wallet this time (polite).
-        hint: This uses the polite negative past form. We're looking for the plain form.
-    scene: Someone comments on a friend's unusual preparedness.
-    register: casual
-    setting: humorous
-    conjugation: negative past plain (～なかった)
-  - english: I didn't answer the phone.
+          - 夏祭り は 日本 の 魅力 です。
+        english: Summer festivals are a charm of Japan.
+        hint: This is less specific about being 'one of many' charms. We're looking to identify them as
+          one specific charm among others.
+    scene: A foreign visitor is talking about their trip to Japan.
+    register: teineigo (polite)
+    setting: friendly
+  - english: Reading books is one of my favorite hobbies.
     japanese:
-      - 私 は 電話 に {出 なかっ た}。
-      - 私 は 電話 に 出 ませ ん でし た。
-    english_literally: I as for phone to came out not.
+      - 本 を 読む こと は 私 の 好き な 趣味 の {一 つ だ}。
+      - 本 を 読む こと は 私 の 好き な 趣味 の {一 つ です}。
+    english_literally: Book to read the act of as for my favorite hobby's one thing is.
     competing_grammar:
       - competing_japanese:
-          - 私 は 電話 に 出 ませ ん でし た。
-        english: I didn't answer the phone (polite).
-        hint: This uses the polite negative past form. We're looking for the plain form.
-      - competing_japanese:
-          - 私 は 電話 に 出る こと が でき なかっ た。
-        english: I wasn't able to answer the phone.
-        hint: This implies inability rather than a simple negation of a past action. We're looking for
-          a simple past action that did not occur.
-    scene: A teenager explains why they missed a call.
+          - 本 を 読む こと は 私 の 好き な 趣味 です。
+        english: Reading books is my favorite hobby.
+        hint: This implies it's the *only* favorite hobby or *the* favorite hobby, not one among several.
+          We need to express that it's one of multiple favorites.
+    scene: A student is describing their hobbies to a new friend.
     register: casual
     setting: friendly
-    conjugation: negative past plain (～なかった)
-    speaker_age: younger
-    nuance: The casual 「出なかった」 is typical for a younger person explaining a simple past action to a peer
-      or family member. 「電話 に 出る」 is the common phrase for 'answering the phone'.
-  - english: The meeting didn't finish on time.
+  - english: Procrastination is one of the common habits among students.
     japanese:
-      - 会議 は 時間 通り に {終わら なかっ た}。
-      - 会議 は 時間 通り に 終わり ませ ん でし た。
-    english_literally: Meeting as for time-as-is at finished not.
+      - 先延ばし は 学生 に よく ある 習慣 の {一 つ だ}。
+      - 先延ばし は 学生 に よく ある 習慣 の {一 つ です}。
+    english_literally: Procrastination as for students for often exists habit's one thing is.
     competing_grammar:
       - competing_japanese:
-          - 会議 は 時間 通り に 終わり ませ ん でし た。
-        english: The meeting didn't finish on time (polite).
-        hint: This uses the polite negative past form. We're looking for the plain form.
+          - 先延ばし は 学生 の よく ある 習慣 です。
+        english: Procrastination is a common habit among students.
+        hint: This doesn't explicitly state that there are other common habits. We're looking to emphasize
+          that it's just one example from a group.
+    scene: A teacher is discussing study habits with their students.
+    register: formal
+    setting: academic
+  - english: The ability to listen is one of the essential skills for communication.
+    japanese:
+      - 聞く 力 は コミュニケーション に 必要 な スキル の {一 つ です}。
+      - 聞く 力 は コミュニケーション に 必要 な スキル の {一 つ だ}。
+    english_literally: Listening ability as for communication for necessary skill's one thing is.
+    competing_grammar:
       - competing_japanese:
-          - 会議 は 時間 通り に 終わっ て い ませ ん でし た。
-        english: The meeting wasn't finished on time.
-        hint: This describes a state of not being finished, not the action of not finishing. We're looking
-          for the simple past action that did not occur.
-    scene: A busy professional updates a colleague on their schedule.
-    register: casual
-    setting: professional
-    conjugation: negative past plain (～なかった)
-post_example_writeup: These examples demonstrate the versatility of the る-verb negative past tense in
-  various casual settings, from daily conversations to professional updates. It's a fundamental structure
-  for denying past actions.
-sources:
-  bunpro: https://bunpro.jp/grammar_points/る-verb-(negative-past)
+          - 聞く 力 は コミュニケーション に 必要 な スキル です。
+        english: The ability to listen is an essential skill for communication.
+        hint: This formulation implies it's *an* essential skill, but not necessarily one *among* other
+          essential skills. We want to state that it's one of several.
+    scene: A communication expert is giving a lecture.
+    register: formal
+    setting: academic

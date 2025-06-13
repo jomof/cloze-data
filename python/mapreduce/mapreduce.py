@@ -174,21 +174,25 @@ class MapReduce:
                         
                             if processed:
                                 with display.work(basename, map_func_name):
-                                    if map_inproc:
-                                        if inspect.iscoroutinefunction(map_func):
-                                            processed = await map_func(processed, input_file_path)
+                                    try:
+                                        if map_inproc:
+                                            if inspect.iscoroutinefunction(map_func):
+                                                processed = await map_func(processed, input_file_path)
+                                            else:
+                                                display.warn(f"Sync map function '{map_func_name}' will run in-process, which may block the event loop.")
+                                                processed = map_func(processed, input_file_path)
                                         else:
-                                            display.warn(f"Sync map function '{map_func_name}' will run in-process, which may block the event loop.")
-                                            processed = map_func(processed, input_file_path)
-                                    else:
-                                        # Only check state before expensive executor work
-                                        if self.run_state != 'running':
-                                            return None
-                                        processed = await asyncio.get_running_loop().run_in_executor(
-                                            self.process_executor,
-                                            map_func,
-                                            processed,
-                                            input_file_path)
+                                            # Only check state before expensive executor work
+                                            if self.run_state != 'running':
+                                                return None
+                                            processed = await asyncio.get_running_loop().run_in_executor(
+                                                self.process_executor,
+                                                map_func,
+                                                processed,
+                                                input_file_path)
+                                    except Exception as e:
+                                        display.error(f"{map_func_name} {basename}: {e}")
+                                        raise
 
                     # Serialize the processed data and write to temp file
                     if processed is not None:

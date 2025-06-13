@@ -1,249 +1,274 @@
 grammar_point: い-Adjective[くなくても] (negative concessive)
 learn_before:
+  - い-Adjective[くても] (concessive)
+  - い-Adjective[くない] (negative)
   - い-Adjectives (adjectives ending in い)
-  - い-Adjectives (negative form)
-  - てください (polite request)
 learn_after:
-  - Verb[て]+もいい (permission)
   - 〜ても〜なくても (whether or not)
+  - なくてもいい (no need to)
 id: gp9999
-meaning: even if it's not (i-adjective); even though it's not (i-adjective)
+meaning: even if not (い-adjective)
 pronunciation:
-  katakana: イ・アドジェクティブ・クナクテモ
+  katakana: イアドジェクティブ クナクテモ
   romaji: i-adjective kunakutemo
 formation:
-  い-Adjective (stem) + くなくても: This formation expresses a concession, indicating that 'even if something
-    is not in the state of the i-adjective,' the main clause still holds true or an action takes place
-    regardless of that negative condition.
+  い-Adjective (stem) + くなくても: Used to express 'even if not [い-adjective]' or 'even if [い-adjective] is
+    not the case'.
 jlpt: N3
 details:
   part-of-speech: phrase
-  register: semi-formal
-  function: expresses a negative concession or condition
-  nuance: Implies that the outcome or situation described in the main clause is independent of the negative
-    state of the i-adjective in the concessive clause. It emphasizes that despite the lack of a certain
-    quality, something still happens or is true.
-etymology: The expression combines the adverbial form of an い-adjective (ending in 「く」) with the negative
-  auxiliary verb 「ない」. This negative form 「ない」 is then put into its te-form 「なくて」, which functions as
-  a connective. Finally, the particle 「も」 is appended, which adds the meaning of concession or 'even if'.
-  Thus, 「くなくても」 literally means 'even if not (い-adjective).'
-writeup: |-
-  The grammar point 「い-Adjective[くなくても]」 is used to express a concession or condition where the i-adjective describes a negative state. It translates to "even if it's not (i-adjective)" or "even though it's not (i-adjective)". This structure indicates that the action or situation in the main clause occurs, or is true, irrespective of the i-adjective's negative quality.
-
-  This grammatical pattern is formed by taking an い-adjective, converting it to its adverbial form by replacing the final 「い」 with 「く」, then adding the negative auxiliary verb 「ない」. This entire negative form 「くない」 is then put into its て-form, resulting in 「くなくて」. Finally, the particle 「も」 is attached to add the concessive meaning. For example, from 寒い (samui - cold), you get 寒くなくても (samukunakutemo - even if it's not cold).
-
-  It is often used when a speaker wants to convey that a certain action or outcome is necessary, desirable, or simply occurs, regardless of whether a particular condition (described by the i-adjective) is met in its negative form. It highlights that the lack of that quality does not impede the following action or state.
+  register: casual
+  usage-context: Expresses a condition that, even if true, does not prevent the main clause from occurring.
+    It implies that the situation described by the negative い-adjective does not matter for the outcome.
+  function: Expresses a concessive condition in the negative form of an い-adjective.
+  nuance: Implies that the situation is irrelevant or has no bearing on the consequence. It can sometimes
+    convey a sense of resignation or a 'no matter what' attitude regarding the negative state.
+  grammatical-role: Connects a negative adjectival clause to a main clause, indicating concession.
+etymology: The 〜くなくても form is a combination of い-adjective stem + く (adverbial form) + ない (negative auxiliary
+  verb) + て (te-form, used for connection) + も (particle indicating concession/even if). Thus, い-Adjective[くなくても]
+  literally means 'even if it is not [い-adjective]'.
+writeup: The い-Adjective[くなくても] grammatical pattern is used to express a concessive condition involving
+  a negative い-adjective. It translates to 'even if not [い-adjective]' or 'even if [い-adjective] is not
+  the case'. This construction indicates that the situation described by the negative い-adjective has
+  no influence on the outcome or the main clause. It's often used to convey a sense of 'it doesn't matter
+  whether it's not X' or 'regardless of whether it's not X'. This form combines the adverbial form of
+  an い-adjective (stem + く), the negative auxiliary ない, its て-form なくて, and the concessive particle も.
+  It's a versatile expression applicable in various contexts, from casual conversations to more formal
+  statements, depending on the politeness level of the main clause.
 false_friends:
-  - term: 〜なくてもいい
-    meaning: don't have to; it's okay not to
+  - term: い-Adjective[くても] (concessive)
+    meaning: even if (い-adjective)
     kind: similar expression
-    nuance: 「い-Adjective[くなくても]」 expresses a concession (even if it's not...). In contrast, 「〜なくてもいい」,
-      which also contains 「なくても」, specifically means 'it's okay not to do/be something' or 'there is no
-      need to do/be something'. The latter focuses on permissibility or lack of necessity, while our grammar
-      point focuses on a conditional 'even if'.
+    nuance: While い-Adjective[くても] means 'even if [い-adjective]', い-Adjective[くなくても] specifically expresses
+      'even if not [い-adjective]'. The crucial difference lies in the negation.
+    grammar_point: い-Adjective[くても] (concessive)
+  - term: なくてもいい
+    meaning: no need to do
+    kind: similar expression
+    nuance: い-Adjective[くなくても] means 'even if it's not X,' suggesting that the negative condition doesn't
+      change the outcome. なくていい means 'it's okay if it's not X' or 'you don't have to do X,' indicating
+      permission for a lack of action or state.
     grammar_point: なくてもいい (no need to)
-  - term: 〜ないけど
-    meaning: not... but (simple negative contrast)
+  - term: 〜ても〜なくても
+    meaning: whether or not
     kind: similar expression
-    nuance: While 「〜ないけど」 introduces a simple negative statement followed by a contrasting or additional
-      point (e.g., 「美味しくないけど、食べます」 - It's not delicious, but I'll eat it), 「い-Adjective[くなくても]」 emphasizes
-      that the following action/state occurs *despite* the negative condition (e.g., 「美味しくなくても、食べます」 -
-      Even if it's not delicious, I'll eat it). The latter carries a stronger concessive nuance.
-    grammar_point: <suggest>:ないけど (not... but)
-  - term: 〜ないで
-    meaning: without doing; don't
-    kind: often confused with
-    nuance: 「い-Adjective[くなくても]」 uses the negative て-form of an i-adjective followed by 「も」 for concession.
-      In contrast, 「〜ないで」 is primarily used with verbs to mean 'without doing something' or as a casual
-      imperative 'don't do something'. The structures and meanings are distinct, though both involve a
-      negative te-form.
-    grammar_point: ないでください・ないで (please don't)
-post_false_friends_writeup: When differentiating 「い-Adjective[くなくても]」 from similar-sounding phrases, focus
-  on the presence of 「も」 and the overall intent. If 「も」 is present with a negative て-form, it almost always
-  implies 'even if (not)...'. If 「いい」 follows 「なくても」, it means 'it's okay not to'. If there's no 「も」,
-  then 「ないで」 typically means 'without doing' or a prohibition. Understanding these subtle differences
-  is key to accurate usage.
+    nuance: い-Adjective[くなくても] states a condition. 〜ても〜なくても presents two contrasting conditions (affirmative
+      and negative) and states that the main clause applies regardless of which condition is met.
+    grammar_point: 〜ても〜なくても (whether or not)
+post_false_friends_writeup: When encountering similar forms, it's important to pay close attention to
+  the specific auxiliary verbs and particles used. い-Adjective[くても] uses the plain affirmative form, whereas
+  い-Adjective[くなくても] uses the plain negative. The presence or absence of いい after なくて changes the meaning
+  from a concessive 'even if not' to a statement of 'no need' or 'it's fine without'. Finally, 〜ても〜なくても
+  explicitly presents both positive and negative possibilities, confirming the outcome regardless of either.
 examples:
-  - english: Even if it's not fun, I have to do this homework.
+  - english: Even if it's not delicious, I will eat it.
     japanese:
-      - 楽しく {くなく て も}、この 宿題 は やら なけれ ば なり ませ ん。
-      - 楽しく {くなく て も}、この 宿題 は やら なく ちゃ。
-      - 楽しく {くなく て も}、この 宿題 は し ない と いけ ませ ん。
-    english_literally: Fun not even if, this homework must do.
+      - 美味しく なく て も 食べ ます。
+      - 美味しく なく て も 食べる よ。
+      - 美味しく なく て も、食べる ね。
+    english_literally: Even if not delicious, will eat.
     competing_grammar:
       - competing_japanese:
-          - 楽しく ない けど、この 宿題 は やら なけれ ば なり ませ ん。
-        english: It's not fun, but I have to do this homework.
-        hint: 'This phrase simply states a fact and then a consequence. We''re looking for a phrase that
-          expresses a concession: ''even if'' something isn''t true.'
-    scene: A student sighs while looking at a pile of homework.
+          - 美味しく て も 食べ ます。
+        english: Even if it's delicious, I will eat it.
+        hint: The nuance is 'even if *not* delicious'. We're looking for the negative concessive form.
+    scene: A friend offers you a dish they made, and you want to be polite.
+    register: casual
+    setting: friendly
+    nuance: 「美味しくなくても」 indicates acceptance of a potentially less-than-ideal situation. The speaker shows
+      willingness to eat regardless of the taste, demonstrating consideration for the friend.
+  - english: Even if the answer is not correct, please write it down.
+    japanese:
+      - 答え が 正しく なく て も、書い て ください。
+      - 答え が 正しく なく て も、書い て。
+      - 答え が 正しく なく とも、記入 し て ください。
+    english_literally: Answer not correct even if, please write.
+    competing_grammar:
+      - competing_japanese:
+          - 答え が 正しい です が、書い て ください。
+        english: The answer is correct, but please write it down.
+        hint: The phrase means 'even if *not* correct'. We need a concessive form of the negative adjective.
+    scene: A teacher giving instructions during an exam.
     register: semi-formal
-    setting: academic
-    nuance: The speaker uses 「やらなければなりません」 to convey a sense of obligation, highlighting that the task
-      must be done regardless of the lack of enjoyment. The phrase 「楽しくくなくても」 sets up this concession.
-  - english: Even if it's not cold, you should still wear a light jacket.
+    setting: instructional
+    nuance: 「正しくなくても」 implies that the accuracy is secondary to the act of attempting. The teacher encourages
+      effort regardless of the correctness.
+  - english: Even if it's not convenient, I have to go.
     japanese:
-      - 寒 {くなく て も}、薄い ジャケット を 着 た 方 が いい です よ。
-      - 寒 {くなく て も}、薄い ジャケット 着 た 方 が いい よ。
-      - 寒 {くなく て も}、薄い ジャケット を 着る べき です。
-    english_literally: Cold not even if, light jacket wearing is better.
+      - 都合 が 悪く なく て も 行か なきゃ。
+      - 都合 が 悪く なく て も、行か ない と。
+      - 都合 が 悪く なく て も、行か なけれ ば なり ませ ん。
+    english_literally: Convenience not bad even if, must go.
     competing_grammar:
       - competing_japanese:
-          - 寒く ない けど、薄い ジャケット を 着 た 方 が いい です よ。
-        english: It's not cold, but you should still wear a light jacket.
-        hint: This is a simple contrast. We need to express 'even if' it's not cold, implying a stronger
-          conditional independence.
-    scene: A mother is advising her child about dressing for uncertain weather.
+          - 都合 が 悪い から 行か なきゃ。
+        english: Because it's inconvenient, I have to go.
+        hint: The sentence implies 'even if it's *not* inconvenient'. We need a concessive particle that
+          conveys 'even if'.
+    scene: A student talking to her friend about an unavoidable appointment.
     register: casual
     setting: friendly
     speaker_gender: female
-    listener_gender: group
-    speaker_age: older
-    nuance: The speaker, likely a mother, uses 「〜方がいいですよ」 as gentle advice. 「寒くなくても」 conveys a parental
-      concern that even if the immediate sensation isn't cold, a jacket is still advisable for caution.
-  - english: Even if it's not particularly tasty, it's still good for your health.
+    nuance: The use of 「都合が悪くなくても」 with 「行かなきゃ」 (a casual contraction of 行かなければならない) indicates a sense
+      of obligation. The female speaker's choice of 「悪くなくても」 conveys a slightly softer tone compared to
+      a direct negative statement, despite the underlying necessity.
+  - english: Even if it's not difficult, attention is necessary.
     japanese:
-      - 特に おいし {くなく て も}、体 に は いい です よ。
-      - 特に おいし {くなく て も}、体 に は いい よ。
-      - 特に おいし {くなく て も}、健康 に 良い です。
-    english_literally: Particularly delicious not even if, for body is good.
+      - 難しく なく て も、注意 が 必要 です。
+      - 難しく なく て も、注意 が 必要 だ。
+      - 難しく なく とも、注意 が 必要 です。
+    english_literally: Not difficult even if, attention necessary.
     competing_grammar:
       - competing_japanese:
-          - 特に おいしく ない けど、体 に は いい です よ。
-        english: It's not particularly tasty, but it's good for your health.
-        hint: 'This simply states two facts. We are looking for a concession: ''even if'' it''s not tasty,
-          it''s still healthy.'
-    scene: Someone is trying a new health food product.
-    register: casual
-    setting: informative
-    nuance: 「特においしくなくても」 indicates a mild disappointment with the taste but shifts focus to the health
-      benefit with 「体にはいいですよ」, implying that the benefit outweighs the lack of taste.
-  - english: Even if it's not difficult, attention to detail is crucial.
-    japanese:
-      - 難し {くなく て も}、細部 へ の 注意 が 肝心 です。
-      - 難し {くなく て も}、細部 へ の 注意 が 重要 です。
-      - 難し {くなく て も}、細部 に 対する 配慮 が 肝要 で ある。
-    english_literally: Difficult not even if, to details attention is crucial.
-    competing_grammar:
-      - competing_japanese:
-          - 難しく ない けど、細部 へ の 注意 が 肝心 です。
-        english: It's not difficult, but attention to detail is crucial.
-        hint: This is a simple contrasting statement. We are looking for a concessive meaning of 'even
-          if' something is not difficult.
-    scene: A manager is giving instructions to a new employee about a task.
+          - 難しい けれど、注意 が 必要 です。
+        english: It's difficult, but attention is necessary.
+        hint: The phrase means 'even if *not* difficult'. We need to express a negative concessive condition.
+    scene: A supervisor reminding a new employee about a task.
     register: formal
     setting: professional
-    nuance: The use of 「肝心です」 (it is crucial) coupled with 「難しくなくても」 emphasizes that the task's ease does
-      not diminish the importance of meticulousness, a common point in professional settings.
-  - english: Even if it's not new, this antique furniture is very valuable.
+    nuance: 「難しくなくても」 emphasizes that ease of task does not negate the need for diligence. The formal
+      tone of 「必要です」 reinforces the professional context.
+  - english: Even if life is not always bright, there are joys.
     japanese:
-      - 新し {くなく て も}、この アンティーク 家具 は とても 価値 が あり ます。
-      - 新し {くなく て も}、この アンティーク 家具 は すごく 価値 が ある よ。
-      - 新し {くなく て も}、この アンティーク 家具 に は 大変 価値 が ござい ます。
-    english_literally: New not even if, this antique furniture very value has.
+      - 人生 が 明るく なく て も、喜び は ある。
+      - 人生 が 明るく なく て も、喜び は あり ます。
+      - 人生 が 明るく なく とも、喜び は 存在 する。
+    english_literally: Life not bright even if, joys exist.
     competing_grammar:
       - competing_japanese:
-          - 新しく ない けど、この アンティーク 家具 は とても 価値 が あり ます。
-        english: It's not new, but this antique furniture is very valuable.
-        hint: This is a simple factual contrast. We want to express that something holds true 'even if'
-          another condition (not being new) is present.
-    scene: An art dealer is showing a client a piece of furniture.
-    register: formal
-    setting: professional
-    nuance: 「新しくなくても」 counters a common assumption (new equals valuable) to highlight the inherent worth
-      of the antique, typical in discussions of art or collectibles.
-  - english: Even if it's not far, I prefer to take the bus today.
-    japanese:
-      - 遠 {くなく て も}、今日 は バス に 乗る 方 が いい です。
-      - 遠 {くなく て も}、今日 は バス に 乗る 方 が いい な。
-      - 遠 {くなく て も}、本日 は バス を 利用 する の が 良い でしょう。
-    english_literally: Far not even if, today bus riding is better.
-    competing_grammar:
-      - competing_japanese:
-          - 遠く ない けど、今日 は バス に 乗る 方 が いい です。
-        english: It's not far, but I prefer to take the bus today.
-        hint: This structure provides a simple 'not X, but Y' contrast. We need the concessive 'even if'
-          to emphasize a preference despite the condition.
-    scene: Two friends are deciding how to travel to their destination.
-    register: casual
-    setting: friendly
-    nuance: 「遠くなくても」 acknowledges the short distance but immediately states a personal preference for
-      comfort or convenience using 「方がいいです」. This is a common way to justify a decision that might seem
-      unnecessary to others.
-  - english: Even if it's not spicy, a little chili oil makes it more delicious.
-    japanese:
-      - 辛 {くなく て も}、少し ラー油 を 入れる と、もっと おいしく なり ます。
-      - 辛 {くなく て も}、ちょっと ラー油 入れ たら、もっと おいしく なる よ。
-      - 辛 {くなく て も}、ラー油 を 少し 加える と、美味しく なり ます。
-    english_literally: Spicy not even if, a little chili oil putting in, more delicious becomes.
-    competing_grammar:
-      - competing_japanese:
-          - 辛く ない けど、少し ラー油 を 入れる と、もっと おいしく なり ます。
-        english: It's not spicy, but if you add a little chili oil, it becomes more delicious.
-        hint: This simply contrasts two facts. We're looking for a phrase that implies 'even if' something
-          lacks a quality, an addition improves it.
-    scene: A chef is suggesting an addition to a dish that is already good.
-    register: semi-formal
-    setting: informative
-    nuance: 「辛くなくても」 acknowledges the current state of the dish, implying it's already good. The addition
-      of 「少しラー油を入れると」 (if you add a little chili oil) suggests a way to enhance it further, showcasing
-      a nuanced approach to taste.
-  - english: Even if it's not painful, you should still have the doctor check it out.
-    japanese:
-      - 痛 {くなく て も}、一 度 医者 に 診 て もらっ た 方 が いい です よ。
-      - 痛 {くなく て も}、一 度 医者 に 診 て もらっ た 方 が いい よ。
-      - 痛 {くなく て も}、一 度 医者 に 診 て もらう べき です。
-    english_literally: Painful not even if, once doctor checked receiving is better.
-    competing_grammar:
-      - competing_japanese:
-          - 痛く ない けど、一 度 医者 に 診 て もらっ た 方 が いい です よ。
-        english: It's not painful, but you should still have the doctor check it out.
-        hint: This indicates a simple contrast. We want to convey that an action is advised 'even if'
-          a condition (pain) is absent.
-    scene: A friend is concerned about another friend's minor injury or symptom.
-    register: casual
-    setting: supportive
-    speaker_gender: male
-    listener_gender: male
-    nuance: The speaker uses 「痛くなくても」 to encourage caution regarding a potential health issue, emphasizing
-      that a check-up is advisable even in the absence of pain, using the friendly 「〜た方がいいですよ」.
-  - english: Even if it's not difficult for you, please explain it slowly for others.
-    japanese:
-      - あなた に は 難し {くなく て も}、他 の 人 の ため に ゆっくり 説明 し て ください。
-      - あなた に は 難し {くなく て も}、他 の 方 の ため に ゆっくり ご 説明 ください。
-      - あなた に は 難し {くなく て も}、他 の 人 の ため に ゆっくり 説明 する よう に お 願い し ます。
-    english_literally: For you difficult not even if, for others slowly explain please.
-    competing_grammar:
-      - competing_japanese:
-          - あなた に は 難しく ない けど、他 の 人 の ため に ゆっくり 説明 し て ください。
-        english: It's not difficult for you, but please explain it slowly for others.
-        hint: This simply states two facts. We need to express 'even if' something isn't difficult for
-          one person, it may be for others, requiring a specific action.
-    scene: A team leader is asking a highly skilled team member to adapt their explanation style.
-    register: semi-formal
-    setting: professional
-    nuance: 「あなたには難しくなくても」 directly addresses the listener's capability while gently requesting consideration
-      for others, demonstrating polite professionalism. The nuance is about adapting one's behavior despite
-      personal ease.
-  - english: Even if it's not bright, I can still read this book with the flashlight.
-    japanese:
-      - 明る {くなく て も}、懐中 電灯 が あれ ば この 本 が 読め ます。
-      - 明る {くなく て も}、懐中 電灯 あっ たら この 本 読める よ。
-      - 明る {くなく て も}、懐中 電灯 が あれ ば この 本 は 読む こと が 可能 です。
-    english_literally: Bright not even if, flashlight if there is this book can read.
-    competing_grammar:
-      - competing_japanese:
-          - 明るく ない けど、懐中 電灯 が あれ ば この 本 が 読め ます。
-        english: It's not bright, but if I have a flashlight, I can read this book.
-        hint: This is a basic contrast. We're looking for 'even if' to show that reading is possible despite
-          the lack of brightness.
-    scene: Someone is in a dimly lit room or outdoors at night, trying to read.
+          - 人生 が 明るく ない なら、喜び は ない。
+        english: If life is not bright, there are no joys.
+        hint: The sentence implies 'even if' life is not bright, not 'if' it's not bright. We're looking
+          for a concessive meaning.
+    scene: Someone reflecting on their life experiences.
     register: casual
     setting: reflective
-    nuance: 「明るくなくても」 sets the scene of limited light, while 「読めます」 (can read) indicates capability, emphasizing
-      that the flashlight compensates for the lack of natural brightness. This highlights overcoming a
-      minor environmental challenge.
-post_example_writeup: The examples provided illustrate how 「い-Adjective[くなくても]」 consistently conveys the
-  meaning of 'even if (not)' across various contexts. Notice how the main clause always expresses an action
-  or state that holds true despite the negative condition introduced by the concessive phrase. This highlights
-  the independence of the main clause from the specified negative condition.
+    nuance: 「明るくなくても」 (even if not bright) acknowledges the potential darkness in life but asserts the
+      continued presence of joy. This reflective nuance is common in philosophical or contemplative statements.
+  - english: Even if it's not hot, it's humid and unpleasant.
+    japanese:
+      - 暑く なく て も、蒸し暑く て 嫌 だ。
+      - 暑く なく て も、蒸し暑く て 嫌 です。
+      - 暑く なく て も、蒸し暑く て マジ 嫌 だ。
+    english_literally: Not hot even if, humid and unpleasant.
+    competing_grammar:
+      - competing_japanese:
+          - 暑く て も、蒸し暑く て 嫌 だ。
+        english: Even if it's hot, it's humid and unpleasant.
+        hint: The phrase expresses 'even if *not* hot'. We need the negative form of the adjective before
+          the concessive particle.
+    scene: Someone complaining about the weather in summer.
+    register: casual
+    setting: casual slang
+    nuance: The phrase 「暑くなくても」 sets up a contrast, indicating that while one negative condition (heat)
+      might be absent, another (humidity) still makes the situation undesirable. The addition of 「嫌だ」
+      expresses a personal feeling of dislike.
+  - english: Even if it's not expensive, a thoughtful gift is good.
+    japanese:
+      - 高く なく て も、気持ち の こもっ た 贈り物 が 良い。
+      - 高く なく て も、気持ち の こもっ た 贈り物 が 良い です。
+    english_literally: Not expensive even if, feelings-entered gift is good.
+    competing_grammar:
+      - competing_japanese:
+          - 高い けど、気持ち の こもっ た 贈り物 が 良い。
+        english: It's expensive, but a thoughtful gift is good.
+        hint: The meaning is 'even if *not* expensive'. We need the negative concessive form of the adjective.
+    scene: Giving advice on gift-giving.
+    register: semi-formal
+    setting: informative
+    nuance: 「高くなくても」 emphasizes the value of sincerity over monetary cost. This nuance is typical in advice-giving,
+      highlighting intrinsic value.
+  - english: Even if the road is not wide, if we go carefully, we can pass.
+    japanese:
+      - 道 が 広く なく て も、注意 し て 行け ば 通れ ます。
+      - 道 が 広く なく て も、注意 し て 行け ば 通れる。
+      - 道 が 広く なく とも、注意 し て 行け ば 通れ ます。
+    english_literally: Road not wide even if, carefully go if can pass.
+    competing_grammar:
+      - competing_japanese:
+          - 道 が 広い から、注意 し て 行け ば 通れ ます。
+        english: Because the road is wide, if we go carefully, we can pass.
+        hint: The sentence implies 'even if *not* wide'. The condition is negative, not positive or a
+          reason.
+    scene: Two people discussing a tricky path.
+    register: casual
+    setting: negotiating
+    nuance: 「広くなくても」 sets a specific constraint (narrow road) but then offers a solution, implying that
+      the negative condition is manageable with caution.
+  - english: Even if it's not particularly interesting, it's worth seeing once.
+    japanese:
+      - 特に 面白く なく て も、一 度 は 見 て おく 価値 が ある。
+      - 特に 面白く なく て も、一 度 は 見 て おく 価値 が あり ます。
+      - 別 に 面白く なく て も、一 回 は 見 とく 価値 ある よ。
+    english_literally: Particularly not interesting even if, once see-put worth exists.
+    competing_grammar:
+      - competing_japanese:
+          - 特に 面白く ない の で、一 度 は 見 て おく 価値 が ある。
+        english: Because it's not particularly interesting, it's worth seeing once.
+        hint: The nuance is 'even if *not* interesting', meaning the lack of interest doesn't negate its
+          value. 'ので' implies a reason, not a concession.
+    scene: A male friend recommending a movie or place.
+    register: casual
+    setting: friendly
+    speaker_gender: male
+    nuance: The male speaker's use of 「面白くなくても」 followed by an assertion of value 「価値がある」 is a common
+      way to express a lukewarm recommendation. It suggests that while it might not be captivating, it
+      still has some merit.
+  - english: Even if the quality is not high, it is significant that it was handmade.
+    japanese:
+      - 品質 が 高く なく て も、手作り で ある こと に 意義 が あり ます。
+      - 品質 が 高く なく て も、手作り で ある こと に 意義 が ある。
+      - 品質 が 高く なく とも、手作り で ある こと に 意義 が あり ます。
+    english_literally: Quality not high even if, handmade being-to meaning exists.
+    competing_grammar:
+      - competing_japanese:
+          - 品質 が 高く ない けれど、手作り で ある こと に 意義 が あり ます。
+        english: The quality is not high, but it is significant that it was handmade.
+        hint: The phrase means 'even if *not* high'. While 'けれど' can indicate contrast, 'くなくても' emphasizes
+          concession, meaning the quality is irrelevant to the significance.
+    scene: A craft exhibition commentary.
+    register: formal
+    setting: academic
+    nuance: 「高くなくても」 in this context implies that conventional standards of quality are secondary to the
+      intrinsic value of being handmade. The phrase 「意義があります」 underscores the importance placed on the
+      effort rather than the perfection.
+  - english: Even if it's not big, a house where you can relax is the best.
+    japanese:
+      - 大きく なく て も、くつろげる 家 が 一番 だ。
+      - 大きく なく て も、くつろげる 家 が 一番 です。
+      - 大きく なく て も、落ち着ける 家 が 一番 だ よ。
+    english_literally: Not big even if, relax-can house is best.
+    competing_grammar:
+      - competing_japanese:
+          - 大きく ない けど、くつろげる 家 が 一番 だ。
+        english: It's not big, but a house where you can relax is the best.
+        hint: The phrase means 'even if *not* big', implying that size is irrelevant to the house being
+          the best. 'けど' simply states a contrast, not a concession.
+    scene: Someone expressing their ideal living situation.
+    register: casual
+    setting: reflective
+    nuance: This sentence uses 「大きくなくても」 to convey that size is not the most important factor for a comfortable
+      home, prioritizing comfort over spaciousness.
+  - english: Even if it's not new, a comfortable pair of shoes is better.
+    japanese:
+      - 新しく なく て も、履き やすい 靴 の 方 が いい。
+      - 新しく なく て も、履き やすい 靴 の 方 が いい です。
+      - 新しく なく て も、履き やすい 靴 の 方 が いい ね。
+    english_literally: Not new even if, easy-to-wear shoes is better.
+    competing_grammar:
+      - competing_japanese:
+          - 新しい 靴 じゃ なく て も、履き やすい 靴 の 方 が いい。
+        english: Even if it's not new shoes, comfortable shoes are better.
+        hint: The structure specifies 'even if the adjective *is not* X'. We're looking for the い-adjective
+          negative concessive form, not a general negative noun phrase.
+    scene: Discussing footwear preferences.
+    register: casual
+    setting: friendly
+    nuance: 「新しくなくても」 suggests that the novelty of an item is less important than its practicality and
+      comfort. This is a common sentiment in everyday discussions about personal belongings.
+post_example_writeup: The usage of い-Adjective[くなくても] clearly highlights situations where the negative
+  state of an い-adjective is presented as a condition that does not affect the main outcome. It allows
+  for nuanced expressions of acceptance, resilience, or practical advice, showing that certain conditions,
+  even if not ideal, are not barriers.
+sources:
+  bunpro: https://bunpro.jp/grammar_points/い-Adjective[くなくても]

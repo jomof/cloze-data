@@ -1,12 +1,11 @@
 grammar_point: Verb[ません] (polite negative)
 learn_before:
-  - Verb[dictionary] (dictionary form)
-  - Verb[ない] (plain negative)
+  - Verb[stem] (continuative)
   - Verb[ます] (polite present)
 learn_after:
   - Verb[ませんでした] (polite past negative)
 id: gp0019
-meaning: polite negative form of verbs
+meaning: polite negative
 pronunciation:
   katakana: マセン
   romaji: masen
@@ -16,236 +15,208 @@ jlpt: N5
 details:
   part-of-speech: auxiliary verb
   register: teineigo (polite)
-  function: Negates a verb in a polite context.
-  nuance: Indicates non-occurrence or denial in a polite, respectful manner. It is a direct polite negative.
-  grammatical-role: Polite negation of actions, states, or existence.
-etymology: The auxiliary verb 「ます」 originates from the classical auxiliary verb 「まゐらす」, which means 'to
-  offer' or 'to serve' in a humble sense, eventually evolving into a general polite marker. Its negative
-  form, 「ません」, is a contraction of 「ませぬ」, where 「ませ」 is the irrealis (mizenkei) form of 「ます」 and 「ぬ」 is
-  the classical negative auxiliary verb, which later contracted to 「ん」. Thus, 「ません」 literally means something
-  like 'does not politely do', establishing its role as a polite negation marker.
+  function: Used to express the polite negative of a verb, indicating that an action is not performed
+    or a state does not exist.
+  nuance: This form carries a polite and formal nuance, suitable for general communication in many contexts,
+    unlike the plain negative form (～ない).
+  grammatical-role: Functions as an auxiliary verb attached to the stem of a verb.
+etymology: The suffix 「ません」 evolved from earlier forms used to express polite negation. 「ます」 itself comes
+  from 「まゐらす」 (mairasu), an older verb meaning 'to humbly present' or 'to serve,' which gradually became
+  a polite auxiliary. The negative 「ん」 is a classical negative suffix, akin to 「ない」. Thus, 「ません」 is a
+  contraction and evolution of these polite and negative elements, creating a streamlined polite negative
+  verb ending.
 writeup: |-
-  「ません」 is the standard polite negative form for Japanese verbs. It is directly derived from the polite affirmative 「ます」 form, serving as its negative counterpart. This grammatical construction is fundamental for expressing actions that are not performed, will not be performed, or states that do not exist, all while maintaining a respectful and polite tone suitable for most general conversations, especially when speaking to superiors, strangers, or in formal settings.
+  The 「ません」 ending is used to form the polite negative of verbs in Japanese. It attaches to the ます-stem of a verb. This form is fundamental for polite discourse and is widely used in everyday conversations, business settings, and formal situations.
 
-  To form the 「ません」 form, you simply take the ます-stem of a verb (which is obtained by dropping 「ます」 from the polite affirmative form) and attach 「ません」. For example, 「食べます」 (to eat) becomes 「食べません」 (will not eat / do not eat), and 「行きます」 (to go) becomes 「行きません」 (will not go / do not go). In the case of 「あります」 (to exist for inanimate objects / to have), its polite negative form is 「ありません」. Similarly, for い-adjectives, the 「ない」 ending becomes 「ありません」 (e.g., 「美味しくありません」 - not delicious) which is a more formal alternative to 「美味しくないです」.
+  For example, if you want to say "I don't eat," you take the ます-stem of 食べる (taberu), which is 食べ (tabe), and add 「ません」, resulting in 食べません (tabemasen).
 
-  This form is gender-neutral and can be used by speakers of any age. It is versatile for expressing habitual actions not performed (e.g., 'I don't drink coffee'), future non-actions (e.g., 'I won't go tomorrow'), or general negative statements (e.g., 'That is not correct'). Mastery of 「ません」 is crucial for polite and effective communication in Japanese.
+  It's crucial to understand that 「ません」 is the direct polite negative equivalent of 「ます」. While 「～ない」 is the plain negative form, 「ません」 elevates the formality and politeness of the statement. Mastering the use of 「ません」 is essential for expressing negation respectfully in Japanese.
 false_friends:
   - term: Verb[ない] (plain negative)
-    meaning: plain negative form of verbs
+    meaning: plain negative
     kind: similar expression
-    nuance: 「ません」 is the polite form for verb negation, suitable for general respectful interactions.
-      In contrast, 「ない」 is the plain or casual form, typically used among close friends and family, or
-      when speaking informally. While both express negation, their level of formality is distinct.
+    nuance: While both express negation, 「Verb[ない]」 is the plain form, used in casual contexts or for
+      direct statements, whereas 「Verb[ません]」 is polite and suitable for formal or respectful situations.
+      We're looking for polite negative here.
     grammar_point: Verb[ない] (plain negative)
   - term: Verb[ませんでした] (polite past negative)
-    meaning: polite past negative form of verbs
+    meaning: polite past negative
     kind: similar expression
-    nuance: 「ません」 indicates a polite negative in the present or future tense (e.g., 'I don't go,' 'I won't
-      go'). 「ませんでした」, however, is the polite past negative form (e.g., 'I didn't go'). The key difference
-      lies in the temporal aspect of the negation.
+    nuance: 「Verb[ませんでした]」 is the past tense polite negative, indicating something was not done in the
+      past. 「Verb[ません]」 is for present or future negative actions.
     grammar_point: Verb[ませんでした] (polite past negative)
-  - term: ませんか (invitation or suggestion)
-    meaning: invitation or suggestion
+  - term: Verb[ません] (polite negative) + か (question)
+    meaning: polite negative question/suggestion
     kind: similar expression
-    nuance: While 「ません」 alone is a statement of polite negation, when followed by the question particle
-      「か」, as in 「ませんか」, it transforms into an invitation or polite suggestion. For example, 「行きませんか？」
-      means 'Won't you go?' or 'Shall we go?', entirely different from the declarative negative 「行きません」
-      ('I won't go').
-    grammar_point: ませんか (invitation or suggestion)
-  - term: い-Adjective[くない] (negative)
-    meaning: negative form of い-adjectives
-    kind: similar expression
-    nuance: 「ません」 is for negating verbs. To negate い-adjectives, you typically use the 「くない」 form (e.g.,
-      「高くない」 - not expensive). While you can form a polite negative of い-adjectives by adding 「ありません」
-      after the く-form (e.g., 「高 くありません」), the base negation for い-adjectives fundamentally involves 「くない」.
-    grammar_point: い-Adjective[くない] (negative)
-post_false_friends_writeup: When distinguishing 「ません」 from similar expressions, remember that its core
-  function is polite verb negation in the non-past tense. Its plain counterpart, 「ない」, fulfills the same
-  role but in casual settings. For past negation, 「ませんでした」 is used. The addition of 「か」 to form 「ませんか」
-  completely changes the meaning from a negative statement to a polite invitation. Finally, while 「ありません」
-  is used for the polite negative of 「ある」 and い-adjectives, the fundamental negative form for い-adjectives
-  is 「くない」.
+    nuance: Adding 「か」 to 「ません」 turns it into a polite question or suggestion, such as 「行きませんか」 (Won't
+      you go? / Shall we go?). Without 「か」, it's a simple negative statement.
+    grammar_point: <suggest>:Verb[ませんか] (invitation or suggestion)
+post_false_friends_writeup: When using Japanese negation, always consider the register and context. The
+  plain negative 「Verb[ない]」 is informal and should generally be avoided in polite conversations, where
+  「Verb[ません]」 is the standard. Be careful not to confuse the present negative 「ません」 with the past negative
+  「ませんでした」, as they refer to different time frames. Lastly, remember that adding 「か」 to 「ません」 completely
+  changes its function from a negative statement to a question or invitation.
 examples:
-  - english: I don't eat meat.
+  - english: I do not eat natto.
     japanese:
-      - 私 は 肉 を {食べ ませ ん}。
-      - 肉 は {食べ ませ ん}。
-      - 肉 を {食べ ませ ん}。
-    english_literally: As for me, meat, I do not eat.
+      - 私 は 納豆 を {食べ ませ ん}。
+      - 納豆 を {食べ ませ ん}。
+    english_literally: As for me, natto object I do not eat.
     competing_grammar:
       - competing_japanese:
-          - 私 は 肉 を 食べ ない。
-        english: I don't eat meat. (casual)
-        hint: 「食べない」 is the casual negative form. We're looking for the polite negative.
-    scene: A person explains their dietary habits to a new acquaintance.
+          - 私 は 納豆 を 食べ ない。
+        english: I don't eat natto (casual).
+        hint: The plain negative 「食べない」 is too casual for a polite context. We're looking for the polite
+          negative form.
+      - competing_japanese:
+          - 私 は 納豆 を 食べ ませ ん でし た。
+        english: I didn't eat natto (polite past).
+        hint: 「食べませんでした」 is the polite past negative. We're looking for the present polite negative.
+    scene: A person is politely declining an offer of natto at a dinner party.
     register: teineigo (polite)
-    setting: informative
-  - english: I will not go to the party tomorrow.
+    setting: friendly
+    conjugation: negative non-past polite (～ません)
+  - english: I won't go to the office tomorrow.
     japanese:
-      - 明日、パーティー に は {行き ませ ん}。
-      - 明日、パーティー へ は {行き ませ ん}。
-    english_literally: Tomorrow, to the party, I will not go.
+      - 明日 は 会社 へ {行き ませ ん}。
+      - 会社 へ {行き ませ ん}、明日 は。
+    english_literally: Tomorrow as for company to I won't go.
     competing_grammar:
       - competing_japanese:
-          - 明日、パーティー に は 行き ませ ん でし た。
-        english: I didn't go to the party tomorrow. (past tense)
-        hint: 「行きませんでした」 is the polite past negative. We're expressing a future decision, not a past event.
-    scene: Someone declines an invitation for an upcoming event.
-    register: teineigo (polite)
-    setting: serious
-  - english: I don't understand Japanese well.
-    japanese:
-      - 私 は 日本 語 が よく {分かり ませ ん}。
-      - 日本 語 が よく {分かり ませ ん}。
-    english_literally: As for me, Japanese, well, I don't understand.
-    competing_grammar:
+          - 明日 は 会社 へ 行か ない。
+        english: I won't go to the office tomorrow (casual).
+        hint: 「行かない」 is the casual negative. We need the polite negative for this context.
       - competing_japanese:
-          - 私 は 日本 語 が よく 分から ない。
-        english: I don't understand Japanese well. (casual)
-        hint: 「分からない」 is the plain form. We need the polite version suitable for a teacher-student interaction.
-    scene: A female student expresses difficulty with Japanese to her teacher.
-    register: teineigo (polite)
-    setting: academic
-    speaker_gender: female
-    nuance: Female speakers often use polite forms like 「分かりません」 in a wide range of situations, including
-      somewhat informal ones, as it conveys a generally soft, humble, and respectful demeanor.
-  - english: That is not correct.
-    japanese:
-      - それ は 正しく {あり ませ ん}。
-      - 正しく {あり ませ ん}。
-    english_literally: That, correctly, it is not.
-    competing_grammar:
-      - competing_japanese:
-          - それ は 正しく ない です。
-        english: That is not correct. (slightly less formal polite)
-        hint: 「正しくないです」 is common in everyday polite speech, but 「正しくありません」 is often preferred in more
-          formal or professional contexts for a more precise and traditional polite tone. We're looking
-          for that formal option.
-    scene: A male colleague corrects a statement made during a business meeting.
+          - 明日 は 会社 へ 行き ませ ん か？
+        english: Won't you go to the office tomorrow?
+        hint: Adding 「か」 changes the statement into a question or invitation. We're looking for a simple
+          negative statement.
+    scene: A colleague is informing their superior about their absence.
     register: teineigo (polite)
     setting: professional
-    speaker_gender: male
-    nuance: Male speakers typically use polite forms like 「ありません」 in professional or formal settings to
-      maintain a respectful and direct tone, which is considered standard professional Japanese.
-  - english: I will not be home tonight.
+    conjugation: negative non-past polite (～ません)
+  - english: I don't understand Japanese very well.
     japanese:
-      - 今夜 は 家 に {い ませ ん}。
-      - 今夜、家 に は {い ませ ん}。
-    english_literally: Tonight, at home, I will not be.
+      - 日本 語 が あまり よく {分かり ませ ん}。
+      - あまり よく 日本 語 が {分かり ませ ん}。
+    english_literally: Japanese subject not very well I don't understand.
     competing_grammar:
       - competing_japanese:
-          - 今夜 は 家 に い ない。
-        english: I won't be home tonight. (casual)
-        hint: 「いない」 is the plain form of the verb 'to exist' (for animate objects) in the negative. We
-          need the polite form to inform a guest politely.
-    scene: A host informs a guest that they won't be present at home later in the evening.
-    register: teineigo (polite)
-    setting: informative
-  - english: Do you not have time?
-    japanese:
-      - お 時間 が {あり ませ ん} か。
-      - 時間 は {あり ませ ん} か。
-    english_literally: Time, is there not?
-    competing_grammar:
-      - competing_japanese:
-          - お 時間、あり ます か。
-        english: Do you have time?
-        hint: While 「ありますか」 asks about availability, using the negative 「ありませんか」 implies a polite inquiry
-          about *lack* of time, sometimes gently suggesting a busy schedule.
-    scene: A person politely asks another if they are busy or available.
-    register: teineigo (polite)
-    setting: interrogative
-  - english: There is no sugar.
-    japanese:
-      - 砂糖 が {あり ませ ん}。
-      - 砂糖 は {あり ませ ん}。
-    english_literally: Sugar, there is not.
-    competing_grammar:
-      - competing_japanese:
-          - 砂糖 が ない。
-        english: There's no sugar. (casual)
-        hint: 「ない」 is the casual negative of 'to exist' (for inanimate objects). We are looking for the
-          polite expression.
-    scene: Someone checks the kitchen pantry and finds they are out of sugar.
-    register: teineigo (polite)
-    setting: informative
-  - english: I don't read newspapers.
-    japanese:
-      - 私 は 新聞 を {読み ませ ん}。
-      - 新聞 は {読み ませ ん}。
-    english_literally: As for me, newspaper, I do not read.
-    competing_grammar:
-      - competing_japanese:
-          - 私 は 新聞 を 読み ませ ん でし た。
-        english: I didn't read newspapers. (past tense)
-        hint: 「読みませんでした」 indicates past action. We are discussing a habitual non-action in the present.
-    scene: A person is asked about their reading habits during a casual interview.
-    register: teineigo (polite)
-    setting: informative
-  - english: Because it's raining, I will not go out.
-    japanese:
-      - 雨 が 降っ て いる の で、{出かけ ませ ん}。
-      - 雨 が 降っ て いる から、{出かけ ませ ん}。
-    english_literally: Rain is falling so, I will not go out.
-    competing_grammar:
-      - competing_japanese:
-          - 雨 が 降っ て いる の で、出かけ たく ない。
-        english: Because it's raining, I don't want to go out.
-        hint: 「出かけたくない」 expresses desire ('don't want to go out'). We are simply stating a negative intention
-          for the future.
-    scene: A person explains their decision to stay indoors due to bad weather.
-    register: teineigo (polite)
-    setting: informative
-  - english: I don't know the answer.
-    japanese:
-      - 答え は {知り ませ ん}。
-      - 答え を {知り ませ ん}。
-    english_literally: The answer, I do not know.
-    competing_grammar:
-      - competing_japanese:
-          - 答え は 知ら ない。
-        english: I don't know the answer. (casual)
-        hint: 「知らない」 is the casual negative of 'to know'. We need the polite form suitable for an academic
-          setting.
-    scene: A student is asked a question by a professor and must admit they don't know the solution.
+          - 日本 語 が あまり よく 分から ない。
+        english: I don't understand Japanese very well (casual).
+        hint: The plain form 「分からない」 lacks the politeness expected in this context. We need the polite
+          negative.
+    scene: A foreign student is explaining their language proficiency to their teacher.
     register: teineigo (polite)
     setting: academic
-  - english: I don't believe that.
+    conjugation: negative non-past polite (～ません)
+  - english: I don't have much time.
     japanese:
-      - 私 は それ を {信じ ませ ん}。
-      - それ を {信じ ませ ん}。
-    english_literally: As for me, that, I do not believe.
+      - 時間 が あまり {あり ませ ん}。
+      - あまり 時間 が {あり ませ ん}。
+    english_literally: Time subject not much I don't have.
     competing_grammar:
       - competing_japanese:
-          - 私 は それ を 信じ ない。
-        english: I don't believe that. (casual)
-        hint: 「信じない」 is the plain form. We need a polite expression of disbelief.
-    scene: A person expresses skepticism or disbelief politely in a discussion.
+          - 時間 が あまり ない。
+        english: I don't have much time (casual).
+        hint: 「ない」 is the casual form for negation of 'to exist/to have'. We're looking for the polite
+          negative.
+    scene: A busy professional is politely declining an impromptu request.
     register: teineigo (polite)
-    setting: serious
-  - english: This isn't delicious.
+    setting: professional
+    conjugation: negative non-past polite (～ません)
+  - english: The train does not stop at this station.
     japanese:
-      - これ は 美味しく {あり ませ ん}。
-      - 美味しく {あり ませ ん}。
-    english_literally: This, delicious, it is not.
+      - この 電車 は この 駅 に {止まり ませ ん}。
+      - この 駅 に この 電車 は {止まり ませ ん}。
+    english_literally: This train topic this station at it does not stop.
     competing_grammar:
       - competing_japanese:
-          - これ は 美味しく ない です。
-        english: This isn't delicious. (less formal polite)
-        hint: While 「美味しくないです」 is commonly used, 「美味しくありません」 is generally considered a more formally correct
-          or traditionally polite way to negate an い-adjective in polite speech. We're looking for that
-          more formal variant.
-    scene: A customer is politely giving feedback on food at a restaurant.
+          - この 電車 は この 駅 に 止まら ない。
+        english: This train doesn't stop at this station (casual).
+        hint: While 「止まらない」 is grammatically correct, 「止まりません」 is more common and polite for general announcements
+          or information. We're looking for the polite negative.
+    scene: A station attendant is making an announcement on the platform.
     register: teineigo (polite)
     setting: informative
-    nuance: For い-adjectives, 「ありません」 can be used in place of 「ないです」 after the く-form (e.g., 「美味しくありません」).
-      This usage is more formal and slightly older-fashioned than 「美味しくないです」, often lending a more refined
-      or even somewhat stiff tone, depending on the context.
-post_example_writeup: As demonstrated in the examples, 「ません」 is a versatile polite negative form for verbs
-  and the existence verb 「ある」. Its consistent application across various contexts, from expressing personal
-  habits to declining invitations, highlights its fundamental role in polite Japanese communication. Pay
-  close attention to the tense and the intent of your statement to choose between 「ません」 (non-past negative)
-  and 「ませんでした」 (past negative), and to distinguish it from the invitational 「ませんか」. For い-adjectives,
-  remember that while 「ありません」 can be used for polite negation, the more common polite form is often 「〜くないです」,
-  with 「〜くありません」 conveying a more formal or traditional nuance.
+    conjugation: negative non-past polite (～ません)
+  - english: I do not know the answer.
+    japanese:
+      - 答え が {分かり ませ ん}。
+      - 私 に は 答え が {分かり ませ ん}。
+    english_literally: Answer subject I don't know.
+    competing_grammar:
+      - competing_japanese:
+          - 答え が 分から ない。
+        english: I don't know the answer (casual).
+        hint: 「分からない」 is the casual form. The polite negative is required here.
+    scene: A student is asked a question by their teacher and admits they don't know.
+    register: teineigo (polite)
+    setting: academic
+    conjugation: negative non-past polite (～ません)
+  - english: I do not drink alcohol.
+    japanese:
+      - お 酒 は {飲み ませ ん}。
+      - 私 は お 酒 を {飲み ませ ん}。
+    english_literally: Alcohol topic I do not drink.
+    competing_grammar:
+      - competing_japanese:
+          - お 酒 は 飲ま ない。
+        english: I don't drink alcohol (casual).
+        hint: Using the plain negative 「飲まない」 can sound too blunt or informal in some social settings.
+          We're looking for the polite negative.
+    scene: A person is politely refusing a drink at a social gathering.
+    register: teineigo (polite)
+    setting: friendly
+    conjugation: negative non-past polite (～ません)
+  - english: I don't think so.
+    japanese:
+      - そう {思い ませ ん}。
+      - 私 は そう {思い ませ ん}。
+    english_literally: That way I don't think.
+    competing_grammar:
+      - competing_japanese:
+          - そう 思わ ない。
+        english: I don't think so (casual).
+        hint: For expressing opinions politely, 「思いません」 is preferred over the casual 「思わない」. We're looking
+          for the polite negative.
+    scene: Someone is politely disagreeing with an idea in a meeting.
+    register: teineigo (polite)
+    setting: professional
+    conjugation: negative non-past polite (～ません)
+  - english: I don't play tennis.
+    japanese:
+      - テニス を {し ませ ん}。
+      - 私 は テニス を {し ませ ん}。
+    english_literally: Tennis object I do not do.
+    competing_grammar:
+      - competing_japanese:
+          - テニス を し ない。
+        english: I don't play tennis (casual).
+        hint: The plain negative 「しない」 is less formal. We need the polite negative.
+    scene: A person is stating their hobbies or lack thereof in a polite introduction.
+    register: teineigo (polite)
+    setting: friendly
+    conjugation: negative non-past polite (～ません)
+  - english: The bus has not come yet.
+    japanese:
+      - バス が まだ {来 ませ ん}。
+      - まだ バス が {来 ませ ん}。
+    english_literally: Bus subject still has not come.
+    competing_grammar:
+      - competing_japanese:
+          - バス が まだ 来 ない。
+        english: The bus hasn't come yet (casual).
+        hint: While 「来ない」 is also correct, 「来ません」 is more polite and commonly used when waiting publicly.
+          We're looking for the polite negative.
+    scene: Two people are waiting at a bus stop, discussing the delay.
+    register: teineigo (polite)
+    setting: casual slang
+    conjugation: negative non-past polite (～ません)
+post_example_writeup: The examples illustrate the versatility of 「ません」 across various verbs and situations,
+  from declining food to stating facts about public transport. It's the go-to form for politeness when
+  negating actions or states in the present or future. Pay attention to how it contrasts with the plain
+  negative and past negative forms to ensure you're conveying the appropriate level of formality and timing
+  in your Japanese.
+sources:
+  bunpro: https://bunpro.jp/grammar_points/ません

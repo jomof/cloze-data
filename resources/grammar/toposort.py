@@ -686,8 +686,8 @@ if __name__ == '__main__':
             after = edit['learn_after_deletes']
             
             # Remove items to delete while preserving order
-            parsed_obj['learn_before'] = [e for e in parsed_obj['learn_before'] if e not in before]
-            parsed_obj['learn_after'] = [e for e in parsed_obj['learn_after'] if e not in after]
+            # parsed_obj['learn_before'] = [e for e in parsed_obj['learn_before'] if e not in before]
+            # parsed_obj['learn_after'] = [e for e in parsed_obj['learn_after'] if e not in after]
         
     def preprocess(parsed_obj, file_path):
         if parsed_obj['grammar_point'] in cuts:
