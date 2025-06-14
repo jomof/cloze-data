@@ -1,3 +1,4 @@
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
 bazel run --jobs=2 //resources/grammar:publish-samples
 gcloud auth application-default login
 gcloud auth application-default set-quota-project jomof-sandbox

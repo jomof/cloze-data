@@ -73,12 +73,12 @@ false_friends:
     kind: similar expression
     nuance: '{下回る} is a verb describing the action of falling below a certain level, while {未満} specifies
       a state of being strictly less than a value.'
-    grammar_point: <suggest>:下回る (to fall below)
+    grammar_point: <strongly-suggest>:下回る (to fall below)
   - term: 超える (to exceed)
     meaning: To exceed; to go over; to pass
     kind: antonym
     nuance: '{超える} expresses a value being greater than a certain limit, effectively the opposite of {未満}.'
-    grammar_point: <suggest>:超える (to exceed)
+    grammar_point: <strongly-suggest>:超える (to exceed)
 post_false_friends_writeup: When working with numerical boundaries in Japanese, it is vital to distinguish
   between exclusive and inclusive limits. {未満} strictly means 'less than,' always excluding the number.
   Conversely, {以下} means 'less than or equal to,' including the number. Similarly, {以上} means 'greater
@@ -146,7 +146,8 @@ examples:
     competing_grammar:
       - competing_japanese:
           - 参加 者 数 が 50 名 {以下} だっ た の で、イベント は 中止 と なり まし た.
-        english: The number of attendees was 50 or less, so the event was cancelled.
+        english: The number of attendees was 50 or less, so the event would still be cancelled. We're
+          looking for strictly 'less than'.
         hint: 「以下」 includes 50 attendees. If exactly 50 attendees showed up, the event would still be
           cancelled. We're looking for strictly 'less than'.
     scene: An event organizer explaining the cancellation.
@@ -277,5 +278,3 @@ post_example_writeup: Understanding the precise boundaries that 「未満」 est
   way to express strict upper limits in official or technical contexts. Pay close attention to whether
   the boundary number itself is included or excluded, as this is the primary distinction between 「未満」
   and similar expressions like 「以下」.
-sources:
-  bunpro: https://bunpro.jp/grammar_points/未満

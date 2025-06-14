@@ -1,9 +1,9 @@
 grammar_point: 気 (feeling・inclination・atmosphere)
 learn_before:
-  - '[い-Adjective-stem]がる・[な-Adjective]がる (to show signs of feeling)'
+  - <suggest>:い-Adjective[stem]がる・な-Adjective[がる] (to show signs of feeling)
+  - <suggest>:と 思う (I think or thought)
   - いる (to exist, animate)
   - たい (want to do)
-  - と思う (I think or thought)
 learn_after:
   - きらいがある (undesirable tendency)
   - げ (seeming・appearance)
@@ -64,14 +64,14 @@ false_friends:
       「気」, on the other hand, can be more abstract, referring to a general inclination, spirit, or even
       the atmosphere or aura of something. 「気」 is also used in many idiomatic phrases where 「気持ち」 would
       not fit.
-    grammar_point: <suggest>:気持ち (feeling・mood)
+    grammar_point: <strongly-suggest>:気持ち (feeling・mood)
   - term: 気分
     meaning: Feeling, mood, disposition
     kind: similar expression
     nuance: 「気分」 specifically refers to one's mood or physical condition, often temporary. It's about
       how one feels physically or emotionally at a given moment. 「気」 has a broader range, encompassing
       spirit, intent, or the atmosphere of a place, beyond just personal mood.
-    grammar_point: <suggest>:気分 (mood・disposition)
+    grammar_point: <strongly-suggest>:気分 (mood・disposition)
   - term: つもりだ
     meaning: To plan to, to intend to; to think that, to believe that.
     kind: often confused with
@@ -95,7 +95,7 @@ examples:
     english_literally: Today I am tired, so the will to make dinner does not arise.
     competing_grammar:
       - competing_japanese:
-          - 晩ご飯 を 作り {たく ない}。
+          - 晩ご飯 を 作り {たく ない}
         english: I don't want to make dinner.
         hint: 「～たくない」 expresses a simple lack of desire. We're looking for a deeper sense of lack of motivation
           to even start.
@@ -111,7 +111,7 @@ examples:
     english_literally: Hearing the manager's passionate speech, suddenly motivation came out.
     competing_grammar:
       - competing_japanese:
-          - やる 気 を 持つ {よう に なっ た}。
+          - やる 気 を 持つ {よう に なっ た}
         english: I came to have motivation.
         hint: 「～ようになる」 suggests a gradual process or change. We're looking for a sudden emergence of motivation.
     scene: An employee is revitalized by a motivational speech given by their department head.
@@ -126,7 +126,7 @@ examples:
     english_literally: This report, I don't feel like it will make the deadline.
     competing_grammar:
       - competing_japanese:
-          - 間に合わ ない {と 思う}。
+          - 間に合わ ない {と 思う}
         english: I think I won't make it in time.
         hint: 「～と思う」 is an objective belief. We're looking for a stronger, more intuitive sense of doubt
           or premonition.
@@ -140,10 +140,10 @@ examples:
       - どう も 誰 か に 見 られ て いる {気} が し ます。
       - 何 か 誰 か に 見 られ てる {気} が する ん だ けど。
       - 変 な ん だ けど、誰 か に 見 られ て いる {気} が する の。
-    english_literally: Somehow I feel like someone is being watched.
+    english_literally: Sometimes I feel like someone is being watched.
     competing_grammar:
       - competing_japanese:
-          - 誰 か に 見 られ て いる {と 思う}。
+          - 誰 か に 見 られ て いる {と 思う}
         english: I think someone is watching me.
         hint: 「～と思う」 suggests a thought based on some evidence. We're looking for an intuitive, often
           unfounded, feeling or hunch.
@@ -159,7 +159,7 @@ examples:
     english_literally: In his irresponsible attitude, not a single sign of reflection is visible.
     competing_grammar:
       - competing_japanese:
-          - 反省 が {ない}。
+          - 反省 が {ない}
         english: There is no remorse.
         hint: 「～がない」 is a direct statement of fact. We're looking for a more subtle, internal state or
           'spirit' that is absent.
@@ -175,7 +175,7 @@ examples:
     english_literally: This restaurant, I feel the old-fashioned craftsman's spirit.
     competing_grammar:
       - competing_japanese:
-          - '{職人 技} が 感じ られる。'
+          - '{職人 技} が 感じ られる'
         english: I can feel the craftsmanship skill.
         hint: 「職人技」 refers to the skill or technique itself. We're looking for the broader 'spirit' or
           'essence' of craftsmanship.
@@ -191,7 +191,7 @@ examples:
     english_literally: As for her, always to others' feelings, uses spirit/mind.
     competing_grammar:
       - competing_japanese:
-          - 彼女 は いつ も 人 の 気持ち を {考える}。
+          - 彼女 は いつ も 人 の 気持ち を {考える}
         english: She always thinks about others' feelings.
         hint: 「考える」 means to think or consider in a more intellectual way. 「気を使う」 implies actively paying
           attention and making an effort to avoid causing trouble or discomfort, often proactively.
@@ -210,7 +210,7 @@ examples:
     english_literally: With the new colleague, very much spirits match.
     competing_grammar:
       - competing_japanese:
-          - 新しい 同僚 と は {仲良く なっ た}。
+          - 新しい 同僚 と は {仲良く なっ た}
         english: I became good friends with my new colleague.
         hint: 「仲良く なった」 implies forming a friendly relationship. 「気が合う」 specifically refers to a natural
           compatibility in personality, ideas, or temperament, rather than just being friends.
@@ -230,7 +230,7 @@ examples:
     english_literally: Such small things, do not make it a matter of mind.
     competing_grammar:
       - competing_japanese:
-          - そんな 小さな こと で {悩ま ない で}。
+          - そんな 小さな こと で {悩ま ない で}
         english: Don't suffer/be troubled by such small things.
         hint: 「悩む」 suggests a deeper, more agonizing state of worrying or being troubled. 「気にする」 implies
           simply paying attention to or letting something bother you, often on a more superficial level.
@@ -252,7 +252,7 @@ examples:
     english_literally: Outside's sound is noisy, and spirit/mind scatters.
     competing_grammar:
       - competing_japanese:
-          - 外 の 音 で {集中 でき ない}。
+          - 外 の 音 で {集中 でき ない}
         english: I can't concentrate because of the outside noise.
         hint: 「集中 でき ない」 means specifically 'cannot concentrate.' While related, 「気が散る」 emphasizes the
           state of being distracted, where one's attention is scattered, rather than just an inability
@@ -260,6 +260,28 @@ examples:
     scene: A student tries to study in a noisy environment.
     register: casual
     setting: serious
+  - english: Please be careful of the slippery floor.
+    japanese:
+      - 滑り やすい 床 に {気 を 付け て} ください。
+      - 滑り やすい 床 に お {気 を 付け} ください ませ。
+      - 滑り やすい から、床 に {気 を 付け} て ね。
+      - この 床、滑り やすい から {気 を 付け て} ほしい な。
+    english_literally: Please attach spirit to the slippery floor.
+    competing_grammar:
+      - competing_japanese:
+          - 滑り やすい 床 に {注意} し て ください。
+        english: Please pay attention to the slippery floor.
+        hint: 「注意する」 is more about 'paying attention' or 'warning', implying a more direct warning of
+          danger. 「気をつける」 has a broader sense of being careful or mindful in general.
+    scene: A janitor warns people in a newly mopped hallway.
+    register: formal
+    setting: instructional
+    speaker_gender: male
+    listener_gender: group
+    nuance: The phrase 「気を付けてください」 (ki o tsukete kudasai) is a very common expression used to advise caution.
+      It literally means 'to attach your spirit/mind' to something, conveying the act of being diligent
+      and aware of potential dangers. It's often used in everyday situations like warning someone about
+      a step or a slippery surface.
 post_example_writeup: The term 気 (ki) is highly productive and forms many compound words and expressions,
   such as 気持ち (kimochi, 'feeling, mood'), 気分 (kibun, 'feeling, mood'), or 気配 (kehai, 'sign, indication').
   While related, these compounds often carry more specific meanings than 気 used independently or in simpler

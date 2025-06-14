@@ -46,14 +46,21 @@ def strip_matching_quotes(text, _ = None):
 
 def false_friends_unknown_grammar_type_to_suggest(val, type, all_grammars_summary):
     if type != "grammarType": return val
+    if val and val.startswith("<strongly-suggest>:"): return
     with_no_suggest = val.strip().removeprefix("<suggest>:").strip()
-
+    with_no_strongly_suggest = with_no_suggest.removeprefix("<strongly-suggest>:").strip()
     if with_no_suggest in all_grammars_summary['all-grammar-points'].keys():
         # Strip <suggest>: if it is in the dictionary
         return with_no_suggest 
+    if with_no_strongly_suggest in all_grammars_summary['all-grammar-points'].keys():
+        # Strip <strongly-suggest>: if it is in the dictionary
+        return with_no_strongly_suggest 
     else:
-        # Prepend <suggest>: if it is in the dictionary
-        return f"<suggest>:{with_no_suggest}" # Otherwise, prepend <suggest>:
+        if val.startswith("<strongly-suggest>:"):
+            return f"<strongly-suggest>:{with_no_strongly_suggest}"  
+        else:
+            # Prepend <suggest>: if it is in the dictionary
+            return f"<suggest>:{with_no_suggest}" # Otherwise, prepend <suggest>:
 
 def lv_quotes(val, type, path, messages):
     """
@@ -204,8 +211,8 @@ def lv_false_friends_grammar_point(val, type, path, messages, all_grammars_summa
     gp = val.get("grammar_point")
     if not isinstance(gp, str) or not gp.strip():
         messages.append(f"[rule-12] warning {path}.grammar_point is missing or empty")
-    elif not gp.startswith("<suggest>:"):
-        messages.append(f"warning {path}.grammar_point is <suggest>: prefixed. Please consider whether an existing grammar point applies. If not, then change it to <strongly-suggest>.")
+    # elif gp.startswith("<suggest>:"):
+    #     messages.append(f"warning {path}.grammar_point '{gp}' is <suggest>: prefixed. Please consider whether an existing grammar point applies (it **MUST** cover 'term'). If not, then change '<suggest>:' to '<strongly-suggest>:'. You **MUST NOT** just remove '<suggest>:', delete the false friend if you can't find an existing grammar point and you can't strongly suggest this one.")
 
 def lv_known_grammar(val, type, path, messages, all_grammars_summary):
     if type != "knownGrammarType":
@@ -217,6 +224,7 @@ def lv_known_grammar(val, type, path, messages, all_grammars_summary):
 def lv_grammar_point_special_characters(val, type, path, messages):
     if type != "grammarType":
         return
+    if not val: return
 
     special = []
     trimmed = val.removeprefix("<suggest>:")

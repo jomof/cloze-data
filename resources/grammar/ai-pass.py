@@ -193,33 +193,32 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
     
 
     json_response = prior_grammar_point
-    try:
-        with AiChatSession(model, GRAMMAR_SCHEMA_WITH_COMMENTS) as session:
-            response = session.send_message(prompt)
-            response = repair_json(response)
-            json_response = json.loads(response)
-            original_json_response = dump_yaml(json_response)
-            j = 0
-            for _ in range(5):
-                json_resonse = clean_lint(json_response, output_file, all_grammars_summary)
-                lint_errors = json_resonse.get('lint-errors', [])
-                with open(temp_dir + "/" + os.path.basename(output_file)+f"-{j}.response", 'w', encoding='utf-8') as f:
-                    f.write(original_json_response + f"\n\nLint errors:\n{lint_errors}")
-                
-                if lint_errors:
-                    display.warn(f"{len(lint_errors)} lint errors found {basename}")
+    with AiChatSession(model, GRAMMAR_SCHEMA_WITH_COMMENTS) as session:
+        for i in range(5):
+            with open(temp_dir + "/" + os.path.basename(output_file)+f"-{i}.prompt", 'w', encoding='utf-8') as f:
+                f.write(prompt)
 
-                    new_prompt = f"There were lint errors in the previous response.\nPlease fix them and return a valid JSON response.\n{dump_yaml(lint_errors)}"
-                    with open(temp_dir + "/" + os.path.basename(output_file)+f"-{j+1}.prompt", 'w', encoding='utf-8') as f:
-                        f.write(new_prompt)
-                    response = session.send_message(new_prompt)
-                    json_response = json.loads(response)
-                    original_json_response = dump_yaml(json_resonse)
-                else:
-                    break
-                j += 1
-    except Exception as e:
-        display.warn(f"{prior_grammar_point.get('grammar_point', 'Unknown grammar point')} failed with error: {e}")
+            response = session.send_message(prompt)
+            with open(temp_dir + "/" + os.path.basename(output_file)+f"-{i}.raw-response", 'w', encoding='utf-8') as f:
+                f.write(response)
+
+            response = repair_json(response)
+            with open(temp_dir + "/" + os.path.basename(output_file)+f"-{i}.repaired-response", 'w', encoding='utf-8') as f:
+                f.write(response)
+
+            json_response = json.loads(response)
+
+            json_response = clean_lint(json_response, output_file, all_grammars_summary)
+            json_response = clean_lint(json_response, output_file, all_grammars_summary)
+
+            with open(temp_dir + "/" + os.path.basename(output_file)+f"-{i}.cleaned-response", 'w', encoding='utf-8') as f:
+                f.write(dump_yaml(json_response))
+
+            if 'lint-errors' not in json_response: break
+            lint_errors = json_response.get('lint-errors', [])
+            display.warn(f"{len(lint_errors)} lint errors found {basename} (iteration {i})")
+
+            prompt = f"There were lint errors in the previous response.\nPlease fix them and return a valid JSON response.\n{dump_yaml(lint_errors)}"
 
     json_response["id"] = id
     
@@ -254,6 +253,7 @@ if __name__ == '__main__':
         display.check(f"Generated grammar summary with {len(grammar_summary['all-grammar-points'])} grammar points.")
 
         async def lint(parsed_obj, file_path):
+            # if 'よく (frequently・often・well)' not in file_path: return None
   
             # if parsed_obj['id'] != 'gp0013': return None
             # Convert original object to JSON for comparison
@@ -303,7 +303,7 @@ if __name__ == '__main__':
                     "func": logic,
                 }
             },
-            max_threads          = 30,
+            max_threads          = 5,
         )
 
         result = asyncio.run(mr.run())

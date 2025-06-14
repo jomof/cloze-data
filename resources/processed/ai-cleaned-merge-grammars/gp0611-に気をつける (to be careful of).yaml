@@ -1,14 +1,14 @@
 grammar_point: に気をつける (to be careful of)
 learn_before:
-  - '[Verb-た]ほうがいい (it is better to do)'
-  - '[Verb-て]いる (ongoing state・habitual action・resultant state)'
-  - '[Verb-ない]ほうがいい (it is better not to do)'
+  - <suggest>:Verb[た]ほうがいい (it is better to do)
+  - <suggest>:Verb[ない]ほうがいい (it is better not to do)
+  - Verb[ている・てる] (progressive・resultative)
   - ないでください・ないで (please don't)
   - に (static location・time)
   - に (target・destination)
   - ように (purpose or desired state)
 learn_after:
-  - '[Verb-stem]かねない (might・could)'
+  - <suggest>:Verb[stem]かねない (might・could)
   - も構わず (without worrying about)
   - をものともせず (making nothing of)
   - 恐れがある (risk or fear)
@@ -123,7 +123,7 @@ writeup: |-
 
   For instance, 「風邪を引かないように気をつける」 means "to be careful not to catch a cold."
 
-  It is often used when offering advice or warning others, or when describing one's own resolve to act cautiously. The particle 「に」 directly precedes the noun or noun-like phrase that requires attention.
+  It is often used when offering advice or warning others, or when describing one's own resolve to act cautiously.
 false_friends:
   - term: 注意する (ちゅういする)
     meaning: to pay attention; to warn; to caution
@@ -131,14 +131,14 @@ false_friends:
     nuance: While both imply being careful, 「注意する」 often carries a nuance of formal warning or objective
       caution (e.g., traffic signs use 「注意」), or a general observation. 「に気をつける」 focuses more on the personal,
       active vigilance or mindfulness one exerts.
-    grammar_point: <suggest>:注意する (to pay attention; to warn; to caution)
+    grammar_point: <strongly-suggest>:注意する (to pay attention・to warn・to caution)
   - term: 用心する (ようじんする)
     meaning: to be cautious; to take precautions; to be on guard
     kind: similar expression
     nuance: 「用心する」 implies a stronger sense of active precaution or being on guard against potential danger
       or trouble. It suggests preparing for or preventing something specific, whereas 「に気をつける」 can be
       about more general attentiveness or carefulness without an immediate threat.
-    grammar_point: <suggest>:用心する (to be cautious; to take precautions; to be on guard)
+    grammar_point: <strongly-suggest>:用心する (to be cautious・to take precautions・to be on guard)
 post_false_friends_writeup: Though 「に気をつける」, 「注意する」, and 「用心する」 can all translate to 'to be careful,'
   their nuances differ significantly. 「に気をつける」 emphasizes individual vigilance and self-awareness in one's
   actions or regarding a specific object. 「注意する」 is broader, often used for warnings or general attentiveness,
@@ -378,9 +378,9 @@ examples:
       - competing_japanese:
           - 私 は 普段 から 言葉遣い に {配慮 し て} いる。
         english: I usually consider my language.
-        hint: 「配慮する」 means to show consideration for others through one's actions, including speech. 「気をつけている」
-          is about one's own carefulness in using language correctly or appropriately. We're looking for
-          self-monitoring of language.
+        hint: 「配慮する」 means to show consideration for others through one's actions, including speech. 「気をつけ
+          ている」 is about one's own carefulness in using language correctly or appropriately. We're looking
+          for self-monitoring of language.
     scene: A public speaker reflecting on their communication style.
     register: formal
     setting: reflective
@@ -428,6 +428,7 @@ examples:
     competing_grammar:
       - competing_japanese:
           - 大事 な 書類 だ から、取り扱い に は {十分 に 注意 し なさい}。
+          - 大事 な 書類 だ から、取り扱い に は {十分 に ご 注意} ください。
         english: It's an important document, so pay full attention to its handling.
         hint: The phrase 「十分に気をつけなさい」 conveys a stronger emphasis on thorough, personal attention and
           mindfulness from the employee towards the document, rather than just a general warning. We're
@@ -504,6 +505,7 @@ examples:
           not specific threat avoidance.
       - competing_japanese:
           - 忙しい 人 ほど、{健康 管理 を 徹底 する} べき だ。
+          - 忙しい 人 ほど、{健康 に 留意 する} べき だ。
         english: The busier a person is, the more thoroughly they should manage their health.
         hint: 「健康管理を徹底する」 is a more formal and systematic approach to health management. 「気をつける」 is a
           common, direct way to advise someone to simply be careful about their health. We're looking
@@ -568,6 +570,7 @@ examples:
           careful handling of a task.
       - competing_japanese:
           - 試験 問題 は 引っ掛け が 多い そう だ から、{慎重 に 解く} べき だ。
+          - 試験 問題 は 引っ掛け が 多い そう だ から、{よく 考え て 解く} べき だ。
         english: I heard that the exam questions are tricky, so you should solve them carefully.
         hint: 「慎重に解く」 means to solve cautiously. 「気をつけたほうがいい」 is broader advice to be generally careful
           due to the nature of the questions. We're looking for general carefulness.
@@ -582,5 +585,3 @@ post_example_writeup: As you can see from these examples, 「に気をつける�
   and registers, always emphasizing the speaker's or listener's active vigilance. Pay close attention
   to the specific particle used (often 「に」 for the object of caution) and how it combines with verbs to
   form precise meanings.
-sources:
-  bunpro: https://bunpro.jp/grammar_points/に気をつける
