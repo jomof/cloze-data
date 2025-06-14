@@ -170,6 +170,9 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
                 ------------------------------------------------------------------------------------------
                 for each lint-error in the input:
                     **EXECUTE**: Fix the lint-error.
+                for each false_friend in the input:
+                    if grammar_point starts with <suggest>:
+                        **EXECUTE** Look at existing grammar points to see if it's there with a slightly different name.
                 ------------------------------------------------------------------------------------------
             ** END PRIORITY INSTRUCTIONS ALGORITHM **
            """)
@@ -189,31 +192,34 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
         model = "gemini-2.0-flash-001"
     
 
-    with AiChatSession(model, GRAMMAR_SCHEMA_WITH_COMMENTS) as session:
-        response = session.send_message(prompt)
-        response = repair_json(response)
-        json_response = json.loads(response)
-        original_json_response = dump_yaml(json_response)
-        j = 0
-        for _ in range(5):
-            json_resonse = clean_lint(json_response, output_file, all_grammars_summary)
-            lint_errors = json_resonse.get('lint-errors', [])
-            with open(temp_dir + "/" + os.path.basename(output_file)+f"-{j}.response", 'w', encoding='utf-8') as f:
-                f.write(original_json_response + f"\n\nLint errors:\n{lint_errors}")
-            
-            if lint_errors:
-                display.warn(f"{len(lint_errors)} lint errors found {basename}")
+    json_response = prior_grammar_point
+    try:
+        with AiChatSession(model, GRAMMAR_SCHEMA_WITH_COMMENTS) as session:
+            response = session.send_message(prompt)
+            response = repair_json(response)
+            json_response = json.loads(response)
+            original_json_response = dump_yaml(json_response)
+            j = 0
+            for _ in range(5):
+                json_resonse = clean_lint(json_response, output_file, all_grammars_summary)
+                lint_errors = json_resonse.get('lint-errors', [])
+                with open(temp_dir + "/" + os.path.basename(output_file)+f"-{j}.response", 'w', encoding='utf-8') as f:
+                    f.write(original_json_response + f"\n\nLint errors:\n{lint_errors}")
+                
+                if lint_errors:
+                    display.warn(f"{len(lint_errors)} lint errors found {basename}")
 
-                new_prompt = f"There were lint errors in the previous response.\nPlease fix them and return a valid JSON response.\n{dump_yaml(lint_errors)}"
-                with open(temp_dir + "/" + os.path.basename(output_file)+f"-{j+1}.prompt", 'w', encoding='utf-8') as f:
-                    f.write(new_prompt)
-                response = session.send_message(new_prompt)
-                json_response = json.loads(response)
-                original_json_response = dump_yaml(json_resonse)
-            else:
-                break
-            j += 1
-
+                    new_prompt = f"There were lint errors in the previous response.\nPlease fix them and return a valid JSON response.\n{dump_yaml(lint_errors)}"
+                    with open(temp_dir + "/" + os.path.basename(output_file)+f"-{j+1}.prompt", 'w', encoding='utf-8') as f:
+                        f.write(new_prompt)
+                    response = session.send_message(new_prompt)
+                    json_response = json.loads(response)
+                    original_json_response = dump_yaml(json_resonse)
+                else:
+                    break
+                j += 1
+    except Exception as e:
+        display.warn(f"{prior_grammar_point.get('grammar_point', 'Unknown grammar point')} failed with error: {e}")
 
     json_response["id"] = id
     
@@ -297,7 +303,7 @@ if __name__ == '__main__':
                     "func": logic,
                 }
             },
-            max_threads          = 5,
+            max_threads          = 30,
         )
 
         result = asyncio.run(mr.run())

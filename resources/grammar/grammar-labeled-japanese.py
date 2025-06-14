@@ -26,7 +26,7 @@ class JapaneseGrammarLabelCompletingClassifier:
     
     def __init__(self, 
                  min_label_freq=2,
-                 max_features=10000,
+                 max_features=20000,
                  ngram_range=(1, 3),
                  class_weight='balanced',
                  random_state=42,
@@ -60,7 +60,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         """Clean and preprocess Japanese text."""
         # Remove curly braces that mark grammar patterns
         clean = re.sub(r'[{}]', '', text)
-        clean = clean.replace('⌈', ' ⌈').replace('⌉', '⌉ ').strip()
+        clean = clean.replace('⌈', ' ⌈ ').replace('⌉', ' ⌉ ').replace('ˢ', ' ˢ').replace('ᵖ', ' ᵖ').replace('ʳ', ' ʳ').strip()
         return clean
     
     def _filter_rare_labels(self, labels_list: List[List[str]]) -> List[List[str]]:
@@ -93,7 +93,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         base_classifier = LogisticRegression(
             max_iter=1000,
             class_weight=self.class_weight,
-            random_state=self.random_state
+            random_state=self.random_state,
         )
         
         # Use OneVsRestClassifier for multi-label classification
@@ -145,9 +145,10 @@ class JapaneseGrammarLabelCompletingClassifier:
                 max_features=self.max_features,
                 ngram_range=self.ngram_range,
                 analyzer='word',
-                min_df=2,
-                max_df=0.95,
+                min_df=3,
+                max_df=0.85,
                 strip_accents=None,
+                sublinear_tf=True 
             )
             X = self.vectorizer.fit_transform(cleaned_texts)
             display.check(f"Feature matrix shape: {X.shape}")
@@ -182,7 +183,7 @@ class JapaneseGrammarLabelCompletingClassifier:
                         self.cooccurrence_counts[pair_key] += 1
                         if len(self.cooccurrence_samples[pair_key]) < 3:
                             self.cooccurrence_samples[pair_key].append({
-                                'text': cleaned_texts[i][:100] + "..." if len(cleaned_texts[i]) > 100 else cleaned_texts[i],
+                                'text': cleaned_texts[i],
                                 'labels': labels
                             })
         
@@ -190,7 +191,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         return self
     
     def predict(self, texts: Union[str, List[str]], 
-                threshold: float = 0.5) -> Union[List[str], List[List[str]]]:
+                threshold: float = 0.45) -> Union[List[str], List[List[str]]]:
         """
         Predict labels for input texts.
         
@@ -342,7 +343,7 @@ class JapaneseGrammarLabelCompletingClassifier:
                         cooccurrence_counts[pair_key] += 1
                         if len(cooccurrence_samples[pair_key]) < 3:
                             cooccurrence_samples[pair_key].append({
-                                'text': texts[i][:100] + "..." if len(texts[i]) > 100 else texts[i],
+                                'text': texts[i],
                                 'labels': label_list
                             })
             
@@ -454,7 +455,8 @@ class JapaneseGrammarLabelCompletingClassifier:
                 samples = cooccurrence_samples.get(f"{label1}||{label2}", [])
                 for j, sample in enumerate(samples[:2]):  # Show up to 2 samples
                     labels_str = ", ".join(sample['labels'])
-                    print(f"    📝 {compact_sentence_to_japanese(sample['text'])}")
+                    clean = sample['text'].replace('⌈ ', '⌈').replace(' ⌉', '⌉').replace(' ˢ', 'ˢ').replace(' ᵖ', 'ᵖ').replace(' ʳ', 'ʳ').replace(' ', '').strip()
+                    print(f"    📝 {compact_sentence_to_japanese(clean)}")
                     print(f"       Labels: [{labels_str}]")
                     if j < len(samples) - 1:
                         print()
@@ -876,8 +878,8 @@ if __name__ == '__main__':
     
     classifier = JapaneseGrammarLabelCompletingClassifier(
         min_label_freq=3,  # Adjust based on your data
-        max_features=15000,
-        ngram_range=(1, 4)
+        max_features=20000,
+        ngram_range=(1, 3)
     )
 
     if os.path.exists(model_file) and os.path.exists(training_data_file):
@@ -935,7 +937,7 @@ if __name__ == '__main__':
         with display.work("analyzing label interference"):
             interference_results = classifier.analyze_label_interference(
                 training_data=training_data,
-                max_label_pairs=1000
+                max_label_pairs=10000
             )
         with open(interference_results_file, 'w', encoding='utf-8') as file:
             json.dump(interference_results, file, ensure_ascii=False, indent=4)

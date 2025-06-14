@@ -1,15 +1,13 @@
 grammar_point: Verb[ました] (polite past)
 learn_before:
   - Verb[dictionary] (dictionary form)
-  - Verb[て] (and then)
   - Verb[ない] (plain negative)
   - Verb[ます] (polite present)
   - Verb[ません] (polite negative)
 learn_after:
+  - Verb[ていた] (past progressive・resultative)
   - '[Verb-た]ことがある (experience of having done)'
   - たばかり (just did)
-  - ていた (past continuous or state)
-  - てしまう・ちゃう (completion・regret・accident)
   - ものだ (general truth expectation)
   - ものの (although・but)
 id: gp0043
@@ -72,7 +70,7 @@ false_friends:
     kind: often confused with
     nuance: 「ました」 describes a single, completed past action. 「ていた」 indicates an action that was ongoing
       in the past, or a state that continued from the past, or a repeated action in the past.
-    grammar_point: ていた (past continuous or state)
+    grammar_point: Verb[ていた] (past progressive・resultative)
   - term: Verb[dictionary] (dictionary form)
     meaning: plain non-past
     kind: similar expression
@@ -273,8 +271,8 @@ examples:
     setting: informative
     conjugation: past polite (～ました)
     nuance: The polite past form 「読み まし た」 is appropriate in a professional or general polite context.
-      The use of 「よ」 or 「ん です」 adds an explanatory or confirmatory nuance, which is common when sharing
-      personal experiences in a polite conversation. 「夜通し」 means 'all night long'.
+      Adding 「よ」 or 「ん です」 adds an explanatory or confirmatory nuance, which is common when sharing personal
+      experiences in a polite conversation. 「夜通し」 means 'all night long'.
   - english: I wrote a letter to my grandmother.
     japanese:
       - 祖母 に 手紙 を {書き まし た}。
@@ -324,7 +322,7 @@ examples:
         hint: This implies a future action. We are looking for a completed action in the past.
       - competing_japanese:
           - カフェ で 長く {話し ませ ん でし た}。
-        english: We didn't talk for a long time at the cafe.
+        english: I didn't talk for a long time at the cafe.
         hint: This is the polite negative past. We are looking for a positive completed action.
     scene: Two colleagues discussing a past meeting at a cafe.
     register: teineigo (polite)

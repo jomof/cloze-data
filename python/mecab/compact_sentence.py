@@ -184,8 +184,12 @@ def tokens_to_japanese(tokens: list[Token], spaces=False) -> str:
     return ''.join(token.surface for token in tokens)
 
 def compact_sentence_to_japanese(input_string, spaces=False):
-    tokens = compact_sentence_to_tokens(input_string)
-    return tokens_to_japanese(tokens, spaces=spaces)
+    try:
+        tokens = compact_sentence_to_tokens(input_string)
+        return tokens_to_japanese(tokens, spaces=spaces)
+    except Exception as e:
+        print(f"Sentence: '{input_string}'")
+        raise ValueError(f"Failed to convert compact sentence '{input_string}' to Japanese: {e}")
 
 
 def parse_raw_mecab_output(raw_output):

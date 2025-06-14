@@ -204,6 +204,8 @@ def lv_false_friends_grammar_point(val, type, path, messages, all_grammars_summa
     gp = val.get("grammar_point")
     if not isinstance(gp, str) or not gp.strip():
         messages.append(f"[rule-12] warning {path}.grammar_point is missing or empty")
+    elif not gp.startswith("<suggest>:"):
+        messages.append(f"warning {path}.grammar_point is <suggest>: prefixed. Please consider whether an existing grammar point applies. If not, then change it to <strongly-suggest>.")
 
 def lv_known_grammar(val, type, path, messages, all_grammars_summary):
     if type != "knownGrammarType":

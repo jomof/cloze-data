@@ -84,6 +84,10 @@ class TestTokenParser(unittest.TestCase):
         # 'あ' and 'う' are bracketed, 'い' is single
         self.assertEqual(compact_sentence_to_japanese(compact), "あいう")
         self.assertEqual(compact_sentence_to_japanese(compact, spaces=True), "あ い う")
+    
+    def test_compact_sentence_to_japanese_real_case(self):
+        compact_sentence_to_japanese("⌈ˢ窓ᵖnʳマド⌉が⌈ˢ開いᵖvᵇ開くʳヒラク⌉て⌈ˢいᵖvᵇいるʳイル⌉⌈ˢますᵖauxvʳマス⌉。")
+
 
     def test_roundtrip_compact_to_japanese_and_back(self):
         original_japanese = "テストだよ。"
