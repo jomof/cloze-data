@@ -259,7 +259,8 @@ if __name__ == '__main__':
             # Convert original object to JSON for comparison
             original_json = json.dumps(parsed_obj, ensure_ascii=False, sort_keys=True)
             
-            result = clean_lint_memoize(parsed_obj, file_path, grammar_summary)
+            result = clean_lint(parsed_obj, file_path, grammar_summary)
+            result = clean_lint(result, file_path, grammar_summary)
             
             # Convert result to JSON for comparison
             result_json = json.dumps(result, ensure_ascii=False, sort_keys=True)

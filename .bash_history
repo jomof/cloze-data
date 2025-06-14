@@ -1132,3 +1132,31 @@ exit
 ./update-python.sh 
 bazel run //resources/grammar:grammar-labeled-japanese
 exit
+/home/codespace/.python/current/bin/python3
+claude
+npm install -g @anthropic-ai/claude-code
+npm install -g npm@11.4.2
+clear
+claude
+
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+bazel run //resources/grammar:split-join-rename
+git clean -xdf
+bazel run //resources/grammar:split-join-rename
+git clean -xdf
+git status
+apt-get btop
+apt-get install btop
+sudo apt-get install btop
+sudo apt install btop
+wget https://github.com/aristocratos/btop/releases/download/v1.4.3/btop-x86_64-linux-musl.tbz
+tar -xjf btop-x86_64-linux-musl.tbz
+cd .temp
+mkdir .temp
+cd .temp
+wget https://github.com/aristocratos/btop/releases/download/v1.4.3/btop-x86_64-linux-musl.tbz
+tar -xjf btop-x86_64-linux-musl.tbz
+sudo cp btop/bin/btop /usr/local/bin/
+btop
+claude

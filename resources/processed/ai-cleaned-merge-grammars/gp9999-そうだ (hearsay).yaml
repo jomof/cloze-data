@@ -1,0 +1,224 @@
+grammar_point: そうだ (hearsay)
+learn_before:
+  - Verb[dictionary] (dictionary form)
+  - い-Adjectives (adjectives ending in い)
+  - だ (casual copula)
+  - な-Adjectives (adjectival nouns)
+learn_after:
+  - かもしれない (might・maybe)
+  - だろう・でしょう (probably・right?)
+  - んだって (I heard, casual)
+id: gp9999
+meaning: It is said that; I heard that
+pronunciation:
+  katakana: ソウダ
+  romaji: sō da
+formation:
+  Verb[plain] + そうだ: Indicates that something is reported or heard regarding an action or state.
+  い-Adjective[plain] + そうだ: Indicates that something is reported or heard regarding a quality or state
+    (for i-adjectives).
+  な-Adjective[plain (omit だ)] + そうだ: Indicates that something is reported or heard regarding a quality
+    or state (for na-adjectives). The だ is often omitted in casual speech.
+  Noun[plain (omit だ)] + そうだ: Indicates that something is reported or heard regarding identity or existence
+    (for nouns). The だ is often omitted in casual speech.
+jlpt: N3
+details:
+  part-of-speech: auxiliary adjective
+  register: teineigo (polite)
+  function: Conveys reported information or hearsay without personal judgment or direct observation.
+  nuance: Used to relay information heard from others, news, or general knowledge. It implies the speaker
+    is repeating information, not asserting it as their own fact. It is distinct from forms that imply
+    observation or conjecture, such as そうだ (appearance).
+  grammatical-role: Forms an adjectival phrase modifying the preceding clause, indicating reported information.
+etymology: The form そうだ (hearsay) is thought to derive from earlier forms of the verb そう (to appear, to
+  seem) or from 然う (sou) meaning 'thus' or 'in such a way,' combined with the copula だ. This construction
+  evolved to signify that something is 'as said' or 'according to what is heard,' thus conveying reported
+  information. It is distinct from そうだ (appearance), which uses a different conjugation pattern and implies
+  direct observation.
+writeup: |-
+  The grammar point そうだ (hearsay) is used to convey information that the speaker has heard from another source, rather than something they have observed directly or know as a fact. It translates roughly to "I heard that..." or "It is said that...".
+
+  This form attaches to the plain form of verbs, i-adjectives, na-adjectives, and nouns. For na-adjectives and nouns, the copula だ can often be omitted, especially in more casual speech. For instance, you might hear 「静かそうです」 instead of 「静かだそうです」, or 「学生そうです」 instead of 「学生だそうです」.
+
+  It is crucial to differentiate this そうだ from the そうだ that indicates appearance or a visual impression (e.g., 「美味しそうだ」 - 'It looks delicious'). The key distinction lies in the form of the preceding word: そうだ (hearsay) attaches to the plain form (e.g., 食べる、美味しい、静かだ、学生だ), while そうだ (appearance) attaches to the verb stem (食べそう), the i-adjective stem (美味しそう), or directly to the na-adjective stem (静かそう) or noun (元気そう).
+
+  This grammar point functions as a neutral way to report information, reflecting that the speaker is simply relaying what they have been told or read, without adding their personal opinion or speculation.
+false_friends:
+  - term: そうだ (appearance)
+    meaning: It looks like; appears to be
+    kind: often confused with
+    nuance: Unlike そうだ (hearsay), そうだ (appearance) is used when the speaker is making a judgment based
+      on their direct observation. For example, 「雨が降りそうです」 (It looks like it's going to rain, based on
+      observing the sky) versus 「雨が降るそうです」 (I heard it's going to rain, based on a weather report).
+    grammar_point: '[Verb-stem]・[い-Adjective-stem]・[な-Adjective]そうだ (it seems・looks like)'
+  - term: らしい
+    meaning: It seems; apparently; I hear (based on evidence)
+    kind: similar expression
+    nuance: While both convey reported information, らしい implies that the speaker has some indirect evidence,
+      a strong impression, or a general sense that something is true, but not necessarily a direct report.
+      そうだ (hearsay) is a more direct relay of what was explicitly heard or stated.
+    grammar_point: らしい (it seems, based on evidence・I hear)
+  - term: とのことだ
+    meaning: I heard that; according to
+    kind: similar expression
+    nuance: とのことだ is more formal and often used to quote someone or something directly, similar to 「〜と申しております」.
+      そうだ (hearsay) is a general report and can be used in a broader range of contexts, both formal and
+      casual.
+    grammar_point: <suggest>:とのことだ (reported information)
+  - term: んだって
+    meaning: I heard that (casual)
+    kind: similar expression
+    nuance: んだって is a very casual contraction of のだそうだ or のだと言っていた. It carries the same hearsay meaning
+      as そうだ but is significantly more informal and typically used among close friends or in very relaxed
+      settings.
+    grammar_point: んだって (I heard, casual)
+post_false_friends_writeup: To avoid confusing そうだ (hearsay) with similar expressions, remember that そうだ
+  (hearsay) is for directly relaying information heard from a source. そうだ (appearance) is for making a
+  judgment based on what you see. らしい suggests indirect evidence or a strong impression. とのことだ is more
+  formal and often used for direct quotes. んだって is a casual version of hearsay.
+examples:
+  - english: The new restaurant is very delicious, I heard.
+    japanese:
+      - 新しい レストラン は とても 美味しい {そう です}。
+      - 新しい レストラン は 美味しい {そう だ よ}。
+    english_literally: New restaurant as for very delicious it is said.
+    competing_grammar:
+      - competing_japanese:
+          - 新しい レストラン は とても 美味し そう です。
+        english: The new restaurant looks very delicious.
+        hint: The form ~そうです with the i-adjective stem (美味しそう) indicates an appearance or impression based
+          on observation. We're looking for what was heard, not what is seen.
+    scene: A coworker is sharing gossip about a recently opened eatery.
+    register: teineigo (polite)
+    setting: friendly
+  - english: I heard that Tanaka-san will get married next month.
+    japanese:
+      - 田中 さん は 来月 結婚 する {そう です}。
+      - 田中 さん 来月 結婚 する {って}。
+    english_literally: Tanaka-san as for next month marriage do it is said.
+    competing_grammar:
+      - competing_japanese:
+          - 田中 さん は 来月 結婚 する らしい です。
+        english: It seems Tanaka-san will get married next month.
+        hint: らしい suggests an inference based on indirect evidence or general impression, not a direct
+          report. We're looking to convey direct hearsay.
+    scene: Two colleagues are discussing news about a mutual acquaintance.
+    register: teineigo (polite)
+    setting: professional
+  - english: It is said that the exam was very difficult.
+    japanese:
+      - 試験 は とても 難しかっ た {そう です}。
+      - 試験 は とても 難しかっ た {らしい よ}。
+    english_literally: Exam as for very difficult was it is said.
+    competing_grammar:
+      - competing_japanese:
+          - 試験 は とても 難しかっ た らしい です。
+        english: It seems the exam was very difficult.
+        hint: らしい implies a less direct source of information or more of a general impression. We're looking
+          for what was heard.
+    scene: Students are discussing a past exam.
+    register: teineigo (polite)
+    setting: academic
+  - english: The weather forecast says it will rain tomorrow.
+    japanese:
+      - 天気 予報 で は 明日 雨 が 降る {そう です}。
+      - 天気 予報 だ と 明日 雨 が 降る {そう}。
+    english_literally: Weather forecast according to tomorrow rain will fall it is said.
+    competing_grammar:
+      - competing_japanese:
+          - 天気 予報 で は 明日 雨 が 降り そう です。
+        english: According to the weather forecast, it looks like it will rain tomorrow.
+        hint: This uses the appearance そうだ, suggesting a visual prediction. We need the hearsay そうだ for
+          a reported forecast.
+    scene: A person is checking the weather report and informing their family.
+    register: teineigo (polite)
+    setting: informative
+  - english: I heard that my grandfather used to be a teacher.
+    japanese:
+      - 祖父 は 昔 先生 だっ た {そう です}。
+      - 祖父 は 昔 先生 {だっ た そう だ よ}。
+    english_literally: Grandfather as for old times teacher was it is said.
+    competing_grammar:
+      - competing_japanese:
+          - 祖父 は 昔 先生 だっ た と の こと です。
+        english: I heard from someone that my grandfather used to be a teacher.
+        hint: とのことだ is more formal and often implies a more specific source of the information. We're
+          looking for a general hearsay statement.
+    scene: Someone is sharing a story about their family history.
+    register: teineigo (polite)
+    setting: storytelling
+  - english: I heard that this road is very dangerous at night.
+    japanese:
+      - この 道 は 夜 とても 危ない {そう です}。
+      - この 道 は 夜 は とても 危ない {そう だ よ}。
+    english_literally: This road as for night very dangerous it is said.
+    competing_grammar:
+      - competing_japanese:
+          - この 道 は 夜 とても 危な そう です。
+        english: This road looks very dangerous at night.
+        hint: Using the stem form of 危ない creates an 'appearance' meaning, indicating a visual impression
+          of danger. We're relaying what someone said.
+    scene: A local resident is warning a visitor about a particular street.
+    register: teineigo (polite)
+    setting: cautious
+  - english: They say that this anime is very popular among young people.
+    japanese:
+      - この アニメ は 若者 の 間 で 大 人気 {だ そう です}。
+      - この アニメ は 若者 に 大 人気 {らしい よ}。
+    english_literally: This anime as for young people among very popular it is said.
+    competing_grammar:
+      - competing_japanese:
+          - この アニメ は 若者 の 間 で 大 人気 な ん だ って。
+        english: I heard this anime is very popular among young people.
+        hint: なんだって is a very casual way to express hearsay. We are looking for a slightly more neutral
+          or polite tone here.
+    scene: A conversation about current trends.
+    register: teineigo (polite)
+    setting: informative
+  - english: I heard the meeting starts at 10 AM, but I'm not sure.
+    japanese:
+      - 会議 は 午前 10 時 に 始まる {そう です} が、よく 分かり ませ ん。
+      - 会議 は 午前 10 時 に 始まる {そう} だ けど、よく 分から ない。
+    english_literally: Meeting as for morning 10 o'clock start it is said but, well do not understand.
+    competing_grammar:
+      - competing_japanese:
+          - 会議 は 午前 10 時 に 始まる か も しれ ませ ん。
+        english: The meeting might start at 10 AM.
+        hint: かもしれません indicates possibility or uncertainty based on speaker's conjecture, not reported
+          information. We're conveying what was heard.
+    scene: A person is checking their schedule and confirming with a colleague.
+    register: teineigo (polite)
+    setting: professional
+  - english: The famous singer will release a new album next month, I heard.
+    japanese:
+      - あの 有名 な 歌手 は 来月 新しい アルバム を 出す {そう です}。
+      - あの 有名 な 歌手、来月 新しい アルバム を 出す {そう です よ}。
+    english_literally: That famous singer as for next month new album release it is said.
+    competing_grammar:
+      - competing_japanese:
+          - あの 有名 な 歌手 は 来月 新しい アルバム を 出す らしい です。
+        english: It seems that famous singer will release a new album next month.
+        hint: らしい suggests a general impression or rumor rather than a direct announcement. We're looking
+          for a direct report.
+    scene: Friends are discussing music news.
+    register: teineigo (polite)
+    setting: friendly
+  - english: I heard that the construction will finally finish next year.
+    japanese:
+      - あの 工事 は 来年 やっと 終わる {そう です}。
+      - あの 工事 は 来年 やっと 終わる {ん だ って}。
+    english_literally: That construction as for next year finally finish it is said.
+    competing_grammar:
+      - competing_japanese:
+          - あの 工事 は 来年 やっと 終わる だろう。
+        english: That construction will probably finally finish next year.
+        hint: だろう expresses probability based on the speaker's judgment, not reported information. We're
+          conveying what was heard.
+    scene: Residents are discussing a long-running construction project.
+    register: teineigo (polite)
+    setting: casual slang
+post_example_writeup: Notice how そうだ is consistently used to simply relay information without adding the
+  speaker's personal judgment or observation. The choice between including or omitting だ for na-adjectives
+  and nouns often depends on the level of formality and the flow of natural conversation.
+sources:
+  bunpro: https://bunpro.jp/grammar_points/そうだ-hearsay
