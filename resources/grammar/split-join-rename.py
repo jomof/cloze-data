@@ -138,6 +138,7 @@ if __name__ == '__main__':
         save_summary(grammar_summary, grammar_root, 'split-join-rename-summary.json')
         display.check(f"Generated grammar summary with {len(grammar_summary['all-grammar-points'])} grammar points.")
 
+        renames = None
         if os.path.exists(renames_allowed):
             # Read the renames-allowed.yaml file
             with open(renames_allowed, 'r', encoding='utf-8') as f:
