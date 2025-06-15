@@ -312,12 +312,11 @@ py_binary(
     ],
     visibility = ["//:__subpackages__"],
     deps = [
+        "//python/classifiers",
         "//python/console:display",
         "//python/mapreduce",
         "//python/mecab",
         "@pip//debugpy",
-        "@pip//numpy",
-        "@pip//scikit_learn",
     ],
 )
 
@@ -361,6 +360,7 @@ py_library(
     visibility = ["//:__subpackages__"],
     deps = [
         "//python/ai",
+        "//python/classifiers",
         "//python/console:display",
         "//python/db",
         "//python/grammar",
@@ -372,8 +372,6 @@ py_library(
         "@pip//debugpy",
         "@pip//json5",
         "@pip//json_repair",
-        "@pip//numpy",
         "@pip//pyyaml",
-        "@pip//scikit_learn",
     ],
 )
