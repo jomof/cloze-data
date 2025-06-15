@@ -285,33 +285,6 @@
       "additionalProperties": { "type": "string" }
     },
     "jlpt": { "$ref": "#/definitions/jlptLevel" },
-
-    // details key **MUST** be English.
-    // **MUST NOT** delete japanese language keys, instead convert them to English.
-    // **MUST** forward all details information from the source bunpro grammar point. If none of these detail properties fit perfectly, then create your own property in the form "custom-myproperty".
-    "details": {
-      "type": "object",
-      "properties": {
-        "part-of-speech": { "$ref": "#/definitions/partOfSpeechType" },
-        "register": { "$ref": "#/definitions/registerType" },
-        // **ONLY** if 'part-of-speech' is "particle", then you **MAY** include a "particle-syntactic-function" field.
-        "particle-syntactic-function": { "$ref": "#/definitions/particleSyntacticFunction" },
-        // **ONLY** if 'part-of-speech' is "particle", then you **MAY** include a "particle-type" field.
-        "particle-pragmatic-function": { "$ref": "#/definitions/particlePragmaticFunction" },
-        "usage-context": { "type": "string" },
-        "function": { "type": "string" },
-        "nuance": { "type": "string" },
-        "counterpoint": { "type": "string" },
-        "colocation": { "type": "string" },
-        "grammatical-role": { "type": "string" },
-        "logical-flow": { "type": "string" },
-        "temporal-flow": { "type": "string" },
-        "spatial-flow": { "type": "string" },
-      },
-      "additionalProperties": {
-        "type": "string"
-      }
-    },
     // The "etymology" field will be display to the user in the grammar point's page.
     "etymology": { "$ref": "#/definitions/etymologyType" },
     // The "writeup" field will be display to the user in the grammar point's page.

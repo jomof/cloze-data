@@ -428,6 +428,8 @@ def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = { "
         del grammar_point['lint-errors']
     if 'change' in grammar_point:
         del grammar_point['change']
+    if 'details' in grammar_point:
+        del grammar_point['details']
 
     # Ensure japanese fields are lists
     for example in grammar_point.get('examples', []):

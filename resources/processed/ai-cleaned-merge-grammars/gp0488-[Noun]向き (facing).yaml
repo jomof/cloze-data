@@ -1,56 +1,52 @@
 grammar_point: '[Noun]向き (facing)'
 learn_before:
-  - '[Verb-stem]にくい (difficult to do)'
-  - '[Verb-stem]やすい (easy to do)'
+  - <suggest>:Verb-stemにくい (difficult to do)
+  - <suggest>:Verb-stemやすい (easy to do)
   - な-Adjective (modifying nouns)
   - に (static location・time)
   - に (target・destination)
   - になる・くなる (to become)
   - の (noun modifier)
-  - へ (directional particle)
+  - へいく (to head toward)
 learn_after:
-  - '[Noun]を問わず (regardless of)'
+  - <suggest>:Nounを問わず (regardless of)
+  - <suggest>:ならば (unique to)
   - きらいがある (undesirable tendency)
-  - ならでは (unique to)
   - に則って・に即して (in accordance with)
   - に越したことはない (nothing better than)
   - に足る (worthy of)
   - 向け (intended for)
 id: gp0488
-meaning: Suitable for; facing
+meaning: Suitable for・facing
 pronunciation:
   katakana: ムキ
   romaji: muki
 formation:
-  Noun + {向き}: Indicates suitability for a noun (e.g., 子供向き - suitable for children).
-  Direction + {向き}: Indicates facing a specific direction (e.g., 南向き - south-facing).
-  State/Trend + {向き}: Indicates a tendency towards a certain state or trend (e.g., 上向き - upward trend).
+  Noun + {向き}: Indicates suitability for a noun (e.g. 子供向き - suitable for children).
+  Direction + {向き}: Indicates facing a specific direction (e.g. 南向き - south-facing).
+  State/Trend + {向き}: Indicates a tendency towards a certain state or trend (e.g. 上向き - upward trend).
 jlpt: N3
-details:
-  part-of-speech: noun
-  register: teineigo (polite)
-  usage-context: Used to describe physical orientation or suitability for something. '向き' often implies
-    a specific direction or a target audience/purpose.
-  function: To specify direction or suitability.
-  nuance: Implies a natural inclination or inherent appropriateness, often suggesting something is 'facing'
-    or 'suited' to a situation by its nature or circumstances, rather than being intentionally designed
-    or created for it. This contrasts with '向け', which implies specific design or intent.
-  grammatical-role: Used as a suffix to nouns to describe inherent qualities or direction.
-  logical-flow: Connects a noun to its inherent suitability or orientation.
-  temporal-flow: Can describe a trend or state that changes over time (e.g., 上向き - upward trend).
-  spatial-flow: Describes physical orientation and boundaries.
 etymology: The word 「向き」 (muki) comes from the intransitive verb 「向く」 (muku), which means "to face" or
   "to turn towards." Thus, 「向き」 retains the core meaning of direction or orientation. Its use as a suffix
   evolved to indicate suitability by implying that something naturally "faces" or is inclined towards
   a particular purpose or audience.
-writeup: |-
-  The noun 「向き」 (muki) is a versatile term in Japanese used to describe both orientation and suitability. It originates from the intransitive verb 「向く」 (muku), meaning "to face." This lineage explains its core meanings:
-
-  1.  **Direction/Facing**: It indicates the direction something is physically facing or oriented towards. For instance, you might describe a house as 「南向き」 (minami muki), meaning "south-facing." This usage is common for buildings, rooms, or objects with a defined front.
-
-  2.  **Suitability/Appropriateness**: When used as a suffix to a noun, 「向き」 signifies that something is suitable for, appropriate for, or naturally inclined towards a particular group or purpose. For example, 「子供向き」 (kodomo muki) implies that an item or activity is inherently suitable for children, perhaps due to its characteristics like size, content, or complexity.
-
-  **Contrast with 向け (muké)**: It is vital to differentiate 「向き」 from 「向け」 (muké). 「向け」 stems from the transitive verb 「向ける」 (mukeru), meaning "to turn something towards" or "to aim something at." Consequently, 「向け」 strongly implies that something was **specifically designed**, **intended for**, or **aimed at** a particular audience or purpose. For example, 「子供向けの本」 (kodomo muké no hon) would more strongly suggest "a book intended/designed for children." In contrast, 「子供向きの本」 (kodomo muki no hon) means "a book suitable for children," implying its content naturally fits children, irrespective of whether it was exclusively written for them. In essence, 「向き」 emphasizes natural suitability or orientation, while 「向け」 highlights specific design or intent. Understanding these distinctions allows for precise descriptions of both physical orientation and conceptual appropriateness.
+writeup: 'The noun 「向き」 (muki) is a versatile term in Japanese used to describe both orientation and suitability.
+  It originates from the intransitive verb 「向く」 (muku), meaning "to face." This lineage explains its core
+  meanings: 1. **Direction/Facing**: It indicates the direction something is physically facing or oriented
+  towards. For instance, you might describe a house as 「南向き」 (minami muki), meaning "south-facing." This
+  usage is common for buildings, rooms, or objects with a defined front. 2. **Suitability/Appropriateness**:
+  When used as a suffix to a noun, 「向き」 signifies that something is suitable for, appropriate for, or
+  naturally inclined towards a particular group or purpose. For example, 「子供向き」 (kodomo muki) implies
+  that an item or activity is inherently suitable for children, perhaps due to its characteristics like
+  size, content, or complexity. **Contrast with 向け (muké)**: It is vital to differentiate 「向き」 from 「向け」
+  (muké). 「向け」 stems from the transitive verb 「向ける」 (mukeru), meaning "to turn something towards" or "to
+  aim something at." Consequently, 「向け」 strongly implies that something was **specifically designed**,
+  **intended for**, or **aimed at** a particular audience or purpose. For example, 「子供向けの本」 (kodomo muké
+  no hon) would more strongly suggest "a book intended/designed for children." In contrast, 「子供向きの本」 (kodomo
+  muki no hon) means "a book suitable for children," implying its content naturally fits children, irrespective
+  of whether it was exclusively written for them. In essence, 「向き」 emphasizes natural suitability or orientation,
+  while 「向け」 highlights specific design or intent. Understanding these distinctions allows for precise
+  descriptions of both physical orientation and conceptual appropriateness.'
 false_friends:
   - term: に向かって
     meaning: Towards (physical direction)
@@ -85,7 +81,7 @@ false_friends:
   - term: に合わせる・に合う
     meaning: In accordance with, Matching, Fitting, Suitable for, Adjust or tune to
     kind: similar expression
-    nuance: 「に合わせて/に合った」 emphasizes alignment or conformity (e.g., 'tailored to' or 'fitted for'), often
+    nuance: 「に合わせて/に合った」 emphasizes alignment or conformity (e.g. 'tailored to' or 'fitted for'), often
       implying an pragmatic adjustment to meet certain conditions. 「向き」 focuses on inherent suitability
       or a natural direction/orientation, without necessarily implying an active effort to match something.
     grammar_point: に合わせる・に合う (match or fit)
@@ -94,43 +90,43 @@ false_friends:
     kind: similar expression
     nuance: 「方向」 is a general term for 'direction' or 'way,' often used for travel or abstract paths.
       Unlike 「向き」, it doesn't typically imply suitability or the exact facing of an object.
-    grammar_point: <suggest>:方向 (direction)
+    grammar_point: <strongly-suggest>:方向 (direction)
   - term: 方 (kata)
     meaning: direction, person, method
     kind: similar expression
     nuance: 「方」 can refer to a 'direction' or a 'way of doing something,' and as an honorific for 'person.'
       It is much broader and less precise than 「向き」 for indicating an exact facing, and doesn't carry
       the 'suitability' nuance.
-    grammar_point: <suggest>:方 (direction・person・method)
+    grammar_point: 方 (direction)
   - term: 方向け (houkouke)
     meaning: for, intended for (colloquial)
     kind: similar expression
     nuance: While 「方向け」 is similar, 「向き」 is a more standard and neutral way to express suitability or
       being 'intended for'.
-    grammar_point: <suggest>:方向け (for・intended for)
+    grammar_point: <strongly-suggest>:方向け (for・intended for)
   - term: ～用 (you)
     meaning: for use by
     kind: similar expression
     nuance: 「～用」 (you) indicates something is specifically 'for use by' a certain group or for a certain
-      purpose (e.g., 子供用 - for children's use, meaning children's size/version). While similar to 「向き」
+      purpose (e.g. 子供用 - for children's use, meaning children's size/version). While similar to 「向き」
       in targeting, 「向き」 often describes a general suitability or appropriateness, whereas 「～用」 implies
       a designated item for that purpose.
-    grammar_point: <suggest>:～用 (for use by)
+    grammar_point: <strongly-suggest>:～用 (for use by)
   - term: ～専用 (senyou)
     meaning: exclusive use for
     kind: similar expression
     nuance: 「～専用」 (senyou) denotes something that is exclusively for a specific use or group, implying
-      restriction or dedication (e.g., 女性専用車両 - women-only car). This is stronger and more restrictive
+      restriction or dedication (e.g. 女性専用車両 - women-only car). This is stronger and more restrictive
       than 「向き」, which simply implies suitability or intention.
-    grammar_point: <suggest>:～専用 (exclusive use for)
+    grammar_point: <strongly-suggest>:～専用 (exclusive use for)
 post_false_friends_writeup: When choosing between 「向き」 and similar expressions, consider the nuance you
   want to convey. If you want to emphasize physical movement or a specific direction of action, use 「に向かって」.
   If the focus is on a particular aim or intended target, use 「に向けて」. If the focus is on a reason or purpose,
   「ため(に)」 is appropriate. For specifically designed targets, 「向け」 is best. And if you need to indicate
   matching or conformity, use 「に合わせて/に合った」. While 「方向」 and 「方」 both mean 'direction,' they are more general.
-  「方向」 is like a path or general bearing (e.g., 'which direction should we go?'), whereas 「向き」 refers
-  to the precise way something is facing (e.g., 'the house faces south'). 「方」 can also mean 'direction'
-  but is more often used for a specific person or a method. 「向け」 is often used for things actively 'directed
+  「方向」 is like a path or general bearing (e.g. 'which direction should we go?'), whereas 「向き」 refers to
+  the precise way something is facing (e.g. 'the house faces south'). 「方」 can also mean 'direction' but
+  is more often used for a specific person or a method. 「向け」 is often used for things actively 'directed
   towards' someone, while 「向き」 implies inherent 'suitability'. Lastly, 「～用」 indicates something is 'for
   use by' a group, and 「～専用」 implies 'exclusive use', both being more specific designations than the general
   'suitability' of 「向き」.
