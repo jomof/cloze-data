@@ -57,11 +57,32 @@ class JapaneseGrammarLabelCompletingClassifier:
         self.valid_labels = None
         
     def _clean_text(self, text: str) -> str:
-        """Clean and preprocess Japanese text."""
-        # Remove curly braces that mark grammar patterns
-        clean = re.sub(r'[{}]', '', text)
-        clean = clean.replace('⌈', ' ⌈ ').replace('⌉', ' ⌉ ').replace('ˢ', ' ˢ').replace('ᵖ', ' ᵖ').replace('ʳ', ' ʳ').strip()
-        return clean
+        """
+        Parses the augmented text and creates a clean 'word_pos' sequence.
+        Example: '⌈ˢ机ᵖnʳツクエ⌉' -> '机_n'
+        """
+        # This regex is an example to find all augmented words. You may need to refine it.
+        # It looks for the surface form (ˢ...) and the part-of-speech (ᵖ...).
+        pattern = re.compile(r'⌈ˢ(?P<surface>.+?)ᵖ(?P<pos>.+?)ʳ.+?⌉')
+        
+        # Function to replace each match with the 'word_pos' format, now with leading/trailing spaces
+        def repl(match):
+            surface = match.group('surface')
+            pos = match.group('pos')
+            # Clean up the POS tag (e.g., 'v' instead of 'vb') if necessary
+            clean_pos = pos.split(' ')[0] # Example of simplification
+            # Add spaces to ensure token separation
+            return f" {surface}_{clean_pos} "
+
+        # Replace all augmented words
+        processed_text = pattern.sub(repl, text)
+        
+        # Remove any remaining special characters that are not part of words
+        processed_text = re.sub(r'[⌈⌉ˢᵖʳ]', '', processed_text)
+        
+        # Normalize whitespace: collapse multiple spaces into one and strip ends.
+        # This is the key to ensuring ' 机_n の ' becomes '机_n の'.
+        return ' '.join(processed_text.split())
     
     def _filter_rare_labels(self, labels_list: List[List[str]]) -> List[List[str]]:
         """Filter out rare labels based on min_label_freq."""
@@ -674,6 +695,89 @@ class JapaneseGrammarLabelCompletingClassifier:
         
         return sorted(overlaps, key=lambda x: x[2], reverse=True)
     
+    def _find_merge_candidates(self, training_data, min_cooccurrence_rate=0.8, min_samples=10):
+        """
+        Find grammar points that are likely identical by using the classifier to predict
+        multiple labels and finding which labels frequently co-occur.
+        
+        Args:
+            training_data: Training data dictionary
+            min_cooccurrence_rate: Minimum rate of co-occurrence to consider labels as merge candidates
+            min_samples: Minimum number of samples for a label to be considered
+        """
+        import random
+        
+        # Build label to texts mapping
+        label_to_texts = defaultdict(list)
+        for text, labels in training_data.items():
+            for label in labels:
+                label_to_texts[label].append(text)
+        
+        # Filter labels with enough samples
+        valid_labels = {label: texts for label, texts in label_to_texts.items() 
+                       if len(texts) >= min_samples}
+        
+        if len(valid_labels) < 2:
+            return []
+        
+        # Sample texts from each label and get predictions
+        cooccurrence_matrix = defaultdict(lambda: defaultdict(int))
+        label_prediction_counts = defaultdict(int)
+        shared_examples = defaultdict(lambda: defaultdict(list))
+        
+        for label, texts in valid_labels.items():
+            # Sample up to 100 texts for efficiency
+            sample_texts = random.sample(texts, min(100, len(texts)))
+            
+            # Get predictions for these texts
+            predictions = self.predict(sample_texts)
+            
+            for text, predicted_labels in zip(sample_texts, predictions):
+                # Count how many times this label was predicted
+                label_prediction_counts[label] += 1
+                
+                # Count co-occurrences with other predicted labels
+                for pred_label in predicted_labels:
+                    if pred_label != label and pred_label in valid_labels:
+                        cooccurrence_matrix[label][pred_label] += 1
+                        if len(shared_examples[label][pred_label]) < 3:
+                            shared_examples[label][pred_label].append(text)
+        
+        merge_candidates = []
+        
+        # Find labels with high co-occurrence rates
+        for label1 in valid_labels:
+            if label_prediction_counts[label1] == 0:
+                continue
+                
+            for label2, cooccurrence_count in cooccurrence_matrix[label1].items():
+                if label1 >= label2:  # Avoid duplicates
+                    continue
+                
+                # Calculate co-occurrence rates
+                rate1 = cooccurrence_count / label_prediction_counts[label1]
+                rate2 = cooccurrence_count / label_prediction_counts.get(label2, 1)
+                
+                # Average co-occurrence rate
+                avg_rate = (rate1 + rate2) / 2
+                
+                if avg_rate >= min_cooccurrence_rate:
+                    merge_candidates.append({
+                        'label1': label1,
+                        'label2': label2,
+                        'similarity_score': avg_rate,
+                        'shared_samples': cooccurrence_count,
+                        'total_samples_1': len(valid_labels[label1]),
+                        'total_samples_2': len(valid_labels[label2]),
+                        'jaccard': 0,  # Not used in this approach
+                        'overlap_ratio_1': rate1,
+                        'overlap_ratio_2': rate2,
+                        'sample_texts': shared_examples[label1][label2]
+                    })
+        
+        # Sort by similarity score
+        return sorted(merge_candidates, key=lambda x: x['similarity_score'], reverse=True)
+    
     def _test_train_split(self, training_data: Dict[str, List[str]]):
         """
         Split training data into train and test sets.
@@ -695,7 +799,10 @@ class JapaneseGrammarLabelCompletingClassifier:
         return train_texts, test_texts, train_labels, test_labels
 
     def analyze_label_interference(self, training_data, 
-                                sample_percent=0.1, max_label_pairs=1000):
+                                sample_percent=0.1, max_label_pairs=1000,
+                                feature_overlap=True, prediction_confusion=False,
+                                sample_similarity=False, suspicious_cooccurrence=False,
+                                merge_candidates=True):
         """
         Comprehensive analysis of potentially interfering labels with intelligent sampling.
         
@@ -703,6 +810,11 @@ class JapaneseGrammarLabelCompletingClassifier:
             training_data: Training data dictionary for all analysis
             sample_percent: Percentage of data to sample (0.1 = 10%). If None, auto-determines based on size
             max_label_pairs: Maximum number of label pairs to analyze for sample similarity (default: 1000)
+            feature_overlap: Whether to analyze feature overlap between labels
+            prediction_confusion: Whether to analyze prediction confusion patterns
+            sample_similarity: Whether to analyze sample similarity between labels
+            suspicious_cooccurrence: Whether to analyze suspicious co-occurrences
+            merge_candidates: Whether to find grammatically identical labels that should be merged
         """
         import random
         
@@ -720,6 +832,7 @@ class JapaneseGrammarLabelCompletingClassifier:
             'prediction_confusion': None,
             'sample_similarity': None,
             'suspicious_cooccurrence': None,
+            'merge_candidates': None,
             'sampling_info': {
                 'total_labels': total_labels,
                 'sample_percent': sample_percent,
@@ -727,74 +840,85 @@ class JapaneseGrammarLabelCompletingClassifier:
             }
         }
         
-        # 1. Feature overlap analysis (always run - relatively fast)
-        with display.work("analyzing feature overlap"):
-            results['feature_overlap'] = self._analyze_label_feature_overlap()
+        # 1. Feature overlap analysis
+        if feature_overlap:
+            with display.work("analyzing feature overlap"):
+                results['feature_overlap'] = self._analyze_label_feature_overlap()
         
         # 2. Prediction confusion analysis
-        sample_size = len(texts)
-        if sample_percent < 1.0:
-            sample_size = max(1000, int(len(texts) * sample_percent))  # At least 1000 samples
-            if sample_size < len(texts):
-                display.check(f"Sampling {sample_size:,} out of {len(texts):,} test samples")
-                indices = random.sample(range(len(texts)), sample_size)
-                sampled_texts = [texts[i] for i in indices]
-                sampled_labels = [labels[i] for i in indices]
+        if prediction_confusion:
+            sample_size = len(texts)
+            if sample_percent < 1.0:
+                sample_size = max(1000, int(len(texts) * sample_percent))  # At least 1000 samples
+                if sample_size < len(texts):
+                    display.check(f"Sampling {sample_size:,} out of {len(texts):,} test samples")
+                    indices = random.sample(range(len(texts)), sample_size)
+                    sampled_texts = [texts[i] for i in indices]
+                    sampled_labels = [labels[i] for i in indices]
+                else:
+                    sampled_texts = texts
+                    sampled_labels = labels
             else:
                 sampled_texts = texts
                 sampled_labels = labels
-        else:
-            sampled_texts = texts
-            sampled_labels = labels
-        
-        results['sampling_info']['test_samples_used'] = len(sampled_texts)
-        
-        with display.work("analyzing prediction confusion"):
-            results['prediction_confusion'] = self._analyze_prediction_confusion(sampled_texts, sampled_labels)
+            
+            results['sampling_info']['test_samples_used'] = len(sampled_texts)
+            
+            with display.work("analyzing prediction confusion"):
+                results['prediction_confusion'] = self._analyze_prediction_confusion(sampled_texts, sampled_labels)
         
         # 3. Sample similarity analysis with intelligent sampling
-        estimated_pairs = (total_labels * (total_labels - 1)) // 2
-        
-        if estimated_pairs <= max_label_pairs:
-            # Small enough to run without sampling
-            with display.work("analyzing sample similarity"):
-                results['sample_similarity'] = self._analyze_sample_overlap(training_data)
-            results['sampling_info']['label_pairs_analyzed'] = estimated_pairs
-        else:
-            # Need to sample label pairs or labels
-            display.check(f"Large label space detected ({estimated_pairs:,} potential pairs)")
+        if sample_similarity:
+            estimated_pairs = (total_labels * (total_labels - 1)) // 2
             
-            if sample_percent >= 0.5:
-                # Sample by most frequent labels
-                label_counts = Counter(label for labels in training_data.values() for label in labels)
-                num_labels_to_keep = int(total_labels * sample_percent)
-                top_labels = set(label for label, _ in label_counts.most_common(num_labels_to_keep))
-                
-                display.check(f"Analyzing top {num_labels_to_keep} most frequent labels")
-                
-                # Filter training data
-                filtered_data = {}
-                for text, labels in training_data.items():
-                    filtered_labels = [l for l in labels if l in top_labels]
-                    if filtered_labels:
-                        filtered_data[text] = filtered_labels
-                
-                with display.work("analyzing sample similarity (top labels)"):
-                    results['sample_similarity'] = self._analyze_sample_overlap(filtered_data)
-                results['sampling_info']['label_pairs_analyzed'] = (num_labels_to_keep * (num_labels_to_keep - 1)) // 2
+            if estimated_pairs <= max_label_pairs:
+                # Small enough to run without sampling
+                with display.work("analyzing sample similarity"):
+                    results['sample_similarity'] = self._analyze_sample_overlap(training_data)
+                results['sampling_info']['label_pairs_analyzed'] = estimated_pairs
             else:
-                # Random sampling of label pairs
-                display.check(f"Randomly sampling {max_label_pairs:,} label pairs from {estimated_pairs:,}")
+                # Need to sample label pairs or labels
+                display.check(f"Large label space detected ({estimated_pairs:,} potential pairs)")
                 
-                with display.work("analyzing sample similarity (sampled pairs)"):
-                    results['sample_similarity'] = self._analyze_sample_overlap_sampled(
-                        training_data, max_pairs=max_label_pairs
-                    )
-                results['sampling_info']['label_pairs_analyzed'] = max_label_pairs
+                if sample_percent >= 0.5:
+                    # Sample by most frequent labels
+                    label_counts = Counter(label for labels in training_data.values() for label in labels)
+                    num_labels_to_keep = int(total_labels * sample_percent)
+                    top_labels = set(label for label, _ in label_counts.most_common(num_labels_to_keep))
+                    
+                    display.check(f"Analyzing top {num_labels_to_keep} most frequent labels")
+                    
+                    # Filter training data
+                    filtered_data = {}
+                    for text, labels in training_data.items():
+                        filtered_labels = [l for l in labels if l in top_labels]
+                        if filtered_labels:
+                            filtered_data[text] = filtered_labels
+                    
+                    with display.work("analyzing sample similarity (top labels)"):
+                        results['sample_similarity'] = self._analyze_sample_overlap(filtered_data)
+                    results['sampling_info']['label_pairs_analyzed'] = (num_labels_to_keep * (num_labels_to_keep - 1)) // 2
+                else:
+                    # Random sampling of label pairs
+                    display.check(f"Randomly sampling {max_label_pairs:,} label pairs from {estimated_pairs:,}")
+                    
+                    with display.work("analyzing sample similarity (sampled pairs)"):
+                        results['sample_similarity'] = self._analyze_sample_overlap_sampled(
+                            training_data, max_pairs=max_label_pairs
+                        )
+                    results['sampling_info']['label_pairs_analyzed'] = max_label_pairs
         
-        # 4. Co-occurrence analysis (always fast)
-        with display.work("analyzing suspicious co-occurrences"):
-            results['suspicious_cooccurrence'] = self._find_suspicious_cooccurrences()
+        # 4. Co-occurrence analysis
+        if suspicious_cooccurrence:
+            with display.work("analyzing suspicious co-occurrences"):
+                results['suspicious_cooccurrence'] = self._find_suspicious_cooccurrences()
+        
+        # 5. Merge candidates analysis
+        if merge_candidates:
+            with display.work("finding merge candidates"):
+                candidates = self._find_merge_candidates(training_data)
+                results['merge_candidates'] = candidates
+                display.check(f"Found {len(candidates)} merge candidates")
         
         return results
 
@@ -844,6 +968,41 @@ class JapaneseGrammarLabelCompletingClassifier:
             for label1, label2, _, _, lift, chi2 in results['suspicious_cooccurrence'][:10]:
                 output.append(f"{label1[:30]} ↔ {label2[:30]}: {lift:.2f}x more than expected (χ²={chi2:.1f})")
         
+        if results.get('merge_candidates'):
+            output.append("\n🔀 RECOMMENDED GRAMMAR POINT MERGES (Top 10)")
+            output.append("-" * 30)
+            output.append("These grammar points appear to be functionally identical:")
+            output.append("")
+            
+            for i, candidate in enumerate(results['merge_candidates'][:10]):
+                label1 = candidate['label1']
+                label2 = candidate['label2']
+                score = candidate['similarity_score']
+                shared = candidate['shared_samples']
+                total1 = candidate['total_samples_1']
+                total2 = candidate['total_samples_2']
+                overlap1 = candidate['overlap_ratio_1']
+                overlap2 = candidate['overlap_ratio_2']
+                
+                output.append(f"{i+1}. {label1[:40]} ≈ {label2[:40]}")
+                output.append(f"   Similarity: {score:.1%} | Examples: {total1} vs {total2}")
+                if shared > 0:
+                    output.append(f"   Coverage: {overlap1:.1%} of '{label1[:30]}' | {overlap2:.1%} of '{label2[:30]}'")
+                
+                # Show a sample shared sentence
+                if candidate.get('sample_texts'):
+                    sample = candidate['sample_texts'][0]
+                    # Convert back to Japanese for readability
+                    clean = sample.replace('⌈ ', '⌈').replace(' ⌉', '⌉').replace(' ˢ', 'ˢ').replace(' ᵖ', 'ᵖ').replace(' ʳ', 'ʳ').replace(' ', '').strip()
+                    try:
+                        japanese = compact_sentence_to_japanese(clean)
+                        output.append(f"   Example: {japanese}")
+                    except:
+                        output.append(f"   Example: {clean[:60]}...")
+                
+                if i < len(results['merge_candidates'][:10]) - 1:
+                    output.append("")
+        
         # Remove the section that tries to access evaluation metrics
         # since this method is for interference analysis, not evaluation results
         output.append(f"\n💡 NEXT STEPS")
@@ -852,6 +1011,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         output.append("2. Examine systematic confusion patterns for training improvements")
         output.append("3. Investigate similar pattern contexts for label refinement")
         output.append("4. Consider splitting unexpectedly frequent combinations")
+        output.append("5. Merge grammatically identical labels identified above")
         
         return "\n".join(output)
 if __name__ == '__main__':
@@ -878,7 +1038,7 @@ if __name__ == '__main__':
     
     classifier = JapaneseGrammarLabelCompletingClassifier(
         min_label_freq=3,  # Adjust based on your data
-        max_features=20000,
+        max_features=30000,
         ngram_range=(1, 3)
     )
 
