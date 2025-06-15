@@ -52,6 +52,7 @@ def check_renames_allowed(renames, grammar_summary):
     
     return True
 
+
 if __name__ == '__main__':
     try:
         # Determine workspace root: Bazel sets BUILD_WORKSPACE_DIRECTORY, otherwise use cwd
@@ -85,6 +86,11 @@ if __name__ == '__main__':
         display.check(f"Generated grammar summary with {len(grammar_summary['all-grammar-points'])} grammar points.")
 
         if os.path.exists(renames_allowed):
+            # Read the renames-allowed.yaml file
+            with open(renames_allowed, 'r', encoding='utf-8') as f:
+                renames = yaml.safe_load(f)
+
+        if renames:
             logger.info(f"Renames file {renames_allowed} exists, renaming now.")
             display.check(f"Renames file {renames_allowed} exists, renaming now.")
             # Read the renames-allowed.yaml file
@@ -365,6 +371,8 @@ if __name__ == '__main__':
             with open(renames_allowed, 'w', encoding='utf-8') as f:
                 yaml.dump(renames, f, allow_unicode=True)
         else:
+            with open(renames_allowed, 'w', encoding='utf-8') as f:
+                f.write('# Empty')
             display.check(f"No renames found.")
     finally:
         display.stop()
