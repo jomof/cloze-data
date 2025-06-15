@@ -14,6 +14,7 @@ if __name__ == '__main__':
             workspace_root,
             'resources', 'processed', 'ai-cleaned-merge-grammars'
         )
+        display.start()
 
         # Generate the grammary summary object
         grammar_summary = generate_summary(grammar_root)

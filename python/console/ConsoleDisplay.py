@@ -58,7 +58,7 @@ class ConsoleDisplay:
         self.final_summary_lines = []
         self.final_message = None
         self._in_error_handling = False
-        self._is_stopping = False  # Track if we're in shutdown mode
+        self._is_stopping = True  # Track if we're in shutdown mode
         
     def _scavenge_items(self):
         """Remove finished/error items older than SCAVENGING_AGE_LIMIT."""
@@ -470,11 +470,8 @@ class ConsoleDisplay:
 
     def check(self, message: str):
         if not self._is_stopping:
-            try:
-                sys.stdout.write(f'\r🌟 {message} {self.CLEAR_TO_EOL}\n')
-                sys.stdout.flush()
-            except (ValueError, OSError):
-                pass
+            sys.stdout.write(f'\r🌟 {message} {self.CLEAR_TO_EOL}\n')
+            sys.stdout.flush()
 
     def update_countdown(self, count: int):
         """Update the countdown of remaining work items."""

@@ -303,6 +303,29 @@ py_binary(
     ],
 )
 
+py_binary(
+    name = "train-grammar-classifier",
+    srcs = ["train-grammar-classifier.py"],
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//python/console:display",
+        "//python/mapreduce",
+        "//python/mecab",
+        "//python/classifiers",
+    ],
+)
+
+# bazel build //resources/grammar:trained-grammar-classifier
+py_build_tool(
+    name = "trained-grammar-classifier",
+    outs = ["output.txt"],
+    main = ":train-grammar-classifier",
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//resources/processed:ai-cleaned-merge-grammars",
+    ],
+)
+
 # bazel run //resources/grammar:grammar-labeled-japanese
 py_binary(
     name = "grammar-labeled-japanese",
@@ -355,6 +378,7 @@ py_library(
         "post-ai-scrub-tool.py",
         "split-join-rename.py",
         "toposort.py",
+        "train-grammar-classifier.py",
         "yaml-clean.py",
     ],
     visibility = ["//:__subpackages__"],

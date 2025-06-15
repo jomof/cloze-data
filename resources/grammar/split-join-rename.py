@@ -114,6 +114,7 @@ if __name__ == '__main__':
             workspace_root,
             'resources', 'processed', 'ai-cleaned-merge-grammars'
         )
+        display.start()
         
         # Set up debug logging
         log_file = os.path.join(grammar_root, 'summary', 'split-join-rename.log')

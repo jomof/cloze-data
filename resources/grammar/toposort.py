@@ -611,6 +611,7 @@ if __name__ == '__main__':
         workspace_root,
         'resources', 'processed', 'ai-cleaned-merge-grammars'
     )
+    display.start()
 
     #Set up logging
     tlog_filename = os.path.join(grammar_root, 'summary/toposort.log')

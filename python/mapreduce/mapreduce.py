@@ -240,8 +240,6 @@ class MapReduce:
         self.map_semaphore = asyncio.Semaphore(self.max_threads)
         self.fold_lock = asyncio.Lock()
 
-        display.start()
-
         # Gather input files
         if not os.path.isdir(self.input_dir):
             display.error('INIT_ERROR', f"Input directory not found: {self.input_dir}")

@@ -29,7 +29,7 @@ if __name__ == '__main__':
     test_evaluation_results_file = os.path.join(grammar_root, 'summary', 'grammar-labeled-japanese-test-evaluation.json')
     
     classifier = JapaneseGrammarLabelCompletingClassifier()
-
+    display.start()
     if os.path.exists(model_file) and os.path.exists(training_data_file):
         display.start()
         with display.work("loading existing training data"):

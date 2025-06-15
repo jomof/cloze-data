@@ -246,7 +246,8 @@ if __name__ == '__main__':
             'resources', 'processed', 'ai-cleaned-merge-grammars'
         )
         temp_dir = os.path.join(workspace_root, '.temp')
-
+        display.start()
+        
         # Generate the grammary summary object
         grammar_summary = generate_summary(grammar_root)
         save_summary(grammar_summary, grammar_root)

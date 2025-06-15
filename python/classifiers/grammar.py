@@ -111,7 +111,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         """Setup the logistic regression classifier."""
         # Good: 2000 iterations/liblinear/l1/C=1.5/features=5000
         base_classifier = LogisticRegression(
-            max_iter=2000,
+            max_iter=3000,
             class_weight=self.class_weight,
             random_state=self.random_state,
             solver='liblinear',
