@@ -23,8 +23,8 @@ class JapaneseGrammarLabelCompletingClassifier:
     """
     
     def __init__(self, 
-                 min_label_freq=2,
-                 max_features=20000,
+                 min_label_freq=3,
+                 max_features=5000,
                  ngram_range=(1, 3),
                  class_weight='balanced',
                  random_state=42,

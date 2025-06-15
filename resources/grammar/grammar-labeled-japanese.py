@@ -28,11 +28,7 @@ if __name__ == '__main__':
     interference_analysis_file = os.path.join(grammar_root, 'summary', 'grammar-labeled-japanese-interference-analysis.txt')
     test_evaluation_results_file = os.path.join(grammar_root, 'summary', 'grammar-labeled-japanese-test-evaluation.json')
     
-    classifier = JapaneseGrammarLabelCompletingClassifier(
-        min_label_freq=3,  # Adjust based on your data
-        max_features=5000,
-        ngram_range=(1, 3)
-    )
+    classifier = JapaneseGrammarLabelCompletingClassifier()
 
     if os.path.exists(model_file) and os.path.exists(training_data_file):
         display.start()
