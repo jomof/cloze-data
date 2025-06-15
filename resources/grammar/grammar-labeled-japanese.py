@@ -562,73 +562,82 @@ class JapaneseGrammarLabelCompletingClassifier:
                 overlaps.append((label1, label2, jaccard, overlap))
         
         return sorted(overlaps, key=lambda x: x[2], reverse=True)
-    
+
     def _find_merge_candidates(self, training_data, min_cooccurrence_rate=0.8, min_samples=10):
         """
-        Find grammar points that are likely identical by using the classifier to predict
-        multiple labels and finding which labels frequently co-occur.
-        
+        [CORRECTED] Finds grammar points that are likely identical by pre-calculating
+        predictions in manageable batches. This version fixes the AttributeError.
+
         Args:
             training_data: Training data dictionary
-            min_cooccurrence_rate: Minimum rate of co-occurrence to consider labels as merge candidates
+            min_cooccurrence_rate: Minimum rate of co-occurrence to consider for merging
             min_samples: Minimum number of samples for a label to be considered
         """
         import random
-        
-        # Build label to texts mapping
+        from collections import defaultdict
+
+        # 1. Build label-to-texts mapping and filter for labels with enough samples
         label_to_texts = defaultdict(list)
         for text, labels in training_data.items():
             for label in labels:
                 label_to_texts[label].append(text)
-        
-        # Filter labels with enough samples
-        valid_labels = {label: texts for label, texts in label_to_texts.items() 
-                       if len(texts) >= min_samples}
-        
+
+        valid_labels = {label: texts for label, texts in label_to_texts.items()
+                        if len(texts) >= min_samples}
+
         if len(valid_labels) < 2:
             return []
-        
-        # Sample texts from each label and get predictions
+
+        # 2. Pre-sample all texts to identify the full set that needs prediction
+        label_to_sampled_texts = {}
+        all_texts_to_predict = set()
+
+        for label, texts in valid_labels.items():
+            sample_texts = random.sample(texts, min(100, len(texts)))
+            label_to_sampled_texts[label] = sample_texts
+            all_texts_to_predict.update(sample_texts)
+
+        # 3. Run prediction in batches to manage memory
+        predictions_cache = {}
+        unique_texts_list = list(all_texts_to_predict)
+        batch_size = 5000
+        total_batches = (len(unique_texts_list) + batch_size - 1) // batch_size
+
+        # The initial message now includes all relevant info, and the problematic p.update() is removed.
+        with display.work(f"predicting {len(unique_texts_list):,} samples in {total_batches} batches of {batch_size}"):
+            for i in range(0, len(unique_texts_list), batch_size):
+                batch_texts = unique_texts_list[i:i + batch_size]
+                batch_predictions = self.predict(batch_texts)
+                
+                # Update the cache with the results from the current batch
+                predictions_cache.update({text: preds for text, preds in zip(batch_texts, batch_predictions)})
+
+        # 4. Build the co-occurrence matrix using the pre-computed predictions
         cooccurrence_matrix = defaultdict(lambda: defaultdict(int))
         label_prediction_counts = defaultdict(int)
         shared_examples = defaultdict(lambda: defaultdict(list))
-        
-        for label, texts in valid_labels.items():
-            # Sample up to 100 texts for efficiency
-            sample_texts = random.sample(texts, min(100, len(texts)))
-            
-            # Get predictions for these texts
-            predictions = self.predict(sample_texts)
-            
-            for text, predicted_labels in zip(sample_texts, predictions):
-                # Count how many times this label was predicted
+
+        for label, sampled_texts in label_to_sampled_texts.items():
+            for text in sampled_texts:
+                predicted_labels = predictions_cache.get(text, [])
                 label_prediction_counts[label] += 1
-                
-                # Count co-occurrences with other predicted labels
                 for pred_label in predicted_labels:
                     if pred_label != label and pred_label in valid_labels:
                         cooccurrence_matrix[label][pred_label] += 1
                         if len(shared_examples[label][pred_label]) < 3:
                             shared_examples[label][pred_label].append(text)
-        
+
+        # 5. Calculate merge candidates (logic remains unchanged)
         merge_candidates = []
-        
-        # Find labels with high co-occurrence rates
         for label1 in valid_labels:
             if label_prediction_counts[label1] == 0:
                 continue
-                
             for label2, cooccurrence_count in cooccurrence_matrix[label1].items():
-                if label1 >= label2:  # Avoid duplicates
+                if label1 >= label2:
                     continue
-                
-                # Calculate co-occurrence rates
                 rate1 = cooccurrence_count / label_prediction_counts[label1]
                 rate2 = cooccurrence_count / label_prediction_counts.get(label2, 1)
-                
-                # Average co-occurrence rate
                 avg_rate = (rate1 + rate2) / 2
-                
                 if avg_rate >= min_cooccurrence_rate:
                     merge_candidates.append({
                         'label1': label1,
@@ -637,15 +646,14 @@ class JapaneseGrammarLabelCompletingClassifier:
                         'shared_samples': cooccurrence_count,
                         'total_samples_1': len(valid_labels[label1]),
                         'total_samples_2': len(valid_labels[label2]),
-                        'jaccard': 0,  # Not used in this approach
+                        'jaccard': 0,
                         'overlap_ratio_1': rate1,
                         'overlap_ratio_2': rate2,
                         'sample_texts': shared_examples[label1][label2]
                     })
-        
-        # Sort by similarity score
+
         return sorted(merge_candidates, key=lambda x: x['similarity_score'], reverse=True)
-    
+
     def _test_train_split(self, training_data: Dict[str, List[str]]):
         """
         Split training data into train and test sets.
