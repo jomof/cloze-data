@@ -111,18 +111,28 @@ class JapaneseGrammarLabelCompletingClassifier:
     
     def _setup_classifier(self):
         """Setup the logistic regression classifier."""
+        # Good: 2000 iterations/liblinear/l1/C=1.5/features=5000
         base_classifier = LogisticRegression(
-            max_iter=100000,
+            max_iter=2000,
             class_weight=self.class_weight,
             random_state=self.random_state,
-            solver='liblinear',      # Use the SAGA solver
-            # penalty='l1',
+            solver='liblinear',
+            # solver='saga',      # Use the SAGA solver
+            # penalty='elasticnet',
+            # l1_ratio=0.01
+            penalty='l1',
+            # l1_ratio=0.1,
             # penalty='l1',       # Enable L1 regularization for sparsity
-            # C=0.1 
+            C=1.7
         )
+        display.check(f"{base_classifier}")
+        display.check(f"  solver={base_classifier.solver}")
+        display.check(f"  penalty={base_classifier.penalty}")
+        
         
         # Use OneVsRestClassifier for multi-label classification
         self.classifier = OneVsRestClassifier(base_classifier, n_jobs=-1)
+        
     
     def fit_from_dict(self, data: Dict[str, List[str]]):
         """
@@ -177,6 +187,7 @@ class JapaneseGrammarLabelCompletingClassifier:
             )
             X = self.vectorizer.fit_transform(cleaned_texts)
             display.check(f"Feature matrix shape: {X.shape}")
+            display.check(f"{self.vectorizer}")
         
         # Prepare labels
         with display.work("preparing labels"):
@@ -806,7 +817,7 @@ if __name__ == '__main__':
     
     classifier = JapaneseGrammarLabelCompletingClassifier(
         min_label_freq=3,  # Adjust based on your data
-        max_features=30000,
+        max_features=5000,
         ngram_range=(1, 3)
     )
 
