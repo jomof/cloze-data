@@ -318,7 +318,7 @@ py_binary(
 # bazel build //resources/grammar:trained-grammar-classifier
 py_build_tool(
     name = "trained-grammar-classifier",
-    outs = ["output.txt"],
+    outs = ["trained-grammar-classifier.pkl"],
     main = ":train-grammar-classifier",
     visibility = ["//:__subpackages__"],
     deps = [

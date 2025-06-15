@@ -47,6 +47,8 @@ if __name__ == '__main__':
     asyncio.run(mr.run())
 
     # Train classifier
-    classifier = JapaneseGrammarLabelCompletingClassifier()
+    classifier = JapaneseGrammarLabelCompletingClassifier(
+        test_size=0.01
+    )
     test_split_evaluation = classifier.fit_from_dict(training_data)
     classifier.save_model(args.output)
