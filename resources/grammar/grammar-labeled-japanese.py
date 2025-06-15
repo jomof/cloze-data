@@ -112,9 +112,13 @@ class JapaneseGrammarLabelCompletingClassifier:
     def _setup_classifier(self):
         """Setup the logistic regression classifier."""
         base_classifier = LogisticRegression(
-            max_iter=1000,
+            max_iter=100000,
             class_weight=self.class_weight,
             random_state=self.random_state,
+            solver='liblinear',      # Use the SAGA solver
+            # penalty='l1',
+            # penalty='l1',       # Enable L1 regularization for sparsity
+            # C=0.1 
         )
         
         # Use OneVsRestClassifier for multi-label classification
@@ -1038,7 +1042,7 @@ if __name__ == '__main__':
     
     classifier = JapaneseGrammarLabelCompletingClassifier(
         min_label_freq=3,  # Adjust based on your data
-        max_features=30000,
+        max_features=25000,
         ngram_range=(1, 3)
     )
 
