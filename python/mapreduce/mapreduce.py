@@ -191,7 +191,7 @@ class MapReduce:
                                                 processed,
                                                 input_file_path)
                                     except Exception as e:
-                                        display.error(f"{map_func_name} {basename}: {e}")
+                                        display.warn(f"{map_func_name} {basename}: {e}")
                                         raise
 
                     # Serialize the processed data and write to temp file

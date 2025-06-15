@@ -52,6 +52,59 @@ def check_renames_allowed(renames, grammar_summary):
     
     return True
 
+def find_renames(grammar_summary):
+    # Create a map of renames in the new simplified format
+    # {
+    #   'better-name': ['old-name-1', 'old-name-2']
+    # }
+    renames = {} # Key is new name, value is list of old names
+    for grammar_point_name in grammar_summary['all-grammar-points']:
+        summary_point = grammar_summary['all-grammar-points'][grammar_point_name]
+        better_names = summary_point.get('better_grammar_point_name')
+        if not better_names:
+            continue
+
+        for better_name in better_names:
+            if better_name not in summary_point:
+                if better_name not in renames:
+                    renames[better_name] = []
+                renames[better_name].append(grammar_point_name)
+
+    def fn(value, type, path):
+        if type != "false_friends/object": return
+        false_friend_grammar_point = value.get('grammar_point', '')
+        if not false_friend_grammar_point: return
+        prefix = "<strongly-suggest>:"
+        if prefix not in false_friend_grammar_point: return
+        stripped = false_friend_grammar_point.removeprefix(prefix)
+        renames[stripped] = renames.get(stripped, [])
+
+    # Find false-friend suggestions:
+    async def logic(parsed_obj, file_path):        
+        visit_json(parsed_obj, GRAMMAR_SCHEMA, fn)
+    
+    mr = MapReduce(
+        input_dir            = grammar_root,
+        output_dir           = grammar_root,
+        map_func_name        = 'searching false friends',
+        map_func             = logic,        # or a sync function
+        max_threads          = 4,
+    )
+
+    asyncio.run(mr.run())
+
+
+    # Save the renames-allowed.yaml file
+    if len(renames) > 0:
+        display.check(f"Found {len(renames)} renames, saving to {os.path.basename(renames_allowed)}.")
+        display.check(f"Check that file and then re-run this script to apply the renames.")
+        with open(renames_allowed, 'w', encoding='utf-8') as f:
+            yaml.dump(renames, f, allow_unicode=True)
+    else:
+        with open(renames_allowed, 'w', encoding='utf-8') as f:
+            f.write('# Empty')
+        display.check(f"No renames found.")
+
 
 if __name__ == '__main__':
     try:
@@ -90,7 +143,9 @@ if __name__ == '__main__':
             with open(renames_allowed, 'r', encoding='utf-8') as f:
                 renames = yaml.safe_load(f)
 
-        if renames:
+        if not renames:
+            find_renames(grammar_summary)
+        else:
             logger.info(f"Renames file {renames_allowed} exists, renaming now.")
             display.check(f"Renames file {renames_allowed} exists, renaming now.")
             # Read the renames-allowed.yaml file
@@ -347,33 +402,7 @@ if __name__ == '__main__':
 
             sys.exit(0)
 
-        # Create a map of renames in the new simplified format
-        # {
-        #   'better-name': ['old-name-1', 'old-name-2']
-        # }
-        renames = {} # Key is new name, value is list of old names
-        for grammar_point_name in grammar_summary['all-grammar-points']:
-            summary_point = grammar_summary['all-grammar-points'][grammar_point_name]
-            better_names = summary_point.get('better_grammar_point_name')
-            if not better_names:
-                continue
-
-            for better_name in better_names:
-                if better_name not in summary_point:
-                    if better_name not in renames:
-                        renames[better_name] = []
-                    renames[better_name].append(grammar_point_name)
-
-        # Save the renames-allowed.yaml file
-        if len(renames) > 0:
-            display.check(f"Found {len(renames)} renames, saving to {os.path.basename(renames_allowed)}.")
-            display.check(f"Check that file and then re-run this script to apply the renames.")
-            with open(renames_allowed, 'w', encoding='utf-8') as f:
-                yaml.dump(renames, f, allow_unicode=True)
-        else:
-            with open(renames_allowed, 'w', encoding='utf-8') as f:
-                f.write('# Empty')
-            display.check(f"No renames found.")
+        
     finally:
         display.stop()
     

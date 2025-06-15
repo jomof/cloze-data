@@ -1042,7 +1042,7 @@ if __name__ == '__main__':
     
     classifier = JapaneseGrammarLabelCompletingClassifier(
         min_label_freq=3,  # Adjust based on your data
-        max_features=25000,
+        max_features=30000,
         ngram_range=(1, 3)
     )
 
