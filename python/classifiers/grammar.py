@@ -12,7 +12,7 @@ from typing import List, Dict, Union
 import warnings
 warnings.filterwarnings('ignore')
 
-from python.mecab.compact_sentence import compact_sentence_to_japanese
+from python.mecab.compact_sentence import compact_sentence_to_japanese, japanese_to_compact_sentence
 from python.console import display
 
 
@@ -24,7 +24,7 @@ class JapaneseGrammarLabelCompletingClassifier:
     
     def __init__(self, 
                  min_label_freq=3,
-                 max_features=5000,
+                 max_features=6000,
                  ngram_range=(1, 3),
                  class_weight='balanced',
                  random_state=42,
@@ -59,6 +59,14 @@ class JapaneseGrammarLabelCompletingClassifier:
         Parses the augmented text and creates a clean 'word_pos' sequence.
         Example: '⌈ˢ机ᵖnʳツクエ⌉' -> '机_n'
         """
+
+        # Strip grammar denoting brackets.
+        text = text.replace('{', '').replace('}', '')
+
+        # If it looks like a plain japanese sentence, then convert to compact
+        if '⌈' not in text:
+            text = japanese_to_compact_sentence(text)
+
         # This regex is an example to find all augmented words. You may need to refine it.
         # It looks for the surface form (ˢ...) and the part-of-speech (ᵖ...).
         pattern = re.compile(r'⌈ˢ(?P<surface>.+?)ᵖ(?P<pos>.+?)ʳ.+?⌉')

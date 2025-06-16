@@ -326,6 +326,22 @@ py_build_tool(
     ],
 )
 
+# bazel run //resources/grammar:calculate-grammar-point-dependencies
+py_binary(
+    name = "calculate-grammar-point-dependencies",
+    srcs = ["calculate-grammar-point-dependencies.py"],
+    data = [
+        "//resources/processed:ai-cleaned-merge-grammars",
+        ":trained-grammar-classifier"
+    ],
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//python/classifiers",
+        "//python/console:display",
+         "//python/mapreduce",
+    ],
+)
+
 # bazel run //resources/grammar:grammar-labeled-japanese
 py_binary(
     name = "grammar-labeled-japanese",

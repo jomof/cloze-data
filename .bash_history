@@ -1160,3 +1160,277 @@ tar -xjf btop-x86_64-linux-musl.tbz
 sudo cp btop/bin/btop /usr/local/bin/
 btop
 claude
+git add .
+bazel run //resources/grammar:split-join-rename
+git add .
+bazel run //resources/grammar:split-join-rename
+clear
+bazel run //resources/grammar:split-join-rename
+clear
+bazel run //resources/grammar:split-join-rename
+git add .
+bazel run //resources/grammar:ai-pass
+clear
+gcloud auth application-default login
+gcloud auth application-default set-quota-project jomof-sandbox
+clear
+bazel run //resources/grammar:ai-pass
+git add .
+bazel run //resources/grammar:split-join-rename
+git add .
+bazel run //resources/grammar:split-join-rename
+clear
+bazel run //resources/grammar:split-join-rename
+clear
+bazel run //resources/grammar:split-join-rename
+clear
+bazel run //resources/grammar:split-join-rename
+clear
+bazel run //resources/grammar:ai-pass
+git add .
+clear
+bazel run //resources/grammar:ai-pass
+git add .
+bazel run //resources/grammar:split-join-rename
+bazel run //resources/grammar:ai-pass
+git add .
+bazel run //resources/grammar:ai-pass
+bazel run //resources/grammar:toposort
+git add .
+bazel run //resources/grammar:ai-pass
+git add .
+bazel run //resources/grammar:ai-pass
+bazel run //resources/grammar:toposort
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+git add .
+bazel run //resources/grammar:split-join-rename
+git add .
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+git add .
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+bazel run //resources/grammar:split-join-rename
+git add .
+clear
+bazel run //resources/grammar:ai-pass
+git add .
+bazel run //resources/grammar:toposort
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+bazel run //resources/grammar:split-join-rename
+git add .
+bazel run //resources/grammar:toposort
+bazel run //resources/grammar:ai-pass
+git add .
+bazel run //resources/grammar:toposort
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+bazel run //resources/grammar:split-join-rename
+git add .
+bazel run //resources/grammar:ai-pass
+bazel run //resources/grammar:toposort
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+bazel run //resources/grammar:split-join-rename
+git add .
+bazel run //resources/grammar:ai-pass
+git add .
+bazel run //resources/grammar:toposort
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+gitt add .
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+bazel run //resources/grammar:split-join-rename
+clear
+bazel run //resources/grammar:split-join-rename
+clear
+bazel run //resources/grammar:split-join-rename
+clear
+bazel run //resources/grammar:split-join-rename
+clear
+bazel run //resources/grammar:split-join-rename
+clear
+bazel run //resources/grammar:split-join-rename
+clear
+bazel run //resources/grammar:split-join-rename
+clear
+bazel run //resources/grammar:split-join-rename
+git add .
+bazel run //resources/grammar:split-join-rename
+git add .
+clear
+bazel run //resources/grammar:ai-pass
+clear
+git add .
+bazel run //resources/grammar:ai-pass
+clear
+git add .
+bazel run //resources/grammar:ai-pass
+git add .
+
+bazel run //resources/grammar:ai-pass
+git add .
+clear
+bazel run //resources/grammar:ai-pass
+git add .
+bazel run //resources/grammar:toposort
+git add .
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+bazel run //resources/grammar:split-join-rename
+git add .
+bazel run //resources/grammar:ai-pass
+git add .
+bazel run //resources/grammar:ai-pass
+git add .
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+bazel run //resources/grammar:split-join-rename
+clear
+bazel run //resources/grammar:split-join-rename
+git add .
+bazel run //resources/grammar:ai-pass
+git add .
+bazel run //resources/grammar:ai-pass
+git add .
+bazel run //resources/grammar:toposort
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+git add .
+clear
+bazel run //resources/grammar:split-join-rename
+bazel run //resources/grammar:ai-pass
+git add .
+clear
+bazel run //resources/grammar:ai-pass
+git add .
+bazel run //resources/grammar:clean-lint
+bazel run //resources/grammar:ai-pass
+git add .
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+git add .
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+bazel run //resources/grammar:split-join-rename
+cd resources/processed/ai-cleaned-merge-grammars/
+ls | grep "Verb\["
+ls | grep "Verb\[" | sort
+ls | sort | grep "Verb\[" 
+cd ..
+bazel run //resources/grammar:lint-grammar-points
+cd ..
+git add .
+git status
+git add .
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+./update-python.sh 
+bazel build //python/...
+bazel test //python/...
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+clear
+bazel run //:gazelle_python_manifest.update && bazel run //:gazelle update
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+git add .
+git clean -xdf
+bazel run //:gazelle_python_manifest.update && bazel run //:gazelle update
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+bazel run //resources/grammar:train-grammar-classifier
+clear
+bazel build //resources/grammar:train-grammar-classifier
+clear
+bazel build //resources/grammar:train-grammar-classifier
+clear
+bazel build //resources/grammar:train-grammar-classifier
+bazel build //resources/grammar:trained-grammar-classifier
+clear
+bazel build //resources/grammar:trained-grammar-classifier
+clear
+bazel build //resources/grammar:trained-grammar-classifier
+clear
+bazel build //resources/grammar:trained-grammar-classifier
+bazel run //:gazelle_python_manifest.update && bazel run //:gazelle update
+bazel build //resources/grammar:trained-grammar-classifier
+clear
+bazel build //resources/grammar:trained-grammar-classifier
+clear
+bazel build //resources/grammar:trained-grammar-classifier
+clear
+bazel build //resources/grammar:trained-grammar-classifier
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+bazel build //resources/grammar:trained-grammar-classifier
+git add .
+bazel build //resources/grammar:trained-grammar-classifier
+clear
+git add .
+bazel build //resources/grammar:trained-grammar-classifier
+clear
+bazel build //resources/grammar:trained-grammar-classifier
+clear
+bazel build //resources/grammar:trained-grammar-classifier
+clear
+bazel build //resources/grammar:trained-grammar-classifier
+clear
+bazel build //resources/grammar:trained-grammar-classifier
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+bazel build //resources/grammar:trained-grammar-classifier
+clear
+git add .
+bazel build //resources/grammar:trained-grammar-classifier
+bazel clean
+bazel build //resources/grammar:trained-grammar-classifier
+clear
+bazel run //resources/grammar:calculate-grammar-point-dependencies
+bazel run //resources/grammar:calculate-grammar-point-dependencies --debug_sandbox
+bazel run //resources/grammar:calculate-grammar-point-dependencies --sandbox_debug
+bazel run //resources/grammar:calculate-grammar-point-dependencies
+clear
+bazel run //resources/grammar:calculate-grammar-point-dependencies
+clear
+bazel run //resources/grammar:calculate-grammar-point-dependencies
+clear
+bazel run //resources/grammar:calculate-grammar-point-dependencies
+gramstat=1 git clean -xdf && clear && bazel run //resources/grammar:grammar-labeled-japanese
+git add .
+bazel run //resources/grammar:calculate-grammar-point-dependencies
+clear
+bazel run //resources/grammar:calculate-grammar-point-dependencies
+clear
+git add .
+bazel run //resources/grammar:calculate-grammar-point-dependencies
+exit

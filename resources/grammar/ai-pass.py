@@ -15,6 +15,7 @@ from python.mapreduce import MapReduce
 from python.utils.build_cache.memoize.memoize import memoize_to_disk
 from python.utils.visit_json.visit_json import visit_json
 from python.db import db
+import traceback
 
 def ws(s: str) -> str:
     return "\n".join(line.strip() for line in s.splitlines())
@@ -186,11 +187,7 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
     id = prior_input_obj["id"]
     sources = { }
         
-    if prior_grammar_point:
-        model = "gemini-2.5-flash-preview-05-20"
-    else:
-        model = "gemini-2.0-flash-001"
-    
+    model = "gemini-2.5-flash-preview-05-20"
 
     json_response = prior_grammar_point
     with AiChatSession(model, GRAMMAR_SCHEMA_WITH_COMMENTS) as session:
@@ -198,9 +195,14 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
             with open(temp_dir + "/" + os.path.basename(output_file)+f"-{i}.prompt", 'w', encoding='utf-8') as f:
                 f.write(prompt)
 
-            response = session.send_message(prompt)
-            with open(temp_dir + "/" + os.path.basename(output_file)+f"-{i}.raw-response", 'w', encoding='utf-8') as f:
-                f.write(response)
+            try:
+                response = session.send_message(prompt)
+                with open(temp_dir + "/" + os.path.basename(output_file)+f"-{i}.raw-response", 'w', encoding='utf-8') as f:
+                    f.write(response)
+            except Exception as e:
+                with open(temp_dir + "/" + os.path.basename(output_file)+f"-{i}.raw-response-exception", 'w', encoding='utf-8') as f:
+                    f.write(traceback.format_exc())
+                raise
 
             response = repair_json(response)
             with open(temp_dir + "/" + os.path.basename(output_file)+f"-{i}.repaired-response", 'w', encoding='utf-8') as f:
@@ -247,7 +249,7 @@ if __name__ == '__main__':
         )
         temp_dir = os.path.join(workspace_root, '.temp')
         display.start()
-        
+
         # Generate the grammary summary object
         grammar_summary = generate_summary(grammar_root)
         save_summary(grammar_summary, grammar_root)
@@ -305,7 +307,7 @@ if __name__ == '__main__':
                     "func": logic,
                 }
             },
-            max_threads          = 5,
+            max_threads          = 14,
         )
 
         result = asyncio.run(mr.run())
