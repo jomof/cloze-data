@@ -11,6 +11,25 @@ from python.console import display
 from collections import defaultdict
 from python.classifiers.grammar import JapaneseGrammarLabelCompletingClassifier
 
+
+def get_keys_with_second_highest_value(d):
+    if not d:
+        return [] # Handle empty dictionary
+
+    # 1. Get all unique values
+    unique_values = sorted(list(set(d.values())), reverse=True)
+
+    # 2. Check if there's a second highest value
+    if len(unique_values) < 2:
+        return [] # Not enough unique values for a "second highest"
+
+    second_highest_value = unique_values[1] # The second element after sorting descending
+
+    # 3. Collect all keys that have this second highest value
+    keys_with_second_highest = [key for key, value in d.items() if value == second_highest_value and value > 1]
+
+    return keys_with_second_highest
+
 if __name__ == '__main__':
 
     workspace_root = os.environ.get('BUILD_WORKSPACE_DIRECTORY') or os.getcwd()
@@ -58,16 +77,10 @@ if __name__ == '__main__':
                 union_of_examples_grammar_points[used] += 1
 
 
-        count_this_grammar_point = union_of_examples_grammar_points[grammar_point]
-        del union_of_examples_grammar_points[grammar_point]
-        union_of_examples_grammar_points = dict(sorted(union_of_examples_grammar_points.items(), key=lambda x: x[1], reverse=True))
-        union_of_examples_grammar_points = {k: v for k, v in union_of_examples_grammar_points.items() if v < count_this_grammar_point}
-        # filtered_dict = {k: v for k, v in union_of_examples_grammar_points.items() if v/count_this_grammar_point > 0.9}
+        second_highest_frequency_items = get_keys_with_second_highest_value(union_of_examples_grammar_points)
 
-        if 'learn_after' in current:
-            del current['learn_after']
-        if union_of_examples_grammar_points:
-            dependencies = sorted(list(union_of_examples_grammar_points.keys())[:3])
+        if second_highest_frequency_items:
+            dependencies = sorted(second_highest_frequency_items)
             current['learn_before'] = dependencies
             # display.check(f"{grammar_point} examples reference {len(union_of_examples_grammar_points)} grammar points. Choosing dependency: {dependency}")
         

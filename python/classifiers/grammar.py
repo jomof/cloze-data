@@ -5,7 +5,7 @@ from itertools import combinations
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.multiclass import OneVsRestClassifier
-from sklearn.preprocessing import MultiLabelBinarizer
+from sklearn.preprocessing import MultiLabelBinarizer, MaxAbsScaler
 from sklearn.metrics import hamming_loss, jaccard_score
 import pickle
 from typing import List, Dict, Union
@@ -14,6 +14,10 @@ warnings.filterwarnings('ignore')
 
 from python.mecab.compact_sentence import compact_sentence_to_japanese, japanese_to_compact_sentence
 from python.console import display
+import numpy as np
+from itertools import combinations
+import os
+
 
 
 class JapaneseGrammarLabelCompletingClassifier:
@@ -24,7 +28,7 @@ class JapaneseGrammarLabelCompletingClassifier:
     
     def __init__(self, 
                  min_label_freq=3,
-                 max_features=6000,
+                 max_features=7500,
                  ngram_range=(1, 3),
                  class_weight='balanced',
                  random_state=42,
@@ -49,6 +53,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         
         # Initialize components
         self.vectorizer = None
+        self.scaler = None # <-- Added scaler
         self.label_binarizer = None
         self.classifier = None
         self.label_counts = None
@@ -119,7 +124,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         """Setup the logistic regression classifier."""
         # Good: 2000 iterations/liblinear/l1/C=1.5/features=5000
         base_classifier = LogisticRegression(
-            max_iter=3000,
+            max_iter=4000,
             class_weight=self.class_weight,
             random_state=self.random_state,
             solver='liblinear',
@@ -129,7 +134,9 @@ class JapaneseGrammarLabelCompletingClassifier:
             penalty='l1',
             # l1_ratio=0.1,
             # penalty='l1',       # Enable L1 regularization for sparsity
-            C=1.7
+            C=1.9,
+            # n_jobs=-1  
+            # verbose=1
         )
         display.check(f"{base_classifier}")
         display.check(f"  solver={base_classifier.solver}")
@@ -193,7 +200,12 @@ class JapaneseGrammarLabelCompletingClassifier:
             )
             X = self.vectorizer.fit_transform(cleaned_texts)
             display.check(f"Feature matrix shape: {X.shape}")
-            display.check(f"{self.vectorizer}")
+        
+        # --- ADDED: Feature Scaling ---
+        with display.work("scaling features"):
+            self.scaler = MaxAbsScaler()
+            X_scaled = self.scaler.fit_transform(X)
+            display.check("Features scaled with MaxAbsScaler")
         
         # Prepare labels
         with display.work("preparing labels"):
@@ -205,7 +217,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         # Train classifier
         with display.work("training model"):
             self._setup_classifier()
-            self.classifier.fit(X, y)
+            self.classifier.fit(X_scaled, y) # <-- Use scaled data
         
         # Analyze training data
         with display.work("gathering statistics"):
@@ -254,22 +266,25 @@ class JapaneseGrammarLabelCompletingClassifier:
         cleaned_texts = [self._clean_text(text) for text in texts]
         X = self.vectorizer.transform(cleaned_texts)
         
+        # --- ADDED: Apply the same scaling ---
+        X_scaled = self.scaler.transform(X)
+        
         # Get probability predictions
         if hasattr(self.classifier, "predict_proba"):
             # For logistic regression classifier that supports predict_proba
             try:
-                y_prob = self.classifier.predict_proba(X)
+                y_prob = self.classifier.predict_proba(X_scaled) # <-- Use scaled data
                 # Convert to binary predictions based on threshold
                 y_pred = (y_prob >= threshold).astype(int)
             except:
                 # Fallback to decision_function or predict
                 if hasattr(self.classifier, "decision_function"):
-                    y_scores = self.classifier.decision_function(X)
+                    y_scores = self.classifier.decision_function(X_scaled) # <-- Use scaled data
                     y_pred = (y_scores >= 0).astype(int)
                 else:
-                    y_pred = self.classifier.predict(X)
+                    y_pred = self.classifier.predict(X_scaled) # <-- Use scaled data
         else:
-            y_pred = self.classifier.predict(X)
+            y_pred = self.classifier.predict(X_scaled) # <-- Use scaled data
         
         # Convert back to labels
         predicted_labels = self.label_binarizer.inverse_transform(y_pred)
@@ -279,8 +294,11 @@ class JapaneseGrammarLabelCompletingClassifier:
         for labels in predicted_labels:
             if len(labels) == 0:
                 # If no labels predicted, return most frequent label as fallback
-                most_frequent_label = self.label_counts.most_common(1)[0][0]
-                result.append([most_frequent_label])
+                if self.label_counts:
+                    most_frequent_label = self.label_counts.most_common(1)[0][0]
+                    result.append([most_frequent_label])
+                else:
+                    result.append([]) # Should not happen if model is fitted
             else:
                 result.append(list(labels))
         
@@ -511,6 +529,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         import os
         model_data = {
             'vectorizer': self.vectorizer,
+            'scaler': self.scaler, # <-- Save the scaler
             'label_binarizer': self.label_binarizer,
             'classifier': self.classifier,
             'label_counts': self.label_counts,
@@ -536,6 +555,7 @@ class JapaneseGrammarLabelCompletingClassifier:
             model_data = pickle.load(f)
         
         self.vectorizer = model_data['vectorizer']
+        self.scaler = model_data['scaler'] # <-- Load the scaler
         self.label_binarizer = model_data['label_binarizer']
         self.classifier = model_data['classifier']
         self.label_counts = model_data['label_counts']
@@ -550,35 +570,67 @@ class JapaneseGrammarLabelCompletingClassifier:
         self.ngram_range = config['ngram_range']
         self.class_weight = config['class_weight']
         
-        import os
         display.check(f"Model loaded from {os.path.basename(file_path)}")
         return self
-    
-    def _analyze_label_feature_overlap(self):
-        """Find labels with highly overlapping feature importance."""
+
+    def _analyze_label_feature_overlap(self, min_support=10):
+        """
+        Find labels with highly overlapping feature importance, considering only features
+        with non-zero weights and sufficient support.
+        """
         if not hasattr(self, 'classifier') or not hasattr(self.classifier, 'estimators_'):
             raise ValueError("Model must be trained first")
         
         label_features = {}
-        labels = self.label_binarizer.classes_
+        all_labels = self.label_binarizer.classes_
         
-        # Extract feature importance for each label's binary classifier
+        # Filter for labels that have enough training examples to be reliable
+        supported_labels = {label for label, count in self.label_counts.items() 
+                            if count >= min_support}
+        if not supported_labels:
+            return []
+
+        # --- Part 1: Build the feature set for each supported label ---
         for i, estimator in enumerate(self.classifier.estimators_):
-            label = labels[i]
+            label = all_labels[i]
+            
+            # Skip labels that are too rare
+            if label not in supported_labels:
+                continue
+            
             if hasattr(estimator, 'coef_'):
-                # Get top features for this label
                 feature_importance = np.abs(estimator.coef_[0])
-                top_features = np.argsort(feature_importance)[-100:]  # Top 100 features
-                label_features[label] = set(top_features)
+                
+                # Filter for features with non-zero weights
+                non_zero_indices = np.where(feature_importance > 0)[0]
+                if len(non_zero_indices) == 0:
+                    continue
+
+                # Get the importance scores for ONLY the non-zero features
+                active_importances = feature_importance[non_zero_indices]
+                
+                # Sort these active features to find the top N
+                sorted_active_indices = np.argsort(active_importances)
+                
+                num_top_features = min(100, len(sorted_active_indices))
+                top_feature_indices = non_zero_indices[sorted_active_indices[-num_top_features:]]
+                
+                label_features[label] = set(top_feature_indices)
         
-        # Calculate pairwise overlaps
+        # --- Part 2: Calculate pairwise overlaps (This was the missing part) ---
         overlaps = []
-        for label1, label2 in combinations(labels, 2):
+        # Note: We iterate through the original list of supported labels
+        for label1, label2 in combinations(sorted(list(supported_labels)), 2):
+            # Ensure both labels were processed and are in the dictionary
             if label1 in label_features and label2 in label_features:
-                overlap = len(label_features[label1] & label_features[label2])
-                total = len(label_features[label1] | label_features[label2])
-                jaccard = overlap / total if total > 0 else 0
-                overlaps.append((label1, label2, jaccard, overlap))
+                intersection_set = label_features[label1] & label_features[label2]
+                union_set = label_features[label1] | label_features[label2]
+                
+                jaccard = len(intersection_set) / len(union_set) if len(union_set) > 0 else 0
+                
+                # Optional: Add a threshold to reduce noise in the final report
+                if jaccard > 0.05:
+                    overlaps.append((label1, label2, jaccard, len(intersection_set)))
         
         return sorted(overlaps, key=lambda x: x[2], reverse=True)
 
@@ -675,22 +727,43 @@ class JapaneseGrammarLabelCompletingClassifier:
 
     def _test_train_split(self, training_data: Dict[str, List[str]]):
         """
-        Split training data into train and test sets.
-        
-        Args:
-            training_data: Dictionary with texts as keys and label lists as values
-            
-        Returns:
-            Tuple of (train_texts, test_texts, train_labels, test_labels)
+        Split training data into train and test sets using stratification.
         """
         all_texts = list(training_data.keys())
-        all_labels = list(training_data.values())
+        all_labels_list = list(training_data.values())
         
-        # Use same split logic as fit_from_dict
-        from sklearn.model_selection import train_test_split
-        train_texts, test_texts, train_labels, test_labels = train_test_split(
-            all_texts, all_labels, test_size=self.test_size, random_state=self.random_state
-        )
+        # You need a binary matrix for stratification in multi-label scenarios
+        mlb = MultiLabelBinarizer()
+        all_labels_binarized = mlb.fit_transform(all_labels_list)
+
+        # Use stratify on the binarized labels
+        # Note: Stratification in multi-label settings can be complex.
+        # For simpler cases, you might stratify on the presence of rare labels,
+        # but sklearn's train_test_split doesn't support this directly for multilabel.
+        # A common library for this is scikit-multilearn.
+        
+        # --- Simple (non-stratified) way from your original code ---
+        # train_texts, test_texts, train_labels, test_labels = train_test_split(
+        #     all_texts, all_labels_list, 
+        #     test_size=self.test_size, 
+        #     random_state=self.random_state
+        # )
+        
+        # --- Using scikit-multilearn for a proper stratified split ---
+        from skmultilearn.model_selection import iterative_train_test_split
+        
+        # iterative_train_test_split needs numpy arrays
+        X = np.array(all_texts).reshape(-1, 1)
+        y = all_labels_binarized
+        
+        X_train, y_train, X_test, y_test = iterative_train_test_split(X, y, test_size=self.test_size)
+        
+        # Convert back to original formats
+        train_texts = X_train.flatten().tolist()
+        test_texts = X_test.flatten().tolist()
+        train_labels = mlb.inverse_transform(y_train)
+        test_labels = mlb.inverse_transform(y_test)
+
         return train_texts, test_texts, train_labels, test_labels
 
     def analyze_label_interference(self, training_data, 

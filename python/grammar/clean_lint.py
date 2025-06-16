@@ -196,15 +196,6 @@ def lv_validate_parenthetical_meaning(val, type, path, messages):
     if invalid_chars:
         messages.append(f"[rule-9] warning {path} (meaning) starts with invalid char: {', '.join(invalid_chars)}")
 
-def lv_learn(val, type, path, messages):
-    if type is not None:
-        return
-    la = val.get("learn_after", [])
-    lb = val.get("learn_before", [])
-    count = len(lb) if isinstance(lb, list) else 0
-    if not la and not lb:
-        messages.append(f"[rule-10][rule-11] warning learn_before and learn_after don't exist; must have at least 1")
-
 def lv_false_friends_grammar_point(val, type, path, messages, all_grammars_summary):
     if type != "false_friends/object":
         return
@@ -424,6 +415,8 @@ def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = { "
         grammar_point['id'] = id
         grammar_point['grammar_point'] = name
 
+    if 'learn_after' in grammar_point:
+        del grammar_point['learn_after']
     if 'lint-errors' in grammar_point:
         del grammar_point['lint-errors']
     if 'change' in grammar_point:
@@ -463,8 +456,8 @@ def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = { "
                     else: 
                         del grammar_point['better_grammar_point_name']
                 
-                # Clean and sort learn_before and learn_after arrays
-                for field_name in ['learn_before', 'learn_after']:
+                # Clean and sort learn_before array
+                for field_name in ['learn_before']:
                     if field_name in grammar_point:
                         field_value = grammar_point[field_name]
                         if isinstance(field_value, list):
@@ -496,7 +489,6 @@ def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = { "
             lv_japanese_count(result, type_name, path, lint)
             lv_better_grammar_name(result, type_name, path, lint)
             lv_validate_parenthetical_meaning(result, type_name, path, lint)
-            lv_learn(result, type_name, path, lint)
             lv_false_friends_grammar_point(result, type_name, path, lint, all_grammars_summary)
             lv_known_grammar(result, type_name, path, lint, all_grammars_summary)
             lv_grammar_point_special_characters(result, type_name, path, lint)

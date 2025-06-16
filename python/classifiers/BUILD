@@ -24,5 +24,6 @@ py_library(
         "//python/mecab",
         "@pip//numpy",
         "@pip//scikit_learn",
+        "@pip//scikit_multilearn",
     ],
 )

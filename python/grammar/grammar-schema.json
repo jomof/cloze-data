@@ -217,17 +217,8 @@
       "type": "array",
       "items": { "$ref":  "#/definitions/wellFormedGrammarType" }
     },
-    // **MUST** be a grammar point from ALL_GRAMMARS_SUMMARY that this grammar point builds on.
-    // [rule-10] **MUST** be at least one item in 'learn_before' or one in 'learn_after'. 
-    // **MUST NOT** have more than 2. Keep only the most important dependencies.
+    // Grammar points that this grammar point (or its examples) builds on.
     "learn_before": {
-      "type": "array",
-      "items": { "$ref": "#/definitions/knownGrammarType" }
-    },
-    // **MUST** be grammar points from ALL_GRAMMARS_SUMMARY that build on this grammar point.
-    // [rule-11] **MUST** be at least one item in 'learn_before' or one in 'learn_after'. Don't add too many.
-    // **MUST NOT** have more than 2. Keep only the most important dependencies.
-    "learn_after": {
       "type": "array",
       "items": { "$ref": "#/definitions/knownGrammarType" }
     },

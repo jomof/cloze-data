@@ -632,8 +632,8 @@ if __name__ == '__main__':
     with open(ordered_file, 'r', encoding='utf-8') as f:
         existing_ordered = yaml.safe_load(f)  # Just to check if the file exists and is valid
 
-    # Generate a grammar summary object with only learn_before and learn_after fields
-    grammar_summary = generate_summary(grammar_root, ['id', 'learn_before', 'learn_after'])
+    # Generate a grammar summary object with only learn_before field
+    grammar_summary = generate_summary(grammar_root, ['id', 'learn_before'])
     save_summary(grammar_summary, grammar_root, 'toposort-summary.json')
 
 
@@ -642,7 +642,6 @@ if __name__ == '__main__':
             current_list=existing_ordered,
             nodes_dict=grammar_summary['all-grammar-points'],
             before_field='learn_before',
-            after_field='learn_after',
             max_edits=10
         )
 
@@ -650,14 +649,12 @@ if __name__ == '__main__':
             new_ordered, 
             grammar_summary['all-grammar-points'], 
             before_field='learn_before', 
-            after_field='learn_after'
         )
 
         updated_constraints = save_updated_constraints(
             analysis, 
             output_format='cuts_only', 
             before_field='learn_before', 
-            after_field='learn_after'
         )
 
     cuts = json.loads(updated_constraints)
@@ -675,20 +672,16 @@ if __name__ == '__main__':
         yaml.dump(changes_made, f, allow_unicode=True)  
 
     def cut_edges(grammar_point, parsed_obj, cuts):
-        # Ensure learn_before and learn_after fields always exist
+        # Ensure learn_before fields always exists
         if 'learn_before' not in parsed_obj:
             parsed_obj['learn_before'] = []
-        if 'learn_after' not in parsed_obj:
-            parsed_obj['learn_after'] = []
             
         if grammar_point in cuts:
             edit = cuts[grammar_point]
             before = edit['learn_before_deletes'] 
-            after = edit['learn_after_deletes']
             
             # Remove items to delete while preserving order
             # parsed_obj['learn_before'] = [e for e in parsed_obj['learn_before'] if e not in before]
-            # parsed_obj['learn_after'] = [e for e in parsed_obj['learn_after'] if e not in after]
         
     def preprocess(parsed_obj, file_path):
         if parsed_obj['grammar_point'] in cuts:

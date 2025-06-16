@@ -349,7 +349,7 @@ if __name__ == '__main__':
                         header = f"Creating a new grammar point '{new_name}' without any old content. "
                         combined_content = ""
                     
-                    # Get learn_before/learn_after from all old grammar points
+                    # Get learn_before from all old grammar points
                     def remove_duplicates_preserve_order(items):
                         """Remove duplicates while preserving order"""
                         seen = set()
@@ -361,7 +361,6 @@ if __name__ == '__main__':
                         return result
                     
                     learn_before = []
-                    learn_after = []
                     for old_content in all_old_content:
                         # Extract YAML content (skip the === header ===)
                         old_yaml_content = old_content.split('\n', 1)[1] if '\n' in old_content else old_content
@@ -369,23 +368,16 @@ if __name__ == '__main__':
                             old_grammar_obj = yaml.safe_load(old_yaml_content)
                             if old_grammar_obj:
                                 learn_before.extend(old_grammar_obj.get('learn_before', []))
-                                learn_after.extend(old_grammar_obj.get('learn_after', []))
                         except:
                             pass
                     
                     # Remove duplicates while preserving order
                     learn_before = remove_duplicates_preserve_order(learn_before)
-                    learn_after = remove_duplicates_preserve_order(learn_after)
 
                     new_content = {
                         'grammar_point': new_name,
                         'id': grammar_id,
                         'learn_before': learn_before,
-                        'learn_after': learn_after,
-                        'split_predecessor': 
-                            f"{header}"
-                            f"Please recreate this grammar point with this information in mind. All fields **MUST** be suitable for the new name. "
-                            f"For your reference, here is the old content:\n\n{combined_content}",
                         'lint-errors': [f"You **MUST** repopulate this grammar point with the new name '{new_name}' in mind. All fields **MUST** be suitable for the new name."],
                     }
                 

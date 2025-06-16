@@ -48,7 +48,7 @@ if __name__ == '__main__':
 
     # Train classifier
     classifier = JapaneseGrammarLabelCompletingClassifier(
-        test_size=0.1
+        test_size=0.01
     )
     test_split_evaluation = classifier.fit_from_dict(training_data)
     classifier.save_model(args.output)

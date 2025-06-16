@@ -308,10 +308,10 @@ py_binary(
     srcs = ["train-grammar-classifier.py"],
     visibility = ["//:__subpackages__"],
     deps = [
+        "//python/classifiers",
         "//python/console:display",
         "//python/mapreduce",
         "//python/mecab",
-        "//python/classifiers",
     ],
 )
 
@@ -331,14 +331,15 @@ py_binary(
     name = "calculate-grammar-point-dependencies",
     srcs = ["calculate-grammar-point-dependencies.py"],
     data = [
+        ":trained-grammar-classifier",
         "//resources/processed:ai-cleaned-merge-grammars",
-        ":trained-grammar-classifier"
     ],
     visibility = ["//:__subpackages__"],
     deps = [
         "//python/classifiers",
         "//python/console:display",
-         "//python/mapreduce",
+        "//python/mapreduce",
+        "//python/mecab",
     ],
 )
 
@@ -383,6 +384,7 @@ py_library(
         "ai-pass.py",
         "bs4-strip.py",
         "bunpro-lint.py",
+        "calculate-grammar-point-dependencies.py",
         "dumpyaml.py",
         "extract-grammar-point-names.py",
         "extract-yaml.py",
