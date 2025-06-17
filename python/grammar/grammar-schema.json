@@ -49,66 +49,6 @@
         "surangu (slang)", "gun-go (military)", "wakamono kotoba (youth)", "meirei-kei no teineigo (polite imperative)"
       ]
     },
-    "partOfSpeechType": {
-      "type": "string",
-      "enum": [
-        "particle", "noun", "verb", "adjective", "adverb", "interjection", "conjunction", "pronoun",
-        "auxiliary verb", "auxiliary adjective", "prefix", "suffix", "numeral", "counter", "phrase"
-      ]
-    },
-    "particleSyntacticFunction": {
-      "type": "string",
-      "enum": [
-        "case-marking",         // e.g., が, を, に, へ, で
-        "topic",                // は
-        "subject",              // が (when indicating subject)
-        "object",               // を
-        "indirect-object",      // に (recipient)
-        "directional",          // へ, に
-        "locative",             // に, で
-        "temporal",             // に, から, まで (time points)
-        "range",                // から, まで
-        "comparative",          // より
-        "limiter",              // だけ, しか, ほど, ばかり
-        "conjunctive",          // が, けど, ので
-        "conditional",          // なら, たら, ば
-        "concessive",           // のに, けど
-        "causal",               // から, ので
-        "purpose",              // に (～に行く)
-        "passive-agent",        // に (passive voice)
-        "quotative",            // と
-        "listing",              // や, とか, と
-        "adverbializer",        // に (makes nouns into adverbs)
-        "attributive",          // の (noun modifier)
-        "vocative",             // よ (in calling out)
-        "sentence-final"        // e.g., よ, ね, か, な
-      ]
-    },
-    "particlePragmaticFunction": {
-      "type": "string",
-      "enum": [
-        "emphasis",            // よ, ぞ, さ
-        "softening",           // ね, な (in some uses)
-        "confirmation",        // ね
-        "assertion",           // よ
-        "evidential",          // っけ (reminding oneself)
-        "interrogative",       // か
-        "exclamatory",         // なあ, よ (when exclaimed)
-        "focus",               // も, さえ, まで
-        "contrastive",         // は
-        "limiting",            // しか, だけ
-        "negative polarity",   // しか
-        "hedging",             // かな (particle use), かも
-        "intensifier",         // さえ, まで
-        "discourse marker",    // よ, ね, さ, な
-        "emotive",             // なあ, よね
-        "agreement-seeking",   // よね, でしょう (if viewed as particle-like but better excluded)
-        "tentative",           // かも, かな (used as particles)
-        "vocative",            // よ (in 呼びかけ)
-        "engagement",          // ね
-        "sentence-final"       // Used generally for particles like よ, ね, か, な, etc.
-      ]
-    },
     "settingType": {
       "type": "string",
       "enum": [
@@ -196,13 +136,14 @@
     "japaneseVariationsType": {
       "type": "array",
       "items": { "$ref": "#/definitions/japaneseVariationType" }
-    },
+    }
   },
   "type": "object",
   "properties": {
     // The name of the grammar point.
     // - **MUST NOT** change this value because it is a database key.
     "grammar_point": { "$ref": "#/definitions/grammarType" },
+    "matcher": { "type": "string"},
     // A possibly better name for the grammar point that would make it fit in better
     // with the other grammar points in the database (ALL_GRAMMARS_SUMMARY).
     // Often, a good name has the form "something (short meaning)".
@@ -446,18 +387,7 @@
       }
     },
     // You **MAY** include a "post_example_writeup" section after "examples" if more clarification is helpful, but don't reference examples by any numeric label.
-    "post_example_writeup": { "type": "string" },
-
-    "sources": {
-      "type": "object",
-      "properties": { "bunpro": { "type": "string", "format": "uri" } },
-      "additionalProperties": false
-    },
-    // If split_predecessor exists, then this grammar point was split from an earlier grammar point.
-    // Use information from the split predecessor to help populate this new grammar point keeping
-    // only the relevant information for the new grammar point.
-    // [rule-18] **MUST** use the information from split_predecessor to compose this grammar point, then discard.
-    "split_predecessor": { "type": "string" }
+    "post_example_writeup": { "type": "string" }
   },
   "required": [
     "grammar_point","id","pronunciation","formation","jlpt",

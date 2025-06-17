@@ -1,10 +1,15 @@
-from python.mapreduce import MapReduce
+
 import os
-import asyncio
-from python.mecab.compact_sentence import japanese_to_compact_sentence
+
+
 from python.console import display
 import json
-from python.classifiers.grammar import JapaneseGrammarLabelCompletingClassifier
+from python.classifiers.grammar import (
+        JapaneseGrammarLabelCompletingClassifier, 
+        gather_training_data,
+        union_positives,
+        apply_negatives
+    )
 
 if __name__ == '__main__':
     if os.getenv("ENABLE_DEBUGPY"):
@@ -44,39 +49,25 @@ if __name__ == '__main__':
             with open(test_evaluation_results_file, 'r', encoding='utf-8') as f:
                 test_split_evaluation = json.load(f)
     else:
-        training_data = {}
-        def map(current, _):
-            grammar_point = current['grammar_point']
-            examples = current.get('examples', [])
-            result = []
-            for example in examples:
-                japaneses = example.get('japanese', [])
-                for japanese in japaneses:
-                    compact = japanese_to_compact_sentence(japanese.replace('{', '').replace('}', ''))
-                    result.append([grammar_point, compact])
-            return result
-
-        def fold(_, points):
-            global training_data
-            for point in points:
-                grammar_point, compact = point
-                point_list = training_data.setdefault(compact, [])
-                point_list.append(grammar_point)
-                training_data[compact] = list(set(point_list))  # Ensure unique labels
-        mr = MapReduce(
-            input_dir            = grammar_root,
-            map_func_name        = 'building training set',
-            map_func             = map,
-            fold_func_name       = 'accumulating training set',
-            fold_func            = fold,
-            max_threads          = 5,
-        )
-
-        result = asyncio.run(mr.run())
+        training_data = gather_training_data(grammar_root)
 
         with open(training_data_file, 'w', encoding='utf-8') as file:
             json.dump(training_data, file, ensure_ascii=False, indent=4)
-        test_split_evaluation = classifier.fit_from_dict(training_data)
+
+        positives = training_data['positive']
+        negatives = training_data['negative']
+        augmented = positives
+        for i in range(1,1):
+            with display.work(f"augmenting pass {i}"):
+                classifier.fit_from_dict(data = augmented, test_split=False)
+                negative_predictions = classifier.predict(negatives, threshold=0.99)
+                positive_predictions = classifier.predict(augmented, threshold=0.99)
+                augmented = union_positives(augmented, positive_predictions, negative_predictions)
+                augmented = apply_negatives(augmented, negatives)
+            
+        with display.work(f"training final model"):
+            test_split_evaluation = classifier.fit_from_dict(data = augmented)
+        
         classifier.save_model(model_file)
 
         with open(test_evaluation_results_file, 'w', encoding='utf-8') as file:
@@ -84,8 +75,7 @@ if __name__ == '__main__':
 
         with display.work("analyzing label interference"):
             interference_results = classifier.analyze_label_interference(
-                training_data=training_data,
-                max_label_pairs=10000
+                training_data=training_data['positive'],
             )
         with open(interference_results_file, 'w', encoding='utf-8') as file:
             json.dump(interference_results, file, ensure_ascii=False, indent=4)

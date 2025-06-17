@@ -361,12 +361,14 @@ if __name__ == '__main__':
                         return result
                     
                     learn_before = []
+                    matcher = None
                     for old_content in all_old_content:
                         # Extract YAML content (skip the === header ===)
                         old_yaml_content = old_content.split('\n', 1)[1] if '\n' in old_content else old_content
                         try:
                             old_grammar_obj = yaml.safe_load(old_yaml_content)
                             if old_grammar_obj:
+                                matcher = old_grammar_obj.get('matcher', None)
                                 learn_before.extend(old_grammar_obj.get('learn_before', []))
                         except:
                             pass
@@ -380,6 +382,9 @@ if __name__ == '__main__':
                         'learn_before': learn_before,
                         'lint-errors': [f"You **MUST** repopulate this grammar point with the new name '{new_name}' in mind. All fields **MUST** be suitable for the new name."],
                     }
+
+                    if matcher:
+                        new_content['matcher'] = matcher
                 
                     with open(new_path, 'w', encoding='utf-8') as f:
                         f.write(json.dumps(new_content, ensure_ascii=False, indent=2))

@@ -95,6 +95,34 @@ class JapaneseGrammarLabelCompletingClassifier:
         # This is the key to ensuring ' 机_n の ' becomes '机_n の'.
         return ' '.join(processed_text.split())
     
+    def _create_negative_labels(self, negative_labels: List[List[str]], all_classes: np.ndarray) -> np.ndarray:
+        """
+        Create binary matrix for negative examples where specified labels are 0.
+        
+        Args:
+            negative_labels: List of label lists that are NOT present in each example
+            all_classes: Array of all possible class names from label_binarizer
+            
+        Returns:
+            Binary matrix where 1 means label might be present, 0 means definitely not present
+        """
+        n_samples = len(negative_labels)
+        n_classes = len(all_classes)
+        
+        # Start with all ones (all labels potentially present)
+        y_neg = np.ones((n_samples, n_classes), dtype=int)
+        
+        # Create label to index mapping
+        label_to_idx = {label: idx for idx, label in enumerate(all_classes)}
+        
+        # Set zeros for labels that are definitely NOT present
+        for i, absent_labels in enumerate(negative_labels):
+            for label in absent_labels:
+                if label in label_to_idx:
+                    y_neg[i, label_to_idx[label]] = 0
+                    
+        return y_neg
+    
     def _filter_rare_labels(self, labels_list: List[List[str]]) -> List[List[str]]:
         """Filter out rare labels based on min_label_freq."""
         # Count label frequencies
@@ -124,7 +152,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         """Setup the logistic regression classifier."""
         # Good: 2000 iterations/liblinear/l1/C=1.5/features=5000
         base_classifier = LogisticRegression(
-            max_iter=4000,
+            max_iter=6000,
             class_weight=self.class_weight,
             random_state=self.random_state,
             solver='liblinear',
@@ -138,16 +166,16 @@ class JapaneseGrammarLabelCompletingClassifier:
             # n_jobs=-1  
             # verbose=1
         )
-        display.check(f"{base_classifier}")
-        display.check(f"  solver={base_classifier.solver}")
-        display.check(f"  penalty={base_classifier.penalty}")
+        # display.check(f"{base_classifier}")
+        # display.check(f"  solver={base_classifier.solver}")
+        # display.check(f"  penalty={base_classifier.penalty}")
         
         
         # Use OneVsRestClassifier for multi-label classification
         self.classifier = OneVsRestClassifier(base_classifier, n_jobs=-1)
         
     
-    def fit_from_dict(self, data: Dict[str, List[str]]):
+    def fit_from_dict(self, data: Dict[str, List[str]], test_split = True):
         """
         Train the classifier directly from a dictionary with automatic evaluation.
         
@@ -161,7 +189,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         texts = list(data.keys())
         labels = list(data.values())
         
-        if len(data) > 10:  # Only split if we have enough data
+        if test_split:  # Only split if we have enough data
             # Split data for evaluation
             train_texts, test_texts, train_labels, test_labels = self._test_train_split(data)
             display.check(f"Dataset split: {len(train_texts):,} train, {len(test_texts):,} test")
@@ -176,12 +204,17 @@ class JapaneseGrammarLabelCompletingClassifier:
             return results
         else:
             # Train on all data if insufficient data for split
-            display.warn("Insufficient data for split - training on full dataset")
+            display.warn("Full training with no test split")
             self.fit(texts, labels)
             return None # No evaluation results in this case
     
     def fit(self, texts: List[str], labels: List[List[str]]):
-        """Train the classifier."""
+        """Train the classifier.
+        
+        Args:
+            texts: List of texts with positive examples
+            labels: List of label lists for positive examples
+        """
         # Clean texts and filter labels
         with display.work("preprocessing"):
             cleaned_texts = [self._clean_text(text) for text in texts]
@@ -201,23 +234,21 @@ class JapaneseGrammarLabelCompletingClassifier:
             X = self.vectorizer.fit_transform(cleaned_texts)
             display.check(f"Feature matrix shape: {X.shape}")
         
-        # --- ADDED: Feature Scaling ---
         with display.work("scaling features"):
             self.scaler = MaxAbsScaler()
             X_scaled = self.scaler.fit_transform(X)
-            display.check("Features scaled with MaxAbsScaler")
         
         # Prepare labels
         with display.work("preparing labels"):
             self.label_binarizer = MultiLabelBinarizer()
             y = self.label_binarizer.fit_transform(filtered_labels)
-            display.check(f"Label matrix shape: {y.shape}")
-            display.check(f"Active labels: {len(self.label_binarizer.classes_)}")
+            # display.check(f"Label matrix shape: {y.shape}")
+            # display.check(f"Active labels: {len(self.label_binarizer.classes_)}")
         
         # Train classifier
         with display.work("training model"):
             self._setup_classifier()
-            self.classifier.fit(X_scaled, y) # <-- Use scaled data
+            self.classifier.fit(X_scaled, y)
         
         # Analyze training data
         with display.work("gathering statistics"):
@@ -241,11 +272,11 @@ class JapaneseGrammarLabelCompletingClassifier:
                                 'labels': labels
                             })
         
-        display.check("Training completed!")
+        # display.check("Training completed!")
         return self
     
-    def predict(self, texts: Union[str, List[str]], 
-                threshold: float = 0.45) -> Union[List[str], List[List[str]]]:
+    def predict(self, texts: Union[str, List[str], Dict[str, List[str]]], 
+                threshold: float = 0.5) -> Union[List[str], List[List[str]], Dict[str, List[str]]]:
         """
         Predict labels for input texts.
         
@@ -256,12 +287,15 @@ class JapaneseGrammarLabelCompletingClassifier:
         Returns:
             List of labels for single text, or list of label lists for multiple texts
         """
+
+        if isinstance(texts, dict):
+            sentences = list(texts.keys())
+            predictions = self.predict(sentences, threshold)
+            return dict(zip(sentences, predictions))
         if isinstance(texts, str):
-            texts = [texts]
-            single_input = True
-        else:
-            single_input = False
-        
+            prediction = self.predict([texts])
+            return prediction[0]
+
         # Clean and vectorize texts
         cleaned_texts = [self._clean_text(text) for text in texts]
         X = self.vectorizer.transform(cleaned_texts)
@@ -302,7 +336,7 @@ class JapaneseGrammarLabelCompletingClassifier:
             else:
                 result.append(list(labels))
         
-        return result[0] if single_input else result
+        return result
     
     def evaluate(self, texts: List[str], labels: List[List[str]]) -> Dict:
         """Evaluate the classifier performance with detailed statistics."""
@@ -675,13 +709,12 @@ class JapaneseGrammarLabelCompletingClassifier:
         total_batches = (len(unique_texts_list) + batch_size - 1) // batch_size
 
         # The initial message now includes all relevant info, and the problematic p.update() is removed.
-        with display.work(f"predicting {len(unique_texts_list):,} samples in {total_batches} batches of {batch_size}"):
-            for i in range(0, len(unique_texts_list), batch_size):
-                batch_texts = unique_texts_list[i:i + batch_size]
-                batch_predictions = self.predict(batch_texts)
-                
-                # Update the cache with the results from the current batch
-                predictions_cache.update({text: preds for text, preds in zip(batch_texts, batch_predictions)})
+        for i in range(0, len(unique_texts_list), batch_size):
+            batch_texts = unique_texts_list[i:i + batch_size]
+            batch_predictions = self.predict(batch_texts)
+            
+            # Update the cache with the results from the current batch
+            predictions_cache.update({text: preds for text, preds in zip(batch_texts, batch_predictions)})
 
         # 4. Build the co-occurrence matrix using the pre-computed predictions
         cooccurrence_matrix = defaultdict(lambda: defaultdict(int))
@@ -874,3 +907,140 @@ class JapaneseGrammarLabelCompletingClassifier:
         output.append("2. Merge grammatically identical labels identified above")
         
         return "\n".join(output)
+    
+
+    
+def apply_negatives(
+        positives: Dict[str, List[str]], 
+        negatives: Dict[str, List[str]]) -> Dict[str, List[str]]:
+    """Add negatives to the corpus and remove the negated labels"""
+    positives = positives.copy()
+    for negative in negatives.keys():
+        positive_labels = set(positives.get(negative, []))
+        negative_labels = set(negatives[negative])
+        positives[negative] = list(positive_labels - negative_labels)
+    return positives
+    
+
+def union_positives(*dicts: Dict[str, List[str]]) -> Dict[str, List[str]]:
+    """
+    Combines multiple dictionaries by unioning values with the same key.
+
+    Args:
+        *dicts: A variable number of dictionaries, where keys are strings
+                and values are lists of strings.
+
+    Returns:
+        A single dictionary representing the union of all input dictionaries,
+        where values for common keys are the union of their respective lists.
+    """
+    result: Dict[str, set[str]] = {} # Use sets internally for efficient union operations
+
+    for d in dicts:
+        for key, values in d.items():
+            if key not in result:
+                result[key] = set() # Initialize with an empty set if key is new
+            result[key].update(values) # Add all elements from the current list to the set
+
+    # Convert all sets back to lists for the final result
+    final_result: Dict[str, List[str]] = {}
+    for key, s in result.items():
+        final_result[key] = list(s)
+
+    return final_result
+
+# Gather training data consistently
+from python.mapreduce import MapReduce
+import asyncio
+from python.mecab.compact_sentence import japanese_to_compact_sentence
+positive_examples = {}
+negative_examples = {}
+matchers = {}
+
+def accumulate(table: Dict[str, List[str]],
+               key: str,
+               value: Union[str, List[str]]) -> int:
+    """Add value(s) under key, keep things sorted, and return how many NEW items."""
+    # Normalize to a set of incoming values
+    values = {value} if isinstance(value, str) else set(value)
+    if not values:
+        return 0
+
+    # Existing entries as a set
+    old_set = set(table.get(key, []))
+    new_set = old_set.union(values)
+
+    # Store back as a sorted list
+    table[key] = sorted(new_set)
+    # Return count of genuinely new items
+    return len(new_set) - len(old_set)
+
+def map(current, _):
+    import re
+    grammar_point = current['grammar_point']
+    matcher = current.get('matcher','').replace('\n','').replace(' ', '')
+    if matcher:
+        regex = re.compile(matcher)
+    
+    examples = current.get('examples', [])
+    positive = []
+    negative = []
+    for example in examples:
+        japaneses = example.get('japanese', [])
+        for japanese in japaneses:
+            compact = japanese_to_compact_sentence(japanese.replace('{', '').replace('}', ''))
+            positive.append(compact)
+            # if "すこしも〜ない (not even a little)" in grammar_point:
+            #     display.check(f"{japanese}->{compact}")
+            if matcher:
+                if not regex.search(compact):
+                    display.error(f"Expected match {matcher}: {japanese}->{compact}")
+            
+        for competing in example.get("competing_grammar", []):
+            for japanese in competing.get("competing_japanese", []):
+                compact = japanese_to_compact_sentence(japanese.replace('{', '').replace('}', ''))
+                negative.append(compact)
+                if matcher:
+                    if regex.search(compact):
+                        display.error(f"Expected no match {matcher}: {japanese}->{compact}")
+    return grammar_point, matcher, positive, negative
+
+def fold(_, points):
+    grammar_point, matcher, positive, negative = points
+    
+    if matcher:
+        accumulate(matchers, matcher, grammar_point)
+    for compact in positive:
+        accumulate(positive_examples, compact, grammar_point)
+    for compact in negative:
+        accumulate(negative_examples, compact, grammar_point)
+
+def gather_training_data(grammar_root):
+    mr = MapReduce(
+        input_dir            = grammar_root,
+        map_func_name        = 'building training set',
+        map_func             = map,
+        fold_func_name       = 'accumulating training set',
+        fold_func            = fold,
+        max_threads          = 5,
+    )
+
+    asyncio.run(mr.run())
+
+    # Augment positives with explicit matchers
+    added = 0
+    for matcher, points in matchers.items():
+        regex = re.compile(matcher)
+        for positive in positive_examples:
+            if regex.search(positive):
+                added += accumulate(positive_examples, positive, points)
+        for negative in negative_examples:
+            if regex.search(negative):
+                added += accumulate(positive_examples, negative, points)
+            
+    display.check(f"Augmented with {added} additional grammar points")
+
+    return {
+        'positive': positive_examples,
+        'negative': negative_examples
+    }

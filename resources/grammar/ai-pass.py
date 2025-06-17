@@ -20,6 +20,38 @@ import traceback
 def ws(s: str) -> str:
     return "\n".join(line.strip() for line in s.splitlines())
 
+class Saved(dict):
+    def save(self, grammar_point, field, remove = True):
+        if field in grammar_point:
+            self[field] = grammar_point[field]
+            if remove:
+                del grammar_point[field]
+    def remove(self, grammar_point, field):
+        if field in grammar_point:
+            del grammar_point[field]
+        self[field] = None
+    def restore(self, grammar_point):
+        """Restore saved fields back"""
+        for f,v in self.items():
+            if v: grammar_point[f] = v
+            elif f in grammar_point: del grammar_point[f]
+
+def save_gp_fields(grammar_point) -> Saved:
+    saved = Saved()
+    saved.save(grammar_point, 'grammar_point', remove=False)
+    saved.save(grammar_point, 'id')
+    saved.save(grammar_point, 'matcher')
+    saved.save(grammar_point, 'sources')
+    saved.save(grammar_point, 'learn_before')
+    saved.remove(grammar_point, 'split_predecessor')
+    saved.remove(grammar_point, 'rank')
+    saved.remove(grammar_point, 'lesson_order')
+    saved.remove(grammar_point, 'bunpro')
+    saved.remove(grammar_point, 'dojg')
+    saved.remove(grammar_point, 'details')
+    return saved
+
+
 PERSONA = ws("""
         You are a highly skilled Japanese teacher. You speak native Japanese that is natural and fluent. 
         Though you are typically serious and terse, you're also warm and empathetic.
@@ -74,7 +106,7 @@ def INSPIRATION_GRAMMAR_POINTS(inpspiration_data):
         - *MUST* create your own example sentences that are appropriate for the grammar point.
     """).replace("[input_replace]", json.dumps(inpspiration_data, ensure_ascii=False, indent=4))
 
-def PRIOR_GRAMMAR_POINT(prior_input_obj):
+def PRIOR_GRAMMAR_POINT(prior_grammar_point):
     return ws("""
         ** -Prior grammar point- **
         This is the prior grammar point that you will be incrementally improving.
@@ -83,7 +115,7 @@ def PRIOR_GRAMMAR_POINT(prior_input_obj):
         [prior_input_replace]
         END PRIOR_GRAMMAR_POINT
 
-    """).replace("[prior_input_replace]", dump_yaml(prior_input_obj))
+    """).replace("[prior_input_replace]", dump_yaml(prior_grammar_point))
 
 def ALL_GRAMMARS_SUMMARY(all_grammars_summary):
     return ws("""
@@ -113,10 +145,8 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
 
     output_dir = os.path.dirname(output_file)
     summary_dir = f"{output_dir}/summary"
-    prior_input_obj = prior_grammar_point
 
-    if 'split_predecessor' in prior_input_obj:
-        del prior_input_obj['split_predecessor']
+    saved = save_gp_fields(prior_grammar_point)
 
     prompt = '\n'.join([
         PERSONA, 
@@ -125,7 +155,7 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
         # KANJI_BY_LEVEL,
         # INSPIRATION_GRAMMAR_POINTS(data), 
         ALL_GRAMMARS_SUMMARY_FILE(f"{summary_dir}/toposort-order.yaml"),
-        PRIOR_GRAMMAR_POINT(prior_input_obj),
+        PRIOR_GRAMMAR_POINT(prior_grammar_point),
         #         ws("""
         #     ** OPERATING INSTRUCTIONS **
         #     We're incrementally improving this grammar point and we're focusing on examples[].japanese
@@ -183,9 +213,6 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
     basename = os.path.basename(output_file)
     with open(temp_dir + f"/{basename}.prompt", 'w', encoding='utf-8') as file:
         file.write(prompt)
-
-    id = prior_input_obj["id"]
-    sources = { }
         
     model = "gemini-2.5-flash-preview-05-20"
 
@@ -222,19 +249,7 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
 
             prompt = f"There were lint errors in the previous response.\nPlease fix them and return a valid JSON response.\n{dump_yaml(lint_errors)}"
 
-    json_response["id"] = id
-    
-    if 'rank' in json_response:
-        del json_response['rank']
-    if 'lesson_order' in json_response:
-        del json_response['lesson_order']
-    if 'bunpro' in json_response:
-        del json_response['bunpro']
-    if 'dojg' in json_response:
-        del json_response['dojg']
-    if len(sources) > 0:
-        json_response['sources'] = sources
-
+    saved.restore(json_response)
     display.check(f"Created grammar point {basename}.")
     return clean_lint(json_response, output_file, all_grammars_summary)
  
@@ -274,8 +289,8 @@ if __name__ == '__main__':
             return result
         
         def logic(parsed_obj, file_path):
-            if len(parsed_obj.get('lint-errors', [])) == 0:
-                return parsed_obj
+            # if len(parsed_obj.get('lint-errors', [])) == 0:
+            #     return parsed_obj
             result = ai_pass(parsed_obj, grammar_summary, file_path, temp_dir)
 
 

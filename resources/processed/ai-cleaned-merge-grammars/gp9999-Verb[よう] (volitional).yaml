@@ -1,4 +1,14 @@
 grammar_point: Verb[よう] (volitional)
+matcher: |-
+  (
+    ⌈ˢ.*ようᵖ(v|auxv)ᵇ.*るʳ.*ル⌉|
+    ⌈ˢ.*ろうᵖ(v|auxv)ᵇ.*るʳ.*ル⌉|
+    ⌈ˢ.*こうᵖ(v|auxv)ᵇ.*くʳ.*ク⌉|
+    ⌈ˢ.*もうᵖ(v|auxv)ᵇ.*むʳ.*ム⌉|
+    ⌈ˢ.*そうᵖ(v|auxv)ᵇ.*すʳ.*ス⌉|
+    ⌈ˢ.*うᵖ(v|auxv)ᵇ.*うʳ.*ウ⌉|
+    ⌈ˢやろうᵖauxvᵇやʳヤ⌉
+  )
 learn_before:
   - '[Noun]をください (please give me)'
   - ちょっと (adverb)
@@ -198,10 +208,9 @@ examples:
     english_literally: Let's try doing it!
     competing_grammar:
       - competing_japanese:
-          - '{試し て} みよう！'
-        english: Let's try it (testing something out).
-        hint: 「試す」 often implies testing an unknown outcome. 「やる」 is more general for 'doing' or 'trying'
-          something. We're looking for a general 'let's try'.
+          - '{やっ て み ましょう}！'
+        english: Let's try! (polite)
+        hint: This uses the polite volitional form. We're looking for the plain, casual form.
     scene: Someone feeling hesitant about a new challenge, and a friend encourages them.
     register: casual
     setting: supportive
