@@ -17,6 +17,7 @@ from python.console import display
 import numpy as np
 from itertools import combinations
 import os
+from python.grammar import compile_matcher
 
 
 
@@ -152,7 +153,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         """Setup the logistic regression classifier."""
         # Good: 2000 iterations/liblinear/l1/C=1.5/features=5000
         base_classifier = LogisticRegression(
-            max_iter=6000,
+            max_iter=7000,
             class_weight=self.class_weight,
             random_state=self.random_state,
             solver='liblinear',
@@ -978,9 +979,12 @@ def accumulate(table: Dict[str, List[str]],
 def map(current, _):
     import re
     grammar_point = current['grammar_point']
-    matcher = current.get('matcher','').replace('\n','').replace(' ', '')
-    if matcher:
-        regex = re.compile(matcher)
+    matcher_string = current.get('matcher','')
+    if matcher_string:
+        matcher = compile_matcher(matcher_string)
+    else:
+        matcher = None
+
     
     examples = current.get('examples', [])
     positive = []
@@ -990,10 +994,14 @@ def map(current, _):
         for japanese in japaneses:
             compact = japanese_to_compact_sentence(japanese.replace('{', '').replace('}', ''))
             positive.append(compact)
-            # if "すこしも〜ない (not even a little)" in grammar_point:
-            #     display.check(f"{japanese}->{compact}")
+
             if matcher:
-                if not regex.search(compact):
+                if not matcher.match_japanese(compact):
+                    display.warn(f"GRAMMAR:  {grammar_point}")
+                    display.warn(f"COMPACT:  {compact}")
+                    display.warn(f"JAPANESE: {japanese}")
+                    display.warn(f"MATCHER: {matcher.regex_string}")
+                    display.warn(f"EXPECTED MATCH")
                     display.error(f"Expected match {matcher}: {japanese}->{compact}")
             
         for competing in example.get("competing_grammar", []):
@@ -1001,7 +1009,11 @@ def map(current, _):
                 compact = japanese_to_compact_sentence(japanese.replace('{', '').replace('}', ''))
                 negative.append(compact)
                 if matcher:
-                    if regex.search(compact):
+                    if matcher.match_japanese(compact):
+                        display.warn(f"POINT:    {grammar_point}")
+                        display.warn(f"COMPACT:  {compact}")
+                        display.warn(f"JAPANESE: {japanese}")
+                        display.warn(f"EXPECTED NO MATCH")
                         display.error(f"Expected no match {matcher}: {japanese}->{compact}")
     return grammar_point, matcher, positive, negative
 
@@ -1028,17 +1040,18 @@ def gather_training_data(grammar_root):
     asyncio.run(mr.run())
 
     # Augment positives with explicit matchers
-    added = 0
+    added_grammar_points = 0
+    sentences_before = len(positive_examples)
     for matcher, points in matchers.items():
-        regex = re.compile(matcher)
         for positive in positive_examples:
-            if regex.search(positive):
-                added += accumulate(positive_examples, positive, points)
+            if matcher.match_japanese(positive):
+                added_grammar_points += accumulate(positive_examples, positive, points)
         for negative in negative_examples:
-            if regex.search(negative):
-                added += accumulate(positive_examples, negative, points)
+            if matcher.match_japanese(negative):
+                added_grammar_points += accumulate(positive_examples, negative, points)
             
-    display.check(f"Augmented with {added} additional grammar points")
+    display.check(f"Augmented with {len(positive_examples) - sentences_before} additional sentences")
+    display.check(f"Augmented with {added_grammar_points} additional grammar points")
 
     return {
         'positive': positive_examples,

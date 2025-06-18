@@ -21,6 +21,8 @@ py_library(
     visibility = ["//:__subpackages__"],
     deps = [
         "//python/console:display",
+        "//python/grammar",
+        "//python/mapreduce",
         "//python/mecab",
         "@pip//numpy",
         "@pip//scikit_learn",

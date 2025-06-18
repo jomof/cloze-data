@@ -354,8 +354,6 @@ py_binary(
     deps = [
         "//python/classifiers",
         "//python/console:display",
-        "//python/mapreduce",
-        "//python/mecab",
         "@pip//debugpy",
     ],
 )

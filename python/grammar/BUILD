@@ -10,18 +10,27 @@ py_test(
     ],
 )
 
+# bazel test //python/grammar:matcher_test
+py_test(
+    name = "matcher_test",
+    srcs = ["matcher_test.py"],
+    deps = [
+        ":grammar",
+    ],
+)
+
 py_library(
     name = "grammar",
     srcs = [
         "__init__.py",
         "clean_lint.py",
         "grammar_schema.py",
+        "matcher.py",
     ],
     data = [":grammar-schema.json"],
     visibility = ["//:__subpackages__"],
     deps = [
         "//python/mecab",
-        "//python/utils/build_cache/memoize",
         "//python/utils/visit_json",
         "@pip//json5",
         "@pip//jsonschema",

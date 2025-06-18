@@ -271,7 +271,7 @@ if __name__ == '__main__':
         display.check(f"Generated grammar summary with {len(grammar_summary['all-grammar-points'])} grammar points.")
 
         async def lint(parsed_obj, file_path):
-            # if 'よく (frequently・often・well)' not in file_path: return None
+            if 'Verb[えば]' not in file_path: return None
   
             # if parsed_obj['id'] != 'gp0013': return None
             # Convert original object to JSON for comparison

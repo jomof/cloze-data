@@ -1,4 +1,9 @@
 grammar_point: と (with)
+matcher: |-
+  {noun}と{noun}|
+  と{noun}⌉|
+  {noun}と|
+  とは{noun}
 learn_before:
   - Verb[ている・てる] (progressive・resultative)
   - Verb[ました] (polite past)

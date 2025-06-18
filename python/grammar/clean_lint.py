@@ -9,7 +9,6 @@ from jsonschema import Draft7Validator
 
 from .grammar_schema import GRAMMAR_SCHEMA
 from python.mecab.compact_sentence import japanese_to_japanese_with_spaces
-from python.utils.build_cache.memoize.memoize import memoize_to_disk_seeded
 from python.utils.visit_json.visit_json import visit_json
 
 QUOTE_PAIRS = [
@@ -94,8 +93,8 @@ def lv_japanese_braces(val, type, path, messages):
     if type != "japaneseVariationType":
         return
 
-    # if '{' not in val or '}' not in val:
-    #     messages.append(f"[rule-5] warning {path} missing {{bold}} grammar point: {val}")
+    if '{' not in val or '}' not in val:
+        messages.append(f"[rule-5] warning {path} missing {{bold}} grammar point: {val}")
 
 def lv_missing_competing_grammar(val, type, path, messages):
     """
@@ -225,6 +224,30 @@ def lv_grammar_point_special_characters(val, type, path, messages):
 
     if special:
         messages.append(f"[rule-14] warning '{path}': '{trimmed}' contain illegal characters: {', '.join(special)}.")
+
+def lv_check_grammar_matcher(val, type, path, messages):
+    """Check grammar against matcher"""
+    from python.grammar import compile_matcher
+    if type: return
+    matcher = val.get('matcher')
+    if not matcher: return
+    examples = val.get('examples')
+    if not examples: return
+    matcher = compile_matcher(matcher)
+    for example_index, example in enumerate(examples):
+        competing_grammars = example.get('competing_grammar')
+        if not competing_grammars: continue
+        for competing_grammar_index, competing_grammar in enumerate(competing_grammars):
+            competing_japaneses = competing_grammar.get('competing_japanese')
+            if not competing_japaneses: continue
+            for competing_japanese_index, competing_japanese in enumerate(competing_japaneses):
+                match = matcher.match_japanese(competing_japanese)
+                if not match: continue
+                match = ', '.join(match)
+
+                messages.append(f"[rule-17] error at examples[{example_index}].competing_grammar[{competing_grammar_index}].competing_japanese[{competing_japanese_index}]. Competing Japanese '{match}' appears to use the main grammar point.")
+
+
 
 
 
@@ -415,14 +438,8 @@ def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = { "
         grammar_point['id'] = id
         grammar_point['grammar_point'] = name
 
-    if 'learn_after' in grammar_point:
-        del grammar_point['learn_after']
     if 'lint-errors' in grammar_point:
         del grammar_point['lint-errors']
-    if 'change' in grammar_point:
-        del grammar_point['change']
-    if 'details' in grammar_point:
-        del grammar_point['details']
 
     # Ensure japanese fields are lists
     for example in grammar_point.get('examples', []):
@@ -492,6 +509,7 @@ def clean_lint(grammar_point, path: str = None, all_grammars_summary: dict = { "
             lv_false_friends_grammar_point(result, type_name, path, lint, all_grammars_summary)
             lv_known_grammar(result, type_name, path, lint, all_grammars_summary)
             lv_grammar_point_special_characters(result, type_name, path, lint)
+            lv_check_grammar_matcher(result, type_name, path, lint)
     visit_json(grammar_point, GRAMMAR_SCHEMA, fn)
 
     lint.extend(lint_schema_enums_with_jsonschema(grammar_point, GRAMMAR_SCHEMA))
