@@ -144,6 +144,7 @@
     // - **MUST NOT** change this value because it is a database key.
     "grammar_point": { "$ref": "#/definitions/grammarType" },
     "matcher": { "type": "string"},
+    "matcher_enforce_examples": { "type": "boolean"},
     // A possibly better name for the grammar point that would make it fit in better
     // with the other grammar points in the database (ALL_GRAMMARS_SUMMARY).
     // Often, a good name has the form "something (short meaning)".
@@ -287,6 +288,7 @@
           // - **MUST** each must be just one sentence. Use "scene" if you need to set up context.
           // - **MUST NOT** use parentheses to set context. If necessary, use a separate "scene" field.
           // - **MUST** be from the point of view of a single speaker. No back-and-forth dialogue. Though you may place setup dialog in "scene" (in English).
+          // - [rule-18] **MUST NOT** use a grammar point from a different, but similar, grammar point. Those should go in competing_grammar.
           "japanese": { "$ref": "#/definitions/japaneseVariationsType" },
           // This translation provides a literal, often less natural, English rendering of the Japanese, serving as a hint for the user regarding Japanese word order and specific word choices during practice.
           // Example:

@@ -93,8 +93,8 @@ def lv_japanese_braces(val, type, path, messages):
     if type != "japaneseVariationType":
         return
 
-    if '{' not in val or '}' not in val:
-        messages.append(f"[rule-5] warning {path} missing {{bold}} grammar point: {val}")
+    # if '{' not in val or '}' not in val:
+    #     messages.append(f"[rule-5] warning {path} missing {{bold}} grammar point: {val}")
 
 def lv_missing_competing_grammar(val, type, path, messages):
     """
@@ -233,6 +233,8 @@ def lv_check_grammar_matcher(val, type, path, messages):
     if not matcher: return
     examples = val.get('examples')
     if not examples: return
+    matcher_enforce_examples = val.get("matcher_enforce_examples", None)
+
     matcher = compile_matcher(matcher)
     for example_index, example in enumerate(examples):
         competing_grammars = example.get('competing_grammar')
@@ -243,13 +245,13 @@ def lv_check_grammar_matcher(val, type, path, messages):
             for competing_japanese_index, competing_japanese in enumerate(competing_japaneses):
                 match = matcher.match_japanese(competing_japanese)
                 if not match: continue
-                match = ', '.join(match)
-
-                messages.append(f"[rule-17] error at examples[{example_index}].competing_grammar[{competing_grammar_index}].competing_japanese[{competing_japanese_index}]. Competing Japanese '{match}' appears to use the main grammar point.")
-
-
-
-
+                messages.append(f"[rule-17] error at examples[{example_index}].competing_grammar[{competing_grammar_index}].competing_japanese[{competing_japanese_index}]. Competing Japanese '{match}' in '{competing_japanese}' appears to use the main grammar point.")
+        if matcher_enforce_examples:
+            japaneses = example.get('japanese', [])
+            for japanese_index, japanese in enumerate(japaneses):
+                match = matcher.match_japanese(japanese)
+                if match: continue
+                messages.append(f"[rule-18] error at examples[{example_index}].japanese[{japanese_index}]. Japanese '{japanese}' uses a different grammar point. Move this sentence to competing grammar if appropriate, but it can't stay here.")
 
 def _validate_grammar_point_meaning(name: str):
     meaning = get_meaning(name)

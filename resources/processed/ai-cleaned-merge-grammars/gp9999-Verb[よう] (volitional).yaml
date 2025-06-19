@@ -1,20 +1,11 @@
 grammar_point: Verb[よう] (volitional)
-matcher: |-
-  (
-    ⌈ˢ.*ようᵖ(v|auxv)ᵇ.*るʳ.*ル⌉|
-    ⌈ˢ.*ろうᵖ(v|auxv)ᵇ.*るʳ.*ル⌉|
-    ⌈ˢ.*こうᵖ(v|auxv)ᵇ.*くʳ.*ク⌉|
-    ⌈ˢ.*もうᵖ(v|auxv)ᵇ.*むʳ.*ム⌉|
-    ⌈ˢ.*そうᵖ(v|auxv)ᵇ.*すʳ.*ス⌉|
-    ⌈ˢ.*うᵖ(v|auxv)ᵇ.*うʳ.*ウ⌉|
-    ⌈ˢやろうᵖauxvᵇやʳヤ⌉
-  )
+matcher: '{verb-volitional}'
 learn_before:
   - '[Noun]をください (please give me)'
   - ちょっと (adverb)
   - にする (to decide or make)
 id: gp9999
-meaning: Let's do・shall we・I intend to do
+meaning: Let's do; I intend to do
 pronunciation:
   katakana: ヨウ
   romaji: yō
@@ -45,7 +36,7 @@ false_friends:
     nuance: While 「よう」 is the plain volitional form, 「ましょう」 is its polite equivalent. Both express suggestion
       or intention, but 「ましょう」 is used in formal settings or when addressing someone you want to show
       respect to.
-    grammar_point: ましょう (polite volitional or suggestion)
+    grammar_point: <suggest>:Verb[ましょう] (polite volitional or suggestion)
   - term: Verb[volitional-よう]+ようと思う (intend to)
     meaning: I intend to do X
     kind: similar expression
@@ -74,11 +65,12 @@ examples:
     english_literally: Lunch, let's eat!
     competing_grammar:
       - competing_japanese:
-          - 昼 ごはん を {食べ ましょう}！
-        english: Let's eat lunch together! (polite)
-        hint: This uses the polite volitional form. We're looking for the plain, casual form.
+          - 昼 ごはん を 食べる の は どう です か？
+        english: How about eating lunch together?
+        hint: This suggests an action using 'dou desu ka'. We're looking for a direct suggestion or intention
+          using the plain volitional form.
       - competing_japanese:
-          - 昼 ごはん が {食べ たい}！
+          - 昼 ごはん が 食べ たい！
         english: I want to eat lunch!
         hint: This expresses desire (want to eat). We're looking for a suggestion or intention (let's
           eat).
@@ -93,12 +85,12 @@ examples:
     english_literally: From tomorrow, hard, let's study!
     competing_grammar:
       - competing_japanese:
-          - 明日 から 一生 懸命 {勉強 する} つもり だ！
+          - 明日 から 一生 懸命 勉強 する つもり だ！
         english: I intend to study hard from tomorrow!
         hint: This explicitly states intention using 'tsumori da'. We're looking for the simple volitional
           form.
       - competing_japanese:
-          - 明日 から 一生 懸命 {勉強 し たい}。
+          - 明日 から 一生 懸命 勉強 し たい。
         english: I want to study hard from tomorrow.
         hint: This expresses desire (want to study). We're looking for a firm intention or decision.
     scene: A student making a New Year's resolution to themselves.
@@ -111,9 +103,10 @@ examples:
     english_literally: To the park, let's go!
     competing_grammar:
       - competing_japanese:
-          - 公園 へ {行き ましょう}！
-        english: Let's go to the park! (polite)
-        hint: This uses the polite volitional form. We're looking for the plain, casual form.
+          - 公園 へ 行き ませ ん か？
+        english: Why don't we go to the park?
+        hint: This is a polite invitation. We're looking for a casual suggestion using the plain volitional
+          form.
     scene: A child asks their parent, 'What should we do?', and the parent suggests going outside.
     register: casual
     setting: friendly
@@ -124,7 +117,7 @@ examples:
     english_literally: A little, let's rest.
     competing_grammar:
       - competing_japanese:
-          - 少し {休ん で} ください。
+          - 少し 休ん で ください。
         english: Please rest for a bit.
         hint: This is a polite request. We're looking for a suggestion for shared action.
     scene: Colleagues working on a project decide to take a short break.
@@ -138,7 +131,7 @@ examples:
     english_literally: All strength, let's exert!
     competing_grammar:
       - competing_japanese:
-          - 全力 を {尽くし ます}。
+          - 全力 を 尽くし ます。
         english: I will do my best. (polite)
         hint: This uses the polite non-past form. We're looking for a strong, casual expression of intention.
     scene: An athlete encouraging themselves before a competition.
@@ -151,9 +144,10 @@ examples:
     english_literally: Next week again, let's meet.
     competing_grammar:
       - competing_japanese:
-          - 来週 また {会い ましょう}。
-        english: Let's meet again next week. (polite)
-        hint: This uses the polite volitional form. We're looking for the plain, casual form.
+          - 来週 また 会う の は どう です か？
+        english: How about meeting again next week?
+        hint: This suggests meeting using 'dou desu ka'. We're looking for a direct suggestion for a shared
+          action using the plain volitional form.
     scene: Friends saying goodbye after a casual gathering.
     register: casual
     setting: friendly
@@ -164,7 +158,7 @@ examples:
     english_literally: By today, this work, I will make finish!
     competing_grammar:
       - competing_japanese:
-          - 今日 中 に この 仕事 を {終え たい}。
+          - 今日 中 に この 仕事 を 終え たい。
         english: I want to finish this work today.
         hint: This expresses desire (want to finish). We're looking for a firm intention or decision.
     scene: A busy professional determined to meet a deadline.
@@ -181,7 +175,7 @@ examples:
     english_literally: Alright, let's buy! That book.
     competing_grammar:
       - competing_japanese:
-          - よし、その 本 を {買う} こと に し た！
+          - よし、その 本 を 買う こと に し た！
         english: Alright, I decided to buy that book!
         hint: This uses 'koto ni suru' to express a decision. We're looking for a simple, direct expression
           of intention.
@@ -195,7 +189,7 @@ examples:
     english_literally: Sake, let's drink.
     competing_grammar:
       - competing_japanese:
-          - お 酒 を {飲み ませ ん か}？
+          - お 酒 を 飲み ませ ん か？
         english: Would you like to drink sake? (polite invitation)
         hint: This is a polite invitation. We're looking for a casual suggestion.
     scene: Friends at an izakaya (Japanese pub) deciding what to order.
@@ -208,9 +202,10 @@ examples:
     english_literally: Let's try doing it!
     competing_grammar:
       - competing_japanese:
-          - '{やっ て み ましょう}！'
-        english: Let's try! (polite)
-        hint: This uses the polite volitional form. We're looking for the plain, casual form.
+          - やっ て み ませ ん か！
+        english: Why don't we try?
+        hint: This is a polite invitation to try. We're looking for a direct, casual suggestion using
+          the plain volitional form.
     scene: Someone feeling hesitant about a new challenge, and a friend encourages them.
     register: casual
     setting: supportive

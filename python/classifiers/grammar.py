@@ -998,7 +998,8 @@ def map(current, _):
             if matcher:
                 if not matcher.match_japanese(compact):
                     display.warn(f"GRAMMAR:  {grammar_point}")
-                    display.warn(f"COMPACT:  {compact}")
+                    c = compact.replace('⌈','\u001b[K\n⌈')
+                    display.warn(f"COMPACT:  {c}")
                     display.warn(f"JAPANESE: {japanese}")
                     display.warn(f"MATCHER: {matcher.regex_string}")
                     display.warn(f"EXPECTED MATCH")

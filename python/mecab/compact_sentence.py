@@ -236,11 +236,14 @@ def raw_tokens_to_compact_sentence(tokens: list[dict]) -> str:
     for token in tokens:
         surface = token["surface"]
         pos = token["pos"]
+        pos_detail_1 = token.get("pos_detail_1")
         pos_code = pos_map.get(pos, pos)
         if pos_code in ['prt', 'sym', 'auxs'] and len(surface) == 1:
             recombined += surface
         else:
             recombined += f"⌈ˢ{surface}ᵖ{pos_code}"
+            if pos_detail_1:
+                recombined += f":{pos_detail_1}"
             base = token.get("basic_form", None)
             if base and base != surface:
                 recombined += f"ᵇ{base}"

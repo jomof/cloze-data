@@ -9,10 +9,9 @@ from dumpyaml import dump_yaml
 from grammar_summary import generate_summary, save_summary
 from python.ai import AiChatSession
 from python.console import display
-from python.grammar import clean_lint, clean_lint_memoize, GRAMMAR_SCHEMA_WITH_COMMENTS
+from python.grammar import clean_lint, GRAMMAR_SCHEMA_WITH_COMMENTS
 from python.grammar.grammar_schema import GRAMMAR_SCHEMA
 from python.mapreduce import MapReduce
-from python.utils.build_cache.memoize.memoize import memoize_to_disk
 from python.utils.visit_json.visit_json import visit_json
 from python.db import db
 import traceback
@@ -36,11 +35,12 @@ class Saved(dict):
             if v: grammar_point[f] = v
             elif f in grammar_point: del grammar_point[f]
 
-def save_gp_fields(grammar_point) -> Saved:
+def clear_gp_fields(grammar_point) -> Saved:
     saved = Saved()
     saved.save(grammar_point, 'grammar_point', remove=False)
     saved.save(grammar_point, 'id')
     saved.save(grammar_point, 'matcher')
+    saved.save(grammar_point, 'matcher_enforce_examples')
     saved.save(grammar_point, 'sources')
     saved.save(grammar_point, 'learn_before')
     saved.remove(grammar_point, 'split_predecessor')
@@ -59,6 +59,7 @@ PERSONA = ws("""
         but you won't avoid discussing cultural differences when they are relevant to the topic at hand.
         You love Japanese and you love to share the details, history, nuances, and beauty of the language and the culture with your students.
         As an ENTJ, love to geek out on explaining Japanese grammar. But you never talk about MBTI in your lessons.
+        You write in the style of "Elements of Style" by Strunk and White.
     """) 
 
 AUDIENCE = ws("""
@@ -146,7 +147,7 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
     output_dir = os.path.dirname(output_file)
     summary_dir = f"{output_dir}/summary"
 
-    saved = save_gp_fields(prior_grammar_point)
+    saved = clear_gp_fields(prior_grammar_point)
 
     prompt = '\n'.join([
         PERSONA, 
@@ -193,8 +194,7 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
         ws("""
             ** OVERRIDE OPERATING INSTRUCTIONS **
             ** PRIORITY INSTRUCTIONS **
-            We're incrementally improving this grammar point and we're focusing on false_friends[]
-            right now. 
+            We're incrementally improving this grammar point and we're cleaning up lint issues right now
            
             ** BEGIN PRIORITY INSTRUCTIONS ALGORITHM **
             Follow these steps:
@@ -211,8 +211,6 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
 
     os.makedirs(temp_dir, exist_ok=True)
     basename = os.path.basename(output_file)
-    with open(temp_dir + f"/{basename}.prompt", 'w', encoding='utf-8') as file:
-        file.write(prompt)
         
     model = "gemini-2.5-flash-preview-05-20"
 
@@ -237,8 +235,11 @@ def ai_pass(prior_grammar_point, all_grammars_summary, output_file, temp_dir):
 
             json_response = json.loads(response)
 
+            
+            saved.restore(json_response)
             json_response = clean_lint(json_response, output_file, all_grammars_summary)
             json_response = clean_lint(json_response, output_file, all_grammars_summary)
+            clear_gp_fields(json_response)
 
             with open(temp_dir + "/" + os.path.basename(output_file)+f"-{i}.cleaned-response", 'w', encoding='utf-8') as f:
                 f.write(dump_yaml(json_response))
@@ -271,7 +272,8 @@ if __name__ == '__main__':
         display.check(f"Generated grammar summary with {len(grammar_summary['all-grammar-points'])} grammar points.")
 
         async def lint(parsed_obj, file_path):
-            if 'Verb[えば]' not in file_path: return None
+            if 'meaning' in parsed_obj and not parsed_obj.get('lint-errors', []):
+                if 'てばかりはいられない (cannot just keep ~ing)' not in file_path: return None
   
             # if parsed_obj['id'] != 'gp0013': return None
             # Convert original object to JSON for comparison

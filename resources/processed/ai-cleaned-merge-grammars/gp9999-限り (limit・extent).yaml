@@ -1,231 +1,281 @@
 grammar_point: 限り (limit・extent)
-better_grammar_point_name:
-  - <suggest>:限り (as long as)
-  - <suggest>:限り (as far as)
-learn_before:
-  - '[Verb-dictionary・Noun-の]限り (as long as・to the extent that)'
+matcher: |-
+  ⌈ˢ限りᵖn:common_nounʳカギリ⌉|
+  ⌈ˢ限りなくᵖadj:generalᵇ限りないʳカギリナイ⌉
 id: gp9999
-meaning: as long as; as far as; to the best of (one's ability); to the utmost
+meaning: limit, extent
 pronunciation:
   katakana: カギリ
   romaji: kagiri
 formation:
-  Verb[dictionary form] + 限り: Indicates a condition that holds as long as the verb's action or state continues.
-    This form often implies a duration or an extent of action.
-  Noun + の + 限り: Expresses the limit or full extent of the noun. This is often used with abstract nouns
-    like 'strength', 'knowledge', 'life', etc., meaning 'to the utmost of' or 'as far as'.
-  Noun + 限り: Means 'limited to' or 'only'. This form indicates a restriction or exclusivity, often used
-    in official notices or rules.
+  Verb[dictionary form] + 限り: Indicates a condition that must continue for an action to persist; 'as long
+    as'.
+  Verb[ない form] + 限り: Expresses a negative condition; 'unless'.
+  Noun + の + 限り: Signifies doing something to the utmost limit of a noun, often one's ability or capacity;
+    'to the extent of', 'as much as possible'.
+  Verb[た form] + 限りでは: Used when conveying information based on one's knowledge or observation; 'as far
+    as (I know)', 'from what I've seen'.
+  Noun + 限り: Denotes a restriction or limitation to a specific noun, often a time period; 'limited to',
+    'only'.
+  い-Adjective[dictionary form] + 限りだ: Expresses a strong feeling or the utmost degree of an adjective;
+    'it's the utmost (feeling/state)'.
 jlpt: N3
-etymology: The word 限り (kagiri) is derived from the verb 限る (kagiru), meaning 'to limit,' 'to restrict,'
-  or 'to confine.' Its use in expressions such as 「知る限り」 (as far as one knows) or 「力の限り」 (to the limit
-  of one's strength) directly reflects this root meaning. It evolved to emphasize acting or understanding
-  within a certain boundary or to the maximum extent of one's capabilities, essentially defining the 'limit'
-  or 'extent' of something.
+etymology: The grammar point 「限り」 stems from the verb 「限る」(kagiru), meaning 'to limit', 'to restrict',
+  or 'to confine'. This fundamental concept of setting boundaries or defining scopes is reflected in all
+  its various applications, whether it indicates a conditional 'as long as', a superlative 'utmost extent',
+  or a restrictive 'only'. The underlying idea is always about a defined boundary or a maximum degree.
 writeup: |-
-  The grammar point 「限り」 (kagiri) is a versatile expression used to denote a limit, extent, or duration. It can be understood as 'as long as,' 'as far as,' or 'to the utmost of.' Its usage primarily falls into three main patterns:
+  The Japanese grammar point 「限り」 is highly versatile, expressing nuances related to limits, extents, and conditions. It can be understood as 'as long as', 'unless', 'to the extent of', 'as far as', or 'only', depending on the context and the grammatical form it follows.
 
-  **1. Verb[dictionary form] + 限り (as long as)**
-  This pattern signifies that something will continue or be true as long as the condition expressed by the verb holds. It sets a continuous boundary for the main clause's action or state. For instance, 「生きている限り」 (as long as I live) implies that a certain condition will persist throughout one's life.
+  When preceded by a verb in its dictionary form (e.g., 生きている限り), 「限り」 means 'as long as' and implies a continuing condition. The action or state in the main clause will persist as long as the condition holds. When used with a verb in the negative ない form (e.g., 努力しない限り), it means 'unless', indicating that something will not happen or be possible without the preceding condition.
 
-  **2. Noun + の + 限り (to the limit of, as far as)**
-  This structure indicates acting or knowing to the maximum extent of the specified noun. It's often used with abstract nouns like 力 (chikara, strength), 知識 (chishiki, knowledge), or 記憶 (kioku, memory). For example, 「力の限り頑張ります」 (I will do my best to the limit of my strength) conveys giving one's absolute maximum effort.
+  Following a noun with 「の」 (e.g., 力の限り), 「限り」 conveys 'to the utmost limit of' that noun, often referring to one's physical or mental capacity, signifying 'doing one's best' or 'as much as possible'.
 
-  **3. Noun + 限り (limited to, only)**
-  This particular pattern, often found in official announcements or rules, restricts something to a specific category or group. For example, 「女性限り」 (limited to women) or 「会員限り」 (members only) means that access or eligibility is restricted exclusively to that group. While related by the core meaning of 'limit', its application is more about exclusivity rather than scope or duration of action, distinguishing it slightly from the other two patterns discussed.
+  When paired with a past-tense verb and 「では」 (e.g., 聞いた限りでは), it translates to 'as far as (one has heard/seen/known)' and is used to state information based on one's limited knowledge or observation.
 
-  It is important to understand the context to correctly interpret 「限り」, as its nuance shifts slightly depending on the preceding word. It is generally a formal or semi-formal expression, though it can be used in casual speech for emphasis. The particle 「の」 is crucial when connecting it to nouns, except in the specific case of 'Noun + 限り' indicating restriction.
+  When appended to a noun (e.g., 本日限り), 「限り」 indicates a strict limitation, typically of time, meaning 'limited to' or 'only for' that specific period. This usage is common in sales or announcements.
+
+  Finally, when appended to an い-adjective (e.g., 嬉しい限りだ), it expresses an intense feeling, meaning 'it's the utmost' or 'the peak of' that emotion. It emphasizes the degree of the adjective, making the feeling very strong or overwhelming.
 false_friends:
-  - term: 〜だけ (only・just)
-    meaning: only; just
+  - term: に限る
+    meaning: nothing is better than, to be limited to
     kind: similar expression
-    nuance: 「だけ」 emphasizes exclusivity or limitation in a simpler, more direct way. While 「限り」 can also
-      denote exclusivity (Noun + 限り), its primary use in 'Verb[dictionary form] + 限り' and 'Noun + の +
-      限り' focuses on the extent or duration of a state/action. 「だけ」 is more about quantity or scope, often
-      implying 'nothing more' or 'nothing else'.
+    nuance: While 「限り」 can imply a restriction, 「に限る」 specifically conveys the idea that something is
+      the best choice or is exclusively limited to a certain group or condition. 「この本は本日限りです」 (This book
+      is only for today) uses 「限り」 as a simple temporal restriction. 「疲れた時は温泉に限る」 (When tired, a hot spring
+      is the best) uses 「に限る」 to recommend something as optimal. We're looking for a grammar point that
+      suggests an optimum choice.
+    grammar_point: に限る (nothing better than)
+  - term: だけ
+    meaning: only, just
+    kind: similar expression
+    nuance: Both 「限り」 (Noun + 限り) and 「だけ」 can mean 'only', but 「限り」 implies a boundary or scope, often
+      related to a condition or a temporal limit, while 「だけ」 is a simple quantitative or qualitative restriction.
+      「今日限り」 (only for today) implies a deadline, while 「今日だけ」 (only today) simply means 'not other days'.
+      We're looking for a grammar point that focuses purely on restriction without the nuance of a boundary
+      or condition.
     grammar_point: だけ (only・just)
-  - term: 〜まで (until・to the extent of)
-    meaning: until; to the extent of
+  - term: 以内
+    meaning: within, less than
     kind: similar expression
-    nuance: 「まで」 primarily indicates a temporal or spatial endpoint, or a surprising extent. While it
-      can convey 'to the extent of', it doesn't carry the same nuance of 'as long as a condition holds'
-      or 'to the absolute limit of ability' as 「限り」 does.
+    nuance: 「限り」 and 「以内」 both indicate a limit. However, 「限り」 often suggests a conditional boundary ('as
+      long as') or a maximum extent ('to the utmost'), whereas 「以内」 strictly means 'within' a numerical
+      or spatial boundary, implying that the limit should not be exceeded. 「法律の範囲限り」 (within the limits
+      of the law) implies adherence to a condition, while 「３日以内」 (within 3 days) specifies a strict timeframe.
+      We're looking for a grammar point that describes strict adherence to a numerical or spatial boundary.
+    grammar_point: 以内 (within)
+  - term: まで
+    meaning: until, to the extent
+    kind: similar expression
+    nuance: 「限り」 can convey 'to the extent of' (Noun + の 限り), similar to 「まで」. However, 「まで」 primarily
+      marks a clear endpoint in time, space, or degree. 「限り」, particularly with verbs, often implies a
+      continuous condition or a maximum effort. 「力の限り走る」 (run to the best of one's ability) suggests continuous
+      effort, while 「駅まで走る」 (run until the station) marks a destination. We're looking for a grammar point
+      that marks a distinct endpoint.
     grammar_point: まで (limit extent)
-  - term: 〜うちに (while or within)
-    meaning: while; during; within
+  - term: 限りで
+    meaning: casual endpoint, limitation
     kind: similar expression
-    nuance: 「うちに」 emphasizes that something must happen while a condition exists or before a change occurs,
-      often with a sense of urgency. 「限り」 indicates that something continues as long as a condition holds,
-      without the same urgency or implication of change.
-    grammar_point: '[Verb-dictionary・い-Adj・な-Adj・Nounの]うちに (while a state continues)'
-  - term: '[Noun]限り (limited to)'
-    meaning: limited to; only
-    kind: similar expression
-    nuance: Though sharing the same word 「限り」, this specific formation is typically used to state a restriction
-      or exclusivity (e.g., 'members only', 'for women only'). The primary grammar point '限り (limit・extent)'
-      focuses on the scope, duration, or maximum extent of an action or knowledge, not exclusivity.
-    grammar_point: '[Noun]限り (limited to)'
-post_false_friends_writeup: When distinguishing 「限り」 from similar expressions like 「だけ」, 「まで」, and 「うちに」,
-  consider the specific nuance. 「限り」 emphasizes the **full extent or duration** of something, often with
-  a sense of boundary. 「だけ」 is more about **exclusivity or quantity**. 「まで」 typically indicates a **temporal
-  or spatial endpoint**. 「うちに」 implies an action must be completed **during a period** or **before a change**
-  occurs, often with urgency. The specific pattern 'Noun + 限り' (without 'の') is unique in its direct assertion
-  of limitation to a group or category, setting it apart from the 'limit/extent' usage.
+    nuance: 「限りで」 is a variant of 「限り」, often used in a more casual context to indicate an endpoint or
+      deadline, similar to 'as of' or 'only until'. While 「限り」 can express a condition or extent, 「限りで」
+      is more focused on marking a final point. For example, 「本日限りで閉店します」 (We close as of today) uses
+      「限りで」 for a definitive closing, whereas 「この情報が正しい限り、問題ない」 (As long as this information is correct,
+      there's no problem) uses 「限り」 to express an ongoing condition.
+    grammar_point: 限りで (casual endpoint・limitation)
+post_false_friends_writeup: Understanding the subtle differences between 「限り」 and similar expressions
+  is key. While some terms like 「だけ」 or 「以内」 might seem interchangeable in certain contexts, 「限り」 carries
+  a unique nuance of a boundary that defines a condition, an extent of effort, or a scope of knowledge.
+  Pay attention to the surrounding particles and the type of word preceding 「限り」 to grasp its precise
+  meaning.
 examples:
-  - english: As far as I know, he is a very honest person.
+  - english: As long as I live, I want to keep learning.
     japanese:
-      - 私 の {知る 限り}、彼 は とても 誠実 な 人 です。
-      - 私 が {知っ て いる 限り}、彼 は とても 誠実 な 人 です。
-    english_literally: As far as I know, he is a very sincere person.
+      - 生き て いる 限り、学び 続け たい と 思い ます。
+      - 生き て いる 限り、学び 続け たい と 思う。
+      - 命 ある 限り、学び 続け たい と 思い ます。
+    english_literally: As long as I am living, I think I want to continue learning.
     competing_grammar:
       - competing_japanese:
-          - 私 が 知っ て いる だけ、彼 は とても 誠実 な 人 です。
-        english: Only what I know, he is a very sincere person.
-        hint: 「だけ」 emphasizes 'only' that knowledge. We're looking for 'as far as' the extent of your
-          knowledge.
-    scene: You are discussing a mutual acquaintance with a friend, and you want to vouch for their character.
-    register: formal
-    setting: informative
-  - english: As long as you live, never give up on your dreams.
+          - 私 が 死な ない うち に、学び 続け たい と 思い ます。
+        english: Before I die, I want to keep learning.
+        hint: 「うちに」 means 'while' or 'before something changes'. We're looking for an expression that
+          signifies 'as long as a condition continues'.
+    scene: A lifelong learner reflecting on their aspirations.
+    register: teineigo (polite)
+    setting: reflective
+    conjugation: progressive (～ている)
+  - english: Unless you get permission from your parents, you can't go.
     japanese:
-      - あなた が {生き て いる 限り}、決して 夢 を 諦め ない で ください。
-      - '{生き て いる 限り}、夢 を 諦める な。'
-    english_literally: As long as you are living, please never give up on dreams.
+      - 親 の 許可 を 得 ない 限り、行け ませ ん。
+      - 親 の 許可 を 得 ない 限り、行け ない。
+      - 親 から 許可 を もらわ ない 限り、行け ませ ん。
+    english_literally: Unless you obtain parents' permission, you cannot go.
     competing_grammar:
       - competing_japanese:
-          - あなた が 生き て いる うち に、夢 を 諦め ない で ください。
-        english: While you are alive, don't give up on your dreams.
-        hint: 「うちに」 implies a duration within which something must be done, sometimes with urgency. We're
-          looking for 'as long as' something continues.
-    scene: A mentor is giving encouraging advice to their young protégé.
-    register: semi-formal
-    setting: inspirational
-    speaker_gender: male
-    listener_gender: female
-    speaker_age: older
-    nuance: The use of 「生きている限り」 emphasizes the continuous nature of the condition – 'for the entire duration
-      of your life'. The casual imperative 「諦めるな」 is often used by older, male speakers addressing younger
-      individuals.
-  - english: He promised to fight with all his strength.
-    japanese:
-      - 彼 は {力 の 限り}、戦う と 約束 し まし た。
-      - 彼 は {力 の 限り} 戦う と 約束 し た。
-    english_literally: He promised to fight to the limit of his strength.
-    competing_grammar:
+          - 親 の 許可 を 得 なけれ ば、行け ませ ん。
+        english: If you don't get permission from your parents, you can't go.
+        hint: 「なければ」 indicates a general conditional 'if not'. We're looking for a stronger negative condition,
+          implying an absolute barrier.
       - competing_japanese:
-          - 彼 は 力 が ある だけ、戦う と 約束 し まし た。
-        english: He promised to fight only with the strength he has.
-        hint: 「だけ」 here would mean 'only with the strength he has', implying a limitation. We're looking
-          for 'to the full extent of his strength'.
-    scene: A general is reporting on the resolve of his soldier.
-    register: formal
-    setting: serious
-  - english: I will make efforts to the best of my ability.
-    japanese:
-      - 私 は {できる 限り}、努力 し ます。
-      - '{できる 限り} 努力 する。'
-    english_literally: I, to the extent that I can, will make efforts.
-    competing_grammar:
-      - competing_japanese:
-          - 私 は {できる だけ} 努力 し ます。
-        english: I will make efforts as much as I can.
-        hint: While 「できるだけ」 is often interchangeable, 「できる限り」 implies a more determined or exhaustive
-          effort 'to the very limit' of what is possible.
-    scene: A student promising their teacher they will study hard for an upcoming exam.
-    register: semi-formal
-    setting: academic
-  - english: As far as I can see, there are no problems.
-    japanese:
-      - 私 の {見る 限り}、問題 は あり ませ ん。
-      - '{見る 限り}、問題 は ない。'
-    english_literally: As far as my seeing, there are no problems.
-    competing_grammar:
-      - competing_japanese:
-          - 私 が 見える だけ、問題 は あり ませ ん。
-        english: Only where I can see, there are no problems.
-        hint: 「だけ」 would imply a limited scope of vision. We're looking for 'as far as' one's entire visual
-          perception extends.
-    scene: A technician is inspecting equipment and reporting the initial findings.
-    register: formal
-    setting: professional
-  - english: As long as there is hope, we should not give up.
-    japanese:
-      - 希望 が {ある 限り}、諦める べき で は ない。
-      - 希望 が {ある 限り}、諦め て は いけ ない。
-    english_literally: As long as hope exists, we should not give up.
-    competing_grammar:
-      - competing_japanese:
-          - 希望 が ある まで、諦める べき で は ない。
-        english: Until there is hope, we should not give up.
-        hint: 「まで」 suggests an endpoint or a point up to which something is valid. We're looking for 'as
-          long as' the condition continues.
-    scene: A leader is motivating their team after a setback.
-    register: formal
-    setting: inspirational
-  - english: They lived their lives to the fullest.
-    japanese:
-      - 彼 ら は {人生 の 限り} を 尽くし た。
-      - 彼 ら は {人生 の 限り} を 謳歌 し た。
-    english_literally: They exhausted the limit of their lives.
-    competing_grammar:
-      - competing_japanese:
-          - 彼 ら は 人生 を 目 いっぱい 生き た。
-        english: They lived their lives to the maximum.
-        hint: 「目いっぱい」 also means 'to the maximum,' but 「人生の限りを尽くす」 has a more profound, often philosophical,
-          nuance of living without regret or holding anything back.
-    scene: A narrator describing the lives of pioneers in a documentary.
-    register: formal
-    setting: storytelling
-  - english: I will support you as much as I can.
-    japanese:
-      - 私 は {できる 限り}、あなた を サポート し ます。
-      - '{できる 限り} サポート する ね。'
-    english_literally: I, to the extent that I can, will support you.
-    competing_grammar:
-      - competing_japanese:
-          - 私 は できる だけ あなた を サポート し ます。
-        english: I will support you as much as possible.
-        hint: While similar to 「できるだけ」, 「できる限り」 carries a stronger nuance of committing to the absolute
-          maximum extent of one's ability, almost implying 'no matter what'.
-    scene: A friend offering help to another who is going through a tough time.
-    register: casual
-    setting: supportive
-    speaker_gender: female
-    listener_gender: female
-    nuance: 「できる限り」 here shows a full commitment to providing support. The sentence-final particle 「ね」
-      softens the statement, making it sound more intimate and empathetic, which is common for female
-      speakers in friendly contexts.
-  - english: As far as my memory serves, this is the first time.
-    japanese:
-      - 私 の {記憶 の 限り}、これ が 初めて です。
-      - '{記憶 の 限り}、これ が 初めて だ。'
-    english_literally: As far as my memory, this is the first time.
-    competing_grammar:
-      - competing_japanese:
-          - 私 の 記憶 で は、これ が 初めて です。
-        english: In my memory, this is the first time.
-        hint: 「記憶では」 is a simpler way to state a fact based on memory. 「記憶の限り」 implies searching through
-          the entirety of one's memory to confirm something, suggesting a more thorough check.
-    scene: Someone is trying to recall if an event has happened before.
-    register: semi-formal
-    setting: informative
-  - english: You should use your strength to the fullest.
-    japanese:
-      - 君 は {力 の 限り} を 尽くす べき だ。
-      - '{力 の 限り} を 尽くせ。'
-    english_literally: You should exert the limit of your strength.
-    competing_grammar:
-      - competing_japanese:
-          - 君 は 力 を 最大 限 に 使う べき だ。
-        english: You should use your strength to the maximum extent.
-        hint: 「最大限に使う」 is a more direct way to say 'use to the maximum'. 「力の限りを尽くす」 is a more idiomatic
-          and stronger expression for putting forth one's absolute best effort.
-    scene: A coach giving instructions to an athlete before a competition.
-    register: casual
+          - 親 の 許可 が なけれ ば 行く こと が でき ませ ん。
+        english: If there is no parent's permission, it is not possible to go.
+        hint: 「ことが できません」 states an inability. We're looking for a phrasing that sets a strict prerequisite
+          condition.
+    scene: A strict parent speaking to their child.
+    register: teineigo (polite)
     setting: commanding
-    speaker_gender: male
-    listener_gender: male
-    speaker_age: older
-    nuance: 「力の限りを尽くす」 implies putting forth maximal effort. The casual imperative 「尽くせ」 is typically
-      used by male speakers to other males, especially in roles of authority or coaching, emphasizing
-      a direct command.
+    conjugation: negative plain (～ない)
+  - english: I will do my utmost to help you.
+    japanese:
+      - 力 の 限り、あなた を 助け ます。
+      - 力 の 限り、あんた を 助ける よ。
+      - 私 の 全力 の 限り、あなた を 助け ます。
+    english_literally: To the limit of strength, I will help you.
+    competing_grammar:
+      - competing_japanese:
+          - 精 一杯、あなた を 助け ます。
+        english: I will help you with all my might.
+        hint: 「精一杯」 is an adverb meaning 'with all one's might'. We're looking for a noun-based phrase
+          that expresses 'to the utmost limit of' an ability.
+      - competing_japanese:
+          - できる だけ あなた を 助け ます。
+        english: I will help you as much as possible.
+        hint: 「できるだけ」 means 'as much as possible' generally. We're looking for an expression that signifies
+          'to the absolute maximum of my ability'.
+    scene: A friend offering strong support.
+    register: teineigo (polite)
+    setting: supportive
+  - english: As far as I heard, the meeting was postponed.
+    japanese:
+      - 聞い た 限り で は、会議 は 延期 さ れ た そう です。
+      - 聞い た 限り で は、会議 は 延期 さ れ た そう だ。
+      - 聞い た 限り で は、会議 は 延期 に なっ た そう です。
+    english_literally: As far as I heard, the meeting was postponed it seems.
+    competing_grammar:
+      - competing_japanese:
+          - 聞い た ところ で は、会議 は 延期 さ れ た そう です。
+        english: According to what I heard, the meeting was postponed.
+        hint: 「聞いたところでは」 is a common way to say 'according to what I heard'. We're looking for an expression
+          that implies 'based on my limited knowledge/observation'.
+    scene: Two colleagues discussing a schedule change.
+    register: teineigo (polite)
+    setting: informative
+    conjugation: past plain (～た)
+  - english: This offer is only valid today.
+    japanese:
+      - この オファー は 本日 限り です。
+      - この オファー は 本日 限り だ。
+      - この オファー は 本日 限り と なり ます。
+      - 本日 限り。
+    english_literally: This offer is today limit.
+    competing_grammar:
+      - competing_japanese:
+          - この オファー は 本日 まで です。
+        english: This offer is until today.
+        hint: 「までです」 marks a deadline. We're looking for an expression that signifies 'limited to' that
+          specific time, often implying exclusivity or a finality.
+      - competing_japanese:
+          - この オファー は 本日 中 と なり ます。
+        english: This offer will be within today.
+        hint: 「本日中」 means 'within today'. We're looking for a phrase that specifically states 'only' or
+          'limited to' today.
+    scene: A salesperson announcing a special promotion.
+    register: teineigo (polite)
+    setting: informative
+  - english: I am beyond happy.
+    japanese:
+      - 嬉しい 限り です。
+      - 嬉しい 限り だ。
+      - 幸せ な 限り です。
+    english_literally: Happy utmost is.
+    competing_grammar:
+      - competing_japanese:
+          - とても 嬉しい です。
+        english: I am very happy.
+        hint: 「とても」 simply means 'very'. We're looking for an expression that conveys 'the highest degree'
+          of happiness, beyond just 'very'.
+      - competing_japanese:
+          - これ 以上 嬉しい こと は あり ませ ん。
+        english: There is nothing happier than this.
+        hint: This phrase explicitly states nothing can be happier. We're looking for a more concise expression
+          for 'utmost happiness'.
+    scene: Someone expressing immense joy after receiving good news.
+    register: teineigo (polite)
+    setting: excited
+  - english: As far as I know, there are no problems with the plan.
+    japanese:
+      - 私 の 知る 限り で は、計画 に 問題 は あり ませ ん。
+      - 俺 の 知る 限り で は、計画 に 問題 は ない。
+      - 知る 限り で は、計画 に 問題 は あり ませ ん。
+    english_literally: As far as my knowing, with the plan problem is not.
+    competing_grammar:
+      - competing_japanese:
+          - 私 の 知識 で は、計画 に 問題 は あり ませ ん。
+        english: With my knowledge, there are no problems with the plan.
+        hint: 「私の知識では」 specifies the source of information. We're looking for an expression implying 'based
+          on what I've ascertained'.
+    scene: A project manager reporting on a plan's status.
+    register: teineigo (polite)
+    setting: professional
+  - english: As long as you are honest, I will believe you.
+    japanese:
+      - あなた が 正直 で ある 限り、私 は あなた を 信じ ます。
+      - お前 が 正直 で ある 限り、俺 は お前 を 信じる。
+    english_literally: You are honest as long as, I you believe.
+    competing_grammar:
+      - competing_japanese:
+          - あなた が 正直 で ある なら ば、私 は あなた を 信じ ます。
+        english: If you are honest, I will believe you.
+        hint: 「ならば」 implies a conditional 'if'. We're looking for an expression that emphasizes 'as long
+          as' a state or condition continues.
+    scene: A mentor giving advice to a young person.
+    register: teineigo (polite)
+    setting: persuasive
+  - english: I'll help you within my capabilities.
+    japanese:
+      - 私 の できる 限り で、お 手伝い し ます。
+      - 俺 の できる 限り で、手伝う よ。
+      - できる 限り、お 手伝い し ます。
+    english_literally: My can do limit by, I will help.
+    competing_grammar:
+      - competing_japanese:
+          - 私 の 可能 な 範囲 で、お 手伝い し ます。
+        english: Within my possible range, I will help.
+        hint: 「可能な範囲で」 indicates 'within the possible range'. We're looking for an expression that signifies
+          'to the maximum extent of my ability'.
+    scene: Someone offering assistance, acknowledging their limitations.
+    register: teineigo (polite)
+    setting: friendly
+  - english: A situation like this cannot continue indefinitely.
+    japanese:
+      - この よう な 状況 は、この まま で は 限りなく 続く こと は ない。
+      - この よう な 状況 が 限りなく 続く こと は ない。
+      - こんな 状況 が 限りなく 続く こと は ない。
+    english_literally: This kind of situation, as is endlessly continuing is not.
+    competing_grammar:
+      - competing_japanese:
+          - この よう な 状況 は、いつ まで も 続く こと は ない。
+        english: This kind of situation will not last forever.
+        hint: 「いつまでも」 means 'forever' or 'for always'. We're looking for a phrasing that specifically
+          uses 'limitless' or 'endlessly' in a negative context.
+    scene: A politician discussing a challenging policy issue.
+    register: teineigo (polite)
+    setting: serious
+  - english: As long as there is hope, we must not give up.
+    japanese:
+      - 希望 が ある 限り、諦め て は なら ない。
+      - 希望 が ある 限り、諦め ない で。
+      - 希望 が ある 限り、諦める な。
+    english_literally: Hope exists as long as, must not give up.
+    competing_grammar:
+      - competing_japanese:
+          - 希望 が ある の なら、諦め て は なら ない。
+        english: If there is hope, you must not give up.
+        hint: 「のなら」 means 'if that's the case'. We're looking for an expression that sets a continuous
+          condition for action.
+    scene: A coach motivating a team during a tough game.
+    register: teineigo (polite)
+    setting: inspirational
+post_example_writeup: The usage of 「限り」 is broad, but each instance consistently relates to a boundary,
+  whether it's a condition that must hold, an extent of effort, or the scope of information. Paying attention
+  to the word preceding 「限り」 is crucial for understanding its specific nuance in each sentence.

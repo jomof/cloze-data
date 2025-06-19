@@ -1,25 +1,28 @@
 grammar_point: Verb[imperative] (imperative)
-matcher: (
-    ⌈ˢ~けᵖvᵇ~くʳ~ク⌉っ?(な|よ|!|！)|
-    ⌈ˢ~ろᵖvᵇ~るʳ~ル⌉っ?(な|よ|!|！)|
-    ⌈ˢ~(る|ん)ᵖvᵇ~るʳ~ル⌉っ?(な|よ|!|！)|
-    ⌈ˢ~(る|ん)ᵖvʳ~ル⌉っ?(な|よ|!|！)|
-    ⌈ˢ~えᵖvᵇ~うʳ~ウ⌉っ?(な|よ|!|！)|
-    ⌈ˢ~いᵖvᵇ~うʳ~ウ⌉っ?(な|よ|!|！)|
-    ⌈ˢ~れᵖvᵇ~るʳ~ル⌉っ?(な|よ|!|！)|
-    ⌈ˢ~きᵖvᵇ~くʳ~ク⌉(な|よ|!|！)|
-    ⌈ˢ~っᵖvᵇ~るʳ~ル⌉て⌈ˢろᵖnʳロ⌉っ?(な|よ|!|！)|
-    ⌈ˢ~てᵖvᵇ~つʳ~ツ⌉っ?(な|よ|!|！)|
-    ⌈ˢ~げᵖnʳ~ゲ⌉(な|よ|!|！)|
-    ⌈ˢ~げᵖnʳ~ゲ⌉⌈ˢなᵖauxvᵇだʳダ⌉⌈ˢさいᵖnʳサイ⌉|
-    ⌈(?![^⌉]*(?:なさいᵖvᵇ|くださいᵖvᵇ))ˢ~いᵖvᵇ~るʳ~ル⌉っ?(な|よ|!|！)
-  )
-extra: ⌈ˢ野菜ᵖnʳヤサイ⌉を⌈ˢ食いᵖvᵇ食うʳクウ⌉な！
+matcher: '{verb-imperative}'
+matcher_enforce_examples: true
 learn_before:
   - Verb[dictionary] (dictionary form)
   - 真上 (directly above)
 id: gp9999
-meaning: To issue a direct command or strong instruction.
+meaning: imperative
+conjugations:
+  - conjugation-type: imperative plain (～ろ/～え)
+    form: 行け
+    rarity: common
+    meaning: go!
+  - conjugation-type: imperative plain (～ろ/～え)
+    form: 食べろ
+    rarity: common
+    meaning: eat!
+  - conjugation-type: imperative plain (～ろ/～え)
+    form: しろ
+    rarity: common
+    meaning: do it!
+  - conjugation-type: imperative plain (～ろ/～え)
+    form: こい
+    rarity: common
+    meaning: come!
 pronunciation:
   katakana: めいれいけい
   romaji: meirei-kei
@@ -58,7 +61,7 @@ false_friends:
     nuance: While also an imperative, 「〜なさい」 is softer and generally used by adults to children or by
       teachers to students, suggesting a gentle instruction rather than a forceful command. We're looking
       for the more direct, casual imperative.
-    grammar_point: <suggest>:Verb[stem]なさい (polite imperative)
+    grammar_point: '[Verb-stem]なさい (polite imperative)'
   - term: 〜てください (please do)
     meaning: Please do
     kind: similar expression
@@ -77,12 +80,12 @@ false_friends:
     kind: similar expression
     nuance: 「〜べきだ」 indicates a strong obligation or recommendation, often based on moral or logical reasoning,
       rather than a direct order. We're looking for a command, not a suggestion of what 'should' be done.
-    grammar_point: <suggest>:Verb[dictionary]べき・べきではない (should・should not)
-post_false_friends_writeup: The imperative form is about direct action. When choosing between the imperative,
-  「〜なさい」, or 「〜てください」, consider the social hierarchy and your relationship with the listener. The plain
-  imperative is the most direct and can sound harsh if not used with care. 「〜なさい」 softens the command,
-  making it more suitable for giving instructions to those younger or of lower status in a gentle manner.
-  「〜てください」 is a neutral polite request, emphasizing politeness and cooperation, suitable for broader situations.
+    grammar_point: '[Verb-dictionary]べき・べきではない (should・should not)'
+post_false_friends_writeup: When choosing between the imperative (plain or polite form), or 「〜てください」,
+  consider the social hierarchy and your relationship with the listener. The plain imperative is the most
+  direct and can sound harsh if not used with care, while the polite imperative softens the command, making
+  it more suitable for giving instructions to those younger or of lower status in a gentle manner. 「〜てください」
+  is a neutral polite request, emphasizing politeness and cooperation, suitable for broader situations.
 examples:
   - english: Go!
     japanese:
@@ -111,14 +114,12 @@ examples:
     japanese:
       - 野菜 を {食べろ}！
       - 野菜 を {食え}！
-      - 野菜 を {食い な}！
     english_literally: Vegetables eat!
     competing_grammar:
       - competing_japanese:
-          - 野菜 を 食べ なさい！
-        english: Eat your vegetables!
-        hint: 「〜なさい」 is a softer imperative, often used by parents to children. We're looking for a slightly
-          more direct command, as if from an exasperated parent.
+          - 野菜 を 摂取 する の が いい！
+        english: It's good to consume vegetables!
+        hint: This states a general recommendation. We're looking for a direct command to eat.
     scene: A father tells his child to eat dinner.
     register: casual
     setting: instructional
@@ -133,9 +134,15 @@ examples:
   - english: Sit down!
     japanese:
       - '{座れ}！'
-      - '{座っ て} ろ！'
+      - '{座れ} よ！'
+      - '{座れ}っ！'
     english_literally: Sit!
     competing_grammar:
+      - competing_japanese:
+          - 座っ てろ！
+        english: Keep sitting! / Sit and stay! (Continuous imperative)
+        hint: 「座ってろ」 emphasizes a continuous state or an order to stay put, as opposed to the simple command
+          to 'sit down' at this moment. We're looking for a direct, one-time action command.
       - competing_japanese:
           - 座っ て ください！
         english: Please sit down!
@@ -177,7 +184,6 @@ examples:
     japanese:
       - よく {聞け}！
       - よく {聞け} よ！
-      - よく {聞き な}！
     english_literally: Well listen!
     competing_grammar:
       - competing_japanese:
@@ -196,27 +202,6 @@ examples:
       While direct, it can convey sincerity and a strong desire for the mentee to truly understand. This
       usage highlights that the imperative is not always negative; it can also show earnestness and care
       when used appropriately within a close relationship.
-  - english: Don't touch it!
-    japanese:
-      - '{触る な}！'
-      - '{触ん な}！'
-    english_literally: Touch not!
-    competing_grammar:
-      - competing_japanese:
-          - 触ら ない で ください！
-        english: Please don't touch it!
-        hint: 「〜ないでください」 is a polite negative request. We're looking for a strong, direct prohibition.
-    scene: A parent scolds their child for touching something dangerous.
-    register: casual
-    setting: commanding
-    conjugation: negative plain (～ない)
-    speaker_gender: female
-    listener_gender: no one
-    speaker_age: older
-    nuance: The combination of the plain verb form with な (e.g., 触るな) is a very strong and direct prohibition.
-      This form is common in urgent situations or when reprimanding, regardless of gender, especially
-      when expressing a warning to a child. The immediacy and force of this expression are crucial for
-      safety.
   - english: Run!
     japanese:
       - '{走れ}！'
@@ -259,13 +244,13 @@ examples:
     japanese:
       - '{投げろ}！'
       - '{投げろ} よ！'
-      - '{投げ な} さい！'
     english_literally: Throw!
     competing_grammar:
       - competing_japanese:
-          - 投げ て！
-        english: Throw (te-form casual request)!
-        hint: 「投げて」 is a casual request. We're looking for a direct command, as given in a sports context.
+          - 物 を 離し て！
+        english: Release the object!
+        hint: This is a request to let go of an object, not specifically to throw it. We're looking for
+          a direct command to throw.
     scene: A baseball coach instructs his pitcher during a game.
     register: casual
     setting: commanding
@@ -299,6 +284,26 @@ examples:
     nuance: 「くれ」 is the imperative form of くれる (kureru) and is a very direct and informal way to ask someone
       to give something to the speaker. It is often associated with male speech and can sound quite brusque,
       especially when used by a child to another child, reflecting their unrefined directness.
+  - english: Read this book!
+    japanese:
+      - この 本 を {読め}！
+      - この 本 を {読め} よ！
+    english_literally: This book read!
+    competing_grammar:
+      - competing_japanese:
+          - この 本 を 読ん で ください！
+        english: Please read this book!
+        hint: 「〜てください」 is a polite request. We're looking for a direct, informal command.
+    scene: A librarian sternly tells a student to read a particular book.
+    register: casual
+    setting: commanding
+    conjugation: imperative plain (～ろ/～え)
+    speaker_gender: female
+    listener_gender: no one
+    speaker_age: older
+    nuance: Here, 「読め」 is a direct command. While a female speaker might typically use softer language,
+      in a context of authority like a librarian giving an instruction, the plain imperative can be used
+      to convey a firm expectation. It is direct and leaves no room for ambiguity.
 post_example_writeup: Understanding the context and relationship is crucial when using the imperative
   form. While it can be a straightforward command, its impact varies greatly from a coach shouting instructions
   to a parent disciplining a child, or even a friend cheering you on. Always consider if the directness

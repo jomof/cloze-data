@@ -1,607 +1,230 @@
 grammar_point: てばかりはいられない (cannot just keep ~ing)
-learn_before:
-  - そこで (and so・at that point・therefore)
-  - てはいられない (cannot afford to)
-  - とばかりに (as if to say)
-  - ばかり (only・just, often with nuance of excess)
-  - もの・もん (because・since)
-  - 数量・しか・ない (limited quantity)
+matcher: |-
+  (
+    {noun}|
+    ⌈ˢ~ᵖn~⌉⌈ˢでᵖauxvᵇだʳダ⌉|
+    {verb-te}
+  )
+  ⌈ˢばかりᵖ~⌉は
+  ⌈ˢいᵖv:non_self_reliantᵇいるʳイル⌉⌈ˢられᵖauxvᵇられるʳラレル⌉{nai}
+
 id: gp1183
-meaning: Cannot just keep ~ing; cannot remain in a certain state.
-meaning_warning: This grammar point carries a strong nuance of an internal realization that continuing
-  a singular action or state is no longer viable, often due to an emotional, practical, or logical necessity
-  to change, rather than a mere inability or external prohibition.
-conjugations:
-  - conjugation-type: negative plain (～ない)
-    form: てばかりはいられない
-    rarity: common
-    meaning: cannot just keep doing
-  - conjugation-type: negative non-past polite (～ません)
-    form: てばかりはいられません
-    rarity: common
-    meaning: cannot just keep doing (polite)
-  - conjugation-type: negative past plain (～なかった)
-    form: てばかりはいられなかった
-    rarity: common
-    meaning: could not just keep doing
-  - conjugation-type: negative past polite (～ませんでした)
-    form: てばかりはいられませんでした
-    rarity: less common
-    meaning: could not just keep doing (polite)
+x: ⌈ˢ待っᵖv:generalᵇ待つʳマツ⌉て⌈ˢばかりᵖprt:adverbial_particleʳバカリ⌉は⌈ˢいᵖv:non_self_reliantᵇいるʳイル⌉⌈ˢられᵖauxvᵇられるʳラレル⌉⌈ˢないᵖauxvʳナイ⌉
+
+meaning: Cannot afford to keep doing something; cannot just stay in a certain state.
 pronunciation:
   katakana: テバカリハイラレナイ
   romaji: te bakari wa irarenai
 formation:
-  Verb[て形] + ばかりはいられない: Indicates that one cannot indefinitely continue a specific action or state.
-  Noun/VerbNoun + ばかり + (しては)いられない: Indicates that one cannot continue to do only a specific noun-related
-    activity or remain in a state of only (verb/noun-verb), often implying a need for broader action or
-    balance.
-jlpt: N1
-etymology: This grammar point combines the 「て」 form of a verb with 「ばかり」 (meaning 'only' or 'just'), 「は」
-  (the topic marker, emphasizing the preceding element), and 「いられない」 (the negative potential form of 「いる」,
-  meaning 'cannot stay/continue'). The overall structure conveys that one cannot exclusively remain doing
-  one thing or stay in the same state, suggesting a necessity for change or broader action. The particle
-  「は」 reinforces the idea that it's precisely this exclusive state that cannot be maintained.
-writeup: 「てばかりはいられない」 indicates that one cannot continue doing something or remain in a particular state
-  indefinitely. It implies a strong sense of urgency or necessity to change, move forward, or take action,
-  often stemming from an internal realization that the current situation is unsustainable or unproductive.
-  This expression emphasizes that focusing *only* on the preceding action or state is no longer viable.
-  It is a versatile expression, suitable for various contexts from personal reflection to professional
-  settings, conveying a need to transition from a prolonged, often exclusive, state to a different, more
-  proactive course of action. While it implies a 'cannot,' it's not a simple inability but rather a recognition
-  that the current singular focus is no longer appropriate or effective.
+  Verb（て形）+ ばかり + は + いられない: Expresses that one cannot continue to do an action or remain in a state.
+  名詞 + ばかり + は + いられない: Expresses that one cannot continue to rely solely on something or someone, or
+    remain in a state defined by a noun.
+  い形容詞（く形）+ ばかり + は + いられない: Expresses that one cannot continue to feel or exhibit a certain い-adjective
+    state (used with ～がる verb form).
+  な形容詞（で形）+ ばかり + は + いられない: Expresses that one cannot continue to be in a certain な-adjective state.
+jlpt: N2
+etymology: The expression 「てばかりはいられない」 combines several elements. 「て」 is the te-form of a verb, indicating
+  a continuous action or state. 「ばかり」 signifies 'only' or 'just', emphasizing that the preceding action
+  or state is the sole focus. 「は」 is a topic particle that adds a strong emphasis, often implying a contrast
+  or a sense of necessity. Finally, 「いられない」 is the negative potential form of the verb 「いる」 (to be, to
+  exist, often implying remaining in a state). Thus, the phrase literally translates to 'cannot be just
+  doing/being', conveying the strong sense that one cannot merely continue in the current state or action
+  due to external or internal pressures demanding a change or new action.
+writeup: The grammar pattern 「てばかりはいられない」 is used to express that one **cannot continue** to perform a
+  specific action or remain in a particular state indefinitely. It carries a strong nuance of obligation
+  or necessity, implying that current circumstances demand a change or that it is no longer appropriate
+  or practical to stay as things are. The speaker feels compelled to move on or take new action. For example,
+  after a setback, one might say 「落ち込んでばかりはいられない」(I can't just keep being depressed), indicating a need
+  to recover and move forward.
 false_friends:
-  - term: ばかり (only, just)
-    meaning: only, just
+  - term: 〜なければならない
+    meaning: must do
     kind: similar expression
-    nuance: Unlike 「てばかりはいられない」, 「ばかり」 itself simply indicates exclusivity or repetition without implying
-      a need for change or action, or that such exclusivity is unsustainable or inappropriate in the long
-      run. It is a more neutral observation of exclusivity or completion, as in 「ご飯 を 食べた ばかり だ」 (I just
-      ate rice) or 「彼 は お金 ばかり 持って いる」 (He only has money).
+    nuance: While both express obligation, 「〜なければならない」 states a direct obligation to perform an action.
+      「てばかりはいられない」 specifically expresses an inability to *continue* remaining in a state or action due
+      to necessity or circumstances, implying a need to *change* from that state.
+    grammar_point: ~なければならない・なきゃ (must do・have to)
+  - term: 〜ている場合ではない
+    meaning: not the time for
+    kind: similar expression
+    nuance: 「〜ている場合ではない」 indicates that it is not the appropriate time or situation to be doing something.
+      It is very close in meaning to 「てばかりはいられない」, sharing the sense of urgency, but focuses more on the
+      *appropriateness of the timing* rather than the *inability to continue* a state.
+    grammar_point: <suggest>:〜ている場合ではない (not the time for)
+  - term: 〜ばかり
+    meaning: only; just
+    kind: often confused with
+    nuance: 「ばかり」 alone emphasizes that only one action is being done, e.g., 「食べてばかりいる」(just eating all
+      the time). This lacks the inherent negative potential and the strong 'cannot continue' implication
+      of 「てばかりはいられない」, which always suggests a necessary shift from that singular focus.
     grammar_point: ばかり (only・just, often with nuance of excess)
-  - term: ばかりでなく
-    meaning: not only... but also
-    kind: similar expression
-    nuance: 「ばかりでなく」 is used to add additional information or emphasize multiple aspects, whereas 「てばかりはいられない」
-      focuses on the need to stop a certain behavior or state from continuing indefinitely. It expands
-      on possibilities or attributes, rather than limiting them due to unsustainability.
-    grammar_point: 〜だけでなく・〜ばかりでなく・〜ばかりか (not only... but also)
-  - term: わけにはいかない (cannot afford to)
-    meaning: cannot afford to; no way; impossible to do
-    kind: often confused with
-    nuance: 「わけにはいかない」 typically implies that an action cannot be taken due to external constraints, social
-      obligations, or moral principles. In contrast, 「てばかりはいられない」 conveys an internal realization that
-      a prolonged, singular action or state is no longer viable due to its unsustainability or inappropriateness,
-      often leading to a self-driven change.
-    grammar_point: '[Verb-dictionary・Verb-ない]わけにはいかない (cannot・must)'
-  - term: てはいけない (must not・cannot)
-    meaning: must not; may not; cannot
-    kind: often confused with
-    nuance: 「てはいけない」 is a direct prohibition or admonition, stating that an action is wrong, forbidden,
-      or impermissible. 「てばかりはいられない」 does not state that the action is inherently wrong, but rather that
-      continuing *only* that action is no longer feasible or appropriate, implying a practical or emotional
-      necessity to move on.
-    grammar_point: 〜てはいけない・〜てはならない (must not)
-  - term: すぎる (too much・excessive)
-    meaning: too much, excessive
-    kind: similar expression
-    nuance: 「すぎる」 indicates that an action or state has occurred to an excessive degree, focusing on the
-      quantity or intensity. While an excessive state might prompt the feeling that one `てばかりはいられない`,
-      `すぎる` itself does not express the *necessity to stop* a singular, prolonged activity or a state
-      of being. It describes the excess, not the active decision or compulsion to cease.
-    grammar_point: すぎる (too much・excessive)
-  - term: 堪らない (unbearable・irresistible)
-    meaning: unbearable; cannot resist; extremely; dying to
-    kind: similar expression
-    nuance: 「堪らない」 describes an intense, often uncontrollable internal feeling or sensation (e.g., 'unbearably
-      hot,' 'can't resist the urge'). It expresses an emotional state that is difficult to bear, whereas
-      「てばかりはいられない」 describes the practical or emotional impossibility of *continuing to do only one specific
-      thing* due to its lack of viability or negative implications if prolonged.
-    grammar_point: 堪らない (unbearable・irresistible)
-post_false_friends_writeup: 「ばかり」 indicates "only" or "just" neutrally, while 「てばかりはいられない」 expresses the
-  idea that one cannot continue doing something exclusively and needs to take action or change. To avoid
-  confusion, remember that 「てばかりはいられない」 always implies a sense of urgency or necessity to move on from
-  a singular focus. 「ばかりでなく」 serves to enumerate multiple elements, rather than limiting them due to unsustainability.
-  Unlike 「わけにはいかない」, which refers to external reasons, 「てばかりはいられない」 suggests an internal drive to change
-  from a limited state. Furthermore, 「てはいけない」 is a direct prohibition, whereas this grammar point implies
-  that exclusive continuation is no longer viable, not that it's inherently wrong. 「すぎる」 describes excess,
-  not the necessity to cease a singular focus. Lastly, while 「堪らない」 speaks to an unbearable emotional
-  state, 「てばかりはいられない」 refers to the impracticality of maintaining an exclusive action or state.
+post_false_friends_writeup: While 「てばかりはいられない」 conveys that one cannot simply continue doing something,
+  「〜なければならない」 expresses a direct obligation to perform a specific action. For example, if you say 「勉強しなければならない」,
+  it means 'I must study'. If you say 「遊んでばかりはいられない」, it means 'I can't just keep playing'. 「〜ている場合ではない」
+  is very similar and implies that 'this is not the time to be doing X', emphasizing the inappropriateness
+  of the current action given the situation. It's important to recognize that 「てばかりはいられない」 specifically
+  highlights the necessity of **changing from a continued state or action**.
 examples:
-  - english: I can't just keep worrying anymore. I have to find a solution.
+  - english: We can't just keep waiting forever; we need to decide something.
     japanese:
-      - もう 悩ん {で ばかり は い られ ませ ん}。解決 策 を 見つけ なけれ ば なり ませ ん。
-      - もう 悩ん {で ばかり は い られ ない}。解決 策 を 見つけ なけれ ば なら ない。
-      - もう 悩ん {で ばかり は い られ ない} ん だ。解決 策 を 見つけよう。
-      - もう 悩ん {で ばかり は い られ ない}。解決 策 を 見つけ なけれ ば。
-      - もう 悩ん {で ばかり い られ ない}。解決 策 を 見つけ ない と。
-      - もう 悩ん {で ばかり じゃ い られ ない}。解決 策 を 見つけ なきゃ。
-      - もう 悩ん {て ばかり い られ ない} よ。解決 策 を 見つけ ない と。
-      - もう 悩ん {て ばかり は い られ ない} と 思い ます。解決 策 を 見つけ なけれ ば なり ませ ん。
-      - もう 悩ん {て ばかり は い られ ない} ん だ。解決 策 を 見つけ なきゃ.
-    english_literally: Anymore worrying only cannot stay. A solution must find.
+      - 私 たち は いつ まで も {待っ て ばかり は い られ ない}、何 か 決め なく て は なら ない。
+      - 私 たち、いつ まで も {待っ て ばかり は い られ ない} ね。何 か 決め なきゃ。
+      - 私 共 は、いつ まで も {待っ て ばかり は い られ ませ ん}。何 か 決め なけれ ば なり ませ ん。
+    english_literally: As for us, forever only waiting we cannot keep, something must decide.
     competing_grammar:
       - competing_japanese:
-          - もう 悩ん で {ばかり} だ。解決 策 を 見つけ なけれ ば なら ない。
-        english: Anymore, it's just worries. I have to find a solution.
-        hint: This phrase describes the current state, implying one is *only* doing something, but it
-          doesn't convey the sense of being unable to *continue* that state due to a need for change.
-          We're looking for a phrase that implies the current state cannot continue.
+          - 私 たち は いつ まで も 待つ {べき で は ない}、何 か 決め なく て は なら ない。
+        english: We shouldn't keep waiting forever; we need to decide something.
+        hint: 「〜べきではない」 expresses that one 'should not' do something, implying it's not proper. We're
+          looking for an expression that means we 'cannot afford to keep doing' something due to circumstances.
+    scene: A group of friends waiting for someone who is very late, realizing they need to make a decision
+      without them.
+    register: casual
+    setting: serious
+  - english: After failing, you can't just keep being depressed; you have to look forward.
+    japanese:
+      - 失敗 し たら、いつ まで も {落ち込ん で ばかり は い られ ない}。前 を 向か なけれ ば なら ない。
+      - 失敗 し たら、いつ まで も {落ち込ん で ばかり は い られ ませ ん}。前 を 向か なけれ ば なり ませ ん。
+    english_literally: If failing, forever only being depressed we cannot keep. Forward must face.
+    competing_grammar:
       - competing_japanese:
-          - 悩み {ばかり で なく}、行動 も 必要 だ。解決 策 を 見つけ なけれ ば なら ない。
-        english: This phrase highlights that "not just worries" but other things are needed, lacking the
-          sense that the *act* of worrying itself cannot be sustained. We're looking for an expression
-          that signifies an an inability to sustain the specific action of worrying.
-        hint: This phrase highlights that "not just worries" but other things are needed, lacking the
-          sense that the *act* of worrying itself cannot be sustained. We're looking for an expression
-          that signifies an an inability to sustain the specific action of worrying.
+          - 失敗 し たら、いつ まで も 落ち込ん で いる {場合 で は ない}。前 を 向か なけれ ば なら ない。
+        english: If failing, it's not the time to keep being depressed. You have to look forward.
+        hint: 「〜ている場合ではない」 emphasizes that it's 'not the time' for an action. We're looking for an expression
+          that conveys 'cannot afford to keep doing something'.
+    scene: A mentor giving earnest advice to a disheartened student who has experienced a setback.
+    register: formal
+    setting: inspirational
+  - english: We can't just rely on others; we have to do it ourselves.
+    japanese:
+      - 他人 {頼り ばかり は い られ ない}。自分 たち で やる べき だ。
+      - 他人 に {頼っ て ばかり は い られ ませ ん}。自分 たち で 行う べき です。
+      - 人 {頼り ばかり は い られ ない} よ ね。自分 たち で やら なきゃ。
+    english_literally: Others dependence only we cannot keep. Ourselves should do.
+    competing_grammar:
       - competing_japanese:
-          - もう 悩む の は {やめる}。解決 策 を 見つけ なけれ ば なら ない。
-        english: It's time to stop worrying. I have to find a solution.
-        hint: This phrase expresses a direct decision to stop, but it doesn't quite capture the sense
-          that simply worrying is no longer a viable option in this situation. We're looking for a phrase
-          that implies the current state cannot continue.
+          - 他人 に 頼る {べき で は ない}。自分 たち で やる べき だ。
+        english: We shouldn't rely on others. We should do it ourselves.
+        hint: 「〜べきではない」 expresses what 'should not' be done. We're looking for an expression that signifies
+          an inability to *continue* relying on someone or something.
+    scene: A team leader addressing their team, urging them to take more initiative.
+    register: teineigo (polite)
+    setting: instructional
+  - english: I can't just keep being lonely; I need to find something to do.
+    japanese:
+      - いつ まで も {寂し がっ て ばかり は い られ ない}。何 か する こと を 見つけ ない と。
+      - いつ まで も {寂し がっ て ばかり は い られ ませ ん}。何 か する こと を 見つけ ない と いけ ませ ん。
+    english_literally: Forever only being sad we cannot keep. Something to do must find.
+    competing_grammar:
       - competing_japanese:
-          - もう 悩ん で ばかり い て も {だめ だ}。解決 策 を 見つけ なけれ ば なら ない。
-        english: It's no good to just keep worrying anymore. I have to find a solution.
-        hint: This states that just worrying is 'no good' or 'useless,' but it doesn't convey the feeling
-          of being literally unable to maintain that state due to an internal or external impetus. We're
-          looking for a phrase that implies the current state cannot continue.
-      - competing_japanese:
-          - もう 悩ん で ばかり いる {わけ に は いか ない}。解決 策 を 見つけ なけれ ば なら ない。
-        english: I can't just keep worrying. I have to find a solution.
-        hint: This phrase expresses an inability to do something due to external circumstances or social
-          norms, rather than an internal realization that the current action is unsustainable. We're looking
-          for a phrase that implies an internal necessity to change from a prolonged action.
-    scene: A young woman reflecting on a difficult problem, realizing she needs to take action because
-      simply worrying isn't getting her anywhere.
+          - いつ まで も 寂しく い て は {だめ だ}。何 か する こと を 見つけ ない と。
+        english: It's no good just being lonely forever. I need to find something to do.
+        hint: 「〜てはだめ」 states that something 'is no good' or 'must not' be done. We're looking for an expression
+          meaning one 'cannot afford to keep being' in a state.
+    scene: A person reflecting aloud to themselves after a breakup, realizing the need to move on.
     register: casual
     setting: reflective
-    conjugation: negative non-past polite (～ません)
-  - english: We can't just keep dwelling on past glories forever. We must look to the future.
+  - english: We can't just keep being idle; we have to prepare for the future.
     japanese:
-      - いつ まで も 過去 の 栄光 に 浸っ {て ばかり は い られ ませ ん}。未来 を 見据え なけれ ば なり ませ ん。
-      - いつ まで も 過去 の 栄光 に 浸っ {て ばかり は い られ ない}。未来 を 見据え なけれ ば。
-      - いつ まで も 過去 の 栄光 に 浸っ {て ばかり は い られ ない} と 思う。未来 を 見据え なけれ ば。
-      - いつ まで も 過去 の 栄光 に 浸っ {て ばかり は い られ ない} ん だ。未来 を 見据えよう。
-      - いつ まで も 過去 の 栄光 に 浸っ {て ばかり は い られ ませ ん} ね。未来 を 見据え ましょう。
-      - いつ まで も 過去 の 栄光 に 浸っ {て ばかり は い られ ない} 時期 だ。未来 を 見据え よう。
-      - いつ まで も 過去 の 栄光 に 浸っ {て ばかり は い られ ない} の さ。未来 を 見据えよう。
-      - いつ まで も 過去 の 栄光 に 浸っ {て ばかり は い られ ない} の です。未来 を 見据え なけれ ば なり ませ ん。
-      - いつ まで も 過去 の 栄光 に 浸っ {て ばかり も い られ ない}。未来 を 見据え なけれ ば.
-    english_literally: Forever past's glory in soaking only cannot stay. Future must look towards.
+      - いつ まで も {暇 で ばかり は い られ ない}。未来 の ため に 準備 し なけれ ば なら ない。
+      - いつ まで も {暇 で ばかり は い られ ませ ん}。未来 の ため に 準備 し なけれ ば なり ませ ん。
+      - いつ まで も {暇 で ばかり は い られ ない} よ ね。未来 の ため に 準備 し なきゃ。
+    english_literally: Forever only idle we cannot keep. Future's sake for must prepare.
     competing_grammar:
       - competing_japanese:
-          - いつ まで も 過去 の 栄光 に 浸っ て {ばかり} だ。未来 を 見据え なけれ ば。
-        english: We are just dwelling on past glories. We must look to the future.
-        hint: This phrase describes a state of affairs—that one is *only* doing something—but does not
-          convey the imperative sense that this state *cannot continue*. We're looking for an expression
-          that signifies the inability to sustain this singular focus.
-      - competing_japanese:
-          - 過去 の 栄光 に 浸る {ばかり で なく}、未来 の 計画 も 必要 だ。未来 を 見据え なけれ ば。
-        english: Not only dwelling on past glories, but future plans are also necessary. We must look
-          to the future.
-        hint: This phrase adds another necessary element to the situation, rather than indicating that
-          the act of dwelling on past glories itself cannot be sustained indefinitely. We're looking for
-          a phrase that implies the current state is no longer an option to maintain.
-      - competing_japanese:
-          - いつ まで も 過去 の 栄光 に 浸り 続ける こと は {でき ない}。未来 を 見据え なけれ ば。
-        english: We cannot continue to dwell on past glories forever. We must look to the future.
-        hint: This indicates a general inability to continue an action, but it doesn't strongly emphasize
-          that only dwelling on past glories is the issue. We're looking for a phrase that specifically
-          targets the exclusivity of the action as unsustainable.
-      - competing_japanese:
-          - 未来 に 目 を 向け なけれ ば なら ない。過去 の 栄光 は {忘れよう}。
-        english: We must turn our eyes to the future. Let's forget past glories.
-        hint: This focuses on the timing for facing reality and a prohibition against being 'caught up'
-          in dreams. We're looking for an expression that implies the former state is no longer possible
-          to maintain.
-      - competing_japanese:
-          - いつ まで も 過去 の 栄光 に 浸る {だけ で は いけ ない}。未来 を 見据え なけれ ば。
-        english: It's not good to just keep dwelling on past glories forever. We must look to the future.
-        hint: This phrase implies that doing only one thing is 'no good' or 'useless,' which is a strong
-          admonition. We're looking for a phrase that indicates an actual inability to continue doing
-          only that one thing.
-    scene: A seasoned CEO addressing a team that is too focused on previous achievements, urging them
-      to innovate because simply celebrating past successes won't move the company forward.
-    register: bijinesu nihongo (business)
-    setting: persuasive
-    conjugation: negative non-past polite (～ません)
-    speaker_gender: male
-    listener_gender: group
-    speaker_age: older
-  - english: I can't just keep watching TV. I have to prepare for the exam.
+          - いつ まで も 暇 で いる {わけ に は いか ない}。未来 の ため に 準備 し なけれ ば なら ない。
+        english: We cannot just stay idle forever. We have to prepare for the future.
+        hint: 「〜わけにはいかない」 means 'cannot possibly' or 'it's not acceptable to'. While similar, our phrase
+          specifically focuses on the inability to *continue* being in a state.
+    scene: Two friends discussing their job search, acknowledging the need to be proactive.
+    register: casual
+    setting: serious
+  - english: Given the current global situation, we cannot just keep pursuing our own interests.
     japanese:
-      - テレビ を 見 て {ばかり は い られ ませ ん}。試験 の 準備 を し なけれ ば なり ませ ん。
-      - テレビ を 見 て {ばかり は い られ ない}。試験 の 準備 を し なけれ ば。
-      - テレビ を 見 て {ばかり は い られ ない} ん だ。試験 の 準備 を し なけれ ば。
-      - テレビ を 見 て {ばかり は い られ ない} から、早く 始めよう。
-      - テレビ を 見 て {ばかり い られ ない}。試験 の 準備 し なきゃ。
-      - テレビ を 見 て {ばかり い られ ない} よ。試験 の 準備 し ない と。
-      - テレビ を 見 て {ばかり じゃ い られ ない}。試験 の 準備 し なきゃ。
-      - テレビ を 見 て {ばかり は い られ ない} と 分かっ て いる。試験 の 準備 を し なけれ ば。
-      - テレビ を 見 て {ばかり じゃ い られ ない} 時期 だ。試験 の 準備 を し なきゃ.
-    english_literally: TV watching only cannot stay. Exam's preparation must do.
+      - 世界 情勢 が この よう な 状況 下 で は、自国 の 利益 {ばかり を 追求 し て ばかり は い られ ない}。
+      - 世界 情勢 が この よう な 状況 下 で は、自国 の 利益 {ばかり を 追求 し て ばかり は い られ ませ ん}。
+      - 世界 情勢 が この よう な 状況 下 で は、自国 の 利益 {ばかり を 追い求め て ばかり は い られ ない}。
+    english_literally: World situation is such a condition under, own country's profit only pursuing we
+      cannot keep.
     competing_grammar:
       - competing_japanese:
-          - テレビ {ばかり} 見 て いる。試験 の 準備 を し なけれ ば。
-        english: I am just watching TV. I have to prepare for the exam.
-        hint: This sentence describes the current action, indicating that one is *only* watching TV, but
-          it does not imply that this action *cannot continue* or is unsustainable. We're looking for
-          a phrase that expresses an actual inability to continue doing only that one thing.
+          - 世界 情勢 が この よう な 状況 下 で は、自国 の 利益 ばかり を 追求 し て は {なら ない}。
+        english: Given the current global situation, one must not just keep pursuing one's own interests.
+        hint: 「〜てはならない」 expresses a prohibition, 'must not'. We're looking for an expression conveying
+          that it's no longer possible or permissible to *continue* an action.
+    scene: A diplomat speaking at an international conference, advocating for global cooperation.
+    register: formal
+    setting: professional
+  - english: I can't just keep worrying; I need to take action.
+    japanese:
+      - いつ まで も {心配 し て ばかり は い られ ない} よ ね。何 か し ない と。
+      - いつ まで も {心配 し て ばかり は い られ ませ ん}。何 か し ない と いけ ませ ん ね。
+      - いつ まで も {心配 し て ばかり は い られ ない}。行動 し ない と。
+    english_literally: Forever only worrying we cannot keep, right? Something must do.
+    competing_grammar:
       - competing_japanese:
-          - テレビ {ばかり で なく}、勉強 も し なけれ ば。試験 の 準備 を し なけれ ば。
-        english: Not only TV, but I also have to study. I have to prepare for the exam.
-        hint: This phrase suggests adding another activity, implying that TV is not the *only* thing to
-          do, but it doesn't convey that the act of watching TV itself cannot be sustained. We're looking
-          for a phrase that implies one cannot remain in that state of exclusively watching TV.
-      - competing_japanese:
-          - テレビ を 見 て いる {暇 は ない}。試験 の 準備 を し なけれ ば。
-        english: I don't have time to watch TV. I have to prepare for the exam.
-        hint: This phrase states there's no free time, but it doesn't convey that *just* watching TV is
-          an unsustainable behavior. We're looking for an expression that implies a self-imposed necessity
-          to stop a specific, singular activity.
-      - competing_japanese:
-          - テレビ ばかり 見 て {い て は いけ ない}。試験 の 準備 を し なけれ ば。
-        english: You shouldn't just keep watching TV. I have to prepare for the exam.
-        hint: This indicates that *only* watching TV is 'no good' or 'wrong,' which is a prohibition.
-          We're looking for a phrase that expresses an actual inability to continue in that state, rather
-          than just a recommendation.
-      - competing_japanese:
-          - テレビ ばかり 見る の は もう {やめよう}。試験 の 準備 を し なけれ ば。
-        english: Let's stop just watching TV. I have to prepare for the exam.
-        hint: This phrase expresses a decision to stop an action, but it lacks the nuance that continuing
-          that action is no longer feasible or appropriate. We're looking for a phrase that implies the
-          current state is not sustainable.
-    scene: A high school student realizing they've procrastinated too much with a looming exam and can
-      no longer afford to spend all their time on entertainment.
+          - いつ まで も 心配 し て い て は {だめ だ} よ ね。何 か し ない と。
+        english: It's no good just worrying forever, right? I need to do something.
+        hint: 「〜てはだめ」 indicates something is 'no good' or 'shouldn't be done'. We're looking for an expression
+          that signifies an inability to *continue* worrying.
+    scene: A woman confiding in her friend about a difficult situation, realizing she needs to be proactive.
     register: casual
     setting: cautious
-    conjugation: negative non-past polite (～ません)
-    speaker_gender: male
-    speaker_age: younger
-  - english: I can't just keep sitting still in this room. Let's go outside and start something new.
-    japanese:
-      - この 部屋 で じっと し {て ばかり は い られ ませ ん}。外 へ 出 て 新しい こと を 始め ましょう。
-      - この 部屋 で じっと し {て ばかり は い られ ない}。外 へ 出 て 新しい こと を 始めよう。
-      - この 部屋 で じっと し {て ばかり は い られ ない} ん だ よ。外 へ 出 て 新しい こと を 始めよう。
-      - この 部屋 で じっと し {て ばかり は い られ ない} から、出かけよう。
-      - この 部屋 で じっと し {て ばかり い られ ない}。外 へ 出 て 新しい こと を 始めよう。
-      - この 部屋 で じっと し {て ばかり じゃ い られ ない}。外 へ 出 て 新しい こと を 始めよう。
-      - この 部屋 で じっと し {て ばかり は い られ ない} もん な。外 へ 出 て 新しい こと 始めよう！
-      - この 部屋 で じっと し {て ばかり は い られ ない} ん です。外 へ 出 て 新しい こと を 始め ましょう。
-      - この 部屋 で じっと し {て ばかり は い られ ない} なあ。外 へ 出 て 新しい こと を 始めよう。
-      - この 部屋 で じっと し {て ばかり い られ ない} よ、本当 に。外 へ 出 て 新しい こと を 始めよう.
-    english_literally: This room in still doing only cannot stay. Outside to go new thing let's start.
-    competing_grammar:
-      - competing_japanese:
-          - この 部屋 で じっと し て {ばかり} いる。外 へ 出 て 新しい こと を 始めよう。
-        english: I am just sitting still in this room. Let's go outside and start something new.
-        hint: This describes the current, singular action, indicating that one is *only* sitting still,
-          but it doesn't imply that this action *cannot continue* or is unsustainable. We're looking for
-          a phrase that implies the inability to sustain this singular focus.
-      - competing_japanese:
-          - じっと し て {ばかり で なく}、動く こと も 必要 だ。外 へ 出 て 新しい こと を 始めよう。
-        english: Not only sitting still, but moving is also necessary. Let's go outside and start something
-          new.
-        hint: This phrase emphasizes the need for an additional action ("moving") alongside "sitting still,"
-          but it doesn't convey that the act of "sitting still" itself cannot be sustained indefinitely.
-          We're looking for a phrase that implies the current state is no longer an option to maintain.
-      - competing_japanese:
-          - この 部屋 に ずっと いる {わけ に は いか ない}。外 へ 出 て 新しい こと を 始めよう。
-        english: I can't just stay in this room forever. Let's go outside and start something new.
-        hint: This phrase implies inability due to external constraints or social norms, rather than an
-          internal realization that the current action is unsustainable. We're looking for a phrase that
-          implies an internal necessity to change from a prolonged action.
-      - competing_japanese:
-          - じっと し {すぎ だ}。外 へ 出 て 新しい こと を 始めよう。
-        english: I've been sitting still too much. Let's go outside and start something new.
-        hint: This is a statement of having done something excessively, but it doesn't convey the sense
-          of being unable to *continue* that state due to a driving need for change. We're looking for
-          a phrase that implies a necessary shift from an unsustainable situation.
-      - competing_japanese:
-          - この 部屋 に ずっと いる の は {耐え られ ない}。外 へ 出 て 新しい こと を 始めよう。
-        english: I can't stand staying in this room forever. Let's go outside and start something new.
-        hint: This phrase expresses an inability to tolerate a situation, which is about endurance. We're
-          looking for a phrase that implies a state or action is no longer a feasible option for continuation,
-          rather than simply being difficult to bear.
-    scene: A young woman feeling restless indoors, expressing a desire for change and activity, as simply
-      staying still is no longer fulfilling.
-    register: casual
-    setting: optimistic
-    conjugation: negative non-past polite (～ません)
+    conjugation: progressive (～ている)
     speaker_gender: female
-    speaker_age: younger
-  - english: I can't just keep longing for my childhood dreams. I need to face reality and move forward.
+    nuance: The particle 「よね」 at the end adds a soft, seeking-agreement tone, characteristic of female
+      speech in casual settings. It makes the statement sound more like a shared realization or a gentle
+      plea for understanding. The speaker is expressing her own internal feeling and subtly seeking her
+      friend's affirmation.
+  - english: We cannot just keep admiring the success of others; we need to develop our own strategy.
     japanese:
-      - 子供 の 頃 の 夢 に 憧れ {て ばかり は い られ ませ ん}。現実 を 見据え て 進む べき です。
-      - 子供 の 頃 の 夢 に 憧れ {て ばかり は い られ ない}。現実 を 見据え て 進む べき だ。
-      - 子供 の 頃 の 夢 に 憧れ {て ばかり は い られ ない} と 気づい た。現実 を 見据え て 進む べき だ。
-      - 子供 の 頃 の 夢 に 憧れ {て ばかり は い られ ない} の は 現実 だ。現実 を 見据え て 進む べき だ。
-      - 子供 の 頃 の 夢 に 憧れ {て ばかり は い られ ない} よ。現実 を 見据え て 進む べき だ。
-      - 子供 の 頃 の 夢 に 憧れ {て ばかり い られ ない}。現実 を 見据え て 進む べき だ。
-      - 子供 の 頃 の 夢 に 憧れ {て ばかり じゃ い られ ない}。現実 を 見据え て 進む べき だ。
-      - 子供 の 頃 の 夢 に 憧れ {て ばかり は い られ ない} もん です。現実 を 見据え て 進む べき です。
-      - 子供 の 頃 の 夢 に 憧れ {て ばかり も い られ ない}。現実 を 見据え て 進む べき だ.
-    english_literally: Childhood's time's dream to longing only cannot stay. Reality must face and move
-      forward should.
+      - 他社 の 成功 を {羨まし がっ て ばかり は い られ ない}。私 たち 独自 の 戦略 を 練る 必要 が ある。
+      - 他社 の 成功 を {羨まし がっ て ばかり は い られ ませ ん}。私 たち 独自 の 戦略 を 練る 必要 が ござい ます。
+    english_literally: Other companies' success only envying we cannot keep. Our own strategy to formulate
+      need is there.
     competing_grammar:
       - competing_japanese:
-          - 子供 の 頃 の 夢 に 憧れ て {ばかり} いる。現実 を 見据え て 進む べき だ。
-        english: I am just longing for my childhood dreams. I need to face reality and move forward.
-        hint: This sentence describes the current, singular focus, indicating that one is *only* longing
-          for dreams, but it doesn't imply that this action *cannot continue* or is unsustainable. We're
-          looking for a phrase that implies the inability to sustain this singular focus.
-      - competing_japanese:
-          - 子供 の 頃 の 夢 に 憧れる {ばかり で なく}、現実 的 な 目標 も 立てる べき だ。現実 を 見据え て 進む べき だ。
-        english: Not only longing for childhood dreams, but one should also set realistic goals. I need
-          to face reality and move forward.
-        hint: This phrase suggests adding another necessary action ("setting realistic goals") alongside
-          "longing for dreams," but it doesn't convey that the act of "longing for dreams" itself cannot
-          be sustained indefinitely. We're looking for a phrase that implies the current state is no longer
-          an option to maintain.
-      - competing_japanese:
-          - 子供 の 頃 の 夢 を 追い 続け て も {仕方 ない}。現実 を 見据え て 進む べき だ。
-        english: There's no use continuing to chase childhood dreams. I need to face reality and move
-          forward.
-        hint: This phrase suggests that continuing an action is futile or pointless, but it doesn't convey
-          an internal or external pressure that makes it impossible to continue. We're looking for a phrase
-          that implies a necessity to stop a current, unsustainable behavior.
-      - competing_japanese:
-          - 現実 と 向き合う 時期 だ。子供 の 頃 の 夢 に {囚われ て は いけ ない}。
-        english: It's time to face reality. I shouldn't be caught up in childhood dreams.
-        hint: This focuses on the timing for facing reality and a prohibition against being 'caught up'
-          in dreams. We're looking for a phrase that implies the current state is no longer an option
-          to maintain, rather than just being ill-advised.
-      - competing_japanese:
-          - 子供 の 頃 の 夢 に ばかり {囚われ て い られ ない}。現実 を 見据え て 進む べき だ。
-        english: I can't just be caught up in childhood dreams. I need to face reality and move forward.
-        hint: This phrase expresses an inability to be fixated on something, often implying being trapped.
-          We're looking for a phrase that signifies the inability to *continue* a singular action or state,
-          not necessarily being unable to escape a fixation.
-    scene: An adult reflecting on their career path, realizing they need to be more practical and move
-      beyond idealized childhood aspirations.
-    register: semi-formal
-    setting: serious
-    conjugation: negative non-past polite (～ません)
-    speaker_gender: male
-    speaker_age: older
-  - english: I can't just keep crying anymore. I have to try my best positively.
-    japanese:
-      - もう 泣い {て ばかり は い られ ませ ん}。前向き に 頑張り ましょう。
-      - もう 泣い {て ばかり は い られ ない}。前向き に 頑張ろう。
-      - もう 泣い {て ばかり は い られ ない} ん だ。前向き に 頑張る よ。
-      - もう 泣い {て ばかり は い られ ない} から、顔 を 上げよう。
-      - もう 泣い {て ばかり は い られ ない}。前向き に 頑張る しか ない。
-      - もう 泣い {て ばかり い られ ない}。前向き に 頑張ろう。
-      - もう 泣い {て ばかり じゃ い られ ない}。前向き に 頑張ろう！
-      - もう 泣い {て ばかり は い られ ない} ん です。前向き に 頑張り ましょう。
-      - もう 泣い {て ばかり い られ ない} し。前向き に 頑張ろう.
-    english_literally: Anymore crying only cannot stay. Positively let's do our best.
-    competing_grammar:
-      - competing_japanese:
-          - もう 泣い て {ばかり} いる。前向き に 頑張ろう。
-        english: I am just crying anymore. I have to try my best positively.
-        hint: This describes the current, singular action, indicating that one is *only* crying, but it
-          doesn't imply that this action *cannot continue* or is unsustainable. We're looking for a phrase
-          that implies the inability to sustain this singular action.
-      - competing_japanese:
-          - 泣い て {ばかり で なく}、行動 も し なけれ ば。前向き に 頑張ろう。
-        english: Not only crying, but I also have to take action. I have to try my best positively.
-        hint: This phrase suggests adding another necessary action ("taking action") alongside "crying,"
-          but it doesn't convey that the act of "crying" itself cannot be sustained indefinitely. We're
-          looking for a phrase that implies the current state is no longer an option to maintain.
-      - competing_japanese:
-          - これ 以上 泣く の は {やめる}。前向き に 頑張ろう。
-        english: I'll stop crying anymore. I have to try my best positively.
-        hint: This expresses a direct decision to cease an action, but it lacks the nuance that *just*
-          crying is an unsustainable state. We're looking for a phrase that implies remaining in that
-          state is no longer feasible or appropriate.
-      - competing_japanese:
-          - 泣い て ばかり い て も {解決 し ない}。前向き に 頑張ろう。
-        english: Even if I just keep crying, it won't solve anything. I have to try my best positively.
-        hint: This sentence emphasizes the futility of an action ('even if I cry, it won't solve anything'),
-          but it doesn't convey the imperative sense of being unable to *remain* in that state due to
-          an internal or external shift. We're looking for a phrase that implies continuing the action
-          is no longer an option.
-      - competing_japanese:
-          - もう 泣く {べき じゃ ない}。前向き に 頑張ろう。
-        english: I shouldn't cry anymore. I have to try my best positively.
-        hint: This phrase expresses what one 'should not' do, which is a recommendation or moral judgment.
-          We're looking for a phrase that conveys a necessity to stop a current action because it's no
-          longer sustainable.
-    scene: A man who has just experienced a setback, deciding to pick himself up and move on, acknowledging
-      that continuous crying is not a viable option.
-    register: casual
-    setting: inspirational
-    conjugation: negative non-past polite (～ません)
-    speaker_gender: male
-  - english: I can't just keep relying on my parents. The time has come to be independent.
-    japanese:
-      - 親 に ばかり 頼っ {て ばかり は い られ ませ ん}。自立 する 時 が 来 まし た。
-      - 親 に ばかり 頼っ {て ばかり は い られ ない}。自立 する 時 が 来 た。
-      - 親 に ばかり 頼っ {て ばかり は い られ ない}。そろそろ 自立 し なきゃ。
-      - 親 に ばかり 頼っ {て ばかり は い られ ない} よ。自分 の 足 で 立つ 時 だ。
-      - 親 に ばかり 頼っ {て ばかり は い られ ない} と 思う。自立 する 時 が 来 た から。
-      - 親 に ばかり 頼っ {て ばかり は い られ ない} ん だ。自立 する 時 が 来 た から。
-      - 親 に ばかり 頼っ {て ばかり い られ ない}。自立 する 時 が 来 た。
-      - 親 に ばかり 頼っ {て ばかり じゃ い られ ない}。自立 する 時 が 来 た。
-      - 親 に ばかり 頼っ {て ばかり は い られ ない} ん だ よ ね。自立 する 時 が 来 た。
-      - 親 に ばかり 頼っ {て ばかり も い られ ない} し。自立 する 時 が 来 た.
-    english_literally: Parents on only relying cannot stay. Independent becoming time has come.
-    competing_grammar:
-      - competing_japanese:
-          - 親 に {ばかり} 頼っ て いる。自立 する 時 が 来 た。
-        english: I am just relying on my parents. The time has come to be independent.
-        hint: This describes the current, singular action, indicating that one is *only* relying on parents,
-          but it doesn't imply that this action *cannot continue* or is unsustainable. We're looking for
-          a phrase that implies the inability to sustain this singular action.
-      - competing_japanese:
-          - 親 に 頼る {ばかり で なく}、自分 で も 稼が なけれ ば。自立 する 時 が 来 た。
-        english: Not only relying on parents, but I also have to earn myself. The time has come to be
-          independent.
-        hint: This phrase suggests adding another necessary action ("earning myself") alongside "relying
-          on parents," but it doesn't convey that the act of "relying on parents" itself cannot be sustained
-          indefinitely. We're looking for a phrase that implies the current state is no longer an option
-          to maintain.
-      - competing_japanese:
-          - 親 に 頼り {っぱなし で は いけ ない}。自立 する 時 が 来 た。
-        english: It's not good to be constantly relying on parents. The time has come to be independent.
-        hint: This phrase suggests that continuous reliance is 'improper' or 'not right,' which is a general
-          admonition. We're looking for a phrase that expresses a stronger sense of being unable to *continue*
-          in that state due to a necessary shift.
-      - competing_japanese:
-          - 親 に ばかり 頼る の は {終わり に し たい}。自立 する 時 が 来 た。
-        english: I want to stop relying only on my parents. The time has come to be independent.
-        hint: This expresses a desire or intention to stop, but it lacks the definitive 'cannot continue'
-          or 'cannot remain' nuance. We're looking for a phrase that implies a realization that the current
-          state is no longer viable.
-      - competing_japanese:
-          - 親 に ばかり 頼る こと は {許さ れ ない}。自立 する 時 が 来 た。
-        english: I'm not allowed to just keep relying on my parents. The time has come to be independent.
-        hint: This phrase implies that relying on parents is impermissible, suggesting a rule or a prohibition.
-          We're looking for a phrase that conveys an internal necessity to cease an action due to its
-          unsustainability, not due to being disallowed.
-    scene: A young adult talking to their friend about their newfound desire for independence, recognizing
-      that continuous reliance on parents is no longer appropriate.
-    register: casual
-    setting: serious
-    conjugation: negative non-past polite (～ません)
-    speaker_gender: female
-  - english: We can't just keep playing around. It's time to get serious about our future.
-    japanese:
-      - いつ まで も 遊ん {で ばかり は い られ ない}。そろそろ 自分 たち の 将来 を 真剣 に 考え なけれ ば。
-      - いつ まで も 遊ん {で ばかり は い られ ませ ん}。そろそろ 自分 たち の 将来 を 真剣 に 考え なけれ ば なり ませ ん。
-      - いつ まで も 遊ん {て ばかり い られ ない}。そろそろ 自分 たち の 将来 を 真剣 に 考え ない と。
-      - いつ まで も 遊ん {て ばかり じゃ い られ ない}。そろそろ 将来 の こと を 考え なきゃ.
-    english_literally: Forever playing around only cannot stay. Soon ourselves' future seriously must
-      consider.
-    competing_grammar:
-      - competing_japanese:
-          - いつ まで も 遊ん で {ばかり} いる。そろそろ 自分 たち の 将来 を 真剣 に 考え なけれ ば。
-        english: We are just playing around forever. It's time to get serious about our future.
-        hint: This phrase describes a current state of only playing, but doesn't convey the imperative
-          sense that this state *cannot continue*. We're looking for an expression that signifies the
-          inability to sustain this singular focus.
-      - competing_japanese:
-          - いつ まで も 遊ぶ {わけ に は いか ない}。そろそろ 自分 たち の 将来 を 真剣 に 考え なけれ ば。
-        english: We cannot keep playing around forever (due to external reasons). It's time to get serious
-          about our future.
-        hint: This phrase implies inability due to external constraints or social norms, rather than an
-          internal realization that the current action is unsustainable. We're looking for a phrase that
-          implies an internal necessity to change from a prolonged action.
-    scene: Two young friends having a serious conversation about their future, realizing they need to
-      shift their focus from leisure to responsibility.
-    register: casual
-    setting: serious
-    conjugation: negative plain (～ない)
-    speaker_gender: male
-    listener_gender: group
-    nuance: The phrase 「いつ まで も」 (forever) emphasizes the prolonged nature of 'playing around,' highlighting
-      the urgency to transition to a more serious mindset. The use of 「そろそろ」 (soon/it's about time) reinforces
-      the timing for a serious shift in attitude, common in conversations among peers approaching adulthood.
-  - english: The company can't just keep maintaining the status quo. We need to innovate.
-    japanese:
-      - 会社 は 現状 維持 {ばかり し て は い られ ませ ん}。革新 し なけれ ば なり ませ ん。
-      - 会社 は 現状 維持 {ばかり し て は い られ ない}。革新 し なけれ ば。
-      - 会社 は 現状 維持 {ばかり し て い られ ない} の です。革新 し なけれ ば なり ませ ん。
-      - 会社 は 現状 維持 {ばかり じゃ い られ ない}。革新 が 必要 だ.
-    english_literally: Company as for status quo only doing cannot stay. Must innovate.
-    competing_grammar:
-      - competing_japanese:
-          - 現状 維持 {ばかり で は いけ ない}。革新 し なけれ ば なり ませ ん。
-        english: It's wrong to just maintain the status quo. We need to innovate.
-        hint: This phrase implies that simply maintaining the status quo is 'wrong' or 'not good,' which
-          is a prohibition or moral judgment. We're looking for a phrase that expresses an actual inability
-          to continue in that state.
-      - competing_japanese:
-          - 現状 維持 {ばかり し て いる}。革新 し なけれ ば なり ませ ん。
-        english: We are just maintaining the status quo. We need to innovate.
-        hint: This phrase describes a state of only doing the status quo, but it does not convey the imperative
-          sense that this state *cannot continue* or is unsustainable. We're looking for an expression
-          that signifies the inability to sustain this singular focus.
-    scene: A company executive addressing their employees in a boardroom, explaining the necessity for
-      new strategies and a departure from old ways.
+          - 他社 の 成功 を 羨まし がっ て いる {だけ で は だめ だ}。私 たち 独自 の 戦略 を 練る 必要 が ある。
+        english: It's no good just envying the success of other companies. We need to formulate our own
+          strategy.
+        hint: 「だけではだめ」 means 'it's no good just doing X'. Our expression emphasizes the inability to *continue*
+          doing X.
+    scene: A business manager addressing their team during a strategy meeting, urging them to innovate.
     register: bijinesu nihongo (business)
-    setting: persuasive
-    conjugation: negative non-past polite (～ません)
-    speaker_gender: male
-    listener_gender: group
-    speaker_age: older
-    nuance: The use of 「現状 維持」 (status quo) is formal and typical in business contexts. The phrase `ばかりしてはいられない`
-      highlights the unsustainability of *only* maintaining the current state, conveying a strong push
-      for change and innovation, suitable for an executive.
-  - english: We can't just keep living without purpose. We must find something meaningful to do.
+    setting: professional
+  - english: I can't just keep remembering the past; I have to live in the present.
     japanese:
-      - 目的 も なく 生き {て ばかり は い られ ない}。何 か 意味 の ある こと を 見つけ なけれ ば。
-      - 目的 も なく 生き {て ばかり は い られ ませ ん}。何 か 意味 の ある こと を 見つけ なけれ ば なり ませ ん。
-      - 目的 も なく 生き {て ばかり い られ ない}。何 か 意味 の ある こと を 見つけよう。
-      - 目的 も なく 生き {て ばかり じゃ い られ ない}。自分 を 変える 時 だ.
-    english_literally: Purpose also without living only cannot stay. Something meaningful must find.
+      - 過去 に {囚われ て ばかり は い られ ない}。今 を 生き なく て は。
+      - 過去 に {囚われ て ばかり は い られ ませ ん}。今 を 生き なけれ ば なり ませ ん。
+      - 過去 に {囚われ て ばかり は い られ ない}。今 に 集中 し なけれ ば。
+    english_literally: Past to being trapped only we cannot keep. Now must live.
     competing_grammar:
       - competing_japanese:
-          - 目的 も なく 生き て いる {だけ で は いけ ない}。何 か 意味 の ある こと を 見つけ なけれ ば。
-        english: It's wrong to just live without purpose. We must find something meaningful to do.
-        hint: This phrase states that living without purpose is 'wrong' or 'not good,' which is a moral
-          admonition. We're looking for a phrase that expresses an actual inability to continue in that
-          state, driven by an internal realization.
-      - competing_japanese:
-          - 目的 も なく 生き て {ばかり いる}。何 か 意味 の ある こと を 見つけ なけれ ば。
-        english: We are just living without purpose. We must find something meaningful to do.
-        hint: This phrase describes a state of only living without purpose, but it does not convey the
-          imperative sense that this state *cannot continue*. We're looking for an expression that signifies
-          the inability to sustain this singular focus.
-    scene: A young woman reflecting on her life and personal growth, deciding she needs to pursue a more
-      fulfilling path.
+          - 過去 に 囚われ て ばかり い たら {いけ ない}。今 を 生き なく て は。
+        english: If I keep being trapped by the past, it's no good. I have to live in the present.
+        hint: 「〜ていたら いけない」 expresses that 'it's not good' or 'one shouldn't' do something continuously.
+          We're looking for an expression about the inability to *continue* a state.
+    scene: Someone journaling their thoughts, reflecting on personal growth and moving forward.
     register: casual
     setting: reflective
-    conjugation: negative plain (～ない)
-    speaker_gender: female
-    speaker_age: younger
-    nuance: The phrase 「目的 も なく」 (without purpose) highlights the emptiness of the current state. `生きてばかりはいられない`
-      implies an internal realization that such a way of living is no longer tolerable or sustainable,
-      driving a need for self-discovery and meaning. The casual register fits this introspective, personal
-      context.
-  - english: I couldn't just keep waiting there. I had to go look for them.
+  - english: Children, you can't just keep playing all the time; you have homework to do!
     japanese:
-      - そこ で 待っ {て ばかり は い られ なかっ た}。探し に 行く しか なかっ た から。
-      - そこ で 待っ {て ばかり は い られ ませ ん でし た}。探し に 行く しか あり ませ ん でし た から。
-      - そこ で 待っ {て ばかり い られ なかっ た} よ。探し に 行く しか なかっ た し。
-      - そこ で 待っ {て ばかり じゃ い られ なかっ た}。何 か する 必要 が あっ た から。
-    english_literally: There waiting only could not stay. Had no choice but to go search.
+      - 子供 たち、いつ まで も {遊ん で ばかり は い られ ない} ぞ！宿題 が ある だろう。
+      - 子供 たち、いつ まで も {遊ん で ばかり は い られ ませ ん} よ。宿題 が あり ます から ね。
+      - 子供 たち、いつ まで も {遊ん で ばかり は い られ ない}！宿題 が ある だろう。
+    english_literally: Children, forever only playing we cannot keep! Homework there is, right?
     competing_grammar:
       - competing_japanese:
-          - そこ で 待っ て {ばかり} い た。探し に 行く しか なかっ た から。
-        english: I was just waiting there. I had no choice but to go search.
-        hint: This describes a past action of *only* waiting, but it doesn't convey that the action *could
-          not continue* or was unsustainable. We're looking for a phrase that implies the inability to
-          sustain this singular action.
-      - competing_japanese:
-          - そこ で 待っ て いる {わけ に は いか なかっ た}。探し に 行く しか なかっ た から。
-        english: I couldn't wait there (due to circumstances). I had no choice but to go search.
-        hint: This implies inability due to external circumstances or social norms, rather than an internal
-          realization that the singular action was unsustainable. We're looking for a phrase that implies
-          an internal necessity to change from a prolonged action.
-      - competing_japanese:
-          - そこ で 待っ て {い て は いけ なかっ た}。探し に 行く しか なかっ た から。
-        english: I shouldn't have waited there. I had no choice but to go search.
-        hint: This is a past prohibition or admonition, focusing on what was wrong to do. We're looking
-          for a phrase that suggests the exclusive waiting was no longer a viable option.
-      - competing_japanese:
-          - そこ で 待つ の は {もう 耐え られ なかっ た}。探し に 行く しか なかっ た から。
-        english: I couldn't endure waiting there anymore. I had no choice but to go search.
-        hint: This expresses an inability to tolerate a situation emotionally. We're looking for a phrase
-          that implies a state or action was no longer a feasible option for continuation due to its unsustainability.
-    scene: A person recounting a past event where they had to make a decision to act because passive waiting
-      was no longer an option.
+          - 子供 たち、いつ まで も 遊ん で いる {わけ に は いか ない} ぞ！宿題 が ある だろう。
+        english: Children, you cannot just keep playing forever! You have homework, don't you?
+        hint: 「〜わけにはいかない」 means 'cannot possibly' or 'it's not acceptable to'. Our phrase conveys an inability
+          to *continue* being in a state.
+    scene: A parent scolding their children playfully but firmly, reminding them of their responsibilities.
     register: casual
-    setting: storytelling
-    conjugation: negative past plain (～なかった)
-    speaker_gender: female
-post_example_writeup: As you can see from the examples, 「てばかりはいられない」 is often used in situations where
-  there's a strong internal or external motivation to change a current, singular focus or state. It expresses
-  a sense of urgency and the realization that remaining in that limited condition is no longer an option.
-  This makes it distinct from simple prohibitions or expressions of inability, as it carries the nuance
-  of needing to break free from a prolonged, restrictive activity.
-sources:
-  bunpro: https://bunpro.jp/grammar_points/てばかりはいられない
+    setting: commanding
+    speaker_gender: male
+    listener_gender: group
+    speaker_age: older
+    nuance: The use of 「ぞ」 at the end adds a strong, masculine, and slightly admonishing tone, typical
+      for a parent addressing children with a command or firm reminder. It conveys authority and a clear
+      expectation of action, highlighting that the carefree play cannot continue indefinitely.
