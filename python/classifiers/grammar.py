@@ -59,70 +59,6 @@ class JapaneseGrammarLabelCompletingClassifier:
         self.classifier = None
         self.label_counts = None
         self.valid_labels = None
-        
-    def _clean_text(self, text: str) -> str:
-        """
-        Parses the augmented text and creates a clean 'word_pos' sequence.
-        Example: '⌈ˢ机ᵖnʳツクエ⌉' -> '机_n'
-        """
-
-        # Strip grammar denoting brackets.
-        text = text.replace('{', '').replace('}', '')
-
-        # If it looks like a plain japanese sentence, then convert to compact
-        if '⌈' not in text:
-            text = japanese_to_compact_sentence(text)
-
-        # This regex is an example to find all augmented words. You may need to refine it.
-        # It looks for the surface form (ˢ...) and the part-of-speech (ᵖ...).
-        pattern = re.compile(r'⌈ˢ(?P<surface>.+?)ᵖ(?P<pos>.+?)ʳ.+?⌉')
-        
-        # Function to replace each match with the 'word_pos' format, now with leading/trailing spaces
-        def repl(match):
-            surface = match.group('surface')
-            pos = match.group('pos')
-            # Clean up the POS tag (e.g., 'v' instead of 'vb') if necessary
-            clean_pos = pos.split(' ')[0] # Example of simplification
-            # Add spaces to ensure token separation
-            return f" {surface}_{clean_pos} "
-
-        # Replace all augmented words
-        processed_text = pattern.sub(repl, text)
-        
-        # Remove any remaining special characters that are not part of words
-        processed_text = re.sub(r'[⌈⌉ˢᵖʳ]', '', processed_text)
-        
-        # Normalize whitespace: collapse multiple spaces into one and strip ends.
-        # This is the key to ensuring ' 机_n の ' becomes '机_n の'.
-        return ' '.join(processed_text.split())
-    
-    def _create_negative_labels(self, negative_labels: List[List[str]], all_classes: np.ndarray) -> np.ndarray:
-        """
-        Create binary matrix for negative examples where specified labels are 0.
-        
-        Args:
-            negative_labels: List of label lists that are NOT present in each example
-            all_classes: Array of all possible class names from label_binarizer
-            
-        Returns:
-            Binary matrix where 1 means label might be present, 0 means definitely not present
-        """
-        n_samples = len(negative_labels)
-        n_classes = len(all_classes)
-        
-        # Start with all ones (all labels potentially present)
-        y_neg = np.ones((n_samples, n_classes), dtype=int)
-        
-        # Create label to index mapping
-        label_to_idx = {label: idx for idx, label in enumerate(all_classes)}
-        
-        # Set zeros for labels that are definitely NOT present
-        for i, absent_labels in enumerate(negative_labels):
-            for label in absent_labels:
-                if label in label_to_idx:
-                    y_neg[i, label_to_idx[label]] = 0
-                    
-        return y_neg
     
     def _filter_rare_labels(self, labels_list: List[List[str]]) -> List[List[str]]:
         """Filter out rare labels based on min_label_freq."""
@@ -153,7 +89,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         """Setup the logistic regression classifier."""
         # Good: 2000 iterations/liblinear/l1/C=1.5/features=5000
         base_classifier = LogisticRegression(
-            max_iter=7000,
+            max_iter=7500,
             class_weight=self.class_weight,
             random_state=self.random_state,
             solver='liblinear',
@@ -218,7 +154,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         """
         # Clean texts and filter labels
         with display.work("preprocessing"):
-            cleaned_texts = [self._clean_text(text) for text in texts]
+            cleaned_texts = [_clean_text(text) for text in texts]
             filtered_labels = self._filter_rare_labels(labels)
         
         # Vectorize texts
@@ -298,7 +234,7 @@ class JapaneseGrammarLabelCompletingClassifier:
             return prediction[0]
 
         # Clean and vectorize texts
-        cleaned_texts = [self._clean_text(text) for text in texts]
+        cleaned_texts = [_clean_text(text) for text in texts]
         X = self.vectorizer.transform(cleaned_texts)
         
         # --- ADDED: Apply the same scaling ---
@@ -909,7 +845,43 @@ class JapaneseGrammarLabelCompletingClassifier:
         
         return "\n".join(output)
     
+def _clean_text(text: str) -> str:
+    """
+    Parses the augmented text and creates a clean 'word_pos' sequence.
+    Example: '⌈ˢ机ᵖnʳツクエ⌉' -> '机_n'
+    """
 
+    # Strip grammar denoting brackets.
+    text = text.replace('{', '').replace('}', '')
+
+    # If it looks like a plain japanese sentence, then convert to compact
+    if '⌈' not in text:
+        text = japanese_to_compact_sentence(text)
+
+    # This regex is an example to find all augmented words. You may need to refine it.
+    # It looks for the surface form (ˢ...) and the part-of-speech (ᵖ...).
+    pattern = re.compile(r'⌈ˢ(?P<surface>.+?)ᵖ(?P<pos>.+?)ʳ.+?(?P<last>.?)⌉')
+    
+    # Function to replace each match with the 'word_pos' format, now with leading/trailing spaces
+    def repl(match):
+        surface = match.group('surface')
+        pos = match.group('pos')
+        last = match.group('last')
+        # Clean up the POS tag (e.g., 'v' instead of 'vb') if necessary
+        clean_pos = pos.split(' ')[0] # Example of simplification
+        # Add spaces to ensure token separation
+        return f" {surface}{clean_pos}{last} "
+
+    # Replace all augmented words
+    processed_text = pattern.sub(repl, text)
+    
+    # Remove any remaining special characters that are not part of words
+    processed_text = re.sub(r'[⌈⌉ˢᵖʳ]', '', processed_text)
+    
+    # Normalize whitespace: collapse multiple spaces into one and strip ends.
+    # This is the key to ensuring ' 机_n の ' becomes '机_n の'.
+    result = ' '.join(processed_text.split())
+    return result
     
 def apply_negatives(
         positives: Dict[str, List[str]], 

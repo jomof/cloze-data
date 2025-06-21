@@ -29,7 +29,10 @@ def compile_matcher(matcher: str) -> Matcher:
     regex = regex.replace('{i-adjective-past}', """
         ⌈ˢ~かっᵖadj:~ᵇ~いʳ~イ⌉⌈ˢたᵖauxvʳタ⌉|
         ⌈~⌉⌈ˢ~かっᵖsuff:adjectivalᵇ~いʳ~イ⌉⌈ˢたᵖauxvʳタ⌉|
-        ⌈~⌉⌈ˢしᵖv:non_self_reliantᵇするʳスル⌉⌈ˢ~かっᵖsuff:adjectivalᵇ~いʳ~イ⌉⌈ˢたᵖauxvʳタ⌉
+        ⌈~⌉⌈ˢしᵖv:non_self_reliantᵇするʳスル⌉⌈ˢ~かっᵖsuff:adjectivalᵇ~いʳ~イ⌉⌈ˢたᵖauxvʳタ⌉|
+        ⌈ˢ~ᵖadj:generalᵇ~いʳ~イ⌉⌈ˢかったᵖadj:generalᵇかったいʳカタイ⌉|
+        ⌈ˢ~ᵖadj:generalᵇ~いʳ~イ⌉⌈ˢかっᵖv:generalᵇかうʳカウ⌉⌈ˢたᵖauxvʳタ⌉|
+        ⌈ˢ~ᵖn:common_nounʳ~⌉⌈ˢかっᵖv:generalᵇかうʳカウ⌉⌈ˢたᵖauxvʳタ⌉
     """)
 
 

@@ -7,9 +7,10 @@ class TestMatcher(unittest.TestCase):
     def test_i_adjective_past(self):
         matcher = compile_matcher("{i-adjective-past}")
 
-        # Should not match - not a past tense i-adjective
-        # self.check(matcher, "本当に素晴らしい眺めです", None)
-
+        self.check(matcher, "昨日、忙し {かっ た} よう でし た ね。", "忙しかった")
+        self.check(matcher, "寒 {かっ た} から、家 に い まし た。", "寒かった")
+        self.check(matcher, "その 夜 は 長く、そして 暗 {かっ た}。", "暗かった")
+        
         # Basic i-adjectives in past tense form (かった)
         self.check(matcher, "この本は{面白かった}です。", "面白かった")
         self.check(matcher, "昨日は{暑かった}ですね。", "暑かった")
