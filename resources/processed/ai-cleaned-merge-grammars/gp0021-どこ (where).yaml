@@ -1,4 +1,6 @@
 grammar_point: どこ (where)
+matcher: ⌈ˢどこᵖpronʳドコ⌉
+matcher_enforce_examples: true
 learn_before:
   - どこか (somewhere・some place)
 id: gp0021
@@ -131,12 +133,6 @@ examples:
       - '{どこ} で 会い ましょう か？'
       - '{どこ} で 会う？'
     english_literally: Where, shall we meet?
-    competing_grammar:
-      - competing_japanese:
-          - '{どこ か} で 会おう か？'
-        english: Should we meet somewhere?
-        hint: どこか implies an unspecified "somewhere," whereas どこ asks for the specific place. We're looking
-          for a question about a specific meeting place.
     scene: You are planning to meet a friend.
     register: casual
     setting: friendly
@@ -177,13 +173,6 @@ examples:
       - 猫 は {どこ} に いる？
       - 猫 {どこ}？
     english_literally: Cat, as for it, where is it existing?
-    competing_grammar:
-      - competing_japanese:
-          - 猫 は {どこ} です か？
-        english: Where is the cat?
-        hint: While 「どこですか？」 is grammatically correct for location, using 「どこにいますか？」 is more natural for
-          animate beings, emphasizing their existence. We're looking for a natural expression for an animate
-          being's location.
     scene: You are looking for your pet cat.
     register: casual
     setting: intimate
@@ -193,13 +182,6 @@ examples:
       - チケット は {どこ} で 買える？
       - チケット は {どこ} で 買い ます か？
     english_literally: Tickets, as for them, where can (I) buy?
-    competing_grammar:
-      - competing_japanese:
-          - チケット は {どこ} に 売っ て い ます か？
-        english: Where are tickets being sold?
-        hint: 「どこに売っていますか？」 focuses on the location where tickets are being sold, while 「どこで買えますか？」 focuses
-          on where one can perform the action of buying. We're looking for the latter, focusing on the
-          ability to buy.
     scene: You are at a train station asking about buying tickets.
     register: formal
     setting: professional

@@ -1,4 +1,8 @@
 grammar_point: どれ (which of 3 or more)
+matcher: |-
+  ⌈ˢどれᵖpronʳドレ⌉|
+  ⌈ˢどれᵖint:generalʳドレ⌉
+matcher_enforce_examples: true
 learn_before:
   - Verb[imperative] (imperative)
   - Verb[よう] (volitional)
@@ -8,7 +12,7 @@ learn_before:
   - 真上 (directly above)
   - 背面 (back surface spatial)
 id: gp0004
-meaning: which one (of three or more options)
+meaning: which one (of three or more)
 pronunciation:
   katakana: ドレ
   romaji: dore
@@ -35,7 +39,7 @@ false_friends:
     kind: often confused with
     nuance: 「どちら」 is specifically used when choosing between two clearly defined options or asking for
       a direction in a polite manner. 「どれ」 is for three or more, or an unspecified large group.
-    grammar_point: <suggest>:どちら (which direction, which one, where - polite)
+    grammar_point: どちら (which way, formal)
   - term: この・その・あの・どの
     meaning: Which (modifies a noun)
     kind: similar expression

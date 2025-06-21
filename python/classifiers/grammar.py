@@ -1012,7 +1012,8 @@ def map(current, _):
                 if matcher:
                     if matcher.match_japanese(compact):
                         display.warn(f"POINT:    {grammar_point}")
-                        display.warn(f"COMPACT:  {compact}")
+                        c = compact.replace('⌈','\u001b[K\n⌈')
+                        display.warn(f"COMPACT:  {c}")
                         display.warn(f"JAPANESE: {japanese}")
                         display.warn(f"EXPECTED NO MATCH")
                         display.error(f"Expected no match {matcher}: {japanese}->{compact}")

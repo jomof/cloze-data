@@ -1,15 +1,17 @@
 grammar_point: です (polite copula)
+matcher: ⌈ˢですᵖauxvʳデス⌉
+matcher_enforce_examples: true
 learn_before:
   - は (topic and contrast)
 id: gp0002
-meaning: polite copula
+meaning: polite copula (is/am/are)
 pronunciation:
   katakana: デス
   romaji: desu
 formation:
-  '[Noun] です': Used to state that something is or equals a noun, in a polite manner.
-  '[Na-Adjective] です': Used to state that something is a na-adjective, in a polite manner.
-  '[I-Adjective] です': Used to state that something is an i-adjective, in a polite manner.
+  V[dictionary] です: Used to state that something is or equals a noun, in a polite manner.
+  Na-Adjective です: Used to state that something is a na-adjective, in a polite manner.
+  I-Adjective です: Used to state that something is an i-adjective, in a polite manner.
 jlpt: N5
 etymology: 'The copula です (desu) is widely believed to be a contraction and phonetic evolution of であります
   (de arimasu). The original form, であります, combines the particle で (de), which indicates a state or location,
@@ -17,12 +19,16 @@ etymology: 'The copula です (desu) is widely believed to be a contraction and 
   the ubiquitous polite copula. This linguistic journey explains its core function: politely stating that
   something ''exists as'' or ''is'' a particular noun or adjective, a foundational element in Japanese
   polite speech.'
-writeup: |-
-  です (desu) is the fundamental polite copula in Japanese, equivalent to 'is,' 'am,' or 'are' in English. It is an essential component of `teineigo` (polite language), making it suitable for most everyday conversations with people you are not intimately familiar with, or in formal settings.
-
-  Its primary function is to express a state of being, identification, or description. It is attached to nouns and `na`-adjectives directly. For `i`-adjectives, です is typically added after the dictionary form to add politeness, although the `i`-adjective can stand alone in polite contexts without です. Verbs do not use です; instead, they use the `ます` (masu) form to achieve politeness.
-
-  です does not inherently carry tense; its tense is determined by context or by changing to its past form, でした (deshita). It is a highly versatile and frequently used word, crucial for forming polite sentences and interacting appropriately in Japanese society. It is used by speakers of all genders and ages when politeness is desired.
+writeup: です (desu) is the fundamental polite copula in Japanese, equivalent to 'is,' 'am,' or 'are' in
+  English. It is an essential component of `teineigo` (polite language), making it suitable for most everyday
+  conversations with people you are not intimately familiar with, or in formal settings.Its primary function
+  is to express a state of being, identification, or description. It is attached to nouns and `na`-adjectives
+  directly. For `i`-adjectives, です is typically added after the dictionary form to add politeness, although
+  the `i`-adjective can stand alone in polite contexts without です. Verbs do not use です; instead, they
+  use the `ます` (masu) form to achieve politeness.です does not inherently carry tense; its tense is determined
+  by context or by changing to its past form, でした (deshita). It is a highly versatile and frequently used
+  word, crucial for forming polite sentences and interacting appropriately in Japanese society. It is
+  used by speakers of all genders and ages when politeness is desired.
 false_friends:
   - term: だ (casual copula)
     meaning: casual form of 'to be'
@@ -37,7 +43,7 @@ false_friends:
     nuance: である is a very formal and literary copula, commonly found in written Japanese, academic papers,
       news reports, or formal speeches. It is rarely used in spoken everyday conversation. です is the standard
       polite copula for general spoken communication.
-    grammar_point: <suggest>:である (formal present)
+    grammar_point: な-Adjective[である] (formal present)
   - term: ございます (polite copula, formal)
     meaning: highly polite form of 'to be'
     kind: similar expression
@@ -135,24 +141,6 @@ examples:
     scene: Recommending a place to a new acquaintance.
     register: teineigo (polite)
     setting: informative
-  - english: It is not a mistake.
-    japanese:
-      - それ は 間違い {で は あり ませ ん}。
-      - それ は 間違い {じゃ あり ませ ん}。
-    english_literally: As for that, it is not a mistake.
-    competing_grammar:
-      - competing_japanese:
-          - それ は 間違い で は ない。
-        english: That is not a mistake (casual).
-        hint: This uses the casual negative copula. We're looking for the polite negative form.
-      - competing_japanese:
-          - それ は 間違い じゃ あり ませ ん。
-        english: That is not a mistake (colloquial polite negative).
-        hint: じゃありません is a common contraction of では ありません, but では ありません is more formal. We're looking
-          for the slightly more formal polite negative.
-    scene: Correcting a misunderstanding during a formal meeting.
-    register: teineigo (polite)
-    setting: professional
   - english: I am thirty years old.
     japanese:
       - 私 は 三十 歳 {です}。
@@ -192,6 +180,19 @@ examples:
     scene: Explaining geographical facts to a tourist.
     register: teineigo (polite)
     setting: informative
+  - english: This computer is new.
+    japanese:
+      - この コンピューター は 新しい {です}。
+      - この コンピューター、新しい {です}。
+    english_literally: As for this computer, it is new.
+    competing_grammar:
+      - competing_japanese:
+          - この コンピューター は 新しい。
+        english: This computer is new (less polite).
+        hint: This uses a direct i-adjective ending. We're looking for the polite form using です.
+    scene: Describing a recently purchased item to a friend.
+    register: teineigo (polite)
+    setting: friendly
 post_example_writeup: The examples provided demonstrate the versatility of です across various contexts,
   from self-introductions to descriptions of objects and qualities. Notice how です always attaches to the
   end of nouns or adjectives to form a polite statement. While `i`-adjectives can stand alone to convey

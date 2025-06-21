@@ -1,8 +1,10 @@
 grammar_point: ではない (formal negative copula)
+matcher: "(⌈ˢでᵖauxvᵇだʳダ⌉|で)は \n( \n  ⌈ˢないᵖadj:non_self_reliantʳナイ⌉|\n  ⌈ˢありᵖv:non_self_reliantᵇあるʳアル⌉⌈ˢませᵖauxvᵇますʳマス⌉⌈ˢんᵖauxvᵇぬʳズ⌉\n\
+  )"
 learn_before:
   - な-Adjective[ではない・じゃない] (plain negative)
 id: gp9999
-meaning: is not (formal); am not (formal); are not (formal)
+meaning: is not (formal)
 pronunciation:
   katakana: デハナイ
   romaji: dewanai
@@ -177,10 +179,9 @@ examples:
     english_literally: That method is wrong is not.
     competing_grammar:
       - competing_japanese:
-          - その 方法 が 間違っ て いる {わけ で は ない}。
+          - その 方法 が 間違っ て いる {わけ じゃ ない}。
         english: It's not that the method is wrong.
-        hint: We are presenting a formal clarification using a nominalizer. We're looking for 'It's not
-          that...'.
+        hint: This is a casual expression for 'it's not that...'. We're looking for a formal clarification.
     scene: A researcher clarifying a point in a Q&A session after a presentation.
     register: formal
     setting: academic

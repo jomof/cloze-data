@@ -4,6 +4,699 @@ from python.mecab.compact_sentence import japanese_to_compact_sentence
 
 class TestMatcher(unittest.TestCase):
 
+    def test_i_adjective_past(self):
+        matcher = compile_matcher("{i-adjective-past}")
+
+        # Should not match - not a past tense i-adjective
+        # self.check(matcher, "本当に素晴らしい眺めです", None)
+
+        # Basic i-adjectives in past tense form (かった)
+        self.check(matcher, "この本は{面白かった}です。", "面白かった")
+        self.check(matcher, "昨日は{暑かった}ですね。", "暑かった")
+        self.check(matcher, "彼女は{美しかった}人です。", "美しかった")
+        self.check(matcher, "その問題は{難しかった}です。", "難しかった")
+        self.check(matcher, "映画は{つまらなかった}でした。", None) # Verb
+
+        # Common i-adjectives in past tense form
+        self.check(matcher, "部屋が{広かった}ですね。", "広かった")
+        self.check(matcher, "水が{冷たかった}です。", "冷たかった")
+        self.check(matcher, "昨日は{寒かった}です。", "寒かった")
+        self.check(matcher, "その料理は{美味しかった}です。", "美味しかった")
+        self.check(matcher, "宿題が{多かった}です。", "多かった")
+        self.check(matcher, "時間が{少なかった}です。", "少なかった")
+        self.check(matcher, "彼は{若かった}です。", "若かった")
+        self.check(matcher, "その道は{長かった}です。", "長かった")
+        self.check(matcher, "話が{短かった}です。", "短かった")
+        self.check(matcher, "値段が{高かった}です。", "高かった")
+        self.check(matcher, "その商品は{安かった}です。", "安かった")
+
+        # Size and physical properties in past tense form
+        self.check(matcher, "象は{大きかった}動物です。", "大きかった")
+        self.check(matcher, "アリは{小さかった}です。", "小さかった")
+        self.check(matcher, "その箱は{重かった}です。", "重かった")
+        self.check(matcher, "羽は{軽かった}です。", "軽かった")
+        self.check(matcher, "道が{狭かった}です。", "狭かった")
+        self.check(matcher, "海は{深かった}です。", "深かった")
+        self.check(matcher, "プールは{浅かった}です。", "浅かった")
+
+        # Colors (i-adjectives) in past tense form
+        self.check(matcher, "血は{赤かった}です。", "赤かった")
+        self.check(matcher, "空は{青かった}です。", "青かった")
+        self.check(matcher, "雪は{白かった}です。", "白かった")
+        self.check(matcher, "髪は{黒かった}です。", "黒かった")
+        self.check(matcher, "葉っぱは{黄色かった}です。", "黄色かった")
+
+        # Emotions and feelings in past tense form
+        self.check(matcher, "彼は{嬉しかった}そうです。", "嬉しかった")
+        self.check(matcher, "とても{悲しかった}気持ちです。", "悲しかった")
+        self.check(matcher, "試験が{怖かった}です。", "怖かった")
+        self.check(matcher, "昨日は{楽しかった}日でした。", "楽しかった")
+        self.check(matcher, "とても{恥ずかしかった}です。", "恥ずかしかった")
+
+        # Special i-adjectives in past tense form
+        self.check(matcher, "彼は{よかった}人です。", "よかった")  # よい → よかった
+        self.check(matcher, "天気が{よかった}です。", "よかった")
+        # Note: いい → よかった (not いかった)
+
+        # Compound i-adjectives in past tense form
+        self.check(matcher, "その靴は{履きやすかった}です。", "履きやすかった")
+        self.check(matcher, "漢字は{覚えにくかった}です。", "覚えにくかった")
+        self.check(matcher, "その本は{読みやすかった}です。", "読みやすかった")
+        self.check(matcher, "数学は{分かりにくかった}です。", "分かりにくかった")
+
+        # Adjectives already ending in ない in past form
+        self.check(matcher, "お金が{なかった}です。", "なかった")  # ない → なかった
+        self.check(matcher, "時間が{足りなかった}です。", None) # Not an adjective
+        self.check(matcher, "昨日は{忙しなかった}です。", "忙しなかった")  # 忙しない → 忙しなかった
+
+        # Longer compound i-adjectives in past tense form
+        self.check(matcher, "その機械は{使いやすかった}です。", "使いやすかった")
+        self.check(matcher, "彼の説明は{分かりやすかった}です。", "分かりやすかった")
+        self.check(matcher, "その道は{歩きにくかった}です。", "歩きにくかった")
+        self.check(matcher, "昨日は{過ごしやすかった}天気でした。", "過ごしやすかった")
+
+        # Regional/dialectal i-adjectives in past tense form
+        self.check(matcher, "その料理は{うまかった}ですね。", "うまかった")  # うまい → うまかった
+        self.check(matcher, "昨日は{えらかった}暑いです。", "えらかった")  # えらい → えらかった
+
+        # Various sentence contexts
+        self.check(matcher, "この本は{面白かった}ですか？", "面白かった")  # Question
+        self.check(matcher, "昨日は{暑かった}でしょう。", "暑かった")  # Probability
+        self.check(matcher, "彼は{優しかった}人だと思います。", "優しかった")  # Opinion
+        self.check(matcher, "その映画は{つまらなかった}かもしれません。", None)  # Not an adjective
+
+        # With intensifiers
+        self.check(matcher, "とても{暑かった}日でした。", "暑かった")
+        self.check(matcher, "すごく{面白かった}映画でした。", "面白かった")
+        self.check(matcher, "かなり{難しかった}問題でした。", "難しかった")
+        self.check(matcher, "本当に{美味しかった}料理でした。", "美味しかった")
+
+        # Casual vs polite contexts
+        self.check(matcher, "映画が{面白かった}。", "面白かった")  # Casual
+        self.check(matcher, "映画が{面白かった}です。", "面白かった")  # Polite
+        self.check(matcher, "映画が{面白かった}でした。", "面白かった")  # Past polite
+
+        # --- False Positives (should NOT match) ---
+
+        # Dictionary form i-adjectives (present tense)
+        self.check(matcher, "この本は{面白い}です。", None)
+        self.check(matcher, "今日は{暑い}ですね。", None)
+        self.check(matcher, "彼女は{美しい}人です。", None)
+        self.check(matcher, "この問題は{難しい}です。", None)
+
+        # Negative forms (くない)
+        self.check(matcher, "この本は{面白くない}です。", None)
+        self.check(matcher, "今日は{暑くない}ですね。", None)
+        self.check(matcher, "彼女は{美しくない}人です。", None)
+
+        # Na-adjectives (not i-adjectives)
+        self.check(matcher, "彼は{親切}でした。", None)  # na-adjective past
+        self.check(matcher, "部屋が{静か}でした。", None)  # na-adjective past
+        self.check(matcher, "とても{綺麗}でしたね。", None)  # na-adjective past
+
+        # Na-adjectives with past copula
+        self.check(matcher, "彼は{親切だった}です。", None)  # na-adjective + だった
+        self.check(matcher, "部屋が{静かだった}です。", None)  # na-adjective + だった
+
+        # Adverbial forms (く form)
+        self.check(matcher, "天気が{よく}なりました。", None)  # Adverbial form
+        self.check(matcher, "もっと{大きく}してください。", None)  # Adverbial form
+        self.check(matcher, "部屋が{広く}て良いですね。", None)  # Te-form
+
+        # Polite past negative forms
+        self.check(matcher, "この本は{面白くありませんでした}。", None)  # Polite past negative
+        self.check(matcher, "今日は{暑くございませんでした}。", None)  # Honorific past negative
+
+        # Verbs in past tense
+        self.check(matcher, "友達に{会った}。", None)  # Past tense verb
+        self.check(matcher, "本を{読んだ}。", None)  # Past tense verb
+        self.check(matcher, "学校に{行った}。", None)  # Past tense verb
+        self.check(matcher, "映画を{見た}。", None)  # Past tense verb
+
+        # Nouns that might end in かった pattern
+        self.check(matcher, "{昔}の話です。", None)  # Noun
+        self.check(matcher, "{方}が良いです。", None)  # Noun
+
+        # Adverbs
+        self.check(matcher, "{もっと}食べてください。", None)  # Adverb
+        self.check(matcher, "{ずっと}待っていました。", None)  # Adverb
+        self.check(matcher, "{ちょっと}休みましょう。", None)  # Adverb
+
+        # Grammar patterns that might contain かった
+        self.check(matcher, "雨が{降った}らしいです。", None)  # Past verb + らしい
+        self.check(matcher, "彼は{来た}はずです。", None)  # Past verb + はず
+
+        # Potential confusion with other forms
+        self.check(matcher, "彼は{来なかった}です。", None)  # Past negative verb
+        self.check(matcher, "何も{分からなかった}。", None)  # Past negative verb
+
+        # --- Edge Cases ---
+
+        # I-adjectives in different sentence positions
+        self.check(matcher, "{新しかった}車を売りました。", "新しかった")  # Modifying noun
+        self.check(matcher, "車が{新しかった}です。", "新しかった")  # Predicate
+
+        # Multiple past adjectives
+        self.check(matcher, "{古かった}本と{新しかった}本がありました。", "古かった")  # Should match first
+
+        # Embedded in longer expressions
+        self.check(matcher, "それは{正しかった}考えだと思います。", "正しかった")
+        self.check(matcher, "{安かった}ものを買いました。", "安かった")
+
+        # Complex compound adjectives in past
+        self.check(matcher, "その説明は{理解しやすかった}です。", "理解しやすかった")
+        self.check(matcher, "その方法は{実行しにくかった}です。", "実行しにくかった")
+
+        # With various time expressions
+        self.check(matcher, "昨日は{暑かった}です。", "暑かった")
+        self.check(matcher, "去年は{忙しかった}でした。", "忙しかった")
+        self.check(matcher, "子供の時は{楽しかった}です。", "楽しかった")
+
+        # In relative clauses
+        self.check(matcher, "{面白かった}本を友達に貸しました。", "面白かった")
+        self.check(matcher, "{美味しかった}料理のレシピを教えてください。", "美味しかった")
+
+        # With various sentence endings
+        self.check(matcher, "とても{寒かった}ね。", "寒かった")  # Casual
+        self.check(matcher, "本当に{面白かった}よ。", "面白かった")  # Casual with よ
+        self.check(matcher, "すごく{難しかった}なあ。", "難しかった")  # Casual with なあ
+        
+    def test_i_adjective_negative(self):
+        matcher = compile_matcher("{i-adjective-negative}")
+
+        # Should not match - not a negative i-adjective
+        self.check(matcher, "本当に素晴らしい眺めです", None)
+
+        # Basic i-adjectives in negative form (くない)
+        self.check(matcher, "この本は{面白くない}です。", "面白く ない")
+        self.check(matcher, "今日は{暑く ない}ですね。", "暑く ない")
+        self.check(matcher, "彼女は{美しく ない}人です。", "美しく ない")
+        self.check(matcher, "この問題は{難しく ない}です。", "難しく ない")
+        self.check(matcher, "その映画は{つまらなく ない}でした。", None)
+
+        # Common i-adjectives in negative form
+        self.check(matcher, "部屋が{広く ない}ですね。", "広く ない")
+        self.check(matcher, "水が{冷たく ない}です。", "冷たく ない")
+        self.check(matcher, "今日は{寒く ない}です。", "寒く ない")
+        self.check(matcher, "この料理は{美味しく ない}です。", "美味しく ない")
+        self.check(matcher, "宿題が{多く ない}です。", "多く ない")
+        self.check(matcher, "時間が{少なく ない}です。", "少なく ない")
+        self.check(matcher, "彼は{若く ない}です。", "若く ない")
+        self.check(matcher, "この道は{長く ない}です。", "長く ない")
+        self.check(matcher, "その話は{短く ない}です。", "短く ない")
+        self.check(matcher, "値段が{高く ない}です。", "高く ない")
+        self.check(matcher, "この商品は{安く ない}です。", "安く ない")
+
+        # Size and physical properties in negative form
+        self.check(matcher, "象は{大きく ない}動物です。", "大きく ない")
+        self.check(matcher, "アリは{小さく ない}です。", "小さく ない")
+        self.check(matcher, "この箱は{重く ない}です。", "重く ない")
+        self.check(matcher, "羽は{軽く ない}です。", "軽く ない")
+        self.check(matcher, "道が{狭く ない}です。", "狭く ない")
+        self.check(matcher, "海は{深く ない}です。", "深く ない")
+        self.check(matcher, "プールは{浅く ない}です。", "浅く ない")
+
+        # Colors (i-adjectives) in negative form
+        self.check(matcher, "血は{赤く ない}です。", "赤く ない")
+        self.check(matcher, "空は{青く ない}です。", "青く ない")
+        self.check(matcher, "雪は{白く ない}です。", "白く ない")
+        self.check(matcher, "髪は{黒く ない}です。", "黒く ない")
+        self.check(matcher, "葉っぱは{黄色く ない}です。", "黄色く ない")
+
+        # Emotions and feelings in negative form
+        self.check(matcher, "彼は{嬉しく ない}そうです。", "嬉しく ない")
+        self.check(matcher, "とても{悲しく ない}気持ちです。", "悲しく ない")
+        self.check(matcher, "試験が{怖く ない}です。", "怖く ない")
+        self.check(matcher, "今日は{楽しく ない}日でした。", "楽しく ない")
+        self.check(matcher, "とても{恥ずかしく ない}です。", "恥ずかしく ない")
+
+        # Special i-adjectives in negative form
+        self.check(matcher, "彼は{よく ない}人です。", "よく ない")  # よい → よく ない
+        self.check(matcher, "天気が{よく ない}です。", "よく ない")
+        # Note: いい usually becomes よく ない, not いく ない
+
+        # Compound i-adjectives in negative form
+        self.check(matcher, "この靴は{履きやすく ない}です。", "履き やすく ない")
+        self.check(matcher, "漢字は{覚えにくく ない}です。", "覚え にくく ない")
+        self.check(matcher, "この本は{読みやすく ない}です。", "読み やすく ない")
+        self.check(matcher, "数学は{分かりにくく ない}です。", "分かり にくく ない")
+
+        # Double negatives (adjectives already ending in ない)
+        self.check(matcher, "お金が{なく ない}です。", "なく ない")  # ない → なく ない
+        self.check(matcher, "時間が{足りなく ない}です。", None)
+        self.check(matcher, "今日は{忙しなく ない}です。", "忙しなく ない")  # 忙しない → 忙しなく ない
+
+        # Longer compound i-adjectives in negative form
+        self.check(matcher, "この機械は{使いやすく ない}です。", "使い やすく ない")
+        self.check(matcher, "彼の説明は{分かりやすく ない}です。", "分かり やすく ない")
+        self.check(matcher, "この道は{歩きにくく ない}です。", "歩き にくく ない")
+        self.check(matcher, "今日は{過ごしやすく ない}天気です。", "過ごし やすく ない")
+
+        # Regional/dialectal i-adjectives in negative form
+        self.check(matcher, "この料理は{うまく ない}ですね。", "うまく ない")  # うまい → うまく ない
+        self.check(matcher, "今日は{えらく ない}暑いです。", "えらく ない")  # えらい → えらく ない
+
+        # Various sentence contexts
+        self.check(matcher, "この本は{面白く ない}ですか？", "面白く ない")  # Question
+        self.check(matcher, "今日は{暑く ない}でしょう。", "暑く ない")  # Probability
+        self.check(matcher, "彼は{優しく ない}人だと思います。", "優しく ない")  # Opinion
+        self.check(matcher, "この映画は{つまらなく ない}かもしれません。", None)  # Maybe
+
+        # With intensifiers
+        self.check(matcher, "とても{暑く ない}日です。", "暑く ない")
+        self.check(matcher, "すごく{面白く ない}映画でした。", "面白く ない")
+        self.check(matcher, "かなり{難しく ない}問題です。", "難しく ない")
+        self.check(matcher, "本当に{美味しく ない}料理です。", "美味しく ない")
+
+        # --- False Positives (should NOT match) ---
+
+        # Dictionary form i-adjectives (positive)
+        self.check(matcher, "この本は{面白い}です。", None)
+        self.check(matcher, "今日は{暑い}ですね。", None)
+        self.check(matcher, "彼女は{美しい}人です。", None)
+        self.check(matcher, "この問題は{難しい}です。", None)
+
+        # Na-adjectives (not i-adjectives)
+        self.check(matcher, "彼は{親切}です。", None)  # na-adjective
+        self.check(matcher, "部屋が{静か}です。", None)  # na-adjective
+        self.check(matcher, "とても{綺麗}ですね。", None)  # na-adjective
+        self.check(matcher, "この問題は{簡単}です。", None)  # na-adjective
+
+        # Na-adjectives with negative copula
+        self.check(matcher, "彼は{親切ではない}です。", None)  # na-adjective negative
+        self.check(matcher, "部屋が{静かではない}です。", None)  # na-adjective negative
+        self.check(matcher, "とても{綺麗じゃない}ですね。", None)  # na-adjective negative
+
+        # Adverbial forms (く form)
+        self.check(matcher, "天気が{よく}なりました。", None)  # Adverbial form
+        self.check(matcher, "とても{美しく}ありません。", None)  # Negative with ありません
+        self.check(matcher, "もっと{大きく}してください。", None)  # Adverbial form
+        self.check(matcher, "部屋が{広く}て良いですね。", None)  # Te-form
+
+        # Past negative forms
+        self.check(matcher, "昨日は{暑くなかった}。", None)  # Past negative
+        self.check(matcher, "その映画は{面白くありませんでした}。", None)  # Polite past negative
+        self.check(matcher, "天気が{よくなかった}です。", None)  # Past negative
+
+        # Polite negative forms
+        self.check(matcher, "この本は{面白くありません}。", None)  # Polite negative
+        self.check(matcher, "今日は{暑くございません}。", None)  # Honorific negative
+        self.check(matcher, "問題が{難しくありません}。", None)  # Polite negative
+
+        # Nouns ending in く ない pattern
+        self.check(matcher, "{悪く ない}という考えです。", "悪く ない")  # This should match - 悪い → 悪く ない
+        self.check(matcher, "{良く ない}結果です。", "良く ない")  # This should match - 良い → 良く ない
+
+        # Verbs that might have similar patterns
+        self.check(matcher, "友達に{会う}。", None)  # Verb
+        self.check(matcher, "本を{読む}。", None)  # Verb
+        self.check(matcher, "学校に{行かない}。", None)  # Negative verb
+
+        # Adverbs
+        self.check(matcher, "{もっと}食べてください。", None)  # Adverb
+        self.check(matcher, "{ずっと}待っています。", None)  # Adverb
+        self.check(matcher, "{ちょっと}休みましょう。", None)  # Adverb
+
+        # Grammar patterns that might contain く ない
+        self.check(matcher, "雨が{降らない}らしいです。", None)  # Negative verb + らしい
+        self.check(matcher, "彼は{来ない}はずです。", None)  # Negative verb + はず
+
+        # Words that might look like negative i-adjectives but aren't
+        self.check(matcher, "{忙しない}人です。", None)  # This is dictionary form of 忙しない
+        self.check(matcher, "とても{せわしない}です。", None)  # Dictionary form
+
+        # --- Edge Cases ---
+
+        # I-adjectives in different sentence positions
+        self.check(matcher, "{新しく ない}車を買いました。", "新しく ない")  # Modifying noun
+        self.check(matcher, "車が{新しく ない}です。", "新しく ない")  # Predicate
+
+        # Multiple negative adjectives
+        self.check(matcher, "{古く ない}本と{新しく ない}本があります。", "古く ない")  # Should match first
+
+        # Embedded in longer expressions
+        self.check(matcher, "それは{正しく ない}考えだと思います。", "正しく ない")
+        self.check(matcher, "{安く ない}ものを買いました。", "安く ない")
+
+        # Potential confusion with similar endings
+        self.check(matcher, "彼は{来ない}です。", None)  # Negative verb, not adjective
+        self.check(matcher, "雨が{降らない}。", None)  # Negative verb
+        self.check(matcher, "何も{分からない}。", None)  # Negative verb
+
+        # Complex compound adjectives
+        self.check(matcher, "この説明は{理解しやすく ない}です。", "理解 し やすく ない")
+        self.check(matcher, "その方法は{実行しにくく ない}です。", "実行 し にくく ない")
+
+        # With various particles and contexts
+        self.check(matcher, "それほど{難しく ない}問題です。", "難しく ない")
+        self.check(matcher, "あまり{高く ない}値段です。", "高く ない")
+        self.check(matcher, "全然{面白く ない}映画でした。", "面白く ない")
+
+    def test_verb_dictionary(self):
+        matcher = compile_matcher("{verb-dictionary}")
+
+        # Should not match - not a verb
+        self.check(matcher, "本当に素晴らしい眺めです", None)
+
+        # Basic u-verbs (godan verbs) in dictionary form
+        self.check(matcher, "毎日学校に{行く}。", "行く")
+        self.check(matcher, "本を{読む}のが好きです。", "読む")
+        self.check(matcher, "友達に{会う}予定です。", "会う")
+        self.check(matcher, "新しい車を{買う}つもりです。", "買う")
+        self.check(matcher, "手紙を{書く}。", "書く")
+        self.check(matcher, "音楽を{聞く}。", "聞く")
+        self.check(matcher, "コーヒーを{飲む}。", "飲む")
+        self.check(matcher, "ご飯を{食べる}。", "食べる")
+        self.check(matcher, "家に{帰る}。", "帰る")
+        self.check(matcher, "電話で{話す}。", "話す")
+        self.check(matcher, "宿題を{する}。", "する")
+        self.check(matcher, "日本に{来る}。", "来る")
+
+        # Ru-verbs (ichidan verbs) in dictionary form
+        self.check(matcher, "テレビを{見る}。", "見る")
+        self.check(matcher, "朝早く{起きる}。", "起きる")
+        self.check(matcher, "家を{出る}。", "出る")
+        self.check(matcher, "友達に{教える}。", "教える")
+        self.check(matcher, "質問に{答える}。", "答える")
+        self.check(matcher, "新しい言葉を{覚える}。", "覚える")
+        self.check(matcher, "窓を{開ける}。", "開ける")
+        self.check(matcher, "ドアを{閉める}。", "閉める")
+        self.check(matcher, "電気を{つける}。", "つける")
+        self.check(matcher, "会議を{始める}。", "始める")
+        self.check(matcher, "仕事を{辞める}。", "辞める")
+
+        # Irregular verbs
+        self.check(matcher, "宿題を{する}。", "する")
+        self.check(matcher, "勉強を{する}。", "する")
+        self.check(matcher, "日本に{来る}。", "来る")
+        self.check(matcher, "ここに{来る}。", "来る")
+
+        # Movement verbs
+        self.check(matcher, "公園を{歩く}。", "歩く")
+        self.check(matcher, "階段を{上る}。", "上る")
+        self.check(matcher, "山を{下る}。", "下る")
+        self.check(matcher, "プールで{泳ぐ}。", "泳ぐ")
+        self.check(matcher, "空を{飛ぶ}。", "飛ぶ")
+        self.check(matcher, "道路を{走る}。", "走る")
+
+        # Daily activity verbs
+        self.check(matcher, "朝ご飯を{作る}。", "作る")
+        self.check(matcher, "皿を{洗う}。", "洗う")
+        self.check(matcher, "部屋を{掃除する}。", "掃除 する")
+        self.check(matcher, "服を{着る}。", "着る")
+        self.check(matcher, "靴を{履く}。", "履く")
+        self.check(matcher, "お風呂に{入る}。", "入る")
+        self.check(matcher, "夜{寝る}。", "寝る")
+
+        # Communication verbs
+        self.check(matcher, "日本語を{話す}。", "話す")
+        self.check(matcher, "歌を{歌う}。", "歌う")
+        self.check(matcher, "冗談を{言う}。", "言う")
+        self.check(matcher, "声で{呼ぶ}。", "呼ぶ")
+        self.check(matcher, "手紙を{送る}。", "送る")
+
+        # Mental/emotional verbs
+        self.check(matcher, "映画を{見る}。", "見る")
+        self.check(matcher, "音楽を{聞く}。", "聞く")
+        self.check(matcher, "問題を{考える}。", "考える")
+        self.check(matcher, "答えを{知る}。", "知る")
+        self.check(matcher, "友達を{信じる}。", "信じる")
+        self.check(matcher, "夢を{見る}。", "見る")
+
+        # Work/study verbs
+        self.check(matcher, "仕事を{する}。", "する")
+        self.check(matcher, "会社で{働く}。", "働く")
+        self.check(matcher, "大学で{学ぶ}。", "学ぶ")
+        self.check(matcher, "本を{読む}。", "読む")
+        self.check(matcher, "レポートを{書く}。", "書く")
+        self.check(matcher, "試験を{受ける}。", "受ける")
+
+        # --- False Positives (should NOT match) ---
+
+        # Conjugated verbs (not dictionary form)
+        self.check(matcher, "学校に{行きます}。", None)  # Polite form
+        self.check(matcher, "本を{読んでいます}。", None)  # Progressive form
+        self.check(matcher, "映画を{見ました}。", None)  # Past tense
+        self.check(matcher, "友達に{会った}。", None)  # Past tense casual
+        self.check(matcher, "宿題を{していません}。", None)  # Negative polite
+        self.check(matcher, "来年{行かない}。", None)  # Negative casual
+        self.check(matcher, "本を{読んだ}。", None)  # Past tense casual
+        self.check(matcher, "友達と{話している}。", None)  # Progressive casual
+
+        # Verb stems
+        self.check(matcher, "友達に{会い}たいです。", None)  # i-stem
+        self.check(matcher, "本を{読み}ながら食べる。", "食べる")  # i-stem
+        self.check(matcher, "学校に{行き}ました。", None)  # i-stem
+        self.check(matcher, "音楽を{聞き}ます。", None)  # i-stem
+
+        # Te-form and other conjugations
+        self.check(matcher, "本を{読んで}ください。", None)  # Te-form
+        self.check(matcher, "学校に{行って}きます。", None)  # Te-form
+        self.check(matcher, "友達に{会って}話しました。", None)  # Te-form
+        self.check(matcher, "宿題を{して}から寝る。", "寝る")  # Te-form of する
+
+        # Conditional and other forms
+        self.check(matcher, "雨が{降れば}行きません。", None)  # Conditional
+        self.check(matcher, "時間が{あれば}来ます。", None)  # Conditional
+        self.check(matcher, "本を{読める}。", None)  # Potential form
+        self.check(matcher, "漢字が{書ける}。", None)  # Potential form
+        self.check(matcher, "日本語を{話せる}。", None)  # Potential form
+
+        # Passive and causative forms
+        self.check(matcher, "先生に{怒られる}。", None)  # Passive
+        self.check(matcher, "友達に{笑われる}。", None)  # Passive
+        self.check(matcher, "子供に{食べさせる}。", None)  # Causative
+        self.check(matcher, "学生に{勉強させる}。", None)  # Causative
+
+        # Nouns that might look like verbs
+        self.check(matcher, "{愛}が大切です。", None)  # Noun
+        self.check(matcher, "{夢}を見ました。", None)  # 夢 is noun, 見る is verb
+        self.check(matcher, "{声}が大きいです。", None)  # Noun
+        self.check(matcher, "{心}が痛いです。", None)  # Noun
+
+        # Adjectives that might end in ru
+        self.check(matcher, "この問題は{軽い}です。", None)  # i-adjective
+        self.check(matcher, "彼は{優しい}人です。", None)  # i-adjective
+
+        # Adverbs
+        self.check(matcher, "{もっと}食べてください。", None)  # Adverb
+        self.check(matcher, "{ずっと}待っています。", None)  # Adverb
+        self.check(matcher, "{ちょっと}休みましょう。", None)  # Adverb
+
+        # Grammar patterns that might look like verbs
+        self.check(matcher, "雨が{降るらしい}です。", "降る")  # らしい pattern
+        self.check(matcher, "彼は医者{らしい}です。", None)  # らしい pattern
+        self.check(matcher, "明日{来るはず}です。", "来る")  # はず pattern
+
+        # --- Edge Cases ---
+
+        # Verbs in different sentence positions
+        self.check(matcher, "{行く}人はいますか？", "行く")  # Modifying noun
+        self.check(matcher, "明日{来る}予定です。", "来る")  # Modifying noun
+        self.check(matcher, "{食べる}ものがありません。", "食べる")  # Modifying noun
+
+        # Verbs with particles
+        self.check(matcher, "学校に{行く}。", "行く")
+        self.check(matcher, "友達と{話す}。", "話す")
+        self.check(matcher, "本を{読む}。", "読む")
+
+        # Multiple verbs in one sentence
+        self.check(matcher, "本を{読む}前に{勉強する}。", "読む")  # Should match first occurrence
+        self.check(matcher, "朝{起きて}{学校に行く}。", "行く")  # First is te-form, shouldn't match
+
+        # Compound verbs
+        self.check(matcher, "友達に{出会う}。", "出会う")
+        self.check(matcher, "電話を{かける}。", "かける")
+        self.check(matcher, "手を{上げる}。", "上げる")
+        self.check(matcher, "荷物を{持つ}。", "持つ")
+
+        # Verbs in questions
+        self.check(matcher, "何を{食べる}のですか？", "食べる")
+        self.check(matcher, "どこに{行く}つもりですか？", "行く")
+        self.check(matcher, "いつ{来る}予定ですか？", "来る")
+
+        # Verbs with various sentence endings
+        self.check(matcher, "明日{行く}と思います。", "行く")
+        self.check(matcher, "雨が{降る}かもしれません。", "降る")
+        self.check(matcher, "彼は{来る}でしょう。", "来る")
+
+        # Honorific verbs (in dictionary form)
+        self.check(matcher, "先生が{いらっしゃる}。", "いらっしゃる")  # Honorific "to be"
+        self.check(matcher, "お客様が{おっしゃる}。", "おっしゃる")  # Honorific "to say"
+
+        # Humble verbs (in dictionary form)
+        self.check(matcher, "私が{参る}。", "参る")  # Humble "to go/come"
+        self.check(matcher, "私が{申す}。", "申す")  # Humble "to say"
+
+        # Verbs that end in -eru but are u-verbs
+        self.check(matcher, "荷物を{持つ}。", "持つ")
+        self.check(matcher, "友達に{会う}。", "会う")
+        self.check(matcher, "窓を{開ける}。", "開ける")  # This is actually ru-verb
+        self.check(matcher, "家に{帰る}。", "帰る")  # This is u-verb despite ending in ru
+
+        # Verbs that might be confused with other word types
+        self.check(matcher, "彼は{走る}のが速い。", "走る")  # Verb
+        self.check(matcher, "{走る}人を見ました。", "走る")  # Verb modifying noun
+        self.check(matcher, "今{走っている}。", None)  # Progressive, not dictionary
+
+    def test_i_adjective_dictionary(self):
+        matcher = compile_matcher("{i-adjective-dictionary}")
+
+        
+        self.check(matcher, "本当に素晴らしい眺めです", None)
+
+        # Basic i-adjectives in dictionary form (ending inい)
+        self.check(matcher, "この本は{面白い}です。", "面白い")
+        self.check(matcher, "今日は{暑い}ですね。", "暑い")
+        self.check(matcher, "彼女は{美しい}人です。", "美しい")
+        self.check(matcher, "この問題は{難しい}です。", "難しい")
+        self.check(matcher, "その映画は{つまらない}でした。", None)
+
+        # Common i-adjectives
+        self.check(matcher, "部屋が{広い}ですね。", "広い")
+        self.check(matcher, "水が{冷たい}です。", "冷たい")
+        self.check(matcher, "今日は{寒い}です。", "寒い")
+        self.check(matcher, "この料理は{美味しい}です。", "美味しい")
+        self.check(matcher, "宿題が{多い}です。", "多い")
+        self.check(matcher, "時間が{少ない}です。", "少ない")
+        self.check(matcher, "彼は{若い}です。", "若い")
+        self.check(matcher, "この道は{長い}です。", "長い")
+        self.check(matcher, "その話は{短い}です。", "短い")
+        self.check(matcher, "値段が{高い}です。", "高い")
+        self.check(matcher, "この商品は{安い}です。", "安い")
+
+        # Size and physical properties
+        self.check(matcher, "象は{大きい}動物です。", "大きい")
+        self.check(matcher, "アリは{小さい}です。", "小さい")
+        self.check(matcher, "この箱は{重い}です。", "重い")
+        self.check(matcher, "羽は{軽い}です。", "軽い")
+        self.check(matcher, "道が{狭い}です。", "狭い")
+        self.check(matcher, "海は{深い}です。", "深い")
+        self.check(matcher, "プールは{浅い}です。", "浅い")
+
+        # Colors (i-adjectives)
+        self.check(matcher, "血は{赤い}です。", "赤い")
+        self.check(matcher, "空は{青い}です。", "青い")
+        self.check(matcher, "雪は{白い}です。", "白い")
+        self.check(matcher, "髪は{黒い}です。", "黒い")
+        self.check(matcher, "葉っぱは{黄色い}です。", "黄色い")
+
+        # Emotions and feelings
+        self.check(matcher, "彼は{嬉しい}そうです。", "嬉しい")
+        self.check(matcher, "とても{悲しい}気持ちです。", "悲しい")
+        self.check(matcher, "試験が{怖い}です。", "怖い")
+        self.check(matcher, "今日は{楽しい}日でした。", "楽しい")
+        self.check(matcher, "とても{恥ずかしい}です。", "恥ずかしい")
+
+        # Negative i-adjectives (ending in ない)
+        self.check(matcher, "お金が{ない}です。", None) # Standalone i-adjective
+        self.check(matcher, "時間が{足りない}です。", None)
+        self.check(matcher, "今日は{忙しく ない}です。", None)  # This is conjugated form, not dictionary
+        self.check(matcher, "問題が{ない}と思います。", None)
+
+        # Special i-adjectives
+        self.check(matcher, "彼は{いい}人です。", "いい")  #いい (colloquial form of よい)
+        self.check(matcher, "天気が{よい}です。", "よい")  # よい (formal form ofいい)
+
+        # Compound i-adjectives
+        self.check(matcher, "この靴は{履きやすい}です。", "履き やすい")
+        self.check(matcher, "漢字は{覚えにくい}です。", "覚え にくい")
+        self.check(matcher, "この本は{読みやすい}です。", "読み やすい")
+        self.check(matcher, "数学は{分かりにくい}です。", "分かり にくい")
+
+        # --- False Positives (should NOT match) ---
+
+        # Na-adjectives (not i-adjectives)
+        self.check(matcher, "彼は{親切}です。", None)  # na-adjective
+        self.check(matcher, "部屋が{静か}です。", None)  # na-adjective
+        self.check(matcher, "とても{綺麗}ですね。", None)  # na-adjective
+        self.check(matcher, "この問題は{簡単}です。", None)  # na-adjective
+        self.check(matcher, "彼女は{元気}です。", None)  # na-adjective
+
+        # Nouns ending inい
+        self.check(matcher, "{愛}が大切です。", None)  # 愛 (ai) - noun
+        self.check(matcher, "{背}が高いです。", "高い")  # 背 (se) - noun
+        self.check(matcher, "{声}が大きいです。", "大きい")  # 声 (koe) - noun
+        self.check(matcher, "{恋}をしています。", None)  # 恋 (koi) - noun
+
+        # Verbs ending inい sound
+        self.check(matcher, "友達に{会い}ます。", None)  # 会う verb stem
+        self.check(matcher, "本を{買い}ました。", None)  # 買う verb stem
+        self.check(matcher, "歌を{歌い}ます。", None)  # 歌う verb stem
+
+        # Conjugated i-adjectives (not dictionary form)
+        self.check(matcher, "天気が{よく}なりました。", None)  # Adverbial form
+        self.check(matcher, "とても{美しく}ありません。", None)  # Adverbial form
+        self.check(matcher, "昨日は{暑く}なかった。", None)  # Past negative stem
+        self.check(matcher, "今日は{寒く}ないです。", None)  # Negative stem
+        self.check(matcher, "もっと{大きく}してください。", None)  # Adverbial form
+        self.check(matcher, "部屋が{広く}て良いですね。", "良い")  # Te-form
+
+        # Adverbs that might look like i-adjectives
+        self.check(matcher, "{もっと}食べてください。", None)  # Adverb
+        self.check(matcher, "{ずっと}待っています。", None)  # Adverb
+        self.check(matcher, "{とても}美味しいです。", "美味しい")  # Adverb
+        self.check(matcher, "{ちょっと}休みましょう。", None)  # Adverb
+
+        # Particles and grammar ending inい
+        self.check(matcher, "本{という}ものです。", None)  # Grammar pattern
+        self.check(matcher, "学校{に}行きます。", None)  # Particle
+        self.check(matcher, "友達{と}会います。", None)  # Particle
+
+        # --- Edge Cases ---
+
+        # I-adjectives in different sentence positions
+        self.check(matcher, "{新しい}車を買いました。", "新しい")  # Modifying noun
+        self.check(matcher, "車が{新しい}です。", "新しい")  # Predicate
+        self.check(matcher, "{古い}本と{新しい}本があります。", "古い")  # Multiple adjectives
+
+        # I-adjectives with intensifiers
+        self.check(matcher, "とても{暑い}日です。", "暑い")
+        self.check(matcher, "すごく{面白い}映画でした。", "面白い")
+        self.check(matcher, "かなり{難しい}問題です。", "難しい")
+        self.check(matcher, "本当に{美味しい}料理です。", "美味しい")
+
+        # Longer compound i-adjectives
+        self.check(matcher, "この機械は{使いやすい}です。", "使い やすい")
+        self.check(matcher, "彼の説明は{分かりやすい}です。", "分かり やすい")
+        self.check(matcher, "この道は{歩きにくい}です。", "歩き にくい")
+        self.check(matcher, "今日は{過ごしやすい}天気です。", "過ごし やすい")
+
+        # I-adjectives in questions
+        self.check(matcher, "この本は{面白い}ですか？", "面白い")
+        self.check(matcher, "今日は{暑い}ですか？", "暑い")
+        self.check(matcher, "日本語は{難しい}ですか？", "難しい")
+
+        # I-adjectives with various sentence endings
+        self.check(matcher, "彼は{優しい}人だと思います。", "優しい")
+        self.check(matcher, "この映画は{つまらない}かもしれません。", None)
+        self.check(matcher, "今日は{忙しい}でしょう。", "忙しい")
+
+        # Regional/dialectal i-adjectives
+        self.check(matcher, "この料理は{うまい}ですね。", "うまい")  # うまい (delicious, casual)
+        self.check(matcher, "今日は{えらい}暑いです。", "えらい")  # えらい (very, dialectal)
+
+        # Archaic or formal i-adjectives
+        self.check(matcher, "とても{美しい}景色です。", "美しい")
+        self.check(matcher, "{正しい}答えを選んでください。", "正しい")
+        self.check(matcher, "彼の考えは{新しい}です。", "新しい")
+
+        # Potential confusion with similar patterns
+        self.check(matcher, "彼は医者{らしい}です。", None)  # らしい is not pure i-adjective
+        self.check(matcher, "雨が{降るらしい}です。", None)  # Grammar pattern, not adjective
+        self.check(matcher, "今日は{暖かそう}です。", None)  # そう form, not dictionary
+        self.check(matcher, "この問題は{易しそう}に見えます。", None)  # そう form, not dictionary
+
+        # Numbers that might end inい sound
+        self.check(matcher, "{四}時に会いましょう。", None)  # Number
+        self.check(matcher, "{九}時です。", None)  # Number
+
+        # Katakana words ending inい sound
+        self.check(matcher, "{コーヒー}を飲みます。", None)  # Katakana noun
+        self.check(matcher, "{パーティー}に行きます。", None)  # Katakana noun
+
+
+
     def test_verb_volitional(self):
         matcher = compile_matcher("{verb-volitional}")
 
@@ -144,7 +837,7 @@ class TestMatcher(unittest.TestCase):
         matcher = compile_matcher("{verb-te}")
 
         
-        self.check(matcher, "いつ まで も {寂し がっ て ばかり は い られ ない}。何 か する こと を 見つけ ない と。", "がっ て")
+        self.check(matcher, "いつ まで も {寂し がっ て ばかり はい られ ない}。何 か する こと を 見つけ ない と。", "がっ て")
 
         # Ichidan verbs (easy: drop る, add て)
         self.check(matcher, "映画を見て、それから晩ご飯を食べました。", "見 て")
@@ -169,7 +862,7 @@ class TestMatcher(unittest.TestCase):
         self.check(matcher, "漢字を書いて、練習しました。", "書い て")
         self.check(matcher, "歩いて、駅まで行った。", "歩い て")
 
-        # 4. ぐ -> いで (イ音便 - ionbin, voiced)
+        # 4. ぐ ->いで (イ音便 - ionbin, voiced)
         self.check(matcher, "泳いで、疲れた。", "泳い で")
         self.check(matcher, "急いで、出発した。", "急い で")
 
@@ -232,7 +925,7 @@ class TestMatcher(unittest.TestCase):
         # --- 4. Conjugated nouns/adjectives that look like verbs ---
         self.check(matcher, "彼が苦手で、話しかけにくい。", None) # 苦手で (nigate de) - な-adjective + particle 'de'
         self.check(matcher, "静かで、勉強しやすい場所だ。", None) # 静かで (shizuka de) - な-adjective + particle 'de'
-        self.check(matcher, "寒くて、震えていた。", "震え て") # 寒くて (samukute) - い-adjective te-form (should NOT be matched if you only want VERBS)
+        self.check(matcher, "寒くて、震えていた。", "震え て") # 寒くて (samukute) -い-adjective te-form (should NOT be matched if you only want VERBS)
                                                             # If your matcher specifically targets {verb-te}, this should be None.
                                                             # If it targets {adjective-te} too, then it would be '寒くて'.
                                                             # It's critical to define if {verb-te} includes i-adjectives. Assuming no.
@@ -378,7 +1071,7 @@ class TestMatcher(unittest.TestCase):
         self.check(matcher, "新しい時代が来た。", None)  # 時代 (jidai) - noun
 
         # Adjectives ending in similar sounds
-        self.check(matcher, "この部屋は広い。", None)  # い-adjective
+        self.check(matcher, "この部屋は広い。", None)  #い-adjective
         self.check(matcher, "彼は元気だ。", None)  # な-adjective
         self.check(matcher, "静かな場所だ。", None)  # な-adjective
 
@@ -502,7 +1195,7 @@ class TestMatcher(unittest.TestCase):
 
         # Adverbs/Other words ending in 'ば' or 'えば'
         self.check(matcher, "ならば、仕方ない。", None) # ならば - conjunction
-        self.check(matcher, "いざという時。", None) # いざ - interjection/adverb
+        self.check(matcher, "いざという時。", None) #いざ - interjection/adverb
         self.check(matcher, "昔話。", None) # 話 - noun (not はなしば)
         self.check(matcher, "例えば。", None) # 例えば - adverb
         self.check(matcher, "並べば、買える。", "並べ ば") # 並べば is a verb, but check '並べ' itself isn't picked up wrongly as a stem.
@@ -543,9 +1236,9 @@ class TestMatcher(unittest.TestCase):
 
 
         self.check(matcher, "{どう} し て も、この 問題 が 解決 でき ない。", None)
-        self.check(matcher, "{どう} だ い？", "どう だ")
+        self.check(matcher, "{どう} だい？", "どう だ")
         self.check(matcher, "この 魚 は {どう} やっ て 料理 し ます か？", None)
-        self.check(matcher, "図書 館 へ は {どう} 行け ば いい です か？", "どう 行け")
+        self.check(matcher, "図書 館 へ は {どう} 行け ばいい です か？", "どう 行け")
         self.check(matcher, "どうして遅れたの", None)
         self.check(matcher, "どう やっ て} 駅 へ 行き ます か？", None)
         self.check(matcher, "試験、{どう} よ？", "どう よ？")
@@ -557,7 +1250,7 @@ class TestMatcher(unittest.TestCase):
 
         self.check(matcher, "この 書類 を PDF {に し たら}、読み やすく なる", "に し たら")
         self.check(matcher, "この 書類 を PDF {に すれ ば}、読み やすく なる", "に すれ ば")
-        self.check(matcher, "# 私 は アイス コーヒー {に 決まっ て い ます}", None)
+        self.check(matcher, "# 私 は アイス コーヒー {に 決まっ てい ます}", None)
         self.check(matcher, "私 は アイス コーヒー に する {こと に し ます}。", "に する")
         self.check(matcher, "これ を きれい に {する} の は 私 の 仕事 だ", "に する")
         
@@ -570,12 +1263,17 @@ class TestMatcher(unittest.TestCase):
         self.check(matcher, "富士 山 は 日本 の 最も 高い 山 の {一 つ です}。", "山 の 一 つ です")
 
     def check(self, matcher, input, expected):
+        if expected:
+            expected = expected.replace(' ', '')
         result = matcher.match_japanese(input)
+        if result:
+            result = result.replace(' ', '')
         if result != expected:
             compact = input.replace('{','').replace('}', '')
             compact = japanese_to_compact_sentence(compact)
             print(f"JAPANESE: {input}")
             print(f"COMPACT:  {compact}")
+
         self.assertEqual(result, expected)
 
 

@@ -1,4 +1,6 @@
 grammar_point: い-Adjective[くない] (negative)
+matcher: '{i-adjective-negative}'
+matcher_enforce_examples: true
 learn_before:
   - い-Adjective (past negative)
 id: gp9999
@@ -66,8 +68,8 @@ post_false_friends_writeup: 'When negating, remember the fundamental difference:
 examples:
   - english: This book is not interesting.
     japanese:
-      - この 本 は 面白く ない。
-      - この 本 は 面白く ない です。
+      - この 本 は 面白く {ない}。
+      - この 本 は 面白く {ない} です。
     english_literally: This book, as for it, is not interesting.
     competing_grammar:
       - competing_japanese:
@@ -93,8 +95,8 @@ examples:
     conjugation: negative plain (～ない)
   - english: The weather today isn't very good.
     japanese:
-      - 今日 の 天気 は あまり 良く ない。
-      - 今日 の 天気 は あまり 良く ない です。
+      - 今日 の 天気 は あまり 良く {ない}。
+      - 今日 の 天気 は あまり 良く {ない} です。
     english_literally: Today's weather, as for it, is not very good.
     competing_grammar:
       - competing_japanese:
@@ -110,8 +112,8 @@ examples:
       with negative forms to soften the statement.
   - english: My room is not big.
     japanese:
-      - 私 の 部屋 は 広く ない。
-      - 私 の 部屋 は 広く ない です。
+      - 私 の 部屋 は 広く {ない}。
+      - 私 の 部屋 は 広く {ない} です。
     english_literally: My room, as for it, is not wide.
     competing_grammar:
       - competing_japanese:
@@ -122,29 +124,30 @@ examples:
     register: casual
     setting: informative
     conjugation: negative plain (～ない)
-  - english: He wasn't busy yesterday.
+  - english: He isn't busy today.
     japanese:
-      - 彼 は 昨日 忙しく なかっ た。
-      - 彼 は 昨日 忙しく なかっ た です。
-    english_literally: He, as for him, yesterday was not busy.
+      - 彼 は 今日 忙しく {ない}。
+      - 彼 は 今日 忙しく {ない} です。
+    english_literally: He, as for him, today is not busy.
     competing_grammar:
       - competing_japanese:
-          - 彼 は 昨日 忙しく ない。
-        english: He isn't busy yesterday. (Grammatically incorrect for past tense)
-        hint: The sentence refers to 'yesterday,' indicating a past event. We need the past negative form
-          of the i-adjective.
-    scene: Two colleagues discussing a third colleague's schedule from the previous day.
+          - 彼 は 昨日 忙しく なかっ た。
+          - 彼 は 昨日 忙しく なかっ た です。
+        english: He wasn't busy yesterday.
+        hint: The original sentence referred to 'yesterday,' requiring the past negative form. We are
+          looking for the non-past negative for today.
+    scene: Two colleagues discussing a third colleague's schedule today.
     register: casual
     setting: professional
-    conjugation: negative past plain (～なかった)
+    conjugation: negative plain (～ない)
     speaker_gender: male
     listener_gender: male
-    nuance: Using 「忙しくなかった」 (isogashikunakatta) correctly places the negation in the past. The addition
-      of 「です」 makes it polite casual, suitable for conversation among colleagues.
+    nuance: Using 「忙しくない」 (isogashikunai) correctly places the negation in the present. The addition of
+      「です」 makes it polite casual, suitable for conversation among colleagues.
   - english: That restaurant isn't delicious.
     japanese:
-      - あの レストラン は 美味しく ない。
-      - あの レストラン は 美味しく ない です。
+      - あの レストラン は 美味しく {ない}。
+      - あの レストラン は 美味しく {ない} です。
     english_literally: That restaurant, as for it, is not delicious.
     competing_grammar:
       - competing_japanese:
@@ -159,44 +162,47 @@ examples:
     listener_gender: female
     nuance: 「美味しくない」 (oishikunai) is the standard negative of 「美味しい」 (oishii - delicious). This is a common
       phrase when giving opinions on food. The casual 「ない」 ending is appropriate for friends.
-  - english: These shoes weren't cheap.
+  - english: These shoes are not cheap.
     japanese:
-      - この 靴 は 安く なかっ た。
-      - この 靴 は 安く なかっ た です。
-    english_literally: These shoes, as for them, were not cheap.
+      - この 靴 は 安く {ない}。
+      - この 靴 は 安く {ない} です。
+    english_literally: These shoes, as for them, are not cheap.
     competing_grammar:
       - competing_japanese:
-          - この 靴 は 安く ない。
-        english: These shoes are not cheap.
-        hint: The sentence clearly states a past condition ('weren't cheap'). Therefore, the past negative
-          form is required.
-    scene: Someone complaining about a recent purchase.
+          - この 靴 は 安く なかっ た。
+          - この 靴 は 安く なかっ た です。
+        english: These shoes weren't cheap.
+        hint: The original sentence clearly stated a past condition ('weren't cheap'). We are looking
+          for the present negative form.
+    scene: Someone commenting on the price of shoes.
     register: casual
     setting: casual slang
-    conjugation: negative past plain (～なかった)
-  - english: The test wasn't easy.
+    conjugation: negative plain (～ない)
+  - english: The test is not easy.
     japanese:
-      - 試験 は 易しく なかっ た。
-      - 試験 は 易しく なかっ た です。
-    english_literally: The test, as for it, was not easy.
+      - 試験 は 易しく {ない}。
+      - 試験 は 易しく {ない} です。
+    english_literally: The test, as for it, is not easy.
     competing_grammar:
       - competing_japanese:
-          - 試験 は 易しく ない。
-        english: The test is not easy.
-        hint: The context implies the test is over, so a past tense negative is needed.
-    scene: A group of students talking after an exam.
+          - 試験 は 易しく なかっ た。
+          - 試験 は 易しく なかっ た です。
+        english: The test wasn't easy.
+        hint: The original context implied the test was over, thus needing a past tense. We are looking
+          for the present negative form.
+    scene: A group of students talking about an upcoming exam.
     register: casual
     setting: academic
-    conjugation: negative past plain (～なかった)
+    conjugation: negative plain (～ない)
     speaker_gender: male
     listener_gender: group
-    nuance: 「易しくなかった」 (yasashikunakatta) is the past negative of 「易しい」 (yasashii - easy). This is a common
-      sentiment among students after a difficult exam. The casual plain form is natural in a group discussion
-      among peers.
+    nuance: 「易しくない」 (yasashikunai) is the present negative of 「易しい」 (yasashii - easy). This is a common
+      sentiment among students regarding a difficult exam. The casual plain form is natural in a group
+      discussion among peers.
   - english: That plan is not bad.
     japanese:
-      - その 計画 は 悪く ない。
-      - その 計画 は 悪く ない です。
+      - その 計画 は 悪く {ない}。
+      - その 計画 は 悪く {ない} です。
     english_literally: That plan, as for it, is not bad.
     competing_grammar:
       - competing_japanese:
@@ -214,8 +220,8 @@ examples:
       their team.
   - english: The movie tonight doesn't seem long.
     japanese:
-      - 今夜 の 映画 は 長く ない。
-      - 今夜 の 映画 は 長く ない です。
+      - 今夜 の 映画 は 長く {ない}。
+      - 今夜 の 映画 は 長く {ない} です。
     english_literally: Tonight's movie, as for it, is not long.
     competing_grammar:
       - competing_japanese:
@@ -226,23 +232,25 @@ examples:
     register: casual
     setting: friendly
     conjugation: negative plain (～ない)
-  - english: His story wasn't interesting at all.
+  - english: His story is not interesting at all.
     japanese:
-      - 彼 の 話 は 全然 面白く なかっ た。
-      - 彼 の 話 は 全然 面白く なかっ た です。
-    english_literally: His story, as for it, completely was not interesting.
+      - 彼 の 話 は 全然 面白く {ない}。
+      - 彼 の 話 は 全然 面白く {ない} です。
+    english_literally: His story, as for it, completely is not interesting.
     competing_grammar:
       - competing_japanese:
-          - 彼 の 話 は 全然 面白く ない。
-        english: His story is not interesting at all.
-        hint: The sentence clearly states a past event. The past negative form is needed.
-    scene: A younger person relaying a boring conversation they had.
+          - 彼 の 話 は 全然 面白く なかっ た。
+          - 彼 の 話 は 全然 面白く なかっ た です。
+        english: His story wasn't interesting at all.
+        hint: The original sentence referred to a past event. We are looking for the present negative
+          form.
+    scene: A younger person describing a currently boring story.
     register: casual
     setting: casual slang
-    conjugation: negative past plain (～なかった)
+    conjugation: negative plain (～ない)
     speaker_age: younger
-    nuance: The phrase 「全然 面白くなかった」 (zenzen omoshirokunakatta) uses 「全然」 (zenzen - not at all), an intensifier
-      often used with negative expressions. The casual past negative is typical for sharing experiences
+    nuance: The phrase 「全然 面白くない」 (zenzen omoshirokunai) uses 「全然」 (zenzen - not at all), an intensifier
+      often used with negative expressions. The casual present negative is typical for sharing opinions
       with friends, especially among younger speakers.
 post_example_writeup: The examples provided illustrate the various ways 「くない」 and its past form 「くなかった」
   are used to negate い-adjectives, ranging from simple descriptions to expressing opinions. Pay attention

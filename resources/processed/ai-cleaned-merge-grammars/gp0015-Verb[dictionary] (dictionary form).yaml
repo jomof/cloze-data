@@ -1,10 +1,11 @@
 grammar_point: Verb[dictionary] (dictionary form)
+matcher: '{verb-dictionary}'
+matcher_enforce_examples: true
 learn_before:
   - どこ (where)
   - 何 (what)
 id: gp0015
-meaning: The basic, non-past, plain form of a verb, used for general statements, dictionary entries, and
-  as a base for various conjugations.
+meaning: plain, non-past verb form
 conjugations:
   - conjugation-type: dictionary (plain non-past)
     form: 食べる
@@ -220,9 +221,10 @@ examples:
     english_literally: Tomorrow rain falls maybe.
     competing_grammar:
       - competing_japanese:
-          - 明日 雨 が 降る でしょう。
+          - 明日 は 雨 だろう。
         english: It will probably rain tomorrow.
-        hint: Both express possibility, but 「かもしれない」 attaches directly to the dictionary form.
+        hint: 「だろう」 expresses a higher probability or conjecture based on inference. We're looking for
+          an expression that conveys a weaker possibility.
     scene: Discussing tomorrow's weather forecast.
     register: casual
     setting: informative

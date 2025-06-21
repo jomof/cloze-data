@@ -1,8 +1,8 @@
 grammar_point: それ (that)
-learn_before:
-  - それと (and; also)
+matcher: ⌈ˢそれᵖpronʳソレ⌉
+matcher_enforce_examples: true
 id: gp0004
-meaning: That (near the listener or previously mentioned)
+meaning: that
 pronunciation:
   katakana: ソレ
   romaji: Sore
@@ -17,25 +17,31 @@ etymology: 「それ」is part of the fundamental Japanese demonstrative series,
   sphere of influence, distinct from the speaker's immediate vicinity (こ-words) and things distant from
   both (あ-words). Historically, this system developed to clearly delineate spatial and conceptual relationships
   in communication.
-writeup: |-
-  The demonstrative pronoun 「それ」is a core component of Japanese communication, crucial for referring to objects, ideas, or situations. It belongs to the こ・そ・あ・ど (ko-so-a-do) series, which systematically indicates proximity relative to the speaker and listener. Specifically, 「それ」refersto something that is physically close to the listener but not the speaker, or something that has just been mentioned in the conversation and is thus conceptually shared between the speaker and listener.
-
-  In everyday conversation, 「それ」is used very frequently. For instance, if you are pointing to an object that is closer to your friend than to yourself, you would use 「それ」. If you are discussing a topic that was just brought up, 「それ」can refer back to that topic without needing to repeat the noun.
-
-  Understanding the subtle distinctions between 「これ」,「それ」, and 「あれ」is essential. While 「これ」refers to something near the speaker and 「あれ」to something distant from both, 「それ」bridges the gap by focusing on the listener's proximity or shared conversational context. This makes 「それ」invaluable for collaborative discussions, clarifications, and building upon previously established points.
+writeup: The demonstrative pronoun 「それ」is a core component of Japanese communication, crucial for referring
+  to objects, ideas, or situations. It belongs to the こ・そ・あ・ど (ko-so-a-do) series, which systematically
+  indicates proximity relative to the speaker and listener. Specifically, 「それ」refers to something that
+  is physically close to the listener but not the speaker, or something that has just been mentioned in
+  the conversation and is thus conceptually shared between the speaker and listener. In everyday conversation,
+  「それ」is used very frequently. For instance, if you are pointing to an object that is closer to your friend
+  than to yourself, you would use 「それ」. If you are discussing a topic that was just brought up, 「それ」can
+  refer back to that topic without needing to repeat the noun. Understanding the subtle distinctions between
+  「これ」,「それ」, and 「あれ」is essential. While 「これ」refers to something near the speaker and 「あれ」to something
+  distant from both, 「それ」bridges the gap by focusing on the listener's proximity or shared conversational
+  context. This makes 「それ」invaluable for collaborative discussions, clarifications, and building upon
+  previously established points.
 false_friends:
   - term: これ (this)
     meaning: This (near the speaker)
     kind: similar expression
     nuance: 「これ」refers to something physically close to the speaker or an idea currently being expressed
       by the speaker, whereas 「それ」refers to something near the listener or a topic already introduced.
-    grammar_point: <suggest>:これ・それ・あれ・どれ (demonstrative pronouns)
+    grammar_point: これ (this)
   - term: あれ (that, over there)
     meaning: That (over there, distant from both speaker and listener)
     kind: similar expression
     nuance: 「あれ」refers to something far away from both the speaker and the listener, often something neither
       can immediately touch, while 「それ」is within the listener's reach or shared context.
-    grammar_point: <suggest>:これ・それ・あれ・どれ (demonstrative pronouns)
+    grammar_point: あれ (that over there)
   - term: その (that・near listener)
     meaning: That (near the listener, modifying a noun)
     kind: similar expression
@@ -85,8 +91,8 @@ examples:
     setting: friendly
   - english: That's a good idea!
     japanese:
-      - '{それ} は いい アイデア です ね。'
-      - '{それ} いい アイデア だ ね！'
+      - それ は いい アイデア です ね。
+      - それ いい アイデア だ ね！
     english_literally: That is a good idea, isn't it.
     competing_grammar:
       - competing_japanese:
@@ -101,9 +107,9 @@ examples:
       that it has now become a shared concept in the conversation.
   - english: I'll take that.
     japanese:
-      - '{それ} を ください。'
-      - '{それ}、ちょうだい。'
-      - '{それ} を お 願い し ます。'
+      - それ を ください。
+      - それ、ちょうだい。
+      - それ を お 願い し ます。
     english_literally: That, please give me.
     competing_grammar:
       - competing_japanese:
@@ -117,8 +123,8 @@ examples:
     setting: professional
   - english: Is that true?
     japanese:
-      - '{それ} は 本当 です か。'
-      - '{それ} 本当？'
+      - それ は 本当 です か。
+      - それ 本当？
     english_literally: That is true?
     competing_grammar:
       - competing_japanese:
@@ -131,9 +137,9 @@ examples:
     setting: interrogative
   - english: That's a bit much, isn't it?
     japanese:
-      - '{それ} は ちょっと 厳しい ね。'
-      - '{それ} ちょっと 厳しい よ。'
-      - '{それ} は 少々 厳しい です ね。'
+      - それ は ちょっと 厳しい ね。
+      - それ ちょっと 厳しい よ。
+      - それ は 少々 厳しい です ね。
     english_literally: That is a little harsh, isn't it.
     competing_grammar:
       - competing_japanese:
@@ -149,9 +155,9 @@ examples:
       the criticism.
   - english: Don't worry about that.
     japanese:
-      - '{それ} は 心配 し なく て いい よ。'
-      - '{それ}、気 に すん な。'
-      - '{それ} なら 大丈夫 だ よ。'
+      - それ は 心配 し なく て いい よ。
+      - それ、気 に すん な。
+      - それ なら 大丈夫 だ よ。
     english_literally: That, no need to worry.
     competing_grammar:
       - competing_japanese:
@@ -167,9 +173,9 @@ examples:
       「よ」adds a sense of assurance.
   - english: That's exactly what I wanted.
     japanese:
-      - '{それ} が 欲しかっ た ん です。'
-      - '{それ} が 欲しかっ た ん だ。'
-      - '{それ}、欲しかっ た やつ！'
+      - それ が 欲しかっ た ん です。
+      - それ が 欲しかっ た ん だ。
+      - それ、欲しかっ た やつ！
     english_literally: That is what I wanted.
     competing_grammar:
       - competing_japanese:
@@ -182,9 +188,9 @@ examples:
     setting: excited
   - english: That's enough.
     japanese:
-      - '{それ} で いい です。'
-      - '{それ} で いい よ。'
-      - '{それ} で 結構 です。'
+      - それ で いい です。
+      - それ で いい よ。
+      - それ で 結構 です。
     english_literally: With that, it is good.
     competing_grammar:
       - competing_japanese:
@@ -197,9 +203,9 @@ examples:
     setting: casual slang
   - english: What was that story again?
     japanese:
-      - '{それ}、何 の 話 だっ た っけ？'
-      - '{それ} は 何 の 話 でし た っけ？'
-      - '{それ}、何 の 話？'
+      - それ、何 の 話 だっ た っけ？
+      - それ は 何 の 話 でし た っけ？
+      - それ、何 の 話？
     english_literally: That, what story was it?
     competing_grammar:
       - competing_japanese:
@@ -217,8 +223,8 @@ examples:
       listener, characteristic of informal, friendly discourse.
   - english: I heard that's happening tomorrow.
     japanese:
-      - '{それ}、明日 ある って 聞い た よ。'
-      - '{それ} は 明日 ある と 聞き まし た よ。'
+      - それ、明日 ある って 聞い た よ。
+      - それ は 明日 ある と 聞き まし た よ。
     english_literally: That, tomorrow happens I heard.
     competing_grammar:
       - competing_japanese:

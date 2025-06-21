@@ -1,10 +1,12 @@
 grammar_point: これ (this)
+matcher: ⌈ˢこれᵖpronʳコレ⌉
+matcher_enforce_examples: true
 learn_before:
   - い (friendly particle)
   - の (one)
   - 何 (what)
 id: gp0004
-meaning: this (thing/one)
+meaning: this or this one
 pronunciation:
   katakana: コレ
   romaji: kore
@@ -136,10 +138,14 @@ examples:
     english_literally: This, by means of, alright?
     competing_grammar:
       - competing_japanese:
-          - これ で いい です か。
-        english: Is this good?
-        hint: While similar, 「大丈夫」focuses on whether it's 'alright' or 'no problem,' whereas 「いい」is more
-          about general 'goodness' or 'acceptability'.
+          - それ で 大丈夫？
+        english: Is that okay?
+        hint: We're referring to something near the speaker, not the listener.
+      - competing_japanese:
+          - この やり 方 で 大丈夫？
+        english: Is this method okay?
+        hint: The original uses a general "this" referring to a situation or object, not a specific "this
+          method".
     scene: Asking a friend if a chosen item or plan is acceptable.
     register: casual
     setting: friendly
@@ -151,10 +157,15 @@ examples:
     english_literally: This, subject, I, subject, heard thing, is, you know.
     competing_grammar:
       - competing_japanese:
-          - 私 は これ を 聞き まし た。
-        english: I heard this.
-        hint: The original emphasizes 'this' as the *result* of what was heard, not just the object of
-          hearing.
+          - それ が 私 が 聞い た こと だ よ。
+        english: That's what I heard.
+        hint: We're emphasizing the information the speaker just obtained or is about to convey, not information
+          the listener shared.
+      - competing_japanese:
+          - 私 が 聞い た こと は こう だ よ。
+        english: What I heard is like this.
+        hint: The original uses 'this' as a direct reference to the content itself, not merely describing
+          what was heard.
     scene: Sharing information from a reliable source with a friend.
     register: casual
     setting: informative
@@ -185,9 +196,9 @@ examples:
     english_literally: Yes, this, object, please.
     competing_grammar:
       - competing_japanese:
-          - はい、これ は あなた の です。
-        english: Yes, this is yours.
-        hint: The sentence is an offering or invitation to take, not merely a statement of possession.
+          - はい、この 本 を どうぞ。
+        english: Here, take this book.
+        hint: The original uses a standalone "this" for an unspecified item, not "this book."
     scene: Offering an item to someone.
     register: teineigo (polite)
     setting: friendly
@@ -219,10 +230,9 @@ examples:
     english_literally: This, to, will do/decide.
     competing_grammar:
       - competing_japanese:
-          - これ を 選び ます。
-        english: I will choose this.
-        hint: 「〜にします」implies a decision or choice being made, often for consumption or action, whereas
-          「選びます」is simply selecting.
+          - この ケーキ に し ます。
+        english: I'll go with this cake.
+        hint: The original allows for a general choice of "this one" without specifying the noun.
     scene: Deciding on a dish from a menu at a restaurant.
     register: teineigo (polite)
     setting: professional

@@ -1,10 +1,11 @@
 grammar_point: な-Adjective[み] (abstract quality)
+matcher: (⌈ˢ~ᵖshp:generalʳ~⌉|{noun})⌈ˢみᵖsuff:noun_likeʳミ⌉
 learn_before:
   - Verb[て] (and then)
   - つつある (gradual process)
   - 何[Counter]も (many of something)
 id: gp0465
-meaning: the abstract quality or inherent state of a な-adjective
+meaning: inherent abstract quality or intrinsic feel
 pronunciation:
   katakana: ミ
   romaji: mi
@@ -41,22 +42,6 @@ post_false_friends_writeup: While both 「み」 and 「さ」 are nominalizing 
   the inherent reliability or authenticity. When in doubt, 「さ」 is generally the safer and more common
   choice for nominalizing な-adjectives, as 「み」 is reserved for specific, often nuanced, applications.
 examples:
-  - english: The peaceful atmosphere of the old temple brought a sense of calm to my heart.
-    japanese:
-      - 古い お 寺 の {和 や かみ} が、心 に 落ち着き を もたらし た。
-      - 古い お 寺 の {和 や かみ} が、心 に 落ち着き を もたらし まし た。
-    english_literally: Old temple's peacefulness, heart to calm brought.
-    competing_grammar:
-      - competing_japanese:
-          - 古い お 寺 の 和やか さ が、心 に 落ち着き を もたらし た。
-        english: The peacefulness of the old temple brought a sense of calm to my heart.
-        hint: 「和やかさ」 emphasizes the degree or state of peacefulness, whereas the target grammar point
-          emphasizes the inherent, subtle quality of that peace.
-    scene: Describing a serene visit to a temple and its calming effect.
-    register: formal
-    setting: reflective
-    nuance: 「和やかみ」 emphasizes the inherent, gentle and profound quality of peacefulness in the atmosphere.
-      This is distinct from 「和やかさ」 which would refer to the general state or degree of peacefulness.
   - english: Her new proposal had a unique freshness to it, unlike anything we'd seen before.
     japanese:
       - 彼女 の 新しい 提案 に は、これ まで 見 た こと の ない {新鮮 み} が あっ た。
@@ -158,24 +143,6 @@ examples:
     nuance: 「穏やかみ」 (less common than 「穏やかさ」) conveys the inherent, deeply felt quality of calmness and
       serenity, often associated with a person's demeanor or spirit. It suggests an intrinsic, profound
       tranquility.
-  - english: Her dance movements had an inherent lightness and grace.
-    japanese:
-      - 彼女 の ダンス の 動き に は、天性 の {軽 や かみ} が あっ た。
-      - 彼女 の ダンス の 動き に は、天性 の {軽 や かみ} が あり まし た。
-    english_literally: Her dance's movements in, natural lightness existed.
-    competing_grammar:
-      - competing_japanese:
-          - 彼女 の ダンス の 動き に は、天性 の 軽やか さ が あっ た。
-        english: Her dance movements had a natural lightness and grace.
-        hint: 「軽やかさ」 refers to the general quality of being light or nimble. The target grammar point
-          「軽やかみ」 focuses on the inherent quality of effortless grace in movement.
-    scene: A dance instructor commenting on a student's innate talent.
-    register: formal
-    setting: creative
-    speaker_gender: female
-    nuance: 「軽やかみ」 (less common than 「軽やかさ」) focuses on the inherent quality of lightness, nimbleness,
-      or effortless grace in movement, distinct from just being "light in weight" (軽さ). The use of 「彼女」
-      (kanojo) implies a female subject, which aligns with typical usage for discussing dance grace.
   - english: The evidence clearly showed the truth, leaving no doubt as to its undeniable obviousness.
     japanese:
       - その 証拠 は 真実 を 明らか に 示し、{明らか み} を 否定 する 余地 は なかっ た。
@@ -212,6 +179,40 @@ examples:
     nuance: While 「複雑さ」 (fukuzatsusa) refers to the degree of complexity, 「複雑み」 (fukuzatsumi), though
       less common, implies an inherent, perhaps subtle, quality of intricacy or depth that makes something
       complex, suggesting a deeper aspect beyond mere complication.
+  - english: The atmosphere of the teahouse had a profound gentleness that calmed everyone.
+    japanese:
+      - その 喫茶 店 の 雰囲気 に は、皆 を 落ち着か せる 深い {和やか み} が あっ た。
+      - その 喫茶 店 の 雰囲気 に は、皆 を 落ち着か せる 深い {和やか み} が あり まし た。
+    english_literally: That teahouse's atmosphere to, everyone to calm deep gentleness existed.
+    competing_grammar:
+      - competing_japanese:
+          - その 喫茶 店 の 雰囲気 に は、皆 を 落ち着か せる 深い 和やか さ が あっ た。
+        english: The atmosphere of the teahouse had a profound peacefulness that calmed everyone.
+        hint: While 「和やかさ」 describes the general state of peacefulness, the target grammar point emphasizes
+          the inherent, pervasive feeling of gentleness in the atmosphere.
+    scene: A quiet reflection on the calming ambiance of a traditional teahouse.
+    register: semi-formal
+    setting: reflective
+    speaker_gender: female
+    nuance: 「和やかみ」 (nagoyakami) suggests a deep, inherent sense of gentleness and peacefulness, often
+      associated with an environment's calming effect. The female speaker uses a more reflective tone.
+  - english: Her singing had a pure quality that touched everyone's heart.
+    japanese:
+      - 彼女 の 歌声 に は、皆 の 心 を 打つ {清らか み} が あっ た。
+      - 彼女 の 歌声 に は、皆 の 心 を 打つ {清らか み} が あり まし た。
+    english_literally: Her singing voice to, everyone's heart to strike pureness existed.
+    competing_grammar:
+      - competing_japanese:
+          - 彼女 の 歌声 に は、皆 の 心 を 打つ 清らか さ が あっ た。
+        english: Her singing had a pureness that touched everyone's heart.
+        hint: 「清らかさ」 refers to the general state of purity. The target grammar point, 「清らかみ」, emphasizes
+          an inherent, spiritual or intrinsic purity in her singing.
+    scene: A male music critic commenting on a singer's performance.
+    register: casual
+    setting: creative
+    speaker_gender: male
+    nuance: 「清らかみ」 (kiyorakami) implies an inherent, almost spiritual purity in the singing, suggesting
+      a quality that transcends mere cleanness. The male speaker expresses a subjective appreciation.
 post_example_writeup: As illustrated by these examples, the use of 「み」 with な-adjectives is quite specific
   and often conveys a nuance of inherent quality or a tangible 'feel' that is distinct from the more general
   nominalizer 「さ」. While some of these constructions might be less common in everyday conversation, they

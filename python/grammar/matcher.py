@@ -26,13 +26,56 @@ def _flatten_search_results(search):
 def compile_matcher(matcher: str) -> Matcher:
     # Do replacements".
     regex = matcher
+    regex = regex.replace('{i-adjective-past}', """
+        ⌈ˢ~かっᵖadj:~ᵇ~いʳ~イ⌉⌈ˢたᵖauxvʳタ⌉|
+        ⌈~⌉⌈ˢ~かっᵖsuff:adjectivalᵇ~いʳ~イ⌉⌈ˢたᵖauxvʳタ⌉|
+        ⌈~⌉⌈ˢしᵖv:non_self_reliantᵇするʳスル⌉⌈ˢ~かっᵖsuff:adjectivalᵇ~いʳ~イ⌉⌈ˢたᵖauxvʳタ⌉
+    """)
+
+
+    regex = regex.replace('{i-adjective-negative}', """
+        ⌈ˢ~ᵖadj:~ᵇ~いʳ~⌉⌈ˢないᵖadj:non_self_reliantʳナイ⌉|
+        ⌈ˢ~ᵖv:~⌉⌈ˢ~ᵖsuff:adjectivalᵇ~いʳ~イ⌉⌈ˢないᵖadj:non_self_reliantʳナイ⌉|
+        ⌈~⌉⌈~ᵖv:non_self_reliant~⌉⌈ˢ~ᵖsuff:~⌉⌈ˢないᵖadj:non_self_reliantʳナイ⌉
+    """)
+    regex = regex.replace('{verb-dictionary}', """
+        (?<!て)⌈ˢ~るᵖv:~ʳ~ル⌉|
+        ⌈ˢ~くᵖv:~ʳ~ク⌉|
+        ⌈ˢ~うᵖv:~ʳ~ウ⌉|
+        ⌈ˢ~むᵖv:~ʳ~ム⌉|
+        ⌈ˢ~すᵖv:~ʳ~ス⌉|
+        ⌈ˢ~ぐᵖv:~ʳ~グ⌉|
+        ⌈ˢ~ぶᵖv:~ʳ~ブ⌉|
+        ⌈ˢ~つᵖv:~ʳ~ツ⌉|
+        ⌈~⌉⌈ˢするᵖv:non_self_reliantʳスル⌉
+    """)
+    regex = regex.replace('{i-adjective-dictionary}', """
+        
+        (?!⌈ˢないᵖadj:non_self_reliantʳナイ⌉)
+        (?!⌈ˢ素晴らしいᵖadj:generalʳスバラシイ⌉)
+        (
+            ⌈ˢ~いᵖadj:~ʳ~イ⌉|
+            ⌈~⌉⌈ˢ~いᵖsuff:adjectivalʳ~イ⌉|
+            (
+                (
+                ⌈~ᵖadj:~ᵇ~いʳ~イ⌉|
+                ⌈ˢしᵖv:non_self_reliantᵇするʳスル⌉
+                )
+                (
+                い|
+                ⌈ˢいᵖint:fillerʳイー⌉|
+                ⌈ˢいᵖv:non_self_reliantᵇいるʳイル⌉
+                )
+            )
+        )
+    """)
     regex = regex.replace('{noun}', """
         (
             ⌈ˢ~ᵖpron~⌉|
             ⌈~ᵖn~⌉⌈~ᵖsuff:noun_likeʳ~⌉|
             ⌈~ᵖn~⌉
         )
-    """) #⌈ˢ一ᵖn:numeralʳヒト⌉⌈ˢつᵖsuff:noun_likeʳツ⌉
+    """) 
     regex = regex.replace('{ni}', """
         (
             に|
@@ -46,9 +89,11 @@ def compile_matcher(matcher: str) -> Matcher:
     """)
     regex = regex.replace('{nai}', """
         (
-            ⌈ˢませᵖauxv~ᵇますʳマス⌉⌈ˢんᵖauxv~ᵇぬʳズ⌉|
+            ⌈ˢないᵖadj:non_self_reliantʳナイ⌉|
             ⌈ˢないᵖauxv~ʳナイ⌉|
-            ⌈ˢなかっᵖauxv~ᵇないʳナイ⌉⌈ˢたᵖauxv~ʳタ⌉
+            ⌈ˢなかっᵖadj:non_self_reliantᵇないʳナイ⌉|
+            ⌈ˢなかっᵖauxvᵇないʳナイ⌉⌈ˢたᵖauxvʳタ⌉|
+            ⌈ˢませᵖauxvᵇますʳマス⌉⌈ˢんᵖauxvᵇぬʳズ⌉
         )
     """)
     regex = regex.replace('{suru}', """
@@ -80,8 +125,7 @@ def compile_matcher(matcher: str) -> Matcher:
     
     regex = regex.replace('{shinai}', """
         (
-        ⌈ˢしᵖvᵇするʳスル⌉⌈ˢないᵖauxvʳナイ⌉|
-        ⌈ˢしᵖvᵇするʳスル⌉⌈ˢませᵖauxvᵇますʳマス⌉⌈ˢんᵖauxvᵇぬʳズ⌉
+            ⌈ˢしᵖvᵇするʳスル⌉{nain}
         )
     """)
     regex = regex.replace('{verb-dictionary}', """

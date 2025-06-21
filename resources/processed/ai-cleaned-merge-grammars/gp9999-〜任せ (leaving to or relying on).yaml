@@ -1,9 +1,10 @@
 grammar_point: 〜任せ (leaving to or relying on)
+matcher: ⌈ˢ~任せᵖn:common_nounʳ~マカセ⌉| ⌈ˢ任せᵖv:generalᵇ任せるʳマカセル⌉
 learn_before:
   - ぜ (male emphatic particle)
   - ちょっと (adverb)
 id: gp9999
-meaning: leaving to, relying on, at the mercy of, entrusting to
+meaning: to leave to or rely on; at the mercy of
 pronunciation:
   katakana: マカセ
   romaji: makase
@@ -16,8 +17,8 @@ etymology: The grammatical pattern 〜任せ derives from the verb 任せる (ma
   'to leave to someone else,' or 'to leave to chance.' The nominalized form 任せ retains this core meaning
   but functions as a suffix, usually to a noun, to describe a state where an action, decision, or outcome
   is surrendered to or dependent on that preceding noun. This evolution from an active verb to a descriptive
-  suffix highlights a shift from the act of entrusting to the resulting condition of reliance or being
-  at the mercy of something.
+  suffix highlights a shift from an active verb to the resulting condition of reliance or being at the
+  mercy of something.
 writeup: |-
   「〜任せ」 is a grammatical pattern that indicates an action, decision, or outcome is **left to**, **reliant upon**, or **at the mercy of** the preceding noun. It often conveys a sense of relinquishing control, whether due to choice, necessity, or a lack of foresight.
 
@@ -43,9 +44,8 @@ false_friends:
     kind: similar expression
     nuance: While `〜任せ` conveys that something is *left to* or *at the mercy of* another, `〜次第` emphasizes
       *dependency* or *conditionality*. For example, 「結果{次第}」 (depending on the result) implies the result
-      *determines* the next step, whereas 「運{任せ}」 (leaving it to luck) implies *ceding control* to luck.
-      `次第` can also mean 'as soon as.'
-    grammar_point: <suggest>:〜次第 (as soon as)
+      *determines* the next step. `次第` can also mean 'as soon as'.
+    grammar_point: <suggest>:[Noun]次第 (depending on)
   - term: 〜に頼る
     meaning: to rely on, to depend on
     kind: similar expression
@@ -88,7 +88,7 @@ examples:
     register: casual
     setting: serious
     nuance: This sentence conveys a sense of resignation, indicating that the outcome is beyond their
-      control and they are simply leaving it to fate or chance. The phrase 「運任せ」directly expresses this
+      control and they are simply leaving it to fate or chance. The phrase 「運任せ」 directly expresses this
       fatalistic approach. This is commonly used when there are no other options but to rely on external
       factors.
   - english: Don't always leave everything to others.
@@ -112,24 +112,6 @@ examples:
     nuance: The phrase 「人任せ」 highlights the act of relying completely on others, often with a negative
       connotation of lacking independence or responsibility. The casual imperative 「〜な」 is typical for
       a parent instructing a child, emphasizing a direct prohibition.
-  - english: His travel plans are always spontaneous.
-    japanese:
-      - 彼 の 旅行 は いつ も {行き当たり ばったり} だ。
-      - 彼 の 旅行 は いつ も {行き当たり ばったり} です。
-      - 彼 の 旅行 は いつ も {行き当たり ばったり} だ よ。
-    english_literally: His travel is always spur-of-the-moment.
-    competing_grammar:
-      - competing_japanese:
-          - 彼 の 旅行 は いつ も その 場 {次第} だ。
-        english: His travel is always dependent on the situation.
-        hint: While 「〜次第」 emphasizes being determined by circumstances, we're looking for a phrase that
-          describes doing things unplanned, as they happen, characteristic of a lack of foresight.
-    scene: Two friends discussing their mutual adventurous friend's travel style.
-    register: casual
-    setting: friendly
-    nuance: Though `行き当たり任せ` is not a common specific compound, `行き当たりばったり` carries the `任せ` nuance of
-      doing things on the spur of the moment, relying on what comes next rather than pre-planning. It
-      describes a characteristic behavior.
   - english: He tends to do things just according to his mood.
     japanese:
       - 彼 は よく {気分 任せ} に 物事 を する。
@@ -257,10 +239,28 @@ examples:
     nuance: 「口任せ」 means speaking carelessly or impulsively, letting one's mouth just run without much
       thought or control. It implies a lack of filter and often results in regrettable or inappropriate
       comments. This usage conveys a critical tone towards the speaker's habit.
+  - english: He handles everything with sheer physical strength.
+    japanese:
+      - 彼 は 何 で も {腕 任せ} で やる。
+      - 彼 は 何 で も {腕 任せ} で やり ます。
+    english_literally: He handles everything strength-leavingly.
+    competing_grammar:
+      - competing_japanese:
+          - 彼 は 何 で も 腕力 {で} やる。
+        english: He handles everything with physical strength.
+        hint: 「腕力でやる」 implies using physical strength. 「腕任せ」 emphasizes relying *solely* on strength,
+          often implying a lack of other considerations or finesse.
+    scene: Two workers commenting on a strong colleague's approach to tasks.
+    register: casual
+    setting: friendly
+    nuance: 「腕任せ」 means to rely solely on one's physical strength or skill, sometimes implying a lack
+      of finesse or planning. It suggests a direct, perhaps brute-force, approach to tasks where physical
+      capability is the primary factor. This can be either a neutral observation or carry a slight nuance
+      of thoughtlessness, depending on context.
 post_example_writeup: As these examples demonstrate, the `〜任せ` pattern is versatile, describing situations
-  where control is ceded to external factors, whether it's fate (`運任せ`), other people (`人任せ`), or even
-  one's own impulses (`気分任せ`, `勢い任せ`). It can convey resignation, irresponsibility, or simply a realistic
-  acknowledgment of external influences. Pay attention to the noun preceding `任せ` to grasp the specific
-  nuance in each context.
+  where control is ceded to external factors, whether it's fate (`運任せ`), other people (`人任せ`), one's own
+  impulses (`気分任せ`, `勢い任せ`), or even one's own physical abilities (`腕任せ`). It can convey resignation,
+  irresponsibility, or simply a realistic acknowledgment of external influences. Pay attention to the
+  noun preceding `任せ` to grasp the specific nuance in each context.
 sources:
   bunpro: https://bunpro.jp/grammar_points/任せ

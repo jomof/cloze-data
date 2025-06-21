@@ -1434,3 +1434,4 @@ clear
 git add .
 bazel run //resources/grammar:calculate-grammar-point-dependencies
 exit
+claude
