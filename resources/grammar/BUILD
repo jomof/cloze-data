@@ -242,7 +242,6 @@ py_binary(
         "//python/db",
         "//python/grammar",
         "//python/mapreduce",
-        "//python/utils/build_cache/memoize",
         "//python/utils/visit_json",
         "@pip//json_repair",
     ],

@@ -1,10 +1,25 @@
 grammar_point: '[Clause]と言っても過言ではない (it is no exaggeration to say)'
 matcher: |-
-  と⌈ˢ言っᵖv:generalᵇ言うʳイウ⌉ても⌈ˢ過言ᵖn:common_nounʳカゴン⌉では⌈ˢないᵖadj:non_self_reliantʳナイ⌉|
-  と⌈ˢ言っᵖv:generalᵇ言うʳイウ⌉ても⌈ˢ過言ᵖn:common_nounʳカゴン⌉⌈ˢじゃᵖauxvᵇだʳダ⌉⌈ˢないᵖadj:non_self_reliantʳナイ⌉|
-  と⌈ˢ言っᵖv:generalᵇ言うʳイウ⌉ても⌈ˢ過言ᵖn:common_nounʳカゴン⌉では⌈ˢありᵖv:non_self_reliantᵇあるʳアル⌉⌈ˢませᵖauxvᵇますʳマス⌉⌈ˢんᵖauxvᵇぬʳズ⌉|
-  ⌈ˢってᵖprt:adverbial_particleʳッテ⌉⌈ˢ言っᵖv:generalᵇ言うʳイウ⌉ても⌈ˢ過言ᵖn:common_nounʳカゴン⌉では⌈ˢないᵖadj:non_self_reliantʳナイ⌉|
-  ⌈ˢってᵖprt:adverbial_particleʳッテ⌉⌈ˢ言っᵖv:generalᵇ言うʳイウ⌉ても⌈ˢ過言ᵖn:common_nounʳカゴン⌉⌈ˢじゃᵖauxvᵇだʳダ⌉⌈ˢないᵖadj:non_self_reliantʳナイ⌉
+  (
+    ⌈ˢとᵖprt:case_particleᵇとʳト⌉|
+    ˢってᵖprt:adverbial_particleᵇってʳッテ⌉
+  )
+  ⌈ˢ言っᵖv:general:godan-waa:conjunctive-geminateᵇ言うᵈ言うʳイッ⌉
+  ⌈ˢてᵖprt:conjunctive_particleᵇてʳテ⌉
+  ⌈ˢもᵖprt:binding_particleᵇもʳモ⌉
+  ⌈ˢ過言ᵖn:common_nounᵇ過言ʳカゴン⌉
+  (
+    ⌈ˢでᵖprt:case_particleᵇでʳデ⌉
+      ⌈ˢはᵖprt:binding_particleᵇはʳワ⌉
+      ⌈ˢないᵖadj:non_self_reliant:adjective:terminalᵇないᵈ無いʳナイ⌉|
+    ⌈ˢじゃᵖauxv:auxv-da:conjunctive-fusedᵇだᵈだʳジャ⌉
+      ⌈ˢないᵖadj:non_self_reliant:adjective:terminalᵇないᵈ無いʳナイ⌉|
+    ⌈ˢでᵖprt:case_particleᵇでʳデ⌉
+      ⌈ˢはᵖprt:binding_particleᵇはʳワ⌉
+      ⌈ˢありᵖv:non_self_reliant:godan-ra:conjunctiveᵇあるᵈ有るʳアリ⌉
+      ⌈ˢませᵖauxv:auxv-masu:imperfectiveᵇますᵈますʳマセ⌉
+      ⌈ˢんᵖauxv:auxv-nu:terminal-nasalᵇぬᵈずʳン⌉
+  )
 learn_before:
   - 膨大 (enormous・vast)
 id: gp9999

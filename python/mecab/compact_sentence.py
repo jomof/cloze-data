@@ -1,7 +1,7 @@
-import json
-from dataclasses import dataclass
-
+import re
 from python.mecab.tagger import get_mecab_tagger
+
+validate = True
 
 pos_map = {
     "名詞": "n",  # Noun
@@ -20,6 +20,20 @@ pos_map = {
     "接尾辞": "suff",  # Suffix
     "形状詞": "shp",  # Shape word
     "連体詞": "at",  # Attributive
+}
+
+pos2_map = {
+    "副詞可能": "adverb-possible",
+    "一般": "general",
+    "サ変可能": "suru-possible",
+    "地名": "place-name",
+    "状詞可能": "descriptive-possible",
+    "形状詞可能": "pos2-unk1",
+    "助数詞可能": "counter-possible",
+    "サ変形状詞可能": "pos2-unk2",
+    "人名": "person-name",
+    "助数詞": "counter",
+    "": ''
 }
 
 pos1_map = {
@@ -48,6 +62,113 @@ pos1_map = {
     "": ''
 }
 
+conjugated_type_map = {
+    "助動詞-タ": "auxv-ta",        # だった (datta - "was")
+    "助動詞-ダ": "auxv-da",        # だ (da - "is/am/are")
+    "助動詞-マス": "auxv-masu",    # ます (masu - polite ending)
+    "助動詞-ヌ": "auxv-nu",        # ぬ (nu - classical negative), classical
+    "助動詞-デス": "auxv-desu",    # です (desu - polite copula)
+    "助動詞-ナイ": "auxv-nai",     # ない (nai - "not")
+    "助動詞-ラシイ": "auxv-rashii",  # らしい (rashii - "seems like/apparently")
+    "助動詞-レル": "auxv-reru",    # られる (rareru - passive/potential)
+    "助動詞-タイ": "auxv-tai",     # たい (tai - "want to")
+    "文語助動詞-リ": "auxv-ri",  # り (ri - classical perfective), classical
+    "文語助動詞-ベシ": "auxv-beshi",  # べし (beshi - "should/ought to"), classical
+    "文語助動詞-ゴトシ": "auxv-gotoshi",  # ごとし (gotoshi - "like/as if"), classical
+    "助動詞-マイ": "auxv-mai",  # まい (mai - "probably won't/shouldn't")
+    "助動詞-ジャ": "auxv-ja",  # じゃ (ja - contracted copula "is/am/are")
+    "助動詞-ヤ": "auxv-ya",  # や (ya - classical question particle/auxiliary)
+    "文語助動詞-タリ-断定": "auxv-tari",  # たり (tari - classical assertive), classical
+    "形容詞": "adjective",          # 高い (takai - "tall/expensive")
+    "五段-ラ行": "godan-ra",       # 作る (tsukuru - "to make")
+    "五段-カ行": "godan-ka",       # 書く (kaku - "to write")
+    "五段-ガ行": "godan-ga",       # 泳ぐ (oyogu - "to swim")
+    "五段-サ行": "godan-sa",       # 話す (hanasu - "to speak")
+    "五段-タ行": "godan-ta",       # 立つ (tatsu - "to stand")
+    "五段-ナ行": "godan-na",       # 死ぬ (shinu - "to die"), rare
+    "五段-バ行": "godan-ba",       # 遊ぶ (asobu - "to play")
+    "五段-マ行": "godan-ma",       # 読む (yomu - "to read")
+    "五段-ワ行": "godan-wa",       # 買う (kau - "to buy")
+    "五段-ワア行": "godan-waa",    # 言う (iu - "to say")
+    "上一段-ア行": "i-ichidan-a",  # いる (iru - "to exist")
+    "上一段-カ行": "i-ichidan-ka", # 起きる (okiru - "to wake up")
+    "上一段-ガ行": "i-ichidan-ga", # 過ぎる (sugiru - "to pass")
+    "上一段-ザ行": "i-ichidan-za", # 信じる (shinjiru - "to believe")
+    "上一段-タ行": "i-ichidan-ta", # 落ちる (ochiru - "to fall")
+    "上一段-ナ行": "i-ichidan-na", # 死ぬる (shinuru), archaic
+    "上一段-バ行": "i-ichidan-ba", # 浴びる (abiru - "to bathe")
+    "上一段-マ行": "i-ichidan-ma", # 見る (miru - "to see")
+    "上一段-ラ行": "i-ichidan-ra", # 居る (iru - "to be"), archaic
+    "下一段-ハ行": "e-ichidan-ha",  # へる (heru - "to decrease"), rare
+    "下一段-ア行": "e-ichidan-a",  # える (eru - "to get"), rare
+    "下一段-サ行": "e-ichidan-sa", # せる (seru - causative), rare
+    "下一段-バ行": "e-ichidan-ba", # 食べる (taberu - "to eat")
+    "下一段-カ行": "e-ichidan-ka", # 受ける (ukeru - "to receive")
+    "下一段-ガ行": "e-ichidan-ga", # 上げる (ageru - "to raise")
+    "下一段-ザ行": "e-ichidan-za", # 教える (oshieru - "to teach")
+    "下一段-タ行": "e-ichidan-ta", # 捨てる (suteru - "to throw away")
+    "下一段-ダ行": "e-ichidan-da", # 出る (deru - "to exit")
+    "下一段-ナ行": "e-ichidan-na", # 寝る (neru - "to sleep")
+    "下一段-マ行": "e-ichidan-ma", # 止める (yameru - "to stop")
+    "下一段-ラ行": "e-ichidan-ra", # 入れる (ireru - "to put in")
+    "文語下二段-ア行": "nidan-a",   # 得 (u - "to get"), classical
+    "文語下二段-カ行": "nidan-ka",  # 受く (uku - "to receive"), classical
+    "文語下二段-ガ行": "nidan-ga",  # 上ぐ (agu - "to raise"), classical
+    "文語下二段-ザ行": "nidan-za",  # 教ふ (oshefu - "to teach"), classical
+    "文語下二段-タ行": "nidan-ta",  # 捨つ (sutsu - "to throw away"), classical
+    "文語下二段-ダ行": "nidan-da",  # 出づ (idezu - "to exit"), classical
+    "文語下二段-ナ行": "nidan-na",  # 寝ぬ (nenu - "to sleep"), classical
+    "文語下二段-バ行": "nidan-ba",  # 食ぶ (tabu - "to eat"), classical
+    "文語下二段-マ行": "nidan-ma",  # 止む (yamu - "to stop"), classical
+    "文語下二段-ヤ行": "nidan-ya",  # 焼ゆ (yaku - "to burn"), classical
+    "文語下二段-ラ行": "nidan-ra",  # 入る (iru - "to enter"), classical
+    "文語下二段-ワ行": "nidan-wa",  # 植う (uu - "to plant"), classical
+    "文語上二段-カ行": "upper-nidan-ka", # 起く (oku - "to wake up"), classical
+    "文語上二段-ガ行": "upper-nidan-ga", # 過ぐ (sugu - "to pass"), classical
+    "カ行変格": "ka-irregular",    # 来る (kuru - "to come")
+    "サ行変格": "sa-irregular",    # する (suru - "to do")
+    "文語サ行変格": "classical-sa-irregular",  # す (su - classical "to do"), classical
+    "文語四段-カ行": "yodan-ka",  # 書く (kaku - "to write"), classical
+    "文語四段-ガ行": "yodan-ga",  # 泳ぐ (oyogu - "to swim"), classical
+    "文語四段-サ行": "yodan-sa",  # 話す (hanasu - "to speak"), classical
+    "文語四段-タ行": "yodan-ta",  # 立つ (tatsu - "to stand"), classical
+    "文語四段-ナ行": "yodan-na",  # 死ぬ (shinu - "to die"), classical
+    "文語四段-バ行": "yodan-ba",  # 遊ぶ (asobu - "to play"), classical
+    "文語四段-マ行": "yodan-ma",  # 読む (yomu - "to read"), classical
+    "文語四段-ラ行": "yodan-ra",  # 作る (tsukuru - "to make"), classical
+    "文語四段-ワ行": "yodan-wa",  # 買ふ (kafu - "to buy"), classical
+    "文語四段-ハ行": "yodan-ha",  # 笑ふ (warafu - "to laugh"), classical
+    "文語形容詞-ク": "classical-adjective-ku",  # 高く (takaku), classical
+   "": ""
+}
+
+conjugated_form_map = {
+  "仮定形-一般": "conditional", 
+  "仮定形-融合": "conditional-fused",
+  "命令形": "imperative",
+  "意志推量形": "volitional-presumptive",
+  "未然形-サ": "imperfective-sa",
+  "未然形-一般": "imperfective",
+  "終止形-一般": "terminal",
+  "終止形-撥音便": "terminal-nasal",
+  "終止形-融合": "terminal-fused",
+  "語幹-一般": "stem",
+  "連体形-一般": "attributive",
+  "連用形-イ音便": "conjunctive-i-sound",
+  "連用形-ニ": "conjunctive-ni",
+  "連用形-一般": "conjunctive",
+  "連用形-促音便": "conjunctive-geminate", 
+  "連用形-撥音便": "conjunctive-nasal",
+  "連用形-融合": "conjunctive-fused",
+  "未然形-セ": "imperfective-se",
+  "連用形-ウ音便": "conjunctive-u-sound",
+  "連体形-撥音便": "attributive-nasal",
+  "已然形-一般": "realis",
+  "連体形-補助": "attributive-auxiliary",
+  "未然形-補助": "imperfective-auxiliary",
+  "": ""
+}
+
 pos_to_chars = {
     "prt": ['は', 'が', 'を', 'に', 'へ', 'と', 'で', 'か', 'の', 'ね', 'よ', 'て', 'わ', 'も', 'ぜ', 'ん', 'な', 'ば', 'ぞ', 'し', 'さ', 'や', 'ら', 'ど', 'い', 'つ', 'べ', 'け', 'ょ'],
     "sym": [], 
@@ -60,143 +181,28 @@ char_to_pos = {
     for ch in chars
 }
 
-@dataclass
-class Token:
-    surface: str
-    pos: str = ''  # Part of speech, e.g., "n" for noun, "v" for verb
-    base_form: str = ''
-    reading: str = ''
-
-    def to_dict(self):
-        return {
-            'surface': self.surface, 
-            'pos': self.pos, 
-            'base_form': self.base_form, 
-            'reading': self.reading, 
-            }
-
-# Example input: ⌈ˢ今日ᵖnʳキョウ⌉は⌈ˢいいᵖadjʳヨイ⌉⌈ˢ天気ᵖnʳテンキ⌉⌈ˢですᵖauxvʳデス⌉ね。
-def compact_sentence_to_tokens(compact_sentence: str) -> list[Token]:
-    i = 0
-    tokens = []
-    state = 'normal'
-    field_type = ''
-    field_types_map = {
-        'ˢ' : 'surface',
-        'ᵖ' : 'pos',
-        'ᵇ' : 'base_form',
-        'ʳ' : 'reading'
-    }
-    field_types = field_types_map.keys()
-    field_value = ''
-    token_fields = {}
-
-    def add_field():
-        nonlocal field_value, field_type
-        token_fields[field_type] = field_value
-        field_type = ''
-        field_value = ''
-    
-    def add_token():
-        nonlocal token_fields, tokens, state
-        if 'surface' not in token_fields:
-            raise ValueError("Token must have a surface field")
-        token = Token(
-            surface=token_fields.get('surface', ''),
-            pos=token_fields.get('pos', ''),
-            base_form=token_fields.get('base_form', ''),
-            reading=token_fields.get('reading', ''),
-        )
-        tokens.append(token)
-        token_fields = {}
-        state = 'normal'
-
-    while i < len(compact_sentence):
-        ch = compact_sentence[i]
-    
-        if state == 'normal':
-            if ch == '⌈':
-                state = 'in_token'
-                token_fields = {}
-            else:
-                tokens.append(Token(surface=ch, pos=char_to_pos.get(ch, ''), base_form=ch, reading=ch))
-            i += 1
-        elif state == 'in_token':
-            if ch in field_types:
-                state = 'in_field'
-                field_type = field_types_map[ch]
-                field_value = ''
-                i += 1
-            else:
-                raise ValueError(f"Expected field type but found '{ch}' at position {i}")
-        elif state == 'in_field':
-            if ch in field_types :
-                add_field()
-                state = 'in_token'
-            elif ch == '⌉':
-                add_field()
-                add_token()
-                state = 'normal'
-                i += 1
-            else:
-                field_value += ch
-                i += 1
-                
-        else:
-            raise ValueError(f"Unexpected state '{state}'")
-    return tokens
-
-
-def tokens_to_compact_sentence(tokens):
-    result = ''
-    for token in tokens:
-        # If single-character prt, sym, or auxs, emit bare surface
-        if token.pos in ['prt', 'sym', 'auxs'] and len(token.surface) == 1:
-            result += token.surface
-            continue
-        if not (token.pos or token.base_form):
-            result += token.surface
-            continue
-        result += '⌈'
-        if token.surface:
-            result += 'ˢ' + token.surface
-        if token.pos:
-            result += 'ᵖ' + token.pos
-        if token.base_form and token.base_form != token.surface:
-            result += 'ᵇ' + token.base_form
-        if token.reading and token.reading != token.surface:
-            result += 'ʳ' + token.reading
-        result += '⌉'
-    return result
-
-def tokens_to_japanese(tokens: list[Token], spaces=False) -> str:
+def compact_sentence_to_japanese(compact_sentence, spaces=False, collapse_punctuation=True):
+    pattern = r'ˢ(.*?)ᵖ'
+    matches = re.findall(pattern, compact_sentence, re.DOTALL)
     if spaces:
-        result = ''
-        for token in tokens:
-            if (len(result) > 0 
-                and last_token.surface != '{' 
-                and (token.pos != 'auxs' or token.surface == '{') 
-                and (last_token.pos != 'auxs' or last_token.surface == '}')):
-                result += ' '
-            result += token.surface
-            last_token = token
+        result = ' '.join(matches).replace('{ ', '{').replace(' }', '}')
+        if collapse_punctuation:
+            for punc in pos_to_chars['auxs']:
+                if punc == '{' or punc == '}': continue
+                result = result.replace(f' {punc}', punc)
+                result = result.replace(f'{punc} ', punc)
         return result
-    return ''.join(token.surface for token in tokens)
+    else:
+        return ''.join(matches)
 
-def compact_sentence_to_japanese(input_string, spaces=False):
-    try:
-        tokens = compact_sentence_to_tokens(input_string)
-        return tokens_to_japanese(tokens, spaces=spaces)
-    except Exception as e:
-        print(f"Sentence: '{input_string}'")
-        raise ValueError(f"Failed to convert compact sentence '{input_string}' to Japanese: {e}")
+_validate_compact_token_to_raw_mecab = {}
 
-
-def parse_raw_mecab_output(raw_output):
+def _parse_raw_mecab_output(raw_output : str) -> list[dict]:
     tokens = []
     for line in raw_output.split("\n"):
         if line == "EOS":
             continue
+        line = line.strip()
         parts = line.split("\t")
         if len(parts) < 2:
             continue
@@ -212,53 +218,141 @@ def parse_raw_mecab_output(raw_output):
             if value == "":
                 return
             token[field] = value
-        add("pos", pos_map[features[0]])
-        add("pos_detail_1", pos1_map[features[1]])
-        add("pos_detail_2", features[2])
-        add("pos_detail_3", features[3])
-        add("conjugated_type", features[4])
-        add("conjugated_form", features[5])
-        add("reading", features[6])
-        add("unknown_7", features[7])
-        add("unknown_8", features[8])
-        add("pronunciation", features[9])
-        add("basic_form", features[10])
-        add("unknown_11", features[11])
-        add("unknown_12", features[12])
-        add("unknown_13", features[13])
-        add("unknown_14", features[14])
-        add("unknown_15", features[15])
+        try:
+
+            # --- Safe Parsing Helper Function ---
+            def get_feature(features_list, index, default_value=""):
+                """Safely gets a feature from the list by index, returning a default value if it's out of bounds."""
+                if index < len(features_list):
+                    return features_list[index]
+                return default_value
+
+            # --- Your Main Parsing Logic ---
+            # Assuming 'features' is the list of fields from the UniDic output (e.g., ['名詞', '数詞'])
+            # and 'add(key, value)' is your function to build the result.
+
+            # We now use the get_feature() helper for every access to make the code robust.
+
+            # --- Part of Speech (POS) ---
+            # Using .get() for the maps is also a good defensive practice.
+            add("pos", pos_map.get(get_feature(features, 0)))
+            add("pos_detail_1", pos1_map.get(get_feature(features, 1)))
+            add("pos_detail_2", pos2_map[get_feature(features, 2)])
+            add("pos_detail_3", get_feature(features, 3))
+
+            # --- Conjugation ---
+            add("conjugated_type", conjugated_type_map.get(get_feature(features, 4)))
+            add("conjugated_form", conjugated_form_map.get(get_feature(features, 5)))
+
+            # --- Lexical Information & Pronunciation ---
+            add("lemma_pronunciation", get_feature(features, 6))
+            add("lemma", get_feature(features, 7))
+
+            # --- Orthography (Spelling) ---
+            add("surface_orthography", get_feature(features, 8))
+            add("base_orthography", get_feature(features, 10))
+
+            # --- Pronunciation ---
+            add("surface_pronunciation", get_feature(features, 9))
+            add("base_pronunciation", get_feature(features, 11))
+            add("surface_kana", get_feature(features, 20))
+            add("base_kana", get_feature(features, 21))
+
+            # --- Semantic and Grammatical Info ---
+            add("word_origin", get_feature(features, 12))
+            add("initial_inflection_type", get_feature(features, 13))
+            add("initial_inflection_form", get_feature(features, 14))
+            add("final_inflection_type", get_feature(features, 15))
+            add("final_inflection_form", get_feature(features, 16))
+            add("initial_connection_type", get_feature(features, 17))
+            add("final_connection_type", get_feature(features, 18))
+            add("entry_type", get_feature(features, 19))
+
+            # --- Word Form (Pronunciation-based) ---
+            add("surface_form_pronunciation", get_feature(features, 22))
+            add("base_form_pronunciation", get_feature(features, 23))
+
+            # --- Accent Information ---
+            add("accent_type", get_feature(features, 24))
+            add("accent_connection_type", get_feature(features, 25))
+            add("accent_modification_type", get_feature(features, 26))
+
+            # --- Unique Identifiers ---
+            add("internal_id", get_feature(features, 27))
+            add("lemma_id", get_feature(features, 28))
+
+        except Exception as e:
+            print(f"LINE: {line}")
+            raise
+
+        if validate:
+            compact_token = _raw_token_to_compact_token(token)
+            japanese = ""
+            for x in raw_output.split("\n"):
+                if x == "EOS":
+                    continue
+                x = x.strip()
+                parts = x.split("\t")
+                japanese += parts[0] + " "
+
+            if compact_token not in _validate_compact_token_to_raw_mecab:
+                _validate_compact_token_to_raw_mecab[compact_token] =[line, japanese]
+            else:
+                [prior_line, prior_japanese] = _validate_compact_token_to_raw_mecab[compact_token]
+                if line != prior_line:
+                    with open("/workspaces/cloze-data/conflicts.txt", "w") as file:
+                        file.write(f"COMPACT:     {compact_token}\n")
+                        file.write(f"  TOKEN1:    {line}\n")
+                        file.write(f"  SENTENCE1: {japanese}\n")
+                        file.write(f"  TOKEN2:    {prior_line}\n")
+                        file.write(f"  SENTENCE2: {prior_japanese}\n")
+                    raise Exception("Two Mecab lines map to the same compact representation.")
+
         tokens.append(token)
     return tokens
 
-def raw_tokens_to_compact_sentence(tokens: list[dict]) -> str:
+def _raw_token_to_compact_token(token: dict) -> str:
     recombined = ""
-    for token in tokens:
-        surface = token["surface"]
-        pos = token["pos"]
-        pos_detail_1 = token.get("pos_detail_1")
-        pos_code = pos_map.get(pos, pos)
-        if pos_code in ['prt', 'sym', 'auxs'] and len(surface) == 1:
-            recombined += surface
-        else:
-            recombined += f"⌈ˢ{surface}ᵖ{pos_code}"
-            if pos_detail_1:
-                recombined += f":{pos_detail_1}"
-            base = token.get("basic_form", None)
-            if base and base != surface:
-                recombined += f"ᵇ{base}"
-            reading = token.get("reading", None)
-            if reading and reading != surface:
-                recombined += f"ʳ{reading}"
-            recombined += "⌉"
+    surface = token["surface"]
+    pos = token["pos"]
+    pos_detail_1 = token.get("pos_detail_1")
+    pos_detail_2 = token.get("pos_detail_2")
+    
+    conjugated_type = token.get("conjugated_type")
+    conjugated_form = token.get("conjugated_form")
+    lemma = token.get("lemma")
+    base = token.get("base_orthography", None)
+    pronunciation = token.get("surface_pronunciation", None)
+
+    pos_code = pos_map.get(pos, pos)
+
+    recombined += f"⌈ˢ{surface}ᵖ{pos_code}"
+    if pos_detail_1:
+        recombined += f":{pos_detail_1}"
+    if pos_detail_2 and pos_detail_2 != "general":
+        recombined += f":{pos_detail_2}"
+    if conjugated_type:
+        recombined += f":{conjugated_type}"
+    if conjugated_form:
+        recombined += f":{conjugated_form}"
+    if base:
+        recombined += f"ᵇ{base}"
+    if lemma and lemma != surface:
+        recombined += f"ᵈ{lemma}"
+    if pronunciation and pronunciation != surface:
+        recombined += f"ʳ{pronunciation}"
+    recombined += "⌉"
     return recombined
 
-def mecab_raw_to_compact_sentence(raw: str) -> str:
-    tokens = parse_raw_mecab_output(raw)
-    return raw_tokens_to_compact_sentence(tokens)
+def _raw_tokens_to_compact_sentence(tokens: list[dict]) -> str:
+    recombined = ""
+    for token in tokens:
+        recombined += _raw_token_to_compact_token(token)
+    return recombined
 
-def mecab_raw_to_tokens(raw):
-    return compact_sentence_to_tokens(mecab_raw_to_compact_sentence(raw))
+def _mecab_raw_to_compact_sentence(raw: str) -> str:
+    tokens = _parse_raw_mecab_output(raw)
+    return _raw_tokens_to_compact_sentence(tokens)
 
 def japanese_to_compact_sentence(japanese: str) -> str:
     wakati = get_mecab_tagger()
@@ -266,30 +360,28 @@ def japanese_to_compact_sentence(japanese: str) -> str:
     # Fix for special case seen
     japanese = japanese.replace(' っ', 'っ').replace('っ ', 'っ')
     raw = wakati.parse(japanese)
-    return mecab_raw_to_compact_sentence(raw)
+    return _mecab_raw_to_compact_sentence(raw)
 
     
-def japanese_to_japanese_with_spaces(japanese: str) -> str:
+def japanese_to_japanese_with_spaces(japanese: str, collapse_punction: bool = True) -> str:
     wakati = get_mecab_tagger()
     try:
         # Fix for special case seen
         japanese = japanese.replace(' っ', 'っ').replace('っ ', 'っ')
         raw = wakati.parse(japanese)
-        compact_sentence = mecab_raw_to_compact_sentence(raw)
-        result = compact_sentence_to_japanese(compact_sentence, spaces=True)
+        compact_sentence = _mecab_raw_to_compact_sentence(raw)
+        result = compact_sentence_to_japanese(compact_sentence, spaces=True, collapse_punction=collapse_punction)
 
-        # # Round trip check
-        # reconstructed = wakati.parse(result)
-        # reconstructed_compact_sentence = mecab_raw_to_compact_sentence(reconstructed)
-        # if compact_sentence != reconstructed_compact_sentence:
-        #     raise ValueError(f"Reconstructed compact sentence does not match original\n{japanese}=>{compact_sentence}\n{result}=>{reconstructed_compact_sentence}")
+        if validate:
+            # Round trip check
+            reconstructed = wakati.parse(result)
+            reconstructed_compact_sentence = _mecab_raw_to_compact_sentence(reconstructed)
+            if compact_sentence != reconstructed_compact_sentence:
+                raise ValueError(f"Reconstructed compact sentence does not match original\n{japanese}=>{compact_sentence}\n{result}=>{reconstructed_compact_sentence}")
 
         return result
     except Exception as e:
         raise Exception(f"Failed to convert Japanese '{japanese}' to spaced Japanese: {e}")
 
-def japanese_to_tokens(japanese: str) -> list[Token]:
-    wakati = get_mecab_tagger()
-    raw = wakati.parse(japanese)
-    return parse_raw_mecab_output(raw)
-
+def split_compact_sentence(compact_sentence: str) -> list[str]:
+    return re.findall(r'⌈[^⌉]*⌉', compact_sentence)

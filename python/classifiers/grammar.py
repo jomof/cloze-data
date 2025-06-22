@@ -1,4 +1,4 @@
-import re
+
 import numpy as np
 from collections import Counter, defaultdict
 from itertools import combinations
@@ -17,7 +17,8 @@ from python.console import display
 import numpy as np
 from itertools import combinations
 import os
-from python.grammar import compile_matcher
+
+from python.classifiers.training_tokens import prepare_sentence_for_tokenization
 
 
 
@@ -154,7 +155,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         """
         # Clean texts and filter labels
         with display.work("preprocessing"):
-            cleaned_texts = [_clean_text(text) for text in texts]
+            cleaned_texts = [prepare_sentence_for_tokenization(text) for text in texts]
             filtered_labels = self._filter_rare_labels(labels)
         
         # Vectorize texts
@@ -234,7 +235,7 @@ class JapaneseGrammarLabelCompletingClassifier:
             return prediction[0]
 
         # Clean and vectorize texts
-        cleaned_texts = [_clean_text(text) for text in texts]
+        cleaned_texts = [prepare_sentence_for_tokenization(text) for text in texts]
         X = self.vectorizer.transform(cleaned_texts)
         
         # --- ADDED: Apply the same scaling ---
@@ -845,43 +846,7 @@ class JapaneseGrammarLabelCompletingClassifier:
         
         return "\n".join(output)
     
-def _clean_text(text: str) -> str:
-    """
-    Parses the augmented text and creates a clean 'word_pos' sequence.
-    Example: '⌈ˢ机ᵖnʳツクエ⌉' -> '机_n'
-    """
 
-    # Strip grammar denoting brackets.
-    text = text.replace('{', '').replace('}', '')
-
-    # If it looks like a plain japanese sentence, then convert to compact
-    if '⌈' not in text:
-        text = japanese_to_compact_sentence(text)
-
-    # This regex is an example to find all augmented words. You may need to refine it.
-    # It looks for the surface form (ˢ...) and the part-of-speech (ᵖ...).
-    pattern = re.compile(r'⌈ˢ(?P<surface>.+?)ᵖ(?P<pos>.+?)ʳ.+?(?P<last>.?)⌉')
-    
-    # Function to replace each match with the 'word_pos' format, now with leading/trailing spaces
-    def repl(match):
-        surface = match.group('surface')
-        pos = match.group('pos')
-        last = match.group('last')
-        # Clean up the POS tag (e.g., 'v' instead of 'vb') if necessary
-        clean_pos = pos.split(' ')[0] # Example of simplification
-        # Add spaces to ensure token separation
-        return f" {surface}{clean_pos}{last} "
-
-    # Replace all augmented words
-    processed_text = pattern.sub(repl, text)
-    
-    # Remove any remaining special characters that are not part of words
-    processed_text = re.sub(r'[⌈⌉ˢᵖʳ]', '', processed_text)
-    
-    # Normalize whitespace: collapse multiple spaces into one and strip ends.
-    # This is the key to ensuring ' 机_n の ' becomes '机_n の'.
-    result = ' '.join(processed_text.split())
-    return result
     
 def apply_negatives(
         positives: Dict[str, List[str]], 
@@ -921,113 +886,3 @@ def union_positives(*dicts: Dict[str, List[str]]) -> Dict[str, List[str]]:
         final_result[key] = list(s)
 
     return final_result
-
-# Gather training data consistently
-from python.mapreduce import MapReduce
-import asyncio
-from python.mecab.compact_sentence import japanese_to_compact_sentence
-positive_examples = {}
-negative_examples = {}
-matchers = {}
-
-def accumulate(table: Dict[str, List[str]],
-               key: str,
-               value: Union[str, List[str]]) -> int:
-    """Add value(s) under key, keep things sorted, and return how many NEW items."""
-    # Normalize to a set of incoming values
-    values = {value} if isinstance(value, str) else set(value)
-    if not values:
-        return 0
-
-    # Existing entries as a set
-    old_set = set(table.get(key, []))
-    new_set = old_set.union(values)
-
-    # Store back as a sorted list
-    table[key] = sorted(new_set)
-    # Return count of genuinely new items
-    return len(new_set) - len(old_set)
-
-def map(current, _):
-    import re
-    grammar_point = current['grammar_point']
-    matcher_string = current.get('matcher','')
-    if matcher_string:
-        matcher = compile_matcher(matcher_string)
-    else:
-        matcher = None
-
-    
-    examples = current.get('examples', [])
-    positive = []
-    negative = []
-    for example in examples:
-        japaneses = example.get('japanese', [])
-        for japanese in japaneses:
-            compact = japanese_to_compact_sentence(japanese.replace('{', '').replace('}', ''))
-            positive.append(compact)
-
-            if matcher:
-                if not matcher.match_japanese(compact):
-                    display.warn(f"GRAMMAR:  {grammar_point}")
-                    c = compact.replace('⌈','\u001b[K\n⌈')
-                    display.warn(f"COMPACT:  {c}")
-                    display.warn(f"JAPANESE: {japanese}")
-                    display.warn(f"MATCHER: {matcher.regex_string}")
-                    display.warn(f"EXPECTED MATCH")
-                    display.error(f"Expected match {matcher}: {japanese}->{compact}")
-            
-        for competing in example.get("competing_grammar", []):
-            for japanese in competing.get("competing_japanese", []):
-                compact = japanese_to_compact_sentence(japanese.replace('{', '').replace('}', ''))
-                negative.append(compact)
-                if matcher:
-                    if matcher.match_japanese(compact):
-                        display.warn(f"POINT:    {grammar_point}")
-                        c = compact.replace('⌈','\u001b[K\n⌈')
-                        display.warn(f"COMPACT:  {c}")
-                        display.warn(f"JAPANESE: {japanese}")
-                        display.warn(f"EXPECTED NO MATCH")
-                        display.error(f"Expected no match {matcher}: {japanese}->{compact}")
-    return grammar_point, matcher, positive, negative
-
-def fold(_, points):
-    grammar_point, matcher, positive, negative = points
-    
-    if matcher:
-        accumulate(matchers, matcher, grammar_point)
-    for compact in positive:
-        accumulate(positive_examples, compact, grammar_point)
-    for compact in negative:
-        accumulate(negative_examples, compact, grammar_point)
-
-def gather_training_data(grammar_root):
-    mr = MapReduce(
-        input_dir            = grammar_root,
-        map_func_name        = 'building training set',
-        map_func             = map,
-        fold_func_name       = 'accumulating training set',
-        fold_func            = fold,
-        max_threads          = 5,
-    )
-
-    asyncio.run(mr.run())
-
-    # Augment positives with explicit matchers
-    added_grammar_points = 0
-    sentences_before = len(positive_examples)
-    for matcher, points in matchers.items():
-        for positive in positive_examples:
-            if matcher.match_japanese(positive):
-                added_grammar_points += accumulate(positive_examples, positive, points)
-        for negative in negative_examples:
-            if matcher.match_japanese(negative):
-                added_grammar_points += accumulate(positive_examples, negative, points)
-            
-    display.check(f"Augmented with {len(positive_examples) - sentences_before} additional sentences")
-    display.check(f"Augmented with {added_grammar_points} additional grammar points")
-
-    return {
-        'positive': positive_examples,
-        'negative': negative_examples
-    }

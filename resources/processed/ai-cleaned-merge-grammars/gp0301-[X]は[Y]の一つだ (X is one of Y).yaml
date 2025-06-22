@@ -1,5 +1,15 @@
 grammar_point: '[X]は[Y]の一つだ (X is one of Y)'
-matcher: '{noun}の⌈ˢ一ᵖn:numeralʳヒト⌉⌈ˢつᵖsuff:noun_likeʳツ⌉{desu}'
+matcher: |-
+  {noun}⌈ˢのᵖprt:case_particleᵇのʳノ⌉⌈ˢ一ᵖn:numeralᵇ一ʳヒト⌉
+  (
+    ⌈ˢつᵖsuff:noun_like:counterʳツ⌉|
+    ⌈ˢつᵖsuff:noun_like:counterᵇつʳツ⌉
+  )
+  (
+    ⌈ˢだᵖauxv:auxv-da:terminalᵇだʳダ⌉|
+    ⌈ˢですᵖauxv:auxv-desu:terminalᵇですʳデス⌉
+  )
+
 learn_before:
   - 一つは (one of them is)
 id: gp0301

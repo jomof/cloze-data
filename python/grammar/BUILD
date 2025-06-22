@@ -16,6 +16,7 @@ py_test(
     srcs = ["matcher_test.py"],
     deps = [
         ":grammar",
+        "//python/mecab",
     ],
 )
 

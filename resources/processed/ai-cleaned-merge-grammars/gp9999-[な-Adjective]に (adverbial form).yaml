@@ -1,5 +1,14 @@
 grammar_point: '[な-Adjective]に (adverbial form)'
-matcher: (⌈ˢ.*ᵖ(n|shp).*⌉⌈ˢにᵖauxvᵇだʳダ⌉|⌈ˢ.*ᵖadvʳ.*⌉に)
+matcher: |-
+  (
+    ⌈ˢ~ᵖshp:~⌉|
+    ⌈ˢ~ᵖadv~⌉|
+    ⌈ˢ~ᵖn:~⌉
+  )
+  (
+    ⌈ˢにᵖauxv:auxv-da:conjunctive-niᵇだᵈだʳニ⌉|
+    ⌈ˢにᵖprt:case_particleᵇにʳニ⌉
+  )
 learn_before:
   - な-Adjectives (adjectival nouns)
 id: gp9999
@@ -137,23 +146,6 @@ examples:
       'seems/looks like,' turning 「嬉しい」 (ureshii, happy, an い-adjective) into a な-adjective-like form
       「嬉しそう」 (looking happy). Adding 「に」 then creates an adverb 'happily' or 'looking happy.' This example
       shows how complex adjectival forms can still be made adverbial with 「に」.
-  - english: We need to consider this problem seriously.
-    japanese:
-      - この 問題 を 真剣 {に} 考える 必要 が あり ます。
-      - この 問題 に 真剣 {に} 取り組む 必要 が あり ます。
-      - 私 たち は この 問題 を 真剣 {に} 議論 する べき です。
-    english_literally: This problem seriously think need exists.
-    competing_grammar:
-      - competing_japanese:
-          - この 問題 を 真剣 {で} 考える 必要 が あり ます。
-        english: It is serious, and we need to consider this problem.
-        hint: 「真剣で」 doesn't correctly modify 'consider' to mean 'seriously'. We need the adverbial form.
-    scene: During a business meeting, a manager addresses their team.
-    register: teineigo (polite)
-    setting: professional
-    nuance: 「真剣 {に}」 (shinken ni) from 「真剣」 (shinken, serious/earnest). The phrase 「真剣に 考える」 (shinken
-      ni kangaeru) means 'to think seriously.' This usage is common in formal and professional contexts
-      to emphasize the gravity or importance of an action.
   - english: He spoke frankly.
     japanese:
       - 彼 は 率直 {に} 話し まし た。

@@ -1,5 +1,7 @@
 grammar_point: い-Adjective[stem] (stem)
-matcher: ⌈ˢ[^いっ⌉]*ᵖadj:(general|non_self_reliant)ᵇ~いʳ~イ⌉
+matcher: |-
+  ⌈ˢ~ᵖadj:general:adjective:stemᵇ~ᵈ~ʳ~⌉|
+  ⌈ˢ~ᵖadj:non_self_reliant:adjectiveᵇ~ᵈ~ʳ~⌉
 matcher_enforce_examples: true
 id: gp9999
 meaning: stem

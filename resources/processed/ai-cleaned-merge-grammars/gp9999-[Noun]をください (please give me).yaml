@@ -1,5 +1,8 @@
 grammar_point: '[Noun]をください (please give me)'
-matcher: '{noun}を?⌈~ʳクダサル⌉'
+matcher: |-
+  {noun}
+  (⌈ˢをᵖprt:case_particleᵇをʳオ⌉)?
+  ⌈ˢくださいᵖv:non_self_reliant:godan-ra:imperativeᵇくださるᵈ下さるʳクダサイ⌉
 learn_before:
   - 真上 (directly above)
 id: gp9999
