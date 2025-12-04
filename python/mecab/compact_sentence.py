@@ -363,14 +363,14 @@ def japanese_to_compact_sentence(japanese: str) -> str:
     return _mecab_raw_to_compact_sentence(raw)
 
     
-def japanese_to_japanese_with_spaces(japanese: str, collapse_punction: bool = True) -> str:
+def japanese_to_japanese_with_spaces(japanese: str, collapse_punctuation: bool = True) -> str:
     wakati = get_mecab_tagger()
     try:
         # Fix for special case seen
         japanese = japanese.replace(' っ', 'っ').replace('っ ', 'っ')
         raw = wakati.parse(japanese)
         compact_sentence = _mecab_raw_to_compact_sentence(raw)
-        result = compact_sentence_to_japanese(compact_sentence, spaces=True, collapse_punction=collapse_punction)
+        result = compact_sentence_to_japanese(compact_sentence, spaces=True, collapse_punctuation=collapse_punctuation)
 
         if validate:
             # Round trip check
