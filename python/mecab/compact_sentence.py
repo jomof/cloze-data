@@ -385,3 +385,16 @@ def japanese_to_japanese_with_spaces(japanese: str, collapse_punctuation: bool =
 
 def split_compact_sentence(compact_sentence: str) -> list[str]:
     return re.findall(r'⌈[^⌉]*⌉', compact_sentence)
+
+
+def get_token_pairs(compact_sentence: str) -> list[str]:
+    """Returns all pairs of tokens where the first token is left of the second.
+
+    Each pair is returned as two tokens concatenated together.
+    """
+    tokens = split_compact_sentence(compact_sentence)
+    pairs = []
+    for i in range(len(tokens)):
+        for j in range(i + 1, len(tokens)):
+            pairs.append(tokens[i] + tokens[j])
+    return pairs

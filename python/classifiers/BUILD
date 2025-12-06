@@ -18,6 +18,7 @@ py_library(
         "__init__.py",
         "gather_sentences.py",
         "grammar.py",
+        "token_tuples.py",
         "training_tokens.py",
         "word2vec.py",
     ],
@@ -45,6 +46,24 @@ py_binary(
     deps = [
         ":classifiers",
         "//python/console:display",
+        "//python/mecab",
         "@pip//gensim",
+        "@pip//numpy",
+        "@pip//scikit_learn",
+    ],
+)
+
+# bazel run //python/classifiers:token_tuples
+py_binary(
+    name = "token_tuples",
+    srcs = ["token_tuples.py"],
+    data = [
+        "//resources/processed:ai-cleaned-merge-grammars",
+    ],
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//python/console:display",
+        "//python/mapreduce",
+        "//python/mecab",
     ],
 )
