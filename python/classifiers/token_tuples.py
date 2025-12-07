@@ -15,6 +15,8 @@ ranked_sentences = []
 registered_tokens = set()
 new_sentences = []  # Track new sentences found in current run
 ranked_sentences_file = "/workspaces/cloze-data/ranked_sentences.yml"
+token_frequency_file = "/workspaces/cloze-data/token_frequency.yml"
+cost_factor = 0.15  # Factor for mean token cost
 
 def load_ranked_sentences():
     """Load ranked sentences and registered tokens from YAML file."""
@@ -39,6 +41,29 @@ def save_ranked_sentences():
         'registered_tokens': sorted(list(registered_tokens))
     }
     with open(ranked_sentences_file, 'w', encoding='utf-8') as f:
+        yaml.dump(data, f, allow_unicode=True, default_flow_style=False, sort_keys=False)
+
+def load_token_frequency():
+    """Load token frequency from YAML file if it exists."""
+    global sorted_tokens, tokens_ranked
+    if os.path.exists(token_frequency_file):
+        with open(token_frequency_file, 'r', encoding='utf-8') as f:
+            data = yaml.safe_load(f)
+            if data:
+                sorted_tokens = [(item['token'], item['count']) for item in data.get('tokens', [])]
+                tokens_ranked = {token: rank for rank, (token, _) in enumerate(sorted_tokens)}
+                return True
+    return False
+
+def save_token_frequency():
+    """Save token frequency to YAML file with all tokens."""
+    data = {
+        'tokens': [
+            {'token': token, 'count': count}
+            for token, count in sorted_tokens
+        ]
+    }
+    with open(token_frequency_file, 'w', encoding='utf-8') as f:
         yaml.dump(data, f, allow_unicode=True, default_flow_style=False, sort_keys=False)
 
 def map(grammar_point, _):
@@ -77,12 +102,21 @@ def map_and_rank_sentences(grammar_point, _):
             compact = japanese_to_compact_sentence(cleaned)
             tokens = get_token_pairs(compact)
 
-            # Calculate cost: sum of rank for tokens not in registered_tokens
-            cost = 0
+            # Calculate cost using formula: (mean_token_cost * token_count * factor) + max_token_cost
+            # Only consider tokens not in registered_tokens
+            unregistered_token_costs = []
             for token in tokens:
                 if token not in registered_tokens and token in tokens_ranked:
                     rank = tokens_ranked[token]
-                    cost += rank
+                    unregistered_token_costs.append(rank)
+
+            if unregistered_token_costs:
+                mean_cost = sum(unregistered_token_costs) / len(unregistered_token_costs)
+                max_cost = max(unregistered_token_costs)
+                token_count = len(unregistered_token_costs)
+                cost = (mean_cost * token_count * cost_factor) + max_cost
+            else:
+                cost = 0
 
             sentence_costs.append((cost, japanese, tokens, english))
 
@@ -102,6 +136,15 @@ def fold_ranked_sentences(_, grammar_sentence_costs):
 
 def rank_tokens_by_frequency():
     global sorted_tokens, tokens_ranked
+
+    # Try to load from cache first
+    if load_token_frequency():
+        print(f"Loaded token frequency from {token_frequency_file}")
+        print(f"Total tokens: {len(sorted_tokens)}")
+        return
+
+    # If not cached, compute it
+    print(f"Computing token frequency...")
     mr = MapReduce(
             input_dir            = grammar_root,
             map_func_name        = 'calculating',
@@ -115,6 +158,11 @@ def rank_tokens_by_frequency():
     sorted_tokens = sorted(token_count_accumulator.items(), key=lambda x: x[1], reverse=True)
     # Create tokens_ranked: token -> rank (0-based)
     tokens_ranked = {token: rank for rank, (token, _) in enumerate(sorted_tokens)}
+
+    # Save to cache
+    save_token_frequency()
+    print(f"Saved token frequency to {token_frequency_file}")
+    print(f"Total tokens: {len(sorted_tokens)}")
 
 def rank_sentences():
     global ranked_sentences, registered_tokens, new_sentences
