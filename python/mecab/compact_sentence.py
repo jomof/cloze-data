@@ -385,26 +385,3 @@ def japanese_to_japanese_with_spaces(japanese: str, collapse_punctuation: bool =
 
 def split_compact_sentence(compact_sentence: str) -> list[str]:
     return re.findall(r'⌈[^⌉]*⌉', compact_sentence)
-
-
-def get_token_pairs(compact_sentence: str) -> list[str]:
-    """Returns all pairs of tokens where the first token is left of the second.
-
-    Each pair is returned as two tokens concatenated together.
-    Excludes tokens that contain punctuation (pos=auxs or pos=sym).
-    If only one non-punctuation token exists, returns that single token.
-    """
-    tokens = split_compact_sentence(compact_sentence)
-    # Filter out tokens with auxs (auxiliary symbols) or sym (symbols) POS tags
-    filtered_tokens = [t for t in tokens if not (re.search(r'ᵖauxs[:\⌉]', t) or re.search(r'ᵖsym[:\⌉]', t))]
-
-    # Special case: if only one token, return it as a single-element list
-    if len(filtered_tokens) == 1:
-        return filtered_tokens
-
-    # Normal case: generate all pairs
-    pairs = []
-    for i in range(len(filtered_tokens)):
-        for j in range(i + 1, len(filtered_tokens)):
-            pairs.append(filtered_tokens[i] + filtered_tokens[j])
-    return pairs

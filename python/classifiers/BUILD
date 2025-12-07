@@ -53,17 +53,3 @@ py_binary(
     ],
 )
 
-# bazel run //python/classifiers:token_tuples
-py_binary(
-    name = "token_tuples",
-    srcs = ["token_tuples.py"],
-    data = [
-        "//resources/processed:ai-cleaned-merge-grammars",
-    ],
-    visibility = ["//:__subpackages__"],
-    deps = [
-        "//python/console:display",
-        "//python/mapreduce",
-        "//python/mecab",
-    ],
-)
